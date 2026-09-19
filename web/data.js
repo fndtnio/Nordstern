@@ -27858,8 +27858,7 @@ window.NORDSTERN = {
     "delivery_gap": 6.93,
     "bucket": "changes-you",
     "bucket_tags": [
-     "nobody-makes-it",
-     "cannot-reach-people"
+     "nobody-makes-it"
     ],
     "knowledge_yld": null,
     "delivery_yld": null,
@@ -28912,7 +28911,6 @@ window.NORDSTERN = {
     "bucket": "ends-it-later",
     "bucket_tags": [
      "nobody-makes-it",
-     "cannot-reach-people",
      "needs-more-evidence"
     ],
     "knowledge_yld": null,
@@ -30397,9 +30395,7 @@ window.NORDSTERN = {
     "knowledge_gap": 0.0,
     "delivery_gap": 0.0,
     "bucket": "ends-it-later",
-    "bucket_tags": [
-     "cannot-reach-people"
-    ],
+    "bucket_tags": [],
     "knowledge_yld": null,
     "delivery_yld": null,
     "quadrant": "known & modifiable",
@@ -31020,8 +31016,7 @@ window.NORDSTERN = {
     "delivery_gap": 0.0,
     "bucket": "defines-your-life",
     "bucket_tags": [
-     "cannot-aim-it",
-     "cannot-reach-people"
+     "cannot-aim-it"
     ],
     "knowledge_yld": null,
     "delivery_yld": null,
@@ -32070,9 +32065,7 @@ window.NORDSTERN = {
     "knowledge_gap": 7200.0,
     "delivery_gap": 3120.0,
     "bucket": "ends-it-later",
-    "bucket_tags": [
-     "cannot-reach-people"
-    ],
+    "bucket_tags": [],
     "knowledge_yld": null,
     "delivery_yld": null,
     "quadrant": "known & modifiable",
@@ -33178,9 +33171,7 @@ window.NORDSTERN = {
     "knowledge_gap": 3300000.0,
     "delivery_gap": 2475000.0,
     "bucket": "ends-it-later",
-    "bucket_tags": [
-     "cannot-reach-people"
-    ],
+    "bucket_tags": [],
     "knowledge_yld": null,
     "delivery_yld": null,
     "quadrant": "known & modifiable",
@@ -34138,7 +34129,6 @@ window.NORDSTERN = {
     "bucket": "ends-it-later",
     "bucket_tags": [
      "found-too-late",
-     "cannot-reach-people",
      "needs-more-evidence"
     ],
     "knowledge_yld": null,
@@ -35411,7 +35401,6 @@ window.NORDSTERN = {
     "delivery_gap": 4420.0,
     "bucket": "ends-it-later",
     "bucket_tags": [
-     "cannot-reach-people",
      "needs-more-evidence"
     ],
     "knowledge_yld": null,
@@ -35721,7 +35710,6 @@ window.NORDSTERN = {
     "delivery_gap": 19600.0,
     "bucket": "ends-it-later",
     "bucket_tags": [
-     "cannot-reach-people",
      "needs-more-evidence"
     ],
     "knowledge_yld": null,
@@ -36059,7 +36047,6 @@ window.NORDSTERN = {
     "bucket": "ends-it-later",
     "bucket_tags": [
      "cannot-aim-it",
-     "cannot-reach-people",
      "needs-more-evidence"
     ],
     "knowledge_yld": null,
@@ -37133,7 +37120,6 @@ window.NORDSTERN = {
     "delivery_gap": 276000.0,
     "bucket": "ends-it-later",
     "bucket_tags": [
-     "cannot-reach-people",
      "needs-more-evidence"
     ],
     "knowledge_yld": null,
@@ -37355,8 +37341,7 @@ window.NORDSTERN = {
     "bucket": "ends-it",
     "bucket_tags": [
      "nobody-makes-it",
-     "cannot-aim-it",
-     "cannot-reach-people"
+     "cannot-aim-it"
     ],
     "knowledge_yld": null,
     "delivery_yld": null,

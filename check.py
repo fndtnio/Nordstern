@@ -747,7 +747,14 @@ def bucket_tags(rec) -> list:
         out.append("cannot-aim-it")
     if rec["axes"]["mechanism"] in ("none", "correlates"):
         out.append("no-starting-point")
-    if delivery(rec) in ("barely", "undelivered"):
+    # THE NAME SAYS "IT WORKS", SO THE RULE HAS TO ASK. `delivery` alone put
+    # Alzheimer's here — a `disease-modifying` record whose own efficacy field
+    # says the number is the wrong shape and whose survival gain is zero. A
+    # treatment that does not hold or end the disease has nothing to arrive.
+    # Same call Engpass's stages report makes: `partial` does not open the
+    # "can we do anything about it" gate, so reach is not asked of it.
+    if (delivery(rec) in ("barely", "undelivered")
+            and capability(rec) in ("curable", "managed", "preventable")):
         out.append("cannot-reach-people")
     if kinds & {"evidence-incomplete", "candidate-untested"}:
         out.append("needs-more-evidence")

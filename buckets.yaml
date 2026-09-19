@@ -27,6 +27,19 @@
 # the version and a digest of the rules in every snapshot, and a test fails if
 # the digest moved and the version did not.
 
+# v5 (2026-09-19) GUARDED `cannot-reach-people` ON CAPABILITY. The tag is
+# named "It works and it does not arrive" and its rule asked only whether it
+# arrived: `delivery` barely/undelivered. That filed `alzheimers` — a
+# `disease-modifying` record whose efficacy field says the number is the wrong
+# shape and whose survival gain is zero — under "it works". The rule now also
+# requires capability `curable`, `managed` or `preventable`, the same line
+# Engpass's stages report draws for its "can we do anything about it" gate.
+# **DROPPED: the 12 `partial` records — alzheimers, als, glioblastoma,
+# mesothelioma, dipg, idiopathic-pulmonary-fibrosis, duchenne, cmv-infection,
+# stroke, heart-failure, rheumatic-heart-disease, h5n1.** 68 → 56. Axis-B
+# counts for this tag are NOT comparable with v1-v4 snapshots; axis A and the
+# other axis-B tags are unchanged.
+
 # v4 (2026-09-02) made axis A READ TREATED SURVIVAL BEFORE THE INTERVENTION RUNG.
 # `survival_outcome()` returns `cured` for anything on the `curative` rung
 # however few survive, so four cancers where most patients die were filed as
@@ -49,7 +62,7 @@
 # v2 (2026-08-30) added `found-too-late` to axis B. Axis A is unchanged, so the
 # axis-A counts in earlier snapshots remain comparable; the axis-B tallies do
 # not, because a record can now carry a tag it could not carry before.
-version: 4
+version: 5
 
 axes:
 
@@ -316,11 +329,17 @@ axes:
         name: It works and it does not arrive
         rule: >
           `delivery` is `barely` or `undelivered` — efficacy multiplied by access
-          leaves most patients untouched.
+          leaves most patients untouched — **and** capability is `curable`,
+          `managed` or `preventable`. A `disease-modifying` treatment is not
+          something that "works" in the sense this bucket means: it slows the
+          course and the disease still wins, so there is nothing to arrive.
         not: >
           NOT a knowledge problem, and it is the single most common state in the
           register. This is the tag the whole `efficacy`/`access` split exists
-          to make sayable.
+          to make sayable. And NOT the `partial` records — Alzheimer's, ALS,
+          glioblastoma — which are undelivered too, but of a treatment that
+          does not hold the disease; version 4 filed them here on delivery
+          alone and the name overclaimed.
         examples: [refractive-error, hearing-loss, sickle-cell, hepatitis-b, obesity]
 
       - slug: needs-more-evidence
