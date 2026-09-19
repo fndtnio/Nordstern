@@ -1,0 +1,341 @@
+slug: buruli-ulcer
+id: FND-D-0033
+name: Buruli ulcer
+also: [Buruli ulcer disease, Bairnsdale ulcer, Daintree ulcer, Mycobacterium ulcerans infection, Searls ulcer]
+mondo: MONDO:0000327
+kind: disease
+residual: false
+contested: false
+
+# THE PATHOGEN ANAESTHETISES THE WOUND IT MAKES.
+#
+# Mycobacterium ulcerans secretes mycolactone, a diffusible toxin that does three
+# things at once: it kills tissue, it locally suppresses the immune response, and
+# IT IS ANALGESIC. So the ulcer is painless. Patients present late not because
+# the disease is slow or because the clinic is far, but because the organism has
+# evolved to remove the signal that would bring them in.
+#
+# `window` records what it closes on and what fraction are caught in time. It
+# never records WHY people are late — and across this corpus the reasons are
+# completely different and want completely different levers. See gaps.md #71.
+#
+# AND NOBODY KNOWS HOW IT IS TRANSMITTED. After decades, the route from the
+# environment to a human being is not established. Every other infectious record
+# here is controlled through its transmission route — the tsetse, the snail, the
+# blackfly, the dog, the Aedes. This one has no route, so it has no prevention:
+# `prevention: none` is not the result of prevention being tried, it is a
+# CONSEQUENCE of a hole in the mechanism axis, and nothing records that the two
+# fields are chained. See gaps.md #70.
+
+burden:
+  incidence:
+    value: 1.5e3
+    units: >
+      reported cases/year worldwide — down from around five thousand in the
+      mid-2000s in West Africa, and RISING in a focus in Victoria, Australia
+    src: recall
+  deaths:
+    value: 0.0
+    units: >
+      deaths/year directly attributable — an eighth morbidity-dominant record;
+      Buruli ulcer disfigures and disables and rarely kills
+    src: reasoning
+  note: >
+    The third most common mycobacterial disease of immunocompetent people, after
+    tuberculosis and leprosy, and vastly smaller than either. Concentrated in
+    West and Central Africa — Côte d'Ivoire, Ghana, Benin, Cameroon, the
+    Democratic Republic of the Congo — and associated everywhere with slow-moving
+    or stagnant fresh water, though what that association means is exactly what
+    is not known.
+    WORTH NOTING WHERE THE RESEARCH CAME FROM. There is a substantial and growing
+    focus in Victoria, Australia, where possums appear to be a reservoir and
+    mosquitoes are implicated in transmission. Much of what is now understood
+    about how this organism might reach people has been worked out there, because
+    it started affecting people in a wealthy country with research capacity. The
+    disease is the same in Benin and the evidence base is not.
+
+axes:
+  mechanism: partial
+  intervention: curative
+  prevention: none
+  ongoing: moderate
+  efficacy:
+    value: 0.90
+    units: >
+      fraction-of-patients (cure with eight weeks of oral rifampicin and
+      clarithromycin) — high, and it is a recent number; see `moved`
+    src: recall
+  access:
+    value: 0.45
+    units: >
+      fraction-of-patients (diagnosed and treated) — the shortfall is late
+      presentation and distance from the few centres that manage it, in a disease
+      that gives the patient no pain to prompt the journey
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: n/a
+  witness: >
+    DIAGNOSTIC is `objective` and decisive: PCR for the IS2404 insertion sequence
+    is highly sensitive and specific, and it is the reference standard. It also
+    requires a laboratory, and the disease occurs in districts that do not have
+    one — so in practice much diagnosis is clinical, against a differential that
+    includes tropical phagedenic ulcer, leprosy, cutaneous leishmaniasis, fungal
+    infection and squamous carcinoma, and clinical accuracy against PCR is
+    imperfect. A point-of-care test is the field's most-requested tool and does
+    not yet exist.
+    PROGNOSTIC is `partial`. Lesion category at presentation — small nodule,
+    plaque, large ulcer, bone involvement — predicts treatment outcome and
+    residual disability reasonably well. What is not predicted is who progresses
+    from an early nodule to a large ulcer and how fast.
+    PREDICTIVE is `n/a`, AND IT IS THE GOOD VERSION. There is one standard
+    regimen and it works in around nine in ten, so the selection question has
+    been abolished by a treatment that succeeds in nearly everybody — the
+    hepatitis C reason, not the schistosomiasis one, where a single drug
+    abolishes the question by leaving nothing to choose between. The register
+    records those identically (see the schistosomiasis note); this is the record
+    that shows how far apart they are.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    Eight weeks of oral rifampicin and clarithromycin. Rifampicin discolours
+    secretions and interacts with a long list of other drugs; paradoxical
+    reactions — the lesion worsening during or after treatment as the immune
+    response returns to tissue the toxin had been suppressing — are common,
+    alarming, and not a treatment failure. Wound care and dressings run for
+    weeks to months. Nothing here is permanent.
+    READ `moved`, BECAUSE THIS RATING IS RECENT. Until the early 2000s the
+    treatment was wide surgical excision — cutting well beyond the visible
+    lesion, skin grafting, sometimes amputation — because there was no effective
+    antibiotic. The disfigurement people associate with this disease is
+    substantially the disfigurement of its former treatment.
+    That is the third record in this corpus to record a collapse of `toll`
+    without any change in capability, after visceral leishmaniasis and sleeping
+    sickness. It has become the commonest kind of progress here, and the
+    register only acquired the means to record it three records ago.
+  incidence:
+    value: 0.0
+    units: fraction-of-treated (permanent harm from current antibiotic therapy)
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    The antibiotics kill the organism and do not rebuild what the toxin
+    destroyed. Mycolactone produces extensive necrosis of skin, subcutaneous fat
+    and sometimes bone before anything is done, and healing is by scar. Large
+    lesions across a joint contract as they heal, leaving fixed flexion,
+    restricted movement and in the worst cases a limb that is present and
+    unusable; osteomyelitis can require resection or amputation.
+    A substantial minority of cured patients — commonly cited as around a
+    quarter — carry permanent limitation, and the burden of the disease is
+    almost entirely this rather than its mortality, which is negligible.
+    The lever is timing, not pharmacology: an early nodule treated for eight
+    weeks leaves a mark, and a large ulcer over a knee treated equally well
+    leaves a contracture. Physiotherapy during and after treatment materially
+    reduces it and is the part of care least often delivered.
+  incidence:
+    value: 0.25
+    units: >
+      fraction-of-cured (permanent scarring, contracture, joint limitation or
+      amputation) — a reasoned estimate, concentrated in those presenting with
+      large or peri-articular lesions
+    src: reasoning
+
+window:
+  what: >
+    Capability does not change with timing — the antibiotics work on the last day
+    as well as the first — and everything else does. A category I lesion, a
+    nodule or plaque under five centimetres, is eight weeks of tablets and a
+    small scar. A category III lesion, extensive or crossing a joint or into
+    bone, is the same eight weeks of tablets plus surgery, grafting, months of
+    dressings, physiotherapy, and a contracture at the end of it.
+    So the window's price is paid entirely in `residue`, as in schistosomiasis and
+    onchocerciasis — and unusually, THE REASON PEOPLE MISS IT IS THE PATHOGEN'S
+    DOING. Mycolactone is analgesic. There is no pain to prompt a journey, and by
+    the time a painless nodule has become an ulcer large enough to alarm someone,
+    the residue is already determined.
+    That changes what the diagnosis lever is. For a painful disease, awareness
+    campaigns tell people to come sooner. Here they have to teach a community to
+    act on something that does not hurt, which is a harder ask and a different
+    intervention.
+  closes_on: >
+    lesion enlargement, extension across a joint, and osteomyelitis
+  caught_in_time:
+    value: 0.35
+    units: >
+      fraction-of-patients (presenting with a category I lesion) — a reasoned
+      estimate; late presentation is the norm in most reported series
+    src: reasoning
+
+witness:
+  mechanism: >
+    Rated `partial`, and the split is unusually clean: the TOXIN is one of the
+    best-characterised bacterial virulence factors in medicine, and the
+    TRANSMISSION is unknown.
+    Mycobacterium ulcerans secretes mycolactone, a diffusible polyketide, and
+    almost everything about the disease follows from what that molecule does. It
+    is cytotoxic, which produces the extensive necrosis of skin and subcutaneous
+    fat. It blocks the Sec61 translocon, so infected tissue cannot secrete
+    cytokines — a LOCAL IMMUNOSUPPRESSION that lets the organism grow
+    undisturbed in an immunocompetent person. And it is analgesic, so the lesion
+    does not hurt. A toxin that kills tissue, silences the immune response to
+    itself, and anaesthetises the result is a remarkable piece of biology and it
+    explains the whole clinical picture without remainder.
+    THE HOLE IS HOW ANYONE CATCHES IT. The organism is associated with
+    slow-moving and stagnant fresh water and is detectable in aquatic
+    environments; aquatic insects have been proposed as vectors; in Victoria,
+    Australia, possums are a reservoir and mosquitoes are strongly implicated.
+    None of that has been established as the route in West Africa, where most of
+    the disease is. After decades of work there is no confirmed transmission
+    pathway, and consequently nothing to interrupt.
+  intervention: >
+    `curative`, and recently so. Rifampicin with clarithromycin, eight weeks,
+    entirely oral, cures around nine in ten — with surgery now adjunctive, for
+    debridement and grafting rather than as the treatment itself. An earlier
+    regimen paired rifampicin with injected streptomycin; the all-oral
+    combination replaced it and removed eight weeks of daily injections.
+    Before any of that, the treatment was the knife: wide excision beyond the
+    visible margin, skin grafts, and amputation where bone was involved. That
+    transition is in `moved`, and it is worth being explicit that MOST OF THE
+    DISFIGUREMENT ASSOCIATED WITH THIS DISEASE IN THE PUBLIC MIND IS THE
+    DISFIGUREMENT OF ITS FORMER TREATMENT.
+  prevention: >
+    `none`, AND THE RATING IS A CONSEQUENCE RATHER THAN A FINDING. There is no
+    prevention because there is nothing to prevent: the transmission route is
+    unknown, so there is no vector to control, no water source to treat, no
+    behaviour to change with any confidence, and no reservoir to target. BCG
+    appears to give some protection and it is partial and short-lived, which is
+    not enough to rate.
+    This is the only infectious record in the register whose control depends on a
+    fact nobody has. Sleeping sickness has the tsetse, schistosomiasis has the
+    snail, echinococcosis has the dog, dengue has Aedes — and every one of those
+    prevention strategies is the transmission route turned into a programme.
+    Buruli ulcer has no route, so it has no programme, and the axis reports
+    `none` exactly as it would for a disease where prevention had been tried and
+    failed. See gaps.md #70.
+  ongoing: >
+    `moderate`. Eight weeks of daily oral antibiotics is finite and light. What
+    is not light is the wound care that goes with a large ulcer — dressings for
+    weeks to months, often requiring travel or admission — and the physiotherapy
+    that determines whether a healing lesion over a joint becomes a contracture.
+    The medical part is short; the nursing part is long.
+
+moved:
+  - date: 2004
+    axis: toll
+    from: catastrophic
+    to: minor
+    why: >
+      Antibiotic therapy — first rifampicin with streptomycin, later the all-oral
+      rifampicin and clarithromycin combination — replaced wide surgical excision
+      as the treatment for Mycobacterium ulcerans infection. Capability was
+      unchanged: the disease was curable by cutting it out before and is curable
+      by tablets now. What collapsed is the price the patient pays, from
+      mutilating surgery and grafts to eight weeks of oral antibiotics. The third
+      such entry in this register, after visceral leishmaniasis and sleeping
+      sickness, and the pattern is now clear enough to say that toll reduction is
+      the commonest form of progress in this corpus.
+
+holes:
+  - How Mycobacterium ulcerans reaches human beings. This is the central hole and
+    it gates the entire prevention axis; see gaps.md #70.
+  - Why the Victorian focus is expanding while the West African burden falls.
+    Two epidemiologies, possibly two transmission routes, one organism.
+  - What predicts progression from an early nodule to an extensive ulcer, which
+    would let treatment be aimed at those who need it soonest.
+  - How much of the permanent disability is preventable by physiotherapy
+    delivered alongside antibiotics. Believed to be a great deal, and thinly
+    trialled.
+  - Reported case counts are a floor, not an estimate. A painless lesion in a
+    rural district with no laboratory is not a case anybody counts.
+  - Written from model recall. Mycolactone's three actions, the eight-week
+    all-oral regimen and the unknown transmission route are the parts most likely
+    right; every number is the part most likely wrong.
+
+blockers:
+  - kind: knowledge
+    obstacles: [burden-unknown]
+    blocks: prevention, entirely — by not knowing how it is transmitted
+    what: >
+      THE BINDING CONSTRAINT, AND IT SITS ON A DIFFERENT AXIS FROM THE ONE IT
+      BLOCKS. Nobody has established how Mycobacterium ulcerans gets from the
+      environment into a person. The association with slow-moving water is
+      consistent and unexplained; aquatic insects have been proposed; the
+      Australian focus points at possums as a reservoir and mosquitoes as
+      vectors, and whether that transfers to West Africa is unknown.
+      Until it is settled there is no prevention to deliver. Every other
+      infectious disease in this register is controlled by attacking its
+      transmission route, and this one has no route to attack — so the
+      `prevention: none` rating on this record is not a statement about effort or
+      funding, it is this blocker showing through a different field.
+      `scale: null`. What is needed is a definitive transmission study, which is
+      an epidemiological and entomological problem rather than a purchasable one.
+    who_could: [academic, sponsor, philanthropy, government]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    blocks: confirming it where it occurs, and catching it early
+    what: >
+      Two problems under one heading. The reference test — PCR for IS2404 — is
+      excellent and needs a laboratory, and the districts with the disease do not
+      have one, so diagnosis in practice is clinical against a differential that
+      includes several other chronic ulcers. A point-of-care test is the single
+      most-requested tool in this field and does not exist.
+      The second problem is not a test at all. THE LESION DOES NOT HURT, because
+      the toxin is analgesic, so nobody presents early — and a diagnostic that
+      confirms Buruli ulcer in a district clinic does nothing for someone who has
+      not walked there. The lever here is community recognition of a painless
+      nodule, which is a harder thing to teach than "come when it hurts", and it
+      is where most of the residue in this record is decided.
+    who_could: [academic, manufacturer, health-system, nonprofit, government]
+    scale: 5.0e7
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: eight weeks of antibiotics, months of dressings, and the physiotherapy
+    what: >
+      The medical treatment is short, cheap and oral. Everything around it is
+      not. A large ulcer needs wound care for weeks to months, which in practice
+      means repeated travel or prolonged admission for a patient who feels
+      perfectly well; and preventing a contracture over a healing joint requires
+      physiotherapy delivered consistently through and after treatment.
+      That last is the part most often missing and it is where a quarter of
+      patients acquire permanent disability. It is also unusually cheap: it is
+      training, time and follow-up rather than drugs or devices, and it converts
+      a cured patient with a contracture into a cured patient with a scar.
+    who_could: [health-system, government, nonprofit, philanthropy]
+    scale: 5.0e7
+    standing: documented
+    src: recall
+
+  - kind: evidence-incomplete
+    blocks: knowing how to manage the parts of care that are not the antibiotic
+    what: >
+      The antibiotic regimen is now well supported by trial evidence, which is
+      more than most of the neglected diseases in this register can say. What is
+      not settled is nearly everything around it: when to operate and when to
+      wait, how to manage paradoxical reactions — the lesion worsening as the
+      immune response returns to tissue the toxin had suppressed — and what
+      rehabilitation protocol best prevents contracture.
+      These are the questions that determine the residue rather than the cure,
+      and they are exactly the questions that do not get funded because the
+      headline result is already good. A disease with fifteen hundred reported
+      cases a year will not generate them on its own.
+    who_could: [academic, sponsor, nonprofit, health-system]
+    scale: 3.0e7
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0033
+  rated: 2026-08-22
+  by: [claude, jeremy]

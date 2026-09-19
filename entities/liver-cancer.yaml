@@ -1,0 +1,535 @@
+slug: liver-cancer
+id: FND-D-0058
+name: liver cancer
+also: [hepatocellular carcinoma, HCC, hepatoma, primary liver cancer]
+mondo: MONDO:0002691
+kind: disease
+residual: false
+contested: false
+
+# ABOUT 870,000 CASES A YEAR AND ABOUT 760,000 DEATHS. **THE RATIO IS THE
+# RECORD** — a cancer that almost nobody survives, and the only one in this
+# register whose incidence and mortality are nearly the same number.
+#
+# It is also **almost entirely preventable, and the prevention is other
+# diseases.** Hepatitis B, hepatitis C, alcohol, and increasingly the metabolic
+# liver disease that follows obesity and diabetes. Aflatoxin in stored grain,
+# which is a food-storage problem with a specific mutational fingerprint.
+#
+# THE REGISTER ALREADY HOLDS ONE OF THOSE CAUSES AND HAS CURED IT. Hepatitis C is
+# `curable` here; hepatitis B is queued; cirrhosis is queued. **Curing hepatitis
+# C prevents this cancer, and vaccinating against hepatitis B prevents it —
+# Taiwan's universal infant programme from 1984 is the first demonstration
+# anywhere that a vaccine prevents a human cancer.** Four rows, one causal chain,
+# no way to connect them.
+#
+# TWO THINGS IT BREAKS:
+#
+# 1. **THE TUMOUR AND THE ORGAN ARE FAILING TOGETHER.** Almost all HCC arises in
+#    a cirrhotic liver, and every treatment decision depends on how much liver
+#    function is left. BCLC is the only staging system in oncology that stages
+#    the ORGAN alongside the tumour. A patient can be untreatable not because the
+#    cancer is too advanced but because the liver is. gaps.md #127.
+#
+# 2. **TRANSPLANT IS ZERO-SUM.** Every other access limit in this register is
+#    fixable with money or infrastructure. Livers are not manufactured. Giving
+#    one patient an organ means another does not get it, and eligibility is
+#    rationed by criteria that include — for alcohol-related disease — how the
+#    patient came to need it. gaps.md #128.
+
+burden:
+  prevalence:
+    value: 8.7e5
+    units: >
+      new cases/year worldwide — third or fourth most commonly diagnosed cancer
+      by mortality, and rising in high-income countries on the back of metabolic
+      liver disease while falling in parts of East Asia on the back of hepatitis
+      B vaccination
+    src: recall
+  deaths:
+    value: 7.6e5
+    units: >
+      deaths/year — **and it is close to the incidence figure**, which is the
+      signature of a cancer diagnosed late in a patient who frequently cannot
+      tolerate treatment
+    src: recall
+  note: >
+    **INCIDENCE AND MORTALITY ARE NEARLY THE SAME NUMBER.** Prostate cancer runs
+    1.5 million diagnoses against 400,000 deaths; liver cancer runs 870,000
+    against 760,000. Those two records are the extremes of this register and
+    everything about them differs accordingly.
+    The causes divide geographically and are shifting. **Hepatitis B** dominates
+    in East Asia and sub-Saharan Africa and can cause HCC without cirrhosis,
+    because the virus integrates into the host genome and is directly oncogenic.
+    **Hepatitis C** dominated in Japan, Egypt and southern Europe. **Alcohol** in
+    Europe and the Americas. And **metabolic liver disease** — the fatty liver
+    that follows obesity and type 2 diabetes — is the fastest-rising cause almost
+    everywhere and is the reason incidence is climbing in countries where the
+    viral causes are receding.
+    **Aflatoxin** deserves separate mention: a fungal toxin contaminating badly
+    stored grain and groundnuts, synergistic with hepatitis B, and it leaves a
+    specific fingerprint — a characteristic *TP53* mutation found in tumours from
+    exposed regions and essentially nowhere else. **A dietary exposure legible in
+    the tumour's genome.**
+    Where the viral causes have been addressed the effect is visible. Where
+    obesity is rising, the effect is visible in the other direction.
+
+survival:
+  horizon: 5 years from diagnosis
+  untreated:
+    value: 0.03
+    units: >
+      fraction alive — hepatocellular carcinoma in a cirrhotic liver has a median
+      survival of a few months untreated
+    src: recall
+  treated:
+    value: 0.2
+    units: >
+      fraction alive — resection, ablation or transplant cure a minority caught
+      early; systemic therapy for advanced disease adds months. **Dragged down
+      twice over**: most patients present late, and many of the rest cannot
+      tolerate treatment because of the liver they have
+    src: recall
+  witness: >
+    **The prevention axis matters more here than the treatment axis.** Hepatitis B
+    vaccination and hepatitis C cure remove the cause; Taiwan's universal infant
+    HBV programme cut childhood liver cancer within a generation. This is a
+    cancer whose incidence is falling for reasons that have nothing to do with
+    oncology.
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: prophylaxis
+  ongoing: high
+  efficacy:
+    value: 0.30
+    units: >
+      fraction-of-patients (cured or durably controlled) — low, and it is
+      dragged down by two things at once: most patients present with advanced
+      tumours, and many of the rest cannot tolerate treatment because of the
+      liver they have
+    src: reasoning
+  access:
+    value: 0.30
+    units: >
+      fraction-of-patients (reaching surveillance, resection, ablation,
+      transplantation or modern systemic therapy) — **and the transplant
+      component of this number cannot be raised with money**, because organs are
+      finite. See gaps.md #128
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: none
+  witness: >
+    DIAGNOSTIC is `objective`, and liver cancer has a property almost unique in
+    oncology: **it can be diagnosed without a biopsy.** A lesion in a cirrhotic
+    liver showing characteristic arterial enhancement and venous washout on
+    contrast imaging is diagnostic, because the pre-test probability in that
+    population is high enough to carry it. Nothing else in this register
+    diagnoses a cancer on a picture.
+    The failure is the same as every other silent cancer: **HCC produces no
+    symptoms until it is large or the liver decompensates**, so it is found
+    either by surveillance in a known cirrhotic or too late.
+    PROGNOSTIC is `partial`, and it is the only staging system in oncology that
+    stages **the organ as well as the tumour.** BCLC combines tumour burden,
+    performance status and liver function, because a small tumour in a failing
+    liver and a large tumour in a working one are different problems with
+    different answers. Child-Pugh and ALBI grade the liver directly.
+    **PREDICTIVE IS `none`, AND IT IS THE FIRST CANCER IN THIS REGISTER TO EARN
+    THAT.** There is no validated biomarker selecting patients for sorafenib,
+    lenvatinib, atezolizumab-bevacizumab or any other systemic regimen. AFP
+    tracks disease and does not predict response. PD-L1 does not work here as it
+    partly does elsewhere. **Patients receive an expensive therapy with real
+    toxicity, in a body with very little reserve, and find out by waiting** —
+    which is why `futile_treatment_risk` fires on this record and why it is
+    correct to.
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    **EVERY TREATMENT HERE IS CONSTRAINED BY THE ORGAN IT IS DELIVERED THROUGH**,
+    and several of them can precipitate the failure they were meant to postpone.
+    **RESECTION** removes functioning liver from someone who has little to spare.
+    In a cirrhotic, taking too much causes post-hepatectomy liver failure, and
+    the calculation of how much can safely go is one of the more consequential
+    judgements in surgery.
+    **TRANSARTERIAL CHEMOEMBOLISATION** deliberately infarcts part of the liver
+    to kill tumour inside it, and post-embolisation syndrome and hepatic
+    decompensation follow in a proportion.
+    **TRANSPLANTATION** is the most effective treatment and exchanges the disease
+    for lifelong immunosuppression, its infection and malignancy risk, and
+    rejection.
+    **SYSTEMIC THERAPY** — the multikinase inhibitors cause hand-foot skin
+    reaction, diarrhoea, hypertension and fatigue that substantially degrade
+    quality of life in patients who have little of it left; checkpoint blockade
+    adds immune-related hepatitis, **in a liver that is already the problem.**
+    And the toll is inflicted without a predictive marker, on people whose
+    remaining time is measured in months.
+  incidence:
+    value: 0.40
+    units: >
+      fraction-of-treated (permanent harm — hepatic decompensation, lifelong
+      immunosuppression after transplant, persistent systemic-therapy toxicity)
+      — a reasoned estimate across a heterogeneous treated population
+    src: reasoning
+
+# NO `residue` BLOCK, AND THE OMISSION IS ITSELF THE FINDING.
+#
+# `residue` means what the DISEASE left in somebody the treatment worked on. What
+# a cured HCC patient is left with is **the cirrhotic liver the cancer grew in**,
+# which was there first, is a separate queued entity, and will grow another
+# tumour: recurrence after resection or ablation approaches seventy percent at
+# five years, and much of it is a NEW primary rather than a return of the old one.
+#
+# The whole organ is the field. Curing the tumour does not cure the field, and
+# the only treatment that does is replacing the organ.
+#
+# So the register has no way to say **"the disease you still have underneath"** —
+# not `residue`, not `toll`, not `ongoing`. See gaps.md #127.
+
+window:
+  what: >
+    **SURVEILLANCE IN A KNOWN, IDENTIFIABLE, ALREADY-DIAGNOSED POPULATION — AND
+    MOST OF THEM ARE NOT IN IT.**
+    Almost all HCC arises in cirrhosis, and cirrhosis is diagnosed. So the
+    at-risk group is not hypothetical: it is a list of patients already under
+    the care of a health system. Six-monthly ultrasound, with or without
+    alpha-fetoprotein, detects tumours small enough to resect, ablate or
+    transplant.
+    Early disease — a single small tumour in a preserved liver — is curable in
+    the majority. Advanced disease is not curable at all.
+    **And surveillance uptake among eligible cirrhotics is poor even in
+    well-resourced systems**, commonly reported in the range of a fifth to two
+    fifths. The patients are known, the test is an ultrasound, the interval is
+    six months, and most of them are not getting it.
+    That is a different failure from lung cancer's — there the eligible
+    population must be identified from smoking histories nobody records. **Here
+    the health system already knows exactly who to call.**
+  closes_on: >
+    growth beyond transplantable or resectable limits, vascular invasion, or
+    decompensation of the underlying liver — whichever comes first, and the last
+    of those is not about the tumour
+  caught_in_time:
+    value: 0.25
+    units: >
+      fraction-of-cases (diagnosed at a stage where cure is possible AND the
+      liver can tolerate it) — a reasoned estimate, and it is a conjunction of
+      two conditions rather than one
+    src: reasoning
+
+strata:
+  - name: very early and early (BCLC 0-A)
+    fraction:
+      value: 0.25
+      units: fraction-of-diagnoses
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.70
+      units: fraction-of-stratum (five-year survival after resection, ablation or transplant)
+      src: reasoning
+    toll: major
+    what: >
+      A single tumour or a few small ones, in a liver with enough function left.
+      Resection, radiofrequency or microwave ablation, or transplantation.
+      **This is the stratum surveillance exists to produce and it is a quarter of
+      diagnoses.**
+      Transplant is the best of the three because it treats the cancer and the
+      cirrhosis together — and it is rationed by organ supply rather than by
+      indication.
+
+  - name: intermediate (BCLC B)
+    fraction:
+      value: 0.25
+      units: fraction-of-diagnoses
+      src: reasoning
+    intervention: disease-modifying
+    efficacy:
+      value: 0.25
+      units: fraction-of-stratum (meaningful survival benefit from locoregional therapy)
+      src: reasoning
+    toll: major
+    what: >
+      Multinodular disease confined to the liver, in preserved function.
+      Transarterial chemoembolisation, sometimes repeated, sometimes combined
+      with systemic therapy or used to downstage a patient into transplant
+      eligibility.
+      **Treatment here deliberately damages the liver to control what is growing
+      in it**, and the balance is the whole art of managing this stratum.
+
+  - name: advanced (BCLC C)
+    fraction:
+      value: 0.35
+      units: fraction-of-diagnoses
+      src: reasoning
+    intervention: disease-modifying
+    efficacy:
+      value: 0.12
+      units: fraction-of-stratum (durable meaningful benefit from systemic therapy)
+      src: reasoning
+    toll: major
+    what: >
+      Vascular invasion, extrahepatic spread, or symptoms. Systemic therapy:
+      checkpoint blockade with an anti-angiogenic, or a multikinase inhibitor.
+      Median survival has roughly doubled since 2007 and is still measured in
+      months to a year and a half.
+      **No biomarker selects any of it**, which is what `predictive: none` means
+      in practice for the largest stratum in this record.
+
+  - name: terminal by liver function (BCLC D)
+    fraction:
+      value: 0.15
+      units: fraction-of-diagnoses
+      src: reasoning
+    intervention: none
+    efficacy:
+      value: 0.0
+      units: fraction-of-stratum (benefit from any anticancer therapy)
+      src: reasoning
+    toll: none
+    what: >
+      **A STRATUM DEFINED BY THE ORGAN RATHER THAN BY THE TUMOUR.** Decompensated
+      cirrhosis — ascites, encephalopathy, coagulopathy — and poor performance
+      status. These patients receive best supportive care, and it is the right
+      answer, because every available treatment would kill them faster than the
+      cancer.
+      Some of them have tumours that would be curable in a working liver.
+      **Nothing else in this register contains a group who are untreatable
+      because of a different disease**, and it is fifteen percent of diagnoses.
+
+moved:
+  - date: 1984
+    axis: prevention
+    from: none
+    to: prophylaxis
+    why: >
+      **TAIWAN'S UNIVERSAL INFANT HEPATITIS B VACCINATION PROGRAMME — THE FIRST
+      DEMONSTRATION ANYWHERE THAT A VACCINE PREVENTS A HUMAN CANCER.**
+      Childhood hepatocellular carcinoma incidence in vaccinated birth cohorts
+      fell substantially, and the effect has followed those cohorts into
+      adulthood. It preceded the HPV vaccine by two decades and is the reason
+      anybody believed a cancer vaccine was possible.
+      **The vaccine is against hepatitis B**, which is a queued and unwritten
+      record in this register. The prevention of this cancer belongs entirely to
+      another entity.
+    src:
+      id: PMID:9197213 doi:10.1056/NEJM199706263362602
+      retrieved: 2026-08-26
+      quote: >
+        Since the institution of Taiwan's program of universal hepatitis B
+        vaccination, the incidence of hepatocellular carcinoma in children has
+        declined.
+
+  - date: 2020
+    axis: efficacy
+    from: 0.25
+    to: 0.3
+    why: >
+      **SYSTEMIC THERAPY THAT WORKS, AFTER THIRTY YEARS OF NOTHING.** Sorafenib
+      in 2007 was the first systemic agent ever to show a survival benefit in
+      advanced HCC, and it bought about three months. Nothing beat it for a
+      decade. In 2020 the combination of a checkpoint inhibitor with an
+      anti-angiogenic antibody did, and median survival in advanced disease is
+      now well over a year.
+      A five-point move at record level, for the same reason as melanoma's: the
+      stratum it reached is a third of diagnoses and the therapy is not curative.
+      **And it arrived without a single predictive biomarker**, so it is given to
+      everybody in that stratum and works for a minority.
+
+witness:
+  mechanism: >
+    `established`, and it is a chain of chronic injury rather than a single
+    lesion.
+    Persistent inflammation — viral, alcoholic or metabolic — drives repeated
+    cycles of hepatocyte death and regeneration. Fibrosis accumulates into
+    **cirrhosis**, in which the liver is a mass of regenerative nodules under
+    constant proliferative pressure. Mutations accumulate; dysplastic nodules
+    appear; one becomes carcinoma. Telomerase promoter mutations, *TP53*, *CTNNB1*.
+    **Two causes short-circuit the chain and both matter.** Hepatitis B integrates
+    into the host genome and is directly oncogenic, so HBV-related HCC can arise
+    **without cirrhosis** — which breaks the surveillance strategy, because the
+    at-risk population is no longer identifiable as "the cirrhotics". And
+    metabolic liver disease increasingly does the same: a growing share of
+    MASH-associated HCC occurs in livers that are not cirrhotic, in a population
+    far too large to survey.
+    **AFLATOXIN LEAVES A FINGERPRINT.** Chronic dietary exposure to the fungal
+    toxin produces a specific *TP53* mutation at codon 249, found in tumours from
+    high-exposure regions and essentially nowhere else. It is the clearest
+    example in this register of an exposure legible in the genome of the disease
+    it caused.
+    THE NAMED HOLE IS WHICH CIRRHOTIC. Most people with cirrhosis never develop
+    HCC and nobody can say which will — the same question COPD asks about
+    smokers, in a population that is already under medical care and therefore
+    already surveyable if only it could be aimed.
+  intervention: >
+    `curative` for early disease, and the rating describes a quarter of
+    diagnoses.
+    Resection, thermal ablation, and **transplantation — the only treatment in
+    this record that addresses both the tumour and the liver it grew in.**
+    Eligibility runs on size and number criteria, and a patient outside them can
+    sometimes be brought inside by locoregional therapy.
+    Then chemoembolisation for intermediate disease, and systemic therapy for
+    advanced. The `strata` block spans from `curative` to `none`, and the last
+    of those is defined by the organ rather than by the cancer.
+    **THE UNUSUAL THING ABOUT TREATING THIS DISEASE IS THAT EVERY OPTION IS
+    RATIONED BY LIVER FUNCTION.** Resection takes liver away. Embolisation
+    infarcts it. Systemic therapy is metabolised by it and immunotherapy can
+    inflame it. **The treatment and the host organ are in direct competition**,
+    which is not true of any other record here.
+  prevention: >
+    `prophylaxis`, **and this is the second vaccine-preventable cancer in the
+    register after cervical.**
+    Hepatitis B vaccination, with a birth dose, prevents the infection that
+    causes most liver cancer worldwide. Taiwan's programme from 1984 demonstrated
+    the effect on cancer incidence and it has held.
+    Then: **curing hepatitis C**, which substantially reduces subsequent HCC risk
+    — though not to zero, because the cirrhosis the virus caused remains and
+    remains oncogenic. **Alcohol reduction.** Obesity and diabetes control, which
+    is the fastest-growing and least tractable of them. And **aflatoxin control**,
+    which is grain drying and storage rather than medicine.
+    So the prevention of this cancer consists of: a vaccine against another
+    disease, a cure for another disease, alcohol policy, obesity policy, and
+    agricultural practice. **Not one item on that list belongs to oncology, and
+    two of them are separate records in this register** — hepatitis C held,
+    hepatitis B queued — with no way to record that treating them is what
+    prevents this.
+  ongoing: >
+    `high`, and it is one of the few records where the rating is about the
+    underlying disease rather than the treatment.
+    A patient with cirrhosis carries six-monthly surveillance imaging, endoscopy
+    for varices, management of ascites and encephalopathy, and dietary and
+    alcohol restriction — indefinitely, whether or not they ever get cancer.
+    A transplant recipient carries lifelong immunosuppression and its
+    consequences.
+    And a patient cured of HCC by resection or ablation carries **the knowledge
+    that the field is still there** and a recurrence risk approaching seventy
+    percent at five years, most of it new primary disease.
+
+holes:
+  - Every scalar is `src: recall` or `src: reasoning`, and the strata fractions
+    are estimates that differ substantially by region — the early-stage fraction
+    is far higher where surveillance programmes function and far lower elsewhere.
+  - The rising share of MASH-associated HCC arising **without cirrhosis** is the
+    part of this record most likely to change, and it undermines the surveillance
+    strategy the whole `window` block rests on.
+  - Intrahepatic cholangiocarcinoma is a different cancer counted in some liver
+    cancer figures and not others; this record describes hepatocellular
+    carcinoma and the burden numbers may include both.
+  - `access: 0.30` conflates things that behave completely differently — a
+    six-monthly ultrasound, an interventional radiology suite, an expensive
+    antibody, and **a donated organ that cannot be bought.**
+  - Hepatitis B, cirrhosis and alcohol use disorder are all queued and unwritten,
+    and all three are upstream of this record. Rating this before them is a
+    consequence of working through a cancer list rather than a causal one.
+
+blockers:
+  - kind: diagnosis
+    blocks: surveillance in a population the health system has already identified
+    obstacles: [who-progresses]
+    what: >
+      **THE AT-RISK POPULATION IS A LIST OF NAMES AND MOST OF THEM ARE NOT BEING
+      SCANNED.**
+      Almost all HCC arises in cirrhosis, cirrhosis is diagnosed, and those
+      patients are under clinical care. Six-monthly ultrasound detects tumours
+      small enough to cure. **Surveillance uptake among eligible cirrhotics is
+      commonly reported between a fifth and two fifths even in well-resourced
+      systems.**
+      This is a different failure from lung cancer's, where the eligible
+      population has to be reconstructed from smoking histories nobody recorded.
+      Here the health system already knows exactly who to call, and does not.
+      The reasons are unglamorous: no organised recall, cirrhosis managed across
+      several specialties with nobody owning the surveillance, patients lost to
+      follow-up, and ultrasound sensitivity that is genuinely mediocre in obese
+      patients and nodular livers.
+      **And the strategy is failing at the other end too**, because a growing
+      share of metabolic HCC arises without cirrhosis, in a population too large
+      to survey and not currently identified at all.
+    who_could: [health-system, government, payer, nonprofit, software]
+    scale: 2.0e9
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: organs, which cannot be manufactured
+    obstacles: []
+    what: >
+      **TRANSPLANTATION IS THE ONLY TREATMENT THAT ADDRESSES BOTH THE CANCER AND
+      THE LIVER, AND IT IS ZERO-SUM.**
+      Every other access constraint in this register can in principle be relieved
+      with money, factories or training. **A liver given to one patient is a
+      liver another patient does not receive**, so eligibility is not a clinical
+      threshold but an allocation rule — size and number criteria, waiting-list
+      priority, and how a scarce organ is fairly distributed among people who
+      will die without one.
+      Living donation and split grafts expand supply at the cost of risk to a
+      healthy person. Opt-out donation systems raise it. Neither changes the
+      structure.
+      **And for alcohol-related liver disease the allocation has historically
+      turned on abstinence periods** — a rule about how the patient came to need
+      the organ. gaps.md #110 said the register cannot record that a patient is
+      blamed; here the consequence of the blame is whether they are offered the
+      only curative treatment there is.
+    who_could: [health-system, government, legislator, regulator, nonprofit]
+    scale: 3.0e9
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: which cirrhotic, and who benefits from any systemic therapy
+    obstacles: [who-progresses]
+    what: >
+      Two absences, and the second is why this record's `predictive` axis reads
+      `none`.
+      **WHICH CIRRHOTIC WILL DEVELOP CANCER.** Most never do. If the surveilled
+      population could be narrowed, six-monthly imaging of everyone with
+      cirrhosis could become intensive imaging of the tenth who need it — and
+      the uptake problem above would shrink accordingly.
+      **AND NOTHING PREDICTS RESPONSE TO SYSTEMIC THERAPY.** There is no
+      validated biomarker for sorafenib, lenvatinib, or checkpoint-based
+      combinations. AFP tracks the disease and does not predict benefit. Patients
+      in the largest stratum receive expensive drugs with real toxicity, with
+      very little physiological reserve, and learn whether it works by waiting.
+      This is exactly what `futile_treatment_risk` was built to flag, and it
+      fires here.
+      Underneath both: **the field problem.** Curing the tumour does not cure the
+      liver, recurrence after resection approaches seventy percent at five years,
+      and much of it is new primary disease. Nobody can prevent that.
+      `scale: null`.
+    who_could: [academic, sponsor, manufacturer, philanthropy]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: policy
+    blocks: the four causes, none of which is oncology
+    obstacles: []
+    what: >
+      **THE PREVENTION OF THIS CANCER IS ENTIRELY SOMEBODY ELSE'S PROGRAMME.**
+      *Hepatitis B birth-dose vaccination* — the single highest-value
+      intervention against liver cancer that exists, and coverage of the timely
+      birth dose lags substantially behind the rest of the infant schedule in
+      exactly the regions with the highest burden.
+      *Hepatitis C diagnosis and cure* — the drugs work, most infected people do
+      not know they are infected, and curing them substantially reduces
+      subsequent cancer.
+      *Alcohol* — taxation, availability and marketing, on the same
+      twenty-to-thirty-year lag as tobacco.
+      *Obesity and diabetes* — the fastest-rising cause, and the one where nobody
+      has a policy that works.
+      *Aflatoxin* — grain drying and storage, which is agricultural extension
+      work, and which also improves nutrition and food security.
+      **Five programmes, five ministries, one cancer, and not one of them is
+      chargeable to this record** (gaps.md #87).
+    who_could: [government, health-system, legislator, nonprofit, payer]
+    scale: 1.0e10
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0058
+  rated: 2026-08-24
+  by: [claude, jeremy]

@@ -1,0 +1,594 @@
+slug: chronic-kidney-disease
+id: FND-D-0081
+name: chronic kidney disease
+also: [CKD, chronic renal failure, end-stage kidney disease, ESKD, ESRD, kidney failure]
+mondo: MONDO:0005300
+kind: disease
+residual: false
+contested: false
+
+# THE RECORD WHERE MEDICINE HAD TO SAY OUT LOUD WHO WOULD BE ALLOWED TO DIE.
+#
+# In 1962, Seattle had a working chronic dialysis programme and far more
+# candidates than machines. An anonymous lay committee chose who was treated,
+# using criteria that included employment, church attendance and dependants. Life
+# magazine published "They Decide Who Lives, Who Dies"; the public reaction to it
+# is generally credited as a founding event of modern bioethics.
+#
+# Ten years later the United States passed the Medicare End-Stage Renal Disease
+# Program — making kidney failure **the only disease in America with universal
+# coverage regardless of age.** It remains the only one.
+#
+# The rationing did not end. It stopped being visible, and it moved offshore.
+# Between 2.3 and 7.1 million people are estimated to die each year for want of a
+# treatment invented in 1960. See gaps.md #174 for what that natural experiment
+# says about `access`, and it is not what the register would predict.
+
+burden:
+  prevalence:
+    value: 8.0e8
+    units: >
+      people worldwide with chronic kidney disease — roughly one adult in ten,
+      **and most of them do not know**, because the disease is silent until
+      kidney function is largely gone
+    src: recall
+  deaths:
+    value: 1.5e6
+    units: >
+      deaths/year directly attributed — **and CKD is projected to become one of
+      the top five causes of death worldwide by 2050**, one of the fastest-rising
+      causes in global health, driven by diabetes, hypertension and ageing
+    src: recall
+  note: >
+    **THE NUMBER THAT MATTERS IS NOT IN THE FIELDS ABOVE.**
+    Somewhere between **2.3 and 7.1 million people die every year because they
+    cannot get dialysis** — a treatment that has existed since 1960. Roughly 2.6
+    to 3.9 million people are receiving kidney replacement therapy worldwide, and
+    the shortfall is not a modelling artefact: it is the difference between
+    countries that pay for it and countries that do not.
+    That is a larger annual death toll than most records in this register, and it
+    is attributable to a **payment decision** rather than to any gap in knowledge,
+    supply chain, or manufacturing.
+    **A second, larger burden is invisible here entirely.** Impaired kidney
+    function is among the strongest independent risk factors for cardiovascular
+    death, contributing on the order of another 1.5 million deaths that are
+    counted in `ischaemic-heart-disease` and `stroke` (gaps.md #160). And roughly
+    two thirds of CKD is caused by `type-2-diabetes` and hypertension — the record
+    immediately before this one, and one still queued.
+
+survival:
+  horizon: 5 years from the onset of kidney failure
+  untreated:
+    value: 0.0
+    units: >
+      fraction alive — **untreated kidney failure is uniformly and rapidly
+      fatal.** Uraemia kills within weeks to months, and this was simply the
+      outcome before the 1960s
+    src: recall
+  treated:
+    value: 0.55
+    units: >
+      fraction alive on kidney replacement therapy — **and it splits more
+      violently by modality than almost any figure in the register.** Five-year
+      survival on haemodialysis is around 0.40, worse than several cancers here;
+      after a functioning transplant it is above 0.85. The blend hides a choice
+      that is made mostly by organ supply and by wealth
+    src: reasoning
+  witness: >
+    **A disease that killed everybody and now kills half, by machine rather than
+    by molecule.** Dialysis is the register's purest case of `suppressive`: it
+    replaces the organ's function indefinitely, does nothing to the disease, and
+    stops working the moment it stops. The outcome qualifier reads *alive and
+    held*, which is exactly right — nobody on dialysis is cured, and the
+    transplanted minority are the only ones who approach it.
+    **This is also the record where `ongoing` and `survival` most contradict each
+    other.** Three sessions a week, four hours each, indefinitely, is a survival
+    figure bought at a price the mortality column cannot show.
+
+axes:
+  mechanism: established
+  intervention: suppressive
+  prevention: risk-reduction
+  ongoing: high
+  efficacy:
+    value: 0.65
+    units: >
+      fraction-of-patients (surviving with acceptable function on kidney
+      replacement therapy) — **and it splits violently by modality**: five-year
+      survival on dialysis is worse than for many cancers in this register, while
+      transplant survival is far better
+    src: reasoning
+  access:
+    value: 0.25
+    units: >
+      fraction-of-patients-with-kidney-failure (receiving any kidney replacement
+      therapy) — the ratio of the roughly 3 million treated to the roughly 10
+      million who need it
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: good
+  predictive: partial
+  witness: >
+    **DIAGNOSTIC IS `objective` AND THE INSTRUMENT CONTAINED A RACE COEFFICIENT
+    UNTIL 2021** (gaps.md #175).
+    Kidney function is not measured. It is **estimated**, by an equation, from
+    serum creatinine plus age and sex — and from 1999 until 2021 the standard
+    equations also included a **coefficient for Black race**, which raised the
+    estimated filtration rate by around sixteen percent. The effect was to make
+    Black patients' kidneys look healthier than they were: later referral to
+    nephrology, later transplant waitlisting, and reclassification of a large
+    share to a less severe stage. A national task force removed it in 2021 and the
+    race-free equation is now standard.
+    The rest of the diagnostic picture is cheap and good — creatinine plus a urine
+    albumin-to-creatinine ratio, both costing very little — and **most people with
+    CKD have never had either done.**
+    **PROGNOSTIC IS `good`, WHICH ALMOST NOTHING ELSE IN THIS REGISTER ACHIEVES.**
+    The Kidney Failure Risk Equation predicts an individual's two- and five-year
+    probability of kidney failure from four routine variables, has been validated
+    across dozens of countries and more than a million patients, and outperforms
+    eGFR staging by a wide margin. **It is the kind of prognostic tool this
+    register keeps saying does not exist**, and it is used to decide referral,
+    vascular access planning and transplant workup timing.
+    PREDICTIVE is `partial`. Nothing identifies who responds to an SGLT2 inhibitor
+    — though the benefit is broad enough that it barely matters — and nothing
+    predicts who will tolerate dialysis well, which is the decision that most
+    changes an elderly patient's remaining life.
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    **BOTH TREATMENTS TAKE SOMETHING PERMANENT AND THEY TAKE DIFFERENT THINGS.**
+    **Dialysis.** Vascular access is a surgically created fistula or a permanent
+    catheter, and access failure and infection are the commonest reasons a
+    dialysis patient is admitted. Catheter-related bloodstream infection is a
+    leading cause of death. Long-term haemodialysis causes β2-microglobulin
+    amyloidosis, bone disease, and profound cardiovascular strain from repeated
+    fluid shifts. **The register's `toll` field is about what the cure costs, and
+    here it also costs twelve hours a week, indefinitely** — see `ongoing`.
+    **Transplant, and it is not the free option.** Lifelong immunosuppression
+    buys the graft at the cost of infection risk and a **substantially elevated
+    rate of malignancy** — skin cancers many times the background rate, and
+    post-transplant lymphoproliferative disease. Calcineurin inhibitors, the
+    backbone of the regimen, are themselves **nephrotoxic**, so the drug that
+    saves the transplanted kidney damages it. Post-transplant diabetes is common.
+    Grafts fail: median survival is on the order of twelve to twenty years, so a
+    young recipient will need another, or will return to dialysis.
+    **AND THE MOST HONEST STATEMENT ABOUT THE TOLL IS THAT PEOPLE CHOOSE TO STOP.**
+    Withdrawal from dialysis precedes something like a fifth of dialysis deaths in
+    several national registries. It is a recognised, planned, supported decision,
+    and it means a significant number of people find this treatment worse than the
+    death it prevents (gaps.md #140).
+  incidence:
+    value: 0.15
+    units: >
+      fraction-of-treated (permanent harm — access complications and amyloidosis
+      on dialysis; malignancy and calcineurin nephrotoxicity after transplant) —
+      a reasoned estimate across both modalities
+    src: reasoning
+
+window:
+  what: >
+    **THE DISEASE IS SILENT UNTIL ABOUT EIGHTY-FIVE PERCENT OF FUNCTION IS GONE,
+    AND EVERY DRUG THAT WORKS WORKS BEFORE THAT.**
+    Kidneys have enormous reserve. Remaining nephrons hyperfilter to compensate,
+    which maintains a normal-looking blood test and **accelerates their own
+    destruction** — the compensation is the mechanism of progression. Symptoms
+    appear late and are non-specific: tiredness, itch, nausea, breathlessness. A
+    large share of patients meet their first nephrologist within months of needing
+    dialysis, and some meet them on the day.
+    Everything that slows progression — blood pressure control, RAAS blockade,
+    SGLT2 inhibitors, glycaemic control — acts on the rate of nephron loss and
+    does nothing for nephrons already gone. **Started early it can defer kidney
+    failure by years or prevent it. Started at stage 5 it does nothing.**
+    **Late referral is measured and it is bad.** Patients referred late start
+    dialysis as an emergency through a catheter rather than a planned fistula,
+    have worse survival, and are far less likely to be assessed for transplant or
+    home therapy — which sets the modality problem in `witness.intervention` in
+    train from the first day.
+    The screening tools are a blood test and a urine test, both costing very
+    little, and the highest-risk populations are already known and already under
+    medical care for `type-2-diabetes` and hypertension.
+  closes_on: >
+    irreversible nephron loss and progression to kidney failure — years, and
+    silent throughout
+  caught_in_time:
+    value: 0.30
+    units: >
+      fraction-of-cases (identified early enough for progression-slowing therapy
+      to matter) — a reasoned estimate; most CKD is undiagnosed and much of the
+      rest is diagnosed late
+    src: reasoning
+
+strata:
+  - name: CKD without kidney failure (stages 1-3)
+    fraction:
+      value: 0.93
+      units: fraction-of-people-with-CKD
+      src: reasoning
+    intervention: disease-modifying
+    efficacy:
+      value: 0.70
+      units: fraction-of-stratum (meaningful slowing of progression on optimal therapy)
+      src: reasoning
+    toll: minor
+    what: >
+      **Almost everybody with the disease, and the stratum where it can still be
+      changed.** Blood pressure control, RAAS blockade, SGLT2 inhibitors and
+      treatment of the underlying cause — cheap, oral, well tolerated. Most of
+      these people do not know they have kidney disease, and most of the ones who
+      do will die of cardiovascular disease before their kidneys fail.
+
+  - name: kidney failure treated with dialysis
+    fraction:
+      value: 0.05
+      units: fraction-of-people-with-CKD
+      src: reasoning
+    intervention: suppressive
+    efficacy:
+      value: 0.45
+      units: fraction-of-stratum (five-year survival)
+      src: reasoning
+    toll: major
+    what: >
+      **Five-year survival worse than several cancers in this register**, twelve
+      hours a week on a machine, and a fifth of the deaths preceded by a decision
+      to stop. It is also, unambiguously, the difference between living and dying
+      within weeks — which is why the access figure above is the most consequential
+      number in the file.
+
+  - name: kidney failure treated with transplant
+    fraction:
+      value: 0.02
+      units: fraction-of-people-with-CKD
+      src: reasoning
+    intervention: suppressive
+    efficacy:
+      value: 0.85
+      units: fraction-of-stratum (five-year patient survival)
+      src: reasoning
+    toll: major
+    what: >
+      **Better survival, better quality of life, and cheaper than dialysis after
+      about two years** — and the smallest stratum. Supply of organs is the
+      binding constraint and cannot be bought (gaps.md #128), but it is not the
+      only one: referral, workup capacity, surgical capacity and, in systems where
+      dialysis is a recurring revenue stream, incentives that point the other way
+      (gaps.md #124).
+
+moved:
+  - date: 1972
+    axis: access
+    from: 0.02
+    to: 0.20
+    why: >
+      **THE ONLY TIME A COUNTRY LEGISLATED A DISEASE'S ACCESS FIGURE TO NEARLY
+      ONE, AND IT HAPPENED BECAUSE THE RATIONING BECAME VISIBLE.**
+      Belding Scribner's arteriovenous shunt in 1960 made repeated dialysis
+      possible and instantly created a shortage. Seattle's programme convened an
+      anonymous lay committee to select patients; its criteria included
+      employment, dependants and community service. **Life magazine published
+      "They Decide Who Lives, Who Dies" in 1962**, and the reaction — to
+      respectable people deciding, on social worth, who would be allowed to die —
+      is widely credited as a founding event of modern bioethics.
+      In 1972 the United States extended Medicare to **end-stage renal disease
+      regardless of age**, the only disease-specific universal entitlement in
+      American health care, and it remains so.
+      **Read what happened next carefully, because it is not what this register's
+      model predicts.** Access approached universal. Spending grew to roughly seven
+      percent of Medicare's fee-for-service budget for about one percent of
+      beneficiaries. And **outcomes did not become the world's best** — United
+      States dialysis survival trails several peer countries, home dialysis remains
+      a small minority where other systems use it for most patients, and transplant
+      rates are lower than the organ supply would permit.
+      `reach = efficacy × access` says solving access solves the record. It did
+      not (gaps.md #174).
+    src: recall
+
+  - date: 2020
+    axis: efficacy
+    from: 0.55
+    to: 0.65
+    why: >
+      **THE FIRST NEW WAY TO SLOW KIDNEY DISEASE IN TWENTY YEARS, AND IT ARRIVED
+      AS A DIABETES DRUG.**
+      RAAS blockade — ACE inhibitors and angiotensin receptor blockers — had been
+      the whole of progression-slowing therapy since the late 1990s. Then SGLT2
+      inhibitors, developed to lower glucose, were found in dedicated kidney
+      outcome trials to **substantially slow progression to kidney failure, in
+      people with and without diabetes.** Non-steroidal mineralocorticoid receptor
+      antagonists and GLP-1 receptor agonists have since added further benefit.
+      **This is `type-2-diabetes`'s gaps.md #172 seen from the other side.** A drug
+      class approved on a glucose endpoint turns out to be a kidney drug, working
+      through haemodynamics rather than glycaemia — and the record that benefits is
+      not the record it was licensed for.
+      The effect is real and it is not a cure: it defers kidney failure rather
+      than preventing it, in a stratum that is 93% of the disease and mostly
+      undiagnosed.
+    src: recall
+
+  - date: 2021
+    axis: access
+    from: 0.24
+    to: 0.25
+    why: >
+      **A COEFFICIENT WAS DELETED FROM AN EQUATION AND A LARGE NUMBER OF PEOPLE
+      BECAME SICKER WITHOUT ANY CHANGE IN THEIR KIDNEYS.**
+      The standard equations estimating kidney function from creatinine included a
+      **Black race coefficient** from 1999, raising estimated filtration by around
+      sixteen percent for Black patients. The consequence was systematic: later
+      referral, later transplant waitlisting, and a substantial share reclassified
+      into a less severe stage than their kidneys warranted.
+      A joint national task force recommended removal in 2021 and race-free
+      equations are now standard. Studies of the change found meaningful numbers of
+      patients reclassified to more advanced CKD, becoming eligible for
+      nephrology referral and for transplant listing.
+      **The numeric move recorded here is deliberately tiny and the entry is not.**
+      It is in the file because this register has no other way to record that **the
+      measuring instrument was the barrier**, and because the fix cost nothing and
+      took two decades (gaps.md #175).
+    src: recall
+
+witness:
+  mechanism: >
+    `established`, and the mechanism explains why the window in this record is
+    silent and one-way.
+    Nephrons are lost — to diabetic glomerulopathy, hypertensive
+    nephrosclerosis, glomerulonephritis, polycystic disease, obstruction or
+    toxins — and **the survivors compensate by hyperfiltering.** That maintains a
+    normal-looking creatinine and simultaneously subjects the remaining glomeruli
+    to raised pressure, which damages them. The compensation is the mechanism of
+    progression, which is why the disease is silent until it is advanced and why
+    it continues after the original insult is removed.
+    Downstream: glomerulosclerosis and tubulointerstitial fibrosis, activation of
+    the renin-angiotensin-aldosterone system, proteinuria that is itself
+    nephrotoxic, and then the systemic consequences — anaemia from erythropoietin
+    deficiency, mineral and bone disorder, acidosis, and the accelerated
+    cardiovascular disease that kills most patients before their kidneys do.
+    RAAS blockade and SGLT2 inhibition both work by reducing intraglomerular
+    pressure, which is the same lever.
+    **THE NAMED HOLE HAS A NAME AND A GEOGRAPHY: CKDu.** Chronic kidney disease of
+    unknown aetiology affects young agricultural labourers on the Pacific coast of
+    Central America and in Sri Lanka's dry zone — men in their twenties and
+    thirties, without diabetes or hypertension, dying of kidney failure. In some
+    communities it is the leading cause of death in men. **After more than twenty
+    years of investigation the cause is not established**: recurrent heat stress
+    and volume depletion is the leading hypothesis, with agrochemicals, heavy
+    metals and infection variously implicated.
+    It is the clearest occupational and environmental disease signal in this
+    register, it is plausibly worsening with rising ambient temperatures, and
+    **`who_could` has no labour ministry and the register has no field for
+    climate.**
+  intervention: >
+    `suppressive`, and the word is doing something unusual here: **the treatment
+    replaces an organ's function rather than acting on a disease.**
+    **Dialysis** removes solutes and fluid three times a week, indefinitely, and
+    substitutes for perhaps ten percent of what a kidney does. **Transplantation**
+    is better on every axis — survival, quality of life, and cost after about two
+    years — and requires lifelong immunosuppression, so it too is `suppressive`
+    rather than `curative`: the recipient still has kidney disease, on drugs,
+    with a graft that has a half-life.
+    Upstream, in the 93% of patients who have not reached kidney failure, blood
+    pressure control, RAAS blockade and SGLT2 inhibitors genuinely modify the
+    disease.
+    **THE PROBLEM THIS RECORD EXISTS TO SHOW IS NOT WHETHER PEOPLE GET TREATED. IT
+    IS WHICH TREATMENT THEY GET** (gaps.md #174). In-centre haemodialysis
+    dominates in some health systems and is a minority practice in others that use
+    home therapies for most patients; transplant rates vary several-fold between
+    countries with comparable organ availability; and survival tracks those choices.
+    **`access` records whether the intervention was obtained. It cannot record
+    that the worse version was obtained**, and for this disease that distinction is
+    worth more life-years than the access figure itself.
+  prevention: >
+    `risk-reduction`, and the two things that would do most are in other records.
+    Roughly two thirds of chronic kidney disease is caused by diabetes and
+    hypertension. Preventing and controlling those prevents this — which makes
+    `type-2-diabetes`'s food-environment blocker and the queued `hypertension`
+    record the largest levers on this one, and makes the causal chain invisible to
+    both (gaps.md #160).
+    Then: avoiding nephrotoxins, which medicine supplies in quantity — NSAIDs,
+    aminoglycosides, contrast agents, calcineurin inhibitors — so a share of this
+    record is manufactured by the rest of the register (gaps.md #147). Treating
+    acute kidney injury properly, since AKI is a strong risk factor for later CKD.
+    And, for CKDu, **shade, water and rest breaks**, which is an occupational
+    health intervention rather than a medical one and is the only thing currently
+    known to help.
+    **Screening is the missing piece and it is cheap.** A creatinine and a urine
+    albumin-to-creatinine ratio in people who already have diabetes or hypertension
+    would find most of the treatable disease, in a population already attending
+    clinics. It is recommended and inconsistently done.
+  ongoing: >
+    `high`, and the queue that scheduled this record called it the register's
+    starkest, correctly.
+    **In-centre haemodialysis is twelve hours a week attached to a machine, plus
+    travel, for the rest of a life or until a transplant.** Around it: fluid
+    restriction measured in cupfuls, a diet restricting potassium, phosphate and
+    salt, and a large daily pill burden including phosphate binders taken with
+    every meal. Employment rates fall sharply. Depression is common and
+    under-treated.
+    Transplantation is a lighter but permanent regimen — immunosuppression that
+    cannot be missed, clinic attendance, and the knowledge that the graft has a
+    finite life.
+    **gaps.md #171 asked what KIND of ongoing burden a record carries. This one is
+    a fourth kind: not supply, not a regimen, not a decision load — it is TIME**,
+    taken in blocks, from a working week. And unlike `type-1-diabetes`'s decision
+    load, nobody has automated it: **the thing that would give the time back is a
+    transplant, and there are not enough kidneys.**
+
+holes:
+  - >
+    **The strata separate dialysis from transplant, which is partly a clinical
+    distinction and partly an access tier** — SCHEMA.md forbids access tiers as
+    strata, and not everybody is a transplant candidate, so the partition is
+    defensible and impure. The record says so rather than pretending otherwise.
+  - >
+    **The 2.3-7.1 million annual deaths from lack of dialysis are not in the
+    `deaths` field**, which holds attributed CKD deaths. The range is that wide
+    because nobody counts people who die of untreated kidney failure in countries
+    without registries.
+  - >
+    `efficacy: 0.65` averages a dialysis stratum with five-year survival worse
+    than several cancers and a transplant stratum far better. The strata carry the
+    honest figures.
+  - >
+    **Most of this record's deaths are counted elsewhere.** Impaired kidney
+    function is among the strongest cardiovascular risk factors, and roughly
+    another 1.5 million deaths a year are attributed to it inside
+    `ischaemic-heart-disease` and `stroke`.
+  - >
+    **CKDu has no separate record and probably deserves one.** It has a distinct
+    epidemiology, an unknown cause, an occupational and environmental profile, and
+    a young male agricultural population — and the register has no field for
+    climate or occupation at all.
+  - >
+    Every scalar is `recall` or `reasoning`, against one of the better-registered
+    diseases in the world.
+
+blockers:
+  - kind: cost
+    blocks: a 1960s treatment that most of the world cannot buy
+    obstacles: []
+    what: >
+      **BETWEEN 2.3 AND 7.1 MILLION PEOPLE DIE EACH YEAR FOR WANT OF DIALYSIS, AND
+      NOTHING ABOUT IT IS A SCIENTIFIC PROBLEM.**
+      Haemodialysis costs on the order of tens of thousands of dollars a year per
+      patient and must continue for life. In most low- and middle-income countries
+      it is paid for out of pocket, which means it is available until a family's
+      money runs out and then it stops — a pattern documented repeatedly, in which
+      patients start treatment, impoverish their households, and discontinue.
+      **Peritoneal dialysis is cheaper, needs no machine or dialysis centre, is
+      done at home, and is used for a minority of patients almost everywhere** —
+      including in wealthy systems where the reimbursement structure favours
+      in-centre haemodialysis. Several countries have shown that a
+      "peritoneal-dialysis-first" policy is both cheaper and at least as good.
+      Local fluid manufacture is the main lever on its cost and is
+      underdeveloped.
+      **This is the register's largest gap between what a treatment costs to
+      provide and what it is worth**, and unlike `#128`'s organ supply it is not
+      capped by anything physical. Machines can be built and nurses trained. The
+      constraint is that somebody has to decide to pay indefinitely for a
+      population that will never stop needing it.
+    who_could: [government, payer, health-system, nonprofit, manufacturer]
+    scale: 3.0e10
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    blocks: a silent disease, two cheap tests, and most patients meeting a nephrologist too late
+    obstacles: []
+    what: >
+      **THE TESTS COST ALMOST NOTHING AND THE HIGH-RISK POPULATION IS ALREADY IN
+      THE CLINIC.**
+      Serum creatinine and a urine albumin-to-creatinine ratio identify most
+      treatable chronic kidney disease. The people at highest risk — those with
+      diabetes and hypertension — are already attending health services for those
+      conditions. Screening them is recommended and inconsistently done, and
+      albuminuria in particular is measured far less often than guidelines
+      specify.
+      The consequence is late referral, which is measured and consistently
+      associated with worse survival, emergency dialysis starts through a catheter
+      rather than a planned fistula, and much lower rates of transplant assessment
+      and home therapy. **A patient who arrives late is routed into the worst
+      modality by default and frequently stays there** — so this blocker produces
+      the one below it.
+      **And the instrument itself was a barrier until 2021.** The race coefficient
+      in the estimating equations raised Black patients' apparent kidney function
+      and delayed their referral and transplant listing for two decades (gaps.md
+      #175).
+    who_could: [health-system, government, academic, payer]
+    scale: 2.0e9
+    standing: documented
+    src: recall
+
+  - kind: policy
+    blocks: the payment structure choosing the worse treatment
+    obstacles: []
+    what: >
+      **TRANSPLANTATION IS BETTER FOR THE PATIENT AND CHEAPER FOR THE PAYER AFTER
+      ABOUT TWO YEARS, AND MOST PEOPLE WITH KIDNEY FAILURE ARE ON DIALYSIS.**
+      Some of that is organ supply, which cannot be bought (gaps.md #128). Much of
+      it is not. Transplant rates vary several-fold between countries with
+      comparable donation rates, and the differences track referral practice,
+      workup capacity, surgical capacity and how the money moves. Home dialysis —
+      cheaper, better tolerated, and preferred by patients who try it — is a small
+      minority in health systems where in-centre haemodialysis is the reimbursed
+      default, and the majority in systems that chose otherwise.
+      **This is gaps.md #124 in its clearest form.** A transplant is a one-time
+      procedure that ends a revenue stream. In-centre dialysis is an annuity
+      billed three times a week for years, and in several countries it is delivered
+      by consolidated for-profit chains. Nobody has to intend a bad outcome for the
+      incentives to select one.
+      Organ donation policy is the other half and is genuinely movable: presumed
+      consent, living donor programmes, paired exchange, and normothermic perfusion
+      that makes marginal organs usable have each increased supply where
+      implemented.
+      Rated `documented` on the international variation and the cost comparisons,
+      both of which are public.
+    who_could: [payer, government, legislator, health-system, regulator]
+    scale: 5.0e9
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: why young farm workers are dying of kidney failure
+    obstacles: []
+    what: >
+      **CHRONIC KIDNEY DISEASE OF UNKNOWN AETIOLOGY, AND IT HAS BEEN UNKNOWN FOR
+      TWENTY YEARS.**
+      In agricultural communities on the Pacific coast of Central America and in
+      the dry zone of Sri Lanka, men in their twenties and thirties develop
+      progressive kidney failure without diabetes, hypertension or
+      glomerulonephritis. In some communities it is the leading cause of death in
+      men. Similar patterns are reported in India and elsewhere.
+      **Recurrent heat stress with volume depletion is the leading hypothesis** —
+      the affected work is outdoor manual labour in extreme heat, and biopsy shows
+      tubulointerstitial injury consistent with it. Agrochemicals, heavy metals,
+      silica and infectious causes have all been investigated and none is
+      established. Intervention studies providing **water, rest and shade** have
+      shown promise, which is an occupational health measure rather than a medical
+      one.
+      **Two things make this the most structurally interesting blocker in the
+      file.** The affected population has almost no political or economic weight,
+      which is a large part of why twenty years have produced no answer. And **if
+      heat is the cause, this is a disease that will grow with ambient
+      temperature** — the clearest climate-attributable signal in this register,
+      in a register with no field for climate, no field for occupation, and no
+      labour ministry in `who_could`.
+      `scale: null`.
+    who_could: [academic, government, nonprofit, philanthropy, sponsor]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: dialysis being a building, a water plant and a nursing rota
+    obstacles: []
+    what: >
+      A dialysis programme is not a product. It is **treated water at
+      pharmaceutical purity**, machines with a maintenance contract, consumables
+      arriving three times a week per patient forever, vascular access surgery, and
+      dialysis nurses — a specialty that takes years to build and is short
+      everywhere.
+      That makes this gaps.md #154's shape in its most capital-intensive form:
+      **an intervention that must be operated, continuously, by trained people, in
+      a building with reliable power and water.** A donated machine without a
+      water treatment plant, a service contract and a nurse is scrap.
+      Peritoneal dialysis avoids most of it and substitutes a different logistics
+      problem — bags of fluid, several a day, delivered to a patient's home
+      indefinitely, which is a distribution network rather than a clinic.
+      Transplantation adds its own: tissue typing laboratories, retrieval teams
+      able to operate at any hour, and surgical capacity that competes with
+      everything else in the hospital.
+      **Every one of these is buildable and none is a discovery**, which is why
+      this record's central failure is a decision rather than a limit.
+    who_could: [health-system, government, payer, manufacturer, nonprofit]
+    scale: 1.5e10
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0082
+  rated: 2026-08-24
+  by: [claude, jeremy]

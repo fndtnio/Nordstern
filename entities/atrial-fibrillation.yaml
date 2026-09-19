@@ -1,0 +1,558 @@
+slug: atrial-fibrillation
+id: FND-D-0083
+name: atrial fibrillation
+also: [AF, AFib, atrial flutter, auricular fibrillation]
+mondo: MONDO:0004981
+kind: disease
+residual: false
+contested: false
+
+# THE RECORD THAT EXISTS BECAUSE OF ANOTHER RECORD.
+#
+# Atrial fibrillation is frequently asymptomatic and rarely kills anybody
+# directly. Its entire clinical weight is that it causes ischaemic stroke — around
+# a fifth to a third of them — and AF-related strokes are larger and more often
+# fatal than others.
+#
+# And the treatment that prevents those strokes CAUSES intracranial haemorrhage,
+# which is `stroke`'s second-largest stratum. So one record's intervention moves
+# two strata of another record in opposite directions, and the net benefit is
+# computable in neither of them. See gaps.md #177.
+#
+# `stroke` is held. This record was queued because that record kept pointing here.
+
+burden:
+  prevalence:
+    value: 5.3e7
+    units: >
+      people with atrial fibrillation or flutter worldwide — **and the lifetime
+      risk for an adult over 45 is on the order of one in three**, which makes
+      this among the most common serious diagnoses anybody will receive
+    src: recall
+  deaths:
+    value: 3.4e5
+    units: >
+      deaths/year directly attributed — **and this figure is close to meaningless
+      on its own**, because the deaths AF causes are counted as strokes and as
+      heart failure
+    src: recall
+  note: >
+    **THE BURDEN OF THIS RECORD IS ALMOST ENTIRELY IN OTHER RECORDS AND THAT IS
+    NOT A ROUNDING ERROR.**
+    Atrial fibrillation causes roughly a fifth to a third of ischaemic strokes,
+    and AF-related strokes are more disabling and roughly twice as fatal as
+    strokes from other causes — because the clot forming in a fibrillating left
+    atrial appendage is large, and it occludes a large vessel. Those deaths are in
+    `stroke`. AF also causes and worsens heart failure, and carries an independent
+    association with dementia that survives adjustment for clinical stroke.
+    **So the register holds an entity whose importance is the incidence of other
+    entities**, and the only field that could say so is prose (gaps.md #160).
+    Prevalence is rising steeply — ageing, better detection, and rising obesity,
+    hypertension and alcohol consumption — and a substantial share is
+    **undiagnosed**, because paroxysmal AF is intermittent and a single
+    electrocardiogram in a clinic is a snapshot of a condition that comes and goes.
+
+survival:
+  horizon: 5 years from diagnosis, untreated, at age 70
+  untreated:
+    value: 0.65
+    units: >
+      fraction alive — atrial fibrillation roughly doubles mortality, mostly
+      through stroke and heart failure. **An exposure rather than a disease
+      course** — see the caveat on `hypertension`
+    src: reasoning
+  treated:
+    value: 0.8
+    units: >
+      fraction alive on anticoagulation and rate or rhythm control.
+      **Anticoagulation prevents about two thirds of AF-related strokes**, which
+      is among the largest single effect sizes in cardiovascular medicine, and
+      direct oral anticoagulants removed the monitoring that kept warfarin from
+      being prescribed
+    src: reasoning
+  witness: >
+    **The gain here is almost entirely stroke prevention**, so this record's
+    survival figure is really a statement about `stroke`. The register has no
+    way to express that one record's treatment moves another record's mortality,
+    which is the same gap that makes the deaths column exceed all human deaths.
+
+axes:
+  mechanism: established
+  intervention: suppressive
+  prevention: risk-reduction
+  ongoing: moderate
+  efficacy:
+    value: 0.70
+    units: >
+      fraction-of-patients (stroke prevented, or rhythm and symptoms controlled)
+      — anticoagulation prevents roughly two thirds of AF-related strokes, which
+      is among the largest single effect sizes in cardiovascular medicine
+    src: reasoning
+  access:
+    value: 0.45
+    units: >
+      fraction-of-eligible-patients (actually anticoagulated) — **and the shortfall
+      is largely not supply.** Registries in wealthy countries consistently find
+      something approaching half of eligible patients untreated or under-treated
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: good
+  predictive: partial
+  witness: >
+    **DIAGNOSTIC IS `objective` AND TRIVIAL — AN IRREGULARLY IRREGULAR PULSE AND A
+    TEN-SECOND ELECTROCARDIOGRAM — AND A LARGE SHARE OF THE DISEASE IS STILL
+    MISSED**, because paroxysmal atrial fibrillation is intermittent and the test
+    is a snapshot. Consumer wearables have changed the detection landscape
+    completely and the register should be careful about calling that an
+    improvement; see the `evidence-incomplete` blocker.
+    **PROGNOSTIC IS `good`, AND IT IS THE THIRD RECORD RUNNING.**
+    CHA₂DS₂-VASc predicts annual stroke risk from age, sex, heart failure,
+    hypertension, diabetes, prior stroke and vascular disease, and **it decides
+    treatment for tens of millions of people.** Its discrimination is modest — a
+    c-statistic in the region of 0.6-0.7, which would be unremarkable in a
+    research paper — and it is nonetheless one of the most consequential
+    prognostic instruments in medicine, because the decision it informs cannot be
+    postponed.
+    **That is the pattern this corpus has now shown three times** (gaps.md #178).
+    `chronic-kidney-disease` has the Kidney Failure Risk Equation. `cirrhosis` has
+    MELD. This has CHA₂DS₂-VASc. Every non-trivial individual prognostic tool in
+    eighty-three records exists because **somebody had to make a decision they
+    could not avoid** — two by scarcity, this one by having harm on both sides of
+    the choice.
+    PREDICTIVE is `partial`, and it is asymmetric in an unusual way. HAS-BLED
+    predicts bleeding risk on treatment and is genuinely weak; it is used to
+    identify modifiable risk factors rather than to withhold anticoagulation, and
+    it is frequently misused for the latter. Nothing usefully predicts who will
+    stay in sinus rhythm after ablation, which is the other major treatment
+    decision.
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    **THE TREATMENT'S HARM IS A STRATUM OF THE DISEASE IT PREVENTS.**
+    Anticoagulation causes bleeding. Major bleeding runs at something like two to
+    three percent a year, and the one that matters is **intracranial
+    haemorrhage** — at roughly 0.3-0.5% a year on a direct oral anticoagulant, and
+    roughly twice that on warfarin. **Intracranial haemorrhage on anticoagulation
+    kills about half of the people it happens to**, and the survivors are
+    frequently severely disabled.
+    That is `stroke`'s intracerebral haemorrhage stratum, which that record rates
+    `intervention: symptomatic` — the stratum where least can be done. **So this
+    record's treatment converts a preventable, treatable stroke into an
+    untreatable one, in a minority, while preventing many more of the first kind**
+    (gaps.md #177).
+    Gastrointestinal bleeding is commoner and much less lethal, and is the main
+    reason people stop taking the drug.
+    **The rhythm drugs have their own permanent costs and one is notorious.**
+    Amiodarone is the most effective antiarrhythmic available and causes
+    **thyroid disease in both directions, pulmonary fibrosis, hepatotoxicity,
+    corneal deposits and permanent skin discolouration**, with cumulative
+    dose-dependent risk. It is prescribed anyway, at low dose, because the
+    alternatives work less well — which is gaps.md #148 in a record where the
+    comparator is an arrhythmia rather than death.
+  incidence:
+    value: 0.05
+    units: >
+      fraction-of-treated (permanent harm — chiefly intracranial haemorrhage with
+      residual deficit or death, and amiodarone organ toxicity) — a reasoned
+      estimate over a multi-year treatment course
+    src: reasoning
+
+window:
+  what: >
+    **THERE ARE TWO AND THEY BELONG TO DIFFERENT GOALS.**
+    *For stroke prevention there is no window at all* — anticoagulation works
+    whenever it is started, and the risk it addresses is present from the moment
+    the arrhythmia is. What matters is only that somebody looked.
+    *For rhythm control the window is about a year, and the field spent two
+    decades believing it did not exist.* Atrial fibrillation remodels the atrium
+    electrically and structurally — **"AF begets AF"** — so the longer somebody
+    fibrillates, the harder sinus rhythm is to restore and hold. Ablation succeeds
+    far more often in paroxysmal disease than in long-standing persistent disease
+    for that reason.
+    **The reversal is the interesting part.** A large trial in 2002 compared rate
+    control with rhythm control and found no mortality difference, which set two
+    decades of practice: do not chase the rhythm. **A trial reporting in 2020
+    randomised patients within twelve months of diagnosis to early rhythm control
+    and found a reduction in cardiovascular death, stroke and hospitalisation.**
+    Same intervention, opposite conclusion, and the variable was **when.**
+    That is the shape gaps.md #157 has been accumulating — an intervention whose
+    effect depends on stage — arriving in a record where it overturned a settled
+    guideline rather than a marginal one.
+  closes_on: >
+    atrial electrical and structural remodelling, after which sinus rhythm becomes
+    progressively harder to restore — months to a couple of years
+  caught_in_time:
+    value: 0.25
+    units: >
+      fraction-of-cases (offered rhythm control within the first year of
+      diagnosis) — a reasoned estimate; much AF is diagnosed late and much of the
+      rest is rate-controlled by default
+    src: reasoning
+
+strata:
+  - name: paroxysmal
+    fraction:
+      value: 0.40
+      units: fraction-of-cases
+      src: reasoning
+    intervention: suppressive
+    efficacy:
+      value: 0.80
+      units: fraction-of-stratum (rhythm maintained and stroke risk managed)
+      src: reasoning
+    toll: major
+    what: >
+      Episodes that start and stop on their own. **The stratum where ablation works
+      best** — pulmonary vein isolation eliminates or greatly reduces the burden
+      in a large majority at a year, less durably beyond that. It is also the
+      hardest to detect, because between episodes the electrocardiogram is normal.
+
+  - name: persistent
+    fraction:
+      value: 0.28
+      units: fraction-of-cases
+      src: reasoning
+    intervention: suppressive
+    efficacy:
+      value: 0.65
+      units: fraction-of-stratum (rhythm or rate controlled, stroke risk managed)
+      src: reasoning
+    toll: major
+    what: >
+      Sustained episodes requiring cardioversion or drugs to terminate. Ablation
+      success falls and repeat procedures are common. The atrium has begun to
+      remodel and the window in the field above is closing.
+
+  - name: permanent
+    fraction:
+      value: 0.32
+      units: fraction-of-cases
+      src: reasoning
+    intervention: suppressive
+    efficacy:
+      value: 0.60
+      units: fraction-of-stratum (rate controlled, stroke risk managed)
+      src: reasoning
+    toll: major
+    what: >
+      Rhythm control has been abandoned by agreement between patient and
+      clinician. **The name is a decision, not a physiology** — "permanent" means
+      nobody is going to try any more, which makes it the only stratum in this
+      register defined by a clinical intention. Management is rate control and
+      anticoagulation, and the stroke risk is identical to every other stratum's.
+
+moved:
+  - date: 1989
+    axis: efficacy
+    from: 0.15
+    to: 0.55
+    why: >
+      **WARFARIN TRIALS TURNED AN ARRHYTHMIA INTO A PREVENTABLE CAUSE OF STROKE.**
+      A series of randomised trials through the late 1980s and early 1990s
+      established that anticoagulation reduces stroke in non-valvular atrial
+      fibrillation by around **two thirds** — one of the largest effect sizes in
+      cardiovascular medicine, achieved with a rat poison discovered in spoiled
+      sweet clover.
+      Before them, AF was an electrocardiographic finding managed for symptoms. It
+      is the moment this record acquired its reason to exist.
+      **The cost was a treatment almost designed to be under-used.** Warfarin
+      requires regular blood tests, has a narrow therapeutic range, interacts with
+      food and with most drugs, and produces intracranial haemorrhage at roughly
+      one percent a year. Time in therapeutic range in real practice was
+      consistently poor.
+    src:
+      id: PMID:2233931 doi:10.1056/NEJM199011293232201
+      retrieved: 2026-08-26
+      quote: >
+        Long-term low-dose warfarin therapy is highly effective in preventing
+        stroke in patients with non-rheumatic atrial fibrillation, and can be quite
+        safe with careful monitoring.
+
+  - date: 2010
+    axis: toll
+    from: 0.09
+    to: 0.05
+    why: >
+      **DIRECT ORAL ANTICOAGULANTS HALVED THE THING THAT MADE ANTICOAGULATION
+      FRIGHTENING.**
+      Dabigatran, rivaroxaban, apixaban and edoxaban were trialled against warfarin
+      between 2009 and 2013. Pooled, they reduce stroke and systemic embolism
+      modestly, reduce all-cause mortality by about a tenth, and — the finding that
+      matters most — **cut intracranial haemorrhage by roughly half.**
+      They also removed the INR clinic. No monitoring, no dietary restriction, far
+      fewer interactions. **That is simultaneously a toll reduction and an access
+      improvement**, and the register has to file it as one or the other; this
+      entry files it as toll because the intracranial haemorrhage rate is what the
+      record's `toll` block is about.
+      They are now going generic, which will move the `cost` blocker below over
+      the next few years.
+    src: recall
+
+  - date: 2020
+    axis: efficacy
+    from: 0.65
+    to: 0.70
+    why: >
+      **A SETTLED GUIDELINE WAS OVERTURNED BY ADDING A CONDITION ABOUT TIMING.**
+      In 2002 a large trial found no mortality advantage for rhythm control over
+      rate control, and practice followed: control the rate, anticoagulate, do not
+      chase sinus rhythm. That held for eighteen years.
+      **In 2020 a trial randomising patients within twelve months of diagnosis to
+      early rhythm control found a reduction in cardiovascular death, stroke and
+      hospitalisation.** The intervention had not changed. The population had — it
+      was applied before the atrium remodelled.
+      Ablation technique has moved alongside it: **pulsed field ablation**, arriving
+      from 2023, uses irreversible electroporation rather than heat or cold, is
+      faster, and largely spares the oesophagus and phrenic nerve that thermal
+      ablation occasionally destroys.
+      **Note what this does to the register's model.** A `moved` entry normally
+      records new capability. This one records the same capability being applied at
+      a different time — and the register has no way to distinguish *we learned to
+      do something* from *we learned when to do it* (gaps.md #120).
+    src: recall
+
+witness:
+  mechanism: >
+    `established`, at both ends of the causal chain.
+    Ectopic electrical activity, most often originating in muscular sleeves
+    extending into the **pulmonary veins**, triggers fibrillation; a substrate of
+    atrial fibrosis, stretch and inflammation sustains it. That single
+    observation — that the triggers are in the pulmonary veins — is the entire
+    basis of catheter ablation, which works by electrically isolating them.
+    Fibrillation itself remodels the atrium, shortening refractory periods and
+    increasing fibrosis, which makes further fibrillation easier: **AF begets AF**,
+    and it is why the `window` above exists.
+    The consequence that matters is mechanical. The fibrillating atrium does not
+    contract, blood stagnates in the **left atrial appendage** — a blind-ended
+    pouch where the great majority of thrombi in non-valvular AF form — and a
+    thrombus that leaves it goes to the brain. It is large, so it lodges in a large
+    vessel, which is why AF-related strokes are more severe than others. **That
+    anatomical fact is also why left atrial appendage occlusion works** as an
+    alternative for people who cannot take anticoagulants.
+    **THE NAMED HOLES.** Genome-wide studies have found many loci and the largest,
+    near *PITX2*, has been known for fifteen years without yielding a therapy.
+    Nothing predicts who will remain in sinus rhythm after ablation, and roughly a
+    third to a half do not. And **nothing reverses atrial fibrosis**, so the
+    substrate that makes AF recur is untreatable even when the arrhythmia is
+    suppressed.
+  intervention: >
+    `suppressive`, and the reason is a fact that is more interesting than the
+    rating.
+    **Anticoagulation** — now overwhelmingly direct oral anticoagulants — prevents
+    roughly two thirds of AF-related strokes. **Rate control** with beta blockers
+    keeps the ventricle from being driven too fast. **Rhythm control** —
+    antiarrhythmic drugs, cardioversion, and increasingly catheter ablation —
+    restores sinus rhythm, best if done early. **Left atrial appendage occlusion**
+    closes the pouch where the clots form, for people who cannot be anticoagulated.
+    **AND A SUCCESSFUL ABLATION DOES NOT LET YOU STOP THE ANTICOAGULANT.**
+    Guidelines are explicit: continue on the basis of the patient's stroke risk
+    score, not on the basis of their rhythm. The reasoning is sound — AF recurs
+    asymptomatically, monitoring is imperfect, and the risk factors that produced
+    the arrhythmia also produce strokes. **So the arrhythmia can be abolished and
+    the treatment continues, because the treatment was never for the arrhythmia.
+    It was for the other disease.**
+    That is the cleanest statement of what this record is. A register organised
+    around entities has one here whose intervention is aimed at a different entry
+    in the same file, and whose own cure changes nothing about it.
+  prevention: >
+    `risk-reduction`, and it is unusually well demonstrated for that rung —
+    including by a randomised trial of not drinking.
+    Obesity, hypertension, obstructive sleep apnoea, diabetes, physical inactivity
+    and alcohol all raise AF risk, and modifying them reduces recurrence
+    measurably. **A weight-management programme achieving ten percent loss produced
+    several-fold better arrhythmia-free survival** in a dedicated cohort study, and
+    **a randomised trial of alcohol abstinence in drinkers with AF significantly
+    reduced recurrence** — which is a rare thing: a behaviour tested the way a drug
+    is tested, and it worked.
+    Risk factor modification is now a guideline pillar alongside anticoagulation
+    and rhythm control, and it is delivered rarely, because it is a programme
+    rather than a prescription (gaps.md #154).
+    **The odd item is exercise.** Physical inactivity raises risk and **extreme
+    endurance exercise raises it too** — a U-shaped relationship that is well
+    described and rarely mentioned, and the only one of its kind in this record.
+  ongoing: >
+    `moderate`, and it improved markedly in 2010.
+    A direct oral anticoagulant is one or two tablets a day with no monitoring —
+    much lighter than warfarin's INR clinic, dietary restriction and dose
+    juggling. Rate or rhythm drugs on top, periodic review, and for those on
+    amiodarone a surveillance schedule for thyroid, liver and lung.
+    **The part that is not light is that missing doses matters more than it does
+    for most drugs.** Direct oral anticoagulants have short half-lives, so
+    protection lapses within a day or two of stopping — unlike warfarin, whose
+    effect decays over the better part of a week. The convenience that improved
+    adherence also made non-adherence sharper.
+
+holes:
+  - >
+    **No `residue` block, and the reason is that this record's residue is in
+    another record.** What AF leaves behind is a stroke, and the disability that
+    follows belongs to `stroke`. The register has no way to say that an entity's
+    permanent damage is filed elsewhere (gaps.md #160).
+  - >
+    **`deaths: 3.4e5` is close to meaningless in isolation** and the record says so
+    in `burden.note`. The deaths AF causes are certified as strokes and as heart
+    failure.
+  - >
+    **The `permanent` stratum is defined by a clinical decision rather than by
+    physiology** — it means nobody is going to attempt rhythm control any more.
+    It is the only stratum in the register named after an intention, and its
+    boundary with `persistent` moves as ablation improves.
+  - >
+    `access: 0.45` describes anticoagulation and conceals that the shortfall is
+    mostly prescriber behaviour rather than availability — a distinction the axis
+    cannot make.
+  - >
+    **The subclinical AF question is unresolved and this record takes a position
+    by omission.** Device-detected atrial fibrillation of short duration is treated
+    here as the same entity as clinical AF, and the trial evidence suggests
+    anticoagulating it is close to net-neutral. If it is a different entity, the
+    prevalence figure above is wrong and rising.
+  - >
+    Every scalar is `recall` or `reasoning`, in a field with unusually large and
+    well-reported randomised trials.
+
+blockers:
+  - kind: adherence
+    blocks: half the eligible patients not being anticoagulated
+    obstacles: []
+    what: >
+      **THE DRUG WORKS, IT IS CHEAP AND GETTING CHEAPER, AND SOMETHING APPROACHING
+      HALF OF ELIGIBLE PATIENTS ARE NOT ON IT.** Registries in wealthy health
+      systems find this consistently, and it is the largest single gap in this
+      record.
+      **Part of it is the patient**, and direct oral anticoagulants made this
+      sharper rather than softer: their short half-life means protection lapses
+      within a day or two of stopping, and there is no monitoring appointment at
+      which non-adherence becomes visible. Gastrointestinal bleeding — common,
+      alarming, rarely lethal — is the usual reason people stop.
+      **Most of it is the prescriber, and the mechanism is an asymmetry of
+      attribution.** A patient who bleeds on a drug you prescribed presents to you,
+      is attributed to you, and is remembered. A patient who has a stroke you did
+      not prevent is a counterfactual — invisible, unattributed, and never
+      presented as your decision. **The two harms are not weighted equally by the
+      person choosing**, and the direction of the error is always the same.
+      Fall risk is the commonest stated reason for withholding, and modelling
+      consistently finds it overstated: a patient would need to fall many hundreds
+      of times a year for the bleeding risk to outweigh the stroke risk they
+      already carry.
+      Rated `documented`: the treatment gap, the stated reasons and the modelling
+      are all published.
+    who_could: [health-system, academic, payer, government, patient-org]
+    scale: 2.0e9
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    blocks: an intermittent arrhythmia and a snapshot test
+    obstacles: []
+    what: >
+      Paroxysmal atrial fibrillation comes and goes, and a clinic electrocardiogram
+      lasts ten seconds. A substantial share of AF is undiagnosed until the stroke
+      that reveals it — **and in a meaningful fraction of AF-related strokes, the
+      stroke is the presenting feature of the arrhythmia.**
+      Longer monitoring finds more: ambulatory recorders, patch monitors,
+      implantable loop recorders, and now consumer wearables that perform
+      opportunistic screening on millions of wrists without anybody commissioning
+      it.
+      **The register should be careful about calling this a solved blocker**, and
+      the reason is in the blocker below. Finding more AF has not straightforwardly
+      prevented more strokes, and it is genuinely unclear whether the additional
+      arrhythmia being found is the same disease.
+      Where the case is strongest is in **stroke survivors** — prolonged monitoring
+      after cryptogenic stroke finds AF in a substantial minority, and those
+      patients demonstrably benefit from switching to anticoagulation.
+    who_could: [health-system, manufacturer, academic, payer]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+  - kind: evidence-incomplete
+    blocks: knowing whether the AF a watch finds is the AF the trials studied
+    obstacles: []
+    what: >
+      **FINDING MORE ATRIAL FIBRILLATION HAS NOT RELIABLY PREVENTED MORE STROKES,
+      AND THIS IS THE MOST UNCOMFORTABLE RESULT IN THE RECORD.**
+      A randomised trial of implantable loop recorders in older people **found
+      about three times as much atrial fibrillation, tripled anticoagulation, and
+      did not significantly reduce stroke.** A systematic screening trial in
+      75-to-76-year-olds found a modest benefit on a composite outcome. And two
+      trials of anticoagulation for **device-detected subclinical AF** — short
+      episodes picked up by pacemakers and monitors — found a small reduction in
+      stroke bought with an increase in major bleeding, netting out close to
+      neutral.
+      Either the arrhythmia being found is different — shorter, lower burden,
+      perhaps a marker of atrial disease rather than a cause of clots — or the risk
+      scores derived from clinically-detected AF simply do not transfer to it.
+      **The register has watched a detection technology pull a disease definition
+      upstream, and the treatment did not follow.** That is the inverse of gaps.md
+      #170, where a drug that worked only early pulled the definitions of
+      Alzheimer's and type 1 diabetes backwards in time. Here the *detector* moved
+      first, and it is now finding a population in whom the treatment may not be
+      worth its harm.
+      What is missing is specific and answerable: the burden threshold at which
+      device-detected AF becomes worth treating, and whether it is a cause or a
+      marker.
+    who_could: [academic, sponsor, manufacturer, regulator, payer]
+    scale: 8.0e8
+    standing: documented
+    src: recall
+
+  - kind: cost
+    blocks: ablation capacity, and the drug in most of the world
+    obstacles: []
+    what: >
+      **Ablation** requires an electrophysiology laboratory, expensive
+      consumables, and an operator trained for years. Waiting lists run to many
+      months in health systems that fund it, which interacts badly with the
+      `window` — the procedure works best early and the queue is long. Pulsed
+      field ablation shortens procedure times substantially and may relieve some
+      of the capacity constraint, at higher per-case consumable cost.
+      **Anticoagulation** is the better story. Direct oral anticoagulants were
+      expensive and are now coming off patent across several jurisdictions, which
+      will move this blocker more in five years than anything else in the file.
+      Warfarin is cheap and requires an INR service, which is itself a cost and is
+      absent in much of the world — **so the cheap drug needs infrastructure and
+      the expensive drug does not**, which is an unusual inversion of this
+      register's usual pattern (gaps.md #154).
+      In low- and middle-income countries the binding constraint is upstream of all
+      of it: AF is not detected, because nobody takes a pulse.
+    who_could: [manufacturer, payer, government, health-system]
+    scale: 6.0e9
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: why the atrium fibrillates, and why a third of ablations fail
+    obstacles: [who-progresses, tissue-repair]
+    what: >
+      **THE TRIGGER IS UNDERSTOOD AND THE SUBSTRATE IS NOT.**
+      Pulmonary vein ectopy initiates atrial fibrillation, and isolating the veins
+      abolishes it in a majority of paroxysmal cases. **A third to a half of
+      patients recur anyway**, and nothing predicts which — because recurrence is
+      driven by the atrial substrate, meaning fibrosis, stretch and inflammation,
+      and there is no treatment for atrial fibrosis at all.
+      That is the same shape as `cirrhosis`'s antifibrotic hole, in a different
+      organ, and it has the same consequence: **the process that makes the disease
+      recur is untreatable even when the disease is suppressed.**
+      Genetics has produced many loci and one dominant signal near *PITX2* that has
+      been known for fifteen years without yielding a therapy — a reminder that a
+      replicated genetic association is not a drug target.
+      And the largest question is upstream: **why does an atrium begin to
+      fibrillate?** Ageing, hypertension, obesity and alcohol raise the risk and
+      none of them identifies the individual, in a condition with a lifetime
+      incidence of roughly one in three.
+      `scale: null`.
+      **Tagged twice (2026-08-28), because this blocker is two questions.** *Nothing predicts which patient recurs after ablation* is `who-progresses` in its standard shape. *There is no treatment for atrial fibrosis at all* is `tissue-repair` — the substrate is scarred myocardium, which that obstacle's question covers exactly.
+    who_could: [academic, sponsor, manufacturer, philanthropy]
+    scale: null
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0084
+  rated: 2026-08-24
+  by: [claude, jeremy]

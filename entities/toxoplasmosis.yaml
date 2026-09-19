@@ -1,0 +1,528 @@
+slug: toxoplasmosis
+id: FND-D-0114
+name: toxoplasmosis
+also: [Toxoplasma gondii infection, congenital toxoplasmosis, ocular toxoplasmosis, cerebral toxoplasmosis, toxoplasmic encephalitis]
+kind: disease
+mondo: MONDO:0005989
+residual: false
+contested: false
+
+# THE LARGEST CHRONIC INFECTION IN HUMANITY, AND NOTHING CLEARS IT.
+#
+# 1. AROUND TWO BILLION PEOPLE CARRY IT FOR LIFE. Seroprevalence runs from
+#    roughly 10% to above 60% depending on country, diet and climate. After the
+#    acute phase *Toxoplasma* encysts as bradyzoites, chiefly in brain, retina
+#    and muscle, and **every licensed drug acts on the replicating tachyzoite
+#    only.** There is no cure, has never been one, and the register has no other
+#    record where the untreatable reservoir is a third of the species.
+#    This is `pathogen-persistence` at a scale that obstacle has not met.
+#
+# 2. THE RECORD IS FOUR DISEASES AND THE SCHEMA WILL SPAN THE LADDER. Latent
+#    infection needs nothing and can be given nothing. Acute infection in a well
+#    person resolves. Congenital infection damages a fetus. Ocular disease
+#    recurs for decades. Reactivation kills the immunosuppressed. **Every rung
+#    from `none` to `suppressive` appears inside one entity.**
+#
+# 3. AND UNLIKE THE FUNGAL RECORDS, MONDO HOLDS EVERY SUB-ENTITY. `congenital
+#    toxoplasmosis`, `ocular toxoplasmosis` and `cerebral toxoplasmosis` all have
+#    their own terms. gaps.md #227 found three mycology sub-entities missing and
+#    inferred an ontology-wide gap; this is the counter-example, and the strata
+#    below are named so the sub-entity check finds them.
+
+burden:
+  prevalence:
+    value: 2.0e9
+    units: >
+      people carrying latent infection worldwide — **an order of magnitude, and
+      the single largest number in this register.** Seroprevalence varies from
+      about 10% in parts of Asia and North America to above 60% in parts of
+      Latin America, Africa and continental Europe, driven by rainfall, cat
+      density and how much undercooked or cured meat a population eats
+    src: recall
+  incidence:
+    value: 2.0e5
+    units: >
+      estimated congenital infections/year worldwide — the fraction of the
+      burden that is unambiguously disease. Total new infections are far larger
+      and mostly silent
+    src: recall
+  deaths:
+    value: 0.0
+    units: >
+      deaths/year — **and this zero is two of the catalogued kinds at once.**
+      Most attributable death is cerebral toxoplasmosis in advanced HIV, where
+      the certificate says HIV, exactly as for `cryptococcal-meningitis`. The
+      rest of the burden is disability rather than mortality — blindness and
+      neurological damage — which is gaps.md #182's problem. **Neither zero
+      means nothing happened**
+    src: reasoning
+  note: >
+    **The prevalence and the harm are almost unrelated, which is why this record
+    is hard to rate.** Two billion carriers, and the great majority will never
+    have a symptom attributable to it. The disease is concentrated in three small
+    populations: fetuses whose mothers are infected during pregnancy, people
+    whose immunity fails, and the minority who develop retinal disease. Reading
+    the prevalence as a burden figure would be the worst misreading available
+    here.
+
+axes:
+  mechanism: established
+  intervention: disease-modifying
+  prevention: risk-reduction
+  ongoing: low
+  efficacy:
+    value: 0.60
+    units: >
+      fraction-of-patients (active disease controlled on pyrimethamine-sulfadiazine
+      or an equivalent) — **and no figure in this record describes cure.** Acute
+      toxoplasmic encephalitis responds well; ocular episodes shorten; congenital
+      treatment reduces severity on contested evidence. The organism remains in
+      every one of them
+    src: reasoning
+  access:
+    value: 0.50
+    units: >
+      fraction-of-patients (diagnosed and receiving appropriate therapy) —
+      **held down by a price rather than by a supply.** Pyrimethamine is a 1953
+      drug whose United States price was raised roughly fifty-fold in 2015;
+      antenatal screening exists in France and Austria and not in most of the
+      world; and the populations at risk of reactivation are the ones least
+      likely to be in regular care
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: none
+  witness: >
+    **DIAGNOSTIC is `objective` and it answers the wrong question well.**
+    IgG serology reliably tells you whether someone has ever been infected — and
+    since a third of humanity has, a positive result is usually uninformative.
+    What clinical decisions actually need is **when** infection occurred, and
+    that is much harder: IgM persists for months to years and has poor
+    specificity, so avidity testing exists precisely to date an infection that a
+    single serology cannot. PCR on amniotic fluid establishes fetal infection;
+    ocular disease is diagnosed by the appearance of the retina, because
+    serology cannot distinguish the lesion in front of you from the two billion
+    people who would also test positive.
+    **A test that is 100% sensitive and nearly useless is a shape this register
+    has not previously recorded.**
+    PROGNOSTIC is `partial`. Gestational timing predicts congenital outcome well
+    and in two opposite directions at once — transmission risk rises through
+    pregnancy while severity falls — which is genuinely useful. What is not
+    predicted is who among the infected will ever develop ocular disease, and
+    that is most of the preventable harm.
+    PREDICTIVE is `none`, and it drives the record's central controversy.
+    **Nobody can say which pregnancy benefits from antenatal treatment.** The
+    evidence that spiramycin reduces transmission, or that
+    pyrimethamine-sulfadiazine reduces fetal damage, is weak enough that entire
+    countries have reached opposite policy conclusions from the same literature
+    — France screens every pregnancy, the United Kingdom and United States do
+    not. See the `evidence-incomplete` blocker.
+
+strata:
+  - name: latent infection
+    fraction:
+      value: 0.93
+      units: fraction-of-infections
+      src: reasoning
+    intervention: none
+    efficacy:
+      value: 0.0
+      units: fraction-of-stratum — nothing acts on the bradyzoite cyst
+      src: reasoning
+    toll: none
+    what: >
+      **The two billion, and the rung is `none` in the strongest sense the
+      register has.** Not "nothing works well" — nothing acts on this stage at
+      all. Every licensed agent targets the replicating tachyzoite; the cyst is
+      metabolically quiescent, walled, and invisible to the immune system that
+      is nonetheless the only thing containing it. Most of these people will
+      never have a symptom, and none of them can be cleared.
+
+  - name: acute toxoplasmosis
+    fraction:
+      value: 0.04
+      units: fraction-of-infections
+      src: reasoning
+    intervention: none
+    efficacy:
+      value: 0.90
+      units: fraction-of-stratum (recovering fully, treated or not)
+      src: reasoning
+    toll: none
+    what: >
+      Fever and cervical lymphadenopathy in an immunocompetent person, resolving
+      over weeks without treatment. **Rated `none` because nothing medicine does
+      changes it** — the same uncomfortable rating `acute-bronchitis` earns for
+      the same reason, and the same missing rung (gaps.md #225).
+
+  - name: ocular toxoplasmosis
+    fraction:
+      value: 0.02
+      units: fraction-of-infections
+      src: reasoning
+    intervention: disease-modifying
+    efficacy:
+      value: 0.60
+      units: fraction-of-stratum (episode shortened, vision preserved)
+      src: reasoning
+    toll: major
+    what: >
+      **The leading infectious cause of posterior uveitis worldwide**, and it
+      recurs — a retinal scar reactivates years or decades later, from the cysts
+      at its edge. Treatment shortens an episode and does not prevent the next
+      one. Lesions at the macula cost central vision permanently. Southern
+      Brazil reports far higher rates and more aggressive disease, attributed to
+      more virulent local strains.
+
+  - name: congenital toxoplasmosis
+    fraction:
+      value: 0.005
+      units: fraction-of-infections
+      src: reasoning
+    intervention: disease-modifying
+    efficacy:
+      value: 0.45
+      units: fraction-of-stratum (severity reduced — on genuinely contested evidence)
+      src: reasoning
+    toll: major
+    what: >
+      Primary maternal infection in pregnancy, crossing the placenta.
+      **Transmission risk rises through gestation and severity falls**, so early
+      infection is rare and devastating while late infection is common and
+      mild. Most infected newborns look normal and declare themselves later,
+      chiefly with chorioretinitis. The severe form is hydrocephalus,
+      intracranial calcification and chorioretinitis together.
+      **The efficacy figure is the least secure in the record** and the reason
+      this entity is treated as a screening question in some countries and
+      ignored in others.
+
+  - name: cerebral toxoplasmosis
+    fraction:
+      value: 0.005
+      units: fraction-of-infections
+      src: reasoning
+    intervention: suppressive
+    efficacy:
+      value: 0.80
+      units: fraction-of-stratum (acute episode controlled on induction therapy)
+      src: reasoning
+    toll: major
+    what: >
+      Reactivation disease generally, of which the cerebral form dominates.
+      **Untreated toxoplasmic encephalitis in advanced HIV is fatal**, and it
+      was among the defining opportunistic infections of the epidemic before
+      antiretroviral therapy and co-trimoxazole prophylaxis. Induction therapy
+      controls the acute episode; **maintenance must continue until immune
+      reconstitution, because the cysts are still there** — which is the only
+      stratum here that earns `suppressive`, and it earns it for the same reason
+      the whole record cannot be cured.
+
+toll:
+  severity: major
+  permanent: false
+  what: >
+    **Pyrimethamine-sulfadiazine is a 1950s antifolate regimen and behaves like
+    one.** Pyrimethamine inhibits dihydrofolate reductase and causes bone marrow
+    suppression, which is why folinic acid is co-prescribed and blood counts are
+    monitored. Sulfadiazine causes rash, crystalluria and occasionally
+    Stevens-Johnson syndrome; sulfa allergy is common enough that alternative
+    regimens exist chiefly to route around it. Both interact widely, and both
+    are given for weeks to months.
+    Spiramycin, used in pregnancy to reduce transmission, is well tolerated —
+    and is the drug whose benefit is least well established.
+    Rated `permanent: false`: the haematological and cutaneous effects reverse.
+    **The permanent damage in this record belongs to the disease and is in
+    `residue`.**
+  incidence:
+    value: 0.25
+    units: >
+      fraction-of-treated with significant toxicity or a regimen change over a
+      prolonged course — reasoned, and high because the regimen is old and the
+      courses are long
+    src: reasoning
+
+residue:
+  severity: catastrophic
+  permanent: true
+  what: >
+    **SIGHT AND A BRAIN, AND IT IS THE DISEASE RATHER THAN THE TREATMENT.**
+    Congenital infection leaves chorioretinal scarring, hydrocephalus,
+    intracranial calcification, seizures and intellectual disability — imposed
+    before birth on someone who will carry it for eighty years. Ocular disease
+    recurring at the macula takes central vision permanently, and each
+    recurrence takes more.
+    **The residue is what this record is actually about.** Attributed deaths are
+    zero; the burden is a fraction of two hundred thousand congenital infections
+    a year growing up with damaged retinas and damaged brains, plus a much larger
+    number of adults losing vision episode by episode. gaps.md #182 says the
+    register's magnitude is deaths and some diseases are disability. **This one
+    is almost entirely disability, and the mortality column reports nothing at
+    all.**
+  incidence:
+    value: 0.03
+    units: >
+      fraction-of-infected left with permanent visual or neurological damage —
+      **small as a fraction and enormous as a count**, because the denominator
+      is two billion people. Reasoned, and the register cannot multiply the two
+      (gaps.md #228)
+    src: reasoning
+
+witness:
+  mechanism: >
+    `established`, and the life cycle explains the epidemiology completely.
+    *Toxoplasma gondii* is an apicomplexan whose **sexual cycle occurs only in
+    the intestine of cats** — the definitive host — while essentially every
+    warm-blooded animal, including us, serves as an intermediate host. Humans are
+    infected by oocysts shed in cat faeces and surviving for months in soil and
+    water, or by tissue cysts in undercooked or cured meat, or transplacentally.
+    After a brief replicating tachyzoite phase the parasite converts to
+    **bradyzoites inside a tough intracellular cyst**, chiefly in brain, retina
+    and muscle, and remains there for life. Containment is cell-mediated; when it
+    fails, the cysts reactivate.
+    **Like the fungal records, its biology is not aimed at us** — we are one of
+    many intermediate hosts on a route back to a cat, and the human disease is a
+    side effect of a strategy for reaching a feline gut.
+  intervention: >
+    `disease-modifying`, and the rating is generous. **No drug clears the cyst**,
+    so no treatment in this record ends the infection. What treatment does is
+    control replicating parasite: it rescues acute encephalitis, shortens ocular
+    episodes, and probably reduces congenital damage. The strata run from `none`
+    to `suppressive` and the record carries ⧉ for it.
+    Pyrimethamine and sulfadiazine both inhibit the folate pathway, and
+    **clindamycin and azithromycin work because they poison the apicoplast** — a
+    relict plastid the parasite inherited from a swallowed alga and which humans
+    do not have. That organelle is the one clean drug target this branch of
+    biology offers, and it is why apicomplexans are more tractable than fungi.
+  prevention: >
+    `risk-reduction`, and every lever is behavioural: cook meat through, wash
+    produce, wear gloves for gardening and cat litter, and — where a country has
+    decided the evidence supports it — screen pregnancies serologically so
+    seronegative women can be counselled and monitored.
+    **There is no human vaccine. There is a licensed vaccine for sheep**, a live
+    attenuated strain used to prevent ovine abortion. That is the second record
+    after `coccidioidomycosis` where the veterinary product exists and the human
+    one does not, and in both cases the reason is a market rather than an
+    immunological obstacle.
+  ongoing: >
+    `low` for the entity and misleading because of it. Two billion people carry
+    this with no burden whatsoever. The people who do carry one — maintenance
+    therapy after cerebral toxoplasmosis, recurrent ocular disease requiring
+    repeated courses and monitoring — are a small fraction whose ongoing cost is
+    substantial, and the record-level rating averages them into invisibility.
+  efficacy: >
+    See the axis and the strata. No figure here is a cure rate, because there is
+    no cure.
+  access: >
+    **The clearest price story in the register.** Pyrimethamine was approved in
+    1953, is off-patent, and in 2015 its United States price was raised from
+    around thirteen dollars a tablet to seven hundred and fifty by an acquiring
+    company — a fifty-fold increase on a drug for toxoplasmosis in immunosuppressed
+    and pregnant patients, with no change to the molecule and no research to
+    recover. Compounding pharmacies and alternative regimens absorbed some of it.
+    **The mechanism is not patent monopoly but the absence of a generic
+    competitor for a small market**, which is the same market failure the
+    register records for `cryptococcal-meningitis`'s flucytosine — arriving from
+    the opposite direction.
+
+moved:
+  - date: 1996
+    axis: intervention
+    from: none
+    to: suppressive
+    why: >
+      **Antiretroviral therapy, not an antiparasitic.** Toxoplasmic encephalitis
+      was among the commonest AIDS-defining brain lesions and became uncommon in
+      populations with access to ART and co-trimoxazole prophylaxis. The stratum
+      that dominated this record's mortality was moved almost entirely by
+      another record's treatment — the same shape as `cryptococcal-meningitis`,
+      and worth counting as progress belonging to `hiv`.
+    src: reasoning
+  - date: 2015
+    axis: access
+    from: 0.60
+    to: 0.50
+    why: >
+      **A record moving BACKWARDS, and the register should have more of these.**
+      The United States price of pyrimethamine was raised roughly fifty-fold by
+      an acquiring company, on a sixty-year-old off-patent drug. `moved:` exists
+      to make a second pass a comparison rather than a fresh opinion, and a
+      comparison that only ever improves is not measuring anything.
+    src: recall
+
+holes:
+  - >
+    **`survival` is deliberately not rated, and the reason is gaps.md #226.**
+    The only informative population is cerebral toxoplasmosis — uniformly fatal
+    untreated, largely controllable treated. Rating that would make this the
+    **fourth** record scored on a named severe subpopulation, after `asthma`,
+    `hypertension` and `coccidioidomycosis`, and #226 logged three as enough to
+    need a rule that does not yet exist. **Declining to add the fourth instance
+    is respecting that gap rather than widening it**; the figures belong in the
+    stratum until the rule is written.
+  - >
+    The strata fractions are the shape of the natural history expressed as
+    fractions of infection, and **congenital toxoplasmosis does not really belong
+    on that denominator** — it is a fraction of pregnancies with primary
+    infection, not of infections. The schema requires one denominator per record
+    and this entity has several.
+  - >
+    The congenital treatment efficacy figure is the least secure number here.
+    **France and Austria screen every pregnancy; the United Kingdom and United
+    States do not** — the same literature, opposite policies — and meta-analysis
+    has found the evidence for benefit weak rather than absent. The record states
+    a figure because the schema demands one.
+  - >
+    Seroprevalence varies more than almost any figure in the register — roughly
+    10% to above 60% between countries — so a single global prevalence is a
+    weighted guess over populations with very different exposures.
+  - >
+    **The psychiatric association is real as a correlation and unestablished as
+    a cause**, and it is filed as a `disputed` blocker rather than in the
+    witness, so the register is not seen to be endorsing it.
+  - Ocular disease incidence, and the fraction of infections that eventually
+    cause it, are poorly measured outside a few cohorts; the Brazilian figures
+    are much higher and strain differences are the usual explanation.
+  - Written from model recall. The life cycle, the cyst's untreatability, the
+    gestational-timing paradox and the pyrimethamine price event are the parts
+    most likely right; every number is the part most likely wrong.
+
+blockers:
+  - kind: knowledge
+    blocks: any drug that touches the cyst — the whole of what makes this incurable
+    what: >
+      **EVERY LICENSED AGENT ACTS ON THE TACHYZOITE AND THE DISEASE LIVES IN THE
+      BRADYZOITE.** The cyst is metabolically quiescent, walled, intracellular
+      and immunologically quiet; it is the reason latent infection is permanent,
+      the reason ocular disease recurs for decades, and the reason reactivation
+      is a lifelong hazard for anyone who becomes immunosuppressed. **Two billion
+      people are carrying an untreatable organism.**
+      Nothing has cleared cysts in a human. Candidate approaches — forcing
+      bradyzoite-to-tachyzoite conversion so existing drugs can act, or targeting
+      cyst-wall biosynthesis — have not left the laboratory.
+      **This is architecturally the same problem as `hiv`'s latent reservoir and
+      `hepatitis-b`'s cccDNA**, and it is the largest instance by population of
+      anything in that family. `scale: null`.
+    who_could: [academic, sponsor, philanthropy]
+    scale: null
+    standing: documented
+    src: reasoning
+    obstacles: [pathogen-persistence]
+
+  - kind: cost
+    blocks: a 1953 drug that was repriced fifty-fold
+    what: >
+      **PYRIMETHAMINE IS OFF-PATENT, SEVENTY YEARS OLD, AND WAS RAISED FROM
+      ABOUT THIRTEEN DOLLARS A TABLET TO SEVEN HUNDRED AND FIFTY IN 2015** after
+      an acquiring company bought the United States rights. Nothing changed about
+      the molecule and no research was being recovered. The affected patients are
+      pregnant women and the immunosuppressed, and the alternative regimens they
+      were pushed toward are less well evidenced.
+      **The mechanism is not a patent monopoly — it is the absence of a generic
+      competitor for a market too small to attract one**, which is the same
+      failure as `cryptococcal-meningitis`'s unregistered flucytosine seen from
+      the other side: there, nobody would register a cheap drug; here, one
+      company could price a cheap drug freely because nobody else made it.
+      This is the register's clearest instance of an `access` axis moving
+      **backwards** for a reason that is entirely commercial.
+    who_could: [regulator, government, payer, manufacturer, legislator]
+    scale: 5.0e7
+    standing: documented
+    src: recall
+
+  - kind: evidence-incomplete
+    blocks: knowing whether to screen every pregnancy, after fifty years
+    what: >
+      **FRANCE AND AUSTRIA SCREEN EVERY PREGNANCY SEROLOGICALLY. THE UNITED
+      KINGDOM AND UNITED STATES DO NOT. THE LITERATURE IS THE SAME.** Whether
+      spiramycin reduces mother-to-child transmission, and whether prenatal
+      pyrimethamine-sulfadiazine reduces damage in an infected fetus, rest on
+      observational cohorts with substantial confounding by gestational timing —
+      the same variable that determines both transmission and severity, in
+      opposite directions. Meta-analysis has found the evidence weak.
+      A randomised trial has never been done and is now very hard to do: in the
+      screening countries it would be unethical by local standards, and in the
+      non-screening countries the cases are not being found. **A policy question
+      affecting every pregnancy in Europe has been settled by national custom
+      rather than by evidence**, and the register has no other example of that at
+      this scale.
+    who_could: [academic, government, sponsor, health-system]
+    scale: 1.5e8
+    standing: documented
+    src: reasoning
+
+  - kind: knowledge
+    blocks: knowing which infected person will lose vision
+    what: >
+      Ocular toxoplasmosis is the leading infectious cause of posterior uveitis
+      worldwide, it recurs unpredictably from the edge of an old scar, and
+      **nothing identifies who will develop it or when the next episode is
+      coming.** Prophylaxis with co-trimoxazole reduces recurrence in trials and
+      is not standard, partly because the population who would benefit cannot be
+      picked out of two billion carriers.
+      Strain virulence appears to matter — Brazilian disease is more frequent and
+      more aggressive — which suggests the answer is partly in the parasite
+      rather than the host, and parasite genotyping is not a clinical test
+      anywhere. **This is `who-progresses` with an unusually concrete payoff: the
+      endpoint is sight, and a cheap generic already exists to give the people
+      who could be identified.**
+    who_could: [academic, sponsor, health-system]
+    scale: null
+    standing: documented
+    src: reasoning
+    obstacles: [who-progresses]
+
+  - kind: knowledge
+    blocks: a vaccine, in a disease where one already exists for sheep
+    what: >
+      **There is a licensed live attenuated vaccine for sheep and none for
+      humans.** That asymmetry is the second instance in this register after
+      `coccidioidomycosis`'s canine vaccine, and it means the immunological
+      problem is at least partly solved — an attenuated strain does elicit
+      protection in a mammal.
+      What blocks a human product is partly market and partly safety: a live
+      attenuated parasite that establishes lifelong cysts is not acceptable in
+      humans, and the populations most needing protection — seronegative pregnant
+      women, and the immunosuppressed — are the two groups a live vaccine is
+      least suited to. **So unlike `coccidioidomycosis`, this is not purely
+      `no-sponsor`**; it is a genuine design constraint, and it is filed as
+      `knowledge` for that reason.
+      Natural infection does confer strong protection against reinfection, so
+      **the template exists** — which is what distinguishes this from
+      tuberculosis and malaria. `scale: null`.
+    who_could: [academic, sponsor, manufacturer, philanthropy]
+    scale: null
+    standing: documented
+    src: reasoning
+    obstacles: [protective-immunity]
+
+  - kind: knowledge
+    blocks: whether latent infection does anything to the brain it sits in
+    what: >
+      **RECORDED AS `disputed`, DELIBERATELY, AND THE REGISTER IS NOT ENDORSING
+      IT.** Infected rodents lose their innate aversion to cat odour, which is
+      well replicated and is a plausible transmission strategy. In humans,
+      meta-analyses report an association between *Toxoplasma* seropositivity and
+      schizophrenia of roughly two-fold, with weaker reported associations to
+      suicide attempts, traffic accidents and personality measures.
+      **The causal claim is not established and the confounding is severe.**
+      Seropositivity tracks poverty, diet, rural residence, cat ownership and
+      immigration — all of which independently track the outcomes studied — and
+      reverse causation is plausible where institutionalisation or
+      hygiene changes with illness. Mendelian randomisation and large biobank
+      analyses have been substantially less supportive than the case-control
+      literature.
+      **The stakes if it were true are enormous**: an exposure carried by a third
+      of humanity, with a cheap preventive route through food hygiene, acting on
+      the register's least tractable disease group. That asymmetry is exactly why
+      it should be held as `disputed` and investigated rather than repeated.
+    who_could: [academic, philanthropy, sponsor]
+    scale: null
+    standing: disputed
+    src: reasoning
+
+assertion:
+  id: FND-A-0115
+  rated: 2026-08-28
+  by: [claude, jeremy]

@@ -1,0 +1,470 @@
+slug: cryptosporidiosis
+id: FND-D-0115
+name: cryptosporidiosis
+also: [Cryptosporidium infection, crypto, Cryptosporidium hominis infection, Cryptosporidium parvum infection]
+kind: disease
+mondo: MONDO:0015474
+residual: false
+contested: false
+
+# THE APICOMPLEXAN THAT THREW AWAY THE DRUG TARGET, AND HAS NO DRUG.
+#
+# 1. THIS RECORD IS THE NEGATIVE CONTROL PREDICTED IN gaps.md #230. Apicomplexans
+#    carry an **apicoplast** — a relict plastid from a swallowed alga, essential,
+#    prokaryote-like, and absent from us. It is the best drug target eukaryotic
+#    pathogens offer, and it is why clindamycin and azithromycin work against
+#    *Plasmodium* and *Toxoplasma*. ***Cryptosporidium* lost it.** Its
+#    mitochondrion is a degenerate mitosome with no genome and no classical
+#    respiration; it salvages purines rather than making them; and it sits
+#    **epicellular** — inside the host cell membrane but outside the cytoplasm —
+#    in a compartment a drug must cross a membrane to reach.
+#    **A stripped-down parasite has fewer things to poison**, and the one
+#    apicomplexan with no apicoplast is the one with no useful drug. That
+#    prediction was written down before this record and it holds.
+#
+# 2. AND THE ONE LICENSED DRUG WORKS ONLY IN PEOPLE WHO DO NOT NEED IT.
+#    Nitazoxanide gives a modest benefit in the immunocompetent, and **no
+#    reliable benefit in malnourished children or the immunosuppressed** —
+#    because it appears to require a host immune response to work. Those two
+#    groups are essentially the entire mortality of this disease.
+#
+# 3. IT CARRIES THE MOST UPSTREAM `tooling` BLOCKER IN THE REGISTER. Nobody
+#    could culture this organism continuously, and there is no animal model that
+#    reproduces human disease — so for decades **there was no assay to screen a
+#    compound against.** The other ten tooling blockers here are about steering
+#    or evaluating a treatment: a test that aims an existing drug (`cml`), an
+#    endpoint that reads out inside a trial's lifetime (`osteoarthritis`), trials
+#    that can be pooled (`me-cfs`). **Every one of them assumes you can already
+#    test the thing.** This one is a rung below: there was nothing to test
+#    against, so there was no drug discovery to steer.
+
+burden:
+  incidence:
+    value: 8.0e6
+    units: >
+      estimated cases/year of diarrhoeal illness attributable to
+      *Cryptosporidium* in children under five — **and the figure has been
+      revised upward twice by better measurement rather than by more disease.**
+      The GEMS study found it among the leading causes of moderate-to-severe
+      diarrhoea in infants across Africa and South Asia, and multiplex molecular
+      stool panels subsequently found far more of it than acid-fast microscopy
+      ever had
+    src: recall
+  deaths:
+    value: 5.0e4
+    units: >
+      deaths/year, overwhelmingly children under five — **and unlike the
+      register's other recent additions this is not a subset of another record's
+      column**, though it overlaps `diarrhoeal-disease`, which holds this
+      organism as one of its named gaps. Published estimates span roughly forty
+      to a hundred thousand
+    src: recall
+  note: >
+    **The mortality is not the whole harm and may not be the larger half.**
+    Cryptosporidial infection — including infection with no diarrhoea at all — is
+    associated with growth faltering and later cognitive deficit in longitudinal
+    birth cohorts. A child who survives it may be permanently shorter and
+    permanently behind, which is `residue` rather than `deaths`, and which
+    gaps.md #182 says this register systematically under-weights.
+
+axes:
+  mechanism: established
+  intervention: symptomatic
+  prevention: risk-reduction
+  ongoing: low
+  efficacy:
+    value: 0.25
+    units: >
+      fraction-of-patients (illness meaningfully shortened by the only licensed
+      agent) — **and the number is an average across two populations where it
+      means opposite things.** Nitazoxanide gives a modest benefit in
+      immunocompetent patients who would mostly have recovered anyway, and no
+      reliable benefit in malnourished or immunosuppressed patients, who are the
+      ones who die. Rehydration and nutritional support carry the rest
+    src: reasoning
+  access:
+    value: 0.45
+    units: >
+      fraction-of-patients (receiving what is recommended) — **high for the part
+      that helps and irrelevant for the part that does not.** Oral rehydration is
+      cheap and widespread; nitazoxanide is patchily registered and would not
+      change the outcome in the children who die if it were everywhere
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: none
+  witness: >
+    **DIAGNOSTIC is `objective`, and the test that was routine for thirty years
+    was missing most of the disease.** Modified acid-fast microscopy requires
+    somebody to specifically request it, is insensitive, and depends heavily on
+    who is at the microscope — so *Cryptosporidium* was ordinarily neither
+    looked for nor found. Antigen assays improved it; **multiplex molecular stool
+    panels changed the picture outright**, detecting far more than microscopy had
+    and contributing to two upward revisions of the global burden.
+    **This is the reverse of `toxoplasmosis`, and the pair is instructive.**
+    There, a test with near-perfect sensitivity answers a question nobody needs
+    asked. Here, an insensitive test hid a leading cause of childhood death for
+    decades, and the burden estimate moved because the assay changed rather than
+    because the disease did.
+    PROGNOSTIC is `partial`, and what it predicts is the host rather than the
+    parasite. Nutritional status, age and immune competence forecast outcome
+    well: a well-nourished adult recovers, a stunted infant may not, and someone
+    with advanced untreated HIV develops intractable wasting diarrhoea. Nothing
+    in the organism has been shown to add much.
+    PREDICTIVE is `none`, and it is unusually stark. **Nobody can identify a
+    patient who will benefit from the only licensed drug** — and the honest
+    reading of the evidence is that in the populations who need it, no such
+    patient reliably exists.
+
+strata:
+  - name: immunocompetent acute infection
+    fraction:
+      value: 0.90
+      units: fraction-of-infections
+      src: reasoning
+    intervention: none
+    efficacy:
+      value: 0.95
+      units: fraction-of-stratum (recovering fully, treated or not)
+      src: reasoning
+    toll: none
+    what: >
+      Watery diarrhoea for one to two weeks, resolving on its own. Unpleasant,
+      occasionally prolonged, and essentially never fatal in a well-nourished
+      adult or child. **Rated `none` for the same reason `acute-bronchitis` is:
+      the disease ends and nothing medicine did ended it** (gaps.md #225).
+
+  - name: malnourished children under five
+    fraction:
+      value: 0.08
+      units: fraction-of-infections
+      src: reasoning
+    intervention: symptomatic
+    efficacy:
+      value: 0.30
+      units: fraction-of-stratum (survival and recovery on rehydration and feeding)
+      src: reasoning
+    toll: minor
+    what: >
+      **The stratum that holds essentially all the mortality, and the one the
+      drug does not work in.** Malnutrition impairs the immune response
+      nitazoxanide appears to depend on, so the agent that helps a well
+      person fails here — and the diarrhoea worsens the malnutrition that caused
+      the failure. Survivors carry the growth and cognitive deficit in `residue`.
+
+  - name: advanced immunosuppression
+    fraction:
+      value: 0.02
+      units: fraction-of-infections
+      src: reasoning
+    intervention: disease-modifying
+    efficacy:
+      value: 0.70
+      units: fraction-of-stratum (resolved, chiefly through immune reconstitution)
+      src: reasoning
+    toll: major
+    what: >
+      Chronic intractable diarrhoea, wasting and biliary disease in advanced HIV
+      or after transplant — one of the defining illnesses of the pre-antiretroviral
+      era. **The effective treatment is antiretroviral therapy, which belongs to
+      another record**: restore the immune system and the parasite is cleared by
+      it. Rated `disease-modifying` on that basis, and the credit belongs to
+      `hiv`.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    **Almost nothing, and that is a statement about how little is given rather
+    than how gentle it is.** Nitazoxanide is well tolerated — nausea, abdominal
+    pain, a harmless yellow-green discolouration of urine — and oral rehydration
+    has no toll at all. Nobody is harmed much by the treatment of this disease
+    because the treatment barely exists.
+    Paromomycin and azithromycin have been used off-label in immunosuppressed
+    patients with poor evidence and real toxicity; that combination is where any
+    toll in this record actually sits, and it is confined to a small stratum.
+  incidence:
+    value: 0.05
+    units: >
+      fraction-of-treated with a significant adverse effect — low, and the
+      denominator is small because most patients are treated supportively
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    **STUNTING AND COGNITIVE DEFICIT, INCLUDING AFTER INFECTION THAT CAUSED NO
+    DIARRHOEA.** Longitudinal birth-cohort work associates cryptosporidial
+    infection in the first two years with reduced linear growth and later
+    cognitive performance, and the association persists for subclinical
+    infection — a child who was never recorded as ill.
+    That makes this the register's clearest instance of a disease whose principal
+    permanent harm is invisible to every field the schema has: it is not death,
+    not treatment toll, not a named disability, and it lands on a child who was
+    never diagnosed. **`residue` is being used here for damage the disease did to
+    somebody nobody treated**, which stretches a field defined as *what the
+    disease leaves in someone it was cured in*.
+  incidence:
+    value: 0.20
+    units: >
+      fraction-of-infected children under two left with measurable growth or
+      developmental deficit — reasoned, from cohort associations rather than from
+      an intervention showing the deficit is preventable, which is the gap the
+      `evidence-incomplete` blocker names
+    src: reasoning
+
+witness:
+  mechanism: >
+    `established`, and the interesting part is what the organism has thrown away.
+    *Cryptosporidium* — chiefly *C. hominis*, human-adapted, and *C. parvum*,
+    shared with cattle — is an apicomplexan whose oocysts are shed in faeces,
+    survive for months in water, and infect at a dose of tens of organisms.
+    **It has lost the apicoplast** that its relatives Plasmodium and Toxoplasma
+    depend on, its mitochondrion is a degenerate mitosome with no genome and no
+    classical respiratory chain, and it salvages purines rather than
+    synthesising them. It is a metabolic minimalist living off the host cell.
+    **And it occupies a niche nothing else in this register does**: epicellular —
+    enveloped by the host enterocyte's own membrane at the apical surface, but
+    outside the cytoplasm. A drug must cross host membrane to reach a
+    compartment that is neither properly inside the cell nor in the gut lumen.
+    **Three structural facts, all of them subtractions, and together they are
+    why sixty years of antiparasitic chemistry has produced one weak drug.**
+  intervention: >
+    `symptomatic`, and the rating is the record. Oral rehydration and nutritional
+    support are the mainstay and neither touches the parasite. **Nitazoxanide is
+    the only licensed agent, and its benefit depends on the host's immune
+    response** — modest in immunocompetent patients, and not established in
+    malnourished children or in the immunosuppressed, who are the people this
+    disease kills.
+    In advanced HIV the effective treatment is antiretroviral therapy, which
+    clears the infection by restoring the immunity that was containing it. **The
+    only reliable cure in this record belongs to another record.**
+  prevention: >
+    `risk-reduction`, and **the crucial fact is that chlorine does not work.**
+    *Cryptosporidium* oocysts are resistant to the concentrations used in
+    drinking water and swimming pools, so the interventions that control almost
+    every other waterborne pathogen do not control this one. What works is
+    filtration, ultraviolet or ozone treatment, catchment protection, and
+    keeping cattle slurry out of source water.
+    **Milwaukee in 1993 is the worked example**: a filtration failure at a
+    treatment plant serving a chlorinated supply, and an estimated four hundred
+    thousand people ill — the largest recorded waterborne outbreak in United
+    States history, in a wealthy city with a functioning water utility. Recreational
+    water outbreaks continue for the same reason.
+    There is no vaccine.
+  ongoing: >
+    `low`. Immunocompetent infection ends and leaves no treatment burden. The
+    burden that persists is the growth and developmental deficit in `residue`,
+    which is not a treatment cost, and the chronic disease in advanced
+    immunosuppression, which resolves if the underlying immunodeficiency is
+    treated.
+  efficacy: >
+    See the axis and the strata. The figure averages a drug that helps people who
+    would have recovered with a drug that does nothing for people who die.
+  access: >
+    **The register's cleanest case of `access` being nearly the wrong question.**
+    Oral rehydration is available almost everywhere and prevents dehydration
+    death; nitazoxanide's registration is patchy and would not change outcomes in
+    the affected children if it were universal. **Making the existing treatment
+    reach everybody would move this record very little**, which is unusual here
+    and is the strongest argument that its binding constraint is discovery rather
+    than delivery.
+
+moved:
+  - date: 2013
+    axis: mechanism
+    from: partial
+    to: established
+    why: >
+      **A measurement result rather than a biological one.** The Global Enteric
+      Multicenter Study identified *Cryptosporidium* as among the leading causes
+      of moderate-to-severe diarrhoea in infants across Africa and South Asia,
+      and associated it with increased risk of death — a place in the childhood
+      diarrhoea hierarchy nobody had assigned it. The organism did not change;
+      what changed was that somebody looked properly, with better assays and a
+      case-control design.
+    src: recall
+
+holes:
+  - >
+    **`survival` is not rated, and this is the SECOND CONSECUTIVE RECORD
+    DECLINING IT** — after `toxoplasmosis`, and for the same reason. Across all
+    infection this disease is survived by essentially everyone; the informative
+    population is malnourished children under five, and rating that would be the
+    fourth instance of scoring a named severe subpopulation, which gaps.md #226
+    logged as needing a rule that does not exist. **Two consecutive declines
+    should make writing that rule urgent**: the register is now accumulating
+    unrated survival on exactly the records where the axis would say something.
+  - >
+    The `residue` figure rests on **association rather than intervention.**
+    Cohort studies link infection to stunting and later cognitive deficit; no
+    trial has shown that preventing or treating the infection prevents the
+    deficit. The number is recorded because the harm is almost certainly real and
+    is otherwise invisible, and it should not be read as an established causal
+    effect size.
+  - >
+    `residue` is also being **stretched past its definition** — the schema calls
+    it *what the disease leaves in someone it was cured in*, and here it is
+    damage done to a child who was never diagnosed or treated. The field has no
+    better home and the definition should probably widen.
+  - Burden figures have been revised upward twice by better assays and remain
+    uncertain by a factor of two or more. **The direction of the error is known
+    and is one-way**: microscopy undercounts, so historical series understate
+    this organism relative to others in the same stool.
+  - >
+    The claim that nitazoxanide requires a host immune response is the standard
+    reading of why it fails in the malnourished and immunosuppressed, and is
+    **inference from trial subgroups rather than a demonstrated mechanism.**
+  - The strata fractions are the shape of the natural history rather than
+    measurements, and the immunosuppressed fraction in particular has collapsed
+    in high-income settings since antiretroviral therapy while remaining
+    substantial where HIV is untreated.
+  - Written from model recall. The lost apicoplast, the epicellular niche,
+    chlorine resistance, Milwaukee and the GEMS result are the parts most likely
+    right; every number is the part most likely wrong.
+
+blockers:
+  - kind: tooling
+    obstacles: [no-model-system]
+    blocks: any way to screen a compound against the organism at all
+    what: >
+      **THE MOST UPSTREAM `tooling` BLOCKER IN THE REGISTER.** For decades *Cryptosporidium* could not be maintained in continuous culture,
+      and there is no small-animal model that reproduces human disease in an
+      immunocompetent host. **So there was no assay.** A drug-discovery programme
+      needs something to test compounds against, and this organism did not
+      provide one — which is a large part of why an infection identified in
+      humans in 1976 still has one weak drug.
+      That is changing: air-liquid-interface intestinal cultures, stem-cell-derived
+      organoids and hollow-fibre systems now support the full life cycle, and
+      genetic modification became possible in the mid-2010s. **The blocker is
+      being cleared by instruments rather than by insight**, which is exactly the
+      class of capability gaps.md #164 says this register holds no way to
+      express — it records interventions, not the tools that produce them.
+      The register's other ten `tooling` blockers are about steering or
+      evaluating a treatment and each presumes an assay exists. **This one is the
+      rung below that**, which is why it is worth distinguishing.
+      `scale` is priced because building culture systems and screening libraries
+      is buyable work of a very ordinary kind.
+    who_could: [academic, sponsor, philanthropy, manufacturer]
+    scale: 2.0e8
+    standing: documented
+    src: reasoning
+
+  - kind: knowledge
+    blocks: a drug target, in a parasite that discarded the obvious one
+    what: >
+      **THIS RECORD IS THE APICOPLAST NEGATIVE CONTROL.** Apicomplexans carry a
+      relict plastid that is essential, prokaryote-like and absent from humans —
+      the best drug target eukaryotic pathogens offer, and the reason clindamycin
+      and azithromycin work against *Plasmodium* and *Toxoplasma*.
+      ***Cryptosporidium* lost it.** Its mitochondrion is a mitosome without a
+      genome or classical respiration; it salvages purines instead of making
+      them; and it lives **epicellular**, behind a host membrane and outside the
+      cytoplasm.
+      **Every one of those is a subtraction, and together they remove the
+      chemistry that works on its relatives.** It is also resistant to the
+      antifolates that treat toxoplasmosis. Bumped-kinase inhibitors targeting
+      calcium-dependent protein kinase 1, and inhibitors of its
+      phenylalanyl-tRNA synthetase, are the most advanced candidates and none is
+      licensed.
+      This is `cell-targeting`'s specificity face at its hardest: **a eukaryotic
+      cell that has thrown away most of what made it distinguishable from ours.**
+      `scale: null` for finding the target.
+    who_could: [academic, sponsor, manufacturer, philanthropy]
+    scale: null
+    standing: documented
+    src: reasoning
+    obstacles: [cell-targeting]
+
+  - kind: knowledge
+    blocks: a drug that works in the children who die of this
+    what: >
+      **NITAZOXANIDE APPEARS TO REQUIRE THE IMMUNE RESPONSE ITS PATIENTS DO NOT
+      HAVE.** It gives a modest benefit in immunocompetent people — who mostly
+      recover regardless — and no established benefit in malnourished children or
+      in advanced immunosuppression, which is essentially the whole mortality of
+      this disease. **A treatment that works only in people who do not need it is
+      a distinct failure mode**, and the register has no other clean example.
+      Why is not established. The standard reading is that the drug is
+      parasitostatic and leaves clearance to the host, so a host that cannot clear
+      does not clear — inference from trial subgroups rather than demonstrated
+      mechanism. Malnutrition and cryptosporidiosis also worsen each other, so the
+      failing population is the one whose immunity the disease is itself degrading.
+      `scale: null`.
+    who_could: [academic, sponsor, philanthropy]
+    scale: null
+    standing: documented
+    src: reasoning
+
+  - kind: policy
+    blocks: water treatment that works, against an organism chlorine does not kill
+    what: >
+      **CHLORINE DOES NOT KILL IT**, at the concentrations used in drinking water
+      and swimming pools — so the single intervention that underpins safe water
+      worldwide fails against this organism specifically. What works is
+      filtration, ultraviolet or ozone treatment, protected catchments, and
+      keeping livestock slurry out of source water. All are infrastructure, all
+      are capital, and none belongs to a health ministry.
+      **Milwaukee, 1993 is the demonstration**: a filtration failure in a
+      chlorinated municipal supply, an estimated four hundred thousand people ill
+      — the largest waterborne outbreak recorded in the United States, in a
+      wealthy city with a working utility. Recreational water outbreaks recur
+      annually for the same reason.
+      Where the deaths actually are, the intervention is the same and larger:
+      water and sanitation infrastructure, which is the most purchasable and
+      least health-sector thing in this record.
+    who_could: [government, legislator, regulator, health-system]
+    scale: 1.0e9
+    standing: documented
+    src: reasoning
+
+  - kind: evidence-incomplete
+    blocks: knowing whether preventing the infection prevents the stunting
+    what: >
+      Birth-cohort studies associate cryptosporidial infection — **including
+      infection with no diarrhoea** — with reduced linear growth and later
+      cognitive deficit. If that is causal it may exceed the mortality burden,
+      and it would change what this disease is for: not an episode of diarrhoea
+      but a determinant of how a child develops.
+      **No intervention has shown that preventing or treating the infection
+      prevents the deficit**, and the confounding is severe — cryptosporidiosis
+      tracks poverty, crowding, unsafe water, coinfection and prior malnutrition,
+      each of which independently stunts children. The trial is hard because the
+      only available drug does not work in this population, so the natural design
+      would have to be a water or hygiene intervention with growth as the
+      endpoint.
+      **This is the register's clearest case of a burden that is probably large
+      and is not established**, and it is filed here rather than asserted in the
+      witness for that reason.
+    who_could: [academic, sponsor, philanthropy, government]
+    scale: 1.5e8
+    standing: documented
+    src: reasoning
+
+  - kind: knowledge
+    blocks: counting an organism the routine test does not find
+    what: >
+      For thirty years the standard method was modified acid-fast microscopy,
+      which must be specifically requested, is insensitive and is
+      operator-dependent — **so this organism was neither looked for nor found**,
+      and its place in the childhood diarrhoea hierarchy was unknown until the
+      GEMS study went looking with a case-control design and better assays.
+      Multiplex molecular panels then found more again.
+      **The error has a known direction**, which is unusual and worth stating:
+      microscopy undercounts, so every historical series understates
+      *Cryptosporidium* relative to the other organisms in the same stool sample.
+      Current estimates still span roughly a factor of two, and the subclinical
+      infection that may drive the stunting burden is essentially uncounted.
+    who_could: [academic, government, health-system, nonprofit]
+    scale: 5.0e7
+    standing: documented
+    src: reasoning
+    obstacles: [burden-unknown]
+
+assertion:
+  id: FND-A-0116
+  rated: 2026-08-28
+  by: [claude, jeremy]

@@ -1,0 +1,611 @@
+slug: duchenne
+id: FND-D-0092
+name: Duchenne muscular dystrophy
+also: [DMD, Duchenne, pseudohypertrophic muscular dystrophy]
+mondo: MONDO:0010679
+kind: disease
+residual: false
+contested: false
+
+# THE THIRD RECORD IN A CONTROLLED COMPARISON, AND IT COMPLETES THE PATTERN
+# EXACTLY BACKWARDS.
+#
+#   DMD    gene cloned 1986  → forty years, no proven disease-modifying drug
+#                               beyond a 1950s corticosteroid
+#   CFTR   cloned 1989       → thirty-five years of failed gene therapy, then
+#                               protein chemistry worked in 2012
+#   SMN1   identified 1995   → gene therapy AND two splicing drugs by 2020
+#
+# **The order of discovery is exactly inverse to the order of success, and the
+# explanatory variable is deliverability every time** (gaps.md #193). Motor
+# neurons are post-mitotic and reachable. Airway epithelium sits behind mucus and
+# turns over. **Duchenne needs the entire musculature — around forty percent of
+# body mass, plus the heart and the diaphragm — and the gene is 2.4 megabases,
+# too large to fit in any viral vector ever built.**
+#
+# It is also the register's clearest case of regulatory flexibility producing
+# approved drugs of unproven benefit, and of that approval making the proof
+# harder to obtain (gaps.md #194).
+
+burden:
+  prevalence:
+    value: 2.5e5
+    units: >
+      boys and men living with Duchenne muscular dystrophy worldwide, order of
+      magnitude — **and the figure is a function of survival**, which differs by
+      more than a decade between health systems with ventilation and cardiac care
+      and those without
+    src: reasoning
+  cases:
+    value: 1.3e4
+    units: >
+      births/year — roughly one in four thousand male births. About two thirds
+      inherit the mutation and **about a third are de novo**, which is why carrier
+      screening cannot prevent most of it
+    src: reasoning
+  deaths:
+    value: 1.2e4
+    units: >
+      deaths/year, approximately equal to births at steady state — **historically
+      respiratory, and now predominantly cardiac**, because ventilation solved the
+      first cause of death and revealed the second
+    src: reasoning
+  note: >
+    **MEDIAN SURVIVAL ROUGHLY DOUBLED WITHOUT A SINGLE DRUG DIRECTED AT THE
+    CAUSE.** From the mid-teens in the 1960s and 70s to around thirty today, and
+    beyond that in the best-served centres. What did it: **corticosteroids**,
+    **non-invasive ventilation**, **cardiac medication started before symptoms**,
+    scoliosis surgery, and multidisciplinary care standards.
+    **And there has been no `moved` entry on this record since 2004, despite four
+    accelerated approvals in the decade since.** That is not an oversight. It is
+    the honest state of the evidence, and it is the record's central fact.
+
+survival:
+  horizon: 25 years from birth
+  untreated:
+    value: 0.2
+    units: >
+      fraction alive — **the natural history: wheelchair by twelve, death in the
+      late teens or early twenties** from respiratory or cardiac failure
+    src: reasoning
+  treated:
+    value: 0.6
+    units: >
+      fraction alive with corticosteroids, non-invasive ventilation and cardiac
+      management — **median survival has moved from the late teens into the
+      thirties.** Almost none of that is the gene therapies; it is steroids,
+      a ventilator and an ACE inhibitor
+    src: reasoning
+  witness: >
+    **The gene is the most famous thing about this disease and has moved this
+    figure least.** Dystrophin was identified in 1986; the survival gain since
+    then came from prednisolone, nocturnal ventilation and treating the
+    cardiomyopathy. **`cell-targeting` is the Engpass obstacle on this record**,
+    and the survival column shows exactly what has been achieved while waiting
+    for it to clear.
+
+axes:
+  mechanism: established
+  intervention: disease-modifying
+  prevention: risk-reduction
+  ongoing: high
+  efficacy:
+    value: 0.40
+    units: >
+      fraction-of-patients (meaningful slowing of the disease course) — **and
+      essentially all of it is corticosteroids and supportive care.** The
+      exon-skipping drugs and the gene therapy are approved and their clinical
+      benefit is unestablished; this number would be roughly the same if none of
+      them existed (gaps.md #195)
+    src: reasoning
+  access:
+    value: 0.35
+    units: >
+      fraction-of-patients (receiving steroids plus the ventilation, cardiac and
+      orthopaedic care that produced the survival gain) — **the cheap part is what
+      works and most of the world does not have it**
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: partial
+  witness: >
+    **DIAGNOSTIC IS `objective` AND CHEAP, AND THE AVERAGE BOY IS DIAGNOSED AT
+    FOUR OR FIVE.** A creatine kinase level is elevated ten to a hundred times
+    above normal from birth, costs almost nothing, and is definitive enough to
+    trigger genetic confirmation. **Diagnosis nevertheless comes years after the
+    first parental concern**, typically after a paediatrician has reassured a
+    family about a clumsy toddler, and the delay is measured repeatedly in surveys
+    and has barely changed in twenty years.
+    **AND DUCHENNE IS NOT ON MOST NEWBORN SCREENING PANELS, WHICH IS A DECISION
+    RATHER THAN AN OVERSIGHT.** Creatine kinase screening was piloted decades ago
+    and discontinued in several places on the explicit reasoning that **there was
+    no treatment, so early diagnosis served nobody.** Corticosteroids work better
+    started before substantial decline, and the case for screening is now stronger
+    than the case that stopped it. **The screening decision is lagging the
+    treatment by roughly thirty years** — the exact inverse of
+    `spinal-muscular-atrophy`, where screening arrived with the drug.
+    PROGNOSTIC is `partial`. Mutation position modifies severity somewhat and does
+    not predict an individual course; age at loss of ambulation varies by years
+    among boys with identical mutations, and nobody can say why.
+    **PREDICTIVE IS `partial`, AND THE REASON IS UNUSUAL.** Genotype determines
+    exon-skipping eligibility precisely — exon 51, 53 or 45 amenable deletions each
+    have a licensed drug. On the `cystic-fibrosis` logic that would be `good`.
+    **It rates `partial` here because predicting who is eligible for a drug whose
+    benefit is unestablished is not predicting who benefits.** The test is
+    excellent and the thing it selects for may not work.
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    **THE ONLY TREATMENT WITH UNAMBIGUOUS BENEFIT IS A 1950s CORTICOSTEROID GIVEN
+    DAILY TO A GROWING CHILD FOR A DECADE, AND THE COST IS EXACTLY WHAT YOU WOULD
+    PREDICT.**
+    Growth suppression, so boys on steroids are markedly shorter than they would
+    have been. **Osteoporosis with vertebral compression fractures**, which are
+    painful, common, and occur in children. Weight gain and its consequences in a
+    child losing the ability to walk. Cataracts. Adrenal suppression requiring
+    stress dosing and carrying a risk of crisis. Delayed puberty, frequently
+    requiring testosterone. Behavioural and mood effects that families
+    consistently rate among the hardest parts.
+    **And it is given anyway, universally, because the alternative is losing
+    ambulation two or three years earlier** — gaps.md #148, in a record where the
+    comparator is a wheelchair at ten instead of at thirteen. **Vamorolone**, a
+    modified steroid approved in 2023, delivers similar benefit with less growth
+    suppression and bone loss, which is the first improvement to this trade in
+    thirty years.
+    **THE GENE THERAPY HAS ITS OWN AND IT IS SEVERE.** Delandistrogene
+    moxeparvovec has been associated with **acute liver failure and deaths**,
+    reported after approval, leading to a boxed warning and to restrictions in
+    non-ambulatory patients. Immune-mediated myositis and myocarditis also occur.
+    That is `spinal-muscular-atrophy`'s hepatotoxicity in a heavier patient at a
+    higher vector dose — and here without the demonstrated benefit that justifies
+    it there.
+  incidence:
+    value: 0.30
+    units: >
+      fraction-of-treated (permanent harm — chiefly steroid-induced growth
+      suppression, osteoporosis with vertebral fracture, and cataract) — a
+      reasoned estimate, and high because these are expected consequences of
+      long-term treatment rather than rare events
+    src: reasoning
+
+window:
+  what: >
+    **MUSCLE THAT HAS BEEN REPLACED BY FAT AND FIBROUS TISSUE CANNOT BE
+    RESTORED BY ANYTHING, AND THE REPLACEMENT BEGINS BEFORE THE DIAGNOSIS.**
+    Dystrophin is absent from birth. Every contraction tears the sarcolemma;
+    calcium enters; fibres necrose and regenerate until the satellite cell pool is
+    exhausted; and what remains is fibro-fatty tissue. **By the time a boy is
+    diagnosed at four or five, the process has been running his whole life.**
+    That sets the window for everything. Corticosteroids work better started
+    before substantial decline. Cardiac medication started before symptoms
+    preserves function better than treatment after. **And every experimental
+    therapy — exon skipping, micro-dystrophin, editing — restores a protein to
+    muscle that still exists**, so its ceiling falls with every year of delay.
+    **This is the record where the window and the diagnostic blocker are the same
+    problem** and where they are, unusually, cheap to fix: creatine kinase is
+    elevated at birth, the test costs almost nothing, and it is not on most
+    newborn panels because it was decided decades ago that early diagnosis served
+    nobody.
+    **A trial in a five-year-old is testing a therapy against a body that has
+    already lost a large share of what it is trying to protect** — which is one
+    reason the evidence in this record is so difficult to interpret, and an
+    argument for screening independent of any drug.
+  closes_on: >
+    progressive irreversible replacement of muscle by fat and fibrous tissue —
+    continuous from birth, and well advanced by the usual age of diagnosis
+  caught_in_time:
+    value: 0.30
+    units: >
+      fraction-of-cases (diagnosed and started on corticosteroids before
+      substantial functional decline) — a reasoned estimate; median diagnosis is
+      around four to five years and there is no newborn screening
+    src: reasoning
+
+strata:
+  - name: deletion amenable to an approved exon-skipping drug
+    fraction:
+      value: 0.30
+      units: fraction-of-cases
+      src: reasoning
+    intervention: disease-modifying
+    efficacy:
+      value: 0.40
+      units: fraction-of-stratum (meaningful slowing of the course)
+      src: reasoning
+    toll: major
+    what: >
+      Deletions amenable to skipping exon 51, 53 or 45 — each with a licensed
+      antisense drug, together roughly three in ten patients. **The efficacy
+      figure is identical to the other strata's, and that is the finding.** The
+      approved drugs restore dystrophin to a fraction of a percent of normal by
+      western blot, their clinical benefit remains unestablished after nearly a
+      decade, and so **having the "right" mutation currently changes nothing
+      measurable.**
+
+  - name: nonsense mutation
+    fraction:
+      value: 0.12
+      units: fraction-of-cases
+      src: reasoning
+    intervention: disease-modifying
+    efficacy:
+      value: 0.40
+      units: fraction-of-stratum (meaningful slowing of the course)
+      src: reasoning
+    toll: major
+    what: >
+      Premature stop codons, theoretically addressable by readthrough agents.
+      **Ataluren held a conditional European approval for a decade, its
+      confirmatory trial failed, and the authorisation was not renewed** — the one
+      case in this record where a drug approved on hope was subsequently withdrawn
+      on evidence. Messenger RNA and editing approaches remain early.
+
+  - name: other mutations, no targeted option
+    fraction:
+      value: 0.58
+      units: fraction-of-cases
+      src: reasoning
+    intervention: disease-modifying
+    efficacy:
+      value: 0.40
+      units: fraction-of-stratum (meaningful slowing of the course)
+      src: reasoning
+    toll: major
+    what: >
+      Large deletions and duplications not amenable to any licensed skipping
+      strategy — **the majority of patients.** They receive corticosteroids,
+      ventilation and cardiac care, which is what everybody receives and what
+      actually extended survival. Micro-dystrophin gene therapy is mutation-agnostic
+      and is the only approved approach that would in principle serve them.
+
+moved:
+  - date: 1986
+    axis: mechanism
+    from: correlates
+    to: established
+    why: >
+      **THE DYSTROPHIN GENE WAS THE FIRST OF THE THREE AND HAS PRODUCED THE LEAST.
+      THIS IS THE REGISTER'S FOURTH `mechanism` MOVE** (gaps.md #183).
+      Positional cloning identified the *DMD* locus in 1986 and the dystrophin
+      protein in 1987 — a founding achievement of human genetics, arrived at
+      without knowing what the protein was. **It is the largest gene in the human
+      genome**: 2.4 megabases, 79 exons.
+      Two things followed immediately and one of them was wrong. The **reading
+      frame rule** — mutations preserving the reading frame produce partial
+      dystrophin and the much milder Becker phenotype — is correct, is the entire
+      logic of exon skipping, and means **nature had already demonstrated that
+      partial dystrophin is enough.** And the expectation that gene replacement
+      would follow within years was wrong for reasons that were visible from the
+      start: the gene does not fit in a viral vector, and the target tissue is
+      roughly forty percent of the body.
+      **Fourth mechanism move, fourth lag of decades, and the third case in a row
+      where the route was not predictable from the mechanism** — except here it was
+      predictable, and predicted, and the prediction was that it would be very
+      hard.
+    src:
+      id: PMID:3773991 doi:10.1038/323646a0
+      retrieved: 2026-08-26
+      quote: >
+        Duchenne muscular dystrophy (DMD) and the less severe Becker muscular
+        dystrophy (BMD) are human X-linked muscle-wasting disorders that have been
+        localized to the band Xp21 by genetic linkage analysis and cytologically
+        detectable abnormalities.
+
+  - date: 1989
+    axis: intervention
+    from: symptomatic
+    to: disease-modifying
+    why: >
+      **CORTICOSTEROIDS, AND THIRTY-SEVEN YEARS LATER THEY ARE STILL THE ONLY
+      DRUG IN THIS RECORD WITH UNAMBIGUOUS BENEFIT.**
+      Randomised evidence from the late 1980s established that daily prednisone
+      slows the loss of muscle strength in Duchenne muscular dystrophy.
+      Subsequent work showed the effect extends to **prolonging ambulation by two
+      to three years**, delaying scoliosis, and preserving respiratory and cardiac
+      function — and international care standards from 2010 made steroids the
+      backbone of treatment worldwide.
+      **The mechanism is not understood.** Anti-inflammatory effects, membrane
+      stabilisation, effects on regeneration and on utrophin have all been
+      proposed, and the honest position is that a drug found empirically in the
+      1950s works in a disease whose molecular cause has been known since 1986,
+      for reasons nobody can state (gaps.md #135).
+      **Vamorolone**, approved in 2023, is the first improvement on the trade-off:
+      comparable benefit with less growth suppression and bone loss.
+    src:
+      id: PMID:2811967 doi:10.1056/NEJM198911233212117
+      retrieved: 2026-08-26
+      quote: >
+        Prednisone therapy for Duchenne's muscular dystrophy.
+
+  - date: 2004
+    axis: efficacy
+    from: 0.25
+    to: 0.40
+    why: >
+      **SURVIVAL ROUGHLY DOUBLED AND NO NEW DRUG WAS INVOLVED.**
+      From the mid-teens in the 1960s and 70s to around thirty today. What did it
+      was **non-invasive ventilation**, started overnight as respiratory function
+      declines; **cardiac medication begun before symptoms**, since dystrophin is
+      absent from cardiac muscle too and cardiomyopathy is universal; scoliosis
+      surgery; and the multidisciplinary care standards that made all of it routine
+      rather than exceptional.
+      **Solving the first cause of death revealed the second.** Respiratory failure
+      used to kill these boys; ventilation converted Duchenne into a cardiac
+      disease, and heart failure is now the leading cause of death — gaps.md #147
+      operating inside a single record, as `cystic-fibrosis` and
+      `spinal-muscular-atrophy` also showed.
+      **This is the last `moved` entry on this record.** Four drugs have been
+      approved since and none has produced one.
+    src: recall
+
+witness:
+  mechanism: >
+    `established`, completely, and earlier than almost anything else in this
+    register.
+    **Dystrophin** links the actin cytoskeleton inside the muscle fibre to the
+    dystrophin-glycoprotein complex in the sarcolemma, and thence to the
+    extracellular matrix. It is a shock absorber. Without it, the membrane tears
+    during normal contraction; calcium floods in; fibres undergo necrosis and
+    regenerate, repeatedly, until the satellite cell pool is exhausted; and muscle
+    is progressively replaced by **fat and fibrous tissue**. The same protein is
+    absent from cardiac muscle, which is why cardiomyopathy is universal, and from
+    brain, which is the likely basis of the cognitive and behavioural features
+    present in a substantial minority.
+    **THE READING FRAME RULE IS THE WHOLE THERAPEUTIC LOGIC.** Out-of-frame
+    mutations abolish dystrophin and cause Duchenne; **in-frame mutations produce
+    a shortened but partly functional protein and cause Becker muscular
+    dystrophy**, which can be compatible with a near-normal lifespan. **Nature
+    already ran the experiment and showed that partial dystrophin is enough** —
+    which is why exon skipping (convert out-of-frame to in-frame) and
+    micro-dystrophin (deliver a deliberately truncated gene that fits a vector)
+    are plausible strategies at all.
+    **AND THE NAMED HOLE IS NOT BIOLOGY, IT IS DELIVERY.** The gene is 2.4
+    megabases against an AAV packaging limit of under five kilobases. The target
+    is roughly forty percent of body mass plus the heart and diaphragm. Muscle
+    turns over, so anything delivered is diluted. And dystrophin is a **neo-antigen**
+    in a boy who has never made it, so the immune system attacks the thing being
+    supplied. **None of that is a gap in understanding, and all of it is
+    expensive, tractable engineering** (gaps.md #193).
+  intervention: >
+    `disease-modifying`, and the rating rests almost entirely on a corticosteroid
+    and a ventilator.
+    **What demonstrably works**: daily corticosteroids, prolonging ambulation by
+    two to three years; **non-invasive ventilation**; **cardiac medication started
+    before symptoms**; scoliosis surgery; and coordinated multidisciplinary care.
+    Together these roughly doubled median survival, and they are the reason this
+    record rates above `symptomatic`.
+    **What is approved and unproven**: four antisense **exon-skipping** drugs,
+    licensed between 2016 and 2021 on accelerated approval, on the basis of
+    dystrophin measured by western blot at **a fraction of one percent of normal**
+    — and clinical benefit that remains unestablished nearly a decade later. And
+    **micro-dystrophin gene therapy**, approved in 2023, whose confirmatory trial
+    **missed its primary endpoint** and which has since been associated with fatal
+    acute liver failure.
+    **What was approved and then withdrawn**: a readthrough agent for nonsense
+    mutations held a conditional European authorisation for about a decade before
+    its confirmatory trial failed and the authorisation lapsed.
+    **So the register's `efficacy: 0.40` would be approximately unchanged if none
+    of the targeted drugs existed**, and stating that plainly is the point of this
+    record (gaps.md #194, #195). Givinostat, approved in 2024 for all genotypes,
+    is the first non-steroid agent with a randomised functional endpoint, and its
+    effect is modest.
+  prevention: >
+    `risk-reduction`, and weaker than in the other genetic records here, for a
+    specific reason: **about a third of cases are de novo mutations**, so carrier
+    screening — offered in some settings and taken up variably — cannot address
+    them at all.
+    For the inherited two thirds, carrier testing, genetic counselling, prenatal
+    diagnosis and preimplantation testing exist, and as in `cystic-fibrosis` and
+    `spinal-muscular-atrophy` this is **prevention of a birth rather than of a
+    disease**, resting on a decision belonging to prospective parents (gaps.md
+    #159).
+    **And there is a population this axis ignores entirely.** Duchenne is X-linked,
+    and female carriers are not uniformly unaffected: a minority have skeletal
+    muscle symptoms, and **cardiomyopathy is found in a substantial fraction of
+    carriers**, with cardiac surveillance now recommended. They are not in this
+    record's prevalence, not in its burden, and not in any register.
+  ongoing: >
+    `high`, and it is the whole family's rather than the patient's.
+    Daily corticosteroids with monitoring for bone density, cataracts, glucose and
+    adrenal suppression. Physiotherapy and stretching to delay contractures.
+    Overnight ventilation and cough assist as respiratory muscles fail.
+    Cardiology, orthopaedics, and a powered wheelchair. Then, over years, the
+    progressive loss of the ability to walk, to lift the arms, to transfer, and to
+    breathe unaided.
+    **The carer burden is among the largest in this register and it is entirely
+    unrecorded** (gaps.md #169): a decade or more of increasing physical care of a
+    growing boy, home adaptation, equipment, lost employment, and the specific
+    difficulty of caring for a young adult with the strength of a small child.
+
+holes:
+  - >
+    **`efficacy: 0.40` describes corticosteroids and supportive care and would be
+    roughly the same if the four accelerated-approval drugs did not exist.** The
+    schema has one number and no way to record that a large part of the treatment
+    landscape is approved and unevidenced (gaps.md #195).
+  - >
+    **The strata are a genotype partition in which all three strata have the same
+    efficacy**, because the mutation-specific drugs have not been shown to change
+    outcomes. That is the honest reading and it makes the partition look
+    pointless — which is itself the finding.
+  - >
+    **No `residue` block**, because there is no cure and therefore no afterwards;
+    everything the disease takes it keeps. Same convention as `alzheimers` and
+    `parkinsons`.
+  - >
+    **Female carriers are absent from every field.** A minority have skeletal
+    muscle involvement and a substantial fraction develop cardiomyopathy requiring
+    surveillance. They are not in the prevalence, the burden, or any register.
+  - >
+    **Survival figures are from high-income specialist centres** and the global
+    picture is far worse — most of the world's patients receive neither ventilation
+    nor cardiac care, which is where the survival gain came from.
+  - >
+    Every scalar is `recall` or `reasoning`. The trial evidence in this record is
+    unusually contested and none of it is cited here, which matters more than
+    usual.
+
+blockers:
+  - kind: regulatory
+    blocks: a decade of approvals that made the evidence harder to get
+    obstacles: []
+    what: >
+      **FOUR DRUGS WERE APPROVED ON A SURROGATE NOBODY HAS VALIDATED, AND THE
+      APPROVALS MADE VALIDATING IT HARDER.**
+      The first exon-skipping drug was licensed in 2016 on the strength of
+      dystrophin production measured by western blot at **a fraction of one percent
+      of normal.** The agency's own statistical and clinical reviewers recommended
+      against; the advisory committee voted against; the centre director approved
+      it; and the decision was appealed internally to the Commissioner and allowed
+      to stand. **It is one of the most fully documented internal regulatory
+      disputes in modern drug history**, and three further drugs followed on the
+      same reasoning. In 2023 a micro-dystrophin gene therapy was approved after a
+      confirmatory trial **missed its primary endpoint**.
+      **The case for is real and should be stated.** A fatal childhood disease, no
+      alternatives, a slow course that makes functional endpoints noisy, and
+      families for whom waiting is not neutral. Accelerated approval exists for
+      exactly this.
+      **The case against is that a decade later nobody knows whether these drugs
+      work**, and the approvals are part of why. Once a drug is licensed,
+      randomising a boy to placebo becomes very hard to justify to a family and
+      very hard to recruit; the standard of care shifts; and the sponsor's
+      incentive to complete a trial that could withdraw its own product is
+      obviously weak. **The confirmatory evidence that was the condition of
+      approval has been rendered substantially harder to obtain by the approval**
+      (gaps.md #194).
+      One counter-example exists and is worth recording: the European readthrough
+      agent's conditional authorisation **was not renewed** after its confirmatory
+      trial failed. It took roughly a decade.
+      **This is the fourth use of the `regulatory` kind in ninety-two records**, and
+      the first where the obstacle is regulatory *permissiveness* rather than
+      restriction.
+    who_could: [regulator, sponsor, academic, legislator, patient-org]
+    scale: 5.0e8
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: getting a very large gene into forty percent of the body
+    obstacles: [cell-targeting]
+    what: >
+      **THE GENE WAS FOUND IN 1986 AND THE PROBLEM HAS NEVER BEEN BIOLOGICAL.**
+      Four obstacles, all of them engineering:
+      **Size.** The dystrophin gene is 2.4 megabases and the coding sequence far
+      exceeds any viral vector's capacity, which is why gene therapy uses
+      deliberately truncated **micro-dystrophin** constructs of uncertain
+      functional equivalence.
+      **Target mass.** Skeletal muscle is roughly forty percent of body weight, and
+      the heart and diaphragm must be reached as well. Systemic dosing at that
+      scale is what drives both the cost and the hepatotoxicity.
+      **Turnover.** Muscle regenerates, so anything delivered episomally is diluted
+      over time, and satellite cells — the regenerative pool — are not efficiently
+      transduced.
+      **Immunity.** Dystrophin is a neo-antigen in a boy who has never produced it,
+      so the immune system can attack the very protein being supplied, and
+      pre-existing vector antibodies exclude many patients from dosing at all.
+      **Every item on that list is a delivery problem with a price attached, not a
+      question about how the disease works** — which is the argument of gaps.md
+      #193, and this record is its sharpest case because the biology has been
+      settled longest and delivered least.
+      `scale: null` is retained here because the split the register needs does not
+      yet exist; **under a `delivery-unsolved` category this blocker would carry a
+      number.**
+    who_could: [academic, sponsor, manufacturer, philanthropy, patient-org]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: cost
+    blocks: three million dollars for an unproven benefit
+    obstacles: []
+    what: >
+      Micro-dystrophin gene therapy lists at around **$3.2 million** as a single
+      infusion. The exon-skipping drugs run to several hundred thousand dollars a
+      year, indefinitely, each serving under a sixth of patients.
+      **What makes this different from `spinal-muscular-atrophy`'s pricing
+      blocker is what is being bought.** There the health-economic case for a
+      screened newborn is among the strongest in the register — the untreated
+      alternative is death by two, and presymptomatic treatment produces children
+      who walk. **Here the clinical benefit is unestablished**, so payers are asked
+      to fund seven-figure and six-figure-per-year therapies against evidence that
+      the regulator's own reviewers considered insufficient.
+      Several national payers have refused or restricted reimbursement on exactly
+      that reasoning, which puts families in an intolerable position: **a drug
+      their regulator approved and their health system will not buy**, in a disease
+      that is progressing while the argument continues.
+      **And the money has an opportunity cost inside the record.** Corticosteroids,
+      ventilation and cardiac care produced the doubling of survival, cost very
+      little, and are unavailable to most of the world's patients. **The cheap
+      thing that works is undelivered while the expensive thing that may not work is
+      litigated** (gaps.md #174).
+    who_could: [manufacturer, payer, government, regulator, nonprofit]
+    scale: 2.0e9
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    blocks: a test that costs nothing, not done, for a reason that expired
+    obstacles: []
+    what: >
+      **CREATINE KINASE IS ELEVATED TEN TO A HUNDRED TIMES ABOVE NORMAL FROM
+      BIRTH, AND THE AVERAGE BOY IS DIAGNOSED AT FOUR OR FIVE.**
+      The delay is well documented: parents raise concerns about walking, falling
+      or speech; a first assessment reassures; and the diagnosis arrives one to two
+      years later on average, after years of irreversible muscle loss. Duchenne
+      also presents commonly as **isolated speech and language delay**, which is
+      not what anybody screens a clumsy toddler's creatine kinase for.
+      **Newborn screening was piloted decades ago and discontinued in several
+      places on the explicit ground that there was no treatment.** That reasoning
+      has expired. Corticosteroids work better started early, cardiac medication
+      works better started before symptoms, and every experimental therapy has a
+      ceiling set by how much muscle is left. **The screening decision is lagging
+      the treatment by roughly thirty years** — the exact inverse of
+      `spinal-muscular-atrophy`, where the screen and the drug arrived together.
+      There is a genuine objection and it should be recorded: screening a newborn
+      for a fatal untreatable disease was considered harmful, and screening for one
+      whose only proven treatment is a corticosteroid with a heavy toll is a real
+      argument rather than an obvious one.
+      **It is nevertheless the cheapest unexploited intervention in this record**,
+      and it would also solve the trial problem — a therapy tested in
+      presymptomatic infants is a different experiment from one tested in a
+      five-year-old who has already lost a third of his muscle.
+    who_could: [health-system, government, academic, patient-org, payer]
+    scale: 5.0e8
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: the ventilator and the cardiologist, which are what actually worked
+    obstacles: []
+    what: >
+      **THE INTERVENTION THAT DOUBLED SURVIVAL IS A MULTIDISCIPLINARY SERVICE AND
+      MOST OF THE WORLD DOES NOT HAVE ONE.**
+      Non-invasive ventilation with cough assist. Cardiology starting ACE
+      inhibitors and beta blockers before symptoms appear, with regular
+      echocardiography or cardiac MRI. Physiotherapy for contractures.
+      Orthopaedics for scoliosis. Respiratory monitoring, bone health monitoring,
+      endocrinology for delayed puberty, and psychology.
+      **None of it is a product** (gaps.md #154). It is a coordinated service
+      operating over twenty years, and where it exists median survival is around
+      thirty and where it does not it remains close to what it was in 1970.
+      **The equipment matters more than the drugs and is distributed worse.** A
+      ventilator and a cough assist device transform survival, cost far less than
+      a year of any approved therapy, and are unavailable across most of the world
+      — while the register's attention, and this record's blockers, are dominated by
+      medicines whose benefit is unproven.
+      Transition from paediatric to adult services is a specific and documented
+      failure point, and it exists at all only because these patients now reach
+      adulthood.
+    who_could: [health-system, government, payer, nonprofit, philanthropy]
+    scale: 3.0e9
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0093
+  rated: 2026-08-25
+  by: [claude, jeremy]

@@ -1,0 +1,427 @@
+slug: varicella-zoster
+id: FND-D-0127
+name: varicella zoster infection
+also: [chickenpox, varicella, shingles, herpes zoster, postherpetic neuralgia, VZV]
+kind: disease
+mondo: MONDO:0005608
+residual: false
+contested: false
+
+# ONE VIRUS, TWO DISEASES, AND A VACCINE THAT WORKS WHERE VACCINES USUALLY FAIL.
+#
+# 1. THE TWO ARE HELD IN ONE RECORD BECAUSE THE LINK BETWEEN THEM IS THE MOST
+#    INTERESTING THING ABOUT EITHER. Chickenpox is a childhood illness that
+#    mostly resolves; shingles is its reactivation decades later and is where
+#    almost all the burden is. **Vaccinating children against varicella removes
+#    the circulating virus that was re-exposing adults and boosting their
+#    immunity** — which was predicted to increase shingles in the generation
+#    above. That hypothesis links the two strata and cannot be stated if they are
+#    separate records. It is held as a `disputed` blocker below.
+#
+# 2. THE RESERVOIR IS THE SAME ONE `genital-herpes` DESCRIBES. VZV establishes
+#    lifelong latency in dorsal root ganglia; no antiviral touches it; and a cure
+#    would have to act inside sensory neurons that cannot be sacrificed. **Two
+#    records, two herpesviruses, one identical constraint** — which is the sort
+#    of thing that only becomes visible once both are written down.
+#
+# 3. AND SHINGRIX IS THE THIRD INSTANCE OF A PATTERN ENGPASS IS TRACKING.
+#    `protective-immunity` argues that vaccines copy a response nature already
+#    makes, and `hpv-infection` and `childhood-pneumonia` are its two
+#    counter-examples — a virus-like particle and a stabilised pre-fusion
+#    protein, where **a structural or formulation insight substituted for a
+#    natural template.** The recombinant zoster vaccine is the third: nature's
+#    answer here is cell-mediated immunity that **decays with age**, and an
+#    adjuvant was engineered that restores it in exactly the people in whom
+#    vaccines usually fail.
+
+burden:
+  incidence:
+    value: 1.4e8
+    units: >
+      episodes/year worldwide, combining varicella and zoster — **dominated by
+      varicella in unvaccinated populations and shifting toward zoster where
+      childhood vaccination is universal.** Lifetime risk of shingles is roughly
+      one in three, and incidence rises steeply after sixty
+    src: reasoning
+  deaths:
+    value: 2.0e4
+    units: >
+      deaths/year worldwide — varicella in unvaccinated adults and the
+      immunocompromised, disseminated zoster, and encephalitis. **Small against
+      the incidence, and the mortality is not what this record is about**
+    src: recall
+  note: >
+    **The burden is pain, not death, and the register has repeatedly found it has
+    no good field for that.** Postherpetic neuralgia — pain persisting months to
+    years after the rash clears — affects a substantial minority of zoster cases
+    and a far larger fraction of the very old. It is refractory to treatment,
+    it is measured in years of a person's life, and it appears in this record only
+    as `residue`.
+
+survival:
+  horizon: 30 days from onset
+  untreated:
+    value: 0.9995
+    units: >
+      fraction alive — varicella and zoster are rarely fatal in the
+      immunocompetent. Mortality concentrates in adults with varicella, neonates,
+      and the immunosuppressed with disseminated disease
+    src: reasoning
+  treated:
+    value: 0.9998
+    units: >
+      fraction alive on aciclovir or valaciclovir. **A gain of +0.0003, and the
+      `zero_gain` guard added with `genital-herpes` correctly keeps this out of
+      the "treatment bought no life" list** — there was almost no death to
+      prevent (gaps.md #234)
+    src: reasoning
+  witness: >
+    Rated so this record can be compared with the other herpesviruses, and it
+    says nothing about the disease. **What zoster costs is measured in pain over
+    years, which this axis cannot see** — the same limit `gonorrhoea` records for
+    reproductive harm.
+
+axes:
+  mechanism: established
+  intervention: symptomatic
+  prevention: prophylaxis
+  ongoing: low
+  efficacy:
+    value: 0.40
+    units: >
+      fraction-of-patients (meaningfully helped by treatment) — **and it is low
+      because the thing that needs treating responds worst.** Antivirals started
+      within 72 hours shorten the rash and reduce acute pain; **their effect on
+      preventing postherpetic neuralgia is modest at best**, and established PHN
+      responds poorly to gabapentinoids, tricyclics and topical agents
+    src: reasoning
+  access:
+    value: 0.45
+    units: >
+      fraction-of-patients (receiving what is recommended) — antivirals are
+      generic and widely available, and the **72-hour window means much of the
+      benefit is lost to people presenting late or being told it is a rash.**
+      The recombinant zoster vaccine is priced and supplied unevenly and
+      coverage is low in most countries that recommend it
+    src: reasoning
+
+measurement:
+  diagnostic: clinical
+  prognostic: partial
+  predictive: none
+  witness: >
+    **DIAGNOSTIC is `clinical` and that is usually enough.** A dermatomal
+    vesicular rash is recognisable, and PCR confirms it where the presentation is
+    atypical — disseminated disease, zoster sine herpete without a rash at all,
+    or central nervous system involvement. **The failure is not the diagnosis but
+    the clock**: antivirals work within 72 hours of rash onset, so a diagnosis
+    made on day five is correct and useless.
+    PROGNOSTIC is `partial`, and what it predicts is **who gets postherpetic
+    neuralgia** — which is the only prognostic question in this record that
+    matters. Age predicts it strongly, as do severity of acute pain and rash. But
+    nothing identifies the individual well enough to justify anything, and there
+    is nothing to escalate to.
+    PREDICTIVE is `none`. Everyone gets the same nucleoside analogue; resistance
+    is rare outside profound immunosuppression; and for postherpetic neuralgia
+    the drugs are tried in sequence until one helps or none does, which is the
+    definition of having no predictive information.
+
+strata:
+  - name: chickenpox
+    fraction:
+      value: 0.70
+      units: fraction-of-episodes
+      src: reasoning
+    intervention: none
+    efficacy:
+      value: 0.95
+      units: fraction-of-stratum (recovering fully, treated or not)
+      src: reasoning
+    toll: none
+    what: >
+      Primary infection, usually in childhood, self-limiting in a well child.
+      **Rated `none` for the reason `acute-bronchitis` and `measles` are: the
+      illness ends and nothing medicine did ended it.** The serious cases are
+      adults, neonates, pregnant women and the immunosuppressed, where varicella
+      pneumonia and disseminated infection carry real mortality.
+      **This stratum is vanishing where childhood vaccination is universal**,
+      which is what makes the boosting question below live.
+
+  - name: herpes zoster
+    fraction:
+      value: 0.28
+      units: fraction-of-episodes
+      src: reasoning
+    intervention: symptomatic
+    efficacy:
+      value: 0.50
+      units: fraction-of-stratum (acute illness shortened by early antiviral)
+      src: reasoning
+    toll: minor
+    what: >
+      Reactivation from dorsal root ganglia, decades later, as cell-mediated
+      immunity declines. Lifetime risk roughly one in three and rising steeply
+      with age. **Ophthalmic zoster threatens sight; geniculate zoster — Ramsay
+      Hunt — causes facial palsy and hearing loss; disseminated zoster in the
+      immunosuppressed can kill.**
+
+  - name: postherpetic neuralgia
+    fraction:
+      value: 0.02
+      units: fraction-of-episodes
+      src: reasoning
+    intervention: symptomatic
+    efficacy:
+      value: 0.30
+      units: fraction-of-stratum (meaningful pain reduction on any available agent)
+      src: reasoning
+    toll: major
+    what: >
+      **THE STRATUM THE RECORD EXISTS FOR.** Neuropathic pain persisting months
+      to years after the rash has healed, refractory to gabapentinoids,
+      tricyclics, topical lidocaine and capsaicin — each of which helps a minority
+      a little. It is among the more treatment-resistant chronic pains in
+      medicine, it is commonest in the very old, and it is the harm the vaccine
+      prevents by preventing the zoster.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    **The treatment costs almost nothing and does almost nothing, which is an
+    unusual pairing.** Aciclovir and valaciclovir are cheap, generic and among
+    the best-tolerated antivirals in existence — the same selectivity mechanism
+    `genital-herpes` describes, activation by a viral kinase — needing only renal
+    dose adjustment.
+    The toll that exists belongs to the pain drugs: gabapentinoids cause
+    sedation, dizziness and falls **in exactly the elderly population that gets
+    postherpetic neuralgia**, and tricyclics add anticholinergic burden. Neither
+    works well.
+  incidence:
+    value: 0.05
+    units: >
+      fraction-of-treated with a consequential adverse effect — dominated by
+      sedation and falls on neuropathic pain agents rather than by the antiviral
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    **PAIN THAT DOES NOT STOP, AND IN A MINORITY, SIGHT OR HEARING.** Postherpetic
+    neuralgia persists for months, years, and sometimes permanently, in a
+    population who are old when it starts. It is the reason zoster is not a
+    self-limiting rash.
+    Ophthalmic zoster causes corneal scarring, uveitis and permanent visual loss;
+    geniculate zoster leaves facial weakness and sensorineural hearing loss in a
+    proportion of cases. **Congenital varicella syndrome** — limb hypoplasia,
+    scarring, ocular and neurological damage — follows maternal varicella in early
+    pregnancy and is rare and severe.
+    **The organism itself is also permanent**, in the sense that matters here:
+    nothing clears the latent virus, so a person who has had chickenpox carries a
+    lifetime risk of the second disease.
+  incidence:
+    value: 0.06
+    units: >
+      fraction-of-episodes leaving permanent pain, visual or neurological damage
+      — reasoned, and far higher within the zoster stratum and higher again with
+      age
+    src: reasoning
+
+witness:
+  mechanism: >
+    `established`, and the two-act structure is the whole of it. Varicella zoster
+    virus causes chickenpox on first exposure, then **travels up sensory axons and
+    establishes lifelong latency in dorsal root and cranial nerve ganglia** — the
+    same compartment, and the same untouchability, that `genital-herpes` records
+    for herpes simplex. Reactivation produces zoster in the dermatome of the
+    ganglion it came from.
+    **What holds it latent is cell-mediated immunity, and that declines with
+    age.** Zoster incidence rising steeply after sixty is one of the clearest
+    clinical manifestations of immunosenescence there is — which is worth stating
+    plainly, because gaps.md #241 found that not one of sixteen age-related
+    records named ageing as the mechanism. **This one does**, and it is a
+    counter-example to that finding.
+    Postherpetic neuralgia follows damage to the ganglion and the nerve, so the
+    pain outlasts the infection by the time it takes nothing to heal.
+  intervention: >
+    `symptomatic`, and the rating is honest rather than harsh. **No treatment
+    clears the latent virus and none reliably prevents postherpetic neuralgia.**
+    Aciclovir, valaciclovir or famciclovir within 72 hours of rash onset shorten
+    the acute illness and reduce acute pain; the evidence that they prevent PHN is
+    weak. Established PHN is managed with gabapentinoids, tricyclics, topical
+    lidocaine or capsaicin, each helping a minority.
+    **The effective intervention in this record is prevention, and it is
+    somebody's vaccine rather than anybody's drug.**
+  prevention: >
+    `prophylaxis`, and **the zoster vaccine is one of the best results in this
+    register.** Two generations: a live attenuated vaccine from 2006 with roughly
+    fifty percent efficacy that waned, and from 2017 a **recombinant subunit
+    vaccine with an adjuvant system, reporting above ninety percent efficacy
+    against zoster and against postherpetic neuralgia, sustained for years, and
+    holding up in people over eighty.**
+    **That last clause is what makes it remarkable.** Vaccines characteristically
+    fail in the old, because the immune response they need is the one that has
+    declined — which is exactly the mechanism of this disease. An engineered
+    adjuvant produced protection where the host could not.
+    Childhood varicella vaccination is separately excellent and has near-abolished
+    chickenpox where it is universal.
+  ongoing: >
+    `low` for the record and misleading, as in `toxoplasmosis`. Most people carry
+    latent VZV with no burden at all. **The person with postherpetic neuralgia
+    carries a large one indefinitely**, and the record-level rating averages them
+    into invisibility.
+  efficacy: >
+    See the axis. The figure is low because the stratum that matters — established
+    postherpetic neuralgia — is the one nothing treats well.
+  access: >
+    Antivirals are generic and the 72-hour window loses much of their benefit to
+    late presentation. **The recombinant zoster vaccine is the access story**: it
+    is expensive, requires two doses, is reactogenic enough that people skip the
+    second, and coverage is low in most countries that recommend it — including
+    wealthy ones where it is funded.
+
+moved:
+  - date: 1995
+    axis: prevention
+    from: none
+    to: prophylaxis
+    why: >
+      Licensure of the live attenuated varicella vaccine, followed by universal
+      childhood programmes in several countries and a very large fall in
+      chickenpox cases, hospitalisations and deaths. **A straightforward vaccine
+      success, and the one that set up the boosting question below.**
+    src: recall
+  - date: 2017
+    axis: efficacy
+    from: 0.30
+    to: 0.40
+    why: >
+      **The recombinant adjuvanted zoster vaccine**, reporting above ninety
+      percent efficacy against zoster and postherpetic neuralgia and sustaining
+      it in the very old, where the previous live vaccine managed roughly fifty
+      percent and waned.
+      Recorded on `efficacy` rather than `prevention` because the axis was already
+      `prophylaxis` and **an enum cannot record a change in degree** — the same
+      complaint `hpv-infection` and `gonorrhoea` log, and the third instance in a
+      fortnight (gaps.md #236).
+    src: recall
+
+holes:
+  - >
+    **The two strata arguably want two records**, and they are held together
+    because the exogenous boosting hypothesis is a claim about the relationship
+    between them. If that question is ever settled the argument for one record
+    weakens considerably.
+  - >
+    The incidence split between varicella and zoster is a global reasoned
+    estimate over populations with completely different vaccination histories.
+    **In a universally vaccinated country the varicella stratum is close to empty
+    and this record describes a different disease.**
+  - >
+    Postherpetic neuralgia has **its own Mondo term** (`MONDO:0041052`) and is
+    carried here as a stratum. It is a chronic pain condition in its own right,
+    and the register holds `low-back-pain` as a record on similar grounds.
+  - >
+    `efficacy: 0.40` blends an antiviral that works on the acute illness with
+    drugs that barely work on the chronic pain. **Two very different numbers, and
+    the schema requires one** — the same complaint `non-hodgkin-lymphoma` makes
+    about a meaningless average.
+  - >
+    **This record names ageing as the mechanism**, which sixteen age-related
+    records in gaps.md #241 did not. It is a genuine counter-example and it is
+    also a special case: immunosenescence here has a single measurable
+    consequence, whereas in Alzheimer's or osteoarthritis "ageing" would be a
+    label rather than a mechanism.
+  - Written from model recall. The latency compartment, the two vaccine
+    generations and the recombinant vaccine's performance in the very old are the
+    parts most likely right; every number is the part most likely wrong.
+
+blockers:
+  - kind: knowledge
+    blocks: anything that prevents or treats the pain, which is the whole burden
+    what: >
+      **ANTIVIRALS DO NOT RELIABLY PREVENT POSTHERPETIC NEURALGIA AND NOTHING
+      TREATS IT WELL.** Started within 72 hours they shorten the rash and reduce
+      acute pain; the evidence that they reduce PHN is weak and has been argued
+      over for decades. Once established, the pain responds to gabapentinoids,
+      tricyclics and topical agents in a minority and modestly.
+      **The mechanism is the problem: the nerve and ganglion are already
+      damaged**, so this is a neuropathic pain of a kind the register keeps
+      finding nothing works for. It sits with `low-back-pain` and the neuropathies
+      in `type-2-diabetes` as a demonstration that **chronic pain after nerve
+      injury is a general unsolved problem**, not a feature of this virus.
+      `scale: null`.
+    who_could: [academic, sponsor, philanthropy]
+    scale: null
+    standing: documented
+    src: reasoning
+
+  - kind: cost
+    blocks: an excellent vaccine that most eligible people do not receive
+    what: >
+      **THE RECOMBINANT ZOSTER VACCINE IS AMONG THE BEST IN THIS REGISTER AND
+      COVERAGE IS LOW EVEN WHERE IT IS FUNDED.** Above ninety percent efficacy
+      against zoster and postherpetic neuralgia, sustained for years, working in
+      people over eighty — and uptake in most recommending countries is a
+      minority of the eligible.
+      Three reasons compound. It is expensive, which restricts it in
+      middle-income countries entirely. It requires **two doses**, and
+      second-dose completion is poor. And it is **notably reactogenic** — a day or
+      two of feeling unwell is common, which is trivial against postherpetic
+      neuralgia and is not trivial to a well seventy-year-old deciding whether to
+      go back for the second injection.
+      **This is a record where the prevention works and the delivery does not**,
+      which is the register's most repeated finding arriving in one of its
+      strongest vaccines.
+    who_could: [payer, government, health-system, manufacturer]
+    scale: 1.0e9
+    standing: documented
+    src: reasoning
+
+  - kind: knowledge
+    blocks: any way to clear a virus latent in a neuron
+    what: >
+      VZV persists for life in dorsal root and cranial nerve ganglia, and **no
+      antiviral acts on the latent genome** — they inhibit replication, and a
+      latent virus is not replicating. So everyone who has had chickenpox carries
+      the risk of zoster permanently, and the vaccine works by suppressing
+      reactivation rather than by removing the virus.
+      **This is exactly `genital-herpes`'s blocker in a different herpesvirus**,
+      including the constraint that makes it hardest: the reservoir is a sensory
+      neuron that does not divide and cannot be replaced, so any cure must silence
+      or excise a genome inside a cell it has to leave alive. **Two records, one
+      identical obstacle**, which is the kind of thing that only appears once both
+      are in the corpus. `scale: null`.
+    who_could: [academic, sponsor, philanthropy]
+    scale: null
+    standing: documented
+    src: reasoning
+    obstacles: [pathogen-persistence, cell-targeting]
+
+  - kind: knowledge
+    blocks: whether vaccinating children against chickenpox gives their grandparents shingles
+    what: >
+      **THE EXOGENOUS BOOSTING HYPOTHESIS, HELD AS `disputed` DELIBERATELY.**
+      Re-exposure to circulating varicella is proposed to boost adult
+      cell-mediated immunity and postpone reactivation. If so, **universal
+      childhood vaccination removes that boosting and should increase zoster in
+      the unvaccinated adult generation** — a real cost, in a different age group,
+      of an intervention that is otherwise unambiguously good.
+      The evidence is genuinely mixed. Zoster incidence was rising in several
+      countries **before** varicella vaccination began, which is the strongest
+      argument against; modelling studies disagree with each other; and the
+      populations that would settle it differ in too many other ways.
+      **It is recorded because it is the clearest instance in the register of an
+      intervention whose possible harm lands on a different generation** — the
+      externality gaps.md #51, #228 and #239 keep describing and no field holds.
+      It also resolves itself: as vaccinated cohorts age, the question disappears.
+    who_could: [academic, government, health-system]
+    scale: null
+    standing: disputed
+    src: reasoning
+
+assertion:
+  id: FND-A-0128
+  rated: 2026-08-30
+  by: [claude, jeremy]

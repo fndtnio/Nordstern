@@ -1,0 +1,563 @@
+slug: parkinsons
+id: FND-D-0087
+name: Parkinson's disease
+also: [Parkinson disease, PD, paralysis agitans, idiopathic parkinsonism]
+mondo: MONDO:0005180
+kind: disease
+residual: false
+contested: false
+
+# THE CONTRAST THE QUEUE ASKED FOR, AND IT IS SHARPER THAN EXPECTED.
+#
+# `huntington` (held) rates `intervention: symptomatic` with `efficacy: 0.0`:
+# perfect prediction — a genetic test decades ahead — and nothing whatever to do
+# about it. The register files it under `engineering problem`.
+#
+# Parkinson's rates `intervention: symptomatic` too, with efficacy around 0.65.
+# **The same rung, from nothing to transformative.** Levodopa returns a person to
+# work for a decade and does not touch the neurodegeneration underneath.
+#
+# So the pair spans what `symptomatic` can mean, and both records share the same
+# hole: no disease-modifying therapy exists for either, after fifty years of
+# trying in one and thirty in the other.
+
+burden:
+  prevalence:
+    value: 1.18e7
+    units: >
+      people living with Parkinson's disease worldwide — **the fastest-growing
+      neurological disorder on earth**, prevalence having more than doubled since
+      1990 and projected to double again by 2050
+    src: recall
+  deaths:
+    value: 3.3e5
+    units: >
+      deaths/year — typically from aspiration pneumonia, falls and the
+      complications of immobility, decades after diagnosis
+    src: recall
+  note: >
+    **AGE-STANDARDISED PREVALENCE HAS RISEN, WHICH MEANS THIS IS NOT ONLY
+    AGEING.** Populations getting older explains much of the growth and not all of
+    it. The leading candidate for the remainder is **industrial and agricultural
+    chemical exposure** — see the `policy` blocker — which would make Parkinson's
+    substantially preventable and it is not treated as a preventable disease by
+    anybody.
+    Two of the most robust findings in its epidemiology run the other way and are
+    unexplained: **smoking and caffeine consumption are both consistently
+    associated with lower risk.** The register's most-blamed exposure appears to
+    protect against this record, replicated across decades and populations, and
+    nobody knows why.
+
+survival:
+  horizon: 10 years from diagnosis
+  untreated:
+    value: 0.55
+    units: >
+      fraction alive — before levodopa, Parkinson's carried a mortality ratio
+      close to three times the general population, largely through immobility,
+      aspiration and falls
+    src: reasoning
+  treated:
+    value: 0.7
+    units: >
+      fraction alive on levodopa and modern supportive care. **Levodopa did improve
+      survival**, which is unusual for a symptomatic treatment and happened
+      because mobility prevents the complications that were doing the killing
+    src: reasoning
+  witness: >
+    **A `symptomatic` treatment that moved survival, which the ladder does not
+    predict.** Nothing about levodopa alters the neurodegeneration; keeping
+    people walking kept them alive. Worth holding beside `copd`, where
+    symptomatic relief moved survival by +0.05, and `alzheimers`, where it moved
+    nothing at all.
+
+axes:
+  mechanism: partial
+  intervention: symptomatic
+  prevention: risk-reduction
+  ongoing: high
+  efficacy:
+    value: 0.65
+    units: >
+      fraction-of-patients (meaningful symptom control) — **near-total in the
+      first years and eroding steadily**, as motor complications appear and as the
+      levodopa-unresponsive features come to dominate
+    src: reasoning
+  access:
+    value: 0.55
+    units: >
+      fraction-of-patients (diagnosed and receiving levodopa) — the drug is
+      generic, cheap and on the essential medicines list; **the constraint is
+      somebody to make the diagnosis**
+    src: reasoning
+
+measurement:
+  diagnostic: clinical
+  prognostic: partial
+  predictive: partial
+  witness: >
+    **DIAGNOSTIC IS `clinical`, WHICH MEANS AN EXPERIENCED NEUROLOGIST WATCHING
+    SOMEBODY MOVE — AND CLINICOPATHOLOGICAL SERIES PUT THE ERROR RATE AT ROUGHLY
+    ONE IN TEN TO ONE IN FIVE**, worse early and worse outside specialist hands.
+    The competing diagnoses matter: multiple system atrophy, progressive
+    supranuclear palsy and dementia with Lewy bodies look like Parkinson's at
+    first and behave completely differently. Dopamine transporter imaging confirms
+    a dopaminergic deficit and does not distinguish among them.
+    **AND THIS CHANGED IN 2023, WHICH IS THE BIGGEST THING TO HAPPEN TO THE
+    RECORD IN A DECADE AND CANNOT BE RECORDED AS A CHANGE** (gaps.md #184).
+    An **alpha-synuclein seed amplification assay** on cerebrospinal fluid detects
+    misfolded synuclein with roughly 88% sensitivity and 96% specificity in a large
+    cohort, and — the important part — **it is positive years before motor
+    symptoms**, in people with REM sleep behaviour disorder and in isolated
+    hyposmia. In 2024 two working groups proposed **defining Parkinson's
+    biologically** by synuclein positivity rather than by motor signs.
+    **That is the fourth record in this register whose definition has been pulled
+    upstream, and it is the most premature of the four** (gaps.md #170).
+    `multiple-sclerosis` did it with transformative therapy waiting.
+    `type-1-diabetes` had teplizumab. `alzheimers` had a marginal drug and I
+    flagged the risk of a diagnostic advancing ahead of a therapeutic.
+    **Parkinson's has redefined itself biologically with nothing whatever to offer
+    the people it newly identifies.**
+    PROGNOSTIC is `partial`. Course varies enormously — tremor-dominant disease
+    progresses more slowly than postural-instability-gait-difficulty phenotype —
+    and nothing predicts an individual's trajectory well. What *is* close to
+    deterministic runs the other way: **idiopathic REM sleep behaviour disorder
+    converts to Parkinson's or dementia with Lewy bodies in roughly three quarters
+    of people within twelve years**, one of the strongest prodromal predictors in
+    medicine.
+    PREDICTIVE is `partial`. Levodopa responsiveness is itself a diagnostic and
+    predictive test — respond, and the diagnosis is probably right. Genetic status
+    (LRRK2, GBA1) does not yet select therapy and is the basis of the trials most
+    likely to change that.
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    **THE TREATMENT CAUSES TWO OF THE THINGS PATIENTS FEAR MOST, AND ONE OF THEM
+    IS NOT A MOVEMENT DISORDER AT ALL.**
+    **Levodopa-induced dyskinesia.** Involuntary writhing movements affecting
+    roughly half of patients within five years of starting levodopa and the large
+    majority within ten. It is caused by pulsatile stimulation of a denervated
+    striatum — the drug and the disease together — and once the sensitisation is
+    established it does not go away. Reducing the dose reduces the dyskinesia and
+    returns the parkinsonism, which is the trade patients spend years managing.
+    Alongside it: **wearing-off**, as the duration of each dose shortens from all
+    day to a couple of hours, which is what turns a simple prescription into the
+    `ongoing` burden below.
+    **IMPULSE CONTROL DISORDERS, AND THIS IS ONE OF THE MOST UNDER-KNOWN
+    IATROGENIC HARMS IN MEDICINE.** Dopamine agonists cause pathological gambling,
+    compulsive shopping, hypersexuality and binge eating in something like one in
+    seven patients taking them. **People have lost houses, savings and marriages**,
+    and it is frequently not recognised, because neither the patient nor the family
+    connects a Parkinson's tablet to a gambling habit and clinicians did not
+    routinely ask. Litigation followed. The behaviour usually stops when the drug
+    is withdrawn; **the bankruptcy and the divorce do not unwind**, which is why
+    this record's `toll` is permanent.
+    **Deep brain stimulation** adds a small risk of intracranial haemorrhage,
+    hardware infection and revision, and can worsen speech, mood and apathy —
+    trading motor benefit for something harder to measure.
+  incidence:
+    value: 0.15
+    units: >
+      fraction-of-treated (permanent harm — chiefly established dyskinesia and the
+      lasting consequences of impulse control disorders) — a reasoned estimate
+    src: reasoning
+
+window:
+  what: >
+    **BY THE TIME THE FIRST TREMOR APPEARS, SOMETHING LIKE HALF TO SEVENTY
+    PERCENT OF THE DOPAMINERGIC NEURONS ARE ALREADY GONE.**
+    The prodrome is long — years to decades — and it is not silent if anybody
+    looks. Loss of smell, constipation, depression, and above all **REM sleep
+    behaviour disorder**, in which people act out their dreams: roughly three
+    quarters of those with idiopathic RBD develop Parkinson's or dementia with
+    Lewy bodies within twelve years. The alpha-synuclein seed assay is positive in
+    many of them.
+    **SO THE WINDOW IS OPEN, IT IS MEASURABLE, THE POPULATION CAN BE IDENTIFIED,
+    AND THERE IS NOTHING TO PUT IN IT** (gaps.md #185).
+    Every neuroprotection trial has failed — selegiline, coenzyme Q10, creatine,
+    isradipine, inosine, and most recently a large phase 3 of exenatide that read
+    out negative. Alpha-synuclein antibodies missed their primary endpoints.
+    `caught_in_time: 0.05` below therefore reads as a diagnostic failure and is
+    nothing of the kind. **A reader would conclude "improve early diagnosis". The
+    correct conclusion is that there is nothing to catch these people for**, and
+    the register has no way to distinguish the two.
+    Note how `huntington` handles the identical situation: it has **no `window`
+    block at all**, because it has no capability. That convention would hide the
+    most important fact about this record, which does have capability — excellent
+    symptomatic capability — just not the kind the window is about.
+  closes_on: >
+    loss of the dopaminergic neurons whose death precedes symptoms by years to
+    decades — irreversible, and detectable before it is complete
+  caught_in_time:
+    value: 0.05
+    units: >
+      fraction-of-cases (reaching an intervention that alters the course before
+      neurons are lost) — **and it is near zero because no such intervention
+      exists**, not because anybody arrived late
+    src: reasoning
+
+strata:
+  - name: early disease, levodopa-responsive without complications
+    fraction:
+      value: 0.35
+      units: fraction-of-people-with-PD
+      src: reasoning
+    intervention: symptomatic
+    efficacy:
+      value: 0.90
+      units: fraction-of-stratum (good symptom control)
+      src: reasoning
+    toll: minor
+    what: >
+      **The "honeymoon", and it is one of the most satisfying periods in
+      neurology.** Levodopa restores function almost completely: people return to
+      work, to driving, to their lives. It lasts perhaps three to seven years, it
+      costs pennies a day, and it does nothing at all to the disease.
+
+  - name: mid-stage with motor complications
+    fraction:
+      value: 0.40
+      units: fraction-of-people-with-PD
+      src: reasoning
+    intervention: symptomatic
+    efficacy:
+      value: 0.60
+      units: fraction-of-stratum (adequate control across the day)
+      src: reasoning
+    toll: major
+    what: >
+      Wearing-off, dyskinesia, and a medication schedule built around them. This
+      is where **deep brain stimulation, focused ultrasound lesioning, apomorphine
+      and intestinal levodopa gel** earn their place — all of them managing the
+      consequences of the treatment as much as the disease. It is also where the
+      `toll` above concentrates.
+
+  - name: advanced disease
+    fraction:
+      value: 0.25
+      units: fraction-of-people-with-PD
+      src: reasoning
+    intervention: symptomatic
+    efficacy:
+      value: 0.30
+      units: fraction-of-stratum (meaningful benefit from available treatment)
+      src: reasoning
+    toll: minor
+    what: >
+      **The features that dominate here do not respond to dopamine at all**, which
+      is the plainest statement of what levodopa never fixed: postural instability
+      and falls, freezing of gait, dysautonomia, and **dementia, which affects the
+      majority of people who live long enough.** Aspiration pneumonia is what
+      usually appears on the certificate. Treatment is supportive, and this stratum
+      is where `huntington`'s efficacy of zero becomes the honest comparison.
+
+moved:
+  - date: 1967
+    axis: intervention
+    from: none
+    to: symptomatic
+    why: >
+      **ONE OF THE GREAT MOMENTS IN THE HISTORY OF MEDICINE, AND IT IS STILL THE
+      WHOLE OF THE TREATMENT SIXTY YEARS LATER.**
+      The observation that Parkinson's involves striatal dopamine depletion led to
+      the obvious experiment and, once high oral doses of levodopa were shown
+      tolerable in 1967, to results nobody had seen before: people who could not
+      move, moving. The most vivid demonstration came in survivors of encephalitis
+      lethargica, immobile for decades, who woke — an episode that reached the
+      public through Oliver Sacks and gave the field its most famous images.
+      **And it is symptomatic.** It replaces a neurotransmitter whose neurons are
+      dying and does not slow their death by any measure. Six decades on, levodopa
+      remains the most effective drug for Parkinson's disease, it is generic, it
+      costs pennies, and **nothing has ever been added that changes the course.**
+      Carbidopa and benserazide made it tolerable; COMT and MAO-B inhibitors
+      extend each dose; the disease proceeds underneath all of it.
+    src:
+      id: PMID:5334614 doi:10.1056/NEJM196702162760703
+      retrieved: 2026-08-26
+      quote: >
+        Aromatic amino acids and modification of parkinsonism.
+
+  - date: 1997
+    axis: efficacy
+    from: 0.55
+    to: 0.65
+    why: >
+      **DEEP BRAIN STIMULATION, AND IT WORKS BECAUSE THE TREATMENT CREATED THE
+      PROBLEM IT SOLVES.**
+      High-frequency stimulation of the subthalamic nucleus or globus pallidus,
+      delivered by an implanted electrode and a programmable pulse generator,
+      substantially reduces tremor, rigidity and — most usefully — **the motor
+      fluctuations and dyskinesias that levodopa itself produces.** A trial in 2013
+      showed benefit earlier in the disease than had been standard, moving it from
+      a last resort toward a mid-stage option.
+      **Focused ultrasound** has since added an incisionless version: lesioning
+      through the intact skull under MRI guidance, with no implanted hardware and
+      no reversibility.
+      Both are symptomatic. Neither touches the underlying degeneration, and the
+      advanced-stage features — falls, freezing, dysautonomia, dementia — are as
+      untreatable after DBS as before it.
+    src: recall
+
+witness:
+  mechanism: >
+    `partial`, and the split is between what happens and why.
+    **What happens is established**: progressive loss of dopaminergic neurons in
+    the substantia nigra pars compacta, with **Lewy bodies** — intraneuronal
+    aggregates whose principal constituent is misfolded **alpha-synuclein**.
+    Striatal dopamine falls, the basal ganglia motor circuit is disinhibited, and
+    the cardinal signs follow. By the time those signs appear, roughly half to
+    seventy percent of the nigral neurons are gone.
+    **The spreading is the part that has changed the field.** Braak's staging
+    proposed that the pathology begins in the olfactory bulb and the dorsal motor
+    nucleus of the vagus and ascends through the brainstem — which fits the
+    prodrome exactly, since anosmia and constipation precede tremor by years.
+    Alpha-synuclein appears to propagate between neurons in a prion-like manner,
+    and the strongest epidemiological support for a gut origin is odd and
+    persuasive: **truncal vagotomy is associated with reduced later risk of
+    Parkinson's disease.**
+    **Genetics has produced the most druggable handles.** *GBA1* variants, which
+    in two copies cause Gaucher disease, are the commonest genetic risk factor for
+    Parkinson's; *LRRK2* mutations are the commonest monogenic cause and are
+    unusually frequent in Ashkenazi Jewish and North African Berber populations.
+    Both encode enzymes, both are targetable, and inhibitors and chaperones are in
+    trials.
+    **THE NAMED HOLE IS WHY THE NEURONS DIE.** Mitochondrial dysfunction,
+    lysosomal and autophagic failure, oxidative stress, protein aggregation and
+    neuroinflammation are all implicated and none is established as the driver.
+    That is exactly the hole every failed neuroprotection trial has fallen into.
+  intervention: >
+    `symptomatic`, and the queue's framing is right: **it works brilliantly for
+    years and changes nothing underneath.**
+    Levodopa, with a peripheral decarboxylase inhibitor, remains the most
+    effective drug. Around it: dopamine agonists, MAO-B and COMT inhibitors,
+    amantadine for dyskinesia, and for advanced disease **deep brain stimulation,
+    focused ultrasound lesioning, apomorphine infusion and intestinal levodopa
+    gel.** Physiotherapy and exercise have better evidence than they are usually
+    given credit for, including some suggestion of effect on progression.
+    **NOTHING SLOWS THE DISEASE, AND THE LIST OF THINGS THAT FAILED IS LONG AND
+    RECENT.** Selegiline, coenzyme Q10, creatine, isradipine, inosine. Most
+    painfully, **a large phase 3 trial of exenatide read out negative**, after a
+    promising phase 2 had made GLP-1 repurposing the field's best hope for several
+    years. Alpha-synuclein antibodies missed their primary endpoints.
+    **The live candidates are genetic**: LRRK2 kinase inhibitors and
+    GBA1-directed therapies, aimed at defined subgroups rather than at everybody —
+    which would make this the first record here where Parkinson's stopped being one
+    disease.
+    **The comparison with `huntington` is the useful one.** Both rate
+    `symptomatic`. Huntington's efficacy is 0.0 — a genetic test decades ahead and
+    nothing to do. Parkinson's is 0.65 — a cheap generic tablet that gives somebody
+    their life back for a decade. **Same rung, and the register needs both
+    numbers to tell them apart.**
+  prevention: >
+    `risk-reduction`, and this record is more preventable than it is treated as
+    being.
+    **The chemical exposures are the substantive part.** **Paraquat**, a herbicide
+    banned across the European Union and still widely used elsewhere, is
+    associated with elevated Parkinson's risk across many studies.
+    **Trichloroethylene**, an industrial degreasing solvent and one of the
+    commonest groundwater contaminants, is associated with substantially raised
+    risk — a study of a heavily contaminated military base found around a seventy
+    percent excess. **Rotenone** and other pesticides recur in agricultural
+    cohorts. And the field's founding demonstration is chemical: **MPTP**, a
+    contaminant in an illicitly synthesised opioid, produced irreversible
+    parkinsonism in young people within days in 1982, and gave the field its animal
+    model.
+    So the mechanism by which a chemical destroys these neurons is not speculative
+    — it has been demonstrated in humans by accident. **What follows is regulatory
+    and it belongs to environmental protection, agriculture and occupational
+    health**, none of which is in `who_could` (gaps.md #87, #53).
+    **And the two most replicated protective associations are unexplained and
+    unusable.** Smoking and caffeine both lower risk, consistently, across decades
+    and populations. Nicotine trials for Parkinson's have failed; caffeine trials
+    have failed. **Something real is being detected and nobody can convert it into
+    an intervention**, which is a specific and unusual kind of open question.
+  ongoing: >
+    `high`, and it is a decision load rather than a pill count — gaps.md #171's
+    fourth kind arriving in a neurological record.
+    Mid-stage Parkinson's means levodopa four to six times a day on a schedule that
+    must be kept to the half hour, timed **away from protein-containing meals**
+    because dietary amino acids compete for the same transporter. Patients titrate
+    against wearing-off and dyskinesia continuously, adjusting for sleep, activity
+    and constipation, which itself slows absorption. Deep brain stimulation adds
+    programming visits and battery replacement.
+    Around all of it: physiotherapy, speech and swallowing therapy, falls
+    management, and eventually the full apparatus of dependency.
+    **And the carer burden is large, long and unrecorded** (gaps.md #169) —
+    typically a spouse of similar age, for the ten to twenty years between
+    diagnosis and death.
+
+holes:
+  - >
+    **No `residue` block, because there is no cure and therefore no "afterwards".**
+    Everything the disease takes it keeps, and the register files that under the
+    disease continuing rather than under residue — the same shape as `alzheimers`.
+  - >
+    **`caught_in_time: 0.05` will be misread and the file says so.** It is near
+    zero because no disease-modifying intervention exists, not because the
+    prodromal population cannot be identified — it can, better than in almost any
+    other record here (gaps.md #185).
+  - >
+    The strata are stages of one course rather than a partition of people, so the
+    fractions are a snapshot of a cohort in motion (gaps.md #111) — the third
+    record running with this problem after `multiple-sclerosis` and `hepatitis-b`.
+  - >
+    **Diagnostic accuracy of around 80-90% means roughly one record in eight
+    describes somebody with a different disease** — multiple system atrophy,
+    progressive supranuclear palsy, dementia with Lewy bodies — and those have
+    worse prognoses and no levodopa response. Every scalar here is contaminated by
+    that and the schema has no way to carry diagnostic uncertainty into a rating.
+  - >
+    **Dementia affects the majority of people who live long enough with Parkinson's
+    and is barely represented here.** It is arguably the outcome patients and
+    families fear most, it is untreatable, and it sits between this record and
+    `alzheimers` with no field connecting them.
+  - >
+    Every scalar is `recall` or `reasoning`.
+
+blockers:
+  - kind: knowledge
+    blocks: fifty years of levodopa and nothing that slows the disease
+    obstacles: []
+    what: >
+      **EVERY NEUROPROTECTION TRIAL IN PARKINSON'S DISEASE HAS FAILED, AND THE
+      MOST RECENT FAILURE WAS THE ONE THE FIELD WAS COUNTING ON.**
+      Selegiline, coenzyme Q10, creatine, isradipine, inosine — all negative. A
+      large phase 3 trial of **exenatide**, following a promising phase 2 that had
+      made GLP-1 repurposing the leading hope for several years, **read out
+      negative.** Antibodies against alpha-synuclein missed their primary
+      endpoints.
+      The underlying hole is that **nobody knows why the neurons die.**
+      Mitochondrial dysfunction, lysosomal and autophagic failure, oxidative
+      stress, aggregation and neuroinflammation are all present and none is
+      established as the driver, so every trial has been a bet on one of them.
+      **The most credible current route is genetic and it narrows the disease**:
+      LRRK2 kinase inhibitors and GBA1-directed therapies target defined subgroups
+      — perhaps a tenth of patients between them — on the reasoning that a
+      mechanism you can name beats a mechanism you cannot. If they work, "Parkinson's
+      disease" stops being one entity, which is gaps.md #39's shape arriving in a
+      neurodegenerative record.
+      `scale: null`.
+    who_could: [academic, sponsor, manufacturer, philanthropy, patient-org]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: evidence-incomplete
+    blocks: being able to measure whether anything slowed the disease
+    obstacles: []
+    what: >
+      **YOU CANNOT SEE NEUROPROTECTION THROUGH LEVODOPA, AND THAT HAS CRIPPLED
+      FIFTY YEARS OF TRIALS.**
+      The problem is specific and methodological. Every clinical rating scale in
+      Parkinson's measures motor function, and levodopa improves motor function
+      enormously. A drug that genuinely slowed neuronal loss would show up as a
+      small difference in a score dominated by a symptomatic effect that varies by
+      the hour, in a disease that progresses over decades, in patients who cannot
+      ethically be kept off levodopa. Washout designs, delayed-start designs and
+      futility designs have all been used and all have been argued about
+      afterwards.
+      **What is missing is a validated biomarker of progression** — something that
+      tracks neuronal loss directly and is independent of symptomatic treatment.
+      Dopamine transporter imaging is confounded by the drugs themselves. **Serum
+      neurofilament light chain** and the new **alpha-synuclein seed assay** are the
+      first serious candidates, and neither is qualified as a trial endpoint.
+      This is not a knowledge blocker in the usual sense — it is an
+      instrumentation one, and it means the field cannot tell a failed drug from a
+      failed measurement. **Several of the negative trials above may have been
+      both.**
+    who_could: [academic, sponsor, regulator, philanthropy, manufacturer]
+    scale: 1.5e9
+    standing: documented
+    src: recall
+
+  - kind: policy
+    blocks: the chemicals, which are regulated by somebody else
+    obstacles: []
+    what: >
+      **A CHEMICAL CAUSED IRREVERSIBLE PARKINSONISM IN HUMANS WITHIN DAYS IN 1982,
+      WHICH SETTLES THE QUESTION OF WHETHER CHEMICALS CAN DO THIS.**
+      MPTP, a contaminant in an illicitly synthesised opioid, destroyed
+      dopaminergic neurons in young people and gave the field its animal model. The
+      exposures that matter at population scale are less dramatic and better
+      studied than the response to them suggests: **paraquat**, a herbicide banned
+      across the European Union and still in wide use elsewhere, and
+      **trichloroethylene**, an industrial solvent and one of the most common
+      groundwater contaminants, associated in one large study of a contaminated
+      military base with roughly a seventy percent excess risk. Rotenone and
+      organochlorines recur in agricultural cohorts.
+      **Age-standardised prevalence is rising, which means this is not only
+      ageing**, and chemical exposure is the leading candidate for the remainder.
+      That would make Parkinson's the largest substantially preventable
+      neurodegenerative disease, and **essentially nobody treats it as
+      preventable.**
+      The levers are pesticide registration, solvent regulation, groundwater
+      remediation and occupational exposure limits. They belong to environmental
+      protection agencies, agriculture ministries and labour inspectorates —
+      **none of which is in `who_could`** — and the benefit would fall on a disease
+      that appears thirty years after the exposure, which is the worst possible
+      shape for any political timetable.
+    who_could: [government, legislator, regulator, academic, nonprofit]
+    scale: 5.0e9
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    blocks: one in eight diagnoses being a different disease, and a new test with nothing behind it
+    obstacles: []
+    what: >
+      **THE DIAGNOSIS IS A CLINICIAN WATCHING SOMEBODY MOVE, AND THE ERROR RATE IS
+      AROUND ONE IN TEN TO ONE IN FIVE.** Multiple system atrophy, progressive
+      supranuclear palsy and dementia with Lewy bodies present similarly early,
+      progress faster, and respond poorly or not at all to levodopa. Patients spend
+      years on the wrong prognosis.
+      **The alpha-synuclein seed amplification assay changed this in 2023** — high
+      sensitivity and specificity on cerebrospinal fluid, and positive in prodromal
+      individuals years before motor signs. Skin biopsy versions are emerging and
+      would remove the lumbar puncture.
+      **And that creates the problem this record is the worst example of.** In 2024
+      two working groups proposed defining Parkinson's biologically, by synuclein
+      positivity. A test that identifies people years early, in a disease with **no
+      disease-modifying therapy of any kind**, tells somebody they will develop a
+      progressive incurable illness and offers them nothing.
+      `alzheimers` raised this as a risk — a diagnostic advancing ahead of a
+      therapeutic. **Here it has arrived**, and the honest reading is that the assay
+      is enormously valuable as a *trial* tool, for enriching neuroprotection
+      studies with people who still have neurons to protect, and is not yet
+      something to offer a well person (gaps.md #170).
+    who_could: [academic, manufacturer, regulator, health-system, sponsor]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: a neurologist, and the therapies that need a hospital
+    obstacles: []
+    what: >
+      Levodopa is generic, costs pennies, and is on the World Health Organization's
+      essential medicines list. **The binding constraint is somebody able to make
+      the diagnosis and titrate the treatment**, and much of the world has a
+      handful of neurologists per million people.
+      In under-served settings the consequences are specific: the diagnosis is
+      missed or delayed for years; levodopa is started too late or dosed
+      unhelpfully; and the mid-stage complications that require expertise —
+      wearing-off, dyskinesia, freezing — are managed badly or not at all.
+      **The advanced therapies are a further tier and are effectively unavailable
+      outside wealthy systems**: deep brain stimulation needs a functional
+      neurosurgery service, a programming clinic and battery replacements for life;
+      focused ultrasound needs an MRI-integrated device; infusion therapies need
+      supply chains and trained nurses.
+      This is gaps.md #154's shape once more, and gaps.md #174's alongside it —
+      **the register's `access` figure records that people get levodopa and cannot
+      record that they are not getting the right dose of it at the right time**,
+      which in this disease is most of the benefit.
+    who_could: [health-system, government, payer, academic, nonprofit]
+    scale: 4.0e9
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0088
+  rated: 2026-08-25
+  by: [claude, jeremy]

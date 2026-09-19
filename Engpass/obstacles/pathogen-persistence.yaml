@@ -1,0 +1,61 @@
+slug: pathogen-persistence
+id: FND-O-0003
+name: Why does the pathogen survive treatment?
+kind: mechanism
+resolution: open
+
+question: >
+  A treatment works, the patient recovers, and the organism is still there.
+  HIV integrates into long-lived cells and waits; stop antiretroviral therapy
+  and it returns within weeks. Ivermectin clears microfilariae and the adult
+  *Onchocerca* worms live on for a decade. Albendazole holds a hydatid cyst
+  without killing it. Filoviruses persist in the eye and the testis of recovered
+  survivors for months to years — and transmission from those survivors has
+  restarted outbreaks.
+  **What makes an organism survivable-through, and what would clear it?**
+  The forms differ — latency in a host genome, an adult stage the drug does not
+  reach, a physical sanctuary the immune system does not police — and the
+  clinical consequence is identical: **treatment that must be continued
+  indefinitely, or a cure that is not one.**
+
+what_it_unblocks: >
+  It is the difference between Nordstern's `suppressive` and `curative` rungs,
+  and that rung is the whole reason the register exists.
+  HIV is the case with the largest population attached: an answer would end
+  lifelong therapy for tens of millions and remove the adherence, cost and
+  supply dependency that comes with it. For onchocerciasis and lymphatic
+  filariasis a macrofilaricide would end mass drug administration programmes
+  that currently must run annually for the fifteen-year lifespan of a worm —
+  Nordstern gaps.md #57's maintenance problem, dissolved rather than funded.
+  For the filoviruses it would remove something the schema cannot even record: a
+  cured survivor who remains a transmission risk to other people (gaps.md #100).
+  **It converts recurring cost into finished work**, which is the shape of
+  progress this project is trying to measure.
+
+why_hard: >
+  Because in most of these the organism is doing something the host cannot
+  distinguish from itself, or has reached somewhere the host deliberately does
+  not defend.
+  HIV's reservoir is integrated provirus in resting memory cells that are
+  transcriptionally silent — invisible to immunity and to any drug that targets
+  replication, and indistinguishable from the cells the patient needs. Attempts
+  to force it out of latency and kill it have not worked at scale.
+  Filoviral persistence sits in immune-privileged sites — the eye and the testis
+  are immunologically restrained on purpose, because inflammation there is worse
+  than infection.
+  Adult filarial worms are large, long-lived multicellular animals living inside
+  a human, and killing them fast enough to matter risks killing the patient with
+  the inflammatory response to a dying worm — which is why the *Loa loa*
+  co-infection problem exists.
+
+holes:
+  - Whether viral latency and macroparasite survival are usefully the same
+    question is genuinely doubtful. They share a consequence and possibly nothing
+    else, and this entry may need splitting once more records cite it.
+  - Bacterial persistence and tolerance — the reason tuberculosis needs six
+    months rather than six days — belongs here and is not yet cited by the
+    tuberculosis record, which files its knowledge blocker as a vaccine.
+
+asserted:
+  date: 2026-08-23
+  by: [claude, jeremy]

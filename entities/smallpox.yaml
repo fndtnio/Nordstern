@@ -1,0 +1,409 @@
+slug: smallpox
+id: FND-D-0048
+name: smallpox
+also: [variola, variola major, variola minor, alastrim]
+mondo: MONDO:0004651
+kind: disease
+residual: false
+contested: false
+
+# THE ONLY HUMAN DISEASE EVER ERADICATED, AND gaps.md #56 ASKED FOR IT BY NAME.
+#
+# That gap said: smallpox is the control case the corpus is missing — the one
+# entity where the answer is *nothing happens, it is over* — and until something
+# here can distinguish that from sleeping sickness, the register cannot tell a
+# finished job from a job being held finished by continuous effort.
+#
+# **The control case does not hold, and that is the finding.**
+#
+# Live variola sits in two freezers, in Atlanta and in Koltsovo, and its
+# destruction has been debated and deferred since 1986. The genome is published.
+# Orthopoxviruses have been synthesised de novo from mail-order DNA. And the
+# eradication itself ended routine vaccination, which left a growing population
+# with no orthopoxvirus immunity — which is part of why mpox is now doing what it
+# is doing.
+#
+# So smallpox is not "over". It is **held over**, by a stockpile, a treaty, an
+# arms-control problem, and a standing decision not to rebuild it. That is
+# different from sleeping sickness in kind, and not in the way #56 hoped.
+#
+# TWO THINGS IT BREAKS:
+#
+# 1. `toll` is what the CURE costs, and the smallpox vaccine's toll is why
+#    vaccination stopped. There is no field for what a PREVENTIVE intervention
+#    costs, and for this disease that number decided the end of the programme.
+#    gaps.md #105.
+#
+# 2. **Winning removed capability.** No clinician alive has seen a case, the
+#    population immunity is gone, and the expertise dispersed. The register
+#    treats capability as a property of the disease; it is a stock, and it
+#    depletes when unused. gaps.md #106.
+#
+# AND IT CORRECTS TWO ERRORS IN gaps.md ITSELF — see the `moved` block below.
+
+burden:
+  prevalence:
+    value: 1.0e7
+    units: >
+      survivors alive worldwide, order of magnitude only — people infected before
+      1977 who are now in their fifties or older. Almost all of them are scarred
+      and some are blind. ZERO active cases; this is the residue population and
+      nothing else
+    src: reasoning
+  deaths:
+    value: 0.0
+    units: >
+      deaths/year — and it is the only zero in this register that means what it
+      says. Not "unknown", not "too small to count". None, since 1978
+    src: recall
+  note: >
+    **AN ESTIMATED 300 MILLION PEOPLE DIED OF SMALLPOX IN THE TWENTIETH CENTURY
+    ALONE** — more than every war of that century combined, and more than the
+    total of every other record in this register by a margin nothing comes close
+    to. Over recorded history the number is unknowable and vastly larger.
+    Case fatality was about 30% for variola major and about 1% for variola minor.
+    Survivors were scarred for life, and smallpox was among the leading causes of
+    blindness in the world.
+    Then: the last case of variola major, Rahima Banu, Bangladesh, October 1975.
+    The last naturally occurring case of any kind, Ali Maow Maalin, Somalia,
+    October 1977. Declared eradicated by the World Health Assembly on 8 May 1980.
+    **THE LAST PERSON TO DIE OF SMALLPOX WAS KILLED BY A LABORATORY.** Janet
+    Parker, a medical photographer at the University of Birmingham, in 1978, from
+    an escape at the medical school below her darkroom. The head of the
+    laboratory took his own life. The disease had already effectively ceased to
+    exist in nature; the containment failed anyway, and that is the whole
+    argument about the remaining stocks in one paragraph.
+
+axes:
+  mechanism: established
+  intervention: symptomatic
+  prevention: eradicated
+  ongoing: none
+  efficacy:
+    value: 0.85
+    units: >
+      fraction-of-patients (projected survival if a case occurred today with
+      modern intensive care and tecovirimat) — A PROJECTION ABOUT A HYPOTHETICAL
+      PATIENT, against roughly 0.7 historically with nothing. No human has had
+      this disease since 1978 and nothing here has ever been observed
+    src: reasoning
+  access:
+    value: 0.30
+    units: >
+      fraction-of-patients (who could reach stockpiled antivirals and vaccine if
+      a case occurred) — stockpiles are held by wealthy states, and the
+      counterfactual patient is far more likely to be somewhere else
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: good
+  predictive: n/a
+  witness: >
+    DIAGNOSTIC is `objective` today — PCR is definitive and orthopoxvirus assays
+    exist. **Historically it was `clinical`, and that was the reason eradication
+    was possible at all.** The rash was unmistakable, appeared in a single crop
+    rather than in waves, was centrifugal, and involved palms and soles. A
+    village health worker with a laminated recognition card could make the
+    diagnosis, which is what allowed surveillance-containment to work in places
+    with no laboratory within several days' travel.
+    **AND THAT CAPABILITY IS GONE.** No clinician now practising has seen a case.
+    The differential for a febrile vesicular rash is chickenpox and now mpox, and
+    a returning smallpox would be recognised late by people who had to be
+    convinced it was possible. The test would work; nobody would order it. See
+    gaps.md #106.
+    PROGNOSTIC is `good`, and unusually so for this register — the form of the
+    rash predicted the outcome. Ordinary-type disease killed roughly a third;
+    modified-type, in the previously vaccinated, was mild; flat and haemorrhagic
+    types were very nearly always fatal, and were recognisable at the bedside.
+    Good prognostic measurement, and nothing to do with it, which is the
+    Huntington's shape.
+    PREDICTIVE is `n/a` on those same Huntington's grounds: **nothing
+    course-altering has ever been demonstrated in a human with smallpox**, so
+    there is no selection question. Tecovirimat is licensed and has never treated
+    a case of the disease it is for.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    There is no treatment and there are no patients, so the field is nearly
+    empty — and **the important toll in this record is not treatment's, which is
+    why the schema cannot see it.**
+    THE VACCINE HAD A REAL TOLL AND IT KILLED PEOPLE. The eradication-era
+    vaccine, and the replication-competent ACAM2000 still stockpiled today, cause
+    progressive vaccinia in the immunosuppressed, eczema vaccinatum in the
+    atopic, post-vaccinial encephalitis, and myocarditis and pericarditis. At
+    population scale that is deaths per million, every year, in healthy people
+    protected against a disease they would probably never have met.
+    **THAT NUMBER IS WHY ROUTINE VACCINATION STOPPED.** Once incidence fell far
+    enough, the vaccine became more dangerous than the disease — a crossing
+    point, computable in principle, and the thing that actually ends an
+    eradication programme. The register holds one of the two quantities and not
+    the other. See gaps.md #105.
+    The modern non-replicating vaccine is far safer and would change that
+    calculation if it were ever needed again.
+  incidence:
+    value: 0.0
+    units: >
+      fraction-of-treated (permanent harm attributable to treatment) — zero
+      because there is no treatment and no patients. The vaccine's toll belongs
+      to `prevention` and there is no field for it
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    Roughly ten million people are alive who had smallpox, and most of them carry
+    it on their faces.
+    **PERMANENT PITTED SCARRING** — the pockmarks — in the large majority of
+    survivors of variola major, concentrated on the face because the rash was
+    centrifugal. For centuries this was among the most common visible
+    disfigurements in the world, and a smooth complexion was remarkable enough to
+    be worth remarking on.
+    **BLINDNESS**, in a substantial minority, from corneal ulceration and
+    scarring. Smallpox was among the leading causes of blindness worldwide before
+    eradication, which is a fact that has largely disappeared from view along
+    with the disease.
+    Limb deformity from osteomyelitis in a smaller fraction, mostly in children.
+    This is the register's clearest instance of `disease-residue`: the disease is
+    gone, was never cured in these people, and what it did is permanent. And it
+    is the only record where **the residue will outlive the disease by
+    decades** — the entity has been eradicated and its consequences are still
+    walking around.
+  incidence:
+    value: 0.70
+    units: >
+      fraction-of-survivors (permanent scarring, blindness or deformity) — a
+      reasoned estimate; facial scarring was near-universal after variola major
+      and blindness affected a minority
+    src: reasoning
+
+window:
+  what: >
+    **POST-EXPOSURE VACCINATION WITHIN ABOUT FOUR DAYS PREVENTED OR SUBSTANTIALLY
+    MODIFIED THE DISEASE**, because the vaccine's immune response outran a
+    twelve-day incubation.
+    That single fact is what made eradication possible, and it is worth stating
+    as the strategy rather than as a footnote. Mass vaccination was never going
+    to reach everyone in India or Nigeria. **Surveillance-containment** did not
+    try: find every case, isolate it, and vaccinate the ring of contacts and
+    contacts-of-contacts inside the window. The disease was chased rather than
+    blanketed.
+    The window and the diagnosis worked together and neither would have sufficed
+    alone. The rash was unmistakable, so cases could be found by non-specialists;
+    the window was four days, so finding them was enough. Ebola's ring
+    vaccination is the direct descendant of this.
+    `caught_in_time` below is a historical figure describing the endgame of a
+    programme that ended in 1977. For any case occurring now it would be near
+    zero, because nobody would recognise the index case in time (gaps.md #106).
+  closes_on: >
+    the immune response to post-exposure vaccination failing to outrun an
+    incubation period of about twelve days — roughly four days after exposure
+  caught_in_time:
+    value: 0.80
+    units: >
+      fraction-of-contacts (vaccinated inside the window during the
+      surveillance-containment era) — a reasoned historical estimate, and the
+      reason the strategy worked. It would not be achievable today
+    src: reasoning
+
+moved:
+  - date: 1796
+    axis: prevention
+    from: none
+    to: prophylaxis
+    why: >
+      Jenner demonstrated that cowpox inoculation protected against smallpox,
+      giving the world its first vaccine and the word for all the others.
+      Variolation — deliberate infection with material from a mild case — had
+      been practised in Asia and Africa long before, and carried a case fatality
+      of a few percent, which was an appalling price and still better than the
+      disease.
+      **THE OLDEST DATED ENTRY IN THIS REGISTER BY A HUNDRED AND SIXTY-EIGHT
+      YEARS.** It is included because this is the one disease whose entire arc is
+      documented, and because gaps.md #91 claimed the register could not record a
+      trajectory that predates it. It could. See the correction below.
+
+  - date: 1967
+    axis: access
+    from: 0.3
+    to: 0.8
+    why: >
+      The Intensified Eradication Programme, and it succeeded on two changes
+      neither of which was a discovery about the virus.
+      The **bifurcated needle** held a fixed dose in the fork by capillary
+      action, needed a fraction of the vaccine per person, and could be used by
+      anyone after a few minutes of instruction.
+      **Surveillance-containment** replaced the assumption that everyone had to
+      be vaccinated. Find every case, ring-vaccinate around it, and let the
+      window do the rest. It worked in Nigeria when vaccine supply failed and the
+      alternative was to do nothing, and it became the strategy everywhere.
+      A delivery change, not a scientific one, and it is the largest single
+      access improvement anywhere in this register.
+
+  - date: 1980
+    axis: prevention
+    from: prophylaxis
+    to: eradicated
+    why: >
+      Declared eradicated by the World Health Assembly on 8 May 1980, following
+      the last naturally occurring case in Somalia in October 1977 and two years
+      of active searching for another.
+      **THE ONLY TIME THIS AXIS HAS EVER REACHED ITS TOP RUNG.** It is the reason
+      the value exists in the enum at all, and after forty-seven records it has
+      exactly one occupant.
+
+witness:
+  mechanism: >
+    `established`, and it was established well enough to act on long before
+    virology existed.
+    Variola virus is an orthopoxvirus with a large DNA genome, transmitted by
+    respiratory droplet and by contact with the rash and its scabs. It has
+    **no animal reservoir**, no chronic carriage, and no asymptomatic
+    transmission: a person is infectious when they have a rash, and the rash is
+    unmistakable. Immunity after infection or vaccination is long-lasting.
+    **THAT LIST IS WHY IT WAS ERADICABLE**, and dracunculiasis' record (gaps.md
+    #85) is the warning against reading it as a checklist — Guinea worm scored
+    perfectly on the same criteria until dogs turned up infected in Chad.
+    Smallpox's advantage was that every item was true and stayed true.
+    THE NAMED HOLE IS NOW A SECURITY QUESTION RATHER THAN A BIOLOGICAL ONE. Why
+    variola was so much more lethal than its orthopoxvirus relatives is
+    incompletely understood, and the answer is in a genome that is published and
+    a virus that exists in two freezers.
+  intervention: >
+    `symptomatic`, and the rating is uncomfortable and correct.
+    **NOTHING HAS EVER BEEN DEMONSTRATED TO ALTER THE COURSE OF SMALLPOX IN A
+    HUMAN**, because the disease ended before antiviral medicine began. Treatment
+    would be supportive: fluids, skin care, management of secondary bacterial
+    infection.
+    Tecovirimat is licensed for smallpox and was approved on **animal efficacy
+    data with human safety data** — precisely the pathway Marburg's record (gaps.md
+    #102) identified as the way out for a disease that can never run an efficacy
+    trial. It has never treated a case of smallpox and never will unless
+    something goes badly wrong.
+    **AND ITS ONE RANDOMISED HUMAN TEST IN A RELATED ORTHOPOXVIRUS DISEASE DID
+    NOT SHOW THE EXPECTED BENEFIT.** A trial of tecovirimat in clade I mpox in the
+    Democratic Republic of the Congo reported no reduction in time to lesion
+    resolution, with low mortality in both arms under good supportive care.
+    That result is about mpox and not about smallpox, and it is still the closest
+    thing to evidence anyone has. **It should temper #102's optimism about the
+    animal-efficacy route**: the pathway lets a product be licensed, and it does
+    not tell you the product works.
+    **SO THIS RECORD LANDS IN `engineering problem` WHILE `capability` READS
+    `curable`** — the eradication special case in `capability()` is not mirrored
+    in `quadrant()`. Two derivations disagreeing about the same record; see
+    gaps.md #66's fifth instance, below.
+  prevention: >
+    `eradicated`. The only occupant of the top rung, and the register's entire
+    reason for having it.
+    What holds it there is not nothing, which is the finding gaps.md #56 asked
+    for and did not expect. **Live variola is retained at two WHO-designated
+    repositories**, in Atlanta and in Koltsovo. Destruction has been on the World
+    Health Assembly's agenda since 1986 and has been deferred every time, on
+    arguments about needing the virus to develop countermeasures against its
+    return — which is close to circular.
+    Beyond the declared stocks: the Soviet Union weaponised smallpox at scale,
+    undeclared material cannot be ruled out, **the genome is published**, and
+    orthopoxviruses have been synthesised de novo from commercially ordered DNA
+    fragments. Eradication was irreversible in 1980 in a way it is no longer.
+    So the axis says `eradicated` and means *nobody has this disease and several
+    institutions could produce it*. Vaccine stockpiles are maintained against
+    exactly that, which makes this the fifth record in a row where gaps.md #57
+    applies: paying continuously for a capability whose value is that it is never
+    used.
+  ongoing: >
+    `none`, and it is the only unqualified `none` in the register that describes
+    a whole population rather than a lucky subset. Nobody takes anything. Nobody
+    is vaccinated except laboratory workers and some military and response
+    personnel. Nobody is screened.
+    The cost of smallpox today is entirely institutional: two secure freezers,
+    a stockpile, a surveillance obligation, and a recurring diplomatic argument.
+
+holes:
+  - The survivor count is an order-of-magnitude guess. Nobody maintains a
+    register of people who had smallpox, and the last of them were infected
+    nearly fifty years ago.
+  - `efficacy: 0.85` describes a patient who does not exist and has never
+    existed. It is a projection, it has never been tested, and the one adjacent
+    human trial of the licensed antiviral was disappointing.
+  - The mpox link — that ending routine vaccination left an immunity gap
+    orthopoxviruses are now exploiting — is widely argued and hard to quantify
+    against the other changes of the last fifty years. It is stated here as a
+    contributing cause and not a sole one. Mpox is not in this register and
+    should be.
+  - Whether the remaining live stocks should be destroyed is a live policy
+    question this record deliberately does not take a side on, beyond observing
+    that the last death from this disease was caused by a laboratory.
+  - The vaccine-toll figures that decided the end of routine vaccination are not
+    given numerically here, and they are the numbers that would matter most for
+    gaps.md #105.
+
+blockers:
+  - kind: policy
+    blocks: making eradication irreversible
+    what: >
+      **THE ONLY BLOCKER IN THIS REGISTER THAT IS ABOUT KEEPING A DISEASE GONE
+      RATHER THAN GETTING RID OF IT.**
+      Live variola is held at two declared repositories. Destroying them has been
+      debated at the World Health Assembly since 1986 and deferred repeatedly,
+      largely on the argument that the virus is needed to develop countermeasures
+      against its return — an argument whose premise is the thing it justifies.
+      Meanwhile the destruction question has been overtaken. The genome is
+      published; orthopoxviruses have been assembled de novo from ordered DNA;
+      and the Soviet weaponisation programme means undeclared stocks cannot be
+      excluded. **Destroying the declared vials would be a real act and would no
+      longer make the disease unrecoverable.**
+      What this actually is, is arms control, and no field in this register can
+      say so. `scale` is recorded as the cost of maintaining the current
+      arrangement rather than of resolving it, because resolving it is not a
+      purchasing decision.
+    who_could: [government, legislator, regulator, academic, nonprofit]
+    scale: 1.0e8
+    standing: documented
+    src: recall
+
+  - kind: manufacturing
+    blocks: enough safe vaccine to matter, fast enough to matter
+    what: >
+      Stockpiles exist and are held largely by wealthy states. Two problems.
+      The older replication-competent vaccine has a real toll — myocarditis,
+      progressive vaccinia, eczema vaccinatum — which is what makes mass use
+      unthinkable outside a genuine emergency. The modern non-replicating vaccine
+      is far safer and there is much less of it.
+      And the surge problem is H5N1's problem, with an even worse ratio: **the
+      global population has essentially no orthopoxvirus immunity**, so a
+      re-introduction would require vaccine at a scale nobody holds, delivered
+      faster than a twelve-day incubation propagates.
+      Fourth use of the `manufacturing` kind in forty-eight records.
+    who_could: [manufacturer, government, philanthropy, sponsor]
+    scale: 5.0e9
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    blocks: anyone recognising the first case
+    what: >
+      **NO DOCTOR NOW PRACTISING HAS SEEN SMALLPOX.**
+      The clinical diagnosis that made eradication possible — an unmistakable
+      centrifugal rash, in a single crop, on palms and soles — was a skill widely
+      distributed among health workers with recognition cards. That skill no
+      longer exists anywhere, and the differential a modern clinician would
+      reach for is chickenpox, or since 2022, mpox.
+      PCR would confirm it instantly and somebody has to order it, which requires
+      believing a disease eradicated in 1980 is in front of them. **The index
+      case would be recognised late, by people who had to be persuaded**, and
+      with an unimmunised population and a twelve-day incubation, late is the
+      only thing that matters.
+      This is the cost of winning, and it is recorded here as a blocker because
+      there is nowhere else to put it. See gaps.md #106.
+    who_could: [health-system, government, academic, nonprofit]
+    scale: 2.0e8
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0048
+  rated: 2026-08-23
+  by: [claude, jeremy]

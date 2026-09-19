@@ -1,0 +1,351 @@
+slug: acute-bronchitis
+id: FND-D-0113
+name: acute bronchitis
+also: [chest cold, acute tracheobronchitis, acute cough illness, bronchitis]
+kind: disease
+mondo: MONDO:0003781
+residual: false
+contested: false
+
+# THE RECORD WHERE THE CORRECT TREATMENT IS NOTHING, AND MEDICINE DOES NOT DO IT.
+#
+# 1. IT DERIVES `unsolved` AND EVERYBODY RECOVERS. `intervention` is
+#    `symptomatic` because that is literally what treatment achieves — nothing
+#    shortens this illness — so `capability` derives `unsolved`, filing acute
+#    bronchitis beside depression and ME/CFS. **That reading is absurd as English
+#    and correct under the schema**, and it is the purest instance of the hole
+#    gaps.md #225 opened: the ladder describes what TREATMENT achieves and has no
+#    rung for *resolves on its own*. The rating is left as it falls rather than
+#    fudged, because a corpus is supposed to break the schema in public.
+#
+# 2. THE HARM IS ENTIRELY IATROGENIC AND MOSTLY LANDS ON OTHER PEOPLE. Roughly
+#    nine in ten cases are viral; antibiotics shorten cough by well under a day
+#    and reliably cause adverse effects. **Prescribing rates have sat near
+#    70-80% for four decades against a guideline target close to zero.** The
+#    cost to the individual patient is small, which is why `toll` reads `minor`
+#    and no derived flag fires. The cost in aggregate is one of the largest
+#    single sources of inappropriate antibiotic use in the world, and it is paid
+#    by whoever gets the resistant infection later.
+#
+# 3. AND MONDO HAS NO HUMAN TERM FOR IT. `bronchitis` (used here) and `chronic
+#    bronchitis` exist; **`acute bronchitis, non-human animal` exists**; the human
+#    acute entity does not. gaps.md #227 found the same hole three times in
+#    mycology and assumed it was a mycology problem. It is not.
+
+burden:
+  incidence:
+    value: 3.0e8
+    units: >
+      estimated episodes/year worldwide — an order of magnitude rather than a
+      count. **Acute bronchitis is among the commonest reasons a human being
+      consults a doctor at all**, accounting for something like ten million
+      ambulatory visits a year in the United States alone, and most episodes
+      never reach a clinician
+    src: recall
+  deaths:
+    value: 0.0
+    units: >
+      deaths/year — **and this is the first genuinely clean zero in the
+      register.** The six kinds catalogued in gaps.md #182 and #211 are
+      attribution habits and modelling decisions; this one is the disease. Acute
+      bronchitis in an immunocompetent person does not kill. Where a frail or
+      elderly patient deteriorates, the illness has become pneumonia and is
+      counted there
+    src: reasoning
+  note: >
+    **The burden of this record is not in any of these fields.** It is roughly
+    three hundred million episodes, a large fraction of them medicated with an
+    antibiotic that cannot work, and the downstream resistance that follows —
+    none of which the schema has a place for. `deaths: 0`, `ylds` negligible, and
+    it is plausibly among the most consequential entries here.
+
+axes:
+  mechanism: established
+  intervention: symptomatic
+  prevention: risk-reduction
+  ongoing: none
+  efficacy:
+    value: 0.30
+    units: >
+      fraction-of-patients (obtaining meaningful symptomatic relief from any
+      available treatment) — **and there is nothing behind this number.**
+      Antitussives, beta-agonists, honey and mucolytics have weak or absent
+      evidence in acute bronchitis; the figure is close to what placebo achieves
+      in a self-limiting illness, and is recorded low deliberately because
+      rating it higher would credit medicine with the natural history
+    src: reasoning
+  access:
+    value: 0.95
+    units: >
+      fraction-of-patients (able to obtain what is recommended) — **near-total,
+      and it is the wrong question.** What is recommended is reassurance, time
+      and symptomatic relief, all of which are universally available. This
+      record is the register's clearest case of an `access` figure that is high
+      because there is nothing to deliver
+    src: reasoning
+
+measurement:
+  diagnostic: clinical
+  prognostic: good
+  predictive: none
+  witness: >
+    **DIAGNOSTIC is `clinical` and there is no test, which is the proximate
+    cause of the whole problem.** Acute bronchitis is a cough illness with no
+    consolidation, diagnosed by history and examination, and **there is no
+    bedside way to separate the nine in ten that are viral from the minority
+    that might not be.** The clinician facing a coughing patient with purulent
+    sputum — which is neutrophil debris and predicts bacterial infection poorly —
+    has no instrument that answers the only question that matters.
+    Point-of-care C-reactive protein and procalcitonin do help, and reduce
+    prescribing without harming patients in trials. **They are used routinely in
+    a few European systems and almost nowhere else**, which makes this a
+    diagnostic gap with a purchasable answer already sitting on a shelf.
+    PROGNOSTIC is `good`, and unusually it is good in the direction that should
+    make treatment unnecessary: the illness resolves in two to three weeks in
+    essentially everyone, and cough persisting for weeks is the expected course
+    rather than a sign of failure. **Patients are rarely told the second half of
+    that sentence**, and the mismatch between the expected duration and the
+    expected duration *as understood by the patient* is a documented driver of
+    re-consultation and of pressure to prescribe.
+    PREDICTIVE is `none`. Nobody can identify the patient who would benefit from
+    an antibiotic, because on the best evidence that patient is rare enough that
+    the trials cannot find them. **The register derives futile-treatment risk
+    from a `none` here and it does not fire, because the toll is rated `minor` —
+    see `holes`.**
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    **RATED FOR THE MODAL PATIENT AND THE MODAL PATIENT GETS OFF LIGHTLY, WHICH
+    IS EXACTLY WHY THIS PERSISTS.** An unnecessary antibiotic course causes
+    diarrhoea in roughly one patient in ten, plus rash, candidiasis and nausea —
+    transient, unmemorable, and cheap enough individually that no prescriber ever
+    sees a reason to stop.
+    The tail is not trivial and is not rated here because it is rare:
+    *Clostridioides difficile* colitis, which can be severe, recurrent and
+    fatal; anaphylaxis; and **fluoroquinolone-associated tendon rupture and
+    peripheral neuropathy, which are permanent** and which regulators have
+    warned about specifically in the context of self-limiting infections.
+    **The honest rating is `minor` and the honest reading is that `minor` × three
+    hundred million is not minor.** The register has no field for that
+    multiplication and this record should not be inflated to compensate.
+  incidence:
+    value: 0.12
+    units: >
+      fraction-of-treated experiencing an adverse drug effect — the common,
+      transient kind; permanent harm is orders of magnitude rarer and is not
+      what this figure counts
+    src: reasoning
+
+witness:
+  mechanism: >
+    `established`, and it is one of the least mysterious entries in the register.
+    Acute bronchitis is inflammation of the large airways following infection —
+    **rhinovirus, influenza, parainfluenza, RSV, coronaviruses and adenovirus
+    account for the great majority**, with *Mycoplasma pneumoniae*, *Chlamydia
+    pneumoniae* and *Bordetella pertussis* making up a small bacterial minority.
+    The cough outlasts the infection because airway epithelium takes weeks to
+    repair and remains transiently hyperresponsive, which is why the illness
+    feels like it is not getting better long after the virus has gone.
+    **Purulent sputum is the single most consequential misunderstanding in this
+    record.** Green or yellow sputum is neutrophil myeloperoxidase — a marker of
+    inflammation, not of bacteria — and both patients and clinicians read it as
+    the indication for an antibiotic.
+  intervention: >
+    `symptomatic`, and it is the whole finding. **No treatment shortens acute
+    bronchitis.** Antibiotics reduce cough duration by well under a day in
+    meta-analysis, an effect small enough to be within the noise of how the
+    endpoint is measured, and reliably increase adverse effects. Beta-agonists do
+    not help patients without airflow obstruction. Antitussives have weak
+    evidence. Honey is about as well supported as anything else.
+    **The correct management is an explanation, a realistic expectation of how
+    long the cough will last, and safety-netting.** That derives `capability:
+    unsolved`, filing this beside diseases nobody knows what to do about — and
+    the difference is that here everybody knows exactly what to do and does
+    something else.
+  prevention: >
+    `risk-reduction`. Hand hygiene, respiratory etiquette, influenza and
+    COVID-19 vaccination and not smoking each remove some episodes. **There is
+    nothing aimed at acute bronchitis specifically**, because it is a syndrome
+    produced by a dozen unrelated viruses rather than an entity with a cause to
+    vaccinate against.
+  ongoing: >
+    `none`, and it is one of very few records that can say so honestly. The
+    illness ends, completely, in two to three weeks, and leaves nothing. **No
+    residue block, no maintenance therapy, no follow-up** — which makes the
+    contrast with the treatment burden the sharper: a disease with zero ongoing
+    cost, routinely treated with a drug that has one.
+  efficacy: >
+    See the axis. The figure is deliberately low because crediting treatment
+    with the natural history is the specific error this record exists to
+    document.
+  access: >
+    `access` is 0.95 and means nothing. Everything recommended for this illness
+    is free, universal and non-pharmaceutical. **The register's `reach = efficacy
+    × access` construction assumes there is something to reach people with**, and
+    this record shows what it does when there is not: it produces a low number
+    for a benign, self-limiting, universally survivable disease and puts it near
+    the bottom of a delivery chart.
+
+moved:
+  - date: 2001
+    axis: efficacy
+    from: 0.30
+    to: 0.30
+    why: >
+      **RECORDED AS A NON-MOVE, DELIBERATELY.** Guidelines from the CDC and the
+      American College of Physicians stated that antibiotics are not indicated
+      for uncomplicated acute bronchitis, and the position has been restated
+      repeatedly since. **Prescribing rates did not fall.** The register's
+      `moved:` field exists to make a second pass a comparison rather than a
+      fresh opinion, and the comparison here is that four decades of accumulating
+      evidence and explicit guidance changed the axis by nothing at all. A `from`
+      equal to its `to` is unusual and is the point.
+    src: reasoning
+
+holes:
+  - >
+    **`capability: unsolved` for an illness everyone recovers from is the
+    schema's error, not the record's**, and it is left standing on purpose. The
+    intervention ladder describes what treatment achieves and has no rung for
+    *resolves on its own* — gaps.md #225, third bullet, forced by
+    `coccidioidomycosis` and now arriving in its purest form. **This record
+    should be the one that fixes it.**
+  - >
+    **The toll is per-patient and the harm is per-population**, so no derived
+    flag fires. `harm_without_benefit` needs a non-clean toll; `minor` is the
+    honest rating for one patient taking one unnecessary course. **`minor` ×
+    three hundred million episodes is among the largest avoidable harms in the
+    corpus** and the schema cannot multiply. Inflating the severity to make the
+    flag fire would be fitting the instrument to the answer.
+  - >
+    **Most of the harm lands on people who are not the patient.** Resistance
+    selected by an unnecessary course is paid by whoever is infected by the
+    resistant organism later. gaps.md #51 logged this externality for
+    tuberculosis and visceral leishmaniasis, where the residue *was* the
+    transmission reservoir; here the externality is not the disease at all but
+    the treatment. **The register still has no field for a harm to third
+    parties.**
+  - >
+    **There is no blocker kind for a clinician knowingly doing the wrong thing.**
+    `adherence` is used throughout the corpus for patients — taking the tablet,
+    accepting the test. The blocker here is prescriber behaviour under time
+    pressure, diagnostic uncertainty and patient expectation, and it is filed as
+    `policy` because nothing fits better.
+  - >
+    MONDO has `bronchitis` and `chronic bronchitis` and **`acute bronchitis,
+    non-human animal`** — and no human acute term, so this record points at the
+    parent. gaps.md #227 found three such holes in mycology and framed it as a
+    mycology problem; **this is a common cold with a stethoscope, and it has the
+    same hole.**
+  - The prescribing-rate figures are recalled from repeated US and European
+    audits and vary substantially by country, setting and decade. The direction
+    and the persistence are far better established than any particular number.
+  - >
+    The boundary with pneumonia, COPD exacerbation, asthma and pertussis is
+    genuinely fuzzy, and some of what is coded here is one of those. **A record
+    defined by the absence of findings on a test nobody performs** — a chest
+    radiograph — is a soft entity, and this one is softer than most.
+  - Written from model recall. The viral aetiology, the meta-analytic effect
+    size, the purulence misunderstanding and the persistence of prescribing are
+    the parts most likely right; every number is the part most likely wrong.
+
+blockers:
+  - kind: policy
+    blocks: prescribing an antibiotic that everybody involved knows will not work
+    what: >
+      **THE MOST DOCUMENTED BEHAVIOURAL FAILURE IN MEDICINE, AND FOUR DECADES OF
+      EVIDENCE HAVE NOT MOVED IT.** Guidelines have said since the 1990s that
+      antibiotics are not indicated for uncomplicated acute bronchitis. Measured
+      prescribing has sat near 70-80% throughout, against a quality-indicator
+      target close to zero. It is consistently among the largest single sources
+      of inappropriate outpatient antibiotic use.
+      The causes are known and none of them is ignorance. Consultations are
+      short and refusing is slower than prescribing. Diagnostic uncertainty is
+      real and the downside of missing a pneumonia is vivid while the downside of
+      resistance is statistical and distant. Patients arrive expecting a
+      prescription, and clinicians systematically over-estimate that expectation.
+      **And the diagnostic label itself is causal**: patients told they have
+      *bronchitis* expect antibiotics substantially more than patients told they
+      have a *chest cold*, for the same illness. Delayed prescriptions, audit and
+      feedback, peer-comparison letters and communication training all work
+      modestly and none is standard.
+      **The blocker kind is wrong and the register has no better one.**
+      `adherence` in this corpus means the patient taking the drug; this is the
+      prescriber giving one. Filed as `policy` for want of anything closer.
+    who_could: [health-system, government, regulator, payer, academic]
+    scale: 5.0e8
+    standing: documented
+    src: reasoning
+
+  - kind: diagnosis
+    blocks: telling the nine in ten from the rest, at the bedside, in ten minutes
+    what: >
+      **There is no test, and the absence of one is the proximate cause of the
+      prescribing.** A clinician facing a coughing adult cannot distinguish viral
+      from bacterial bronchitis clinically; purulent sputum, the sign both
+      parties trust, is neutrophil debris and predicts bacterial infection
+      poorly. Chest radiography excludes pneumonia and answers a different
+      question.
+      **Point-of-care C-reactive protein and procalcitonin already solve a large
+      part of this.** Both reduce antibiotic prescribing in randomised trials
+      without increasing harm; CRP testing is routine primary care in the
+      Netherlands and parts of Scandinavia and is close to absent in most other
+      systems including the United States. This is not a discovery problem, a
+      manufacturing problem or a safety problem — **it is a device, a
+      reimbursement code and a habit**, which makes it among the most purchasable
+      interventions in the register.
+      What does not exist is a rapid test that names the organism cheaply enough
+      to use on three hundred million episodes.
+    who_could: [health-system, payer, government, manufacturer, regulator]
+    scale: 1.0e9
+    standing: documented
+    src: reasoning
+
+  - kind: evidence-incomplete
+    blocks: knowing whether the small bacterial minority exists as a treatable group
+    what: >
+      Meta-analysis finds antibiotics shorten cough by well under a day on
+      average — **an average across a population in which, if a genuinely
+      antibiotic-responsive subgroup exists, it is diluted to invisibility.**
+      *Mycoplasma*, *Chlamydia pneumoniae* and *Bordetella pertussis* do cause a
+      minority of cases and do respond to macrolides, and no trial has been
+      powered to identify them prospectively at the point of care.
+      **This is the honest counter-argument to the blocker above and it should be
+      recorded rather than suppressed.** "Antibiotics do not work for acute
+      bronchitis" is true of the population and may be false of a patient nobody
+      can currently identify. The trial that would settle it — aetiology-stratified,
+      point-of-care-guided treatment versus usual care — is feasible and has not
+      been done at scale. Until it is, the argument for not prescribing rests on
+      an average, which is a weaker foundation than the confidence with which it
+      is usually asserted.
+    who_could: [academic, sponsor, government, health-system]
+    scale: 8.0e7
+    standing: documented
+    src: reasoning
+
+  - kind: knowledge
+    blocks: why a three-week cough is normal and nobody believes it
+    what: >
+      Post-infectious cough persists two to three weeks and sometimes longer, and
+      **the mismatch between that and what patients expect drives both
+      re-consultation and the pressure to prescribe.** Patients typically expect
+      resolution in under a week; being told the real figure at the first visit
+      measurably reduces both.
+      The mechanism of the persistence — transient airway hyperresponsiveness and
+      epithelial repair — is understood in outline and not well enough to shorten
+      it. **A treatment that genuinely reduced post-infectious cough would remove
+      the demand this whole record is built on**, which is an unusual shape: the
+      way to stop the antibiotics may be to give people something that works.
+      `scale: null` for the mechanism; the communication half is not a knowledge
+      problem and is in the `policy` blocker.
+    who_could: [academic, sponsor, health-system]
+    scale: null
+    standing: alleged
+    src: reasoning
+
+assertion:
+  id: FND-A-0114
+  rated: 2026-08-28
+  by: [claude, jeremy]

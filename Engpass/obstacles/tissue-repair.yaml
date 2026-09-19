@@ -1,0 +1,64 @@
+slug: tissue-repair
+id: FND-O-0002
+name: Can destroyed tissue be repaired?
+kind: capability
+resolution: open
+
+question: >
+  Adult humans do not regenerate most of what they lose. Myocardium infarcted in
+  an hour is scar for life. Brain distal to an occluded artery does not come
+  back, and recovery after stroke comes from reorganisation around the lesion
+  rather than replacement of it. Alveolar wall destroyed in emphysema is gone.
+  Bowel wall fibrosed in Crohn's is resected. Striatal neurons lost in
+  Huntington's are not replaced.
+  **Can any of it be restored — grown, replaced, or induced to regenerate — in a
+  living adult?**
+  The question is a capability target rather than a mechanism gap, and it is
+  stated that way deliberately. A good deal is known about why mammals do not
+  regenerate and about organisms that do. What does not exist is a way to make
+  it happen in a person.
+
+what_it_unblocks: >
+  **THE PERMANENT DAMAGE IN THE LARGEST RECORDS IN NORDSTERN**, and it unblocks
+  something no other question here does: it acts on people who have already been
+  harmed. Every other entry in this register is about preventing or predicting.
+  This one is about the tens of millions already living with the consequence.
+  Concretely: post-infarct heart failure, which is the residue of ischaemic heart
+  disease and shortens life after the coronary disease has been controlled;
+  stroke disability, which is the leading cause of long-term adult disability
+  worldwide; the lost lung function that defines COPD and has nowhere to live in
+  Nordstern's schema at all (gaps.md #97).
+  It would also change what `residue` means as a category. Ten records currently
+  describe damage that is permanent by assumption. **Permanence is the premise of
+  the field, not a finding**, and this question is the one that would test it.
+
+why_hard: >
+  Because the block appears to be a real evolutionary trade-off rather than an
+  oversight. Mammalian tissues that retain regenerative capacity — liver, gut
+  epithelium, skin — do so in ways that heart and brain do not, and the leading
+  accounts connect the loss of regeneration to the suppression of proliferation
+  that keeps large long-lived animals from getting cancer. Anything that
+  unblocked regeneration in an adult would be operating on the same machinery
+  that is holding tumours in check.
+  And scar is not merely absent tissue. It is a structure — mechanically and
+  electrically different, arrhythmogenic in the heart, inhibitory to axon growth
+  in the central nervous system — so replacement means displacing something that
+  is already there and doing a job.
+  Stem-cell approaches to cardiac repair have been pursued for two decades with
+  results that have not survived scrutiny, which is worth stating plainly rather
+  than eliding.
+
+holes:
+  - This is arguably several questions — cardiac, neural, pulmonary, intestinal —
+    that share only a name and a frustration. Whether a general answer exists is
+    itself unknown, and the register does not assume one.
+  - It is the entry most vulnerable to Nordstern gaps.md #101: the claim that
+    answering it would unblock a great deal is confident and untested, and the
+    honest position is that nobody knows what a partial answer would buy.
+  - Transplantation already answers the question for some organs, at the price of
+    lifelong immunosuppression and an organ shortage, which is a different
+    problem in the same place.
+
+asserted:
+  date: 2026-08-23
+  by: [claude, jeremy]

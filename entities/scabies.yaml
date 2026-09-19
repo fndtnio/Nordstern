@@ -1,0 +1,368 @@
+slug: scabies
+id: FND-D-0038
+name: scabies
+also: [Sarcoptes scabiei infestation, the itch, crusted scabies, Norwegian scabies]
+mondo: MONDO:0004525
+kind: disease
+residual: false
+contested: false
+
+# THE CHEAPEST INTERVENTION FOR RHEUMATIC HEART DISEASE MIGHT BE A SCABIES
+# PROGRAMME, AND BOTH RECORDS ARE IN THIS REGISTER.
+#
+# Scratching a scabies infestation breaks the skin. Group A Streptococcus gets
+# in. Impetigo follows, and in high-burden settings streptococcal SKIN infection
+# is increasingly thought to drive acute rheumatic fever and therefore rheumatic
+# heart disease — the classical model attributes that to throat infection, and
+# the skin route is actively researched rather than settled.
+#
+# Ivermectin mass drug administration for scabies has been shown in Pacific
+# island trials to cut scabies prevalence by around ninety percent and impetigo
+# by around two thirds. So there is a cheap, tested, upstream intervention here
+# whose benefit lands on a DIFFERENT RECORD — one that the register already
+# rates `partial`, reach 0.2, ⚑, and whose own blocker list says the problem is
+# penicillin supply.
+#
+# Every previous missing edge in this register had a plausible excuse. This one
+# is between two entities it already holds, it is actionable, and it would change
+# what a funder does. See gaps.md #55 and #78.
+#
+# AND TWO PERCENT OF PATIENTS DRIVE TRANSMISSION FOR THE OTHER NINETY-EIGHT.
+# Crusted scabies carries millions of mites where ordinary scabies carries a
+# dozen. `strata` partition patients and treat the partitions as independent;
+# here one stratum is the reservoir for the rest. See gaps.md #82.
+
+burden:
+  prevalence:
+    value: 3.0e8
+    units: >
+      people infested at any time — estimates run from roughly 200 to 400
+      million, the second-largest prevalence in this register after
+      soil-transmitted helminths
+    src: recall
+  deaths:
+    value: 0.0
+    units: >
+      deaths/year directly attributable — a twelfth morbidity-dominant record.
+      Deaths that follow through impetigo, sepsis, rheumatic heart disease and
+      post-streptococcal kidney disease are attributed to those, not to this
+    src: reasoning
+  note: >
+    THE PRIMARY MORBIDITY IS ITCH, and it is the most systematically
+    under-weighted outcome this register has encountered. Relentless itch, worse
+    at night, causing sleep deprivation, school absence, poor concentration,
+    mental health effects and social exclusion — in three hundred million people.
+    Note the double discount. This register ranks on deaths, and scabies has
+    none. The fix proposed for that (gaps.md #48) is to use DALYs instead, and
+    **standard disability weights for itch and skin disease are low** relative to
+    what people describe. So the metric that would rescue tuberculosis from the
+    no-champion list would still substantially under-count this record.
+    Not a tropical disease. Scabies is endemic in care homes, prisons,
+    childcare settings, homeless populations and refugee camps in wealthy
+    countries, and was only added to the WHO neglected tropical disease list in
+    2017 — one year after mycetoma.
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: risk-reduction
+  ongoing: low
+  efficacy:
+    value: 0.85
+    units: >
+      fraction-of-patients (mite clearance with topical permethrin or oral
+      ivermectin, given correctly and with household contacts treated) —
+      reinfestation from untreated contacts is the commonest reason this fails
+    src: reasoning
+  access:
+    value: 0.50
+    units: >
+      fraction-of-patients (diagnosed and adequately treated) — the drugs are
+      cheap generics and frequently unavailable where the burden is; and a great
+      deal of scabies is simply never recognised
+    src: reasoning
+
+measurement:
+  diagnostic: clinical
+  prognostic: none
+  predictive: none
+  witness: >
+    DIAGNOSTIC is `clinical`, the fourth record in a row to rate so and the
+    fourth for a different reason. Skin scraping and microscopy for mites is
+    objective and misses roughly half of cases, because ordinary scabies carries
+    only ten or fifteen mites on a whole body. Dermoscopy does better in trained
+    hands. So diagnosis rests on the 2020 consensus criteria — burrows, typical
+    distribution, nocturnal itch, affected household contacts — which are
+    explicitly a clinical framework with confirmed, clinical and suspected tiers.
+    PROGNOSTIC is `none`, and it hides the consequential question. Nothing
+    predicts who develops impetigo from scratching, and therefore nothing
+    predicts who is on the path toward streptococcal complications. Nothing
+    predicts who develops crusted scabies either, which matters for everybody
+    else (see the strata).
+    PREDICTIVE is `none` AND THERE IS NO TEST OF CURE, which combine into a
+    genuinely nasty clinical loop. Itch after successful treatment is expected —
+    it is a hypersensitivity reaction to dead mite antigen and persists for
+    weeks. So a patient who still itches cannot be distinguished from a patient
+    who was reinfested, or from one whose mites were resistant. The usual
+    response is to treat again with a topical agent **that is itself an
+    irritant**, which causes itch, which prompts further treatment.
+    That is the second feedback loop in this register after leprosy's stigma
+    cycle (gaps.md #77), and the first that is purely clinical. It is also the
+    fifth record with no test of cure (gaps.md #45), and here the absence is not
+    an inconvenience — it drives real over-treatment.
+
+strata:
+  - name: ordinary scabies
+    fraction:
+      value: 0.98
+      units: fraction-of-cases
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.85
+      units: fraction-of-stratum (clearance with correct treatment of the household)
+      src: reasoning
+    toll: minor
+    what: >
+      Ten to fifteen mites on an entire body, and an itch out of all proportion
+      to that — because the itch is a delayed hypersensitivity reaction to mite
+      products rather than to the burrowing itself. First infestation is silent
+      for four to six weeks while sensitisation develops; reinfestation itches
+      within days.
+      Topical permethrin or a course of oral ivermectin clears it. The commonest
+      reason treatment fails is that the household was not treated at the same
+      time.
+
+  - name: crusted (Norwegian) scabies
+    fraction:
+      value: 0.02
+      units: fraction-of-cases
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.60
+      units: >
+        fraction-of-stratum (clearance) — requires prolonged combined oral
+        ivermectin and topical therapy, with relapse common
+      src: reasoning
+    toll: major
+    what: >
+      THE SAME MITE, MILLIONS OF THEM. In people whose cell-mediated immunity is
+      impaired — elderly, immunosuppressed, some neurological and developmental
+      conditions — the mite proliferates without check, producing thick
+      hyperkeratotic crusts teeming with organisms. It often does not itch, which
+      is part of why it is missed.
+      TWO CONSEQUENCES THAT THE SCHEMA CANNOT CARRY. First, these patients are
+      **hyperinfectious** — a single case seeds outbreaks through a care home or
+      a household, so two percent of patients drive transmission for the other
+      ninety-eight (gaps.md #82). Second, crusted scabies is routinely
+      misdiagnosed as eczema or psoriasis and treated with topical
+      corticosteroids, which suppress what little immune response was containing
+      the mite and make it dramatically worse.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    Permethrin is a topical irritant and stings applied to excoriated skin; oral
+    ivermectin is well tolerated. Neither leaves anything permanent, and both are
+    cheap generics. This is among the lightest treatment burdens in the register.
+    The interesting cost is the one described in the measurement witness: because
+    itch persists for weeks after cure and there is no test of cure, repeat
+    treatment is common, and repeat topical treatment is itself irritant. The
+    toll here is small, self-inflicted by the system rather than by the drug, and
+    entirely a consequence of a missing measurement.
+  incidence:
+    value: 0.0
+    units: fraction-of-treated (permanent harm)
+    src: reasoning
+
+residue:
+  severity: minor
+  permanent: true
+  what: >
+    Scoped tightly. Post-inflammatory hyperpigmentation and depigmentation
+    persist for months to years and are more visible and more socially
+    consequential in darker skin; scratching and secondary impetigo leave
+    scarring, particularly in children; nodular scabies can persist for months
+    after the mites are gone.
+    WHAT IS DELIBERATELY NOT IN THIS BLOCK is rheumatic heart disease and
+    post-streptococcal kidney disease. Those are real consequences of scabies in
+    high-burden settings and they are **not a residue of this disease** — they
+    are caused by a different organism entering through skin that scabies broke,
+    and both have or deserve records of their own. Putting them here would
+    miscategorise a relation as a property, which is exactly the confusion
+    gaps.md #55 exists to name.
+  incidence:
+    value: 0.10
+    units: >
+      fraction-of-patients (persistent pigmentary change or scarring) — a
+      reasoned estimate, higher in children and in darker skin
+    src: reasoning
+
+# NO `window` BLOCK, and the reason is the most interesting thing about this
+# record. The schema's test is whether CAPABILITY changes with timing, and here
+# it does not: scabies is curable on the last day as readily as the first. What
+# accumulates while nobody treats it is impetigo, streptococcal infection and —
+# probably — rheumatic heart disease and kidney disease. So the price of delay is
+# real, large, and **paid on somebody else's record**. A window field that
+# recorded it would be claiming the damage lands here. It does not.
+
+witness:
+  mechanism: >
+    `established`, and one detail of it explains most of the clinical difficulty.
+    *Sarcoptes scabiei* var. *hominis* burrows into the stratum corneum; the
+    female lays eggs along the burrow. Transmission needs prolonged skin-to-skin
+    contact, which is why it tracks crowding rather than climate.
+    THE ITCH IS AN IMMUNE REACTION, NOT AN INJURY. It is a delayed type IV
+    hypersensitivity response to mite products, which is why a first infestation
+    is asymptomatic for four to six weeks while sensitisation develops, why
+    reinfestation itches within days, and why itch continues for weeks after
+    every mite is dead. Three clinical problems — late presentation of first
+    infestation, apparent treatment failure, and repeat treatment — all fall out
+    of that one immunological fact.
+    The named holes: what determines who develops crusted scabies beyond the
+    broad association with impaired cell-mediated immunity; and how large the
+    contribution of streptococcal SKIN infection is to acute rheumatic fever
+    relative to the classical throat route. The second is under active
+    investigation and is not settled, and it is the number that would decide how
+    much of rheumatic heart disease is a scabies problem.
+  intervention: >
+    `curative`. Topical permethrin, or oral ivermectin — both cheap generics,
+    both effective, with the choice usually driven by logistics rather than by
+    the patient. Ivermectin's oral route is what makes mass administration
+    possible. Household contacts must be treated simultaneously or the index
+    patient is reinfested, and failure to do that is the commonest reason a
+    correct treatment appears not to work.
+    Two things are eroding at the edges. Reduced susceptibility to both
+    permethrin and ivermectin has been reported, and there is no susceptibility
+    testing to detect it — so resistance, if it spreads, will be visible only as
+    an unexplained rise in treatment failure that cannot be distinguished from
+    reinfestation or from post-scabetic itch.
+  prevention: >
+    `risk-reduction`. Treating households and close contacts at the same time as
+    the index case; reducing crowding; and — the recent and important one — MASS
+    DRUG ADMINISTRATION with ivermectin in communities where prevalence exceeds
+    about ten percent, which trials in Fiji and the Solomon Islands showed cuts
+    scabies prevalence by roughly ninety percent and impetigo by around two
+    thirds. There is no vaccine.
+    That impetigo figure is the one worth staring at. It is a measured reduction
+    in streptococcal skin infection produced by treating a mite, and if the skin
+    route to acute rheumatic fever is as important as it now appears, it is a
+    measured upstream intervention against rheumatic heart disease — a record
+    this register already holds, and rates ⚑ with reach 0.2.
+  ongoing: >
+    `low`. One topical application or one or two oral doses, repeated once. There
+    is no chronic phase and no maintenance. The burden of scabies is the itch
+    while you have it, not the treatment.
+
+holes:
+  - How much acute rheumatic fever and rheumatic heart disease is attributable to
+    streptococcal SKIN infection rather than throat infection, and therefore how
+    much of that burden a scabies programme would prevent. Actively researched,
+    not settled, and the most consequential open question in this record.
+  - What determines who develops crusted scabies. It is the transmission engine
+    and nothing identifies the people at risk before they become one.
+  - Whether reported reduced susceptibility to permethrin and ivermectin
+    represents real resistance. Without a test of cure or susceptibility testing,
+    it cannot be distinguished from reinfestation.
+  - How much scabies there is. Prevalence estimates span 200 to 400 million and
+    rest on surveys in a small number of settings; the disease is under-recognised
+    in exactly the institutional settings in wealthy countries where it is
+    commonest.
+  - How much people actually suffer from itch, in units any funder uses. The
+    standard disability weights are low and the clinical experience is not.
+  - Written from model recall. The hypersensitivity mechanism, the crusted
+    scabies mite burden, the Fiji MDA results and the 2017 NTD listing are the
+    parts most likely right; every number is the part most likely wrong.
+
+blockers:
+  - kind: diagnosis
+    blocks: recognising it at all, and telling cure from failure
+    what: >
+      Two problems, and the second is unusual enough to be worth the space.
+      The first is ordinary: scabies is diagnosed clinically, microscopy misses
+      half of cases because there are so few mites, and a great deal of scabies
+      is treated as eczema. Crusted scabies is worse — it often does not itch, is
+      routinely mistaken for psoriasis or eczema, and the corticosteroids that
+      follow make it dramatically worse while the patient seeds an outbreak.
+      The second is that **there is no test of cure**, and itch persists for
+      weeks after every mite is dead because it is an immune reaction rather than
+      an injury. So treatment failure, reinfestation, resistance and normal
+      post-treatment itch are clinically indistinguishable — which drives repeat
+      treatment with an irritant, and which means emerging resistance would be
+      invisible until it was widespread.
+      A point-of-care test that said *the mites are gone* would resolve all of
+      that at once, and no such thing exists.
+    who_could: [academic, manufacturer, health-system, nonprofit]
+    scale: 5.0e7
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: treating households and communities rather than individuals
+    what: >
+      Scabies is a household disease and is treated one patient at a time. The
+      index case is cured, returns to untreated contacts, and is reinfested — so
+      a clinical service that works perfectly at the level of the patient fails
+      at the level of the problem.
+      Mass drug administration is the answer where prevalence is high, and it is
+      new: scabies only entered the neglected tropical disease framework in 2017,
+      so the delivery machinery that trachoma and onchocerciasis have spent
+      decades building does not exist here. Ivermectin for scabies also has no
+      donation programme of the kind that supplies it for onchocerciasis and
+      lymphatic filariasis, despite being the same molecule.
+      In wealthy countries the equivalent failure is institutional: a care home
+      outbreak requires treating every resident and every member of staff
+      simultaneously, which is an organisational act rather than a medical one.
+    who_could: [health-system, government, nonprofit, philanthropy, manufacturer]
+    scale: 2.0e8
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    obstacles: [burden-unknown]
+    blocks: knowing how much of rheumatic heart disease this causes
+    what: >
+      The highest-value unanswered question in this record, and it is about a
+      different record. Streptococcal skin infection following scabies is
+      increasingly implicated in acute rheumatic fever, against a classical model
+      that attributes it to throat infection. If the skin route is substantial in
+      high-burden settings, then scabies mass drug administration — cheap, tested,
+      and already shown to cut impetigo by two thirds — is an upstream
+      intervention against a disease that kills hundreds of thousands of people a
+      year and that this register rates ⚑ with reach 0.2.
+      Quantifying it needs long-term cohort work in high-burden populations, and
+      it would change how both records are funded.
+      Beneath it sit two smaller questions: what determines crusted scabies, and
+      whether reported reduced drug susceptibility is real resistance.
+      `scale: null` — the cohort studies are fundable, and the answer is not
+      something that can be bought directly.
+    who_could: [academic, sponsor, philanthropy, nonprofit]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: policy
+    blocks: a disease that belongs to nobody
+    what: >
+      Scabies arrived on the neglected tropical disease list in 2017, which is
+      recent enough that it has none of the institutional apparatus the older
+      entries have: no donation programme, no dedicated coalition of the kind
+      trachoma has, no elimination target, and limited national programme
+      capacity.
+      It also does not fit the category cleanly, which is part of the problem. It
+      is endemic in Pacific island communities and in London care homes, in
+      refugee camps and in prisons, and the wealthy-country burden sits with
+      institutional infection control rather than with any disease programme. A
+      condition affecting three hundred million people is nobody's portfolio in
+      particular.
+    who_could: [government, health-system, nonprofit, philanthropy, patient-org]
+    scale: 1.0e8
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0038
+  rated: 2026-08-23
+  by: [claude, jeremy]

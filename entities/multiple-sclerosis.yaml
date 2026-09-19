@@ -1,0 +1,642 @@
+slug: multiple-sclerosis
+id: FND-D-0086
+name: multiple sclerosis
+also: [MS, disseminated sclerosis, relapsing-remitting MS, progressive MS]
+mondo: MONDO:0005301
+kind: disease
+residual: false
+contested: false
+
+# QUEUED AS "THE POSITIVE EXEMPLAR FOR gaps.md #89" — disease-modifying therapy
+# that unambiguously changed a life course, in a register that used to score that
+# as nothing. #89 was closed on 2026-08-23 and this record was meant to vindicate
+# it.
+#
+# ON CLOSE READING IT HAS CLIMBED PAST THAT RUNG. For relapsing MS on
+# high-efficacy therapy the register's own definition of `suppressive` — near-
+# normal life, treated indefinitely — is simply met: relapses abolished, new
+# lesions abolished, people working and walking decades after a diagnosis that
+# used to mean a wheelchair. So this rates `suppressive`, and `disease-modifying`
+# survives in the progressive strata, where it means roughly what it means in
+# `alzheimers` (see the note in `witness.intervention` — the effect sizes are
+# nearly identical).
+#
+# The queue's expectation was reasonable and is superseded. Recorded rather than
+# quietly corrected.
+
+burden:
+  prevalence:
+    value: 2.9e6
+    units: >
+      people living with multiple sclerosis worldwide — **and this is a
+      prevalence record, not a mortality one.** Onset is typically between 20 and
+      40, roughly two to three times more often in women, and the disease then
+      runs for decades
+    src: recall
+  deaths:
+    value: 2.2e4
+    units: >
+      deaths/year — **among the smallest death figures in this register, attached
+      to one of its larger disability burdens.** Life expectancy is reduced by
+      something like five to ten years and the gap has been narrowing
+    src: recall
+  note: >
+    **THIS RECORD IS WHERE THE REGISTER'S DEATH-SHAPED MAGNITUDE BREAKS** (gaps.md
+    #182). Twenty-two thousand deaths a year would place multiple sclerosis near
+    the bottom of any burden ranking in this file. What it actually does is take
+    an adult in their twenties or thirties and impose four or five decades of
+    accumulating physical and cognitive disability, in the years they would have
+    been working and raising children.
+    gaps.md #48 — the register's most serious logged gap — says triage views sort
+    on a fraction or a price and never multiply by magnitude. **Its proposed fix
+    is a deaths-weighted metric, and that fix would rank this record at
+    approximately zero.**
+    Prevalence is strongly latitude-dependent, rising in most registries, and the
+    female-to-male ratio has been climbing for decades for reasons nobody has
+    established.
+
+survival:
+  horizon: 30 years from diagnosis
+  untreated:
+    value: 0.65
+    units: >
+      fraction alive — untreated multiple sclerosis reduced life expectancy by
+      roughly seven to ten years, through immobility, infection and swallowing
+      failure in progressive disease
+    src: reasoning
+  treated:
+    value: 0.8
+    units: >
+      fraction alive on disease-modifying therapy. **The evidence that these drugs
+      extend life is observational rather than trial-based** — they clearly
+      reduce relapses and disability accrual, and the survival inference follows
+      from that rather than from a mortality endpoint
+    src: reasoning
+  witness: >
+    **A record where the honest survival number is an inference.** No trial was
+    ever powered on death, because the disease takes decades and the drugs are
+    thirty years old. The register writes the inference down and labels it,
+    rather than leaving the row blank and implying nobody knows anything.
+
+axes:
+  mechanism: established
+  intervention: suppressive
+  prevention: risk-reduction
+  ongoing: moderate
+  efficacy:
+    value: 0.70
+    units: >
+      fraction-of-patients (relapses and new lesion formation substantially or
+      completely suppressed on high-efficacy therapy) — **and it does not mean the
+      same thing in the progressive strata**, where the best agents slow
+      disability accrual by roughly a quarter to a third
+    src: reasoning
+  access:
+    value: 0.35
+    units: >
+      fraction-of-patients (receiving an appropriate disease-modifying therapy) —
+      requiring MRI, a neurologist and a drug costing tens of thousands a year,
+      and **unavailable across most of the world**
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: partial
+  witness: >
+    **DIAGNOSTIC IS `objective` AND HAS BEEN DELIBERATELY PULLED EARLIER FIVE
+    TIMES — AND HERE THAT WAS RIGHT** (gaps.md #170).
+    Magnetic resonance imaging plus cerebrospinal fluid oligoclonal bands, applied
+    through the McDonald criteria, which have been revised in 2001, 2005, 2010,
+    2017 and 2024. **Every revision made diagnosis possible earlier**, by letting
+    dissemination in time and space be shown on a single scan rather than by
+    waiting for a second clinical attack. The 2024 revision goes further, and
+    trials in **radiologically isolated syndrome** — MRI findings characteristic of
+    MS in somebody with no symptoms — have shown that treating reduces conversion
+    to clinical disease.
+    **That is the third record in this register whose definition has been dragged
+    upstream by a treatment**, after `alzheimers` and `type-1-diabetes`. It is also
+    the one where it is clearly correct: the treatment is transformative, the
+    damage prevented is irreversible, and the untreated course is not benign. #170
+    now has three cases spanning the quality range, and MS is the good end.
+    PROGNOSTIC is `partial`, and it is the field's most-wanted answer. The course
+    varies from a single lifetime attack to rapid disability, and nothing at
+    diagnosis distinguishes them reliably. **Serum neurofilament light chain** is
+    the most promising biomarker — it rises with axonal injury, including
+    injury that produces no relapse — and is moving toward clinical use.
+    PREDICTIVE is `partial`, and it is asymmetric in the way this register keeps
+    finding. **JC virus antibody status, index and prior immunosuppressant
+    exposure stratify the risk of progressive multifocal leukoencephalopathy on
+    natalizumab across roughly two orders of magnitude**, and that test is why the
+    drug is usable at all. Like G6PD in `malaria` and APOE in `alzheimers`, it
+    predicts the harm well and the benefit not at all.
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    **THE MOST EFFECTIVE DRUG IN THIS RECORD WAS WITHDRAWN FROM THE MARKET FOR
+    KILLING PEOPLE AND BROUGHT BACK BECAUSE IT WORKED THAT WELL.**
+    Natalizumab reduced relapses by around two thirds — unprecedented in 2004 —
+    and was withdrawn in 2005 after cases of **progressive multifocal
+    leukoencephalopathy**, a JC virus reactivation in the brain that is frequently
+    fatal and leaves severe disability in survivors. It returned in 2006 under a
+    mandatory risk-management programme, and the risk is now stratified by JC
+    virus serology, antibody index, prior immunosuppression and treatment duration
+    — **from negligible to as high as roughly one in a hundred in the worst
+    stratum.**
+    The rest of the class has its own costs. **Alemtuzumab** causes secondary
+    autoimmunity in a large minority — thyroid disease most often, and
+    occasionally immune thrombocytopenia or anti-glomerular basement membrane
+    disease. **Anti-CD20 agents** produce hypogammaglobulinaemia with prolonged
+    use, raise infection risk, and **blunt vaccine responses**, which mattered
+    considerably during the pandemic. **Fingolimod** causes first-dose bradycardia
+    and macular oedema, and stopping it can precipitate severe rebound disease
+    worse than baseline. **Autologous haematopoietic stem cell transplantation**
+    carries treatment-related mortality and infertility.
+    **And the historical toll is instructive**: mitoxantrone, used before the
+    modern era, causes cardiomyopathy and therapy-related leukaemia.
+    This is a record where the drugs are genuinely dangerous and are given anyway,
+    to young people, because the untreated disease is worse — gaps.md #148, with
+    an unusually well-quantified comparator.
+  incidence:
+    value: 0.03
+    units: >
+      fraction-of-treated (permanent harm — chiefly PML, secondary autoimmunity
+      and transplant-related complications) — a reasoned estimate across a class
+      whose members differ by an order of magnitude in risk
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    **AXONS DO NOT GROW BACK AND MYELIN DOES NOT RELIABLY RETURN, SO EVERY
+    DISABILITY ACCUMULATED BEFORE TREATMENT IS PERMANENT.**
+    Acute demyelination is followed by partial remyelination in early disease and
+    by failure of remyelination later; the oligodendrocyte precursor cells are
+    present and do not differentiate. Once the axon is transected, the connection
+    is gone. Grey matter atrophy proceeds throughout, faster than in normal
+    ageing, and correlates with cognitive impairment better than lesion count
+    does.
+    So this record's `window` and its `residue` are the same fact from two
+    directions: **treatment prevents future damage and undoes almost none of the
+    damage already present.** A person treated at first symptom and a person
+    treated after ten years may have identical disease activity from that day
+    forward and completely different lives.
+    What accumulates: mobility impairment, bladder and bowel dysfunction,
+    spasticity, fatigue that patients consistently rank as their worst symptom,
+    and **cognitive impairment in roughly half**, which is under-recognised
+    because it is not what anybody is looking for in a walking-focused clinic.
+    **No approved therapy promotes remyelination**, despite it being the field's
+    most obvious target for two decades.
+  incidence:
+    value: 0.35
+    units: >
+      fraction-of-patients (permanent disability accumulated despite best
+      available treatment) — a reasoned estimate, and falling steadily in
+      treated cohorts over the last three decades
+    src: reasoning
+
+window:
+  what: >
+    **THE ENTIRE RECORD IS A WINDOW, AND THE ARGUMENT IS ABOUT SEQUENCE RATHER
+    THAN TIMING.**
+    Inflammatory activity is highest early and declines with disease duration;
+    neurodegeneration accumulates throughout and dominates later. The drugs
+    suppress inflammation. **So they work best exactly when there is most to
+    prevent and least already lost**, and their effect on established progressive
+    disease is modest.
+    That produced the field's central strategic question: **start with the most
+    effective drug, or escalate from safer ones if the disease misbehaves?** The
+    traditional approach escalated, on the reasonable grounds that the effective
+    drugs are dangerous. Observational data consistently favour starting high, and
+    dedicated randomised trials have been reporting.
+    **This is not the ordinary window in this register.** Elsewhere — `sepsis`,
+    `maternal-haemorrhage`, `neonatal-conditions` — the window closes and
+    capability is lost. Here capability persists and **what is lost is the
+    opportunity to have prevented something**, permanently, because axons do not
+    return. The register's `window` field describes the first kind.
+    Diagnostic delay compounds it: from first symptom to diagnosis is commonly one
+    to two years, spent inside the period when treatment is worth most.
+  closes_on: >
+    transition from an inflammatory to a predominantly neurodegenerative phase,
+    and the accumulation of irreversible axonal loss — years
+  caught_in_time:
+    value: 0.45
+    units: >
+      fraction-of-cases (diagnosed and started on adequate therapy while
+      inflammatory activity still dominates) — a reasoned estimate in settings
+      with MRI and neurologists, and far lower elsewhere
+    src: reasoning
+
+strata:
+  - name: relapsing-remitting MS
+    fraction:
+      value: 0.60
+      units: fraction-of-people-with-MS
+      src: reasoning
+    intervention: suppressive
+    efficacy:
+      value: 0.75
+      units: fraction-of-stratum (no evidence of disease activity, or close to it, on high-efficacy therapy)
+      src: reasoning
+    toll: major
+    what: >
+      **The stratum medicine solved, and the word for what it did is
+      `suppressive`.** Relapses abolished, new lesions abolished, disability
+      progression markedly slowed — indefinitely, on treatment, in a young person
+      who would previously have been told to expect a wheelchair. **The proportion
+      of people with MS using wheelchairs has fallen and time to needing a walking
+      aid has lengthened substantially over three decades.**
+      What it is not is a cure: stop the drug and activity returns, and disability
+      still accrues silently underneath (see `witness.intervention`).
+
+  - name: secondary progressive MS
+    fraction:
+      value: 0.25
+      units: fraction-of-people-with-MS
+      src: reasoning
+    intervention: disease-modifying
+    efficacy:
+      value: 0.35
+      units: fraction-of-stratum (meaningful slowing of disability accrual)
+      src: reasoning
+    toll: major
+    what: >
+      **The stratum patients transition INTO**, which is why the strata here are
+      not a partition of people but stages of one course (gaps.md #111). Steady
+      accrual of disability with or without superimposed relapses.
+      Anti-inflammatory therapy does much less here, and until recently nothing
+      worked at all. **A Bruton's tyrosine kinase inhibitor reported the first
+      positive trial in non-relapsing secondary progressive disease in 2024-25**,
+      slowing confirmed disability progression by around a third — which is real,
+      new, and of the same order as anti-amyloid therapy in `alzheimers`.
+
+  - name: primary progressive MS
+    fraction:
+      value: 0.15
+      units: fraction-of-people-with-MS
+      src: reasoning
+    intervention: disease-modifying
+    efficacy:
+      value: 0.30
+      units: fraction-of-stratum (meaningful slowing of disability accrual)
+      src: reasoning
+    toll: major
+    what: >
+      Progressive from onset, with no relapses. Older at onset, and the sex ratio
+      is close to even rather than female-predominant. **Ocrelizumab in 2017
+      produced the first positive trial in this stratum** — roughly a quarter
+      reduction in confirmed disability progression — after decades in which every
+      agent failed.
+      **That number deserves a comparison this register can make and few readers
+      will**: it is almost exactly the effect size of lecanemab in early
+      Alzheimer's, which the `alzheimers` record describes as below the threshold
+      anybody perceives. Same rung, same magnitude, and in one record it is
+      celebrated and in the other it is contested.
+
+moved:
+  - date: 1993
+    axis: intervention
+    from: none
+    to: disease-modifying
+    why: >
+      **INTERFERON BETA, AND BEFORE IT THERE WAS NOTHING.**
+      Until 1993 multiple sclerosis was managed with steroids for acute relapses,
+      physiotherapy, and a conversation about what to expect. Interferon beta-1b
+      reduced relapse rate by around a third and reduced new MRI lesions — modest
+      by present standards, and it was the first evidence that the course of this
+      disease could be altered at all.
+      Glatiramer acetate followed in 1996. Both were injectables with unpleasant
+      side effects, both were adopted rapidly and gratefully, and **both are now
+      what a neurologist reaches for when they cannot get anything better.**
+    src: recall
+
+  - date: 2006
+    axis: intervention
+    from: disease-modifying
+    to: suppressive
+    why: >
+      **A DRUG THAT ABOLISHED RELAPSES, KILLED PEOPLE, AND CAME BACK.**
+      Natalizumab reduced relapses by around two thirds — roughly double anything
+      before it — and was **withdrawn in 2005** after cases of progressive
+      multifocal leukoencephalopathy. It returned in 2006 under a mandatory risk
+      management programme, because the neurologists and the patients wanted it
+      back.
+      **That is the moment this record's rung changed**, and the oral agents and
+      anti-CD20 antibodies that followed made it general rather than exceptional.
+      A substantial fraction of people with relapsing MS now achieve **no evidence
+      of disease activity** — no relapses, no new lesions, no measured progression
+      — which is the register's `suppressive` definition met in full.
+      **The risk-management programme is the underrated part.** JC virus serology
+      stratifies PML risk across two orders of magnitude and made an unusable drug
+      usable — a case where a *test* rather than a molecule delivered the
+      capability.
+    src: recall
+
+  - date: 2017
+    axis: efficacy
+    from: 0.60
+    to: 0.70
+    why: >
+      **THE FIRST DRUG TO WORK IN PROGRESSIVE DISEASE, AND IT REWROTE THE
+      MECHANISM AT THE SAME TIME.**
+      Ocrelizumab, an anti-CD20 antibody, reduced confirmed disability progression
+      in **primary progressive** multiple sclerosis by roughly a quarter — the
+      first positive trial in a stratum where everything had failed — alongside
+      strong effects in relapsing disease.
+      **And it made the field rethink what MS is.** Anti-CD20 depletes B cells and
+      does not deplete plasma cells, so it barely changes antibody levels. It works
+      anyway. That means B cells matter in MS as antigen-presenting and
+      cytokine-producing cells rather than as antibody factories — a mechanistic
+      correction delivered by a drug rather than by a laboratory.
+      A Bruton's tyrosine kinase inhibitor has since reported the first positive
+      result in non-relapsing secondary progressive disease, targeting the
+      compartmentalised inflammation behind an intact blood-brain barrier that
+      antibodies cannot reach.
+    src: recall
+
+  - date: 2022
+    axis: mechanism
+    from: partial
+    to: established
+    why: >
+      **THE CAUSE OF MULTIPLE SCLEROSIS WAS ESTABLISHED IN 2022, AND THIS IS THE
+      FIRST `moved` ENTRY ON THE `mechanism` AXIS IN THE ENTIRE REGISTER**
+      (gaps.md #183).
+      A cohort of more than ten million United States military personnel with
+      stored serial serum samples allowed the question to be asked properly:
+      **infection with Epstein-Barr virus raised the risk of multiple sclerosis
+      roughly thirty-two-fold, and of 801 cases, only one was EBV-negative at
+      onset.** No other candidate exposure behaved that way. Antibody profiles rose
+      only for EBV, and only after seroconversion.
+      EBV infects most of humanity harmlessly, so it is **necessary and nowhere
+      near sufficient** — the rest is genetic susceptibility, principally
+      HLA-DRB1*15:01, plus vitamin D status, adolescent obesity, smoking and
+      probably molecular mimicry between EBV nuclear antigen and a central nervous
+      system protein.
+      **What it buys is a target.** EBV vaccines are in early trials, and if one
+      works the prevention axis of this record moves from `risk-reduction` to
+      `prophylaxis` — a chronic autoimmune disease of young adults prevented by
+      vaccinating children against a common virus.
+      **Ninety-seven `moved` entries across forty-eight records before this one,
+      and not one on `mechanism`.** Either understanding never changes, or the
+      register has never recorded it changing.
+    src:
+      id: PMID:35025605 doi:10.1126/science.abj8222
+      retrieved: 2026-08-26
+      quote: >
+        Multiple sclerosis (MS) is a chronic inflammatory demyelinating disease of
+        the central nervous system of unknown etiology.
+
+witness:
+  mechanism: >
+    `established`, and it became so recently enough that the change is recorded
+    above as a `moved` entry rather than assumed.
+    Autoreactive T cells and B cells cross the blood-brain barrier and attack
+    central nervous system myelin, producing demyelinating plaques disseminated in
+    space and time. Oligodendrocytes are lost; remyelination succeeds partially
+    early and fails later; **axons are transected**, and that is what produces
+    permanent disability. In progressive disease the inflammation becomes
+    compartmentalised behind a largely intact blood-brain barrier — meningeal
+    follicles, microglial activation — which is why drugs that work in the blood
+    do less as the disease advances.
+    **The B cell surprise is worth stating because it corrected the textbook.**
+    Anti-CD20 antibodies work extremely well and do not deplete plasma cells or
+    meaningfully lower immunoglobulin, so MS is not principally an
+    antibody-mediated disease. B cells act as antigen-presenting and
+    cytokine-producing cells. **A drug taught the field its own mechanism.**
+    **THE CAUSE.** Epstein-Barr virus infection is now established as
+    near-necessary — a thirty-two-fold risk increase, and essentially no MS in the
+    EBV-negative. Susceptibility is dominated by HLA-DRB1*15:01 among more than two
+    hundred loci; low vitamin D, adolescent obesity and smoking add to it.
+    **THE NAMED HOLES ARE PROGRESSION AND REMYELINATION**, and they are the same
+    hole seen twice. What drives disability accrual when there is no inflammation
+    to see — and why oligodendrocyte precursors, which are present in chronic
+    lesions, will not differentiate and repair them.
+  intervention: >
+    `suppressive`, and the record was queued expecting `disease-modifying`.
+    For relapsing MS on a high-efficacy agent — anti-CD20, natalizumab,
+    alemtuzumab, cladribine, or autologous stem cell transplantation — relapses
+    stop, new lesions stop, and a substantial fraction achieve **no evidence of
+    disease activity**. People diagnosed at twenty-five are working at fifty-five.
+    Time to needing a walking aid has lengthened markedly across treated cohorts
+    and wheelchair use has fallen. **Near-normal life, treated indefinitely, is the
+    register's definition of `suppressive` and it is simply met.**
+    **THE THING THAT IS NOT SUPPRESSED IS THE THING THAT CAUSES DISABILITY, AND
+    THE FIELD FOUND THIS OUT THE HARD WAY.** Disability accrues in treated patients
+    without relapses and without new lesions — **progression independent of relapse
+    activity** — and in modern cohorts it accounts for the majority of disability
+    accumulation. So the disease was defined and treated by relapses and MRI
+    lesions, and the outcome that matters proceeds by a route the drugs barely
+    touch.
+    **That is gaps.md #172's shape in a second organ.** `type-2-diabetes` is
+    defined by glucose and its best drugs work around glucose; MS is defined by
+    relapses and its disability arrives without them. In both cases the surrogate
+    was not the harm, and in both cases it took outcome data to notice.
+    In the progressive strata, `disease-modifying` means roughly a quarter to a
+    third reduction in disability accrual — **the same order as anti-amyloid
+    therapy in `alzheimers`**, which that record describes as below the threshold
+    anybody perceives. The rung is identical and the reception is not.
+  prevention: >
+    `risk-reduction` today, and it may be the first record in this register whose
+    prevention axis moves because of a virology finding.
+    What exists now is modest: vitamin D sufficiency, not smoking, avoiding
+    adolescent obesity, and — with much weaker evidence — infectious mononucleosis
+    being a marker rather than a modifiable exposure.
+    **What is coming is an EBV vaccine.** If Epstein-Barr infection is
+    near-necessary for multiple sclerosis, then preventing or modifying it should
+    prevent the disease, and candidates are in early trials.
+    **The arithmetic of that is worth stating before anybody gets excited.**
+    Epstein-Barr virus infects most of humanity, usually harmlessly, and multiple
+    sclerosis affects roughly one person in a thousand. Preventing MS by
+    vaccinating against EBV means **vaccinating everybody against a near-universal
+    benign infection to prevent a disease in a fraction of a percent of them** —
+    the same structure as HPV vaccination against cervical cancer, which worked,
+    and the same structure gaps.md #130 flagged for mass *H. pylori* eradication,
+    which has costs landing in another record. EBV also causes several lymphomas
+    and nasopharyngeal carcinoma, which improves the arithmetic considerably.
+  ongoing: >
+    `moderate`, and it varies more within this record than in most.
+    An oral tablet daily, or a subcutaneous injection monthly, or a six-monthly
+    infusion — plus MRI surveillance, blood monitoring, and for anybody on
+    natalizumab, **JC virus serology repeated indefinitely because the risk it
+    stratifies rises with treatment duration.**
+    **And the burden the field measures worst is the one patients rank worst.**
+    Fatigue is consistently the most disabling symptom reported and has no
+    effective treatment; cognitive impairment affects roughly half and is rarely
+    assessed. Neither appears in any trial's primary endpoint, and neither appears
+    anywhere in this schema.
+
+holes:
+  - >
+    **`intervention: suppressive` departs from the queue's expectation and from
+    common framing**, which calls MS drugs "disease-modifying therapies" as a
+    matter of nomenclature. The file argues it in `witness.intervention` rather
+    than asserting it. A reader who weights progression-independent disability
+    more heavily would rate `disease-modifying` and would be defensible.
+  - >
+    **The strata are stages of one course, not a partition of people.** Most
+    people with relapsing MS eventually transition to secondary progressive
+    disease, so the fractions are a snapshot of a cohort in motion and the whole
+    purpose of treatment is to prevent the transition (gaps.md #111).
+  - >
+    **`deaths: 2.2e4` will misrank this record in every view the register has**,
+    and the disability that constitutes the actual burden has no field (gaps.md
+    #182).
+  - >
+    `residue: 0.35` is falling year on year in treated cohorts and the record
+    stores one undated value — the same problem `moved` exists to solve, applied
+    to a field that has no `moved`.
+  - >
+    **Fatigue and cognitive impairment are the symptoms patients rank as worst,
+    have no effective treatment, and appear in no field here** — not `toll`, not
+    `residue`, not `ongoing`.
+  - >
+    Every scalar is `recall` or `reasoning`, in a field with large, well-reported
+    randomised trials and good international registries.
+
+blockers:
+  - kind: cost
+    blocks: a drug class whose prices rose when competitors arrived
+    obstacles: []
+    what: >
+      **THE PRICE OF MULTIPLE SCLEROSIS DRUGS WENT UP WHEN NEW ONES ENTERED THE
+      MARKET, WHICH IS THE OPPOSITE OF WHAT COMPETITION IS SUPPOSED TO DO.**
+      The first-generation agents launched in the 1990s at roughly eight to eleven
+      thousand dollars a year in the United States. By the mid-2010s the same
+      drugs cost around sixty thousand — increases running several times medical
+      inflation — **and analyses found that the prices of existing agents rose when
+      newer, more expensive ones were approved**, rather than falling.
+      The mechanisms are structural: rebate-driven list pricing, a patient
+      population that does not switch on price because switching carries clinical
+      risk, and prescribers insulated from cost. Biosimilars and generics have
+      arrived slowly — a natalizumab biosimilar in 2023, generic glatiramer earlier
+      — and have moved things less than the theory predicts.
+      **This matters for the register beyond one record.** Every `cost` blocker in
+      this file carries an implicit assumption that price falls with time,
+      competition and patent expiry. `type-1-diabetes` documented a century-old
+      molecule with no generic; **this documents a market where entry pushed prices
+      up**, and a `scale` figure that assumes purchasability at tomorrow's price
+      may be assuming the wrong direction.
+      Globally the consequence is simple: the international MS registry reports
+      disease-modifying therapy as unavailable or unaffordable across most
+      low- and middle-income countries.
+    who_could: [manufacturer, payer, government, regulator, legislator]
+    scale: 1.5e10
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: progression, and the repair that has never worked
+    obstacles: []
+    what: >
+      **THE FIELD SUPPRESSED RELAPSES AND DISCOVERED THAT DISABILITY ARRIVES
+      ANYWAY.**
+      Progression independent of relapse activity accounts for the majority of
+      disability accumulation in modern treated cohorts. Something is destroying
+      axons without producing a relapse or a new lesion — compartmentalised
+      meningeal and microglial inflammation behind an intact blood-brain barrier,
+      chronic active lesions with smouldering rims, mitochondrial failure in
+      chronically demyelinated axons — and no available drug addresses it well. The
+      Bruton's tyrosine kinase inhibitors are the first serious attempt and their
+      first positive result arrived in 2024-25.
+      **The second half is remyelination, and it is the field's longest-running
+      disappointment.** Oligodendrocyte precursor cells are present in chronic
+      lesions and do not differentiate. The biology of that block has been studied
+      for twenty years; clemastine, opicinumab and others have produced marginal
+      or negative results. **No approved therapy repairs myelin**, which means
+      every one of this record's `residue` figures is permanent by default rather
+      than by necessity.
+      A remyelinating agent would do something no drug in this file does: **restore
+      function already lost.** It would also change `residue.permanent` from `true`
+      to gaps.md #176's proposed `if-caught`.
+      `scale: null`.
+    who_could: [academic, sponsor, manufacturer, philanthropy]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: an MRI scanner and a neurologist, which most of the world does not have
+    obstacles: []
+    what: >
+      Diagnosing multiple sclerosis requires magnetic resonance imaging and
+      somebody trained to interpret it in context; treating it requires a
+      neurologist, infusion capacity or reliable pharmacy supply, and ongoing MRI
+      and blood monitoring.
+      **Across most of the world none of that exists**, and the international
+      registry's atlas documents the consequence directly: large parts of Africa,
+      South Asia and Central Asia have a handful of neurologists per million people
+      and no reliable access to disease-modifying therapy.
+      That interacts with the `window` in the worst possible way. **A disease whose
+      treatment must start early, in a health system where the diagnosis takes
+      years or never happens, produces exactly the progressive disability the drugs
+      exist to prevent** — and those patients then present with established
+      disability that nothing reverses.
+      It is gaps.md #154's shape again: not a product problem. Scanners, training
+      and specialist time have to be built and operated locally, and MS is a small
+      enough population in most countries that it competes badly for them.
+    who_could: [health-system, government, payer, nonprofit, academic]
+    scale: 5.0e9
+    standing: documented
+    src: recall
+
+  - kind: evidence-incomplete
+    blocks: knowing what order to give the drugs in, and when to stop
+    obstacles: []
+    what: >
+      **THREE ORDINARY QUESTIONS, ALL ANSWERABLE, NONE ANSWERED FOR THIRTY
+      YEARS.**
+      *Start high or escalate?* Beginning with the most effective agents produces
+      better outcomes in observational data; escalating from safer ones exposes
+      fewer people to serious harm. Dedicated randomised trials have only recently
+      been reporting, three decades after the first drug was licensed.
+      *When can somebody stop?* Inflammatory activity declines with age, the drugs
+      carry cumulative infection and malignancy risk, and older patients on
+      long-term therapy may be taking all of the harm and none of the benefit.
+      Discontinuation trials exist and are small.
+      *Which drug for which patient?* Nothing predicts response. Selection is by
+      risk tolerance and by what is reimbursed.
+      **None of this requires a discovery. It requires head-to-head and
+      de-escalation trials that no manufacturer has a reason to fund**, in a field
+      where every product is on patent and comparison is commercially unattractive.
+      It is the same publicly-funded-trial gap `covid-19` identified as the highest
+      return of the pandemic (gaps.md #164), in a chronic disease where the
+      question has been open long enough to have harmed people in both directions.
+    who_could: [academic, sponsor, government, payer, regulator]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    blocks: a year or two spent inside the window, before anybody looks
+    obstacles: []
+    what: >
+      Time from first symptom to diagnosis is commonly one to two years, and that
+      time is spent inside the period when treatment is worth most.
+      The reasons are ordinary: the first attack is frequently transient — a
+      numb limb, blurred vision in one eye, a few weeks of imbalance — and it
+      resolves before anybody investigates. Optic neuritis is the classic
+      presentation and is often attributed to something else. Primary care has no
+      screening tool and no reason to suspect a rare disease in a young adult who
+      got better.
+      **Serum neurofilament light chain** may change this: it rises with axonal
+      injury, is measurable in blood, and could flag both undiagnosed disease and
+      subclinical progression in treated patients. It is close to clinical use and
+      not there.
+      The counterpoint is that the criteria have already been revised five times to
+      permit earlier diagnosis, and treating radiologically isolated syndrome
+      reduces conversion. **This record has been steadily pulling its own
+      diagnosis upstream for twenty-five years and it has been right to** — which
+      is not true of every record doing the same thing (gaps.md #170).
+    who_could: [academic, health-system, manufacturer, government]
+    scale: 8.0e8
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0087
+  rated: 2026-08-25
+  by: [claude, jeremy]

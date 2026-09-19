@@ -1,0 +1,147 @@
+slug: h-pylori-ulcer
+id: FND-D-0001
+name: peptic ulcer disease caused by Helicobacter pylori
+also: [H. pylori peptic ulcer, peptic ulcer disease, duodenal ulcer]
+mondo: MONDO:0004247
+kind: disease
+residual: false
+contested: false
+
+# The cleanest `curative` in the register, and the reference point the other
+# nine are measured against: a finite course of drugs, and the disease is gone.
+
+burden:
+  prevalence:
+    value: 8.0e6
+    units: people (symptomatic PUD, point prevalence)
+    src: recall
+  dalys:
+    value: 2.0e6
+    units: DALY/year
+    src: recall
+  note: >
+    H. pylori colonises on the order of half of humanity; only a small
+    minority develop ulcers. Prevalence of the INFECTION and of the DISEASE
+    differ by orders of magnitude and must not be conflated.
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: risk-reduction
+  ongoing: none
+  efficacy:
+    value: 0.85
+    units: fraction-of-patients (eradication on first-line therapy)
+    src: recall
+  access:
+    value: 0.6
+    units: fraction-of-patients
+    src: recall
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: partial
+  witness: >
+    Susceptibility testing exists and is rarely performed, so regimens are
+    chosen empirically and quietly fail against rising clarithromycin
+    resistance. The measurement gap here is neither scientific nor
+    technological but a matter of what gets ordered — the cheapest kind to
+    close. Which colonised person will ulcerate remains unpredictable, though
+    it matters less once the organism is simply eradicated.
+
+toll:
+  severity: none
+  permanent: false
+  what: >
+    A fortnight of oral antibiotics. Nausea, taste disturbance and diarrhoea
+    during the course, and Clostridioides difficile infection occasionally;
+    nothing permanent is taken. This is the register's reference point for a
+    clean cure, and the reason `toll` had to exist to distinguish it from the
+    others.
+  incidence:
+    value: 0.0
+    units: fraction-of-treated (permanent harm)
+    src: recall
+
+residue:
+  severity: minor
+  permanent: true
+  what: >
+    Rated `minor` deliberately, and the reasoning is the calibration this field
+    needs. For the modal patient eradication IS restoration: the ulcer heals,
+    the symptoms go, and recurrence stops. What does not reverse is the gastric
+    mucosal atrophy and intestinal metaplasia in those who had already
+    developed it, and with it a gastric cancer risk that eradication reduces
+    substantially without abolishing.
+    So the residue is real, permanent, asymptomatic, and consequential for a
+    minority — which is exactly what `minor` is supposed to mean, and why this
+    record still derives `restored`. A field that rated everything `major`
+    would stop distinguishing anything.
+  incidence:
+    value: 0.3
+    units: >
+      fraction-of-cured (persistent atrophic gastritis or intestinal
+      metaplasia after successful eradication)
+    src: reasoning
+
+witness:
+  mechanism: >
+    Marshall and Warren identified the organism in gastric biopsies in 1983-84
+    and Marshall demonstrated causation on himself, developing gastritis after
+    deliberate ingestion; Nobel Prize 2005. The chain is complete and
+    unusually short: colonisation of gastric mucosa, urease-mediated survival
+    in acid, inflammation, mucosal defence failure, ulceration. The prior
+    consensus — stress and acid — was not an incomplete mechanism but the
+    wrong one, which is worth remembering when reading the `correlates`
+    ratings elsewhere in this register.
+  intervention: >
+    Triple or quadrium therapy (a PPI plus two or three antibiotics) for 7-14
+    days. Eradication ends the disease: ulcer recurrence falls from the
+    majority of patients within a year to a few per cent. Finite course, no
+    maintenance, nothing to adhere to afterwards — this is what `curative`
+    means and why HIV does not qualify for it.
+  prevention: >
+    No vaccine. Transmission is reduced by sanitation and crowding measures,
+    which is `risk-reduction` and not prophylaxis. Population-level
+    eradication is discussed for gastric cancer prevention rather than ulcers.
+  efficacy: >
+    First-line eradication has fallen with clarithromycin resistance —
+    historically above 90%, now materially lower in high-resistance regions,
+    with second-line regimens recovering most failures. A rating that is
+    drifting downward for reasons that have nothing to do with knowledge.
+
+holes:
+  - Why only a minority of colonised people ulcerate is not settled — host
+    and strain factors are named but not assembled into a chain.
+  - Rising antibiotic resistance is eroding `efficacy` over time; the register
+    needs to distinguish a rating that fell because the world changed from one
+    that fell because we learned something.
+
+blockers:
+  - kind: diagnosis
+    blocks: eradication therapy (curative)
+    what: >
+      Test-and-treat is not applied consistently; many patients receive acid
+      suppression alone, which relieves the ulcer and leaves the cause. The
+      cure is withheld by not looking for the organism.
+    who_could: [health-system]
+    scale: 1e8
+    standing: documented
+    src: recall
+  - kind: tooling
+    blocks: eradication therapy (curative)
+    what: >
+      Regimens are chosen empirically because routine susceptibility testing is
+      rare, so rising clarithromycin resistance silently lowers cure rates.
+      Local resistance surveillance would recover much of the lost efficacy
+      without any new drug.
+    who_could: [health-system, academic, software]
+    scale: 1e7
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0001
+  rated: 2026-08-11
+  by: [claude, jeremy]

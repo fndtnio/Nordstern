@@ -1,0 +1,333 @@
+slug: breast-cancer
+id: FND-D-0017
+name: breast cancer
+also: [carcinoma of the breast]
+mondo: MONDO:0007254
+kind: disease
+residual: false
+contested: false
+
+# The record that forced `strata`, and the first in the register where "is it
+# solved" is a MALFORMED QUESTION rather than a hard one. Stage I is cured and
+# stage IV is not, and both are breast cancer.
+#
+# It also breaks something every other window record assumed. Everywhere else,
+# catching it earlier is strictly better. Here it is not: screening converts
+# fatal cancers into curable ones AND inflicts full cancer treatment on people
+# whose cancer would never have harmed them. The window and the toll are in
+# direct conflict, and no other record in the register has that shape.
+
+burden:
+  incidence:
+    value: 2.3e6
+    units: new cases/year
+    src: recall
+  deaths:
+    value: 6.7e5
+    units: deaths/year
+    src: recall
+  prevalence:
+    value: 7.8e6
+    units: people alive within 5 years of diagnosis
+    src: recall
+  note: >
+    The most commonly diagnosed cancer in women worldwide. Survival differs
+    enormously by country — on the order of 90% five-year net survival in
+    high-income settings against roughly half that in parts of sub-Saharan
+    Africa — and almost all of that gap is stage at presentation and treatment
+    availability rather than tumour biology.
+
+survival:
+  horizon: 5 years from diagnosis
+  untreated:
+    value: 0.18
+    units: >
+      fraction alive — from the Middlesex Hospital natural-history series and
+      comparable untreated cohorts, with a median survival near two and a half
+      years from presentation. **These were symptomatic, palpable, often
+      locally-advanced tumours**, not the screen-detected disease the treated
+      figure describes, which inflates the apparent gain
+    src: recall
+  treated:
+    value: 0.90
+    units: >
+      fraction alive with stage-appropriate surgery, radiotherapy, endocrine
+      therapy and systemic treatment in a high-income system. **Global survival is
+      substantially lower** — this record's `access` axis — and the register's
+      `strata` hold the stage-by-stage figures that this average conceals
+    src: recall
+  witness: >
+    **The comparison across a century is not clean and it is worth making
+    anyway.** Part of the rise from 0.18 to 0.90 is better treatment; part is
+    lead time from screening, and part is overdiagnosis of cancers that would
+    never have killed anybody — the same effect the `prostate-cancer` record
+    flags. The honest reading is that a large real gain is inflated by an unknown
+    amount that nobody can subtract.
+    **This is the general problem with the untreated column** and it applies to
+    every cancer here: the historical cohort had advanced disease by definition,
+    because that is when it presented.
+
+axes:
+  mechanism: partial
+  intervention: curative
+  prevention: risk-reduction
+  ongoing: moderate
+  efficacy:
+    value: 0.8
+    units: fraction-of-patients (long-term disease-free with best available treatment)
+    src: recall
+  access:
+    value: 0.45
+    units: fraction-of-patients (timely diagnosis and complete multimodal treatment)
+    src: recall
+
+strata:
+  - name: stage I-II (early, operable)
+    fraction:
+      value: 0.62
+      units: fraction-of-diagnoses (high-income, screened populations)
+      src: recall
+    intervention: curative
+    efficacy:
+      value: 0.9
+      units: fraction-of-stratum (alive and disease-free long-term)
+      src: recall
+    toll: major
+    what: >
+      Surgery — breast-conserving with radiation, or mastectomy — with sentinel
+      node biopsy, plus systemic therapy chosen by subtype. Most of these
+      patients are cured. The toll is real and permanent for a substantial
+      minority (lymphoedema, infertility, neuropathy) but the disease ends.
+  - name: stage III (locally advanced)
+    fraction:
+      value: 0.30
+      units: fraction-of-diagnoses
+      src: recall
+    intervention: curative
+    efficacy:
+      value: 0.65
+      units: fraction-of-stratum (alive and disease-free long-term)
+      src: recall
+    toll: catastrophic
+    what: >
+      Still treated with curative intent, and this is where the register's
+      harshest toll sits — a counterintuitive result worth stating plainly. Cure
+      here means the full arsenal: neoadjuvant chemotherapy, mastectomy, axillary
+      dissection, radiation and years of endocrine therapy. The most aggressive
+      treatment is given to the group being cured, not to the group dying, so
+      maximum toll and curative intent coincide.
+  - name: stage IV (metastatic at diagnosis, or later recurrence)
+    fraction:
+      value: 0.08
+      units: fraction-of-diagnoses (de novo metastatic; recurrence adds more later)
+      src: recall
+    intervention: suppressive
+    efficacy:
+      value: 0.6
+      units: fraction-of-stratum (meaningful durable disease control)
+      src: recall
+    toll: major
+    what: >
+      Not curable, and the honesty of that word matters: metastatic breast
+      cancer is treated indefinitely, through successive lines, until it stops
+      responding. Median survival is measured in years and is far longer for
+      HER2-positive disease than it was twenty years ago, with a small tail of
+      very long survivors. But nobody is cured, and calling breast cancer a
+      "curable cancer" without a stratum for these patients is the specific
+      inaccuracy this block exists to prevent.
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: partial
+  witness: >
+    The register's most instructive measurement record, because it is strong
+    where people assume it is weak and weak where they assume it is strong.
+    PREDICTIVE measurement here is the paradigm case for all of medicine: ER,
+    PR and HER2 status assign treatment directly, and genomic recurrence
+    assays identify many women who can safely skip chemotherapy. That is
+    `partial` only because triple-negative disease has little to offer and the
+    assays are unevenly deployed. PROGNOSTIC measurement is good for
+    symptomatic disease — stage, grade, nodal status — and absent for the
+    question that matters most: whether a screen-detected cancer would ever
+    have harmed this patient. That single missing measurement is what produces
+    overdiagnosis, and it is why the record rates `partial` rather than
+    `good`. See holes: the gap is stratum-specific and the record-level rating
+    cannot express that.
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    Record-level rating describes the modal (early-stage) patient; see `strata`
+    for the stage III rating of `catastrophic`. Cure costs, in combination:
+    the breast, or its shape and sensation; the axilla, and with it a permanent
+    risk of lymphoedema, far higher after full dissection than after sentinel
+    node biopsy; fertility, through chemotherapy-induced premature ovarian
+    insufficiency, which lands on young women at exactly the wrong moment;
+    peripheral sensory nerves, through taxane neuropathy that frequently does
+    not recover; cardiac reserve, through anthracycline dose-dependent
+    cardiotoxicity that is permanent; and rarely a second cancer, from
+    radiation or from alkylating agents. Endocrine therapy adds five to ten
+    years of arthralgia, hot flushes and bone loss, with an endometrial cancer
+    risk on tamoxifen.
+    Two things follow that no other record shows as clearly. First, much of
+    modern breast cancer research is TOLL REDUCTION rather than capability
+    improvement — sentinel node biopsy instead of axillary clearance,
+    genomic assays to identify who can safely skip chemotherapy, shorter
+    radiation schedules, de-escalated HER2 regimens. That is real progress and
+    it does not move a single axis on this record. Second, the toll is
+    inflicted on people who were never going to die of this — see `window`.
+  incidence:
+    value: 0.35
+    units: fraction-of-treated (any permanent sequela of treatment)
+    src: recall
+
+window:
+  what: >
+    The only window in the register that cuts both ways, and the reason it must
+    not be read as "earlier is better, full stop".
+    THE CASE FOR: stage at diagnosis is the dominant determinant of survival, and
+    it is what separates a 90% five-year survival from half that. In most of the
+    world the binding problem is late presentation — a lump found late, a
+    diagnosis delayed, treatment begun at stage III or IV. Every stratum boundary
+    above is a window closing.
+    THE CASE AGAINST: mammographic screening also finds cancers that would never
+    have become symptomatic in the patient's lifetime — overdiagnosis — and
+    every one of those patients receives the toll above for no benefit at all.
+    Estimates of the overdiagnosed fraction of screen-detected cancers range from
+    roughly a tenth to a third depending on method, and the disagreement is
+    genuine rather than resolvable by more data of the same kind. Add DCIS, much
+    of which would never progress, and a large number of people are treated for
+    cancer they did not need treated.
+    So this record contains the `harm without benefit` category INSIDE a curable
+    disease, which is a shape the schema did not anticipate. The lever that
+    resolves it is not more screening or less screening but a way to tell which
+    tumours need treating — which is a `knowledge` blocker, and the most
+    valuable unsolved question here.
+  closes_on: nodal and then distant spread
+  caught_in_time:
+    value: 0.62
+    units: fraction-of-diagnoses (early stage; far lower in low-income settings)
+    src: recall
+
+witness:
+  mechanism: >
+    `partial`, and the rating undersells how much is genuinely known while being
+    honest about the hole. Breast cancer is among the best mechanistically
+    dissected of all cancers: oestrogen receptor signalling, HER2 amplification,
+    BRCA1/2 and homologous recombination deficiency, PIK3CA and TP53, and the
+    intrinsic molecular subtypes. Crucially, several treatments were DESIGNED
+    against known targets rather than found — tamoxifen and aromatase inhibitors
+    against ER, trastuzumab against HER2, PARP inhibitors against BRCA-mutant
+    tumours, CDK4/6 inhibitors against the cell-cycle machinery. That is a
+    mechanism-to-drug chain most of this register lacks entirely.
+    The named holes: what initiates the disease in a given woman is
+    probabilistic rather than causal; why metastatic cells lie dormant for
+    fifteen or twenty years and then reawaken is unexplained, and it is why
+    "cured" can only ever be said retrospectively; and there is no way to tell
+    an indolent early cancer from a lethal one at diagnosis, which is the direct
+    cause of the overtreatment above.
+  intervention: >
+    `curative` at record level because early disease is genuinely cured — but
+    read the strata. Multimodal therapy is the standard: surgery, radiation, and
+    systemic treatment matched to subtype. Metastatic disease is `suppressive`
+    and no line of therapy changes that.
+  prevention: >
+    `risk-reduction` for the population — chemoprevention with tamoxifen or an
+    aromatase inhibitor in high-risk women, and the modifiable contributions of
+    alcohol, obesity and physical inactivity. For BRCA1/2 carriers specifically,
+    risk-reducing mastectomy and salpingo-oophorectomy are `prophylaxis` grade,
+    which is a stratum-level fact the prevention axis cannot currently express.
+    Screening is early detection, not prevention, and is recorded in `window`.
+  ongoing: >
+    `moderate`. Five to ten years of endocrine therapy for the hormone-receptor-
+    positive majority, with discontinuation rates that reflect how unpleasant it
+    is, plus surveillance and the permanent knowledge that late recurrence
+    happens.
+
+blockers:
+  - kind: knowledge
+    obstacles: [who-progresses]
+    blocks: cure of metastatic disease, and avoidance of overtreatment
+    what: >
+      Two research problems and they are the two biggest things here. Metastatic
+      breast cancer is not curable and dormancy is not understood, so recurrence
+      cannot be predicted or prevented. And nothing distinguishes an early cancer
+      that will kill from one that never would, which is why the overdiagnosed
+      receive the full toll. A test that answered the second would reduce more
+      suffering than most new drugs.
+    who_could: [academic, sponsor]
+    scale: null
+    standing: documented
+    src: recall
+  - kind: diagnosis
+    blocks: treatment at an early stage
+    what: >
+      The dominant driver of the global mortality gap. Late presentation and
+      diagnostic delay — not tumour biology — is why survival differs roughly
+      twofold between high- and low-income countries. Clinical breast
+      examination, prompt referral pathways and accessible biopsy do most of the
+      work; population mammographic screening is a later and more contested
+      addition.
+    who_could: [health-system, government, nonprofit]
+    scale: 1e9
+    standing: documented
+    src: recall
+  - kind: cost
+    blocks: HER2-targeted and later-line therapy
+    what: >
+      Trastuzumab and subsequent targeted agents, CDK4/6 inhibitors and
+      antibody-drug conjugates carry prices that put them out of reach across
+      much of the world, in a disease where the biology is identical everywhere.
+      Trastuzumab biosimilars have materially reduced this, so the blocker is
+      partly clearing — a useful demonstration that a `cost` blocker can be
+      cleared without new science.
+    who_could: [payer, manufacturer, government, nonprofit]
+    scale: 1e9
+    standing: documented
+    src: recall
+  - kind: tooling
+    blocks: de-escalation — sparing patients treatment they do not need
+    what: >
+      Genomic recurrence assays already identify many women who can safely skip
+      chemotherapy, and they are unevenly available and often unfunded. This is
+      the register's clearest case of a lever that reduces TOLL without changing
+      CAPABILITY, and the schema previously had no place to value it. Cheap
+      relative to its effect.
+    who_could: [payer, health-system, academic, software]
+    scale: 1e8
+    standing: documented
+    src: recall
+  - kind: logistics
+    blocks: complete multimodal treatment
+    what: >
+      Cure requires surgery, radiotherapy and systemic therapy in sequence.
+      Radiotherapy capacity in particular is absent across large parts of the
+      world, so treatment is incomplete rather than merely delayed, and partial
+      treatment converts a curable cancer into a fatal one.
+    who_could: [government, health-system, nonprofit, philanthropy]
+    scale: 1e9
+    standing: documented
+    src: recall
+
+holes:
+  - Overdiagnosis estimates range from roughly a tenth to a third of
+    screen-detected cancers and the methods disagree fundamentally. Any use of
+    this record's window must carry the range, and the disagreement may be a
+    `contested: true` case in disguise.
+  - DCIS probably deserves its own record. Much of it never progresses, it is
+    treated as cancer, and it is the purest instance of the harm-without-benefit
+    problem inside a screening programme.
+  - The stratum fractions are high-income screened-population figures. In most of
+    the world the distribution is shifted heavily toward stage III and IV, which
+    means the record as rated describes the minority of patients — a limitation
+    the schema cannot currently express, since strata have one fraction each.
+  - Subtype (hormone-receptor-positive, HER2-positive, triple-negative) drives
+    prognosis and treatment as strongly as stage does, and cuts across it. A
+    second, orthogonal stratification axis is not supported.
+
+assertion:
+  id: FND-A-0017
+  rated: 2026-08-11
+  by: [claude, jeremy]

@@ -1,0 +1,427 @@
+slug: visceral-leishmaniasis
+id: FND-D-0024
+name: visceral leishmaniasis
+also: [kala-azar, VL, black fever, Leishmania donovani infection]
+mondo: MONDO:0005445
+kind: disease
+residual: false
+contested: false
+
+# TWO THINGS THE REGISTER CANNOT SAY, AND THIS RECORD NEEDS BOTH.
+#
+# 1. THE RESIDUE IS A TRANSMISSION RESERVOIR. Post-kala-azar dermal
+#    leishmaniasis appears months to years after apparently successful cure: a
+#    skin rash, usually not severe enough to send anyone to a clinic — and
+#    INFECTIOUS TO SANDFLIES. PKDL patients sustain transmission between
+#    epidemics. So the damage the disease leaves in someone you cured is mild
+#    for them and is the mechanism by which the disease survives.
+#    The `residue` field was added yesterday and already has toll's blind spot:
+#    it measures harm to the treated patient. Here the residue and the
+#    externality are THE SAME OBJECT, where in tuberculosis they were two.
+#    See gaps.md #51.
+#
+# 2. IT IS SOLVED IN ONE PLACE AND NOT ANOTHER. Bangladesh was validated in
+#    2023 as the first country ever to eliminate visceral leishmaniasis as a
+#    public health problem, and the Indian subcontinent has gone from tens of
+#    thousands of cases to a few thousand. Over the same period East Africa
+#    became the majority of the world's burden, with worse drug response, HIV
+#    co-infection and conflict. Same disease, same drugs, opposite
+#    trajectories — and the register has one global row. See gaps.md #52.
+
+burden:
+  incidence:
+    value: 7.0e4
+    units: >
+      estimated new cases/year — reported cases are far fewer, on the order of
+      fifteen to twenty thousand, and the gap between the two is the diagnosis
+      blocker rather than an estimate of uncertainty
+    src: recall
+  deaths:
+    value: 2.0e4
+    units: >
+      deaths/year — the least firm figure in this record. Untreated visceral
+      leishmaniasis is over ninety percent fatal, so mortality tracks whoever
+      is not reached, and that denominator is exactly what is not known
+    src: unknown
+  note: >
+    Fatal if untreated, which sets it apart from the two neglected tropical
+    diseases already here. Chagas has an indeterminate phase where two thirds
+    never become ill; tuberculosis has two billion latently infected of whom
+    most never progress. Visceral leishmaniasis has no such problem — the
+    difficult ethical question of whom to treat does not arise, because
+    everyone with the disease dies without treatment.
+    THE GEOGRAPHY IS THE STORY. The Indian subcontinent programme drove cases
+    from roughly seventy-seven thousand in 2007 to a few thousand, and
+    Bangladesh was validated in 2023 as the first country to eliminate it as a
+    public health problem. East Africa — Sudan, South Sudan, Ethiopia, Kenya,
+    Somalia — is now the majority of global cases and is the harder problem.
+    A single global figure conceals a success and a deterioration happening
+    simultaneously.
+
+survival:
+  horizon: 12 months from onset
+  untreated:
+    value: 0.05
+    units: >
+      fraction alive — **untreated visceral leishmaniasis is over 95% fatal**,
+      through progressive splenomegaly, wasting and secondary infection
+    src: recall
+  treated:
+    value: 0.95
+    units: >
+      fraction alive on liposomal amphotericin B — a single dose cures in much of
+      South Asia. **Antimonials, still used where the newer drug is
+      unaffordable, are cardiotoxic and less effective**
+    src: recall
+  witness: >
+    **Another uniformly-fatal-to-curable transition, and it is nearly finished
+    in one region and not started in another.** India's elimination programme
+    has driven cases down sharply; East Africa, with a more resistant parasite
+    and less money, has not moved. Same disease, same drug, different survival.
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: risk-reduction
+  ongoing: low
+  efficacy:
+    value: 0.85
+    units: >
+      fraction-of-patients (cure with regionally appropriate first-line
+      therapy) — blends roughly 0.95 in the Indian subcontinent with lower
+      figures in East Africa and much lower in HIV co-infection
+    src: reasoning
+  access:
+    value: 0.55
+    units: >
+      fraction-of-patients (reached and treated) — BIMODAL AND THEREFORE
+      MISLEADING AS A SINGLE NUMBER: active case detection in the subcontinent
+      is now good, while conflict, distance and seasonality keep East African
+      access poor. See gaps.md #52
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: partial
+  witness: >
+    DIAGNOSTIC is `objective` and is one of the quiet successes in this
+    register: the rK39 rapid test is a dipstick, needs no laboratory, no cold
+    chain and no electricity, and performs around ninety-five percent
+    sensitivity in the Indian subcontinent. It is materially worse in East
+    Africa — closer to eighty-five percent — which is one of several ways the
+    same disease is a different problem there. The alternative is a splenic or
+    bone marrow aspirate: definitive, invasive, and occasionally fatal.
+    AND IT CANNOT TELL YOU WHETHER TREATMENT WORKED. rK39 detects antibody and
+    stays positive for years after cure, so it cannot confirm cure, cannot
+    detect relapse, and cannot be used to find the PKDL cases that matter most
+    for transmission. Relapse is diagnosed by clinical suspicion and a repeat
+    aspirate. This is the third record in a row with no test of cure —
+    tuberculosis has one for active disease and not for latent infection,
+    Chagas has none at all, and here the test that made field diagnosis
+    possible is structurally incapable of being one. See gaps.md #45.
+    PROGNOSTIC is `partial`. Untreated outcome is not in doubt — over ninety
+    percent die — and severity at presentation predicts treatment mortality
+    well. What is not predicted is who relapses and, more consequentially, who
+    develops PKDL, which is the question that decides whether transmission
+    continues.
+    PREDICTIVE is `partial`. Regimen choice is driven by region, species and
+    HIV status, all of which carry real information, and HIV co-infection
+    strongly predicts relapse. What does not exist is anything patient-level
+    comparable to tuberculosis's drug susceptibility testing.
+
+strata:
+  - name: immunocompetent, Indian subcontinent
+    fraction:
+      value: 0.30
+      units: fraction-of-cases
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.95
+      units: fraction-of-stratum (cure, single-dose liposomal amphotericin B)
+      src: recall
+    toll: minor
+    what: >
+      The best outcome in this record and one of the best in the register: a
+      SINGLE INFUSION, one day, cure in about ninety-five percent. It replaced
+      thirty days of painful antimonial injections that were failing in more
+      than half of patients in Bihar through acquired resistance. This is the
+      stratum the elimination programme was built on, and it is why Bangladesh
+      is validated as eliminated and the subcontinent's case counts collapsed.
+
+  - name: immunocompetent, East Africa
+    fraction:
+      value: 0.60
+      units: fraction-of-cases
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.88
+      units: fraction-of-stratum (cure, combination therapy)
+      src: reasoning
+    toll: major
+    what: >
+      The same disease and a different problem. Single-dose liposomal
+      amphotericin does not perform as well here, so first-line is seventeen
+      days of combination therapy including a pentavalent antimonial — which
+      means cardiotoxicity, QT prolongation and pancreatitis, delivered daily
+      by injection in some of the least resourced and least stable health
+      systems on earth. PKDL is far commoner after treatment here than in the
+      subcontinent. Curable, and at a price the other stratum stopped paying a
+      decade ago.
+
+  - name: HIV co-infected
+    fraction:
+      value: 0.10
+      units: fraction-of-cases (concentrated in Ethiopia and north-east Africa)
+      src: reasoning
+    intervention: suppressive
+    efficacy:
+      value: 0.40
+      units: fraction-of-stratum (durable cure)
+      src: reasoning
+    toll: major
+    what: >
+      Where the ladder breaks. Relapse is the expectation rather than the
+      complication, initial cure is harder to achieve and rarely durable, and
+      management becomes indefinite secondary prophylaxis rather than a course
+      of treatment — which is `suppressive`, not `curative`, for the same
+      organism that a single infusion clears in Bihar. Mortality is high.
+      These patients are also disproportionately infectious, so the stratum
+      with the worst outcomes is also the one doing the most transmission.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    Rated for the direction of travel rather than the global average, and the
+    change is worth recording as change: see `moved`. Single-dose liposomal
+    amphotericin B causes infusion reactions and little else, and it is now
+    first-line for the whole Indian subcontinent. Where antimonials are still
+    used — most of East Africa — the price is real: cardiotoxicity, QT
+    prolongation, pancreatitis, and thirty days of painful injections in the
+    older regimens. Miltefosine, the first oral treatment, is teratogenic and
+    therefore constrained in exactly the population most affected.
+    Rated `minor` because the modal patient's treatment is trending hard toward
+    a single infusion, and the East African antimonial toll is carried in the
+    strata where it belongs.
+  incidence:
+    value: 0.02
+    units: >
+      fraction-of-treated (permanent sequelae of treatment) — a reasoned
+      estimate; the transient toxicity of antimonials is far commoner and is
+      not permanent harm
+    src: reasoning
+
+residue:
+  severity: minor
+  permanent: false
+  what: >
+    POST-KALA-AZAR DERMAL LEISHMANIASIS, AND IT IS THE MOST IMPORTANT THING IN
+    THIS RECORD DESPITE BEING RATED `minor`.
+    Months to years after apparently successful treatment, a proportion of
+    cured patients develop a skin eruption — macular, papular or nodular — on
+    the face, trunk and limbs. Rated `minor` and `permanent: false` honestly:
+    macular disease frequently self-heals, treatment clears it, and most
+    patients are not systemically unwell. Severe nodular forms are
+    disfiguring and stigmatising and are not minor for the person who has one,
+    but they are not the mode.
+    WHAT THE SEVERITY RATING CANNOT SEE IS THE ENTIRE POINT. PKDL patients are
+    INFECTIOUS TO SANDFLIES. They are the human reservoir that carries
+    transmission through the gaps between outbreaks, in an anthroponotic
+    disease where humans are the only reservoir that matters. And because the
+    rash rarely makes anyone feel ill, they do not present — so the people
+    sustaining the epidemic are precisely the people not seeking care. It is
+    commoner after East African disease than after subcontinental disease, by a
+    wide margin.
+    So the field added to this schema yesterday inherits the blind spot it was
+    added to fix. `toll` measured harm to the treated patient; `residue` was
+    built to measure the OTHER harm to the treated patient. Here the residue
+    and the externality are one object, and its cost to the patient is close to
+    the least interesting thing about it. See gaps.md #51 — and note that this
+    is the failure mode a register catches by adding records rather than by
+    thinking harder about the schema.
+  incidence:
+    value: 0.15
+    units: >
+      fraction-of-cured (developing PKDL) — a blended figure hiding a wide
+      geographic split: roughly five to ten percent after subcontinental
+      disease, and reported up to half or more in Sudan
+    src: reasoning
+
+# NO `window` BLOCK. Untreated visceral leishmaniasis kills, so delay kills —
+# but capability does not change with timing, which is the test this schema
+# applies. The drugs work on the last day they can be given. Treatment
+# mortality does rise with severity at presentation, which is an argument about
+# outcomes rather than about what is possible. Same reasoning as tuberculosis,
+# and the discipline is deliberate: three consecutive records have now declined
+# a window that could have been argued for.
+
+witness:
+  mechanism: >
+    `established`. Leishmania donovani and L. infantum, transmitted by
+    phlebotomine sandflies, parasitising macrophages of the spleen, liver and
+    bone marrow — which explains the presentation without remainder: the
+    enormous spleen, the hepatomegaly, the pancytopenia, the wasting, the
+    hypergammaglobulinaemia, and death from secondary infection or haemorrhage
+    rather than from the parasite directly. Transmission is anthroponotic in
+    the subcontinent and East Africa, where humans are the reservoir, and
+    zoonotic around the Mediterranean and in Brazil, where dogs are. That one
+    distinction determines whether treating people is also prevention.
+    The holes are on the host side, as in tuberculosis. Asymptomatic infection
+    outnumbers disease by a wide margin and nothing predicts who progresses.
+    PKDL's immunopathology is not settled. And why East African disease
+    responds less well to liposomal amphotericin than subcontinental disease is
+    genuinely unresolved — parasite genetics, host factors, or nutritional
+    status are all argued, and it is the difference on which the region's
+    treatment strategy turns.
+  intervention: >
+    `curative`, and the last two decades have been extraordinary. The historical
+    treatment was pentavalent antimony — a 1940s drug, thirty days of painful
+    injections, cardiotoxic, and by the 2000s failing in over half of patients
+    in Bihar through acquired resistance. It has been replaced in the
+    subcontinent by a SINGLE 10 mg/kg INFUSION of liposomal amphotericin B,
+    curing about ninety-five percent in one day. Miltefosine arrived in 2002 as
+    the first oral treatment, and paromomycin and combination regimens fill out
+    the rest.
+    That transformation is recorded in `moved` rather than left as prose,
+    because it is the shape of progress this register keeps failing to see:
+    capability did not change — it was curable before and it is curable now —
+    but the price fell from thirty days of a cardiotoxic injection to one
+    infusion. Gap 26 asked where toll reduction goes when no axis moves. It
+    moves `toll`, and `moved` can carry it.
+    What has not changed is the HIV co-infected stratum, where relapse is the
+    norm and the honest rating is `suppressive`.
+  prevention: >
+    `risk-reduction`. Indoor residual spraying and insecticide-treated nets
+    reduce sandfly exposure and were a component of the subcontinental
+    elimination programme. There is no human vaccine.
+    Note the peculiarity of an anthroponotic disease: in the subcontinent and
+    East Africa, humans are the reservoir, so FINDING AND TREATING CASES IS
+    ITSELF PREVENTION — and treating PKDL, which makes nobody feel better in a
+    hurry, is among the most valuable preventive acts available. The schema
+    files case-finding under `diagnosis` blockers and treatment under
+    `intervention`, and has no way to record that here they are also the
+    prevention programme.
+  ongoing: >
+    `low`, and for the subcontinental stratum astonishingly so: one infusion and
+    it is finished. Among curable records only a course of antibiotics compares.
+    The East African regimens are seventeen days of daily injection, and the
+    HIV co-infected stratum is indefinite secondary prophylaxis, which is not
+    `low` at all — another thing the record-level axis flattens.
+
+moved:
+  - date: 2011
+    axis: toll
+    from: major
+    to: minor
+    why: >
+      Single-dose liposomal amphotericin B displaced thirty days of pentavalent
+      antimonial injections as first-line in the Indian subcontinent — same
+      capability, a fraction of the price paid for it. Recorded because
+      `moved` is what makes a second pass a comparison rather than a fresh
+      opinion, and because toll reduction is a kind of progress the register
+      had previously decided no axis records. It does: this one.
+
+holes:
+  - Why East African disease responds less well to liposomal amphotericin B.
+    The region's whole treatment strategy rests on the answer and it is unsettled.
+  - What determines who develops PKDL. This is the question that decides whether
+    transmission continues, and nothing predicts it.
+  - How much PKDL there is. Reported incidence ranges from a few percent to over
+    half depending on region and on how hard anyone looked, and the people with
+    it do not present.
+  - No test of cure, and rK39 cannot become one — it detects antibody and stays
+    positive for years.
+  - The `deaths` figure is the weakest number in this record. Mortality tracks
+    whoever is not reached, and that denominator is the thing not known.
+  - The strata fractions are reasoned from the reported shift of burden toward
+    East Africa, not measured. Reporting is incomplete in exactly the places
+    where the fraction matters most.
+  - Written from model recall. The single-dose regimen, the Bangladesh
+    elimination validation and PKDL's role as a reservoir are the parts most
+    likely right; every number is the part most likely wrong.
+
+blockers:
+  - kind: diagnosis
+    blocks: finding cases, and finding the PKDL that sustains transmission
+    what: >
+      Two gaps of different kinds under one heading. The first is the ordinary
+      one: estimated incidence runs several times reported incidence, and the
+      shortfall sits in remote, seasonal and conflict-affected districts of
+      East Africa where the rK39 dipstick also performs worse than it does in
+      Asia.
+      The second has no equivalent elsewhere in this register. Finding PKDL is
+      not about diagnosing a sick person — it is about **actively seeking
+      people who feel well enough not to come**, in order to interrupt
+      transmission rather than to relieve them. Every incentive in a clinical
+      system points the wrong way for that, and no diagnostic test helps,
+      because the people concerned are not looking for one.
+    who_could: [health-system, government, nonprofit, philanthropy]
+    scale: 5.0e7
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    obstacles: [cold-chain]
+    blocks: delivering a single-dose cure that needs a cold chain and a drip
+    what: >
+      The sharpest logistics blocker in the register, because the science could
+      not be more finished. The treatment is ONE INFUSION and it cures
+      ninety-five percent. It also requires refrigerated storage, intravenous
+      access, and a facility that can observe an infusion — in South Sudan, in
+      the rainy season, in districts reachable by road for part of the year.
+      Nothing about this is a discovery problem. It is cold chain, transport
+      and staffed facilities, which is the most purchasable category of problem
+      there is, and it is why the same drug produced elimination in Bangladesh
+      and has not in South Sudan.
+    who_could: [health-system, government, nonprofit, philanthropy]
+    scale: 1.0e8
+    standing: documented
+    src: recall
+
+  - kind: no-sponsor
+    obstacles: [donation-dependency]
+    blocks: a supply that does not depend on a donation continuing
+    what: >
+      Documented and structurally uncomfortable rather than obstructive. The
+      elimination programme's key drug reaches endemic countries substantially
+      through a manufacturer donation to WHO. That is generous, it has worked,
+      and it is a dependency: a public health programme in a dozen countries
+      resting on a commercial decision that could be revisited, for a drug
+      whose market is by definition people who cannot pay for it.
+      This is the same neglected-disease economics as Chagas and tuberculosis,
+      with a different institutional patch. Chagas got a nonprofit product
+      development partnership; tuberculosis got philanthropic and public
+      funding; this got a donation. Three diseases, three improvised answers to
+      the same missing incentive, and none of them a market.
+    who_could: [manufacturer, government, philanthropy, nonprofit, payer]
+    scale: 2.0e8
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    obstacles: [who-progresses]
+    blocks: a vaccine, and any way to predict or prevent PKDL
+    what: >
+      There is no human vaccine, and for an anthroponotic disease driven to low
+      numbers by case-finding, that matters more at the end than at the
+      beginning: elimination programmes that get to very low incidence have to
+      stay there, and staying there currently means surveillance forever.
+      The more specific gap is PKDL. Nothing predicts who develops it, its
+      immunopathology is unsettled, and treatment is a twelve-week course
+      offered to someone who feels well — which is an adherence problem created
+      by a knowledge problem. A marker that identified the PKDL-bound at the
+      point of cure would let a programme treat the reservoir instead of
+      hunting it.
+      `scale: null`; there is no priced path.
+    who_could: [academic, sponsor, nonprofit]
+    scale: null
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0024
+  rated: 2026-08-21
+  by: [claude, jeremy]

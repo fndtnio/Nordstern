@@ -1,0 +1,604 @@
+slug: spinal-muscular-atrophy
+id: FND-D-0091
+name: spinal muscular atrophy
+also: [SMA, 5q SMA, proximal spinal muscular atrophy, Werdnig-Hoffmann disease, Kugelberg-Welander disease]
+mondo: MONDO:0019079
+kind: disease
+residual: false
+contested: false
+
+# JOINED TO `proximal spinal muscular atrophy` RATHER THAN THE PARENT
+# `MONDO:0001516 spinal muscular atrophy`, because this record is about the
+# 5q/SMN1-related disease — roughly 95% of cases, and the only kind the three
+# approved drugs treat. The non-5q spinal muscular atrophies are a separate and
+# much rarer group with different genes and no therapy.
+#
+# THE COUNTER-CASE TO `cystic-fibrosis`, ONE RECORD LATER, AND THE PAIR IS A
+# CONTROLLED EXPERIMENT THE REGISTER SHOULD NOT WASTE:
+#
+#   CFTR cloned 1989 → gene therapy attempted from 1993 → THIRTY-FIVE YEARS,
+#     NO APPROVED PRODUCT. What worked was small-molecule protein chemistry.
+#   SMN1 identified 1995 → gene therapy approved 2019, AND two splicing drugs.
+#
+# Same era, same logic, same ambition, opposite outcome. **The variable is not
+# understanding. It is whether the vector can reach the cell** — motor neurons
+# are post-mitotic and reachable by an intravenous AAV in an infant; airway
+# epithelium sits behind mucus and turns over. See gaps.md #193.
+
+burden:
+  prevalence:
+    value: 1.0e5
+    units: >
+      people living with 5q spinal muscular atrophy worldwide, order of magnitude
+      — **and the figure is rising for the best possible reason.** Type 1 killed
+      before the age of two, so prevalence was held down by mortality; children
+      who would have died are now growing up
+    src: reasoning
+  cases:
+    value: 8.0e3
+    units: >
+      births/year with SMA — roughly one in ten thousand live births, with a
+      carrier frequency around one in fifty
+    src: recall
+  note: >
+    **SPINAL MUSCULAR ATROPHY TYPE 1 WAS THE LEADING GENETIC CAUSE OF INFANT
+    DEATH, AND IT IS NOT ANY MORE.**
+    Untreated, a type 1 infant never sits, and by two years is dead or permanently
+    ventilated. In the presymptomatic treatment trials — babies identified by
+    newborn screening and treated within days or weeks — **essentially all
+    survived, all sat, and most walked on a normal schedule.**
+    That is the largest reversal of a natural history in this register, it
+    happened between 2016 and 2020, and **almost the entire benefit depends on
+    treating before symptoms appear.** A child treated at six months is stabilised
+    at whatever weakness they have reached. A child treated at six days develops
+    normally. The interventions are identical; the motor neurons are not.
+    Prevalence, incidence and every scalar here are therefore in rapid motion and
+    the register stores an undated snapshot.
+
+axes:
+  mechanism: established
+  intervention: suppressive
+  prevention: risk-reduction
+  ongoing: moderate
+  efficacy:
+    value: 0.70
+    units: >
+      fraction-of-patients (substantial preservation or normal acquisition of
+      motor function) — **around 0.9 treated presymptomatically and far lower
+      treated late**, which makes this figure a statement about screening rather
+      than about pharmacology
+    src: reasoning
+  access:
+    value: 0.20
+    units: >
+      fraction-of-patients (receiving any disease-modifying therapy) — three drugs
+      priced between roughly $340,000 a year and **$2.1 million as a single
+      dose**, and newborn screening in a minority of countries
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: good
+  predictive: partial
+  witness: >
+    **DIAGNOSTIC IS `objective` AND ABOUT AS DEFINITIVE AS A TEST GETS.** Around
+    95% of cases are caused by homozygous deletion of exon 7 of *SMN1*, detectable
+    by a cheap PCR on a dried blood spot. **That is why newborn screening for this
+    disease works at all** — it is a single, binary, unambiguous result, and it was
+    added to the United States screening panel in 2018 and to many national
+    programmes since.
+    **PROGNOSTIC IS `good`, AND THE MECHANISM SUPPLIES IT DIRECTLY.** *SMN2* copy
+    number — a second, nearly identical gene that most people carry in variable
+    number — predicts severity inversely and reliably: two copies predicts type 1,
+    three predicts type 2 or 3, four or more predicts a mild course. **A number
+    from a blood test at birth predicts, roughly, whether a child would have
+    walked.**
+    It is one of the few genuinely useful prognostic instruments in this corpus,
+    and consistent with gaps.md #178 it exists because a decision forced it:
+    **screening identifies presymptomatic infants and somebody must decide whom to
+    treat immediately.** For two and three copies the answer is now unambiguous.
+    For four copies it is contested — those children may not become symptomatic
+    for years, and treating them commits an asymptomatic infant to an expensive,
+    irreversible or lifelong therapy.
+    PREDICTIVE is `partial`. Copy number informs urgency and does not choose among
+    the three drugs, and **nothing predicts who will respond incompletely to gene
+    therapy** — which matters because a substantial share of treated children end
+    up on an additional agent, off-label, without trial evidence.
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    **THE GENE THERAPY HAS KILLED CHILDREN, AND IT IS STILL THE RIGHT DRUG FOR
+    SOME OF THEM.**
+    Onasemnogene abeparvovec causes **hepatotoxicity**, ranging from transaminase
+    elevation to **acute liver failure, with deaths reported after approval.**
+    Every infant receives prophylactic corticosteroids for weeks and is monitored
+    intensively. **Thrombotic microangiopathy** and cardiac troponin elevation also
+    occur. The dose is weight-based, so older and heavier children carry more risk
+    — which is one reason the drug is aimed at newborns.
+    **Nusinersen's toll is procedural and cumulative**: intrathecal administration,
+    four loading doses and then a lumbar puncture every four months for life.
+    In children who develop scoliosis and undergo spinal fusion — common in
+    untreated type 2 — the intrathecal space can become difficult or impossible to
+    access, so **a complication of the disease can foreclose the treatment for
+    it.**
+    Risdiplam is oral, daily, and comparatively benign.
+    **AND THE PROPERTY THAT MATTERS MOST IS NOT A SIDE EFFECT.** A single AAV
+    infusion provokes neutralising antibodies that make redosing impossible.
+    **It cannot be stopped, adjusted, or repeated** — a decision taken once, in an
+    infant, by a proxy, on a surrogate endpoint, for a lifetime (gaps.md #192).
+  incidence:
+    value: 0.02
+    units: >
+      fraction-of-treated (permanent harm — chiefly severe hepatotoxicity after
+      gene therapy) — a reasoned estimate, and it excludes the irreversibility
+      itself, which the schema has no field for
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    **MOTOR NEURONS THAT HAVE DIED DO NOT COME BACK, AND IN TYPE 1 MOST OF THEM
+    DIE IN THE FIRST FEW MONTHS.**
+    All three drugs raise SMN protein and thereby stop further motor neuron loss.
+    **None of them replaces a lost anterior horn cell.** So a child treated after
+    symptoms appear is held at whatever function remains — which for a symptomatic
+    type 1 infant may be no head control — while a child treated presymptomatically
+    may never lose anything.
+    What persists in the symptomatically treated: proximal weakness, inability to
+    sit or stand, **scoliosis** requiring spinal fusion, hip dysplasia, contractures,
+    **respiratory insufficiency** needing non-invasive or invasive ventilation, and
+    bulbar weakness requiring gastrostomy feeding.
+    **And a new and unexpected residue is emerging from success.** SMN protein is
+    required in every cell — it assembles the spliceosome — and children who now
+    survive with restored but not normal SMN are showing features nobody had seen,
+    because nobody survived to show them: sensory involvement, autonomic and
+    cardiac findings, and metabolic abnormalities. **The treated phenotype is a new
+    disease and the register is watching it appear.**
+  incidence:
+    value: 0.40
+    units: >
+      fraction-of-treated (permanent motor and respiratory impairment) — a reasoned
+      estimate dominated by children treated symptomatically, **and falling steeply
+      wherever newborn screening exists**
+    src: reasoning
+
+window:
+  what: >
+    **THE WINDOW IS WEEKS, THE TEST IS A DRIED BLOOD SPOT, AND THE DIFFERENCE
+    BETWEEN THE TWO SIDES OF IT IS WHETHER THE CHILD WALKS.**
+    Motor unit loss in type 1 SMA is fastest before and around symptom onset — a
+    large share of anterior horn cells are gone within the first months of life,
+    and the clinical signs appear only once the reserve is exhausted. **By the time
+    a parent notices floppiness, most of the damage is done.**
+    The presymptomatic trials are the clearest natural experiment in this
+    register. Infants identified by newborn screening and treated within days to
+    weeks **survived, sat, and mostly walked on a normal developmental schedule**,
+    in a disease whose untreated type 1 form means never sitting and dying by two.
+    Infants treated after symptom onset are stabilised at the function they have
+    left.
+    **So the entire value of a two-million-dollar drug is a function of a screening
+    programme that costs a few dollars per baby**, and most of the world has
+    neither.
+    The remaining clinical argument is at the mild end: whether to treat an
+    asymptomatic infant with four or more *SMN2* copies, who may not become
+    symptomatic for years or decades. **Treating commits a well baby to an
+    irreversible or lifelong therapy; waiting risks missing the window that makes
+    the therapy work.** There is no way to have it both ways and the trials to
+    settle it would take decades (gaps.md #191).
+  closes_on: >
+    irreversible loss of anterior horn cells, which is largely complete around the
+    time symptoms appear — weeks to a few months in type 1
+  caught_in_time:
+    value: 0.25
+    units: >
+      fraction-of-cases (identified and treated presymptomatically) — a reasoned
+      estimate; newborn screening for SMA exists in a minority of countries and
+      the window is measured in weeks
+    src: reasoning
+
+strata:
+  - name: type 1 (onset before six months)
+    fraction:
+      value: 0.55
+      units: fraction-of-cases
+      src: reasoning
+    intervention: suppressive
+    efficacy:
+      value: 0.65
+      units: fraction-of-stratum (survival with meaningful motor function)
+      src: reasoning
+    toll: major
+    what: >
+      **The stratum that was a death sentence.** Two *SMN2* copies, onset in the
+      first months, never sits, and untreated is dead or permanently ventilated by
+      around two years. **It is also the stratum where treatment does the most and
+      where timing matters most** — presymptomatic infants achieve normal
+      milestones, symptomatic infants survive with severe residual weakness. Almost
+      the entire difference between those outcomes is a newborn screening
+      programme.
+
+  - name: type 2 (onset six to eighteen months)
+    fraction:
+      value: 0.25
+      units: fraction-of-cases
+      src: reasoning
+    intervention: suppressive
+    efficacy:
+      value: 0.70
+      units: fraction-of-stratum (motor function preserved or improved)
+      src: reasoning
+    toll: major
+    what: >
+      Sits but never walks unaided; survival into adulthood is usual with
+      respiratory and orthopaedic support. Treatment preserves and modestly
+      improves function. **Scoliosis and spinal fusion are near-universal in the
+      untreated course**, and fusion can make intrathecal nusinersen difficult to
+      deliver — a complication of the disease foreclosing a treatment for it.
+
+  - name: types 3 and 4 (onset after eighteen months)
+    fraction:
+      value: 0.20
+      units: fraction-of-cases
+      src: reasoning
+    intervention: suppressive
+    efficacy:
+      value: 0.75
+      units: fraction-of-stratum (ambulation preserved)
+      src: reasoning
+    toll: minor
+    what: >
+      Walks, sometimes for decades, and may lose it. Three or more *SMN2* copies.
+      Normal life expectancy. **The treatment question here is different in kind**
+      — preserving ambulation in an adult rather than rescuing an infant — and it
+      is where the cost-effectiveness arguments are hardest, because the untreated
+      course is long and the drugs are priced against a fatal childhood disease.
+
+moved:
+  - date: 1995
+    axis: mechanism
+    from: correlates
+    to: established
+    why: >
+      **SMN1 WAS IDENTIFIED IN 1995 AND THE FIRST DRUG ARRIVED IN 2016 — A
+      TWENTY-ONE YEAR LAG, ALMOST EXACTLY MATCHING CYSTIC FIBROSIS'S TWENTY-THREE.
+      THIS IS THE REGISTER'S THIRD `mechanism` MOVE** (gaps.md #183).
+      What was found was unusually favourable and it took two decades to exploit.
+      Spinal muscular atrophy is caused by loss of *SMN1* — and humans carry a
+      second, nearly identical copy, ***SMN2***, in variable number. A single
+      base difference in *SMN2* disrupts a splicing enhancer, so most of its
+      transcripts skip exon 7 and produce unstable protein; roughly a tenth splice
+      correctly.
+      **Everybody with spinal muscular atrophy already has a partly-working backup
+      gene.** That single fact defined every therapy that followed: you do not need
+      to deliver a gene, you need to make an existing one splice properly — which
+      an antisense oligonucleotide and later a small molecule can both do.
+      **Two records now, two mechanism moves, two lags of about twenty years, and
+      in both cases the route was not predictable from the mechanism.** In cystic
+      fibrosis everybody expected gene therapy and got protein chemistry. Here the
+      mechanism handed the field a splicing target nobody would have looked for
+      without it.
+    src: recall
+
+  - date: 2016
+    axis: intervention
+    from: none
+    to: suppressive
+    why: >
+      **NUSINERSEN, AND BEFORE IT THE ONLY TREATMENT FOR SPINAL MUSCULAR ATROPHY
+      TYPE 1 WAS DECIDING WHETHER TO VENTILATE.**
+      An antisense oligonucleotide that binds *SMN2* pre-messenger RNA and blocks
+      the splicing silencer, so exon 7 is included and full-length protein is
+      made. The pivotal trial in infants was stopped early for efficacy: treated
+      infants achieved motor milestones that untreated infants with this disease
+      simply do not achieve, and event-free survival improved substantially.
+      It is delivered **intrathecally, four loading doses and then every four
+      months for life**, and cost roughly three quarters of a million dollars in
+      the first year.
+      **What it established was not only a drug but a target class.** Risdiplam, an
+      oral small molecule doing the same job to the same gene, followed in 2020 —
+      daily, at home, no lumbar punctures — and is the reason this record's
+      `ongoing` is `moderate` rather than `high`.
+    src:
+      id: PMID:29091570 doi:10.1056/NEJMoa1702752
+      retrieved: 2026-08-26
+      quote: >
+        Among infants with spinal muscular atrophy, those who received nusinersen
+        were more likely to be alive and have improvements in motor function than
+        those in the control group. Early treatment may be necessary to maximize
+        the benefit of the drug. (Funded by Biogen and Ionis Pharmaceuticals;
+        ENDEAR ClinicalTrials.gov number, NCT02193074 .).
+
+  - date: 2019
+    axis: efficacy
+    from: 0.35
+    to: 0.70
+    why: >
+      **GENE THERAPY IN A SINGLE INFUSION, AND — MORE IMPORTANTLY — PROOF THAT
+      TREATING BEFORE SYMPTOMS CHANGES THE DISEASE ENTIRELY.**
+      Onasemnogene abeparvovec delivers a functional *SMN1* copy in an AAV9 vector
+      that crosses the infant blood-brain barrier, given **once, intravenously**, at
+      around $2.1 million — the most expensive medicine in the world when
+      approved.
+      **The result that matters more came from the presymptomatic trials.**
+      Infants identified by newborn screening and treated within days or weeks,
+      with either the gene therapy or the antisense drug, **survived, sat, and
+      largely walked on a normal schedule.** In a disease where type 1 means never
+      sitting and death by two.
+      **That converted spinal muscular atrophy from a treatment problem into a
+      screening problem**, and it is why this record's `efficacy` figure is really
+      a statement about how many countries screen newborns.
+      Newborn screening was added to the United States panel in 2018 and to many
+      others since. **Most of the world does not screen**, and in those places the
+      drugs arrive, if at all, after the window has closed.
+    src:
+      id: PMID:29091557 doi:10.1056/NEJMoa1706198
+      retrieved: 2026-08-26
+      quote: >
+        In patients with SMA1, a single intravenous infusion of adeno-associated
+        viral vector containing DNA coding for SMN resulted in longer survival,
+        superior achievement of motor milestones, and better motor function than in
+        historical cohorts. Further studies are necessary to confirm the safety and
+        efficacy of this gene therapy.
+
+witness:
+  mechanism: >
+    `established`, and it is among the most satisfying mechanisms in this register
+    because the disease came with its own therapeutic target attached.
+    Homozygous loss of ***SMN1*** reduces survival motor neuron protein, and alpha
+    motor neurons in the anterior horn of the spinal cord degenerate — producing
+    symmetric proximal weakness, worse in the legs, with sparing of sensation and
+    of the diaphragm relative to intercostals. Why motor neurons are selectively
+    vulnerable to a deficiency in a protein every cell needs is **not** fully
+    established, and is the record's remaining mechanistic hole.
+    ***SMN2* is the whole story of the therapy.** Humans carry a second, nearly
+    identical copy of the gene, present in one to eight copies. A single C-to-T
+    difference in exon 7 disrupts an exonic splicing enhancer, so most transcripts
+    skip that exon and produce a rapidly degraded protein; a minority splice
+    correctly. **Copy number therefore sets the dose of functional protein and
+    predicts severity inversely** — which is where `prognostic: good` comes from.
+    And it means every patient carries a partly-functional gene that can be
+    persuaded to work better. **Two of the three approved drugs do exactly that**
+    — an antisense oligonucleotide and a small molecule, both splicing modifiers —
+    and the third supplies a working *SMN1* instead.
+    **THE NAMED HOLES ARE NEW AND ARE PRODUCTS OF SUCCESS.** SMN assembles
+    spliceosomal snRNPs in every tissue, and children now surviving with restored
+    but sub-normal SMN are displaying sensory, autonomic, cardiac and metabolic
+    features that were never observed because nobody lived to display them.
+    Whether the treated phenotype is a milder version of the same disease or a
+    different one is genuinely open.
+  intervention: >
+    `suppressive`, and the rating is awkward in a way that is itself the finding.
+    **Nusinersen and risdiplam are unambiguously suppressive**: they raise SMN
+    protein for as long as they are given, must be continued indefinitely, and the
+    underlying deletion is untouched.
+    **Onasemnogene abeparvovec fits nowhere on the ladder.** It is a single
+    infusion. It is not `curative` — the delivered gene is episomal rather than
+    integrated, durability beyond several years is unproven, the *SMN1* deletion
+    remains, and **a substantial share of treated children are subsequently started
+    on an additional splicing drug**, off-label and without trial evidence. It is
+    not `suppressive` either, because nothing is being continued.
+    **And it cannot be stopped, adjusted, or repeated.** Neutralising antibodies
+    to the vector make redosing impossible. **The register's entire intervention
+    vocabulary assumes a treatment is either ongoing or finished**, and this is a
+    third thing: a decision, taken once, in an infant, by a proxy, on a surrogate
+    endpoint, that determines a lifetime and cannot be revisited (gaps.md #192).
+    Around all three: non-invasive ventilation, gastrostomy feeding, scoliosis
+    surgery, physiotherapy — the supportive care that was the whole of treatment
+    before 2016 and which is still what most of the world's patients receive.
+  prevention: >
+    `risk-reduction`, matching `cystic-fibrosis`, and covering the same ethically
+    distinct thing.
+    Nothing prevents spinal muscular atrophy in a person who has it. **Carrier
+    screening** — offered preconceptionally or in pregnancy in a number of
+    countries, with a carrier frequency around one in fifty — together with
+    prenatal diagnosis and preimplantation testing, prevents affected births where
+    couples choose it. That is prevention of a birth rather than of a disease,
+    resting on a decision belonging entirely to prospective parents, and the
+    register files it in the same field it uses for a bed net (gaps.md #159).
+    **The intervention that functions as prevention of damage is newborn
+    screening**, and here that framing is nearly literal: screening plus immediate
+    treatment prevents the disease from ever manifesting. A dried blood spot, a
+    PCR, and a drug within days.
+    **It is the strongest argument in this register for a screening programme** —
+    a definitive cheap test, a window of weeks, an untreated outcome of death, and
+    a treated outcome of normal development — and it exists in a minority of
+    countries.
+  ongoing: >
+    `moderate`, and it depends entirely on which of three drugs somebody receives.
+    **Risdiplam** is a daily oral solution taken at home, which is why the record
+    rates `moderate` rather than `high`. **Nusinersen** is a lumbar puncture every
+    four months for life, requiring a day case and sometimes sedation, and becomes
+    technically difficult after spinal fusion. **Onasemnogene** is nothing after
+    the first few weeks — no further doses, ever.
+    Around all of them, the supportive apparatus persists for anybody treated after
+    symptoms: respiratory support, feeding, orthopaedics, physiotherapy, and the
+    equipment and adaptations of a physical disability.
+    **And for the presymptomatically treated child there may be almost no `ongoing`
+    burden at all**, beyond a daily medicine — which is a sentence nobody could
+    have written about this disease ten years ago.
+
+holes:
+  - >
+    **`intervention: suppressive` is a compromise and the file says why.** Two
+    drugs are clearly suppressive; the gene therapy is a single irreversible dose
+    that fits no rung, and rating the record by its majority obscures the property
+    that most distinguishes it (gaps.md #192).
+  - >
+    **`efficacy: 0.70` is a statement about screening rather than about
+    pharmacology.** Presymptomatic treatment approaches 0.9 and symptomatic
+    treatment is far lower; the record-level figure is a weighted average over a
+    population whose composition depends on which countries screen newborns.
+  - >
+    **Every number here is in rapid motion.** Prevalence is rising because children
+    who would have died are surviving; `residue` is falling wherever screening
+    exists; the strata proportions will shift as presymptomatic treatment spreads.
+    The register stores an undated snapshot of a record mid-transformation
+    (gaps.md #91).
+  - >
+    **Durability of gene therapy beyond several years is unproven** and cannot be
+    proven for decades. The AAV genome is episomal; motor neurons do not divide,
+    which argues for persistence, and there is no long-run evidence either way
+    (gaps.md #191).
+  - >
+    **Whether to treat asymptomatic infants with four or more *SMN2* copies is
+    unresolved**, and the trial that would settle it would take decades. The record
+    treats them as part of the mild strata without taking a position.
+  - >
+    Every scalar is `recall` or `reasoning`. The trial evidence here is recent,
+    small, and unusually well documented, and none of it is cited.
+
+blockers:
+  - kind: cost
+    blocks: two million dollars, once, for a baby
+    obstacles: []
+    what: >
+      **THE MOST EXPENSIVE MEDICINE IN THE WORLD WHEN APPROVED, AND THE PRICING
+      PROBLEM IT POSES IS STRUCTURAL RATHER THAN ARITHMETIC.**
+      Onasemnogene abeparvovec lists at around $2.1 million for a single infusion.
+      Nusinersen ran to roughly three quarters of a million dollars in the first
+      year and around $375,000 annually thereafter. Risdiplam is around $340,000 a
+      year.
+      **A one-time cure breaks health financing in a way a chronic therapy does
+      not.** Annual budgets, formularies and cost-effectiveness thresholds are built
+      around recurring spending; a single seven-figure payment for a benefit
+      realised over sixty years fits none of them. Outcomes-based agreements and
+      annuity-style instalment payments have been negotiated in several countries —
+      **genuinely novel financing, invented because the product forced it** — and
+      they remain uncommon and contested.
+      **And the arithmetic is more defensible here than almost anywhere.** The
+      untreated alternative for type 1 is death by two or lifelong invasive
+      ventilation, which is itself extremely expensive. The health-economic case
+      for gene therapy in a screened newborn is among the strongest in the
+      register, and the case for treating a mildly affected adult is among the
+      weakest — **the same drug, the same price, and the value differs by an order
+      of magnitude depending on when it is given.**
+      In most of the world none of it is available at any price.
+    who_could: [manufacturer, payer, government, regulator, nonprofit]
+    scale: 3.0e9
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    blocks: a dried blood spot that most of the world does not take
+    obstacles: []
+    what: >
+      **THIS IS THE CHEAPEST HIGH-VALUE INTERVENTION IN THE RECORD AND IT IS A
+      SCREENING TEST.**
+      Around 95% of spinal muscular atrophy is caused by a homozygous deletion
+      detectable by PCR on a dried blood spot, costing a few dollars, multiplexable
+      with the screens a newborn already receives. The window is weeks. Treated
+      presymptomatically, children survive and walk; treated after symptoms, they
+      are stabilised at whatever is left.
+      **So a two-million-dollar drug's entire value is gated on a test costing
+      less than a cup of coffee**, and most of the world does not run it — because
+      newborn screening panels are national decisions, adding a condition requires
+      a treatment pathway to exist, and adding one whose treatment costs millions is
+      a decision no health ministry makes lightly.
+      **That is a genuine chicken-and-egg and it is worth stating plainly**: you
+      cannot justify screening without access to treatment, and you cannot justify
+      the treatment budget without screening to make it cost-effective.
+      Where screening exists, the residual failure is speed. The window is weeks and
+      the pathway — result, confirmation, *SMN2* copy number, funding approval,
+      infusion — has to run inside it.
+    who_could: [health-system, government, payer, academic, manufacturer]
+    scale: 8.0e8
+    standing: documented
+    src: recall
+
+  - kind: evidence-incomplete
+    blocks: three drugs, no comparisons, and questions that take decades
+    obstacles: [validation-throughput]
+    what: >
+      **THREE APPROVED THERAPIES, NO HEAD-TO-HEAD TRIAL, AND A COMBINATION USED
+      ROUTINELY THAT NOBODY HAS STUDIED.**
+      A substantial share of children given gene therapy are subsequently started
+      on nusinersen or risdiplam because the response was judged incomplete. That
+      combination is off-label, has no randomised evidence, and is now common
+      practice. **The register's `efficacy` figure quietly incorporates a regimen
+      nobody has tested.**
+      The unanswerable questions are worse and they are the important ones.
+      **Whether gene therapy's effect persists for decades** cannot be known for
+      decades. **Whether to treat asymptomatic infants with four or more *SMN2*
+      copies** requires following untreated mild patients for years — which is
+      ethically fraught once a treatment exists — and the answer determines whether
+      a well child receives an irreversible therapy.
+      This is gaps.md #191 in its sharpest form: **the outcome that matters lies
+      beyond any trial, the decision cannot be deferred, and the decision cannot be
+      revised** (gaps.md #192). Registries are the only instrument on this
+      timescale and are funded as research rather than as infrastructure.
+      **Tagged `validation-throughput` (2026-09-02) as the purest instance of its
+      volume face in the corpus.** Nothing here needs discovering. Three
+      therapies exist for a disease that was uniformly fatal within a
+      professional lifetime, and the question of which to give first has no
+      answer because the trial that would settle it has no sponsor — each
+      manufacturer risks losing and none gains. **The molecules are on the shelf
+      and the knowledge of how to use them is not.**
+      The same shape recurs in `crohns`, `rheumatoid-arthritis`,
+      `multiple-sclerosis` and `schizophrenia`: several approved drugs, no
+      ordering, and a patient who finds out by failing. **Recorded here as
+      `evidence-incomplete` rather than `no-sponsor` because what is missing is
+      the evidence** — but that boundary is genuinely thin, and the obstacle's
+      own holes say so.
+    who_could: [academic, sponsor, regulator, manufacturer, patient-org]
+    scale: 5.0e8
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: what the treated disease is, now that people survive it
+    obstacles: []
+    what: >
+      **SUCCESS CREATED A DISEASE NOBODY HAD SEEN, AND IT IS BEING CHARACTERISED IN
+      REAL TIME.**
+      SMN protein assembles the spliceosome in every cell in the body. Spinal
+      muscular atrophy was understood as a motor neuron disease because motor
+      neurons failed first and fatally — **and children who now survive with
+      restored but sub-normal SMN are showing sensory, autonomic, cardiac and
+      metabolic features that were never observed because nobody lived long enough
+      to display them.**
+      Whether that is a milder version of the same disease or a distinct treated
+      phenotype is unresolved, and it determines what these children should be
+      monitored for over sixty years.
+      The older hole remains open too: **why motor neurons are selectively
+      vulnerable** to deficiency in a housekeeping protein every cell requires. It
+      is the question that would explain the disease rather than the therapy, and
+      it has been open since 1995.
+      `scale: null`.
+    who_could: [academic, sponsor, philanthropy, patient-org]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: the pathway that has to run inside a window of weeks
+    obstacles: []
+    what: >
+      Delivering this record's benefit requires, within a few weeks of birth: a
+      newborn screening laboratory, a confirmatory genetic test including *SMN2*
+      copy number, a specialist neuromuscular centre, a funding decision, and —
+      for two of the three drugs — either an intrathecal procedure under sedation
+      or an intravenous gene therapy infusion with weeks of hepatic monitoring
+      afterwards.
+      **Each step is ordinary and the sequence has to complete before the motor
+      neurons die.** Where any link is missing the child is treated symptomatically,
+      which is a different and much worse intervention delivered with the same drug.
+      For the symptomatically affected, the supportive apparatus is its own
+      logistics problem: non-invasive ventilation, cough assist devices,
+      gastrostomy, powered wheelchairs, spinal surgery, and a multidisciplinary
+      clinic — none of which is available in most of the world, and all of which
+      determined survival before 2016 and still does for untreated patients.
+      This is gaps.md #154 with an unusually short fuse: **an intervention that
+      must be operated, correctly, by several services in sequence, in a newborn,
+      inside a deadline.**
+    who_could: [health-system, government, payer, academic, nonprofit]
+    scale: 1.5e9
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0092
+  rated: 2026-08-25
+  by: [claude, jeremy]

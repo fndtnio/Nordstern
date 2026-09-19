@@ -1,0 +1,459 @@
+slug: endometriosis
+id: FND-D-0137
+name: Endometriosis
+also: [deep infiltrating endometriosis, endometrioma, adenomyosis]
+mondo: unresolved
+kind: disease
+residual: false
+contested: false
+
+# THE ONLY DIAGNOSTIC DELAY IN THE REGISTER STATED AS A NUMBER OF YEARS:
+# SEVEN TO TEN.
+#
+# Roughly one in ten women of reproductive age — about 190 million — have
+# endometrial-like tissue growing outside the uterus, and the median time from
+# first symptom to diagnosis is most often quoted at seven to ten years.
+#
+# **NO OTHER RECORD IN THIS CORPUS QUANTIFIES ITS DELAY AT ALL**, which is a
+# weaker claim than "the worst delay" and is the one that survived checking.
+# `heds`, `me-cfs`, `pots` and `mcas` are the obvious candidates to be worse and
+# every one of them is silent on the number. So this is not the longest delay in
+# the register — it is the only one anybody has measured.
+#
+# THREE THINGS MAKE IT THE RECORD IT IS.
+#
+# **The stage does not predict the symptoms.** A woman with minimal disease can
+# be in agony and a woman with the most extensive disease can have none. The
+# staging system that exists predicts fertility somewhat and pain essentially
+# not at all, which means this record cannot be stratified by severity — the
+# schema's usual answer to a heterogeneous entity does not work here.
+#
+# **The treatment for the pain and the treatment for the infertility are
+# incompatible.** Every effective medical therapy suppresses ovulation. A woman
+# whose principal complaint is that she cannot conceive is offered a drug that
+# guarantees she will not.
+#
+# **And it is the second record in this pass where a condition affecting mainly
+# women, with no simple objective test, has been systematically under-treated.**
+# `migraine` was the first, and its holes conceded that the register's framing
+# might be dodging the point. Two instances is a pattern.
+
+burden:
+  prevalence:
+    value: 1.9e8
+    units: >
+      women and girls of reproductive age worldwide — roughly one in ten,
+      the figure WHO uses. **It is a prevalence estimated largely from surgical
+      series and from populations investigated for pain or infertility**, so it
+      is anchored on the women who reached a laparoscope
+    src: recall
+  incidence:
+    value: 5.0e6
+    units: >
+      new diagnoses/year worldwide — a reasoned estimate, and a number that
+      describes diagnostic activity rather than disease onset, since onset is
+      typically years earlier and unobserved
+    src: reasoning
+  note: >
+    **THE PREVALENCE FIGURE AND THE DIAGNOSTIC DELAY ARE THE SAME PROBLEM SEEN
+    TWICE.** One in ten is the commonly quoted figure and it rests on studies of
+    women who underwent laparoscopy — for pain, for infertility, or
+    incidentally at sterilisation. A disease whose definitive diagnosis requires
+    an operation is counted only in the women who had one.
+    No deaths are attributed. There is a modest elevation in the risk of clear
+    cell and endometrioid ovarian cancer, small in absolute terms and counted
+    elsewhere. `deaths` is absent rather than zero — **the seventh record in
+    this pass where mortality is the wrong question.**
+
+axes:
+  mechanism: partial
+  intervention: suppressive
+  prevention: none
+  ongoing: high
+  efficacy:
+    value: 0.55
+    units: >
+      fraction-of-patients (meaningful reduction in pain on hormonal
+      suppression or after expert excision) — **and the ceiling is set by two
+      things the axis cannot show**: relief lasts only while suppression
+      continues, and a substantial minority have pain that persists after every
+      visible lesion has been removed
+    src: reasoning
+  access:
+    value: 0.3
+    units: >
+      fraction-of-affected-women (diagnosed AND receiving effective treatment) —
+      dominated by the diagnostic delay rather than by the cost of treatment,
+      since the first-line drugs are generic combined oral contraceptives and
+      progestins that cost very little
+    src: reasoning
+
+measurement:
+  diagnostic: clinical
+  prognostic: none
+  predictive: none
+  witness: >
+    **THE MEASUREMENT BLOCK IS THIS RECORD.**
+    DIAGNOSTIC is `clinical`, and the reason is unusual: **an objective test
+    exists and it costs an operation.** Laparoscopy with histology is definitive.
+    Transvaginal ultrasound and MRI reliably detect endometriomas and deep
+    infiltrating disease — but **superficial peritoneal endometriosis, the
+    commonest form, is largely invisible on imaging.** So a negative scan rules
+    nothing out, and for years the alternative to uncertainty was a general
+    anaesthetic.
+    Guidelines changed on this recently and it is recorded in `moved` below: a
+    clinical diagnosis without surgical confirmation is now endorsed, which
+    removes an operation from the pathway at the cost of some certainty.
+    PROGNOSTIC is **`none`, and the reason is the single most important fact in
+    this file.** The staging system in general use classifies disease from
+    minimal to severe by the extent and depth of lesions and the presence of
+    adhesions — and **it does not correlate with pain.** Stage I can be
+    disabling and stage IV can be silent. It retains some value for predicting
+    fertility outcomes and almost none for the symptom that brings women in.
+    Nothing predicts progression, and nothing predicts recurrence after surgery.
+    **THE SCHEMA CONSEQUENCE IS THAT THIS RECORD CANNOT BE STRATIFIED.** The
+    register's usual answer to a heterogeneous entity is `strata` — as in
+    `migraine`'s episodic and chronic forms. Here the available severity
+    classification does not track the thing being rated, so stratifying by it
+    would produce two ratings that are both wrong.
+    PREDICTIVE is `none`. Nothing identifies which woman responds to which
+    hormonal agent, or who will get lasting benefit from excision surgery
+    against who will be back in eighteen months.
+
+# NO `survival:` BLOCK. Endometriosis does not shorten life. It takes years to
+# diagnose, causes pain through the whole of a woman's reproductive life,
+# contributes to a large share of infertility, and interrupts education and
+# work during the decades those are built. The register has no axis for any of
+# it — seventh consecutive record making that argument.
+
+moved:
+  - date: 1927
+    axis: mechanism
+    from: none
+    to: correlates
+    why: >
+      Sampson proposed retrograde menstruation — endometrial tissue passing
+      backwards through the fallopian tubes and implanting in the pelvis. It
+      remains the dominant account nearly a century later.
+      **IT IS ALSO KNOWN TO BE INSUFFICIENT, AND THE REGISTER SHOULD SAY SO.**
+      Retrograde menstruation occurs in the large majority of women and only
+      about one in ten develops endometriosis, so whatever determines who does
+      is not in the theory. The axis moves to `correlates` rather than further
+      because that is exactly what the field has: a mechanism that is present in
+      almost everybody and a disease that is not.
+    src: recall
+  - date: 2022
+    axis: measurement
+    from: objective
+    to: clinical
+    why: >
+      **A MOVE THAT LOOKS LIKE A DOWNGRADE AND IS PROGRESS**, which is why it is
+      worth recording. European and other guidelines endorsed diagnosing and
+      treating endometriosis on clinical grounds and imaging, **without
+      requiring laparoscopic confirmation.** For decades the definitive
+      diagnosis required a general anaesthetic and an operation, and requiring
+      it delayed treatment for women who could not get one or were not offered
+      one.
+      The axis value falls because the register grades the *kind of evidence*,
+      and clinical grounds are weaker evidence than histology. The patient's
+      position improved. **Any view that reads this axis as a quality score will
+      read this entry backwards**, which is a real limitation of the vocabulary
+      and is logged in holes.
+    src: recall
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    **THE TREATMENT FOR A DISEASE THAT CAUSES INFERTILITY CAN CAUSE
+    INFERTILITY.** Excision of an ovarian endometrioma removes normal ovarian
+    tissue with it and measurably reduces ovarian reserve; bilateral
+    endometriomas operated on repeatedly can end fertility altogether. That is a
+    permanent cost imposed by the standard treatment on the outcome many of
+    these women came in to protect.
+    THE REST OF THE LADDER HAS ITS OWN PRICES. GnRH agonists and antagonists
+    induce a menopausal state — vasomotor symptoms, mood effects, and **bone
+    mineral density loss** that limits duration of use and requires add-back
+    therapy. Long-term progestins cause breakthrough bleeding and mood effects
+    in a substantial minority. Repeated pelvic surgery produces adhesions, and
+    carries bowel and ureteric injury risk in deep infiltrating disease.
+    **AND HYSTERECTOMY IS NOT RELIABLY CURATIVE, WHICH IS WIDELY
+    MISUNDERSTOOD.** Removing the uterus and ovaries produces surgical
+    menopause, ends fertility permanently, and leaves a proportion of women with
+    ongoing pain, because the disease is not in the uterus. **It is the most
+    irreversible thing done for this condition and it is not a cure.**
+  incidence:
+    value: 0.25
+    units: >
+      fraction-of-treated with permanent consequences of treatment — reduced
+      ovarian reserve after endometrioma excision, surgical menopause,
+      adhesions — a reasoned estimate over women receiving surgical rather than
+      purely medical management
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    **PAIN THAT OUTLASTS THE LESIONS.** A substantial minority of women continue
+    to have pain after every visible deposit has been excised, and the leading
+    explanation is central sensitisation — the nervous system having spent years
+    processing pain begins to generate it independently of the peripheral
+    cause. If that account is right, **the years of diagnostic delay are not
+    merely lost time; they are the mechanism by which the disease becomes
+    permanent.**
+    ADHESIONS from disease and from surgery distort pelvic anatomy, cause
+    dyspareunia and dyschezia, and complicate every subsequent operation.
+    INFERTILITY is the residue that many women rate highest. Endometriosis is
+    present in a large share of women investigated for infertility, and the
+    contribution is mechanical in advanced disease and poorly understood in
+    minimal disease — another place the stage does not explain the outcome.
+    Rated `major`. Not `catastrophic`: most women with endometriosis are not
+    disabled by it, and the ones who are, are genuinely disabled.
+  incidence:
+    value: 0.3
+    units: >
+      fraction-of-affected-women left with permanent consequences — persistent
+      pain after treatment, adhesions, or infertility — a reasoned estimate and
+      one that varies enormously with how early the disease was found
+    src: reasoning
+
+window:
+  what: >
+    **A WINDOW THE REGISTER IS RECORDING WITH LESS CONFIDENCE THAN USUAL, AND
+    SAYING SO.**
+    The claim is that the seven-to-ten-year delay does lasting harm rather than
+    merely postponing relief — through central sensitisation, through disease
+    progression to deep infiltrating forms, and through ovarian reserve
+    declining during the years spent undiagnosed. If that is right, early
+    diagnosis is not a comfort measure; it is the difference between a treatable
+    condition and a permanent one.
+    **THE EVIDENCE THAT EARLY TREATMENT CHANGES THE LONG-TERM COURSE IS WEAKER
+    THAN THE ARGUMENT SOUNDS.** Nobody has run the trial that would settle it,
+    and it may be unrunnable: it would require randomising women to delayed
+    diagnosis. What is well established is the delay itself and the years of
+    untreated pain, missed schooling and missed work inside it — which is harm
+    whether or not the disease progressed.
+    Recorded as a window because the register should be able to hold *we think
+    this closes and we cannot prove it*, and flagged in holes so a reader does
+    not take it as settled.
+  closes_on: >
+    central sensitisation and progression to deep infiltrating disease —
+    gradual, contested, and not demonstrated to be irreversible
+  caught_in_time:
+    value: 0.2
+    units: >
+      fraction-of-affected-women diagnosed within roughly two years of symptom
+      onset — a reasoned estimate against a median delay commonly reported at
+      seven to ten years
+    src: reasoning
+
+witness:
+  mechanism: >
+    `partial`, and the gap has stood for a century.
+    ESTABLISHED: the lesions are real, visible, biopsiable and histologically
+    characterised — which is what separates this record from
+    `unexplained-illness` and is why that obstacle is deliberately not cited
+    below. Endometriosis is oestrogen-dependent, shows progesterone resistance,
+    provokes a chronic inflammatory response, and is substantially heritable.
+    THE HOLE: **why the tissue is there at all, and why only in some women.**
+    Sampson's retrograde menstruation is the dominant theory and is present in
+    almost everybody; coelomic metaplasia, Müllerian remnants and a bone-marrow
+    stem cell origin are the alternatives, and lesions at distant sites — the
+    diaphragm, the lung — are hard for any of them. Immune failure to clear
+    ectopic tissue is the usual bridging explanation and is not demonstrated.
+    A SECOND HOLE THAT MATTERS MORE CLINICALLY: **nobody knows how the lesions
+    cause pain.** Since stage does not predict symptoms, the pain cannot be a
+    simple function of lesion burden. Nerve infiltration, local inflammatory
+    mediators and central sensitisation are all implicated. **A record where the
+    lesion is visible and the symptom is unexplained is unusual here**, and it
+    is why the treatment removes what can be seen and often does not work.
+  intervention: >
+    `suppressive`, and the rung is exactly right in the least helpful way.
+    Combined oral contraceptives, progestins such as dienogest, and GnRH
+    agonists and antagonists all suppress the disease by suppressing the
+    hormonal cycle that drives it. They work while taken. They stop working when
+    stopped. Excision surgery by an experienced surgeon reduces pain
+    substantially and **recurrence within five years is common**, so surgery is
+    suppression with a longer interval rather than a cure.
+    **THE BIND IS THAT EVERY EFFECTIVE MEDICAL THERAPY PREVENTS PREGNANCY.**
+    Endometriosis is a leading contributor to infertility, and the treatments
+    for its principal symptom are contraceptives and induced pseudo-menopause. A
+    woman who wants both relief and a child is told to choose, or to pursue
+    assisted reproduction, which is expensive and which this record's `access`
+    figure does not attempt to include.
+    **AND THERE HAS BEEN NOTHING GENUINELY NEW FOR DECADES.** The oral GnRH
+    antagonists are a convenience improvement on injected agonists. There is no
+    non-hormonal disease-modifying agent, and no treatment that acts on whatever
+    causes the tissue to be there.
+  prevention: >
+    `none`. Nothing prevents endometriosis. Long-term combined oral
+    contraceptive use has been associated with lower risk in some studies and
+    the association is confounded by the drug being prescribed for the symptoms
+    of undiagnosed disease. Nothing is given to a woman to stop her developing
+    it, and given the mechanism is unknown there is nothing to aim at.
+  ongoing: >
+    `high`, rated deliberately and arguably.
+    The case for `high`: continuous hormonal therapy through the whole of a
+    woman's reproductive life — twenty to thirty years — with side effects
+    requiring monitoring; repeat surgery for a large minority; chronic pain
+    management; fertility treatment; and appointments across gynaecology, pain
+    medicine, colorectal surgery and physiotherapy that no one specialty
+    coordinates.
+    The case against: most women with endometriosis have milder disease managed
+    on a generic pill, which is not `high` by the standard of `sickle-cell` or
+    `type-1-diabetes`.
+    It is rated `high` because **the diagnosed population is the severe tail** —
+    a seven-to-ten-year delay selects for the women whose symptoms could not be
+    dismissed — and the axis should describe the people the register can
+    actually see. That is a real distortion and it is recorded in holes.
+
+holes:
+  - >
+    **THE 7-10 YEAR DELAY IS THE HEADLINE AND IT IS QUOTED FROM RECALL.**
+    Published estimates vary by country and by method, with figures from about
+    four to about eleven years, and the definition of "symptom onset" is
+    self-reported and retrospective. **The claim that this is the worst delay in
+    the register is a superlative I have not checked against the other 136
+    records**, and gaps.md #244 exists because I have made exactly that mistake
+    before.
+  - >
+    **`ongoing: high` DESCRIBES THE DIAGNOSED POPULATION, NOT THE DISEASED
+    ONE**, and the diagnosed population is selected for severity by the very
+    delay this record is about. Every axis here has that bias and `ongoing` has
+    it worst. A record whose central finding is that most cases go unrecognised
+    for a decade cannot rate the typical case, only the visible one.
+  - >
+    **THE 2022 `moved:` ENTRY MOVES AN AXIS DOWNWARDS TO RECORD AN IMPROVEMENT**,
+    because `measurement.diagnostic` grades the kind of evidence and dropping
+    the laparoscopy requirement means weaker evidence and better care. Any
+    derived view treating that axis as a quality score reads this backwards.
+    **The register has no way to say "the test got less invasive"**, and this is
+    the first record to need one.
+  - >
+    **THIS RECORD CANNOT USE `strata` AND THAT IS A FINDING RATHER THAN AN
+    OMISSION.** The available staging system does not correlate with the symptom
+    being rated, so stratifying by it would produce two confidently wrong
+    ratings instead of one honestly averaged one. Compare `migraine`, where
+    episodic and chronic genuinely differ and strata work.
+  - >
+    **THE WINDOW IS ASSERTED ON A MECHANISM RATHER THAN ON EVIDENCE.** Central
+    sensitisation is a plausible and widely held account of why early treatment
+    should matter, and the trial that would demonstrate it would require
+    randomising women to delayed diagnosis and will not be run. The delay
+    unambiguously causes years of untreated pain; whether it causes permanent
+    disease is not established.
+  - >
+    **THE GENDER DIMENSION IS NOW A PATTERN AND THE REGISTER STILL HAS NO FIELD
+    FOR IT.** `migraine` and this record are both common, both predominantly
+    affect women, both lack a simple objective test, both are historically
+    dismissed as ordinary discomfort, and both are systematically
+    under-diagnosed. Both file it as a `diagnosis` or `policy` blocker because
+    that form is checkable. **Two independent instances is the threshold this
+    corpus normally uses to justify a schema change**, and no change is
+    proposed here because nobody has worked out what the field would be. It
+    should not be left implicit indefinitely.
+  - >
+    Written from model recall. The stage-symptom discordance, the retrograde
+    menstruation theory's insufficiency, the ovarian reserve cost of
+    endometrioma excision and the non-curative nature of hysterectomy are the
+    parts most likely right; every number is the part most likely wrong.
+
+blockers:
+  - kind: diagnosis
+    blocks: recognising the disease inside a decade
+    what: >
+      **THE ONLY DELAY IN THIS REGISTER ANYBODY HAS PUT A NUMBER ON, AND FOUR
+      SEPARATE THINGS PRODUCE IT.**
+      **The symptom is normalised.** Severe period pain is widely understood —
+      by patients, families, teachers and clinicians — as something women
+      experience. A girl who cannot attend school for two days a month is
+      frequently told that is ordinary. She stops mentioning it.
+      **The presentation is non-specific.** Pelvic pain, bowel and bladder
+      symptoms and fatigue overlap almost completely with irritable bowel
+      syndrome, pelvic inflammatory disease and interstitial cystitis, and
+      endometriosis is commonly diagnosed after those have been treated
+      unsuccessfully.
+      **The definitive test was an operation.** Until recently, confirmation
+      required laparoscopy under general anaesthetic, so clinicians reasonably
+      hesitated and women reasonably declined.
+      **And imaging does not rule it out.** Ultrasound and MRI find
+      endometriomas and deep disease and miss the superficial peritoneal form
+      entirely, so a normal scan is routinely taken as reassurance when it is
+      nothing of the kind.
+      There is no non-invasive test for the commonest form of a disease
+      affecting one woman in ten. Priced as a diagnostic development and
+      pathway-training programme.
+    who_could: [academic, health-system, government, sponsor, patient-org]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    obstacles: [who-progresses]
+    blocks: knowing why it hurts, and who it will hurt
+    what: >
+      Two gaps, and the clinically expensive one is not the origin question.
+      **WHY THE LESIONS CAUSE PAIN.** Stage does not predict symptoms, so pain is
+      not a function of lesion burden, and nobody can say what it is a function
+      of. This is why excision surgery — removing everything visible — leaves a
+      substantial minority in pain, and why the field cannot tell those women
+      anything useful in advance.
+      **WHO PROGRESSES AND WHO RECURS.** Nothing predicts which minimal disease
+      becomes deep infiltrating disease, and nothing predicts which woman is
+      back within eighteen months of surgery. A direct instance of
+      `who-progresses` (FND-O-0001).
+      The origin question — why the tissue is there — is a century old and is
+      deliberately **not** claimed as the blocker, because answering it would not
+      obviously change management. Answering the pain question would.
+      `scale: null`.
+    who_could: [academic, sponsor, nonprofit, philanthropy]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: no-sponsor
+    blocks: any treatment that is not a contraceptive
+    what: >
+      **THE THERAPEUTIC LADDER FOR A DISEASE AFFECTING 190 MILLION WOMEN IS
+      MADE ENTIRELY OF DRUGS DEVELOPED FOR SOMETHING ELSE.** Combined oral
+      contraceptives, progestins and GnRH analogues were developed for
+      contraception and for hormone-dependent conditions, and were found to help.
+      There is no disease-modifying agent and no non-hormonal option that acts
+      on the disease rather than on the cycle.
+      Research funding for endometriosis is repeatedly documented as low
+      relative to its prevalence and disability. **Recorded as `documented`
+      because the funding-to-burden discrepancy is published and quantified**,
+      and not as an accusation: no regulator has refused anything and nothing is
+      being suppressed. The pattern is the one `migraine` records — a non-fatal
+      condition with no visible lesion at the population level does not compete
+      for attention with diseases that kill.
+      Priced as a therapeutic development programme.
+    who_could: [sponsor, government, philanthropy, academic, patient-org]
+    scale: 2.0e9
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: surgeons who can excise it and teams that can manage it
+    what: >
+      Expert excision of deep infiltrating endometriosis is difficult surgery
+      involving bowel, bladder and ureter, and the small number of surgeons who
+      do it well are concentrated in a few centres with long waits. **Inexpert
+      surgery has the same property as inexpert fistula repair: it makes the
+      next operation harder** through adhesions, and it removes ovarian tissue
+      that does not grow back.
+      Beyond surgery, this is a condition needing gynaecology, pain medicine,
+      colorectal surgery, physiotherapy and fertility care in coordination, and
+      almost nowhere is it anybody's job to coordinate them. The register
+      records the same pattern for `heds` — a multi-system condition with no
+      owning specialty.
+    who_could: [health-system, government, academic, payer]
+    scale: 5.0e8
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0138
+  rated: 2026-09-01
+  by: [claude, jeremy]

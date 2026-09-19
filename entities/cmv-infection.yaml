@@ -1,0 +1,453 @@
+slug: cmv-infection
+id: FND-D-0128
+name: cytomegalovirus infection
+also: [CMV, human herpesvirus 5 infection, congenital CMV, cCMV, CMV retinitis]
+kind: disease
+common: CMV
+mondo: MONDO:0005132
+residual: false
+contested: false
+
+# THE COMMONEST INFECTIOUS CAUSE OF CONGENITAL DISABILITY, AND ALMOST NOBODY
+# HAS HEARD OF IT.
+#
+# 1. IT IS THE LEADING NON-GENETIC CAUSE OF CHILDHOOD SENSORINEURAL HEARING LOSS,
+#    and it affects more newborns than several conditions every pregnant woman is
+#    screened or counselled for. **`hearing-loss` is a record in this register
+#    whose largest preventable cause is another record that did not exist until
+#    now** — and that link is derived from nothing, because neither record knew
+#    about the other.
+#
+# 2. AND MATERNAL IMMUNITY DOES NOT PREVENT IT. In high-seroprevalence
+#    populations **most congenital CMV follows non-primary maternal infection** —
+#    reactivation of the mother's own latent virus, or reinfection with a
+#    different strain. So the natural template a vaccine would imitate **exists
+#    and demonstrably does not work.** That is a harder position than
+#    `tuberculosis`, where nature supplies no template at all, and it is why this
+#    record's vaccine blocker is not simply another instance of
+#    `protective-immunity`.
+#
+# 3. IT IS ALSO THE THIRD RECORD WHOSE MORTALITY BELONGS TO `hiv`. CMV retinitis
+#    was a leading cause of blindness in AIDS and largely vanished with
+#    antiretroviral therapy — the same shape as `cryptococcal-meningitis` and
+#    `toxoplasmosis`. **Three opportunistic records, one treatment, and it is
+#    another record's.**
+
+burden:
+  incidence:
+    value: 7.5e5
+    units: >
+      congenital infections/year worldwide — roughly 0.5-0.7% of live births, of
+      whom perhaps one in eight is symptomatic at birth. **A larger number of
+      infections occur after birth and in adults and are almost all harmless**,
+      which is why the congenital figure is the one recorded
+    src: recall
+  prevalence:
+    value: 4.0e9
+    units: >
+      people carrying latent CMV worldwide — seroprevalence runs from roughly
+      forty percent in some high-income populations to near-universal elsewhere,
+      rising with age and with crowding
+    src: reasoning
+  deaths:
+    value: 0.0
+    units: >
+      deaths/year — **and this is the register's now-familiar subset zero.**
+      Symptomatic congenital infection kills a small number of newborns; CMV
+      disease in transplant recipients and in advanced HIV kills more, and is
+      certified to the transplant or to HIV. **The harm here is disability, not
+      mortality** (gaps.md #182)
+    src: reasoning
+  note: >
+    **The comparison that makes this record matter**: congenital CMV affects more
+    newborns than Down syndrome, spina bifida or fetal alcohol syndrome in
+    high-income countries, and unlike those it is an infection — in principle
+    preventable, in principle screenable, in principle treatable. **Public
+    awareness is close to zero**, and surveys repeatedly find that most pregnant
+    women have never heard of it.
+
+axes:
+  mechanism: established
+  intervention: disease-modifying
+  prevention: risk-reduction
+  ongoing: low
+  efficacy:
+    value: 0.45
+    units: >
+      fraction-of-patients (meaningfully helped) — **and it blends two very
+      different situations.** In symptomatic congenital infection, six months of
+      valganciclovir modestly improves hearing and neurodevelopmental outcomes
+      and does not restore them. In transplant recipients, prophylaxis and
+      pre-emptive therapy work well and letermovir works very well
+    src: reasoning
+  access:
+    value: 0.35
+    units: >
+      fraction-of-patients (identified and treated in time) — **held down almost
+      entirely by not looking.** Congenital infection must be confirmed within
+      about three weeks of birth, before postnatal acquisition makes the test
+      uninterpretable, and most countries do not screen. Transplant programmes
+      monitor closely and score far higher; the average is dragged down by the
+      newborns
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: none
+  witness: >
+    **DIAGNOSTIC is `objective` and there is a three-week door.** PCR on saliva or
+    urine in the first two to three weeks of life establishes congenital
+    infection definitively. **After that the test cannot distinguish congenital
+    from postnatal acquisition**, and postnatal acquisition is common and
+    harmless — so a diagnosis missed in the newborn period is usually
+    unrecoverable, and dried blood spots retested later are insensitive.
+    **That deadline is what makes the screening question decidable rather than
+    academic**, and it is unusual: most of this register's diagnostic failures
+    can be repaired late.
+    In adults, viral load monitoring in transplant recipients is well established
+    and drives pre-emptive therapy — one of the better-run surveillance
+    programmes in medicine, and a striking contrast with the newborns.
+    PROGNOSTIC is `partial`. Symptomatic infection at birth predicts poor outcome
+    well. **The harder group is the roughly nine in ten who look normal at
+    birth**, of whom a minority develop late-onset sensorineural hearing loss over
+    the following years, and nothing identifies which — so all of them need
+    audiological follow-up that most do not receive.
+    PREDICTIVE is `none`. Antiviral resistance testing exists for transplant
+    recipients; for the congenital question there is nothing that says which
+    infant benefits from six months of a myelosuppressive drug.
+
+strata:
+  - name: congenital cytomegalovirus infection
+    fraction:
+      value: 0.05
+      units: fraction-of-clinically-relevant-infections
+      src: reasoning
+    intervention: disease-modifying
+    efficacy:
+      value: 0.35
+      units: fraction-of-stratum (outcome measurably improved by antiviral therapy)
+      src: reasoning
+    toll: major
+    what: >
+      **The stratum this record exists for.** Sensorineural hearing loss,
+      developmental delay, cerebral palsy, chorioretinitis, microcephaly.
+      Symptomatic at birth in a minority and predicting badly; **the larger group
+      look normal and a proportion lose hearing over the following years.**
+      Valganciclovir for six months improves hearing and neurodevelopmental
+      outcomes in the symptomatic, at the cost of neutropenia.
+
+  - name: CMV disease in transplant and advanced HIV
+    fraction:
+      value: 0.15
+      units: fraction-of-clinically-relevant-infections
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.80
+      units: fraction-of-stratum (disease controlled on antiviral therapy)
+      src: reasoning
+    toll: major
+    what: >
+      Retinitis, colitis, pneumonitis, and graft dysfunction. **This is where the
+      drugs work** — ganciclovir, valganciclovir, foscarnet, cidofovir, and since
+      2017 letermovir for prophylaxis in stem-cell transplantation, which is
+      effective and unusually free of the marrow and renal toxicity that
+      characterises the rest.
+      **CMV retinitis was a leading cause of blindness in AIDS and largely
+      disappeared with antiretroviral therapy**, which belongs to `hiv`.
+
+  - name: immunocompetent infection
+    fraction:
+      value: 0.80
+      units: fraction-of-clinically-relevant-infections
+      src: reasoning
+    intervention: none
+    efficacy:
+      value: 0.99
+      units: fraction-of-stratum (recovering without consequence)
+      src: reasoning
+    toll: none
+    what: >
+      Asymptomatic, or a mononucleosis-like illness that resolves. **The great
+      majority of infection, and nothing is done about it or needs to be** — the
+      rung is `none` in the same sense `toxoplasmosis`'s latent stratum earns it.
+
+toll:
+  severity: major
+  permanent: false
+  what: >
+    **The drugs are old and myelosuppressive, and they are given to newborns.**
+    Ganciclovir and valganciclovir cause neutropenia — in a substantial minority
+    of treated infants, requiring monitoring throughout six months of therapy —
+    plus anaemia and thrombocytopenia. Foscarnet is nephrotoxic and causes
+    electrolyte derangement; cidofovir is nephrotoxic enough to require
+    probenecid and saline loading. All are potentially carcinogenic and
+    teratogenic in animal studies, which is not a comfortable class to give an
+    infant for half a year.
+    **Letermovir is the exception and shows what the rest are missing**: a
+    different target, effective as prophylaxis, and largely free of marrow and
+    renal toxicity.
+  incidence:
+    value: 0.30
+    units: >
+      fraction-of-treated with significant haematological or renal toxicity —
+      reasoned, and high because the standard agents are half a century old
+    src: reasoning
+
+residue:
+  severity: catastrophic
+  permanent: true
+  what: >
+    **HEARING, AND A BRAIN.** Congenital CMV is the **leading non-genetic cause of
+    childhood sensorineural hearing loss**, and the hearing loss is frequently
+    progressive and sometimes late-onset — a child who passed the newborn hearing
+    screen losing hearing at three or five. It also causes developmental delay,
+    cerebral palsy, epilepsy, chorioretinitis and visual loss, and microcephaly.
+    **This is `hearing-loss`'s largest preventable cause and that record does not
+    know it**, because neither existed alongside the other until now. It also
+    overlaps `cerebral-palsy`.
+    Antiviral therapy improves these outcomes and does not restore them.
+    **`toll` is rated `major` and `residue` `catastrophic` deliberately: the drug
+    is unpleasant and reversible, and what the disease does is neither.**
+  incidence:
+    value: 0.20
+    units: >
+      fraction-of-congenitally-infected left with permanent hearing,
+      neurological or visual impairment — reasoned across symptomatic and
+      initially-asymptomatic infants, and the late-onset fraction is the part
+      nobody counts well
+    src: reasoning
+
+witness:
+  mechanism: >
+    `established`. Human cytomegalovirus is a betaherpesvirus transmitted in
+    saliva, urine, breast milk, sexually and across the placenta, and — like the
+    rest of its family — it **establishes lifelong latency**, here in cells of
+    the **myeloid lineage** rather than in neurons. That is a different
+    compartment from `genital-herpes` and `varicella-zoster`, and it is one
+    reason the reservoir problem here has a different shape: the cells divide, and
+    they are replaceable.
+    **Young children are the reservoir that matters.** Toddlers shed CMV in
+    saliva and urine for months, and the highest-risk exposure for a pregnant
+    woman is her own toddler — which makes the prevention advice unusually
+    specific and unusually hard to follow.
+    **And the immunological fact that shapes everything: maternal seropositivity
+    does not prevent congenital transmission.** In high-seroprevalence
+    populations most congenital infection follows reactivation or reinfection
+    with a different strain, so prior immunity reduces risk without abolishing
+    it.
+  intervention: >
+    `disease-modifying`, and the two strata pull in opposite directions.
+    **Nothing cures the latent virus.** For symptomatic congenital infection, six
+    months of valganciclovir modestly improves hearing and neurodevelopment
+    against six weeks, at the cost of neutropenia — a real effect, and a long way
+    from restoration. For transplant recipients, monitoring with pre-emptive
+    therapy works, and **letermovir prophylaxis since 2017 is genuinely good**.
+    The rung reflects the congenital stratum because that is where the burden is.
+  prevention: >
+    `risk-reduction`, and **it is thin enough to be uncomfortable given the
+    burden.** There is no vaccine. What exists is hygiene advice to pregnant
+    women — not sharing food or utensils with a toddler, handwashing after nappy
+    changes, avoiding kissing a young child on the mouth — which trials suggest
+    reduces seroconversion and which **most pregnant women are never given**,
+    because most have never heard of the infection.
+    Antenatal screening is not standard almost anywhere; newborn screening is
+    increasingly discussed and is done in a few places, sometimes triggered by a
+    failed hearing screen rather than universally. **The screening question here
+    has a harder edge than `toxoplasmosis`'s**, because the diagnostic window
+    closes at about three weeks and because a treatment with a real effect
+    exists.
+  ongoing: >
+    `low` for the record. Latent infection carries no burden for the four billion
+    people who have it. **The child with congenital CMV carries a lifetime of
+    audiological follow-up, hearing aids or implants, and developmental support**
+    — which is `residue` rather than treatment, and is the whole cost.
+  efficacy: >
+    See the axis. No figure describes clearing the infection, and the congenital
+    figure describes improvement rather than prevention.
+  access: >
+    **The binding constraint is that nobody looks within three weeks.** PCR on
+    saliva or urine is cheap, fast and definitive; after about three weeks it
+    cannot distinguish congenital from postnatal infection, and the opportunity is
+    gone permanently. Most countries do no newborn CMV screening at all.
+    In transplantation the picture inverts completely: viral load surveillance is
+    routine, letermovir is available, and outcomes are good. **Two populations,
+    one virus, and the difference is entirely whether a programme exists.**
+
+moved:
+  - date: 2015
+    axis: intervention
+    from: symptomatic
+    to: disease-modifying
+    why: >
+      A randomised trial established that **six months of valganciclovir improved
+      hearing and neurodevelopmental outcomes over six weeks** in symptomatic
+      congenital infection — the first demonstration that treating a congenitally
+      infected newborn changes the outcome rather than only the virology.
+      Modest, real, and the only thing on this axis to have moved.
+    src: recall
+  - date: 2017
+    axis: efficacy
+    from: 0.35
+    to: 0.45
+    why: >
+      **Letermovir**, licensed for CMV prophylaxis after allogeneic stem-cell
+      transplantation: a new target, effective, and without the marrow toxicity
+      that limits every other agent in this record. **It moved the transplant
+      stratum and did nothing for the newborns**, which is why the record-level
+      figure moves by less than the result deserves.
+    src: recall
+
+holes:
+  - >
+    **The link to `hearing-loss` is real and is not made in either record.**
+    Congenital CMV is the leading non-genetic cause of childhood sensorineural
+    hearing loss; that record's blocker is about hair cell regeneration and says
+    nothing about preventable causes. **This is the strongest cross-record link
+    the register has found by adding a record, and it should be written into
+    both.**
+  - >
+    The mRNA CMV vaccine's phase 3 result is **recalled as disappointing and is
+    the single least certain fact in this record.** It should be checked before
+    anything is inferred from it, and the vaccine blocker is written so that it
+    does not depend on the outcome.
+  - >
+    The residue incidence of 0.20 spans symptomatic and initially-asymptomatic
+    infants and **the late-onset hearing loss fraction is poorly counted**,
+    because it requires audiological follow-up of children who were never
+    diagnosed.
+  - >
+    `intervention: disease-modifying` is a compromise across strata that run from
+    `none` to `curative`, and the record does not carry ⧉ only because the
+    capability tiers happen not to split. **The transplant stratum and the
+    newborn stratum are different diseases in every respect that matters.**
+  - >
+    The denominator on the strata — *fraction of clinically relevant infections*
+    — is invented for this record because the natural denominator, all infections,
+    would put ninety-nine percent in the asymptomatic bucket and make the others
+    invisible. **That is a schema problem `toxoplasmosis` also has and neither
+    record solves.**
+  - Written from model recall. The congenital burden, the three-week diagnostic
+    window, non-primary maternal infection and letermovir are the parts most
+    likely right; every number is the part most likely wrong.
+
+blockers:
+  - kind: diagnosis
+    blocks: a three-week window that almost no country looks through
+    what: >
+      **CONGENITAL CMV MUST BE CONFIRMED WITHIN ABOUT THREE WEEKS OF BIRTH AND
+      MOST COUNTRIES DO NOT LOOK.** PCR on saliva or urine is cheap, fast and
+      definitive. After roughly three weeks, postnatal acquisition — which is
+      common and harmless — makes a positive result uninterpretable, and retesting
+      dried blood spots later is insensitive. **The opportunity closes and does
+      not reopen.**
+      The consequences are specific. Infants who would benefit from antiviral
+      therapy are not identified in time. The larger group who look normal at
+      birth and later lose hearing are not flagged for the audiological follow-up
+      that would catch it early. And **a child who fails a hearing screen at four
+      is investigated for everything except the cause.**
+      Targeted screening after a failed newborn hearing screen is done in some
+      places and misses the late-onset cases by construction, because they passed.
+      **Universal newborn screening is the intervention, it is cheap, and the
+      argument against it is that the treatment's benefit is modest** — which is
+      a real argument and is not the same as the test being useless.
+    who_could: [health-system, government, payer, academic]
+    scale: 4.0e8
+    standing: documented
+    src: reasoning
+
+  - kind: knowledge
+    blocks: a vaccine, against a virus whose natural immunity already fails
+    what: >
+      **THERE IS NO CMV VACCINE AFTER DECADES, AND THE REASON IS HARDER THAN
+      `protective-immunity`'S USUAL CASE.** For tuberculosis and malaria, nature
+      supplies no protected population to copy. Here it supplies one and it does
+      not work: **maternal seropositivity does not prevent congenital
+      transmission**, because most congenital infection in high-seroprevalence
+      settings follows reactivation of the mother's own latent virus or
+      reinfection with a different strain.
+      So a vaccine must do **better than natural immunity**, not imitate it — which
+      is the position `hpv-infection` turned out to be in, and which HPV solved by
+      presenting the antigen better than the virus does. A glycoprotein B vaccine
+      reached roughly fifty percent efficacy in phase 2; an mRNA candidate went to
+      phase 3 and the result is recalled as disappointing.
+      **The Institute of Medicine ranked a CMV vaccine a top-tier priority in the
+      1990s and it is still not done**, which for a leading cause of congenital
+      disability is worth stating plainly. `scale: null`.
+    who_could: [academic, sponsor, manufacturer, philanthropy]
+    scale: null
+    standing: documented
+    src: reasoning
+    obstacles: [protective-immunity]
+
+  - kind: policy
+    blocks: telling pregnant women that this exists
+    what: >
+      **SURVEYS REPEATEDLY FIND THAT MOST PREGNANT WOMEN HAVE NEVER HEARD OF
+      CMV**, and that most have not been told the hygiene precautions that reduce
+      seroconversion — not sharing food or utensils with a toddler, handwashing
+      after nappy changes, not kissing a young child on the mouth. Trials suggest
+      those precautions work.
+      **The comparison is the argument.** Every pregnant woman in a high-income
+      country is counselled about listeria, toxoplasma and alcohol. Congenital CMV
+      affects more newborns than several conditions that are screened for by
+      name, and it is the one nobody mentions.
+      The reasons given are that the advice is burdensome, that it may cause
+      anxiety without a certain benefit, and that there is no vaccine to offer
+      alongside it. **Whatever the merits, the effect is that the commonest
+      infectious cause of congenital disability is not discussed in antenatal
+      care**, and this is the cheapest intervention in the record.
+    who_could: [health-system, government, nonprofit, patient-org]
+    scale: 5.0e7
+    standing: documented
+    src: reasoning
+
+  - kind: knowledge
+    blocks: knowing which infected newborn will lose hearing
+    what: >
+      **ROUGHLY NINE IN TEN CONGENITALLY INFECTED INFANTS LOOK COMPLETELY NORMAL
+      AT BIRTH, AND A MINORITY OF THEM LOSE HEARING OVER THE FOLLOWING YEARS.**
+      Nothing identifies which. Viral load at birth carries some information and
+      not enough to act on; imaging helps in the symptomatic and not in this
+      group.
+      The cost of the gap runs both ways. **Treating them all** means six months
+      of a myelosuppressive drug given to well-appearing babies for a benefit
+      most will not need — and the trials that established benefit were done in
+      symptomatic infants, so the evidence does not extend to this group anyway.
+      **Treating none** means the hearing loss is found late, after the window in
+      which early amplification or implantation matters most.
+      This is `who-progresses` in a newborn, and it is the reason the screening
+      argument above cannot be settled by asserting that the treatment works.
+    who_could: [academic, sponsor, health-system]
+    scale: null
+    standing: documented
+    src: reasoning
+    obstacles: [who-progresses]
+
+  - kind: knowledge
+    blocks: a drug that is not fifty years old and toxic to marrow
+    what: >
+      **GANCICLOVIR, VALGANCICLOVIR, FOSCARNET AND CIDOFOVIR ARE ALL
+      MYELOSUPPRESSIVE OR NEPHROTOXIC**, and they are what is given to newborns
+      for six months and to transplant recipients indefinitely. Neutropenia in a
+      treated infant is common enough to require monitoring throughout.
+      **Letermovir shows it is not necessary.** Licensed in 2017 for prophylaxis
+      after stem-cell transplantation, it targets the viral terminase complex
+      rather than the polymerase, and is largely free of marrow and renal
+      toxicity. **A single new target ended fifty years of accepting toxicity as
+      the price** — for one indication, in one population.
+      What does not exist is an equivalent for congenital infection, where the
+      patient is a newborn and the exposure is six months, and where the case for
+      screening is weakened by exactly the toxicity a better drug would remove.
+      `scale: null` for the target; development is priceable and is nobody's
+      priority.
+    who_could: [academic, sponsor, manufacturer]
+    scale: null
+    standing: documented
+    src: reasoning
+
+assertion:
+  id: FND-A-0129
+  rated: 2026-08-30
+  by: [claude, jeremy]

@@ -1,0 +1,500 @@
+slug: stroke
+id: FND-D-0043
+name: stroke
+also: [cerebrovascular accident, CVA, brain attack, cerebral infarction, intracerebral haemorrhage]
+mondo: MONDO:0005098
+kind: disease
+residual: false
+contested: false
+
+# TWO DISEASES UNDER ONE NAME, WITH OPPOSITE TREATMENTS AND IDENTICAL
+# PRESENTATIONS.
+#
+# A vessel blocks, or a vessel bursts. The patient looks exactly the same: a
+# face drooping, an arm falling, speech gone. Give a clot-buster to the first and
+# you may hand them their life back; give it to the second and you kill them.
+# **Nothing at the bedside distinguishes them.** The CT scanner is the entire
+# decision, and where there is no CT there is no treatment, ever.
+#
+# ~6.6 million deaths a year — and stroke's real signature is not mortality. It
+# is the LEADING CAUSE OF LONG-TERM DISABILITY IN ADULTS WORLDWIDE. Brain does
+# not regenerate. The residue here is `catastrophic` and it is the point of the
+# record.
+#
+# THREE THINGS THIS RECORD BREAKS:
+#
+# 1. `strata` cannot override `mechanism`, and SCHEMA.md justifies that with
+#    "it is the same disease". For stroke that is simply false — thrombosis and
+#    vessel rupture are different mechanisms. See gaps.md #93.
+#
+# 2. Stroke proved a window can be MEASURED rather than assumed. Perfusion
+#    imaging extended thrombectomy from six hours to twenty-four by selecting on
+#    salvageable tissue instead of on the clock. The register treats a window as
+#    a property of the disease; it is a property of the patient. gaps.md #94.
+#
+# 3. `efficacy` assumes everyone agrees what "works" means. In severe stroke they
+#    do not: decompressive craniectomy reliably converts death into survival with
+#    major disability, and whether that is a success is contested by the people
+#    it is done to. gaps.md #95.
+#
+# And it is the SECOND CONSECUTIVE RECORD filed under `engineering problem` for
+# gaps.md #89's reason. The register now says "the mechanism is known and nothing
+# can be done" about the first and third largest causes of death on Earth.
+
+burden:
+  prevalence:
+    value: 1.0e8
+    units: >
+      people living with stroke or its sequelae — the number that matters for
+      this record, because most of them are alive and impaired rather than dead
+    src: recall
+  deaths:
+    value: 6.6e6
+    units: >
+      deaths/year — second or third largest cause of death worldwide depending
+      on the year and the grouping
+    src: recall
+  note: >
+    MORTALITY UNDERSTATES THIS DISEASE MORE THAN ANY OTHER IN THE REGISTER.
+    Stroke is the leading cause of long-term disability in adults, and a
+    death-ranked view of medicine sees only the fraction that kills. Around a
+    hundred million people are alive with the consequences: hemiparesis,
+    aphasia, dysphagia, hemianopia, cognitive impairment, post-stroke
+    depression.
+    Together with ischaemic heart disease this is roughly 15.6 million deaths a
+    year — **more than a quarter of all human deaths, in two records that share
+    most of a mechanism and almost all of a prevention strategy.**
+    The haemorrhagic share is larger in low- and middle-income countries and in
+    East Asia than in Western populations, which matters because it is the share
+    for which almost nothing works.
+
+survival:
+  horizon: 5 years from first stroke
+  untreated:
+    value: 0.40
+    units: >
+      fraction alive — the natural history before organised stroke care. Roughly
+      a quarter die within the first month and mortality remains elevated for
+      years afterwards, mostly from recurrence and from vascular disease elsewhere
+    src: recall
+  treated:
+    value: 0.55
+    units: >
+      fraction alive with best-demonstrated care — stroke-unit admission,
+      reperfusion in the eligible minority, and secondary prevention. **The
+      largest single contributor is the stroke unit, not the clot-buster**:
+      organised inpatient care benefits every patient, while thrombolysis and
+      thrombectomy reach a small selected fraction within a narrow time window
+    src: reasoning
+  witness: >
+    **Survival is the wrong question for this record and it is still worth
+    asking.** Stroke's defining harm is disability among survivors, which this
+    axis cannot see at all — a person alive at five years with a dense hemiplegia
+    and no speech counts here exactly as one who walked out of hospital. The
+    register holds that in `toll` and `residue`, and the two fields must be read
+    together or this row flatters the disease badly.
+    The intracerebral-haemorrhage half is worse than this blended figure and has
+    had almost nothing new; the ischaemic half carries nearly all the gain.
+
+axes:
+  mechanism: established
+  intervention: disease-modifying
+  prevention: risk-reduction
+  ongoing: moderate
+  efficacy:
+    value: 0.50
+    units: >
+      fraction-of-patients (meaningful benefit from best-demonstrated care —
+      reperfusion where eligible, stroke-unit care, and secondary prevention) —
+      A CONSTRUCT, not a measurement, and see `holes`. It nets a very large
+      benefit in a selected minority against near-nothing for intracerebral
+      haemorrhage
+    src: reasoning
+  access:
+    value: 0.25
+    units: >
+      fraction-of-patients (reaching stroke-unit care and reperfusion where
+      indicated) — thrombolysis reaches only a small share of eligible patients
+      even in wealthy systems, and mechanical thrombectomy requires a
+      comprehensive centre that most of the world is nowhere near
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: partial
+  witness: >
+    DIAGNOSTIC is `objective` and the imaging is superb — non-contrast CT
+    excludes haemorrhage in minutes, diffusion-weighted MRI shows infarct almost
+    immediately, CT angiography locates the occluded vessel.
+    **But note what the test is FOR.** It is not confirming that a stroke is
+    present; that is obvious at the bedside. It is deciding *which of two
+    opposite diseases* this is, because the treatment for one is lethal to the
+    other. The imaging is doing predictive work under a diagnostic name, and no
+    CT means no thrombolysis, anywhere, ever — which makes a scanner the hard
+    floor for treating this disease at all.
+    The real diagnostic failure is before the hospital: recognising a stroke as
+    a stroke, at home, in the first minutes. Public recognition campaigns exist
+    because the symptom is painless and the patient is frequently the least able
+    person present to notice it — aphasia and neglect remove the ability to
+    report the problem. Compare Buruli ulcer's analgesic toxin: **a disease that
+    disables the alarm is a distinct and recurring shape.**
+    PROGNOSTIC is `partial`. Early mortality prediction is reasonable from
+    imaging, age and stroke severity. How much function returns over the
+    following year is much less predictable, varies enormously, and is the
+    question every patient and family actually asks.
+    PREDICTIVE is `partial`, and it splits cleanly. ACUTE selection is one of
+    medicine's genuine measurement successes — see `window` and gaps.md #94.
+    SECONDARY prevention selection is not: **around a quarter of ischaemic
+    strokes are cryptogenic**, no cause found after workup, and without a cause
+    you cannot choose between an antiplatelet and an anticoagulant. Prolonged
+    cardiac monitoring converts some of them into occult atrial fibrillation,
+    which is a measurement fix to a treatment-selection problem and exactly the
+    shape the register should be able to reward.
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    Unlike ischaemic heart disease, where the modal treated patient takes a
+    tablet, the flagship acute stroke treatment can kill the person it is given
+    to.
+    THROMBOLYSIS CAUSES SYMPTOMATIC INTRACRANIAL HAEMORRHAGE in a few percent of
+    those treated, and when it happens it is frequently fatal or devastating.
+    That risk is accepted because the average benefit is larger, but it is
+    accepted *by a clinician, in minutes, for a specific person, who may not be
+    able to speak*. There is no other decision quite like it in this register.
+    Thrombectomy adds vessel perforation, dissection, and embolisation into
+    previously healthy territory. Anticoagulation for atrial fibrillation trades
+    ischaemic stroke risk for haemorrhagic stroke risk — the treatment for one
+    stratum of this record causes another stratum of the same record.
+    AND THE STARKEST CASE IS DECOMPRESSIVE HEMICRANIECTOMY. In a massive middle
+    cerebral artery infarct with malignant swelling, removing part of the skull
+    reliably prevents death. What it delivers is survival with major disability.
+    The operation works, and whether it succeeded is contested by the people it
+    is done to and by their families. **The register has no way to record a
+    treatment whose goal is disputed** — see gaps.md #95.
+    Rated `major` rather than `minor` precisely because recording a several
+    percent chance of a treatment-caused fatal brain haemorrhage as a minor cost
+    would hide the thing that makes acute stroke care hard.
+  incidence:
+    value: 0.05
+    units: >
+      fraction-of-actively-treated (permanent harm attributable to treatment —
+      symptomatic haemorrhage after thrombolysis, procedural complications of
+      thrombectomy, anticoagulant-related bleeding) — a reasoned estimate
+    src: reasoning
+
+residue:
+  severity: catastrophic
+  permanent: true
+  what: >
+    **STROKE IS THE LEADING CAUSE OF LONG-TERM DISABILITY IN ADULTS WORLDWIDE**,
+    and that sentence is the record.
+    Infarcted or haemorrhage-destroyed brain does not regenerate. What recovery
+    occurs comes from reorganisation around the lesion, is largely complete
+    within six to twelve months, and is very incomplete for most people with a
+    large stroke. What remains: hemiparesis, spasticity and contracture,
+    aphasia, dysphagia with its aspiration risk, hemianopia, hemispatial
+    neglect, post-stroke cognitive impairment and dementia, emotional lability,
+    and depression in a large minority.
+    APHASIA DESERVES SEPARATE NAMING because nothing else in this register does
+    what it does. A dominant-hemisphere stroke can leave someone fully aware,
+    intellectually intact, and unable to produce or understand language — cut off
+    from every other person while remaining entirely present. There is no
+    prosthesis for it.
+    Rated `catastrophic` on the schema's own test: permanently disabling in its
+    own right. Second `catastrophic` residue in the register after noma, and by
+    population it is larger by three orders of magnitude.
+    **And the residue is the direct price of the window.** Roughly two million
+    neurons are lost per minute of large-vessel occlusion. Every figure in this
+    block is a function of how long the artery stayed shut.
+  incidence:
+    value: 0.40
+    units: >
+      fraction-of-survivors (persistent disability affecting daily function) —
+      a reasoned estimate; the fraction with any lasting deficit is higher and
+      the fraction fully dependent is lower
+    src: reasoning
+
+window:
+  what: >
+    **TIME IS BRAIN** — on the order of two million neurons a minute during a
+    large-vessel occlusion, which is why acute stroke care is built like a fire
+    service.
+    Intravenous thrombolysis is given within four and a half hours of onset.
+    Mechanical thrombectomy for large-vessel occlusion was established within
+    six hours.
+    THEN THE INTERESTING PART. Trials selecting patients by perfusion imaging —
+    showing a small completed core and a large volume of still-salvageable
+    tissue — extended thrombectomy out to twenty-four hours, in patients the
+    clock would have excluded. **The window was not extended. It was measured.**
+    Collateral circulation varies enormously between people: one patient's
+    penumbra is gone in ninety minutes, another's survives most of a day. The
+    fixed hour-count was always a population average standing in for a
+    patient-specific fact that is now directly imageable.
+    That is a genuinely different kind of answer to a window than anything else
+    in this register, and the schema cannot express it — `caught_in_time` treats
+    the window as a property of the disease. See gaps.md #94.
+    The other end is untouched by any of this: onset must be *witnessed and
+    recognised*, and a stroke that happens during sleep has no known onset time
+    at all. Perfusion imaging partly rescues those too, which is the same point
+    again.
+  closes_on: >
+    completion of infarction through the ischaemic penumbra — patient-specific,
+    determined by collateral circulation, and directly measurable on perfusion
+    imaging rather than inferrable from the clock
+  caught_in_time:
+    value: 0.12
+    units: >
+      fraction-of-ischaemic-strokes (reperfused within a window that salvages
+      meaningful tissue) — a global reasoned estimate. Thrombolysis reaches
+      only a modest share of eligible patients even in well-organised systems,
+      and thrombectomy capacity is a small fraction of need everywhere
+    src: reasoning
+
+strata:
+  - name: ischaemic stroke
+    fraction:
+      value: 0.65
+      units: fraction-of-strokes
+      src: recall
+    intervention: disease-modifying
+    efficacy:
+      value: 0.60
+      units: fraction-of-stratum (benefit from reperfusion where eligible plus secondary prevention)
+      src: reasoning
+    toll: major
+    what: >
+      A vessel occludes — by atherosclerotic thrombosis, by embolus from a
+      fibrillating atrium, or by small-vessel disease. This is the stratum where
+      everything that works, works: thrombolysis, thrombectomy, stroke units,
+      and secondary prevention that substantially reduces recurrence.
+      Around a quarter are cryptogenic, and those patients get secondary
+      prevention chosen without knowing what they are preventing.
+
+  - name: intracerebral haemorrhage
+    fraction:
+      value: 0.27
+      units: fraction-of-strokes
+      src: recall
+    intervention: symptomatic
+    efficacy:
+      value: 0.15
+      units: fraction-of-stratum (benefit from any acute intervention)
+      src: reasoning
+    toll: minor
+    what: >
+      A vessel ruptures into the brain, usually from chronic hypertension or
+      cerebral amyloid angiopathy, and increasingly from anticoagulants taken to
+      prevent the *other* stratum.
+      **ALMOST NOTHING WORKS.** Intensive blood-pressure lowering gives a modest
+      benefit at best. Surgical evacuation of the clot has repeatedly failed to
+      help most patients. Reversing anticoagulation helps the subset on it.
+      Care is supportive, and roughly a third to a half are dead within a month.
+      This is the stratum that makes the record span the ladder: `symptomatic`
+      derives to `unsolved`, and it is more than a quarter of all strokes and a
+      larger share in the places where most strokes now happen.
+      Its toll is `minor` for the bleakest possible reason — there is scarcely
+      any treatment to charge a price for.
+
+  - name: subarachnoid haemorrhage
+    fraction:
+      value: 0.08
+      units: fraction-of-strokes
+      src: recall
+    intervention: disease-modifying
+    efficacy:
+      value: 0.50
+      units: fraction-of-stratum (survival with good outcome after securing the aneurysm)
+      src: reasoning
+    toll: major
+    what: >
+      Usually a ruptured berry aneurysm, and demographically distinct — younger
+      patients, more women, a sudden thunderclap headache rather than a focal
+      deficit.
+      Here there IS something decisive: securing the aneurysm by endovascular
+      coiling or surgical clipping prevents rebleeding, which is what kills.
+      Nimodipine reduces delayed ischaemia from vasospasm. Mortality remains
+      high and survivors frequently carry cognitive deficits that are easy to
+      miss because the limbs work.
+
+witness:
+  mechanism: >
+    `established` for each stratum separately, which is the problem the record
+    exposes rather than a weakness in the science.
+    Ischaemic: large-artery atherosclerosis, cardioembolism (dominantly from
+    atrial fibrillation), and small-vessel occlusive disease. The tissue
+    consequence is precisely characterised — a densely ischaemic core surrounded
+    by a penumbra that is electrically silent but structurally alive and
+    salvageable if flow returns. Modern stroke care is that one idea, executed
+    fast.
+    Haemorrhagic: chronic hypertension damaging small perforating arteries, and
+    cerebral amyloid angiopathy in older patients; ruptured saccular aneurysms
+    for subarachnoid bleeding.
+    **THE NAMED HOLE IS CRYPTOGENIC STROKE** — roughly a quarter of ischaemic
+    strokes with no cause identified after workup. Some are occult atrial
+    fibrillation found by prolonged monitoring, some involve a patent foramen
+    ovale, and many remain unexplained. It is a mechanism gap that presents as a
+    treatment-selection failure: no cause means no principled choice of
+    secondary prevention.
+    Rated `established` rather than `partial` because the chain from occlusion or
+    rupture to tissue death is not in doubt; what is missing is the *aetiology in
+    the individual patient*, which the schema has no separate place for.
+  intervention: >
+    `disease-modifying` at the record level, and the modal patient is doing a lot
+    of work in that phrase — see `strata`, where the rungs run from
+    `disease-modifying` down to `symptomatic`.
+    For ischaemic stroke reaching modern care the effect sizes are among the
+    largest in medicine: mechanical thrombectomy for large-vessel occlusion
+    requires treating only a handful of patients to leave one more of them
+    functionally independent. Organised stroke-unit care improves outcomes on its
+    own, with no drug and no procedure — arguably the cheapest intervention of
+    real size in this register.
+    It is `disease-modifying` and not higher for the same reason as ischaemic
+    heart disease: reperfusion salvages threatened tissue and does not restore
+    what has already infarcted, and the underlying vascular disease continues
+    afterwards. The process is interrupted at one moment, not held.
+    **And so stroke lands in `engineering problem` — understood, nothing can be
+    done — one record after ischaemic heart disease did.** Two records, the first
+    and third largest causes of death on Earth, both filed as untreatable by a
+    derivation that recognises only `suppressive` and `curative` as capability.
+    gaps.md #89 no longer needs arguing.
+  prevention: >
+    `risk-reduction`, and it is very nearly the same list as ischaemic heart
+    disease's — with one reordering that matters.
+    **BLOOD PRESSURE IS THE DOMINANT RISK FACTOR FOR STROKE**, more clearly than
+    for coronary disease, and overwhelmingly so for intracerebral haemorrhage.
+    Population-level blood-pressure control is therefore the single largest
+    available intervention against the one stratum where treatment does not
+    work. That is a rare and useful shape: **where the acute problem is
+    unsolvable, prevention is not a second-best, it is the whole strategy.**
+    Then anticoagulation for atrial fibrillation, which prevents a large share of
+    ischaemic strokes and is substantially underused; smoking cessation; lipid
+    lowering; diabetes control; and salt reduction, which acts through blood
+    pressure and is legislative rather than clinical.
+    All of it prevents ischaemic heart disease at the same time, which is
+    gaps.md #87 again and by now the register's most repeated structural
+    complaint.
+  ongoing: >
+    `moderate` for the medically treated: daily secondary prevention, monitoring,
+    anticoagulation checks where relevant.
+    For the disabled survivor it is not moderate and it is not really `ongoing`
+    in the sense the axis means. Rehabilitation, mobility aids, speech and
+    language therapy, adapted housing, and in many cases a family member who
+    stops working to provide care. The axis measures the cost of being *treated*;
+    most of what stroke costs a household is the cost of the residue, and it is
+    recorded nowhere in this schema.
+
+holes:
+  - Every scalar is `src: recall` or `src: reasoning`, and the strata fractions
+    in particular vary substantially by region — the haemorrhagic share is
+    considerably higher in East Asia and in low-income settings than the global
+    figure used here.
+  - `efficacy: 0.50` is a construct and a poor one. It averages a stratum where
+    thrombectomy produces one of the largest effect sizes in medicine with a
+    stratum where nothing works, and the result describes no actual patient.
+    The strata carry the honest numbers; the record-level figure exists because
+    the schema requires one.
+  - What counts as a good outcome is genuinely contested in severe stroke, so
+    `efficacy` is not merely uncertain but ill-defined. See gaps.md #95.
+  - The boundary with ischaemic heart disease is arbitrary. They share
+    atherosclerosis, most risk factors, and nearly all of prevention. Two records
+    is a choice made because clinical medicine made it, and a mechanism-first
+    register might have one.
+  - Transient ischaemic attack is not recorded and probably should be: it is the
+    warning shot, the highest-yield prevention opportunity in the disease, and
+    a distinct measurement problem since it is defined by symptoms that have
+    already resolved.
+
+blockers:
+  - kind: logistics
+    blocks: getting patients to organised acute stroke care inside the window
+    what: >
+      THE BINDING CONSTRAINT, and it is a systems-engineering problem rather
+      than a scientific one.
+      Thrombectomy requires a comprehensive stroke centre with interventional
+      neuroradiology available around the clock. There are not many of these
+      anywhere and there are almost none across large parts of the world.
+      Thrombolysis requires a CT scanner, a protocol, and a team that has
+      rehearsed it — reachable for far more people than thrombectomy, and still
+      out of reach for most of the world's stroke patients.
+      **Stroke-unit care is the cheapest large intervention here**: organised
+      multidisciplinary care improves survival and function without any drug or
+      device, and it is absent from most hospitals globally.
+      Rated at a very large scale because it is capital, staffing and
+      round-the-clock rotas rather than a commodity that can be shipped.
+    who_could: [health-system, government, philanthropy, nonprofit]
+    scale: 2.0e10
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    blocks: recognising the stroke, and separating the two diseases
+    what: >
+      Two failures, at opposite ends, and the first is free to fix.
+      RECOGNITION AT ONSET. Stroke is painless, and the deficits that define it
+      frequently remove the patient's ability to raise the alarm — aphasia takes
+      speech, neglect removes awareness that anything is wrong. Delay before
+      calling for help is the largest single contributor to missing the window,
+      and public recognition campaigns are cheap and demonstrably shift it.
+      SEPARATING ISCHAEMIA FROM HAEMORRHAGE. Nothing clinical distinguishes them
+      and the treatments are lethal to each other, so a CT scanner is a hard
+      precondition for treating stroke at all. **This is the register's cleanest
+      example of a device being an absolute floor rather than an improvement** —
+      without it the correct action is to give nothing.
+      Mobile stroke units carrying a CT scanner in the ambulance exist and shorten
+      time to treatment; they are expensive and rare.
+    who_could: [health-system, government, nonprofit, manufacturer]
+    scale: 5.0e9
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    obstacles: [who-progresses, tissue-repair]
+    blocks: intracerebral haemorrhage, cryptogenic stroke, and repair
+    what: >
+      Three absences, and the first is the largest untreated stratum in this
+      register by population.
+      **NOTHING MEANINGFUL TREATS INTRACEREBRAL HAEMORRHAGE.** More than a
+      quarter of strokes, a third to a half dead within a month, and acute care
+      is supportive. Surgical evacuation has been tested repeatedly and does not
+      help most patients. This is a genuine scientific frontier hiding inside a
+      record whose other strata look well served.
+      CRYPTOGENIC STROKE leaves a quarter of ischaemic patients without an
+      aetiology, and therefore without a principled secondary prevention choice.
+      REPAIR. Recovery plateaus at six to twelve months and rehabilitation works
+      within that limit rather than extending it. Anything that genuinely
+      restored function in chronic stroke would act on a hundred million people,
+      and nothing does.
+      `scale: null` — this is the part money alone cannot resolve.
+    who_could: [academic, sponsor, manufacturer, philanthropy, government]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: policy
+    blocks: population blood-pressure control and detection of atrial fibrillation
+    what: >
+      Hypertension is the dominant modifiable cause of stroke and by far the
+      dominant cause of the haemorrhagic stratum — **so the intervention against
+      the untreatable stratum is entirely preventive.** Population salt
+      reduction, treatment coverage for hypertension, and simply detecting it
+      are among the highest-value interventions available against any disease in
+      this register, and none of them are aimed specifically at stroke
+      (gaps.md #87).
+      Atrial fibrillation is the other half: often asymptomatic, frequently
+      undetected until the stroke it caused, and anticoagulation prevents a large
+      share of those strokes. Screening strategies exist and are inconsistently
+      deployed.
+      Detection of both conditions is cheap, requires no innovation, and is
+      chiefly a question of who is responsible for looking.
+    who_could: [government, health-system, legislator, nonprofit, payer]
+    scale: 1.0e10
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0043
+  rated: 2026-08-23
+  by: [claude, jeremy]

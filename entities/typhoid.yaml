@@ -1,0 +1,508 @@
+slug: typhoid
+id: FND-D-0066
+name: typhoid fever
+also: [enteric fever, Salmonella Typhi infection]
+mondo: MONDO:0005619
+kind: disease
+residual: false
+contested: false
+
+# **THE ANTIBIOTICS ARE FAILING AND THE VACCINE JUST GOT GOOD, IN THE SAME DECADE,
+# AND THE REGISTER REPORTS BOTH AS STATIC NUMBERS.**
+#
+# Typhoid has walked through the antibiotic armamentarium one drug at a time
+# since 1948 — chloramphenicol, then ampicillin and co-trimoxazole, then the
+# fluoroquinolones, and since 2016 an **extensively drug-resistant clone in
+# Pakistan** that defeats third-generation cephalosporins too. What is left is
+# azithromycin and the carbapenems, and azithromycin resistance is already
+# reported.
+#
+# Meanwhile the **typhoid conjugate vaccine** was prequalified in 2018: one dose,
+# roughly eighty percent effective, working in infants, durable — the first
+# typhoid vaccine that is actually good.
+#
+# **The capability in this record is not a state. It is a race**, and `efficacy`
+# is a snapshot of a quantity the treatment's own use is eroding. gaps.md #143.
+#
+# AND THE RESERVOIR IS PEOPLE WHO ARE NOT ILL. *S.* Typhi has **no animal host** —
+# so typhoid is eradicable in principle, like smallpox — except that two to five
+# percent of those infected become chronic gallbladder carriers, shedding for
+# years, entirely well.
+#
+# **Mary Mallon was detained for roughly twenty-six years for being healthy.**
+# `toll` records what treatment costs a patient. There is no field for what
+# public health does to a person for everybody else's benefit. gaps.md #144.
+
+burden:
+  prevalence:
+    value: 9.0e6
+    units: >
+      cases/year worldwide — estimates range from roughly 9 to over 20 million
+      depending on the modelling, because the diagnosis is bad and the
+      surveillance is worse. Paratyphoid adds several million more and **is not
+      covered by the vaccine**
+    src: recall
+  deaths:
+    value: 1.1e5
+    units: >
+      deaths/year — and untreated case fatality is on the order of ten to twenty
+      percent, against under one percent with an antibiotic the organism is still
+      susceptible to
+    src: recall
+  note: >
+    **CONCENTRATED IN SOUTH ASIA, THEN SUB-SAHARAN AFRICA AND SOUTHEAST ASIA** —
+    which is to say, where drinking water and sewage are not reliably separated.
+    Typhoid left Europe and North America the way cholera did, with plumbing, and
+    for the same reason.
+    The burden figures are soft for a reason this register keeps meeting: **blood
+    culture is only about half to two-thirds sensitive and is largely
+    unavailable**, so most typhoid is diagnosed clinically or by a serological
+    test known to be close to worthless. The disease is simultaneously
+    **over-diagnosed clinically** — driving antibiotic use, driving resistance —
+    and **under-diagnosed microbiologically**, so the surveillance that would
+    justify vaccinating does not exist.
+    That loop is the record: a bad test produces empirical antibiotics, which
+    produce resistance, which raises the value of the vaccine, which is hard to
+    argue for because the bad test means nobody can say how many cases there
+    are.
+
+survival:
+  horizon: 30 days from onset
+  untreated:
+    value: 0.85
+    units: >
+      fraction alive — untreated typhoid fever has a case fatality of roughly
+      10-20%, through intestinal perforation and haemorrhage in the third week
+    src: recall
+  treated:
+    value: 0.99
+    units: >
+      fraction alive on appropriate antibiotics. **The qualifier is doing real work
+      and is getting harder**: extensively drug-resistant typhoid has spread
+      from Pakistan since 2016, and azithromycin is close to the last oral
+      option
+    src: recall
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: prophylaxis
+  ongoing: none
+  efficacy:
+    value: 0.95
+    units: >
+      fraction-of-patients (cured by an antibiotic the organism is susceptible
+      to) — **AND THIS NUMBER IS FALLING.** It was effectively 0.99 for decades
+      and the extensively drug-resistant clone has taken a bite out of it. See
+      the `moved` block
+    src: reasoning
+  access:
+    value: 0.60
+    units: >
+      fraction-of-patients (reaching an antibiotic that works) — high, because
+      antibiotics are cheap and in many endemic countries available without
+      prescription, **which is part of why they are failing**
+    src: reasoning
+
+measurement:
+  diagnostic: clinical
+  prognostic: partial
+  predictive: partial
+  witness: >
+    DIAGNOSTIC is `clinical`, and that rating is a judgement about the world
+    rather than about the science.
+    **Blood culture is the reference standard and it misses a third to a half of
+    cases** — the bacterial load in typhoid is low, prior antibiotics sterilise
+    the sample, and the volume of blood that would improve yield is not what gets
+    drawn from a febrile child. Bone marrow culture is better and nobody is going
+    to do it.
+    **What is actually used across most of the endemic world is the Widal test**,
+    a century-old serology with poor sensitivity and poor specificity in
+    populations with high background exposure, which persists because there is
+    nothing else and a clinician facing a febrile patient needs an answer today.
+    So the enum has `objective`, `clinical` and `complaint`, and this record needs
+    a fourth: **an objective test exists, is in routine use, and misleads.** That
+    is not the same as having no test, and it is worse in one specific way — a
+    bad test produces confident wrong answers, and confident wrong answers get
+    antibiotics.
+    PROGNOSTIC is `partial`. Clinical severity, and the recognition of
+    complications — **intestinal perforation in the third week, which needs
+    surgery and kills a substantial fraction of those who get it.**
+    PREDICTIVE is `partial` and it is the axis that matters most here.
+    **Antimicrobial susceptibility testing tells you which drug will work**, and
+    in extensively drug-resistant typhoid that is the difference between
+    azithromycin and nothing. It is definitive when done, and it requires the
+    culture that mostly is not done. **A `good` predictive test that almost
+    nobody can run.**
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    The antibiotics are cheap and largely benign — a course of azithromycin, or
+    ceftriaxone, or a carbapenem for the resistant clones. Fluoroquinolones carry
+    tendinopathy risk, chloramphenicol carried aplastic anaemia and is why it was
+    abandoned in wealthy countries long before resistance arrived.
+    Intestinal perforation belongs to the disease rather than the treatment, and
+    the laparotomy that follows is major surgery in a very sick patient.
+    **AND THEN THERE IS WHAT IS DONE TO CHRONIC CARRIERS, WHICH IS NOT TREATMENT
+    AT ALL.**
+    Two to five percent of infected people carry *S.* Typhi in the gallbladder
+    for years, shedding, entirely well. Managing them means prolonged antibiotic
+    courses, sometimes **cholecystectomy — removing a healthy organ from a healthy
+    person** — and historically much worse.
+    **Mary Mallon was detained on North Brother Island for roughly twenty-six
+    years, in total, for being an asymptomatic carrier.** She was never ill. She
+    was quarantined for the protection of other people, released on a promise she
+    broke, and re-detained for the rest of her life.
+    `toll` means what the cure costs the patient. **There is no field in this
+    schema for what public health does to a person on everybody else's behalf**,
+    and typhoid is where the corpus has to admit it (gaps.md #144).
+  incidence:
+    value: 0.01
+    units: >
+      fraction-of-treated (permanent harm attributable to treatment) — low; the
+      drugs are benign and the coercive management of carriers is a different
+      thing that this field cannot hold
+    src: reasoning
+
+# NO `residue` BLOCK, AND THE REASON IS THE SAME ONE EBOLA FORCED.
+#
+# Chronic carriage is not damage to the survivor. **It is a risk they carry for
+# everybody else** — for years, silently, from a gallbladder that frequently
+# contains gallstones with biofilm on them.
+#
+# `toll` is what treatment took, `residue` is what the disease left in the
+# patient, and this is neither (gaps.md #100). It is also more consequential here
+# than in Ebola: filovirus persistence restarts outbreaks occasionally, whereas
+# **chronic typhoid carriage is how the species persists between epidemics.** The
+# reservoir of a human-only pathogen is well people.
+
+window:
+  what: >
+    **THREE WEEKS, AND WHAT CLOSES IT IS A HOLE IN THE BOWEL.**
+    Untreated typhoid runs a course of weeks — a stepwise fever, bacteraemia,
+    seeding of the gallbladder and Peyer's patches. In the third week those
+    patches ulcerate, and **intestinal perforation** follows in a small
+    percentage, requiring emergency laparotomy in a patient who has been febrile
+    for a month, with a mortality that is high wherever surgery is not close.
+    Antibiotics given early shorten the illness to days and prevent essentially
+    all of that.
+    So the window is unusually generous — weeks rather than the hours cholera
+    allows — and the thing that closes it is not the organism spreading but the
+    ileum giving way.
+    **What fails is not arrival. It is the diagnosis.** A febrile patient in
+    Karachi or Kathmandu gets an antibiotic, frequently the wrong one, frequently
+    without a culture, and the question of whether it worked is answered by
+    whether the fever settles. In an era of extensively drug-resistant typhoid
+    that is a dangerous way to find out.
+  closes_on: >
+    ulceration of Peyer's patches and intestinal perforation, typically in the
+    third week of untreated illness
+  caught_in_time:
+    value: 0.60
+    units: >
+      fraction-of-cases (treated with an effective antibiotic before
+      complications) — a reasoned estimate, and it is falling in the places where
+      resistance is rising
+    src: reasoning
+
+strata:
+  - name: fully susceptible
+    fraction:
+      value: 0.55
+      units: fraction-of-cases
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.99
+      units: fraction-of-stratum (cured)
+      src: reasoning
+    toll: minor
+    what: >
+      Cured by a cheap oral antibiotic in days. **This is what typhoid was
+      everywhere in 1960**, and it is still most of the world.
+
+  - name: multidrug-resistant
+    fraction:
+      value: 0.25
+      units: fraction-of-cases
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.97
+      units: fraction-of-stratum (cured)
+      src: reasoning
+    toll: minor
+    what: >
+      Resistant to chloramphenicol, ampicillin and co-trimoxazole — the first
+      three drugs, lost between the 1970s and the 1990s. Treated with a
+      fluoroquinolone, or with what came after when that failed too.
+
+  - name: fluoroquinolone-resistant
+    fraction:
+      value: 0.15
+      units: fraction-of-cases
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.95
+      units: fraction-of-stratum (cured)
+      src: reasoning
+    toll: minor
+    what: >
+      Dominant across South Asia, driven substantially by a single successful
+      lineage. Treated with a third-generation cephalosporin or azithromycin,
+      which means an injection or a more expensive tablet.
+
+  - name: extensively drug-resistant
+    fraction:
+      value: 0.05
+      units: fraction-of-cases
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.90
+      units: fraction-of-stratum (cured)
+      src: reasoning
+    toll: major
+    what: >
+      **EMERGED IN PAKISTAN IN 2016 AND IS STILL CURABLE, WHICH IS THE ONLY GOOD
+      NEWS IN THIS ROW.** Resistant to chloramphenicol, ampicillin,
+      co-trimoxazole, fluoroquinolones **and third-generation cephalosporins.**
+      What remains is azithromycin and the carbapenems — an oral drug to which
+      resistance is already being reported, and an intravenous class that
+      requires a hospital.
+      **Note that every stratum here is `curative`, so ⧉ does not fire.**
+      Resistance has not yet removed curability from typhoid. It has removed
+      options, cheapness, and the ability to treat at a health post. The strata
+      show `efficacy` eroding beneath a rating that has not moved, which is
+      exactly what gaps.md #143 is about.
+
+moved:
+  - date: 1948
+    axis: intervention
+    from: none
+    to: curative
+    why: >
+      **CHLORAMPHENICOL.** Typhoid case fatality fell from something on the order
+      of ten to twenty percent to under one, in the space of a few years, with a
+      cheap oral antibiotic.
+      Before it, treatment was nursing: fluids, cool baths, and waiting out four
+      weeks of fever while hoping the bowel held. It is one of the cleanest
+      `none → curative` transitions in this register.
+
+  - date: 2016
+    axis: efficacy
+    from: 0.99
+    to: 0.95
+    why: >
+      **THE THIRD BACKWARDS ENTRY IN THIS REGISTER, AND THE FIRST CAUSED BY THE
+      TREATMENT ITSELF.**
+      Yaws' 1964 regression was a campaign wound down. Measles' 2020 regression
+      was coverage falling. **This one is the antibiotics being used**, which is
+      the only way they could have failed.
+      An extensively drug-resistant clone emerged in Hyderabad, Pakistan in 2016,
+      defeating five drug classes including third-generation cephalosporins, and
+      spread. Fluoroquinolone resistance had already become dominant across South
+      Asia. Azithromycin resistance is now reported.
+      The date marks an identifiable event in an arc that began in the 1970s.
+      **Nothing about the disease changed. What changed is that it has been
+      treated for seventy-five years.**
+
+  - date: 2018
+    axis: access
+    from: 0.4
+    to: 0.6
+    why: >
+      **THE TYPHOID CONJUGATE VACCINE**, prequalified by WHO in 2018 and
+      Gavi-supported from 2019. Vi polysaccharide conjugated to tetanus toxoid:
+      **one dose, roughly eighty percent effective, immunogenic in infants,
+      durable** — none of which the older Vi polysaccharide and Ty21a vaccines
+      could claim.
+      Pakistan deployed it in direct response to the extensively drug-resistant
+      outbreak, which is the clearest instance in this register of **a vaccine
+      being used as an answer to antimicrobial resistance.**
+      Filed under `access` because there is nowhere else to put it. **What rose is
+      vaccination coverage, which is prevention coverage, and prevention has no
+      coverage field** (gaps.md #109) — the fourth record to hit that.
+
+witness:
+  mechanism: >
+    `established`, and the pathogen's strategy explains both the illness and the
+    reservoir.
+    *Salmonella enterica* serovar Typhi is swallowed in contaminated water or
+    food, invades through M cells overlying Peyer's patches in the ileum, and —
+    unlike the non-typhoidal salmonellae, which stay in the gut and cause
+    diarrhoea — **survives inside macrophages and is carried into the
+    bloodstream.** That is why typhoid is a systemic febrile illness rather than
+    a gastroenteritis. It seeds liver, spleen, bone marrow and **gallbladder**,
+    and returns to the bowel in bile, re-infecting the Peyer's patches which
+    ulcerate and occasionally perforate.
+    The **Vi capsular polysaccharide** is the principal virulence factor, shielding
+    the organism from complement and antibody, and it is what both modern
+    vaccines target — a rare case of the virulence mechanism and the vaccine
+    antigen being the same object.
+    **THE NAMED HOLE IS WHY SOME PEOPLE BECOME CARRIERS.** Two to five percent
+    harbour the organism in the gallbladder for years, and gallstones are strongly
+    associated — the bacterium forms biofilm on them, where antibiotics do not
+    reach. Why that happens in some people and not others, and how to clear it
+    short of removing the organ, is unresolved.
+    **And *S.* Typhi has no animal reservoir**, which puts typhoid on the very
+    short list with smallpox and dracunculiasis of diseases that are eradicable in
+    principle — **except that the reservoir is well people who do not know.**
+  intervention: >
+    `curative`, and the rating is intact while the ground under it moves.
+    An antibiotic to which the organism is susceptible cures typhoid in days and
+    takes case fatality below one percent. **The problem is the clause.**
+    Chloramphenicol in 1948, then ampicillin and co-trimoxazole, then the
+    fluoroquinolones, then third-generation cephalosporins — each lost in turn,
+    each loss traceable to lineages that spread because the drug was used.
+    Since 2016 an extensively drug-resistant clone leaves azithromycin and the
+    carbapenems: **one oral drug to which resistance is already reported, and one
+    intravenous class that cannot be given at a health post.**
+    So the record still reads `curative` and it means something different than it
+    did. **Resistance has not removed curability. It has removed cheapness,
+    oralness, and the ability to treat empirically** — and it is doing so
+    steadily, in a direction with an obvious end point.
+    The strata above show it: efficacy falling from 0.99 to 0.90 across four
+    resistance classes, with the rung unchanged in all four.
+  prevention: >
+    `prophylaxis`, and it improved sharply at exactly the moment the treatment
+    began failing.
+    **The typhoid conjugate vaccine** is the first good one. Vi antigen conjugated
+    to a carrier protein, which converts a T-independent polysaccharide response
+    into a T-dependent one — **so it works in infants, it boosts, and it lasts.**
+    A single dose, roughly eighty percent protective. Pakistan introduced it in
+    direct response to the extensively drug-resistant outbreak.
+    The older vaccines — unconjugated Vi polysaccharide and the oral live Ty21a —
+    were roughly half to two-thirds effective, did nothing under two years of age,
+    and required repeating. They were real and they were not enough.
+    **AND THE LARGER PREVENTION IS THE SAME ONE CHOLERA'S RECORD DESCRIBES.**
+    Typhoid is faecal-oral. It left the wealthy world with sewers and water
+    treatment, deliberately, and it persists where those do not exist. **The same
+    pipes prevent typhoid, cholera, hepatitis A, most diarrhoeal disease and much
+    of the helminth burden**, and are chargeable to none of them (gaps.md #87).
+    **Paratyphoid A is not covered by any of it** — several million cases a year,
+    rising as a share, and no licensed vaccine.
+  ongoing: >
+    `none` for the great majority. Typhoid is an acute illness; treated patients
+    recover completely and carry nothing.
+    The exception is the chronic carrier, and what they carry is not a burden of
+    treatment but an obligation to other people — prolonged antibiotics,
+    sometimes removal of a healthy gallbladder, and in some jurisdictions
+    exclusion from food handling and from healthcare work for life.
+    That is `ongoing` in the ordinary sense of the word and it is not what the
+    axis measures.
+
+holes:
+  - Every scalar is `src: recall` or `src: reasoning`, and the case estimate spans
+    roughly two-fold between modelling groups because **the diagnostic that would
+    settle it is the thing that does not work.**
+  - The resistance strata fractions are a global composite of a picture that
+    differs enormously by country — extensively drug-resistant typhoid is a large
+    share of cases in parts of Pakistan and essentially absent elsewhere.
+  - Paratyphoid fever is a substantial and growing share of enteric fever, is not
+    covered by the conjugate vaccine, and is excluded from every number here.
+  - The relationship between over-the-counter antibiotic availability and
+    resistance emergence is well argued and hard to quantify, and this record
+    states it as a contributor rather than a measured cause.
+  - `amr-infection` is a held record, `cholera` and `soil-transmitted-helminths`
+    share the sanitation intervention, and **none of the three links exist.**
+
+blockers:
+  - kind: diagnosis
+    blocks: knowing whether this febrile patient has typhoid, today
+    obstacles: []
+    what: >
+      **THE TEST IN ROUTINE USE IS KNOWN TO BE BAD AND IS USED ANYWAY, BECAUSE
+      THE ALTERNATIVE IS NOTHING.**
+      Blood culture misses a third to a half of cases and requires a laboratory
+      most endemic settings do not have. The Widal test is a century old, performs
+      poorly in populations with high background exposure, and is the mainstay
+      across much of South Asia and Africa.
+      The consequences compound in both directions. **Over-diagnosis** sends
+      antibiotics to febrile patients who have malaria, dengue or something else,
+      which is a direct contributor to the resistance in this record.
+      **Under-diagnosis** means nobody can say how much typhoid there is, which
+      makes the case for vaccine introduction harder to argue in exactly the
+      places that need it.
+      **A rapid, accurate, point-of-care test is the highest-value missing object
+      in this record** — higher than a new antibiotic, because it would slow the
+      loss of the ones that remain and would generate the surveillance that
+      justifies the vaccine.
+    who_could: [academic, manufacturer, sponsor, health-system, philanthropy]
+    scale: 5.0e8
+    standing: documented
+    src: recall
+
+  - kind: policy
+    blocks: the pipes, and the pharmacy counter
+    obstacles: []
+    what: >
+      **TWO POLICY FAILURES AND THEY PULL AGAINST EACH OTHER.**
+      *Water and sanitation.* Typhoid is faecal-oral and left the wealthy world
+      with sewers. It is the same intervention cholera's record describes, at the
+      same enormous cost, preventing the same five diseases at once, and
+      belonging to the same ministry that is not health.
+      *Antibiotic access.* In much of the endemic world antibiotics are sold
+      without prescription — which means a febrile person gets treated quickly,
+      which saves lives, **and which is a principal driver of the resistance that
+      is dismantling this record.** Restricting sales without first providing
+      diagnosis and reliable care would kill people.
+      **That is a genuine dilemma rather than a failure**, and the register's
+      blocker vocabulary — which assumes obstacles are things somebody is failing
+      to do — has no way to record a policy where both directions cost lives.
+    who_could: [government, legislator, regulator, health-system, nonprofit]
+    scale: 3.0e10
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: getting the conjugate vaccine into routine immunisation
+    obstacles: []
+    what: >
+      The typhoid conjugate vaccine is prequalified, Gavi-supported, single-dose
+      and effective in infants. It has been introduced in Pakistan, Nepal, Malawi,
+      Zimbabwe, Liberia and Samoa, and **not in most of the countries with the
+      highest burden** — including large parts of India, Bangladesh and
+      sub-Saharan Africa.
+      The obstacles are the ordinary ones: adding a vaccine to a crowded infant
+      schedule, financing the co-payment as countries transition out of Gavi
+      eligibility, and — circularly — **making the case for introduction when the
+      surveillance data does not exist because the diagnostic does not work.**
+      **This is the intervention that would most change the record**, and it is
+      also the one most obviously in a race with the resistance in the blocker
+      below.
+    who_could: [health-system, government, philanthropy, manufacturer, payer]
+    scale: 3.0e9
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: chronic carriage, paratyphoid, and what comes after azithromycin
+    obstacles: [pathogen-persistence]
+    what: >
+      Three absences, and the first is the reason typhoid cannot be eradicated
+      despite having no animal host.
+      **NOBODY CAN RELIABLY CLEAR A CHRONIC CARRIER.** Two to five percent of
+      infected people harbour *S.* Typhi in the gallbladder for years, forming
+      biofilm on gallstones where antibiotics do not reach. Prolonged courses
+      sometimes work; cholecystectomy usually does; **neither is an acceptable
+      population strategy.** A drug that cleared carriage would put eradication on
+      the table for a human-only pathogen.
+      **PARATYPHOID A HAS NO VACCINE**, is several million cases a year, and is
+      rising as a share of enteric fever precisely as typhoid vaccination expands.
+      **AND THE RESISTANCE LADDER HAS A BOTTOM.** Azithromycin resistance is
+      reported; after that the carbapenems, which cannot be given at a health
+      post; after that nothing. No new antibiotic class is close.
+      `scale: null`.
+    who_could: [academic, sponsor, manufacturer, philanthropy]
+    scale: null
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0066
+  rated: 2026-08-24
+  by: [claude, jeremy]

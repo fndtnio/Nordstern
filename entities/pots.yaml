@@ -1,0 +1,332 @@
+slug: pots
+id: FND-D-0020
+name: postural orthostatic tachycardia syndrome
+also: [POTS, chronic orthostatic intolerance]
+common: POTS
+mondo: unresolved
+kind: syndrome
+residual: false
+contested: true
+
+# THE COUNTEREXAMPLE TO THE REGISTER'S OWN MEASUREMENT OPTIMISM, and the reason
+# to add it directly after hEDS.
+#
+# Every measurement argument in this register so far runs one way: the gap is
+# the missing test, and an objective test is the good state. POTS has one. The
+# diagnostic criterion is a heart rate rise of 30 bpm within ten minutes of
+# standing, without a fall in blood pressure — reproducible, quantitative,
+# measurable with a stopwatch and a cuff, available in any clinic on earth for
+# the cost of ten minutes.
+#
+# And it has bought almost none of what the register assumes an objective test
+# buys. The mechanism is still unknown, the entity is still contested, patients
+# are still told it is anxiety for years, and there is still not one approved
+# drug. An objective sign is not the same as an objective ENTITY: this one is a
+# final common pathway with several distinct causes upstream of it, so measuring
+# it perfectly does not tell you what you have measured. See gaps.md #39.
+
+burden:
+  prevalence:
+    value: 3.0e-3
+    units: >
+      fraction-of-population — wide range; see note. figures in circulation
+      correspond to roughly 0.5-3 million people in the United States before
+      2020, and substantially more since
+    src: recall
+  deaths:
+    value: 0.0
+    units: >
+      deaths/year directly attributable — POTS is disabling and is not
+      considered life-shortening in itself
+    src: reasoning
+  note: >
+    Onset is typically between 15 and 45 and the female-to-male ratio is on the
+    order of five to one, which is relevant to the dismissal documented in the
+    `contested` witness rather than incidental to it. Counts rose sharply after
+    2020: post-COVID dysautonomia is now a substantial share of new diagnoses,
+    and that is the single most important thing to have happened to this field,
+    because it supplies a dated exposure and prospective cohorts where before
+    there were neither.
+    THE THIRD MORBIDITY-ONLY RECORD, after low back pain and hEDS. High
+    lifelong disability, near-zero mortality, in a population at the start of
+    working life. Any triage weighting deaths sees none of the three.
+
+axes:
+  mechanism: partial
+  intervention: suppressive
+  prevention: none
+  ongoing: moderate
+  efficacy:
+    value: 0.5
+    units: >
+      fraction-of-patients (substantial functional improvement on combined
+      management) — a reasoned estimate over a heterogeneous population, not a
+      trial result
+    src: reasoning
+  access:
+    value: 0.4
+    units: >
+      fraction-of-patients (diagnosed and receiving competent management) —
+      dominated by diagnostic delay and clinician recognition, not by cost
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: none
+  witness: >
+    Read this against hEDS and ME/CFS, because it is the case that breaks the
+    pattern. Both of those are `clinical` because nothing objective exists to
+    measure. POTS is `objective` — the heart rate criterion is quantitative,
+    reproducible, and nearly free — AND IT HAS NOT DELIVERED WHAT THE REGISTER
+    ASSUMES OBJECTIVE MEASUREMENT DELIVERS. Diagnostic delay is still commonly
+    years, patients are still routinely told it is anxiety, the mechanism is
+    still unknown and no drug is approved. The test is not the bottleneck and
+    never was.
+    Two reasons, and both generalise. First, an objective SIGN is not an
+    objective ENTITY: this sign sits downstream of several distinct
+    pathophysiologies, so measuring it perfectly still leaves you unable to say
+    what you measured. Second, the threshold is a convention with imperfect
+    specificity — a meaningful fraction of healthy young people meet 30 bpm on
+    tilt — so even the objective number needs clinical judgement to mean
+    anything.
+    PROGNOSTIC is `partial` and better than either neighbour: adolescent-onset
+    POTS has a genuinely favourable outlook and a substantial fraction improves
+    or remits over years, while post-viral adult onset is far less predictable.
+    Real signal, unreliable at the individual level.
+    PREDICTIVE is `none`. The subtypes that are supposed to guide therapy —
+    neuropathic, hyperadrenergic, hypovolemic — overlap, coexist, and are rarely
+    measured in ordinary practice, so drug selection is sequential trial and
+    error. The consequential unknown is who will be helped by exercise
+    reconditioning and who has the post-exertional malaise phenotype and will be
+    harmed by it, which is the ME/CFS dispute arriving inside this record.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    Rated `minor` deliberately, and the reasoning matters more than the rating
+    because it is the control case for gaps.md #38.
+    hEDS carries the same `predictive: none` — nobody can say which patient
+    responds — but its interventions include spinal fusion and joint surgery,
+    which do not come back. POTS management is salt, fluid, compression
+    garments, graded reconditioning and a sequence of cheap off-label drugs
+    (midodrine, fludrocortisone, ivabradine, low-dose beta blockade,
+    pyridostigmine). Try one, it fails, stop it, try the next. Unpredictable
+    response to REVERSIBLE treatment is an inconvenience; unpredictable response
+    to IRREVERSIBLE treatment is the thing worth flagging. Same measurement gap,
+    entirely different stakes, and the register should not file them together.
+    Two real permanent harms exist and are minority events rather than the modal
+    experience. Indwelling central venous access for regular saline infusion —
+    used in some refractory cases and contested as practice — carries line
+    infection, sepsis and thrombosis, and those can be permanent or fatal.
+    And exercise prescription in the subgroup with post-exertional malaise is
+    reported to cause lasting deterioration, exactly as graded exercise therapy
+    was in ME/CFS. Neither is the modal patient, and the schema rates the modal
+    patient.
+  incidence:
+    value: 0.02
+    units: >
+      fraction-of-treated (permanent harm, chiefly line complications and
+      exertion-induced deterioration) — a reasoned estimate; no denominator is
+      published
+    src: reasoning
+
+# NO `window` BLOCK, deliberately. The tempting one is the deconditioning
+# spiral — the longer someone is upright-intolerant and inactive, the more
+# cardiac deconditioning accrues and the harder it is to reverse — which would
+# make early diagnosis a window in the register's sense. It is left out because
+# whether deconditioning is cause or consequence is the single most contested
+# question in this field (see `contested`), and because the natural history
+# points the other way for the largest subgroup: adolescent-onset POTS often
+# improves with time rather than hardening. Adding a window here would be
+# asserting the disputed side of a live argument in a derived field. Two
+# consecutive records with hedged windows was already one too many.
+
+witness:
+  mechanism: >
+    Rated `partial`, and it is a real `partial` rather than a generous one —
+    which is what separates this record from hEDS next door at `correlates`.
+    There are several coherent causal chains here; what is missing is the
+    unifying account and any reliable way to say which patient is on which.
+    NEUROPATHIC: partial peripheral autonomic denervation, predominantly in the
+    lower limbs, with blood pooling on standing and compensatory tachycardia.
+    Supported by objective findings — small fibre loss on skin biopsy, abnormal
+    sudomotor testing — in a substantial minority.
+    HYPERADRENERGIC: excessive standing catecholamines with tremor and often a
+    rise rather than a fall in standing blood pressure. In a very small number
+    of families this is a Mendelian norepinephrine transporter defect, which is
+    a fully established mechanism in a handful of people and a proof that at
+    least one POTS is a real disease with a real cause.
+    HYPOVOLEMIC: measurably reduced plasma volume, with renin and aldosterone
+    inappropriately low for the degree of depletion — an endocrine abnormality
+    that is not merely "not drinking enough".
+    AUTOIMMUNE: frequently post-infectious onset, association with other
+    autoimmune disease, and reported autoantibodies against adrenergic and
+    muscarinic receptors. The most promising and the least settled; the antibody
+    assays and their significance are disputed.
+    The hole is not in any one chain. It is that these coexist, overlap, and
+    cannot be separated in ordinary practice — so the entity is a bag of
+    mechanisms wearing one name, which is the shape that ruins trials.
+  intervention: >
+    Rated `suppressive`, the most consequential judgement in this record, and it
+    is what makes POTS read differently from hEDS and ME/CFS despite being
+    discussed in the same breath as both.
+    `suppressive` means near-normal life while treated indefinitely, and a real
+    fraction of POTS patients get there: salt loading, two to three litres of
+    fluid, waist-high compression, and progressive reconditioning starting
+    recumbent, with an off-label drug added where needed. Some no longer meet
+    the diagnostic criteria after a training programme. It is not `curative` —
+    the regimen is maintained, and stopping it generally means relapse — and
+    `disease-modifying` would be a category error, because POTS is not
+    characteristically progressive, so there is no course to slow.
+    THE COUNTERARGUMENT, which is live and should be stated: whether
+    reconditioning treats the disease or selects out the subgroup whose problem
+    was deconditioning is genuinely disputed, dropout from training programmes
+    is high, and prescribing exercise to the post-exertional-malaise subgroup
+    may harm them. If the sceptics are right, this rating should fall to
+    `symptomatic` and capability with it. `efficacy: 0.5` is where that
+    uncertainty is parked, and it is the number in this record most likely to be
+    wrong in either direction.
+    Note also what is NOT here: not one drug is approved for POTS anywhere.
+    Every pharmacological option above is off-label.
+  prevention: >
+    `none`. Onset most often follows an infection, and the honest question this
+    raises is whether preventing the trigger counts — but "avoid getting a
+    virus" is not prophylaxis in the schema's sense, and no vaccine has been
+    shown to reduce POTS incidence as an endpoint. Left at `none` rather than
+    stretched.
+  ongoing: >
+    `moderate`, and it is a heavier `moderate` than the word suggests. Daily
+    salt loading, litres of fluid, compression garments worn through the day, a
+    maintained exercise programme, and usually one to three medications, all of
+    it indefinitely and all of it self-administered. It is not medically
+    intensive — nobody is dialysed — but the adherence burden falls on a
+    fifteen-to-forty-five-year-old population trying to complete education or
+    hold a job, which is where the functional cost actually lands.
+  contested: >
+    Contested along the three lines hEDS established (gaps.md #6), plus a fourth
+    that is new and is the most scientifically consequential.
+    (1) EXISTENCE AND LEGITIMACY — a long history of attribution to anxiety or
+    to psychosomatic illness in a patient population that is roughly five to one
+    female and young. Improving, and not resolved.
+    (2) BOUNDARY — where POTS ends and ME/CFS, long COVID, and chronic
+    orthostatic intolerance begin. These overlap heavily and are studied by
+    different communities.
+    (3) SCOPE — the asserted triad with hEDS and mast cell activation syndrome,
+    contested at both ends exactly as it is in the hEDS record.
+    (4) CAUSAL DIRECTION — whether deconditioning is a cause of POTS or a
+    consequence of it. This is not a dispute about whether the entity exists,
+    where its edge is, or what comes with it; it is a dispute about which way an
+    arrow points, and it is the one with immediate treatment consequences,
+    because the two answers prescribe opposite advice to the same patient. A
+    `contested` axis that cannot distinguish this from "is it real" is losing
+    the most actionable disagreement in the field.
+
+holes:
+  - Whether POTS is one condition, four, or a physiological finding that several
+    diseases produce. Everything downstream depends on it, including why the
+    trials are thin — see the evidence blocker.
+  - Whether deconditioning is cause or consequence, which decides whether the
+    `suppressive` rating above is right or two rungs too generous.
+  - Whether the reported adrenergic and muscarinic autoantibodies are
+    pathogenic, epiphenomenal, or assay artefacts. The most likely route to a
+    mechanism and the least settled.
+  - The 30 bpm threshold's specificity. A convention that healthy young people
+    can meet, doing duty as a diagnostic boundary.
+  - `efficacy: 0.5` and `access: 0.4` are reasoning over a heterogeneous
+    population, not measurements. Reach 0.2 should be read as an argument, not a
+    finding.
+  - Long COVID's relationship to POTS is the field's best prospective
+    opportunity and its biggest confounder, and this record does not attempt to
+    separate the two.
+  - Written from model recall. The diagnostic criterion and the subtype
+    structure are the parts most likely right; every number is the part most
+    likely wrong.
+
+blockers:
+  - kind: knowledge
+    obstacles: [unexplained-illness]
+    blocks: a unifying mechanism, and any way to assign a patient to a subtype
+    what: >
+      The binding constraint, and its specific form is unusual enough to be worth
+      naming. This is not the hEDS problem of having no mechanism at all — there
+      are four coherent ones. It is that they coexist and cannot be separated at
+      the bedside, so the diagnosis names a physiological output rather than a
+      cause. Everything else in this record follows from that: trials enrol
+      mixtures, drug selection is trial and error, and prognosis is a population
+      statement rather than a patient one.
+      `scale: null` — no priced path exists, and the money that would be spent
+      is on separating the subtypes, not on testing a candidate.
+    who_could: [academic, sponsor]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: no-sponsor
+    blocks: regulatory approval of any drug for this indication
+    what: >
+      The register's second clean instance of the same market failure, and this
+      one is `documented` rather than inferred: there is no approved drug for
+      POTS, and every agent in routine use — midodrine, fludrocortisone,
+      ivabradine, propranolol, pyridostigmine — is an off-label generic. The
+      absence of an approval is a checkable fact rather than an allegation.
+      The mechanism is the lithium pattern from the bipolar record: THE DRUGS
+      THAT WORK ARE ALREADY CHEAP AND UNPATENTABLE, so nobody can recover the
+      cost of a registrational trial, so the indication stays unapproved, so
+      prescribing stays off-label and coverage stays arbitrary. Nothing is being
+      suppressed and no regulator has refused anything — the incentive simply
+      does not exist. That is a real market failure and it is a different animal
+      from the "pharma will not allow it" refrain, which does not apply here.
+      Contrast MSMDS, where `no-sponsor` had to be rated `alleged` because with
+      no candidate there was nothing to sponsor. Here there are candidates,
+      including one with a positive randomised crossover trial behind it, and
+      still no sponsor. That is what makes it documented.
+    who_could: [nonprofit, philanthropy, government, sponsor, patient-org]
+    scale: 5.0e7
+    standing: documented
+    src: recall
+
+  - kind: evidence-incomplete
+    blocks: knowing which treatment suits which patient
+    what: >
+      Downstream of the knowledge blocker in a specific and diagnosable way. If
+      the entity is a mixture of four mechanisms, then every trial that enrols
+      by the 30 bpm criterion enrols a mixture, and a drug that works well in one
+      subtype is diluted toward the null by the other three. That is a
+      sufficient explanation for a thin evidence base without anyone having been
+      negligent, and it predicts that stratified trials would succeed where
+      unstratified ones have not.
+      The base is thin rather than empty — ivabradine has a positive randomised
+      placebo-controlled crossover result — and the register should say so
+      rather than round it to nothing.
+    who_could: [academic, sponsor, nonprofit]
+    scale: 1.0e8
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    blocks: timely recognition
+    what: >
+      Included specifically for the contrast with hEDS, because the two records
+      carry the same blocker kind with opposite convertibility, and the
+      difference is exactly what `scale` exists to express.
+      In hEDS there is no test to apply, so the diagnosis blocker is downstream
+      of a knowledge blocker and money moves only part of it. HERE THE TEST
+      EXISTS, COSTS ESSENTIALLY NOTHING, AND TAKES TEN MINUTES. A stopwatch, a
+      blood pressure cuff, and a clinician who thinks of it. The entire blocker
+      is recognition, referral pathways and undoing the anxiety attribution —
+      which is training and process, the most purchasable thing in the register.
+      This is the cheapest genuine lever in any of the three records added in
+      this batch, and it is the one place where "work on measurement" pays here:
+      not by inventing a test, but by getting people to perform the one that
+      already exists.
+    who_could: [health-system, government, academic, patient-org]
+    scale: 1.0e7
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0020
+  rated: 2026-08-20
+  by: [claude, jeremy]

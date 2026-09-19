@@ -1,0 +1,605 @@
+slug: malaria
+id: FND-D-0069
+name: malaria
+also: [Plasmodium infection, falciparum malaria, vivax malaria, marsh fever, ague]
+mondo: MONDO:0005136
+kind: disease
+residual: false
+contested: false
+
+# Mondo also carries species-level terms — MONDO:0005920 (P. falciparum),
+# MONDO:0005921 (P. vivax), MONDO:0001943 (P. malariae). This record joins on the
+# parent because its burden numbers, its funding and its control programmes are
+# all reported for malaria as a whole. The species split lives in `strata`, and
+# `strata` is where the disagreement actually is: falciparum and vivax differ in
+# the parasite's life cycle, the drug, the test, and whether curing the blood
+# cures the patient.
+
+burden:
+  cases:
+    value: 2.5e8
+    units: >
+      cases/year worldwide — roughly 94% in the WHO African Region, and **the
+      figure has been flat to slowly rising since about 2015** after falling
+      through the previous decade
+    src: recall
+  deaths:
+    value: 6.0e5
+    units: >
+      deaths/year — **around three quarters of them children under five**, which
+      makes this among the largest contributors to under-five mortality anywhere
+      in the register
+    src: recall
+  note: >
+    **THE SHAPE OF THIS BURDEN OVER TIME MATTERS MORE THAN ITS LEVEL, AND IT IS
+    TWO STORIES BACK TO BACK.**
+    From roughly 2000 to 2015, malaria deaths fell by something close to half —
+    insecticide-treated nets, artemisinin combination therapy, rapid diagnostic
+    tests, and the money to deploy all three at once. Estimates of deaths averted
+    over that period run to seven million and above. **It is one of the largest
+    deliberate reductions in mortality in human history and it is barely
+    twenty-five years old.**
+    **Then it stopped.** Case incidence has been flat or rising since about 2015,
+    deaths rose in 2020 and have not returned to the previous trajectory, and
+    population growth in endemic areas means a flat rate is a rising count.
+    So the honest summary is not "malaria is declining" and not "malaria is
+    getting worse" — it is **an achievement that ran out of road**, and the
+    reasons it ran out are four separate adversaries evolving at once
+    (`blockers`, and gaps.md #149, #150).
+
+survival:
+  horizon: 30 days from the onset of severe falciparum malaria
+  untreated:
+    value: 0.10
+    units: >
+      fraction alive — untreated severe malaria, with cerebral involvement or
+      severe anaemia, is fatal in the great majority. **Uncomplicated malaria is
+      a different question** and mostly resolves, which is why the horizon here
+      names the severe presentation
+    src: recall
+  treated:
+    value: 0.85
+    units: >
+      fraction alive on intravenous artesunate — which replaced quinine on a
+      trial showing a roughly one-third relative reduction in mortality, one of
+      the largest such results in infectious disease. **The residual 15% is the
+      hard floor**: children who arrive already comatose or profoundly acidotic
+      die despite optimal drugs, because the damage precedes the treatment
+    src: recall
+  witness: >
+    **The gap here is a drug and the residual is an ambulance.** Artesunate works
+    almost immediately and the deaths that remain are overwhelmingly among
+    children who reach care too late — which makes this record's limit a
+    `delivery` blocker rather than a knowledge one, and puts it in the register's
+    largest category.
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: prophylaxis
+  ongoing: low
+  efficacy:
+    value: 0.93
+    units: >
+      fraction-of-patients (cured) — artemisinin combination therapy cures well
+      over 95% of uncomplicated falciparum infection, intravenous artesunate
+      leaves severe malaria with roughly 10-15% mortality, and **vivax pulls the
+      figure down because curing the blood does not clear the liver**
+    src: reasoning
+  access:
+    value: 0.55
+    units: >
+      fraction-of-patients (reaching a diagnosis and an effective drug in time) —
+      subsidised artemisinin combinations are cheap and widely distributed, and
+      the constraint is **a febrile child reaching anybody at all within a day**
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: partial
+  witness: >
+    DIAGNOSTIC is `objective` and it is one of the register's better field
+    diagnostics: light microscopy of a blood film has been definitive for over a
+    century, and rapid diagnostic tests put a fifteen-minute answer in a village
+    health worker's hands for well under a dollar. Hundreds of millions are used
+    every year, and the shift from presumptive treatment of every fever to
+    test-before-treat is a genuine achievement of the last twenty years.
+    **AND THE PARASITE IS DELETING THE ANTIGEN THE TEST LOOKS FOR.** The dominant
+    rapid test detects histidine-rich protein 2. Parasites carrying deletions of
+    *pfhrp2* and *pfhrp3* cause disease and return a negative result, the
+    deletions are under positive selection precisely because testing is
+    widespread, and Eritrea has already had to abandon HRP2-based testing
+    nationally. This is the only place in the register where **the instrument
+    itself is being evolved against** (gaps.md #149).
+    PROGNOSTIC is `partial`. The WHO severe-malaria criteria — impaired
+    consciousness, acidosis, hyperlactataemia, hypoglycaemia, severe anaemia — are
+    good at identifying a child who is *already* in danger. **Nothing identifies
+    the child who is about to be**, and that is the child the window is about.
+    PREDICTIVE is `partial`, and split in a way worth stating. Species
+    identification genuinely predicts treatment, and **G6PD status predicts
+    whether the drug that cures vivax will destroy the patient's red cells** —
+    the clearest case in the register of a predictive test that exists to prevent
+    harm rather than to select benefit. But there is **no per-patient test for
+    whether the artemisinin will work.** Resistance is detected by therapeutic
+    efficacy studies at population level and by *kelch13* genotyping in
+    surveillance laboratories, years after the fact. Compare `cre` one record
+    earlier, where a molecular result names the drug in an hour. Here you give the
+    combination and find out.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    **THE TREATMENT IS CHEAP, ORAL, THREE DAYS LONG AND MOSTLY BENIGN**, which is
+    worth stating plainly in a register where that is unusual. An artemisinin
+    combination costs on the order of a dollar and is well tolerated.
+    The exception is the drug that makes vivax curable. **Primaquine and
+    tafenoquine cause haemolysis in glucose-6-phosphate dehydrogenase deficiency**
+    — an inherited variant carried by a substantial fraction of people in exactly
+    the populations where malaria is endemic, because it is itself protective
+    against malaria. The haemolysis can be severe and has been fatal. So the
+    radical cure requires a test that is frequently unavailable, and where the
+    test is unavailable the safe choice is to leave the liver stage in place and
+    let the patient relapse.
+    Intravenous artesunate causes **post-artesunate delayed haemolysis** in a
+    minority, appearing one to three weeks after treatment, occasionally requiring
+    transfusion, and resolving. Quinine, still used where artesunate is not
+    available, causes cinchonism and hypoglycaemia.
+    Rated `minor` and not permanent because the overwhelming majority of the two
+    hundred and fifty million annual courses cost the patient nothing lasting.
+  incidence:
+    value: 0.01
+    units: >
+      fraction-of-treated (significant adverse effect — chiefly drug-induced
+      haemolysis) — a reasoned estimate
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    **THE PERMANENT DAMAGE IN THIS RECORD BELONGS TO THE DISEASE, NOT TO THE
+    TREATMENT — WHICH IS THE EXACT INVERSE OF THE RECORD BEFORE IT.**
+    Roughly a quarter of children who survive **cerebral malaria** are left with
+    lasting neurological or cognitive deficit: epilepsy, attention and memory
+    impairment, behavioural disturbance, language and learning difficulty. The
+    child is cured of the parasite, discharged, counted as a survivor, and does
+    not get the brain back.
+    **Severe malarial anaemia** in infancy and **repeated uncomplicated infection
+    across childhood** are both associated with impaired cognitive development
+    and school attainment — a diffuse, unmeasured, population-scale loss that no
+    field in this register can hold.
+    **Malaria in pregnancy** places the residue in a second person: placental
+    sequestration causes low birth weight and prematurity, and low birth weight
+    carries consequences across a whole life. The mother is cured; the child
+    starts behind.
+    This is the largest thing in the record and it does not appear in the death
+    count, which is why `deaths` alone makes malaria look smaller than it is.
+  incidence:
+    value: 0.25
+    units: >
+      fraction-of-cerebral-malaria-survivors (persistent neurocognitive deficit) —
+      from paediatric follow-up cohorts, and a much larger and unquantified
+      fraction of all infected children carry some developmental cost
+    src: recall
+
+window:
+  what: >
+    **THE SHARPEST WINDOW IN THE REGISTER, AND IT IS MEASURED IN HOURS IN A
+    CHILD.**
+    Uncomplicated falciparum malaria in a young child can progress to cerebral
+    malaria, severe anaemia or acidosis within twenty-four to forty-eight hours of
+    the first fever. Treated on day one it is a three-day oral course with near-
+    total cure. Treated on day three it is an intensive care problem with a
+    mortality above ten percent and a one-in-four chance of permanent neurological
+    damage in the survivors.
+    **Almost the entire difference between malaria's efficacy figure and its death
+    count is this window**, and what closes it is not a drug — it is distance, a
+    caregiver's recognition of danger signs, transport, and whether the nearest
+    person with a rapid test and a blister pack is an hour away or a day away.
+    **Rectal artesunate exists specifically for this**: a suppository a community
+    health worker gives a child who cannot swallow, buying time during the journey
+    to a facility. It works when the referral it is buying time for actually
+    happens, and its programmatic history is a caution — evaluations found harm
+    where the referral did not follow, which is a delivery failure being read as a
+    drug failure.
+  closes_on: >
+    progression of uncomplicated falciparum infection to cerebral malaria, severe
+    anaemia or metabolic acidosis — twenty-four to forty-eight hours in a young
+    child
+  caught_in_time:
+    value: 0.55
+    units: >
+      fraction-of-cases (reaching effective treatment before severe disease) — a
+      reasoned estimate; roughly a third of febrile African children never reach
+      any care provider at all
+    src: reasoning
+
+strata:
+  - name: uncomplicated Plasmodium falciparum
+    fraction:
+      value: 0.70
+      units: fraction-of-cases
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.97
+      units: fraction-of-stratum (cured)
+      src: reasoning
+    toll: minor
+    what: >
+      Most of the disease. Three days of an artemisinin combination, taken at
+      home, costing about a dollar, curing almost everybody. **This stratum is
+      the reason the record rates `curative` and it is not where the problem is.**
+
+  - name: severe Plasmodium falciparum
+    fraction:
+      value: 0.02
+      units: fraction-of-cases
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.87
+      units: fraction-of-stratum (survival)
+      src: reasoning
+    toll: minor
+    what: >
+      **Two percent of the cases and essentially all of the deaths.** Cerebral
+      malaria, severe anaemia, acidosis, multi-organ failure. Intravenous
+      artesunate replaced quinine on the strength of trials showing a substantial
+      mortality reduction, and it remains a condition that kills more than one in
+      ten treated in a hospital and a far higher share of those who never reach
+      one. **A quarter of the child survivors carry permanent neurocognitive
+      deficit**, which the stratum's efficacy figure — a survival figure — does
+      not express.
+
+  - name: Plasmodium vivax
+    fraction:
+      value: 0.28
+      units: fraction-of-cases
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.75
+      units: fraction-of-stratum (radical cure — blood and liver stages both cleared)
+      src: reasoning
+    toll: minor
+    what: >
+      **A different disease wearing the same name, and the difference is a
+      dormant liver stage.** *P. vivax* leaves **hypnozoites** in hepatocytes that
+      reactivate weeks to months later, so clearing the blood cures the illness
+      and not the infection — a single infective bite can produce relapses for
+      years. Radical cure needs primaquine or tafenoquine, which needs G6PD
+      testing, which is largely unavailable, so **most vivax in the world is
+      treated for the episode and left to relapse.**
+      It is rarely fatal, dominates outside Africa, is protected from elimination
+      by a reservoir nobody can see or culture, and its efficacy figure is the
+      lowest of the three because the stratum measures *radical* cure rather than
+      symptom resolution.
+
+moved:
+  - date: 2015
+    axis: access
+    from: 0.30
+    to: 0.60
+    why: >
+      **ONE OF THE LARGEST DELIBERATE REDUCTIONS IN MORTALITY IN HUMAN HISTORY,
+      AND IT HAPPENED INSIDE FIFTEEN YEARS.**
+      Malaria deaths fell by roughly half between 2000 and 2015. Four things
+      arrived together and none of them would have worked alone: **insecticide-
+      treated nets** distributed by the billion, **artemisinin combination therapy**
+      replacing a chloroquine that resistance had already destroyed, **rapid
+      diagnostic tests** putting an answer in a village health worker's hand, and
+      **the money** — the Global Fund, the President's Malaria Initiative, and a
+      sustained political commitment that treated malaria as a thing to be ended
+      rather than endured.
+      Estimates of deaths averted run past seven million. **Nets alone are
+      credited with the largest single share**, which is a striking thing to say
+      about a piece of treated fabric costing two dollars.
+    src:
+      id: PMID:26375008 doi:10.1038/nature15535
+      retrieved: 2026-08-26
+      quote: >
+        Since the year 2000, a concerted campaign against malaria has led to
+        unprecedented levels of intervention coverage across sub-Saharan Africa.
+        Understanding the effect of this control effort is vital to inform future
+        control planning.
+
+  - date: 2020
+    axis: access
+    from: 0.60
+    to: 0.55
+    why: >
+      **THE STALL, AND IT IS A REGRESSION RATHER THAN A PLATEAU.**
+      Case incidence stopped falling around 2015. Deaths rose in 2020 as the
+      pandemic disrupted campaigns, and did not return to the previous trajectory
+      afterwards. Population growth in endemic areas means a flat incidence rate
+      is a rising number of children.
+      **The causes are separate and simultaneous**, which is what makes this hard
+      to reverse with one intervention: pyrethroid resistance is now close to
+      universal in African *Anopheles*, so the nets that did most of the work do
+      less of it; **an invasive urban-adapted vector, *Anopheles stephensi*, has
+      spread across the Horn of Africa and beyond**; the funding curve flattened
+      at roughly half of the estimated requirement; and the parasite began
+      deleting the antigen the tests detect.
+      Recorded as a `moved` entry on `access` because that is the only axis that
+      can hold it, and it is the wrong axis — **none of those four is about a
+      patient's ability to obtain a drug** (gaps.md #150, #109).
+    src: recall
+
+  - date: 2023
+    axis: efficacy
+    from: 0.96
+    to: 0.93
+    why: >
+      **ARTEMISININ PARTIAL RESISTANCE REACHED AFRICA, WHICH IS WHERE THE DEATHS
+      ARE.**
+      Delayed parasite clearance associated with *kelch13* mutations was first
+      documented in the Greater Mekong subregion in the late 2000s. Containment
+      there was taken seriously and was largely successful, and the working
+      assumption was that Africa would receive the Asian parasite if it received
+      anything.
+      Instead the mutations **emerged independently in East Africa** — Rwanda,
+      Uganda, Eritrea, Ethiopia — which means the evolutionary path is available
+      wherever the drug pressure is, and containing a geographic focus does not
+      contain the phenomenon.
+      **This is partial resistance, not failure**: the artemisinin still works and
+      clears more slowly, and cure depends increasingly on the partner drug — which
+      is the next thing to be lost. The register's word for that is #146's:
+      capability is being degraded rather than destroyed, and there is no rung
+      below `curative` to record it.
+    src: recall
+
+witness:
+  mechanism: >
+    `established`, and among the best-characterised in the register at every level
+    from the molecule to the village.
+    An infected *Anopheles* injects sporozoites, which reach the liver and
+    multiply silently; merozoites emerge into the bloodstream and begin the
+    asexual cycle that causes the illness; a fraction commit to gametocytes, which
+    are the only stage that infects a mosquito and are therefore the only stage
+    transmission control cares about. The genome was published in 2002.
+    Severe falciparum disease is understood in outline as **cytoadherence**:
+    infected red cells display PfEMP1 on their surface and stick to endothelium
+    via CD36, ICAM-1 and the endothelial protein C receptor, sequestering out of
+    the circulation and obstructing microvasculature. That is why cerebral malaria
+    is a *microvascular* disease, why the parasite disappears from a peripheral
+    film while the patient deteriorates, and why falciparum kills when the other
+    species mostly do not.
+    **THREE NAMED HOLES, AND THE FIRST TWO ARE WHY THERE IS NO GOOD VACCINE.**
+    *Why one child gets cerebral malaria and the child beside them does not.* Same
+    parasite, same transmission intensity, same village. Host genetics explains a
+    fraction — sickle trait, haemoglobin C, thalassaemia and G6PD deficiency are
+    all malaria-protective polymorphisms held at high frequency by exactly this
+    selection pressure, which is the textbook demonstration that the disease has
+    been shaping human genomes for millennia. It does not explain most of it.
+    *What protective immunity looks like.* Naturally acquired immunity is
+    unmistakably real — adults in high-transmission settings carry parasites
+    without illness — and it is slow to acquire, non-sterilising, incomplete, and
+    wanes when exposure stops. **Nobody can state the correlate of protection**,
+    which is the same sentence this register writes for tuberculosis, dengue and
+    *S. aureus* (gaps.md #70).
+    *Hypnozoite biology.* The dormant vivax liver stage cannot be cultured,
+    cannot be detected in a living person, and nobody knows what wakes it.
+  intervention: >
+    `curative`, cheaply and quickly, for the great majority.
+    **Uncomplicated falciparum**: a three-day artemisinin combination —
+    artemether-lumefantrine, artesunate-amodiaquine, dihydroartemisinin-
+    piperaquine — costing about a dollar, curing well over ninety-five percent.
+    **Severe falciparum**: intravenous artesunate, which replaced quinine after
+    trials in African children and Asian adults both showed substantial mortality
+    reductions, and remains one of the better-evidenced treatment switches in
+    tropical medicine.
+    **Vivax**: chloroquine still works in most places for the blood stage, and
+    **radical cure requires killing the hypnozoites** — primaquine over fourteen
+    days, or single-dose tafenoquine — neither of which can be given safely
+    without knowing the patient's G6PD status.
+    **THE THREAT IS THAT THIS IS THE LAST GOOD CLASS AND IT IS UNDER SELECTION.**
+    Chloroquine was lost. Sulfadoxine-pyrimethamine was lost, and survives only in
+    preventive regimens. Artemisinin partial resistance is now established in
+    Southeast Asia and has emerged independently in East Africa. Triple
+    combinations and new chemical classes are in development and none is deployed
+    at scale. **There is no per-patient susceptibility test**, so unlike the
+    bacterial records the clinician cannot even see the problem arriving.
+  prevention: >
+    `prophylaxis`, and **this is the most elaborate prevention portfolio in the
+    entire register** — which is exactly the problem with recording it as one
+    word.
+    **Insecticide-treated nets** are the largest single contributor to the
+    2000-2015 decline. **Indoor residual spraying** where it is affordable.
+    **Seasonal malaria chemoprevention** gives monthly antimalarials to tens of
+    millions of Sahelian children through the transmission season. **Intermittent
+    preventive treatment in pregnancy** protects the placenta. **Two vaccines** are
+    now recommended — RTS,S/AS01 and R21/Matrix-M, both against the
+    circumsporozoite protein, the first vaccines ever recommended against a human
+    parasite. **Larval source management**, **mass drug administration** in
+    elimination settings, and gene-drive mosquitoes at the far end of the pipeline.
+    **Every component has its own coverage, its own failure mode and its own
+    funder, and the axis has one enum value.** The nets are losing to pyrethroid
+    resistance. The vaccines are roughly forty to seventy-five percent effective in
+    the first year and wane, which is a level of protection that would be
+    unacceptable in most of this register and is deployed here because the burden
+    justifies it. The chemoprevention depends on a drug the parasite has already
+    partly defeated in treatment.
+    `prevention: prophylaxis` is true and says none of it (#109, and #66's open
+    half).
+  ongoing: >
+    `low`, correctly, for the episode: malaria is an acute illness that ends.
+    **It is the wrong reading for the population**, and this is the record where
+    the field's per-patient framing is least adequate. A child in a
+    high-transmission setting may have several episodes a year for years. The net
+    must be slept under every night and replaced every three years; the seasonal
+    chemoprevention is four monthly courses every year of early childhood; the
+    spraying is annual. **The permanent burden of malaria is not carried by a
+    patient under treatment, it is carried by an entire population under
+    indefinite control measures**, and `ongoing` has no way to say so.
+
+holes:
+  - >
+    **Every scalar here is `recall` or `reasoning` against a body of data that is
+    unusually good.** The WHO World Malaria Report is annual, detailed and public,
+    and this record does not cite it. That is a defect of this pass, not of the
+    evidence base, and it is more embarrassing here than in most records.
+  - >
+    The strata fractions divide falciparum from vivax on a global count that is
+    itself modelled, and the severe-malaria fraction is a facility-based figure
+    applied to a denominator of estimated infections.
+  - >
+    **`efficacy: 0.93` blends three strata with different denominators** — cure of
+    an episode, survival of severe disease, and radical cure of a relapsing
+    infection. Those are not the same quantity and averaging them is a convenience.
+  - >
+    Vivax and falciparum arguably want separate records: different parasite
+    biology, different geography, different drug, different test, different
+    definition of cure, and the only thing they clearly share is the mosquito.
+    They are merged here and the merge is visible everywhere in the file.
+  - >
+    **The residue figure is the most consequential number in the record and the
+    least measurable.** A quarter of cerebral malaria survivors with persistent
+    deficit is reasonably established; the developmental cost of repeated
+    uncomplicated infection across a childhood is real, large, and has no figure
+    at all.
+  - >
+    Malaria in pregnancy places permanent harm in a **second person**, and the
+    `residue` field is scoped to the patient (gaps.md #130's shape, unrecorded
+    here).
+
+blockers:
+  - kind: tooling
+    blocks: the nets working, now that the mosquitoes are resistant to what is on them
+    obstacles: []
+    what: >
+      **PYRETHROID RESISTANCE IN AFRICAN *ANOPHELES* IS NOW CLOSE TO UNIVERSAL**,
+      and pyrethroids were the only insecticide class ever approved for treating
+      bed nets — a monoculture of selection pressure applied to billions of nets
+      for two decades, with a predictable result.
+      Resistance is behavioural as well as biochemical. Populations under net
+      pressure shift toward **biting outdoors and biting earlier in the evening**,
+      which defeats an intervention whose entire logic is that people are indoors
+      and asleep.
+      The answer that exists is **dual-active-ingredient nets** pairing a
+      pyrethroid with chlorfenapyr or with the insect growth regulator
+      pyriproxyfen, and cluster-randomised trials show them outperforming
+      pyrethroid-only nets on both infection and case incidence. **They cost
+      substantially more**, and the budget that buys them is flat, so replacing
+      the world's nets means covering fewer people.
+      The deeper problem is the pipeline: agricultural chemistry supplies public
+      health with insecticides as a by-product, agriculture uses the same classes
+      at enormous scale in the same fields, and **nobody develops an insecticide
+      for malaria control as a primary market.** It is `no-sponsor`'s shape in a
+      different industry.
+    who_could: [manufacturer, government, philanthropy, nonprofit, academic]
+    scale: 5.0e9
+    standing: documented
+    src: recall
+
+  - kind: cost
+    blocks: doing the things that already work, at the coverage they need
+    obstacles: []
+    what: >
+      **NOTHING IN THIS BLOCKER REQUIRES A DISCOVERY.** Global malaria funding runs
+      at roughly half the estimated requirement, and the gap is the difference
+      between the nets, spraying, chemoprevention and case management that are
+      delivered and the ones that would be delivered at target coverage.
+      The consequence is a portfolio of forced choices between things that all
+      work: nets that resistance has degraded versus dual-AI nets at twice the
+      price; seasonal chemoprevention extended to more children versus vaccine
+      introduction; treatment versus prevention.
+      **And malaria control has a ratchet that most delivery problems do not.**
+      Coverage that lapses does not merely stop preventing cases — transmission
+      rebounds, and rebounds into a population whose acquired immunity has
+      declined during the good years, which historically produces epidemics worse
+      than the pre-control baseline. Sri Lanka's near-elimination in the 1960s
+      followed by a resurgence to hundreds of thousands of cases is the standing
+      example. **Partial funding of a malaria programme can be worse than none**,
+      and no field in this register can express that.
+    who_could: [government, philanthropy, nonprofit, payer, legislator]
+    scale: 4.0e9
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    blocks: the test still working, and knowing whether the curative drug is safe
+    obstacles: []
+    what: >
+      **TWO SEPARATE DIAGNOSTIC FAILURES, AND ONE OF THEM IS THE PARASITE FIGHTING
+      BACK.**
+      *The test is being evolved against.* Rapid diagnostic tests overwhelmingly
+      detect histidine-rich protein 2. Parasites with *pfhrp2/3* deletions cause
+      ordinary disease and return a negative result; the deletions are under
+      positive selection exactly because testing is universal; Eritrea has already
+      switched away from HRP2-based tests nationally, and deletions are documented
+      across the Horn of Africa and in South America. Alternative targets exist —
+      LDH, aldolase — and are less sensitive and more expensive. **The instrument
+      is a moving target and the register treats diagnostics as fixed** (gaps.md
+      #149).
+      *G6PD testing barely exists in the field.* Radical cure of vivax requires
+      primaquine or tafenoquine, which cause haemolysis in G6PD-deficient
+      patients, who are common in endemic populations for the obvious evolutionary
+      reason. Point-of-care quantitative G6PD tests exist and are not widely
+      deployed, so the standard of care over much of the world is to treat the
+      episode and accept the relapses. **The blocker on curing vivax is not a
+      drug — it is a test that costs a few dollars.**
+    who_could: [manufacturer, nonprofit, government, health-system, philanthropy]
+    scale: 1.5e9
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: a vaccine that works like a vaccine
+    obstacles: [protective-immunity, no-model-system]
+    what: >
+      **TWO VACCINES ARE RECOMMENDED AND NEITHER IS THE VACCINE THIS DISEASE
+      NEEDS.** RTS,S/AS01 and R21/Matrix-M are real achievements — the first
+      vaccines ever recommended against a human parasite, after a century of
+      failure — and they deliver something like forty to seventy-five percent
+      protection in the first year, waning thereafter, requiring four doses.
+      A measles vaccine is over ninety percent effective for life.
+      The reason is not formulation. **Nobody can state what protective immunity to
+      *Plasmodium* consists of.** Natural immunity exists, takes years of repeated
+      infection to acquire, never becomes sterilising, and decays without
+      exposure — so the immune system's own answer to this parasite is a poor one,
+      and the vaccinologist has no target to imitate. Both licensed vaccines aim at
+      the sporozoite's circumsporozoite protein largely because it was the
+      tractable antigen, and a single sporozoite escaping the liver restarts the
+      infection.
+      The other half is **hypnozoite biology**: the dormant vivax liver stage
+      cannot be cultured, cannot be seen in a patient, and nobody knows what
+      reactivates it. Elimination of vivax requires clearing a reservoir that is
+      undetectable by any means.
+      `scale: null`.
+    who_could: [academic, sponsor, philanthropy, manufacturer]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: a febrile child reaching a rapid test and a blister pack within a day
+    obstacles: []
+    what: >
+      **THE DRUG COSTS A DOLLAR, CURES ALMOST EVERYBODY, AND THE CHILD DIES ON THE
+      WAY.**
+      Roughly a third of febrile children in sub-Saharan Africa are never taken to
+      any care provider. Of those who are, a share reach an informal drug seller
+      rather than a health worker, are treated without testing, or receive an
+      artemisinin monotherapy — which cures the episode and selects for exactly
+      the resistance the combination policy exists to prevent.
+      What works is **integrated community case management**: a trained village
+      health worker with rapid tests, artemisinin combinations, and rectal
+      artesunate for the child who cannot swallow. It puts the window's answer
+      inside the window. It requires supervision, resupply, and paying the health
+      worker, and it is chronically underfunded because it is a running cost
+      rather than a commodity.
+      **This blocker and the `window` field are the same fact seen twice**, and it
+      is where most of the gap between a 93% efficacy figure and 600,000 deaths
+      actually lives.
+    who_could: [health-system, government, nonprofit, payer, philanthropy]
+    scale: 3.0e9
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0069
+  rated: 2026-08-24
+  by: [claude, jeremy]

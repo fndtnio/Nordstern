@@ -1,0 +1,345 @@
+slug: multiple-system-atrophy
+id: FND-D-0142
+name: Multiple system atrophy
+also: [MSA, Shy-Drager syndrome, MSA-P, MSA-C, olivopontocerebellar atrophy]
+common: a parkinsonian syndrome
+mondo: unresolved
+kind: disease
+residual: false
+contested: false
+
+# THE SECOND OF THREE RECORDS WRITTEN ON 2026-09-02 TO POPULATE `ends-it`, and
+# the one that is an adult disease with ordinary numbers rather than a rarity.
+#
+# IT EXISTS IN THIS REGISTER TO BE READ NEXT TO `parkinsons`, and the pairing is
+# the point. Both are synucleinopathies. Both present with slowness, stiffness
+# and falls. `parkinsons` is the register's standing example of a disease
+# medicine can do a great deal for symptomatically and nothing for causally —
+# fifty years of levodopa, no disease modification. **MSA is what that looks
+# like with the levodopa taken away.** The same protein, in a different cell
+# type, and none of the symptomatic scaffolding works.
+#
+# It also arrives without a window, which is what puts it in `ends-it` rather
+# than beside the cancers. There is no early phase in which anything different
+# would be done.
+
+burden:
+  prevalence:
+    value: 3.5e5
+    units: >
+      people living with MSA worldwide — a reasoned estimate from a prevalence
+      usually quoted at three to five per 100,000 and a short survival. **Short
+      survival makes prevalence a bad measure of this disease**: incidence is
+      roughly 0.6-3 per 100,000 per year and most of those diagnosed in a given
+      decade are dead by the end of it
+    src: reasoning
+  deaths:
+    value: 4.0e4
+    units: >
+      deaths per year worldwide — a reasoned estimate that follows from the
+      prevalence and a median survival of six to ten years. **Almost none of
+      these are attributed to MSA in any mortality statistic**: the certified
+      cause is aspiration pneumonia, sudden death, or Parkinson's disease, which
+      is what the record was misdiagnosed as
+    src: reasoning
+  note: >
+    No `ylds`, on the standing rule. The disability here is severe and the
+    duration short, which is the combination GBD's method handles least
+    comfortably and this register cannot currently express at all.
+
+axes:
+  mechanism: partial
+  intervention: symptomatic
+  prevention: none
+  ongoing: high
+  efficacy:
+    value: 0.25
+    units: >
+      fraction-of-treated getting meaningful and durable symptomatic benefit — a
+      reasoned estimate, and it is generous. Midodrine, droxidopa and
+      fludrocortisone genuinely help orthostatic hypotension. Levodopa helps a
+      minority partially and transiently, and the poverty of that response is a
+      diagnostic criterion. **Nothing touches the progression at all**, and the
+      number describes comfort rather than course
+    src: reasoning
+  access:
+    value: 0.5
+    units: >
+      fraction-of-affected reaching a service that manages this properly — a
+      reasoned estimate. What is needed is not a scarce molecule but a
+      multidisciplinary neurology, continence, speech and palliative service over
+      several years, which most people with a rare neurodegenerative diagnosis do
+      not have within reach
+    src: reasoning
+
+measurement:
+  diagnostic: clinical
+  prognostic: partial
+  predictive: none
+  witness: >
+    **DIAGNOSTIC IS `clinical` AND IT IS ROUTINELY WRONG FOR YEARS.** MSA is the
+    parkinsonian syndrome most often mistaken for Parkinson's disease, and the
+    misdiagnosis runs in both directions. There is no blood test and no imaging
+    finding that settles it; the criteria are a constellation — autonomic failure
+    that is early and severe, a poor levodopa response, cerebellar signs,
+    stridor — read by a specialist over time. **Definite diagnosis remains
+    neuropathological**, which is to say the diagnosis is confirmed after the
+    patient has died.
+    **THE COST OF THE DELAY IS NOT A LOST TREATMENT — IT IS A LOST DECISION.**
+    Nothing would have been prescribed differently. What is lost is the several
+    years in which somebody believed they had a disease with a median survival of
+    two decades rather than one with a median of seven, and made decisions about
+    work, money, housing and their family on that basis. **The register has no
+    way to record a diagnostic failure whose cost is planning**, and this is the
+    clearest instance of it in the corpus.
+    PROGNOSTIC is `partial`. Once the diagnosis is right, the trajectory is
+    fairly predictable in shape and poorly predictable in speed; early severe
+    autonomic failure and stridor mark a faster course.
+    PREDICTIVE is `none`, and it means what it usually means here: nothing says
+    which patient will get a useful interval out of levodopa. Unlike `dipg`, the
+    value is not a category error, because there is genuinely something to select
+    between and nothing to select with.
+
+survival:
+  horizon: 15 years from symptom onset
+  untreated:
+    value: 0.0
+    units: >
+      fraction alive. Median survival is roughly six to ten years from the first
+      motor or autonomic symptom, and the tail is short
+    src: recall
+  treated:
+    value: 0.02
+    units: >
+      fraction alive on best available care. **Treatment does not alter this
+      number**; supportive management of blood pressure, bladder and swallowing
+      may extend life somewhat and is aimed at comfort. The horizon is declared
+      at fifteen years for the same reason `huntington` declares twenty: at five
+      years a majority are alive and the figure says nothing about a disease that
+      is uniformly fatal
+    src: recall
+  witness: >
+    **THE HORIZON IS DOING THE WORK AND THE RECORD SHOULD SAY SO.** At five years
+    MSA survival is perhaps a half, which would place it in a band beside
+    treatable cancers. At fifteen it is near zero. The disease has not changed
+    between those two sentences; the question has. **This register's `survival`
+    axis is only meaningful with the horizon attached**, which is why the field
+    exists — `huntington` made the same argument first, and this is its second
+    instance.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    The treatments are drugs with ordinary drug problems: supine hypertension
+    from the pressor agents used to treat the orthostatic drop, which is the
+    central and genuinely difficult trade-off in managing this disease — the same
+    patient cannot stand up and cannot lie flat. Anticholinergic burden from
+    bladder agents. Levodopa's dyskinesias, in the minority who respond enough to
+    get them.
+    **RATED `minor` BECAUSE THE TREATMENTS TAKE LITTLE**, which is only true
+    because the treatments do little. Interventions that arrive late —
+    tracheostomy for stridor, gastrostomy for swallowing failure — are permanent
+    and are recorded here rather than as toll because they are consequences of
+    the disease that the patient chooses whether to meet, not prices of a cure.
+  incidence:
+    value: 0.2
+    units: >
+      fraction-of-treated with a significant adverse consequence of treatment —
+      a reasoned estimate dominated by supine hypertension
+    src: reasoning
+
+# NO `window:` BLOCK, AND IT IS THE SAME DELIBERATE ABSENCE AS `dipg`.
+#
+# There is a long diagnostic delay here — commonly years — and the register's
+# instinct is to call that a window being missed. **It is not.** A window in this
+# schema is an interval in which acting changes the outcome, and there is nothing
+# to act with: a patient correctly diagnosed on the day of their first symptom
+# receives the same drugs and dies at the same time. The cost of the delay is
+# real and it is about planning, not survival, and it is recorded under
+# `measurement` where it belongs.
+#
+# Filing this as a window would put the record in `ends-it-unless-caught` beside
+# `rabies`, and would assert that early diagnosis saves lives here. It does not.
+
+witness:
+  mechanism: >
+    `partial`, and the interesting part is how much is known.
+    **ESTABLISHED:** MSA is a synucleinopathy, defined pathologically by
+    **glial cytoplasmic inclusions** — aggregated alpha-synuclein inside
+    *oligodendrocytes*. That location is the whole distinction from Parkinson's
+    disease, where the same protein aggregates inside *neurons* as Lewy bodies.
+    Two diseases, one protein, different cell type, and radically different
+    courses. The degeneration is multi-system by definition: striatonigral,
+    olivopontocerebellar and autonomic, in proportions that give the clinical
+    subtypes.
+    **THE HOLE IS EVERYTHING CAUSAL.** Oligodendrocytes are not thought to
+    express much alpha-synuclein, so where the protein in the inclusions comes
+    from is unresolved. Why the aggregation begins, why it spreads in the pattern
+    it does, why this disease is sporadic where several synucleinopathies have
+    familial forms, and why it moves so much faster than Parkinson's — none of it
+    is settled.
+    **AND THE MECHANISM HAS PRODUCED NOTHING.** Alpha-synuclein has been the
+    central target of neurodegeneration research for two decades; trials of
+    immunotherapy and aggregation inhibitors in this disease have not worked.
+    Same shape as `dipg`: the lesion is identified and the identification has
+    bought nothing yet.
+  intervention: >
+    `symptomatic`, cleanly and without argument. **Nothing modifies the course.**
+    What exists is management: midodrine, droxidopa and fludrocortisone with
+    compression and salt for the orthostatic hypotension that is often the most
+    disabling symptom; intermittent catheterisation for the bladder;
+    non-invasive ventilation or tracheostomy for stridor, which is a cause of
+    sudden death here; gastrostomy for swallowing failure; and palliative care,
+    which arrives earlier in this disease than in almost anything else the
+    register holds.
+    **LEVODOPA IS THE HINGE BETWEEN THIS RECORD AND `parkinsons`.** In Parkinson's
+    it is transformative for years — the reason that disease is `unsolved` on
+    mechanism and still not filed here. In MSA the response is absent or partial
+    and wears off quickly, and *that failure is itself a diagnostic criterion*.
+    **The same drug, the same protein, and a different answer** is the clearest
+    thing this record contributes to the corpus.
+    Deep brain stimulation, which helps in Parkinson's, does not help here.
+  prevention: >
+    `none`. Sporadic, with no established environmental exposure and no
+    reproducible inherited risk of any size. There is nothing to avoid and
+    nothing to give.
+  ongoing: >
+    `high`, and it is one of the more clearly justified `high` ratings in the
+    register. Within a few years this is blood pressure that has to be managed in
+    two directions at once, a bladder that needs catheterising, a swallow that
+    needs modifying, mobility that needs equipment and then a wheelchair, speech
+    that becomes hard to understand, and breathing that may need support at
+    night. **The care falls largely on a family member**, over roughly seven
+    years, and the register has no field for that at all — the same absence
+    `cerebral-palsy` and `disorders-of-consciousness` both record.
+
+holes:
+  - >
+    **THE BURDEN FIGURES ARE THE WEAKEST PART AND THE DEATHS FIGURE IS ALMOST
+    CERTAINLY NOT COUNTED ANYWHERE.** MSA deaths are certified as aspiration
+    pneumonia, sudden death or Parkinson's disease. The estimate here is derived
+    from a recalled prevalence and a recalled median survival, which is two
+    guesses multiplied — the same objection this register makes about inventing
+    a YLD, applied to its own arithmetic. **Treat the deaths value as an order of
+    magnitude and nothing more.**
+  - >
+    **THE HORIZON IS A CHOICE AND IT DECIDES THE BUCKET.** At five years this
+    record's survival is around half and it lands in `ends-it-later`; at fifteen
+    it is near zero and it lands in `ends-it`. Fifteen was chosen because the
+    disease is uniformly fatal and a horizon that hides that is uninformative —
+    `huntington`'s argument. But it is a judgement made by the author of the
+    record, and **a reader should know that the bucket here turns on a declared
+    field rather than on a fact.**
+  - >
+    **THE DIAGNOSTIC DELAY HAS NOWHERE TO LIVE.** Years of being told this is
+    Parkinson's costs nothing in survival and a great deal in how somebody spends
+    the years they have. The register can record a delay that costs treatment
+    (`endometriosis`, `uterine-fibroids`) and has no way to record one that costs
+    only planning. Second instance of a nearby gap — `endometriosis` logged that
+    a *test getting less invasive* had nowhere to go — and both are about the
+    schema treating measurement purely as an input to treatment.
+  - >
+    **`toll: minor` READS AS GOOD NEWS AND IS NOT.** It is minor because the
+    treatments are minor. A record where nothing is done to you scores well on an
+    axis measuring what is done to you, and the derived `terms: clean` that
+    follows is actively misleading beside a disease that kills everybody within a
+    decade. The bucket rule now overrides this correctly — v4 reads survival
+    first — but the `terms` verdict is still printed and still says *clean*.
+  - >
+    Written from model recall. The oligodendroglial inclusions, the poor levodopa
+    response as a diagnostic criterion, the autonomic failure and the survival
+    range are the parts most likely right; every number is the part most likely
+    wrong.
+
+blockers:
+  - kind: knowledge
+    blocks: why the protein is in the wrong cell, and what to do about it
+    what: >
+      **ALPHA-SYNUCLEIN IS THE MOST-STUDIED PROTEIN IN NEURODEGENERATION AND MSA
+      IS WHERE ITS BIOLOGY MAKES LEAST SENSE.** The inclusions are in
+      oligodendrocytes, which are not thought to produce much of the protein, so
+      the aggregating material has to be arriving from somewhere or being made in
+      a way nobody has established. That is not a detail; it decides whether a
+      therapy should be aimed at production, at transfer, or at clearance.
+      Trials of anti-synuclein antibodies and aggregation inhibitors have not
+      worked here. **The register's standing assumption is that identifying a
+      causal molecule opens a route to a treatment**, and this record and `dipg`
+      are its two most direct counter-examples in the same week: the lesion is
+      named, and naming it has bought nothing.
+      `scale: null`.
+    who_could: [academic, sponsor]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    obstacles: [who-progresses]
+    blocks: telling this apart from Parkinson's, for years
+    what: >
+      **NO TEST SEPARATES THEM AND THE SEPARATION IS THE PROGNOSIS.** A person
+      with early parkinsonism has, in front of them, either a disease with a
+      median survival approaching two decades or one with a median of about
+      seven. Which one is decided by a specialist's judgement over time, is
+      commonly wrong for years, and is confirmed only at autopsy.
+      **The value of solving it is unusual and the register should be precise
+      about it: it is not survival.** Nothing would be prescribed differently. It
+      is that people make irreversible decisions — retiring or not, moving house
+      or not, what to tell their children — on a prognosis that is wrong by a
+      decade. Skin biopsy for phosphorylated synuclein and seed amplification
+      assays are the candidate tests and are not yet routine.
+      Filed as `diagnosis` and tagged `who-progresses` (FND-O-0001), which it is
+      an unusual instance of: the question is not *which patient will deteriorate*
+      but *which disease is this*, and the register's obstacle covers both.
+    who_could: [academic, health-system, sponsor]
+    scale: 5.0e8
+    standing: documented
+    src: recall
+
+  - kind: no-sponsor
+    blocks: a rare disease with no endpoint short of death
+    what: >
+      Few patients, rapid decline, no biomarker to serve as a surrogate endpoint,
+      and a trial that has to run for years to show anything. Interest in MSA
+      exists largely because it is a **model system for synucleinopathy in
+      general** — a fast, pure, uniformly progressive version of what Parkinson's
+      does slowly — which means the funding it attracts is partly aimed past the
+      patients in it.
+      Recorded because it is the honest description and not as a grievance: the
+      commercial calculus here is not obviously wrong, and it is exactly the
+      calculus that leaves a disease with nothing.
+    who_could: [sponsor, philanthropy, academic, patient-org]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: several years of multidisciplinary care that mostly is not there
+    what: >
+      What this disease needs is not scarce molecules. It is neurology,
+      continence services, speech and language therapy, respiratory support,
+      equipment, home adaptation and early palliative care, coordinated over
+      about seven years — and delivered to someone who becomes progressively less
+      able to travel to any of it.
+      **THIS IS THE REGISTER'S ORDINARY DELIVERY FAILURE ATTACHED TO A DISEASE
+      WITH NO TREATMENT, AND THE DERIVATION CANNOT SEE IT.** Efficacy 0.25 times
+      access 0.5 gives a reach of 0.125, which would be `barely` on the delivery
+      bands and would earn the `cannot-reach-people` tag. It does not fire:
+      `delivery` is withheld entirely when `capability` is `unsolved`, so this
+      record derives no tag at all.
+      That gate is right far more often than it is wrong — `keloid` logs the same
+      thing, where it correctly prevents *it arrives and does not work* from being
+      labelled *it works and does not arrive*. **Here it hides something real.**
+      Half the people with this disease do not get the continence, respiratory and
+      palliative care that exists and would help them, and the page shows an
+      untagged record. Second instance; the two together suggest the gate should
+      distinguish *no capability* from *only supportive capability*.
+    who_could: [health-system, government, nonprofit, payer]
+    scale: 2.0e9
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0143
+  rated: 2026-09-02
+  by: [claude, jeremy]

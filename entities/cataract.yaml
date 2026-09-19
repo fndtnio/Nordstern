@@ -1,0 +1,582 @@
+slug: cataract
+id: FND-D-0089
+name: cataract
+also: [age-related cataract, senile cataract, lens opacity, congenital cataract]
+mondo: MONDO:0005129
+kind: disease
+residual: false
+contested: false
+
+# THE PUREST ACCESS RECORD IN THE REGISTER, AND IT IS WORTH SAYING WHAT THAT
+# MEANS BEFORE THE FILE STARTS.
+#
+#   mechanism   established — lens crystallins aggregate, and we know why
+#   intervention  curative — a fifteen-minute operation restores sight
+#   toll        minor and not permanent
+#   ongoing     NONE — one of eight records in the corpus that rate it
+#   prevention  risk-reduction, and honestly nothing much
+#   deaths      approximately zero
+#
+# Roughly fifteen million people are blind from it and around eighty million more
+# are visually impaired. There is no mechanism hole, no contested definition, no
+# resistance, no evidence dispute, and no toll worth arguing about. **Every
+# remaining question is about who gets the operation.**
+#
+# It is also #182's flagship: zero attributed deaths, an enormous disability
+# burden, and plausibly the most cost-effective surgical intervention in
+# medicine — and every triage view this register has would rank it at zero.
+
+burden:
+  prevalence:
+    value: 9.4e7
+    units: >
+      people with vision impairment or blindness caused by cataract — roughly
+      **15 million blind**, the single leading cause of blindness worldwide, and
+      around 79 million more with moderate or severe visual impairment
+    src: recall
+  deaths:
+    value: 0.0
+    units: >
+      deaths/year directly attributed — **and the zero is doing something
+      misleading in two directions at once.** Cataract blindness causes falls and
+      hip fractures, which kill; and cataract surgery is associated with
+      substantially lower subsequent mortality in older people (see `holes`)
+    src: reasoning
+  note: >
+    **MORE THAN NINE IN TEN OF THE WORLD'S VISION LOSS IS IN LOW- AND
+    MIDDLE-INCOME COUNTRIES, AND THE OPERATION IS THE SAME EVERYWHERE.**
+    The cataract surgical rate — operations per million population per year —
+    runs above six thousand in high-income countries and below five hundred in
+    parts of sub-Saharan Africa. That is not a difference in disease. It is a
+    difference in surgeons, theatres and money, applied to an identical lens.
+    **And the number that matters is not the surgical rate but effective
+    coverage** — the share of people needing surgery who received it *and can
+    see afterwards*. The World Health Assembly adopted a target of raising it by
+    thirty percentage points by 2030, which is an unusually honest metric because
+    it counts an operation that left somebody still unable to see as **not
+    done.**
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: risk-reduction
+  ongoing: none
+  efficacy:
+    value: 0.90
+    units: >
+      fraction-of-patients (good visual outcome, 6/18 or better, with best
+      practice) — **and population surveys in many programmes find substantially
+      worse**, mostly from uncorrected refractive error afterwards rather than
+      from the surgery itself
+    src: reasoning
+  access:
+    value: 0.35
+    units: >
+      fraction-of-patients (receiving surgery with a good outcome — effective
+      cataract surgical coverage) — **this single number is the entire record**
+    src: recall
+
+measurement:
+  diagnostic: objective
+  prognostic: good
+  predictive: partial
+  witness: >
+    **DIAGNOSTIC IS `objective` AND ALMOST TRIVIALLY SO.** A visual acuity chart
+    and a torch will identify most operable cataract; a slit lamp confirms it in
+    seconds; the lens is visible. There is no biomarker question, no imaging
+    question, no differential worth agonising over in the common case.
+    **PROGNOSTIC IS `good`, WHICH ALMOST NOTHING IN THIS REGISTER ACHIEVES, AND
+    IT IS THE FOURTH RECORD IN A ROW TO FIT gaps.md #178's PATTERN.** Optical
+    biometry measures the eye and predicts what the patient will see afterwards,
+    to within a fraction of a dioptre. A surgeon can tell somebody, individually
+    and accurately, what their vision will be. **The forcing decision is which
+    lens to implant** — a choice that cannot be deferred and cannot be undone —
+    and the prediction exists because of it.
+    PREDICTIVE is `partial`. What is predicted well is the refractive result;
+    what is predicted less well is whether the eye behind the cataract is
+    healthy. **A dense cataract hides the retina**, so diabetic retinopathy,
+    macular degeneration and glaucoma can only be assessed indirectly beforehand,
+    and a proportion of operations restore a clear view of an eye that was never
+    going to see.
+    **THE MEASUREMENT FAILURE IN THIS RECORD IS AFTERWARDS, NOT BEFORE.** A large
+    share of poor outcomes worldwide is **uncorrected refractive error after
+    successful surgery** — the operation worked, the lens power was estimated
+    without biometry, and nobody supplied spectacles. That is a measurement
+    problem producing a blind patient with a perfectly good implant, and it is why
+    the coverage metric counts outcome rather than operations.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    **AMONG THE MILDEST TOLLS IN THE REGISTER, FOR ONE OF ITS LARGEST BENEFITS.**
+    Modern cataract surgery is a day case under topical anaesthesia, taking ten to
+    twenty minutes, through an incision small enough to seal itself.
+    **Endophthalmitis** — infection inside the eye — occurs in roughly one case in
+    a thousand to one in three thousand and is devastating when it happens, which
+    is why intracameral antibiotics at the end of the operation became standard.
+    **Posterior capsule opacification** affects a substantial minority within a
+    few years and is treated in minutes with a laser, needing no incision.
+    Retinal detachment, cystoid macular oedema and refractive surprise complete
+    the list.
+    **THE HISTORICAL AND PERSISTING EXCEPTION IS COUCHING**, which deserves
+    recording because it is still practised. The technique — pushing the opaque
+    lens backwards into the vitreous with a needle — is thousands of years old,
+    requires no equipment, is performed by traditional practitioners in parts of
+    Africa and Asia, and produces very poor vision with high rates of glaucoma,
+    retinal detachment and loss of the eye. **People choose it because it is
+    available, immediate and cheap**, which is a statement about the `logistics`
+    blocker rather than about the patients.
+  incidence:
+    value: 0.005
+    units: >
+      fraction-of-treated (permanent harm — chiefly endophthalmitis and retinal
+      complications) — a reasoned estimate under modern surgical conditions
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    **THE RESIDUE IN THIS RECORD IS ENTIRELY A CONSEQUENCE OF WAITING, WHICH IS
+    WHY IT BELONGS BESIDE THE `window` RATHER THAN THE `toll`.**
+    **In children, the deadline is developmental and absolute.** A congenital
+    cataract blocks the visual signal during the critical period of cortical
+    development, and the visual cortex does not wire itself for an eye it never
+    heard from. Operate within the first weeks to a few months and sight develops;
+    operate later and **the eye becomes optically perfect and the child remains
+    blind in it.** Nothing recovers it. This is the only hard developmental
+    deadline in the register.
+    **In adults, the lens itself becomes dangerous if left long enough.** A
+    hypermature cataract swells or leaks protein and can precipitate acute
+    glaucoma, and the optic nerve damage from that is permanent — so an operation
+    that would have restored sight becomes an operation that saves an eye which
+    will never see well.
+    **And there is a residue that is not ocular at all.** Prolonged blindness
+    costs people employment, independence, mobility and social contact, and the
+    literature on visual rehabilitation after long-standing blindness finds that
+    restoring the retinal image does not automatically restore the life. The eye
+    recovers faster than the person does.
+  incidence:
+    value: 0.02
+    units: >
+      fraction-of-affected (permanent visual loss despite eventual surgery —
+      deprivation amblyopia in children, glaucomatous damage from hypermature
+      cataract) — a reasoned estimate, and concentrated entirely in those who
+      waited
+    src: reasoning
+
+window:
+  what: >
+    **TWO WINDOWS, AND ONE OF THEM IS MEASURED IN WEEKS.**
+    *Congenital cataract.* Surgery within roughly the first six to ten weeks of
+    life gives a chance of normal vision; beyond it, deprivation amblyopia sets in
+    and is irreversible whatever is done to the eye afterwards. **It is the
+    tightest window in this register that is not an emergency** — no hours of
+    resuscitation, no golden minute, just a deadline several weeks long that most
+    of the world's health systems have no mechanism to notice, because it requires
+    somebody to examine a newborn's red reflex and act on it.
+    *Adult cataract.* Slower and softer, and real. The lens progresses from
+    interfering with reading to preventing driving to blindness over years, and
+    people can be operated at any point along it with an excellent result. **What
+    closes is not the operation's chance of success but the accumulating cost of
+    the blind interval** — the fall, the lost job, the hip fracture, the
+    deconditioning — plus, at the far end, the risk that a hypermature lens causes
+    glaucoma.
+    **So this is a window whose closure produces harm in other records rather
+    than in this one.** A person waiting three years for cataract surgery is not
+    losing surgical eligibility. They are falling over.
+  closes_on: >
+    deprivation amblyopia in infancy — weeks; and in adults, the accumulating
+    consequences of blindness plus the risk of glaucoma from a hypermature lens
+  caught_in_time:
+    value: 0.35
+    units: >
+      fraction-of-cases (operated before avoidable harm accumulates) — a reasoned
+      estimate tracking effective surgical coverage, and far lower for congenital
+      cataract, where the deadline is weeks and the detection system does not
+      exist in most of the world
+    src: reasoning
+
+strata:
+  - name: uncomplicated age-related cataract
+    fraction:
+      value: 0.90
+      units: fraction-of-cases
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.95
+      units: fraction-of-stratum (good visual outcome)
+      src: reasoning
+    toll: minor
+    what: >
+      **Nine in ten, and it is as close to a solved clinical problem as this
+      register contains.** Fifteen minutes, day case, sutureless, an implanted
+      lens, and the patient sees. Manual small-incision surgery achieves
+      comparable outcomes without a phacoemulsification machine, faster and far
+      cheaper, which is what makes high-volume programmes in low-income settings
+      possible at all.
+
+  - name: cataract with coexisting eye disease
+    fraction:
+      value: 0.08
+      units: fraction-of-cases
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.65
+      units: fraction-of-stratum (meaningful visual improvement)
+      src: reasoning
+    toll: minor
+    what: >
+      Diabetic retinopathy, glaucoma, age-related macular degeneration, previous
+      trauma or surgery. **The cataract is still curable and the eye may not be**,
+      and the dense lens hides the retina beforehand so the limit is often
+      discovered afterwards. This stratum is growing with `type-2-diabetes`.
+
+  - name: congenital and paediatric cataract
+    fraction:
+      value: 0.02
+      units: fraction-of-cases
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.50
+      units: fraction-of-stratum (useful vision achieved)
+      src: reasoning
+    toll: major
+    what: >
+      **Technically the same operation and an entirely different problem.** The
+      surgery must happen within weeks, the eye is still growing so lens power
+      selection is a moving target, and afterwards comes years of amblyopia
+      therapy, patching, refractive correction and repeat procedures — the only
+      part of this record with a heavy `ongoing` burden. Miss the window and the
+      operation restores the optics and not the sight.
+
+moved:
+  - date: 1949
+    axis: efficacy
+    from: 0.40
+    to: 0.75
+    why: >
+      **THE INTRAOCULAR LENS, AND IT CAME FROM SHOT-DOWN FIGHTER PILOTS.**
+      Before 1949, cataract surgery removed the lens and left the patient
+      **aphakic** — able to see through spectacles so thick and distorting that
+      many considered the result barely worth having: no peripheral vision, a
+      third of the image magnified, and no possibility of correcting one eye
+      alone.
+      Harold Ridley, operating on Royal Air Force casualties, noticed that
+      fragments of shattered acrylic cockpit canopy sat in pilots' eyes **without
+      provoking chronic inflammation** — and reasoned that a lens could be made of
+      the same material and left inside. He implanted the first one in 1949.
+      **The profession rejected it for two decades.** He was accused of recklessness
+      and largely ostracised; the technique was adopted slowly through the 1970s
+      and 1980s and he was knighted in 2000, shortly before his death.
+      Every cataract operation performed today does what he proposed.
+    src:
+      id: PMID:39983943 doi:10.1016/j.ajo.2025.02.020
+      retrieved: 2026-08-26
+      quote: >
+        Design and construction of the first intraocular lens by Ridley in 1949
+        proceeded rapidly, and early mistakes were made.
+
+  - date: 1967
+    axis: efficacy
+    from: 0.75
+    to: 0.90
+    why: >
+      **PHACOEMULSIFICATION TURNED AN INPATIENT OPERATION INTO A COFFEE BREAK.**
+      Charles Kelman's insight — reportedly from a dental ultrasonic scaler — was
+      that the lens could be emulsified in place and aspirated through a tube,
+      which meant the incision needed to be a few millimetres rather than half the
+      circumference of the cornea. Small incision meant no sutures, no induced
+      astigmatism, immediate recovery, and eventually topical anaesthesia and day
+      surgery.
+      **The consequence that matters for this record is not comfort. It is that
+      the threshold moved.** When the operation required a week in hospital lying
+      still with sandbags beside your head, you waited until the cataract was
+      "ripe" and you were blind. When it takes fifteen minutes, you operate on
+      somebody who can still read — and in high-income systems the indication has
+      drifted down to visual acuities that would not have been considered
+      remotely operable in 1960 (gaps.md #189).
+      **Manual small-incision surgery** achieves most of the same benefit without
+      the machine, and is the technique that made high-volume programmes in
+      low-income settings viable.
+    src: recall
+
+  - date: 1992
+    axis: access
+    from: 0.15
+    to: 0.35
+    why: >
+      **THE REGISTER'S CLEAREST WORKED EXAMPLE OF A DELIVERY PROBLEM BEING
+      SOLVED, AND IT WAS SOLVED BY ORGANISATION RATHER THAN BY DISCOVERY**
+      (gaps.md #188).
+      An Indian eye hospital system founded in 1976 set out to eliminate needless
+      blindness and reorganised the operation around volume: extreme division of
+      labour, two operating tables per surgeon so that one patient is prepared
+      while the other is operated, standardised technique, and surgeons performing
+      **several times the annual case volume of their Western counterparts with
+      comparable complication rates.**
+      **The financing is the part usually left out.** Roughly half to two thirds of
+      patients are treated free or heavily subsidised, cross-subsidised by paying
+      patients within the same institution — so the programme is self-sustaining
+      rather than donor-dependent.
+      **And when the intraocular lens was the binding cost**, at over a hundred
+      dollars apiece, they built a manufacturing arm in 1992 and brought it to a
+      few dollars, then supplied it to other countries.
+      Every element is published, none is proprietary, the model has been
+      replicated in several countries, and **global effective coverage remains
+      around a third.** The register can record the blocker and has no field for
+      the demonstrated answer.
+    src: recall
+
+witness:
+  mechanism: >
+    `established`, and it is one of the few records here where that word means what
+    a physicist would mean by it.
+    The lens is a transparent structure made of tightly packed **crystallin**
+    proteins, arranged with a short-range order that prevents light scattering.
+    Lens fibre cells lose their nuclei and organelles during development to stay
+    clear, which means **they cannot replace their proteins.** The crystallins in
+    somebody's lens are as old as they are.
+    Over decades those proteins accumulate oxidative and photochemical damage,
+    undergo post-translational modification, and aggregate. Aggregates the size of
+    a wavelength of light scatter it, and the lens goes from clear to yellow to
+    opaque. Ultraviolet exposure, smoking, diabetes, corticosteroids and trauma
+    accelerate it; **age alone is sufficient**, and lens opacity is close to
+    universal by the ninth decade.
+    Congenital cataract has separate causes — genetic mutations in crystallin and
+    connexin genes, intrauterine rubella, galactosaemia — and a completely
+    different clinical problem behind it, because the visual cortex is still
+    developing.
+    **THE NAMED HOLE IS THE ONE THAT WOULD MAKE THIS RECORD DISAPPEAR.** Nothing
+    prevents or reverses cataract pharmacologically. A 2015 report that a
+    naturally occurring sterol could dissolve lens aggregates attracted enormous
+    attention and did not replicate reliably. **Preventing cataract chemically
+    would remove roughly fifteen million people from blindness without a single
+    operation**, and the fact that this is barely funded relative to its potential
+    is a statement about how research priorities are set.
+  intervention: >
+    `curative`, unambiguously, and **`ongoing: none`** — which eight records in
+    this corpus manage and almost none of them for a condition affecting a hundred
+    million people. The lens is removed and replaced, the patient sees, and there
+    is nothing to take afterwards.
+    Two techniques do the work. **Phacoemulsification** — ultrasound through a
+    two-to-three millimetre incision, foldable lens, topical anaesthetic, ten to
+    twenty minutes, no sutures — is standard where the machine and the consumables
+    exist. **Manual small-incision cataract surgery** achieves comparable visual
+    outcomes with a scleral tunnel and no phacoemulsifier, is faster in trained
+    hands, and costs a fraction as much. Randomised comparisons find little
+    between them on outcome. **The second technique is what makes this record
+    solvable in the places where it is not solved**, and it is not a compromise.
+    **The half of the operation that is routinely dropped is the refraction
+    afterwards.** An implanted lens has a fixed power; without biometry beforehand
+    and spectacles afterwards, a technically perfect operation can leave somebody
+    unable to see. Population surveys of operated eyes find this repeatedly, and it
+    is why the international coverage metric counts outcomes rather than
+    procedures.
+  prevention: >
+    `risk-reduction`, and thin. Ultraviolet protection, not smoking, glycaemic
+    control, avoiding unnecessary systemic corticosteroids, and avoiding ocular
+    trauma each shift the risk modestly and none of them stops the lens ageing.
+    **Nothing prevents age-related cataract**, and the register should be plain
+    that this is a real absence rather than a neglected one: the biology —
+    irreplaceable proteins accumulating a lifetime of damage — is genuinely hard
+    to intervene in, and no candidate has survived replication.
+    For congenital cataract, prevention is real and belongs to other records:
+    **rubella immunisation** eliminates a major cause, and newborn screening for
+    galactosaemia catches another.
+    **The intervention that would function as prevention is early detection**, and
+    for children it is a red reflex examination of a newborn — an examination
+    requiring an ophthalmoscope, thirty seconds, and somebody who was taught to do
+    it.
+  ongoing: >
+    **`none`, and it is worth pausing on**, because seven other records in this
+    register share the rating and they are things like smallpox and treated
+    hepatitis C. Cataract surgery ends. There is no maintenance therapy, no
+    monitoring schedule, no adherence question, no resistance, no relapse.
+    Posterior capsule opacification may need a laser once, taking minutes.
+    The exception is the paediatric stratum, where `ongoing` would be `high`:
+    amblyopia therapy, patching, repeated refraction as the eye grows, and often
+    further surgery.
+    **This is the strongest possible contrast with the records around it in the
+    queue.** `type-1-diabetes` is a hundred and eighty decisions a day forever;
+    `chronic-kidney-disease` is twelve hours a week on a machine. This is fifteen
+    minutes, once, and then nothing.
+
+holes:
+  - >
+    **`deaths: 0` is wrong in two directions and the schema cannot express
+    either.** Cataract blindness causes falls and hip fractures, which kill — and
+    those deaths are counted elsewhere. **And cataract surgery is associated with
+    substantially lower subsequent mortality** in older people in cohort studies,
+    with reduced hip fracture risk as one plausible route. So the register holds a
+    record with no attributed deaths whose treatment may be a mortality
+    intervention, and can say neither thing (gaps.md #182, #160).
+  - >
+    **`efficacy: 0.90` describes best practice and population surveys find
+    substantially worse** — chiefly from uncorrected refractive error after
+    technically successful surgery. The gap between what the operation can do and
+    what programmes achieve is large, measured, and folded into one number.
+  - >
+    `access: 0.35` is effective coverage and is the entire record. It varies by
+    more than an order of magnitude between countries, and a single global
+    fraction conceals that this is a solved problem in some places and untouched
+    in others (gaps.md #52).
+  - >
+    **The strata fractions are reasoned, and the coexisting-eye-disease stratum is
+    growing** with diabetes and population ageing in a way the snapshot cannot
+    show.
+  - >
+    **The residue and the window are the same fact and the schema stores them
+    twice.** Everything permanent in this record is a consequence of waiting.
+  - >
+    Every scalar is `recall` or `reasoning`, in a field with unusually good
+    population survey methodology — rapid assessments of avoidable blindness have
+    been run in dozens of countries and none is cited here.
+
+blockers:
+  - kind: logistics
+    blocks: surgeons, theatres, and a system that finds people
+    obstacles: []
+    what: >
+      **THE CATARACT SURGICAL RATE RUNS ABOVE SIX THOUSAND OPERATIONS PER MILLION
+      PEOPLE PER YEAR IN HIGH-INCOME COUNTRIES AND BELOW FIVE HUNDRED IN PARTS OF
+      SUB-SAHARAN AFRICA.** The lens is the same. The difference is people,
+      theatres and organisation.
+      Three constraints compound. **Surgeons**: ophthalmologists per million
+      population differ by more than an order of magnitude between regions, and
+      training one takes years. **Theatre capacity and consumables**: a sterile
+      operating environment, microscopes, and a reliable supply of intraocular
+      lenses and viscoelastic. **And demand generation** — people who are blind
+      from cataract frequently do not know it is treatable, cannot travel, or
+      cannot leave dependents, which is why outreach camps that screen villages and
+      transport patients are a core part of every programme that works.
+      **This is gaps.md #154's shape and it has a known answer**, which is the
+      unusual part: the high-volume model raises the number of operations a surgeon
+      performs several-fold without worsening outcomes, and non-physician cataract
+      surgeons in several African programmes achieve results comparable to
+      ophthalmologists.
+      **Nothing here needs inventing. It needs building and paying for**, and eye
+      care competes badly for both because nobody dies of cataract.
+    who_could: [health-system, government, payer, nonprofit, philanthropy]
+    scale: 8.0e9
+    standing: documented
+    src: recall
+
+  - kind: policy
+    blocks: eye care competing for attention against things that kill people
+    obstacles: []
+    what: >
+      **NOBODY DIES OF CATARACT, WHICH IS WHY IT LOSES EVERY ARGUMENT ABOUT
+      PRIORITIES.**
+      Health budgets, national plans and international funding are organised around
+      mortality. Cataract surgery is repeatedly identified as among the most
+      cost-effective interventions available in any health system — a one-off
+      procedure costing tens of dollars in high-volume settings, restoring years of
+      independent sight — and it is routinely absent from essential benefit
+      packages, insurance coverage and donor priorities.
+      **The register demonstrates the mechanism on itself.** This record has
+      `deaths: 0`. Every triage view here sorts on deaths, on `reach`, or on a
+      blocker price. **gaps.md #48 — the register's most serious logged gap —
+      proposes fixing the ranking with a mortality weight, which would rank this
+      record at exactly zero** (gaps.md #182).
+      The World Health Assembly's adoption of an effective-coverage target in 2021
+      is the countermove: a metric that makes eye care a number a health minister is
+      accountable for. Whether it changes budgets is the open question, and it is a
+      political one rather than a medical one.
+    who_could: [government, payer, health-system, nonprofit, philanthropy]
+    scale: 3.0e9
+    standing: documented
+    src: recall
+
+  - kind: cost
+    blocks: a cheap operation that is still out of reach
+    obstacles: []
+    what: >
+      **THE MARGINAL COST OF A CATARACT OPERATION IN A HIGH-VOLUME PROGRAMME IS ON
+      THE ORDER OF TENS OF DOLLARS, AND IT IS STILL UNAFFORDABLE FOR MANY OF THE
+      PEOPLE WHO NEED IT.**
+      What the patient actually pays is rarely the surgical fee. It is transport to
+      a city, accommodation for an escort, lost wages for two people for several
+      days, and — where surgery is not covered — an out-of-pocket charge in a
+      household that has already lost the earnings of the blind person.
+      **This is why the free-and-cross-subsidised model matters more than the unit
+      cost.** Making the operation nominally cheap does not reach somebody who
+      cannot afford the bus, which is what outreach camps with transport exist to
+      solve.
+      **And when the intraocular lens was the binding cost**, at over a hundred
+      dollars, an Indian hospital system built a manufacturing arm and took it to a
+      few dollars, then exported it. That is a solved cost blocker, solved by the
+      people affected by it, and the register has no way to mark it solved
+      (gaps.md #188).
+      Remaining cost pressure is at the other end: premium intraocular lenses and
+      femtosecond laser assistance add substantial cost in wealthy systems for
+      benefits that are contested, while global coverage sits around a third.
+    who_could: [payer, government, health-system, manufacturer, nonprofit]
+    scale: 2.0e9
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    blocks: the measurement before and the spectacles after
+    obstacles: []
+    what: >
+      **A TECHNICALLY PERFECT OPERATION CAN LEAVE SOMEBODY UNABLE TO SEE, AND THIS
+      IS A LARGE SHARE OF POOR OUTCOMES WORLDWIDE.**
+      An implanted lens has a fixed power. Choosing it requires **biometry** —
+      measuring the eye's axial length and corneal curvature — and getting it wrong
+      leaves a substantial refractive error that only spectacles can correct.
+      Population surveys of operated eyes repeatedly find people with a clear
+      implant and poor vision for exactly this reason: no biometry beforehand, no
+      refraction afterwards, no spectacles supplied.
+      **The other half is the newborn examination that nobody does.** Congenital
+      cataract must be operated within weeks, and detecting it requires a red
+      reflex check on a newborn — thirty seconds with an ophthalmoscope. In most of
+      the world there is no systematic newborn eye examination, so the diagnosis
+      arrives when a parent notices the child is not following faces, by which
+      point the developmental window has closed and the operation restores the
+      optics but not the sight.
+      **Both failures are cheap to fix and neither is a discovery**, and both are
+      the difference between an operation counted as done and a person who can see.
+    who_could: [health-system, government, manufacturer, nonprofit, academic]
+    scale: 1.5e9
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: any way to prevent or reverse it without surgery
+    obstacles: [animal-translation]
+    what: >
+      **NOTHING PREVENTS OR REVERSES CATARACT PHARMACOLOGICALLY, AND A DRUG THAT
+      DID WOULD REMOVE ROUGHLY FIFTEEN MILLION PEOPLE FROM BLINDNESS WITHOUT A
+      SINGLE OPERATION.**
+      The biology is genuinely difficult. Lens fibre cells destroy their nuclei and
+      organelles to become transparent, which means **they cannot synthesise new
+      proteins** — the crystallins in an eighty-year-old's lens have been there for
+      eighty years, accumulating oxidative and photochemical damage with no repair
+      pathway. Preventing aggregation means protecting a protein for a lifetime, or
+      redissolving aggregates in a structure with no protein turnover.
+      A 2015 report that a naturally occurring sterol could reverse lens opacity
+      attracted very large attention and has not replicated reliably. Antioxidant
+      supplementation trials have been negative. Aldose reductase inhibitors work
+      in diabetic animal models and not in people.
+      **The register should note the asymmetry rather than the difficulty.** This
+      is the single highest-leverage unsolved question in the file — it would
+      dissolve the entire `logistics` blocker above — and it attracts a small
+      fraction of the research attention that goes to conditions with comparable
+      burden and higher mortality. **`deaths: 0` shapes what gets studied as much
+      as what gets funded.**
+      `scale: null`.
+      **Tagged `animal-translation` (2026-08-30)**, and this is the second record that earns that obstacle bottom-up. A whole drug class was carried into human trials on animal data and did nothing — the same failure `als` records, in a tissue whose model-organism version ages on a completely different clock from ours.
+    who_could: [academic, sponsor, philanthropy, manufacturer]
+    scale: null
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0090
+  rated: 2026-08-25
+  by: [claude, jeremy]

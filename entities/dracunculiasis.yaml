@@ -1,0 +1,314 @@
+slug: dracunculiasis
+id: FND-D-0040
+name: dracunculiasis
+also: [Guinea worm disease, Dracunculus medinensis infection, guinea-worm disease, dracontiasis, Medina worm disease]
+mondo: MONDO:0016472
+kind: disease
+residual: false
+contested: false
+
+# THERE IS NO DRUG AND NO VACCINE, AND IT IS ALMOST ERADICATED.
+#
+# 1986: about 3.5 million cases a year across 21 countries.
+# Now: on the order of a dozen human cases a year.
+#
+# That is the second-largest reduction in human disease ever achieved, after
+# smallpox — and it was done with cloth water filters, larvicide in ponds, health
+# education, and finding every case and keeping the sufferer out of the water.
+# **No medicine was involved at any point.** The only treatment is the ancient
+# one: wind the emerging worm slowly onto a stick over days or weeks.
+#
+# So `intervention: symptomatic`, so `capability: unsolved`, so the quadrant
+# reads `engineering problem` — understood, and nothing can be done — for a
+# disease that is about to stop existing.
+#
+# Rabies was the argument for gaps.md #66. THIS IS THE REDUCTIO. Rabies at least
+# has post-exposure prophylaxis to hide on the prevention axis; here there is no
+# medical act at all, and the register has no way to record that a filter and a
+# conversation constitute capability.
+#
+# AND THE ERADICABILITY CHECKLIST WAS WRONG. gaps.md #72 proposed scoring
+# diseases on whether they COULD be eradicated — no animal reservoir, an
+# interruptible cycle, findable infections. Dracunculiasis would have scored
+# perfectly in 2010. Then dogs started turning up infected in Chad, in thousands,
+# and the target has slipped from 2009 to 2015 to 2020 to 2030. See gaps.md #85.
+
+burden:
+  incidence:
+    value: 1.4e1
+    units: >
+      human cases reported in a recent year — fourteen, worldwide, down from
+      roughly 3.5 million a year in 1986. THOUSANDS of infections are reported
+      annually in dogs, chiefly in Chad, and that is now the binding constraint
+    src: recall
+  deaths:
+    value: 0.0
+    units: >
+      deaths/year — dracunculiasis is agonising and disabling and almost never
+      directly fatal
+    src: reasoning
+  note: >
+    THE SMALLEST BURDEN IN THIS REGISTER BY THREE ORDERS OF MAGNITUDE, and it is
+    the point of the record. Sleeping sickness at 800 cases already broke the
+    ranking (gaps.md #48); fourteen cases is not a rounding error, it is below
+    the resolution of any burden-weighted metric that could be built.
+    Read the numbers the other way and this is one of the great public health
+    achievements in history — and the only one ever accomplished without a drug
+    or a vaccine.
+    The remaining human cases are in Chad, South Sudan, Mali, Ethiopia and
+    Angola. The remaining ANIMAL cases are mostly in Chad and vastly outnumber
+    them.
+
+axes:
+  mechanism: established
+  intervention: symptomatic
+  prevention: risk-reduction
+  ongoing: moderate
+  efficacy:
+    value: 0.0
+    units: >
+      fraction-of-patients (disease course altered by any treatment) — THERE IS
+      NO DRUG. The worm emerges over weeks whatever anybody does; extraction
+      shortens and safeguards the process without altering the infection
+    src: reasoning
+  access:
+    value: 0.0
+    units: fraction-of-patients (no course-altering treatment to access)
+    src: reasoning
+
+measurement:
+  diagnostic: clinical
+  prognostic: good
+  predictive: n/a
+  witness: >
+    DIAGNOSTIC is `clinical`, and it is the least ambiguous diagnosis in the
+    register: a metre of worm is emerging from a blister on somebody's leg. No
+    test is used because none is needed and none exists.
+    THE TEST THAT IS MISSING IS FOR THE OTHER TEN TO FOURTEEN MONTHS. Infection
+    is silent from the moment contaminated water is drunk until the worm reaches
+    the skin nearly a year later. There is no way to identify an infected person —
+    or an infected dog — before emergence, which means surveillance can only ever
+    detect the disease at the exact moment it becomes transmissible. In an
+    eradication endgame that is the whole problem: every case is found on the day
+    it is most dangerous.
+    PROGNOSTIC is `good` and useless, for the second record in a row after
+    rabies. The worm emerges, it takes weeks, it is agonising, and then it is
+    over. Entirely predictable, and nothing follows from the prediction.
+    PREDICTIVE is `n/a` on the Huntington's grounds: no course-altering therapy
+    exists whose response could be predicted.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    There is no treatment, so almost no treatment toll. What exists is
+    procedural: the worm is wound a few centimetres a day onto a stick, and if it
+    BREAKS, the retained portion provokes intense inflammation, cellulitis and
+    abscess. That is a real harm caused by the only thing anyone can do, and it
+    is why the winding is slow.
+    Recorded as `minor` because it is manageable and uncommon when done
+    carefully, and because the disabling consequences that follow — see
+    `residue` — come from secondary bacterial infection rather than from the
+    extraction itself.
+    Worth noting what is absent. Nine records in this register describe drug
+    toxicity; this one cannot, because there is no drug. The rod-and-worm image
+    that may be the origin of the rod of Asclepius is, as far as anyone can tell,
+    still the state of the art.
+  incidence:
+    value: 0.02
+    units: >
+      fraction-of-patients (permanent harm attributable to extraction itself) —
+      a reasoned estimate
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    The worm leaves an open wound in a place with no clean water, and secondary
+    bacterial infection is the rule rather than the exception. What follows in a
+    minority is permanent: septic arthritis where the worm has emerged near or
+    into a joint, contracture as the wound heals, tendon damage, and in the worst
+    cases a leg that never works properly again.
+    Most people recover completely after weeks of agony. A small fraction do not,
+    and the disability is lifelong — in agricultural communities where it means
+    not farming.
+    The register's tenth `residue` block, and the first where the mechanism is
+    an ordinary bacterial infection of a wound the parasite made. Nothing about
+    it requires the parasite: it requires the wound, the water and the absence of
+    antiseptic.
+  incidence:
+    value: 0.05
+    units: >
+      fraction-of-patients (permanent joint damage, contracture or disability
+      following secondary infection) — a reasoned estimate
+    src: reasoning
+
+# NO `window` BLOCK. The schema's test is whether capability changes with timing,
+# and here nothing changes: the worm emerges when it is ready, and there is no
+# treatment to be earlier or later with. What matters is not when the patient is
+# reached but WHERE they go afterwards — into the water or not — which is
+# containment, not a window, and belongs to prevention.
+
+witness:
+  mechanism: >
+    `established`, and the life cycle contains the most elegant piece of host
+    manipulation in this register.
+    A person drinks water containing copepods — water fleas — carrying larvae.
+    The larvae are released in the stomach, cross the gut wall, mature over ten
+    to fourteen months, and the fertilised female, up to a metre long, migrates
+    to the skin, usually of the lower leg. There she raises a blister.
+    **THE BLISTER BURNS.** It produces an intense, unrelenting burning pain, and
+    the sufferer does the only thing that relieves it: plunges the limb into
+    water. That is precisely what the worm requires — contact with water causes
+    it to discharge hundreds of thousands of larvae, copepods eat them, and the
+    cycle closes.
+    So the symptom is the transmission mechanism. It is not a side effect of the
+    parasite's presence; it is the dispersal strategy, and the entire eradication
+    programme is built on interrupting that one behaviour — teaching people not
+    to enter drinking water, and filtering the copepods out. See gaps.md #86.
+    THE NAMED HOLE IS DOGS, and it is the reason this disease is not already
+    eradicated. From around 2012, infections began appearing in domestic dogs in
+    Chad in numbers now far exceeding human cases, along with cats and baboons.
+    How the dogs are infected is not settled — ingestion of copepods is one
+    route, and eating raw fish or frog viscera acting as paratenic hosts is
+    another. Until that is understood there is no way to be confident the cycle
+    can be closed.
+  intervention: >
+    `symptomatic`, and there is nothing to argue about: **there is no drug and
+    there is no vaccine.** There never has been.
+    The treatment is to wind the emerging worm onto a stick, a few centimetres a
+    day, over days or weeks, keeping the wound clean and not letting the worm
+    break. It shortens nothing about the infection — the worm was coming out
+    anyway — and it reduces suffering, prevents breakage, and above all keeps the
+    patient away from water while the worm is discharging.
+    That last function is why extraction matters, and it is not a treatment
+    function at all. It is case containment: the medical act exists to interrupt
+    transmission rather than to help the patient, which is a purpose the
+    `intervention` axis has no word for.
+  prevention: >
+    `risk-reduction`, and that phrase is doing more work here than anywhere else
+    in this register. What it denotes is a reduction from 3.5 million cases a
+    year to about fourteen, achieved by:
+    CLOTH AND PIPE FILTERS so people can strain copepods out of drinking water;
+    LARVICIDE (temephos) applied to ponds; HEALTH EDUCATION teaching people with
+    an emerging worm not to enter drinking water; CASE CONTAINMENT — finding
+    every case, with cash rewards paid for reports, and keeping the sufferer away
+    from water sources; and SAFE WATER provision where it can be built.
+    None of that is medicine. A disease is being eradicated by a piece of cloth,
+    a conversation and a surveillance system, and the register's entire apparatus
+    — intervention ladder, efficacy, toll, residue — is built to describe a
+    medical act. `capability: unsolved` is what it produces. See gaps.md #66.
+    The dog problem has forced a fourth species into this register's
+    interventions after sheep, dogs for rabies and pigs: infected dogs are
+    tethered while the worm emerges, and larvicide is applied to the water they
+    use. `who_could` still has no veterinary service (gaps.md #69).
+  ongoing: >
+    `moderate`. The episode is finite — weeks of extraction and wound care — and
+    while it lasts the patient frequently cannot walk or work, which in a farming
+    community during planting season is the disease's main economic cost. There
+    is no chronic phase and no maintenance therapy, because there is no therapy.
+
+holes:
+  - How dogs acquire the infection, and whether the canine cycle can be
+    interrupted. This is the binding constraint on eradication and it appeared
+    only when human cases had already fallen below a hundred.
+  - Whether the worms in dogs and in humans are the same population. If they are
+    not, the eradication target means something different.
+  - Whether a serological or molecular test could detect infection during the ten
+    to fourteen silent months. It would transform an endgame that currently
+    detects every case on the day it becomes infectious.
+  - How much disability follows secondary infection. The acute disease is well
+    described and the long-term outcomes are not, because nobody followed
+    patients when there were millions of them.
+  - Written from model recall. The life cycle, the water-contact discharge
+    mechanism, the case numbers and the emergence of the dog reservoir are the
+    parts most likely right; every number is the part most likely wrong.
+
+blockers:
+  - kind: knowledge
+    obstacles: [burden-unknown]
+    blocks: closing a transmission cycle that turned out to include dogs
+    what: >
+      THE BINDING CONSTRAINT, AND IT ARRIVED AT THE ENDGAME. For decades this was
+      understood as a purely human infection with no reservoir — which is why it
+      was selected for eradication and why it very nearly succeeded. From around
+      2012, infected domestic dogs began appearing in Chad, and they now
+      outnumber human cases by orders of magnitude.
+      How they are infected is not settled: drinking water containing copepods is
+      one route, and eating raw fish or amphibian viscera acting as paratenic
+      hosts is another, and the interventions differ completely depending on the
+      answer. Until it is known, nobody can say whether the cycle can be closed
+      or only suppressed.
+      **This is the fact that would have made the eradicability field proposed in
+      gaps.md #72 give the wrong answer**, confidently, for twenty-five years.
+      `scale: null` — this is field parasitology and epidemiology, not something
+      that can be bought.
+    who_could: [academic, sponsor, nonprofit, philanthropy]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: tooling
+    blocks: detecting infection during the year before it becomes visible
+    what: >
+      There is no drug, no vaccine, and no diagnostic test — and of those three
+      absences the third is now the most costly. Infection is silent for ten to
+      fourteen months and becomes detectable at the exact moment the worm
+      emerges, which is the moment it becomes transmissible.
+      So surveillance can never get ahead of the parasite. Every case is found on
+      its most dangerous day, containment is a race, and the same limitation
+      applies to dogs — there is no way to identify an infected animal before a
+      worm appears, which makes tethering reactive rather than preventive.
+      A serological or molecular test that detected pre-emergent infection would
+      change the endgame more than anything else on this list. It is an assay
+      development problem for a disease with fourteen cases a year, which is
+      precisely the kind of thing nobody funds.
+    who_could: [academic, manufacturer, nonprofit, philanthropy]
+    scale: 5.0e7
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: surveillance across insecure and mobile populations
+    what: >
+      The last cases are in Chad, South Sudan, Mali, Ethiopia and Angola — which
+      is to say in conflict-affected areas, among mobile and nomadic
+      populations, along rivers and seasonal ponds. Finding fourteen cases in
+      that geography requires a village-level surveillance network covering tens
+      of thousands of settlements, with cash rewards paid for reports, sustained
+      indefinitely.
+      The cost per case found is now enormous and rising, which is exactly what
+      gaps.md #56 predicted for an endgame: screening does not get cheaper as
+      cases fall, and the political case for spending weakens as the numbers do.
+      There is nothing clever to be done here. It is people, vehicles, radios and
+      years.
+    who_could: [nonprofit, philanthropy, government, health-system]
+    scale: 1.0e8
+    standing: documented
+    src: recall
+
+  - kind: policy
+    blocks: sustaining a programme for a dozen cases a year
+    what: >
+      The eradication target has moved from 2009 to 2015 to 2020 to 2030, and
+      each slip has to be funded. A programme that costs tens of millions a year
+      to find and contain a dozen human cases is impossible to justify on any
+      burden-weighted arithmetic, and completely justified on the only arithmetic
+      that matters — that the alternative is a resurgence and starting again.
+      Yaws is the cautionary tale in this register: reduced by ninety-five
+      percent, integrated into general services, and back within fifteen years.
+      Dracunculiasis has avoided that so far because a single philanthropic
+      institution has carried it for four decades with unusual persistence, which
+      is itself a dependency of the kind gaps.md #54 describes.
+      This blocker is the register's clearest instance of paying to hold a zero at
+      zero (gaps.md #57), and the register's own metrics argue against it.
+    who_could: [philanthropy, government, nonprofit, health-system]
+    scale: 2.0e8
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0040
+  rated: 2026-08-23
+  by: [claude, jeremy]

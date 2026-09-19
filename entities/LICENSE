@@ -1,0 +1,24 @@
+The records in this directory, and the obstacle records under
+../Engpass/obstacles/, are data: ratings, witnesses, blockers and the
+provenance attached to them.
+
+Copyright (c) 2026 Jeremy Schwartz
+
+They are licensed under the Creative Commons Attribution 4.0 International
+licence (CC BY 4.0). You may share and adapt them for any purpose, including
+commercially, provided you give appropriate credit, link to the licence, and
+indicate if changes were made.
+
+Full text:  https://creativecommons.org/licenses/by/4.0/legalcode
+Summary:    https://creativecommons.org/licenses/by/4.0/
+
+Suggested attribution:
+  Nordstern disease register, fndtn (https://fndtn.io), CC BY 4.0.
+  Cite a record by its permanent id (FND-D-NNNN) and a rating by its
+  assertion id (FND-A-NNNN); slugs may be renamed, ids never are.
+
+Disease identifiers (`mondo:`) are borrowed from the Mondo Disease Ontology,
+which is itself CC BY 4.0: https://mondo.monarchinitiative.org/
+
+The code that reads and checks these records is under the MIT licence in the
+repository root.

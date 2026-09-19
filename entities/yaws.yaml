@@ -1,0 +1,346 @@
+slug: yaws
+id: FND-D-0034
+name: yaws
+also: [frambesia tropica, pian, buba, Treponema pallidum pertenue infection]
+mondo: MONDO:0006019
+kind: disease
+residual: false
+contested: false
+
+# THE DISEASE THAT WAS NEARLY ERADICATED, AND CAME BACK, AND IS BEING TRIED
+# AGAIN FOR THE THIRD TIME.
+#
+# 1952-1964: a WHO/UNICEF campaign treated about 50 MILLION PEOPLE in 46
+# countries with injectable penicillin and cut global prevalence by roughly 95%.
+# The vertical programme was then folded into primary health care, surveillance
+# stopped, and yaws resurged through the 1970s and 80s. A second attempt in the
+# 1980s did not hold. A third began in 2012, after a single oral dose of
+# azithromycin was shown to work as well as an injection — the eradication target
+# has since slipped from 2020 to 2030.
+#
+# TWO THINGS THIS BREAKS.
+#
+# 1. The register can record that a disease HAS been eradicated. It cannot
+#    record whether one COULD be — and eradicability is a property of the
+#    pathogen's natural history rather than of anybody's effort. Yaws has no
+#    animal reservoir and a single cheap oral cure, and it has LATENT
+#    ASYMPTOMATIC INFECTION, which is why treating everyone you can see does not
+#    finish it. See gaps.md #72.
+#
+# 2. This is not an untried opportunity. It is a three-time attempt, and the
+#    register has no memory of prior attempts — only of the state they left
+#    behind. Any funder reading a row that says "curable, cheap, 80,000 cases"
+#    should know it has been nearly won twice. See gaps.md #73.
+
+burden:
+  incidence:
+    value: 8.0e4
+    units: >
+      reported cases/year across roughly 15 endemic countries — a floor rather
+      than an estimate. Before 1952 the figure was on the order of 50 million
+      people infected worldwide
+    src: recall
+  deaths:
+    value: 0.0
+    units: >
+      deaths/year — a ninth morbidity-dominant record. Yaws disfigures and
+      disables children and does not kill them
+    src: reasoning
+  note: >
+    A disease of children in warm, humid, rural places with limited water for
+    washing: Papua New Guinea, the Solomon Islands, Ghana, Cameroon, the
+    Democratic Republic of the Congo, Indonesia, Timor-Leste and a handful of
+    others. Transmitted skin to skin, no vector, no animal reservoir.
+    THE HISTORICAL NUMBER IS THE POINT OF THIS RECORD. Fifty million infections
+    reduced to around two and a half million in twelve years, then allowed back.
+    India was certified free of yaws in 2016, which shows the thing is finishable
+    where somebody finishes it.
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: risk-reduction
+  ongoing: low
+  efficacy:
+    value: 0.95
+    units: >
+      fraction-of-patients (cure with a single oral dose of azithromycin, or one
+      injection of benzathine penicillin)
+    src: recall
+  access:
+    value: 0.35
+    units: >
+      fraction-of-patients (reached by treatment) — remote populations,
+      intermittent campaign funding, and no routine service in most endemic
+      districts. It was far higher in 1964 than it is now; see `moved`
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: none
+  predictive: n/a
+  witness: >
+    DIAGNOSTIC is `objective` and field-capable: a dual-path rapid test reads
+    treponemal and non-treponemal antibody from a finger-prick in one device, and
+    PCR from a lesion swab confirms and can distinguish the organism.
+    TWO LIMITS, AND THE SECOND DECIDES WHETHER ERADICATION IS POSSIBLE.
+    First, serology cannot tell yaws from SYPHILIS. The organisms are
+    *Treponema pallidum* subspecies *pertenue* and *pallidum*, near-identical
+    genetically and indistinguishable to any standard serological test. In
+    children that is unimportant; in adults it makes a reactive test ambiguous,
+    which is why certification of freedom rests on surveys of children. Note the
+    shape: the test conflates the target with a different disease carrying an
+    entirely different social meaning, and the treatment for both is the same, so
+    the cost is wrong epidemiology rather than wrong treatment.
+    Second, and decisively: THERE IS NO WAY TO FIND LATENT INFECTION. People with
+    latent yaws have no lesions, are seropositive, can relapse years later and
+    can transmit when they do. A clinical survey sees none of them. That single
+    fact is why the 1950s campaigns — which treated visible cases and their
+    contacts — reduced the disease by ninety-five percent and did not finish it,
+    and it is why the current strategy is to give azithromycin to entire
+    communities rather than to the people who look ill.
+    PROGNOSTIC is `none`: nothing predicts who relapses from latency, which is
+    the question the eradication programme most needs answered.
+    PREDICTIVE is `n/a`, the good version — one dose works in around
+    ninety-five percent, so there is nothing to select between. Same reason as
+    Buruli ulcer; not the schistosomiasis reason.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    A single oral dose of azithromycin, with gastrointestinal upset at worst.
+    The alternative, one intramuscular injection of benzathine penicillin, adds
+    pain, a small anaphylaxis risk and the need for a cold chain, a needle and
+    someone trained to use it — which is precisely what made mass campaigns hard
+    before 2012 and easy after.
+    Nothing here is permanent, and this is among the lightest treatment burdens
+    in the entire register: one tablet, once, and the disease is over.
+  incidence:
+    value: 0.0
+    units: fraction-of-treated (permanent harm)
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    Untreated for years, yaws becomes destructive. Tertiary disease produces
+    gangosa — erosion of the nose, palate and pharynx — along with sabre tibia,
+    juxta-articular nodules and joint destruction. None of that reverses when the
+    treponeme is finally killed, and it happens to people who were infected as
+    children.
+    RATED WITH A LOW INCIDENCE FOR A REASON WORTH READING TWICE: tertiary yaws is
+    now rare, and it is rare BECAUSE THE 1950s CAMPAIGN WORKED. A generation of
+    children were treated before their infections had years to destroy anything.
+    The residue in this record is small because of maintenance that was performed
+    and then stopped, which is the register's clearest evidence for why gap #57
+    matters.
+  incidence:
+    value: 0.02
+    units: >
+      fraction-of-infected (destructive tertiary lesions) — a reasoned estimate
+      reflecting current practice, and far higher historically
+    src: reasoning
+
+window:
+  what: >
+    Years wide, and — unusually for this register — mostly being caught. Yaws
+    treated at any point in primary or secondary disease is cured by one dose
+    with nothing left behind. Left for years it becomes tertiary and destroys
+    bone and cartilage permanently.
+    The `caught_in_time` figure here is high, and it is the only high one in this
+    file. That is what a window looks like when the programme is more or less
+    working: most children with a yaws lesion in an endemic district now get
+    treated before it destroys anything, and the destructive form has become a
+    thing older clinicians remember. The gap in this record is not the window; it
+    is the latent reservoir behind it, which no amount of treating visible
+    lesions reaches.
+  closes_on: >
+    progression to destructive tertiary disease — gangosa, sabre tibia,
+    juxta-articular nodules, joint destruction
+  caught_in_time:
+    value: 0.95
+    units: >
+      fraction-of-infected (treated before destructive tertiary lesions) — a
+      reasoned estimate; the destructive form is now uncommon where it was once
+      routine
+    src: reasoning
+
+witness:
+  mechanism: >
+    `established`, and its close relationship to a much better-known disease is
+    the interesting part. Yaws is caused by *Treponema pallidum* subspecies
+    *pertenue*, a near-twin of the syphilis organism — same genus, same species,
+    different subspecies, genetically almost identical and serologically
+    identical. It is transmitted by skin-to-skin contact between children, not
+    sexually, and there is NO VECTOR AND NO ANIMAL RESERVOIR: humans are the
+    entire reservoir.
+    Every one of those facts is favourable for eradication, and one is not.
+    LATENT INFECTION: after primary and secondary disease resolve, the treponeme
+    persists, the person is asymptomatic and seropositive, and years later can
+    relapse into infectious secondary lesions. What governs that latency, and
+    what fraction of a treated community is silently carrying it, are not known —
+    and that ignorance is precisely what defeated the campaigns that treated
+    everyone who looked ill.
+  intervention: >
+    `curative`, and about as cleanly as anything in this register: ONE ORAL DOSE
+    of azithromycin cures around ninety-five percent, established by trial in
+    Papua New Guinea in 2012 against the previous standard of a single injection
+    of benzathine penicillin. Penicillin remains effective and is the fallback.
+    That 2012 result is the reason the third eradication attempt exists. An
+    injection needs a cold chain, a needle, a trained injector and a reason for
+    the recipient to accept one; a tablet needs a volunteer with a bag. It did
+    not change what could be done to a patient — the disease was curable in 1952
+    — it changed what could be done to a population, which is a distinction the
+    intervention axis cannot make (see the onchocerciasis note, gaps.md #58).
+    Azithromycin resistance in *T. p. pertenue* has been documented after mass
+    treatment in Papua New Guinea. It is not yet widespread and penicillin still
+    works, so this is a warning rather than a crisis — but it is the same shape
+    as tuberculosis: the drug that makes the programme possible is under
+    selection pressure from the programme.
+  prevention: >
+    `risk-reduction`. There is no vaccine and no vector to control. What reduces
+    transmission is soap, water and treating people — and in an anthroponotic
+    disease with a single-dose oral cure, TREATING IS PREVENTING. The current
+    strategy is total community mass treatment followed by resurveys, precisely
+    because the latent cannot be found and the only way to reach them is to treat
+    everybody.
+    So this record has the same structure as visceral leishmaniasis and lymphatic
+    filariasis: the prevention programme and the treatment programme are the same
+    act, filed under different axes, and neither field says so.
+  ongoing: >
+    `low`, and it is the lightest in the register alongside visceral
+    leishmaniasis's single infusion. One tablet, once. There is no follow-up
+    regimen, no monitoring, and no chronic phase to manage — which is exactly
+    why the failure in this record is not clinical at all.
+
+moved:
+  - date: 1964
+    axis: access
+    from: 0.9
+    to: 0.2
+    why: >
+      THE REGISTER'S FIRST BACKWARD ENTRY, and the first recorded on a scalar
+      rather than an enum. Gap #57 noted that `moved` must be able to record a
+      rating going the wrong way, and that no record had yet needed to.
+      The WHO/UNICEF campaign of 1952-64 treated roughly 50 million people in 46
+      countries and cut global prevalence by about 95%. The vertical programme
+      was then integrated into general primary health care, dedicated
+      surveillance ended, and yaws resurged across West and Central Africa,
+      Southeast Asia and the Pacific through the 1970s and 80s.
+      Nothing about the disease changed. No drug stopped working, no resistance
+      emerged, no new reservoir appeared. **The programme was stopped because it
+      had nearly succeeded**, and the residual latent infections did the rest.
+      The numbers are reasoned rather than measured and are given to make the
+      direction and rough scale legible.
+
+holes:
+  - How much latent infection exists in a treated community, and what governs
+    relapse from it. This is the question that decides whether eradication is
+    achievable, and it has been open since the 1950s.
+  - Whether the azithromycin resistance documented in Papua New Guinea after mass
+    treatment will spread. Penicillin remains the fallback, so this is a warning
+    rather than a failure.
+  - How many cases there actually are. Reported figures come from countries
+    running active surveys; the rest report nothing and are not therefore free of
+    it.
+  - What proportion of reactive serology in adults in endemic areas is yaws and
+    what proportion is syphilis. The tests cannot distinguish them, and the
+    answer matters for certification.
+  - Written from model recall. The 1952-64 campaign and its abandonment, the 2012
+    single-dose azithromycin result and the latency problem are the parts most
+    likely right; every number is the part most likely wrong, and the `moved`
+    figures especially so.
+
+blockers:
+  - kind: diagnosis
+    blocks: finding latent infection, which is what eradication requires
+    what: >
+      THE BINDING CONSTRAINT, AND IT HAS BEEN FOR SEVENTY YEARS. A person with
+      latent yaws has no lesions, is seropositive, and can relapse into
+      infectious disease years later. There is no test that identifies them as
+      needing treatment rather than as having been treated, and a clinical survey
+      of a village sees none of them.
+      That is why the 1950s campaigns failed to finish the job despite treating
+      fifty million people, and why the current strategy is to give azithromycin
+      to an entire community and then resurvey rather than to find and treat the
+      infected. Mass treatment is the workaround for a diagnostic that does not
+      exist.
+      Add to it that serology cannot distinguish yaws from syphilis, so
+      certification of freedom depends on surveying children — which works, and
+      is a constraint on when and where you can look.
+      A test that identified active latent infection would change the shape of
+      the whole programme: it would replace repeated community-wide treatment
+      with targeted treatment and make certification tractable.
+    who_could: [academic, manufacturer, nonprofit, philanthropy]
+    scale: 5.0e7
+    standing: documented
+    src: recall
+
+  - kind: policy
+    blocks: sustaining a programme through the last few per cent
+    what: >
+      The documented failure mode, with a date on it. In 1964 the vertical yaws
+      campaign — having reduced global prevalence by roughly ninety-five percent
+      — was integrated into general primary health care and dedicated
+      surveillance stopped. The disease came back.
+      This is the same blocker as sleeping sickness's and it is better evidenced
+      here, because the mechanism was administrative rather than circumstantial:
+      no war, no funding collapse, no new science. A programme was judged to have
+      substantially succeeded and was folded into routine services that had no
+      capacity to look for a disease that had become rare.
+      The current attempt faces exactly the same decision in whichever country
+      gets there first. India was certified free in 2016 and stayed free, which
+      shows it can be held; the question is whether it will be held everywhere at
+      once, since a single unfinished country reseeds its neighbours.
+    who_could: [government, health-system, philanthropy, nonprofit]
+    scale: 2.0e8
+    standing: documented
+    src: recall
+
+  - kind: no-sponsor
+    obstacles: [donation-dependency]
+    blocks: a reliable supply of a drug that is already donated for another disease
+    what: >
+      Recorded because the contrast is sharp and specific rather than because the
+      pattern is new. Azithromycin is donated at enormous scale — hundreds of
+      millions of doses — for trachoma elimination, through one of the largest
+      and longest-running drug donation programmes in existence. The equivalent
+      architecture has not been built at the same scale for yaws, whose total
+      requirement is a small fraction of it.
+      So the eighth instance of the neglected-disease supply pattern in this
+      corpus has an unusual feature: the product exists, the manufacturer already
+      donates it, and the programme that would use it is a different one. That is
+      not a market failure of the ordinary kind. It is closer to an
+      administrative one, and it should therefore be easier to fix than any of
+      the seven before it.
+    who_could: [manufacturer, philanthropy, nonprofit, government]
+    scale: 5.0e7
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    obstacles: [burden-unknown]
+    blocks: knowing whether eradication is achievable at all
+    what: >
+      Two questions, and both are about the latent reservoir rather than about
+      treatment. What fraction of a treated community still carries the
+      treponeme, and what makes it relapse? Without those numbers nobody can say
+      how many rounds of community-wide treatment are needed, or when a district
+      can safely stop — which is the difference between a programme with an end
+      and a programme without one.
+      Behind them sits the emerging azithromycin resistance, which if it spreads
+      returns the programme to injections and undoes the logistical advance that
+      made the third attempt possible.
+      `scale: null`. What is wanted is longitudinal serological and molecular
+      study of treated communities, which is research rather than procurement.
+    who_could: [academic, sponsor, nonprofit, philanthropy]
+    scale: null
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0034
+  rated: 2026-08-22
+  by: [claude, jeremy]

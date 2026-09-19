@@ -1,0 +1,660 @@
+slug: obesity
+id: FND-D-0085
+name: obesity
+also: [obesity disorder, adiposity, clinical obesity, preclinical obesity]
+mondo: MONDO:0011122
+kind: disease
+residual: false
+contested: true
+
+# THE RECORD WHERE THE FIELD SOLVED gaps.md #179 BEFORE THE REGISTER HAD A NAME
+# FOR IT.
+#
+# #179 was written one record ago, at `hypertension`, and said: some entities are
+# risk factors rather than diseases, every field in this schema assumes a disease,
+# and the fix is a `kind` value that makes the downstream fields behave
+# differently. It named obesity as the next case.
+#
+# In January 2025 a Lancet Diabetes & Endocrinology Commission proposed exactly
+# that split — **clinical obesity** (excess adiposity WITH organ dysfunction or
+# limitation of daily activities: a disease) versus **preclinical obesity** (excess
+# adiposity with preserved function: a risk state). It also concluded that BMI
+# should not be used alone to diagnose either.
+#
+# This record's `strata` are that split. The register did not need to invent the
+# distinction; it needed to notice that the field had already made it.
+
+burden:
+  prevalence:
+    value: 8.9e8
+    units: >
+      adults living with obesity worldwide — **plus roughly 160 million children
+      and adolescents, a fourfold rise since 1990** — and the total crossed a
+      billion people in 2022
+    src: recall
+  deaths:
+    value: 5.0e6
+    units: >
+      deaths/year attributable to high body mass index — **and as in
+      `hypertension`, effectively none of them is recorded as obesity.** They are
+      ischaemic heart disease, stroke, type 2 diabetes, kidney disease and a dozen
+      cancers
+    src: recall
+  note: >
+    **PREVALENCE ROUGHLY TRIPLED SINCE THE 1970s AND THE HUMAN GENOME DID NOT
+    CHANGE.** That single observation is the strongest argument in this record and
+    it points the whole file away from individual behaviour and towards the food
+    environment: whatever happened, happened to everybody at once, over about two
+    generations, in almost every country.
+    **AND THE COUNT DEPENDS ON A CUT-POINT WITH AN ETHNICITY TERM IN IT.** Obesity
+    is conventionally BMI ≥30, and the World Health Organization recommends lower
+    action points — around 23 and 27.5 — for Asian populations, because
+    cardiometabolic risk appears at lower BMI where body composition differs. So
+    the same body is obese in Delhi and overweight in Copenhagen, and unlike the
+    kidney equation's race coefficient **this correction was kept, deliberately,
+    because removing it would under-treat the people it applies to** (gaps.md
+    #175, amended).
+
+survival:
+  horizon: 20 years from class III obesity at age 40
+  untreated:
+    value: 0.8
+    units: >
+      fraction alive — a body mass index above 40 in middle age is associated with
+      roughly eight to ten years of lost life expectancy, through diabetes,
+      cardiovascular disease and several cancers. **An exposure, not a disease
+      course** — see the caveat on `hypertension`
+    src: reasoning
+  treated:
+    value: 0.88
+    units: >
+      fraction alive after effective treatment — **bariatric surgery is the only
+      intervention with long-term mortality data**, showing roughly a 30%
+      relative reduction in all-cause death in the Swedish Obese Subjects
+      cohort. GLP-1 receptor agonists reduce cardiovascular events; their
+      mortality effect is not yet established over this horizon
+    src: reasoning
+  witness: >
+    **The treated figure describes an intervention almost nobody receives.**
+    Bariatric surgery reaches a fraction of one percent of eligible people, and
+    the drugs that might replace it are priced beyond the populations with the
+    highest prevalence. **This row measures what is possible, and this record's
+    `access` axis measures what happens.**
+
+axes:
+  mechanism: established
+  intervention: suppressive
+  prevention: risk-reduction
+  ongoing: moderate
+  efficacy:
+    value: 0.75
+    units: >
+      fraction-of-patients (achieving clinically meaningful and maintained weight
+      reduction on current pharmacotherapy or surgery) — **while the treatment
+      continues**, which is the whole of this record's `intervention` rating
+    src: reasoning
+  access:
+    value: 0.08
+    units: >
+      fraction-of-patients (receiving pharmacotherapy or metabolic surgery) — a
+      drug costing on the order of a thousand dollars a month, an operation used
+      by one or two percent of eligible people, and **a statutory coverage
+      exclusion in the largest public payer in the world**
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: partial
+  witness: >
+    **DIAGNOSTIC IS `objective` AND THE INSTRUMENT IS A NINETEENTH-CENTURY
+    POPULATION STATISTIC BEING USED ON INDIVIDUALS.**
+    Body mass index is weight over height squared. It was devised by Quetelet in
+    the 1830s as a way of describing *populations*, and he said so. It does not
+    distinguish fat from muscle, says nothing about where the fat is — visceral
+    adiposity carries the metabolic risk and subcutaneous much less — and
+    misclassifies muscular people as obese and sarcopenic people as healthy.
+    **The 2025 Commission's central recommendation was to stop using it alone**:
+    confirm excess adiposity with a second measure — waist circumference,
+    waist-to-height ratio, or direct body composition — and then determine whether
+    organ function is affected.
+    **AND THE THRESHOLD CARRIES AN ETHNICITY TERM THAT IS CORRECT.** Lower action
+    points for Asian populations exist because the same BMI corresponds to more
+    visceral fat and higher cardiometabolic risk. The kidney equation's race
+    coefficient (gaps.md #175) delayed care for the group it applied to and was
+    removed in 2021; **this one brings care forward and is retained.** Same
+    structural feature, opposite verdict, and the distinguishing question is
+    whether the term tracks something measurable and which way it moves treatment.
+    PROGNOSTIC is `partial`. BMI predicts population risk well and individual
+    trajectory poorly. **"Metabolically healthy obesity" is real, measurable, and
+    frequently transient** — a substantial share convert to metabolically unhealthy
+    over a decade — which is precisely the ambiguity the preclinical/clinical
+    split was designed to handle.
+    PREDICTIVE is `partial`. Response to GLP-1 receptor agonists varies several-fold
+    between individuals and nothing predicts it; a meaningful minority are
+    non-responders and find out after months of injections.
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    **THIS RECORD HAS THE WORST DRUG-SAFETY HISTORY IN THE REGISTER AND IT IS WHY
+    THE CURRENT EVIDENCE MATTERED SO MUCH.**
+    Fenfluramine-phentermine was withdrawn in 1997 after causing valvular heart
+    disease. Sibutramine was withdrawn in 2010 for cardiovascular events.
+    Rimonabant was withdrawn for psychiatric harm including suicidality. Before
+    them, amphetamines and thyroid extract. **Every previous generation of weight
+    drugs was withdrawn**, which is the context in which a 2023 trial showing a 20%
+    reduction in cardiovascular events should be read: it is the first time the
+    class has been shown to prevent something rather than merely to work.
+    **The current drugs.** Gastrointestinal effects are near-universal and lead a
+    meaningful minority to stop; gallstones increase with rapid loss; pancreatitis
+    is rare. **Roughly a quarter to two-fifths of the weight lost is lean tissue**,
+    which matters most in older patients and is the subject of active concern
+    rather than settled evidence.
+    **Metabolic surgery** rearranges the gastrointestinal tract permanently:
+    lifelong micronutrient supplementation and monitoring, dumping syndrome,
+    revision surgery in a fraction, and **a documented increase in alcohol use
+    disorder and in self-harm after gastric bypass** — among the most
+    under-discussed findings in the field.
+    **And the largest imposition is not clinical.** Weight stigma is measurable in
+    employment, in education, in clinical encounters and in outcomes, and it
+    attaches to the condition rather than to any treatment (gaps.md #110).
+  incidence:
+    value: 0.05
+    units: >
+      fraction-of-treated (permanent harm — chiefly the nutritional and
+      psychiatric consequences of bariatric surgery) — a reasoned estimate
+      weighted to the surgical route
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    **THE BODY REMEMBERS BEING HEAVY, AND SO DO THE JOINTS.**
+    **Adipocyte number is largely set by adolescence.** Fat cells turn over but
+    their total number stays approximately constant through adult life; weight
+    change alters cell *size*, not count. Somebody who was obese as a child carries
+    a permanently larger number of adipocytes, and that is part of why childhood
+    obesity predicts adult obesity so strongly and why the weight defended is
+    higher.
+    **Osteoarthritis does not reverse.** Cartilage lost to years of mechanical
+    load in the knees and hips stays lost; weight reduction slows progression and
+    relieves symptoms and does not restore the joint. `osteoarthritis` is queued
+    as its own record and a substantial share of it is generated here.
+    **Cardiac and vascular remodelling** partly regress and not wholly, and the
+    cardiometabolic risk of childhood obesity persists into adulthood after weight
+    normalises.
+    And after massive weight loss, redundant skin frequently requires
+    body-contouring surgery that many health systems classify as cosmetic and do
+    not fund — **a residue of the treatment, of the disease, and of a
+    reimbursement category, all at once.**
+  incidence:
+    value: 0.10
+    units: >
+      fraction-of-affected (permanent sequelae persisting after weight reduction —
+      chiefly osteoarthritis and childhood-established adiposity) — a reasoned
+      estimate
+    src: reasoning
+
+window:
+  what: >
+    **THE WINDOW IS CHILDHOOD, AND IT IS THE ONE PART OF THIS RECORD NOBODY IS
+    TREATING.**
+    Adipocyte number is established by adolescence and fixed thereafter. Childhood
+    obesity strongly predicts adult obesity, and the set point that adult treatment
+    must fight is partly laid down before adulthood begins. **Obesity in children
+    and adolescents has risen roughly fourfold since 1990**, which means the
+    population entering adulthood over the next two decades will be harder to treat
+    than the one being treated now.
+    That is a window measured in years, opening at birth and closing around
+    twenty, and almost nothing in this record's `intervention` block is licensed
+    or delivered inside it. GLP-1 receptor agonists have trial data in adolescents
+    and their long-term use in a growing body is genuinely unresolved. Bariatric
+    surgery in adolescents is done and is controversial. **The interventions with
+    the best evidence for the window are not medical at all** — school food, the
+    price and marketing of energy-dense food to children, and the built
+    environment.
+    **The second window is shorter and clinical.** Once organ dysfunction is
+    established — the Commission's clinical obesity — some of it reverses with
+    weight loss and some does not, which is the same threshold structure
+    `cirrhosis` records for fibrosis (gaps.md #176).
+  closes_on: >
+    establishment of adipocyte number and of a defended higher set point in
+    adolescence; and separately, the transition from preserved organ function to
+    established damage
+  caught_in_time:
+    value: 0.15
+    units: >
+      fraction-of-cases (addressed before adult obesity and organ dysfunction are
+      established) — a reasoned estimate, and low because essentially no health
+      system intervenes at population scale in childhood
+    src: reasoning
+
+strata:
+  - name: preclinical obesity
+    fraction:
+      value: 0.44
+      units: fraction-of-people-with-obesity
+      src: reasoning
+    intervention: none
+    efficacy:
+      value: 0.0
+      units: fraction-of-stratum (no disease treatment is indicated by default)
+      src: reasoning
+    toll: minor
+    what: >
+      **Excess adiposity with preserved organ function and no limitation of daily
+      activities.** Under the 2025 Commission's framework this is a **risk state,
+      not a disease**, and the recommended response is risk reduction, monitoring,
+      and individualised judgement — not disease treatment by default.
+      Rated `intervention: none` because that is what is indicated, and it is why
+      the record flags ⧉. **This is the stratum where the medicalisation argument
+      lives**: treating it as disease creates hundreds of millions of patients for
+      an indefinite drug, and refusing to treat it at all abandons people whose
+      risk is real and rising.
+
+  - name: clinical obesity
+    fraction:
+      value: 0.55
+      units: fraction-of-people-with-obesity
+      src: reasoning
+    intervention: suppressive
+    efficacy:
+      value: 0.80
+      units: fraction-of-stratum (meaningful weight reduction and organ improvement, while treated)
+      src: reasoning
+    toll: major
+    what: >
+      Excess adiposity **with** objective organ dysfunction or limitation of daily
+      activities — breathlessness, heart failure, sleep apnoea, joint disease,
+      metabolic derangement. **A disease by any reading**, and the stratum where
+      the current drugs and surgery have their evidence. Weight reduction here
+      improves organ function measurably, and stopping the treatment reverses it.
+
+  - name: monogenic and syndromic obesity
+    fraction:
+      value: 0.01
+      units: fraction-of-people-with-obesity
+      src: reasoning
+    intervention: disease-modifying
+    efficacy:
+      value: 0.60
+      units: fraction-of-stratum (substantial response to mechanism-specific therapy)
+      src: reasoning
+    toll: minor
+    what: >
+      Leptin deficiency, POMC and PCSK1 and leptin-receptor defects, MC4R
+      variants, Bardet-Biedl and Prader-Willi syndromes. Small, and it is the only
+      stratum where the mechanism is known in an individual patient —
+      **setmelanotide, a melanocortin-4 receptor agonist, treats several of these
+      specifically.** Congenital leptin deficiency remains the field's proof of
+      principle: a hormone replaced, and the hunger stops.
+
+moved:
+  - date: 1991
+    axis: intervention
+    from: none
+    to: suppressive
+    why: >
+      **BARIATRIC SURGERY BECAME LEGITIMATE MEDICINE, AND IT IS STILL THE MOST
+      EFFECTIVE THING IN THIS RECORD.**
+      A national consensus conference in 1991 established surgical treatment as
+      appropriate for severe obesity, ending a period in which it had been regarded
+      as a fringe and dangerous intervention. What followed — Roux-en-Y gastric
+      bypass, then sleeve gastrectomy — produces weight reduction on the order of
+      25-30% sustained for many years, along with remission of type 2 diabetes in a
+      large fraction and reduced long-term mortality in cohort studies.
+      **It reaches one or two percent of the people who qualify for it**, which is
+      gaps.md #174's problem — the better and more durable option losing to the
+      one that is easier to start.
+      **Note the rung.** Even surgery is `suppressive`, not `curative`: weight
+      regain occurs over years in a substantial minority, and the anatomy is
+      permanently altered with lifelong nutritional consequences.
+    src: recall
+
+  - date: 2021
+    axis: efficacy
+    from: 0.30
+    to: 0.60
+    why: >
+      **A DRUG PRODUCED SURGICAL-SCALE WEIGHT LOSS, WHICH NOBODY EXPECTED.**
+      Semaglutide at 2.4mg weekly produced around 15% weight reduction at 68 weeks
+      in its pivotal trial. Tirzepatide, a dual GIP and GLP-1 receptor agonist,
+      followed with around 21%. A triple agonist reported around 24% in mid-stage
+      trials. **The previous best pharmacological result was in the region of
+      3-5%**, and the field had largely concluded that drugs could not do this.
+      They work because they act on the regulatory system rather than against it —
+      gut hormones that signal satiety to the hypothalamus, applied continuously,
+      which lowers the defended set point instead of asking the patient to fight
+      it (see `witness.mechanism`, and gaps.md #181).
+      **And they stop working when you stop them.** One year after withdrawal in
+      the extension of the pivotal trial, participants had regained about two
+      thirds of the weight lost. That is not a failure of the drug. It is the
+      physiology doing what it does.
+    src: recall
+
+  - date: 2023
+    axis: efficacy
+    from: 0.60
+    to: 0.75
+    why: >
+      **THE FIRST OBESITY DRUG EVER SHOWN TO PREVENT SOMETHING, IN A FIELD WHOSE
+      ENTIRE PRIOR PHARMACOLOGY WAS WITHDRAWN FOR CAUSING THINGS.**
+      A trial of over seventeen thousand people with overweight or obesity and
+      cardiovascular disease **but without diabetes** found semaglutide reduced
+      major adverse cardiovascular events by about 20%. Subsequent trials in the
+      class have shown benefit in heart failure with preserved ejection fraction,
+      in chronic kidney disease, in obstructive sleep apnoea, and in metabolic
+      liver disease.
+      **That is what converted obesity from a cosmetic and moral question into a
+      treatable cardiovascular risk state in the eyes of payers**, and it is why
+      the statutory coverage exclusions described in the `policy` blocker below
+      are now under active challenge.
+      It also makes this record's benefit almost entirely a benefit in *other*
+      records — `ischaemic-heart-disease`, `stroke`, `chronic-kidney-disease`,
+      `cirrhosis`, `type-2-diabetes`, the queued `osteoarthritis` — which is
+      gaps.md #179's point restated as a trial result.
+    src: recall
+
+witness:
+  mechanism: >
+    `established`, and the established thing is the opposite of the folk model.
+    Body weight is **homeostatically regulated**. Adipose tissue signals its mass
+    to the hypothalamus through leptin; the gut signals meal state through ghrelin,
+    GLP-1, PYY and others; the arcuate nucleus integrates them and adjusts hunger,
+    satiety and energy expenditure to defend a set point. Heritability of body mass
+    index is high — commonly estimated between 40% and 70% — and rare monogenic
+    defects in this pathway produce extreme obesity from infancy, which is the
+    proof that the system is causal rather than descriptive.
+    **AND THE SYSTEM DEFENDS THE HIGHER WEIGHT AFTER LOSS, ACTIVELY AND FOR
+    YEARS.** After diet-induced weight reduction, ghrelin rises, leptin and PYY
+    fall, and hunger increases — and these changes persist at twelve months and
+    beyond rather than resolving. Resting energy expenditure falls **below what the
+    smaller body mass predicts**, an effect documented as persisting for six years
+    in one intensively studied cohort. So a person maintaining a reduced weight is
+    hungrier and burning less than someone of the same size who was never heavier.
+    **That is why weight regain is the norm, why the drugs must be continued, and
+    why the willpower framing is not merely unkind but mechanically wrong** — it
+    describes a person losing a contest with their own hypothalamus and attributes
+    the result to character (gaps.md #181, #110).
+    **THE NAMED HOLE IS WHY THE SET POINT ROSE ACROSS ENTIRE POPULATIONS.**
+    Prevalence roughly tripled since the 1970s with no genetic change. The leading
+    candidate is the food environment, and the best experimental evidence is a
+    metabolic-ward randomised trial in which people eating an ultra-processed diet
+    *ad libitum* consumed around five hundred more calories a day than on a matched
+    unprocessed diet and gained weight — **a controlled demonstration that food
+    processing itself drives overconsumption**, independent of nutrient content.
+    Sleep, endocrine disruptors, the microbiome and medication effects are all
+    proposed contributors and none is established at population scale.
+  contested: >
+    **IS OBESITY A DISEASE? THE DISPUTE IS FORMAL, THE PARTIES ARE NAMED, AND IT
+    HAS NOW BEEN PARTLY RESOLVED IN A WAY THIS REGISTER SHOULD RECORD** (gaps.md
+    #6, #179).
+    In 2013 the **American Medical Association** House of Delegates voted to
+    classify obesity as a disease — **against the recommendation of its own Council
+    on Science and Public Health**, which had advised that body mass index is too
+    crude a measure to define a disease state. The World Health Organization and
+    ICD-11 treat it as a disease.
+    The objections are substantive on both sides. Calling it a disease reduces
+    blame, unlocks reimbursement, and funds research. It also medicalises a
+    variation in body size, creates hundreds of millions of patients for an
+    indefinite drug, and rests on a threshold in a measure its own advocates say is
+    inadequate.
+    **In January 2025 a Lancet Diabetes & Endocrinology Commission proposed the
+    split this record's strata use**: *clinical obesity*, where excess adiposity has
+    produced organ dysfunction or limited daily activities, is a disease;
+    *preclinical obesity*, where function is preserved, is a risk state. It further
+    recommended that BMI not be used alone for either.
+    That is a serious attempt to end the argument by making the distinction the
+    argument was about, and **the register's own #179 proposes the same fix in the
+    same year, arrived at from the schema side.**
+  intervention: >
+    `suppressive`, and the rating is the record's most important single statement.
+    **GLP-1 receptor agonists and dual agonists** produce 15-21% weight reduction
+    and, in the class's outcome trials, reduce cardiovascular events, heart failure
+    hospitalisation, kidney disease progression and sleep apnoea severity.
+    **Metabolic surgery** produces 25-30% durably and remits type 2 diabetes in a
+    large fraction. **Behavioural and dietary programmes** produce 5-10% and it is
+    mostly regained.
+    **None of it is curative, and the reason is mechanical rather than a failure of
+    effort.** Stop the drug and roughly two thirds of the lost weight returns
+    within a year. Weight is defended: hunger rises, expenditure falls, and the
+    system pulls back toward the set point it learned. **The intervention cannot
+    be finite because the opposing process never stops** (gaps.md #181).
+    **AND THE CONTRAST WITH THE RECORD THREE FILES AGO IS EXACT.** Substantial
+    weight loss is `curative` for `type-2-diabetes` — remission, off all
+    medication, a finite intervention ending a disease — and `suppressive` for
+    obesity itself. **The same intervention holds different rungs in the upstream
+    and downstream records**, and nothing in the register can say that treating one
+    thing cures another (gaps.md #160).
+  prevention: >
+    `risk-reduction`, and the honest reading is that nothing in medicine is the
+    lever.
+    Prevalence tripled in two generations without genetic change. The interventions
+    with population-level evidence are **fiscal and regulatory**: taxes on
+    sugar-sweetened beverages, which reduce purchases where implemented;
+    restrictions on marketing energy-dense food to children; mandatory
+    reformulation; front-of-pack labelling; and school food standards. The
+    experimental evidence points specifically at **ultra-processed food** as a
+    driver of overconsumption independent of its nutrient profile.
+    These belong to finance, agriculture, trade, education and planning ministries.
+    The benefit is shared across this record, `type-2-diabetes`, `hypertension`,
+    `ischaemic-heart-disease`, `stroke`, `cirrhosis`, the queued `osteoarthritis`
+    and roughly thirteen cancers — **so no single record can justify the policy and
+    the register cannot sum it** (gaps.md #87, #53).
+    **AND THE CANCERS ARE NAMED HERE RATHER THAN COUNTED, BECAUSE COUNTING THEM
+    HID THEM.** Eight are records in this register: `uterine-cancer`, where the
+    association is the strongest of any malignancy and is causal on the strength
+    of the bariatric surgery evidence; `colorectal-cancer`; `liver-cancer`, where
+    metabolic disease is the fastest-rising cause; `pancreatic-cancer`;
+    `gastric-cancer` at the cardia; `renal-cell-carcinoma`; `breast-cancer` after
+    the menopause; and `thyroid-cancer`, where the association is weakest and is
+    entangled with the overdiagnosis that record is largely about. Oesophageal
+    adenocarcinoma, gallbladder, ovarian cancer and meningioma complete the
+    conventional list and have no record here.
+    **Three of those records name obesity as a cause and this one named none of
+    them back** — found by the cross-record check in `sqlite_probe.py`, which was
+    built after `hearing-loss` was found to have omitted congenital CMV in
+    exactly the same way (gaps.md #242, #243). A number is not a link, and
+    *"roughly thirteen cancers"* is the form an omission takes when it looks like
+    precision. `who_could` still has no
+    finance ministry, no food regulator and no education ministry.
+    **The window makes this urgent rather than merely important.** Childhood
+    obesity has risen roughly fourfold since 1990, adipocyte number is set in
+    adolescence, and the cohort now growing up will be harder to treat than the
+    one being treated.
+  ongoing: >
+    `moderate`. A weekly subcutaneous injection, indefinitely, with
+    gastrointestinal effects that are worst during dose escalation and settle for
+    most people. Post-surgery: lifelong micronutrient supplementation and
+    monitoring.
+    **The burden that the field is not discussing openly is the indefiniteness.**
+    These drugs work while taken, in a condition affecting a billion people, with
+    regain on stopping. That is either the largest chronic-therapy commitment in
+    the history of medicine or an argument for finding something that resets the
+    set point rather than continuously opposing it — and there is currently no
+    candidate for the second.
+
+holes:
+  - >
+    **THE STRATA FRACTIONS ARE THE WEAKEST NUMBERS IN THE FILE AND THE SPLIT IS
+    ONE YEAR OLD.** The 2025 Commission defined clinical and preclinical obesity
+    and did not quantify them, and published estimates of "metabolically healthy
+    obesity" — a narrower concept — range from about a tenth to about two fifths
+    depending on definition. The 44/55 split here is a reasoned placeholder for a
+    partition nobody has measured.
+  - >
+    **`kind: disease` is asserted and the record's own `contested` witness argues
+    it is only half true.** Under the Commission's framework the preclinical
+    stratum is not a disease, which is gaps.md #179's problem showing through the
+    one field that cannot express it.
+  - >
+    **`intervention: none` for preclinical obesity will read as neglect and is
+    the Commission's position**, not the register's editorialising. It means no
+    disease treatment is indicated by default, not that nothing should be done.
+  - >
+    `access: 0.08` describes pharmacotherapy and surgery. Behavioural programmes
+    reach more people and produce 5-10% loss that is mostly regained, so counting
+    them would raise the number and lower what it means.
+  - >
+    **The deaths figure is entirely attributed and entirely double-counted** against
+    `ischaemic-heart-disease`, `stroke`, `type-2-diabetes`,
+    `chronic-kidney-disease`, `cirrhosis` and the cancers (gaps.md #147, #160).
+  - >
+    Every scalar is `recall` or `reasoning`, against a field with very large recent
+    randomised trials whose numbers are public.
+
+blockers:
+  - kind: cost
+    blocks: a thousand dollars a month, for a billion people, indefinitely
+    obstacles: []
+    what: >
+      **THE ARITHMETIC DOES NOT WORK AND EVERYBODY KNOWS IT.**
+      List prices for the effective agents run around a thousand dollars a month in
+      the United States, lower elsewhere, and the treatment does not end. Roughly
+      890 million adults have obesity. **No health system on earth can fund
+      indefinite therapy at that price for that denominator**, and the
+      cost-effectiveness question is genuinely different from any other drug in this
+      register because the eligible population is a substantial fraction of all
+      adults.
+      Three things are moving it. **Competition** — several agents now, more in
+      late-stage trials, and an oral small-molecule agonist would change
+      manufacturing economics entirely, since peptide supply constraints produced
+      real shortages between 2022 and 2024. **Patent expiry**, beginning for
+      semaglutide in some jurisdictions in the coming years. And **negotiated
+      pricing**, with the first agreements substantially below list.
+      **The distributional point is the sharp one.** Obesity prevalence is highest
+      in the most deprived populations in most high-income countries, and a
+      thousand-dollar-a-month drug will reach the least deprived first. **A
+      treatment that works and is priced this way widens the gap it was meant to
+      close**, and this register has no field that records an intervention making
+      an inequality worse.
+    who_could: [manufacturer, payer, government, regulator, legislator]
+    scale: 1.0e11
+    standing: documented
+    src: recall
+
+  - kind: policy
+    blocks: the food environment that produced the epidemic
+    obstacles: []
+    what: >
+      **PREVALENCE TRIPLED IN TWO GENERATIONS AND THE GENOME DID NOT CHANGE.**
+      Whatever caused that happened to whole populations at once, and the leading
+      account is the availability, price, formulation and marketing of
+      energy-dense, ultra-processed food. **The strongest experimental evidence is
+      a metabolic-ward randomised trial** in which people eating an ultra-processed
+      diet freely consumed around five hundred more calories a day than on a
+      matched unprocessed diet, and gained weight — a controlled demonstration that
+      processing itself drives overconsumption.
+      The policy instruments with population evidence are fiscal and regulatory:
+      beverage taxation, marketing restrictions to children, mandatory
+      reformulation, labelling, school food standards. They sit in finance,
+      agriculture, trade and education, and they are opposed by a well-resourced
+      industry — documented behaviour, not a conspiracy claim.
+      **And the benefit is shared so widely that no record can claim it**: this one,
+      `type-2-diabetes`, `hypertension`, `ischaemic-heart-disease`, `stroke`,
+      `cirrhosis`, the queued `osteoarthritis`, and the thirteen cancers named
+      in the prevention witness — eight of which are records here
+      (gaps.md #87, #53).
+      **The urgent part is the children.** Adolescent obesity has risen roughly
+      fourfold since 1990 and adipocyte number is set before adulthood, so this
+      blocker is also the only intervention that acts inside the record's `window`.
+    who_could: [government, legislator, regulator, payer, nonprofit]
+    scale: 5.0e10
+    standing: documented
+    src: recall
+
+  - kind: policy
+    blocks: coverage excluded by category rather than assessed on evidence
+    obstacles: []
+    what: >
+      **THE LARGEST PUBLIC DRUG BENEFIT IN THE WORLD EXCLUDED WEIGHT-LOSS AGENTS
+      BY STATUTE, WRITTEN INTO LAW IN 2003, TWO DECADES BEFORE THE DRUGS WORKED.**
+      United States Medicare's prescription benefit carries a categorical statutory
+      exclusion of agents used for weight loss — not a coverage decision made on
+      evidence, and not revisable by the agency on evidence, but a legislated
+      carve-out naming an indication. Many private and employer plans exclude
+      obesity treatment similarly.
+      **This is gaps.md #110's third operational case, and it is the widest.**
+      `lung-cancer` showed blame as diffuse under-funding. `cirrhosis` showed it as
+      a written transplant eligibility rule applied per patient. **Here it is
+      primary legislation excluding an entire indication**, resting on a
+      long-standing view of obesity as a lifestyle matter rather than a disease —
+      which is the argument in `witness.contested`, decided by a legislature in
+      advance and left in place while the evidence changed underneath it.
+      The 2023 cardiovascular outcome trial is what put it under challenge, because
+      an agent that prevents heart attacks is difficult to classify as a weight-loss
+      drug. Coverage under the cardiovascular indication has begun to open, which
+      is a revealing route: **the drug became payable when it stopped being about
+      the weight.**
+      Rated `documented`: the statute, the exclusions and the outcome trial are all
+      matters of record.
+    who_could: [legislator, payer, government, regulator]
+    scale: 2.0e9
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: any way to lower the set point rather than continuously oppose it
+    obstacles: []
+    what: >
+      **EVERY EFFECTIVE TREATMENT IN THIS RECORD WORKS ONLY WHILE IT IS BEING
+      GIVEN, BECAUSE THE PHYSIOLOGY PUSHES BACK FOR YEARS.**
+      After weight reduction, ghrelin rises, leptin and PYY fall, hunger increases,
+      and resting energy expenditure drops below what the reduced body mass
+      predicts — changes documented as persisting for at least a year after diet-
+      induced loss and for six years in one intensively followed cohort. Two thirds
+      of lost weight returns within a year of stopping a GLP-1 agonist.
+      **So the open question is not how to lose weight. It is how to make the body
+      accept the new weight**, and nothing in development targets that directly.
+      The drugs work by continuously supplying a satiety signal; they do not reset
+      the reference point they are arguing with.
+      What would answer it: what encodes the set point and where; why it ratchets
+      upward and essentially never downward; whether the ratchet is developmental,
+      epigenetic or neural; and whether it can be moved deliberately. **Congenital
+      leptin deficiency is the field's proof that this system is addressable** —
+      replace the hormone and the hunger stops — and it applies to a handful of
+      people worldwide.
+      **A treatment that reset the set point would convert this record from
+      `suppressive` to `curative` and would remove the cost blocker above at the
+      same time**, since the therapy would end. It is the highest-value unanswered
+      question in the file and it has no Engpass obstacle.
+      `scale: null`.
+    who_could: [academic, sponsor, manufacturer, philanthropy]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: the more durable option reaching one or two percent of eligible people
+    obstacles: []
+    what: >
+      **METABOLIC SURGERY PRODUCES MORE WEIGHT LOSS, MORE DURABLY, AND IS CHEAPER
+      OVER A DECADE THAN INDEFINITE PHARMACOTHERAPY — AND ONE TO TWO PERCENT OF
+      ELIGIBLE PEOPLE RECEIVE IT.**
+      The constraints are capacity and referral rather than evidence: bariatric
+      surgeons, theatre time, multidisciplinary preoperative assessment, and
+      lifelong follow-up for nutritional monitoring. Referral rates are low even
+      where the operation is funded, and the reasons documented include clinician
+      reluctance, patient fear, and a persistent view of surgery as a failure of
+      willpower rather than a treatment.
+      **This is gaps.md #174 exactly** — the register's `access` field records
+      whether an intervention was obtained and cannot record that the better and
+      more durable one was not offered. `chronic-kidney-disease` had the same shape
+      with transplant against dialysis, and the same incentive geometry: **an
+      operation is a one-time cost and a weekly injection is an annuity** (gaps.md
+      #124).
+      Preoperative requirements are their own barrier — some programmes require
+      documented supervised weight loss before surgery, a criterion with weak
+      evidence and an obvious resemblance to `cirrhosis`'s abstinence rule.
+    who_could: [health-system, payer, government, academic]
+    scale: 1.0e10
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0086
+  rated: 2026-08-25
+  by: [claude, jeremy]

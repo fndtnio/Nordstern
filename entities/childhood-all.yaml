@@ -1,0 +1,536 @@
+slug: childhood-all
+id: FND-D-0055
+name: childhood acute lymphoblastic leukaemia
+also: [childhood ALL, acute lymphoblastic leukemia of childhood, childhood acute lymphocytic leukaemia]
+common: childhood leukaemia
+mondo: MONDO:0000870
+kind: disease
+residual: false
+contested: false
+
+# UNIFORMLY FATAL IN 1948. ABOUT NINETY PERCENT CURED NOW.
+#
+# It is the largest capability change in this register and the only one that goes
+# from nothing to nearly everything. And **it was not a discovery.**
+#
+# There was no breakthrough drug. Almost every agent used is old and generic —
+# vincristine, a corticosteroid, asparaginase, methotrexate, mercaptopurine, an
+# anthracycline. What produced the cure was combination therapy, prophylaxis of a
+# sanctuary site, risk stratification, and **fifty years of successive
+# cooperative-group randomised trials, each adding a few percentage points**,
+# with a majority of affected children enrolled in one.
+#
+# **CHILDHOOD ALL IS A PROCESS THAT SOLVED A DISEASE**, which is the thing this
+# project says it wants to build — and the register can record the before, the
+# after, and none of the how. gaps.md #120.
+#
+# AND THE BILL IS STILL ARRIVING. A child cured at five carries the treatment for
+# sixty years: anthracycline cardiomyopathy appearing in the fourth decade,
+# cognitive impairment from cranial irradiation given to a generation now in
+# middle age, second cancers, endocrine failure. Around two thirds of childhood
+# cancer survivors have a chronic health condition by their forties and a quarter
+# have a severe one.
+#
+# **THE CURE WAS DECLARED AT FIVE YEARS AND THE PRICE IS BEING DISCOVERED AT
+# FORTY.** gaps.md #121.
+
+burden:
+  prevalence:
+    value: 6.0e4
+    units: >
+      new cases/year worldwide in children — the most common childhood cancer,
+      roughly a quarter to a third of all cancer in children, and the figure is
+      soft because childhood cancer is substantially under-diagnosed where
+      survival is worst
+    src: recall
+  deaths:
+    value: 2.5e4
+    units: >
+      deaths/year — and the number is almost entirely a statement about where the
+      child lives. In high-income countries roughly one child in ten dies of
+      this. Across much of the world it is closer to half
+    src: reasoning
+  note: >
+    **NINETY PERCENT IS A HIGH-INCOME NUMBER**, and repeating it without that
+    qualifier is the single most misleading thing anybody says about this
+    disease.
+    Survival in low-income settings has been reported anywhere from a fifth to a
+    half, and the reasons are almost entirely not oncological: death from
+    infection during induction because there is no blood product support or
+    intensive care, malnutrition, delayed presentation, and **treatment
+    abandonment** — families who stop coming because the protocol runs for two
+    and a half years and they cannot sustain being there.
+    The drugs are cheap and off patent. What is expensive is the two years of
+    supportive care around them.
+    Age matters as much as geography. Cure rates fall through adolescence into
+    adulthood, and **adolescents and young adults treated on paediatric protocols
+    do substantially better than those treated on adult ones** — same disease,
+    same age, different department. See gaps.md #122.
+
+survival:
+  horizon: 5 years from diagnosis
+  untreated:
+    value: 0.0
+    units: >
+      fraction alive — **before 1948, acute lymphoblastic leukaemia in a child was
+      uniformly and rapidly fatal**, measured in weeks to months
+    src: recall
+  treated:
+    value: 0.90
+    units: >
+      fraction alive at five years in high-income settings on modern risk-adapted
+      protocols. **Far lower where those protocols cannot be delivered**, which is
+      this record's `access` figure rather than its biology
+    src: recall
+  witness: >
+    **THE MOST DRAMATIC NUMBER IN THE REGISTER, AND IT TOOK FIFTY YEARS.** Farber's
+    1948 remissions were temporary and every child still died; combination
+    chemotherapy and CNS-directed treatment through the 1960s and 70s converted
+    that into cure. **No single discovery did it** — it was a sequence of
+    protocols each adding a few percent, which is a shape `moved` records well and
+    the popular history of medicine does not.
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: none
+  ongoing: moderate
+  efficacy:
+    value: 0.90
+    units: >
+      fraction-of-patients (alive and disease-free at five years on modern
+      risk-adapted therapy) — best-demonstrated, which here means a
+      well-resourced paediatric oncology centre running a cooperative-group
+      protocol
+    src: recall
+  access:
+    value: 0.35
+    units: >
+      fraction-of-patients (reaching a centre able to deliver two and a half
+      years of protocol therapy with the supportive care it requires) — the
+      binding item is not the drugs, which are generic and cheap, but the blood
+      bank, the antibiotics, the intensive care and the family's ability to stay
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: good
+  predictive: good
+  witness: >
+    **THE BEST-MEASURED RECORD IN THIS REGISTER**, and that is not a coincidence
+    — risk-adapted therapy was invented here.
+    DIAGNOSTIC is `objective` and unambiguous: morphology, flow cytometry
+    immunophenotyping, cytogenetics and molecular testing. A diagnosis takes days
+    and is not in doubt.
+    PROGNOSTIC is `good`, which almost nothing else in this corpus earns. Age,
+    presenting white cell count and cytogenetics stratify at diagnosis — hyperdiploidy
+    and *ETV6-RUNX1* favourable, *KMT2A* rearrangement and hypodiploidy poor.
+    And then **minimal residual disease after induction**, measured by flow
+    cytometry or molecular methods to a sensitivity of one leukaemic cell in ten
+    thousand or better, predicts relapse better than any baseline feature. **It
+    is among the strongest prognostic markers in all of oncology.**
+    PREDICTIVE is `good`, and it follows directly. MRD does not merely predict —
+    **it directs**: children clearing early are de-escalated, children with
+    persistent disease are intensified or taken to transplant. *BCR-ABL1*-positive
+    disease gets a tyrosine kinase inhibitor added, which transformed the worst
+    cytogenetic group. CD19 and CD22 expression select blinatumomab, inotuzumab
+    and CAR-T at relapse.
+    **This is the register's thesis in its purest form.** No new drug produced
+    the last twenty points of survival; measuring the residual disease and
+    changing the dose did. Prostate cancer's active surveillance is the same
+    move made a decade later in a different organ.
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    **A CHILD CURED AT FIVE CARRIES THE TREATMENT FOR SIXTY YEARS, AND THE BILL
+    ARRIVES IN INSTALMENTS NOBODY CAN PREDICT.**
+    Around two thirds of childhood cancer survivors have at least one chronic
+    health condition by their forties, and roughly a quarter have a severe,
+    disabling or life-threatening one. That is the headline of the survivorship
+    literature and it belongs in this field rather than in a footnote.
+    **ANTHRACYCLINE CARDIOMYOPATHY** is the emblem: dose-dependent, frequently
+    silent for twenty or thirty years, and then heart failure in a
+    thirty-five-year-old who was cured of leukaemia as a child.
+    **CRANIAL IRRADIATION** was given to nearly every child for CNS prophylaxis
+    from the 1970s, and it produced cognitive impairment, growth hormone
+    deficiency, short stature, obesity and second brain tumours. It has largely
+    been replaced by intrathecal chemotherapy — **which is a large toll
+    reduction that moved no axis** (gaps.md #26) — but a generation of survivors
+    now in middle age carries it, and the register cannot express that a toll
+    applies to a cohort rather than to a disease.
+    **SECOND MALIGNANCIES**, from alkylating agents, topoisomerase inhibitors and
+    radiation. **OSTEONECROSIS** from prolonged corticosteroids, which in
+    adolescents can mean joint replacement in the twenties. **Peripheral
+    neuropathy** from vincristine. Endocrine and metabolic consequences.
+    Infertility in the subset receiving alkylators or transplant.
+    And two and a half years of treatment in a small child: lines, admissions,
+    infections, missed school, a family reorganised around a hospital.
+  incidence:
+    value: 0.55
+    units: >
+      fraction-of-survivors (at least one permanent treatment-attributable
+      health condition by middle age) — drawn from long-term survivorship cohort
+      findings; the severe or life-threatening fraction is roughly half of that
+      again
+    src: recall
+
+# NO `residue` BLOCK, AND `restored` THEREFORE DERIVES `cure-costs` — WHICH IS
+# THE HARSHEST INSTANCE IN THE REGISTER.
+#
+# The leukaemia itself leaves nothing in a child who is cured; it is a disease of
+# circulating cells and it goes away. **Every permanent consequence in this
+# record was inflicted by the treatment**, on a five-year-old, to save their life,
+# and correctly.
+#
+# Lung, prostate, colorectal, cervical and breast cancer derive the same value.
+# None of them means it like this: those are adults trading an organ for a cure.
+# This is a child trading sixty years of cardiac and cognitive risk for the
+# eighty years they would not otherwise have had.
+
+# NO `window` BLOCK EITHER, AND IT IS THE FIRST CANCER IN THE REGISTER WITHOUT
+# ONE.
+#
+# Every solid tumour here has a stage window: localised is curable, metastatic is
+# not, and getting there earlier is the whole game. Leukaemia is disseminated at
+# the moment it exists — there is no early stage to catch.
+#
+# More striking: **time from symptom onset to diagnosis does not reliably predict
+# outcome in childhood ALL**, and some series find the relationship runs the wrong
+# way, because the most aggressive disease declares itself fastest. That is the
+# exact opposite of every window record in this corpus, and it is worth stating
+# rather than leaving as an empty field.
+
+strata:
+  - name: standard-risk B-ALL
+    fraction:
+      value: 0.55
+      units: fraction-of-diagnoses
+      src: recall
+    intervention: curative
+    efficacy:
+      value: 0.95
+      units: fraction-of-stratum (event-free survival at five years)
+      src: recall
+    toll: major
+    what: >
+      Favourable age, low presenting count, favourable cytogenetics, and rapid
+      MRD clearance. Cure is the overwhelming expectation, and **the work in this
+      stratum is now de-escalation** — giving less anthracycline, less steroid,
+      less of everything, because the toll in `toll` is the whole of what is left
+      to improve.
+
+  - name: high-risk B-ALL
+    fraction:
+      value: 0.22
+      units: fraction-of-diagnoses
+      src: recall
+    intervention: curative
+    efficacy:
+      value: 0.75
+      units: fraction-of-stratum (event-free survival at five years)
+      src: reasoning
+    toll: major
+    what: >
+      Poor cytogenetics, high presenting count, or persistent MRD after
+      induction. Intensified chemotherapy, immunotherapy, and transplant for the
+      worst. **`BCR-ABL1`-positive disease used to be the worst group in this
+      record and a tyrosine kinase inhibitor moved it into this one** — the only
+      place in childhood ALL where a targeted drug changed a stratum's fate.
+
+  - name: T-cell ALL
+    fraction:
+      value: 0.15
+      units: fraction-of-diagnoses
+      src: recall
+    intervention: curative
+    efficacy:
+      value: 0.85
+      units: fraction-of-stratum (event-free survival at five years)
+      src: reasoning
+    toll: major
+    what: >
+      A biologically distinct disease that presents differently — older children,
+      often a mediastinal mass, higher white counts — and was historically much
+      worse. Intensified regimens and the addition of nelarabine closed most of
+      the gap.
+
+  - name: infant ALL (KMT2A-rearranged, under one year)
+    fraction:
+      value: 0.03
+      units: fraction-of-diagnoses
+      src: recall
+    intervention: curative
+    efficacy:
+      value: 0.45
+      units: fraction-of-stratum (event-free survival at five years)
+      src: reasoning
+    toll: major
+    what: >
+      **THE STRATUM FIFTY YEARS OF TRIALS DID NOT REACH.** Leukaemia in the first
+      year of life, almost always carrying a *KMT2A* rearrangement, arising from
+      a lesion that occurred **in utero** — the initiating event is prenatal and
+      is sometimes demonstrable on the newborn blood spot.
+      Survival is under half and has moved little. Adding blinatumomab to infant
+      protocols is the first substantial improvement in decades. Every other
+      stratum here is a success story; this one is a frontier, and it is three
+      percent of the record.
+
+  - name: relapsed or refractory
+    fraction:
+      value: 0.05
+      units: fraction-of-diagnoses
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.50
+      units: fraction-of-stratum (long-term survival after salvage)
+      src: reasoning
+    toll: major
+    what: >
+      Salvage chemotherapy, blinatumomab or inotuzumab, CD19 CAR-T, and
+      allogeneic transplant. **CAR-T produces durable remissions in children who
+      had exhausted everything**, and whether it is a cure or a very long
+      remission is exactly the question gaps.md #118 raises about melanoma.
+      The toll here is the register's heaviest: transplant means graft-versus-host
+      disease, infertility and lifelong immune consequences, in a child.
+
+moved:
+  - date: 1948
+    axis: intervention
+    from: none
+    to: symptomatic
+    why: >
+      Sidney Farber gave aminopterin, a folate antagonist, to children with acute
+      leukaemia and produced **temporary remissions in a disease that had never
+      remitted at all.** Every child relapsed and died.
+      It is the founding event of cancer chemotherapy, and by this register's
+      ladder it is `symptomatic`: the phenotype was masked and the course was
+      unchanged. **That rating is correct and it undersells the moment**, because
+      what it demonstrated was that the disease was chemically reachable at all.
+    src:
+      id: PMID:16803563 doi:10.1111/j.1365-2141.2006.06119.x
+      retrieved: 2026-08-26
+      quote: >
+        Sidney Farber, world-renowned paediatric pathologist, made major
+        contributions to his field but is acknowledged as the father of the modern
+        era of chemotherapy. He recognised that folic acid stimulated leukaemic
+        cell growth and enhanced disease progression.
+
+  - date: 1970
+    axis: intervention
+    from: symptomatic
+    to: curative
+    why: >
+      **THE TOTAL THERAPY STUDIES, AND THE TWO IDEAS THAT MADE LEUKAEMIA
+      CURABLE.**
+      First, **combination chemotherapy** — several agents with different
+      mechanisms given together, so the clone could not escape by resisting one.
+      Second, **prophylaxis of the central nervous system**, initially by cranial
+      irradiation. Before it, children went into remission and then relapsed in
+      the brain, because the drugs did not get there. Treating a sanctuary site
+      in patients with no evidence of disease in it was not an obvious thing to
+      do, and it is what converted remission into cure.
+      Cure rates went from essentially zero to roughly half within a decade.
+      **Neither idea was a new drug.**
+
+  - date: 2000
+    axis: efficacy
+    from: 0.7
+    to: 0.9
+    why: >
+      **MEASUREMENT, NOT MEDICINE.** Minimal residual disease quantification
+      after induction, at a sensitivity of one cell in ten thousand or better,
+      made it possible to sort children by how their disease was actually
+      responding rather than by how it looked at diagnosis.
+      Children clearing rapidly were de-escalated; children with persistent
+      disease were intensified or taken to transplant. Survival rose and, for the
+      largest stratum, the toll fell at the same time.
+      The date marks an arc across the 1990s and 2000s. **No agent in the
+      backbone changed.** This is the register's clearest demonstration that
+      measuring better and treating better are substitutes, and it happened a
+      decade before prostate cancer's active surveillance made the same move.
+
+witness:
+  mechanism: >
+    `established` for the leukaemia and **thin to the point of embarrassment for
+    what causes it.**
+    ALL is a clonal expansion of arrested lymphoid precursors. The genetics are
+    well mapped and clinically load-bearing: hyperdiploidy and *ETV6-RUNX1*
+    define the most curable group; *KMT2A* rearrangements define infant disease
+    and the worst; *BCR-ABL1* was the poorest cytogenetic group until a tyrosine
+    kinase inhibitor was added to the backbone; Ph-like ALL was defined by
+    expression profiling and carries kinase fusions that are in principle
+    targetable.
+    **AETIOLOGY IS ANOTHER MATTER ENTIRELY.** Ionising radiation and a few
+    genetic syndromes account for a small fraction. For the great majority
+    nothing is known. The leading account is a two-hit model: a **prenatal
+    initiating lesion** — demonstrable on stored newborn blood spots in some
+    children, and present in far more newborns than ever develop leukaemia — plus
+    a second event, hypothesised to be an abnormal immune response to a common
+    infection encountered late because early-life microbial exposure was
+    unusually low. It is a serious hypothesis with real supporting epidemiology
+    and it is not established.
+    **THE CONSEQUENCE IS `prevention: none`**, in a disease of small children
+    that is otherwise the register's greatest success. Nobody can tell a parent
+    how to avoid it because nobody knows.
+  intervention: >
+    `curative`, and the way it became curative is the most interesting thing in
+    this record.
+    Modern therapy is two to two and a half years: induction, consolidation, CNS
+    prophylaxis with intrathecal chemotherapy, delayed intensification, and a
+    long maintenance phase of daily oral mercaptopurine and weekly methotrexate.
+    Almost every drug in it predates 1980.
+    **THERE WAS NO BREAKTHROUGH.** The gains came from combination, from treating
+    a sanctuary site, from risk stratification, and from **a fifty-year sequence
+    of cooperative-group randomised trials in which the majority of affected
+    children were enrolled** — each testing a modification, each adding a few
+    points, each generation's standard arm being the previous generation's
+    experimental one.
+    That model is now the template for paediatric oncology, and it is the thing
+    this register cannot describe. `moved` records that the rating changed;
+    nothing records **that it changed by iteration rather than by discovery**,
+    which is a different fact about the world and a more useful one for anybody
+    trying to repeat it. See gaps.md #120.
+  prevention: >
+    `none`, honestly rather than for want of looking. Nothing is known to prevent
+    childhood ALL, because nothing is reliably known to cause it.
+    The delayed-infection hypothesis, if it holds, would imply that early
+    microbial exposure is protective — which is a claim about how children are
+    raised rather than about a medical intervention, and which nobody could
+    responsibly act on at its current standard of evidence.
+    Third record in this register with `prevention: none` alongside prostate
+    cancer and pleomorphic adenoma, and the only one where that is the most
+    important sentence in the file: **a disease of two- to five-year-olds that
+    cannot be prevented, cannot be screened for, and has no window.** Everything
+    this record achieves, it achieves after the child is already ill.
+  ongoing: >
+    `moderate`, and the axis is measuring the wrong thing for a child.
+    Two and a half years of protocol therapy is finite, which is why it is not
+    `high` — but for a four-year-old it is most of remembered life, and it means
+    central lines, neutropenic admissions, steroid weeks, missed school and a
+    family reorganised around a hospital.
+    **And then it never quite ends.** Survivorship care is lifelong:
+    echocardiograms for anthracycline exposure, endocrine and growth monitoring,
+    second-cancer surveillance, and for the irradiated generation, neurocognitive
+    support. `ongoing` measures the cost of being treated; most of what this
+    disease costs a person happens after treatment stops and is recorded in
+    `toll`.
+
+holes:
+  - The global survival figures are the weakest numbers here. Registration is
+    poor where survival is worst, so the deaths estimate compounds an uncertain
+    incidence with an uncertain case fatality.
+  - `toll.incidence: 0.55` is drawn from long-term survivorship cohorts that
+    largely describe people treated in earlier eras, with more cranial
+    irradiation and more anthracycline than a child would receive today. **The
+    number describes the price of a cure delivered thirty years ago**, and the
+    price of a cure delivered now will not be known for thirty more — which is
+    gaps.md #121 stated as a limitation of this record rather than of the schema.
+  - Strata fractions are approximate and the risk-group definitions themselves
+    have moved as MRD replaced older criteria.
+  - Adult ALL is a different record and is absent. The age gradient — roughly
+    ninety percent in children, under half in adults — is one of the steepest in
+    oncology and this register holds only the good half.
+  - The delayed-infection hypothesis is stated as a hypothesis. It is the best
+    account available and it is not established.
+
+blockers:
+  - kind: logistics
+    blocks: two and a half years of supportive care, where the drugs are already cheap
+    obstacles: []
+    what: >
+      **THE DRUGS ARE GENERIC AND THE CURE IS NOT AVAILABLE**, which is as clean
+      a delivery failure as this register contains.
+      What childhood ALL needs is not a molecule. It is a blood bank that can
+      supply platelets for two years, antibiotics and antifungals for neutropenic
+      sepsis, intensive care for the child who deteriorates during induction,
+      reliable central line care, nutrition, and a paediatric oncology unit
+      running a protocol properly.
+      **Most induction deaths in low-income settings are from infection, not
+      leukaemia.**
+      Then **treatment abandonment**, which is the specific and documented way
+      this cure fails in poor countries: families stop coming. Not refusal, not
+      non-adherence — the protocol runs two and a half years, the hospital is far
+      away, the parent cannot keep working, and there are other children at home.
+      **The duration of the treatment is itself the barrier**, and no field in
+      this register can say so. Programmes that provide accommodation, transport
+      and income support reduce abandonment substantially, which is the clearest
+      evidence of what is actually blocking the cure.
+    who_could: [health-system, government, nonprofit, philanthropy]
+    scale: 5.0e9
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: what causes it, infant leukaemia, and who will be harmed by the cure
+    obstacles: [who-progresses]
+    what: >
+      Three absences, and the first makes `prevention: none` unavoidable.
+      **NOTHING RELIABLY CAUSES IT.** Ionising radiation and a handful of genetic
+      syndromes account for a small fraction; for the rest there is a
+      two-hit hypothesis involving a prenatal lesion and a delayed immune
+      challenge, which is plausible and unproven. Until it is settled, a disease
+      of small children has no prevention at all.
+      **INFANT ALL HAS NOT MOVED.** *KMT2A*-rearranged leukaemia in the first
+      year of life, initiated before birth, with survival under half after fifty
+      years in which every other stratum was transformed.
+      **AND NOBODY CAN PREDICT WHO WILL BE HARMED BY THE TREATMENT.** Which child
+      develops cardiomyopathy from a given anthracycline dose thirty years later
+      is not predictable beyond broad dose bands. A marker would allow the
+      de-escalation that is now the main work in the largest stratum, and it
+      would let the register stop trading a certain lifelong risk against an
+      uncertain one.
+      `scale: null`.
+    who_could: [academic, sponsor, philanthropy, government]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: cost
+    blocks: the newer agents, and occasionally the oldest one
+    obstacles: []
+    what: >
+      The backbone is generic and cheap, and two things around it are not.
+      **BLINATUMOMAB, INOTUZUMAB AND CAR-T** are the advances of the last decade
+      and are priced accordingly — CAR-T in the hundreds of thousands per
+      infusion, requiring apheresis, manufacturing and a centre that can manage
+      cytokine release syndrome. They are why relapsed disease is now salvageable
+      and they are available in a small number of countries.
+      **AND ASPARAGINASE SUPPLY HAS REPEATEDLY FAILED.** A drug essential to
+      every paediatric protocol, decades off patent, has been subject to global
+      shortages that forced substitution or omission — which measurably worsens
+      outcomes. It is rheumatic heart disease's benzathine penicillin problem in
+      a cancer record: **the cheapest essential product is the one nobody wants
+      to make.**
+    who_could: [manufacturer, payer, government, health-system, philanthropy]
+    scale: 3.0e9
+    standing: documented
+    src: recall
+
+  - kind: policy
+    blocks: children being treated on the protocol that works
+    obstacles: []
+    what: >
+      Cure rates fall steeply through adolescence into adulthood, and a large
+      part of that gradient is not biology. **Adolescents and young adults with
+      ALL do substantially better on paediatric protocols than on adult ones** —
+      same disease, same age, different department, different result. Paediatric
+      regimens are more intensive, use more asparaginase and steroid, and demand
+      more of the supporting service.
+      So the outcome depends on which service admits the patient, which depends
+      on local referral custom and on where the age boundary happens to be drawn.
+      **The register records whether a patient reached care. It has no way to
+      record whether they reached the right version of it** (gaps.md #122).
+      The fix is a policy and a referral pathway rather than a discovery, and
+      several health systems have made it and improved survival by doing so.
+    who_could: [health-system, government, academic, payer]
+    scale: 5.0e8
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0055
+  rated: 2026-08-24
+  by: [claude, jeremy]

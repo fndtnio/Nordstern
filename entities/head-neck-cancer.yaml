@@ -1,0 +1,722 @@
+slug: head-neck-cancer
+id: FND-D-0102
+name: head and neck cancer
+also: [head and neck squamous cell carcinoma, HNSCC, oral cavity cancer, oropharyngeal cancer, laryngeal cancer, throat cancer, mouth cancer, tongue cancer]
+mondo: MONDO:0010150
+kind: disease
+residual: false
+contested: true
+
+# THE SEVENTEENTH CANCER IN THIS CORPUS AND THE FIRST WHERE THE TREATMENT TAKES
+# EATING, SPEAKING AND THE FACE.
+#
+# `pleomorphic-adenoma` is in this register because a benign salivary tumour can
+# cost a facial nerve, and that record exists to make the point that "cured" is
+# not a description of what happened to the patient. **This is the same argument
+# at fifty times the scale**, in a disease that kills roughly 365,000 people a
+# year.
+#
+# IT IS ALSO TWO DISEASES WEARING ONE NAME, AND THEY ARE MOVING IN OPPOSITE
+# DIRECTIONS. Tobacco-and-alcohol disease is falling wherever smoking has
+# fallen. **HPV-positive oropharyngeal cancer is rising**, in younger men, in
+# exactly the countries where the other half is declining — and it is
+# **preventable by a vaccine this register already holds in `cervical-cancer`**.
+# One record, two causes, two trends, two prevention levers, and roughly 80%
+# five-year survival against 45%.
+#
+# NASOPHARYNGEAL CARCINOMA IS DELIBERATELY NOT HERE. It is Epstein-Barr virus
+# rather than HPV or tobacco, radiotherapy rather than surgery, concentrated in
+# southern China, South-East Asia and the Maghreb rather than everywhere, and it
+# has a blood test that works. Filing it here would average a surgical disease
+# into a radiotherapeutic one and hide the geography — gaps.md #4. It gets its
+# own record.
+
+burden:
+  cases:
+    value: 7.5e5
+    units: >
+      new cases/year across the lip and oral cavity, oropharynx, larynx and
+      hypopharynx — **a sum across subsites rather than a single published
+      figure**, which is why the number is soft. Collectively the group is
+      usually placed sixth or seventh among cancers worldwide. **Nasopharynx is
+      excluded** and is a separate record
+    src: recall
+  deaths:
+    value: 3.6e5
+    units: >
+      deaths/year across the same subsites, approximately. Oral cavity carries
+      the largest share, driven by South and South-East Asia where **betel quid
+      and areca nut** are chewed at population scale
+    src: recall
+  note: >
+    **THE INCIDENCE OF THIS RECORD IS TWO CURVES CROSSING.** Tobacco-driven
+    disease is falling across high-income countries in step with smoking.
+    **HPV-positive oropharyngeal cancer has risen steeply over three decades**,
+    predominantly in men, to the point where in several countries it now exceeds
+    cervical cancer in incidence — a fact that surprises almost everyone,
+    including clinicians, because the vaccine was introduced as a girls'
+    programme.
+
+survival:
+  horizon: 5 years from diagnosis
+  untreated:
+    value: 0.05
+    units: fraction alive — untreated squamous carcinoma of the upper aerodigestive tract
+    src: reasoning
+  treated:
+    value: 0.55
+    units: >
+      fraction alive on best available treatment, blended across a record that
+      `spans_ladder` — roughly 0.80 for HPV-positive oropharyngeal disease and
+      roughly 0.45 for tobacco-and-alcohol disease
+    src: recall
+  witness: >
+    **A "GOOD CHANCE" RECORD WHOSE TOLL IS `catastrophic`, WHICH IS THE ARGUMENT
+    FOR KEEPING THESE AXES APART.** Fifty-five percent survive five years; a large
+    share of them do so without a larynx, without saliva, or with a feeding tube.
+    **`survival` answers "do I live" and says nothing about "as what"** — `toll`,
+    `residue` and `restored` carry that, and a dashboard showing survival alone
+    would report this record as a success.
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: prophylaxis
+  ongoing: moderate
+  efficacy:
+    value: 0.55
+    units: >
+      fraction-of-patients (alive and free of disease at five years on best
+      available treatment) — **a blend of two very different diseases**: around
+      0.80 for HPV-positive oropharyngeal cancer and around 0.45 for
+      tobacco-and-alcohol disease, which is one of the widest prognostic splits
+      inside a single record in this corpus
+    src: reasoning
+  access:
+    value: 0.35
+    units: >
+      fraction-of-patients (reaching curative-intent treatment with the surgery,
+      radiotherapy, reconstruction and rehabilitation it requires) — **this is
+      not a drug, it is a service**, and the service is a head and neck surgeon,
+      a radiotherapy machine, a reconstructive team, a speech and swallowing
+      therapist and a dentist, in the same institution
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: good
+  predictive: partial
+  witness: >
+    **DIAGNOSTIC IS `objective` AND THE PROBLEM IS NOT THE TEST, IT IS THAT
+    NOBODY LOOKED.** Diagnosis is a biopsy, and **p16 immunohistochemistry** — a
+    cheap, routine stain — serves as the surrogate for HPV status and decides
+    which of the two diseases the patient has. There is no diagnostic ambiguity
+    worth arguing about once a specimen exists.
+    **The specimen is the problem.** Oral cavity cancer is *visible*. It sits on
+    a tongue or a gum, in a mouth that a dentist or a nurse can look into with a
+    torch, and it is routinely diagnosed at stage III or IV. **This register
+    contains no other cancer that can be seen with the naked eye and is still
+    caught late**, and it makes the `window` below the cheapest thing here.
+    PROGNOSTIC is `good`, and unusually so: **HPV status is one of the strongest
+    single prognostic markers in oncology.** It is so strong that in 2017 the
+    staging system was rebuilt around it — HPV-positive oropharyngeal cancer was
+    given **its own separate staging**, because the existing stages no longer
+    predicted survival for those patients. A stage IV under the old system was
+    frequently a stage I under the new one, with no change to the patient.
+    PREDICTIVE is `partial`. HPV status predicts radiosensitivity. **PD-L1
+    combined positive score selects who benefits from pembrolizumab** in
+    recurrent and metastatic disease, which is a real biomarker doing real work.
+    **What is not predicted is the decision that matters most** — surgery or
+    radiotherapy first, for a patient in whom either might cure and the two take
+    completely different things away. That choice is made on institutional
+    culture as much as on evidence, and it decides whether somebody keeps their
+    larynx.
+
+toll:
+  severity: catastrophic
+  permanent: true
+  what: >
+    **THIS RECORD'S TOLL IS EATING, SPEAKING AND THE FACE — THE THREE THINGS
+    THAT CONSTITUTE BEING A PERSON IN A ROOM WITH OTHER PEOPLE.**
+    **Surgery** may take part of the tongue, part of the mandible, or the larynx
+    entirely. A total laryngectomy means a **permanent stoma in the neck, no
+    voice**, and breathing through a hole for the rest of a life. Free-flap
+    reconstruction rebuilds the jaw from the fibula and the result is
+    functional, not invisible.
+    **Radiotherapy takes the saliva, permanently.** The salivary glands do not
+    recover, so **xerostomia** is for life: eating requires water with every
+    mouthful, taste is altered, the teeth decay and are often removed
+    prophylactically before treatment begins, and **osteoradionecrosis of the
+    mandible** — irradiated bone that dies and will not heal — is the
+    complication everybody in the field fears. Add fibrosis, trismus,
+    hypothyroidism, and carotid stenosis a decade later.
+    **Dysphagia is the one that kills.** Long-term feeding-tube dependence, and
+    aspiration into irradiated lungs, and the register records those deaths as
+    pneumonia.
+    **THE FIELD HAS SPENT TWENTY YEARS TRYING TO REDUCE THIS TOLL AND THE MOST
+    IMPORTANT RESULT WAS A FAILURE.** HPV-positive patients are young, do well,
+    and live for decades with what treatment took — so replacing cisplatin with
+    the gentler cetuximab was the obvious de-escalation. **Two randomised trials
+    reported in 2019 and both found worse survival with cetuximab**, without a
+    meaningful reduction in toxicity. A serious, well-motivated attempt to give
+    people their swallowing back cost some of them their lives, and it is the
+    reason de-escalation is now done cautiously and inside trials.
+  incidence:
+    value: 0.25
+    units: >
+      fraction-of-treated (**catastrophic** permanent harm — loss of voice after
+      laryngectomy, long-term feeding-tube dependence, osteoradionecrosis,
+      disfiguring resection) — a reasoned estimate, concentrated in the locally
+      advanced stratum.
+      **The layer beneath it is much larger and this field cannot hold two.**
+      Permanent xerostomia is close to universal after radiotherapy to these
+      fields, and dysphagia of some degree affects a majority — `major` harm at
+      perhaps 0.60, sitting under a `catastrophic` harm at 0.25. SCHEMA.md says
+      severity describes the harm *when it happens* and incidence carries how
+      often, which is right and means **a treatment with two distinct permanent
+      tolls at two severities can only report one of them**
+    src: reasoning
+
+window:
+  what: >
+    **A CANCER YOU CAN SEE WITH A TORCH, DIAGNOSED AT STAGE IV.**
+    Stage at diagnosis dominates everything in this record: early-stage disease
+    is cured by single-modality treatment with a modest toll, and locally
+    advanced disease needs surgery *and* chemoradiation and takes the whole of
+    the `toll` block above. **The gap between those two is the difference between
+    a scar and a laryngectomy.**
+    And a large share of this disease is **visible or palpable months before
+    anybody acts on it**. An ulcer on the tongue that has not healed in three
+    weeks, a lump in the neck, a hoarse voice that persists, a loose tooth with
+    no dental cause. The people best placed to find it are **dentists, dental
+    hygienists and primary care**, not oncologists, and the delay is typically
+    split between the patient not presenting and the first clinician not
+    referring.
+    **The second window is prophylactic and it closes in adolescence.** HPV
+    vaccination prevents the infection that causes the rising half of this
+    record, and it must be given before exposure. **Boys were excluded from most
+    national programmes for a decade** — see `prevention` — which means a cohort
+    of men now in their twenties was left unprotected against a cancer that
+    predominantly affects men.
+    A third, quieter one: **field cancerisation.** Tobacco and alcohol damage the
+    whole upper aerodigestive mucosa, so a cured patient carries a persistent
+    risk of a second primary tumour of a few percent per year, indefinitely.
+    Stopping smoking after diagnosis measurably reduces it, and is asked about
+    far less often than it should be.
+  closes_on: >
+    progression from early-stage disease curable by one modality to locally
+    advanced disease requiring surgery and chemoradiation together — months, in a
+    cancer that is frequently visible throughout; and separately, HPV exposure in
+    adolescence, after which the vaccine cannot help
+  caught_in_time:
+    value: 0.40
+    units: >
+      fraction-of-cases (diagnosed at a stage curable with single-modality
+      treatment) — a reasoned estimate, and markedly worse for oral cavity
+      cancer in South Asia than for laryngeal cancer in Europe
+    src: reasoning
+
+strata:
+  - name: HPV-positive oropharyngeal
+    fraction:
+      value: 0.20
+      units: fraction-of-people-with-head-and-neck-cancer
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.80
+      units: fraction-of-stratum (alive and disease-free at five years)
+      src: reasoning
+    toll: major
+    what: >
+      **A DIFFERENT DISEASE THAT HAPPENS IN THE SAME PLACE.** Caused by HPV16,
+      predominantly in the tonsil and base of tongue, in men who are younger and
+      often never smoked. The tumours are radiosensitive, the survival is around
+      80%, and the staging system was rebuilt in 2017 to stop calling them stage
+      IV. **The share is rising steeply and is the reason this record's incidence
+      is not falling with tobacco.** It is also the stratum that is preventable
+      outright by a vaccine.
+
+  - name: HPV-negative, early stage
+    fraction:
+      value: 0.25
+      units: fraction-of-people-with-head-and-neck-cancer
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.70
+      units: fraction-of-stratum (alive and disease-free at five years)
+      src: reasoning
+    toll: major
+    what: >
+      Tobacco, alcohol and betel quid disease caught before it needs everything.
+      **Single-modality treatment — surgery or radiotherapy — cures most of
+      them**, and the toll, while real, is a fraction of what the next stratum
+      pays. Everything in `window` is about moving patients into this row.
+
+  - name: HPV-negative, locally advanced
+    fraction:
+      value: 0.40
+      units: fraction-of-people-with-head-and-neck-cancer
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.40
+      units: fraction-of-stratum (alive and disease-free at five years)
+      src: reasoning
+    toll: catastrophic
+    what: >
+      **THE LARGEST STRATUM, AND WHERE THE WHOLE OF THIS RECORD'S TOLL LIVES.**
+      Surgery and chemoradiation together, or chemoradiation with salvage surgery
+      held in reserve. Cure in roughly four of ten, and the survivors are the
+      people in the `toll` block — the laryngectomies, the feeding tubes, the
+      rebuilt jaws. **Curative intent and catastrophic price in the same row**,
+      which is what `terms` exists to say.
+
+  - name: recurrent or metastatic
+    fraction:
+      value: 0.15
+      units: fraction-of-people-with-head-and-neck-cancer
+      src: reasoning
+    intervention: disease-modifying
+    efficacy:
+      value: 0.15
+      units: fraction-of-stratum (meaningful survival benefit)
+      src: reasoning
+    toll: major
+    what: >
+      Pembrolizumab, with chemotherapy or alone depending on PD-L1, is first
+      line and a minority do remarkably well for a long time. After it fails
+      there has been almost nothing — which is the gap the 2026 `moved` entry
+      addresses, cautiously.
+
+moved:
+  - date: 1991
+    axis: toll
+    from: catastrophic
+    to: catastrophic
+    why: >
+      **THE FIRST CANCER TRIAL WHOSE POINT WAS TO KEEP AN ORGAN RATHER THAN TO
+      LIVE LONGER, AND IT CHANGED WHAT ONCOLOGY TRIALS ARE ALLOWED TO MEASURE.**
+      Until the Department of Veterans Affairs larynx trial, advanced laryngeal
+      cancer meant a total laryngectomy: cure at the cost of a voice and a
+      permanent stoma. The trial randomised induction chemotherapy followed by
+      radiotherapy against immediate laryngectomy, and found **survival was not
+      compromised while roughly two thirds of the survivors kept their larynx.**
+      **The severity rating does not move and that is deliberate.** For the
+      people who still need laryngectomy the price is unchanged; what changed is
+      how many of them there are. **The register has no way to record a toll that
+      became rarer without becoming milder** — `toll.incidence` carries it and
+      `toll.severity` does not, and the derived `terms` reads only severity.
+      Its importance is larger than this record. **Organ preservation became a
+      legitimate endpoint**, and the same argument later reshaped breast surgery,
+      limb salvage in sarcoma, and the bladder-sparing story in `bladder-cancer`.
+    src:
+      id: PMID:2034244 doi:10.1056/NEJM199106133242402
+      retrieved: 2026-08-27
+      quote: >
+        These preliminary results suggest a new role for chemotherapy in patients
+        with advanced laryngeal cancer and indicate that a treatment strategy
+        involving induction chemotherapy and definitive radiation therapy can be
+        effective in preserving the larynx in a high percentage of patients,
+        without compromising overall survival.
+
+  - date: 2006
+    axis: efficacy
+    from: 0.45
+    to: 0.48
+    why: >
+      **THE FIRST TARGETED AGENT TO IMPROVE SURVIVAL IN THIS DISEASE, AND IT
+      MATTERS MORE FOR WHAT IT PERMITTED THAN FOR ITS EFFECT SIZE.**
+      Adding **cetuximab**, an antibody against EGFR, to radiotherapy improved
+      survival in locally advanced disease. EGFR is overexpressed in most head
+      and neck squamous carcinomas, so this was mechanism-to-drug reasoning that
+      worked, and it gave the field a non-platinum partner for radiotherapy.
+      **And it set up the most instructive failure in this record.** Because
+      cetuximab was better tolerated than cisplatin, it became the obvious
+      candidate for de-escalating treatment in young HPV-positive patients — a
+      hypothesis that took thirteen years to test and turned out to be wrong (see
+      `witness.contested`). A drug being gentler is not the same as a drug being
+      adequate, and it took two randomised trials to establish that.
+    src:
+      id: PMID:16467544 doi:10.1056/NEJMoa053422
+      retrieved: 2026-08-27
+      quote: >
+        Treatment of locoregionally advanced head and neck cancer with concomitant
+        high-dose radiotherapy plus cetuximab improves locoregional control and
+        reduces mortality without increasing the common toxic effects associated
+        with radiotherapy to the head and neck. (ClinicalTrials.gov number,
+        NCT00004227.)
+
+  - date: 2011
+    axis: toll
+    from: catastrophic
+    to: catastrophic
+    why: >
+      **INTENSITY-MODULATED RADIOTHERAPY GAVE PEOPLE THEIR SALIVA BACK, AND IT IS
+      A TOLL REDUCTION WITH NO SURVIVAL COMPONENT AT ALL.**
+      Conventional radiotherapy irradiated the parotid glands because they sit in
+      the field. IMRT shapes the dose around them. A randomised trial showed
+      **significantly less xerostomia with no loss of tumour control** — the same
+      cure, at a materially lower permanent price.
+      **This register has an axis for whether treatment works and an axis for
+      what it costs, and progress on the second is nearly invisible in the
+      derived views.** `terms` reads `toll.severity`, which does not move here
+      because the severe cases still exist; `reach` does not see toll at all. A
+      patient would rank this among the most important things that has happened
+      to them, and the register's headline figures are silent about it.
+      Recorded because gaps.md #183 asked for exactly this kind of entry.
+    src:
+      id: PMID:21236730 doi:10.1016/S1470-2045(10)70290-4
+      retrieved: 2026-08-27
+      quote: >
+        Sparing the parotid glands with IMRT significantly reduces the incidence of
+        xerostomia and leads to recovery of saliva secretion and improvements in
+        associated quality of life, and thus strongly supports a role for IMRT in
+        squamous-cell carcinoma of the head and neck.
+
+  - date: 2019
+    axis: efficacy
+    from: 0.48
+    to: 0.53
+    why: >
+      **PEMBROLIZUMAB BECAME FIRST-LINE FOR RECURRENT AND METASTATIC DISEASE, AND
+      IT CAME WITH A BIOMARKER THAT ACTUALLY SELECTS.**
+      KEYNOTE-048 established pembrolizumab — alone in PD-L1-expressing tumours,
+      or with chemotherapy — as first-line treatment, displacing the platinum,
+      fluorouracil and cetuximab regimen that had held since 2008. **A minority
+      of patients do remarkably well for years**, which is the shape immunotherapy
+      has in most solid tumours and which averages badly into a median.
+      **PD-L1 combined positive score is a real predictive biomarker** doing real
+      work here, which is why this record rates `predictive: partial` rather than
+      `none` — and it is worth naming, because the register's `predictive` column
+      is mostly empty.
+    src:
+      id: PMID:31679945 doi:10.1016/S0140-6736(19)32591-7
+      retrieved: 2026-08-27
+      quote: >
+        Based on the observed efficacy and safety, pembrolizumab plus platinum and
+        5-fluorouracil is an appropriate first-line treatment for recurrent or
+        metastatic HNSCC and pembrolizumab monotherapy is an appropriate first-line
+        treatment for PD-L1-positive recurrent or metastatic HNSCC.
+
+  - date: 2026
+    axis: efficacy
+    from: 0.53
+    to: 0.55
+    why: >
+      **A SMALL MOVE, RECORDED WITH ITS QUALIFICATIONS ATTACHED, AND THE
+      QUALIFICATIONS ARE THE REASON IT IS HERE.**
+      Subcutaneous **amivantamab**, a bispecific antibody against EGFR and MET,
+      produced a 42% confirmed response rate with **15 complete responses in 102
+      patients** whose disease had already progressed on both a checkpoint
+      inhibitor and platinum chemotherapy — a population with essentially nothing
+      left. Median duration of response was not reached at 11.8 months.
+      **Now the qualifications.** It is **phase 1b/2 and single-arm**: there is no
+      comparator, so there is no survival benefit to quote and the response rate
+      is the whole result. **HPV-positive oropharyngeal cancer was excluded**,
+      which removes the best-prognosis fifth of this record. The drug is not new —
+      it has been approved in `lung-cancer` since 2021 — so what is new is the
+      indication, not the molecule.
+      **This entry exists partly as a worked example.** The register learned about
+      it from a news article headlined *"cancer jab can eradicate entire
+      tumors"*, which called a bispecific antibody a vaccine and reported the
+      complete responses without the single-arm design, the excluded stratum or
+      the absent comparator. **The underlying result is real and good; the framing
+      was not.** Distinguishing those two is most of what this register is for.
+    src:
+      id: PMID:42218660 doi:10.1200/JCO-26-01042
+      retrieved: 2026-08-27
+      quote: >
+        Single-agent paclitaxel or cetuximab after immune checkpoint inhibitor
+        (ICI) and chemotherapy demonstrated objective response rates (ORRs) of
+        21%-24% in recurrent/metastatic (R/M) head/neck squamous cell cancer
+        (HNSCC). Epidermal growth factor receptor (EGFR) and MET are overexpressed
+        in R/M HNSCC.
+
+witness:
+  mechanism: >
+    `established`, and it is two mechanisms rather than one.
+    **THE TOBACCO-AND-ALCOHOL DISEASE IS CLASSICAL CARCINOGENESIS.** Tobacco
+    smoke and smokeless tobacco deliver carcinogens directly onto the upper
+    aerodigestive mucosa; **alcohol is synergistic rather than additive**, acting
+    as a solvent and through acetaldehyde, so a heavy drinker who smokes carries
+    a risk far above the sum of the two. **Betel quid and areca nut** are the
+    third and are the reason oral cavity cancer's burden is concentrated in South
+    and South-East Asia — chewed by hundreds of millions of people, and
+    classified as a Group 1 carcinogen. The molecular picture is *TP53* mutation,
+    *CDKN2A* loss and chromosomal instability: a genome that has been damaged
+    repeatedly.
+    **And the damage is to the whole surface, not to a spot.** Field
+    cancerisation — the observation that the entire exposed mucosa is
+    premalignant — is why cured patients develop second primary tumours at a few
+    percent a year for the rest of their lives.
+    **THE HPV-POSITIVE DISEASE IS A VIRAL ONCOGENESIS AND THE GENOME IS OTHERWISE
+    INTACT.** HPV16 infects the tonsillar crypt epithelium; the **E6 and E7
+    oncoproteins degrade p53 and inactivate Rb** respectively, achieving by
+    protein what the other disease achieves by mutation. *TP53* is typically
+    wild-type. That difference is thought to be much of why these tumours respond
+    so much better to radiation, and it is the same mechanism `cervical-cancer`
+    records in a different epithelium — **the same virus, the same two proteins,
+    two records.**
+    **What is not understood is why the incidence rose when it did**, and why so
+    disproportionately in men.
+  contested: >
+    **THE LIVE ARGUMENT IS DE-ESCALATION, AND IT IS CONTESTED BECAUSE THE FIRST
+    SERIOUS ATTEMPT KILLED PEOPLE.**
+    HPV-positive patients are young, mostly cured, and then live for thirty or
+    forty years with xerostomia, dysphagia and the rest of the `toll` block. The
+    case for treating them less aggressively is therefore strong and humane, and
+    the field has been trying to build it for fifteen years.
+    **The obvious version was tested and failed.** Two randomised trials
+    reporting in 2019 replaced cisplatin with the better-tolerated cetuximab in
+    HPV-positive oropharyngeal cancer. **Both found worse survival**, and the
+    reduction in toxicity did not materialise as expected. The lesson taken was
+    that a gentler drug is not automatically an adequate one, and that
+    de-escalation must be proven rather than assumed.
+    **The argument now is about which axis to de-escalate** — dose, volume,
+    surgery versus radiation, or selecting by response — and it is unresolved.
+    One position is that continuing to treat a highly curable young population
+    with a catastrophic-toll regimen is itself a harm being tolerated because it
+    is familiar. The other is that survival is not a currency to spend on
+    quality of life without proof, and 2019 is what happens when you do.
+    **The register takes no position and notes that the dispute is between two
+    correct instincts**, which is the most difficult kind.
+  intervention: >
+    `curative`, and it is genuinely curative for the majority — at the price in
+    `toll`.
+    **Surgery and radiotherapy are the backbone and either can cure.** Early
+    disease gets one of them. Locally advanced disease gets surgery followed by
+    radiotherapy or chemoradiation, or definitive chemoradiation with **cisplatin**
+    and surgery held in reserve for salvage. **Which of the two comes first is
+    the most consequential decision in this record and it is not evidence-based
+    in the way it should be** — it varies by institution, and it decides whether
+    somebody keeps a larynx.
+    **Two technical advances did most of the toll reduction.** IMRT spares the
+    salivary glands; **transoral robotic and laser surgery** reach the oropharynx
+    through the mouth, avoiding the mandible-splitting approaches that used to be
+    required. Free-flap reconstruction rebuilds what has to be removed.
+    **In recurrent and metastatic disease**, pembrolizumab is first line and
+    **amivantamab** entered after it in 2026 — see the `moved` entries.
+    **And the intervention that is not surgical or pharmacological is
+    rehabilitation**, which decides how the survivors actually live: speech and
+    language therapy, swallowing therapy, prosthodontics, dental care before
+    radiotherapy, and voice restoration after laryngectomy. It is chronically
+    under-resourced everywhere and invisible to every axis in this register.
+  prevention: >
+    `prophylaxis`, and the rating is carried entirely by one stratum — which the
+    schema cannot say (gaps.md #66, #109).
+    **HPV VACCINATION PREVENTS THE RISING HALF OF THIS RECORD OUTRIGHT**, and the
+    vaccine is the same one held in `cervical-cancer`. It must be given before
+    exposure, so the window is adolescence. **Most national programmes vaccinated
+    only girls for roughly a decade**, on a cervical-cancer rationale, which left
+    a male cohort unprotected against a cancer that occurs predominantly in men —
+    and gender-neutral vaccination is still not universal. **This is one of the
+    clearest cases in the corpus of a prevention programme scoped by the disease
+    it was designed against rather than by the pathogen it prevents.**
+    **Everything else is `risk-reduction` and belongs to policy rather than to
+    medicine**: tobacco control, alcohol policy, and regulation of **betel quid
+    and areca nut**, which is the one with the largest burden attached and by far
+    the least attention — it is a legal, culturally embedded, commercially sold
+    Group 1 carcinogen consumed by hundreds of millions of people.
+    Also: treating the mouth. Dental care and the removal of chronic irritation
+    matter at the margin, and **stopping smoking after a diagnosis measurably
+    reduces second primaries** in a population that is rarely offered help to do
+    it.
+  ongoing: >
+    `moderate` as a rating and bimodal in reality.
+    A cured early-stage patient needs surveillance, dental follow-up and not much
+    else. **A cured locally advanced patient may need a feeding tube, daily
+    saliva substitutes, a voice prosthesis that has to be changed, swallowing
+    therapy, dental extractions, and management of osteoradionecrosis that can
+    run for years.** The register has one `ongoing` value for both, and the
+    distance between them is the widest inside any record here.
+    **The burden that is not clinical is social.** Difficulty eating and speaking
+    removes people from meals and from conversation, which is where most social
+    life happens. Depression and social isolation after treatment for this
+    disease are documented and substantial, and **suicide rates among head and
+    neck cancer survivors are among the highest of any cancer** — a fact that
+    belongs in this record and has no field anywhere in the schema.
+
+holes:
+  - >
+    **Two `moved` entries record toll reductions and neither moves any derived
+    figure** — organ preservation in 1991 and IMRT in 2011. `terms` reads
+    `toll.severity`, which stays `catastrophic` because the severe cases still
+    exist, and `reach` does not see toll at all. **The register cannot record a
+    toll that became rarer without becoming milder** (gaps.md #183).
+  - >
+    **`prevention: prophylaxis` is earned by one stratum.** The HPV vaccine
+    prevents perhaps a fifth of this record outright and does nothing for the
+    rest, and the axis applies to whole records (gaps.md #66, #109) — the same
+    hole `cerebral-palsy` records for kernicterus.
+  - >
+    **The two halves of this record have opposite incidence trends**, different
+    causes, different prognosis and different prevention, and a single
+    `mechanism`, `prevention` and `efficacy` value covers both. It is gaps.md #4
+    with the strata doing as much as strata can.
+  - >
+    **The register has no field for the social consequence of the toll**, which
+    in this disease is the outcome patients rank highest — eating and speaking in
+    company. Elevated suicide among survivors is documented and has nowhere to go.
+  - >
+    **No `residue` block, deliberately.** Almost all permanent damage here is
+    inflicted by the treatment rather than left by the disease, so it belongs in
+    `toll`; and field cancerisation is the *cause still present* rather than
+    damage left behind, which is `copd`'s shape (gaps.md #97).
+  - >
+    **`toll` reports one severity and this treatment has two.** Catastrophic harm
+    (laryngectomy, feeding tube, osteoradionecrosis) at roughly 0.25 sits under
+    near-universal `major` harm (xerostomia, dysphagia) at roughly 0.60, and the
+    field can carry one pair. The derived `terms` reads the catastrophic one and
+    the register loses the layer that affects most patients.
+  - >
+    Burden is a **sum across four subsites** rather than a published figure, and
+    every scalar is `recall` or `reasoning`. Both burden values sit in the
+    `sourceable` tier and belong in the GBD pass rather than in memory.
+
+blockers:
+  - kind: diagnosis
+    blocks: finding a visible cancer before it needs everything
+    obstacles: []
+    what: >
+      **THIS IS A CANCER THAT CAN BE SEEN WITH A TORCH AND IT IS ROUTINELY FOUND
+      AT STAGE IV.**
+      An ulcer on the tongue that has not healed in three weeks, a neck lump, a
+      persistent hoarse voice, a loose tooth with no dental cause. The delay is
+      split roughly between patients not presenting — the early disease is
+      painless, and the populations at highest risk are the least engaged with
+      dentistry — and first-contact clinicians not referring, because most will
+      see a handful of these in a career.
+      **The people best placed to find it are not doctors.** Dentists and dental
+      hygienists look into mouths for a living, in a scheduled appointment,
+      with good light. Routine opportunistic oral examination is cheap, requires
+      no technology, and is neither systematically taught nor commissioned.
+      **In the highest-burden settings the problem is different and harder**:
+      in South Asia, where betel quid drives an enormous oral cavity burden,
+      trained health workers can screen visually and cluster-randomised evidence
+      supports it — and it competes for the same community health worker time as
+      everything else.
+      **What makes this the cheapest lever in the record** is the `window`: the
+      distance between early and locally advanced disease is the distance between
+      a scar and a laryngectomy.
+    who_could: [health-system, government, academic, nonprofit, patient-org]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+  - kind: policy
+    blocks: the vaccine for boys, and a legal Group 1 carcinogen
+    obstacles: []
+    what: >
+      **TWO PREVENTION FAILURES, AND BOTH ARE DECISIONS RATHER THAN GAPS IN
+      KNOWLEDGE.**
+      **HPV vaccination was scoped to girls for roughly a decade**, on a
+      cervical-cancer rationale, in most of the countries that introduced it.
+      HPV-positive oropharyngeal cancer occurs predominantly in men and has been
+      rising throughout that period. Gender-neutral programmes have spread but
+      are still not universal, and coverage in boys lags where they exist. **A
+      vaccine was aimed at a pathogen and funded against one of its diseases** —
+      which is a commissioning failure with a twenty-year lag built into it,
+      because the cohorts left out are only now reaching the age of onset.
+      **Betel quid and areca nut are the larger and quieter one.** A Group 1
+      carcinogen, chewed by hundreds of millions of people across South and
+      South-East Asia, sold legally and cheaply, marketed openly, embedded in
+      custom and in hospitality, and increasingly packaged industrially in
+      sachets aimed at the young. Tobacco control has an international framework
+      convention behind it; **areca nut has almost nothing** — no equivalent
+      treaty, little taxation, patchy advertising restriction, and a fraction of
+      the research attention despite driving the largest single subsite in this
+      record.
+      Alcohol policy belongs here too, and is the third of the record's three
+      causes.
+    who_could: [legislator, government, regulator, nonprofit, health-system]
+    scale: 5.0e9
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: a service, not a drug
+    obstacles: []
+    what: >
+      **CURATIVE TREATMENT HERE IS AN INSTITUTION, NOT A PRESCRIPTION.**
+      It requires a head and neck surgeon, a radiotherapy machine with planning
+      capability, a medical oncologist, a reconstructive surgeon with microvascular
+      skills, a pathologist who can report p16, a dentist who prepares the mouth
+      *before* radiotherapy begins, a dietitian, and a speech and swallowing
+      therapist for years afterwards — **in the same institution, coordinated,
+      and in the right order.** Get the order wrong and the patient loses teeth
+      to osteoradionecrosis that a pre-radiotherapy dental assessment would have
+      prevented.
+      **Radiotherapy is the binding constraint globally.** Large parts of Africa
+      and South Asia have a small fraction of the machines their populations
+      need, and a linear accelerator is a building, a shielded bunker, a physicist
+      and a maintenance contract rather than a purchase.
+      **Rehabilitation is the part that is under-resourced even in rich systems.**
+      Speech and swallowing therapy determines whether a cured patient eats and
+      talks, it is the outcome patients rank highest, and it is the first thing
+      cut. It is invisible to every axis in this register, which scores treatment
+      and not what happens afterwards.
+    who_could: [health-system, government, payer, academic, nonprofit]
+    scale: 2.0e10
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: how to take less away without taking less life
+    obstacles: []
+    what: >
+      **THE OPEN QUESTION IS DE-ESCALATION AND THE FIELD HAS ONE LARGE NEGATIVE
+      RESULT TO LEARN FROM.**
+      HPV-positive patients are young, mostly cured, and then live for decades
+      with xerostomia and dysphagia. Reducing treatment for them is obviously
+      desirable and **the obvious way to do it was tested twice in 2019 and made
+      survival worse.** So the question is unresolved and now expensive to
+      answer: which axis can safely be reduced — radiation dose, treated volume,
+      surgery instead of chemoradiation, or selection by response — and in whom.
+      **What would settle it is a biomarker that identifies who is over-treated**,
+      and nothing does. Circulating tumour HPV DNA is the most promising
+      candidate and is being used for surveillance faster than the evidence for
+      using it to *choose* treatment has accumulated.
+      **A second and separate hole: nobody can say why HPV-positive disease rose
+      when it did**, or why so disproportionately in men.
+      **And a third that belongs to the other half of the record**:
+      tobacco-and-alcohol disease has had almost no therapeutic progress at all —
+      cetuximab in 2006 and immunotherapy for the incurable. **The stratum with
+      the worst survival and the largest share of the deaths has the emptiest
+      pipeline**, which is this register's recurring shape.
+      `scale: null`.
+    who_could: [academic, sponsor, philanthropy, manufacturer]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: cost
+    blocks: the machine, the reconstruction and the antibody
+    obstacles: []
+    what: >
+      **THE EXPENSIVE PARTS OF THIS RECORD ARE CAPITAL AND SKILL RATHER THAN
+      MOLECULES, WHICH IS UNUSUAL FOR A CANCER.**
+      A linear accelerator with IMRT planning is a capital project — a bunker,
+      a physicist, a maintenance contract — and it is the single item most
+      responsible for the geography of who survives this disease. Free-flap
+      reconstruction and transoral robotic surgery need trained surgeons and
+      theatre time. **None of it goes off patent.**
+      **The drugs are the smaller number and are not where the deaths are.**
+      Pembrolizumab and now amivantamab are priced like modern oncology and are
+      given in the incurable setting; **cisplatin, the drug that does most of the
+      curing, costs almost nothing.** That inversion is worth stating plainly,
+      because attention and expenditure both follow the new molecules and the
+      survival gains are mostly upstream of them.
+      Add the costs nobody counts: dental extractions before radiotherapy,
+      nutritional support, voice prostheses, and years of therapy — small
+      individually, unfunded, and decisive for how a survivor lives.
+    who_could: [payer, government, health-system, manufacturer, philanthropy]
+    scale: 1.5e10
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0103
+  rated: 2026-08-27
+  by: [claude, jeremy]

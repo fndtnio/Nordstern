@@ -1,0 +1,404 @@
+slug: genital-herpes
+id: FND-D-0118
+name: genital herpes
+also: [herpes simplex virus 2 infection, HSV-2, genital HSV, herpes]
+kind: disease
+mondo: MONDO:0005770
+residual: false
+contested: false
+
+# THE DISEASE WHERE THE GUIDELINE SAYS DO NOT LOOK.
+#
+# 1. THE RESERVOIR IS A NEURON YOU CANNOT SACRIFICE. HSV establishes lifelong
+#    latency as an episome in sensory ganglia, transcriptionally near-silent, and
+#    every antiviral acts on the replicating virus only. **That is the same shape
+#    as `hiv`'s proviral reservoir, `hepatitis-b`'s cccDNA and `toxoplasmosis`'s
+#    bradyzoite cyst — with one constraint none of the others has.** For HIV you
+#    can at least imagine killing the infected cell. Here the infected cell is a
+#    sensory neuron that does not divide and is not replaceable, so **any cure
+#    must edit or silence a genome inside a cell it must leave alive.**
+#
+# 2. AND THE MAIN HARM IS ARGUABLY THE DIAGNOSIS. Most infection is
+#    asymptomatic or mildly symptomatic; the documented distress on being
+#    diagnosed is substantially driven by stigma rather than by illness. **The
+#    USPSTF recommends AGAINST serological screening of asymptomatic adults** —
+#    a formal recommendation not to test, on the grounds that finding it harms
+#    people and nothing can be done about it. No other record in this register
+#    contains a guideline saying do not look.
+#
+# 3. SCOPE. This is the genital disease. Oral HSV-1 infection — several billion
+#    people — herpetic keratitis, which is a leading infectious cause of corneal
+#    blindness in high-income countries, and herpes simplex encephalitis are
+#    separate entities sharing an organism. See `holes`.
+
+burden:
+  prevalence:
+    value: 5.0e8
+    units: >
+      people aged 15-49 living with HSV-2 worldwide — **one of the largest
+      prevalence figures in this register**, and rising in absolute terms with
+      population. Genital HSV-1 is additional and growing in high-income
+      countries, where falling childhood HSV-1 acquisition leaves adolescents
+      seronegative and susceptible to genital acquisition
+    src: recall
+  incidence:
+    value: 2.4e7
+    units: >
+      new HSV-2 infections/year worldwide, plus a substantial and less
+      well-counted number of genital HSV-1 infections
+    src: recall
+  deaths:
+    value: 4.0e3
+    units: >
+      deaths/year — **almost entirely neonatal herpes**, which is rare and
+      severe: roughly fourteen thousand cases a year worldwide, with mortality
+      concentrated in disseminated and central-nervous-system disease. Herpes
+      simplex encephalitis in adults adds a smaller number. **Genital herpes
+      itself kills essentially nobody**
+    src: reasoning
+  note: >
+    **Five hundred million people and four thousand deaths.** The burden of this
+    record is neither mortality nor, for most people, physical illness: it is
+    recurrent discomfort in a minority, a small number of catastrophically
+    affected newborns, and — at a scale nothing here can measure — the
+    psychological cost of a permanent diagnosis for a condition that is common,
+    mild and heavily stigmatised.
+
+survival:
+  horizon: 1 year from infection
+  untreated:
+    value: 0.9999
+    units: >
+      fraction alive — genital herpes does not kill adults. The mortality in this
+      record is neonatal and is a different population from this denominator
+    src: reasoning
+  treated:
+    value: 0.9999
+    units: >
+      fraction alive on suppressive antiviral therapy. **Identical, and it must
+      not be read as `alzheimers`' identical pair.** There, treatment buys no
+      life against a course that kills; here there is no death to prevent. The
+      snapshot's `zero_gain` list now excludes records whose untreated survival
+      is already above 0.95 for exactly this reason
+    src: reasoning
+  witness: >
+    **THIS ROW WAS RATED IN ORDER TO FIX A DERIVATION, AND THE FIX IS THE
+    FINDING.** A survival gain of zero had been treated as one thing. It is two:
+    *medicine buys no life against something that kills you* — Alzheimer's,
+    Huntington's, rabies, prion disease — and *there was nothing to buy*.
+    Without the guard added alongside this record, genital herpes would have
+    appeared on the dashboard beside rabies under **"where treatment bought no
+    extra life at all"**, which is true, useless and would have been read as
+    damning.
+    Declining to rate would have hidden the bug. Rating it exposed it (gaps.md
+    #234).
+
+axes:
+  mechanism: established
+  intervention: suppressive
+  prevention: risk-reduction
+  ongoing: low
+  efficacy:
+    value: 0.75
+    units: >
+      fraction-of-patients (recurrences substantially reduced or abolished on
+      daily suppressive therapy) — **aciclovir and valaciclovir work well, are
+      generic, cost very little and are among the best-tolerated drugs in this
+      register.** They do not touch the latent virus, so the figure describes
+      control of symptoms and of shedding, never cure
+    src: reasoning
+  access:
+    value: 0.60
+    units: >
+      fraction-of-patients (able to obtain what is recommended) — **and the
+      shortfall is mostly that people do not know**, since the drug itself is
+      cheap and available almost everywhere. Most infection is undiagnosed,
+      partly because it is asymptomatic and partly because guidelines
+      deliberately do not screen for it
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: partial
+  witness: >
+    **DIAGNOSTIC is `objective`, and the register has never before recorded a
+    guideline that says not to use the test.** PCR on a lesion swab is sensitive
+    and definitive; type-specific serology reliably distinguishes HSV-1 from
+    HSV-2 and tells you whether someone has ever been infected.
+    **The United States Preventive Services Task Force recommends against
+    serologic screening in asymptomatic adolescents and adults**, including
+    pregnant women, on the reasoning that the test has imperfect specificity in
+    low-prevalence populations, that there is no cure to offer, and that a
+    positive result causes documented psychological harm and relationship
+    disruption. **That is a formal, evidence-based recommendation not to look**,
+    and it makes the `access` figure above almost meaningless: what is
+    recommended for most people is not to be tested.
+    PROGNOSTIC is `partial`. Recurrence frequency in the first year predicts
+    the later pattern reasonably, HSV-2 recurs far more than genital HSV-1, and
+    most people's recurrences decline over years. What is not predicted is who
+    will shed asymptomatically and infect a partner, which is the transmission
+    question and is most of what matters epidemiologically.
+    PREDICTIVE is `partial`, **and it was written as `n/a` and the validator
+    refused it for the second time in this corpus** — the same rule that caught
+    `cryptococcal-meningitis`. The argument had been that one drug class works in
+    essentially everybody and aciclovir resistance is rare outside profound
+    immunosuppression, both true. But `efficacy` is 0.75, meaning **a quarter of
+    people on suppression still get recurrences that matter to them**, and a
+    treatment failing one person in four has a selection question whether or not
+    anybody can answer it. `n/a` is an attractive rating because it looks clean;
+    the rule exists to stop exactly that.
+    What is `partial`: virus type carries real information — genital HSV-1 recurs
+    far less than HSV-2 — and first-year recurrence frequency predicts the later
+    pattern. What is missing is anything that says *this patient needs a
+    different regimen*, because there is only one class to give.
+
+toll:
+  severity: none
+  permanent: false
+  what: >
+    **Aciclovir and valaciclovir are about as benign as systemic drugs get.**
+    Taken daily for years or decades, they are well tolerated, cheap, generic,
+    and free of meaningful interactions; renal dosing is needed in impairment
+    and that is close to the whole of it. Long-term suppressive therapy has been
+    studied over many years without a signal of consequence.
+    Rated `none` with an incidence of zero, deliberately and consistently: this
+    record's harm is not in the treatment column.
+  incidence:
+    value: 0.0
+    units: >
+      fraction-of-treated with permanent harm from the drug — zero, as far as
+      long-term suppression data show
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    **A PERMANENT DIAGNOSIS, AND — IN A SMALL NUMBER OF NEWBORNS — A DAMAGED
+    BRAIN.** Two very different things sit in this field and the record should
+    say so.
+    The rare one is severe: neonatal herpes, acquired at delivery and most
+    dangerous when the mother acquires primary infection late in pregnancy
+    rather than from recurrent disease. Disseminated and central-nervous-system
+    disease leave survivors with seizures, developmental impairment and visual
+    loss despite prompt aciclovir. **Herpes simplex encephalitis in adults
+    similarly leaves memory and personality damage in a large share of
+    survivors.**
+    The common one is not physical. **The infection is lifelong and known to be
+    lifelong, and the distress documented on diagnosis is disproportionate to
+    the illness** — driven by stigma, by the disclosure obligation to future
+    partners, and by the knowledge that it cannot be got rid of. The register
+    has no field for a harm that is entirely social, and `residue` is the closest
+    thing, which is the fourth record in a fortnight to stretch it (gaps.md
+    #231).
+  incidence:
+    value: 0.30
+    units: >
+      fraction-of-diagnosed reporting significant psychological distress —
+      reasoned, poorly measured, and much larger in absolute terms than the
+      neonatal harm it shares this field with
+    src: reasoning
+
+witness:
+  mechanism: >
+    `established`, and the latency is the record. Herpes simplex virus enters at
+    a mucosal surface, replicates locally, and travels up sensory axons to the
+    dorsal root or trigeminal ganglia, where it **persists for life as a
+    circular episome in the neuronal nucleus** — transcriptionally near-silent,
+    expressing latency-associated transcripts, and invisible to both the immune
+    system and every available drug. Reactivation travels back down the same
+    nerve.
+    **Aciclovir is a beautiful drug and a limited one.** It is phosphorylated
+    only by viral thymidine kinase, so it is activated almost exclusively inside
+    infected cells — one of the most selective antivirals ever made, and the
+    reason its toll is nil. It inhibits the viral DNA polymerase, and **a latent
+    genome is not replicating**, so there is nothing for it to inhibit.
+    HSV-1 and HSV-2 both cause genital disease; HSV-1 recurs much less often
+    genitally, which is why the shifting mix in high-income countries is
+    changing what the average patient experiences.
+  intervention: >
+    `suppressive`, unambiguously and permanently. Daily antiviral therapy
+    reduces recurrences substantially and reduces transmission to a partner by
+    roughly half; episodic therapy shortens an outbreak. **Stop, and the virus
+    is exactly where it was.**
+    **The cure requires something nobody can do yet**: silencing or excising a
+    genome inside a sensory neuron that must survive the procedure. Gene-editing
+    approaches — targeting the latent genome with meganucleases delivered by AAV
+    — have cleared a large fraction of latent virus in mice and are the most
+    serious attempt, still preclinical.
+  prevention: >
+    `risk-reduction`. Condoms reduce transmission partially — they do not cover
+    all the shedding sites — and suppressive therapy in the infected partner
+    roughly halves it. **Neither approaches prevention**, and asymptomatic
+    shedding means most transmission comes from people unaware they are infected.
+    **There is no vaccine, after an unusually well-funded series of failures.**
+    In pregnancy the important intervention is preventing *maternal primary
+    infection near term*, which is when neonatal risk is highest — so the advice
+    is directed at seronegative women with infected partners, in a setting where
+    routine serology is not recommended. The register should note the awkwardness
+    plainly: **the population who would most benefit from knowing their status is
+    the one the screening guideline declines to test.**
+  ongoing: >
+    `low` and genuinely so — a cheap generic tablet, once daily, well tolerated,
+    for as long as the person wants it. **The ongoing burden that matters is not
+    pharmacological.** It is disclosure to partners, and the awareness of
+    permanence, which no field here measures.
+  efficacy: >
+    See the axis. It is a good number describing control, and no number in this
+    record describes cure.
+  access: >
+    The drug is generic and available; **most people with this infection do not
+    know they have it**, and the guidelines are deliberately arranged so that
+    they will not find out unless they have symptoms. That makes `access` close
+    to unanswerable here: what is recommended for the asymptomatic majority is
+    nothing at all, so they are receiving it.
+
+moved:
+  - date: 1982
+    axis: intervention
+    from: none
+    to: suppressive
+    why: >
+      **Aciclovir, and it is one of the cleanest arrivals in the register.**
+      Gertrude Elion's rational design produced a drug activated by a viral
+      enzyme, therefore near-harmless to the host — the first genuinely selective
+      antiviral, and the work for which she shared a Nobel Prize. Before it,
+      there was nothing. After it, recurrences could be suppressed indefinitely
+      and the latent virus was exactly as untouchable as before.
+    src: recall
+
+holes:
+  - >
+    **The record is scoped to genital disease and the organism causes more.**
+    Oral HSV-1 infection reaches several billion people; **herpetic keratitis is
+    a leading infectious cause of corneal blindness in high-income countries**;
+    herpes simplex encephalitis is rare and devastating. Each is arguably its own
+    record and each has its own Mondo term. The genital scope was chosen because
+    the question asked was about sexually transmitted infection.
+  - >
+    **`residue` is holding two incommensurable things** — neonatal neurological
+    damage, which is rare and catastrophic, and psychological distress from a
+    permanent diagnosis, which is common and social. They share a field because
+    nothing else will take them, and the incidence figure describes the second
+    while the severity describes the first.
+  - >
+    The distress figure is the least defensible number here. It is reasoned from
+    a literature that is genuinely mixed: distress on diagnosis is well
+    documented and its persistence over time much less so, and much of the
+    research predates the current prevalence and the current stigma.
+  - >
+    **A well-known negative result belongs in this record and is easy to omit.**
+    HSV-2 infection is associated with roughly two- to three-fold increased HIV
+    acquisition, and randomised trials of aciclovir suppression **did not reduce
+    HIV acquisition or transmission.** The association is real and the obvious
+    intervention failed, which is a caution about acting on associations of this
+    kind and is not usually repeated alongside the association.
+  - >
+    Genital HSV-1 is displacing HSV-2 in some high-income populations, so the
+    average recurrence rate — and therefore the lived severity of this record —
+    is changing without the biology changing.
+  - Written from model recall. Neuronal latency, aciclovir's selectivity
+    mechanism, the vaccine failures and the USPSTF position are the parts most
+    likely right; every number is the part most likely wrong.
+
+blockers:
+  - kind: knowledge
+    blocks: a cure that must leave the cell holding the virus alive
+    what: >
+      **THE LATENT GENOME SITS IN A NEURON, AND THE NEURON IS NOT EXPENDABLE.**
+      HSV persists as an episome in sensory ganglia, transcriptionally
+      near-silent; aciclovir inhibits a viral polymerase that is not running, so
+      no antiviral can touch it in principle rather than merely in practice.
+      **This is `hiv`'s reservoir and `hepatitis-b`'s cccDNA with an extra
+      constraint.** In those, one can at least imagine eliminating the infected
+      cell — shock-and-kill, hepatocyte turnover. **Sensory neurons do not
+      divide and cannot be replaced**, so a cure has to silence or excise a
+      genome *inside a cell that must survive the procedure*, and reach the
+      ganglia to do it. That is `cell-targeting` and
+      `pathogen-persistence` at once, in the hardest compartment either has met.
+      Gene-editing approaches using AAV-delivered meganucleases have eliminated a
+      large share of latent virus in mice and remain preclinical. `scale: null`.
+    who_could: [academic, sponsor, philanthropy, manufacturer]
+    scale: null
+    standing: documented
+    src: reasoning
+    obstacles: [pathogen-persistence, cell-targeting]
+
+  - kind: knowledge
+    blocks: a vaccine, after a series of well-run failures
+    what: >
+      **THE FAILURES HERE ARE UNUSUALLY INFORMATIVE BECAUSE THE TRIALS WERE
+      GOOD.** Glycoprotein-D subunit vaccines were taken through large
+      randomised trials; the Herpevac Trial for Women found **no protection
+      against HSV-2** — and, unexpectedly, roughly 58% efficacy against genital
+      HSV-1 disease. Therapeutic vaccines aimed at reducing recurrences in
+      already-infected people have repeatedly failed in phase 2.
+      **On the register's template argument this sits with tuberculosis and
+      malaria rather than with `coccidioidomycosis`.** Natural infection does not
+      prevent reinfection with the other type, does not prevent reactivation, and
+      does not protect a partner — so nature demonstrates no protective state to
+      imitate, and there is no correlate of protection to design against.
+      **And the HSV-1 result is the interesting anomaly**: the same antigen
+      protected against one virus and not its close relative, which says the
+      problem is specifiable rather than hopeless and that nobody can currently
+      specify it. `scale: null`.
+    who_could: [academic, sponsor, manufacturer, philanthropy]
+    scale: null
+    standing: documented
+    src: reasoning
+    obstacles: [protective-immunity]
+
+  - kind: policy
+    blocks: a stigma that is a larger harm than the disease
+    what: >
+      **THE USPSTF RECOMMENDS AGAINST SEROLOGICAL SCREENING OF ASYMPTOMATIC
+      ADULTS, INCLUDING IN PREGNANCY** — because specificity is imperfect in
+      low-prevalence populations, because there is no cure to offer, and because
+      **a positive result causes documented psychological and relationship harm.**
+      That is a formal recommendation not to look, and this register contains no
+      other.
+      It is defensible and it has a cost. The people at highest risk of the one
+      genuinely severe outcome — a seronegative woman acquiring primary infection
+      late in pregnancy, from a partner neither of them knows is infected — are
+      precisely the population the guideline declines to test. **The screening
+      question and the neonatal question point in opposite directions**, and the
+      reason is not epidemiological. It is that a diagnosis carries a social
+      penalty disproportionate to a common, usually mild, treatable condition.
+      **The blocker is the penalty.** If disclosure of a herpes diagnosis cost
+      what disclosure of a cold sore costs — the same organism, in most people's
+      minds a different thing entirely — the screening calculus would change and
+      so would transmission. That is a public-understanding problem, it is
+      purchasable in principle, and no health system owns it.
+    who_could: [health-system, government, nonprofit, patient-org, academic]
+    scale: 1.0e8
+    standing: documented
+    src: reasoning
+
+  - kind: knowledge
+    blocks: knowing who sheds, which is where transmission comes from
+    what: >
+      **MOST TRANSMISSION COMES FROM ASYMPTOMATIC SHEDDING BY PEOPLE WHO DO NOT
+      KNOW THEY ARE INFECTED.** Shedding is intermittent, frequent, and largely
+      invisible: it occurs on days without lesions, varies enormously between
+      individuals, and nothing available predicts who sheds much or when.
+      That single fact defeats most of the prevention in this record. Condoms
+      miss uncovered sites; suppressive therapy halves transmission rather than
+      stopping it; and abstaining during outbreaks addresses the minority of
+      shedding that is visible. **A test or marker identifying high-frequency
+      shedders would let suppressive therapy be aimed rather than offered
+      generally**, and would matter most for serodiscordant couples and for
+      pregnancy.
+      `scale: null` for the biology; the shedding-frequency studies that
+      established the problem were expensive and are the model for what would
+      answer it.
+    who_could: [academic, sponsor, health-system]
+    scale: null
+    standing: documented
+    src: reasoning
+    obstacles: [who-progresses]
+
+assertion:
+  id: FND-A-0119
+  rated: 2026-08-28
+  by: [claude, jeremy]

@@ -1,0 +1,609 @@
+slug: hypertension
+id: FND-D-0084
+name: hypertension
+also: [high blood pressure, hypertensive disorder, essential hypertension, raised blood pressure]
+mondo: MONDO:0005044
+kind: disease
+residual: false
+contested: true
+
+# THE LARGEST ENTITY IN THIS REGISTER AND IT HAS ALMOST NO BURDEN OF ITS OWN.
+#
+# Raised blood pressure is the leading single risk factor for death worldwide —
+# on the order of 10.8 million attributable deaths a year, more than any disease
+# in this file. Essentially none of those deaths is a death from hypertension.
+# They are strokes, myocardial infarctions, heart failure, kidney failure and
+# dementia, and they are counted in `stroke`, `ischaemic-heart-disease`,
+# `chronic-kidney-disease` and the queued heart failure record.
+#
+# `atrial-fibrillation`, the record immediately before this one, has the same
+# shape at roughly a thirtieth of the scale. THIS ONE IS NOT A DISEASE AT ALL —
+# it is a number above a line, in a person who feels well. See gaps.md #179.
+#
+# `contested: true` — the line itself is disputed between two guideline bodies
+# and the dispute is live. See `witness.contested`.
+
+burden:
+  prevalence:
+    value: 1.28e9
+    units: >
+      adults aged 30-79 with hypertension worldwide — **and the figure is a
+      function of where the threshold is drawn**, which two major guideline bodies
+      currently draw in different places (gaps.md #90)
+    src: recall
+  deaths:
+    value: 1.08e7
+    units: >
+      deaths/year attributable to raised systolic blood pressure — **the largest
+      attributable figure in the register, and not one of these deaths is
+      recorded as hypertension.** They are in other records
+    src: recall
+  note: >
+    **THE CASCADE IS THE RECORD, AND IT IS THE CLEANEST DELIVERY FAILURE IN THIS
+    ENTIRE FILE.**
+    Of the 1.28 billion adults with hypertension: **about 46% do not know they
+    have it. About 42% are diagnosed and treated. About 21% are controlled.**
+    The drugs are generic, cost pennies a day, have been available for decades,
+    and reduce stroke by something like a third and coronary events by a fifth for
+    each 10 mmHg of systolic reduction. **There is no scientific obstacle
+    anywhere in this record.** Four fifths of the world's largest cause of death
+    is uncontrolled because of a measurement nobody took, a prescription nobody
+    wrote, or a tablet nobody kept taking.
+    **And the prevalence number can be moved by writing a guideline.** In 2017 an
+    American guideline lowered the diagnostic threshold from 140/90 to 130/80 and
+    reclassified roughly 31 million additional United States adults as hypertensive
+    overnight — national prevalence going from about 32% to about 46%. The European
+    guideline did not follow. **The same person is hypertensive in Atlanta and not
+    in Amsterdam.**
+
+survival:
+  horizon: 10 years from diagnosis of stage 2 hypertension, untreated, at age 50
+  untreated:
+    value: 0.7
+    units: >
+      fraction alive — **and the horizon is doing essential work here.** Across all
+      hypertension there is no meaningful survival figure, because it is a risk
+      factor rather than a disease with a course. Named at stage 2 in middle
+      age the question becomes answerable: the VA Cooperative trials of the
+      1960s stopped early because the untreated arm was accumulating strokes and
+      deaths
+    src: reasoning
+  treated:
+    value: 0.9
+    units: >
+      fraction alive on treatment — one to three generic agents, reaching target in
+      most people, with roughly a 20-25% relative reduction in cardiovascular
+      death per 10 mmHg of systolic reduction
+    src: reasoning
+  witness: >
+    **RATED WITH A CAVEAT THAT APPLIES TO THREE RECORDS HERE.** Hypertension,
+    obesity and atrial fibrillation are *exposures*, not illnesses with a
+    natural history, and a bare survival figure for them would be a number about
+    nothing. Naming the population and the horizon makes the question real —
+    but this row is **not comparable** to `pancreatic-cancer`'s, because that
+    one measures a disease's own lethality and this one measures a risk
+    factor's contribution to somebody else's (gaps.md #219).
+    **10.8 million attributed deaths, against a treatment that is generic,
+    oral, and older than most people taking it.** Every blocker on this record
+    is diagnosis and adherence.
+
+axes:
+  mechanism: partial
+  intervention: suppressive
+  prevention: risk-reduction
+  ongoing: low
+  efficacy:
+    value: 0.85
+    units: >
+      fraction-of-patients (achievable blood pressure control on available drugs)
+      — most people reach target on one to three generic agents, and resistant
+      hypertension is a minority
+    src: reasoning
+  access:
+    value: 0.25
+    units: >
+      fraction-of-patients (reaching diagnosis, prescription and sustained
+      control) — **chosen so that reach reproduces the WHO control figure of about
+      21%**, which is the number this record is really about
+    src: recall
+
+measurement:
+  diagnostic: objective
+  prognostic: good
+  predictive: partial
+  witness: >
+    **DIAGNOSTIC IS `objective`, THE INSTRUMENT IS A CUFF, AND THE WAY IT IS USED
+    ROUTINELY MISCLASSIFIES PEOPLE IN BOTH DIRECTIONS.**
+    Blood pressure is not a fixed property. It varies minute to minute, and the
+    number recorded depends on the method: **white-coat hypertension** — raised in
+    clinic, normal at home — affects something like one in five people labelled
+    hypertensive, and **masked hypertension** does the reverse in perhaps one in
+    eight who are called normal. Ambulatory and home monitoring predict
+    cardiovascular outcomes better than office readings, and one national guideline
+    body requires ambulatory confirmation before a diagnosis is made. Most of the
+    world diagnoses on office readings.
+    **Then there is the cuff.** A cuff too small for the arm overestimates
+    systolic pressure substantially — a randomised comparison found errors of
+    roughly 20 mmHg when a regular cuff was used on large arms — and mis-cuffing
+    is common. Terminal-digit preference, insufficient rest, talking, and a full
+    bladder each move the number by clinically meaningful amounts.
+    **AND THE THRESHOLD AND THE INSTRUMENT WERE SET BY DIFFERENT PEOPLE USING
+    DIFFERENT METHODS** (gaps.md #180). The trial that justified lowering the
+    American threshold measured blood pressure by **unattended automated office
+    readings**, which run materially lower than a conventional clinic measurement.
+    The threshold derived from it is applied, in most clinics, with the higher-
+    reading method.
+    **PROGNOSTIC IS `good`, AND IT IS THE FOURTH RECORD RUNNING.** Blood pressure
+    is among the best-characterised continuous predictors in medicine, and the
+    ten-year cardiovascular risk calculators built on it perform comparably to the
+    scores in `atrial-fibrillation`, `cirrhosis` and `chronic-kidney-disease`.
+    **All four exist because a treat-or-not decision could not be deferred**, which
+    is gaps.md #178 acquiring a fourth independent case rather than a forced one.
+    PREDICTIVE is `partial`. Class response varies and is poorly predicted;
+    guidelines still recommend thiazides or calcium channel blockers first-line for
+    Black patients on differential-response evidence, and that recommendation is
+    contested on the grounds that race is a poor proxy for the underlying renin
+    physiology it is standing in for. Renin profiling would be the mechanistic
+    version and is not used.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    **THE TOLL IS SMALL AND IT IS PAID BY SOMEBODY WHO FEELS PERFECTLY WELL, WHICH
+    CHANGES WHAT IT MEANS.**
+    ACE inhibitors cause a dry cough in around one in ten. Calcium channel
+    blockers cause ankle oedema. Thiazides cause hyponatraemia, hypokalaemia and
+    gout. All of them can cause dizziness, and in older people **hypotension,
+    syncope and falls** — which is where the permanent harm lives, because a
+    fractured hip in an eighty-year-old is not a minor event.
+    The intensive-treatment trial that moved the American threshold reported more
+    hypotension, syncope, electrolyte disturbance and acute kidney injury in the
+    arm treated harder, alongside its mortality benefit. **Both results are real
+    and the trade is genuine.**
+    **What makes this different from every other `toll` in the register is the
+    baseline.** A patient with sepsis weighs a treatment's harm against dying. A
+    person with hypertension has no symptoms to relieve, so **every side effect is
+    a pure subtraction from a life that felt fine**, purchased against a
+    probability shift in a disease they do not have yet. That is why adherence in
+    this record is what it is, and it is not irrationality.
+    Rated `minor` and not permanent for the modal patient, which is correct and
+    understates the falls.
+  incidence:
+    value: 0.02
+    units: >
+      fraction-of-treated (permanent harm — chiefly fracture following
+      treatment-related hypotension in older patients) — a reasoned estimate
+    src: reasoning
+
+window:
+  what: >
+    **THE WINDOW IS FORTY YEARS LONG AND ALMOST NOBODY IS TREATED INSIDE IT.**
+    Hypertension damages arteries by cumulative exposure. The relationship between
+    blood pressure and cardiovascular risk is continuous, log-linear, and holds
+    down to about 115/75 — there is no threshold in the biology at all. What
+    matters is the integral: **millimetres of mercury multiplied by years.**
+    Two consequences follow and both are counter-intuitive.
+    **Treating a thirty-five-year-old prevents far more than treating a
+    seventy-five-year-old**, because there is more remaining exposure to prevent —
+    and essentially no health system screens or treats thirty-five-year-olds,
+    because their ten-year risk is low and every guideline is built on ten-year
+    risk. Lifetime-risk framing would produce a different policy and is not used.
+    **And blood pressure lowered late does not undo what was done.** Trials show a
+    legacy effect in the same direction as `type-2-diabetes`'s metabolic memory:
+    early control confers advantages that persist after the groups converge.
+    Arterial stiffening, left ventricular hypertrophy and small-vessel disease in
+    the brain accumulate, and only some of it regresses.
+    So the record's window is not a deadline. **It is a meter that has been
+    running since somebody's twenties**, and the entire apparatus of diagnosis and
+    treatment is aimed at the last third of it.
+  closes_on: >
+    cumulative arterial and end-organ damage — decades, continuous, and with no
+    symptom to mark any point on it
+  caught_in_time:
+    value: 0.30
+    units: >
+      fraction-of-cases (controlled early enough to prevent most attributable
+      damage) — a reasoned estimate; 46% are unaware and diagnosis typically comes
+      in middle age or later
+    src: reasoning
+
+strata:
+  - name: essential hypertension, controllable on standard therapy
+    fraction:
+      value: 0.75
+      units: fraction-of-cases
+      src: reasoning
+    intervention: suppressive
+    efficacy:
+      value: 0.95
+      units: fraction-of-stratum (controlled on one to three generic agents)
+      src: reasoning
+    toll: minor
+    what: >
+      **Three quarters of the disease, and the drugs work.** One to three tablets
+      from five generic classes, costing pennies, reaching target in almost
+      everybody who takes them. **This stratum is entirely a delivery problem** and
+      it contains most of the 10.8 million attributable deaths.
+
+  - name: resistant hypertension
+    fraction:
+      value: 0.15
+      units: fraction-of-cases
+      src: reasoning
+    intervention: suppressive
+    efficacy:
+      value: 0.60
+      units: fraction-of-stratum (controlled)
+      src: reasoning
+    toll: minor
+    what: >
+      Uncontrolled despite three agents including a diuretic. Spironolactone is
+      the established fourth agent and is under-used. **Renal denervation** —
+      catheter ablation of renal sympathetic nerves — failed its first
+      sham-controlled trial in 2014, succeeded in later ones, and was approved in
+      2023 for this stratum. A substantial share of apparent resistance is
+      non-adherence or bad measurement rather than biology.
+
+  - name: secondary hypertension with a treatable cause
+    fraction:
+      value: 0.10
+      units: fraction-of-cases
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.70
+      units: fraction-of-stratum (cured or substantially improved by treating the cause)
+      src: reasoning
+    toll: major
+    what: >
+      **THE CURABLE STRATUM, AND IT IS ALMOST NEVER LOOKED FOR.** Primary
+      aldosteronism alone accounts for something like 5-10% of all hypertension and
+      up to a fifth of resistant hypertension; **it is diagnosed in well under one
+      percent of hypertensive patients.** Unilateral disease is cured by removing
+      an adrenal gland; bilateral disease responds specifically to
+      mineralocorticoid receptor antagonists. It also carries excess
+      cardiovascular risk beyond its blood pressure, so missing it costs more than
+      the number suggests.
+      Also here: obstructive sleep apnoea, renal artery stenosis,
+      phaeochromocytoma, Cushing's, coarctation. **Screening for aldosteronism is a
+      blood test.** The record flags ⧉ because of this stratum.
+
+moved:
+  - date: 1967
+    axis: intervention
+    from: none
+    to: suppressive
+    why: >
+      **UNTIL THE 1960s, RAISED BLOOD PRESSURE WAS THOUGHT TO BE NECESSARY.**
+      The phrase "essential hypertension" is a fossil of that belief: the pressure
+      was held to be *essential* to perfuse ageing, narrowed arteries, and lowering
+      it was considered dangerous. Franklin Roosevelt died in 1945 of a cerebral
+      haemorrhage with blood pressure in the region of 300/190, and nothing was
+      done about it because there was nothing to do and no consensus that anything
+      should be.
+      **The Veterans Administration Cooperative Study settled it.** Randomising men
+      with severe hypertension to drug treatment or placebo, it was stopped early
+      because the placebo arm was having strokes and heart failure at a rate that
+      made continuing indefensible. A second arm extended the finding to moderate
+      hypertension.
+      Everything in this record follows from those trials, and the drug classes
+      that came after — thiazides, then beta blockers, ACE inhibitors, calcium
+      channel blockers and angiotensin receptor blockers — **are now all generic
+      and cost pennies.** The science of this record was finished decades ago.
+    src: recall
+
+  - date: 2015
+    axis: efficacy
+    from: 0.80
+    to: 0.85
+    why: >
+      **A TRIAL SHOWED THAT LOWER IS BETTER, AND THE THRESHOLD MOVED ON TWO
+      CONTINENTS DIFFERENTLY.**
+      SPRINT randomised high-risk patients to a systolic target below 120 rather
+      than below 140, and was stopped early: fewer cardiovascular events and lower
+      all-cause mortality in the intensive arm, alongside more hypotension,
+      syncope, electrolyte disturbance and acute kidney injury.
+      In 2017 an American guideline lowered the diagnostic threshold to 130/80,
+      reclassifying roughly 31 million more United States adults as hypertensive.
+      **European guidance did not follow**, retaining 140/90 for the diagnosis
+      while adding a category of "elevated" pressure below it.
+      **Two things about this entry are worth separating.** The clinical finding is
+      real and has largely replicated. **And the trial measured blood pressure by
+      unattended automated office readings, which run materially lower than a
+      conventional clinic measurement** — so a target derived under one instrument
+      is being applied under another (gaps.md #180). An earlier trial in diabetic
+      patients had found no benefit from a similar intensive target, which is part
+      of why the two guideline bodies read the evidence differently.
+    src:
+      id: PMID:26551272 doi:10.1056/NEJMoa1511939
+      retrieved: 2026-08-26
+      quote: >
+        Among patients at high risk for cardiovascular events but without diabetes,
+        targeting a systolic blood pressure of less than 120 mm Hg, as compared
+        with less than 140 mm Hg, resulted in lower rates of fatal and nonfatal
+        major cardiovascular events and death from any cause, although
+        significantly higher rates of some adverse events were
+
+  - date: 2013
+    axis: access
+    from: 0.18
+    to: 0.25
+    why: >
+      **ONE HEALTH SYSTEM TOOK CONTROL FROM 44% TO 90% AND PUBLISHED HOW.**
+      A large American integrated care organisation raised hypertension control in
+      its population from about 44% in 2001 to about 90% by 2013. The ingredients
+      were unglamorous and are all reproducible: **a registry of every hypertensive
+      patient**, a single simplified treatment algorithm, **single-pill
+      combinations** to reduce the tablet count, free or near-free follow-up blood
+      pressure checks done by medical assistants rather than physicians, and
+      measurement of control as an organisational performance indicator.
+      The World Health Organization's HEARTS technical package packages the same
+      approach for low- and middle-income countries, and national programmes built
+      on it have produced large control improvements in India, Cuba and elsewhere.
+      **No discovery. No new drug. A registry, a protocol, a combination pill and
+      somebody made responsible for the number.** This entry is dated to the
+      published result rather than to any global change, because globally the
+      figure remains about 21% — the demonstration exists and has not been copied.
+    src: recall
+
+witness:
+  mechanism: >
+    `partial`, and the rating is unusual: **the consequences are understood
+    completely and the cause is not.**
+    Ninety to ninety-five percent of hypertension is "essential", which means
+    nobody knows why the pressure is high. Contributors are established and none
+    is sufficient: sodium handling by the kidney and the pressure-natriuresis
+    relationship, renin-angiotensin-aldosterone activity, sympathetic tone,
+    arterial stiffness, endothelial dysfunction, obesity and insulin resistance.
+    Genome-wide studies have found over a thousand loci, together explaining a
+    modest share of variance and yielding essentially no new drug targets.
+    **What is fully understood is the damage.** Raised pressure produces
+    endothelial injury, arterial remodelling and stiffening, left ventricular
+    hypertrophy, glomerular hyperfiltration and sclerosis, and cerebral
+    small-vessel disease. The relationship between pressure and risk is continuous
+    and log-linear down to about 115/75 — **there is no biological threshold at
+    which the harm begins**, which is precisely why the diagnostic threshold is a
+    committee decision (gaps.md #90).
+    **THE NAMED HOLE IS ALSO THE MOST ACTIONABLE THING IN THE RECORD.** Primary
+    aldosteronism is far commoner than the textbooks said — plausibly 5-10% of all
+    hypertension — and it is looked for in a tiny fraction of patients. It is
+    identifiable by a blood test and treatable specifically or surgically. **The
+    field spent decades believing essential hypertension was one thing, and a
+    substantial slice of it turns out to be a curable endocrine disease nobody
+    tests for.**
+  contested: >
+    **THE DISPUTE IS ABOUT WHERE THE LINE GOES, AND THE PARTIES ARE TWO GUIDELINE
+    BODIES WHO HAVE READ THE SAME TRIALS** (gaps.md #6, #90).
+    The **American College of Cardiology and American Heart Association**, in
+    2017, defined hypertension as ≥130/80. The **European Society of Cardiology**
+    retains ≥140/90 as the diagnostic threshold, adding a category of "elevated"
+    blood pressure below it in its 2024 guidance rather than calling those people
+    hypertensive.
+    The disagreement is substantive rather than semantic. It turns on how much
+    weight to give the intensive-treatment trial given its unattended measurement
+    method and its high-risk population; on whether an earlier trial in diabetic
+    patients that found no benefit should temper it; and on the consequences of
+    labelling tens of millions of well people as diseased — anxiety, insurability,
+    and the medicalisation of a risk factor.
+    **Both bodies recommend broadly similar drug treatment thresholds.** The
+    argument is about the *diagnosis*, not the *treatment* — which is exactly what
+    makes it a `contested` entry rather than an `efficacy` one, and exactly what
+    the register has no field to express.
+  intervention: >
+    `suppressive`, cheaply and effectively, for the great majority.
+    Five generic classes — thiazide-type diuretics, ACE inhibitors, angiotensin
+    receptor blockers, calcium channel blockers, and spironolactone as the fourth
+    agent — controlling most people on one to three tablets, indefinitely. **Stop
+    them and the pressure returns**, which is what puts this on the `suppressive`
+    rung rather than a higher one.
+    **Single-pill combinations matter more than their pharmacology suggests.**
+    Halving the tablet count measurably improves adherence and control, and the
+    fixed-dose "polypill" tested in several large trials reduces cardiovascular
+    events in populations rather than individuals.
+    **What is genuinely new is a drug you might take twice a year.** An
+    interfering RNA therapy targeting hepatic angiotensinogen has produced
+    sustained blood pressure reduction from six-monthly dosing in mid-stage trials.
+    If it holds, it converts the register's largest adherence problem into a
+    twice-yearly appointment — which would matter more here than in any other
+    record in this file.
+    And the secondary stratum is genuinely `curative`: remove an
+    aldosterone-producing adenoma and the hypertension goes.
+  prevention: >
+    `risk-reduction`, and the population lever is one of the best-evidenced
+    interventions in public health.
+    **Sodium.** Global mean intake is roughly double the recommended maximum, most
+    of it from processed food rather than the salt cellar, and population-level
+    sodium reduction is on the World Health Organization's short list of "best
+    buys". Mandatory reformulation works where it has been done; voluntary targets
+    work less well. **Potassium-enriched salt substitutes** are the strongest
+    recent result — a large randomised trial in Chinese villages found reductions
+    in stroke, major cardiovascular events and death from replacing table salt.
+    Then: weight, alcohol, physical activity, and the same food-environment levers
+    as `type-2-diabetes`.
+    **All of it belongs to agriculture, trade, food regulation and industry
+    relations rather than to medicine** (gaps.md #87, #53), the benefit is shared
+    across this record, `stroke`, `ischaemic-heart-disease` and
+    `chronic-kidney-disease`, and `who_could` still has no food regulator and no
+    finance ministry.
+  ongoing: >
+    `low`, and the rating is technically right and practically misleading.
+    One to three generic tablets a day, no monitoring beyond periodic blood
+    pressure checks, no dietary restriction that is enforceable, no procedures.
+    Lighter than almost anything else on the `suppressive` rung.
+    **And roughly half of people prescribed antihypertensives are not taking them
+    a year later**, because the burden that matters is not the pill — it is being
+    asked to take a daily drug, indefinitely, with occasional side effects, for a
+    condition you cannot feel, to reduce a probability you will never observe.
+    gaps.md #171 asked what *kind* of ongoing burden a record carries. This is a
+    sixth kind: **a burden that is objectively trivial and subjectively
+    unjustifiable**, and it defeats the largest preventable cause of death on
+    earth.
+
+holes:
+  - >
+    **`restored` derives cleanly and the derivation is empty.** The treated patient
+    has no permanent toll and the disease leaves no residue — because hypertension
+    has no natural history of its own. Everything it does is in `stroke`,
+    `ischaemic-heart-disease`, `chronic-kidney-disease` and the queued heart
+    failure and dementia records (gaps.md #179, #160).
+  - >
+    **`prevalence: 1.28e9` is a policy output.** Two guideline bodies place the
+    threshold differently and the difference is tens of millions of people in the
+    United States alone. Any figure quoted here should carry the threshold with it.
+  - >
+    **`access: 0.25` was chosen so that reach reproduces the observed 21% control
+    rate**, which makes it a fitted parameter rather than an independent estimate.
+    It is the honest way to encode a cascade in two fields and it should be read as
+    such.
+  - >
+    The `secondary` stratum's 10% is the upper end of published prevalence for
+    primary aldosteronism plus the other causes, and the true figure is contested
+    precisely because so few people are screened — **the denominator depends on
+    looking.**
+  - >
+    **Isolated systolic hypertension in the elderly, and the whole question of
+    treatment targets in frailty, are folded in without comment**, and they are
+    where the falls in `toll` concentrate.
+  - >
+    Every scalar is `recall` or `reasoning`, in the best-measured risk factor in
+    epidemiology.
+
+blockers:
+  - kind: logistics
+    blocks: half the people with it never being told
+    obstacles: []
+    what: >
+      **46% OF PEOPLE WITH THE WORLD'S LARGEST CAUSE OF DEATH DO NOT KNOW THEY
+      HAVE IT**, and the test is a cuff.
+      The disease produces no symptom, so nothing brings anybody in. Diagnosis
+      happens opportunistically — at an unrelated appointment, an insurance
+      medical, a pharmacy — and in much of the world there is no routine encounter
+      at which to measure anybody.
+      **The demonstration that this is solvable exists and is published.** A large
+      integrated system took control from 44% to 90% with a registry, a single
+      algorithm, single-pill combinations, and blood pressure checks performed by
+      non-physicians. The WHO packages the same approach for low-resource settings
+      and national programmes built on it have produced large gains.
+      **The reason it has not spread is that every component is a running cost
+      rather than a product** (gaps.md #154): somebody to maintain a register,
+      somebody to take a blood pressure, somebody accountable for a control rate.
+      There is nothing to procure, patent, ship or donate.
+      This is the largest single delivery gap in the register by attributable
+      deaths, and it is closed by administration.
+    who_could: [health-system, government, payer, nonprofit, philanthropy]
+    scale: 2.0e10
+    standing: documented
+    src: recall
+
+  - kind: adherence
+    blocks: a symptomless condition treated with a daily tablet forever
+    obstacles: []
+    what: >
+      **ROUGHLY HALF OF PEOPLE STARTED ON ANTIHYPERTENSIVES ARE NOT TAKING THEM A
+      YEAR LATER**, and the reason is structural rather than personal.
+      The patient feels well before treatment and sometimes worse after it — a
+      cough, swollen ankles, dizziness. The benefit is a probability shift in a
+      disease they do not have, decades away, which they will never observe even
+      if it works. **Nothing about persisting is reinforced by anything they can
+      perceive** (gaps.md #161).
+      What demonstrably helps is reducing the friction rather than increasing the
+      motivation: **single-pill combinations**, which halve the tablet count and
+      measurably improve control; free or subsidised medication, since even small
+      co-payments reduce persistence; and longer prescription intervals.
+      **And the thing that would change it most is pharmacological.** A
+      six-monthly injectable — an interfering RNA against angiotensinogen is in
+      mid-stage trials — converts adherence from a daily decision into a twice-
+      yearly appointment. **In no other record in this register would that trade
+      be worth as much**, because in no other record is the intervention this
+      cheap, this effective and this widely abandoned.
+    who_could: [manufacturer, health-system, payer, government, academic]
+    scale: 5.0e9
+    standing: documented
+    src: recall
+
+  - kind: policy
+    blocks: the salt, which is in the food before anybody buys it
+    obstacles: []
+    what: >
+      Global mean sodium intake is roughly twice the recommended maximum and **most
+      of it is added during food manufacture**, not by the person eating — which
+      makes individual advice close to useless and reformulation close to
+      decisive.
+      Population sodium reduction is one of the World Health Organization's "best
+      buys". Mandatory reformulation targets work; voluntary ones work less well
+      and more slowly. **Potassium-enriched salt substitution is the strongest
+      recent evidence** — a large randomised trial in rural Chinese villages found
+      reductions in stroke, major cardiovascular events and death simply from
+      replacing the salt people already used.
+      The obstacles are the familiar ones: reformulation costs manufacturers money,
+      salt is a preservative and a flavour crutch, and the industry opposes
+      mandatory targets — documented behaviour rather than a conspiracy claim.
+      **The benefit is spread across this record, `stroke`,
+      `ischaemic-heart-disease`, `chronic-kidney-disease` and gastric cancer, so no
+      single record can justify the policy and nothing in the register sums it**
+      (gaps.md #87). `who_could` has no food regulator.
+    who_could: [government, legislator, regulator, nonprofit, payer]
+    scale: 1.0e10
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    blocks: the number being wrong, and the curable cause never being sought
+    obstacles: []
+    what: >
+      **TWO FAILURES, AND THE SECOND IS A MISSED CURE AT SCALE.**
+      *The measurement.* Office blood pressure misclassifies in both directions —
+      white-coat hypertension in perhaps a fifth of those labelled, masked
+      hypertension in perhaps an eighth of those cleared. Ambulatory and home
+      monitoring predict outcomes better and are used inconsistently. **Cuff size
+      errors alone can shift systolic readings by around 20 mmHg**, and mis-cuffing
+      is routine. The instrument is objective and its application is not.
+      *The curable cause nobody looks for.* **Primary aldosteronism plausibly
+      accounts for 5-10% of all hypertension and up to a fifth of resistant
+      hypertension, and is diagnosed in well under one percent of hypertensive
+      patients.** It is found by a blood test — an aldosterone-to-renin ratio — and
+      unilateral disease is cured by removing an adrenal gland. It also carries
+      cardiovascular risk beyond its blood pressure.
+      **A curable disease affecting tens of millions of people, identifiable by a
+      cheap blood test, screened for almost never.** Nothing in this register is a
+      better argument that the binding constraint in medicine is frequently not
+      knowledge but the decision to look.
+    who_could: [health-system, academic, government, payer, manufacturer]
+    scale: 3.0e9
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: why the pressure is high in nine out of ten people
+    obstacles: []
+    what: >
+      **"ESSENTIAL" HYPERTENSION MEANS HYPERTENSION WHOSE CAUSE IS UNKNOWN, AND IT
+      IS 90-95% OF THE DISEASE.**
+      Sodium handling, renin-angiotensin-aldosterone activity, sympathetic tone,
+      arterial stiffness, endothelial function and obesity all contribute, none is
+      sufficient, and the relative weight differs between people in ways nothing
+      measures. Genome-wide association studies have identified over a thousand
+      loci, explaining a modest fraction of variance and producing **no new drug
+      target** — a useful caution for every record in this register that treats
+      genetic discovery as a route to therapy.
+      The practical cost is that treatment is empirical. A clinician picks a class,
+      waits weeks, measures, and switches — because nothing predicts which
+      mechanism is dominant in this patient. **Renin profiling would be the
+      mechanistic answer and is not in routine use**, and the race-based
+      prescribing recommendation that stands in for it is a proxy that most people
+      involved agree is a poor one.
+      A drug acting on a newly understood mechanism would matter far less here than
+      in most records, because the existing drugs work and reach a quarter of
+      patients. **This blocker is a scientific hole in a record whose problem is
+      not scientific**, and stating that clearly is more useful than inflating it.
+      `scale: null`.
+    who_could: [academic, sponsor, manufacturer, philanthropy]
+    scale: null
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0085
+  rated: 2026-08-24
+  by: [claude, jeremy]

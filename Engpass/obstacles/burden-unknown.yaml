@@ -1,0 +1,61 @@
+slug: burden-unknown
+id: FND-O-0005
+name: How many are there, and how does it spread?
+kind: epidemiology
+resolution: open
+
+question: >
+  For a set of diseases the register holds, nobody can say **how many people have
+  it, how it is transmitted, or whether it can be finished.**
+  Noma's incidence figure dates from 1998 and is derived from survivors of a
+  disease that kills nine in ten. Nobody knows how *Mycobacterium ulcerans* gets
+  into a person, which means Buruli ulcer has no prevention at all. How much
+  rheumatic heart disease scabies causes, and how much epilepsy neurocysticercosis
+  causes, are both unmeasured and both large. Whether yaws and sleeping sickness
+  can actually be eradicated is unresolved, and dracunculiasis' answer changed
+  when dogs turned out to be infected.
+  **This is not a question about biology.** It is included because Nordstern
+  files it as a `knowledge` blocker forty-two times over and it behaves
+  differently from the other four entries here: it is answerable with effort
+  rather than with insight.
+
+what_it_unblocks: >
+  Ranking, funding and the register's own headline metric. A disease with no
+  defensible burden estimate cannot be argued for, cannot be compared, and cannot
+  be shown to have improved — which is Nordstern gaps.md #48, unresolved, and the
+  reason the register currently reports that it cannot compute what it exists to
+  compute.
+  For Buruli ulcer it unblocks prevention entirely: there is no way to avoid an
+  exposure nobody has identified.
+  And it closes the loop the register keeps finding — **not counted, not costed,
+  not funded, not counted** — which noma, leprosy and scabies all describe
+  independently (gaps.md #77, #88).
+
+why_hard: >
+  Because the counting is defeated by the thing being counted, in a way that is
+  specific rather than general.
+  **The undercount scales with the severity of the outcome.** A disease that
+  disables gets counted at clinics; a disease that kills quickly at home does
+  not. Noma is the extreme, and its entire evidence base is the tenth who
+  survived, were found, and were brought forward.
+  **And the mirror distortion inflates severity.** H5N1's famous ~50% case
+  fatality is an artefact of ascertainment: confirmation required illness severe
+  enough to reach a hospital, until active surveillance of exposed dairy workers
+  found mostly mild conjunctivitis. Together these are Nordstern gaps.md #88 and
+  #104, and together they say the register's picture of a disease is a picture of
+  that disease's surveillance system.
+  Stigma is the third mechanism: leprosy, noma and scabies survivors are hidden,
+  and hidden people are not in any denominator.
+
+holes:
+  - This does not belong in a register of open questions in biology, and it is
+    here because the corpus put it there. If the two registers separate cleanly
+    it should probably move to a third thing about measurement and surveillance.
+  - It is the only entry whose answer is bought with money rather than with
+    discovery, which makes `scale: null` wrong for the blockers citing it — a
+    misclassification the second register has surfaced and Nordstern has not
+    fixed.
+
+asserted:
+  date: 2026-08-23
+  by: [claude, jeremy]

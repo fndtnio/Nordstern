@@ -1,0 +1,742 @@
+slug: asthma
+id: FND-D-0097
+name: asthma
+also: [bronchial asthma, allergic asthma, eosinophilic asthma, severe asthma, childhood asthma, reactive airway disease]
+mondo: MONDO:0004979
+kind: disease
+residual: false
+contested: true
+
+# COPD'S DESIGNATED CONTRAST, QUEUED SINCE THE DISABILITY BLOCK WAS WRITTEN, AND
+# THE TWO RECORDS INVERT ON EVERY AXIS THAT MATTERS.
+#
+# Same organ, same symptom, same inhaler cabinet. COPD rates `mechanism:
+# established` and `intervention: symptomatic` — the mechanism is known and
+# nothing alters the course. **Asthma rates `mechanism: partial` and
+# `intervention: suppressive`** — a substantial part of the disease has no
+# identified mechanism at all, and it is nonetheless one of the best-controlled
+# chronic diseases on earth. Understanding and capability come apart again, and
+# in the direction that keeps surprising this register (gaps.md #193, #198).
+#
+# AND IT IS THE REGISTER'S MOST PREVENTABLE MORTALITY. Roughly 455,000 deaths a
+# year, concentrated in low- and middle-income countries, and the consensus of
+# every body that has looked is that **the great majority are preventable with a
+# cheap, off-patent drug that has existed since 1972.**
+#
+# The reason they are not prevented is the sharpest thing in this record and it
+# is not "no access". **The reliever is available almost everywhere and the
+# preventer is not** — and reliever-alone is not partial treatment, it is a
+# treatment associated with death (gaps.md #204).
+
+burden:
+  prevalence:
+    value: 2.62e8
+    units: >
+      people — one of the commonest chronic diseases in the world and **the
+      commonest chronic disease of childhood**. The figure is soft in both
+      directions for the reasons in `measurement`: substantial overdiagnosis in
+      wealthy systems and substantial underdiagnosis everywhere else
+    src: recall
+  deaths:
+    value: 4.55e5
+    units: >
+      deaths/year — roughly a thousand a day, **the overwhelming majority in low-
+      and middle-income countries, and the overwhelming majority considered
+      preventable.** Unlike almost every other mortality figure in this register,
+      this one is not concentrated in the sickest patients: national reviews of
+      asthma deaths repeatedly find that most of the dead had mild or moderate
+      disease and identifiable, modifiable failures of treatment
+    src: recall
+  ylds:
+    value: 1.3e7
+    units: >
+      YLD/year, approximately — smaller than `osteoarthritis` or
+      `low-back-pain` and unusual in this block for carrying deaths as well
+    src: recall
+  note: >
+    **THE ONLY RECORD IN THE DISABILITY BLOCK WITH A BODY COUNT, AND THE BODY
+    COUNT IS THE ARGUMENT.** `hearing-loss`, `cataract` and `osteoarthritis` all
+    read `deaths: 0`; asthma reads 455,000, and every one of those deaths happened
+    to someone whose disease was controllable by a drug that costs a few dollars a
+    month to make. **This is the cleanest case in the corpus for gaps.md #48** —
+    the register cannot rank by preventable burden, and if it could, this record
+    would be near the top.
+
+survival:
+  horizon: 5 years from diagnosis of severe asthma
+  untreated:
+    value: 0.98
+    units: >
+      fraction alive — **asthma kills 455,000 people a year and almost nobody who
+      has it**, which is the whole difficulty with this row. Untreated severe
+      asthma kills through acute exacerbation, and the annual death rate is
+      small against an enormous prevalence
+    src: reasoning
+  treated:
+    value: 0.997
+    units: >
+      fraction alive on inhaled corticosteroids — **the single most effective
+      mortality intervention in respiratory medicine**, and one of the highest
+      efficacy figures in the register
+    src: reasoning
+  witness: >
+    **A GAIN OF +0.017 THAT REPRESENTS MOST OF 455,000 ANNUAL DEATHS.** The
+    survival axis compresses catastrophically at the top: a small difference
+    across a very large prevalence is an enormous number of people, and this
+    column cannot show it. `covid-19` fails the same way at +0.006.
+    **A dashboard sorted by `gain` puts asthma near the bottom and is wrong to**
+    — see gaps.md #221. Nearly every asthma death is preventable with a
+    cheap inhaler, which is why this record's blockers are all delivery.
+
+axes:
+  mechanism: partial
+  intervention: suppressive
+  prevention: risk-reduction
+  ongoing: moderate
+  efficacy:
+    value: 0.85
+    units: >
+      fraction-of-patients (good symptom control and freedom from severe
+      exacerbations on appropriate inhaled therapy) — **one of the highest
+      efficacy figures in the register**, and it is why the deaths are so hard to
+      look at
+    src: reasoning
+  access:
+    value: 0.35
+    units: >
+      fraction-of-patients (receiving an inhaled corticosteroid, or an
+      ICS-formoterol combination, and able to keep receiving it) — **and this
+      number is doing violence to the truth, because access to the RELIEVER is far
+      higher than access to the PREVENTER and the schema has one field**
+      (gaps.md #204)
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: partial
+  witness: >
+    **DIAGNOSTIC IS `objective` AND THE TEST HAS A PROPERTY NO OTHER OBJECTIVE
+    TEST IN THIS REGISTER HAS: IT ONLY WORKS WHEN THE PATIENT IS UNWELL.**
+    Asthma is defined by **variable** airflow obstruction, so the confirmatory
+    tests measure variability — spirometry showing bronchodilator reversibility,
+    peak flow diurnal variation, exhaled nitric oxide, or a bronchial challenge.
+    All of them are normal between attacks, and **all of them are normal in a
+    patient whose treatment is working.** The test that would confirm the
+    diagnosis is abolished by treating the disease, and treatment is started
+    before testing because the patient is breathless now.
+    **The consequence is documented and it runs in both directions.** In wealthy
+    systems, studies re-testing adults carrying a physician diagnosis of asthma
+    find that **roughly a third do not have it** — a treatable disease diagnosed
+    onto people who do not have it, who then carry the label, the inhaler and its
+    toll for life. Everywhere else the diagnosis is missed or never made, because
+    spirometry is not available and wheeze is treated as infection. It is
+    `copd`'s complaint (gaps.md #90) with the mechanism inverted: there the
+    threshold decides who has the disease; **here the timing does.**
+    PROGNOSTIC is `partial` and asymmetric. Prior exacerbations predict future
+    exacerbations better than anything else in respiratory medicine — the single
+    most useful prognostic fact in the record. **What is not predicted is who
+    dies**, because most asthma deaths occur in people classified as mild or
+    moderate, which means the register's own severity gradings do not identify the
+    people at risk of the outcome that matters most. And nothing predicts which
+    child will still have asthma at thirty (gaps.md #205).
+    PREDICTIVE is `partial`, and inside severe asthma it is genuinely **good** —
+    one of the better biomarker stories in medicine. Blood eosinophil count,
+    exhaled nitric oxide and IgE with allergen sensitisation select who responds
+    to which biologic, and they are cheap and routine. **The rating is dragged
+    down by everything outside that 6% of patients**: nothing predicts who will
+    respond to inhaled corticosteroid, nothing predicts which of several
+    biologics is right for a patient eligible for more than one, and there is no
+    biomarker at all for the non-type-2 group, which is the group with nothing to
+    offer.
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    **ORAL CORTICOSTEROIDS, AND THE REGISTER HAS SEEN THIS EXACT STRUCTURE BEFORE
+    IN `copd`.**
+    Every severe exacerbation is treated with a course of oral steroid, every
+    individual course is correct, and nobody is responsible for the total. Ten or
+    twenty courses over a decade — or maintenance oral steroid, which a minority
+    of severe asthmatics take for years — produce osteoporosis and fragility
+    fracture, diabetes, hypertension, cataract, glaucoma, weight gain, skin
+    fragility, adrenal suppression and increased infection risk. **The principal
+    selling point of the biologics is not that they control asthma better. It is
+    that they get people off steroids**, which is a field explicitly buying its
+    way out of its own toll.
+    **Inhaled corticosteroid is far safer and is not free.** Oral candidiasis and
+    dysphonia are common and trivial; at higher doses adrenal suppression is real;
+    and in children regular ICS produces a small reduction in growth velocity that
+    translates to roughly a centimetre of final adult height. **That last one is
+    worth stating carefully**, because it is the single most common reason parents
+    stop the preventer, and the trade is a centimetre against the deaths in the
+    burden block.
+    **And there is a toll that is not a side effect.** Short-acting beta-agonist
+    overuse — three or more canisters a year — is itself associated with death,
+    partly because it works: it relieves the symptom, so the patient does not
+    escalate, and the inflammation proceeds unopposed underneath. **A drug that
+    makes you feel better while the disease worsens is a category the schema has
+    no word for**, and it is `low-back-pain`'s inverted blocker appearing as a
+    property of a medicine rather than of a service.
+  incidence:
+    value: 0.05
+    units: >
+      fraction-of-treated (permanent harm — chiefly systemic corticosteroid
+      sequelae in the frequently-exacerbating and severe groups, plus adrenal
+      suppression and the growth effect in children) — a reasoned estimate
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    **CHILDHOOD ASTHMA IS A DOCUMENTED ROUTE INTO COPD, AND IT IS `copd`'s OWN
+    gaps.md #96 SEEN FROM THE OTHER END.**
+    That gap records that roughly half of COPD arises not from accelerated decline
+    but from **never reaching a normal peak** of lung function — and that the
+    determinative period is gestation to about age twenty-five, with nothing to
+    diagnose and no patient. **Asthma is one of the things that happens during that
+    period.** Children with persistent asthma, especially poorly controlled
+    persistent asthma, attain a lower maximal lung function than they otherwise
+    would, and they do not get it back. Some of them meet the spirometric
+    definition of COPD in middle age without ever having smoked.
+    **In adults the residue is airway remodelling.** Subepithelial fibrosis and
+    smooth muscle hypertrophy convert variable obstruction into fixed obstruction
+    in a minority, at which point the defining feature of the disease —
+    reversibility — is gone, and the patient has what is often filed as
+    asthma-COPD overlap. **The reversible disease became the irreversible one**,
+    which is why the boundary between these two records is a gradient rather than
+    a line.
+    Note this is genuinely `residue` and not #97's problem. The remodelled airway
+    is not the disease still doing it; it is what the disease left behind in
+    someone whose asthma is now controlled.
+  incidence:
+    value: 0.12
+    units: >
+      fraction-of-affected (permanent reduction in attained or retained lung
+      function — fixed airflow obstruction from remodelling, or a lung-growth
+      deficit carried out of childhood) — a reasoned estimate, concentrated in
+      poorly controlled persistent disease
+    src: reasoning
+
+window:
+  what: >
+    **TWO WINDOWS, HOURS AND DECADES, AND ALMOST EVERY DEATH IN THIS RECORD IS IN
+    THE SHORT ONE.**
+    **The acute window is hours.** A fatal asthma attack is almost always
+    preventable in the hours before it: oxygen, repeated inhaled bronchodilator,
+    systemic corticosteroid, and getting to somewhere with the ability to
+    ventilate. What kills is delay — the patient waiting because the reliever has
+    always worked before, the system with no oxygen, the clinic with salbutamol
+    and no steroid. **This is why the deaths sit in low- and middle-income
+    countries and in the mild-to-moderate severity bands**: the window is short,
+    it opens in someone who was not thought to be at risk, and closing it needs a
+    functioning acute service rather than a discovery.
+    There is a subtler version of the same window running over weeks. Deterioration
+    before a fatal attack is usually visible in hindsight — rising reliever use,
+    night waking, falling peak flow — and it is visible to nobody at the time,
+    because **the reliever is masking exactly the signal that would trigger
+    escalation.**
+    **The developmental window is childhood and it closes on lung growth.** Lung
+    function rises to a peak in the early twenties, and persistent poorly
+    controlled asthma in childhood lowers that peak permanently — see `residue`.
+    The treatment that protects it is the same cheap inhaled corticosteroid, taken
+    for years, for a benefit that arrives forty years later in a different disease
+    and a different record. **Nobody funds that** (gaps.md #87, #96).
+  closes_on: >
+    respiratory arrest during a severe exacerbation — hours, and the deterioration
+    that precedes it is visible for weeks and watched by nobody; and separately
+    the attainment of peak lung function in early adulthood, after which a
+    childhood deficit is permanent
+  caught_in_time:
+    value: 0.50
+    units: >
+      fraction-of-cases (severe exacerbations reaching adequate acute care in
+      time; children whose asthma is controlled well enough during lung growth) —
+      a reasoned estimate averaging a very high figure in wealthy systems against a
+      very low one elsewhere
+    src: reasoning
+
+strata:
+  - name: mild to moderate, controlled on inhaled therapy
+    fraction:
+      value: 0.60
+      units: fraction-of-people-with-asthma
+      src: reasoning
+    intervention: suppressive
+    efficacy:
+      value: 0.95
+      units: fraction-of-stratum (good control on low-dose ICS or ICS-formoterol)
+      src: reasoning
+    toll: minor
+    what: >
+      **The largest stratum, and the one that contains most of the deaths.** That
+      sentence is the whole record. Control is achievable in nearly everyone here
+      with a cheap off-patent drug; the people who die are in this band, and they
+      die because they were on the reliever alone, or ran out, or never escalated.
+      **Mild asthma is not low-risk asthma. It is low-treated asthma.**
+
+  - name: moderate to severe, controlled on higher-dose combination therapy
+    fraction:
+      value: 0.30
+      units: fraction-of-people-with-asthma
+      src: reasoning
+    intervention: suppressive
+    efficacy:
+      value: 0.80
+      units: fraction-of-stratum (good control, tolerable exacerbation frequency)
+      src: reasoning
+    toll: minor
+    what: >
+      Medium-to-high-dose ICS with a long-acting beta-agonist, often with a
+      long-acting antimuscarinic or a leukotriene antagonist. Works well, costs
+      more, needs a prescriber who will step treatment up and down, and is where
+      **inhaler technique** starts deciding outcomes — a majority of patients use
+      their device wrongly and are recorded as treatment failures.
+
+  - name: severe refractory, type-2 high — biologic-eligible
+    fraction:
+      value: 0.06
+      units: fraction-of-people-with-asthma
+      src: reasoning
+    intervention: suppressive
+    efficacy:
+      value: 0.70
+      units: fraction-of-stratum (substantial exacerbation reduction and steroid-sparing on a biologic)
+      src: reasoning
+    toll: major
+    what: >
+      **The register's better biomarker story.** Blood eosinophils, exhaled nitric
+      oxide and IgE identify who will respond, and anti-IgE, anti-IL-5, anti-IL-4Rα
+      and anti-TSLP antibodies halve exacerbations and get most recipients off oral
+      steroids. It is rationally designed medicine that worked. **It costs tens of
+      thousands a year per patient**, which puts it out of reach of exactly the
+      countries carrying the deaths, where the binding constraint is a drug that
+      costs a few dollars.
+
+  - name: severe refractory, type-2 low
+    fraction:
+      value: 0.04
+      units: fraction-of-people-with-asthma
+      src: reasoning
+    intervention: symptomatic
+    efficacy:
+      value: 0.30
+      units: fraction-of-stratum (meaningful control)
+      src: reasoning
+    toll: major
+    what: >
+      **THE MECHANISM HOLE, MADE COUNTABLE.** Neutrophilic, paucigranulocytic,
+      obesity-associated and smoking-associated asthma responds poorly to
+      corticosteroid and has no targeted therapy — every biologic on the market
+      aims at the type-2 pathway these patients do not have. Tezepelumab, which
+      acts further upstream at the epithelium, helps some of them and is the only
+      thing that does. **This stratum is why the record rates `mechanism: partial`
+      rather than `established`**, and it is the four percent that carries a
+      disproportionate share of the maintenance-steroid toll.
+
+moved:
+  - date: 1972
+    axis: intervention
+    from: symptomatic
+    to: suppressive
+    why: >
+      **THE INHALED CORTICOSTEROID, AND IT IS THE MOVE THE REST OF THIS RECORD IS
+      MEASURED AGAINST.**
+      Before it, asthma was treated with bronchodilators — the airways were opened
+      and the inflammation underneath was untouched — and asthma mortality was
+      rising in several countries. Beclometasone dipropionate delivered by
+      inhaler put a corticosteroid into the airway at a dose small enough to avoid
+      most systemic effects, and it treats the disease rather than the episode.
+      **Asthma mortality fell substantially across the countries that adopted it**,
+      and the drug went off patent decades ago.
+      **That is the fact underneath the burden block.** The intervention that would
+      prevent the great majority of the 455,000 annual deaths was invented in 1972,
+      is cheap to manufacture, is on the WHO Essential Medicines List, and does not
+      reach the people dying. This record's problem has been a delivery problem for
+      fifty years.
+    src: recall
+
+  - date: 2015
+    axis: efficacy
+    from: 0.78
+    to: 0.83
+    why: >
+      **THE BIOLOGICS, AND THEY ARE ONE OF THE FEW PLACES IN THIS REGISTER WHERE
+      RATIONAL DESIGN FROM A MECHANISM ACTUALLY DELIVERED.**
+      Anti-IgE arrived in 2003 and anti-IL-5 in 2015, followed by anti-IL-4Rα and,
+      in 2021, anti-TSLP. Each targets a named node in the type-2 inflammatory
+      cascade, each halves severe exacerbations in the right patient, and — the
+      point that matters clinically — **each gets patients off maintenance oral
+      corticosteroid**, which is this record's `toll`.
+      **And they came with their own selection tests**, which is rarer still.
+      Blood eosinophil count and exhaled nitric oxide are cheap, routine, and
+      predict response, so the register's `predictive` rating is carried almost
+      entirely by this 6% of patients.
+      **Record the move as modest for an honest reason.** It transformed a small
+      stratum at very high cost, in the countries that were already doing well.
+      It did nothing whatever for the four percent with type-2-low disease, and
+      nothing for the mortality in the burden block.
+    src: recall
+
+  - date: 2019
+    axis: efficacy
+    from: 0.83
+    to: 0.85
+    why: >
+      **A GUIDELINE CHANGED AND NO DRUG DID, AND IT MAY BE THE MOST IMPORTANT
+      ENTRY IN THIS RECORD.**
+      For nearly fifty years the recommended treatment for mild asthma was a
+      short-acting beta-agonist taken as needed — the reliever alone. In 2019 the
+      Global Initiative for Asthma withdrew that recommendation entirely: **no
+      adult or adolescent should be treated with a short-acting beta-agonist
+      alone**, and even the mildest asthma should receive an inhaled
+      corticosteroid, whether regularly or combined with the reliever in a single
+      ICS-formoterol inhaler taken as needed.
+      **The evidence was that reliever-alone is not undertreatment, it is
+      dangerous.** Reliever use of three or more canisters a year is associated
+      with death; the drug relieves the symptom that would otherwise have driven
+      escalation; and the deaths were occurring in people the old severity ladder
+      classified as mild.
+      **Both drugs were decades old. What changed was the recognition that one of
+      them, given by itself, is worse than a placebo would have been** — because
+      a placebo would not have hidden the deterioration.
+      This is gaps.md #204 in one sentence, and it is also why this record's
+      `access: 0.35` is the wrong shape: the countries carrying the deaths have
+      salbutamol on the shelf and not budesonide, which is precisely the regimen
+      the world's asthma guideline abolished.
+    src: recall
+
+witness:
+  mechanism: >
+    `partial`, and the split is clean enough to count — see `strata`.
+    **What is established is the type-2 pathway, and it is established well enough
+    to have been drugged on purpose.** An inhaled allergen or irritant provokes
+    epithelial release of the alarmins TSLP, IL-33 and IL-25; type-2 lymphocytes
+    and innate lymphoid cells produce IL-4, IL-5 and IL-13; IL-4 and IL-13 drive
+    IgE class switching and mucus production, IL-5 recruits and sustains
+    eosinophils, and the result is chronic airway inflammation, mucus plugging,
+    smooth muscle contraction and bronchial hyperresponsiveness. **Every biologic
+    on the market is a monoclonal antibody against a node in that paragraph, and
+    they work.** That is a rarer sentence in this register than it should be.
+    **What is not established is everything outside it.** Neutrophilic and
+    paucigranulocytic asthma, obesity-associated asthma and smoking-associated
+    asthma are grouped as "type-2 low" — a category named for a biomarker being
+    absent, which is a confession rather than a mechanism. Corticosteroids work
+    poorly in them, no targeted agent exists, and **they are a substantial
+    fraction of severe disease.** Naming a group by what it is not is the same
+    move `low-back-pain` makes with "non-specific", and it should be read the same
+    way.
+    **Two further holes worth naming.** *Airway hyperresponsiveness itself* — the
+    excessive smooth-muscle response that is asthma's defining physiology — is not
+    fully explained by the inflammation, and persists in some patients whose
+    inflammation is suppressed. And **nothing explains why the disease remits**,
+    which is the subject of gaps.md #205 and is not a small question: it happens to
+    a large fraction of the children who have it.
+  contested: >
+    Two live disputes, both consequential, and the register takes no position on
+    either.
+    **IS ASTHMA ONE DISEASE?** The field increasingly writes "the asthmas", and
+    the type-2-high / type-2-low division is the operative one — different cells,
+    different response to corticosteroid, different response to everything else.
+    The counter-position is that the phenotype schemes proliferate faster than
+    they validate, that they overlap within a single patient over time, and that a
+    label which changes when the patient loses weight or stops smoking is not a
+    disease boundary. **The asthma-COPD overlap boundary is disputed in the same
+    way and by the same people**, and `residue` above records why: remodelled
+    asthma and COPD converge.
+    **AND ASTHMA IS SIMULTANEOUSLY OVERDIAGNOSED AND UNDERDIAGNOSED, WHICH IS AN
+    UNUSUAL THING FOR A REGISTER TO HAVE TO STATE ABOUT ONE ENTITY.** Studies
+    re-testing adults with a physician diagnosis find roughly a third do not meet
+    objective criteria; meanwhile most asthma in low- and middle-income countries
+    is never diagnosed. The dispute is not about whether both are true — they are
+    — but about what follows: whether the answer is more objective testing before
+    treatment, which delays a treatment that is cheap and safe, or fewer labels,
+    which risks the deaths in the burden block. **The stakes are asymmetric and
+    that asymmetry is what makes it an argument.**
+  intervention: >
+    `suppressive`, and precisely so: **the treatment works while taken and nobody
+    is cured.**
+    **Inhaled corticosteroid is the whole record.** It suppresses the airway
+    inflammation, reduces exacerbations, and prevents deaths; stop it and the
+    disease returns over weeks. Combining it with formoterol in a single inhaler —
+    used regularly, or as the reliever itself in the maintenance-and-reliever
+    approach — reduces severe exacerbations further and solves the adherence
+    problem structurally, because **the drug you cannot feel working is bound to
+    the drug you can.** That is the most elegant fix in this record and it deserves
+    the credit.
+    **Short-acting beta-agonists relieve and do not treat**, and see `toll` and
+    the 2019 `moved` entry for why that is a stronger statement than it sounds.
+    **Biologics** transformed the severe type-2 stratum. **Bronchial thermoplasty**
+    exists, is a physical ablation of airway smooth muscle, and has a thin evidence
+    base and few enthusiasts. **Allergen immunotherapy** helps a selected minority.
+    **And there is no cure and no serious candidate for one.** Nothing resets the
+    airway. The best outcome the field offers is a person on a cheap daily inhaler
+    with no symptoms — which, given the burden block, would be an enormous
+    victory if it were delivered.
+  prevention: >
+    `risk-reduction`, and the honest summary is that **primary prevention of asthma
+    does not work.**
+    Decades of trials — allergen avoidance in infancy, dietary manipulation,
+    breastfeeding promotion, probiotics, house dust mite measures — have not
+    produced a reliable way to stop a child developing asthma. The hygiene
+    hypothesis and the farm-exposure findings are real epidemiology and have not
+    converted into an intervention. **Nobody knows how to prevent this disease**,
+    and that is a knowledge gap sitting behind a prevention rating that sounds more
+    encouraging than it is.
+    **What does work is preventing exacerbations and preventing exposure.**
+    Tobacco smoke, including in utero and second-hand, is the clearest modifiable
+    factor. **Air pollution** — traffic-related nitrogen dioxide and particulates —
+    is associated with both incidence and exacerbation, and is addressed by
+    regulation rather than by medicine. **Occupational asthma is roughly a sixth
+    of adult-onset disease**, is caused by identified agents in identified
+    industries, and is genuinely preventable by exposure control — which makes it
+    one of the few preventable slices of any record in this register that has a
+    named regulator already responsible for it. Influenza and pneumococcal
+    vaccination reduce exacerbations.
+  ongoing: >
+    `moderate`, and the shape is a daily inhaler taken for life by someone who
+    mostly feels well — which sounds light and is the reason the record's adherence
+    blocker exists.
+    Add: annual review, a written action plan that most patients do not have,
+    peak-flow monitoring for those who use it, technique that degrades and needs
+    re-teaching, and repeat prescriptions that must not lapse. **For the severe
+    stratum the burden is a different order** — an injection every two to four
+    weeks, specialist follow-up, and for those still on maintenance oral steroid,
+    the monitoring their `toll` requires.
+    **And a burden that is not medical: the disease is unpredictable.** Asthma
+    constrains what people are willing to do — sport, travel, pets, work, cold
+    weather — by the possibility of an attack rather than by a current symptom, and
+    no field here records anticipatory constraint.
+  access: >
+    `0.35`, and it is the least honest number in this record because **the schema
+    forces one figure onto a two-drug regimen whose halves are distributed
+    completely differently** (gaps.md #204).
+    Surveys of medicine availability in low- and middle-income countries find
+    salbutamol widely stocked in public-sector facilities and **inhaled
+    corticosteroid frequently absent, and unaffordable where present** — often
+    several days' wages for a month's supply, for a drug that has been off patent
+    for decades.
+    **The reason it is expensive is the device, not the molecule.** An inhaler is a
+    drug in a delivery mechanism, the mechanism is patented and re-patented as the
+    molecule ages, and generic entry requires demonstrating equivalence of a
+    device-and-drug combination rather than of a compound. **The result is an
+    essential medicine from 1972 with a generic market that behaves like a
+    branded one**, which is a market-structure story rather than a science one.
+    In wealthy systems access to the drug is near-universal and what fails is the
+    surrounding service: annual review, action plans, technique checks, and
+    specialist referral for the severe stratum. Biologics are rationed by cost
+    everywhere.
+
+holes:
+  - >
+    **`access: 0.35` is one number for a regimen with two parts that are not
+    substitutes** (gaps.md #204). The reliever reaches most of the world and the
+    preventer does not, and reliever-alone is associated with death — so this
+    record's access figure is not just imprecise, it has the wrong sign on the
+    part it is mostly measuring.
+  - >
+    **A large fraction of childhood asthma remits and no field records it**
+    (gaps.md #205). `intervention: suppressive` describes a lifelong treatment for
+    a disease many patients will stop having, and the register cannot tell a
+    treated remission from a natural one.
+  - >
+    **The deaths are in the mild stratum**, which means the record's own severity
+    grading does not identify the people at risk of its worst outcome. `prognostic:
+    partial` is generous.
+  - >
+    **`mechanism: partial` and `intervention: suppressive` against `copd`'s
+    `established` and `symptomatic`** — the two records invert, in the direction
+    gaps.md #193 and #198 keep finding, and nothing in the schema connects a
+    contrast that was the explicit reason this record was queued.
+  - >
+    **The treatment has a cost that lands on people who do not have the disease**
+    — pressurised inhalers use propellants with a high global warming potential,
+    and inhalers are a measurable fraction of some health systems' carbon
+    footprint. gaps.md #78 said externalities have a sign; this one has an address
+    outside medicine entirely, and `scale` is denominated in money.
+  - >
+    Every scalar is `recall` or `reasoning`. The mortality figure in particular
+    is quotable-looking and unverified, and national asthma death reviews — which
+    are the best evidence for the "mostly preventable" claim this record leans on
+    — are not cited.
+
+blockers:
+  - kind: logistics
+    blocks: the preventer, in the countries carrying the deaths
+    obstacles: []
+    what: >
+      **THE SUPPLY CHAIN DELIVERS THE WRONG HALF OF THE TREATMENT, AND THAT IS
+      WORSE THAN DELIVERING NEITHER.**
+      Availability surveys across low- and middle-income countries find salbutamol
+      commonly stocked in public-sector facilities and inhaled corticosteroid
+      frequently absent. The result is not partial treatment. It is **the exact
+      regimen the Global Initiative for Asthma abolished in 2019** — reliever
+      monotherapy — delivered by default to hundreds of millions of people,
+      because it is what arrives in the box.
+      The reasons are ordinary and fixable: procurement lists built around acute
+      symptomatic care, no cold chain problem and no excuse for one, forecasting
+      that treats asthma as episodic, and prescribers trained where the preventer
+      was never on the shelf. **Nothing here is a discovery.**
+      **And there is a second-order effect that makes it self-sustaining.** A
+      clinician who has only ever had salbutamol treats asthma as attacks; a
+      patient who has only ever had salbutamol experiences it as attacks; and the
+      demand signal that would pull inhaled corticosteroid into the system is
+      never generated. This is gaps.md #204's practical form, and it is the single
+      highest-yield item in this record.
+    who_could: [health-system, government, nonprofit, payer, manufacturer]
+    scale: 3.0e9
+    standing: documented
+    src: recall
+
+  - kind: cost
+    blocks: an off-patent drug sold in a patented device
+    obstacles: []
+    what: >
+      **THE MOLECULE HAS BEEN OFF PATENT FOR DECADES AND THE INHALER HAS NOT.**
+      Beclometasone dates from 1972 and budesonide from the early 1980s; both are
+      cheap to synthesise. An inhaler, however, is a drug **and** a delivery
+      device, and the device is patentable, re-patentable, and improvable in ways
+      that restart exclusivity around an unchanged active ingredient. A generic
+      entrant must demonstrate equivalence of the combination, not of the compound
+      — a materially harder and more expensive regulatory path than for a tablet.
+      **The consequence is an essential medicine with a generic market that
+      behaves like a branded one.** Prices in low- and middle-income countries
+      commonly run to several days' wages for a month's supply, which for a drug
+      taken for life is a de facto exclusion, and the same product costs wildly
+      different amounts in different countries.
+      **The biologics are a separate and larger number** — tens of thousands per
+      patient per year — but they are not what this record's mortality turns on,
+      and saying so is the point. **The deaths would be prevented by the cheap
+      drug.**
+    who_could: [manufacturer, regulator, payer, government, nonprofit]
+    scale: 2.0e9
+    standing: documented
+    src: recall
+
+  - kind: adherence
+    blocks: taking a drug you cannot feel working
+    obstacles: []
+    what: >
+      **ADHERENCE TO INHALED CORTICOSTEROID IS ROUTINELY MEASURED AT UNDER HALF,
+      AND THE REASON IS STRUCTURAL RATHER THAN MOTIVATIONAL.**
+      The preventer produces no perceptible effect when it is working; the
+      reliever produces an immediate, unmistakable one. A patient learning from
+      their own experience will conclude that the blue inhaler is the medicine and
+      the brown one is optional, and **they are reasoning correctly from the
+      evidence available to them.** Add a fear of steroids that is specific,
+      widespread, and not entirely unfounded given the `toll` block, and the
+      centimetre of final height that parents are told about, and the behaviour is
+      overdetermined.
+      **Then add technique.** Study after study finds that a majority of patients
+      use their inhaler incorrectly enough to reduce delivered dose substantially,
+      that technique degrades within months of being taught, and that it is
+      rarely re-checked. **A drug that is prescribed, dispensed, taken, and not
+      inhaled is recorded as treatment failure**, and the register's `efficacy`
+      and `access` fields both count it as delivered.
+      **The best answer found so far is not education.** It is combining the two
+      drugs in one device — maintenance-and-reliever therapy — so that reaching
+      for relief delivers the preventer. That is a design solution to an adherence
+      problem, and it is the model for gaps.md #161's whole class.
+    who_could: [health-system, manufacturer, academic, patient-org, software]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    blocks: knowing who has it, in both directions at once
+    obstacles: []
+    what: >
+      **THE CONFIRMATORY TEST IS ABOLISHED BY THE TREATMENT AND BY THE PATIENT
+      BEING WELL.**
+      Asthma is defined by variability, so spirometry with reversibility, peak
+      flow variation, exhaled nitric oxide and bronchial challenge all require the
+      abnormality to be present at the moment of testing. It is not, between
+      attacks or on treatment — and treatment is started first, because the
+      patient is breathless in front of you and the drug is safe.
+      **So the diagnosis is largely made and kept on clinical impression, and it
+      is wrong in both directions.** Re-testing studies in wealthy systems find
+      roughly a third of adults carrying the label do not meet objective criteria;
+      elsewhere spirometry is unavailable and most asthma is never diagnosed at
+      all, with wheeze treated as infection — which is also how antibiotics get
+      used for it.
+      **What would fix it is not exotic.** Spirometry at scale in primary care,
+      objective confirmation before committing someone to lifelong treatment, and
+      a protocol for testing at presentation rather than after control is
+      achieved. **This is the third record where `diagnosis` is really a
+      *timing* problem rather than a missing test** — `mcas` needs the sample
+      within hours of an unpredictable event, and this needs it before the
+      treatment starts.
+    who_could: [health-system, academic, software, government, manufacturer]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: the four percent with no target, and preventing the disease at all
+    obstacles: []
+    what: >
+      **TWO SEPARATE HOLES, AND THE FIELD'S SUCCESS ELSEWHERE MAKES BOTH MORE
+      VISIBLE RATHER THAN LESS.**
+      **Type-2-low asthma has no mechanism and therefore no drug.** Every biologic
+      on the market targets a node in the type-2 cascade, and this group does not
+      have one; corticosteroids work poorly; the category is named for a biomarker
+      being absent. Tezepelumab, acting upstream at the epithelium, helps some of
+      them, which is a hint rather than an answer. **A field that can design four
+      working antibodies against a pathway it understands has produced nothing at
+      all for the patients outside it**, which is a fair summary of what mechanism
+      buys.
+      **And nobody knows how to prevent asthma.** Decades of primary-prevention
+      trials — allergen avoidance, diet, probiotics, dust mite measures — have not
+      produced a reliable intervention. The hygiene and farm-exposure epidemiology
+      is real and has not converted. For the commonest chronic disease of
+      childhood, **the honest statement is that its origins are not understood
+      well enough to interrupt.**
+      A third, smaller: **nothing explains remission** (gaps.md #205), and
+      whatever ends the disease in a large fraction of children is presumably the
+      most direct route to a cure anybody could ask for.
+      `scale: null`.
+    who_could: [academic, sponsor, manufacturer, philanthropy]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: policy
+    blocks: the exposures, and the propellant
+    obstacles: []
+    what: >
+      **THE PREVENTABLE PART OF THIS RECORD BELONGS TO REGULATORS AND NOT TO
+      CLINICIANS.**
+      **Air quality.** Traffic-related nitrogen dioxide and particulate exposure is
+      associated with asthma incidence in children and with exacerbations in
+      everyone, and it is addressed by emissions standards, road policy and
+      building ventilation. **Tobacco**, including in utero and second-hand
+      exposure, is the clearest single modifiable factor and belongs to tobacco
+      control. **Occupational asthma is roughly a sixth of adult-onset disease**,
+      is caused by identified agents — isocyanates, flour, enzymes, latex,
+      persulphates — in identified industries, and is prevented by exposure limits
+      and substitution. That is a rare thing in this register: **a preventable
+      slice of a disease with a named regulator already responsible for it, and
+      enforcement rather than discovery as the missing step.**
+      **And the treatment has an externality that lands outside medicine
+      entirely.** Pressurised metered-dose inhalers use hydrofluorocarbon
+      propellants with a high global warming potential, and inhalers have been
+      measured as a few percent of some national health systems' total carbon
+      footprint. Dry powder inhalers are far lower and are not suitable for
+      everyone — **they need an inspiratory flow that a patient having an attack
+      does not have**, so the device that must stay pressurised is the reliever,
+      which is the one used most. Lower-GWP propellants are in development.
+      **Record it as a real cost with the caveat attached**: the answer is not
+      fewer inhalers, and better-controlled asthma uses fewer relievers, so the
+      clinical fix and the environmental one point the same way. gaps.md #78 gave
+      externalities a sign; this one has an address in no record at all.
+    who_could: [legislator, regulator, government, manufacturer, health-system]
+    scale: 2.0e9
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0098
+  rated: 2026-08-25
+  by: [claude, jeremy]

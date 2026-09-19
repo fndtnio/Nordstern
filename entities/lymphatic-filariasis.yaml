@@ -1,0 +1,404 @@
+slug: lymphatic-filariasis
+id: FND-D-0028
+name: lymphatic filariasis
+also: [filarial elephantiasis, elephantiasis, LF, Wuchereria bancrofti infection, Bancroftian filariasis]
+mondo: MONDO:0005761
+kind: disease
+residual: false
+contested: false
+
+# THE RECORD WHERE THE RESIDUE IS THE TREATABLE PART.
+#
+# `residue` was added five records ago to hold what the disease leaves behind in
+# someone the treatment worked on. Every instance so far has been damage nothing
+# can touch: scarred lungs, cirrhosis, a blind eye, dead conduction tissue.
+#
+# Here it is not. Roughly 25 million men have a hydrocele, which a cheap
+# day-case operation CURES. Roughly 17 million people have lymphoedema, whose
+# progression is largely prevented by washing the limb with soap and water.
+# Neither has anything to do with the antiparasitic drug — killing the worms in
+# someone with elephantiasis does nothing at all — and the single largest
+# actionable intervention in this record is treating the residue rather than the
+# disease. `residue` records severity, permanence and incidence, and has no way
+# to say that. See gaps.md #60.
+#
+# AND THE INFECTED ARE NOT THE DISEASED. About 51 million people are infected,
+# most of them without symptoms; about 36 million have chronic morbidity, most
+# of them no longer infected. `reach` describes treating the first group. Mass
+# drug administration reaching every one of them would do nothing whatever for
+# the second. See gaps.md #61.
+
+burden:
+  prevalence:
+    value: 5.1e7
+    units: >
+      people with active infection — down from roughly 199 million in 2000.
+      Around 882 million in 44 countries still live where preventive
+      chemotherapy is required
+    src: recall
+  deaths:
+    value: 0.0
+    units: >
+      deaths/year directly attributable — a sixth morbidity-dominant record;
+      lymphatic filariasis disables and does not kill
+    src: reasoning
+  note: >
+    READ THE SECOND NUMBER, WHICH THE SCHEMA HAS NO FIELD FOR. Roughly 36
+    million people live with chronic manifestations — on the order of 25 million
+    men with hydrocele and 15 to 17 million people with lymphoedema or frank
+    elephantiasis. That population is largely NOT the infected population above:
+    chronic disease develops years after infection and persists long after the
+    worms are gone.
+    So this record contains two diseases with two different denominators, and
+    every derived figure here describes the first one. Around twenty countries
+    have been validated as having eliminated lymphatic filariasis as a public
+    health problem, which means transmission has been stopped — and tens of
+    millions of disabled people remain in them. The word "eliminated" is doing
+    something very specific and a reader will hear something else.
+
+axes:
+  mechanism: established
+  intervention: suppressive
+  prevention: risk-reduction
+  ongoing: low
+  efficacy:
+    value: 0.90
+    units: >
+      fraction-of-patients (microfilarial clearance on mass drug
+      administration) — OF THE INFECTION, which is not the same thing as of the
+      disease; see the strata
+    src: reasoning
+  access:
+    value: 0.80
+    units: >
+      fraction-of-patients (reached by preventive chemotherapy) — among the
+      best-covered programmes in this register; the shortfall is concentrated
+      where onchocerciasis or Loa loa co-endemicity restricts the regimen, and
+      in conflict areas
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: none
+  predictive: partial
+  witness: >
+    DIAGNOSTIC is `objective`, and the history is worth a sentence because it
+    shows what a good test buys. Microfilariae of Wuchereria bancrofti circulate
+    with NOCTURNAL PERIODICITY — they peak in the blood around midnight — so
+    for decades surveys meant waking villages up to take blood at night. Rapid
+    filarial antigen tests removed that entirely: a finger-prick, any hour.
+    Ultrasound can visualise adult worms moving in the lymphatics.
+    PROGNOSTIC is `none`, and it is the expensive gap here as in Chagas and
+    latent tuberculosis. Most infected people never develop chronic disease.
+    Nothing identifies which of them will end up with a swollen leg, which with
+    a hydrocele, and which with neither — and chronic disease often appears
+    years after the infection itself has cleared, so the question is being asked
+    about people who no longer have anything to treat.
+    PREDICTIVE is `partial`, and for the same reason as onchocerciasis: the live
+    question is about harm rather than benefit. Which regimen is safe here
+    depends on what ELSE is endemic. The triple-drug combination recommended
+    from 2017 is markedly more effective and cannot be used where onchocerciasis
+    or Loa loa are co-endemic, because diethylcarbamazine provokes severe
+    reactions in the presence of those parasites. So the mapping that determines
+    the regimen is a map of other diseases, and `predictive` — which asks only
+    whether a treatment will work — has no room for it. See gaps.md #59.
+
+strata:
+  - name: infected, asymptomatic
+    fraction:
+      value: 0.60
+      units: fraction-of-ever-infected
+      src: reasoning
+    intervention: suppressive
+    efficacy:
+      value: 0.90
+      units: fraction-of-stratum (microfilarial clearance)
+      src: reasoning
+    toll: minor
+    what: >
+      The majority, and the group mass drug administration is actually for.
+      Circulating microfilariae, no clinical disease, and — critically — they
+      are the transmission reservoir. Annual tablets clear the microfilariae,
+      which protects the community more immediately than it protects them.
+      Most of this group will never develop chronic disease, and nobody can say
+      which of them will.
+
+  - name: hydrocele
+    fraction:
+      value: 0.25
+      units: fraction-of-ever-infected (men)
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.95
+      units: fraction-of-stratum (cured by hydrocelectomy)
+      src: reasoning
+    toll: minor
+    what: >
+      THE MOST CLEARLY SOLVABLE PROBLEM IN THIS RECORD AND POSSIBLY IN THE
+      REGISTER. On the order of 25 million men have a hydrocele caused by
+      lymphatic damage, with the disability, pain, social exclusion and loss of
+      work that goes with it — and a hydrocelectomy is a cheap, quick, day-case
+      operation that CURES IT. Not manages it. Cures it.
+      The antiparasitic drug does nothing for these men. The intervention that
+      does is surgery, delivered by a district hospital, and the constraint is
+      surgical capacity and money rather than knowledge of any kind. This
+      stratum is why the record derives ⧉ and why the `residue` field is not
+      adequate to what is going on here.
+
+  - name: lymphoedema and elephantiasis
+    fraction:
+      value: 0.15
+      units: fraction-of-ever-infected
+      src: reasoning
+    intervention: symptomatic
+    efficacy:
+      value: 0.0
+      units: >
+        fraction-of-stratum (established lymphoedema reversed) — progression and
+        acute attacks are substantially preventable, and the damage already done
+        is not reversible
+      src: reasoning
+    toll: minor
+    what: >
+      Fifteen to seventeen million people, disproportionately women, with
+      progressive swelling of the limbs and in advanced cases the gross
+      disfigurement the disease is named for. Once the lymphatics are destroyed
+      nothing restores them.
+      What DOES work is startlingly cheap and almost entirely non-medical:
+      washing the affected limb daily with soap and water, skin care, elevation,
+      exercise, and prompt treatment of the acute bacterial attacks that drive
+      progression. Morbidity management and disability prevention is a hygiene
+      programme, and it is the difference between a manageable leg and
+      elephantiasis. It is also the part of the response that is chronically
+      under-delivered, because it is not a tablet and no donation programme
+      supplies it.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    Albendazole with ivermectin or diethylcarbamazine, once a year, is well
+    tolerated: transient fever, headache and malaise, largely the immune
+    response to dying microfilariae rather than the drugs themselves. Nothing
+    permanent for the modal recipient, which is what makes community-wide
+    distribution possible.
+    The exception is co-endemicity, and it is the same shape as onchocerciasis.
+    Diethylcarbamazine given to someone with onchocerciasis provokes severe
+    Mazzotti reactions including eye damage, and in the presence of a heavy Loa
+    loa load it is dangerous. So the more effective triple-drug regimen is
+    unusable across much of Central and West Africa, and the constraint is set
+    by which OTHER parasites are present — a fact about a different disease,
+    determining this one's treatment, in a register with no way to relate two
+    records.
+  incidence:
+    value: 0.0
+    units: >
+      fraction-of-treated (permanent harm from the standard regimen outside
+      co-endemic areas)
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    Adult worms live in the lymphatic vessels and damage them. The damage
+    accumulates, outlasts the infection, and produces the two conditions that
+    are what most people mean by this disease: hydrocele, and lymphoedema
+    progressing in advanced cases to elephantiasis. Around 36 million people are
+    living with one or the other, and most of them no longer have worms.
+    THIS IS THE FIRST RESIDUE IN THE REGISTER THAT CAN BE TREATED, AND THE FIELD
+    HAS NOWHERE TO SAY SO. Hydrocele is cured by a day-case operation. Lymphoedema
+    is not reversible, and its progression and its acute bacterial attacks are
+    substantially prevented by washing the limb with soap and water. Neither
+    involves the antiparasitic drug; killing worms in someone who already has
+    elephantiasis achieves nothing.
+    So the largest actionable intervention in this record is aimed at the
+    residue rather than at the disease, and the schema records `residue` as
+    severity, permanence and incidence — a description of harm with no room for
+    what can be done about it. The strata below carry part of it, which is why
+    this record spans the ladder; they cannot carry the fact that the curable
+    stratum is cured by SURGERY FOR THE SEQUELA rather than by treating the
+    parasite. See gaps.md #60.
+  incidence:
+    value: 0.25
+    units: >
+      fraction-of-ever-infected (developing chronic hydrocele or lymphoedema) —
+      a reasoned estimate; roughly 36 million with chronic disease against a
+      historical infected population several times larger
+    src: reasoning
+
+window:
+  what: >
+    The same structure as onchocerciasis and schistosomiasis, and the fourth in
+    a row, because these diseases genuinely share it: a long, slow accumulation
+    of damage that is preventable while it is happening and permanent once it
+    has happened.
+    Treatment before the lymphatics are destroyed prevents hydrocele and
+    lymphoedema entirely. After, the infection can be cleared and the leg stays
+    as it is. This is why mass drug administration is justified in populations
+    where most individuals will never develop symptoms — the drug is being given
+    to prevent a harm that cannot be undone, in people who cannot be identified
+    in advance.
+    The window's second half is unusual and worth stating: for someone who has
+    already missed it, there is still a great deal to do — surgery, hygiene — it
+    is simply not the thing the programme is built to deliver.
+  closes_on: >
+    irreversible destruction of lymphatic vessels, and the hydrocele or
+    lymphoedema that follows
+  caught_in_time:
+    value: 0.75
+    units: >
+      fraction-of-infected (treated before chronic damage) — tracks programme
+      coverage and duration and has improved substantially since 2000
+    src: reasoning
+
+witness:
+  mechanism: >
+    `established`. Filarial nematodes — Wuchereria bancrofti in about ninety
+    percent of cases, with Brugia species elsewhere — transmitted by mosquitoes,
+    with adult worms living five to eight years in the lymphatic vessels and
+    releasing microfilariae that circulate in blood. As in onchocerciasis, the
+    worms carry the Wolbachia endosymbiont, and killing the bacterium with
+    doxycycline sterilises and eventually kills the adult worm.
+    The named hole is the same one that makes prognosis impossible: why chronic
+    disease develops in a minority, and why some develop hydrocele and others
+    lymphoedema. The role of recurrent bacterial superinfection in driving
+    lymphoedema progression is well enough established to be the basis of
+    treatment, and the underlying determinant of who progresses at all is not.
+  intervention: >
+    Rated `suppressive`, and the rating describes the infection rather than the
+    disease people live with — which is the tension this whole record is about.
+    Annual albendazole with ivermectin or diethylcarbamazine clears
+    microfilariae and interrupts transmission; sustained for five or more rounds
+    at adequate coverage it drives infection out of a community, and around
+    twenty countries have been validated on that basis. The triple-drug
+    combination recommended from 2017 clears microfilariae for far longer and
+    should shorten the number of rounds required, where co-endemicity permits
+    its use.
+    None of that touches the 36 million people who already have chronic disease.
+    For them the effective interventions are a hydrocelectomy and a bar of soap,
+    and the strata are where the register can say so.
+  prevention: >
+    `risk-reduction`. Mass drug administration reduces transmission as well as
+    infection. Vector control matters and arrives partly by accident — insecticide-
+    treated bed nets distributed for malaria also reduce lymphatic filariasis
+    transmission, and in some settings that co-benefit has done real work. There
+    is no vaccine.
+    Diethylcarbamazine-fortified cooking salt deserves a mention as one of the
+    stranger delivery vehicles in public health: used successfully in China and
+    elsewhere, it turns a daily household staple into the distribution
+    mechanism, with no programme visit required at all.
+  ongoing: >
+    `low` for the person taking annual tablets, and the rating is another
+    casualty of the two-populations problem. For the fifteen million people with
+    lymphoedema, ongoing burden is daily limb hygiene for the rest of their
+    lives, plus the acute attacks when it fails — which is `high` by any
+    reading. The axis rates the mode, the mode is the asymptomatic person taking
+    a tablet once a year, and the people with the disease are somewhere else in
+    the file.
+
+holes:
+  - Why chronic disease develops in a minority of the infected, and why it takes
+    the form it does. This is the prognostic gap and it is what makes treating
+    everyone the only available policy.
+  - How large the hydrocele backlog actually is and what clearing it would cost.
+    The intervention is a known, cheap operation and the denominator is an
+    estimate.
+  - Whether morbidity management delivered at scale changes long-run outcomes as
+    much as the small studies suggest. It is cheap enough that it is done anyway,
+    which is not the same as being measured.
+  - What co-endemicity ultimately costs the elimination effort, given that the
+    better regimen cannot be used across much of Africa.
+  - The strata fractions are reasoned from the commonly cited 25 million
+    hydrocele and 15-17 million lymphoedema figures against a historical infected
+    population, not measured, and the three groups are not cleanly disjoint.
+  - Written from model recall. The two-population structure, the hydrocelectomy
+    and the co-endemicity constraint are the parts most likely right; every
+    number is the part most likely wrong.
+
+blockers:
+  - kind: logistics
+    blocks: surgery and hygiene for 36 million people the drug cannot help
+    what: >
+      THE LARGEST CONCRETE DELIVERABLE IN THIS RECORD, and it is not a drug
+      programme. On the order of 25 million men need a hydrocelectomy — a cheap
+      day-case operation that cures — and the constraint is surgical capacity,
+      trained staff, theatre time and money in district hospitals. Fifteen
+      million people with lymphoedema need hygiene kits, training and treatment
+      for acute attacks, which is soap, water, basic drugs and someone to teach
+      the routine.
+      Neither is scientifically hard. Both are chronically under-delivered
+      relative to mass drug administration, and the reason is structural rather
+      than anybody's fault: MDA has donated tablets, a coverage metric, and an
+      elimination target that counts transmission. Morbidity management has none
+      of those, so the part of the response aimed at the people who are actually
+      disabled is the part with no donation behind it and no number to report.
+      A programme can be validated as having eliminated this disease with every
+      one of those 36 million people still exactly as they were.
+    who_could: [health-system, government, nonprofit, philanthropy, payer]
+    scale: 5.0e8
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    obstacles: [who-progresses, pathogen-persistence]
+    blocks: a macrofilaricide, and any way to predict who will be disabled
+    what: >
+      Two gaps, the second larger than it looks. There is no deployable drug
+      that kills the adult worm — doxycycline anti-Wolbachia therapy does, and
+      needs weeks of daily antibiotic with contraindications that rule it out of
+      mass administration, exactly as in onchocerciasis.
+      The second is prognostic. Most infected people never develop chronic
+      disease and nothing says which will, so the entire strategy is to treat
+      everybody for years to prevent an outcome in a minority who cannot be
+      identified. A marker for who progresses would change what the programme is
+      for.
+      `scale: null` — no priced path to either.
+    who_could: [academic, sponsor, philanthropy, nonprofit]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    blocks: knowing which regimen is safe, and confirming elimination
+    what: >
+      Two different needs, both real. The first is co-endemicity mapping: the
+      more effective triple-drug regimen cannot be used where onchocerciasis or
+      Loa loa are present, so what can be given depends on a map of OTHER
+      diseases — the same harm-scoped question as onchocerciasis, and the same
+      absence of anywhere to record it.
+      The second is the endgame. Confirming that transmission has stopped
+      requires transmission assessment surveys in children, repeated after
+      treatment stops, at exactly the point where prevalence is too low for the
+      tools to be comfortable and the programme is under pressure to declare
+      victory and leave.
+    who_could: [health-system, academic, government, nonprofit]
+    scale: 1.0e8
+    standing: documented
+    src: recall
+
+  - kind: no-sponsor
+    obstacles: [donation-dependency]
+    blocks: a drug supply not dependent on donations continuing
+    what: >
+      The sixth instance of the pattern and by now it is the pattern rather than
+      the exception. Albendazole, ivermectin and diethylcarbamazine all reach
+      these programmes through manufacturer donations. It has worked, at a scale
+      of billions of treatments, and it is a dependency.
+      What this record adds is the shape of what donations do NOT cover.
+      Tablets are donated; hydrocele surgery and hygiene kits are not. So the
+      response is generously funded exactly where a product exists to donate and
+      thin exactly where the intervention is an operation or a bar of soap —
+      which is also where the 36 million disabled people are. The improvised
+      institution that answered the drug problem did not answer this one, and
+      could not have.
+    who_could: [manufacturer, philanthropy, government, nonprofit, payer]
+    scale: 2.0e8
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0028
+  rated: 2026-08-21
+  by: [claude, jeremy]

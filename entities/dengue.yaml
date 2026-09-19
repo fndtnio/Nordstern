@@ -1,0 +1,349 @@
+slug: dengue
+id: FND-D-0031
+name: dengue
+also: [dengue disease, dengue fever, breakbone fever, severe dengue, dengue haemorrhagic fever]
+mondo: MONDO:0005502
+kind: disease
+residual: false
+contested: false
+
+# THE REGISTER FILES THIS NEXT TO HUNTINGTON'S DISEASE.
+#
+# `capability` is computed from the INTERVENTION ladder and ignores prevention
+# unless prevention is `eradicated`. Dengue has no antiviral — treatment is
+# fluids and monitoring — so `intervention: symptomatic`, so `capability:
+# unsolved`, so the quadrant reads `engineering problem`: understood, and
+# nothing can be done.
+#
+# There are two licensed vaccines and a vector intervention with a 77% reduction
+# in a cluster-randomised trial. All of that lives on the `prevention` axis,
+# which is a single enum word with no efficacy, no coverage, no harm profile and
+# no bearing on capability. See gaps.md #66.
+#
+# AND THE PREVENTION HAS HARMED PEOPLE. The first dengue vaccine increased the
+# risk of severe dengue in recipients who had never been infected — because a
+# vaccine that primes like a first infection makes the next natural infection
+# behave like a second one, which is the dangerous one. The programme was
+# halted, and the damage did not stop at dengue: vaccine confidence in the
+# Philippines collapsed, coverage fell, and a large measles outbreak followed.
+# An intervention for one disease damaged the control of another by damaging the
+# institution both depend on. See gaps.md #67.
+
+burden:
+  incidence:
+    value: 2.5e8
+    units: >
+      infections/year — modelled estimates run from roughly 100 to 400 million,
+      of which most are asymptomatic or mild; reported cases are far fewer, with
+      2024 the worst year ever recorded at over 14 million
+    src: recall
+  deaths:
+    value: 2.0e4
+    units: >
+      deaths/year — wide uncertainty. With competent supportive care the case
+      fatality of severe dengue falls below one percent; without it, it is
+      an order of magnitude higher, so mortality is largely a function of health
+      system quality
+    src: recall
+  note: >
+    Roughly half the world's population lives where transmission occurs, and
+    THE NUMBER IS GROWING. Aedes aegypti and Aedes albopictus are extending
+    their range with urbanisation, water storage practice and a warming climate;
+    2023 and 2024 set records, driven by the Americas.
+    That growth is invisible in this file. Every record in this register is a
+    snapshot, and the register's stated purpose is to take an annual bearing —
+    which requires knowing that sleeping sickness is falling and dengue is
+    rising, and both currently read as a static row. See gaps.md #57.
+
+survival:
+  course: acute
+  horizon: 30 days from onset of severe dengue
+  untreated:
+    value: 0.8
+    units: >
+      fraction alive — severe dengue with plasma leakage and shock carries a case
+      fatality above 20% without careful fluid management
+    src: recall
+  treated:
+    value: 0.99
+    units: >
+      fraction alive with protocolised fluid resuscitation and monitoring.
+      **There is no antiviral**; the entire gain is knowing how much fluid to
+      give and when, which is a guideline rather than a drug
+    src: recall
+  witness: >
+    **A survival gain produced by a WHO handbook.** Case fatality fell below 1%
+    in countries that adopted structured severity triage, with no new
+    therapeutic agent involved at all. The register keeps finding these — the
+    stroke unit, oral rehydration, oxygen for childhood pneumonia — and
+    `intervention` has no rung that describes them.
+
+axes:
+  mechanism: established
+  intervention: symptomatic
+  prevention: prophylaxis
+  ongoing: low
+  efficacy:
+    value: 0.0
+    units: >
+      fraction-of-patients (disease course altered by any treatment) — THERE IS
+      NO ANTIVIRAL. Careful fluid management takes the case fatality of severe
+      dengue from something like one in five to under one in a hundred, and it
+      does not alter the disease, so it has nowhere to go on this axis. See the
+      intervention witness
+    src: reasoning
+  access:
+    value: 0.0
+    units: fraction-of-patients (no course-altering treatment to access)
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: n/a
+  witness: >
+    DIAGNOSTIC is `objective` and genuinely good for a disease of this
+    distribution: NS1 antigen rapid tests in the first days of illness, RT-PCR,
+    and IgM/IgG serology afterwards. Cheap, field-usable, widely available.
+    PROGNOSTIC is `partial` and is the axis that saves lives here. Most dengue
+    is self-limiting; a small fraction deteriorates into plasma leakage and
+    shock, and it does so at a predictable moment — around defervescence, as the
+    fever breaks. The WHO warning signs (abdominal pain, persistent vomiting,
+    mucosal bleeding, lethargy, a rising haematocrit with a falling platelet
+    count) identify much of that group in time to admit and fluid-resuscitate
+    them. It is imperfect and it is the basis of triage in every dengue season,
+    and it is a rare case in this register of prognostic measurement being the
+    intervention.
+    PREDICTIVE is `n/a` on the Huntington's grounds — no course-altering therapy
+    exists whose response could be predicted. AND THAT RATING HIDES THE LIVE
+    PREDICTIVE QUESTION IN THIS RECORD, which is about the vaccine: whether a
+    given person has been infected before determines whether vaccination
+    protects them or endangers them, and a serostatus test answers it. That is
+    the onchocerciasis shape — a test to decide who must NOT receive something —
+    and the second instance of it in this register. `predictive` is
+    treatment-scoped, so a decisive, answerable, harm-scoped question about a
+    PREVENTIVE intervention is invisible on this axis and on every other one.
+    See gaps.md #59 and #66.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    There is no specific treatment, so there is almost no treatment toll. The
+    management is intravenous or oral fluid, monitoring, and transfusion where
+    needed. Fluid overload from over-enthusiastic resuscitation is a real
+    iatrogenic harm in dengue units and is transient and manageable.
+    THE HARM IN THIS RECORD IS FROM THE VACCINE AND THIS FIELD CANNOT HOLD IT.
+    `toll` is defined as what the CURE takes from the patient. A preventive
+    intervention that increases the severity of the disease it was given to
+    prevent, in a subgroup defined by prior exposure, is not a cure and is not a
+    toll, and the schema has no other field for it. Recorded in the prevention
+    witness and in gaps.md #66, where it does not belong either.
+  incidence:
+    value: 0.0
+    units: fraction-of-treated (permanent harm from supportive management)
+    src: reasoning
+
+window:
+  what: >
+    THE SHORTEST WINDOW IN THE REGISTER BY SEVERAL ORDERS OF MAGNITUDE, and the
+    contrast is worth stating because it changes what the lever is.
+    Every other window here is measured in years or decades — fibrosis in
+    Chagas and schistosomiasis, blindness in onchocerciasis, bone invasion in
+    mycetoma, the blood-brain barrier in sleeping sickness. This one is measured
+    in HOURS. Severe dengue announces itself around the time the fever breaks,
+    plasma leakage develops over a day or so, and the difference between a
+    survivable illness and death is whether somebody recognised the warning
+    signs and started fluids in that period.
+    So the cheap lever is not a screening programme. It is clinical training,
+    triage protocols and a bed — the ability of a district facility in a dengue
+    season to spot deterioration and act on it the same afternoon. That is why
+    case fatality varies so enormously between health systems for a disease
+    nobody can treat.
+  closes_on: >
+    progression to plasma leakage and shock, over hours around defervescence
+  caught_in_time:
+    value: 0.70
+    units: >
+      fraction-of-severe-cases (recognised and fluid-managed in time) — a
+      reasoned estimate, and enormously variable: near-total in an experienced
+      dengue unit, poor where the season is new and the staff have not seen it
+    src: reasoning
+
+witness:
+  mechanism: >
+    `established`, and the important part of the mechanism is what makes this
+    disease so difficult to prevent.
+    A flavivirus with FOUR SEROTYPES, transmitted by Aedes aegypti and Aedes
+    albopictus — day-biting, urban, breeding in domestic water containers rather
+    than in swamps, which is why this is a city disease and why control is a
+    household matter. Infection gives lifelong immunity to that serotype and only
+    transient cross-protection against the others.
+    ANTIBODY-DEPENDENT ENHANCEMENT is the crux. A second infection with a
+    different serotype carries substantially higher risk of severe disease,
+    because non-neutralising antibodies from the first infection bind the new
+    virus without disabling it and help it into cells that carry Fc receptors.
+    It is one of the best-documented examples of immune enhancement in human
+    disease, and it means the same antibody can protect or endanger depending on
+    which serotype arrives and at what titre.
+    The named hole follows directly and it is the same one tuberculosis has:
+    there is no clean CORRELATE OF PROTECTION. If a given antibody level can
+    protect against one serotype and enhance another, then a vaccine cannot be
+    screened by measuring the immune response it produces — it has to be taken
+    to a full efficacy trial and, as the record below shows, sometimes to a
+    population.
+  intervention: >
+    `symptomatic`, and there is no argument to be had: THERE IS NO ANTIVIRAL FOR
+    DENGUE. Nothing shortens it, nothing prevents progression, nothing clears the
+    virus. Management is fluid replacement timed against the critical phase,
+    haematocrit and platelet monitoring, transfusion where needed, and avoiding
+    non-steroidal anti-inflammatories and unnecessary procedures.
+    THAT MANAGEMENT IS ENORMOUSLY EFFECTIVE AT NOT DYING AND THE AXIS CANNOT SAY
+    SO. Competent supportive care takes the case fatality of severe dengue from
+    roughly one in five to under one in a hundred. It is one of the largest
+    mortality effects of any intervention in this register, it requires no drug,
+    and because it does not alter the disease it scores `efficacy: 0.0` — which
+    then multiplies through `reach` to zero, and the record reports that nothing
+    can be done.
+    The ladder is built around altering a disease. Dengue's capability is
+    entirely about not being infected and not dying while infected, and neither
+    is a rung.
+  prevention: >
+    THE ENTIRE RECORD IS ON THIS AXIS AND THE AXIS IS ONE WORD.
+    `prophylaxis` is true — there are licensed vaccines — and it conveys none of
+    the following.
+    THE FIRST VACCINE HARMED PEOPLE. Licensed in 2015-16 and deployed in a
+    school-based campaign to hundreds of thousands of children in the
+    Philippines, it was found in 2017 to increase the risk of severe dengue in
+    recipients who had never been infected. The reason is the mechanism above: a
+    vaccine that primes like a first infection makes the next natural infection
+    behave like a second one. Guidance now restricts it to the demonstrably
+    seropositive, which requires screening every candidate before vaccinating.
+    A SECOND VACCINE, licensed from 2022 and prequalified since, performs better
+    and does not resolve the shape: efficacy varies by serotype, and questions
+    about seronegative recipients and the less common serotypes persist.
+    AND WOLBACHIA IS THE MOST INTERESTING PREVENTION IN THIS REGISTER. Aedes
+    mosquitoes carrying the Wolbachia bacterium do not transmit dengue well;
+    released into a wild population the bacterium spreads and establishes
+    itself. A cluster-randomised trial in Yogyakarta reported around a 77%
+    reduction in dengue incidence. It is not a drug, not a vaccine, and not
+    vector killing — it is a ONE-OFF, SELF-SUSTAINING MODIFICATION OF THE VECTOR
+    POPULATION, closer in shape to building a sewer than to spraying, and the
+    enum has nowhere to put a preventive act that persists after you stop paying
+    for it.
+    So this axis is being asked to carry: does prevention exist, how well does it
+    work, how many people does it reach, does it harm anyone, and does it stay
+    done. It answers the first. See gaps.md #66.
+  ongoing: >
+    `low`. An acute illness lasting a week or two, with no chronic treatment and
+    no long-term regimen. Post-dengue fatigue is described and is poorly
+    characterised; see holes.
+
+holes:
+  - Why only a minority of secondary infections become severe. Antibody-dependent
+    enhancement explains the elevated risk and does not identify the individual.
+  - What protective immunity looks like. Without a correlate of protection,
+    vaccine candidates cannot be screened short of full efficacy trials, which is
+    how a vaccine reached hundreds of thousands of children before its
+    seronegative effect was understood.
+  - Whether post-dengue fatigue and post-severe-dengue organ sequelae amount to a
+    genuine residue. Described, thinly characterised, and deliberately NOT given
+    a `residue` block here rather than asserting one on weak evidence.
+  - How much of the 100-400 million estimate is real. The range is a factor of
+    four and is modelled rather than counted.
+  - Whether the vaccine-confidence damage in the Philippines caused the
+    subsequent measles outbreak. The confidence collapse is documented in survey
+    data and the coverage fall and outbreak followed; the causal attribution is
+    strongly argued and remains an inference.
+  - Written from model recall. Antibody-dependent enhancement, the four
+    serotypes, the seronegative vaccine finding and the Wolbachia trial result
+    are the parts most likely right; every number is the part most likely wrong.
+
+blockers:
+  - kind: knowledge
+    obstacles: [who-progresses, protective-immunity]
+    blocks: an antiviral, and a vaccine that is safe in everyone
+    what: >
+      Two absences with one root. There is no drug that treats dengue, in a
+      disease with hundreds of millions of infections a year — which on its own
+      would make this one of the largest untreated infections on earth.
+      And the vaccine problem is harder than it looks because of antibody-
+      dependent enhancement: a candidate cannot be screened by measuring the
+      antibody response it produces, since the same response can protect against
+      one serotype and enhance another. Without a correlate of protection, every
+      candidate must go to a full efficacy trial, across four serotypes, in
+      populations with mixed prior exposure. That is why one reached a national
+      immunisation campaign before its effect in seronegative children was
+      understood.
+      `scale: null` — no priced path to either.
+    who_could: [academic, sponsor, philanthropy, nonprofit]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: deploying a proven vector intervention city by city
+    what: >
+      THE MOST PURCHASABLE THING IN THIS RECORD, and unusually the science is
+      finished. Releasing Wolbachia-carrying Aedes into a city establishes the
+      bacterium in the wild mosquito population and suppresses transmission —
+      around 77% in a cluster-randomised trial — and once established it
+      persists without further payment.
+      The constraint is that it must be done place by place: rearing facilities,
+      release programmes, community consent and monitoring, in every city that
+      wants it. That is an infrastructure programme with an unusually good
+      evidence base and an unusually favourable long-run cost profile, and it is
+      exactly the kind of thing that is hard to fund because the benefit accrues
+      to a municipality over decades.
+    who_could: [government, health-system, philanthropy, nonprofit]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    blocks: knowing who can safely be vaccinated
+    what: >
+      The second harm-scoped diagnosis blocker in this register, after the
+      onchocerciasis device that decides who must not receive ivermectin. Here
+      the question is prior exposure: the first dengue vaccine helps the
+      seropositive and endangers the seronegative, so guidance requires screening
+      before vaccinating.
+      That turns a school-based mass campaign into an individually tested one,
+      which is a completely different operation — and rapid serological tests
+      with adequate specificity for this purpose are not straightforwardly
+      available at the point of vaccination. A pre-vaccination screening test
+      that worked in a queue would restore a delivery model, not merely a
+      statistic.
+      Distinct from case-management diagnostics, which are cheap and good.
+    who_could: [manufacturer, academic, health-system, nonprofit]
+    scale: 1.0e8
+    standing: documented
+    src: recall
+
+  - kind: policy
+    blocks: household vector control, and the trust to deploy anything
+    what: >
+      Aedes aegypti breeds in domestic water storage — buckets, tanks, tyres,
+      plant pots — so vector control here is not aerial spraying but hundreds of
+      millions of households changing what they leave standing in a yard. That
+      is municipal sanitation, water supply reliability and behaviour, sitting
+      across the same ministry boundary as schistosomiasis's latrines.
+      AND THE SECOND HALF IS THE DAMAGE ALREADY DONE. After the seronegative
+      finding, the Philippine programme was suspended amid criminal
+      investigations and sustained public alarm. Survey data recorded a
+      collapse in public confidence in vaccines generally — not dengue vaccines,
+      vaccines — coverage of other childhood immunisations fell, and a large
+      measles outbreak followed in 2019.
+      Recorded here because it is a real, current obstacle to deploying any
+      dengue vaccine in the region, and because the register has nowhere else to
+      put it: the harm was to an institution rather than to a patient, and it
+      landed on a different disease. See gaps.md #67.
+    who_could: [government, health-system, legislator, nonprofit, patient-org]
+    scale: 5.0e8
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0031
+  rated: 2026-08-22
+  by: [claude, jeremy]

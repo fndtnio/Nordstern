@@ -1,0 +1,564 @@
+slug: hepatitis-b
+id: FND-D-0075
+name: chronic hepatitis B
+also: [hepatitis B, HBV, chronic HBV infection, hepatitis B virus infection]
+mondo: MONDO:0005366
+kind: disease
+residual: false
+contested: false
+
+# Joined to `chronic hepatitis B virus infection` rather than the parent
+# `MONDO:0005344 hepatitis B virus infection`, because acute HBV in an adult is a
+# self-limiting illness in about 95% of cases and this record is about the 254
+# million people whose infection did not resolve.
+#
+# THE DESIGNED CONTRAST. `hepatitis-c` (held) is the same organ, the same cancer,
+# and the mirror image on both axes:
+#
+#                    vaccine     cure        ladder          reach
+#   hepatitis B      YES (1982)  no          suppressive     0.08
+#   hepatitis C      no          YES (2014)  curative        0.19
+#
+# Two viruses, one liver, opposite profiles — and the register's cleanest
+# demonstration that `prevention` and `intervention` are genuinely independent
+# axes rather than two ways of saying the same thing.
+#
+# This record also sits upstream of `liver-cancer` (held) and of the queued
+# `cirrhosis`, which is where its deaths are actually counted (gaps.md #160).
+
+burden:
+  prevalence:
+    value: 2.54e8
+    units: >
+      people living with chronic hepatitis B — **revised DOWN from around 296
+      million** in the previous global estimate, not because anybody recovered but
+      because the modelling changed (gaps.md #141)
+    src: recall
+  deaths:
+    value: 1.1e6
+    units: >
+      deaths/year — **and essentially none of them are deaths from hepatitis.**
+      They are deaths from cirrhosis and hepatocellular carcinoma, decades after
+      an infection usually acquired at birth
+    src: recall
+  note: >
+    **THE CASCADE HERE IS THE WORST IN THE REGISTER FOR A DISEASE WITH A CHEAP
+    GENERIC TREATMENT.** Roughly **13% of infected people are diagnosed** and
+    roughly **3% are on treatment.** Tenofovir costs on the order of thirty
+    dollars a year.
+    Compare `hiv`, which is the same shape of problem — a chronic virus, lifelong
+    suppression, cheap generics, no cure — and reaches 0.72 in this register.
+    **Same shape, roughly twenty-five times the delivery** (gaps.md #163).
+    **The deaths are also somebody else's.** Hepatitis B kills through cirrhosis
+    and liver cancer, both of which are or will be records here, so this figure
+    double-counts against `liver-cancer` and against the queued `cirrhosis` in the
+    way #147 and #160 describe. What this record uniquely holds is the *cause*.
+
+survival:
+  horizon: 20 years from established chronic infection
+  untreated:
+    value: 0.75
+    units: >
+      fraction alive — chronic hepatitis B progresses to cirrhosis or
+      hepatocellular carcinoma in a substantial minority over decades, and the
+      rest carry it without dying of it
+    src: recall
+  treated:
+    value: 0.95
+    units: >
+      fraction alive on tenofovir or entecavir — near-complete viral suppression in
+      anybody who takes them, with substantially reduced progression. **They do
+      not cure and they do not abolish the cancer risk**, so surveillance
+      continues indefinitely
+    src: recall
+  witness: >
+    **The vaccine is the record, not the antiviral.** Universal infant
+    immunisation has driven chronic infection in vaccinated cohorts close to
+    zero, which is a prevention gain this axis cannot see — it measures what
+    happens to people who already have it.
+
+axes:
+  mechanism: established
+  intervention: suppressive
+  prevention: prophylaxis
+  ongoing: moderate
+  efficacy:
+    value: 0.95
+    units: >
+      fraction-of-patients (durable viral suppression on treatment) — tenofovir
+      and entecavir suppress HBV DNA in almost everybody who takes them and
+      substantially reduce progression to cirrhosis and cancer. **They do not
+      cure, and they do not abolish the cancer risk**
+    src: reasoning
+  access:
+    value: 0.08
+    units: >
+      fraction-of-patients (treated, among those guidelines would treat) —
+      **the denominator is itself contested**, since eligibility criteria require
+      tests most of the burden cannot reach; about 3% of all infected people are
+      on treatment and roughly 13% know they are infected
+    src: recall
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: partial
+  witness: >
+    **DIAGNOSTIC IS `objective` AND IT IS EXCELLENT AND CHEAP — WHICH MAKES THE
+    13% DIAGNOSIS FIGURE HARDER TO EXPLAIN, NOT EASIER.** Hepatitis B surface
+    antigen is a definitive marker of infection, rapid point-of-care tests cost
+    around a dollar and work on a fingerprick, and the test has been available for
+    fifty years. Nothing about finding these people is technically unsolved.
+    PROGNOSTIC is `partial`. HBV DNA level, ALT, HBeAg status, fibrosis stage and
+    age all predict progression to cirrhosis and cancer at population level and
+    none of them decides an individual. About one in four untreated chronic
+    infections ends in cirrhosis or hepatocellular carcinoma and there is no way
+    to say which one.
+    **AND HERE PROGNOSTIC MEASUREMENT IS NOT INFORMATION — IT IS A GATE.**
+    Treatment eligibility is defined by those same variables, so the workup that
+    stratifies risk is also the workup that decides who gets a thirty-dollar
+    generic. HBV DNA quantification needs a PCR platform; fibrosis staging needs
+    elastography or at minimum a panel of blood tests, repeated over time.
+    **The assessment costs several times the annual treatment**, so in most of the
+    world "not eligible" and "not assessable" produce the same outcome, and the
+    outcome is no treatment (gaps.md #162).
+    PREDICTIVE is `partial`. Genotype predicted interferon response, which barely
+    matters now that nucleos(t)ide analogues are the backbone. Nothing predicts
+    who will achieve functional cure, and the question that matters clinically —
+    who can safely stop — has no answer at all.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    **THE DRUGS ARE ONE TABLET A DAY AND ARE WELL TOLERATED, WHICH IS WHY THE 3%
+    FIGURE IS SO STRIKING.** Tenofovir disoproxil causes a measurable decline in
+    renal function and bone mineral density over years, which matters in a therapy
+    that never ends; tenofovir alafenamide and entecavir largely avoid it.
+    Resistance, which destroyed lamivudine, is rare with either modern agent.
+    **THE REAL COST IS THAT YOU CANNOT STOP.** Discontinuing a nucleos(t)ide
+    analogue causes viral rebound and, in a substantial minority, a **severe
+    hepatitis flare** — occasionally with hepatic decompensation and occasionally
+    fatal. So a patient who runs out of tablets because of a stockout, a move, or
+    a lost clinic appointment is at more risk than one who never started.
+    That is a property this register has no field for: **an intervention whose
+    interruption is more dangerous than its absence.** It applies to `hiv` too and
+    to nothing else held here, and it makes the `ongoing` rating a statement about
+    supply-chain reliability as much as about the patient.
+  incidence:
+    value: 0.02
+    units: >
+      fraction-of-treated (significant lasting harm — chiefly renal and bone
+      effects of long-term tenofovir disoproxil) — a reasoned estimate
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    **THE VIRUS WRITES ITSELF INTO THE GENOME AND TREATMENT DOES NOT UNWRITE IT.**
+    HBV DNA integrates into host hepatocyte chromosomes, and integration
+    contributes to hepatocellular carcinoma risk **independently of ongoing
+    replication.** So suppression reduces cancer risk substantially and does not
+    abolish it, and a patient with fully suppressed virus still needs six-monthly
+    surveillance for the rest of their life.
+    **Cirrhosis, once established, does not reverse fully.** Antiviral therapy can
+    produce real regression of fibrosis and even of early cirrhosis, which is a
+    genuine and underappreciated finding, but portal hypertension, varices and the
+    architectural distortion of an established cirrhotic liver persist. Roughly a
+    quarter of untreated chronic infections end in cirrhosis or liver cancer.
+    **This is where the deaths in `burden` actually happen**, decades downstream,
+    in what the death certificate calls a different disease.
+    Uniquely in this register, the residue is also the reason the record exists:
+    hepatitis B is not dangerous because of hepatitis. It is dangerous because of
+    what it does to the liver over forty years.
+  incidence:
+    value: 0.15
+    units: >
+      fraction-of-chronically-infected (cirrhosis or hepatocellular carcinoma over
+      a lifetime) — lower with treatment and not zero, since integrated viral DNA
+      carries risk that suppression does not remove
+    src: reasoning
+
+window:
+  what: >
+    **THE WINDOW IS TWENTY-FOUR HOURS LONG AND IT OPENS AT BIRTH, AND IT IS A
+    WINDOW ON PREVENTION RATHER THAN ON TREATMENT — WHICH MAY BE A SCHEMA
+    OBSERVATION.**
+    The single most important fact in this record's epidemiology is that
+    **chronicity is age-dependent, steeply.** An infant infected at birth becomes
+    a chronic carrier roughly nine times in ten. An adult infected today becomes a
+    chronic carrier roughly one time in twenty and otherwise clears it. The
+    immature immune system tolerates the virus rather than fighting it.
+    So essentially the entire prevalent population of 254 million was created by
+    perinatal and early-childhood transmission, and **the intervention that
+    prevents a lifetime of infection is a vaccine dose given within twenty-four
+    hours of delivery** — plus, for mothers with high viral load, tenofovir in the
+    third trimester and hepatitis B immunoglobulin for the baby.
+    **Global birth-dose coverage is around 45%**, against roughly 85% for the
+    three-dose infant series that follows it. The gap between those two numbers is
+    the whole problem: the later doses are given at scheduled visits and the birth
+    dose requires somebody with a vaccine to be present at the birth itself.
+    That places this record inside `neonatal-conditions`' constraint — a competent
+    person, a cold chain, and a birth that happens somewhere with both.
+  closes_on: >
+    establishment of chronic infection in a perinatally exposed infant — about
+    twenty-four hours
+  caught_in_time:
+    value: 0.45
+    units: >
+      fraction-of-births (receiving a timely hepatitis B birth dose) — the
+      reported global birth-dose coverage figure
+    src: recall
+
+strata:
+  - name: treatment-eligible chronic infection
+    fraction:
+      value: 0.35
+      units: fraction-of-chronically-infected
+      src: reasoning
+    intervention: suppressive
+    efficacy:
+      value: 0.95
+      units: fraction-of-stratum (durable suppression on treatment)
+      src: reasoning
+    toll: minor
+    what: >
+      Active viral replication with liver inflammation or fibrosis. A daily
+      generic tablet suppresses the virus in almost everybody and substantially
+      reduces progression. **This is the stratum where a thirty-dollar-a-year drug
+      is failing to reach roughly nine in ten of the people it would help**, and
+      the reason is the assessment required to establish that they belong in it.
+
+  - name: chronic infection not currently meeting treatment criteria
+    fraction:
+      value: 0.50
+      units: fraction-of-chronically-infected
+      src: reasoning
+    intervention: none
+    efficacy:
+      value: 0.0
+      units: fraction-of-stratum (no treatment is given)
+      src: reasoning
+    toll: minor
+    what: >
+      **HALF THE INFECTED POPULATION, AND THE STANDARD OF CARE IS DELIBERATE
+      NON-TREATMENT WITH INDEFINITE MONITORING.** Low replication, normal
+      transaminases, no significant fibrosis — the evidence that antivirals help
+      them is genuinely weak, and the recommendation is six-monthly review for
+      life.
+      Rated `intervention: none` because that is literally what happens, and it is
+      why this record flags ⧉.
+      **Two things make it uncomfortable.** Monitoring for life requires an
+      infrastructure that mostly does not exist, so in practice these patients are
+      told they have a virus that may kill them, given no treatment, and lost to
+      follow-up. And WHO's 2024 guidelines **expanded eligibility substantially**,
+      moving people out of this stratum — which means its size is a judgement that
+      has already moved once and is partly a rationing decision (gaps.md #162).
+
+  - name: established cirrhosis or hepatocellular carcinoma
+    fraction:
+      value: 0.15
+      units: fraction-of-chronically-infected
+      src: reasoning
+    intervention: disease-modifying
+    efficacy:
+      value: 0.45
+      units: fraction-of-stratum (meaningful benefit from antiviral therapy)
+      src: reasoning
+    toll: major
+    what: >
+      Where the deaths are. Antiviral therapy is indicated regardless of the usual
+      criteria, reduces decompensation and cancer incidence, and **arrives too
+      late to undo the architecture.** From here the record hands over to
+      `liver-cancer` and to the queued `cirrhosis`, and to transplantation, which
+      is `#128`'s rationed resource.
+
+moved:
+  - date: 1982
+    axis: prevention
+    from: none
+    to: prophylaxis
+    why: >
+      **THE FIRST VACCINE AGAINST A HUMAN CANCER, AND IT IS ALSO THE FIRST
+      RECOMBINANT VACCINE.**
+      The original 1981 product was purified from the plasma of chronic carriers —
+      a vaccine made from the blood of infected people, which is as strange as it
+      sounds and worked. It was replaced in 1986 by a recombinant version
+      expressed in yeast, the first of its kind, and the platform that followed
+      is the reason several later vaccines exist.
+      **The proof is Taiwan.** Universal infant immunisation began in 1984, and
+      hepatitis B carriage in children collapsed, followed by a large fall in
+      childhood hepatocellular carcinoma. A vaccine given to infants measurably
+      prevented a cancer, which had never been demonstrated before.
+      Around 95% effective, protection appears to be long-lasting without boosters,
+      and it costs a few dollars for the course. **Incidence of new chronic
+      infection has fallen dramatically and prevalence has barely moved**, because
+      prevalence is a stock and the vaccine only acts on the flow (gaps.md #163).
+    src: recall
+
+  - date: 1998
+    axis: intervention
+    from: symptomatic
+    to: suppressive
+    why: >
+      **FROM INTERFERON, WHICH WAS BRUTAL AND WORKED SOMETIMES, TO A DAILY TABLET
+      THAT WORKS ALMOST ALWAYS.**
+      Lamivudine (1998) was the first oral nucleoside analogue and it demonstrated
+      the principle and then failed on resistance — a mutation rate that rendered
+      it useless in a majority of patients within a few years. **Tenofovir and
+      entecavir**, arriving through the following decade, have a high barrier to
+      resistance, suppress HBV DNA in almost everybody, and are now cheap generics.
+      What that bought is precisely a `suppressive` rung and not a `curative` one.
+      The drugs block reverse transcription and stop new virions being made. They
+      **do not touch the cccDNA minichromosome in the nucleus**, so stopping the
+      drug means rebound, and there is no end to the treatment.
+      Compare `hepatitis-c`'s move over the same period, which went the whole way
+      to `curative` in twelve weeks. **Same organ, same clinic, same decade — and
+      the difference is one piece of viral biology.**
+    src: recall
+
+witness:
+  mechanism: >
+    `established`, in unusual molecular detail, and the mechanism explains
+    precisely why there is no cure.
+    Hepatitis B is a small partially double-stranded DNA virus that replicates
+    through an RNA intermediate — a pararetrovirus. On entering a hepatocyte via
+    the NTCP receptor, its relaxed circular genome travels to the nucleus and is
+    repaired into **covalently closed circular DNA (cccDNA)**: a stable
+    minichromosome that associates with host histones, persists for the life of
+    the cell, and serves as the template for everything the virus makes.
+    **NO AVAILABLE DRUG TOUCHES cccDNA.** Nucleos(t)ide analogues inhibit the
+    reverse transcriptase, so no new genomes are packaged and the viral load falls
+    to undetectable — while the template sits in the nucleus intact. Withdraw the
+    drug and it starts again. This is the same architecture as `hiv`'s latent
+    reservoir and it produces the same rung on the ladder for the same reason.
+    **The virus also integrates into host chromosomes**, which is not part of its
+    replication cycle and is a dead end for the virus and a permanent problem for
+    the patient: integrated sequences drive HBx and surface antigen expression and
+    contribute to carcinogenesis independently of replication.
+    Liver injury is **immune-mediated, not cytopathic** — the virus does not kill
+    hepatocytes; cytotoxic T cells attacking infected hepatocytes do. That single
+    fact explains the age-dependent chronicity in `window` (a neonate's immune
+    system tolerates rather than attacks), explains why ALT is a marker of the
+    *response* rather than the virus, and explains the flares that follow stopping
+    treatment.
+    **THE NAMED HOLES.** How to eliminate or permanently silence cccDNA — the
+    entire cure agenda, and the reason "functional cure", meaning sustained
+    surface antigen loss, is the field's realistic target rather than eradication.
+    Why a minority spontaneously clear surface antigen and most do not. And the
+    natural-history phases are descriptive labels rather than understood states.
+  intervention: >
+    `suppressive`, indefinitely, and effectively.
+    Tenofovir or entecavir, one tablet daily, suppresses HBV DNA in essentially
+    everybody who takes them, normalises transaminases, regresses fibrosis in many
+    and even early cirrhosis in some, and substantially reduces progression to
+    cancer. Generic tenofovir costs on the order of thirty dollars a year.
+    **It is not a cure and there is no realistic prospect of one with current
+    tools.** Pegylated interferon achieves functional cure in a small minority at
+    the cost of a difficult course. Capsid assembly modulators, small interfering
+    RNAs and antisense oligonucleotides against surface antigen are in trials and
+    aim at *functional* cure — sustained surface antigen loss off treatment — which
+    is the field conceding that cccDNA will still be there.
+    **THE THING THAT SHOULD BE OBVIOUS AND IS NOT: THE DRUG IS NOT THE
+    CONSTRAINT.** It is off-patent, cheap, once-daily, well tolerated, resistant
+    to resistance, and reaches 3% of the people who have this disease. Every
+    blocker below is about finding people, assessing them, or caring enough.
+  prevention: >
+    `prophylaxis`, and one of the most effective in the whole register.
+    **The birth dose within twenty-four hours** is the load-bearing intervention,
+    because perinatal infection is what creates chronic carriers — see `window`.
+    Then the routine infant series, catch-up vaccination, and for mothers with high
+    viral load, tenofovir in the third trimester plus immunoglobulin for the infant,
+    which together drive mother-to-child transmission close to zero.
+    Also: blood supply screening, which ended a major transmission route in
+    high-income countries decades ago and is incomplete elsewhere; sterile
+    injection practice; and harm reduction.
+    **AND THIS RECORD IS THE REGISTER'S PROOF THAT `prevention` AND `intervention`
+    ARE INDEPENDENT AXES.** Hepatitis B has an outstanding vaccine and no cure.
+    Hepatitis C has a spectacular cure and no vaccine. Same organ, same cancer,
+    same clinics — and the axes disagree completely, which is exactly what a
+    register designed around a single "is it solved" verdict would have been unable
+    to say.
+  ongoing: >
+    `moderate`. A daily generic tablet that most people tolerate is at the light
+    end of lifelong therapy — but it is lifelong, it comes with six-monthly
+    monitoring and ultrasound surveillance for liver cancer, and **the
+    consequences of interrupting it are worse than the consequences of never
+    starting**, which makes reliable supply part of the treatment rather than an
+    implementation detail.
+    For the untreated half of the prevalent population the `ongoing` burden is
+    surveillance without therapy: an appointment every six months, for life,
+    that produces no intervention.
+
+holes:
+  - >
+    **`access: 0.08` has a contested denominator and that is the substantive
+    point, not a caveat.** About 3% of all infected people are treated; the share
+    of *eligible* people treated depends on eligibility criteria that WHO expanded
+    in 2024, moving the denominator without moving a patient (gaps.md #162, #141).
+  - >
+    **The prevalence figure was revised down by tens of millions by a change in
+    modelling**, which is #141's shape in the largest chronic-infection record
+    here.
+  - >
+    **The deaths belong to other records.** Hepatitis B kills through cirrhosis and
+    hepatocellular carcinoma; `liver-cancer` is held and `cirrhosis` is queued, and
+    the register cannot express that this record is upstream of both (gaps.md
+    #160).
+  - >
+    The strata fractions divide a natural history whose phases are descriptive
+    labels rather than understood states, and whose boundaries move with guidelines.
+    The middle stratum in particular is sized by a judgement rather than by biology.
+  - >
+    `residue: 0.15` mixes treated and untreated natural history. Treatment lowers
+    it substantially and does not abolish it, and the record has one number.
+  - >
+    Regional heterogeneity is severe and averaged away: the Western Pacific and
+    sub-Saharan Africa dominate prevalence, with different genotypes, different
+    transmission ages and different cancer risk, and this record is a global mean
+    of all of it.
+
+blockers:
+  - kind: policy
+    blocks: anybody mobilising for the people who are already infected
+    obstacles: []
+    what: >
+      **THE VACCINE SOLVED THE FUTURE AND THE PRESENT WAS LEFT WHERE IT WAS.**
+      Two hundred and fifty-four million people are chronically infected, almost
+      all of them infected before the vaccine reached them, and about 3% are on a
+      thirty-dollar-a-year generic that would prevent a large share of their
+      deaths. New chronic infections have collapsed. **Both facts are true and only
+      one of them gets attention.**
+      **`hiv` is the control case and it is decisive.** Same shape of disease —
+      chronic virus, no cure, lifelong suppression, cheap generics, stigma — and
+      it reaches 0.72 in this register against this record's 0.08. HIV was not
+      easier. HIV got a global emergency framing, dedicated financing at the scale
+      of PEPFAR and the Global Fund, sustained patient activism, price negotiation
+      as a public campaign, and named international targets that governments were
+      measured against. **Hepatitis B got a vaccine and was filed as handled.**
+      `chagas` is the second instance and is worse: vector control succeeded,
+      roughly six million infected people remain, over ninety percent were never
+      diagnosed, and its reach in this register is 0.03. **A prevention that works
+      makes the prevalent cohort invisible, because funding follows incidence and
+      the stock is not incidence** (gaps.md #163).
+      Rated `documented`: the coverage figures, the financing asymmetry and the
+      target architecture are all matters of public record. It is not a claim that
+      anybody obstructed anything.
+    who_could: [government, payer, philanthropy, nonprofit, legislator, health-system]
+    scale: 5.0e9
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    blocks: the eligibility workup costing several times the treatment
+    obstacles: []
+    what: >
+      **THE GATE COSTS MORE THAN THE THING BEHIND IT.**
+      Generic tenofovir is roughly thirty dollars a year. Establishing that a
+      patient qualifies for it has historically required **HBV DNA
+      quantification** on a PCR platform, **ALT** repeated over months to establish
+      a pattern, **HBeAg** status, and **fibrosis staging** by elastography or a
+      calculated index. That workup costs several times the annual drug, needs
+      equipment and a laboratory, and must be repeated for the half of patients
+      who are told to come back in six months.
+      In most of the burden the equipment is absent, so **"not eligible" and "not
+      assessable" produce the same outcome and it is no treatment.**
+      **The precedent for fixing it is in the record next door.** Hepatitis C
+      treatment once required genotyping to choose a regimen; pan-genotypic
+      direct-acting antivirals abolished the question, and this register records
+      that as `predictive: n/a` — *a measurement question closed by a better
+      treatment.* WHO's 2024 hepatitis B guidelines moved the same way, simplifying
+      criteria and expanding eligibility, on the explicit reasoning that a
+      simpler rule treats more people even if it treats some who would not have
+      benefited.
+      **Simplifying the gate is a therapeutic act**, and the register has no way to
+      record it as one (gaps.md #162).
+    who_could: [manufacturer, health-system, government, nonprofit, academic]
+    scale: 2.0e9
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    blocks: eighty-seven percent of infected people not knowing
+    obstacles: []
+    what: >
+      A one-dollar fingerprick test for hepatitis B surface antigen has existed for
+      decades and is definitive. **Roughly 13% of the world's 254 million infected
+      people have been diagnosed.**
+      The disease is silent for thirty years, which removes the usual prompt to
+      seek testing; there is no symptom to bring anybody in. Where screening does
+      happen it is opportunistic — antenatal clinics, blood donation, migration
+      health checks — and each of those finds a slice of a population and misses
+      the rest.
+      Stigma is real and documented, including employment and marriage
+      discrimination in several high-prevalence countries, and it makes a positive
+      result costly to hold in a setting where no treatment follows it.
+      **That last clause matters.** Testing without a treatment pathway produces a
+      diagnosis and nothing else, which is a poor bargain to offer somebody, and it
+      is why this blocker and the two on either side of it are really one problem
+      broken into three.
+    who_could: [health-system, government, nonprofit, payer, philanthropy]
+    scale: 3.0e9
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: a vaccine dose in the first twenty-four hours of life
+    obstacles: [cold-chain]
+    what: >
+      **BIRTH-DOSE COVERAGE IS AROUND 45% AGAINST ROUGHLY 85% FOR THE INFANT
+      SERIES THAT FOLLOWS IT**, and the gap between those two numbers is the
+      entire remaining transmission problem.
+      The later doses are given at scheduled clinic visits. The birth dose has to
+      be given within twenty-four hours of delivery, which means somebody with a
+      vaccine has to be at the birth — and a large share of births in the
+      highest-prevalence settings happen at home or in facilities without a
+      functioning cold chain.
+      **This is `neonatal-conditions`' constraint exactly** (gaps.md #154): not a
+      product problem, an operations problem, at the same moment and in the same
+      room as the bag-valve mask and the drying towel. Controlled temperature chain
+      approaches, which allow the vaccine to sit outside the cold chain for a
+      limited period, are the most promising technical answer and are not widely
+      implemented.
+      Every birth dose missed today creates a chronic carrier who will need
+      lifelong treatment or die of liver cancer around 2065.
+    who_could: [health-system, government, nonprofit, payer, manufacturer]
+    scale: 2.0e9
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: a cure, and it is one molecule of DNA in the nucleus
+    obstacles: []
+    what: >
+      **cccDNA IS THE WHOLE PROBLEM AND IT HAS BEEN THE WHOLE PROBLEM SINCE IT WAS
+      DESCRIBED.**
+      The covalently closed circular DNA minichromosome sits in the hepatocyte
+      nucleus, wrapped in host histones, using host transcription machinery,
+      replenished from within the cell, and untouched by every licensed drug. The
+      nucleos(t)ide analogues that suppress this virus so effectively act one step
+      downstream of it and always will.
+      Nobody has a way to eliminate it, silence it durably, or count it reliably
+      in a living patient — **which means the field cannot even measure the thing
+      it is trying to remove** without a liver biopsy.
+      The consequence is that the entire cure pipeline — capsid assembly
+      modulators, siRNA and antisense against surface antigen, therapeutic vaccines,
+      immune modulators — targets **functional cure**, meaning sustained surface
+      antigen loss off therapy, rather than eradication. That is a well-judged
+      retreat and it is a retreat.
+      This is architecturally the same problem as `hiv`'s latent reservoir, and the
+      two fields have been circling it independently for thirty years. **A method
+      for silencing or excising a stable episomal genome would move both records
+      and several others**, which is exactly the kind of cross-cutting question
+      Engpass exists to hold and does not yet have.
+      `scale: null`.
+    who_could: [academic, sponsor, manufacturer, philanthropy]
+    scale: null
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0076
+  rated: 2026-08-24
+  by: [claude, jeremy]

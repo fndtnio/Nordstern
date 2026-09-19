@@ -1,0 +1,379 @@
+slug: noma
+id: FND-D-0041
+name: noma
+also: [cancrum oris, gangrenous stomatitis, necrotizing ulcerative stomatitis]
+mondo: MONDO:0017124
+kind: disease
+residual: false
+contested: false
+
+# THE ORGANISMS ARE ALREADY IN EVERY CHILD'S MOUTH. WHAT IS MISSING IS FOOD.
+#
+# Noma is a polymicrobial gangrene of the face — Fusobacterium, Prevotella,
+# ordinary oral flora — that becomes destructive only when a child's immunity
+# collapses. It occurs almost exclusively in severely malnourished children aged
+# two to six, usually after measles, malaria or diarrhoea, in extreme poverty.
+#
+# So the necessary cause is an ABSENCE, not an agent. Every other infectious
+# record in this register has something to attack: a fluke, a tsetse fly, a
+# mycobacterium. Here the bacteria are harmless residents and the disease is
+# constituted by deprivation.
+#
+# Which makes the intervention that prevents it NON-SPECIFIC. Feeding children
+# prevents noma — and pneumonia, and diarrhoea, and measles mortality, and most
+# of what kills children under five. The register assumes interventions map to
+# entities. This one maps to all of them at once. See gaps.md #87.
+#
+# AND ROUGHLY NINE IN TEN VICTIMS DIE AT HOME, UNCOUNTED. Everything known about
+# this disease is known from the tenth who survived and reached somebody. The
+# incidence figure below is derived from survivors, dates from 1998, and is
+# widely regarded as unreliable. See gaps.md #88.
+#
+# Added to the WHO neglected tropical disease list in DECEMBER 2023 — the most
+# recent addition of all, later even than mycetoma.
+
+burden:
+  incidence:
+    value: 1.4e5
+    units: >
+      new cases/year — THE MOST UNRELIABLE NUMBER IN THIS REGISTER. It derives
+      from a 1998 estimate, rests on survivors reaching care, and is widely
+      regarded as a guess. The true figure could be several times higher or lower
+    src: unknown
+  deaths:
+    value: 1.2e5
+    units: >
+      deaths/year — reasoned from the incidence figure and an untreated case
+      fatality around ninety percent, which compounds two uncertain numbers.
+      These children die at home, young, and are recorded as malnutrition or as
+      nothing
+    src: unknown
+  note: >
+    A disease of children aged two to six in the poorest households of the Sahel
+    and comparable settings, though it has been reported wherever extreme
+    malnutrition and immune compromise coincide — including historically in
+    Europe, and in concentration camps.
+    THREE THINGS MAKE THE BURDEN UNKNOWABLE BY THE USUAL MEANS, and they
+    compound. Around nine in ten die, at home, before anyone with a notebook sees
+    them. Survivors are hidden by families, sometimes abandoned, because the
+    disfigurement is read as a curse. And until December 2023 there was no
+    international framework under which anybody was required to count.
+    So the register's evidentiary base for this record is the small minority who
+    survived AND were found AND were brought forward. See gaps.md #88.
+
+survival:
+  horizon: 30 days from onset of acute disease
+  untreated:
+    value: 0.1
+    units: >
+      fraction alive — **untreated noma kills roughly 90% of affected children
+      within weeks.** It is a gangrene of the face in a severely malnourished
+      child, and it moves fast
+    src: recall
+  treated:
+    value: 0.9
+    units: >
+      fraction alive with antibiotics, wound care and nutritional rehabilitation —
+      **none of which is advanced medicine.** The survivors are left with the
+      facial destruction this record's `residue` field carries
+    src: recall
+  witness: >
+    **One of the largest untreated-to-treated gaps in the register, achieved with
+    antibiotics and food.** Noma was added to the WHO neglected tropical
+    diseases list only in 2023. There is no knowledge blocker here of any kind:
+    the disease is a marker of extreme poverty and the survival figure is a
+    statement about who is reached.
+
+axes:
+  mechanism: partial
+  intervention: curative
+  prevention: risk-reduction
+  ongoing: high
+  efficacy:
+    value: 0.90
+    units: >
+      fraction-of-patients (arrest and cure with antibiotics, nutritional
+      rehabilitation and oral hygiene) — IF REACHED IN THE ACUTE STAGE, which
+      almost nobody is. This number describes a treatment, not an outcome
+    src: reasoning
+  access:
+    value: 0.10
+    units: >
+      fraction-of-patients (reached while the disease is still reversible) —
+      the lowest in this register, and the reason the treatment's excellence is
+      irrelevant to most children who get this
+    src: reasoning
+
+measurement:
+  diagnostic: clinical
+  prognostic: none
+  predictive: n/a
+  witness: >
+    DIAGNOSTIC is `clinical` and splits sharply in two.
+    ESTABLISHED noma is unmistakable — a hole in a child's face — and requires no
+    test and no expertise. It is also, by then, too late for anything but
+    surgery.
+    EARLY noma is acute necrotising gingivitis with facial oedema, and it looks
+    like a sick, malnourished child with a sore mouth. There is no test. What
+    distinguishes it is a health worker who knows this disease exists and knows
+    to look inside the mouth of a wasted two-year-old — and until December 2023
+    there was no framework under which anyone was trained to.
+    PROGNOSTIC is `none` and it is the decisive gap. Acute necrotising gingivitis
+    is common in malnourished children. Noma is rare. **Nothing identifies which
+    child will cross from one to the other**, and the crossing takes days.
+    PREDICTIVE is `n/a` — antibiotics and food work in essentially everyone
+    reached in time, so there is nothing to select between. The good version of
+    that rating, as in Buruli ulcer and yaws.
+    Note what this means for the overtreatment flag below: it fires, and it is
+    wrong. The `prognostic: none` refers to which malnourished child will
+    progress; the `costly` toll refers to reconstructive surgery on survivors.
+    **Two different populations, one record, and the derivation multiplies them
+    together** (gaps.md #61).
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    The ACUTE treatment costs almost nothing: antibiotics, nutritional
+    rehabilitation, oral hygiene, wound care. A child reached in time is cured
+    and carries little.
+    The toll in this record belongs to the survivors, and it is reconstructive
+    surgery. Rebuilding a face that has lost cheek, lip, nose or jaw takes
+    multiple staged operations, free tissue transfer, general anaesthesia in a
+    child who is often still malnourished, and donor sites that scar
+    permanently. Results improve function and appearance and do not restore a
+    face. Trismus — a jaw fused shut by scar — frequently recurs after release
+    and needs operating again.
+    Most of this is delivered by visiting surgical teams on periodic missions,
+    which means a child waits, sometimes years, and may be operated on once by
+    people who will not be there for the revision.
+    THIS IS THE FOURTH RECORD WHERE THE LARGEST INTERVENTION IS AIMED AT THE
+    RESIDUE (gaps.md #60) — and the first where it is neither cheap nor simple.
+    Hydrocelectomy takes minutes; a lid rotation takes minutes; leprosy self-care
+    is soap and inspection. This is specialist maxillofacial reconstruction. A
+    `residue` capability field would need its own cost as well as its own rung.
+  incidence:
+    value: 0.20
+    units: >
+      fraction-of-treated (permanent harm attributable to reconstruction — donor
+      site morbidity, recurrent trismus, complications of repeated anaesthesia)
+      — a reasoned estimate
+    src: reasoning
+
+residue:
+  severity: catastrophic
+  permanent: true
+  what: >
+    THE MOST SEVERE RESIDUE IN THIS REGISTER, and for survivors it is the whole
+    of what noma means.
+    The gangrene destroys soft tissue and bone of the face in days: cheek, lips,
+    nose, palate, orbit, mandible. What heals is scar, and scar contracts. A
+    survivor may be unable to open their mouth at all, unable to eat solid food,
+    unable to speak intelligibly, unable to close an eye, and visibly missing
+    part of their face — from the age of three.
+    Then the social consequence, which in this disease is not a footnote.
+    Children are hidden, withdrawn from school, excluded from marriage, and in
+    some settings abandoned or believed cursed. **The disfigurement and the
+    stigma are the same object**, and the stigma is why the survivors are not
+    counted, which is why the burden is unknown, which is why nobody funded it —
+    the third feedback loop in this register after leprosy's and scabies'
+    (gaps.md #77).
+    Reconstructive surgery helps and does not undo it. Nothing does.
+  incidence:
+    value: 0.95
+    units: >
+      fraction-of-survivors (permanent facial disfigurement and functional
+      impairment) — essentially all of them; children reached before necrosis
+      are cured without sequelae and are not survivors of this in the relevant
+      sense
+    src: reasoning
+
+window:
+  what: >
+    DAYS. This is the second-shortest window in the register after dengue's
+    hours, and the difference between its two sides is the widest.
+    On one side: a malnourished child with acute necrotising gingivitis and
+    facial swelling, treatable with a course of antibiotics, food and mouth
+    care, costing very little, curing almost completely, leaving nothing.
+    On the other: gangrenous necrosis of the face, ninety percent mortality, and
+    for the tenth who lives, a lifetime of the residue described above and
+    reconstructive surgery that will never finish the job.
+    Between those two states is a few days.
+    Nothing in this register has that ratio — a trivially cheap intervention and
+    a catastrophic, permanent, socially annihilating outcome, separated by less
+    than a week, in a two-year-old whose family may be a day's walk from anyone
+    who has heard of the disease. The `caught_in_time` figure below is the lowest
+    in the corpus and it is the entire problem.
+  closes_on: >
+    the transition from reversible oedema and gingival necrosis to gangrene of
+    facial soft tissue and bone
+  caught_in_time:
+    value: 0.05
+    units: >
+      fraction-of-cases (reached while still reversible) — a reasoned estimate
+      and the lowest in this register; most children are never seen by anyone who
+      recognises the early stage
+    src: reasoning
+
+witness:
+  mechanism: >
+    Rated `partial`, and the reason is unusual: the difficulty is not identifying
+    an agent but explaining why an agent that is present in everybody does this
+    to a few.
+    Noma is POLYMICROBIAL. *Fusobacterium necrophorum*, *Prevotella intermedia*
+    and other ordinary members of oral flora are consistently found, and no
+    single organism is necessary or sufficient. What is necessary is the host
+    side: severe acute malnutrition, poor oral hygiene, and usually a recent
+    immunosuppressing insult — measles, malaria, severe diarrhoea, HIV.
+    So the causal chain runs: deprivation → immune collapse → normal flora
+    becomes invasive → acute necrotising gingivitis → gangrene, in days. **The
+    pathogen is not the cause in the sense the rest of this register uses the
+    word.** Remove the malnutrition and the bacteria do nothing at all, which is
+    why noma disappeared from Europe with the general nutrition of European
+    children and not through any medical advance.
+    THE NAMED HOLE: acute necrotising gingivitis is common among malnourished
+    children and noma is rare. What tips a child across is unknown — a
+    particular organism, a particular immune failure, a threshold of wasting,
+    something else — and answering it would identify the children to treat
+    before the days run out.
+  intervention: >
+    `curative`, and the rating describes a treatment almost nobody receives in
+    time. Antibiotics, nutritional rehabilitation and oral hygiene arrest early
+    noma and cure it, cheaply, with no disfigurement. That is the whole of the
+    acute-phase intervention and it works.
+    For survivors, the intervention is reconstructive surgery — staged,
+    specialist, imperfect, and usually delivered by visiting missions rather than
+    by a health system. It restores function partially and appearance
+    incompletely.
+    Read the two together with `access: 0.10`. **The treatment is excellent and
+    the disease still kills nine in ten**, because the treatment and the child
+    are almost never in the same place within the few days available. That is the
+    cleanest separation of efficacy from reach anywhere in this register.
+  prevention: >
+    `risk-reduction`, and the rating conceals that prevention here is not a
+    health intervention at all.
+    What prevents noma is: adequate nutrition in the first five years,
+    vaccination against measles, treatment of malaria and diarrhoea, oral
+    hygiene, and — underneath all of it — a household not in extreme poverty.
+    None of that is aimed at noma. **All of it prevents noma and a dozen other
+    things simultaneously**, which is why the disease vanished from Europe
+    without anyone intending it and why it will vanish from the Sahel the same
+    way if it vanishes at all.
+    The register's blocker taxonomy names health-sector and research actors and
+    prices interventions against the entity they treat. There is no way to record
+    an intervention whose benefit is spread across every childhood disease at
+    once, and no way to price a share of it to this record. See gaps.md #87.
+  ongoing: >
+    `high`, and it belongs to the survivors rather than to the treated. A child
+    cured in the acute phase carries nothing. A survivor faces years of staged
+    surgery, feeding difficulty, speech therapy where it exists, and a social
+    exclusion that does not end — which is not the burden of being treated in the
+    sense the axis means, and is the burden they actually carry.
+
+holes:
+  - How many children get noma, and how many die of it. The figure in circulation
+    dates from 1998, derives from survivors, and is widely regarded as
+    unreliable. Everything else in this record inherits that uncertainty.
+  - What makes a malnourished child with acute necrotising gingivitis cross into
+    noma. It is the only question whose answer would let treatment be aimed
+    within the days available.
+  - How many survivors are living with the sequelae. They are hidden, by
+    families and by stigma, and are not in any register.
+  - Whether the disease is genuinely confined to the settings where it is
+    reported, or is simply not recognised elsewhere. It has been described
+    wherever extreme malnutrition occurs.
+  - Written from model recall. The polymicrobial aetiology, the malnutrition
+    dependency, the days-long window, the ~90% untreated case fatality and the
+    December 2023 NTD listing are the parts most likely right; every number is
+    the part most likely wrong, and the burden figures should not be quoted at
+    all.
+
+blockers:
+  - kind: diagnosis
+    blocks: recognising the reversible stage, in the days it exists
+    what: >
+      THE BINDING CONSTRAINT, and it is a missing person rather than a missing
+      device — the third record with that shape after leprosy and trachoma, and
+      the most acute.
+      Established noma needs no diagnosis; it is a hole in a child's face. Early
+      noma is a malnourished toddler with a sore, swollen mouth, and there is no
+      test that distinguishes the one who will lose their face from the many who
+      will not. What distinguishes them is a health worker who knows the disease
+      exists, knows to look inside the mouth, and acts the same day.
+      Until December 2023 noma was not on any international list, which means
+      front-line workers in endemic districts were not trained to recognise it,
+      because there was no curriculum that mentioned it. That is the most
+      correctable blocker in this record and it is training, not equipment.
+    who_could: [health-system, government, nonprofit, academic, philanthropy]
+    scale: 5.0e7
+    standing: documented
+    src: recall
+
+  - kind: policy
+    blocks: an intervention that is not a health intervention
+    what: >
+      Noma is prevented by feeding children. Not by a noma programme — by
+      nutrition, measles vaccination, and the treatment of ordinary childhood
+      illness in households that are not destitute.
+      Every one of those already exists as a priority for its own reasons, none
+      is aimed at this disease, and **all of them would prevent it**. So there is
+      nothing to fund that is specific to noma at the prevention end, and the
+      thing that would work is a share of an agenda that belongs to nutrition and
+      child health.
+      The consequence is that noma has no natural owner. It is a dental problem,
+      a nutrition problem, a paediatric emergency, a maxillofacial surgical
+      problem and a poverty problem, and it sat outside every international
+      framework until the end of 2023.
+      Recorded as `policy` with a large scale because what is actually required
+      is that child nutrition programmes count this among their outcomes — which
+      costs nothing extra and requires somebody to decide it matters.
+    who_could: [government, health-system, nonprofit, philanthropy, legislator]
+    scale: 5.0e8
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: reconstructive surgery for the survivors
+    what: >
+      Rebuilding a face destroyed at the age of three takes staged maxillofacial
+      reconstruction — free tissue transfer, trismus release that frequently
+      recurs and needs redoing, and general anaesthesia in a child who may still
+      be malnourished. It is delivered largely by visiting surgical missions,
+      which means children wait years and are often operated on once, by a team
+      that will not be there for the revision.
+      This is the fourth record where the largest available intervention is aimed
+      at the residue rather than the disease — and unlike the hydrocelectomy, the
+      lid rotation and the leprosy self-care kit, **it is expensive and requires
+      scarce specialists.** Building regional capacity rather than importing it
+      periodically is the difference between a mission and a service.
+    who_could: [health-system, government, nonprofit, philanthropy]
+    scale: 2.0e8
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    obstacles: [who-progresses, burden-unknown]
+    blocks: knowing how many, and knowing who is about to cross
+    what: >
+      Two absences and the first one poisons everything else in this record.
+      NOBODY KNOWS HOW MANY. The circulating incidence figure is from 1998, is
+      derived from survivors, and cannot be right in a disease that kills nine in
+      ten at home. Without a defensible burden estimate this record cannot be
+      ranked against anything, cannot be argued for, and cannot be shown to have
+      improved.
+      And nothing predicts which malnourished child with gingivitis will cross
+      into gangrene within days. A marker would convert a disease that is
+      effectively unpreventable at the individual level into one that is
+      treatable, because the treatment already works and costs almost nothing.
+      `scale: null` for the second; the burden work is fundable epidemiology and
+      is the first thing that should happen now that there is a framework to
+      report into.
+    who_could: [academic, nonprofit, philanthropy, government]
+    scale: null
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0041
+  rated: 2026-08-23
+  by: [claude, jeremy]

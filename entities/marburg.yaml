@@ -1,0 +1,416 @@
+slug: marburg
+id: FND-D-0046
+name: Marburg virus disease
+also: [Marburg, Marburg haemorrhagic fever, MVD, Ravn virus disease, green monkey disease]
+mondo: MONDO:0020500
+kind: disease
+residual: false
+contested: false
+
+# THE CONTROL CASE, AND IT WAS ADDED IMMEDIATELY AFTER EBOLA FOR THAT REASON.
+#
+# Same virus family. Indistinguishable at the bedside. Same transmission route.
+# Same kind of bat reservoir. Comparable lethality. **The same vaccine platform
+# already works** — the licensed Ebola vaccine is an rVSV vector, and an
+# rVSV-vectored Marburg candidate has existed for years.
+#
+# Ebola is `curable`. Marburg has NO LICENSED VACCINE AND NO LICENSED
+# THERAPEUTIC, and is `unsolved`.
+#
+# The difference is not scientific, not biological, and not about difficulty.
+# **Ebola had 2014** — 28,600 cases, 11,300 deaths, and cases in Europe and the
+# United States. Marburg's largest outbreak ever was 252 people in Angola.
+#
+# Marburg was also identified FIRST, in 1967, nine years before Ebola. It is the
+# original filovirus and it has been waiting fifty-eight years.
+#
+# TWO THINGS IT BREAKS THAT EBOLA DID NOT:
+#
+# 1. **Marburg's reservoir IS established** — Egyptian rousette bats, live virus
+#    isolated, outbreaks traced to specific caves and mines. Ebola's record made
+#    the reservoir its headline knowledge blocker, on the reasoning that knowing
+#    it would let you act before the first case. Marburg knows, and nothing
+#    follows. A knowledge question can be answered and change nothing.
+#    gaps.md #101.
+#
+# 2. **There will never be enough cases to license anything.** About 600-700
+#    human cases in fifty-eight years. A phase III efficacy trial is not slow
+#    here, it is impossible, and the 2024 Rwanda outbreak ended before candidate
+#    products deployed under protocol could enrol enough people to power
+#    anything. gaps.md #102.
+
+burden:
+  prevalence:
+    value: 3.0e2
+    units: >
+      survivors alive, worldwide, ever — a rough figure and the reason almost
+      nothing is known about the aftermath of this disease
+    src: reasoning
+  deaths:
+    value: 8.0
+    units: >
+      deaths/year — roughly 450 to 500 deaths in total since 1967, divided by
+      the years since. THE SMALLEST DEATHS FIGURE IN THIS REGISTER, and like
+      Ebola's it describes no year that has ever occurred. See the note
+    src: reasoning
+  note: >
+    ROUGHLY 600 TO 700 HUMAN CASES IN FIFTY-EIGHT YEARS. That is the entire
+    recorded history of the disease, and it is smaller than a single ward round
+    in most of this register.
+    1967 — the index event, and it happened in Europe. Laboratory workers in
+    Marburg and Frankfurt and in Belgrade fell ill after handling African green
+    monkeys imported from Uganda. Thirty-one cases, seven deaths. The virus was
+    isolated and named for the town.
+    1998-2000 Durba, Democratic Republic of the Congo — about 154 cases among
+    gold miners working an underground mine, case fatality around 83%.
+    2004-2005 Angola — about 252 cases, case fatality near 90%. The largest
+    outbreak there has ever been.
+    Then Uganda repeatedly, Guinea, Ghana, Equatorial Guinea and Tanzania in
+    2023, and Rwanda in 2024 — the last of these with a case fatality far lower
+    than any before it, in the range of a quarter, with intensive supportive care
+    and candidate products used under trial protocols.
+    **THE CASE FATALITY RANGES FROM ROUGHLY 24% TO ROUGHLY 90% ACROSS
+    OUTBREAKS**, and the largest single determinant appears to be the quality of
+    the supportive care available — which is a statement about hospitals, not
+    about the virus.
+
+survival:
+  course: acute
+  horizon: 28 days from symptom onset
+  untreated:
+    value: 0.2
+    units: >
+      fraction alive — case fatality across Marburg outbreaks has ranged from
+      roughly 24% to 88%, with supportive care alone
+    src: reasoning
+  treated:
+    value: 0.25
+    units: >
+      fraction alive — **there is no licensed treatment and no licensed vaccine.**
+      The small gain is better supportive care: fluid and electrolyte
+      management, which is the same thing that improved Ebola outcomes before
+      the antibodies arrived
+    src: reasoning
+  witness: >
+    **The negative control for `ebola`.** The same filovirus family, the same
+    clinical syndrome, and one of them has monoclonal antibodies that took
+    survival from 0.35 to 0.70 while the other has nothing. The difference is
+    not biology — it is that Marburg outbreaks have been smaller and no trial
+    has ever been completed. **`no-sponsor`, expressed as a survival figure.**
+
+axes:
+  mechanism: established
+  intervention: symptomatic
+  prevention: risk-reduction
+  ongoing: low
+  efficacy:
+    value: 0.60
+    units: >
+      fraction-of-patients (survival with intensive supportive care — fluids,
+      electrolytes, organ support) — against roughly 0.1 to 0.2 in the worst
+      outbreaks with none of it. CONFOUNDED: the best-documented modern outbreak
+      also used unlicensed candidate therapeutics under protocol, so the figure
+      cannot be cleanly attributed to supportive care alone
+    src: reasoning
+  access:
+    value: 0.25
+    units: >
+      fraction-of-patients (reaching a facility able to deliver intensive fluid
+      and electrolyte management) — and there is no licensed product to access,
+      so this measures hospitals rather than supply. Same wrong shape as Ebola's;
+      see gaps.md #99
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: n/a
+  witness: >
+    DIAGNOSTIC is `objective` — RT-PCR is definitive — and the practical failure
+    is worse than Ebola's for a reason that has nothing to do with the assay.
+    **NOBODY SUSPECTS IT.** The early presentation is fever, headache, myalgia
+    and malaise, indistinguishable from malaria, typhoid and Ebola itself, in
+    places where malaria is endemic. Ebola at least has a name every clinician in
+    the region knows. Marburg has produced fewer than a dozen recognised
+    outbreaks in six decades, so the prior probability a clinician assigns it is
+    approximately zero, and index cases are routinely identified only
+    retrospectively — after a cluster, or after a health worker dies.
+    **The rarer the disease, the later the diagnosis, and the later the diagnosis
+    the larger the outbreak.** That is a feedback loop, and it is the reason a
+    disease with 700 cases in its entire history is not simply a curiosity.
+    PROGNOSTIC is `partial` — viral load at presentation predicts mortality, as
+    in Ebola, and it is the same actionable fact: early means survivable.
+    PREDICTIVE is `n/a`, **on the Huntington's grounds and not the hepatitis C
+    grounds.** Hepatitis C's `n/a` means a treatment works in essentially
+    everyone so there is nothing to select between. Marburg's means there is
+    nothing course-altering whose response could be predicted. Same value, and
+    the difference between them is the whole content of this record.
+    Marburg virus and Ravn virus are distinct and it does not matter, because
+    nothing is licensed against either.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    There is no drug, so there is no drug toxicity. This is the second record in
+    a row where treatment takes almost nothing from the body, and the first where
+    the reason is that there is nothing to take it.
+    What remains is what Ebola's record described: isolation in a treatment unit,
+    staff behind plastic and respirators, people dying without their families,
+    and burial practices overridden by necessity. Real, caused by the response,
+    and not permanent damage to a body — so the field reads `minor` and means it.
+    It has the same epidemiological consequence here as there: fear of the unit
+    delays presentation, and presentation time is the largest thing separating
+    survival from death.
+  incidence:
+    value: 0.005
+    units: >
+      fraction-of-treated (permanent physical harm attributable to treatment) —
+      near zero, because supportive care is the treatment
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    RATED WITH LOW CONFIDENCE AND STATED AS SUCH — the same treatment given to
+    HAT's late-stage sequelae, and for the same reason. **There have been roughly
+    three hundred Marburg survivors in history.** The literature is case series
+    from outbreaks of thirty-one people and of a few dozen, not cohorts, and
+    almost everything below could be revised by a single well-followed outbreak.
+    What is reported: prolonged myalgia and arthralgia, profound fatigue, ocular
+    inflammation including uveitis, hepatitis, and — from the 1967 European
+    cases, which were the best-observed by far — psychiatric and cognitive
+    disturbance, including psychosis.
+    **AND VIRAL PERSISTENCE.** Marburg virus has been detected in semen months
+    after recovery, as with Ebola, and the same counselling and testing follows.
+    It is the same problem gaps.md #100 named one record ago: not damage to the
+    survivor, but a risk they carry for other people, with no field to hold it.
+    Note what the thin evidence base actually is. It is not that nobody studied
+    this. It is that **the number of people who could be studied is three
+    hundred**, which is also why there is no licensed product. The same scarcity
+    produces both.
+  incidence:
+    value: 0.40
+    units: >
+      fraction-of-survivors (persistent symptoms) — a reasoned estimate carried
+      largely from Ebola, because Marburg's own denominator is too small to
+      support one
+    src: reasoning
+
+window:
+  what: >
+    The same two windows Ebola has, and the outer one is worse.
+    THE PATIENT'S WINDOW is days. Intensive fluid and electrolyte management
+    started early is the difference between the Angolan case fatality near 90%
+    and the Rwandan one near a quarter. There is no antiviral to be early with;
+    what is being delivered in time is a drip and a laboratory.
+    THE OUTBREAK'S WINDOW is the one that decides the death toll, and Marburg's
+    is longer because nobody is looking. Ebola is a name every clinician in
+    Central and West Africa knows. Marburg has caused fewer than a dozen
+    recognised outbreaks in fifty-eight years, so it is not on anybody's
+    differential, and the index case is usually identified after the cluster
+    exists.
+    **Rarity lengthens the window, and the lengthened window is what makes the
+    disease dangerous.** Neither of those facts fits in `caught_in_time`, which
+    is a per-patient fraction. See gaps.md #99.
+  closes_on: >
+    progression to hypovolaemic shock, electrolyte derangement and multi-organ
+    failure — days, and continuously worse rather than at a threshold
+  caught_in_time:
+    value: 0.25
+    units: >
+      fraction-of-cases (reaching intensive supportive care early enough to
+      change the outcome) — a reasoned estimate across recorded outbreaks, and
+      it varies more between outbreaks than any comparable figure in this
+      register
+    src: reasoning
+
+# NO `strata` BLOCK, DELIBERATELY, AND THE CONTRAST WITH EBOLA IS THE POINT.
+#
+# Ebola carries strata because Zaire ebolavirus has a licensed vaccine and two
+# licensed monoclonals while Sudan ebolavirus has neither — the species split
+# changes the capability, so ⧉ fires and "is Ebola solved" is malformed.
+#
+# Marburg virus and Ravn virus are equally distinct and it changes nothing,
+# because nothing is licensed against either. A partition that does not disagree
+# about capability is not a stratum, it is taxonomy.
+
+witness:
+  mechanism: >
+    `established`, and in one respect **better established than Ebola's.**
+    Pathogenesis is the filovirus pattern: entry via macrophages and dendritic
+    cells, suppression of the interferon response, massive replication, hepatic
+    and adrenal involvement, cytokine storm, endothelial dysfunction. Death comes
+    from fluid and electrolyte loss and shock rather than from haemorrhage,
+    despite the name — which is why a drip and a laboratory move the case
+    fatality as much as they do.
+    **AND THE RESERVOIR IS KNOWN.** The Egyptian rousette bat, *Rousettus
+    aegyptiacus*. Not inferred from antibodies — infectious virus has been
+    isolated from wild colonies, and human outbreaks trace repeatedly to specific
+    underground places: the Durba mine, caves in Kenya and Uganda where the
+    colonies roost.
+    **THIS IS THE COUNTEREXAMPLE TO WHAT EBOLA'S RECORD CLAIMED ONE FILE AGO.**
+    That record filed the unknown reservoir as its headline knowledge blocker,
+    reasoning that identifying it would permit action before the first human case
+    — the only intervention that would ever be cheap. Marburg identified it, and
+    what followed was: tell miners. The bats cannot be eliminated and should not
+    be; the timing of spillover remains unpredictable; and no product, no
+    surveillance system and no capability came of it. See gaps.md #101.
+    THE NAMED HOLES ARE ELSEWHERE, and they are small only because so little has
+    ever been observed: what triggers a spillover at a particular moment, why
+    case fatality has ranged from a quarter to nearly ninety percent across
+    outbreaks, and how long the virus persists in survivors.
+  intervention: >
+    `symptomatic`, and it is the same close call COPD forced, decided the same
+    way and for the same reason.
+    There is no licensed antiviral and no licensed antibody. What exists is
+    intensive supportive care — aggressive fluid replacement, electrolyte
+    correction, organ support — and it appears to move case fatality from
+    something near ninety percent to something near a quarter. That is an
+    enormous effect and it is not disease modification: **the virus replicates
+    and is cleared on exactly the same schedule.** The patient is kept alive
+    while their own immune system does the work. `symptomatic` by the schema's
+    words — the course is unchanged.
+    **SO THIS RECORD LANDS IN `engineering problem` AND gaps.md #98 IS
+    ESSENTIAL TO READING IT.** The cell means the mechanism is understood and
+    treatment does not change the course. It does not mean treatment does
+    nothing. Here it means the difference between nine deaths in ten and two, and
+    the register scores it as no capability at all.
+    Marburg is a better demonstration of #98 than COPD was, because the benefit
+    is not symptom relief — **it is survival**, and it still scores zero.
+  prevention: >
+    `risk-reduction`, and the gap from Ebola's `prophylaxis` is the entire thesis
+    of this record.
+    Ebola has a licensed single-dose vaccine deployed in ring vaccination around
+    confirmed cases. Marburg has candidates — including one on **the same rVSV
+    vector platform as the licensed Ebola vaccine** — and none of them is
+    licensed, so none of them can be deployed except under a trial protocol
+    written during an emergency.
+    What is left is what was available in 1967: avoid the caves and mines where
+    the bats roost, isolate cases, trace contacts, control infection in health
+    facilities, and bury the dead safely.
+    **The scientific distance between these two records is close to zero and the
+    capability distance is the whole ladder.** What separates them is that one
+    disease killed eleven thousand people and reached Europe and the United
+    States, and the other has killed about five hundred people in fifty-eight
+    years, in mines and villages. The register can state both ratings and has no
+    way to record that the second is a consequence of the first's history.
+  ongoing: >
+    `low`. The illness is acute and there is no maintenance therapy, because
+    there is no therapy.
+    What survivors carry is in `residue`, and it includes the same
+    population-scoped obligation Ebola's record named: semen testing and
+    counselling for a duration nobody can specify, which is surveillance of the
+    patient on everybody else's behalf and belongs to no field here.
+
+holes:
+  - Every scalar is `src: recall` or `src: reasoning`, and the denominators are
+    so small that ordinary sampling variation swamps them. A single outbreak of
+    two hundred people would move the case fatality, the sequelae rate and the
+    survivor count all at once.
+  - `efficacy: 0.60` is confounded and says so. The outbreak that most supports
+    it also deployed unlicensed candidate therapeutics under protocol, so
+    supportive care cannot be cleanly credited.
+  - The residue block is carried substantially from Ebola because Marburg's own
+    evidence base is roughly three hundred people, most of them observed before
+    1980.
+  - Recent outbreak details — Equatorial Guinea and Tanzania in 2023, Rwanda in
+    2024 — are the parts of this record most likely to be wrong in specifics,
+    and the Rwandan case fatality in particular is stated as a range on purpose.
+  - Whether Marburg and Ebola should be one record or two remains genuinely open,
+    and this file is the argument for two: **their ratings differ, and the
+    difference is the finding.**
+
+blockers:
+  - kind: no-sponsor
+    blocks: a vaccine and a therapeutic that could already exist
+    what: >
+      THE BINDING CONSTRAINT, AND IT IS NOT A SCIENTIFIC ONE.
+      Candidate vaccines exist and have existed for years, including one built on
+      **the same rVSV vector platform as the licensed Ebola vaccine** — a
+      platform proven in humans, in an outbreak, against a virus in the same
+      family. Candidate monoclonals exist and protect non-human primates.
+      None is licensed, because the market is roughly ten cases a year in
+      expectation, in the poorest places, and no revenue model survives contact
+      with that arithmetic.
+      Ebola escaped this only because 2014 was catastrophic enough to change what
+      governments were prepared to fund, and the vaccine that saved it had itself
+      been sitting unlicensed for about a decade. **Marburg has not had its
+      catastrophe.** The register's own reading of that is uncomfortable: this
+      record's rating is a bet that not enough people have died yet.
+    who_could: [sponsor, manufacturer, philanthropy, government, regulator]
+    scale: 5.0e8
+    standing: documented
+    src: recall
+
+  - kind: regulatory
+    blocks: licensure by a route that does not require a trial nobody can run
+    what: >
+      **A PHASE III EFFICACY TRIAL FOR MARBURG IS NOT SLOW, IT IS IMPOSSIBLE.**
+      Six hundred to seven hundred cases have occurred in fifty-eight years,
+      arriving in unpredictable clusters of a few dozen in remote places. There
+      is no plausible future in which enough people are infected, in one place,
+      at one time, for a conventional efficacy trial to reach statistical power.
+      The 2024 Rwandan outbreak deployed candidate products under protocol and
+      ended — correctly and by design — before enrolment could power anything.
+      **Containment defeated the evidence, exactly as gaps.md #99 described for
+      Sudan ebolavirus**, and here it is not an unlucky outcome but the permanent
+      condition.
+      A route exists: licensure on animal efficacy data with human safety data,
+      the pathway written for precisely this situation. Using it requires a
+      regulator to accept it, a sponsor to build the animal model package, and
+      somebody to pay for both in advance of any demand.
+      **Second use of the `regulatory` blocker kind in forty-six records**, and
+      the first where the obstacle is the evidentiary standard itself rather
+      than a decision under it.
+    who_could: [regulator, sponsor, government, academic, philanthropy]
+    scale: 2.0e8
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: intensive supportive care, delivered where the outbreaks happen
+    what: >
+      The one thing that demonstrably works here is a drip, a laboratory, and
+      staff who can correct electrolytes for a week — and the case fatality
+      difference between outbreaks with that and outbreaks without it is the
+      largest effect in this record.
+      Marburg emerges in mines, in villages, and in places a long way from any of
+      it. Delivering it means moving a treatment unit, a laboratory and trained
+      people into a remote area within days, and then paying to keep that
+      capability in existence during the years when there is no outbreak — the
+      stockpile problem gaps.md #57 keeps finding from new directions.
+      Cheap per patient. Impossible to justify per year.
+    who_could: [health-system, government, nonprofit, philanthropy]
+    scale: 5.0e8
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    obstacles: [pathogen-persistence]
+    blocks: what supportive care cannot reach, and what survivors carry
+    what: >
+      Note first what is NOT here. The reservoir — the question Ebola files as
+      its headline knowledge gap — is answered for Marburg: Egyptian rousette
+      bats, virus isolated from wild colonies, outbreaks traced to named caves
+      and mines. **Answering it produced advice to miners and nothing else**
+      (gaps.md #101), and this blocker is smaller than Ebola's precisely because
+      the big question was already settled and did not help.
+      What remains: why case fatality has ranged from roughly a quarter to
+      roughly ninety percent across outbreaks, and how much of that is care,
+      strain, or host. How long the virus persists in survivors, in whom, and
+      how to clear it. And what the aftermath actually consists of, which cannot
+      be answered because there are three hundred survivors in total.
+      `scale: null`. And unusually for this register, **more money would not
+      obviously help**: the limiting resource is patients, and wanting more of
+      them is not a research agenda.
+    who_could: [academic, philanthropy, government, nonprofit]
+    scale: null
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0046
+  rated: 2026-08-23
+  by: [claude, jeremy]

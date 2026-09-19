@@ -1,0 +1,624 @@
+slug: schizophrenia
+id: FND-D-0088
+name: schizophrenia
+also: [schizophrenia spectrum disorder, psychotic disorder, dementia praecox]
+mondo: MONDO:0005090
+kind: disease
+residual: false
+contested: true
+
+# COMPLETES THE PSYCHIATRIC TRIO, AND THE THREE DO NOT LINE UP THE WAY THE
+# QUEUE ASSUMED.
+#
+#   depression      mechanism: correlates   intervention: symptomatic   frontier
+#   bipolar         mechanism: correlates   intervention: suppressive   empirical luck
+#   schizophrenia   mechanism: PARTIAL      intervention: suppressive   known & treatable
+#
+# This record rates `partial` because it has more than associations: a measured
+# presynaptic dopamine abnormality, a validated pharmacological target, 287
+# genome-wide loci, and a complement gene tied to synaptic pruning. That lands it
+# in `known & treatable` alongside hepatitis C and lung cancer, which is generous
+# and which the file flags rather than avoids — see `holes`, and gaps.md #135,
+# because a large part of what looks like disease mechanism here is really
+# knowing how the drug works.
+#
+# THE LARGEST FACT IN THIS RECORD IS NOT PSYCHIATRIC. People with schizophrenia
+# die roughly fifteen to twenty years early, mostly of cardiovascular disease, and
+# a substantial part of that is care they did not receive for it (gaps.md #186).
+
+burden:
+  prevalence:
+    value: 2.4e7
+    units: >
+      people living with schizophrenia worldwide — roughly one person in three
+      hundred, with onset concentrated in late adolescence and early adulthood
+    src: recall
+  deaths:
+    value: 3.0e4
+    units: >
+      deaths/year attributed directly — **and this figure is almost meaningless.**
+      The mortality that matters is a fifteen-to-twenty-year reduction in life
+      expectancy, and it is recorded in `ischaemic-heart-disease` and `stroke`
+    src: recall
+  note: >
+    **THE MORTALITY GAP IS ONE OF THE LARGEST IN THIS REGISTER AND MOST OF IT IS
+    NOT SUICIDE.**
+    Suicide accounts for something like one death in twenty and is concentrated in
+    the first years of illness. **The majority of the excess mortality is
+    cardiovascular and metabolic** — driven by antipsychotic-induced weight gain
+    and diabetes, smoking rates of sixty to eighty percent, poverty, and
+    **physical health care that is measurably worse than other people receive for
+    the same conditions.**
+    So this record's burden is: a psychiatric illness treated with drugs that cause
+    metabolic disease, in people who then get less investigation and less treatment
+    for that metabolic disease **because they have a psychiatric diagnosis**
+    (gaps.md #186).
+    And the treatment gap is among the widest here. WHO estimates that well over
+    two thirds of people with psychosis worldwide are not receiving appropriate
+    care, with the fraction far higher in low-income countries.
+
+survival:
+  horizon: 20 years from diagnosis
+  untreated:
+    value: 0.8
+    units: >
+      fraction alive — **life expectancy in schizophrenia is reduced by roughly
+      fifteen to twenty years**, and the causes are cardiovascular disease,
+      smoking, and suicide, which accounts for around 5% of deaths
+    src: reasoning
+  treated:
+    value: 0.85
+    units: >
+      fraction alive on antipsychotic treatment. **Clozapine reduces suicide
+      specifically**, and antipsychotics as a class are associated with lower
+      all-cause mortality than no treatment — while contributing to the
+      metabolic disease that does much of the rest of the killing
+    src: reasoning
+  witness: >
+    **The treatment is on both sides of this figure, and that is the finding.**
+    Antipsychotics reduce suicide and worsen metabolic risk; the net is a modest
+    survival gain in a disease whose mortality gap has *not* narrowed over
+    thirty years while the general population's improved. **A record where
+    medicine ran to stand still.**
+
+axes:
+  mechanism: partial
+  intervention: suppressive
+  prevention: risk-reduction
+  ongoing: high
+  efficacy:
+    value: 0.55
+    units: >
+      fraction-of-patients (positive symptoms controlled and relapse prevented) —
+      **and it is the wrong outcome.** Negative symptoms and cognitive impairment
+      determine whether somebody works and has relationships, and respond to
+      nothing
+    src: reasoning
+  access:
+    value: 0.40
+    units: >
+      fraction-of-patients (receiving appropriate treatment) — over two thirds
+      untreated worldwide, and in well-resourced systems the specific failure is
+      **clozapine**, which is the only drug that works in treatment-resistant
+      disease and is chronically under-prescribed
+    src: reasoning
+
+measurement:
+  diagnostic: clinical
+  prognostic: partial
+  predictive: none
+  witness: >
+    **DIAGNOSTIC IS `clinical` AND THERE IS NO TEST OF ANY KIND** — which it shares
+    with `depression` and `bipolar`, and which is why the psychiatric trio sits
+    apart from everything else in this register.
+    Diagnosis is made against operational criteria: hallucinations, delusions,
+    disorganised speech, negative symptoms, functional decline, and a duration
+    threshold. Some of that is **reported** by the patient and some is
+    **observed** — which is a mixture no other record here has. Reliability between
+    trained clinicians is reasonable; validity is the contested question, and it is
+    contested by serious people (see `witness.contested`).
+    PROGNOSTIC is `partial`, and this is where the trio diverges — `depression` and
+    `bipolar` both rate `none`. Three things predict here. **Duration of untreated
+    psychosis** is robustly associated with worse outcome, which is what early
+    intervention services exist to shorten. **Clinical high-risk criteria** identify
+    a population converting to psychosis at something like twenty to thirty percent
+    over two to three years. And **22q11.2 deletion** carries roughly a one-in-four
+    lifetime risk, which is the strongest single genetic predictor in psychiatry.
+    None of it predicts an individual's trajectory once the illness is
+    established, and outcomes range from full recovery to lifelong dependency with
+    nothing at onset separating them.
+    **PREDICTIVE IS `none`, AND THE COST IS MEASURED IN YEARS.** Nothing indicates
+    which antipsychotic will work in which patient. Selection is by side-effect
+    profile and by what the clinic stocks; a trial takes weeks to assess and
+    failure means starting again. **Treatment resistance is defined retrospectively
+    — having failed two adequate trials** — so the criterion for the one drug that
+    demonstrably works in that group can only be met by spending a year or more
+    failing.
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    **THE DRUGS THAT CONTROL THE PSYCHOSIS CAUSE THE DISEASE THAT KILLS THE
+    PATIENT.**
+    **Metabolic harm** is near-universal with the most effective agents. Olanzapine
+    and clozapine produce substantial weight gain, dyslipidaemia and type 2
+    diabetes; the resulting cardiovascular disease is the largest contributor to
+    this record's fifteen-to-twenty-year mortality gap. **It is not a rare adverse
+    event. It is the expected course of treatment**, and it is why the 2024 arrival
+    of an antipsychotic with no dopamine blockade and no weight gain matters as
+    much as it does.
+    **Tardive dyskinesia** — involuntary movements of the face, tongue and limbs,
+    caused by prolonged dopamine receptor blockade and **frequently permanent even
+    after the drug is stopped.** Cumulative incidence on first-generation agents
+    reached roughly a third; second-generation drugs lowered it without abolishing
+    it. VMAT2 inhibitors, licensed from 2017, are the first treatments for it and
+    do not reverse it.
+    **Clozapine** carries agranulocytosis in under one percent, myocarditis, severe
+    constipation that can be fatal, and mandatory blood monitoring for life.
+    Akathisia — a subjective restlessness patients describe as unbearable and
+    clinicians routinely miss — is associated with suicidality. Hyperprolactinaemia
+    causes sexual dysfunction, amenorrhoea and reduced bone density.
+    **AND THE LARGEST IMPOSITION IN THIS RECORD IS NOT PHARMACOLOGICAL.** For a
+    substantial minority, treatment is delivered under legal compulsion —
+    detention, involuntary medication, community treatment orders. `toll` records
+    what the cure costs the patient. **Liberty is not in any field** (gaps.md
+    #187).
+  incidence:
+    value: 0.20
+    units: >
+      fraction-of-treated (permanent harm — chiefly metabolic disease and tardive
+      dyskinesia) — a reasoned estimate, and high because the metabolic burden is
+      close to expected rather than exceptional
+    src: reasoning
+
+window:
+  what: >
+    **DURATION OF UNTREATED PSYCHOSIS PREDICTS OUTCOME, AND IT IS ONE OF THE FEW
+    MODIFIABLE VARIABLES IN THE RECORD.**
+    The association is robust: the longer somebody is psychotic before treatment
+    starts, the worse their symptomatic and functional outcome, and median
+    durations of a year or more are common. Whether the relationship is causal is
+    argued — insidious onset predicts both long duration and poor outcome — but
+    the practical response has been tested directly.
+    **Early intervention services** — specialised multidisciplinary teams for
+    first-episode psychosis, combining medication, family work, supported
+    employment and assertive follow-up — improve symptoms, function and engagement
+    across trials in several countries.
+    **AND THE BENEFIT ATTENUATES WHEN THE SERVICE ENDS.** Long-term follow-up of
+    the best-studied programmes found the treated and control groups converging
+    after the specialised period finished. The intervention works while it is
+    running and does not leave a durable change — which is gaps.md #173's decaying
+    cure applied to **a service rather than a drug**, and #57's maintenance problem
+    at the level of an individual patient.
+    Upstream of that is the **clinical high-risk** state, where twenty to thirty
+    percent convert within a few years. Trials of intervening there have been
+    small and largely disappointing, so this is a second window — identifiable,
+    populated, and close to empty (gaps.md #185).
+  closes_on: >
+    accumulating functional and social loss during untreated psychosis, and the
+    end of the specialised early-intervention period after which gains attenuate
+  caught_in_time:
+    value: 0.30
+    units: >
+      fraction-of-cases (reaching treatment early and through a specialised
+      service) — a reasoned estimate; early intervention services exist in a
+      minority of health systems and nowhere at full coverage
+    src: reasoning
+
+strata:
+  - name: good outcome with treatment
+    fraction:
+      value: 0.20
+      units: fraction-of-people-with-schizophrenia
+      src: reasoning
+    intervention: suppressive
+    efficacy:
+      value: 0.90
+      units: fraction-of-stratum (sustained remission and functional recovery)
+      src: reasoning
+    toll: major
+    what: >
+      **Recovery happens and is systematically under-reported**, because the people
+      who do well leave services and stop appearing in the literature written about
+      services. Sustained remission, employment, relationships — on medication
+      indefinitely, with its metabolic cost.
+
+  - name: episodic illness with residual impairment
+    fraction:
+      value: 0.50
+      units: fraction-of-people-with-schizophrenia
+      src: reasoning
+    intervention: suppressive
+    efficacy:
+      value: 0.60
+      units: fraction-of-stratum (positive symptoms controlled between relapses)
+      src: reasoning
+    toll: major
+    what: >
+      The modal course. Antipsychotics control hallucinations and delusions and
+      prevent relapse — roughly a quarter relapse on treatment in a year against
+      nearly two thirds off it — and **the negative symptoms and cognitive
+      impairment persist untouched.** Employment rates in this stratum are very
+      low, and it is those symptoms rather than the psychosis that explain why.
+
+  - name: treatment-resistant
+    fraction:
+      value: 0.30
+      units: fraction-of-people-with-schizophrenia
+      src: reasoning
+    intervention: suppressive
+    efficacy:
+      value: 0.45
+      units: fraction-of-stratum (meaningful response, essentially all of it to clozapine)
+      src: reasoning
+    toll: major
+    what: >
+      **Roughly a third of patients, and one drug works.** Clozapine produces
+      meaningful response in perhaps half of them, reduces suicide, and is the
+      only agent with proven superiority in this stratum after fifty years of
+      alternatives. **It is dramatically under-prescribed everywhere**, with
+      several-fold variation between comparable health systems, and the reasons are
+      the monitoring requirement and clinician caution rather than the evidence.
+
+moved:
+  - date: 1952
+    axis: intervention
+    from: none
+    to: suppressive
+    why: >
+      **CHLORPROMAZINE, AND IT IS THE FOUNDING EVENT OF PSYCHOPHARMACOLOGY.**
+      Introduced in 1952 after being noticed as a surgical adjunct, it did
+      something nothing had done: it stopped hallucinations and delusions. Within a
+      decade the asylum populations of several countries had begun to fall for the
+      first time in a century, and the possibility of living outside an institution
+      with schizophrenia existed at all.
+      **What followed was seventy years of variations on one mechanism.**
+      Haloperidol, then the second-generation agents from the 1990s — risperidone,
+      olanzapine, quetiapine, aripiprazole — every one of them a dopamine D2
+      antagonist or partial agonist, differing in side-effect profile rather than
+      in efficacy. Meta-analyses have found little to separate them on positive
+      symptoms, with the single exception below.
+      **And deinstitutionalisation was not only pharmacological.** It was also
+      policy and cost, and in several countries it ran ahead of the community
+      services meant to replace the asylums — which is why a substantial share of
+      this record's population is now in prisons and homeless shelters.
+    src: recall
+
+  - date: 1988
+    axis: efficacy
+    from: 0.45
+    to: 0.55
+    why: >
+      **CLOZAPINE WORKED WHERE NOTHING ELSE DID, AND IT HAD ALREADY BEEN
+      WITHDRAWN ONCE FOR KILLING PEOPLE.**
+      Synthesised in 1958, withdrawn in the 1970s after deaths from
+      agranulocytosis, and brought back in 1988 on the strength of a trial showing
+      response in patients who had failed everything else. It remains **the only
+      antipsychotic with demonstrated superiority in treatment-resistant
+      schizophrenia**, it reduces suicide, and it works without the strong D2
+      blockade the rest of the class relies on — which has never been satisfactorily
+      explained.
+      The price is a mandatory blood monitoring programme for life, plus
+      myocarditis, severe constipation and profound sedation.
+      **The register should record what happened next, because it is a delivery
+      failure rather than a pharmacological one.** Clozapine is under-prescribed
+      by large margins in almost every health system studied, with several-fold
+      variation between comparable countries. Patients spend years on drugs that do
+      not work before reaching the one that might — which is `access` recording
+      something quite unlike a supply problem (gaps.md #174).
+    src:
+      id: PMID:3046553 doi:10.1001/archpsyc.1988.01800330013001
+      retrieved: 2026-08-26
+      quote: >
+        The treatment of schizophrenic patients who fail to respond to adequate
+        trials of neuroleptics is a major challenge. Clozapine, an atypical
+        antipsychotic drug, has long been of scientific interest, but its clinical
+        development has been delayed because of an associated risk of
+        agranulocytosis.
+
+  - date: 2024
+    axis: toll
+    from: 0.25
+    to: 0.20
+    why: >
+      **THE FIRST GENUINELY NEW MECHANISM IN SEVENTY YEARS, AND WHAT IT CHANGES IS
+      THE TOLL RATHER THAN THE EFFICACY.**
+      Xanomeline-trospium, approved in 2024, is a muscarinic M1/M4 agonist paired
+      with a peripherally-restricted antagonist to blunt the cholinergic side
+      effects. **It does not block dopamine D2 receptors at all.**
+      Efficacy against positive symptoms is broadly comparable to existing agents.
+      What it does not do is the point: **no significant weight gain, no
+      extrapyramidal side effects, no prolactin elevation.** Given that
+      antipsychotic-induced metabolic disease is the largest contributor to this
+      record's fifteen-to-twenty-year mortality gap, a drug that controls psychosis
+      without causing it addresses the actual cause of death rather than the
+      presenting complaint.
+      **It is early**, long-term data are absent, tardive dyskinesia risk is
+      unknown over years, and cholinergic side effects lead some patients to stop.
+      Recorded as a `toll` move rather than an `efficacy` one because that is
+      honestly what changed — and because it is the first evidence in seventy years
+      that the dopamine hypothesis is a description of one working drug class
+      rather than of the disease.
+    src: recall
+
+witness:
+  mechanism: >
+    `partial`, and it is the strongest of the psychiatric trio while still not
+    explaining the illness.
+    **The dopamine story is real and narrower than it is usually stated.**
+    Antipsychotic potency tracks D2 receptor affinity, which is solid pharmacology.
+    In patients, imaging consistently shows **elevated presynaptic dopamine
+    synthesis capacity in the striatum** — a measured abnormality in the disease
+    rather than an inference from the drugs, and it predicts treatment response.
+    What it does not explain is negative symptoms, cognitive impairment, or why the
+    synthesis capacity is elevated in the first place. Glutamatergic NMDA
+    hypofunction is the leading complementary account, supported by ketamine and
+    phencyclidine producing a convincing model of the illness in healthy people.
+    **The genetics are among the best-powered in psychiatry and mostly humbling.**
+    Twin heritability is around eighty percent; the largest association study found
+    287 loci across some seventy-six thousand cases, each contributing very little.
+    **The exception is mechanistically satisfying**: the strongest signal sits in
+    the major histocompatibility complex and was traced to **complement component
+    C4A**, whose copy number predicts expression and which is involved in
+    **synaptic pruning.** Excessive pruning during adolescence — exactly when the
+    illness begins — is the most coherent developmental story the field has. Rare
+    variants add to it, and **22q11.2 deletion carries roughly a one-in-four
+    lifetime risk.**
+    **A CAUTION THIS RECORD SHOULD CARRY.** A large part of what looks like
+    established mechanism here is knowledge of **how the drug works**, not of how
+    the disease works, which gaps.md #135 says the axis cannot distinguish. Rating
+    `partial` places this record in `known & treatable`; a stricter reading would
+    rate `correlates` and move it beside `bipolar`.
+  contested: >
+    **THE DISPUTE IS ABOUT WHETHER "SCHIZOPHRENIA" NAMES ONE THING, AND IT IS
+    CONDUCTED BY PSYCHIATRISTS RATHER THAN BY CRITICS OF PSYCHIATRY** (gaps.md
+    #6).
+    The construct has no biological test, its outcomes range from full recovery to
+    lifelong dependency, and its genetic architecture overlaps substantially with
+    bipolar disorder and with autism — which has led a serious body of opinion to
+    argue it is a **syndrome of several conditions**, or a severe end of a
+    psychosis continuum, rather than a disease entity.
+    The renaming argument is the most concrete form of it. **Japan replaced the
+    term in 2002** with one translating roughly as "integration dysregulation
+    syndrome", and **South Korea followed in 2011**, both explicitly to reduce
+    stigma and to signal that the older term implied an inevitable deteriorating
+    course. Proposals to do the same in Dutch and English — "psychosis
+    susceptibility syndrome" and others — have been published and not adopted.
+    **Note what is and is not disputed.** Nobody serious disputes that people
+    experience hallucinations, delusions and profound functional impairment, or
+    that antipsychotics reduce them. The dispute is about the boundary and the
+    name, which is exactly what `contested` means in this schema.
+  intervention: >
+    `suppressive`, matching `bipolar` and one rung above `depression`.
+    Antipsychotics control positive symptoms in around seven in ten patients and
+    substantially prevent relapse — roughly a quarter relapse within a year on
+    treatment against nearly two thirds without it. **Long-acting injectables**
+    reduce rehospitalisation further and are under-used. **Clozapine** is the only
+    agent that works in the treatment-resistant third. Psychosocial treatment —
+    family intervention, cognitive behavioural therapy for psychosis, **supported
+    employment**, and assertive community treatment — has real evidence and is
+    delivered patchily.
+    **AND THE THING THE DRUGS DO NOT TOUCH IS THE THING THAT DETERMINES A LIFE.**
+    Negative symptoms — avolition, blunted affect, social withdrawal — and cognitive
+    impairment in attention, working memory and processing speed respond to
+    essentially nothing, and they predict employment and independent living far
+    better than hallucinations do. **Seventy years of drug development has
+    produced excellent control of the symptoms that frighten other people and
+    almost nothing for the symptoms that disable the patient.**
+    That is gaps.md #172's shape a third time: the entity was defined and treated
+    by its most visible feature, and the outcome that matters proceeds by another
+    route.
+  prevention: >
+    `risk-reduction`, and one of its components is a live and politically awkward
+    policy question.
+    Risk is dominated by things nobody can change — genetic loading, obstetric
+    complications, being born and raised in a city, migration and minority status,
+    childhood adversity. **The exception is cannabis.**
+    The association is dose-dependent and strongest for **high-potency
+    preparations**: daily use of high-THC cannabis is associated with several-fold
+    increased odds of psychotic disorder, and population-attributable-fraction
+    estimates in cities with high-potency markets have run from roughly a third to
+    a half of first-episode cases. Causality is not settled — reverse causation and
+    confounding are real — and the evidence is strong enough that it would be
+    treated as actionable in almost any other record here.
+    **It sits inside a global movement toward legalisation, in which potency has
+    risen sharply and is largely unregulated**, and the policy lever nobody is
+    pulling is not prohibition but **potency limits** — which several jurisdictions
+    apply to alcohol without controversy. Rated `documented` on the association and
+    the potency trend, not on any claim that a particular policy would work.
+    Early intervention shortens duration of untreated psychosis and improves
+    outcomes without preventing the illness, which is why this axis is
+    `risk-reduction` rather than anything stronger.
+  ongoing: >
+    `high`, matching `bipolar`, and for reasons that go well past the medication.
+    A daily antipsychotic or a monthly injection, indefinitely, with metabolic
+    monitoring that is recommended and frequently not done. For clozapine, blood
+    counts for life. Around it: relapse vigilance, the cognitive impairment that
+    makes complex self-management hard, and for a substantial minority a legal
+    framework — detention, community treatment orders — that constrains where a
+    person lives and whether they can refuse a drug.
+    **And the register's `ongoing` field cannot express the part that most defines
+    the illness**: schizophrenia begins in the early twenties and the burden is
+    fifty years of it, in a person whose education, employment and relationships
+    were interrupted before they were established.
+
+holes:
+  - >
+    **`mechanism: partial` places this record in `known & treatable`, alongside
+    hepatitis C and lung cancer, and that is generous.** The rating rests partly on
+    knowing how antipsychotics work rather than on knowing how schizophrenia works
+    — precisely the distinction gaps.md #135 says the axis cannot make. A stricter
+    reading would rate `correlates` and file it beside `bipolar` in `empirical
+    luck`.
+  - >
+    **`deaths: 3.0e4` is nearly meaningless and the mortality that matters is
+    elsewhere.** A fifteen-to-twenty-year reduction in life expectancy, mostly
+    cardiovascular, recorded in other records (gaps.md #186, #160).
+  - >
+    **`efficacy: 0.55` measures the wrong outcome and says so.** It describes
+    control of positive symptoms and relapse prevention. Negative symptoms and
+    cognitive impairment determine function and respond to nothing, so a record
+    reading "efficacy 0.55" describes a treatment that works well against
+    something other than what disables the patient.
+  - >
+    The strata are outcome bands rather than a biological partition, their
+    boundaries move with how recovery is defined, and **the good-outcome stratum is
+    systematically under-observed** because people who recover leave services.
+  - >
+    **Compulsory treatment is a routine part of care in this record and appears in
+    no field** (gaps.md #187). Neither does the substantial share of this
+    population in prisons and homeless shelters, which is a consequence of
+    deinstitutionalisation rather than of the illness.
+  - >
+    Every scalar is `recall` or `reasoning`, and outcome heterogeneity here is
+    wider than in most records, so each is an average over a genuinely bimodal
+    population.
+
+blockers:
+  - kind: policy
+    blocks: fifteen to twenty years of life, lost to conditions somebody else treats
+    obstacles: []
+    what: >
+      **THE BIGGEST KILLER IN THIS RECORD IS HEART DISEASE, AND THE FAILURE IS IN
+      SOMEBODY ELSE'S CLINIC.**
+      People with schizophrenia die roughly fifteen to twenty years early. Suicide
+      is perhaps one death in twenty. **The majority is cardiovascular and
+      metabolic**, produced by antipsychotic-induced weight gain and diabetes,
+      smoking rates of sixty to eighty percent, and poverty — and then compounded
+      by **diagnostic overshadowing**: people with severe mental illness receive
+      less cardiac investigation and revascularisation, fewer statins and less
+      cancer screening than others with the same physical findings, because
+      symptoms get attributed to the psychiatric diagnosis or to the drugs
+      (gaps.md #186).
+      **What would fix it is unglamorous and known**: metabolic monitoring actually
+      performed, smoking cessation offered rather than assumed impossible,
+      cardiovascular risk treated to the same standard as anybody else's, and
+      antipsychotic choice weighted by metabolic profile. The 2024 arrival of an
+      effective agent with no weight gain changes the arithmetic considerably.
+      **The structural problem is that the money and the responsibility sit in
+      different services.** Physical health is not a mental health budget line,
+      psychiatric patients are not a cardiology performance indicator, and the
+      years lost are attributed to neither.
+    who_could: [health-system, government, payer, academic, patient-org]
+    scale: 4.0e9
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: the symptoms that disable people, which respond to nothing
+    obstacles: []
+    what: >
+      **SEVENTY YEARS OF DRUG DEVELOPMENT PRODUCED EXCELLENT CONTROL OF THE
+      SYMPTOMS THAT FRIGHTEN OTHER PEOPLE AND ALMOST NOTHING FOR THE SYMPTOMS THAT
+      DISABLE THE PATIENT.**
+      Negative symptoms — avolition, blunted affect, social withdrawal, poverty of
+      speech — and cognitive impairment in attention, working memory and processing
+      speed predict employment, independent living and relationships far better
+      than hallucinations and delusions do. **No drug treats either.** Cognitive
+      remediation has modest effects; every pharmacological attempt has failed, and
+      the field has cycled through glutamatergic, cholinergic and
+      anti-inflammatory approaches without a licensed product.
+      Part of the difficulty is that nobody agrees what negative symptoms are —
+      primary features of the illness, secondary consequences of antipsychotics
+      (which blunt affect and motivation directly), or of chronic institutional
+      understimulation. **A treatment cannot be developed against a target that
+      cannot be cleanly measured**, and every trial in the area has argued about
+      its own endpoint.
+      The complement and synaptic pruning finding is the most promising
+      mechanistic lead the field has had in decades and has produced no therapy.
+      `scale: null`.
+    who_could: [academic, sponsor, manufacturer, philanthropy]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: two thirds of the world receiving no treatment at all
+    obstacles: []
+    what: >
+      **WELL OVER TWO THIRDS OF PEOPLE WITH PSYCHOSIS WORLDWIDE ARE NOT RECEIVING
+      APPROPRIATE CARE**, and in low-income countries the figure approaches all of
+      them. First-generation antipsychotics are generic, cost very little and are on
+      the essential medicines list — **the constraint is a mental health service,
+      not a drug.**
+      Where services exist, the failure is different and specific. **Clozapine is
+      the only drug that works in the treatment-resistant third and is
+      under-prescribed everywhere**, with several-fold variation between comparable
+      health systems. The stated reasons are the mandatory blood monitoring and
+      clinician caution about agranulocytosis, and the effect is that patients spend
+      years cycling through drugs that do not work.
+      **Early intervention services** demonstrably improve outcomes and exist in a
+      minority of health systems, nowhere at full coverage, and their benefit
+      attenuates when the specialised period ends.
+      And in several high-income countries the largest institutions housing people
+      with schizophrenia are prisons — the unfinished half of
+      deinstitutionalisation, which closed the asylums and did not build the
+      community services that were supposed to replace them.
+    who_could: [health-system, government, payer, nonprofit, philanthropy]
+    scale: 1.0e10
+    standing: documented
+    src: recall
+
+  - kind: policy
+    blocks: cannabis potency, which is rising while the law liberalises
+    obstacles: []
+    what: >
+      **THE ONLY SUBSTANTIALLY MODIFIABLE RISK FACTOR FOR SCHIZOPHRENIA IS
+      CANNABIS POTENCY, AND IT IS RISING EVERYWHERE.**
+      The association is dose-dependent and concentrated in **high-THC
+      preparations**: daily use of high-potency cannabis is associated with
+      several-fold increased odds of psychotic disorder, and
+      population-attributable-fraction estimates in cities with high-potency
+      markets have run from roughly a third to a half of first-episode cases.
+      Causality is not settled — reverse causation and confounding by shared
+      liability are real objections — but the evidence would be treated as
+      actionable in almost any other record in this register.
+      **The policy question is not prohibition and is almost never framed
+      honestly.** Legalisation has been accompanied by sharp increases in average
+      THC content and by concentrate products, largely unregulated. **Potency caps
+      are the obvious instrument**, they are applied to alcohol without
+      controversy, and they are absent from most legalisation frameworks.
+      Rated `documented` on the association and on the potency trend, not on any
+      claim that a particular policy would work. **The register takes no position
+      on legalisation**; it records that a dose-dependent risk factor for a severe
+      lifelong illness is becoming more concentrated and less regulated at the same
+      time, and that this is the one prevention lever the record has.
+    who_could: [government, legislator, regulator, academic, nonprofit]
+    scale: 5.0e8
+    standing: documented
+    src: recall
+
+  - kind: evidence-incomplete
+    blocks: not knowing which drug, and finding out only by failing
+    obstacles: []
+    what: >
+      **NOTHING PREDICTS WHICH ANTIPSYCHOTIC WILL WORK, AND THE ONLY ROUTE TO THE
+      DRUG THAT DOES IS TO FAIL TWICE FIRST.**
+      Selection among D2-blocking agents is by side-effect profile and formulary,
+      because head-to-head efficacy differences are small. Each trial takes weeks to
+      assess. **Treatment resistance is defined retrospectively — two adequate
+      failed trials — so the criterion for clozapine can only be satisfied by
+      spending a year or more not getting better**, during which functional and
+      social losses accumulate that the `window` says are not recovered.
+      What is missing is ordinary and answerable: a biomarker or clinical rule
+      identifying likely non-responders at first episode, and trials of **clozapine
+      first-line** in that group. Striatal dopamine synthesis capacity — lower in
+      treatment-resistant patients — is the leading candidate and requires a PET
+      scanner.
+      **And the question of when treatment can be reduced or stopped is barely
+      studied**, in a lifelong therapy causing metabolic disease that shortens life.
+      A small number of discontinuation trials exist, they are contested, and the
+      dominant clinical position is indefinite continuation with limited evidence
+      about the tail.
+      This is the same publicly-funded-comparison gap `multiple-sclerosis` and
+      `covid-19` identified: nobody selling a product has a reason to fund it.
+    who_could: [academic, sponsor, government, regulator, health-system]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0089
+  rated: 2026-08-25
+  by: [claude, jeremy]

@@ -1,0 +1,334 @@
+slug: soil-transmitted-helminths
+id: FND-D-0029
+name: soil-transmitted helminthiasis
+also: [STH, intestinal worms, ascariasis, trichuriasis, hookworm infection, geohelminth infection]
+common: intestinal worms
+mondo: unresolved
+kind: disease
+residual: false
+contested: false
+
+# THE FIRST RECORD WHERE THE DISPUTED THING IS THE TREATMENT.
+#
+# Four of the register's `contested: true` records dispute the ENTITY — is
+# ME/CFS real, where does hEDS end, which way does the POTS arrow point, whose
+# MCAS criteria. Nobody disputes that hookworm causes anaemia. What is disputed,
+# after decades and many hundreds of millions of doses, is whether MASS
+# DEWORMING PRODUCES MEASURABLE HEALTH BENEFIT — Cochrane reviews finding little
+# or no average effect on weight, haemoglobin, cognition or school attendance,
+# against economists' long-run trial follow-ups and a major funder community that
+# treats it as one of the best buys in global health.
+#
+# `contested` is defined as the entity's existence or definition being disputed,
+# so this record rates `false` — correctly, and uselessly. And `standing`
+# (documented / alleged / disputed / refuted) exists only on BLOCKERS. Every axis
+# rating in this register is asserted flat, including `efficacy`, which is the
+# most consequential and most genuinely disputed number in this file. See
+# gaps.md #62.
+#
+# Underneath it sits a second confusion. Albendazole clears worms. Whether
+# clearing worms helps the child is a different question, and `efficacy` has one
+# field for both. See gaps.md #63.
+
+burden:
+  prevalence:
+    value: 1.5e9
+    units: >
+      people infected — the largest prevalence in this register by an order of
+      magnitude, commonly given as roughly a quarter of the world's population,
+      with more recent estimates somewhat lower
+    src: recall
+  deaths:
+    value: 0.0
+    units: >
+      deaths/year directly attributable — a seventh morbidity-dominant record.
+      Heavy Ascaris burden can cause fatal intestinal obstruction, which is rare
+      and not counted under this heading
+    src: reasoning
+  note: >
+    Four organisms under one name: Ascaris lumbricoides, Trichuris trichiura,
+    and the hookworms Necator americanus and Ancylostoma duodenale. They share a
+    transmission route — human faeces contaminating soil, then eggs swallowed or
+    larvae penetrating bare feet — and they share a tablet, and they are not
+    otherwise one disease.
+    THE LARGEST PREVALENCE IN THE REGISTER BELONGS TO THE ENTITY WHOSE TREATMENT
+    BENEFIT IS LEAST SETTLED. That is not a coincidence: the effect of light and
+    moderate infection is small per person and enormous in aggregate, which is
+    exactly the shape that is hard to measure and easy to argue about.
+    Note also that the four species cannot be made into `strata`: polyparasitism
+    is the norm rather than the exception, so they do not partition a population
+    and the schema's one available subdivision does not fit.
+
+axes:
+  mechanism: partial
+  intervention: curative
+  prevention: risk-reduction
+  ongoing: low
+  efficacy:
+    value: 0.70
+    units: >
+      fraction-of-patients (PARASITOLOGICAL cure, single-dose benzimidazole,
+      blended across species) — READ THE UNITS. Ascaris clears in roughly 95%,
+      hookworm rather less, Trichuris in something like 30%. This is what the
+      drug does to the worm. Whether it helps the child is the disputed question
+      and there is no field for it; see gaps.md #63
+    src: recall
+  access:
+    value: 0.60
+    units: >
+      fraction-of-patients (school-age children reached by preventive
+      chemotherapy) — coverage has risen substantially and remains short of the
+      75% target; pre-school children and adults are largely outside the
+      programme
+    src: recall
+
+measurement:
+  diagnostic: objective
+  prognostic: none
+  predictive: partial
+  witness: >
+    DIAGNOSTIC is `objective` and, as in schistosomiasis, deliberately unused:
+    Kato-Katz counts eggs in stool, it works, and mass drug administration hands
+    a tablet to every school-age child in an endemic district without testing
+    any of them, because albendazole costs a few cents and the slide costs more.
+    The same consequences follow — no test of cure, no individual denominator,
+    and no early warning of reduced benzimidazole efficacy.
+    AND HERE IT COMPOUNDS THE CENTRAL DISPUTE. Because nobody types the species,
+    nobody knows the species MIX in a treated population — and single-dose
+    benzimidazoles clear Ascaris in about ninety-five percent of cases and
+    Trichuris in something like thirty. So the parasitological efficacy of a
+    deworming round is a function of a composition that is never measured, in a
+    debate about whether deworming works.
+    PROGNOSTIC is `none`. Nothing identifies which infected child will be stunted
+    or anaemic and which will carry a light burden with nothing to show for it.
+    Infection intensity is the strongest predictor and is not measured in
+    programme settings, for the reason above.
+    PREDICTIVE is `partial`: species predicts drug response, well, and is not
+    determined in practice.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    Albendazole and mebendazole are among the safest drugs given at scale — a
+    single tablet, a few cents, with transient abdominal discomfort at worst.
+    That safety is the whole basis of the programme's defensibility: hundreds of
+    millions of children a year receive a tablet without being tested, most of
+    them uninfected in any given round, and it costs them essentially nothing.
+    The register's `overtreatment_risk` flag correctly stays silent, for the same
+    reason it does in schistosomiasis.
+    WHICH IS ALSO WHY THE EVIDENCE DISPUTE IS SO HARD TO RESOLVE POLITICALLY.
+    When an intervention is nearly free and nearly harmless, the expected-value
+    argument for doing it survives an effect size indistinguishable from zero —
+    and so the question of whether it works can stay open indefinitely without
+    anyone behaving unreasonably.
+  incidence:
+    value: 0.0
+    units: fraction-of-treated (permanent harm)
+    src: reasoning
+
+residue:
+  severity: minor
+  permanent: true
+  what: >
+    Scoped narrowly and deliberately. Heavy, chronic infection in early
+    childhood — hookworm causing iron-deficiency anaemia through intestinal
+    blood loss, Trichuris dysentery syndrome causing growth failure — is
+    associated with stunting and with cognitive deficits that do not fully
+    recover once the worms are cleared. That much is broadly accepted and is
+    what this block records.
+    WHAT IS NOT RECORDED HERE IS THE DISPUTED CLAIM. Whether LIGHT and MODERATE
+    infection, which is most infection, produces enough developmental harm to
+    justify treating everybody is the question the deworming controversy is
+    actually about. Rating this residue `major` would smuggle the pro-treatment
+    side of that argument into a field that looks like an observation; omitting
+    it entirely would smuggle in the other. `minor` with a low incidence records
+    the well-supported part and leaves the argument where it belongs, in
+    `efficacy` and in the evidence blocker.
+    The register has no way to mark a rating as disputed — see gaps.md #62 — so
+    this paragraph is doing a job a field should be doing.
+  incidence:
+    value: 0.05
+    units: >
+      fraction-of-infected (permanent developmental deficit following heavy
+      chronic childhood infection) — a reasoned estimate covering heavy burden
+      only; the figure for all infection is the contested question
+    src: reasoning
+
+# NO `window` BLOCK, and this is the fifth NTD in a row where one could have been
+# argued. Childhood is obviously when the damage would be done and when treatment
+# would prevent it — but that claim IS the disputed claim, and asserting it in a
+# derived field would put the register on one side of its own open question.
+# Compare schistosomiasis, onchocerciasis, lymphatic filariasis and sleeping
+# sickness, where the irreversible damage and its timing are not in dispute and a
+# window is recorded. The difference between those records and this one is the
+# whole point of the entry.
+
+witness:
+  mechanism: >
+    Rated `partial`, and it is the rating most likely to be argued with, so the
+    split is set out.
+    ESTABLISHED: the parasitology is complete. Eggs pass in faeces, embryonate in
+    warm moist soil, and are swallowed (Ascaris, Trichuris) or hatch to larvae
+    that penetrate skin (hookworm). Adult worms live in the intestine for one to
+    several years. Hookworm feeds on blood at the mucosa, and the resulting iron
+    loss is dose-dependent and thoroughly demonstrated — heavy hookworm burden
+    causes iron-deficiency anaemia, and that chain would survive any refutation
+    attempt.
+    THE NAMED HOLE is the chain from LIGHT AND MODERATE infection — which is
+    most infection — to the stunting, cognitive deficit and school
+    underperformance attributed to it at population scale. Those associations
+    are real; whether the worms cause them, or whether both are consequences of
+    the poverty and sanitation conditions that produce the worms, is not settled.
+    And that is not a separate question from the treatment dispute. If mass
+    deworming does not improve growth or cognition, one explanation is that the
+    causal chain was weaker than believed. The Cochrane finding is evidence about
+    the mechanism, which is why this axis reads `partial` while the three
+    filarial and fluke records nearby read `established`.
+  intervention: >
+    `curative` of the infection, unambiguously: a single dose of albendazole or
+    mebendazole clears the worms, at a cost of a few cents. Reinfection in an
+    endemic setting follows within months, which is why treatment is repeated
+    annually or twice yearly rather than given once — the same pattern as
+    schistosomiasis.
+    AND THE RATING IS DOING SOMETHING THE READER WILL MISREAD. `curative` here
+    means the worms are gone. It does not mean the child is better off, and
+    whether the child is better off is the open question of this record. The
+    axes have no way to hold the difference, so the record says `curable`,
+    `partly delivered`, and reads like an ordinary delivery problem in a file
+    whose central fact is an evidence problem.
+    Species matter and are invisible. Trichuris responds poorly to single-dose
+    benzimidazoles — cure rates around thirty percent — while Ascaris clears
+    almost completely. Adding ivermectin markedly improves Trichuris clearance
+    and is not standard everywhere.
+  prevention: >
+    `risk-reduction`, and as with schistosomiasis the durable answer is not a
+    drug. These are SOIL-TRANSMITTED helminths: the transmission route is human
+    faeces reaching soil, so sanitation, safe water, hygiene and footwear end
+    them, and did end them in the countries that now have neither the worms nor
+    a deworming programme. The American South's hookworm campaign a century ago
+    was as much sanitation as it was medicine.
+    That answer sits in a water and sanitation ministry, and the disease sits in
+    a health ministry, which is the same structural problem schistosomiasis has
+    and the reason both diseases are managed with tablets by the people who have
+    tablets.
+  ongoing: >
+    `low`. One tablet, once or twice a year, usually handed out at school. As
+    light as an intervention gets, and the lightness is load-bearing for the
+    entire argument about whether to do it.
+
+holes:
+  - Whether mass deworming produces measurable health or developmental benefit.
+    This is the record's central question, it is disputed by serious people on
+    both sides, and it has stayed open through decades and hundreds of millions
+    of doses.
+  - Whether light and moderate infection causes the morbidity attributed to it,
+    or whether both are consequences of the conditions that produce worms. This
+    is the same question seen from the mechanism side.
+  - The species mix in treated populations, which determines what a deworming
+    round actually achieves and is never measured because nobody diagnoses.
+  - Whether benzimidazole efficacy is declining under sustained mass
+    administration. Unmeasurable for the same reason.
+  - `efficacy: 0.70` is parasitological and is not what a reader will take it
+    for. The clinical figure it would need in order to mean what people assume is
+    the disputed number.
+  - Written from model recall. The species-specific cure rates, the transmission
+    routes and the shape of the evidence controversy are the parts most likely
+    right; every number is the part most likely wrong.
+
+blockers:
+  - kind: evidence-incomplete
+    blocks: knowing whether the largest deworming programmes are worth running
+    what: >
+      THE BINDING CONSTRAINT, AND IT IS UNLIKE ANY OTHER IN THIS REGISTER.
+      Elsewhere `evidence-incomplete` means a trial has not been funded, or the
+      population cannot be defined well enough to enrol. Here the intervention
+      has been delivered to hundreds of millions of children for decades and the
+      question of whether it works is still open, with systematic reviews finding
+      little or no average effect on weight, haemoglobin, cognition or school
+      attendance, and long-run economic follow-ups and a substantial funder
+      community reaching the opposite conclusion.
+      Three things keep it open, and none of them is anyone's negligence. The
+      effect per child is small even if real, so detecting it needs enormous
+      trials. Treating some children protects others, so cluster designs and
+      spillovers make the analysis contested rather than clean. And the
+      intervention is so cheap and so safe that an expected-value case for doing
+      it survives an effect size indistinguishable from zero — which removes the
+      pressure that would otherwise force a resolution.
+      What would settle it is a very large, long, cluster-randomised trial with
+      agreed endpoints, and the reason it has not been run is partly that the
+      people who would fund it are already convinced, in both directions.
+    who_could: [academic, philanthropy, sponsor, government]
+    scale: 2.0e8
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    blocks: measuring what any of this achieves
+    what: >
+      The second inverted diagnosis blocker of the schistosomiasis kind, and
+      here it compounds the evidence dispute rather than merely limiting
+      surveillance. Mass administration deliberately skips testing because the
+      drug is cheaper than the slide, which is correct arithmetic — and the
+      consequence is that a programme cannot report cure, cannot report the
+      species mix that determines its own parasitological efficacy, and cannot
+      detect declining benzimidazole susceptibility.
+      So the largest deworming programmes in the world run without the
+      measurement that would resolve the argument about whether they work.
+      Priced as sentinel surveillance rather than as universal testing: the
+      requirement is a representative sample with species identification and
+      cure assessment, not a slide for every child.
+    who_could: [academic, health-system, government, nonprofit]
+    scale: 5.0e7
+    standing: documented
+    src: recall
+
+  - kind: policy
+    blocks: sanitation, which is the answer
+    what: >
+      Identical in shape to schistosomiasis and worth recording twice because
+      the repetition is the finding. These worms are transmitted by human faeces
+      reaching soil. Latrines, safe water, hygiene and shoes end them
+      permanently, and did so in the countries that no longer have them.
+      That intervention lives in a water and sanitation budget, in a different
+      ministry, on a capital timescale. The health system does what the health
+      system can do alone, which is to hand out tablets indefinitely. Recorded
+      as `policy` rather than `cost` for the same reason as schistosomiasis: the
+      money exists in national infrastructure planning, and what is missing is
+      the mechanism by which a worm burden becomes an argument in it.
+      Note in passing that the tablets themselves arrive by manufacturer
+      donation — the seventh instance of that pattern in this corpus, and not
+      given its own blocker here because it would be pure repetition of the
+      previous six.
+    who_could: [government, legislator, health-system, philanthropy]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: a regimen that works on all four species, and a vaccine
+    obstacles: [protective-immunity]
+    what: >
+      One tablet is given for four organisms and works well on one of them.
+      Single-dose benzimidazoles clear Ascaris almost completely, hookworm
+      rather less, and Trichuris in roughly thirty percent of cases. Combining
+      albendazole with ivermectin substantially improves Trichuris clearance and
+      is not standard practice everywhere, which is closer to a delivery
+      question than a research one.
+      The research questions are a vaccine — hookworm candidates have been in
+      development for years — and the mechanism hole above, which is the
+      scientific form of the evidence dispute: whether light and moderate
+      infection causes what is attributed to it. Answering that would decide
+      whether the programme's target should be everybody or only the heavily
+      infected, and the second would be a completely different and much cheaper
+      programme.
+      `scale: null` — no priced path to either.
+    who_could: [academic, sponsor, philanthropy, nonprofit]
+    scale: null
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0029
+  rated: 2026-08-21
+  by: [claude, jeremy]

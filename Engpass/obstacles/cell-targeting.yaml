@@ -1,0 +1,154 @@
+slug: cell-targeting
+id: FND-O-0008
+name: Can a molecule be made to act on the cells you mean, and not the others?
+kind: capability
+resolution: open
+
+question: >
+  A drug goes everywhere. That is the default and it is the problem.
+  Systemic administration distributes a molecule roughly according to blood flow,
+  so the dose that reaches the intended cell also reaches every other cell that
+  will take it up. **What limits treatment is then not whether the molecule
+  works but what it does to the tissues that were not the target** — which is why
+  the ceiling on cytotoxic chemotherapy is marrow and gut, the ceiling on
+  glucocorticoids is bone and glucose, and the ceiling on immunosuppression is
+  infection.
+  **Can a therapeutic be addressed to a defined population of cells?**
+  Two faces, and the register holds records for both:
+  **SPECIFICITY.** The molecule reaches the target *and everything else*, so
+  toxicity sets the dose. Nobody has a way to remove the autoreactive T-cell
+  clone in type 1 diabetes without suppressing the immune system, or to kill a
+  tumour cell without the shared machinery of dividing cells.
+  **REACH.** The molecule cannot get to the target at all. Vascular and visceral
+  smooth muscle throughout the body. Forty percent of a boy's body weight in
+  skeletal muscle. Airway epithelium behind mucus. Haematopoietic stem cells in
+  a living marrow. Brain behind an intact blood-brain barrier. Cartilage, which
+  has no blood supply at all. The interior of a tuberculous granuloma.
+  They are one question because a solution to either is an **address** — some
+  property of the target cell that a carrier can recognise and act on — and
+  because the modalities being built (lipid nanoparticles, engineered viral
+  capsids, antibody-drug conjugates, cell therapies) are aimed at both at once.
+  **NOT TO BE CONFUSED WITH NORDSTERN'S OTHER SENSE OF "DELIVERY", WHICH IS WHY
+  THIS RECORD IS NOT CALLED THAT.** `tuberculosis` says *"Everything else here is
+  delivery"* and `hiv` says *"no amount of delivery funding touches it"*, and both
+  mean getting an existing product to a patient. **This is getting a molecule to
+  a cell.** The two are opposite in almost every respect — one is money and
+  logistics, the other is `scale: null` — and sharing a word would have merged
+  the register's most-priced obstacle with one of its least priceable.
+
+what_it_unblocks: >
+  **THE RECORDS WHERE THE MECHANISM IS SOLVED AND THE TREATMENT DOES NOT EXIST**,
+  which is a specific and unusually well-defined set. Nordstern keeps finding
+  that the order of gene discovery is inverse to therapeutic success (gaps.md
+  #193, #198), and this is the variable that explains it: **the diseases whose
+  genes were found first are the ones whose target tissue is hardest to reach.**
+  Concretely, from the records that cite it: the ten percent of cystic fibrosis
+  that no modulator can reach and would need mRNA or editing delivered to airway
+  epithelium; dystrophin into forty percent of a body; allele-selective editing
+  reaching smooth muscle in MSMDS, where `msmds` states outright that the
+  conceptual route is open and the physical one is not; **in vivo editing of
+  haematopoietic stem cells, which would collapse `sickle-cell`'s cost, logistics
+  and toll blockers simultaneously** — that record's cure currently requires
+  myeloablation, and its `toll` is `catastrophic` at an incidence of 0.99 for
+  precisely that reason.
+  **And it would change what `toll` means across the corpus rather than clearing
+  one record.** A large share of the permanent prices this register records are
+  paid by tissues nobody was aiming at: marrow and neuropathy from chemotherapy,
+  bone and diabetes from glucocorticoids, deafness from aminoglycosides and
+  cisplatin, infection from immunosuppression. **Those are not side effects of
+  bad drugs. They are the arithmetic of a good drug with no address.**
+  A partial answer is worth something on its own, which is not true of every
+  entry here: each new addressable tissue converts a set of diseases from
+  untreatable to treatable independently of the others.
+
+why_hard: >
+  **BECAUSE AN ADDRESS HAS TO EXIST BEFORE IT CAN BE USED, AND FOR MOST CELL
+  TYPES THERE ISN'T ONE.** Targeting requires a surface feature that is present
+  on the intended cells and absent from the rest — and the reason CD19 and HER2
+  are famous is that such features are rare. Most cell types are defined by what
+  they do rather than by anything distinctive on the outside, and "the smooth
+  muscle cells of the arterial wall" is not a molecular category.
+  **The barriers are barriers on purpose.** The blood-brain barrier, mucus, the
+  glycocalyx and the endothelium evolved to exclude exactly the class of thing a
+  therapy is. Defeating one non-selectively usually means defeating it for
+  pathogens too.
+  **Scale defeats the ones that are otherwise soluble.** Skeletal muscle is the
+  largest tissue in the body; the viral dose required to transduce a meaningful
+  fraction is what drives both the cost and the hepatotoxicity in `duchenne`.
+  **Turnover undoes the rest.** Airway epithelium and muscle renew, so anything
+  delivered episomally is diluted; the regenerative pool is usually the hardest
+  compartment to transduce, which is the whole difficulty of reaching stem cells.
+  **And the carrier is itself immunogenic.** Viral capsids provoke neutralising
+  antibodies that make a second dose impossible and pre-existing immunity that
+  excludes a large fraction of patients before treatment starts.
+  **The counter-evidence matters and should be stated, because it is what makes
+  this a capability target rather than a lament.** Targeting has been solved
+  several times, always by finding an address that already existed:
+  bisphosphonates work because they bind bone mineral; **inhaled corticosteroids
+  work because you can put the drug in the organ**, which is most of why `asthma`
+  is one of the best-controlled chronic diseases in the corpus while its
+  mechanism rates `partial`; nusinersen reaches motor neurons because it is
+  injected intrathecally, going around the barrier rather than through it;
+  lipid nanoparticles go to hepatocytes because that is where the liver puts
+  them. **Every one is an accident of chemistry or anatomy rather than a designed
+  address, and that is the state of the art.**
+
+claims:
+  - unblocks: alzheimers
+    standing: alleged
+    why: >
+      The blood-brain barrier excludes most large molecules, and the amyloid
+      antibodies that do cross achieve small effects at high dose with ARIA as
+      the price. **A route into the brain would change what can be attempted**,
+      not merely how much of it arrives. Recorded as `alleged` because the
+      record's own binding constraint may be that the target is wrong rather than
+      unreachable, and delivering more of an ineffective agent buys nothing.
+  - unblocks: type-1-diabetes
+    standing: alleged
+    why: >
+      Teplizumab delays onset by suppressing T cells broadly, because nobody can
+      remove the autoreactive clone specifically. **An antigen-specific
+      intervention is the field's stated goal and has never worked in humans.**
+      `alleged` because it is not established that the autoimmunity is the whole
+      story by the time it is detectable.
+  - unblocks: osteoarthritis
+    standing: alleged
+    why: >
+      Cartilage is avascular, so a systemic drug does not reach chondrocytes at
+      useful concentration — a plausible contributor to forty years of failed
+      disease-modifying trials, alongside the entity being heterogeneous and the
+      endpoint being poor. **Recorded as a claim rather than a link because
+      `osteoarthritis`'s own knowledge blocker names initiation and pain, not
+      access**, and asserting otherwise would be putting words in that record.
+
+holes:
+  - >
+    **This is arguably two obstacles and the record says so on purpose.**
+    Specificity — the drug reaches everything — and reach — the drug reaches
+    nothing — have different solutions in the near term even if both are
+    "addressing" problems. `unexplained-illness` sets the precedent for holding a
+    cluster and expecting it to split; this one should split when a record
+    appears that is blocked by exactly one of the two.
+  - >
+    **It risks becoming a bucket for "the treatment does not work yet".** The
+    discipline is that a record cites this only when the mechanism is solved and
+    the physical route is the named obstacle — `msmds` is the clean case, and
+    `hiv`'s reservoir is deliberately excluded because that is a biology question
+    rather than an addressing one.
+  - >
+    **`scale: null` may be wrong here, and this is the entry that tests
+    Engpass's headline finding.** The register's claim is that knowledge blockers
+    cannot be triaged with money. But delivery modalities are engineering:
+    capsid libraries, nanoparticle screens and conjugate chemistry are
+    parallelisable, buyable work of exactly the kind money does move. **If any
+    obstacle in this register has a price, it is this one**, and none of the
+    records citing it has put a number on it.
+  - >
+    The counter-examples may be more informative than the failures. Bone,
+    airway, intrathecal and hepatocyte targeting all work because an address
+    happened to exist. **Nobody has designed one**, and whether that is possible
+    is the actual question underneath this record.
+
+asserted:
+  date: 2026-08-28
+  by: [claude, jeremy]

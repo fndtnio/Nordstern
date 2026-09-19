@@ -1,0 +1,538 @@
+slug: non-hodgkin-lymphoma
+id: FND-D-0057
+name: non-Hodgkin lymphoma
+also: [NHL, diffuse large B-cell lymphoma, follicular lymphoma, MALT lymphoma, Burkitt lymphoma]
+mondo: MONDO:0018908
+kind: disease
+residual: true
+contested: false
+
+# THE FIRST ENTITY IN THIS REGISTER DEFINED BY WHAT IT IS NOT.
+#
+# "Non-Hodgkin lymphoma" means *the lymphomas that are not Hodgkin's*. It is a
+# leftover, and the WHO classification recognises somewhere between sixty and a
+# hundred distinct diseases inside it, which differ in cell of origin, in
+# genetics, in natural history, and in whether they can be cured.
+#
+# `residual: true` — and it is the third record in fifty-seven to set that flag,
+# after low back pain and MCAS. **The flag is stored, it is queryable, and
+# nothing derives from it or checks it.** It marks a category error and then
+# permits every rating anyway. gaps.md #125.
+#
+# TWO THINGS INSIDE IT THAT SHOULD NOT BE IN THE SAME FILE:
+#
+# 1. **AGGRESSIVE IS CURABLE AND INDOLENT IS NOT.** Diffuse large B-cell
+#    lymphoma will kill you in months untreated and is cured in roughly two
+#    thirds by six cycles of chemotherapy. Follicular lymphoma is compatible with
+#    twenty years of life and is not curable at all — the standard of care for
+#    asymptomatic disease is to do nothing. **Every intuition the word "cancer"
+#    carries runs backwards here.**
+#
+# 2. **ONE SUBTYPE IS CURED BY ANTIBIOTICS.** Gastric MALT lymphoma is driven by
+#    chronic *Helicobacter pylori* infection, and eradicating the bacterium makes
+#    the lymphoma regress in most patients. The register already holds
+#    `h-pylori-ulcer` as a separate entity: **one record's treatment is another
+#    record's cure**, and nothing can say so.
+#
+# AND THE SUBTYPE IS A PATHOLOGIST'S JUDGEMENT. Expert review changes the
+# diagnosis in a meaningful share of cases, and the subtypes it moves between
+# have DIFFERENT CAPABILITY RATINGS — curable, suppressible, neither. gaps.md #126.
+
+burden:
+  prevalence:
+    value: 5.5e5
+    units: >
+      new cases/year worldwide — and the count depends on where the boundary
+      with Hodgkin lymphoma, with the leukaemias and with plasma cell neoplasms
+      is drawn, which is a classification decision rather than a fact
+    src: recall
+  deaths:
+    value: 2.5e5
+    units: >
+      deaths/year — an average over diseases whose individual mortality ranges
+      from near-zero to near-total, which is the problem with the record rather
+      than with the figure
+    src: recall
+  note: >
+    **EVERY NUMBER IN THIS FILE IS AN AVERAGE OVER SIXTY DISEASES.** That is
+    stated once here rather than repeated in every field.
+    Incidence rose through the second half of the twentieth century in
+    high-income countries and has broadly plateaued. Part of the rise was real —
+    HIV-associated lymphoma, an ageing population, immunosuppression after
+    transplantation — and part was reclassification, as entities were split,
+    renamed and moved in and out of the category by successive WHO revisions.
+    **The category itself has changed shape several times**, which makes any
+    long-run trend partly a measurement of nomenclature.
+    Several constituent diseases have identified infectious causes, and the
+    register already holds three of them: *Helicobacter pylori* for gastric MALT,
+    HIV for the AIDS-associated lymphomas, and hepatitis C for a share of
+    marginal zone disease. Epstein-Barr virus, which drives endemic Burkitt
+    lymphoma alongside malaria in equatorial Africa, is not a record here and
+    probably should be.
+
+survival:
+  horizon: 5 years from diagnosis
+  untreated:
+    value: 0.1
+    units: >
+      fraction alive — aggressive subtypes kill within months untreated; indolent
+      ones take years, which is why a single untreated figure for this record
+      is a blend of two natural histories
+    src: reasoning
+  treated:
+    value: 0.72
+    units: >
+      fraction alive — **A MEANINGLESS AVERAGE, and it is recorded because the
+      schema demands one.** Diffuse large B-cell lymphoma is cured in roughly
+      two thirds by R-CHOP; mantle cell is not cured at all. The `strata` carry
+      the honest numbers
+    src: reasoning
+  witness: >
+    **The ⧉ record on this axis.** One entity, several diseases, and the register
+    already flags that the question is malformed rather than hard. The survival
+    figure inherits the problem exactly.
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: risk-reduction
+  ongoing: moderate
+  efficacy:
+    value: 0.55
+    units: >
+      fraction-of-patients (cured, or durably controlled) — A MEANINGLESS
+      AVERAGE, and it is recorded because the schema demands one. The strata
+      carry the honest numbers and they range from about 0.30 to about 0.85
+    src: reasoning
+  access:
+    value: 0.40
+    units: >
+      fraction-of-patients (reaching expert haematopathology, immunochemotherapy,
+      and cellular therapy where indicated) — rituximab is now biosimilar and
+      cheap; the pathology expertise and the cellular therapy are not
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: partial
+  witness: >
+    DIAGNOSTIC is `objective` in the sense that it rests on tissue —
+    morphology, immunophenotype, cytogenetics and increasingly sequencing — and
+    **it is the most consequential subjective judgement in this register.**
+    In lymphoma the subtype *is* the treatment decision. Diffuse large B-cell
+    disease gets six cycles of immunochemotherapy with curative intent.
+    Follicular disease of the same bulk gets watched. Gastric MALT gets
+    antibiotics. Getting the subtype wrong is not a matter of degree; it means
+    treating a different disease.
+    **And expert review changes the diagnosis in a meaningful share of cases.**
+    Concordance between a general pathologist and a haemato-pathology reference
+    panel is imperfect, particularly at the borders — between follicular grade 3B
+    and DLBCL, between mantle cell and other small B-cell lymphomas, across the
+    T-cell entities where morphology is least helpful.
+    Melanoma's #119 was a threshold that drifted. **This is worse: the subtypes a
+    disagreement moves a patient between have different capability ratings.** A
+    misclassification here does not over- or under-treat one disease; it assigns
+    the patient to a different row of the `strata` block. See gaps.md #126.
+    PROGNOSTIC is `partial`. The International Prognostic Index and its variants
+    stratify usefully; interim PET after two cycles predicts outcome in aggressive
+    disease; cell-of-origin and genetic subtypes of DLBCL predict outcome well.
+    PREDICTIVE is `partial`, and the failure is instructive. **CD20 expression
+    predicts benefit from rituximab and is nearly universal in B-cell disease**,
+    which is a predictive marker so uniformly positive that it stopped being one.
+    CD19 selects CAR-T and bispecifics. **But cell-of-origin-directed therapy has
+    repeatedly failed in randomised trials** — the biology predicts prognosis
+    beautifully and has not yet predicted which drug to add, which is a
+    distinction the register's single `predictive` axis cannot draw.
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    Immunochemotherapy's price is the familiar one and lands on people who are
+    frequently cured.
+    **R-CHOP** carries anthracycline cardiotoxicity — the same delayed
+    cardiomyopathy childhood ALL's record describes, in adults who will live
+    thirty years afterwards — vincristine neuropathy that is often permanent,
+    infertility, and a raised risk of second malignancy including
+    therapy-related myeloid neoplasms.
+    **Rituximab and every anti-CD20 antibody deplete normal B cells**, producing
+    hypogammaglobulinaemia that can persist for a year or more and, with
+    maintenance therapy, longer. It reactivates hepatitis B, which is why
+    screening before treatment is mandatory and why the register's
+    `hepatitis-b` record, queued and unwritten, is upstream of this one.
+    **CELLULAR THERAPY HAS ITS OWN.** CAR-T causes cytokine release syndrome and
+    ICANS — a neurotoxicity ranging from confusion to seizures — both acute and
+    mostly reversible. What is not reversible is **prolonged B-cell aplasia**:
+    the therapy destroys the lineage its target belongs to, and some patients
+    require immunoglobulin replacement indefinitely. **A cure that leaves you
+    permanently dependent on a blood product is a shape nothing else in this
+    register has.**
+    Radiotherapy, where still used, adds second cancers and thyroid failure in
+    young patients.
+  incidence:
+    value: 0.35
+    units: >
+      fraction-of-treated (permanent harm — cardiomyopathy, neuropathy,
+      infertility, second malignancy, prolonged hypogammaglobulinaemia) — a
+      reasoned estimate across a very heterogeneous treated population
+    src: reasoning
+
+# NO `residue` BLOCK. A cured lymphoma leaves the patient very little; the
+# permanent damage is the anthracycline's, the vincristine's and the B-cell
+# depletion's. `restored` derives `cure-costs`, as it has for every cancer here
+# except melanoma.
+
+# NO `window` BLOCK, AND IT IS THE SECOND RECORD WITHOUT ONE AFTER CHILDHOOD ALL
+# — FOR A RELATED REASON AND WITH A SHARPER EDGE.
+#
+# Aggressive lymphoma is usually disseminated at diagnosis and is CURED ANYWAY.
+# Stage matters far less than in any solid tumour: advanced-stage DLBCL is
+# routinely cured, which is the opposite of the assumption every window record in
+# this corpus rests on.
+#
+# And for indolent lymphoma, treating earlier is **actively pointless.** Trials
+# of immediate versus deferred therapy in asymptomatic follicular lymphoma found
+# no survival benefit to treating early, so watchful waiting is standard. This is
+# the only record in the register where the correct response to finding the
+# disease sooner is to do nothing about it for longer.
+#
+# The one exception is Burkitt lymphoma, which can double in a day and is a
+# genuine emergency — but the urgency is about tumour lysis and marrow failure
+# rather than about stage.
+
+strata:
+  - name: diffuse large B-cell and other aggressive B-cell
+    fraction:
+      value: 0.35
+      units: fraction-of-diagnoses
+      src: recall
+    intervention: curative
+    efficacy:
+      value: 0.65
+      units: fraction-of-stratum (cured by first-line immunochemotherapy)
+      src: recall
+    toll: major
+    what: >
+      **AGGRESSIVE, DISSEMINATED, AND CURED IN ROUGHLY TWO THIRDS BY SIX CYCLES
+      OF CHEMOTHERAPY.** Untreated it kills within months. It is the largest
+      subtype and the reason the record-level rating is `curative`.
+      Relapsed disease was a death sentence and is now salvageable in a
+      meaningful minority by CAR-T or bispecific antibodies.
+
+  - name: follicular and other indolent B-cell
+    fraction:
+      value: 0.30
+      units: fraction-of-diagnoses
+      src: recall
+    intervention: suppressive
+    efficacy:
+      value: 0.85
+      units: fraction-of-stratum (durable control, near-normal life expectancy)
+      src: reasoning
+    toll: minor
+    what: >
+      **INCURABLE, AND COMPATIBLE WITH DECADES.** Median survival now exceeds
+      fifteen to twenty years. Asymptomatic disease is watched rather than
+      treated, because trials showed no survival benefit to treating early.
+      Patients relapse, respond again, relapse again, over a very long time.
+      **A quarter of these transform into aggressive lymphoma**, at which point
+      the patient moves to the row above — a stratum transition caused by the
+      disease's own evolution rather than by treatment, which is gaps.md #111
+      from a new direction.
+
+  - name: gastric MALT (Helicobacter-associated)
+    fraction:
+      value: 0.03
+      units: fraction-of-diagnoses
+      src: recall
+    intervention: curative
+    efficacy:
+      value: 0.80
+      units: fraction-of-stratum (regression after H. pylori eradication)
+      src: recall
+    toll: minor
+    what: >
+      **A CANCER CURED BY ANTIBIOTICS.** Chronic *Helicobacter pylori* infection
+      drives a marginal zone lymphoma of the stomach through sustained antigenic
+      stimulation, and in most patients eradicating the bacterium makes the
+      lymphoma regress and stay away.
+      Two weeks of triple therapy, costing very little, for a lymphoma. The
+      register holds `h-pylori-ulcer` as a separate record with the same
+      treatment, and cannot connect them.
+      The exception is disease carrying t(11;18), which has become
+      antigen-independent and does not regress — **the tumour graduating from
+      needing the infection**, which is as clean a demonstration of clonal
+      evolution as the corpus contains.
+
+  - name: mantle cell
+    fraction:
+      value: 0.06
+      units: fraction-of-diagnoses
+      src: recall
+    intervention: suppressive
+    efficacy:
+      value: 0.50
+      units: fraction-of-stratum (durable control on BTK-inhibitor-based therapy)
+      src: reasoning
+    toll: major
+    what: >
+      Historically the worst of both worlds — behaving aggressively and not
+      curable. BTK inhibitors and, more recently, CAR-T changed the outlook
+      substantially without making it curative.
+
+  - name: T-cell and NK-cell lymphomas
+    fraction:
+      value: 0.12
+      units: fraction-of-diagnoses
+      src: recall
+    intervention: disease-modifying
+    efficacy:
+      value: 0.30
+      units: fraction-of-stratum (durable benefit)
+      src: reasoning
+    toll: major
+    what: >
+      **THE STRATUM THE ANTIBODY ERA PASSED OVER.** There is no CD20 on a T cell,
+      so rituximab — the drug that transformed B-cell lymphoma — does nothing
+      here, and thirty years of derivative advances went with it.
+      A dozen rare entities treated largely with regimens designed for other
+      diseases, with outcomes that have moved little. Same shape as small cell
+      lung cancer and infant ALL: a frontier hiding inside a record whose
+      headline is progress.
+
+  - name: Burkitt and other
+    fraction:
+      value: 0.14
+      units: fraction-of-diagnoses
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.75
+      units: fraction-of-stratum (cured by intensive short-course chemotherapy)
+      src: reasoning
+    toll: major
+    what: >
+      Burkitt lymphoma doubles in about a day, is a medical emergency, and is
+      **cured in the large majority by short intensive chemotherapy** —
+      particularly in children. The endemic form in equatorial Africa is driven
+      by Epstein-Barr virus with malaria as a cofactor, which is two infectious
+      contributions the register cannot record because neither is a held entity.
+      This row also carries the miscellaneous remainder, which is honest and
+      unsatisfying.
+
+moved:
+  - date: 1997
+    axis: efficacy
+    from: 0.35
+    to: 0.5
+    why: >
+      **RITUXIMAB — THE FIRST THERAPEUTIC MONOCLONAL ANTIBODY APPROVED FOR ANY
+      CANCER.** Adding an anti-CD20 antibody to CHOP chemotherapy improved
+      survival in diffuse large B-cell lymphoma substantially, and the same
+      addition helped across essentially every CD20-positive entity in the
+      category.
+      It is the founding case of antibody therapy in oncology in the way imatinib
+      is the founding case of targeted small molecules, and it arrived four years
+      earlier.
+      **It reached only the B-cell side.** T-cell lymphomas have no CD20 and got
+      nothing, which is why they are still the worst stratum in this record
+      thirty years later.
+    src:
+      id: PMID:9704735 doi:10.1200/JCO.1998.16.8.2825
+      retrieved: 2026-08-26
+      quote: >
+        The response rate of 48% with IDEC-C2B8 is comparable to results with
+        single-agent cytotoxic chemotherapy. Toxicity was mild. Attention needs to
+        be paid to the rate of antibody infusion, with titration according to
+        toxicity. Further investigation of this agent is warranted, including its
+        use in conjunction with standard chemotherapy.
+
+  - date: 2017
+    axis: efficacy
+    from: 0.5
+    to: 0.55
+    why: >
+      **CD19 CAR-T CELLS**, approved for relapsed and refractory large B-cell
+      lymphoma — patients who had exhausted chemotherapy and transplant, in whom
+      roughly forty percent achieved durable remission. Bispecific antibodies
+      followed, off the shelf and considerably cheaper than a manufactured cell
+      product.
+      The record-level move is five points, because the stratum it rescued is a
+      minority of a minority. **For the people in it the move was from nothing to
+      a real chance**, and gaps.md #61 is the reason those two sentences are both
+      true.
+    src:
+      id: PMID:29226797 doi:10.1056/NEJMoa1707447
+      retrieved: 2026-08-26
+      quote: >
+        In this multicenter study, patients with refractory large B-cell lymphoma
+        who received CAR T-cell therapy with axi-cel had high levels of durable
+        response, with a safety profile that included myelosuppression, the
+        cytokine release syndrome, and neurologic events.
+
+witness:
+  mechanism: >
+    `established` for each constituent disease and **not a meaningful question
+    about the category**, which is what `residual: true` is trying to say.
+    Follicular lymphoma carries t(14;18), placing *BCL2* under an immunoglobulin
+    enhancer and blocking apoptosis. Burkitt carries a *MYC* translocation.
+    Mantle cell carries t(11;14) and cyclin D1. Diffuse large B-cell disease
+    splits by cell of origin into germinal-centre and activated B-cell types with
+    different genetics and different outcomes. Gastric MALT arises from chronic
+    antigenic stimulation by *Helicobacter pylori* and stops needing it once it
+    acquires t(11;18).
+    Those are six different chains, and rating them as one `established` says
+    nothing. **The honest statement is that the mechanism axis does not apply to
+    a bucket**, which the schema half-knows — it has the flag and does nothing
+    with it (gaps.md #125).
+    What the constituents share is a cell lineage and an origin in the mistakes
+    of somatic hypermutation and class-switch recombination — B cells
+    deliberately break their own DNA to make antibodies, and lymphoma is
+    substantially the price of that. **The immune system's most creative
+    mechanism is also its principal oncogenic hazard**, which is a fact about
+    biology rather than a rating.
+  intervention: >
+    `curative`, on the strength of diffuse large B-cell lymphoma and Burkitt — an
+    aggressive, disseminated cancer cured in the majority by a few months of
+    chemotherapy is a genuine achievement and it describes about half the record.
+    The `strata` block carries the rest, and it spans the whole ladder: curable,
+    suppressible, and neither.
+    **The inversion is worth stating plainly because it violates every intuition
+    the word cancer carries.** The aggressive lymphomas are the curable ones. The
+    indolent lymphomas are the ones you live with and die with. A patient told
+    they have a slow-growing lymphoma has been given worse news, in one specific
+    sense, than a patient told they have a fast-growing one — and `capability`
+    read alone reverses that (gaps.md #123).
+    Then the third answer: **antibiotics.** Gastric MALT lymphoma regresses when
+    the infection driving it is eradicated.
+  prevention: >
+    `risk-reduction`, and it is doing two very different jobs.
+    For the great majority of NHL there is nothing to prevent — no established
+    modifiable exposure, and the causes are the ordinary hazards of a lineage
+    that mutates its own genome by design.
+    **For the infection-associated minority, prevention is specific and
+    effective.** Eradicating *Helicobacter pylori* prevents gastric MALT.
+    Suppressing HIV prevents the AIDS-associated lymphomas and their incidence
+    fell sharply with antiretroviral therapy. Curing hepatitis C is associated
+    with regression of some marginal zone disease. Reducing immunosuppression
+    causes some post-transplant lymphoproliferative disease to regress.
+    **Every one of those is a treatment for a different entity**, three of which
+    this register already holds. The prevention of this cancer is largely the
+    treatment of other records, and nothing here can express that.
+  ongoing: >
+    `moderate`, and it splits by stratum more than any other record in the
+    corpus.
+    A cured DLBCL patient carries surveillance and whatever the anthracycline
+    did. A follicular patient carries **decades of intermittent treatment** —
+    watch, treat, respond, relapse, treat again — and the psychological weight of
+    a disease that is always there and mostly quiet. A CAR-T recipient may carry
+    immunoglobulin infusions indefinitely.
+    The axis records one word for all of it.
+
+holes:
+  - Every number is an average over sixty diseases and the record says so
+    repeatedly. `efficacy: 0.55` in particular describes nobody.
+  - The strata fractions are approximate, differ by region — T-cell lymphomas are
+    a considerably larger share in parts of Asia — and shift with each WHO
+    reclassification.
+  - Chronic lymphocytic leukaemia is counted with NHL in some classifications and
+    separately in others; it is excluded here, which changes the indolent
+    fraction materially.
+  - Hodgkin lymphoma is not in this register, which is awkward given that this
+    record is named after its absence. It is highly curable and structurally very
+    different.
+  - Epstein-Barr virus and malaria are both required to explain endemic Burkitt
+    lymphoma and neither is a record here. Hepatitis B is upstream of the
+    rituximab reactivation risk and is queued and unwritten.
+
+blockers:
+  - kind: diagnosis
+    blocks: knowing which of sixty diseases the patient has
+    obstacles: []
+    what: >
+      **THE SUBTYPE IS THE TREATMENT DECISION AND IT IS A JUDGEMENT CALL.**
+      Curable with chemotherapy, watched without treatment, or cured with
+      antibiotics — the answer depends on a haematopathologist reading
+      morphology, immunophenotype and genetics together, and expert review
+      changes the diagnosis in a meaningful share of referred cases.
+      The expertise is scarce, concentrated in reference centres, and largely
+      absent from the countries where a growing share of the burden is. A
+      diagnosis of "lymphoma" without a subtype is not actionable, and the
+      default in a resource-limited setting is to treat everything as aggressive
+      B-cell disease — which cures some patients and gives anthracyclines to
+      people who should have been watched.
+      **Digital pathology and reference-panel review by telepathology are the
+      cheapest available fix** and require no new science.
+    who_could: [health-system, academic, government, nonprofit, software]
+    scale: 2.0e9
+    standing: documented
+    src: recall
+
+  - kind: cost
+    blocks: cellular and bispecific therapy, and the pathology to aim it
+    obstacles: []
+    what: >
+      Rituximab is biosimilar and cheap now, which is the single biggest reason
+      this record's `access` is as high as it is. **Everything after it is not.**
+      CAR-T is a manufactured autologous cell product costing in the hundreds of
+      thousands per infusion, requiring apheresis, a manufacturing slot, a
+      centre able to manage cytokine release syndrome and neurotoxicity, and
+      several weeks during which the patient must survive. Bispecific antibodies
+      are off the shelf and materially cheaper and still expensive.
+      The pattern this register keeps finding holds here too: **the cheap old
+      drug delivers most of the benefit** — rituximab plus CHOP cures two thirds
+      of the largest stratum — **and the expensive new one rescues a minority of
+      the failures.** A health system that can afford biosimilar rituximab and
+      competent pathology captures most of what is available.
+    who_could: [manufacturer, payer, government, health-system]
+    scale: 1.0e10
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: T-cell lymphoma, and why the biology predicts prognosis and not treatment
+    obstacles: [who-progresses]
+    what: >
+      **T-CELL LYMPHOMAS HAVE NO CD20 AND GOT NOTHING.** The antibody era
+      transformed B-cell disease and passed over a dozen rare T-cell and NK-cell
+      entities, which are treated with regimens borrowed from other diseases and
+      whose outcomes have moved little in thirty years. Twelve percent of a
+      quarter-million-death record, and each constituent is individually rare
+      enough that trials are very hard to run.
+      **AND CELL-OF-ORIGIN THERAPY FAILED.** Diffuse large B-cell lymphoma splits
+      cleanly into germinal-centre and activated B-cell types with different
+      genetics and clearly different prognosis — and randomised trials adding
+      agents targeted at that biology have repeatedly not improved outcomes. The
+      classification predicts what will happen and does not tell you what to do,
+      which is the difference between a prognostic and a predictive marker
+      written in the largest possible letters.
+      `scale: null`.
+    who_could: [academic, sponsor, manufacturer, philanthropy]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: delivering a cell therapy that has to be manufactured per patient
+    obstacles: []
+    what: >
+      CAR-T is not a drug that can be stocked. Cells are collected from the
+      patient, shipped, engineered, expanded, shipped back and infused, over
+      weeks during which aggressive lymphoma may progress beyond the point of
+      benefit. Manufacturing slots are limited and manufacturing failures happen.
+      The patient must be at a qualified centre for infusion and for a monitoring
+      period afterwards.
+      **The constraint is a supply chain with a human being inside it**, which is
+      unlike anything else in this register — and it is why bispecific
+      antibodies, which are off the shelf and give up some efficacy, matter more
+      globally than the more effective product.
+    who_could: [manufacturer, health-system, regulator, government]
+    scale: 5.0e9
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0057
+  rated: 2026-08-24
+  by: [claude, jeremy]

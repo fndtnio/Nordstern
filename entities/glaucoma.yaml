@@ -1,0 +1,396 @@
+slug: glaucoma
+id: FND-D-0131
+name: Glaucoma
+also: [primary open-angle glaucoma, primary angle-closure glaucoma, normal-tension glaucoma, ocular hypertension]
+mondo: unresolved
+kind: disease
+residual: false
+contested: false
+
+# THE FIRST RECORD ADDED TO TEST WHETHER THIS REGISTER CAN SEE A DISEASE THAT
+# KILLS NOBODY.
+#
+# Until now the corpus has been weighted towards mortality — 86 of 130 records
+# carry a `deaths` figure and the derived views lean on it. Glaucoma has none.
+# It is the leading cause of IRREVERSIBLE blindness in the world, roughly eighty
+# million people, and every one of them dies of something else.
+#
+# It also fills a hole with a strange shape. The register could already see
+# blindness caused by a worm (`onchocerciasis`), by a chlamydia (`trachoma`),
+# and by a lens that can be replaced (`cataract`) — **and could not see
+# blindness caused by pressure in the eye**, which is the commonest permanent
+# kind. Non-infectious eye disease was absent entirely: no diabetic
+# retinopathy, no macular degeneration, no uncorrected refractive error, no
+# retinopathy of prematurity.
+
+burden:
+  prevalence:
+    value: 8.0e7
+    units: >
+      people worldwide with glaucoma, roughly three quarters of them primary
+      open-angle — with projections toward 110 million by 2040 driven almost
+      entirely by population ageing
+    src: recall
+  incidence:
+    value: 2.4e6
+    units: new cases/year worldwide — a reasoned estimate from prevalence and duration
+    src: reasoning
+  note: >
+    **THE NUMBER THAT MATTERS HERE IS NOT PREVALENCE, IT IS THE FRACTION WHO DO
+    NOT KNOW.** Roughly half of people with glaucoma in high-income countries
+    are undiagnosed, and in low- and middle-income settings the figure is closer
+    to nine in ten. The disease is painless, takes the peripheral field first
+    and leaves central acuity intact until late, so a person reads, drives and
+    passes an acuity chart while the optic nerve is being destroyed. **They
+    present when they notice, and by then it is gone.**
+    Two forms with different geographies and different behaviour. **Primary
+    open-angle glaucoma** is the majority and is the silent one described above;
+    it is commoner and more aggressive in people of African ancestry.
+    **Primary angle-closure glaucoma** is a larger share of the burden in East
+    and South Asia, can present as an acute painful emergency, and blinds
+    disproportionately — a minority of cases and a large minority of the
+    blindness.
+    No deaths are attributed to it. `deaths` is deliberately absent rather than
+    zero: this is not a disease with a mortality of nought, it is a disease for
+    which mortality is not the question.
+
+axes:
+  mechanism: partial
+  intervention: suppressive
+  prevention: none
+  ongoing: moderate
+  efficacy:
+    value: 0.75
+    units: >
+      fraction-of-patients (progression halted or substantially slowed on
+      tolerated therapy, among those diagnosed and treated) — **and note what
+      this cannot mean: no treatment returns any vision already lost.** A
+      minority progress despite well-controlled pressure, which is the strongest
+      clinical evidence that pressure is not the whole mechanism
+    src: reasoning
+  access:
+    value: 0.25
+    units: >
+      fraction-of-patients (diagnosed AND on effective sustained treatment) —
+      dragged down from both ends: about half are undiagnosed in the richest
+      systems and around nine in ten elsewhere, and of those diagnosed a large
+      share stop their drops within a year
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: none
+  witness: >
+    DIAGNOSTIC is `objective` and unusually well equipped. Intraocular pressure,
+    optic disc photography, optical coherence tomography of the retinal nerve
+    fibre layer and automated perimetry between them give a structural and a
+    functional measurement, and the diagnosis is not seriously ambiguous once
+    somebody looks. **The failure is that nobody looks.** This record's central
+    blocker is not that the test is hard or expensive; it is that an
+    asymptomatic person has no reason to attend.
+    There is real ambiguity at one margin and it is worth naming: **ocular
+    hypertension** (high pressure, no nerve damage, most never progress) and
+    **normal-tension glaucoma** (nerve damage at pressures inside the normal
+    range) sit either side of the definition and demonstrate that the disease is
+    not the pressure.
+    PROGNOSTIC is `partial`. Rate of progression varies enormously between
+    individuals and **establishing an individual's trend requires serial visual
+    fields over years** — so the information arrives at the speed of the damage
+    it is meant to prevent. Population-level risk factors are known (age,
+    ancestry, family history, disc haemorrhage, high myopia, baseline pressure);
+    none of them tells you about the person in front of you.
+    PREDICTIVE is `none`. Nothing identifies in advance who will keep losing
+    field despite a well-controlled pressure — the group who need earlier
+    surgery — and nothing predicts which agent will work in whom.
+
+# NO `survival:` BLOCK, AND ITS ABSENCE IS THE POINT OF THE RECORD.
+#
+# The axis asks what fraction is alive at a stated horizon. For glaucoma the
+# answer is "the same as everybody else", which is a true sentence carrying no
+# information. Filling it in would put a 100% survival figure beside pancreatic
+# cancer's 13% and imply this record is the good news.
+#
+# It is not. The thing at stake is the visual field, permanently, and the
+# register's mortality-shaped views cannot see it: `knowledge_gap` and
+# `delivery_gap` both return None here for want of a `deaths` figure, and the
+# burden-weighted chart on the dashboard does not draw it at all. **That is a
+# stated limitation of those views rather than a fact about this disease**, and
+# it is why the buckets were re-spined on life impact — see `bucket-design.md`.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    Rated for the modal patient, who is on one or two eye drops for the rest of
+    their life. Prostaglandin analogues cause conjunctival hyperaemia, eyelash
+    growth and permanent periocular and iris pigmentation — cosmetic, mostly
+    unwelcome, not disabling. Topical beta-blockers are systemically absorbed
+    and can worsen asthma and bradycardia, which matters in a comorbid
+    population.
+    **THE SURGICAL MINORITY PAY MORE AND THE RATING HIDES THEM.**
+    Trabeculectomy accelerates cataract, can produce hypotony, and leaves a
+    filtering bleb that carries a small lifelong risk of endophthalmitis — an
+    infection that can take the eye. Selective laser trabeculoplasty, now used
+    first-line in some systems, is close to free of permanent cost and is the
+    reason this rating is not higher.
+    **AND ALMOST NONE OF WHAT PEOPLE SUFFER FROM THIS DISEASE IS THE
+    TREATMENT'S DOING.** It is `residue` below, and it is the whole record.
+  incidence:
+    value: 0.05
+    units: >
+      fraction-of-treated (permanent harm attributable to treatment — chiefly
+      surgical complications and bleb-related infection) — a reasoned estimate
+      over all treated patients, most of whom never have surgery
+    src: reasoning
+
+residue:
+  severity: catastrophic
+  permanent: true
+  what: >
+    **RETINAL GANGLION CELLS DO NOT REGENERATE, AND THAT SENTENCE IS THE ENTIRE
+    DISEASE.** Every axon lost from the optic nerve is lost for good. Treatment
+    lowers pressure and slows or halts further loss; it has never returned a
+    single degree of visual field to anybody. `tissue-repair` (FND-O-0002) is
+    cited below and glaucoma is one of its cleanest cases — the damage is
+    focal, well characterised, and permanent by assumption rather than by
+    finding.
+    What it leaves, in order of arrival: peripheral field loss the person does
+    not notice; then difficulty in low light, with kerbs, steps and doorframes;
+    then loss of the ability to drive, which in much of the world is loss of
+    independence; then tunnel vision; then, in a minority, no useful sight at
+    all. **Central acuity is preserved until very late, which is why people with
+    advanced glaucoma still read the top line of the chart and are told their
+    vision is good.**
+    Rated `catastrophic` on the schema's test: permanently disabling, and it
+    removes a capability that organises an entire life. It is not fatal and it
+    is not reversible, and the register has been better at recording the first
+    kind of severity than the second.
+  incidence:
+    value: 0.15
+    units: >
+      fraction-of-diagnosed who go on to lose useful vision in at least one eye
+      — a reasoned estimate, far higher among those diagnosed late and much
+      lower in systems with routine eye examination
+    src: reasoning
+
+window:
+  what: >
+    **THE WIDEST QUIET WINDOW IN THE REGISTER, AND IT CLOSES WITHOUT A
+    SYMPTOM.** Glaucoma progresses over decades. At any point in those decades a
+    two-minute pressure check, a look at the optic disc or an OCT would find it,
+    and treatment started then preserves the field that remains. The window is
+    not short and it is not technically difficult; **it is invisible**, because
+    the disease removes peripheral vision first and the brain fills in the
+    missing field so convincingly that people are unaware of large scotomas.
+    What closes it is axon death, and the position of the closure is different
+    for every patient because nobody can predict rate of progression.
+    **CONTRAST `cataract` DELIBERATELY, BECAUSE THE PAIR IS INSTRUCTIVE.**
+    Cataract causes more blindness worldwide and is reversed by twenty minutes
+    of surgery; the person who waited ten years for it sees again afterwards.
+    Glaucoma causes less blindness and none of it comes back. **The register's
+    `delivery` and `access` axes treat the two alike, and a queue for cataract
+    surgery and a queue for glaucoma screening are not the same object at all.**
+  closes_on: >
+    retinal ganglion cell and optic nerve axon loss — irreversible, cumulative,
+    and asymptomatic until the field defect reaches the centre
+  caught_in_time:
+    value: 0.3
+    units: >
+      fraction-of-cases (identified while enough field remains that treatment
+      preserves a functional life) — a reasoned global estimate, high in systems
+      with routine optometry and very low where a person only attends when
+      something hurts
+    src: reasoning
+
+witness:
+  mechanism: >
+    `partial`, and the hole is at the centre rather than the edges.
+    ESTABLISHED: the pathology. Glaucoma is a progressive optic neuropathy —
+    apoptotic loss of retinal ganglion cells and excavation of the optic nerve
+    head — producing a characteristic and predictable pattern of field loss.
+    Aqueous humour dynamics are well understood, the anatomy of the drainage
+    angle is understood, and lowering intraocular pressure demonstrably slows
+    progression across many randomised trials. **That is a genuinely solid
+    causal chain and it is why the treatment works.**
+    THE HOLE: **pressure is a risk factor and not the disease.** A substantial
+    share of glaucoma occurs at pressures inside the statistically normal range,
+    particularly in Japan; most people with raised pressure never develop optic
+    neuropathy; and a minority progress despite excellent pressure control.
+    Something determines susceptibility of the axon — vascular perfusion of the
+    nerve head, translaminar pressure gradient, mitochondrial vulnerability and
+    glial responses are all proposed — and nobody has settled it. The practical
+    cost is that **the only lever anybody has acts on a correlate**, which is
+    why every neuroprotection trial aimed at the ganglion cell itself has so far
+    failed.
+  intervention: >
+    `suppressive`, and the rung is worth arguing over because two readings are
+    defensible.
+    FOR `suppressive`: treatment is continuous and lifelong, stopping it resumes
+    progression, and a person diagnosed early and treated well keeps their sight
+    and lives an ordinary life. That is the definition the register uses, and it
+    is the same shape as `hiv` or `type-1-diabetes` — a disease held off on
+    condition of permanent treatment.
+    AGAINST: suppression is imperfect in a way HIV's is not — a fraction
+    progress on treatment — and **nothing here restores function**, whereas an
+    HIV patient on suppressive therapy has their immune system back. The
+    counter-argument would place it at `disease-modifying`.
+    It is rated `suppressive` because the register asks what the treatment
+    achieves for the patient it works in, and for that patient the disease
+    stops. The permanent loss belongs to `residue`, which is where the
+    disagreement is actually recorded.
+    THE THERAPEUTIC LADDER IS UNUSUALLY GOOD AND UNUSUALLY CHEAP. Generic
+    prostaglandin drops are pennies. **Selective laser trabeculoplasty is a
+    five-minute outpatient procedure that works as well as drops as a first
+    treatment and removes the adherence problem entirely** — which makes it one
+    of the few interventions in this register that solves a delivery blocker
+    with a clinical decision rather than with money. Trabeculectomy, tube shunts
+    and minimally invasive surgery sit behind it.
+  prevention: >
+    `none`, and this is the axis where the record is weakest and least
+    satisfying. Nothing is given to a person to stop them developing glaucoma.
+    The risk factors — age, ancestry, family history, high myopia — are not
+    modifiable, and no lifestyle, diet or drug has been shown to prevent onset.
+    ONE EXCEPTION, DELIBERATELY NOT PROMOTED TO THE AXIS. In eyes with
+    anatomically narrow angles, prophylactic laser peripheral iridotomy reduces
+    the incidence of angle closure. It is a real prophylaxis for a real
+    mechanism, and it is not recorded here because the absolute event rate in
+    screened narrow angles is low enough that the population case is weak, and
+    because it addresses the minority form. If the register later splits open-
+    angle and angle-closure into strata, that stratum's prevention is
+    `prophylaxis` and the whole-record rating is wrong.
+  ongoing: >
+    `moderate`. One or two drops daily, indefinitely, with the well-documented
+    consequence that roughly half of patients have stopped within a year — an
+    adherence problem driven not by cost or side effects but by the fact that
+    **the disease produces no symptom to relieve and the drops produce no
+    benefit anyone can feel.** Add clinic attendance every three to twelve
+    months for pressure, fields and imaging, sustained across decades.
+    Not `high`: it is not dialysis and it is not insulin. But it is a lifetime
+    of maintenance for an invisible threat, which is the exact profile adherence
+    is worst for.
+
+holes:
+  - >
+    **THIS RECORD IS RATED FOR A SPECTRUM AND SHOULD PROBABLY BE STRATA.** Primary
+    open-angle and primary angle-closure differ in mechanism, geography,
+    presentation, prevention and treatment — one is silent and chronic, the
+    other can be an acute painful emergency reversible by a laser. Rating them
+    together produces an `efficacy` and a `prevention` value that describes
+    neither well. Left as one record because the diagnostic failure that
+    dominates the entry is common to both, and flagged here so a later pass can
+    split it.
+  - >
+    **EVERY NUMBER IN THIS FILE IS `recall` OR `reasoning`.** The 80 million
+    prevalence, the roughly-half-undiagnosed figure and the nine-in-ten figure
+    for low-income settings are quoted from memory and carry the record's whole
+    argument. They are consistently reported and none is cited.
+  - >
+    **`residue.incidence: 0.15` IS THE LEAST FIRM NUMBER HERE AND IT IS DOING A
+    LOT OF WORK.** It attempts a single global figure for the fraction of
+    diagnosed patients who lose useful vision, across systems where routine
+    optometry finds people early and systems where nobody is found until they
+    are blind in one eye. The true value differs by an order of magnitude
+    between those settings, which arguably makes a single figure meaningless.
+  - >
+    **NO `deaths` FIGURE MEANS THIS RECORD IS INVISIBLE TO SEVERAL DERIVED
+    VIEWS**, by construction — `knowledge_gap`, `delivery_gap` and the
+    burden-weighted chart all skip it. That is the register reporting its own
+    limitation correctly rather than a defect in this file, and it is the
+    argument for the disability-weighted sibling axis that `bucket-design.md`
+    already says is missing.
+  - >
+    Written from model recall. The mechanism, the asymptomatic-until-late
+    pattern, the irreversibility and the standing of laser trabeculoplasty as a
+    first-line option are the parts most likely right; every number is the part
+    most likely wrong.
+
+blockers:
+  - kind: diagnosis
+    obstacles: [who-progresses]
+    blocks: finding people while they still have a field to save
+    what: >
+      **THE CENTRAL BLOCKER AND IT IS ALMOST EMBARRASSINGLY CHEAP.** Around half
+      of people with glaucoma in wealthy countries do not know, and roughly nine
+      in ten elsewhere. The tests are a pressure measurement, a look at the
+      optic disc and an OCT; none is new, none is expensive per patient, and
+      none requires a doctor to perform.
+      What is in the way is that **there is no symptom to bring anybody in.**
+      Where routine optometry exists — a free or cheap eye test people attend
+      for spectacles — glaucoma is found opportunistically and the problem is
+      much smaller. Where it does not, the first presentation is a person who
+      has already lost an eye.
+      **AND POPULATION SCREENING HAS NOT BEEN SHOWN TO WORK, WHICH IS A GENUINE
+      FINDING RATHER THAN AN OVERSIGHT.** Screening trials have struggled with a
+      low positive predictive value, a slow disease and a large number needed to
+      screen; several national bodies conclude the evidence is insufficient to
+      recommend general population screening. The lever that works is
+      opportunistic case-finding attached to something people already attend
+      for, which is a health-system design problem rather than a technology one.
+    who_could: [health-system, government, payer, nonprofit]
+    scale: 3.0e8
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    obstacles: [who-progresses, tissue-repair]
+    blocks: protecting the nerve, and restoring it
+    what: >
+      Two absences and the second is absolute. **Nothing protects the retinal
+      ganglion cell itself.** Every treatment in use acts on intraocular
+      pressure, which is a risk factor rather than the mechanism — the proof
+      being that people progress at normal pressures and that a minority
+      progress on well-controlled ones. Neuroprotection trials aimed directly at
+      the ganglion cell have not delivered.
+      **And nothing restores what has gone.** Axons of the optic nerve do not
+      regenerate in an adult, so every derived view of this record is about
+      preventing loss rather than treating disease. Cell replacement and optic
+      nerve regeneration are laboratory work with no clinical route yet.
+      `scale: null` — there is no priced path to a neuroprotectant when the
+      mechanism of susceptibility is unsettled.
+    who_could: [academic, sponsor, nonprofit, philanthropy]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: adherence
+    blocks: a lifetime of drops for a disease that never hurts
+    what: >
+      Roughly half of patients have stopped their drops within a year. The
+      reasons are structural rather than personal: **the disease is
+      asymptomatic, so treatment produces no felt benefit; stopping produces no
+      felt penalty; and the penalty when it arrives is invisible and
+      permanent.** Add hyperaemia and stinging, difficulty instilling a drop
+      with arthritic hands, and multiple bottles on different schedules.
+      **This blocker has an unusual property: a clinical decision can delete
+      it.** Selective laser trabeculoplasty as a first-line treatment removes
+      the daily act entirely, and the trial evidence supports it as at least
+      equivalent to drops. Adopting it is a matter of ophthalmology capacity and
+      payment models rather than of new science, which is why this is priced.
+    who_could: [health-system, payer, patient-org, software]
+    scale: 2.0e8
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: the examination, the imaging and the surgical capacity
+    what: >
+      Glaucoma care is not a product. It is an optometrist or ophthalmologist, a
+      slit lamp, a tonometer, a perimeter, an OCT and a theatre for the minority
+      who need surgery — repeated for decades per patient. The same
+      infrastructure constraint that `cataract` and `osteoarthritis` record, with
+      the difference that **cataract surgery is a one-off that restores sight
+      and glaucoma care is a lifelong subscription that prevents loss nobody
+      will ever see.** Health systems fund the first far more readily.
+      Ophthalmologist density across much of sub-Saharan Africa and South Asia is
+      one to two orders of magnitude below what a screening or monitoring
+      programme would need.
+    who_could: [health-system, government, payer]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0132
+  rated: 2026-09-01
+  by: [claude, jeremy]

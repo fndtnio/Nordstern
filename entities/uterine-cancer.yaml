@@ -1,0 +1,529 @@
+slug: uterine-cancer
+id: FND-D-0064
+name: uterine corpus cancer
+also: [endometrial cancer, endometrial carcinoma, uterine cancer, womb cancer]
+mondo: MONDO:0006003
+kind: disease
+residual: false
+contested: false
+
+# **THE ONE CANCER IN THIS REGISTER GOING THE WRONG WAY, AND THE CAUSE IS A
+# QUEUED RECORD.**
+#
+# Incidence is rising in high-income countries and **so is mortality** — which
+# almost nothing else in this corpus can say. Lung, gastric, colorectal and
+# cervical cancer are all falling as a rate. This one is climbing, and the
+# principal reason is obesity.
+#
+# Adipose tissue converts androgens to oestrogen. Unopposed oestrogen drives
+# endometrial proliferation. **Endometrial cancer is the most obesity-attributable
+# cancer there is**, and obesity is a record queued and unwritten in this
+# register.
+#
+# It is the exact inverse of gastric cancer. **There, the world changed —
+# refrigeration replaced salt — and a cancer receded with nobody intending it
+# (gaps.md #129). Here the world changed the other way and a cancer is
+# advancing**, with nobody intending that either. Same mechanism, opposite sign,
+# and the register can record neither. gaps.md #139.
+#
+# TWO OTHER THINGS:
+#
+# 1. **THE PATHWAY WORKS, AND IT WORKS BETTER FOR SOME WOMEN THAN OTHERS.** Around
+#    nine in ten of these cancers announce themselves with postmenopausal
+#    bleeding, and roughly a tenth of postmenopausal bleeding is cancer. That is
+#    why most present at stage I. **Black women have roughly double the mortality**
+#    — more aggressive histology, later stage, and bleeding evaluated later. This
+#    is gaps.md #136's sharpest instance, one record after it was named.
+#
+# 2. **YOUNG WOMEN CAN CHOOSE THE WORSE CANCER OUTCOME AND BE RIGHT.** Early
+#    low-grade disease can be treated with progestins instead of hysterectomy, to
+#    preserve fertility, accepting a higher recurrence risk. `efficacy` assumes
+#    there is one best treatment. gaps.md #140.
+
+burden:
+  prevalence:
+    value: 4.2e5
+    units: >
+      new cases/year worldwide — **the most common gynaecological cancer in
+      high-income countries**, and rising
+    src: recall
+  deaths:
+    value: 9.7e4
+    units: >
+      deaths/year — roughly a quarter of the incidence, which is a good ratio by
+      this register's standards, and **the absolute number is rising**
+    src: recall
+  note: >
+    **INCIDENCE UP AND MORTALITY UP, WHICH IS ALMOST UNIQUE IN THIS CORPUS.**
+    Most cancer records here describe a rate that is falling, or flat, or rising
+    while mortality falls. Endometrial cancer is rising on both, in high-income
+    countries, and has been for two decades.
+    The proximate cause is obesity. Relative risk rises steeply with body mass
+    index — roughly two to three-fold in obesity and higher above that — through
+    peripheral aromatisation of androgens to oestrogen and the unopposed
+    stimulation of endometrium that follows. **Obesity is a queued record**, and
+    diabetes, which is independently associated, is two more.
+    A second contribution is compositional: the aggressive non-endometrioid
+    subtypes — serous carcinoma, carcinosarcoma — are a growing share of
+    diagnoses and account for a disproportionate share of deaths.
+    **AND THE DISPARITY IS SEVERE.** Black women in the United States have
+    roughly double the endometrial cancer mortality of white women. The
+    contributions are a higher proportion of aggressive histology, later stage at
+    diagnosis, differences in treatment received, and abnormal bleeding evaluated
+    later. It is one of the largest and best-documented cancer mortality
+    disparities there is.
+
+survival:
+  horizon: 5 years from diagnosis
+  untreated:
+    value: 0.15
+    units: >
+      fraction alive — untreated endometrial carcinoma invades locally and
+      metastasises
+    src: recall
+  treated:
+    value: 0.81
+    units: >
+      fraction alive — **the best survival of any gynaecological cancer, and the
+      reason is a symptom.** Postmenopausal bleeding brings women to a doctor
+      while the disease is still confined to the uterus, so hysterectomy cures
+      most of them
+    src: recall
+  witness: >
+    **A cancer caught early by biology rather than by a programme.** No screening
+    test, no vaccine — an early warning sign that is hard to ignore. Worth
+    holding beside `pancreatic-cancer`, which has no early symptom at all and
+    sits at 0.13.
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: risk-reduction
+  ongoing: moderate
+  efficacy:
+    value: 0.75
+    units: >
+      fraction-of-patients (cured, or durably controlled) — high because the
+      disease announces itself early and hysterectomy is definitive for
+      stage I endometrioid disease, which is most of it
+    src: reasoning
+  access:
+    value: 0.50
+    units: >
+      fraction-of-patients (reaching prompt evaluation of bleeding, hysterectomy
+      with appropriate staging, and immunotherapy where indicated) — the surgery
+      is widely available; **prompt evaluation is not evenly distributed**, and
+      the immunotherapy is expensive
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: partial
+  witness: >
+    DIAGNOSTIC is `objective` and the pathway is one of the better ones in this
+    register. **Postmenopausal bleeding is a loud, specific, early signal** —
+    around nine in ten endometrial cancers produce it, and roughly a tenth of
+    women who report it have cancer. Transvaginal ultrasound measuring
+    endometrial thickness triages; an office endometrial biopsy takes minutes and
+    costs very little; hysteroscopy resolves the rest.
+    **Compare the adjacent organ.** Ovarian cancer is silent, presents late and
+    is lethal; endometrial cancer bleeds, presents at stage I and is mostly
+    cured. Two cancers, centimetres apart, and the entire difference in outcome
+    is whether the disease tells you it is there.
+    **AND THE PATHWAY'S PERFORMANCE DEPENDS ON WHO REPORTS THE BLEEDING.** Later
+    evaluation in Black women is a documented contributor to the mortality
+    disparity above. The biopsy is the same. Whether and when it is done is not.
+    gaps.md #136.
+    PROGNOSTIC is `partial` and improving sharply. The 2013 molecular
+    classification sorted endometrial cancer into four groups — **POLE-ultramutated
+    with outcomes so good that trials now test giving those patients nothing**,
+    mismatch-repair-deficient, p53-abnormal with poor outcomes, and a residual
+    group with no specific molecular profile. It is in the WHO classification and
+    it changes adjuvant treatment.
+    It is `partial` rather than `good` because **the largest of the four groups is
+    defined by not being the other three** — a residual bucket inside a
+    prognostic classifier, which is gaps.md #125 one level down.
+    PREDICTIVE is `partial` and unusually strong for a large minority.
+    **Endometrial cancer has one of the highest rates of mismatch-repair
+    deficiency of any cancer — roughly a quarter to a third** — and those tumours
+    respond to checkpoint blockade well enough that adding it to chemotherapy in
+    advanced disease changed practice in 2023. Hormone receptor status guides
+    endocrine therapy; HER2 matters in serous disease.
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    **THE STANDARD CURE ENDS FERTILITY, AND A GROWING SHARE OF THESE PATIENTS ARE
+    YOUNG.** Hysterectomy with removal of tubes and ovaries is definitive
+    treatment. In a premenopausal woman it also produces immediate surgical
+    menopause — hot flushes, bone loss, cardiovascular and cognitive
+    consequences — decades earlier than it would otherwise have come.
+    That used to be a footnote in a disease of seventy-year-olds. It is less of
+    one now, because obesity-driven endometrial cancer is appearing in women in
+    their thirties and forties.
+    **LYMPHOEDEMA** follows pelvic lymphadenectomy and is permanent, unglamorous
+    and life-altering — a swollen leg, compression garments, cellulitis risk.
+    **Sentinel lymph node biopsy has largely replaced full lymphadenectomy** for
+    exactly this reason, which is the ninth de-adoption in this register's cancer
+    records (gaps.md #138).
+    **RADIOTHERAPY** adds vaginal stenosis, bowel and bladder dysfunction.
+    **AND OBESITY MAKES THE SURGERY ITSELF DANGEROUS.** Many of these patients
+    have severe obesity, which raises operative complication rates, wound
+    infection, venous thromboembolism and anaesthetic risk substantially. **The
+    risk factor for the disease is also a risk factor for its treatment**, and no
+    field here can express that.
+  incidence:
+    value: 0.35
+    units: >
+      fraction-of-treated (permanent harm — infertility, surgical menopause,
+      lymphoedema, radiation sequelae, surgical complications of obesity) — a
+      reasoned estimate
+    src: reasoning
+
+# NO `residue` BLOCK. `restored` derives `cure-costs`, as for every cancer here
+# except melanoma. What a cured patient carries is what the hysterectomy took.
+
+window:
+  what: >
+    **THE SIGNAL IS LOUD, EARLY AND SPECIFIC, WHICH IS WHY THIS CANCER IS MOSTLY
+    SURVIVED.**
+    Around nine in ten endometrial cancers cause abnormal uterine bleeding, and
+    in a postmenopausal woman that symptom is unmistakable and unignorable. Most
+    present at stage I, confined to the uterus, and hysterectomy cures the great
+    majority.
+    So the window is generous and the pathway mostly works. **This record is in
+    the register partly as the counterexample to every silent cancer in it** —
+    ovarian, pancreatic, liver, kidney — and the difference is not biology or
+    treatment. It is that the disease produces a symptom a woman will act on.
+    Where it fails, it fails at the referral rather than the window: bleeding
+    dismissed, evaluation delayed, and the delay distributed unevenly by race and
+    by access.
+    There is no screening programme and none is needed for the general
+    population. **Lynch syndrome carriers are surveyed**, and are offered
+    risk-reducing hysterectomy once childbearing is complete — because in Lynch
+    families endometrial cancer is frequently the *first* cancer, preceding the
+    colorectal one.
+  closes_on: >
+    invasion through the myometrium and spread beyond the uterus — after which
+    surgery alone is no longer sufficient
+  caught_in_time:
+    value: 0.70
+    units: >
+      fraction-of-cases (diagnosed at stage I, confined to the uterus) — among
+      the highest in the register, and it is a fact about bleeding rather than
+      about any programme
+    src: reasoning
+
+strata:
+  - name: endometrioid, stage I, low grade
+    fraction:
+      value: 0.55
+      units: fraction-of-diagnoses
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.95
+      units: fraction-of-stratum (cured by hysterectomy)
+      src: reasoning
+    toll: major
+    what: >
+      **THE MODAL PATIENT, AND SHE IS CURED.** Hysterectomy with bilateral
+      salpingo-oophorectomy, sentinel node assessment, and often nothing else.
+      Ten-year survival is excellent.
+      **This is also the stratum where fertility preservation is possible.** A
+      young woman with low-grade disease confined to the endometrium can be
+      treated with progestins — oral or by intrauterine device — with a majority
+      responding, a real recurrence risk, and hysterectomy held in reserve. She
+      is choosing a less certain cancer outcome for a reason the register cannot
+      record (gaps.md #140).
+
+  - name: endometrioid, higher risk or stage II-III
+    fraction:
+      value: 0.20
+      units: fraction-of-diagnoses
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.70
+      units: fraction-of-stratum (cured by surgery with adjuvant radiotherapy or chemotherapy)
+      src: reasoning
+    toll: major
+    what: >
+      Deeper myometrial invasion, higher grade, lymphovascular invasion or nodal
+      spread. Surgery with adjuvant treatment guided increasingly by molecular
+      group rather than by histology alone — **POLE-mutated tumours in this
+      stratum are being de-escalated because their outcomes are excellent
+      regardless.**
+
+  - name: serous, carcinosarcoma and p53-abnormal
+    fraction:
+      value: 0.15
+      units: fraction-of-diagnoses
+      src: reasoning
+    intervention: disease-modifying
+    efficacy:
+      value: 0.30
+      units: fraction-of-stratum (durable benefit)
+      src: reasoning
+    toll: major
+    what: >
+      **A DIFFERENT DISEASE SHARING AN ORGAN.** Not oestrogen-driven, not
+      obesity-driven, p53-mutated, behaving more like high-grade serous ovarian
+      cancer than like the endometrioid majority — and **over-represented in Black
+      women**, which is part of the mortality disparity.
+      Chemotherapy, radiotherapy, HER2-directed therapy where amplified. It is
+      fifteen percent of diagnoses and a far larger share of the deaths.
+
+  - name: advanced or recurrent, mismatch-repair deficient
+    fraction:
+      value: 0.05
+      units: fraction-of-diagnoses
+      src: reasoning
+    intervention: disease-modifying
+    efficacy:
+      value: 0.50
+      units: fraction-of-stratum (durable benefit from chemo-immunotherapy)
+      src: reasoning
+    toll: major
+    what: >
+      **THE STRATUM 2023 CHANGED.** Adding a checkpoint inhibitor to platinum
+      chemotherapy in advanced disease produced a large improvement, concentrated
+      overwhelmingly in mismatch-repair-deficient tumours.
+      Endometrial cancer has one of the highest dMMR rates of any cancer, which
+      is why immunotherapy landed here harder than in most solid tumours.
+
+  - name: advanced or recurrent, mismatch-repair proficient
+    fraction:
+      value: 0.05
+      units: fraction-of-diagnoses
+      src: reasoning
+    intervention: disease-modifying
+    efficacy:
+      value: 0.15
+      units: fraction-of-stratum (durable meaningful benefit)
+      src: reasoning
+    toll: major
+    what: >
+      Chemotherapy, with pembrolizumab and lenvatinib in combination as a later
+      line, and hormonal therapy for receptor-positive low-grade disease. The
+      improvement here has been real and much smaller than in the row above —
+      **the same two-tier pattern colorectal, gastric and now four cancers in
+      this register show, split by one test.**
+
+moved:
+  - date: 2013
+    axis: toll
+    from: 0.5
+    to: 0.35
+    why: >
+      **A MOLECULAR CLASSIFICATION THAT CHANGED WHO GETS TREATED, IN BOTH
+      DIRECTIONS.** The Cancer Genome Atlas sorted endometrial cancer into four
+      groups — POLE-ultramutated, mismatch-repair-deficient, p53-abnormal, and no
+      specific molecular profile — and it entered the WHO classification and the
+      guidelines.
+      **POLE-mutated tumours do so well that trials now test giving them no
+      adjuvant treatment at all**, and p53-abnormal tumours are escalated. Same
+      operation, same drugs, different people receiving them.
+      Sentinel lymph node biopsy replacing full pelvic lymphadenectomy belongs to
+      the same arc and removed a large amount of permanent lymphoedema.
+      The numbers above are the toll's *incidence* rather than its severity, which
+      `moved` cannot distinguish — fifth record to hit that limitation after
+      breast, prostate, gastric and bladder cancer (gaps.md #26).
+
+  - date: 2023
+    axis: efficacy
+    from: 0.7
+    to: 0.75
+    why: >
+      **CHECKPOINT BLOCKADE ADDED TO FIRST-LINE CHEMOTHERAPY** for advanced and
+      recurrent disease, with the benefit concentrated in
+      mismatch-repair-deficient tumours, which are an unusually large share of
+      this cancer.
+      A five-point move at record level because the strata it reached are a tenth
+      of diagnoses — the same arithmetic as melanoma's, non-Hodgkin lymphoma's
+      and bladder cancer's recent entries (gaps.md #61).
+
+witness:
+  mechanism: >
+    `established`, and it is the clearest hormonal carcinogenesis story in this
+    register.
+    Endometrium proliferates under oestrogen and is stabilised by progesterone.
+    **Oestrogen unopposed by progesterone drives proliferation, then hyperplasia,
+    then atypical hyperplasia, then carcinoma** — a stepwise precursor sequence
+    (gaps.md #114) that is visible on biopsy and reversible with progestin at the
+    hyperplasia stage.
+    The sources of unopposed oestrogen are the record's risk factors: **adipose
+    tissue aromatising androgens**, anovulatory cycles, polycystic ovary
+    syndrome, nulliparity, late menopause, and tamoxifen taken for breast cancer —
+    which is a held record whose treatment causes this one (gaps.md #130).
+    Molecularly, endometrioid disease runs on *PTEN* loss, *PIK3CA*, *ARID1A* and
+    mismatch-repair defects. **Serous carcinoma is a different disease** driven by
+    *TP53*, not oestrogen-dependent, arising in atrophic endometrium, and behaving
+    like high-grade serous ovarian cancer.
+    **THE NAMED HOLES ARE TWO AND BOTH CONCERN THE PART THAT IS GETTING WORSE.**
+    Why the aggressive non-endometrioid subtypes are becoming a larger share, and
+    how much of the racial disparity in mortality is biology rather than
+    pathway — both are actively studied and neither is settled.
+  intervention: >
+    `curative`, and unusually the rating is true of most patients because most
+    present early.
+    Total hysterectomy with bilateral salpingo-oophorectomy and sentinel node
+    assessment, with adjuvant radiotherapy or chemotherapy determined by risk —
+    and increasingly by molecular group rather than by histology.
+    For advanced and recurrent disease, chemotherapy with a checkpoint inhibitor,
+    hormonal therapy for receptor-positive low-grade tumours, and pembrolizumab
+    with lenvatinib as a later line.
+    **AND THERE IS A REAL ORGAN-PRESERVING ALTERNATIVE.** Young women with
+    low-grade disease confined to the endometrium can be treated with progestins —
+    a majority respond, a substantial minority recur, and hysterectomy remains
+    available afterwards. It is the same shape as prostate active surveillance,
+    bladder preservation and rectal watch-and-wait, and it differs from all three
+    in one respect: **what is being preserved is the ability to have children**,
+    which is not a smaller version of the same good.
+  prevention: >
+    `risk-reduction`, and the levers are unusual.
+    **WEIGHT IS THE LARGEST AND NOBODY HAS A RELIABLE WAY TO MOVE IT.** Bariatric
+    surgery reduces endometrial cancer risk substantially, which is the strongest
+    demonstration that the association is causal, and it is not a public health
+    intervention. GLP-1 receptor agonists may change this and it is too early to
+    say.
+    **COMBINED ORAL CONTRACEPTIVES ROUGHLY HALVE THE RISK**, with the protection
+    persisting for decades after stopping, and the levonorgestrel intrauterine
+    system does the same. **Hundreds of millions of women have taken them, for
+    contraception, and the cancer prevention is a side effect nobody counts.**
+    It is the mirror of tamoxifen causing this disease while treating another —
+    one held record's therapy causes it, and a different intervention entirely
+    prevents it, and the register can charge neither.
+    Progestin treatment of atypical hyperplasia prevents progression to
+    carcinoma, which is precursor management (gaps.md #114). Lynch syndrome
+    carriers are offered **risk-reducing hysterectomy** once childbearing is
+    complete — the third prophylactic organ removal in this register after *CDH1*
+    and *RET*.
+  ongoing: >
+    `moderate`. Surveillance after treatment, and for younger women **hormone
+    replacement after surgical menopause**, which is a lifelong medication
+    following a curative operation.
+    Lymphoedema management where it occurs is daily and permanent — compression,
+    skin care, and vigilance about cellulitis.
+    And for the growing share of patients with severe obesity, the ongoing
+    management is of the risk factor rather than of the cancer, which belongs to
+    a record that does not exist yet.
+
+holes:
+  - Every scalar is `src: recall` or `src: reasoning`. The strata fractions
+    describe a high-income population; the non-endometrioid share is larger where
+    diagnosis is later.
+  - The mortality disparity in Black women is well documented and its
+    decomposition between histology, stage, treatment and pathway is not settled.
+    The record states the components without weighting them.
+  - Uterine sarcomas — leiomyosarcoma and the rest — are a different disease
+    sharing the organ, are excluded here, and behave far worse.
+  - **Obesity, type 2 diabetes and ovarian cancer are all absent from this
+    register and all belong beside this record** — two as causes and one as the
+    contrast case that makes the window argument.
+  - The MONDO term used is `uterine corpus cancer`, which is the right scope; a
+    reader looking for `endometrial cancer` will find a narrower sibling term.
+
+blockers:
+  - kind: policy
+    blocks: the cause, which is getting worse
+    obstacles: []
+    what: >
+      **THIS IS THE ONLY CANCER RECORD IN THE REGISTER WHOSE PRINCIPAL BLOCKER IS
+      A RISK FACTOR THAT IS ADVANCING.**
+      Obesity drives endometrial cancer more strongly than it drives any other
+      malignancy, the association is causal on the strength of the bariatric
+      surgery evidence, and obesity prevalence has risen for four decades across
+      most of the world. **Incidence and mortality are both rising as a direct
+      consequence.**
+      Nobody has a population-level intervention that works. Tobacco control took
+      thirty years and had taxation, advertising bans and smoke-free legislation
+      to work with; **there is no equivalent instrument for food**, and the
+      attempts — sugar taxes, labelling, marketing restrictions — are smaller in
+      effect and more contested.
+      GLP-1 receptor agonists are the first thing that reliably reduces weight at
+      scale and it is far too early to know what they will do to this record.
+      Filed under `policy` and it belongs to a queued entity: **obesity is not a
+      record in this register yet and is upstream of at least four that are.**
+    who_could: [government, legislator, health-system, payer, nonprofit]
+    scale: 2.0e10
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    blocks: bleeding being investigated promptly, for everyone
+    obstacles: []
+    what: >
+      **THE TEST IS AN OFFICE BIOPSY THAT TAKES MINUTES AND THE FAILURE IS
+      UPSTREAM OF IT.**
+      Postmenopausal bleeding is a specific, early and actionable symptom, which
+      is why most endometrial cancer is caught at stage I. Where it is dismissed,
+      attributed to fibroids or atrophy or hormone therapy, or where the woman
+      does not have a clinician to tell, the same cancer presents late.
+      **Black women in the United States are diagnosed at later stage and have
+      roughly double the mortality**, and delayed evaluation of bleeding is one
+      documented contributor alongside a higher proportion of aggressive
+      histology. This is gaps.md #136 — *the pathway performs differently
+      depending on who presents* — and it is the sharpest instance in the
+      register because the test is so cheap and so quick that nothing else can
+      explain the delay.
+      Auditing time-from-bleeding-to-biopsy by demographic group is a cheap,
+      unglamorous, entirely feasible intervention that would show whether the
+      pathway is doing what it is supposed to.
+    who_could: [health-system, government, payer, academic, patient-org]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: the aggressive subtypes, and the disparity's biology
+    obstacles: [who-progresses]
+    what: >
+      **THE PART OF THIS RECORD THAT IS GETTING WORSE IS THE PART NOBODY
+      UNDERSTANDS.**
+      Serous carcinoma and carcinosarcoma are not oestrogen-driven, not
+      obesity-driven, arise in atrophic endometrium, and are becoming a larger
+      share of diagnoses. **Why is not known**, and they supply a
+      disproportionate share of the deaths.
+      **And the disparity has an unresolved biological component.** Black women
+      have a higher proportion of aggressive histology, which is not explained by
+      access and is not obviously explained by anything else. Separating that
+      from the pathway and treatment contributions is a live research question
+      whose answer changes what should be done about it.
+      A third, smaller absence: the largest molecular group in the 2013
+      classification is defined as **"no specific molecular profile"** — a
+      residual bucket inside a prognostic classifier, containing more patients
+      than any of the three real groups.
+      `scale: null`.
+    who_could: [academic, sponsor, philanthropy, government]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: cost
+    blocks: immunotherapy for the strata it works in
+    obstacles: []
+    what: >
+      Hysterectomy is one of the most commonly performed operations in the world
+      and is affordable almost everywhere. Radiotherapy and platinum chemotherapy
+      are established. **The checkpoint inhibitors that changed advanced disease
+      in 2023 are not**, and neither is the mismatch-repair testing that selects
+      for them.
+      The testing is the cheaper half and the more important one: **universal
+      mismatch-repair testing of endometrial cancers both selects immunotherapy
+      and identifies Lynch syndrome**, which then prevents colorectal cancer in
+      the patient's relatives — a diagnosis in one person producing prevention in
+      another, in a different organ, in a different record.
+      Same pattern as every cancer here: the cheap part cures the majority, the
+      expensive part changed the outlook for the minority who die.
+    who_could: [manufacturer, payer, government, health-system]
+    scale: 3.0e9
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0064
+  rated: 2026-08-24
+  by: [claude, jeremy]

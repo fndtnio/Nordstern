@@ -1,0 +1,375 @@
+slug: genital-chlamydia
+id: FND-D-0120
+name: genital chlamydia infection
+also: [chlamydia, Chlamydia trachomatis genital infection, chlamydial cervicitis, chlamydial urethritis]
+kind: disease
+mondo: MONDO:0005701
+residual: false
+contested: false
+
+# THE COMMONEST BACTERIAL STI ON EARTH, AND THE SCREENING PROGRAMME WAS CUT BACK.
+#
+# 1. IT COMPLETES A TRIAD, AND THE THREE ARE THE POINT. Syphilis, gonorrhoea and
+#    chlamydia are managed in the same clinics by the same people with the same
+#    tests. **Syphilis has never developed penicillin resistance. Gonorrhoea has
+#    lost six drug classes. Chlamydia has essentially no clinically significant
+#    resistance either** — doxycycline works, has always worked, and nobody is
+#    worried about it. Three bacteria, one specialty, three completely different
+#    outcomes, and none of it is explained by how they are managed.
+#
+# 2. AND IT IS THE REGISTER'S ONLY RECORD OF A SCREENING PROGRAMME NARROWED ON
+#    EVIDENCE. England's National Chlamydia Screening Programme was refocused in
+#    2021 from screening everyone aged 15-24 to targeting women, because the
+#    evidence for benefit in men did not support it. The Netherlands ran a large
+#    implementation trial over three rounds, **found no reduction in prevalence,
+#    and discontinued it.** Public health programmes are almost never scaled back
+#    for this reason, and the register should record one that was.
+#
+# 3. THERE IS NO MONDO TERM FOR IT. `MONDO:0005701` is *Chlamydia trachomatis
+#    infectious disease*, whose four children are **trachoma, inclusion
+#    conjunctivitis, lymphogranuloma venereum and chlamydial pneumonia** — two
+#    eye diseases, a rare proctitis syndrome and a neonatal pneumonia. The
+#    commonest bacterial sexually transmitted infection in the world, roughly a
+#    hundred and thirty million infections a year, has no term of its own. This
+#    is the fifth instance of gaps.md #227 and the least defensible.
+
+burden:
+  incidence:
+    value: 1.3e8
+    units: >
+      new infections/year worldwide — **the largest incidence figure in this
+      register**, and larger than the estimate suggests, because most infection
+      is asymptomatic and most testing is opportunistic
+    src: recall
+  deaths:
+    value: 0.0
+    units: >
+      deaths/year — genuinely, in the sense `acute-bronchitis` and `gonorrhoea`
+      earn. Chlamydia kills essentially nobody. **The harm is reproductive and
+      arrives years later under another name**
+    src: reasoning
+  note: >
+    **A hundred and thirty million infections and no deaths, for the second
+    record in a fortnight.** The burden is pelvic inflammatory disease, tubal
+    infertility, ectopic pregnancy and chronic pelvic pain — recorded in the
+    health system as infertility rather than as this. `gonorrhoea` argues the
+    same point at greater length and it is not repeated here; what this record
+    adds is that **the intervention aimed at that burden has been tested and
+    partly found wanting.**
+
+survival:
+  horizon: 1 year from infection
+  untreated:
+    value: 0.9999
+    units: >
+      fraction alive — genital chlamydia does not kill people
+    src: reasoning
+  treated:
+    value: 0.9999
+    units: >
+      fraction alive on doxycycline. **Rated for consistency with `gonorrhoea`
+      rather than for information**: leaving a near-identical STI unrated beside
+      a rated one would create a difference a reader could not account for. The
+      `zero_gain` guard added with `genital-herpes` correctly excludes this row,
+      because untreated survival is already above 0.95 (gaps.md #234)
+    src: reasoning
+  witness: >
+    `gonorrhoea` carries the argument this row would otherwise make — that a
+    survival axis is silent on a disease whose harm is reproductive — and it is
+    not restated. **One demonstration of an instrument failing is a finding; two
+    identical ones are noise.**
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: risk-reduction
+  ongoing: none
+  efficacy:
+    value: 0.95
+    units: >
+      fraction-of-patients (cured by a week of doxycycline) — **and unlike
+      `gonorrhoea`'s equivalent figure, this one is not perishable.** There is no
+      meaningful antibiotic resistance in *C. trachomatis*. Doxycycline is now
+      preferred over single-dose azithromycin, chiefly because azithromycin
+      fails more often in rectal infection
+    src: reasoning
+  access:
+    value: 0.50
+    units: >
+      fraction-of-patients (diagnosed and treated) — **and almost the whole
+      shortfall is that nobody knows they have it.** Seventy to eighty percent of
+      infections in women and around half in men cause no symptoms, the test is
+      cheap and excellent, the drug is generic — and an infection nobody looks
+      for is not found
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: n/a
+  witness: >
+    **DIAGNOSTIC is `objective` and is one of the better tests in this
+    register.** Nucleic acid amplification on urine or a self-collected swab is
+    sensitive, specific, needs no examination, and can be posted to a laboratory
+    from a person's home. It is why chlamydia screening was ever feasible at
+    population scale, and it removed almost every practical barrier to finding
+    this infection.
+    **So this record is not blocked on the test. It is blocked on what to do
+    with it**, which is unusual here and is why the interesting blockers below
+    are `evidence-incomplete` rather than `diagnosis`.
+    PROGNOSTIC is `partial`. Most infection clears or is cured without
+    consequence; a minority ascends to cause pelvic inflammatory disease and, in
+    a minority of those, tubal damage. **Nothing identifies which woman that will
+    be** — which is `gonorrhoea`'s prognostic gap in the same anatomy, and the
+    reason both records file under `who-progresses`.
+    PREDICTIVE is `n/a`, the abolished kind. **A week of a cheap generic
+    tetracycline cures essentially everybody**, there is no meaningful resistance
+    to test for, and no subgroup needs a different drug. Rectal infection needs
+    doxycycline rather than azithromycin, which is a site rule rather than a
+    patient one.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    A week of doxycycline: photosensitivity, gastrointestinal upset, pill
+    oesophagitis if taken lying down, and contraindication in pregnancy — where
+    azithromycin or amoxicillin is used instead. **Nothing here is a reason
+    anybody goes untreated**, and the treatment column has never been this
+    record's problem.
+  incidence:
+    value: 0.02
+    units: >
+      fraction-of-treated with a consequential adverse effect — reasoned, and
+      dominated by drug intolerance rather than harm
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    **Tubal infertility, ectopic pregnancy and chronic pelvic pain**, following
+    ascending infection that was usually asymptomatic and often never diagnosed.
+    The mechanism and the consequence are the same as `gonorrhoea`'s and the
+    argument is made there in full; chlamydia contributes more of the total
+    because it is roughly twice as common.
+    **What this record adds is that the residue is the target the screening
+    programmes were built to prevent**, and the evidence that they prevent it is
+    weaker than the programmes assumed. That is a different kind of uncertainty
+    from *we do not know how to treat this*: the treatment is excellent, and
+    whether finding more people to give it to reduces the harm is genuinely
+    unsettled.
+    Neonatal conjunctivitis and pneumonia from vertical transmission are the
+    other permanent-harm route, largely prevented where antenatal testing exists.
+  incidence:
+    value: 0.05
+    units: >
+      fraction-of-infected women left with tubal damage — reasoned and lower than
+      once assumed. **Older estimates derived from symptomatic hospitalised PID
+      were substantially higher**, and cohort data on largely asymptomatic
+      screen-detected infection suggest a smaller figure, which is itself part of
+      why the screening arithmetic changed
+    src: reasoning
+
+witness:
+  mechanism: >
+    `established`. *Chlamydia trachomatis* serovars D to K infect columnar
+    epithelium of the cervix, urethra, rectum and conjunctiva. It is an
+    **obligate intracellular bacterium with a biphasic life cycle** — an
+    infectious, metabolically inert elementary body that enters the cell, and a
+    replicating reticulate body inside a membrane-bound inclusion — and under
+    stress, including antibiotic pressure and interferon, it can enter an
+    **aberrant persistent state** that is viable, non-replicating and hard to
+    eradicate in the laboratory. Whether that matters clinically is unresolved.
+    **The damage is immunopathological rather than cytotoxic.** Ascending
+    infection provokes an inflammatory response that scars the fallopian tube,
+    and the scarring rather than the organism is what causes infertility — which
+    is why the tubal damage persists long after the bacterium is gone.
+    Serovars A-C cause `trachoma`, in a different epithelium of the same species;
+    L1-L3 cause lymphogranuloma venereum. **One organism, three diseases, two
+    Mondo terms and this record pointing at the parent.**
+  intervention: >
+    `curative` and untroubled: a week of doxycycline cures essentially everyone,
+    the drug is generic and old, and **there is no resistance problem worth
+    naming** — which is worth stating explicitly in a register that has just
+    recorded `gonorrhoea` losing its sixth drug class. Single-dose azithromycin
+    was preferred for years on adherence grounds and has largely given way to
+    doxycycline because it fails more often at the rectum.
+  prevention: >
+    `risk-reduction`. Condoms, partner notification, and screening — **which is
+    the lever this record is actually about, and the one whose evidence base
+    moved.**
+    There is no human vaccine. **A koala vaccine exists**, developed because
+    chlamydial disease is a major cause of blindness and infertility in wild
+    koala populations, and a first human candidate reached phase 1 in 2019 and
+    was immunogenic. **That is the third veterinary-before-human vaccine in this
+    register**, after `coccidioidomycosis` in dogs and `toxoplasmosis` in sheep.
+  ongoing: >
+    `none`. A week of tablets and it is finished. **The burden that persists
+    belongs to people who were never treated**, and is in `residue`.
+  efficacy: >
+    See the axis. It is one of very few high efficacy figures in this register
+    that is not at risk of falling.
+  access: >
+    The test is excellent and postable, the drug is generic — and half of
+    infections go undiagnosed because they cause no symptoms and nobody looks.
+    **The access problem here is entirely a screening-policy problem**, which is
+    why the important blockers are about whether to screen rather than about
+    whether anything is available.
+
+moved:
+  - date: 2021
+    axis: prevention
+    from: prophylaxis
+    to: risk-reduction
+    why: >
+      **A PREVENTION AXIS MOVING BACKWARDS ON EVIDENCE RATHER THAN ON FAILURE OF
+      SUPPLY**, and the register has no other instance. England's National
+      Chlamydia Screening Programme was refocused from opportunistic screening of
+      everyone aged 15-24 to targeted screening of women, on review finding
+      insufficient evidence of benefit in men. The Netherlands had already
+      discontinued its implementation trial after three rounds showed no
+      reduction in prevalence.
+      Rated as a move from `prophylaxis` to `risk-reduction` because a programme
+      offered to a whole age band and a programme offered to half of it on a
+      harm-reduction rationale are different objects. **Recorded as a
+      deterioration in the axis and an improvement in honesty**, which the schema
+      cannot distinguish.
+    src: recall
+
+holes:
+  - >
+    **There is no Mondo term for genital chlamydia.** The parent covers trachoma
+    and chlamydial pneumonia; the four children are the less common
+    presentations. gaps.md #227's fifth instance, and the one where the missing
+    term is by far the largest entity.
+  - >
+    **The residue incidence is contested and moved downward.** Older figures for
+    tubal damage after chlamydial infection derived from symptomatic
+    hospitalised pelvic inflammatory disease; cohort data on screen-detected
+    asymptomatic infection suggest much lower risk. **The register carries the
+    lower figure and the uncertainty is real**, and it is exactly what the
+    screening arithmetic turns on.
+  - >
+    `intervention: curative` and `prevention: risk-reduction` together understate
+    how good the treatment is and overstate how well the disease is controlled.
+    The record's whole difficulty is that **an excellent cure and an excellent
+    test have not obviously reduced the harm at population level**, and no axis
+    holds that.
+  - >
+    The arrested-immunity hypothesis is held as a `disputed` blocker rather than
+    in the witness. If it is right it changes the sign of the intervention, and
+    the register should not be seen to be asserting something that
+    consequential on contested evidence.
+  - Incidence rests on modelled estimates over a largely asymptomatic infection
+    with very uneven testing, and screening intensity itself changes the measured
+    figure — so trends in reported cases confound the disease with the programme.
+  - Written from model recall. The English programme's narrowing, the Dutch
+    trial, the absence of resistance and the koala vaccine are the parts most
+    likely right; every number is the part most likely wrong.
+
+blockers:
+  - kind: evidence-incomplete
+    blocks: knowing whether screening for it actually prevents the harm
+    what: >
+      **THE REGISTER'S ONLY RECORD OF A SCREENING PROGRAMME NARROWED BECAUSE THE
+      EVIDENCE DID NOT SUPPORT IT.** The logic was compelling: a common
+      asymptomatic infection, an excellent cheap test, a cheap cure, and a
+      serious late consequence. Screen widely, treat early, prevent infertility.
+      **It has not clearly worked at population level.** The Netherlands ran a
+      large implementation trial over three rounds and found no reduction in
+      prevalence, and discontinued it. England refocused its national programme
+      in 2021 from everyone aged 15-24 to women only, finding insufficient
+      evidence of benefit in men. The POPI trial did show reduced pelvic
+      inflammatory disease with screening, **and much of the PID occurred in
+      women who had tested negative at baseline** — meaning the infections that
+      mattered were acquired after the screen.
+      Two explanations compete and both are actionable. **Frequency**: a single
+      opportunistic test cannot catch an infection acquired next month, so the
+      programme was under-dosed rather than wrong. **Denominator**: the risk of
+      tubal damage from asymptomatic screen-detected infection may be far lower
+      than the figures derived from hospitalised PID, in which case the
+      programmes were built on an inflated estimate.
+      **Nobody has resolved which**, and the answer decides whether to intensify
+      screening or to stop it. `scale` reflects a properly powered trial with a
+      reproductive endpoint, which is expensive and long and has never been run.
+    who_could: [academic, government, health-system, sponsor]
+    scale: 3.0e8
+    standing: documented
+    src: reasoning
+
+  - kind: knowledge
+    blocks: knowing which infection ascends, which is the entire risk
+    what: >
+      Most genital chlamydia clears or is cured without consequence. A minority
+      ascends to the upper genital tract, and a minority of those scars a
+      fallopian tube. **Nothing identifies the woman it will happen to** — not
+      symptoms, since the damaging infections are frequently silent; not
+      serovar; not any available marker.
+      That single gap is why the screening question above cannot be settled by
+      argument. **If ascending infection could be predicted, treatment could be
+      aimed**, the denominator problem would dissolve, and a targeted programme
+      would replace a population one. It is the same question `gonorrhoea` files
+      in the same anatomy, and the same one `cervical-cancer` asks about
+      persistence in the cervix a few centimetres away. `scale: null`.
+    who_could: [academic, sponsor, health-system]
+    scale: null
+    standing: documented
+    src: reasoning
+    obstacles: [who-progresses]
+
+  - kind: knowledge
+    blocks: a vaccine, in a disease where the koalas have one
+    what: >
+      **THERE IS NO HUMAN CHLAMYDIA VACCINE AND THERE IS A KOALA ONE**, developed
+      because chlamydial disease causes blindness and infertility in wild koala
+      populations and threatens them at species level. That is the **third**
+      veterinary-before-human vaccine in this register, after
+      `coccidioidomycosis` in dogs and `toxoplasmosis` in sheep.
+      A human candidate reached phase 1 in 2019 and was immunogenic, which is
+      further than this field had previously got. **The immunological problem is
+      genuinely hard rather than merely unfunded**: natural infection confers
+      only partial, short-lived, serovar-restricted protection, so nature
+      supplies a weak template; and the damage is immunopathological, so a
+      vaccine that provokes the wrong response risks causing the scarring it is
+      meant to prevent — the concern that ended the trachoma vaccine programmes
+      of the 1960s, in the same organism.
+      **That last point puts this squarely in `protective-immunity`'s founding
+      argument**: a vaccine against this organism has already once made things
+      worse, in a different tissue. `scale: null`.
+    who_could: [academic, sponsor, manufacturer, philanthropy]
+    scale: null
+    standing: documented
+    src: reasoning
+    obstacles: [protective-immunity]
+
+  - kind: knowledge
+    blocks: whether curing it early stops people becoming immune to it
+    what: >
+      **THE ARRESTED-IMMUNITY HYPOTHESIS, AND IT WOULD INVERT THE INTERVENTION IF
+      TRUE.** Natural chlamydial infection generates partial immunity over
+      repeated exposures. The hypothesis is that **treating early — as a
+      screening programme does, by design — interrupts that process**, leaving
+      the treated person more susceptible to reinfection than they would have
+      been, and raising population susceptibility over time.
+      The supporting observations are real: reinfection rates after treatment are
+      high, on the order of fifteen to twenty percent within a year; and
+      prevalence has not fallen in several populations where screening was
+      scaled up. **The confounding is severe** — reinfection tracks ongoing
+      exposure from an untreated partner far more obviously than it tracks
+      immunology, and prevalence trends confound the disease with the testing
+      programme.
+      Held as `disputed` deliberately. **If it is right, a screening programme is
+      not merely less effective than assumed but actively counterproductive at
+      population level**, and the register should neither assert that nor omit
+      it. It is also the sharpest instance in the corpus of an intervention
+      possibly undermining the defence it substitutes for.
+    who_could: [academic, sponsor, philanthropy]
+    scale: null
+    standing: disputed
+    src: reasoning
+
+assertion:
+  id: FND-A-0121
+  rated: 2026-08-28
+  by: [claude, jeremy]

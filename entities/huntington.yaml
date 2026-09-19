@@ -1,0 +1,162 @@
+slug: huntington
+id: FND-D-0005
+name: Huntington's disease
+also: [HD, Huntington chorea]
+mondo: MONDO:0007739
+kind: disease
+residual: false
+contested: false
+
+# The purest engineering problem in the register: everything is known, nothing
+# can be done. If any entry justifies separating the mechanism axis from the
+# intervention axis, it is this one.
+
+burden:
+  prevalence:
+    value: 5.0e-5
+    units: fraction-of-population (European-ancestry; lower elsewhere)
+    src: recall
+  note: >
+    Roughly 2.7-10 per 100,000 in European-ancestry populations, considerably
+    lower in East Asian and African populations. Small burden, maximal
+    diagnostic value for the schema.
+
+survival:
+  horizon: 20 years from motor onset
+  untreated:
+    value: 0.0
+    units: fraction alive — median survival is roughly 15-20 years from onset
+    src: recall
+  treated:
+    value: 0.0
+    units: >
+      fraction alive on best available treatment. **Nothing alters the course.**
+      Tetrabenazine and its successors treat chorea; the neurodegeneration
+      proceeds
+    src: recall
+  witness: >
+    **THE CONTROL CASE FOR THIS ENTIRE AXIS: TERMINAL, AND STILL TERMINAL.** The
+    causal mutation has been known since 1993 and these numbers have not moved.
+    It is terminal at a twenty-year horizon rather than a five-year one, which is
+    why the horizon is declared — **five-year survival in Huntington's is high and
+    completely uninformative.** A disease that kills everybody slowly is not less
+    terminal than one that kills everybody quickly.
+
+axes:
+  mechanism: partial
+  intervention: symptomatic
+  prevention: none
+  ongoing: high
+  efficacy:
+    value: 0.0
+    units: fraction-of-patients (disease course altered)
+    src: reasoning
+  access:
+    value: 0.0
+    units: fraction-of-patients (no course-altering treatment to access)
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: good
+  predictive: n/a
+  witness: >
+    The inverse case, and the reason "work on measurement" is not universally
+    good advice. Diagnostic and prognostic measurement here are near-perfect:
+    a definitive genetic test available decades pre-symptomatically, with CAG
+    repeat length predicting age of onset. And there is nothing to do with the
+    information. `predictive` is `n/a` because no course-altering therapy
+    exists to predict response to. Perfect measurement, zero capability —
+    measurement pays where a treatment exists and is being aimed badly, which
+    is not here.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    Tetrabenazine causes depression and parkinsonism and is often limiting,
+    but it is reversible on withdrawal. There is no curative intervention and
+    therefore no price of cure to pay — the whole tragedy of this record is
+    that there is nothing to trade anything for.
+  incidence:
+    value: 0.0
+    units: fraction-of-treated (permanent harm)
+    src: recall
+
+witness:
+  mechanism: >
+    Rated `partial`, and the split inside that rating is the point. The
+    GENETICS are as established as anything in medicine: an expanded CAG
+    repeat in HTT on chromosome 4, located in 1993 by the Huntington's Disease
+    Collaborative Research Group after a decade-long hunt; repeat length
+    predicts age of onset; the inheritance is fully penetrant above about 40
+    repeats. The PATHOGENESIS has a named hole: how mutant huntingtin kills
+    medium spiny neurons of the striatum preferentially, whether aggregates
+    are toxic or protective, and which of transcriptional dysregulation,
+    mitochondrial failure and axonal transport defects is the load-bearing
+    step, are all still argued. Knowing the cause exactly has not yielded the
+    chain.
+  intervention: >
+    Tetrabenazine and deutetrabenazine reduce chorea. Antidepressants and
+    antipsychotics address psychiatric features. None of it touches the course:
+    onset, progression and death are unchanged. Tominersen, an antisense
+    oligonucleotide lowering huntingtin, had its phase 3 halted in 2021 when
+    higher doses did worse than placebo — the most advanced attempt so far,
+    and a failure that came after the target was known with certainty.
+  prevention: >
+    `none`. The disease is entirely genetic and fully penetrant; there is no
+    exposure to avoid and no prophylaxis. Pre-implantation genetic diagnosis
+    and prenatal testing prevent the birth of an affected person, which is a
+    reproductive option and not a preventive treatment. The register should not
+    blur those.
+  ongoing: >
+    `high` — decades of progressive motor, cognitive and psychiatric decline
+    with intensive caregiving, and a suicide rate well above the population
+    baseline, much of it in the pre-symptomatic tested population.
+
+holes:
+  - Cell-type selectivity: why striatal medium spiny neurons first, when HTT is
+    expressed everywhere. Nothing about treatment is likely to be settled while
+    this is open.
+  - Whether huntingtin lowering is therapeutic at all, at what dose, in what
+    tissue, at what age — the tominersen failure did not answer it either way.
+  - Somatic repeat instability as a modifier of onset is a live and relatively
+    recent line that could redraw the target.
+
+blockers:
+  - kind: knowledge
+    obstacles: [tissue-repair, cell-targeting]
+    blocks: any course-altering treatment
+    what: >
+      The only blocker, and it is total. The cause has been known exactly since
+      1993 and the most advanced attempt at lowering huntingtin had its phase 3
+      halted in 2021 for harm at higher doses. There is no trial waiting for a
+      sponsor, no drug waiting for a regulator, and no product waiting for a
+      payer.
+      **AND THE WAY IT FAILED IS AN ADDRESSING FAILURE, WHICH IS WHY THIS RECORD
+      NOW CITES `cell-targeting` AS WELL.** Lowering huntingtin non-selectively
+      lowers the wild-type protein too, which is essential; an allele-selective
+      agent is the field's stated aim and does not exist. So the target is known
+      exactly, the intervention is specified exactly, and what is missing is a
+      way to act on the mutant allele, in the right neurons, at a dose that does
+      not harm. That is `cell-targeting`'s specificity face, and `msmds` cites
+      the same obstacle in the same words — *"allele-selective silencing or
+      editing reaching smooth muscle."*
+      The addition came from testing a CRUD framing against the corpus
+      (`Engpass/crud.md`): this is the register's only record blocked by
+      knowledge alone, so it is the whole test set for any theory about what
+      knowledge blockers are made of, and the theory found a link the record was
+      missing.
+      `scale: null` because the sum required is unknown and unpriceable —
+      this is what a genuine research problem looks like in the schema, and it
+      is the control case against which every `documented` delivery blocker
+      elsewhere should be read.
+    who_could: [academic, sponsor]
+    scale: null
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0005
+  rated: 2026-08-11
+  by: [claude, jeremy]

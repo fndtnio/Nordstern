@@ -1,0 +1,496 @@
+slug: bladder-cancer
+id: FND-D-0062
+name: bladder cancer
+also: [urinary bladder cancer, urothelial carcinoma, transitional cell carcinoma of the bladder]
+mondo: MONDO:0001187
+kind: disease
+residual: false
+contested: false
+
+# THE OLDEST IMMUNOTHERAPY IN ONCOLOGY IS A LIVE TUBERCULOSIS VACCINE POURED INTO
+# THE BLADDER, NOBODY FULLY KNOWS WHY IT WORKS, AND THERE HAS NOT BEEN ENOUGH OF
+# IT FOR YEARS.
+#
+# BCG has been instilled into bladders since 1976. It reduces recurrence and
+# progression in high-risk non-muscle-invasive disease, and its main effect is
+# that people keep their bladders. It is the same product as the tuberculosis
+# vaccine — **`tuberculosis` is a record in this register and the shortage
+# affects both.**
+#
+# **THE SHORTAGE IS CHRONIC AND STRUCTURAL.** Live attenuated bacteria are hard to
+# manufacture, the number of producers is tiny, and urologists have spent years
+# splitting doses, substituting and rationing a drug that costs almost nothing.
+# Fifth use of the `manufacturing` blocker in sixty-two records and the clearest.
+#
+# TWO OTHER THINGS:
+#
+# 1. **THE DISEASE MECHANISM IS ESTABLISHED AND THE TREATMENT MECHANISM IS NOT.**
+#    Fifty years of BCG and the explanation is still "non-specific immune
+#    activation". The `mechanism` axis rates why the disease happens; there is no
+#    field for why the treatment works, and here the answer to the second
+#    question is *nobody knows*. gaps.md #135.
+#
+# 2. **WOMEN ARE DIAGNOSED LATER, FOR THE SAME SYMPTOM.** Visible haematuria in a
+#    woman is attributed to urinary infection or gynaecological causes more often
+#    and worked up later, and stage at diagnosis is worse. `diagnostic: objective`
+#    describes the test. Nothing describes whether it gets ordered. gaps.md #136.
+
+burden:
+  prevalence:
+    value: 6.1e5
+    units: >
+      new cases/year worldwide — and the prevalent population is far larger
+      relative to incidence than in most cancers, because most patients live for
+      decades with a disease that keeps coming back
+    src: recall
+  deaths:
+    value: 2.2e5
+    units: >
+      deaths/year — roughly a third of the incidence, and the deaths are almost
+      entirely in the quarter of patients whose disease invades muscle
+    src: recall
+  note: >
+    **ROUGHLY THREE QUARTERS OF BLADDER CANCER NEVER INVADES MUSCLE, AND THAT
+    QUARTER SUPPLIES ALMOST ALL THE DEATHS.** The two behave so differently that
+    they are managed by different specialists in some centres.
+    It is one of the most male-skewed cancers in the register — roughly four men
+    for every woman — and a disease of older people, with a median age at
+    diagnosis in the seventies.
+    **THE CAUSES ARE UNUSUALLY WELL DOCUMENTED AND UNUSUALLY EXTERNAL.** Smoking
+    accounts for around half. Occupational exposure to aromatic amines in the dye
+    and rubber industries was described by Rehn in 1895 and is the founding case
+    of occupational cancer epidemiology. And in Egypt and parts of sub-Saharan
+    Africa, **chronic *Schistosoma haematobium* infection causes squamous cell
+    bladder cancer** — `schistosomiasis` is a record in this register, and its
+    control has visibly changed the histological mix in Egypt.
+    So this is the **fifth record in the tobacco family** after ischaemic heart
+    disease, stroke, COPD and lung cancer, and the **fourth consecutive cancer
+    whose cause is an entity the register already holds.**
+
+survival:
+  horizon: 5 years from diagnosis
+  untreated:
+    value: 0.15
+    units: >
+      fraction alive — untreated bladder cancer progresses to muscle invasion and
+      metastasis, though slowly enough that some survive several years
+    src: recall
+  treated:
+    value: 0.77
+    units: >
+      fraction alive — high because **most bladder cancer is non-muscle-invasive
+      and controllable rather than cured.** "Controlled" here means decades of
+      cystoscopic surveillance and repeated resections, which the survival
+      figure cannot show and this record's `ongoing` axis can
+    src: recall
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: risk-reduction
+  ongoing: high
+  efficacy:
+    value: 0.60
+    units: >
+      fraction-of-patients (cured, or durably controlled) — high because most
+      bladder cancer is non-muscle-invasive and controllable, and "controlled"
+      here means decades of recurrence managed rather than a disease that goes
+      away
+    src: reasoning
+  access:
+    value: 0.40
+    units: >
+      fraction-of-patients (reaching cystoscopy and repeat resection, BCG when
+      indicated, radical cystectomy or chemoradiation, and modern systemic
+      therapy) — and BCG availability is a supply problem rather than a money one
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: partial
+  witness: >
+    DIAGNOSTIC is `objective` — cystoscopy with biopsy, plus urine cytology and
+    imaging — and **the standard of care is putting a camera up the urethra every
+    few months for years**, because nothing non-invasive is good enough to
+    replace it.
+    That is the central practical fact about this disease. Urinary biomarkers and
+    DNA-based assays exist, perform respectably, and do not have the negative
+    predictive value to let a urologist skip a look. **A surveillance test that
+    could is worth more to more patients than any drug in this record.**
+    **AND THE PATHWAY PERFORMS DIFFERENTLY DEPENDING ON WHO PRESENTS.** Painless
+    visible haematuria is the classic red flag and is investigated promptly — in
+    men. In women it is attributed to urinary infection or to gynaecological
+    causes more often, worked up later, and the stage at diagnosis is
+    correspondingly worse. The test is the same and the referral is not. See
+    gaps.md #136.
+    PROGNOSTIC is `partial` and reasonably good: grade, stage, tumour number and
+    size, and the presence of carcinoma in situ feed established risk tables that
+    decide surveillance intensity and whether BCG is given.
+    PREDICTIVE is `partial`. **FGFR3 alterations** select erdafitinib. Nectin-4
+    is expressed near-universally, which is why enfortumab vedotin works broadly
+    and is not really a predictive marker. PD-L1 shifts odds without deciding.
+    **Nothing predicts who responds to BCG**, which is the oldest and most-used
+    therapy in the record.
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    **THE CURE FOR MUSCLE-INVASIVE DISEASE IS REMOVING THE BLADDER, AND THE
+    PATIENT URINATES DIFFERENTLY FOR THE REST OF THEIR LIFE.**
+    Radical cystectomy with urinary diversion means either an **ileal conduit** —
+    a stoma and an external bag — or a **neobladder** constructed from bowel,
+    which avoids the bag and brings incontinence, nocturnal leakage and the need
+    to self-catheterise in a substantial minority. In men the prostate and
+    seminal vesicles go too, so erectile dysfunction is close to universal; in
+    women the operation may include the anterior vaginal wall, with sexual
+    consequences that are documented much less well.
+    **REPEATED TRANSURETHRAL RESECTION** — the mainstay for the non-invasive
+    majority — is not free either: urethral stricture, bladder capacity loss, and
+    the cumulative burden of many general anaesthetics in a population with a
+    median age in the seventies.
+    **BCG'S OWN TOLL IS INSTRUCTIVE.** Cystitis, urgency and flu-like symptoms in
+    most patients, and rarely **disseminated BCG infection**, which is
+    tuberculosis and is treated with antituberculous drugs. A cancer therapy whose
+    complication is another record in this register.
+    Cisplatin adds nephrotoxicity, ototoxicity and neuropathy in older patients
+    who frequently cannot receive it at all. Enfortumab vedotin adds peripheral
+    neuropathy, skin toxicity and hyperglycaemia.
+  incidence:
+    value: 0.40
+    units: >
+      fraction-of-treated (permanent harm — urinary diversion and its
+      consequences, sexual dysfunction, urethral stricture, platinum toxicity) —
+      a reasoned estimate, concentrated in the minority who need cystectomy
+    src: reasoning
+
+# NO `residue` BLOCK. What a cured patient carries is what the operation took.
+# `restored` derives `cure-costs`, as it has for every cancer here except
+# melanoma.
+
+window:
+  what: >
+    **THIS IS ONE OF THE FEW WINDOWS IN THE REGISTER THAT IS USUALLY CAUGHT**,
+    and the reason is that the disease announces itself early and unmistakably.
+    Painless visible haematuria is the presenting symptom in most cases, it is a
+    recognised red flag with established referral pathways, and it appears while
+    the tumour is still confined to the urothelium. Roughly three quarters of
+    bladder cancer is non-muscle-invasive at diagnosis.
+    So unlike pancreatic, ovarian or liver cancer, this disease is not silent.
+    **The window is generous, the signal is obvious, and the pathway mostly
+    works.**
+    Where it fails it fails for a specific and documented reason: **the same
+    symptom in a woman is more often attributed to infection**, investigated
+    later, and found at a worse stage. That is not a window problem. It is a
+    referral problem, and the register records the window and not the referral.
+    The second window is progression: non-muscle-invasive high-grade disease,
+    especially with carcinoma in situ, can progress to muscle invasion, and
+    preventing that is what BCG is for.
+  closes_on: >
+    invasion into the detrusor muscle — after which the treatment becomes
+    cystectomy or chemoradiation rather than endoscopic resection
+  caught_in_time:
+    value: 0.70
+    units: >
+      fraction-of-cases (diagnosed while non-muscle-invasive) — **among the
+      highest in the register**, and it is a fact about haematuria rather than
+      about any screening programme
+    src: reasoning
+
+strata:
+  - name: non-muscle-invasive, low risk
+    fraction:
+      value: 0.45
+      units: fraction-of-diagnoses
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.95
+      units: fraction-of-stratum (alive and free of progression at ten years)
+      src: reasoning
+    toll: minor
+    what: >
+      Resected endoscopically, sometimes with a single instillation of
+      chemotherapy afterwards, then watched. It recurs in a large share of
+      patients and rarely progresses.
+      **The burden here is not the disease and not the treatment — it is the
+      surveillance.** A cystoscopy every few months for years, in an ageing
+      patient, indefinitely.
+
+  - name: non-muscle-invasive, high risk (including carcinoma in situ)
+    fraction:
+      value: 0.25
+      units: fraction-of-diagnoses
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.65
+      units: fraction-of-stratum (durable control without cystectomy)
+      src: reasoning
+    toll: major
+    what: >
+      **THE STRATUM BCG EXISTS FOR.** High-grade disease and carcinoma in situ
+      progress to muscle invasion often enough that the alternative is removing
+      the bladder pre-emptively. Induction and maintenance BCG reduce recurrence
+      and progression, and most of these patients keep their bladders as a
+      result.
+      **BCG-unresponsive disease is the frontier**: nadofaragene firadenovec,
+      pembrolizumab and intravesical combinations exist and the standard answer is
+      still cystectomy.
+
+  - name: muscle-invasive, resectable
+    fraction:
+      value: 0.20
+      units: fraction-of-diagnoses
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.50
+      units: fraction-of-stratum (cured by cystectomy or chemoradiation with neoadjuvant chemotherapy)
+      src: reasoning
+    toll: major
+    what: >
+      Neoadjuvant cisplatin-based chemotherapy then radical cystectomy, or
+      trimodal therapy — maximal resection with chemoradiation — which preserves
+      the bladder in selected patients with comparable outcomes and is
+      substantially underused.
+      **Many of these patients cannot have cisplatin** because of age and renal
+      function, which removes the part of the treatment with the survival
+      evidence.
+
+  - name: metastatic
+    fraction:
+      value: 0.10
+      units: fraction-of-diagnoses
+      src: reasoning
+    intervention: disease-modifying
+    efficacy:
+      value: 0.20
+      units: fraction-of-stratum (durable meaningful benefit)
+      src: reasoning
+    toll: major
+    what: >
+      Platinum chemotherapy, then checkpoint blockade, and since 2023
+      **enfortumab vedotin with pembrolizumab as first line**, which produced the
+      largest survival improvement this disease has seen and is the reason the
+      `moved` block has a recent entry.
+      Not curable. FGFR3-altered disease has erdafitinib as a further line.
+
+moved:
+  - date: 1976
+    axis: toll
+    from: 0.6
+    to: 0.4
+    why: >
+      **BCG, AND WHAT IT CHANGED WAS WHETHER PEOPLE KEPT THEIR BLADDERS.**
+      Before intravesical BCG, high-grade non-muscle-invasive disease and
+      carcinoma in situ progressed often enough that early cystectomy was a
+      reasonable answer. After it, most of those patients are managed with an
+      intact bladder.
+      Capability barely moved — these patients were curable by cystectomy before
+      and are curable by cystectomy now. **What collapsed is the fraction who need
+      it**, which is `toll.incidence` rather than severity, and `moved` records a
+      change on an axis rather than in one of its components. Fourth record to
+      hit that limitation after breast, prostate and gastric cancer (gaps.md #26).
+      **And it is a live tuberculosis vaccine, adopted empirically, still not
+      fully explained.**
+
+  - date: 2023
+    axis: efficacy
+    from: 0.55
+    to: 0.6
+    why: >
+      **ENFORTUMAB VEDOTIN WITH PEMBROLIZUMAB** replaced platinum chemotherapy as
+      first-line treatment for advanced urothelial carcinoma, with a survival
+      improvement large enough to change practice immediately — the biggest
+      advance in metastatic disease since cisplatin combinations arrived in the
+      1980s.
+      A five-point move at record level, because the stratum it reached is a
+      tenth of diagnoses and the therapy is not curative. The same arithmetic as
+      melanoma's and non-Hodgkin lymphoma's recent entries (gaps.md #61).
+
+witness:
+  mechanism: >
+    `established`, and the mechanism explains why this is the classic
+    occupational and smoking cancer: **the bladder stores the carcinogen.**
+    Aromatic amines and tobacco-derived carcinogens are metabolised, excreted in
+    urine, and held in contact with the urothelium for hours at a time. Exposure
+    is systemic and the dose is delivered locally, repeatedly, by the organ's own
+    function. Rehn described the association in dye workers in 1895 and it became
+    the founding case of occupational cancer epidemiology.
+    **Two molecular pathways match the two clinical diseases almost exactly.**
+    *FGFR3*-mutant, low-grade papillary tumours recur endlessly and rarely
+    invade. *TP53*-mutant flat lesions and carcinoma in situ are high-grade and
+    invade. That correspondence is unusually clean and is why the strata above
+    behave as separate diseases.
+    **AND *SCHISTOSOMA HAEMATOBIUM* CAUSES A DIFFERENT HISTOLOGY.** Chronic
+    infection produces squamous cell carcinoma rather than urothelial carcinoma,
+    in a younger population, in endemic regions. Egypt's shifting histological mix
+    as schistosomiasis control improved is one of the clearer natural experiments
+    in cancer prevention — and `schistosomiasis` is a held record in this
+    register with no way to point at this one.
+    **THE NAMED HOLE IS NOT ABOUT THE DISEASE.** It is that nobody knows why BCG
+    works. See `intervention` and gaps.md #135.
+  intervention: >
+    `curative`, and the record contains two treatments that barely resemble each
+    other.
+    **Endoscopic resection** for the non-invasive three quarters, with
+    intravesical therapy for higher risk, and surveillance cystoscopy
+    indefinitely. **Radical cystectomy with urinary diversion**, or trimodal
+    bladder-preserving chemoradiation, for the invasive quarter. Systemic therapy
+    for metastatic disease, transformed in 2023.
+    **AND THE OLDEST IMMUNOTHERAPY IN ONCOLOGY SITS IN THE MIDDLE OF IT.**
+    Bacillus Calmette-Guérin — live attenuated *Mycobacterium bovis*, the
+    tuberculosis vaccine — instilled into the bladder since 1976 because Morales
+    tried it and it worked. It reduces recurrence and progression in high-risk
+    non-muscle-invasive disease and it predates every checkpoint inhibitor by
+    four decades.
+    **Nobody fully knows why.** The account is a local innate and adaptive immune
+    response — mycobacterial attachment to urothelium, cytokine release,
+    recruitment of granulocytes and T cells, trained immunity — and after fifty
+    years it remains a description rather than a mechanism. **There is no
+    biomarker for response, no synthetic equivalent, and no way to improve it
+    rationally**, which is exactly what not understanding it costs.
+  prevention: >
+    `risk-reduction`, and the causes are unusually amenable to it.
+    **Smoking** accounts for around half, and this is the fifth record in the
+    register driven by it after ischaemic heart disease, stroke, COPD and lung
+    cancer (gaps.md #87).
+    **Occupational exposure** to aromatic amines is the classic story: identified
+    in 1895, regulated over the following century, and the incidence in dye and
+    rubber workers fell as a direct consequence. It is one of the few clean
+    demonstrations in this register that **industrial regulation prevents
+    cancer**, and it happened without any medicine at all.
+    **Schistosomiasis control** prevents the squamous variant in endemic regions,
+    and Egypt's changing histology is the evidence.
+    Note what all three have in common: none is a drug, none is delivered by a
+    clinician, and all three worked.
+  ongoing: >
+    `high`, **and bladder cancer is the most expensive cancer per patient to
+    manage over a lifetime largely because of it.**
+    A patient with non-muscle-invasive disease faces cystoscopy every three to
+    six months initially, then annually, for years — a camera through the urethra
+    in an outpatient clinic, repeated indefinitely, with repeat resections under
+    anaesthetic whenever something is seen. Most of them will never die of this
+    disease and most of them will never be free of it either.
+    Add intravesical BCG on an induction-and-maintenance schedule for the
+    high-risk group, and for cystectomy patients a lifetime of stoma care or
+    neobladder management, B12 monitoring after ileal resection, and metabolic
+    consequences.
+    **This is the register's clearest case of a disease whose burden is the
+    surveillance rather than the illness**, and the axis records one word for it.
+
+holes:
+  - Every scalar is `src: recall` or `src: reasoning`. The strata fractions are
+    approximate and the squamous fraction is far larger in schistosomiasis-endemic
+    regions, which changes the whole record there.
+  - `efficacy: 0.60` counts decades of managed recurrence as durable control,
+    which is defensible and generous, and is not comparable with any other
+    record's figure.
+  - The sex disparity in diagnostic delay is well described and its size is
+    debated; the direction is not.
+  - Upper tract urothelial carcinoma shares the biology and is excluded here, as
+    is squamous bladder cancer's separate natural history beyond a mention.
+  - Trimodal bladder-preserving therapy is probably underused relative to its
+    evidence, and the register records `access` to treatment without recording
+    which treatment was offered — gaps.md #122 again.
+
+blockers:
+  - kind: manufacturing
+    blocks: enough BCG to give the people who need it
+    obstacles: []
+    what: >
+      **A FIFTY-YEAR-OLD DRUG THAT COSTS ALMOST NOTHING AND CANNOT BE MADE IN
+      SUFFICIENT QUANTITY.**
+      BCG is a live attenuated bacterium. It must be grown, not synthesised;
+      batches are variable; the manufacturing is genuinely difficult; and the
+      number of producers supplying the oncology market has at times come down to
+      essentially one. Shortages have run for years, and urologists have
+      responded by splitting doses, shortening maintenance schedules, restricting
+      it to the highest-risk patients, and substituting intravesical chemotherapy
+      that works less well.
+      **The consequence is measurable in bladders.** Patients who would have kept
+      theirs have them removed, because the drug that would have prevented
+      progression was rationed.
+      **AND IT IS THE TUBERCULOSIS VACCINE.** Same organism, same production
+      problem, and `tuberculosis` is a record in this register. A supply failure
+      in one product degrades a cancer therapy and an infant immunisation
+      simultaneously, and nothing here can say so.
+      Fifth use of `manufacturing` in sixty-two records, after snakebite
+      antivenom, benzathine penicillin, pandemic influenza vaccine and smallpox
+      vaccine — **and every one of them is an old, cheap, biologically produced
+      essential.**
+    who_could: [manufacturer, government, regulator, philanthropy, health-system]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    blocks: a surveillance test that is not a camera, and a referral that happens on time
+    obstacles: []
+    what: >
+      **TWO SEPARATE FAILURES AND THE SECOND IS ABOUT WHO THE PATIENT IS.**
+      *No non-invasive surveillance test is good enough.* The standard of care
+      for the non-invasive majority is cystoscopy every few months for years.
+      Urine cytology, biomarker panels and DNA assays perform respectably and none
+      has the negative predictive value to let a urologist skip a look. **A test
+      that did would spare more patients more discomfort than any drug in this
+      record**, and it would reduce the highest per-patient lifetime cost in
+      oncology.
+      *And the referral pathway performs differently by sex.* Painless visible
+      haematuria is a red flag with established pathways, and in women it is
+      attributed to urinary infection or gynaecological causes more often,
+      investigated later, and diagnosed at a worse stage. The test is identical.
+      **What differs is whether it is ordered** (gaps.md #136).
+      The first is a research target. The second is a referral rule and an audit,
+      and it is much cheaper.
+    who_could: [academic, health-system, manufacturer, government, sponsor]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: why BCG works, and what to do when it stops
+    obstacles: []
+    what: >
+      **FIFTY YEARS OF USE AND THE MECHANISM IS STILL A DESCRIPTION.**
+      Mycobacterial attachment to urothelium, cytokine release, granulocyte and T
+      cell recruitment, trained innate immunity — all observed, none assembled
+      into an account that predicts anything. **There is no biomarker for
+      response, no rational way to improve the product, and no synthetic
+      equivalent to make when supply fails.**
+      That is not an academic complaint. The manufacturing blocker above would be
+      far less serious if anybody knew which component of a live bacterium was
+      doing the work.
+      **AND BCG-UNRESPONSIVE DISEASE IS THE PRACTICAL FRONTIER.** Patients whose
+      high-risk non-muscle-invasive cancer recurs through BCG face cystectomy.
+      Nadofaragene firadenovec, pembrolizumab and intravesical combinations give
+      some of them more time with a bladder, and none is a replacement.
+      `scale: null`.
+    who_could: [academic, sponsor, manufacturer, philanthropy]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: cost
+    blocks: the agents that changed metastatic disease
+    obstacles: []
+    what: >
+      Endoscopic resection, cystectomy and generic cisplatin are the backbone and
+      are affordable in most systems. **Enfortumab vedotin with pembrolizumab,
+      erdafitinib and the intravesical gene therapies are not**, and they are the
+      whole of what changed in the last decade.
+      The pattern this register keeps finding holds here with a twist: the cheap
+      part of the record does most of the work, **and the cheapest thing in it —
+      BCG — is unavailable for reasons that have nothing to do with price.** Cost
+      and supply are different blockers and this record has both.
+    who_could: [manufacturer, payer, government, health-system]
+    scale: 3.0e9
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0062
+  rated: 2026-08-24
+  by: [claude, jeremy]

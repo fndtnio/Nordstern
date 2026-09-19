@@ -1,0 +1,592 @@
+slug: prion-disease
+id: FND-D-0106
+name: prion disease
+also: [Creutzfeldt-Jakob disease, CJD, sporadic CJD, variant CJD, fatal familial insomnia, Gerstmann-Sträussler-Scheinker, transmissible spongiform encephalopathy, kuru]
+mondo: MONDO:0005429
+kind: disease
+residual: false
+contested: false
+
+# `MONDO:0007403` IS *INHERITED* CREUTZFELDT-JAKOB DISEASE AND WOULD HAVE BEEN
+# THE WRONG IDENTIFIER. It was the exact-label match for "Creutzfeldt-Jakob
+# disease" and it covers roughly a tenth of this record. `MONDO:0005429` — prion
+# disease — is the family: sporadic, genetic and acquired. **An identifier that
+# joins cleanly to the wrong population is worse than a missing one**, which is
+# the rule `resolve_mondo.py` was built around.
+#
+# THE POINT OF THIS RECORD IS ONE SENTENCE: THE MECHANISM IS ESTABLISHED, IT WON
+# A NOBEL PRIZE, AND THERE IS NOTHING TO GIVE ANYBODY.
+#
+# `mechanism: established` and `intervention: none`. Only three records in this
+# register rate `intervention: none` — `rabies`, `me-cfs` and this — and this is
+# the only one where the cause is fully characterised. **Rabies has a vaccine.
+# ME/CFS has no mechanism.** Prion disease has a mechanism, a named agent, a
+# structural biology, transgenic models, and no treatment of any kind.
+#
+# IT ALSO CONTAINS THE REGISTER'S CLEANEST IATROGENIC CHAIN. Cadaveric growth
+# hormone, dura mater grafts and neurosurgical instruments transmitted this
+# disease to hundreds of people, and **the agent survives autoclaving** — the one
+# pathogen in this corpus that standard sterilisation does not destroy.
+#
+# AND ITS BURDEN IS TINY. Roughly one to two cases per million per year. It earns
+# a record on structure, which is the register's stated rule, and it should be
+# read as a shape rather than as a priority.
+
+burden:
+  cases:
+    value: 1.2e4
+    units: >
+      new cases/year worldwide, approximately — **around 1-2 per million per
+      year**, of which roughly 85% is sporadic Creutzfeldt-Jakob disease, 10-15%
+      genetic, and a small and now nearly closed remainder acquired. The figure
+      is a reasoned extrapolation from surveillance in the countries that do it
+    src: reasoning
+  deaths:
+    value: 1.2e4
+    units: >
+      deaths/year — **cases and deaths are the same number, because everybody
+      dies and most within a year.** No other record in this register has that
+      property so exactly
+    src: reasoning
+  note: >
+    **THE SMALLEST BURDEN IN THE CORPUS AND ONE OF THE MOST INFORMATIVE
+    RECORDS.** Twelve thousand deaths a year against `ischaemic-heart-disease`'s
+    nine million. It is here because it is the extreme case of several things the
+    register measures — perfect lethality, a fully established mechanism, zero
+    capability, iatrogenic transmission, and a food-borne epidemic caused by an
+    agricultural decision — and because a register organised only by burden would
+    never contain a record that demonstrates all five.
+
+survival:
+  horizon: 2 years from symptom onset
+  untreated:
+    value: 0.02
+    units: >
+      fraction alive — **median survival in sporadic CJD is four to six months**,
+      and roughly seven in ten die within six months. Genetic forms and variant
+      CJD run longer, around twelve to eighteen months
+    src: recall
+  treated:
+    value: 0.02
+    units: >
+      fraction alive on best available treatment. **The numbers are identical
+      because there is no treatment.** Quinacrine, pentosan polysulfate,
+      doxycycline and flupirtine have all been tried and none altered survival
+    src: recall
+  witness: >
+    **THE SHORTEST ILLNESS IN THE REGISTER AND THE ONLY ONE WHERE BOTH SURVIVAL
+    COLUMNS ARE THE SAME NUMBER BECAUSE NOTHING HAS EVER MOVED THEM.**
+    `rabies` is 0.0 and 0.0, which is the same statement more absolutely; this is
+    0.02 and 0.02, which is the same statement with a tail. **In both cases the
+    gap between untreated and treated — the quantity that measures what medicine
+    has bought — is zero.**
+    Note what that means for the progress metric. `no_longer_terminal` counts
+    records that were uniformly fatal and are not any more; **this record and
+    `rabies` and `huntington` are the control group.** A count of transitions is
+    only meaningful against a denominator of diseases that could have made one
+    and did not.
+    **And a two-year horizon flatters it.** At five years the figure is
+    essentially zero. The horizon was chosen because a disease with a median
+    survival of five months needs a scale that can see it at all, which is
+    gaps.md #216's problem arriving from the short end.
+
+axes:
+  mechanism: established
+  intervention: none
+  prevention: risk-reduction
+  ongoing: moderate
+  efficacy:
+    value: 0.0
+    units: >
+      fraction-of-patients (course altered by any available treatment) —
+      **zero, and not for want of trying.** Several agents have reached
+      randomised trials in this very rare disease and none has worked
+    src: recall
+  access:
+    value: 0.0
+    units: >
+      fraction-of-patients (receiving a treatment that alters the course) — zero,
+      because there is nothing to receive. **Diagnostic and palliative access is
+      a separate and real question that this axis cannot express**
+    src: recall
+
+measurement:
+  diagnostic: objective
+  prognostic: good
+  predictive: n/a
+  witness: >
+    **THE DIAGNOSTIC STORY IS THE ONE GENUINELY GOOD THING THAT HAS HAPPENED TO
+    THIS DISEASE, AND IT ARRIVED IN THE LAST DECADE.**
+    Diagnosis used to be clinical — rapidly progressive dementia with myoclonus,
+    a characteristic EEG, MRI changes in the cortical ribbon and basal ganglia,
+    14-3-3 protein in cerebrospinal fluid — and **definitive only at autopsy.**
+    **RT-QuIC changed that.** Real-time quaking-induced conversion uses the
+    misfolded protein's own defining property as the assay: it templates the
+    conversion of recombinant prion protein in vitro, and the resulting
+    aggregation is read out by fluorescence. Performed on cerebrospinal fluid it
+    has high sensitivity and very high specificity, and it converted a
+    probabilistic clinical diagnosis into a laboratory one. **An assay built
+    directly out of the pathogenic mechanism is a rare thing and this register
+    should say so.**
+    PROGNOSTIC is `good` in the bleakest possible sense: the answer is always the
+    same and the timing is fairly predictable from the subtype and the *PRNP*
+    codon 129 genotype.
+    PREDICTIVE is **`n/a`** — the same rating `hepatitis-c` carries, arrived at
+    from the opposite direction. There is no selection question because **there
+    is nothing to select between.** The register's `n/a` means the question has
+    been abolished; there it was abolished by a treatment that works in everyone,
+    and here by there being no treatment at all. **One value, two situations, and
+    the schema cannot distinguish them** — worth noting because `n/a` reads as
+    benign.
+
+toll:
+  severity: none
+  permanent: false
+  what: >
+    **NO TOLL, BECAUSE NO TREATMENT.**
+    This field records what the cure takes and there is no cure. Symptomatic
+    management — clonazepam or levetiracetam for myoclonus, benzodiazepines,
+    antipsychotics for agitation — carries ordinary drug side effects in a person
+    with weeks to months, and nothing permanent is inflicted by medicine.
+    **The register's permanent-price machinery is entirely silent here, and the
+    silence is accurate.** Everything that happens to a person with prion disease
+    is done by the disease: rapidly progressive dementia, myoclonus, ataxia,
+    cortical blindness, akinetic mutism, and death, usually within half a year of
+    the first symptom.
+    **`toll: none` alongside `survival: terminal` is a pairing the register has
+    not had before**, and it reads oddly on any view that treats a clean toll as
+    good news. `als` came close — `toll: minor` — and this is the pure case.
+    A dashboard that ranked records by `terms` would place this one beside
+    `hearing-loss`.
+  incidence:
+    value: 0.0
+    units: fraction-of-treated (permanent harm attributable to treatment) — there is none
+    src: reasoning
+
+window:
+  what: >
+    **THE WINDOW IS BEFORE SYMPTOMS AND FOR ONE GROUP IT IS OPEN AND KNOWN.**
+    Once symptoms begin, this disease is over in months and there is no window at
+    all — no treatment exists, and neuronal loss is already extensive by
+    presentation. **The interesting window is presymptomatic and it applies to
+    the genetic tenth.**
+    Carriers of pathogenic *PRNP* variants can be identified decades before onset
+    by a simple genetic test. Prion protein is measurable in cerebrospinal fluid,
+    and neurofilament light rises before clinical onset. **So there exists a
+    population that can be identified, monitored with a biomarker, and treated
+    before any neuron is lost** — and antisense oligonucleotides that lower prion
+    protein expression are in trials in exactly that population.
+    **This is `spinal-muscular-atrophy`'s shape.** That record's largest gain came
+    from newborn screening plus treating before symptoms; the same argument is
+    being made here, in a disease where the presymptomatic population is small,
+    identifiable, and highly motivated. If it works it changes the genetic tenth
+    and does nothing for the sporadic majority — **which is `als` and tofersen
+    again, and it is becoming a pattern in this register: the genetic minority
+    gets the drug and defines the field's optimism.**
+  closes_on: >
+    the onset of symptoms, after which neuronal loss is extensive and rapid and no
+    intervention exists — for the genetic minority the window is decades long and
+    presymptomatic; for the sporadic majority there is no way to know it is open
+  caught_in_time:
+    value: 0.0
+    units: >
+      fraction-of-cases reached before symptoms with anything that alters the
+      course — **zero, because no such treatment exists yet.** The field is being
+      recorded because the window is real and identifiable, not because it is
+      being used
+    src: reasoning
+
+strata:
+  - name: sporadic Creutzfeldt-Jakob disease
+    fraction:
+      value: 0.85
+      units: fraction-of-people-with-prion-disease
+      src: recall
+    intervention: none
+    efficacy:
+      value: 0.0
+      units: fraction-of-stratum (course altered)
+      src: recall
+    toll: none
+    what: >
+      **THE RECORD, ESSENTIALLY, AND NOBODY KNOWS WHY IT HAPPENS.** Spontaneous
+      misfolding of prion protein with no inherited mutation and no identified
+      exposure, at a remarkably constant one to two per million per year across
+      every country that counts. **No risk factor, no prevention, no presymptomatic
+      marker, no way to know who is at risk.** Median survival four to six months.
+
+  - name: genetic prion disease
+    fraction:
+      value: 0.13
+      units: fraction-of-people-with-prion-disease
+      src: recall
+    intervention: none
+    efficacy:
+      value: 0.0
+      units: fraction-of-stratum (course altered)
+      src: recall
+    toll: none
+    what: >
+      *PRNP* mutations causing genetic CJD, **fatal familial insomnia** and
+      Gerstmann-Sträussler-Scheinker syndrome. Autosomal dominant, so carriers can
+      be identified decades ahead — **and this is the only stratum in this record
+      with a plausible route to a treatment**, because prion-protein-lowering
+      antisense oligonucleotides are in trials in presymptomatic carriers. The
+      obvious comparison is `spinal-muscular-atrophy`.
+
+  - name: acquired
+    fraction:
+      value: 0.02
+      units: fraction-of-people-with-prion-disease
+      src: reasoning
+    intervention: none
+    efficacy:
+      value: 0.0
+      units: fraction-of-stratum (course altered)
+      src: recall
+    toll: none
+    what: >
+      **THE STRATUM THAT MEDICINE AND AGRICULTURE CREATED, AND THEN CLOSED.**
+      Iatrogenic CJD from cadaveric growth hormone, dura mater grafts, corneal
+      transplants and contaminated neurosurgical instruments — several hundred
+      cases, essentially all now historical because the practices stopped.
+      **Variant CJD** from bovine spongiform encephalopathy, roughly 230 deaths,
+      ended by a feed ban. **Kuru**, transmitted by mortuary practice in Papua New
+      Guinea, ended when the practice did. **Every acquired route was closed by a
+      decision, and none of them was closed by a treatment.**
+
+moved:
+  - date: 1982
+    axis: mechanism
+    from: none
+    to: established
+    why: >
+      **THE PRION HYPOTHESIS, AND IT WAS THOUGHT TO BE WRONG.**
+      Prusiner proposed that the transmissible agent in scrapie was a protein
+      with no nucleic acid, which contradicted the assumption that every
+      infectious agent carries a genome. **The proposal was widely rejected and
+      the Nobel Prize followed in 1997.**
+      The mechanism as it now stands: a normal cellular protein, PrP^C, adopts a
+      misfolded conformation, PrP^Sc, which templates the same conversion in
+      other copies of itself. The change is conformational rather than genetic;
+      the misfolded form aggregates, resists proteases, and is neurotoxic. **The
+      pathogen is a shape.**
+      **This entry is in the register to be read against the intervention axis.**
+      Established mechanism, Nobel Prize, forty-four years — and
+      `intervention: none`. It is the strongest instance in the corpus of
+      gaps.md #193 and #198: **understanding a disease completely is not the same
+      as being able to do anything about it**, and this record removes every
+      excuse. There is no delivery problem — antisense oligonucleotides reach the
+      brain intrathecally, as `als` demonstrates. There is no target problem — the
+      target is one protein and lowering it is protective in animals. There is a
+      **timing** problem, and it is that by the time anybody knows they are ill,
+      the disease is nearly over.
+    src:
+      id: PMID:6801762 doi:10.1126/science.6801762
+      retrieved: 2026-08-28
+      quote: >
+        After infection and a prolonged incubation period, the scrapie agent causes
+        a degenerative disease of the central nervous system in sheep and goats.
+        Six lines of evidence including sensitivity to proteases demonstrate that
+        this agent contains a protein that is required for infectivity.
+
+  - date: 1996
+    axis: prevention
+    from: none
+    to: risk-reduction
+    why: >
+      **A FOOD-BORNE PRION EPIDEMIC, CAUSED BY AN AGRICULTURAL DECISION AND ENDED
+      BY A REGULATION.**
+      Variant CJD was identified in 1996 and linked to bovine spongiform
+      encephalopathy, itself caused by feeding rendered ruminant protein back to
+      cattle. **A practice adopted for efficiency created a novel human disease.**
+      The response was a feed ban, removal of specified risk material from the
+      food chain, and deferral of blood donors — and the human epidemic ended at
+      roughly 230 deaths worldwide.
+      **The forecasts at the time ranged from a few hundred to several hundred
+      thousand, and the low end was right.** That is worth recording without
+      triumphalism: the modelling was honestly uncertain because the incubation
+      period and the genetic susceptibility were unknown, and the policy response
+      was made under that uncertainty and was correct. **It is one of the register's
+      few clean examples of precautionary regulation working.**
+      **And the tail is not closed.** Retrospective appendix surveys in the United
+      Kingdom found abnormal prion protein in roughly one specimen in two
+      thousand, which — if those people are genuinely incubating — implies a
+      subclinical reservoir vastly larger than the number of clinical cases, with
+      an unknown lifetime risk and unknown transmissibility by blood or surgery.
+      **Thirty years on, nobody knows what that number means.**
+    src:
+      id: PMID:8598754 doi:10.1016/s0140-6736(96)91412-9
+      retrieved: 2026-08-28
+      quote: >
+        These cases appear to represent a new variant of CJD, which may be unique
+        to the UK. This raises the possibility that they are causally linked to
+        BSE. Although this may be the most plausible explanation for this cluster
+        of cases, a link with BSE cannot be confirmed on the basis of this evidence
+        alone.
+
+  - date: 2017
+    axis: measurement
+    from: probabilistic clinical diagnosis, definitive at autopsy
+    to: RT-QuIC on cerebrospinal fluid
+    why: >
+      **AN ASSAY BUILT OUT OF THE PATHOGENIC MECHANISM ITSELF.**
+      Dated to the multicentre diagnostic-accuracy study rather than to the
+      first description — the register's `moved` dates follow the evidence,
+      because that is what the citation can support.
+      Real-time quaking-induced conversion exploits the property that defines the
+      agent: misfolded prion protein templates the conversion of normal
+      recombinant protein, and the resulting aggregation is detected by
+      fluorescence. Applied to cerebrospinal fluid it achieves high sensitivity
+      and very high specificity, and it moved diagnosis from a clinical judgement
+      supported by EEG, MRI and a non-specific surrogate marker to a laboratory
+      test.
+      **What it does not do is change any outcome**, and the record should say so.
+      There is no treatment, so an earlier and more certain diagnosis buys
+      certainty, the end of an often long and distressing diagnostic process, the
+      ability to plan, access to trials, and accurate surveillance. **Those are
+      real goods and none of them is survival**, which is why this is a
+      `measurement` entry (gaps.md #184) and moves no other axis.
+    src:
+      id: PMID:27942718 doi:10.1001/jamaneurol.2016.4614
+      retrieved: 2026-08-28
+      quote: >
+        A proposed diagnostic algorithm for sporadic CJD combines CSF and OM
+        RT-QuIC testing to provide virtually 100% diagnostic sensitivity and
+        specificity in the clinical phase of the disease.
+
+witness:
+  mechanism: >
+    `established`, and this record exists partly to test what that word is worth.
+    **The agent is a protein.** PrP^C, a normal cell-surface glycoprotein
+    expressed most highly in neurons, adopts an alternative conformation, PrP^Sc,
+    which is protease-resistant, aggregation-prone, and **templates its own
+    conformation onto further copies of the normal protein.** Replication is
+    conformational rather than genetic. The hypothesis was proposed in 1982,
+    resisted, and is now the accepted account.
+    **The evidence is unusually complete for a neurodegenerative disease.**
+    Animals lacking the *PRNP* gene cannot be infected and do not develop disease,
+    which is about as clean a causal demonstration as biology offers. Transgenic
+    models reproduce the illness. Strains of prion with distinct incubation
+    periods and lesion profiles propagate faithfully through conformation alone.
+    Structures of the aggregated fibrils have been solved.
+    **The three routes converge on one event.** Sporadic disease is presumed to be
+    stochastic misfolding, its constant worldwide rate consistent with a rare
+    spontaneous event. Genetic disease results from *PRNP* mutations that
+    destabilise the normal fold. Acquired disease is introduction of the misfolded
+    template from outside. **Codon 129 genotype modifies susceptibility and
+    phenotype across all three.**
+    **What is not known.** Why sporadic misfolding happens in a particular person
+    at a particular time — there is no risk factor at all. What exactly kills the
+    neuron, since aggregate burden and neuronal loss correlate imperfectly. And
+    what the subclinical carriers found in appendix surveys will do.
+    **The templated-misfolding idea has since spread across neurology** — the
+    prion-like propagation of tau, alpha-synuclein and TDP-43 is now a mainstream
+    hypothesis in `alzheimers`, `parkinsons` and `als`. **This record's mechanism
+    may end up being more important to other records than to itself.**
+  intervention: >
+    `none`, and it is the honest rating rather than a harsh one.
+    **Nothing alters the course.** Quinacrine, pentosan polysulfate given
+    intraventricularly, doxycycline and flupirtine have all been tried, several in
+    randomised trials that were remarkable achievements in a disease this rare,
+    and none extended survival. Immunotherapy against prion protein has been
+    limited by the protein being a normal self-antigen expressed throughout the
+    brain.
+    **Care is symptomatic and palliative**: clonazepam or levetiracetam for
+    myoclonus, management of agitation, and — because the illness is so short and
+    so devastating — early involvement of specialist palliative care and support
+    for a family who will be bereaved within months of a diagnosis most of them
+    have never heard of.
+    **The live route is presymptomatic and it is antisense.** Lowering PrP^C
+    expression is protective in animal models, and prion protein-lowering
+    oligonucleotides delivered intrathecally are in trials. **The route is proven
+    — `als` and tofersen established that an ASO reaches motor neurons and
+    silences a gene in a living person.** What is unproven is whether lowering the
+    protein in someone who is already symptomatic helps at all, which is why the
+    trials are aiming at carriers before onset.
+  prevention: >
+    `risk-reduction`, and the rating is carried entirely by the acquired stratum
+    — which is 2% of the record and is now essentially closed.
+    **Every acquired route was closed by a decision.** Cadaveric growth hormone
+    was replaced by recombinant. Cadaveric dura mater grafts were withdrawn. Kuru
+    ended when mortuary practice ended. Variant CJD ended with a feed ban and the
+    removal of specified risk material. **Not one of them was closed by a
+    treatment**, and collectively they are among the most effective preventive
+    interventions in this register.
+    **Surgical instruments are the route that remains open, and the reason is
+    unique in this corpus: prions survive standard sterilisation.** Autoclaving at
+    conventional parameters does not reliably destroy them; the protocols require
+    extended autoclaving with sodium hydroxide, or single-use instruments for
+    high-risk neurosurgical procedures on suspected cases. **This register
+    contains no other pathogen that defeats an autoclave.**
+    **For the sporadic 85% there is no prevention and nothing to avoid**, because
+    there is no known risk factor. And for the genetic 13%, prevention means
+    genetic counselling and pre-implantation testing — preventing transmission
+    rather than disease, the same distinction `als` records.
+  ongoing: >
+    `moderate`, and the rating is strained because the illness is so short that
+    "ongoing" barely applies.
+    What happens over four to six months: rapidly progressive dementia, myoclonus,
+    ataxia, visual disturbance progressing to cortical blindness, and akinetic
+    mutism. Care needs escalate from independence to total dependence in weeks.
+    Most of it is delivered at home or in a hospice by family, and there is
+    frequently no established care pathway because a service may see one case a
+    decade.
+    **The burden that has no field is the diagnostic ordeal and its aftermath.**
+    Families commonly describe months of neurological investigation ending in a
+    diagnosis with no treatment and a prognosis of weeks, followed by a death that
+    requires special handling for post-mortem and, in genetic cases, opens a
+    question for every relative. **Genetic prion disease imposes a decision about
+    testing on people who are entirely well**, which the register records nowhere
+    and which is the largest ongoing burden this record produces.
+
+holes:
+  - >
+    **`toll: none` and `survival: terminal` in the same record**, and any view
+    that treats a clean toll as good news will read this as reassuring. `als`
+    came close at `toll: minor`; this is the pure case, and it is a property of
+    having no treatment rather than of having a gentle one.
+  - >
+    **`predictive: n/a` here means "there is nothing to select between" and in
+    `hepatitis-c` it means "the question was abolished by a treatment that works
+    in everyone".** Same value, opposite situations, and `n/a` reads as benign.
+  - >
+    **`mechanism: established` with `intervention: none` is the strongest
+    statement of gaps.md #193 and #198 in the corpus**, and unlike `duchenne` or
+    `cystic-fibrosis` there is no delivery problem to blame — antisense reaches
+    the brain. The obstacle is timing.
+  - >
+    **The subclinical reservoir is unresolved and unquantifiable.** Appendix
+    surveys suggest roughly one in two thousand may carry abnormal prion protein,
+    with unknown lifetime risk and unknown transmissibility. The register has no
+    way to record a burden figure that might be four orders of magnitude larger
+    than the clinical one, or might be nothing.
+  - >
+    **Burden is `reasoning` rather than `recall`** — extrapolated from
+    surveillance in the countries that do it, and prion disease is
+    under-ascertained everywhere else. `src: unknown` would arguably be more
+    honest for the global figure.
+  - >
+    **The genetic stratum has a presymptomatic window that is real, identifiable
+    and unused**, and `caught_in_time: 0.0` records that correctly while making
+    the record look worse than the science is.
+
+blockers:
+  - kind: knowledge
+    obstacles: []
+    blocks: treating a disease that is over before it is diagnosed
+    what: >
+      **THE OBSTACLE HERE IS TIMING, AND IT IS UNUSUAL IN THIS REGISTER FOR NOT
+      BEING ANYTHING ELSE.**
+      There is no delivery problem: antisense oligonucleotides reach the brain
+      intrathecally, which `als` and tofersen established. There is no target
+      problem: the target is a single well-characterised protein, and animals
+      lacking it are completely resistant to disease. There is no mechanism
+      problem: the mechanism won a Nobel Prize forty-four years after it was
+      proposed.
+      **The problem is that by the time anybody knows they have it, most of the
+      neurons are gone and the patient has weeks.** A disease with a median
+      survival of four to six months from first symptom cannot be treated with an
+      agent that lowers protein expression over weeks, and there is no way to
+      identify the sporadic 85% before they present.
+      **So the tractable question is a narrow one: does lowering prion protein
+      help somebody who is already symptomatic, and if not, can the
+      presymptomatic genetic population be treated in time?** Both are being
+      tested. If the answer is no to the first and yes to the second, this record
+      acquires a treatment for a tenth of its patients and nothing for the rest —
+      **which is `als` and `cystic-fibrosis` again, and is becoming this
+      register's most reliable prediction about genetic medicine.**
+      **And a second, quieter hole: nothing predicts sporadic disease.** No risk
+      factor, no biomarker, no presymptomatic phase anybody can find.
+      `scale: null`.
+    who_could: [academic, sponsor, philanthropy, manufacturer]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    obstacles: []
+    blocks: recognising in weeks a disease most clinicians never see
+    what: >
+      **RT-QuIC WORKS AND MOST OF THE WORLD CANNOT ORDER IT.**
+      The assay is excellent and is performed in a small number of national
+      reference laboratories. Outside them, diagnosis remains clinical, slow, and
+      frequently reached only at autopsy — which matters less for the patient,
+      who has no treatment either way, and enormously for **surveillance,
+      infection control and the families of genetic cases.**
+      **The clinical problem underneath it is unfixable by any test.** A
+      neurologist may see one case in a career. Rapidly progressive dementia has a
+      long differential, several entries of which are treatable — autoimmune
+      encephalitis above all — so the diagnostic process is properly a search for
+      the things that are not this. **In a disease measured in months, that search
+      consumes most of the illness.**
+      **What a test would buy is not survival but everything else**: an end to the
+      investigation, time to plan, eligibility for trials, correct infection
+      control for any subsequent surgery, and — in genetic cases — the beginning
+      of a conversation with a family. The register has no field that records any
+      of it.
+    who_could: [health-system, academic, government, manufacturer, nonprofit]
+    scale: 1.0e8
+    standing: documented
+    src: recall
+
+  - kind: evidence-incomplete
+    obstacles: []
+    blocks: running a trial in a disease that kills before it can be studied
+    what: >
+      **A RANDOMISED TRIAL IN A DISEASE WITH TWELVE THOUSAND CASES A YEAR,
+      SCATTERED ACROSS EVERY COUNTRY, KILLING IN FIVE MONTHS.**
+      Recruitment competes with the diagnostic delay: by the time RT-QuIC
+      confirms the diagnosis a substantial fraction of the illness is over, and
+      patients are often too impaired to consent. Several trials have nonetheless
+      been completed, which is a considerable achievement, and all were negative.
+      **This is gaps.md #102's family** — *some diseases cannot generate the
+      evidence their own approval requires* — with a different cause. Marburg's
+      obstacle is that there are not enough patients in one place at one time;
+      here there are patients but the window in each of them is too short.
+      **The presymptomatic route changes the problem and creates a harder one.**
+      A trial in *PRNP* carriers who are well would need either a biomarker
+      endpoint — prion protein or neurofilament light in cerebrospinal fluid — or
+      decades of follow-up to a clinical event. **That is an argument for
+      biomarker-based approval in a population where the alternative is no trial
+      at all**, and it is the same argument `als` records for tofersen and
+      `alzheimers` records less comfortably.
+    who_could: [academic, sponsor, regulator, patient-org, philanthropy]
+    scale: 5.0e8
+    standing: documented
+    src: recall
+
+  - kind: policy
+    obstacles: []
+    blocks: an agent that survives the autoclave, and a reservoir nobody has sized
+    what: >
+      **THIS IS THE ONLY PATHOGEN IN THIS REGISTER THAT STANDARD STERILISATION
+      DOES NOT DESTROY.**
+      Prions resist conventional autoclaving, formaldehyde and alcohol.
+      Decontamination requires extended autoclaving with sodium hydroxide or
+      sodium hypochlorite, or single-use instruments — which means every
+      neurosurgical, ophthalmic or neuroendoscopic procedure on an
+      unsuspected case is a potential transmission event. **Several hundred
+      iatrogenic cases arose exactly this way**, alongside cadaveric growth
+      hormone and dura mater grafts, before the practices were changed.
+      **And the reservoir is unsized.** Retrospective appendix surveys found
+      abnormal prion protein in roughly one specimen in two thousand. If those
+      people are incubating variant CJD, the subclinical population is orders of
+      magnitude larger than the clinical one; if the finding is not disease, it is
+      nothing. **Thirty years after the epidemic, nobody knows**, and the policy
+      consequences — blood donor deferral, surgical instrument protocols,
+      plasma-derived product sourcing — have been maintained on that uncertainty
+      at real and continuing cost.
+      **Recorded as `policy` rather than `knowledge` because the decisions are
+      being made now, repeatedly, under uncertainty that may never resolve** —
+      which is the shape `h5n1` records for preparedness and is here about a
+      hazard already introduced rather than one anticipated.
+    who_could: [government, regulator, health-system, legislator, academic]
+    scale: 5.0e8
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0107
+  rated: 2026-08-28
+  by: [claude, jeremy]

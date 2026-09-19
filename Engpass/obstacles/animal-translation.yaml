@@ -1,0 +1,172 @@
+slug: animal-translation
+id: FND-O-0010
+name: What does a result in a mouse tell you about a human?
+kind: tooling
+resolution: open
+
+question: >
+  Nearly every therapeutic hypothesis is gated on an animal experiment before it
+  reaches a person. **What almost nothing states is the transfer function** — in
+  what respect, and by how much, a result in a mouse should update a belief about
+  a human. The gate is used as though the answer were *directly and fully*, and
+  it plainly is not.
+  Nordstern's `als` record states the failure in its sharpest form: **"the SOD1
+  mouse became the standard preclinical gate for all ALS, including the 98% of
+  patients without SOD1 mutations, and it predicted a long series of human
+  failures."** A model of a rare genetic subtype was made the entry requirement
+  for a whole disease, and a decade of candidates passed through it into negative
+  trials.
+  **The scaling half of the argument is separate and better founded.** Body mass
+  governs metabolic rate, lifespan, dose kinetics and — Geoffrey West's point —
+  cancer incidence, and it does so as a power law rather than a constant. A mouse
+  develops far more tumours per gram of tissue per year than a human does, and a
+  whale almost none. **Peto's paradox is real and unexplained**, and until it is
+  explained there is no principled basis for scaling an oncology result up from a
+  mouse or down from a whale.
+  So the question is not *do animal models work*. It is: **is there a stated,
+  checkable mapping between an animal result and a human expectation — and if
+  not, what is the gate actually doing?**
+
+what_it_unblocks: >
+  **THE THING IT WOULD CHANGE IS WHAT GETS INTO TRIALS AND WHAT GETS ABANDONED
+  BEFORE THEM**, and the second is invisible and probably larger.
+  The visible half is failure: candidates that cleared an animal gate and failed
+  in people. `parkinsons`' attempts file lists selegiline, coenzyme Q10,
+  creatine, isradipine, inosine, exenatide and two anti-synuclein antibodies —
+  every one preceded by supportive preclinical work. `sepsis` is worse:
+  **anti-TNF was "dramatically protective in animal models of endotoxin
+  challenge" and a higher-dose arm increased mortality in humans.**
+  **The invisible half is the one that matters more.** A compound that fails in
+  mice is not usually tried in people, so **the false negatives are never
+  observed and cannot be counted.** If the transfer function is as weak as the
+  failures suggest, an unknown number of workable human therapies have been
+  discarded at a gate that had no right to stop them. Nothing in this register or
+  anywhere else can currently estimate that number, and **it is the strongest
+  argument for the obstacle mattering.**
+  A stated mapping would also make the gate honest. At present a negative animal
+  result ends a programme and a positive one licenses a trial, with the same
+  confidence in both directions and no stated basis for either.
+
+why_hard: >
+  **BECAUSE THE MODEL IS USUALLY OF THE HYPOTHESIS, NOT OF THE DISEASE.** A mouse
+  is engineered to express a human mutation, or given a chemical insult that
+  produces something resembling the pathology, and the resulting animal is then
+  used to test a drug aimed at that mechanism. **The experiment is close to
+  circular**: it asks whether the intervention works in a system built to embody
+  the assumption the intervention is based on. `als`'s SOD1 mouse is the clean
+  case — a real model of 2% of the disease, used as the gate for all of it.
+  **The scaling is a genuine and unsolved physical problem.** Metabolic rate,
+  heart rate, lifespan and drug clearance scale with body mass as power laws with
+  non-integer exponents; a mouse lives three years and a human eighty, and a
+  chronic disease of ageing has nowhere to happen in an animal that does not age
+  the same way. **Peto's paradox** — that cancer incidence does not rise with
+  body mass across species as cell count alone would predict — means the
+  organisms differ in ways nobody has characterised, so there is no correction
+  factor to apply even in principle.
+  **And the immune system is the worst case.** Laboratory mice are inbred,
+  specific-pathogen-free, and immunologically naive in a way no human is;
+  co-housing them with pet-store mice measurably shifts their immune phenotype
+  toward something more human. Much of what fails in translation is
+  immunological, and this is part of why.
+  **The counter-evidence is substantial and must be stated, or this record is
+  advocacy.** Insulin came from depancreatised dogs and is in this register as
+  `type-1-diabetes`'s founding intervention. Polio vaccine required monkeys.
+  Most antibiotics, cytotoxic chemotherapy, monoclonal antibodies, and the GLP-1
+  agonists now reshaping `obesity` and `type-2-diabetes` — all passed through
+  animals, and several were discovered there. **The gate is not empty. It is
+  uncalibrated**, and those are different complaints with different fixes.
+
+claims:
+  - unblocks: alzheimers
+    standing: alleged
+    why: >
+      Transgenic amyloid mice develop plaques and respond to plaque-clearing
+      agents; humans develop plaques, respond to plaque-clearing agents, and
+      largely do not get better. **The model reproduced the biomarker and not the
+      disease**, which is the most expensive instance of this obstacle if it is
+      one. `alleged` because that record's own position is subtler — the amyloid
+      hypothesis was *right and not sufficient* — and the mouse may have been
+      faithful to a mechanism that is real and partial.
+  - unblocks: sepsis
+    standing: alleged
+    why: >
+      The endotoxin-challenge model was dramatically protective for anti-TNF and
+      anti-endotoxin antibodies, both of which failed in humans and one of which
+      **increased mortality**. A widely discussed genomic analysis argued that
+      murine inflammatory responses correlate poorly with human ones, and was
+      contested. `alleged` because that record's own diagnosis is that **sepsis
+      is a syndrome trialled as a disease** — an entity problem that would sink
+      the trials whatever the preclinical model said.
+  - unblocks: stroke
+    standing: alleged
+    why: >
+      A very large number of neuroprotective agents have shown benefit in rodent
+      stroke models and essentially none has worked in people — a discrepancy
+      large enough that the field wrote preclinical quality guidelines in
+      response. `alleged` because that record does not file a preclinical blocker
+      and because trial timing, the heterogeneity of human stroke and outcome
+      measurement all contribute independently.
+
+holes:
+  - >
+    **THE 92% FIGURE IS THE WEAKEST PART OF THE ARGUMENT AND IT IS THE PART MOST
+    QUOTED.** The commonly cited claim is that over 90% of drugs entering human
+    trials fail. **That is the base rate of the whole enterprise, not a
+    measurement of animal models** — candidates fail for efficacy, for safety, for
+    trial design and for commercial reasons, and preclinical translation is one
+    contributor among them. Phase 2 failure alone runs near 70%. **Quoting 92% as
+    the failure rate of a tool attributes the entire attrition of drug
+    development to one stage of it.**
+  - >
+    **AND A SCREENING FILTER CANNOT BE SCORED ON ITS FALSE POSITIVES ALONE.**
+    The 92% counts compounds that passed the animal gate and then failed in
+    humans. It does not count the compounds the gate stopped — the toxic ones
+    that never reached a person, which are the filter's true negatives and are
+    unobservable by construction. **A test that lets through 92% failures may
+    still be worth running if what it blocks is worse.** Nobody knows the size of
+    that set, which cuts both ways: it also hides the workable therapies wrongly
+    discarded, and that is this record's own strongest claim above.
+  - >
+    **"You have learned nothing" is falsified by the corpus.** Insulin, polio
+    vaccine, most antibiotics, cytotoxic chemotherapy, monoclonal antibodies and
+    the GLP-1 agonists all came through animals. The defensible claim is not that
+    animal work teaches nothing, but that **nobody can say in advance which
+    results will transfer** — a statement about calibration rather than about
+    validity.
+  - >
+    **The obvious alternatives are not yet better, and one of them is in this
+    register.** Organoids, organ-on-chip and human challenge studies are the
+    proposed replacements; `cryptosporidiosis` records that the *absence* of any
+    culture system or animal model meant there was no assay to screen against at
+    all, and that the gap is now being closed by organoids. **That record wants
+    more modelling capability, not less** — so this obstacle must not be read as
+    an argument against animal work in general, only against using it
+    uncalibrated.
+  - >
+    **A THIRD SHAPE IS IN THE CORPUS AND THIS RECORD EXCLUDES IT ON PURPOSE.**
+    `cryptosporidiosis`, `heds` and `diarrhoeal-disease`'s enteric dysfunction
+    are blocked by there being **no animal model at all** — a missing tool, not a
+    misleading one. That is the opposite complaint and has the opposite fix, and
+    folding it in here would let the record mean anything. **And `marburg` holds
+    a fourth**: the regulatory Animal Rule, under which animal efficacy data is
+    the *only* permissible evidence because a human efficacy trial cannot
+    ethically be run. **Three uses of the same tool — as a gate, as an absence,
+    and as the sole evidence — and only the first is this record.**
+  - >
+    **This entry may be two obstacles.** *The model is of the hypothesis rather
+    than the disease* (SOD1, amyloid mice) is a study-design problem soluble by
+    better practice. *Physiological scaling does not permit extrapolation across
+    body mass* is a physical problem with no known solution. They share a
+    consequence and possibly nothing else — the same doubt `pathogen-persistence`
+    records about viral latency and macroparasite survival.
+  - >
+    `scale: null` is asserted and is arguable. **Building better human model
+    systems is engineering** — organoid banks, microphysiological systems,
+    reference tissue panels — and is parallelisable, buyable work of exactly the
+    kind money moves. **Working out the transfer function is not.** The record
+    covers both and prices neither, which is the same objection `cell-targeting`
+    logs against itself.
+
+asserted:
+  date: 2026-08-30
+  by: [claude, jeremy]

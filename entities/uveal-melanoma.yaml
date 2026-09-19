@@ -1,0 +1,479 @@
+slug: uveal-melanoma
+id: FND-D-0144
+name: uveal melanoma
+also: [choroidal melanoma, ciliary body melanoma, iris melanoma, intraocular melanoma]
+mondo: MONDO:0006486
+kind: disease
+residual: false
+contested: false
+
+# THE SAME CELL AS `melanoma`, A DIFFERENT DISEASE, AND THE OPPOSITE ANSWER TO
+# EVERY QUESTION THE CUTANEOUS RECORD IS PROUD OF.
+#
+# Uveal melanoma is a melanocyte tumour of the choroid, ciliary body or iris —
+# the commonest primary cancer of the adult eye, and rare: a few thousand cases
+# a year worldwide. It shares a cell of origin with cutaneous melanoma and
+# almost nothing else. It is not caused by ultraviolet light, it carries one of
+# the LOWEST mutational burdens of any adult cancer, it is driven by a
+# different pair of genes (GNAQ/GNA11, not BRAF), and **checkpoint blockade —
+# the therapy that transformed skin melanoma — barely works in it.** The
+# mechanism the `melanoma` witness is built on (UV → mutations → neoantigens →
+# immune visibility) runs backwards here, exactly as it does for that record's
+# acral stratum.
+#
+# THE RECORD'S CENTRAL FACT: **THE EYE IS ALMOST ALWAYS SAVED FROM THE TUMOUR,
+# AND ABOUT HALF OF PATIENTS DIE OF IT ANYWAY.** Local control by plaque
+# brachytherapy, proton beam or enucleation exceeds ninety percent. Roughly half
+# of patients nonetheless develop metastases — overwhelmingly in the liver —
+# sometimes more than a decade after a "cured" eye, from micrometastases that
+# were already seeded before anybody saw the tumour. The largest trial ever run
+# in the disease (COMS) showed that removing the eye and irradiating the eye
+# give the same survival, which is the cleanest demonstration in this register
+# that **local treatment does not move the survival axis at all.**
+#
+# THAT MAKES IT THE HUNTINGTON'S OF ONCOLOGY. A biopsy at the time of treatment
+# — monosomy 3, BAP1 loss, or a commercial gene-expression class — predicts who
+# will metastasise with an accuracy almost no other cancer can match, and
+# **there is nothing to do with the answer.** Every adjuvant trial has failed.
+# Prognostic measurement is near-perfect and capability for the predicted
+# outcome is close to nil: the schema's own control case, in a cancer.
+#
+# THE ONE THING THAT MOVED: tebentafusp (2022), a bispecific T-cell engager
+# against gp100, is the first drug ever to extend survival in metastatic uveal
+# melanoma — median overall survival up by roughly half a year, in the half of
+# patients who carry HLA-A*02:01, on a weekly infusion for life. It is a real
+# move on the metastatic stratum from `none` to `disease-modifying`, and the
+# record-level `efficacy` does not change by a single point. gaps.md #61,
+# again.
+
+burden:
+  cases:
+    value: 7.5e3
+    units: >
+      new cases/year worldwide, approximately — incidence around five to seven
+      per million per year in populations of European descent, an order of
+      magnitude lower in African and East Asian populations, and stable for
+      decades (unlike cutaneous melanoma). **A soft figure:** GBD has no line
+      for this disease; it sits inside an "eye cancer" or "other neoplasm"
+      residual, so the `sourceable` tier is nominal here and the number comes
+      from national registries (SEER, European registries) scaled by hand
+    src: recall
+  deaths:
+    value: 3.5e3
+    units: >
+      deaths/year, approximately — roughly half of cases eventually die of
+      metastatic disease, and incidence has been flat long enough that the
+      steady-state arithmetic is defensible
+    src: reasoning
+  note: >
+    **RARE, AND FOR THAT REASON A CLEAN EXPERIMENT.** Seven thousand cases a
+    year is a rounding error against the cancers in this register, and the
+    disease is worth a record for what it isolates rather than what it weighs:
+    a cancer where diagnosis is easy, local cure is routine, prognosis is
+    knowable to a degree almost nothing else matches, and survival has been
+    flat for fifty years. Whatever is missing in uveal melanoma, it is not
+    detection, not local treatment, and not prognostic measurement.
+    It is a disease of light eyes and fair skin, median age around sixty, with
+    germline BAP1 mutation carriers and people with ocular melanocytosis at
+    substantially raised risk. **No environmental cause is established** —
+    the UV story that explains cutaneous melanoma does not reach the back of
+    the eye, and the mutational signature says so.
+
+survival:
+  horizon: 5 years from diagnosis
+  untreated:
+    value: 0.70
+    units: >
+      fraction alive — **the register's least defensible untreated figure, and
+      it is stated that way.** Nobody has left this disease untreated in a
+      cohort. The number reasons from COMS: local treatment does not change
+      survival, so "untreated" is close to "treated" except for whatever an
+      untreated large tumour adds by extrascleral extension, which is the
+      difference recorded here and is a guess
+    src: reasoning
+  treated:
+    value: 0.75
+    units: >
+      fraction alive at five years after local treatment — metastatic death
+      accumulates slowly and does not stop: roughly a quarter dead by five
+      years, a third by ten, approaching half by twenty. The five-year figure
+      flatters a disease whose survival curve never plateaus
+    src: recall
+  witness: >
+    **A GAIN OF ABOUT ZERO, AND THAT IS THE FINDING.** COMS randomised
+    medium-sized tumours between enucleation and iodine-125 plaque
+    brachytherapy and found no survival difference at twelve years; a
+    pre-enucleation radiotherapy arm for large tumours found none either. Local
+    treatment saves the eye and does not save the patient, because in the
+    half who die the disease had already left the eye — micrometastases are
+    estimated to seed years before the primary is found. The disease is the
+    register's clearest case of a treatment that changes everything about the
+    organ and nothing about survival.
+    The five-year horizon is also wrong for this disease and is kept for
+    comparability. Uveal melanoma kills at ten and fifteen years from a "cured"
+    eye, which no five-year number can show; a ten-year horizon would read
+    closer to 0.65. Tebentafusp's half-year of median survival in the
+    HLA-eligible half of the metastatic half is invisible at this horizon and
+    at every other.
+
+axes:
+  mechanism: partial
+  intervention: curative
+  prevention: none
+  ongoing: low
+  efficacy:
+    value: 0.50
+    units: >
+      fraction-of-patients (alive without metastasis long-term after local
+      treatment) — the primary is controlled in more than nine in ten; the
+      figure is the fraction in whom controlling the primary was the whole
+      disease, and it has not moved in half a century
+    src: reasoning
+  access:
+    value: 0.60
+    units: >
+      fraction-of-patients (reaching timely ophthalmic diagnosis and local
+      treatment) — enucleation is available wherever there is an eye surgeon
+      and is survival-equivalent to everything else, so access to the
+      survival-relevant treatment is high; access to EYE-SPARING treatment
+      (plaque, proton) needs an ocular oncology centre and is far lower; access
+      to tebentafusp is confined to a few high-income countries and the
+      HLA-A*02:01 half
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: good
+  predictive: partial
+  witness: >
+    DIAGNOSTIC is `objective` and unusually direct. The tumour is seen through
+    the pupil on dilated fundoscopy, measured by ultrasound, and characterised
+    by optical coherence tomography and angiography; the diagnostic accuracy of
+    an ocular oncologist without a biopsy is very high, and COMS confirmed it
+    histologically in the enucleated eyes. **This is one of the few solid
+    cancers routinely diagnosed without tissue.** About a third of patients are
+    asymptomatic and found on a routine eye examination — which is also why
+    optometrists and dilated examinations are the whole detection pathway.
+    PROGNOSTIC is `good`, and it is the record's distinguishing feature.
+    Monosomy of chromosome 3, loss of BAP1, and a commercial gene-expression
+    profile (class 1 versus class 2) separate patients whose ten-year risk of
+    metastasis is a few percent from those in whom it is a large majority.
+    Tumour size, ciliary body involvement and extrascleral extension refine it.
+    A fine-needle biopsy at the time of plaque placement answers the question
+    at the moment of treatment. Almost no other cancer can say, at diagnosis,
+    who will die of it this well.
+    **AND THE ANSWER CHANGES NOTHING.** No adjuvant therapy has ever reduced
+    metastasis in the high-risk group; surveillance imaging finds the liver
+    metastases earlier without demonstrated survival benefit; and the patient
+    is left with a number. `overtreatment_risk` and `futile_treatment_risk` do
+    not fire here — the record has the opposite problem, for which the schema
+    has no flag: prognosis without capability.
+    PREDICTIVE is `partial`, and it is a strange partial. HLA-A*02:01 status is
+    a hard, binary predictor of whether tebentafusp CAN be given — the drug
+    physically requires the allele — and it is a germline test that is
+    trivially available. Within the eligible half, nothing predicts who
+    benefits, and objective response rate does not track survival: tebentafusp
+    extends life in patients whose tumours do not visibly shrink, which is a
+    measurement problem in its own right.
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    **THE CURE TAKES THE EYE, OR TAKES THE SIGHT IN IT, AND SPARES THE PATIENT
+    NOTHING ELSE.**
+    Enucleation removes the globe: a prosthesis, monocular vision, loss of
+    depth perception and field. Plaque brachytherapy and proton beam keep the
+    globe and usually cost its vision over the following years, through
+    radiation retinopathy, optic neuropathy, cataract and neovascular
+    glaucoma; a substantial fraction of irradiated eyes are at or below legal
+    blindness within a few years, and some are later removed anyway for a
+    blind painful eye. Since COMS showed the two are survival-equivalent, the
+    choice between them is a choice about which permanent toll the patient
+    prefers, and eye-sparing treatment has become standard where it exists.
+    The other eye is unaffected, which is why this is `major` and not
+    `catastrophic`: a person with one good eye drives, reads and works.
+    The metastatic stratum carries a different toll — tebentafusp causes
+    cytokine release syndrome and rash in most patients, largely in the first
+    doses and largely manageable; liver-directed therapies carry the tolls of
+    hepatic surgery and perfusion. Both sit in `strata`.
+  incidence:
+    value: 0.50
+    units: >
+      fraction-of-treated (loss of the eye, or of useful vision in it,
+      attributable to treatment) — near-certain for enucleation, and a
+      majority of irradiated eyes over five to ten years
+    src: recall
+
+# NO `residue` BLOCK, deliberately. The tumour itself damages the retina
+# before treatment — exudative detachment, visual field loss — but that damage
+# cannot be separated from what the radiation then does to the same eye, and
+# splitting one blind eye between `toll` and `residue` would be a false
+# precision. The eye is filed under `toll`, where most of it belongs. The
+# disease leaves nothing else in a patient it was cured in.
+
+window:
+  what: >
+    **A WINDOW FOR THE EYE AND NOT FOR THE LIFE.** Small and medium tumours can
+    be treated with plaque brachytherapy or proton beam and the globe kept;
+    large tumours, or those with extrascleral extension, are enucleated. Caught
+    early, the patient loses vision gradually; caught late, the eye goes at
+    once. Small choroidal melanomas are also hard to tell from benign naevi,
+    and a period of observation for growth is standard — a deliberate delay
+    inside the window, accepted because the survival cost of it is unmeasurable.
+    Whether earlier local treatment prevents metastasis is a genuine dispute.
+    Larger tumours metastasise more, but the metastasising tumours are also the
+    fast-growing, monosomy-3 ones, and modelling of metastasis growth rates
+    suggests seeding years before the primary was detectable. The window
+    recorded here is the one that can be shown: the organ, not survival.
+  closes_on: >
+    tumour growth beyond the size treatable by plaque or proton, ciliary body
+    involvement, extrascleral extension
+  caught_in_time:
+    value: 0.75
+    units: >
+      fraction-of-cases (small or medium at diagnosis, eligible for
+      eye-sparing treatment) — high where routine dilated eye examination is
+      common, lower elsewhere
+    src: recall
+
+strata:
+  - name: low metastatic risk (disomy 3 / class 1; EIF1AX or SF3B1)
+    fraction:
+      value: 0.55
+      units: fraction-of-diagnoses
+      src: recall
+    intervention: curative
+    efficacy:
+      value: 0.90
+      units: fraction-of-stratum (alive without metastasis at ten years)
+      src: recall
+    toll: major
+    what: >
+      Local treatment is the whole treatment and it works. SF3B1-mutant
+      tumours are the caveat inside this stratum — an intermediate group whose
+      metastases arrive late, sometimes past ten years, so "cured" here is a
+      statement about a horizon. **This stratum is where the record's
+      `curative` rating lives.**
+
+  - name: high metastatic risk (monosomy 3 / BAP1 loss / class 2)
+    fraction:
+      value: 0.45
+      units: fraction-of-diagnoses
+      src: recall
+    intervention: disease-modifying
+    efficacy:
+      value: 0.10
+      units: >
+        fraction-of-stratum (durable meaningful benefit — the minority who
+        never metastasise despite the profile, plus the rare long survivors
+        on systemic or liver-directed therapy)
+      src: reasoning
+    toll: major
+    what: >
+      **KNOWN AT DIAGNOSIS TO BE VERY LIKELY TO DIE, AND NOTHING TO OFFER FOR
+      IT.** A large majority develop liver metastases, at a median of a few
+      years and sometimes beyond a decade. Once metastatic, median survival was
+      about a year and chemotherapy never changed it; checkpoint blockade gives
+      single-digit response rates as monotherapy and modest ones in
+      combination, at full immune-related toll. Tebentafusp, for the
+      HLA-A*02:01 half, extends median survival by roughly six months on a
+      weekly infusion for life, with a one-year survival around three-quarters
+      against under two-thirds. Percutaneous hepatic perfusion with melphalan
+      produces responses in the liver without a demonstrated survival benefit.
+      Rated `disease-modifying` on tebentafusp; before 2022 this stratum was
+      `none`, and for the HLA-negative half it still is.
+
+moved:
+  - date: 2001
+    axis: toll
+    from: catastrophic
+    to: major
+    why: >
+      **COMS.** The Collaborative Ocular Melanoma Study randomised medium
+      tumours between enucleation and iodine-125 plaque brachytherapy and
+      found no difference in survival; twelve-year follow-up confirmed it.
+      Until then the standard treatment was removal of the eye, and the
+      Zimmerman hypothesis — that enucleation itself disseminated tumour — had
+      made even that contested. COMS settled both: the eye could be kept
+      without cost to survival, and eye-sparing treatment became the standard
+      wherever it was available. **A toll move with no move on any axis** —
+      the same shape gaps.md #26 records for melanoma's abandoned
+      lymphadenectomy, and here it is the most consequential event in the
+      disease's treatment history.
+    src: recall
+
+  - date: 2022
+    axis: intervention
+    from: none
+    to: disease-modifying
+    why: >
+      **TEBENTAFUSP — the first drug ever to extend survival in metastatic
+      uveal melanoma, and the first bispecific T-cell engager approved for a
+      solid tumour.** A soluble T-cell receptor that binds a gp100 peptide
+      presented on HLA-A*02:01, fused to an anti-CD3 fragment: it drags T cells
+      onto melanocytic cells regardless of how few neoantigens they carry,
+      which is precisely the route around the low mutational burden that
+      defeats checkpoint blockade. Phase 3 against investigator's choice
+      (pembrolizumab, ipilimumab or dacarbazine): one-year survival around
+      73% against 59%, median overall survival longer by roughly six months.
+      Approved by the FDA in January 2022 and in Europe the same year.
+      Three limits, all of which the schema records somewhere. It requires
+      HLA-A*02:01, carried by roughly half of people of European descent and
+      fewer of everyone else. It is given weekly, intravenously, indefinitely.
+      And it moves the METASTATIC STRATUM from `none` to `disease-modifying`
+      while leaving record-level `efficacy` at 0.50 exactly — six months of
+      median survival in a quarter of diagnoses is not a change in the
+      fraction cured. Recorded on `intervention` at record level nonetheless,
+      because the axis the drug moved has no other place to be written.
+    src: recall
+
+witness:
+  mechanism: >
+    `partial`, and the named hole is the half of the disease that kills.
+    THE CHAIN TO THE TUMOUR IS CLEAR. Nearly all uveal melanomas carry an
+    activating mutation in GNAQ or GNA11 — the alpha subunit of a
+    heterotrimeric G protein — or, in the remainder, in CYSLTR2 or PLCB4
+    upstream and downstream of it. Constitutive Gαq signalling drives
+    protein kinase C, the MAP kinase pathway and YAP; the tumour is a
+    one-pathway disease with a low mutational burden and no UV signature. That
+    is the mechanism of *being a melanoma of the eye*.
+    THE CHAIN TO DEATH IS THE HOLE. A second event — loss of one copy of
+    chromosome 3 together with inactivation of BAP1 on the other — separates
+    tumours that metastasise from tumours that do not, with SF3B1 and EIF1AX
+    marking intermediate and low-risk tumours. Nobody can say what BAP1 loss
+    does that confers metastatic competence, why the metastases go almost
+    exclusively to the liver, or how disseminated cells stay dormant for a
+    decade and then grow. **And drugging the known driver has failed**: MEK
+    inhibition (selumetinib) improved response rate and not survival, and PKC
+    inhibitors are still in trials. The register rates a disease `partial`
+    when the chain has a named hole; here the hole is named and is the whole
+    of the mortality.
+  intervention: >
+    `curative`, with the strongest caveat in the register's cancer set: it
+    describes the modal patient, and the modal patient was going to be cured
+    by any local treatment at all, including one from the nineteenth century.
+    Enucleation has cured the low-risk half since before anybody could name
+    it. Plaque brachytherapy and proton beam cure the same half while keeping
+    the globe. Local control exceeds ninety percent by every method.
+    For the high-risk half, `curative` is false and the record's strata say
+    so. Metastatic disease had no treatment that extended life until 2022;
+    tebentafusp now extends it by months in the HLA-eligible subset; liver
+    resection in the rare oligometastatic patient produces some long
+    survivors; nothing cures.
+    The verdict this record earns is the ⧉ flag: **"is uveal melanoma solved"
+    is a malformed question**, because at diagnosis it is two diseases with
+    two answers, and a biopsy tells you which.
+  prevention: >
+    `none`. No modifiable cause is established. Fair skin, light irides,
+    ocular melanocytosis, cutaneous naevi and germline BAP1 mutation raise
+    risk, and none can be acted on except by surveillance. Sunlight is a
+    plausible and unproven contributor — the mutational signature does not
+    show UV damage — so there is no sun-protection lever with evidence behind
+    it. Screening the general population for a disease this rare is not
+    justified; screening BAP1 families is, and finds tumours earlier without
+    demonstrated survival benefit, which is this record's refrain.
+  ongoing: >
+    `low` for the cured. Lifelong ophthalmic follow-up of the treated eye and,
+    for anyone above the lowest risk class, liver imaging every six to twelve
+    months for years — surveillance for a metastasis nobody can prevent, whose
+    early detection has no demonstrated survival benefit, and which patients
+    and clinicians want anyway. The metastatic stratum's weekly indefinite
+    infusion of tebentafusp is `high` and sits there.
+
+holes:
+  - Every scalar is `src: recall` or `src: reasoning`. The incidence and death
+    figures are registry extrapolations; GBD has no line for the disease, so
+    the `sourceable` tier promises more than any source can deliver here.
+  - The `untreated` survival figure has no cohort behind it and is stated as a
+    reasoning from COMS rather than a measurement; it is the register's least
+    defensible untreated number.
+  - The two strata are a simplification of a continuous risk landscape
+    (disomy-3/EIF1AX, SF3B1, monosomy-3/BAP1, plus size and ciliary body
+    involvement); the 0.55/0.45 split is a recalled approximation of the
+    class 1/class 2 proportions.
+  - Whether early local treatment prevents any metastasis at all is a live
+    dispute in the field and the record takes the conservative side (no
+    survival window); if the other side is right, `caught_in_time` and a
+    `diagnosis` blocker would both need rewriting.
+  - Tebentafusp's benefit in non-European populations, where HLA-A*02:01 is
+    less common and the disease rarer, is essentially unstudied.
+  - Conjunctival melanoma — a surface tumour of the eye that behaves like
+    cutaneous melanoma and responds to checkpoint blockade — is a different
+    disease and is deliberately not in this record.
+
+blockers:
+  - kind: knowledge
+    blocks: any treatment of the metastatic half
+    obstacles: []
+    what: >
+      **THE PATIENT WHO WILL DIE CAN BE NAMED AT DIAGNOSIS AND NOTHING CAN BE
+      DONE WITH THE NAME.** What BAP1 loss does to confer metastatic
+      competence, why the liver, and what holds micrometastases dormant for a
+      decade are all open — and the answer to any of them is the adjuvant
+      therapy that every trial so far has failed to find. Downstream of that,
+      the known driver pathway has been drugged and the survival curve did not
+      move. Tebentafusp shows the immune route can be forced open in a
+      low-mutation tumour; extending that beyond one HLA allele, and from
+      months to years, is the open engineering half of the same question.
+      `scale: null`.
+    who_could: [academic, sponsor, manufacturer, philanthropy]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: cost
+    blocks: tebentafusp
+    obstacles: []
+    what: >
+      A patented biologic given weekly for life, priced in the hundreds of
+      thousands of dollars a year, approved in a handful of high-income
+      jurisdictions, for a disease too rare to attract a competitor. The
+      HLA restriction halves the eligible population before price is
+      considered. Even where it is reimbursed, a weekly infusion for the rest
+      of one's life is its own access barrier for anyone far from a centre.
+    who_could: [manufacturer, payer, government, health-system]
+    scale: 1.0e8
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: eye-sparing local treatment
+    obstacles: []
+    what: >
+      Plaque brachytherapy needs a radiation source, a physicist and an
+      ophthalmic surgeon trained to place it; proton beam needs a proton
+      facility. Both are concentrated in a small number of ocular oncology
+      centres, almost all in high-income countries. Elsewhere the treatment is
+      enucleation — survival-equivalent, so this blocker moves `toll` and not
+      `efficacy`, and the register has no place to put a blocker on a toll.
+      For a disease this rare, regional referral centres rather than national
+      ones are the plausible answer, and the volume to sustain them is thin.
+    who_could: [health-system, government, nonprofit]
+    scale: 1.0e8
+    standing: documented
+    src: recall
+
+  - kind: evidence-incomplete
+    blocks: surveillance and liver-directed therapy for metastasis
+    obstacles: []
+    what: >
+      Systematic liver imaging after treatment is near-universal for higher
+      risk patients and has never been shown to extend life — it finds
+      metastases earlier and, until tebentafusp, there was nothing to give
+      earlier. Percutaneous hepatic perfusion with melphalan produced a high
+      response rate in the liver in a randomised trial and no overall survival
+      benefit, in part because of crossover; whether liver-directed therapy
+      extends life remains unsettled after two decades of use. Both are
+      practised on the strength of their plausibility, and the trials that
+      would decide either are hard to run in a disease of a few thousand cases
+      a year.
+    who_could: [academic, sponsor, nonprofit, regulator]
+    scale: 5.0e7
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0145
+  rated: 2026-09-06
+  by: [claude]

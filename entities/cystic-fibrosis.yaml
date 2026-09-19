@@ -1,0 +1,676 @@
+slug: cystic-fibrosis
+id: FND-D-0090
+name: cystic fibrosis
+also: [CF, mucoviscidosis, CFTR-related disease]
+mondo: MONDO:0009061
+kind: disease
+residual: false
+contested: false
+
+# QUEUED AS "gaps.md #151's SHARPEST INSTANCE AHEAD" — a stratum transformed
+# while the record-level scalar hides it, as MDR-TB's transformation hid inside
+# `tuberculosis`.
+#
+# IT IS THE INVERSE, AND THE INVERSE IS MORE INTERESTING. #151's case is a small
+# stratum transformed and averaged away. Here the modulators reached roughly NINE
+# IN TEN patients, so the record moves enormously — and **the tenth is left in a
+# worse position than before**, because the trial population, the market, the
+# comparator and the field's attention all followed the majority out (gaps.md
+# #190).
+#
+# It is also the only `predictive: good` record whose test never expires, and its second
+# `moved` entry on the `mechanism` axis — CFTR was cloned in 1989 and took
+# twenty-three years to produce a drug, by a route nobody predicted.
+
+burden:
+  prevalence:
+    value: 1.05e5
+    units: >
+      people diagnosed with cystic fibrosis worldwide — **and the true number is
+      higher.** CF was long considered a disease of European-ancestry
+      populations, and it is substantially under-diagnosed in South Asia, the
+      Middle East and Latin America, where the mutation spectrum differs and
+      newborn screening mostly does not exist
+    src: recall
+  deaths:
+    value: 2.0e3
+    units: >
+      deaths/year, order of magnitude — **and this figure is collapsing, which is
+      the record's whole story.** Median predicted survival has gone from around a
+      decade in the 1960s to beyond fifty years for a child born today in a
+      high-income country
+    src: reasoning
+  note: >
+    **THERE ARE NOW MORE ADULTS THAN CHILDREN WITH CYSTIC FIBROSIS, AND THAT
+    SENTENCE DESCRIBES A DIFFERENT DISEASE FROM THE ONE THE TEXTBOOKS DEFINED.**
+    CF was a paediatric illness that killed in childhood. It is becoming a chronic
+    adult condition, and the content of the record changed with it: **CF-related
+    diabetes** in a large share of adults, male infertility that now matters
+    because men with CF expect to have children, pregnancy in women on modulators,
+    transplantation, and the ordinary problems of ageing in lungs that started
+    damaged.
+    **Success created new disease inside one record** — gaps.md #147 operating
+    within an entity rather than between them — and the register stores an undated
+    snapshot of an entity whose strata, `ongoing` and `residue` all move as
+    survival extends.
+
+survival:
+  horizon: 30 years from birth
+  untreated:
+    value: 0.0
+    units: >
+      fraction alive — **in the 1950s most children with cystic fibrosis died
+      before school age**; the disease was named in the 1930s as a paediatric
+      pathology finding
+    src: recall
+  treated:
+    value: 0.90
+    units: >
+      fraction alive at thirty in high-income settings. Predicted median survival
+      for a child born today with access to modulators is past sixty, a figure
+      that has moved within the last decade
+    src: recall
+  witness: >
+    **A TRANSITION THAT HAPPENED BY ACCUMULATION AND THEN BY A DRUG.** Airway
+    clearance, pancreatic enzymes, nutrition, antibiotics and specialist centres
+    moved survival from early childhood into adulthood **before anybody knew what
+    the gene was.** Modulators then moved it again from 2012. The record's `moved`
+    block shows both, and only the second is usually remembered.
+
+axes:
+  mechanism: established
+  intervention: suppressive
+  prevention: risk-reduction
+  ongoing: high
+  efficacy:
+    value: 0.80
+    units: >
+      fraction-of-patients (substantial and sustained improvement on modulator
+      therapy) — **and the number is a genotype, not a response rate.** Roughly
+      nine in ten carry a mutation the drugs correct, and roughly one in ten carry
+      one they cannot touch at all
+    src: reasoning
+  access:
+    value: 0.35
+    units: >
+      fraction-of-patients (receiving modulator therapy) — a drug listing above
+      three hundred thousand dollars a year, in a disease that is
+      under-diagnosed across most of the world
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: good
+  witness: >
+    **DIAGNOSTIC IS `objective` AND UNUSUALLY COMPLETE.** Newborn screening —
+    immunoreactive trypsinogen followed by a DNA panel — identifies most cases in
+    the first weeks of life in high-income countries; the sweat chloride test has
+    been definitive since the 1950s; and genotyping names the exact defect. **A
+    baby can be diagnosed before symptoms exist**, which is the precondition for
+    everything in `window`.
+    It has produced its own boundary problem. Screening finds infants with
+    abnormal results who do not meet diagnostic criteria — **CFSPID, or CF
+    screen-positive inconclusive diagnosis** — some of whom will develop
+    CFTR-related disease and most of whom will not. A genetic disease has acquired
+    an overdiagnosis category, which is not what anybody expected of a monogenic
+    condition.
+    PROGNOSTIC is `partial`. Genotype predicts pancreatic status well and lung
+    disease badly; **siblings with identical mutations have markedly different
+    courses**, driven by modifier genes, infection history and something nobody has
+    named. Lung function and *Pseudomonas* status predict at population level.
+    **PREDICTIVE IS `good` — one of ten records — AND IT IS THE ONLY ONE WHOSE
+    TEST IS DONE ONCE AND NEVER CHANGES.** `cre` and `tuberculosis` also rate
+    `good` on susceptibility testing, and those answers expire: the organism
+    evolves, so the test must be repeated and can be defeated (gaps.md #149).
+    **A CFTR genotype is fixed at conception and the answer holds for life.**
+    Genotype determines modulator eligibility almost deterministically: gating
+    mutations respond to a potentiator, F508del needs correctors as well, and
+    nonsense and severe splice mutations produce no protein for a modulator to act
+    on and respond to nothing. **This is what precision medicine was supposed to
+    look like** — a genetic test that names the drug — and it is rare enough in
+    this corpus to be worth stating plainly.
+    **And it cuts the other way with equal precision.** The same test that
+    identifies who will benefit identifies who cannot, permanently, at birth.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    **THE TOLL COLLAPSED WHEN THE MODULATORS ARRIVED, AND THE REGISTER SHOULD SAY
+    WHAT IT REPLACED.**
+    Before them, treatment was airway clearance physiotherapy twice a day,
+    nebulised antibiotics and mucolytics, pancreatic enzymes with every meal, fat
+    soluble vitamins, and repeated courses of intravenous antibiotics — commonly
+    two to four hours of daily treatment for a lifetime. That is `ongoing` rather
+    than `toll`, and it was the dominant fact of a person's day.
+    **The modulators themselves are comparatively benign**: transaminase
+    elevation requiring monitoring, drug interactions through CYP3A4, **cataracts
+    reported in paediatric patients**, and a signal for anxiety, depression and
+    insomnia that emerged after approval and is being characterised in registries
+    rather than in trials.
+    **Lung transplantation** is the other end and carries the register's usual
+    transplant toll — lifelong immunosuppression, malignancy risk, calcineurin
+    nephrotoxicity — with the specific complication that chronic *Burkholderia
+    cepacia* infection is a contraindication in many programmes, so an organism
+    acquired years earlier can disqualify somebody.
+    Rated `minor` for the modal patient today, which would have been an absurd
+    rating fifteen years ago.
+  incidence:
+    value: 0.01
+    units: >
+      fraction-of-treated (permanent harm from treatment) — a reasoned estimate
+      under modulator therapy, and far higher for the transplanted minority
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    **MODULATORS PRESERVE LUNG FUNCTION. THEY DO NOT RESTORE IT.**
+    Bronchiectasis — permanently widened, scarred, chronically infected airways —
+    is the end state of years of obstruction and inflammation, and it does not
+    reverse. A person who began modulator therapy at twenty-five with an FEV1 of
+    forty percent gains a substantial improvement and does not get back to normal.
+    A child started at two may never develop the damage at all. **The same drug,
+    the same genotype, two different lives, and the variable is when it started**
+    — which is why this record's `window` and its `residue` are the same fact.
+    Also permanent: **pancreatic insufficiency**, established in most patients
+    before birth or in infancy, requiring enzyme replacement with every meal for
+    life regardless of modulator response. **Male infertility** from congenital
+    absence of the vas deferens, affecting more than nineteen in twenty men with
+    CF — which was invisible when the disease killed in childhood and is now a
+    central concern of adult care.
+    And **CF-related diabetes**, which develops in a large share of adults and is
+    a consequence of surviving long enough to get it.
+  incidence:
+    value: 0.30
+    units: >
+      fraction-of-patients (permanent structural lung damage or established
+      pancreatic and endocrine disease) — a reasoned estimate, **and falling
+      steeply in cohorts treated from early childhood**
+    src: reasoning
+
+window:
+  what: >
+    **THIS IS THE CLEANEST WINDOW IN THE REGISTER, BECAUSE THE DISEASE, THE TEST
+    AND THE DRUG ALL EXIST AND THE ONLY VARIABLE IS TIMING.**
+    Newborn screening identifies CF in the first weeks of life. Modulators correct
+    the defective protein. Lung damage accumulates from infancy — infection,
+    inflammation, bronchiectasis — and does not reverse. **So the value of the
+    drug is a function of how much lung is left when it starts**, and starting it
+    in a two-year-old with normal lungs is a different intervention from starting
+    it in an adult with established bronchiectasis, even though it is the same
+    tablet.
+    Modulator licensing has been extended progressively downward — to children,
+    then to toddlers — on exactly this reasoning, and the long-term question is
+    whether a child treated from age two ever develops the disease's structural
+    consequences at all. **Nobody will know for forty years** (gaps.md #191).
+    **The window closes differently for the untreatable tenth.** For them the
+    relevant timing is transplant referral, and the damage accrues on the old
+    trajectory while the rest of the cohort's improves — so their outcomes are now
+    being compared, in clinics and in registries, against a standard they cannot
+    reach.
+  closes_on: >
+    accumulating bronchiectasis and irreversible airway damage — years, beginning
+    in infancy
+  caught_in_time:
+    value: 0.50
+    units: >
+      fraction-of-patients (started on effective therapy before substantial
+      structural lung damage) — a reasoned estimate, high in countries with
+      newborn screening and funded modulators and near zero elsewhere
+    src: reasoning
+
+strata:
+  - name: modulator-responsive genotype
+    fraction:
+      value: 0.88
+      units: fraction-of-people-with-CF
+      src: reasoning
+    intervention: suppressive
+    efficacy:
+      value: 0.85
+      units: fraction-of-stratum (substantial sustained improvement while treated)
+      src: reasoning
+    toll: minor
+    what: >
+      **Nine in ten, and the transformation is genuine.** Triple modulator therapy
+      produces large gains in lung function, near-normalisation of sweat chloride,
+      weight gain, and a substantial fall in exacerbations. Transplant referrals
+      and CF-attributed deaths have fallen sharply in countries that funded it.
+      It is `suppressive` rather than curative: the mutation is untouched, the
+      protein misfolds again if the drug stops, and it must be taken for life from
+      as early as it can be started.
+
+  - name: non-responsive genotype
+    fraction:
+      value: 0.10
+      units: fraction-of-people-with-CF
+      src: reasoning
+    intervention: symptomatic
+    efficacy:
+      value: 0.25
+      units: fraction-of-stratum (meaningful benefit from available treatment)
+      src: reasoning
+    toll: minor
+    what: >
+      **Nonsense mutations, severe splice defects and rare variants that produce
+      no CFTR protein for a modulator to correct.** They get the pre-2012 disease:
+      airway clearance, nebulised antibiotics, enzymes, and eventually transplant.
+      **Their position got worse when everyone else's improved** — the trial
+      population fragmented, the commercial case shrank, and the comparator
+      required to test anything new is now a standard of care they cannot achieve
+      (gaps.md #190). Readthrough agents have failed; messenger RNA delivery and
+      gene editing are the live routes and none is approved.
+
+  - name: advanced lung disease requiring transplantation
+    fraction:
+      value: 0.02
+      units: fraction-of-people-with-CF
+      src: reasoning
+    intervention: disease-modifying
+    efficacy:
+      value: 0.60
+      units: fraction-of-stratum (five-year survival after transplant)
+      src: reasoning
+    toll: major
+    what: >
+      Bilateral lung transplantation, with the register's standard transplant
+      costs — lifelong immunosuppression, malignancy risk, and a graft with a
+      finite life. **This stratum is shrinking fast** in countries with funded
+      modulators, which is the clearest single measure of what the drugs did.
+
+moved:
+  - date: 1989
+    axis: mechanism
+    from: correlates
+    to: established
+    why: >
+      **CFTR WAS CLONED IN 1989 AND IT TOOK TWENTY-THREE YEARS TO PRODUCE A DRUG,
+      BY A ROUTE NOBODY PREDICTED. THIS IS THE REGISTER'S SECOND `mechanism` MOVE**
+      (gaps.md #183).
+      Positional cloning identified the gene on chromosome 7 without knowing the
+      protein, one of the founding triumphs of human genetics, and established that
+      cystic fibrosis is caused by defects in a chloride channel at the epithelial
+      surface. The expectation at the time was explicit and universal: **the cure
+      would be gene therapy, and it would take a few years.**
+      It did not. Gene therapy trials began in 1993 and have continued for three
+      decades — dozens of them, viral and non-viral — and **none has produced an
+      approved product.** The lung defeated them: a mucus barrier, immune responses
+      to repeated vector dosing, and an epithelium that turns over.
+      What worked instead was **small-molecule protein chemistry found by
+      high-throughput screening** — compounds that help a misfolded protein fold
+      and open. Nobody proposed that in 1989.
+      **So this entry is exactly what #183 asked for: a mechanism move, and the
+      record of what it bought.** It bought everything, eventually, twenty-three
+      years later, through a door nobody was looking at.
+    src: recall
+
+  - date: 2012
+    axis: intervention
+    from: symptomatic
+    to: suppressive
+    why: >
+      **THE FIRST DRUG TO TREAT THE CAUSE OF CYSTIC FIBROSIS RATHER THAN ITS
+      CONSEQUENCES, AND IT WORKED IN FOUR PERCENT OF PATIENTS.**
+      Ivacaftor is a potentiator: it holds open CFTR channels that reach the cell
+      surface and fail to conduct. That describes gating mutations — principally
+      G551D — which are carried by roughly one patient in twenty-five. In them the
+      effect was unmistakable: sweat chloride falling toward normal, lung function
+      up, weight gain, in a disease where nothing had ever moved the underlying
+      defect.
+      **The financing is as notable as the pharmacology and is the register's
+      clearest case of a patient organisation buying its own cure.** The Cystic
+      Fibrosis Foundation invested on the order of a hundred and fifty million
+      dollars of philanthropic money into the research when no company would carry
+      it, and sold the resulting royalty rights in 2014 for **$3.3 billion.**
+      Venture philanthropy by a disease foundation, at a scale nobody had attempted,
+      and it produced the drugs.
+      **And the drugs then listed at over three hundred thousand dollars a year**,
+      which is the uncomfortable half of the same story and the subject of the
+      `cost` blocker below.
+    src:
+      id: PMID:22047557 doi:10.1056/NEJMoa1105185
+      retrieved: 2026-08-26
+      quote: >
+        Ivacaftor was associated with improvements in lung function at 2 weeks that
+        were sustained through 48 weeks. Substantial improvements were also
+        observed in the risk of pulmonary exacerbations, patient-reported
+        respiratory symptoms, weight, and concentration of sweat chloride.
+
+  - date: 2019
+    axis: efficacy
+    from: 0.25
+    to: 0.80
+    why: >
+      **THE TRIPLE COMBINATION TOOK ELIGIBILITY FROM FOUR PERCENT TO ROUGHLY
+      NINETY, AND IT IS THE LARGEST SINGLE JUMP IN ANY EFFICACY FIGURE IN THIS
+      REGISTER.**
+      Adding two correctors — molecules that help the misfolded F508del protein
+      reach the cell surface at all — to the original potentiator produced a
+      regimen effective in anybody carrying at least one copy of F508del, which is
+      around nine in ten patients. Lung function rose by well over ten percentage
+      points, exacerbations fell by around two thirds, and sweat chloride
+      approached the normal range.
+      In countries that funded it, transplant referrals and deaths fell within a
+      few years, and clinics began reporting a problem nobody had planned for:
+      **adults whose lives had been organised around dying now needed help
+      planning careers.**
+      **The record's `efficacy` moved from 0.25 to 0.80 and the untreatable tenth
+      did not move at all.** gaps.md #151 predicted this record would show a
+      transformation hidden by a record-level average; it shows the opposite, and
+      the opposite is worse for the people it leaves out (gaps.md #190).
+    src:
+      id: PMID:31697873 doi:10.1056/NEJMoa1908639
+      retrieved: 2026-08-26
+      quote: >
+        Elexacaftor-tezacaftor-ivacaftor was efficacious in patients with cystic
+        fibrosis with Phe508del-minimal function genotypes, in whom previous CFTR
+        modulator regimens were ineffective. (Funded by Vertex Pharmaceuticals;
+        VX17-445-102 ClinicalTrials.gov number, NCT03525444.).
+
+witness:
+  mechanism: >
+    `established`, and it is one of the most completely understood diseases in
+    this register — a single gene, a known protein, a known ion, and drugs
+    designed against the specific way each mutation class breaks it.
+    **CFTR is a chloride and bicarbonate channel** at the apical surface of
+    secretory epithelia. Without functioning channels, airway surface liquid is
+    depleted and its bicarbonate content falls; mucus becomes thick, acidic and
+    poorly cleared; and the airway is chronically infected — *Staphylococcus
+    aureus* early, then *Pseudomonas aeruginosa*, sometimes *Burkholderia cepacia*
+    complex. Neutrophilic inflammation destroys airway walls and produces
+    **bronchiectasis**, which is the permanent damage in `residue`. The same defect
+    obstructs pancreatic ducts before birth in most patients, blocks the vas
+    deferens, and thickens intestinal contents.
+    **The mutation classes matter because they determine the drug.** Class I —
+    nonsense and severe splice mutations — produce no protein at all. Class II,
+    which includes **F508del**, produce protein that misfolds and is degraded
+    before reaching the surface. Class III, including G551D, reach the surface and
+    fail to open. **Potentiators open channels that are present; correctors help
+    them arrive.** Nothing helps a channel that was never made.
+    **THE NAMED HOLE IS THE ONE EVERYBODY EXPECTED TO SOLVE FIRST.** The gene has
+    been known since 1989 and there is still no gene therapy — the lung's mucus
+    barrier, immune responses to repeated vector dosing, and epithelial turnover
+    have defeated three decades of attempts. And modifier genetics remains open:
+    siblings with identical CFTR genotypes have markedly different lung disease,
+    and nobody can say why.
+  intervention: >
+    `suppressive`, and the word is carrying an unusually large amount of
+    transformation.
+    **CFTR modulators** correct the protein defect. Triple therapy reaches roughly
+    nine in ten patients and produces large, sustained improvements in lung
+    function, nutrition and exacerbation rate. **The mutation is untouched** —
+    stop the drug and the protein misfolds again — which is what places this on the
+    `suppressive` rung rather than higher.
+    Around it, the pre-modulator apparatus continues and is not obsolete: airway
+    clearance, nebulised mucolytics and antibiotics, pancreatic enzyme
+    replacement, fat-soluble vitamins, aggressive treatment of exacerbations,
+    nutritional support, and **lung transplantation** for advanced disease.
+    **WHAT DOES NOT EXIST IS A CURE, AND THE ROUTE EVERYBODY EXPECTED IS THE ONE
+    THAT FAILED.** Gene therapy has been in trials since 1993 with no approved
+    product. Gene editing and messenger RNA delivery are the current attempts, and
+    they matter most for the tenth of patients no modulator can help — a population
+    that is now small, dispersed, and harder to run a trial in than it was before
+    the modulators arrived.
+  prevention: >
+    `risk-reduction`, matching `sickle-cell`, and **the rating is recording
+    something ethically different from a vaccine and the axis cannot say so.**
+    Nothing prevents cystic fibrosis in a person who has it. What exists is carrier
+    screening — offered to couples in several countries and to specific
+    populations where carrier frequency is high — together with prenatal diagnosis
+    and preimplantation genetic testing. Where such programmes are established, the
+    birth incidence of CF has fallen.
+    **That is prevention of a birth rather than prevention of a disease**, it
+    involves a decision that belongs entirely to prospective parents, and it sits
+    beside the reproductive questions gaps.md #159 raised at
+    `maternal-haemorrhage`. The register records it in the same field it uses for
+    a bed net. **This file states the rating and declines to treat it as
+    equivalent.**
+    The intervention that functions as prevention of *damage* is **newborn
+    screening**, which is real, cheap, and the precondition for everything in
+    `window` — and which most of the world does not do.
+  ongoing: >
+    `high`, and it improved dramatically without becoming light.
+    Before modulators: airway clearance twice daily, nebulised therapies,
+    pancreatic enzymes with every meal and snack, vitamins, frequent clinic
+    attendance, and repeated multi-week courses of intravenous antibiotics —
+    commonly two to four hours of treatment every day, from infancy, forever.
+    **On modulators it is a tablet twice a day plus most of the above**, because
+    the pre-existing damage still needs managing and few patients have safely
+    stopped airway clearance. What changed is the frequency of exacerbations and
+    the trajectory, not the daily apparatus.
+    **And a new `ongoing` burden appeared with survival**: CF-related diabetes
+    requiring insulin, fertility treatment for men who are almost universally
+    infertile, pregnancy management, and the mental health consequences of a life
+    reorganised around an ending that no longer applies.
+
+holes:
+  - >
+    **`efficacy: 0.80` is a genotype frequency wearing a response rate's
+    clothing.** Roughly nine in ten patients carry a mutation the drugs correct and
+    roughly one in ten carry one they cannot touch at all. The number is not "how
+    well does it work" — it is "how many people have the right mutation", and the
+    schema has one field for both.
+  - >
+    **The deaths figure is collapsing and the record stores one value.** Median
+    predicted survival has moved from a decade to beyond fifty years, more adults
+    than children now have CF, and every scalar here is dated implicitly to a
+    moment in a fast-moving trajectory (gaps.md #91).
+  - >
+    **Under-diagnosis outside high-income countries is unquantified and probably
+    large.** CF was long treated as a European-ancestry disease; the mutation
+    spectrum differs elsewhere, panels are built around F508del, and newborn
+    screening is absent. **The prevalence figure is partly a map of who screens.**
+  - >
+    `prevention: risk-reduction` covers carrier screening and reproductive choice,
+    which is not the same kind of object as a prophylactic drug, and the axis
+    cannot distinguish them.
+  - >
+    **The long-term outcome of treating a two-year-old for sixty years is
+    unknown and unknowable within any trial** (gaps.md #191). Approval rested on
+    lung function and sweat chloride; the question that matters is whether such a
+    child develops the disease at all, and the answer arrives around 2080.
+  - >
+    Every scalar is `recall` or `reasoning`, in a disease with unusually good
+    national registries.
+
+blockers:
+  - kind: cost
+    blocks: three hundred thousand dollars a year, for life, from childhood
+    obstacles: []
+    what: >
+      **A DISEASE FOUNDATION FUNDED THE RESEARCH, SOLD THE ROYALTIES FOR $3.3
+      BILLION, AND THE DRUG LISTS ABOVE $300,000 A YEAR.**
+      Both halves are true and the register should hold them together. The Cystic
+      Fibrosis Foundation's venture philanthropy model put roughly $150 million
+      into the science when no company would, and it produced three approved drugs
+      — the clearest demonstration in this corpus that a patient organisation can
+      buy its own cure (gaps.md #188). It then sold the royalty stream, and the
+      product was priced at a level that has produced multi-year standoffs between
+      the manufacturer and national payers.
+      **The standoffs are the specific harm, because this record has a window.**
+      England's dispute over an earlier modulator ran for roughly three years
+      before resolution; comparable negotiations elsewhere took years more.
+      Modulators preserve lung function and do not restore it, so **every year of
+      negotiation is permanent lung damage in a cohort of children**, and the
+      register's `cost` blocker records a price rather than an accruing loss.
+      Lifetime cost per patient runs into eight figures at list. That arithmetic
+      is unavoidable in a chronic monogenic disease with a small population, and
+      it is the central test case for whether orphan-drug pricing is sustainable
+      when the orphan drug works.
+    who_could: [manufacturer, payer, government, regulator, patient-org]
+    scale: 5.0e9
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: the tenth of patients no modulator can reach
+    obstacles: [cell-targeting]
+    what: >
+      **NONSENSE AND SEVERE SPLICE MUTATIONS PRODUCE NO CFTR PROTEIN, AND A
+      MODULATOR CANNOT CORRECT A PROTEIN THAT WAS NEVER MADE.**
+      Roughly one patient in ten is in this position. They receive the pre-2012
+      disease and its trajectory, in clinics where everybody else's trajectory has
+      changed.
+      The candidate routes are real and none is approved. **Readthrough agents**,
+      intended to make the ribosome ignore a premature stop codon, have been tried
+      and failed. **Messenger RNA delivery** to airway epithelium would supply the
+      protein directly and faces the same barrier that defeated gene therapy — mucus,
+      immunity, epithelial turnover. **Gene editing** would fix the sequence and is
+      early.
+      **And the problem is now harder than it was before the modulators worked**
+      (gaps.md #190): the eligible trial population is a tenth of a rare disease and
+      geographically dispersed; the commercial case shrank with it; and the
+      comparator against which any new therapy must be judged is a standard of care
+      these patients cannot reach.
+      **Thirty-five years after the gene was cloned, the people who need a genetic
+      therapy most are the ones for whom nothing exists.**
+      `scale: null`.
+    who_could: [academic, sponsor, manufacturer, philanthropy, patient-org]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    blocks: a disease that is not looked for outside the places that named it
+    obstacles: []
+    what: >
+      **CYSTIC FIBROSIS WAS CLASSIFIED AS A DISEASE OF EUROPEAN-ANCESTRY
+      POPULATIONS AND THE CLASSIFICATION BECAME SELF-CONFIRMING.**
+      Diagnostic panels are built around F508del and the mutations common in
+      European populations. In South Asia, the Middle East, Africa and Latin
+      America the mutation spectrum is different, panels miss cases, newborn
+      screening is largely absent, and children present with malnutrition and
+      recurrent chest infections that are attributed to more common causes and
+      frequently to tuberculosis. **A disease you do not screen for, using a panel
+      built elsewhere, in children whose symptoms have a commoner explanation, is a
+      disease you will conclude is rare.**
+      The consequence compounds with the `window`: a child diagnosed at seven with
+      established bronchiectasis has already lost what modulators would have
+      preserved, and may not carry a mutation the available panel would have
+      detected anyway.
+      **Newborn screening is cheap, established, and absent from most of the
+      world.** Where it exists it created its own boundary problem — infants with
+      abnormal screens and inconclusive diagnoses — which is a real cost and a much
+      smaller one than not looking.
+    who_could: [health-system, government, academic, manufacturer, nonprofit]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+  - kind: evidence-incomplete
+    blocks: knowing what a lifetime of this drug does, when the answer arrives in 2080
+    obstacles: [validation-throughput]
+    what: >
+      **A TWO-YEAR-OLD STARTING A MODULATOR TODAY WILL TAKE IT FOR SIXTY YEARS,
+      AND THE OUTCOME THAT MATTERS CANNOT BE MEASURED INSIDE ANY TRIAL** (gaps.md
+      #191).
+      Approval rested on lung function, sweat chloride and exacerbation rate over
+      months. The question everybody actually has is whether a child treated from
+      infancy develops bronchiectasis, pancreatic insufficiency and CF-related
+      diabetes at all, or has a normal life — **and the answer arrives around
+      2080**, decades after the patent, the pricing decision and the clinical
+      convention are all settled.
+      Specific things that are unknown and answerable only by waiting: whether
+      airway clearance can safely be stopped in a child who never developed
+      structural damage; whether the mental health signal is causal; what happens
+      to fertility and to pregnancy outcomes across a generation; and whether
+      modulator benefit attenuates over decades.
+      **Registries are the only instrument that works on this timescale**, which
+      makes them infrastructure rather than research, and they are funded as
+      research. That is gaps.md #164's shape — a capability that improves every
+      question in the record and belongs to no trial.
+      **Tagged `validation-throughput` (2026-09-02) as its time face, which is
+      the one nothing on the discovery side touches.** However many candidates
+      can be generated, the question *what does forty years of this drug do* is
+      answered by forty years. There is no compression available except a
+      surrogate endpoint, and the obstacle's own `why_hard` lists four drugs
+      approved on surrogates in this register and subsequently withdrawn.
+      What a wider gate could buy here is narrow and real: a standing registry
+      with prospective randomisation embedded in routine care answers
+      long-horizon questions decades earlier than a series of fixed trials does.
+      **It does not shorten the horizon** — claiming otherwise would be the
+      surrogate mistake again — it stops the horizon being restarted every time a
+      new question is asked.
+    who_could: [academic, sponsor, regulator, patient-org, health-system]
+    scale: 5.0e8
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: a specialist centre, and everything that goes with it
+    obstacles: []
+    what: >
+      Cystic fibrosis care is delivered by multidisciplinary specialist centres —
+      respiratory physicians, physiotherapists, dietitians, specialist nurses,
+      microbiology capable of tracking *Pseudomonas* and *Burkholderia*, and
+      infection control strict enough to keep patients from cross-infecting one
+      another, which is why people with CF are kept physically apart from each
+      other in clinics and at events.
+      Centre-based care measurably improves outcomes and requires a population
+      large enough to justify a centre. **In countries where CF is rare, or rarely
+      diagnosed, that population does not exist** — so patients are managed by
+      general services without the specific expertise, which is the pattern across
+      most of the world.
+      The transition from paediatric to adult services is its own documented
+      failure point, and it barely existed as a problem thirty years ago because
+      few patients reached it.
+      **And as survival extends, the required expertise widens**: endocrinology for
+      CF-related diabetes, fertility services, obstetrics, transplant medicine,
+      mental health. A disease that was managed by paediatricians now needs a
+      hospital.
+    who_could: [health-system, government, payer, academic, nonprofit]
+    scale: 2.0e9
+    standing: documented
+    src: recall
+
+  - kind: candidate-untested
+    blocks: an organism that can cost a patient the transplant that would save them
+    obstacles: []
+    what: >
+      **THE INFECTION THIS RECORD DOES NOT NAME, AND THE ONE WITH NO ANSWER.**
+      The witness follows the classical progression — *Staphylococcus aureus*,
+      then *Pseudomonas aeruginosa*, sometimes *Burkholderia cepacia*. It omits
+      ***Mycobacterium abscessus***, a rapidly-growing nontuberculous
+      mycobacterium now found in something like one CF patient in ten, and
+      **intrinsically resistant to almost everything, including the
+      antituberculous drugs its name suggests.** Treatment is twelve to eighteen
+      months of multi-drug therapy including intravenous amikacin, with cure
+      rates around a third to a half and aminoglycoside deafness as a routine
+      price.
+      **At many centres it is a relative or absolute contraindication to lung
+      transplantation** — so an untreatable infection can cost a patient the
+      operation that would have saved them. That is a distinct shape from the
+      rest of this record's blockers, which are about money, geography and
+      access to a drug that exists.
+      **AND IT IS WHERE PHAGE THERAPY HAS ITS SINGLE MOST STRIKING CASE.** In
+      2019 a fifteen-year-old with cystic fibrosis and disseminated
+      *M. abscessus* after bilateral lung transplant was treated with a
+      three-phage cocktail — two of them genetically engineered to be lytic by
+      deleting a repressor — with dramatic clinical improvement, reported in
+      *Nature Medicine*. It is the most-cited phage result in modern medicine.
+      **The honest counterweight belongs beside it and is usually omitted.** The
+      subsequent compassionate-use series was mixed: some clear responses, some
+      none, neutralising antibodies to the phages in a proportion of patients,
+      and — the finding that matters most for anyone thinking of funding this —
+      **a suitable phage could not be found at all for a substantial share of
+      isolates screened.** The personalisation problem is not theoretical; it is
+      quantified, and it says that not every patient has a phage.
+      So this is `candidate-untested` rather than `knowledge`: **the candidate
+      exists, has been given to humans, and has documented individual responses
+      with no controlled trial for this indication.** Compare `amr-infection`,
+      which files the same modality as `regulatory` and `disputed` — the same
+      therapy, two blocker kinds, because the two records are waiting for
+      different things. That record wants an evidence and manufacturing
+      framework; this one wants a phage that matches this patient's organism.
+    who_could: [academic, sponsor, philanthropy, regulator, health-system]
+    scale: 1.5e8
+    standing: documented
+    src: reasoning
+
+assertion:
+  id: FND-A-0091
+  rated: 2026-08-25
+  by: [claude, jeremy]

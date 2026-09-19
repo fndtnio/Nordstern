@@ -1,0 +1,481 @@
+slug: measles
+id: FND-D-0049
+name: measles
+also: [rubeola, morbilli]
+mondo: MONDO:0004619
+kind: disease
+residual: false
+contested: false
+
+# THE MOST PREVENTABLE DISEASE IN THIS REGISTER, FILED UNDER "UNDERSTOOD, AND
+# NOTHING CAN BE DONE".
+#
+# A two-dose vaccine that is about 97% effective, off patent, in use since 1963,
+# costing a couple of dollars. It eliminated measles from the entire American
+# continent. Deaths fell from roughly 2.6 million a year before the vaccine to
+# about a hundred thousand.
+#
+# `intervention: symptomatic` — because there is no antiviral and never has been
+# — so `capability()` reads `unsolved` and the quadrant reads
+# `engineering problem`. **gaps.md #66 has had three arguments (dengue, rabies,
+# dracunculiasis) and this is the one that should end it.** Prevention is not
+# merely present here; it is the entire disease.
+#
+# AND IT IS GOING BACKWARDS. Coverage has not recovered from the pandemic and
+# hesitancy has grown; global first-dose coverage sits around 83% against a herd
+# immunity threshold of **95%**, which measles needs because it is the most
+# contagious human disease known. Cases and deaths are rising, and countries
+# that had eliminated it have lost that status.
+#
+# So this record carries the second BACKWARDS `moved` entry in the register,
+# after yaws in 1964 — and it is the first written while it was happening.
+#
+# TWO OTHER FIRSTS:
+#
+# 1. **THE FIRST `refuted` BLOCKER IN 175.** The claim that MMR causes autism is
+#    the reason a large share of refusal exists, and it is false. `standing`
+#    exists to test claims rather than echo them, and a register that only ever
+#    finds `documented` blockers is campaigning.
+#
+# 2. **IMMUNE AMNESIA.** Measles destroys existing immunological memory — the
+#    antibody repertoire built up against everything else — and elevates
+#    mortality from OTHER infections for two to three years afterwards. The harm
+#    lands in other entities and no field here can hold it (gaps.md #100).
+
+burden:
+  prevalence:
+    value: 1.0e7
+    units: >
+      estimated cases/year worldwide — an order of magnitude, and heavily
+      under-reported: confirmed case counts are a fraction of modelled incidence
+    src: recall
+  deaths:
+    value: 1.1e5
+    units: >
+      deaths/year — RISING. Down from roughly 2.6 million a year before the
+      vaccine and from about 535,000 in 2000, and up again from the low reached
+      in the late 2010s
+    src: recall
+  note: >
+    **THE MOST CONTAGIOUS HUMAN DISEASE KNOWN**, with a basic reproduction
+    number usually cited between 12 and 18 — the highest of anything in this
+    register, and the fact from which everything else follows.
+    An infected person leaves virus suspended in the air of a room for up to two
+    hours after leaving it. In a fully susceptible population one case becomes a
+    dozen or more.
+    A high R0 sets a high herd immunity threshold — roughly 1 − 1/R0, which for
+    measles is about **95%** — and that number is not a matter of judgement. It
+    is arithmetic on the pathogen's own transmissibility. **Unlike every other
+    threshold in this register (gaps.md #90), nobody voted on it.**
+    Which makes measles the sentinel. It requires the highest coverage of any
+    vaccine-preventable disease, so **it is the first thing to return when
+    vaccination slips**, and its resurgence is a measurement of a health system
+    rather than of a virus.
+    Deaths are concentrated in unvaccinated children under five, and heavily in
+    malnourished ones.
+
+survival:
+  course: acute
+  horizon: 30 days from rash onset
+  untreated:
+    value: 0.985
+    units: >
+      fraction alive — case fatality runs about 0.1-0.2% in a well-nourished
+      population with hospital access and **above 5%, sometimes far above, in
+      malnourished children without it.** This figure is the global blend
+    src: reasoning
+  treated:
+    value: 0.995
+    units: >
+      fraction alive with vitamin A and supportive care. **There is no antiviral**;
+      the treatment column here is nursing, nutrition and treating the bacterial
+      pneumonia that does most of the killing
+    src: reasoning
+  witness: >
+    **THE RECORD THAT SHOWS THIS AXIS MEASURING THE WRONG THING.** Measles is
+    `preventable` — a two-dose vaccine at 97% effectiveness, in use since 1963 —
+    and the entire achievement is that people do not get it. The survival
+    columns are nearly identical and nearly irrelevant; the 110,000 annual
+    deaths are a vaccination-coverage figure wearing a mortality costume.
+
+axes:
+  mechanism: established
+  intervention: symptomatic
+  prevention: prophylaxis
+  ongoing: none
+  efficacy:
+    value: 0.50
+    units: >
+      fraction-of-patients (mortality averted by best supportive care — vitamin
+      A, treatment of secondary bacterial infection, nutrition, rehydration) —
+      SUPPORTIVE ONLY. There is no antiviral and never has been. Vitamin A alone
+      roughly halves measles mortality where deficiency is common, which is a
+      very large effect for two cheap doses
+    src: reasoning
+  access:
+    value: 0.55
+    units: >
+      fraction-of-patients (reaching care able to give vitamin A and manage
+      complications) — and note this scalar describes TREATMENT of a disease
+      that should not have occurred. The number that matters for measles is
+      vaccination coverage, which is on the prevention axis and which
+      `capability()` does not read
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: n/a
+  witness: >
+    DIAGNOSTIC is `objective` — IgM serology and PCR are definitive — and
+    historically it was `clinical` and needed to be nothing more. The rash is
+    characteristic, it follows three or four days of fever, cough, coryza and
+    conjunctivitis, and Koplik spots on the buccal mucosa appear before the rash
+    and are close to pathognomonic.
+    **AND IN AN ELIMINATION SETTING THAT CLINICAL SKILL IS GONE**, which is
+    gaps.md #106 arriving one record after smallpox forced it. A doctor trained
+    in a country where measles was eliminated has probably never seen a case, and
+    the first cases of an outbreak are routinely diagnosed late — as a viral
+    exanthem, as drug rash, as scarlet fever — while the patient sits in a
+    waiting room seeding it. **The same success that removes the disease removes
+    the ability to recognise it**, and for a pathogen with an R0 of 15, a few
+    days of that is an outbreak.
+    PROGNOSTIC is `partial`. Age under five, malnutrition, vitamin A deficiency
+    and immunodeficiency all predict severity well at group level. What cannot be
+    predicted is **who develops SSPE** — a fatal degenerative encephalitis
+    arriving seven to ten years later — or how deep the immune amnesia goes.
+    PREDICTIVE is `n/a` on the Huntington's grounds, and this is the third record
+    in a row with that reading: there is nothing course-altering to select
+    between. Vitamin A is given to every child in a deficient setting because
+    there is no way and no need to choose.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    **THE TREATMENT TOLL IS NEARLY ZERO AND THE VACCINE'S IS SMALLER**, and that
+    combination is what makes this record's blockers so uncomfortable.
+    Supportive care is vitamin A, fluids, and antibiotics for secondary bacterial
+    infection. None of it takes anything permanent.
+    The measles-containing vaccine is one of the best-tolerated medical products
+    in existence: fever and a mild rash in a minority, febrile seizures at a rate
+    below that caused by measles itself, transient thrombocytopenia rarely, and
+    anaphylaxis at roughly one per million doses. It is contraindicated in severe
+    immunocompromise and in pregnancy, which is a real limit and a narrow one.
+    **The perceived toll is enormous and the measured toll is negligible**, and
+    the gap between those two numbers is doing more damage to this record than
+    any biological obstacle. See the `refuted` blocker below — and note that
+    gaps.md #105 asked for a field to hold what a *preventive* intervention
+    costs. Here the honest entry would be *almost nothing*, and the register
+    still cannot say it.
+  incidence:
+    value: 0.001
+    units: >
+      fraction-of-treated (permanent harm attributable to treatment) — vitamin A
+      and antibiotics, and the figure is near zero
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    **IMMUNE AMNESIA IS THE FINDING, AND IT IS NOT DAMAGE IN THE USUAL SENSE.**
+    Measles infects and destroys memory B and T lymphocytes, erasing a large
+    fraction of the antibody repertoire a child had built up against everything
+    they had previously met or been vaccinated against. Reported estimates of the
+    loss run from a tenth to most of it.
+    The consequence is that **measles kills people with other diseases, for two
+    to three years afterwards.** Elevated childhood mortality from pneumonia,
+    diarrhoea and other infections follows measles infection long after the rash
+    has gone, and it is a substantial share of the disease's total burden.
+    Nothing in this schema can hold that: `residue` means what the disease left
+    in this patient, and this is a deficit whose consequences land in *other
+    entities in this register* (gaps.md #100). It is also the exact inverse of
+    smallpox's #106 — there, winning removed a population's capability; here, the
+    disease removes an individual's.
+    SSPE. Subacute sclerosing panencephalitis appears seven to ten years after
+    infection, progresses relentlessly, and is **uniformly fatal.** Roughly one
+    in ten thousand cases, and far higher — perhaps one in a thousand or worse —
+    in children infected under the age of one, who are also the children too
+    young to be vaccinated. **A decade of latency is the longest gap between
+    cause and residue anywhere in this register.**
+    BLINDNESS, from corneal ulceration in vitamin A deficiency, which made
+    measles a leading cause of childhood blindness before supplementation.
+    Encephalitis in about one in a thousand acute cases, with permanent
+    neurological deficits in survivors. And post-measles wasting in already
+    malnourished children.
+  incidence:
+    value: 0.03
+    units: >
+      fraction-of-cases (permanent sequelae — blindness, encephalitis deficits,
+      SSPE) — a reasoned estimate, and it EXCLUDES immune amnesia, which affects
+      essentially everyone and has no field
+    src: reasoning
+
+window:
+  what: >
+    **POST-EXPOSURE PROPHYLAXIS WORKS, AND ALMOST NOBODY GETS IT.**
+    A measles-containing vaccine given within about 72 hours of exposure can
+    prevent or attenuate disease; immunoglobulin given within six days can do the
+    same for infants, pregnant women and the immunocompromised, who cannot have
+    the live vaccine. The vaccine's immune response outruns a ten-to-twelve-day
+    incubation, which is the same trick that eradicated smallpox.
+    The obstacle is knowing you were exposed. Measles is airborne and lingers,
+    so contacts include people who were merely in a room a while after the case
+    left it, and the case was frequently not recognised as measles at the time.
+    By the time a diagnosis is made and contact tracing starts, most of the
+    seventy-two hours are gone.
+    **AND THE WINDOW THAT ACTUALLY MATTERS IS NOT A PATIENT'S.** It is coverage
+    staying above roughly 95%, continuously, in every community rather than on
+    average. National coverage of 90% with a 70% pocket is an outbreak waiting in
+    the pocket, and measles finds it. That is a population-scoped window of the
+    kind gaps.md #99 named and this schema cannot express.
+  closes_on: >
+    about 72 hours after exposure for vaccine, six days for immunoglobulin —
+    after which the incubating infection outruns any response
+  caught_in_time:
+    value: 0.10
+    units: >
+      fraction-of-exposed-contacts (reached with post-exposure prophylaxis in
+      time) — a reasoned estimate, and low because exposure is usually
+      recognised only after the index case is diagnosed
+    src: reasoning
+
+moved:
+  - date: 1963
+    axis: prevention
+    from: none
+    to: prophylaxis
+    why: >
+      The first measles vaccine was licensed. Before it, essentially every child
+      caught measles and roughly 2.6 million people a year died of it worldwide.
+      A live attenuated vaccine, two doses, about 97% effective, and now costing
+      a couple of dollars a course.
+    src:
+      id: PMID:19198559 doi:10.1007/978-3-540-70523-9_1
+      retrieved: 2026-08-26
+      quote: >
+        Following their initial isolation in cell culture of the virus in 1954, a
+        succession of investigators under the mentorship of John E Enders conducted
+        the research, development, and initial clinical studies responsible for the
+        licensure in 1963 of a successful live attenuated measles virus vaccine.
+
+  - date: 2000
+    axis: access
+    from: 0.35
+    to: 0.8
+    why: >
+      The global immunisation push of the following two decades took measles
+      deaths down by roughly 94% from the 2000 figure — one of the largest
+      mortality reductions ever achieved against a single disease, and achieved
+      entirely by delivering a forty-year-old product to more children.
+      **The Americas were declared free of endemic measles in 2016.** A disease
+      with an R0 of fifteen was eliminated from two continents by logistics.
+
+  - date: 2020
+    axis: access
+    from: 0.8
+    to: 0.55
+    why: >
+      **THE SECOND BACKWARDS ENTRY IN THIS REGISTER, AFTER YAWS IN 1964 — AND
+      THE FIRST WRITTEN WHILE IT WAS HAPPENING.**
+      Pandemic disruption caused tens of millions of children to miss doses, and
+      coverage has not recovered. Vaccine hesitancy has grown in parallel and in
+      some places sharply. Global first-dose coverage sits near 83% and
+      second-dose coverage lower still, against a threshold of 95%.
+      Cases and deaths are rising. Countries and regions that had eliminated
+      measles have lost or come close to losing that status, and outbreaks in
+      high-income countries have produced deaths in children for the first time
+      in decades.
+      Nothing about the virus changed. Nothing about the vaccine changed.
+      **The rating went backwards because delivery did**, which is the whole
+      argument for `moved:` being able to record a regression — and the reason
+      gaps.md #56 asked for it.
+
+witness:
+  mechanism: >
+    `established`, and the receptor biology explains the two things that make
+    measles what it is.
+    The virus enters through the respiratory tract and binds **CD150/SLAM**, a
+    receptor on memory lymphocytes, dendritic cells and macrophages — so its
+    first act is to infect the immune system itself. It replicates massively in
+    lymphoid tissue, becomes systemic, and only later binds **nectin-4** on the
+    basolateral surface of airway epithelium, which delivers virus back into the
+    airway to be coughed out. The rash is a cell-mediated immune response to
+    infected endothelium.
+    **THAT ORDER — IMMUNE CELLS FIRST, AIRWAY LAST — IS WHY THIS DISEASE IS BOTH
+    ENORMOUSLY CONTAGIOUS AND IMMUNOSUPPRESSIVE.** The lymphocyte tropism
+    produces the immune amnesia in `residue`; the epithelial exit produces an R0
+    of fifteen. One receptor pair accounts for both.
+    Humans are the only reservoir, there is no chronic carriage, and immunity
+    after infection or vaccination is lifelong. **That list is the eradication
+    checklist smallpox passed** — and dracunculiasis' record (gaps.md #85) is the
+    warning against reading it as a guarantee.
+    The named hole is SSPE: why persistent, mutated virus establishes itself in
+    the central nervous system in a small fraction, why infancy raises the risk
+    so sharply, and why it takes a decade.
+  intervention: >
+    `symptomatic`, and it is the correct rating for a treatment axis that has
+    been empty since 1963.
+    **There is no antiviral for measles and there never has been.** Care is
+    supportive: vitamin A in two doses, which roughly halves mortality where
+    deficiency is common; antibiotics for the secondary bacterial pneumonia that
+    causes most measles deaths; fluids; nutrition.
+    Third record in a row where `symptomatic` conceals a large survival benefit —
+    after Marburg's supportive care and COPD's bronchodilators — and gaps.md #98
+    is the standing complaint. Vitamin A is two cheap doses that halve deaths and
+    the register scores it as no capability at all.
+    **BUT THE REAL PROBLEM HERE IS #66, NOT #98.** For measles, treatment is
+    beside the point. The disease should not occur. A 97%-effective vaccine has
+    existed for sixty years, and `capability()` reads only the `intervention`
+    axis — so the single most preventable disease in this register is filed
+    `unsolved`, in `engineering problem`, *understood and nothing can be done*.
+    Dengue, rabies and dracunculiasis were the previous arguments for fixing
+    that. **This one is not arguable.**
+  prevention: >
+    `prophylaxis`, and it is the whole of what this disease is about.
+    Two doses of a live attenuated vaccine, usually combined with mumps and
+    rubella, about 93% effective after one dose and about 97% after two, with
+    lifelong protection. Off patent, a couple of dollars a course, stable enough
+    to reach almost anywhere with a cold chain.
+    Post-exposure prophylaxis works inside the window described above.
+    **AND IT ALL TURNS ON ONE NUMBER: 95%.** Because R0 is so high, the herd
+    immunity threshold is higher than for anything else routinely vaccinated
+    against, and coverage below it does not merely reduce protection
+    proportionally — it lets transmission chains re-establish. Measles is
+    therefore the **sentinel**: the first disease to come back when a system
+    slips, and the one whose case count is a direct readout of how well
+    childhood immunisation is working in general.
+    That is worth stating as a register-level fact rather than a measles fact.
+    **Measles resurgence is a measurement of delivery**, and a rising case count
+    is early warning for everything else that shares the same schedule.
+  ongoing: >
+    `none`. There is no maintenance therapy because there is no therapy, and
+    survivors of uncomplicated measles carry nothing that requires ongoing care.
+    What is genuinely ongoing belongs to the population rather than the patient:
+    keeping coverage above 95% forever, in every community, is the entire
+    programme. That is gaps.md #57's maintenance problem again — a cost that must
+    be paid continuously and whose success looks like nothing happening.
+
+holes:
+  - Every scalar is `src: recall` or `src: reasoning`. The case figure in
+    particular is a modelled estimate an order of magnitude above confirmed
+    reports, and the deaths figure is moving.
+  - The `moved` entry dated 2020 assigns a single date to a process that has run
+    from roughly 2019 to the present and has several causes — pandemic
+    disruption, hesitancy, conflict, and funding. The date marks where the
+    direction changed, not a discrete event.
+  - `efficacy: 0.50` is a construct describing mortality averted by supportive
+    care, and it is dominated by vitamin A in deficient populations. In a
+    well-nourished child it means something quite different.
+  - Immune amnesia's magnitude is an active research question and the range of
+    reported estimates is wide. That measles causes prolonged
+    immunosuppression is not in doubt; how much of childhood infectious
+    mortality it accounts for is.
+  - Rubella and mumps share the vaccine and are not in this register. Rubella in
+    particular has a distinct and severe burden — congenital rubella syndrome —
+    and is eliminated in many places by the same two doses counted here.
+
+blockers:
+  - kind: policy
+    blocks: coverage staying above the threshold the pathogen sets
+    obstacles: []
+    what: >
+      THE BINDING CONSTRAINT, AND NOTHING ABOUT IT IS SCIENTIFIC.
+      Measles needs about 95% coverage, sustained, in every community rather than
+      on average — a national figure of 90% with a 70% pocket is an outbreak
+      living in the pocket. Global first-dose coverage is near 83% and
+      second-dose coverage lower.
+      What closes the gap is unglamorous and known: routine immunisation
+      services, outreach to communities that the schedule misses, catch-up
+      campaigns for the cohorts that missed doses during the pandemic, and
+      school-entry requirements where they are politically possible.
+      **This is the third record needing a blocker kind that does not exist** —
+      after Ebola's Kivu response, where treatment centres were burned, and
+      H5N1's farm workers, who cannot afford to be tested. In all three the
+      obstacle is that *the affected people have reasons not to cooperate with
+      the intervention*, and the taxonomy has twelve kinds and none of them says
+      that. Filed as `policy` with the mismatch stated rather than hidden.
+    who_could: [health-system, government, legislator, nonprofit, philanthropy]
+    scale: 3.0e9
+    standing: documented
+    src: recall
+
+  - kind: policy
+    blocks: vaccination, via a claim that the vaccine causes autism
+    obstacles: []
+    what: >
+      **THE FIRST `refuted` BLOCKER IN THIS REGISTER, AND THE VALUE EXISTS FOR
+      EXACTLY THIS.**
+      The claim originates in a 1998 paper that was retracted, whose findings
+      could not be replicated, and whose author lost his medical licence. It has
+      since been tested in cohort studies covering millions of children across
+      multiple countries, including studies powered to detect an effect in
+      genetically susceptible subgroups. **There is no association.**
+      Recording it as `refuted` rather than omitting it is the point.
+      Nordstern's `standing` axis was built to test the widely repeated claim
+      that a disease is *solvable but somebody will not allow it*, and the rule
+      is that **a project that only ever finds `documented` blockers is
+      campaigning rather than investigating.** After 175 blockers this is the
+      first time the register has been able to say *people assert this and it is
+      not true*, and being able to say that is what makes the other 174 worth
+      anything.
+      Note carefully what is refuted and what is not. **The causal claim is
+      false. The blocking effect is entirely real** — refusal reduces coverage,
+      coverage below 95% produces outbreaks, and children have died. A refuted
+      claim can still be a documented obstacle, and the schema currently forces
+      one `standing` onto both halves.
+    who_could: [health-system, government, academic, nonprofit, patient-org]
+    scale: 1.0e9
+    standing: refuted
+    src: recall
+
+  - kind: logistics
+    blocks: reaching the children the schedule misses
+    obstacles: [cold-chain]
+    what: >
+      Most unvaccinated children are not refused; they are missed. They live in
+      conflict zones, in displaced populations, in urban settlements that no
+      register counts, and in places where the cold chain ends before the road
+      does.
+      The vaccine is cheap and the delivery is not: two doses, on a schedule,
+      with a cold chain, to a child who must be found twice. Second-dose coverage
+      trails first-dose coverage everywhere, and it is the second dose that takes
+      protection from about 93% to about 97% — which is the difference between
+      above and below the threshold.
+      Measles campaigns are also frequently the vehicle for delivering vitamin A
+      and other interventions, so a lapse here is a lapse in several programmes
+      at once — gaps.md #87 seen from the delivery side rather than the
+      prevention side.
+    who_could: [health-system, government, nonprofit, philanthropy]
+    scale: 5.0e9
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: protecting infants, and predicting who develops SSPE
+    obstacles: [who-progresses]
+    what: >
+      Two absences, and the first is the one that kills.
+      **INFANTS ARE THE GAP.** Maternal antibody wanes over the first months of
+      life and interferes with vaccine response, so the first dose is given at
+      nine to twelve months. Between the waning and the dose there is a window in
+      which a child is susceptible, and it is exactly the age at which measles is
+      most lethal and at which SSPE risk is highest. **In a population with high
+      coverage those infants are protected by everyone else** — which is why
+      falling coverage kills the youngest first. A vaccine that worked reliably
+      in the presence of maternal antibody would close it.
+      **AND NOBODY CAN SAY WHO DEVELOPS SSPE.** A fatal encephalitis arriving
+      seven to ten years later in roughly one in ten thousand, with no way to
+      identify the child while anything could be done — and nothing that could be
+      done anyway.
+      `scale: null`.
+    who_could: [academic, sponsor, manufacturer, philanthropy]
+    scale: null
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0049
+  rated: 2026-08-24
+  by: [claude, jeremy]

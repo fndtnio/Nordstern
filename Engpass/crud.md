@@ -1,0 +1,193 @@
+143 records · 615 blockers
+  CRUD-addressable blockers :  182  (30%)
+  everything else           :  433  (70%)
+  `diagnosis`, reported both ways: 98
+  obstacles CRUD-shaped / not    : 96 / 78 record-citations
+  blocked ONLY by knowledge      : 1  (huntington)
+wrote crud.md
+and every operation reduces to them. The proposal is
+that medicine has the same four at the level of a cell — **create** cells that are
+gone, **read** which ones and in whom, **update** what is inside one, **delete**
+the ones that should not be there — and that mastering all four would essentially
+solve medicine.
+
+## Where it holds, and it holds better than expected
+
+**Engpass was built without this framing and four of its obstacles map cleanly
+onto it.** That is the strongest evidence for the idea, because nothing about how
+these records were written was aiming at it.
+
+**The table now shows five, and the fifth is not evidence.** `growth-control`
+was written on 2026-09-02, after this document existed, so it cannot support a
+claim about what the register produced independently. It is listed because
+leaving it `unclassified` would be worse, and flagged here because a count that
+quietly absorbs records written afterwards stops being the test it was.
+
+| obstacle | records | maps to |
+|---|---:|---|
+| `who-progresses` | 50 | **READ** — which one, in whom — the largest obstacle in the register |
+| `protective-immunity` | 21 | **—** — instruct an immune system BEFORE the cell event; not an operation on cells |
+| `burden-unknown` | 20 | **—** — epidemiology; nobody counted |
+| `tissue-repair` | 15 | **CREATE** — replace what was lost |
+| `cell-targeting` | 14 | **ADDRESS** — not an operation — the precondition all four need |
+| `pathogen-persistence` | 13 | **DELETE** — a reservoir no drug reaches |
+| `unexplained-illness` | 8 | **—** — the entity is unnamed — there is nothing to operate on |
+| `no-model-system` | 8 | **?** — unclassified |
+| `cold-chain` | 8 | **?** — unclassified |
+| `donation-dependency` | 6 | **—** — economics |
+| `growth-control` | 4 | **CONSTRAINT** — not an operation — how many cells there should be, which CREATE and DELETE both enforce |
+| `validation-throughput` | 4 | **?** — unclassified |
+| `animal-translation` | 2 | **?** — unclassified |
+| `anaesthesia-mechanism` | 1 | **?** — unclassified |
+
+**96 record-citations point at CRUD-shaped obstacles; 78 point at
+obstacles the framing cannot touch.**
+
+And the records say it almost in the framing's own words. `hearing-loss`: *"hair
+cells, which birds regrow and we do not."* `heart-failure`: *"any way to replace
+lost muscle."* `cerebral-palsy`: *"any way back to the lesion."* All CREATE.
+`genital-herpes` is the sharpest UPDATE case in the corpus — the virus sits in a
+sensory neuron, so **a cure must edit a genome inside a cell it has to leave
+alive**, because DELETE is unavailable.
+
+### The refinement the corpus adds
+
+**`cell-targeting` is not a fifth operation. It is the addressing layer all four
+require.** Its own record states it: *"a solution to either is an **address** —
+some property of the target cell that a carrier can recognise and act on."* In
+the framing's terms that is the primary key, and medicine mostly does not have
+one. Every CREATE, UPDATE and DELETE is blocked on it before it is blocked on
+anything else.
+
+## Where it breaks
+
+**Of 615 blockers across 143 records, 182 — 30% —
+are the kind a perfected cell-level capability could clear.**
+
+| blocker kind | n | share | cell-level CRUD? |
+|---|---:|---:|---|
+| `knowledge` | 166 | 27.0% | **yes** |
+| `logistics` | 105 | 17.1% | no |
+| `diagnosis` | 98 | 15.9% | *splits — see below* |
+| `policy` | 84 | 13.7% | no |
+| `cost` | 55 | 8.9% | no |
+| `evidence-incomplete` | 35 | 5.7% | no |
+| `no-sponsor` | 29 | 4.7% | no |
+| `tooling` | 14 | 2.3% | **yes** |
+| `adherence` | 13 | 2.1% | no |
+| `manufacturing` | 9 | 1.5% | no |
+| `regulatory` | 5 | 0.8% | no |
+| `candidate-untested` | 2 | 0.3% | **yes** |
+
+**433 of 615 blockers — 70% — are logistics,
+cost, policy, no-sponsor, manufacturing, regulatory, adherence, absent evidence, or
+a test that exists and is not used.** None of them is a biology problem.
+
+### The `diagnosis` kind is the contested 98, and it mostly is not READ
+
+A generous reading counts all 98 `diagnosis` blockers as READ, which would take the total to 46%. **The corpus does not support that reading.** In this
+register a `diagnosis` blocker is usually *a test that exists and nobody runs*
+rather than *we cannot identify it*:
+
+- `cryptococcal-meningitis` — a two-dollar dipstick above 95% sensitivity, unused
+- `syphilis` — a blood test in pregnancy, and congenital cases up tenfold
+- `coccidioidomycosis` — good serology, not ordered, in a wealthy health system
+- `vulvar-cancer` — a lesion on the surface of the body, treated as thrush for years
+- `trichomoniasis` — left off the multiplex panel the patient is already having
+
+**Those are not READ failures. They are a test sitting on a shelf**, which is the
+same delivery problem wearing a diagnostic label.
+
+### Four obstacles the framing cannot reach at all
+
+- **`protective-immunity`** — the second-largest obstacle in the register. A vaccine
+  instructs an immune system **before** any cell event, and is not an operation on
+  cells. It is also the only intervention the register records as routinely moving a
+  disease from `unsolved` to `preventable` outright.
+- **`unexplained-illness`** — ME/CFS, hEDS, POTS. **You cannot CRUD what you cannot
+  name.** The entity is missing, not the operation.
+- **`burden-unknown`** — nobody counted.
+- **`donation-dependency`** — economics.
+
+### And the register's headline finding sits entirely outside the frame
+
+**The treatment exists and does not arrive.** Flucytosine unregistered across the
+continent where cryptococcal meningitis is. Benzathine penicillin — a 1943 drug —
+running short while congenital syphilis rises tenfold. HPV vaccine at roughly a
+fifth of the girls who need it. Sickle-cell gene therapy that cures, costs two to
+three million dollars, and reaches almost nobody.
+
+**Perfect cell-level CRUD tomorrow changes none of it.**
+
+## The prediction the framing makes, and the test
+
+If the theory is right, the records blocked **only** by knowledge should be clean
+CRUD statements — nothing else is in the way, so what remains must be an operation.
+
+**1 of 143 records qualify: `huntington`.**
+
+That is the whole test set, and it is the register's most-repeated finding arriving
+from a new direction: **almost nothing in medicine is held up by biology alone.**
+The corpus has grown by roughly a quarter since that count was one, and it is
+still one.
+
+**And the one record passes.** Huntington's disease: the gene identified exactly in
+1993, the protein known, the mechanism understood — READ complete. The intervention
+is to lower huntingtin — UPDATE, precisely specified. The most advanced attempt had
+its phase 3 **halted in 2021 for harm at higher doses**, which is a dosing and
+delivery failure rather than a failure of the idea. Its own blocker says there is
+*"no trial waiting for a sponsor, no drug waiting for a regulator, and no product
+waiting for a payer."*
+
+**Read complete, update specified, no safe address.** The framing predicts exactly
+that shape, and it is what is there.
+
+**AND THE FRAMING CHANGED THE RECORD, WHICH IS MORE THAN A FRAMING USUALLY
+EARNS.** Huntington's cited `tissue-repair` — CREATE, replace the lost neurons —
+and **not `cell-targeting`**, although what actually stopped the trial was that
+lowering huntingtin non-selectively lowers the essential wild-type protein too.
+An allele-selective agent is the field's stated aim and does not exist. **That is
+the specificity face of `cell-targeting`**, and `msmds` cites the same obstacle in
+the same words — *"allele-selective silencing or editing reaching smooth muscle."*
+The link was added on 2026-08-28, and the record states that this test is why.
+
+### The weaker test, and why it proves nothing yet
+
+Relaxing to records where knowledge is at least half the blockers gives 14:
+
+- `huntington` — 1/1
+- `genital-chlamydia` — 3/4
+- `genital-herpes` — 3/4
+- `varicella-zoster` — 3/4
+- `toxoplasmosis` — 4/6
+- `uterine-fibroids` — 3/5
+- `cmv-infection` — 3/5
+- `anal-cancer` — 2/4
+- `candidaemia` — 3/6
+- `trichomoniasis` — 2/4
+- `invasive-aspergillosis` — 3/6
+- `hpv-infection` — 2/4
+- `cryptosporidiosis` — 3/6
+- `dipg` — 2/4
+
+**Nine of these were written in the last few days, in a single push through
+infectious disease**, where blockers are disproportionately biological. It is a
+record of what was recently added, not a finding about medicine, and it should not
+be quoted as one until the corpus is sampled rather than accumulated.
+
+## Verdict
+
+**A good taxonomy of the biological quarter, and not a theory of medicine** — and
+the second half is worth more than the first, because it tells you where the
+leverage is not.
+
+The sharper form the corpus supports: **CRUD describes what medicine would need in
+order to stop needing biology. It says nothing about the delivery system, and
+delivery is where roughly three-quarters of the loss is.** That is not a criticism
+of the idea. It is the idea doing work, by making the residual visible and
+countable.
+
+**Where it earns its place is as a lens on the obstacle layer**, which is what
+Engpass holds: four of nine obstacles are CRUD-shaped, one is the address they all
+need, and four are outside it. That is a more useful map of the knowledge quarter
+than the register previously had.

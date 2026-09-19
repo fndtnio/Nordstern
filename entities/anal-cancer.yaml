@@ -1,0 +1,284 @@
+slug: anal-cancer
+id: FND-D-0123
+name: anal cancer
+also: [anal canal carcinoma, anal squamous cell carcinoma, anal canal cancer]
+kind: disease
+mondo: MONDO:0000405
+residual: false
+contested: false
+
+# THE CANCER WHERE SCREENING BECAME EVIDENCE-BASED IN 2022.
+#
+# 1. IT IS RISING, AND IT IS THE ONLY ONE OF THE FOUR THAT IS. Incidence has
+#    climbed steadily in high-income countries for decades while cervical cancer
+#    fell — the same virus, the opposite trajectory, because one epithelium got a
+#    screening programme in the 1950s and the other got nothing.
+#
+# 2. THE ANCHOR TRIAL CHANGED IT. Reporting in 2022, it randomised people with
+#    HIV and high-grade anal lesions to treatment or monitoring and found
+#    **roughly a 57% reduction in progression to cancer.** It was stopped early
+#    for efficacy. Before it, anal screening was plausible-by-analogy with the
+#    cervix and had never been shown to work; guidelines followed in 2024.
+#    **`hpv-infection` records that cervical prevention did not generalise. This
+#    is the first place it did.**
+#
+# 3. AND ITS TREATMENT IS ONE OF ONCOLOGY'S EARLIEST ORGAN-PRESERVATION
+#    SUCCESSES. Until the 1970s the operation was abdominoperineal resection: the
+#    anus removed, a permanent colostomy. Norman Nigro's chemoradiation protocol
+#    replaced it, curing most patients with the organ intact. **A cure whose toll
+#    fell by an entire operation**, which is the kind of progress `moved:` exists
+#    to record and no other axis does.
+
+burden:
+  incidence:
+    value: 5.0e4
+    units: >
+      new cases/year worldwide, **and rising by roughly two to three percent a
+      year in most high-income countries** — one of few cancers in this register
+      whose incidence is climbing for reasons that are understood
+    src: recall
+  deaths:
+    value: 1.9e4
+    units: deaths/year worldwide
+    src: recall
+  note: >
+    **The risk concentration is extreme and is what makes screening tractable.**
+    Incidence among men who have sex with men living with HIV runs on the order
+    of fifty to a hundred times the general population — comparable to or above
+    cervical cancer incidence before screening. A disease that is rare overall
+    and common in an identifiable group is the ideal shape for a targeted
+    programme, and it took until 2022 to prove one works.
+
+survival:
+  horizon: 5 years from diagnosis
+  untreated:
+    value: 0.10
+    units: fraction alive — untreated anal squamous carcinoma invades locally and metastasises
+    src: reasoning
+  treated:
+    value: 0.70
+    units: >
+      fraction alive on chemoradiation — high for a squamous cancer, and it
+      falls steeply with nodal and metastatic spread. Salvage surgery after
+      chemoradiation failure cures a further minority at the cost of a permanent
+      colostomy
+    src: recall
+  witness: >
+    **The gain is large and most of it is fifty years old.** Nigro's protocol
+    established chemoradiation in the 1970s and the survival figure has moved
+    little since; what has moved is the toll, and then in 2022 the prevention.
+    **Three kinds of progress on one record, and the survival axis sees only the
+    first.**
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: prophylaxis
+  ongoing: low
+  efficacy:
+    value: 0.70
+    units: >
+      fraction-of-patients (cured, organ preserved, on stage-appropriate
+      chemoradiation) — and it is a genuine cure rate rather than a control rate
+    src: reasoning
+  access:
+    value: 0.55
+    units: >
+      fraction-of-patients (diagnosed early and receiving chemoradiation) —
+      **held down by late presentation, which is partly anatomical embarrassment
+      and partly that symptoms are attributed to haemorrhoids for months.**
+      Radiotherapy capacity is the constraint where it is the constraint
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: none
+  witness: >
+    **DIAGNOSTIC is `objective` and the delay is behavioural.** Bleeding, pain
+    and a mass are attributed to haemorrhoids — by patients and frequently by
+    first-contact clinicians — for months. Examination and biopsy settle it
+    immediately.
+    **The screening question is the one that changed.** Anal cytology and
+    high-resolution anoscopy have existed for years; what was missing until 2022
+    was evidence that finding and treating high-grade lesions prevents cancer.
+    ANCHOR supplied it, and the constraint is now the supply of clinicians who
+    can perform anoscopy — a procedural skill in short supply and slow to train.
+    PROGNOSTIC is `partial`: stage and nodal status predict outcome well; who
+    among those with high-grade lesions will progress does not.
+    PREDICTIVE is `none`. Everyone receives the same chemoradiation backbone;
+    nothing selects between regimens, and the de-escalation question that
+    `head-neck-cancer` is grappling with for HPV-positive disease has barely
+    been asked here.
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    **Pelvic chemoradiation on the anal sphincter, and the price is permanent for
+    many.** Faecal urgency and incontinence, chronic proctitis, anal stenosis,
+    sexual dysfunction, vaginal stenosis in women, infertility, and pelvic
+    insufficiency fractures years later. **The organ is preserved and does not
+    always work.**
+    Salvage abdominoperineal resection after chemoradiation failure means a
+    permanent colostomy — the operation the protocol was designed to avoid,
+    performed on the minority in whom it failed.
+  incidence:
+    value: 0.40
+    units: >
+      fraction-of-treated with permanent bowel, sexual or pelvic dysfunction —
+      reasoned, and high because the radiation field contains the sphincter
+    src: reasoning
+
+witness:
+  mechanism: >
+    `established`. Persistent high-risk HPV — chiefly HPV16 — infects the anal
+    transformation zone, an epithelial junction analogous to the cervix's, and
+    produces high-grade squamous intraepithelial lesions that progress in a
+    minority. The E6/E7 mechanism is held in `cervical-cancer` and
+    `hpv-infection` and not repeated here.
+    **Immunosuppression is the dominant risk modifier**, which is why incidence
+    in people with HIV is so much higher and why it did not fall with
+    antiretroviral therapy the way other AIDS-associated cancers did: people
+    survive long enough for a slow cancer to arrive.
+  intervention: >
+    `curative` by chemoradiation, and **the organ preservation is the story**.
+    Abdominoperineal resection with permanent colostomy was standard until Nigro
+    demonstrated in the 1970s that concurrent chemoradiation cured most patients
+    without it. Surgery is now salvage rather than first-line.
+  prevention: >
+    `prophylaxis`. HPV vaccination prevents the causal infection — and
+    **`head-neck-cancer` records that vaccination was scoped to girls for roughly
+    a decade in most countries that introduced it**, which left the population at
+    highest risk of this cancer entirely unprotected. Gender-neutral vaccination
+    corrects it prospectively and does nothing for men already exposed.
+    Screening became evidence-based in 2022 and is being implemented for
+    high-risk groups.
+  ongoing: >
+    `low` in medication terms and substantial in function: survivors manage bowel
+    and sexual dysfunction indefinitely, which is `toll` rather than treatment.
+  efficacy: >
+    See the axis.
+  access: >
+    Late presentation dominates, and anoscopy capacity is the new constraint —
+    a screening programme was just proved to work and there are not enough people
+    trained to deliver it.
+
+moved:
+  - date: 1974
+    axis: toll
+    from: catastrophic
+    to: major
+    why: >
+      **Nigro's chemoradiation protocol replaced abdominoperineal resection**,
+      curing most patients with the anus intact instead of removing it and
+      creating a permanent colostomy. Survival changed less than the toll did.
+      **This is one of the clearest toll reductions in the register and one of
+      oncology's earliest organ-preservation results.**
+    src: recall
+  - date: 2022
+    axis: prevention
+    from: risk-reduction
+    to: prophylaxis
+    why: >
+      **The ANCHOR trial**, stopped early for efficacy, showed that treating
+      high-grade anal lesions in people with HIV reduced progression to cancer by
+      roughly 57%. Anal screening had been plausible by analogy with the cervix
+      for twenty years and unproven; guidelines followed in 2024. **The first
+      demonstration that cervical-style secondary prevention generalises to
+      another HPV site.**
+    src: recall
+
+holes:
+  - >
+    `MONDO:0000405` is *anal canal cancer* and this record also covers anal
+    margin tumours, which the ontology holds separately. The distinction matters
+    clinically — margin lesions are managed more like skin cancer — and the
+    record does not carry it as strata.
+  - The incidence and mortality figures are global estimates over a cancer whose
+    rate varies by more than an order of magnitude between risk groups, so the
+    single figure describes nobody in particular.
+  - >
+    **ANCHOR was conducted in people with HIV** and whether its result transfers
+    to other high-risk groups — men who have sex with men without HIV, women with
+    prior cervical neoplasia, transplant recipients — is assumed rather than
+    shown.
+  - The de-escalation question that dominates HPV-positive oropharyngeal cancer
+    has barely been asked here, despite the same favourable biology and a
+    permanent toll worth reducing.
+  - Written from model recall. ANCHOR, the Nigro protocol and the risk
+    concentration in HIV are the parts most likely right; every number is the
+    part most likely wrong.
+
+blockers:
+  - kind: logistics
+    blocks: enough people who can perform the procedure the trial just validated
+    what: >
+      **A SCREENING PROGRAMME WAS PROVED TO WORK AND THERE ARE NOT ENOUGH
+      CLINICIANS TO DELIVER IT.** High-resolution anoscopy is a procedural skill
+      requiring substantial training and case volume, and the workforce is
+      concentrated in a small number of centres. ANCHOR's result created demand
+      for a capability that takes years to build.
+      **This is an unusually clean logistics blocker**: the evidence exists, the
+      equipment is not exotic, the target population is identifiable, and the
+      constraint is trained hands. It is also the kind money moves.
+    who_could: [health-system, government, academic, payer]
+    scale: 3.0e8
+    standing: documented
+    src: reasoning
+
+  - kind: knowledge
+    blocks: knowing which high-grade lesion becomes a cancer
+    what: >
+      ANCHOR showed that treating high-grade lesions prevents cancer; it did not
+      show which lesions were going to become one. **Most would not have.** So
+      the programme treats a large number of people to prevent a smaller number
+      of cancers, with ablation causing pain, bleeding and stenosis.
+      This is `cervical-cancer`'s CIN2 problem in a different epithelium — that
+      record notes roughly half of CIN2 regresses and nobody can say which half —
+      and it arrives here with the same shape and none of the accumulated data.
+    who_could: [academic, sponsor, health-system]
+    scale: null
+    standing: documented
+    src: reasoning
+    obstacles: [who-progresses]
+
+  - kind: policy
+    blocks: a decade of vaccinating only girls against a cancer that mostly kills men
+    what: >
+      **HPV VACCINATION WAS SCOPED TO GIRLS FOR ROUGHLY A DECADE** in most
+      countries that introduced it, on a cervical-cancer rationale.
+      `head-neck-cancer` records the same decision and the same consequence.
+      Anal cancer's highest-incidence group — men who have sex with men, and
+      particularly those living with HIV — was excluded from the intervention
+      that prevents it, and men who have sex with men derive no herd protection
+      from vaccinating girls.
+      Gender-neutral programmes now exist in many countries and **do nothing for
+      the cohorts already exposed**, who are the ones presenting now and for the
+      next thirty years.
+    who_could: [government, health-system, payer]
+    scale: 5.0e8
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: reducing a permanent toll in a disease that is mostly cured
+    what: >
+      Chemoradiation cures roughly seven in ten and leaves a large share with
+      permanent faecal urgency or incontinence, sexual dysfunction and pelvic
+      complications. **The patients are increasingly young, increasingly cured,
+      and living for decades with the consequences.**
+      `head-neck-cancer` is running de-escalation trials for HPV-positive disease
+      on exactly this logic — favourable biology, high cure, heavy toll — and
+      **has one large negative result to show for it.** Anal cancer has the same
+      argument and almost no trials, and the register should record that the
+      obvious next step here has already failed once next door.
+    who_could: [academic, sponsor, health-system]
+    scale: 2.0e8
+    standing: documented
+    src: reasoning
+
+assertion:
+  id: FND-A-0124
+  rated: 2026-08-28
+  by: [claude, jeremy]

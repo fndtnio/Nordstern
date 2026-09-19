@@ -1,0 +1,480 @@
+slug: retinopathy-of-prematurity
+id: FND-D-0132
+name: Retinopathy of prematurity
+also: [ROP, retrolental fibroplasia]
+common: blindness in premature babies
+mondo: unresolved
+kind: disease
+residual: false
+contested: false
+
+# THE RECORD WHERE MEDICINE CAUSED THE DISEASE, MEASURED THE PRICE OF STOPPING,
+# AND FOUND THE PRICE WAS HIGHER.
+#
+# ROP is iatrogenic in origin: the supplemental oxygen that keeps a premature
+# infant alive is what blinds them. That alone would make it unusual here. What
+# makes it singular is what happened next — oxygen was restricted, blindness
+# fell, and infant mortality and cerebral palsy rose. In 1973 Cross put a number
+# on the exchange: **roughly sixteen infant deaths for every case of blindness
+# prevented.**
+#
+# Nothing else in this register has a stated exchange rate between death and
+# disability, and the whole corpus has been built on the assumption that the two
+# can be rated on separate axes. This record is where that assumption is
+# actually tested, and it is the reason it was written second in the
+# non-mortality pass, after `glaucoma`.
+
+burden:
+  incidence:
+    value: 2.0e4
+    units: >
+      infants blinded or severely visually impaired each year worldwide —
+      published estimates span roughly 12,000 to 32,000 and the spread is a
+      property of the screening, not of measurement noise: an unscreened baby
+      who goes blind is often never attributed
+    src: recall
+  prevalence:
+    value: 6.0e5
+    units: >
+      people living with visual impairment from ROP — a reasoned estimate from
+      incidence and life expectancy, and unusually long-lived as a prevalence
+      because **the harm arrives in the first weeks of life and is carried for
+      eighty years**
+    src: reasoning
+  note: >
+    **THREE EPIDEMICS, AND THE THIRD ONE IS NOW.**
+    THE FIRST, in the 1940s and 50s, followed the arrival of the incubator and
+    unmonitored supplemental oxygen in the United States, Britain and Australia.
+    It blinded something on the order of ten thousand infants — the largest
+    single cause of childhood blindness in those countries at the time — before
+    Terry described it in 1942 and the cause was established in the mid-1950s.
+    THE SECOND, in the 1970s and 80s, came from success: neonatal intensive care
+    began saving infants born far earlier, and a smaller, sicker, more immature
+    population brought the disease back in a form oxygen restriction alone could
+    not prevent.
+    **THE THIRD IS HAPPENING NOW, IN MIDDLE-INCOME COUNTRIES, AND IT IS THE ONLY
+    PLACE IN THIS REGISTER WHERE A DISEASE IS GETTING WORSE FOR A REASON THAT IS
+    NOBODY'S FAULT.** Neonatal survival in Latin America, Eastern Europe, India
+    and China has improved faster than oxygen monitoring and screening capacity.
+    Babies survive who would have died, in units without blenders, pulse
+    oximeters or an ophthalmologist — so **larger and more mature infants are
+    going blind than would ever develop ROP in a high-income unit**, and the
+    screening criteria imported from those units do not include them.
+    No deaths are attributed to ROP. `deaths` is absent rather than zero, for
+    the same reason as `glaucoma`: mortality is not the question. **The deaths
+    in this record's history belong to its prevention, not to the disease.**
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: risk-reduction
+  ongoing: low
+  efficacy:
+    value: 0.85
+    units: >
+      fraction-of-treated (favourable structural outcome when treated at
+      threshold, within the window) — laser ablation or anti-VEGF stops the
+      neovascular process in most eyes reached in time. **It does not restore an
+      eye already detached**, and treated eyes are not normal eyes
+    src: reasoning
+  access:
+    value: 0.35
+    units: >
+      fraction-of-at-risk-infants (screened on schedule by someone competent to
+      stage the disease, with treatment available within days if needed) — high
+      in high-income units, patchy to absent across the third-epidemic
+      countries where most of the blindness now occurs
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: none
+  witness: >
+    DIAGNOSTIC is `objective` with a large asterisk. The disease is staged by an
+    international classification on the appearance of the retina — zone, stage,
+    and the presence of plus disease — and two competent examiners will mostly
+    agree. **But the examination is indirect ophthalmoscopy with scleral
+    depression on a 900-gram infant, and the competence is the scarce part.**
+    Agreement on plus disease specifically, which is the finding that triggers
+    treatment, is known to be imperfect even between experienced graders. This
+    is a test that is objective in principle and operator-limited in practice,
+    which is why imaging and automated grading matter here more than in most
+    records.
+    PROGNOSTIC is `partial`, and better than most of this register. The
+    classification predicts progression well enough to define a treatment
+    threshold, and prediction models using postnatal weight gain add to it. What
+    it cannot do is tell you which individual eye at stage 2 will progress, so
+    the answer is to keep looking every week — **surveillance substituting for
+    prediction**, which works and is exactly what the workforce blocker below
+    cannot supply.
+    PREDICTIVE is `none`. Nothing says which eye does better with laser and
+    which with anti-VEGF, and nothing identifies the anti-VEGF-treated eyes that
+    will reactivate months later — which is why that treatment obliges a longer
+    follow-up that the settings needing it most are least able to provide.
+
+# NO `survival:` BLOCK. Same reason as `glaucoma`: ROP does not kill, and a
+# survival figure here would describe the prematurity rather than the disease.
+#
+# **BUT THIS RECORD IS THE ONE WHERE THAT SEPARATION IS NOT CLEAN**, because its
+# prevention has a body count. See `moved` (1954, 1973) and the `prevention`
+# witness. The register's `toll` field is defined as what the CURE takes from
+# the patient; there is no field for what a prevention took from a DIFFERENT
+# patient, and the sixteen-to-one exchange therefore lives in prose. See holes.
+
+moved:
+  - date: 1942
+    axis: mechanism
+    from: none
+    to: correlates
+    why: >
+      Terry described retrolental fibroplasia in premature infants, naming a
+      disease that had effectively not existed before the incubator. **The
+      entity arrived with the technology that caused it.**
+    src: recall
+  - date: 1954
+    axis: prevention
+    from: none
+    to: risk-reduction
+    why: >
+      A cooperative study confirmed that unrestricted supplemental oxygen caused
+      the disease, following Campbell's hypothesis of 1951. Oxygen was
+      restricted and the first epidemic ended. **This is one of the fastest and
+      most complete preventions in the register, and it is the setup for the
+      entry below rather than a triumph.**
+    src: recall
+  - date: 1973
+    axis: prevention
+    from: risk-reduction
+    to: risk-reduction
+    why: >
+      **A NULL AXIS MOVE RECORDING THE PRICE OF THE PREVIOUS ONE.** Cross
+      quantified what oxygen restriction had cost: on his calculation roughly
+      **sixteen infant deaths for every case of blindness prevented**, together
+      with an increase in cerebral palsy among survivors. The axis does not
+      move because the capability did not change; what changed is what the field
+      knew about it. Recorded because the register's `moved:` field is its only
+      time series and **a correction of this size is exactly what it should be
+      able to hold.**
+    src: recall
+  - date: 1988
+    axis: intervention
+    from: none
+    to: disease-modifying
+    why: >
+      The CRYO-ROP trial showed cryotherapy of the avascular peripheral retina
+      roughly halved unfavourable structural outcomes in threshold disease. The
+      first treatment that did anything, thirty-four years after the cause was
+      known.
+    src: recall
+  - date: 2003
+    axis: intervention
+    from: disease-modifying
+    to: curative
+    why: >
+      ETROP established treatment at an earlier threshold — "type 1" disease —
+      and laser had by then replaced cryotherapy. Treated in the window, the
+      neovascular process stops and does not return once retinal vascularisation
+      completes: **a finite intervention that ends the disease**, which is the
+      register's definition of `curative`.
+    src: recall
+  - date: 2011
+    axis: intervention
+    from: curative
+    to: curative
+    why: >
+      BEAT-ROP reported intravitreal bevacizumab superior to laser for zone I
+      disease, and anti-VEGF agents entered routine use. A second null move,
+      recorded because it changed the *terms* rather than the rung — it spares
+      the peripheral retina that laser destroys, and buys that with systemic
+      VEGF exposure in a developing infant and a reactivation risk requiring
+      months of further follow-up.
+    src: recall
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    **THE TREATMENT THAT SAVES THE EYE DESTROYS PART OF IT ON PURPOSE.** Laser
+    photocoagulation works by ablating the avascular peripheral retina to remove
+    the stimulus driving neovascularisation. It is deliberate, permanent
+    destruction of retina, and it buys the central vision by spending the
+    periphery. Treated eyes carry permanent peripheral field loss, and high
+    myopia is very common — often severe, needing correction from infancy.
+    Strabismus, amblyopia and later retinal detachment and glaucoma risk follow
+    a treated eye through life.
+    Anti-VEGF avoids the ablation, which is its main attraction, and substitutes
+    two different costs: **systemic VEGF suppression in an infant whose lungs,
+    kidneys and brain are still developing**, where the long-term consequence is
+    genuinely unsettled; and late reactivation, which converts a single
+    procedure into months of surveillance.
+    Rated `major` and `permanent: true` for laser, which remains the majority
+    treatment worldwide. **`terms` therefore reads `costly`, and it should**:
+    nobody leaves this disease untouched.
+  incidence:
+    value: 0.8
+    units: >
+      fraction-of-treated with permanent consequences of treatment — chiefly
+      peripheral field loss and high myopia after laser — a reasoned estimate,
+      high because the ablation is the mechanism rather than a complication
+    src: reasoning
+
+residue:
+  severity: catastrophic
+  permanent: true
+  what: >
+    For the infants reached too late or not at all, the endpoint is
+    fibrovascular proliferation dragging the retina off the back of the eye.
+    **Stage 5 total retinal detachment is blindness, and surgery for it — lens-
+    sparing vitrectomy, scleral buckling — has poor and often no useful visual
+    result.** The retina does not go back.
+    Rated `catastrophic` without hesitation. This is **blindness from birth or
+    from the first weeks of life**, so there is no visual memory, no prior
+    literacy, no established mobility. The consequences run through language
+    acquisition, schooling, employment and independence for eighty years, and
+    they fall hardest in exactly the settings that produced them — the
+    third-epidemic countries have the least developed services for blind
+    children.
+    `tissue-repair` (FND-O-0002) is cited below: like `glaucoma`, this is
+    permanent because retina does not regenerate, and permanence here is an
+    assumption of the field rather than a finding.
+  incidence:
+    value: 0.05
+    units: >
+      fraction-of-infants-developing-ROP who progress to severe permanent visual
+      impairment — a reasoned estimate over all ROP including the large majority
+      of mild disease that regresses spontaneously; far higher where no
+      screening exists
+    src: reasoning
+
+window:
+  what: >
+    **THE SHARPEST WINDOW IN THIS REGISTER, AND IT IS MEASURED IN DAYS.**
+    Everything about ROP is a clock. Screening begins around four weeks after
+    birth or a corrected gestational age near 31 weeks, and repeats weekly or
+    fortnightly depending on what is seen. Once type 1 disease is identified,
+    **treatment is expected within 48 to 72 hours.** Miss it by a fortnight and
+    the retina detaches.
+    And the window shuts permanently in a second sense: retinal vascularisation
+    completes around term-equivalent age, after which ROP cannot develop and
+    cannot be treated. **The entire natural history of this disease — onset,
+    threshold, treatment, and irreversibility — happens inside about ten weeks
+    of a human life.**
+    **THIS IS WHY THE BLOCKER IS A WORKFORCE PROBLEM AND NOT A DRUG PROBLEM.**
+    The laser is not scarce and the drug costs very little. What is scarce is an
+    ophthalmologist willing and trained to examine a ventilated 900-gram infant
+    on a fixed schedule, in a neonatal unit, for a disease that is invisible to
+    everyone else in the room. A screening programme that runs at 90% is not 90%
+    as good as one that runs at 100%; the missed infant goes blind.
+  closes_on: >
+    fibrovascular proliferation and retinal detachment — days to weeks after
+    type 1 disease appears, and irreversible once it occurs
+  caught_in_time:
+    value: 0.35
+    units: >
+      fraction-of-at-risk-infants examined and treated inside the window — a
+      reasoned global estimate; near-complete in high-income neonatal units and
+      very low where the third epidemic is occurring
+    src: reasoning
+
+witness:
+  mechanism: >
+    `established`, and unusually cleanly for a record this consequential. The
+    disease is a two-phase vasoproliferative retinopathy. **Phase one**: a
+    premature retina is incompletely vascularised, and the relative hyperoxia of
+    extrauterine life — worsened by supplemental oxygen — arrests and obliterates
+    the developing vessels. **Phase two**: as the infant grows, the avascular
+    retina becomes metabolically hypoxic and drives VEGF-mediated
+    neovascularisation, which is disordered, fibrous, and pulls the retina off.
+    Low IGF-1 in the first weeks, poor postnatal weight gain, sepsis and
+    transfusion all modulate it.
+    The chain is complete enough that both interventions were designed from it
+    and both work: ablate the hypoxic periphery to remove the VEGF stimulus, or
+    block VEGF directly. **A record where mechanism is genuinely established and
+    the disease still blinds twenty thousand infants a year is worth holding on
+    to** — it is the clearest available counter-example to the assumption that
+    understanding is what unblocks medicine, and it belongs beside
+    `anaesthesia-mechanism` in that argument.
+  intervention: >
+    `curative`, and the rung is defensible on the register's own definition — a
+    *finite* intervention ends it. One laser session, or one injection, applied
+    inside the window, stops the process; retinal vascularisation then completes
+    and the disease cannot recur. There is no maintenance therapy and no
+    suppression.
+    **THE QUALIFICATION IS THAT `curative` HERE MEANS THE DISEASE ENDS, NOT THAT
+    THE EYE IS NORMAL.** Laser leaves permanent peripheral ablation and usually
+    severe myopia; anti-VEGF leaves an unsettled systemic question and a
+    reactivation risk. `terms` reads `costly` and that is the honest summary:
+    this is the register's `cured_at_a_price` shape in one of its starker forms,
+    paid by somebody who cannot consent and will carry it for a lifetime.
+    What does not exist is a way to *repair*. Nothing on the ladder addresses a
+    detached retina in an infant, and vitreoretinal surgery for stage 5 restores
+    useful vision in a small minority at best.
+  prevention: >
+    `risk-reduction`, and it is the most instructive prevention entry in the
+    register because **it is the only one whose history includes measuring the
+    harm the prevention itself caused.**
+    What works: controlled oxygen delivery with blenders and continuous pulse
+    oximetry, targeting a saturation range rather than a supply; avoiding wide
+    fluctuations; and the ordinary quality of neonatal care that reduces sepsis
+    and supports weight gain. In high-income units this has made severe ROP a
+    disease of the extremely preterm alone.
+    Not `prophylaxis`: nothing is given to an infant to prevent it. And the
+    saturation target itself remains contested at the margin — the large trials
+    comparing lower and higher targets found the lower range reduced ROP and was
+    associated with higher mortality, **which is the 1973 exchange reappearing
+    sixty years later in a randomised form.** The field settled on an
+    intermediate target because both endpoints matter and neither can be
+    optimised alone.
+  ongoing: >
+    `low`, rated for the modal child — screened, found to have mild disease or
+    none, and discharged. For the treated child it is a lifetime of refraction,
+    spectacles from infancy, amblyopia management and periodic retinal review,
+    which is more than `low` and less than the `high` that `sickle-cell` or
+    `type-1-diabetes` carry. For the blind child the burden is not medical at
+    all, and the register records it as `residue`.
+
+holes:
+  - >
+    **THE SIXTEEN-TO-ONE EXCHANGE HAS NOWHERE TO LIVE IN THIS SCHEMA, AND IT IS
+    THE MOST IMPORTANT FACT IN THE FILE.** `toll` records what the cure takes
+    from the patient. There is no field for **what a prevention took from a
+    different patient** — the infants who died when oxygen was restricted to
+    save the sight of others. It sits in `moved` (1973) and in prose, and any
+    derived view of this record silently omits it. This is the strongest
+    argument the corpus has produced for a `trade_off` or `harm_displaced`
+    field, and it is not the only case: the oxygen-saturation trials reproduced
+    the same exchange in the 2010s.
+  - >
+    **THE 1973 FIGURE IS QUOTED FROM RECALL AND IS DOING MORE WORK THAN ANY
+    OTHER NUMBER HERE.** Cross's calculation was a retrospective estimate over
+    national mortality data, not a trial result, and it has been both cited for
+    fifty years and argued with. If the true exchange was 3:1 rather than 16:1
+    the story is different in tone though not in kind. **It is checkable in an
+    afternoon and it is not checked**, which makes it the best candidate in the
+    register for `source_moved.py`.
+  - >
+    **THE THIRD EPIDEMIC IS A REGRESSION AND `moved:` CANNOT RECORD IT.** ROP
+    incidence and blindness are rising across a set of middle-income countries
+    because neonatal survival improved faster than screening. That is a real,
+    dated, directional change in the world, and the field it belongs in holds
+    `{axis, from, to}` for a *capability* — which has not moved. **All 219
+    `moved:` entries in this register encode progress**, and this record is the
+    second thing this month to press on whether the field should be able to run
+    backwards. See gaps.md.
+  - >
+    **THE INCIDENCE FIGURES ARE THE WORST KIND OF UNCERTAIN — THEY DEPEND ON THE
+    THING BEING MEASURED.** Estimates of infants blinded annually span 12,000 to
+    32,000, and the spread exists because an unscreened infant who goes blind is
+    frequently never attributed to ROP. **The countries with the largest burden
+    are the ones least able to count it**, which is `burden-unknown` in its
+    purest form and is cited below.
+  - >
+    **`efficacy: 0.85` DESCRIBES ONLY INFANTS REACHED IN TIME** and therefore
+    flatters the disease considerably, since `access` and `caught_in_time` are
+    where the harm actually is. Two records in a row now (`glaucoma`,
+    this one) where the axis measures the treated and the story is about the
+    untreated.
+  - >
+    Written from model recall. The two-phase mechanism, the three epidemics, the
+    48-to-72-hour treatment expectation and the trial names are the parts most
+    likely right; every number is the part most likely wrong.
+
+blockers:
+  - kind: logistics
+    obstacles: [burden-unknown]
+    blocks: an ophthalmologist at the cot, on schedule, for ten weeks
+    what: >
+      **THE BINDING CONSTRAINT, AND IT IS A PERSON RATHER THAN A PRODUCT.**
+      Screening requires someone trained in indirect ophthalmoscopy with scleral
+      depression who is willing to examine ventilated infants weekly on a fixed
+      schedule in a neonatal unit. The laser is not scarce, bevacizumab costs
+      very little per dose, and neither matters without the examination.
+      Ophthalmologists able and willing to do this are scarce everywhere and
+      close to absent across the third-epidemic countries. The work is
+      unglamorous, poorly reimbursed, carries real medicolegal exposure, and
+      takes a specialist out of a clinic where they could see forty patients.
+      **A programme running at 90% coverage is not 90% as good as one running at
+      100%** — the infant missed is the infant blinded — which makes this one of
+      the few records where partial delivery has almost no partial value.
+    who_could: [health-system, government, nonprofit, payer]
+    scale: 5.0e8
+    standing: documented
+    src: recall
+
+  - kind: tooling
+    blocks: substituting an image for a scarce specialist
+    what: >
+      Wide-field retinal imaging lets a technician capture the retina at the cot
+      and an expert grade it elsewhere, and automated grading of plus disease
+      has performed at or above expert level in reported series. **This is the
+      one blocker in the record with an obvious technological answer**, and it
+      is a genuine instance of the pattern `cml` and `breast-cancer` record —
+      the intervention is cheap and the test that steers it is not.
+      What is missing is deployment rather than invention: cameras in units that
+      have none, a reading service someone pays for, and regulatory acceptance
+      of automated grading for a decision that blinds a child if wrong.
+    who_could: [health-system, manufacturer, software, regulator, nonprofit]
+    scale: 2.0e8
+    standing: documented
+    src: recall
+
+  - kind: policy
+    blocks: screening the babies who are actually at risk
+    what: >
+      **SCREENING CRITERIA WERE WRITTEN FOR A DIFFERENT POPULATION AND ARE BEING
+      APPLIED TO THIS ONE.** High-income thresholds — roughly under 31 weeks or
+      under 1500 grams — describe who develops severe ROP in a unit with
+      blended oxygen, continuous saturation monitoring and good infection
+      control. In units without those, **heavier and more mature infants develop
+      severe disease and fall outside the imported criteria entirely.**
+      Several third-epidemic countries have published wider national criteria
+      for exactly this reason, and adoption is uneven. This is a documented
+      policy failure with a cheap fix — change the numbers in the protocol — and
+      it is the clearest instance in the register of guidance travelling further
+      than the evidence that produced it.
+    who_could: [government, health-system, nonprofit, regulator]
+    scale: 1.0e7
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    obstacles: [cold-chain]
+    blocks: the oxygen being delivered in a controllable form
+    what: >
+      Prevention here is a blender, a pulse oximeter and a saturation target.
+      Where oxygen arrives from a concentrator or cylinder without blending and
+      without continuous monitoring, the dose is whatever the tubing delivers.
+      This is the same class of constraint `sepsis` records for oxygen and
+      `maternal-haemorrhage` for the cold chain: **not a molecule, an
+      infrastructure**, and it is the intervention with the largest effect on
+      this disease because it prevents rather than treats.
+    who_could: [health-system, government, manufacturer, nonprofit]
+    scale: 8.0e8
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    obstacles: [who-progresses, tissue-repair]
+    blocks: predicting which eye needs treating, and repairing the ones that detach
+    what: >
+      Two gaps of very different size. The smaller: the staging system defines a
+      threshold but cannot say which individual eye at stage 2 will progress, so
+      the field substitutes weekly surveillance for prediction — which works and
+      is precisely what the workforce blocker cannot supply. **A biomarker or a
+      validated risk model would convert a ten-week vigil into a targeted
+      examination** and would relieve the binding constraint above without a
+      single extra ophthalmologist.
+      The larger: **a detached infant retina cannot be repaired.** Surgery for
+      stage 5 restores useful vision in a small minority. Everything else in
+      this record is prevention of an event that is absolute once it happens.
+      `scale: null` — no priced path to either.
+    who_could: [academic, sponsor, nonprofit, philanthropy]
+    scale: null
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0133
+  rated: 2026-09-01
+  by: [claude, jeremy]

@@ -1,0 +1,81 @@
+slug: donation-dependency
+id: FND-O-0007
+name: The drug supply depends on a donation that could stop
+kind: economic
+resolution: open
+
+# THE FIRST NON-KNOWLEDGE OBSTACLE, AND IT IS HERE TO TEST WHETHER THE OTHER 77%
+# OF NORDSTERN'S BLOCKERS CLUSTER AS HARD AS THE KNOWLEDGE ONES.
+#
+# They do. FIVE records say this independently, in five phrasings, and nothing
+# in either register connected them until now.
+
+question: >
+  Several of the register's best-delivered programmes run on drugs given away by
+  their manufacturers. Ivermectin for onchocerciasis and lymphatic filariasis,
+  albendazole and mebendazole for the helminths, azithromycin for trachoma,
+  liposomal amphotericin B for visceral leishmaniasis, benzathine penicillin for
+  yaws.
+  **None of those donations is a contract with the people who need the drug.**
+  They are corporate decisions, renewable, made by companies whose obligations
+  are elsewhere, and in most cases the drug has no commercial market at all —
+  which is why it is donated rather than sold.
+  So the question is not scientific and it is not really a question. It is a
+  standing fragility: **what happens to five disease programmes if a board
+  changes its mind**, and what would it take to make the supply not depend on
+  that?
+
+what_it_unblocks: >
+  Nothing new. **It protects what already works**, which is a different and less
+  glamorous thing, and it is why this obstacle would be invisible to any register
+  that only counts progress.
+  These are among the most successful delivery programmes in global health.
+  Onchocerciasis and lymphatic filariasis are both held near elimination in large
+  areas by annual mass drug administration; trachoma has been eliminated as a
+  public health problem in a growing list of countries. All of it runs on
+  donated product.
+  What resolving it buys is that the ratings in those five records stop being
+  **contingent on a decision nobody in the health system controls.** Nordstern
+  gaps.md #54 asked what happens if the current effort stops; this is the
+  specific mechanism by which it could, for five records at once.
+  And it is the clearest case in either register of an obstacle where **the
+  actor who could move it is not a scientist, a clinician or a government** — it
+  is a manufacturer, and the lever is a contract.
+
+why_hard: >
+  Because the economics that produced the donation are the same economics that
+  make the alternative expensive.
+  These drugs are off-patent, cheap to make, and needed by people who cannot pay.
+  A donation costs a manufacturer the marginal cost of production plus goodwill,
+  and it is genuinely cheaper for them than the reputational cost of stopping —
+  which is the whole reason the arrangement has been stable for decades.
+  **Replacing it means somebody paying**, at a price that has never been
+  established because there has never been a transaction. Guaranteed-purchase
+  and advance-commitment mechanisms exist and would work; nobody has been
+  required to build one because the donations have not stopped.
+  There is also a structural trap: the donation's existence is the argument
+  against funding the alternative. A programme that is working, for free, does
+  not generate the pressure that would replace it — which is the same shape as
+  gaps.md #57's maintenance problem seen from the funder's side.
+
+holes:
+  - **No donation in this set has actually stopped**, so the fragility is
+    documented as a dependency rather than as a failure. Nordstern's `standing`
+    vocabulary would call this `documented` for the dependency and `alleged` for
+    the risk, and this register cannot currently make that distinction about
+    itself.
+  - Whether this is one obstacle or five is arguable — the drugs, the companies
+    and the diseases differ, and only the shape is shared. It is recorded as one
+    because the fix is the same in all five cases.
+  - It sits uncomfortably next to `cost` blockers, which are the mirror image:
+    hepatitis C, sickle cell, Crohn's and breast cancer all have a drug that
+    exists and is priced out of reach. **Donated-and-fragile and
+    priced-and-unreachable are two ends of one axis**, and the register may
+    eventually want them as one record.
+  - Yaws is the sharpest case and the most awkward: its azithromycin is donated
+    for *trachoma*, so a second disease depends on the first programme's
+    arrangement continuing.
+
+asserted:
+  date: 2026-08-24
+  by: [claude, jeremy]

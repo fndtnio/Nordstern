@@ -1,0 +1,424 @@
+slug: trachoma
+id: FND-D-0036
+name: trachoma
+also: [trachomatous blindness, granular conjunctivitis, ocular Chlamydia trachomatis infection]
+mondo: MONDO:0001249
+kind: disease
+residual: false
+contested: false
+
+# THE OFF-TARGET EFFECT IS PLAUSIBLY BIGGER THAN THE ON-TARGET ONE.
+#
+# Mass azithromycin distribution for trachoma was tested against child mortality
+# in the MORDOR trial, and reduced ALL-CAUSE DEATHS IN CHILDREN by around a
+# seventh — far more in the highest-mortality settings. That has nothing to do
+# with trachoma. It may be the largest benefit the programme produces, and it is
+# invisible to this record, which is filed under an eye disease.
+#
+# The same act carries an off-target COST: mass macrolide administration selects
+# for resistance in organisms that were never the target. So one intervention has
+# a large unmeasured benefit and a real unmeasured cost, both landing on other
+# entities. The register has repeatedly hit externalities and always as harms.
+# See gaps.md #78.
+#
+# AND THIS RECORD WILL FLAG ⚑ NO CHAMPION, WHICH IS FALSE. Trachoma has one of
+# the best-resourced programmes in global health — a coalition, a donation of
+# hundreds of millions of doses, and more than twenty countries validated as
+# having eliminated it. The flag computes reach below 0.6 plus a documented
+# blocker; the name asserts that nobody is carrying it. See gaps.md #79.
+
+burden:
+  prevalence:
+    value: 1.2e8
+    units: >
+      people living in districts still requiring intervention — down from
+      roughly 1.5 billion at risk in 2002, which is the steepest decline
+      recorded in this register
+    src: recall
+  incidence:
+    value: 1.5e6
+    units: >
+      people with trichiasis awaiting surgery — the operable backlog, and the
+      most concrete deliverable in the record
+    src: recall
+  deaths:
+    value: 0.0
+    units: >
+      deaths/year directly attributable — an eleventh morbidity-dominant record.
+      Trachoma blinds and does not kill. See the note: the intervention may
+      nonetheless be preventing child deaths at scale
+    src: reasoning
+  note: >
+    The leading INFECTIOUS cause of blindness. Transmission is by eye-seeking
+    flies that breed in human faeces on open ground, by fingers, and by shared
+    cloths — so the disease is a direct function of water access and sanitation,
+    and it disappeared from Europe and North America without anyone treating it.
+    More than twenty countries have now been validated as having eliminated
+    trachoma as a public health problem, India among them. Read that against the
+    leprosy record: the same phrase, and here the criteria are a transmission
+    proxy in children plus a trichiasis prevalence plus demonstrated system
+    capacity — none of which moves when a treatment schedule changes. **This is
+    what a well-built elimination target looks like**, and it is the direct
+    counterexample to gaps.md #76.
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: risk-reduction
+  ongoing: low
+  efficacy:
+    value: 0.85
+    units: >
+      fraction-of-patients (infection cleared by azithromycin, or trichiasis
+      corrected by surgery) — the blend hides a real difference: the antibiotic
+      works almost always and the surgery recurs in a substantial minority
+    src: reasoning
+  access:
+    value: 0.65
+    units: >
+      fraction-of-patients (reached) — mass drug administration coverage is high
+      and among the best in this register; the shortfall is almost entirely the
+      surgical backlog and the districts where water and sanitation have not
+      changed
+    src: reasoning
+
+measurement:
+  diagnostic: clinical
+  prognostic: none
+  predictive: none
+  witness: >
+    DIAGNOSTIC is `clinical`, and for the second record in a row the reason is
+    that the assessment is a trained eye rather than a missing device. The WHO
+    simplified grading system — TF, TI, TS, TT, CO — is applied by graders with
+    a loupe and a torch, and programmes make district-level treatment decisions
+    on the prevalence of follicular trachoma in children aged one to nine.
+    PCR exists and is not what programmes use. That is a deliberate choice and a
+    defensible one: grading is cheap, fast and reproducible enough to survey a
+    district, and the alternative is a laboratory for an eyelid.
+    PROGNOSTIC is `none`, and it is the expensive gap. Active trachoma in
+    childhood is not blinding. Repeated episodes over years scar the
+    conjunctiva, the scar contracts, the lashes turn inward, and the cornea is
+    abraded — decades later, mostly in women. Nothing identifies which infected
+    child is on that path, so the programme treats every child in a district to
+    prevent an outcome that will or will not appear in thirty years.
+    PREDICTIVE is `none` for the decision that matters. There is one antibiotic
+    and one operation, so there is little to select between — but trichiasis
+    surgery RECURS in a substantial minority, and nothing predicts who. A patient
+    is operated on, the lashes come back, and the cornea goes on being scraped.
+    Predicting recurrence would be worth more here than a new drug.
+
+strata:
+  - name: active trachoma (children)
+    fraction:
+      value: 0.85
+      units: fraction-of-affected
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.95
+      units: fraction-of-stratum (infection cleared by a single oral dose)
+      src: reasoning
+    toll: minor
+    what: >
+      Follicular and intense inflammatory trachoma in children aged one to nine.
+      A single oral dose of azithromycin clears it. Not blinding in itself, and
+      the reason the whole programme exists: these are the infections that, if
+      they keep recurring for years, produce the scarring that blinds an adult
+      decades later.
+      This stratum is where the off-target child-mortality benefit lands, and it
+      is not a trachoma outcome at all.
+
+  - name: trichiasis (adults, mostly women)
+    fraction:
+      value: 0.13
+      units: fraction-of-affected
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.70
+      units: >
+        fraction-of-stratum (durable correction) — surgical recurrence is common
+        and is the field's most persistent quality problem
+      src: reasoning
+    toll: major
+    what: >
+      In-turned lashes abrading the cornea with every blink. Roughly 1.5 million
+      people are waiting for a lid-rotation operation that takes minutes, costs
+      very little, and is performed by trained non-specialist surgeons.
+      It is the residue of childhood infection made operable — and the operation
+      recurs in a substantial minority, which is the reason this stratum rates
+      0.70 rather than 0.95. Antibiotics do nothing for these patients. The
+      backlog is the largest concrete deliverable in the record.
+
+  - name: corneal opacity and blindness
+    fraction:
+      value: 0.02
+      units: fraction-of-affected
+      src: reasoning
+    intervention: none
+    efficacy:
+      value: 0.0
+      units: fraction-of-stratum (sight restored)
+      src: reasoning
+    toll: none
+    what: >
+      Once the cornea is scarred, nothing in the SAFE strategy reaches it.
+      Corneal transplantation is possible in principle and performs poorly in
+      an eye with a scarred, dry, lash-abraded surface, and is unavailable where
+      the disease is.
+      This stratum is why the register derives ⧉ for trachoma: the same entity
+      contains a child cured by one tablet and an adult whose blindness is
+      permanent, and no single `intervention` rating is true of both.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    A single oral dose of azithromycin, with transient gastrointestinal upset.
+    That is the modal patient, and it is close to the lightest treatment burden
+    in the register.
+    The surgical stratum pays more, and it is carried there: over- and
+    under-correction, lid deformity, and above all recurrence — the lashes
+    returning to abrade a cornea that has already been abraded once, sometimes
+    requiring repeat surgery. Nothing that follows a lid-rotation is permanent in
+    the way a resection is, and the recurrence rate is a real quality problem
+    rather than an acceptable side effect.
+    THE COST THIS FIELD CANNOT HOLD IS NOT TO THE PATIENT AT ALL. Distributing
+    azithromycin to whole districts, annually, selects for macrolide resistance
+    in organisms that were never the target — pneumococcus among them. That is a
+    real and documented consequence of the programme, it is borne by people who
+    never had trachoma, and `toll` is defined as what the cure takes from the
+    treated patient. See gaps.md #78.
+  incidence:
+    value: 0.0
+    units: >
+      fraction-of-treated (permanent harm from azithromycin) — surgical
+      complications are carried in the trichiasis stratum
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    Trachoma's residue arrives in two stages, and only the first is treatable.
+    Repeated conjunctival infection in childhood scars the tarsal plate. The scar
+    contracts over decades and turns the lashes inward — trichiasis — which is
+    permanent damage from an infection that was cleared long ago, and which a
+    short operation corrects. **The residue is the treatable part**, for the
+    third time in this register after lymphatic filariasis's hydroceles and
+    leprosy's insensate limbs, and the intervention is again surgery rather than
+    pharmacology (gaps.md #60).
+    The second stage is not treatable. Lashes abrading the cornea opacify it, and
+    a scarred cornea does not clear. That is the blindness the disease is named
+    for, and neither antibiotics nor surgery reach it once it has happened.
+    Note who carries it: trichiasis and trachomatous blindness fall
+    disproportionately on WOMEN, at something like two to four times the rate in
+    men, because women care for the infected children who are the reservoir.
+  incidence:
+    value: 0.02
+    units: >
+      fraction-of-infected (progressing to corneal opacity) — a reasoned
+      estimate over the full natural history; the great majority of childhood
+      infections resolve without sequelae
+    src: reasoning
+
+window:
+  what: >
+    The widest window in the register, measured in DECADES, and it is a window on
+    a cumulative process rather than on a single episode. One bout of follicular
+    trachoma in a child harms nobody. Twenty bouts over a childhood scar the
+    eyelid, and the scar takes another twenty or thirty years to contract far
+    enough to turn the lashes in.
+    So the intervention and the outcome it prevents are separated by a working
+    lifetime, and the people treated are not the people who would have gone
+    blind — they are their childhood selves. That is what makes the programme
+    hard to sustain politically and easy to justify epidemiologically, and it is
+    the same structure as gap #61's two populations stretched across time rather
+    than across a clinic.
+    A second, shorter window sits inside it: once trichiasis exists, operating
+    before the cornea opacifies preserves sight, and operating after does not.
+  closes_on: >
+    conjunctival scarring, then lash inversion, then corneal opacification —
+    each irreversible, over decades
+  caught_in_time:
+    value: 0.70
+    units: >
+      fraction-of-affected (reached before irreversible scarring, or operated
+      before corneal opacity) — a reasoned estimate; mass drug administration
+      coverage is high and the surgical backlog is where this figure is lost
+    src: reasoning
+
+witness:
+  mechanism: >
+    `established`. Ocular serovars of *Chlamydia trachomatis* — A, B, Ba and C,
+    distinct from the genital serovars of the same organism — infect the
+    conjunctiva. Transmission is by eye-seeking flies, by fingers and by shared
+    cloths, and the fly that matters breeds in **human faeces on open ground**,
+    which is why this is a sanitation disease that vanished from Europe and North
+    America without anyone treating it.
+    The chain from infection to blindness is fully characterised: repeated
+    infection, follicular inflammation, conjunctival scarring, lid contraction,
+    trichiasis, corneal abrasion, opacity.
+    Two named holes. Why some heavily infected children scar and others do not is
+    unresolved and appears partly immunogenetic. And more awkwardly: in some
+    settings scarring appears to progress AFTER chlamydial infection has been
+    eliminated from a district, which raises the possibility that the process
+    becomes self-sustaining or is driven by other conjunctival organisms. If that
+    is right, treating the infection does not close the whole problem, and the
+    programme's own success is what exposed the question.
+  intervention: >
+    `curative` at record level, and the record's real interest is that the
+    official strategy is not a single intervention at all.
+    WHO's approach is **SAFE**: Surgery for trichiasis, Antibiotics by mass
+    administration, Facial cleanliness, and Environmental improvement — water and
+    latrines. Four components, four different actors, four different timescales,
+    and they are a package: antibiotics without F and E means reinfection from an
+    unchanged environment, and surgery without antibiotics means operating into a
+    continuing epidemic.
+    THE REGISTER HAS ONE `intervention` RUNG AND ONE `prevention` RUNG. SAFE maps
+    onto them badly — S is surgery for the residue, A is simultaneously treatment
+    and transmission control, F is behaviour, E is municipal infrastructure. The
+    operational world worked out decades ago that disease control is a portfolio;
+    this schema still models it as a single act with a single rating. Worth
+    noting alongside gaps #58 and #60, both of which are symptoms of the same
+    thing.
+    Azithromycin replaced six weeks of twice-daily topical tetracycline ointment.
+    See `moved`.
+  prevention: >
+    `risk-reduction`, carrying the F and E of SAFE. Facial cleanliness reduces
+    fly-eye contact; latrines remove the breeding substrate for the fly; water
+    supply makes both possible. There is no vaccine.
+    This is the third record — after schistosomiasis and soil-transmitted
+    helminths — where **the durable answer is sanitation and lives in a different
+    ministry**. What distinguishes trachoma is that the health sector has
+    formally adopted the infrastructure components into its own strategy rather
+    than leaving them implicit, which is the closest any record here comes to
+    resolving that split, and it still does not give the health ministry a water
+    budget.
+  ongoing: >
+    `low`. One tablet a year during mass administration rounds, or one operation
+    that takes minutes. See `moved` for what it replaced: a six-week course of
+    ointment applied to a child's eyes twice a day, which is a different kind of
+    ask entirely.
+
+moved:
+  - date: 1999
+    axis: ongoing
+    from: moderate
+    to: low
+    why: >
+      A single annual oral dose of azithromycin replaced six weeks of
+      twice-daily topical tetracycline ointment as the antibiotic component of
+      SAFE, supported from 1998 by a manufacturer donation that now runs to
+      hundreds of millions of doses a year. Capability was unchanged — the
+      infection was treatable before — and what collapsed was what compliance
+      required. The register's first `moved` entry on `ongoing`, after three on
+      `toll`, one on `access` and two on `intervention`.
+    src:
+      id: PMID:8102427 doi:10.1016/0140-6736(93)91591-9
+      retrieved: 2026-08-26
+      quote: >
+        Azithromycin is effective against Chlamydia trachomatis in vitro and as a
+        single dose for the treatment of chlamydia infection of the genital tract.
+
+holes:
+  - Whether conjunctival scarring continues to progress after chlamydial
+    infection has been eliminated from a district, and if so what drives it. The
+    programme's success is what raised the question and the answer decides
+    whether A alone can finish the job.
+  - Why some infected children scar and others do not.
+  - What predicts recurrence after trichiasis surgery. Recurrence is the field's
+    most persistent quality problem and nothing identifies who is at risk.
+  - How large the off-target child-mortality benefit of mass azithromycin really
+    is outside the highest-mortality settings, and how it trades against the
+    macrolide resistance the same programme selects for. Both effects are
+    documented and neither is in this record's arithmetic.
+  - The strata fractions are reasoned from the ~1.5 million trichiasis backlog
+    against the population in districts requiring intervention, not measured.
+  - Written from model recall. The SAFE strategy, the fly-faeces transmission
+    route, the grading system and the MORDOR result are the parts most likely
+    right; every number is the part most likely wrong.
+
+blockers:
+  - kind: logistics
+    blocks: 1.5 million lid-rotation operations
+    what: >
+      THE LARGEST CONCRETE DELIVERABLE, and the third time in this register that
+      the biggest available intervention is surgery for a residue rather than
+      treatment of a disease. Roughly 1.5 million people have in-turned lashes
+      scraping their corneas, and the correction is a short lid-rotation
+      procedure that a trained non-specialist can perform, costing very little.
+      Two constraints, and the second is the interesting one. Surgical capacity —
+      trained operators, outreach to the districts where patients are, follow-up
+      — is the ordinary problem. Recurrence is not: a substantial minority of
+      operations fail within a few years, so the backlog is partly self-refilling
+      and quality of surgery matters as much as quantity. A programme that
+      operates fast and badly does not clear it.
+    who_could: [health-system, government, nonprofit, philanthropy]
+    scale: 2.0e8
+    standing: documented
+    src: recall
+
+  - kind: policy
+    blocks: the F and E of SAFE, which are water and sanitation
+    what: >
+      The third record with this shape and the one where the health sector has
+      gone furthest to absorb it. Trachoma's fly breeds in human faeces on open
+      ground; latrines remove the breeding site and water supply makes face
+      washing possible, and both are why the disease left Europe without a drug.
+      WHO put those components INSIDE the strategy rather than leaving them as
+      background — SAFE names them — which is more than schistosomiasis or
+      soil-transmitted helminths got. It still does not give a health ministry a
+      water budget, a sanitation workforce or authority over municipal planning,
+      so the components the strategy owns are the two it can deliver alone.
+      Recorded as `policy` rather than `cost` for the same reason as the other
+      two: the money exists in infrastructure planning and the mechanism to make
+      a disease burden count in it does not.
+    who_could: [government, legislator, health-system, philanthropy]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    obstacles: [who-progresses, burden-unknown]
+    blocks: knowing whether antibiotics alone can finish it, and who recurs
+    what: >
+      Two questions raised by the programme's own success.
+      Scarring appears in some settings to progress after chlamydial infection
+      has gone from a district. If the process becomes self-sustaining, then
+      districts that meet the elimination criteria will keep generating
+      trichiasis for decades, and the surgical component has no end date.
+      And nothing predicts surgical recurrence, which is what determines whether
+      the 1.5 million backlog is cleared once or repeatedly.
+      Behind both sits macrolide resistance selected by mass administration —
+      documented, consequential for organisms that were never the target, and not
+      yet quantified against the programme's benefit.
+      `scale: null` — no priced path.
+    who_could: [academic, sponsor, nonprofit, philanthropy]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: evidence-incomplete
+    blocks: knowing when to stop, and how to operate better
+    what: >
+      Unusually for this register, the evidence base here is good and the gaps
+      are specific. Mass administration has clear trial support, the grading
+      system is validated, and the elimination criteria are defensible.
+      What is not settled is the stopping rule — how many rounds, at what
+      prevalence, with what surveillance afterwards, in a disease whose outcome
+      appears thirty years after the exposure. And surgical technique and
+      training standards vary, with recurrence rates that differ widely between
+      programmes in ways that suggest the difference is fixable.
+      Neither is a discovery problem. Both are trials that would need
+      multi-country coordination and long follow-up, in a field whose funders
+      reasonably feel the main questions are answered.
+    who_could: [academic, sponsor, nonprofit, health-system]
+    scale: 5.0e7
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0036
+  rated: 2026-08-23
+  by: [claude, jeremy]

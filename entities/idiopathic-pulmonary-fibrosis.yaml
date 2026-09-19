@@ -1,0 +1,628 @@
+slug: idiopathic-pulmonary-fibrosis
+id: FND-D-0108
+name: idiopathic pulmonary fibrosis
+also: [IPF, cryptogenic fibrosing alveolitis, usual interstitial pneumonia, pulmonary fibrosis, progressive pulmonary fibrosis]
+common: scarring of the lungs
+mondo: MONDO:0800504
+kind: disease
+residual: true
+contested: true
+
+# **"IDIOPATHIC" IS IN THE NAME, AND THAT IS THE FIRST THING THIS RECORD IS
+# FOR.** The entity is defined by exclusion: a usual interstitial pneumonia
+# pattern with no connective tissue disease, no drug, no inhaled antigen, no
+# asbestos. `residual: true` — the register's flag for *we looked and found
+# nothing* — and it joins `low-back-pain` in that column, which is odd company
+# for a disease with a well-described genetics.
+#
+# THE SECOND THING IS A COMBINATION THE REGISTER HAS NOT HAD.
+# `disease-modifying` and lethal. Two antifibrotics arrived in the same year,
+# 2014, and both **slow the rate of lung function decline by roughly half and
+# stop nothing.** Median survival from diagnosis is three to five years, which is
+# worse than most of the cancers in this corpus. **Nobody is cured, nobody's
+# disease is arrested, and the drugs are unambiguously worth taking** — which is
+# what the middle rung of the ladder actually looks like when it is not a
+# euphemism.
+#
+# AND IT CARRIES THE HARSHEST BACKWARDS ENTRY IN THE REGISTER. From the 1960s
+# until 2012 the standard treatment was prednisone with azathioprine and
+# N-acetylcysteine. **A randomised trial stopped early because that combination
+# increased deaths.** Not "did not help" — increased them, in a regimen given as
+# standard of care for four decades.
+
+burden:
+  prevalence:
+    value: 3.0e6
+    units: >
+      people living with idiopathic pulmonary fibrosis worldwide, approximately —
+      **and rising**, both because populations are ageing and because
+      high-resolution CT finds it in people who would previously have been told
+      they had age-related breathlessness
+    src: recall
+  deaths:
+    value: 7.0e4
+    units: >
+      deaths/year, approximately — **a soft figure and probably an undercount.**
+      Death certification frequently records pneumonia, respiratory failure or
+      cor pulmonale, and GBD counts interstitial lung disease as one category of
+      which IPF is a part
+    src: recall
+  note: >
+    **A DISEASE OF OLDER MEN THAT KILLS FASTER THAN MOST CANCERS AND IS NOT
+    THOUGHT OF AS ONE.** Median age at diagnosis is around seventy, and median
+    survival from diagnosis is three to five years — worse than breast, prostate,
+    colorectal or bladder cancer, and comparable to some of the poor-prognosis
+    ones in this register. **The comparison is made constantly by the field and
+    almost never outside it**, which is most of why the disease is
+    under-recognised, under-referred and under-funded relative to its lethality.
+
+survival:
+  horizon: 5 years from diagnosis
+  untreated:
+    value: 0.20
+    units: >
+      fraction alive — **median survival of three to five years from diagnosis**,
+      with wide variation: a minority progress in months and a minority are
+      stable for years
+    src: recall
+  treated:
+    value: 0.30
+    units: >
+      fraction alive on antifibrotic therapy, with transplantation in the small
+      minority eligible. **The figure is uncertain, and see `witness` — the drugs
+      were licensed on lung-function decline rather than on survival**
+    src: recall
+  witness: >
+    **A THIRD RECORD IN THE `a chance` BAND WHERE THE CHANCE IS TEMPO RATHER THAN
+    CURE**, after `als` and `pancreatic-cancer` — and it is the clearest of the
+    three that gaps.md #216 is a real problem rather than an edge case.
+    Thirty percent alive at five years puts this record in the same band as
+    pancreatic cancer, where the survivors are cured. **Nobody here is cured.**
+    Fibrosis does not reverse; the survivors are people whose disease is moving
+    slowly, plus a very small number with a transplanted lung. **The axis reports
+    a number and cannot report which kind it is.**
+    **And the treated figure deserves a caveat the others do not.** Pirfenidone
+    and nintedanib were both licensed on **forced vital capacity decline**, a
+    surrogate. Meta-analyses and registry data support a survival benefit and no
+    single trial was powered to demonstrate one. **So the gap between 0.20 and
+    0.30 is the register's least certain survival delta**, and it is recorded with
+    that stated rather than rounded away.
+
+axes:
+  mechanism: partial
+  intervention: disease-modifying
+  prevention: risk-reduction
+  ongoing: high
+  efficacy:
+    value: 0.35
+    units: >
+      fraction-of-patients (meaningful slowing of lung function decline on
+      antifibrotic therapy, tolerated and continued) — **and "meaningful" means
+      roughly halving a rate of loss, not stopping it.** A substantial minority
+      discontinue for side effects
+    src: reasoning
+  access:
+    value: 0.30
+    units: >
+      fraction-of-patients (diagnosed, referred to a specialist interstitial lung
+      disease service, and receiving an antifibrotic) — **limited first by
+      diagnosis and second by price**, and near zero across most of the world
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: none
+  witness: >
+    **THE DIAGNOSIS BECAME NON-INVASIVE AND IT IS STILL A COMMITTEE.**
+    High-resolution CT showing a **usual interstitial pneumonia** pattern —
+    subpleural, basal-predominant reticulation with honeycombing and traction
+    bronchiectasis — is now sufficient for diagnosis in the right clinical
+    context, which spared a generation of elderly patients a surgical lung biopsy.
+    **But IPF remains a diagnosis of exclusion made by multidisciplinary
+    discussion**: a radiologist, a respiratory physician and often a pathologist
+    agreeing that no connective tissue disease, no drug, no inhaled antigen and no
+    asbestos accounts for it. **Interobserver agreement between expert centres is
+    imperfect**, and the same scan can attract different diagnoses in different
+    hospitals.
+    **The practical consequence is delay measured in years.** Progressive
+    breathlessness in a seventy-year-old smoker is treated as COPD or heart
+    failure first; median time from symptom onset to diagnosis runs to one to two
+    years, against a median survival of three to five. **A third of the illness,
+    which is `als`'s figure exactly.**
+    PROGNOSTIC is `partial`. Baseline and, more usefully, **change** in forced
+    vital capacity and gas transfer predict survival well at group level, and
+    composite indices exist. **What is not predicted is who will progress
+    rapidly** — a substantial minority decline precipitously, and they cannot be
+    identified at diagnosis.
+    PREDICTIVE is `none`. **Nothing selects between the two antifibrotics**, which
+    have never been compared head to head, or identifies who will respond, or
+    predicts who will tolerate them. The choice is made on side-effect profile and
+    what the patient thinks they can live with.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    **THE DRUGS ARE UNPLEASANT RATHER THAN DANGEROUS, AND THE UNPLEASANTNESS IS
+    THE REASON A LOT OF PEOPLE STOP TAKING THEM.**
+    **Nintedanib** causes diarrhoea in a majority — frequently enough to need dose
+    reduction or an anti-motility agent — along with nausea, weight loss and
+    transaminase rises requiring monitoring. **Pirfenidone** causes nausea,
+    anorexia, weight loss, and **photosensitivity severe enough that patients are
+    told to avoid sunlight**, in a population who are often retired and outdoors.
+    Neither is permanent and neither is disabling; both are taken three times a
+    day for the rest of a life, and **discontinuation rates in real-world cohorts
+    are substantial.**
+    **`toll: minor` alongside a three-to-five year median survival is accurate and
+    reads as good news**, which is the pairing `prion-disease` and `als` also
+    produce. **Almost everything that happens to a person with IPF is done by the
+    disease**: progressive breathlessness, oxygen dependence, and the loss of the
+    ability to climb stairs, then to walk, then to talk in full sentences.
+    **The exception is transplantation and it is a different order.** Lifelong
+    immunosuppression, chronic allograft dysfunction, infection and malignancy
+    risk, and a median survival after lung transplant of roughly six years — see
+    the transplanted stratum, which is the only row in this record with a
+    catastrophic toll.
+    **And the historical toll is the one worth remembering.** For four decades the
+    standard treatment was prednisone with azathioprine, with all of
+    corticosteroid's permanent consequences — and it increased mortality. See the
+    2012 `moved` entry.
+  incidence:
+    value: 0.05
+    units: >
+      fraction-of-treated (permanent harm attributable to treatment — chiefly
+      hepatotoxicity, and the consequences of transplantation in the minority who
+      receive one) — a reasoned estimate
+    src: reasoning
+
+window:
+  what: >
+    **THE WINDOW IS EVERYTHING YOU HAVE NOT LOST YET, AND A THIRD OF IT IS SPENT
+    GETTING DIAGNOSED.**
+    Antifibrotics slow the rate of decline. They do not recover lost lung, because
+    **fibrosis does not reverse** — so the amount of lung function a patient has
+    when treatment starts is very close to the best they will ever have again.
+    Every month of delay is a permanent subtraction, and median time from symptom
+    to diagnosis is one to two years against a median survival of three to five.
+    **The delay is structural rather than negligent.** Breathlessness on exertion
+    in an older person has a long differential of commoner things, the chest
+    radiograph is frequently reported as normal or as "chronic changes", and the
+    diagnosis needs high-resolution CT that nobody orders until something else has
+    been excluded. **Fine inspiratory crackles at the lung bases are the finding
+    that would shorten this, and they are audible with a stethoscope in a primary
+    care room** — which makes examination, of all things, the cheapest lever here.
+    **And a second window nobody can predict: the acute exacerbation.** Patients
+    decline in a stepwise way punctuated by sudden severe deteriorations with
+    around half dying in hospital. There is no treatment — corticosteroids are
+    given and the evidence for them is poor, and given what the 2012 trial found
+    about steroids in stable disease, that is uncomfortable. **The exacerbation is
+    the commonest way this disease kills and nothing in medicine reliably
+    interrupts it.**
+  closes_on: >
+    lung function already lost, which does not come back — there is no threshold,
+    only continuous irreversible subtraction, and the practical deadline is
+    transplant eligibility, which age and comorbidity close permanently
+  caught_in_time:
+    value: 0.30
+    units: >
+      fraction-of-cases (diagnosed and started on antifibrotic therapy while lung
+      function is still substantially preserved) — a reasoned estimate
+    src: reasoning
+
+strata:
+  - name: typical slowly progressive IPF
+    fraction:
+      value: 0.65
+      units: fraction-of-people-with-IPF
+      src: reasoning
+    intervention: disease-modifying
+    efficacy:
+      value: 0.45
+      units: fraction-of-stratum (meaningful slowing of decline, tolerated)
+      src: reasoning
+    toll: minor
+    what: >
+      **THE MODAL PATIENT, AND THE DRUGS DO WHAT THEY SAY.** Decline of forced
+      vital capacity roughly halved, oxygen and pulmonary rehabilitation as the
+      disease progresses, and a median survival measured in years rather than
+      months. **This is what `disease-modifying` looks like when the rung is
+      earned rather than stretched** — real, replicated, licensed, and not
+      remotely a cure.
+
+  - name: rapidly progressive
+    fraction:
+      value: 0.30
+      units: fraction-of-people-with-IPF
+      src: reasoning
+    intervention: symptomatic
+    efficacy:
+      value: 0.10
+      units: fraction-of-stratum (meaningful slowing)
+      src: reasoning
+    toll: minor
+    what: >
+      **A SUBSTANTIAL MINORITY DECLINE PRECIPITOUSLY AND NOBODY CAN IDENTIFY THEM
+      AT DIAGNOSIS.** Some progress over months rather than years; others are
+      punctuated by acute exacerbations that carry roughly fifty percent
+      in-hospital mortality and have no effective treatment. **`prognostic:
+      partial` is carrying this row** — the register can say what IPF does on
+      average and not what it will do to a person, which is the question being
+      asked.
+
+  - name: transplanted
+    fraction:
+      value: 0.05
+      units: fraction-of-people-with-IPF
+      src: reasoning
+    intervention: suppressive
+    efficacy:
+      value: 0.70
+      units: fraction-of-stratum (substantial extension of life and function)
+      src: reasoning
+    toll: catastrophic
+    what: >
+      **THE ONLY INTERVENTION THAT CHANGES THE ENDPOINT, AND IT REACHES ONE
+      PATIENT IN TWENTY.** Lung transplantation is now the commonest indication
+      for which IPF patients are listed, and it substitutes one disease for
+      another: lifelong immunosuppression, chronic allograft dysfunction, and a
+      median survival after transplant of around six years. **Rated `suppressive`
+      rather than `curative` deliberately** — the graft is not a cure, it is a
+      treatment that must be maintained and that eventually fails. Eligibility is
+      closed by age and comorbidity in a disease whose median age at diagnosis is
+      seventy, which is why the fraction is so small.
+
+moved:
+  - date: 2011
+    axis: measurement
+    from: surgical lung biopsy for most patients
+    to: high-resolution CT pattern, in multidisciplinary discussion
+    why: >
+      **A DIAGNOSIS THAT USED TO REQUIRE AN OPERATION STOPPED REQUIRING ONE.**
+      International consensus criteria established that a definite **usual
+      interstitial pneumonia** pattern on high-resolution CT, in the right
+      clinical context and after exclusion of other causes, was sufficient to
+      diagnose IPF without surgical lung biopsy. **In a population with a median
+      age of seventy and failing lungs, avoiding a thoracoscopic biopsy is not a
+      convenience** — the procedure carries real mortality in exactly these
+      patients.
+      **What it did not do is make the diagnosis certain.** IPF remains defined
+      by exclusion and settled by a multidisciplinary meeting, and expert centres
+      disagree with each other often enough to have measured it. **A criterion
+      that removes an operation and leaves the uncertainty is a genuine advance
+      and an honest one.**
+      Recorded on the `measurement` axis (gaps.md #184): nothing about the
+      treatment changed, only what it takes to know.
+    src:
+      id: PMID:21471066 doi:10.1164/rccm.2009-040GL
+      retrieved: 2026-08-28
+      quote: >
+        This document is an international evidence-based guideline on the diagnosis
+        and management of idiopathic pulmonary fibrosis, and is a collaborative
+        effort of the American Thoracic Society, the European Respiratory Society,
+        the Japanese Respiratory Society, and the Latin American Thoracic
+        Association.
+
+  - date: 2012
+    axis: toll
+    from: major
+    to: minor
+    why: >
+      **THE STANDARD OF CARE FOR FOUR DECADES WAS TESTED AND IT INCREASED
+      DEATHS.**
+      Prednisone with azathioprine, latterly with N-acetylcysteine, had been
+      standard treatment for IPF since the 1960s on a theory that the disease was
+      inflammatory. **The PANTHER-IPF trial randomised it against placebo and the
+      combination arm was stopped early: more deaths, more hospitalisations, more
+      serious adverse events.**
+      **This is the harshest backwards entry in the register and it is a toll
+      reduction.** `low-back-pain` records opioids and fusion; `mesothelioma`
+      records a major operation withdrawn; `als` records a drug approved and then
+      pulled. **None of them was standard of care for forty years, and none of
+      them was found to kill people.**
+      **The severity rating genuinely moves here**, which it did not for the four
+      previous toll-reduction entries in this corpus. Stopping corticosteroids and
+      azathioprine removed a `major` permanent toll — osteoporosis, diabetes,
+      infection, marrow suppression — from every patient with this disease, and
+      what replaced it two years later was diarrhoea and photosensitivity.
+      **That is the one case so far where gaps.md #183's complaint does not
+      apply**, because the toll did not merely become rarer: it was abolished.
+      **And the theory was the problem.** IPF was treated as an inflammatory
+      disease because it looked like one, for fifty years, and it is a fibrotic
+      one. The trial that established this had to be done against the entire
+      weight of accepted practice.
+    src:
+      id: PMID:22607134 doi:10.1056/NEJMoa1113354
+      retrieved: 2026-08-28
+      quote: >
+        Increased risks of death and hospitalization were observed in patients with
+        idiopathic pulmonary fibrosis who were treated with a combination of
+        prednisone, azathioprine, and NAC, as compared with placebo. These findings
+        provide evidence against the use of this combination in such patients.
+
+  - date: 2014
+    axis: intervention
+    from: none
+    to: disease-modifying
+    why: >
+      **TWO ANTIFIBROTIC DRUGS IN THE SAME YEAR, AFTER FIFTY YEARS OF NOTHING.**
+      Pirfenidone and nintedanib both reported pivotal phase 3 results in 2014
+      and both reduced the annual decline in forced vital capacity by roughly
+      half. **They are the first and still the only drugs that alter the course of
+      this disease**, and their arrival two years after the previous standard of
+      care was shown to be lethal is one of the sharper reversals in modern
+      respiratory medicine.
+      **The rung moves from `none` to `disease-modifying` and stops there,
+      correctly.** Neither drug arrests fibrosis, neither recovers lost lung, and
+      nobody is cured. The register's middle rung is often a euphemism; here it is
+      an accurate description.
+      **The qualification belongs in the entry rather than a footnote.** Both were
+      licensed on **lung function decline, a surrogate endpoint**. Individual
+      trials were not powered for mortality; pooled analyses and registry data
+      support a survival benefit and the point is still argued. **A treatment can
+      be clearly worth taking and its effect on how long you live still not
+      established**, which is a distinction this register's `efficacy` axis cannot
+      draw.
+    src:
+      id: PMID:24836312 doi:10.1056/NEJMoa1402582
+      retrieved: 2026-08-28
+      quote: >
+        Pirfenidone, as compared with placebo, reduced disease progression, as
+        reflected by lung function, exercise tolerance, and progression-free
+        survival, in patients with idiopathic pulmonary fibrosis. Treatment was
+        associated with an acceptable side-effect profile and fewer deaths.
+
+witness:
+  mechanism: >
+    `partial`, and the name is now misleading in a way worth stating.
+    **The old theory was inflammation and it was wrong.** IPF was treated as an
+    inflammatory alveolitis for fifty years, which is why the standard treatment
+    was corticosteroids and why the 2012 trial that tested them was so
+    consequential. **The current account is of aberrant repair rather than
+    inflammation**: repeated micro-injury to a susceptible ageing alveolar
+    epithelium, failure of the type II pneumocytes to regenerate the surface
+    properly, and activation of fibroblasts into myofibroblasts that lay down
+    collagen and stiffen the lung irreversibly.
+    **The "idiopathic" label is increasingly inaccurate.** The **MUC5B promoter
+    variant** is the strongest common genetic risk factor identified for any
+    complex lung disease and is present in a substantial minority of patients.
+    **Short telomeres** — from *TERT* and *TERC* mutations in familial cases and
+    from ageing more generally — are a recurring theme, and they connect this
+    disease to a broader biology of cellular senescence. Surfactant protein
+    mutations cause familial forms. **Smoking, occupational dusts and
+    gastro-oesophageal reflux are associated with risk**, none strongly enough to
+    be a target.
+    **What is not known is the initiating injury and why it is the lung base.**
+    The disease begins subpleurally and basally with a regularity nobody has
+    explained mechanically, and the trigger in a person with the risk genotype is
+    unidentified.
+    **And the reason it is incurable is one word: fibrosis does not reverse.**
+    Collagen laid down in the alveolar interstitium is not remodelled away, so
+    every unit of lung function lost is lost permanently. That is the same
+    sentence `copd` writes about alveoli and `als` writes about motor neurons,
+    and it is why this record cites `tissue-repair`.
+  contested: >
+    **TWO ARGUMENTS, AND THE FIRST IS ABOUT WHETHER THE DRUGS EXTEND LIFE.**
+    Pirfenidone and nintedanib were licensed on forced vital capacity decline.
+    Neither pivotal trial was powered for mortality. **Pooled analyses, extension
+    studies and national registries support a survival benefit; no single
+    adequately powered randomised trial has demonstrated one, and none now can be
+    run, because withholding an approved therapy would not be acceptable.**
+    The position that they extend survival rests on a surrogate plus consistent
+    observational data; the position that this is unproven is methodologically
+    correct and has no route to resolution. **The register records both and notes
+    that the drugs are unambiguously worth taking either way** — slowing the loss
+    of lung function is a benefit in itself, which is exactly the kind of benefit
+    gaps.md #98 says this schema cannot see.
+    **The second is about where the entity ends.** The 2022 concept of
+    **progressive pulmonary fibrosis** recognised that other fibrotic interstitial
+    lung diseases — hypersensitivity pneumonitis, connective-tissue-associated
+    fibrosis, and others — can behave like IPF and respond to the same drug.
+    **That is either a useful description of a shared final common pathway
+    (gaps.md #39) or the dissolution of IPF as a separate entity**, and the field
+    has not settled which. `residual: true` on this record is the register's way
+    of saying the boundary is drawn by exclusion and may not survive.
+  intervention: >
+    `disease-modifying`, and this is the rung's cleanest instance in the corpus.
+    **Pirfenidone and nintedanib** each roughly halve the rate of lung function
+    decline. They are taken three times daily indefinitely, they have real and
+    unpleasant side effects, a substantial minority stop, and **they do not
+    recover a single unit of lost lung.** No head-to-head comparison exists.
+    Combination is not established.
+    **Everything else is supportive and some of it matters as much.**
+    Supplementary oxygen for exertional desaturation; **pulmonary rehabilitation**,
+    which improves function and quality of life and is under-delivered
+    everywhere — the same finding `copd` records; treatment of the common
+    comorbidities, pulmonary hypertension and reflux; and **early palliative care
+    for breathlessness**, which is the dominant symptom and for which low-dose
+    opioids are effective and under-prescribed.
+    **Lung transplantation is the only intervention that changes the endpoint**
+    and reaches a small minority, closed off by age and comorbidity in a disease
+    diagnosed at seventy.
+    **And acute exacerbations have nothing.** Around half of the patients admitted
+    with one die during the admission. High-dose corticosteroids are given by
+    convention; the evidence is poor, and the 2012 result about steroids in stable
+    disease makes the convention uncomfortable rather than reassuring.
+  prevention: >
+    `risk-reduction`, and it is weak enough that the rating flatters it.
+    **Smoking is the most consistent modifiable association**, and occupational
+    exposure to metal and wood dusts, stone and silica carries risk. Neither
+    explains most cases, and there is no exposure whose removal would eliminate
+    the disease in the way `mesothelioma`'s does.
+    **There is no screening and no premalignant state.** Interstitial lung
+    abnormalities are increasingly found incidentally on CT scans done for other
+    reasons, and a minority of those people progress to clinical fibrosis —
+    **which is the beginning of a screening question rather than an answer to
+    one**, because nobody knows who progresses or whether treating them early
+    helps.
+    **Familial pulmonary fibrosis is the one place prevention has a foothold**:
+    telomere-related and surfactant mutations run in families, first-degree
+    relatives can be identified, and surveillance is offered in some centres. It
+    addresses a small minority and prevents nothing — it finds disease earlier,
+    which given the `window` above is worth something.
+  ongoing: >
+    `high`, and it escalates steeply.
+    Antifibrotics three times a day with the side effects above. Regular lung
+    function testing, which is the measure everything turns on. **Ambulatory then
+    continuous oxygen**, which is the point at which the illness takes over a
+    house: concentrators, cylinders, tubing, and a radius of movement set by a
+    tube. Pulmonary rehabilitation where it exists.
+    **The dominant symptom is breathlessness and it is relentless.** Patients
+    describe the progressive contraction of what they can do — stairs, then a
+    room, then a sentence — and the anxiety that accompanies air hunger is
+    itself disabling. **The register has no field for a symptom, and in this
+    record the symptom is the disease** (gaps.md #98).
+    **And there is a burden specific to transplant candidacy**: the assessment,
+    the waiting, the requirement to stay well enough and fit enough to remain
+    listed, and for most people the eventual news that they are no longer
+    eligible.
+
+holes:
+  - >
+    **`survival: a chance` at 0.30, and nobody here is cured** — the third record
+    after `als` and `pancreatic-cancer` where the band cannot distinguish
+    surviving from dying slowly (gaps.md #216).
+  - >
+    **`residual: true` on a disease with a named common risk allele.** IPF is
+    defined by exclusion, so the flag is correct, and MUC5B and telomere biology
+    mean "we found nothing" is no longer true. **The flag records how the
+    diagnosis is made, not how much is known**, and those have come apart here.
+  - >
+    **The survival benefit of the only two drugs is supported by surrogate and
+    observational evidence and cannot now be tested**, because withholding an
+    approved therapy is not acceptable. The register's `efficacy` axis cannot
+    express *"clearly worth taking, effect on lifespan unproven"*.
+  - >
+    **No `residue` block.** The lost lung function is the disease still doing it,
+    which is `copd`'s exact shape (gaps.md #97) — and it terminates rather than
+    accumulating, as in `als`.
+  - >
+    **`toll: minor` beside a three-to-five-year median survival reads as good
+    news**, the same pairing `prion-disease` and `als` produce. Almost everything
+    permanent here is inflicted by the disease and the schema records what
+    treatment took.
+  - >
+    Burden figures are `recall` and probably undercounts — death certification
+    frequently records pneumonia or respiratory failure. Both survival values are
+    `sourceable`.
+
+blockers:
+  - kind: knowledge
+    obstacles: [tissue-repair]
+    blocks: fibrosis, which does not reverse
+    what: >
+      **NOTHING REMOVES SCAR FROM A LUNG, AND THAT IS THE WHOLE OF WHY THIS
+      DISEASE IS FATAL.**
+      Collagen deposited in the alveolar interstitium is not remodelled away.
+      Antifibrotics slow the rate at which more is laid down; **no agent has ever
+      recovered lost lung function in this disease**, and none is close. That
+      makes the ceiling on every treatment the amount of lung a patient still has
+      when they start, which is why the `window` matters so much and why a
+      diagnostic delay is a permanent subtraction.
+      **This is `tissue-repair`'s sixth citing record and one of its clearest.**
+      Cardiac scar, brain distal to an infarct, emphysematous alveoli, fibrosed
+      bowel — and fibrotic lung. **The obstacle is the same in each: mammals
+      replace functional tissue with scar and cannot reverse it**, and this record
+      differs only in that the process is ongoing rather than the residue of a
+      single event.
+      **Two further holes underneath it.** The initiating injury is unidentified —
+      the genetics name susceptibility, not trigger — and nobody has explained why
+      the disease begins subpleurally and basally with such regularity. And **the
+      acute exacerbation has no mechanism and no treatment**, while being the
+      commonest way the disease kills.
+      `scale: null`.
+    who_could: [academic, sponsor, philanthropy, manufacturer]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    obstacles: []
+    blocks: one to two years, out of three to five
+    what: >
+      **THE DELAY IS A THIRD OF THE ILLNESS AND THE FINDING THAT WOULD SHORTEN IT
+      IS AUDIBLE WITH A STETHOSCOPE.**
+      Median time from symptom onset to diagnosis runs to one to two years.
+      Progressive breathlessness in an older person is attributed to COPD, heart
+      failure, deconditioning or age; the chest radiograph is frequently
+      unremarkable or reported as non-specific chronic change; and nobody orders
+      the high-resolution CT that would settle it until other things have failed.
+      **Fine, dry, velcro-like inspiratory crackles at both lung bases are
+      characteristic, present early, and detectable in a primary care consultation
+      room** — which makes physical examination the cheapest intervention
+      available in this record and one that has quietly fallen out of use.
+      **Then the diagnosis itself needs a service.** High-resolution CT, an expert
+      thoracic radiologist, and a multidisciplinary meeting; expert centres
+      disagree with one another often enough for it to have been measured, and
+      most of the world has no such meeting to convene.
+      **Because antifibrotics do not recover lost lung, the delay is not merely
+      inconvenient — it is subtraction.** A patient diagnosed two years late
+      starts treatment permanently worse off, and that is the strongest argument
+      for the unglamorous fix: teach the crackles, lower the threshold for CT.
+    who_could: [health-system, academic, government, nonprofit, patient-org]
+    scale: 5.0e8
+    standing: documented
+    src: recall
+
+  - kind: evidence-incomplete
+    obstacles: []
+    blocks: knowing whether the drugs extend life, and what to do in an exacerbation
+    what: >
+      **THE TWO DRUGS THAT DEFINE THIS RECORD WERE LICENSED ON A SURROGATE AND THE
+      QUESTION CAN NO LONGER BE ASKED.**
+      Forced vital capacity decline is a reasonable surrogate and it is a
+      surrogate. Neither pivotal trial was powered for mortality; pooled analyses,
+      open-label extensions and registries support a survival benefit. **A
+      placebo-controlled mortality trial would now be unethical**, so the
+      strongest available evidence is the strongest evidence there will ever be.
+      **This is gaps.md #102's family again** — a question whose answer is
+      foreclosed — and it arises here not from rarity but from success: **approval
+      on a surrogate removed the possibility of testing the endpoint that
+      matters.** `alzheimers` records the same structure less comfortably.
+      **And acute exacerbations are the unaddressed half.** They cause roughly
+      half of the deaths in this disease and have no established treatment. High
+      dose corticosteroids are given by convention; the evidence base is
+      observational and weak; and the 2012 finding that steroids increased
+      mortality in stable disease makes that convention actively uneasy. **A
+      randomised trial in acute exacerbation is hard, necessary, and has not been
+      done.**
+      Third: **nothing distinguishes the two available drugs.** No head-to-head
+      trial exists, combination is untested, and a physician chooses between
+      diarrhoea and photosensitivity on the patient's preference.
+    who_could: [academic, sponsor, regulator, patient-org, philanthropy]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+  - kind: cost
+    obstacles: []
+    blocks: two drugs that are priced like orphan therapies
+    what: >
+      **BOTH ANTIFIBROTICS WERE PRICED AS ORPHAN DRUGS FOR A DISEASE WITH THREE
+      MILLION PATIENTS.**
+      Annual cost per patient runs to tens of thousands of dollars in
+      high-income markets. Reimbursement is frequently restricted by lung function
+      criteria — treat only within a defined FVC band — which is a rule that
+      **withholds a drug from the patients with the most lung left to protect**,
+      given that the drugs slow decline and cannot recover it. Generic entry has
+      begun for pirfenidone in some markets and has not yet moved the picture
+      globally.
+      **And the access failure upstream is larger than the price.** Most of the
+      world has neither the high-resolution CT nor the multidisciplinary service
+      needed to make the diagnosis, so the drug's cost is not the binding
+      constraint for the majority of the three million — **not being diagnosed
+      is.**
+      **Lung transplantation is the other cost and it is not money.** It is
+      donor organs, and the number is fixed by something other than budgets. IPF
+      is now among the commonest indications for lung transplant, which means this
+      record competes directly with every other end-stage lung disease for the
+      same fixed supply — gaps.md #128's zero-sum shape.
+    who_could: [payer, manufacturer, government, health-system, regulator]
+    scale: 3.0e9
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0109
+  rated: 2026-08-28
+  by: [claude, jeremy]

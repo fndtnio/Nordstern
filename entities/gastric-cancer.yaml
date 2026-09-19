@@ -1,0 +1,494 @@
+slug: gastric-cancer
+id: FND-D-0059
+name: gastric cancer
+also: [stomach cancer, gastric carcinoma, stomach carcinoma]
+mondo: MONDO:0001056
+kind: disease
+residual: false
+contested: false
+
+# CAUSED BY A BACTERIUM THIS REGISTER ALREADY HOLDS, AND ITS GREAT DECLINE WAS
+# CAUSED BY THE REFRIGERATOR.
+#
+# **THREE CANCERS IN A ROW WHOSE CAUSE IS ANOTHER RECORD.** Non-Hodgkin lymphoma's
+# gastric MALT is *Helicobacter pylori*. Liver cancer is hepatitis B and C.
+# Gastric cancer is *H. pylori* again — a WHO Group 1 carcinogen since 1994, and
+# the cause of the large majority of non-cardia disease. `h-pylori-ulcer` is
+# already a record here, with the same two weeks of triple therapy as its
+# treatment.
+#
+# AND THE LARGEST FALL IN GASTRIC CANCER INCIDENCE PREDATES EVERY MEDICAL
+# INTERVENTION AGAINST IT. Incidence has been declining across the developed
+# world since the 1930s, and the leading explanation is **domestic
+# refrigeration** replacing salt and smoke preservation, plus falling *H. pylori*
+# transmission with sanitation and household crowding.
+#
+# **Nobody was trying to prevent cancer. It is arguably the largest cancer
+# prevention in history and it has no programme, no ministry and no field in this
+# schema.** gaps.md #129.
+#
+# THE OTHER THING IT BREAKS: eradicating *H. pylori* at population scale means
+# giving antibiotics to a substantial fraction of humanity to prevent cancer in
+# one or two percent of them. **That feeds antimicrobial resistance, which is
+# `amr-infection` — another record in this register.** An intervention's harm
+# landing in a different entity has nowhere to go. gaps.md #130.
+
+burden:
+  prevalence:
+    value: 9.7e5
+    units: >
+      new cases/year worldwide — and falling steadily as a rate for a century,
+      while the absolute count holds up because populations are larger and older
+    src: recall
+  deaths:
+    value: 6.6e5
+    units: >
+      deaths/year — fourth or fifth largest cause of cancer death worldwide
+    src: recall
+  note: >
+    **THE GEOGRAPHY IS EXTREME AND SO IS THE SURVIVAL GAP.** Incidence is highest
+    in East Asia — Japan, Korea, China, Mongolia — with further concentrations in
+    Andean South America and Eastern Europe.
+    Five-year survival runs around thirty to thirty-five percent in most of the
+    world and **around seventy percent in Japan and Korea.** Same disease, same
+    operations, same drugs. The difference is that both countries run national
+    screening programmes and find the cancer while it is confined to the mucosa.
+    This is gaps.md #52 at its widest, and unlike visceral leishmaniasis none of
+    it is biology.
+    **AND THE DISEASE IS SPLITTING IN TWO.** Non-cardia, intestinal-type gastric
+    cancer — the *H. pylori* one, arising through the Correa cascade — is falling
+    everywhere. **Cardia cancer, at the junction with the oesophagus, is rising in
+    high-income countries** and is associated with obesity and reflux rather than
+    with infection. Diffuse-type disease, which strikes younger patients, is not
+    falling either.
+    So a record whose headline is decline contains a subtype that is climbing,
+    and the two have different causes, different prevention and different
+    prognosis.
+
+survival:
+  horizon: 5 years from diagnosis
+  untreated:
+    value: 0.02
+    units: >
+      fraction alive — untreated gastric cancer obstructs, bleeds and metastasises
+    src: recall
+  treated:
+    value: 0.35
+    units: >
+      fraction alive — **and it is almost entirely a function of stage, which is
+      almost entirely a function of whether the country screens.** Japan and
+      South Korea, which screen endoscopically, report five-year survival above
+      0.65; most of the world reports half that for the same disease and the
+      same operations
+    src: recall
+  witness: >
+    **The cleanest natural experiment in the register for screening.** Two
+    populations, the same tumour biology, the same surgery, and a survival
+    difference of thirty points produced by when the endoscope goes in. The gap
+    is a `diagnosis` blocker, not a knowledge one.
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: prophylaxis
+  ongoing: moderate
+  efficacy:
+    value: 0.40
+    units: >
+      fraction-of-patients (cured, or durably controlled) — and it is almost
+      entirely a function of stage at diagnosis, which is almost entirely a
+      function of whether the country screens
+    src: reasoning
+  access:
+    value: 0.35
+    units: >
+      fraction-of-patients (reaching endoscopy, gastrectomy or endoscopic
+      resection, perioperative chemotherapy and biomarker-directed systemic
+      therapy) — endoscopy capacity is the binding item, as in colorectal cancer
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: partial
+  witness: >
+    DIAGNOSTIC is `objective` — endoscopy with biopsy — and as in colorectal
+    cancer **the diagnostic instrument is also the curative one** for early
+    disease: a lesion confined to the mucosa can be removed by endoscopic
+    submucosal dissection in the same session, and the patient keeps their
+    stomach.
+    The obstacle is that early gastric cancer produces no symptoms. Dyspepsia is
+    universal and non-specific; by the time there is weight loss, vomiting or
+    anaemia the disease is usually advanced. **Which is why the countries that do
+    well are the ones that scope people who feel fine.**
+    PROGNOSTIC is `partial` and stage does nearly all of it. Depth of invasion —
+    mucosa, submucosa, muscularis — decides whether the cure is an endoscopy or
+    an operation, and it is assessed by the endoscopist before anything is
+    removed.
+    PREDICTIVE is `partial` and improving from a low base. **HER2 amplification**
+    in roughly a fifth selects trastuzumab. **Mismatch-repair-deficient and
+    EBV-associated tumours** respond to checkpoint blockade far better than the
+    rest, which is the same two-percent-of-the-record story colorectal cancer
+    tells. **Claudin 18.2** is a recent addition with its own antibody. PD-L1
+    shifts the odds without deciding.
+    That leaves the majority — chromosomally unstable, HER2-negative,
+    microsatellite-stable disease — with chemotherapy chosen by tolerability.
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    **LOSING YOUR STOMACH CHANGES EVERY MEAL FOR THE REST OF YOUR LIFE, AND THE
+    REGISTER HAS NO BETTER WORD FOR IT THAN `major`.**
+    After a total gastrectomy a person eats small amounts many times a day and
+    cannot do otherwise. **Dumping syndrome** — food entering the small bowel
+    undiluted — causes sweating, palpitations, cramping and diarrhoea after
+    eating, and reactive hypoglycaemia afterwards. **Vitamin B12 must be injected
+    for life**, because the intrinsic factor that absorbed it was in the removed
+    stomach. Iron deficiency, calcium and vitamin D malabsorption, osteoporosis,
+    and sustained weight loss that frequently never fully reverses.
+    Subtotal resection is better and not normal. Perioperative chemotherapy adds
+    neuropathy. D2 lymphadenectomy adds surgical morbidity.
+    **AND THE MOST DAMAGING PROCEDURE IN THIS RECORD IS GIVEN TO PEOPLE WHO DO
+    NOT HAVE CANCER.** Carriers of a pathogenic *CDH1* variant — hereditary
+    diffuse gastric cancer — face a lifetime risk in the region of seventy
+    percent, arising in a mucosa that endoscopy cannot reliably survey. The
+    standard recommendation is **prophylactic total gastrectomy, often in a
+    person's twenties or thirties.** A certain, permanent, life-altering harm to
+    prevent a probable cancer, in someone who is well.
+    That is gaps.md #105 — `toll` is scoped to treatment and prevention has costs
+    — in its sharpest form anywhere in the corpus.
+  incidence:
+    value: 0.50
+    units: >
+      fraction-of-treated (permanent harm — gastrectomy and its nutritional
+      consequences, chemotherapy neuropathy) — a reasoned estimate, and it
+      EXCLUDES the early-stage patients cured endoscopically, which is the point
+      of finding them early
+    src: reasoning
+
+# NO `residue` BLOCK. A gastric cancer resected and cured leaves the patient the
+# consequences of the resection. `restored` derives `cure-costs`, as it has for
+# every cancer here except melanoma.
+#
+# The one thing that arguably belongs here has nowhere to go: a patient cured of
+# early gastric cancer endoscopically **still has the atrophic, metaplastic
+# stomach the cancer grew in**, and remains at raised risk of a second primary.
+# It is liver cancer's field problem in a different organ, and the same absent
+# field (gaps.md #127).
+
+window:
+  what: >
+    **THE WINDOW BUYS YOU YOUR STOMACH AS WELL AS YOUR LIFE, WHICH IS UNUSUAL.**
+    Gastric cancer confined to the mucosa is cured in over ninety percent of
+    cases — **by endoscopic submucosal dissection, without surgery, with the
+    stomach intact.** Once it invades the submucosa and beyond, the answer is
+    gastrectomy, and past that it is not curable at all.
+    So the difference between finding it early and finding it late is the
+    difference between an outpatient procedure and eating six small meals a day
+    for the rest of your life. `window_toll_link` fires on this record and
+    reports that **the toll is the price of missing it and diagnosis is the cheap
+    lever** — which for prostate cancer was exactly backwards and here is exactly
+    right.
+    **AND TWO COUNTRIES HAVE DEMONSTRATED IT AT NATIONAL SCALE.** Japan has
+    screened for gastric cancer since the 1960s and Korea since 1999, both now
+    principally by endoscopy, and both detect a large share of their cancers at
+    the endoscopically curable stage. Their survival figures are roughly double
+    everybody else's.
+    The upstream window is longer still: the Correa cascade from chronic
+    gastritis through atrophy and intestinal metaplasia takes decades, and
+    eradicating the infection partway along reduces the risk.
+  closes_on: >
+    invasion beyond the mucosa — at which point the cure becomes a gastrectomy —
+    and then beyond the stomach wall and to nodes
+  caught_in_time:
+    value: 0.30
+    units: >
+      fraction-of-cases (diagnosed at a stage curable by endoscopic resection or
+      by surgery with good expectation) — a reasoned global estimate. **In Japan
+      and Korea it is far higher and everywhere else far lower**, which is the
+      whole record
+    src: reasoning
+
+strata:
+  - name: early gastric cancer (mucosal, endoscopically resectable)
+    fraction:
+      value: 0.20
+      units: fraction-of-diagnoses
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.95
+      units: fraction-of-stratum (five-year survival after endoscopic submucosal dissection)
+      src: recall
+    toll: minor
+    what: >
+      **CURED BY AN ENDOSCOPY, WITH THE ORGAN LEFT IN PLACE.** Over ninety
+      percent five-year survival, no operation, no nutritional consequences, and
+      a surveillance endoscopy afterwards.
+      **The `toll: minor` on this row against `major` on the next is the largest
+      within-record toll gap in the corpus**, and it is bought entirely by
+      finding the cancer a few millimetres earlier. It is twenty percent of
+      diagnoses globally and a far larger share in the two countries that screen.
+
+  - name: locally advanced, resectable
+    fraction:
+      value: 0.35
+      units: fraction-of-diagnoses
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.40
+      units: fraction-of-stratum (cured by gastrectomy with perioperative chemotherapy)
+      src: reasoning
+    toll: major
+    what: >
+      Subtotal or total gastrectomy with D2 lymphadenectomy, and perioperative
+      chemotherapy. Cure in a substantial minority, at the price described in
+      `toll`.
+      **This is where most of the record's suffering is**: patients who are cured
+      and who will never eat a normal meal again.
+
+  - name: advanced, biomarker-selected (HER2+, MSI-high or EBV-associated)
+    fraction:
+      value: 0.10
+      units: fraction-of-diagnoses
+      src: reasoning
+    intervention: disease-modifying
+    efficacy:
+      value: 0.25
+      units: fraction-of-stratum (durable benefit from targeted or immune therapy)
+      src: reasoning
+    toll: major
+    what: >
+      HER2 amplification selects trastuzumab; mismatch-repair deficiency and
+      Epstein-Barr association predict genuine responses to checkpoint blockade;
+      claudin 18.2 has its own antibody.
+      **A tenth of the record where the last fifteen years happened**, and the
+      same shape colorectal cancer shows: the biomarker-defined minority does
+      considerably better than the majority beside it.
+
+  - name: advanced, unselected
+    fraction:
+      value: 0.35
+      units: fraction-of-diagnoses
+      src: reasoning
+    intervention: disease-modifying
+    efficacy:
+      value: 0.10
+      units: fraction-of-stratum (durable meaningful benefit)
+      src: reasoning
+    toll: major
+    what: >
+      Chromosomally unstable, HER2-negative, microsatellite-stable disease
+      treated with fluoropyrimidine and platinum chemotherapy chosen by
+      tolerability. Median survival around a year. **The largest stratum and the
+      one nothing has reached.**
+
+moved:
+  - date: 1994
+    axis: prevention
+    from: none
+    to: prophylaxis
+    why: >
+      **HELICOBACTER PYLORI WAS CLASSIFIED AS A GROUP 1 HUMAN CARCINOGEN**, a
+      decade after it was shown to cause peptic ulcer disease, and gastric cancer
+      acquired a preventable cause for the first time.
+      Eradication reduces subsequent gastric cancer incidence, most clearly in
+      people treated before atrophy and intestinal metaplasia are established.
+      **Japan approved eradication for all infected people in 2013 explicitly for
+      cancer prevention** and has pursued it as national policy since.
+      The prevention of this cancer is two weeks of antibiotics for a different
+      disease, which this register already holds as `h-pylori-ulcer`.
+    src:
+      id: PMID:7715068
+      retrieved: 2026-08-26
+      quote: >
+        Schistosomes, liver flukes and Helicobacter pylori.
+
+  - date: 2000
+    axis: toll
+    from: 0.75
+    to: 0.5
+    why: >
+      **ENDOSCOPIC SUBMUCOSAL DISSECTION**, developed in Japan through the 1990s
+      and spreading from around 2000, made mucosal gastric cancer curable without
+      an operation. The patient keeps their stomach.
+      Capability did not change — those patients were curable by gastrectomy
+      before. **What collapsed is the price**, from a life reorganised around
+      eating to an outpatient procedure and a surveillance endoscopy.
+      The numbers above are the toll's *incidence* rather than its severity, and
+      `moved` records a change on an axis rather than in one of its components —
+      the same limitation prostate cancer's 2012 entry ran into (gaps.md #26).
+
+witness:
+  mechanism: >
+    `established`, and it is one of the few cancers with a named bacterial cause
+    and a stepwise histological path that can be watched through an endoscope.
+    **The Correa cascade**: *Helicobacter pylori* colonises the gastric mucosa
+    and produces chronic active gastritis; over decades this becomes atrophic
+    gastritis, then intestinal metaplasia, then dysplasia, then carcinoma. Salt
+    and salt-preserved food accelerate it; smoking contributes; the bacterium's
+    own virulence factors — *cagA* above all — determine much of the risk.
+    That accounts for intestinal-type, non-cardia disease, which is most of the
+    global burden and the part that is falling.
+    **The molecular classification splits it four ways** — Epstein-Barr-positive,
+    microsatellite-unstable, genomically stable diffuse, and chromosomally
+    unstable — and those groups differ in age, prognosis and what they respond
+    to, which is why the `strata` block above is written the way it is.
+    **DIFFUSE-TYPE DISEASE IS A DIFFERENT PROBLEM.** Signet-ring cell carcinoma
+    infiltrates the stomach wall without forming a mass, strikes younger
+    patients, is less clearly *H. pylori*-dependent, and is the form inherited
+    with *CDH1* variants. It is not declining.
+    **THE NAMED HOLE IS WHO.** Roughly half the world carries *H. pylori* and
+    one to two percent of the infected develop gastric cancer. Bacterial
+    virulence factors, host inflammatory genotype, salt intake and the timing of
+    acquisition all contribute and none of it identifies an individual — which is
+    the same question COPD asks about smokers, and it is what makes mass
+    eradication a blunt instrument.
+  intervention: >
+    `curative`, and this record has two cures that are barely the same kind of
+    thing.
+    **Endoscopic submucosal dissection** removes a mucosal cancer through the
+    mouth, cures over ninety percent of them, and leaves the stomach working.
+    **Gastrectomy** removes the organ, cures a substantial minority of locally
+    advanced disease with perioperative chemotherapy, and reorganises the rest of
+    the patient's life around eating.
+    For advanced disease: chemotherapy, with trastuzumab for HER2-positive
+    tumours, checkpoint blockade for the mismatch-repair-deficient and
+    EBV-associated minority, and an anti-claudin antibody more recently. Median
+    survival around a year, and the last fifteen years reached about a tenth of
+    the record.
+  prevention: >
+    `prophylaxis`, **and the prophylaxis is antibiotics for somebody else's
+    disease.**
+    Eradicating *Helicobacter pylori* reduces subsequent gastric cancer,
+    particularly when done before atrophy is established. Japan has treated it as
+    national cancer-prevention policy since 2013; most countries have not, and
+    the reason is in the blockers below.
+    Then salt reduction, smoking cessation, and — historically and by far the
+    largest of them — **the change in how food is preserved.**
+    **THE GREAT DECLINE WAS NOT A MEDICAL ACHIEVEMENT.** Gastric cancer incidence
+    has been falling across the developed world since roughly the 1930s, decades
+    before *H. pylori* was discovered, and the leading explanation is domestic
+    refrigeration replacing salting and smoking, together with falling *H.
+    pylori* transmission as sanitation improved and households became less
+    crowded.
+    **Nobody did any of that to prevent cancer.** It is plausibly the largest
+    cancer prevention in human history, it has no programme and no ministry, and
+    this schema can only record deliberate acts. See gaps.md #129.
+  ongoing: >
+    `moderate`, and it is carrying two very different populations.
+    A patient cured endoscopically carries surveillance endoscopy and the
+    knowledge that the rest of the stomach is still metaplastic.
+    A patient after total gastrectomy carries **lifelong vitamin B12 injections,
+    iron and calcium supplementation, bone density monitoring, dietetic support,
+    and a permanently altered relationship with food.** The axis records that as
+    the same word.
+
+holes:
+  - Every scalar is `src: recall` or `src: reasoning`, and the strata fractions
+    are global averages over a bimodal world — in Japan and Korea the early-stage
+    fraction is far larger and in most countries far smaller.
+  - Cardia and non-cardia disease are counted together here and are diverging in
+    opposite directions with different causes. They may deserve separate records.
+  - The magnitude of the refrigeration effect is an inference from
+    time trends and ecological comparison rather than a measured quantity, and it
+    is stated as the leading explanation rather than a settled one.
+  - The benefit of mass *H. pylori* eradication in preventing cancer is
+    established in trials in high-incidence populations; whether it transfers to
+    low-incidence populations, and at what cost in resistance, is unresolved.
+  - Oesophageal cancer shares the cardia boundary and is absent from this
+    register. So is `hepatitis-b`, `cirrhosis` and now a fourth upstream entity —
+    the queue keeps producing records whose causes are not yet written.
+
+blockers:
+  - kind: logistics
+    blocks: endoscopy for people who feel perfectly well
+    obstacles: []
+    what: >
+      **TWO COUNTRIES HAVE PROVED IT WORKS AND ALMOST NOBODY ELSE DOES IT.**
+      Japan and Korea screen at national scale, find a large share of their
+      cancers while they are mucosal, cure them endoscopically, and report
+      roughly double everybody else's survival. The intervention is an endoscopy
+      in a person with no symptoms.
+      Elsewhere the arithmetic does not obviously work: at low incidence,
+      screening a population by endoscopy costs more per cancer found than
+      anybody will pay, and the procedure has its own small risk. **So the
+      strategy is correct, demonstrated, and rationally declined by most of the
+      world** — which is a different kind of blocker from the ones this register
+      usually records.
+      The constraint is the same one colorectal cancer names: endoscopists and
+      rooms, made slowly, not shippable. Where both cancers are common the
+      capacity serves both, which nothing here can express.
+    who_could: [health-system, government, payer, academic]
+    scale: 5.0e9
+    standing: documented
+    src: recall
+
+  - kind: policy
+    blocks: deciding whether to give half the world antibiotics
+    obstacles: []
+    what: >
+      **ERADICATING *H. PYLORI* AT POPULATION SCALE MEANS TREATING ROUGHLY HALF
+      OF HUMANITY TO PREVENT CANCER IN ONE OR TWO PERCENT OF THEM.**
+      The benefit is real and is demonstrated in high-incidence populations. The
+      costs are: a course of two or three antibiotics per person, side effects,
+      the disruption of a microbiome that may not be entirely a parasite, and
+      **antimicrobial resistance** — clarithromycin resistance in *H. pylori* is
+      already rising and is the main reason first-line regimens fail.
+      That last cost lands in `amr-infection`, which is a separate record in this
+      register, and **nothing can say that a prevention for one entity worsens
+      another** (gaps.md #130).
+      Japan decided the trade was worth it and treats eradication as cancer
+      policy. Most countries have not decided, and the undecided position is
+      itself a choice being made every year.
+      A vaccine against *H. pylori* would dissolve the whole problem and does not
+      exist.
+    who_could: [government, health-system, regulator, academic, payer]
+    scale: 2.0e9
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: which infected person, and diffuse-type disease
+    obstacles: [who-progresses]
+    what: >
+      Two absences and the first would settle the policy question above.
+      **WHICH OF THE INFECTED WILL GET CANCER.** One to two percent, over
+      decades, and the determinants — bacterial *cagA* status, host inflammatory
+      genotype, salt intake, age at acquisition — stratify populations without
+      identifying people. **A test that named the one-in-fifty would turn mass
+      eradication into targeted eradication and remove the resistance argument
+      entirely.**
+      **AND DIFFUSE-TYPE DISEASE HAS NO ANSWER.** It infiltrates without forming
+      a mass, so endoscopic screening is much less effective against it; it
+      strikes younger people; it is not clearly falling; and for hereditary
+      *CDH1* carriers the only reliable option is removing a healthy stomach.
+      `scale: null`.
+    who_could: [academic, sponsor, philanthropy, government]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: cost
+    blocks: the biomarker-directed agents, and the testing that aims them
+    obstacles: []
+    what: >
+      The chemotherapy backbone is generic. HER2 testing plus trastuzumab,
+      mismatch-repair or PD-L1 testing plus checkpoint blockade, and claudin
+      18.2 testing plus its antibody are not — and they are the whole of what
+      changed in advanced gastric cancer in the last fifteen years.
+      **They reach about a tenth of the record**, which means a health system
+      that can afford endoscopy, surgery and generic chemotherapy captures most
+      of the available benefit and misses the part that is growing.
+      Trastuzumab biosimilars have helped and the newer agents are on patent.
+    who_could: [manufacturer, payer, government, health-system]
+    scale: 3.0e9
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0059
+  rated: 2026-08-24
+  by: [claude, jeremy]

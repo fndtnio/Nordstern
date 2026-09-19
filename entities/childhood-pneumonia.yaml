@@ -1,0 +1,556 @@
+slug: childhood-pneumonia
+id: FND-D-0071
+name: pneumonia in children under five
+also: [childhood pneumonia, paediatric pneumonia, acute lower respiratory infection, ALRI]
+mondo: MONDO:0005249
+kind: disease
+residual: false
+contested: false
+
+# Mondo's `pneumonia` is age-agnostic and this record is scoped to children under
+# five, because that is how the burden is counted, how the case definition is
+# written, how the vaccines are targeted and where the deaths are. Adult and
+# elderly lower respiratory infection is a large separate burden this register
+# does not yet hold.
+#
+# THE ENTITY AS COUNTED IS NOT THE ENTITY AS DEFINED, and the record says so
+# repeatedly. Mondo defines pneumonia anatomically — infection of the lung
+# parenchyma. The 140 million annual episodes below are counted by a community
+# health worker observing a cough and counting a respiratory rate, which fires on
+# bronchiolitis, asthma, malaria, anaemia and acidosis as well. See gaps.md #155.
+
+burden:
+  cases:
+    value: 1.4e8
+    units: >
+      episodes/year in children under five — **and this is a count of a case
+      definition firing, not of confirmed lung infection** (see the file header
+      and gaps.md #155)
+    src: recall
+  deaths:
+    value: 7.0e5
+    units: >
+      deaths/year in children under five — **the leading infectious cause of
+      death in this age group**, roughly two thousand children a day, and
+      concentrated in India, Nigeria, Pakistan, the Democratic Republic of the
+      Congo and Ethiopia
+    src: recall
+  note: >
+    **THE HEADLINE NUMBER IS THE ONE THAT FELL FURTHEST IN THIS REGISTER AND
+    NOBODY NOTICED.** Under-five pneumonia deaths were around 1.7 million in 2000
+    and are around 700,000 now — a reduction of roughly a million children a year,
+    achieved by conjugate vaccines, wider antibiotic access, better nutrition and
+    falling household air pollution. Measured as lives saved per year it is
+    comparable to the malaria decline and it has no equivalent public profile.
+    **And the composition changed underneath the total.** *Haemophilus influenzae*
+    type b has been essentially removed by vaccination where the vaccine is used;
+    pneumococcal disease is much reduced. The PERCH case-control study, reporting
+    in 2019 across seven countries, found **viruses accounting for the majority of
+    severe childhood pneumonia and RSV the single largest cause**, with
+    *Streptococcus pneumoniae* a small share in vaccinated populations.
+    So the disease this record describes is not the disease of 1990. **We removed
+    the bacterial part, and what is left is mostly viral and is treated with
+    antibiotics anyway**, for reasons the `measurement` witness explains and does
+    not excuse.
+
+survival:
+  horizon: 30 days from onset
+  untreated:
+    value: 0.85
+    units: >
+      fraction alive — most childhood pneumonia is viral and self-limiting, which
+      is why the untreated figure is high. **The mortality sits almost entirely
+      in the bacterial and hypoxaemic minority**, and averaging over the whole
+      syndrome conceals a subgroup with a far worse outlook
+    src: reasoning
+  treated:
+    value: 0.98
+    units: >
+      fraction alive with antibiotics and oxygen where needed. **Oxygen is the
+      larger of the two.** Hypoxaemia is the strongest predictor of death in
+      childhood pneumonia, and a functioning oxygen supply — concentrator, power,
+      pulse oximeter, someone to read it — saves children that antibiotics alone
+      do not
+    src: reasoning
+  witness: >
+    **The rated record where the untreated column is least informative**, because
+    the syndrome is mostly benign and the deaths are concentrated in a fraction
+    the average cannot see. It is logged as a limit of the axis rather than
+    corrected: a single survival figure assumes a population with one prognosis,
+    and syndromic records like this one, `sepsis` and `stroke` do not have that.
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: prophylaxis
+  ongoing: low
+  efficacy:
+    value: 0.94
+    units: >
+      fraction-of-patients (survival, with antibiotics and oxygen where needed) —
+      **and the figure is set almost entirely by whether oxygen is available**,
+      since hypoxaemia is the strongest predictor of death
+    src: reasoning
+  access:
+    value: 0.45
+    units: >
+      fraction-of-patients (reaching care, an antibiotic, and oxygen if hypoxaemic)
+      — roughly six in ten sick children are taken to any provider, fewer receive
+      an appropriate antibiotic, and **oxygen is the constraint that binds**
+    src: reasoning
+
+measurement:
+  diagnostic: clinical
+  prognostic: partial
+  predictive: none
+  witness: >
+    **DIAGNOSTIC IS `clinical`, AND THE DIAGNOSIS IS A COUNTED RESPIRATORY RATE.**
+    The WHO Integrated Management of Childhood Illness algorithm says: a child
+    with cough or difficult breathing, plus fast breathing for their age — fifty
+    or more breaths a minute under one year, forty or more from one to five — has
+    pneumonia and should receive oral amoxicillin. Chest indrawing makes it
+    severe. That is the whole test, it costs a watch and sixty seconds, and it is
+    used for most of the 140 million episodes above.
+    **IT IS DELIBERATELY INACCURATE, AND THAT IS THE CORRECT DESIGN.** It fires on
+    bronchiolitis, asthma, malaria, severe anaemia and metabolic acidosis, all of
+    which cause tachypnoea. It was chosen because the cost of missing bacterial
+    pneumonia in a child is death within days and the cost of a false positive is
+    three days of an antibiotic costing pennies. Given that asymmetry, a rule
+    optimised for sensitivity beats a rule optimised for accuracy — **and the
+    register then reads the resulting count as a disease burden** (gaps.md #155).
+    Chest radiography is largely unavailable, and where it is available observers
+    disagree with each other about it.
+    PROGNOSTIC is `partial`, and **the one thing that works is a five-dollar
+    device.** Hypoxaemia — oxygen saturation below 90% — is the strongest single
+    predictor of death in childhood pneumonia, and a pulse oximeter measures it in
+    seconds without training or consumables. It identifies the children who will
+    die without oxygen. It is not universally deployed, which is the same sentence
+    as the `logistics` blocker below and is really one failure with two names.
+    **PREDICTIVE IS `none`, AND IT IS THE SECOND RECORD RUNNING.** Nothing at the
+    point of care distinguishes the child with bacterial pneumonia who needs the
+    antibiotic from the majority with a viral illness who does not. C-reactive
+    protein and procalcitonin are imperfect and absent from the settings that
+    matter. `sepsis` rated `none` because there was nothing to choose between;
+    this rates `none` because there is a real choice and no way to make it.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    **THE TREATMENT IS THREE DAYS OF ORAL AMOXICILLIN COSTING A FEW CENTS AND IT
+    IS ESSENTIALLY HARMLESS.** Rash, diarrhoea, rare allergy. Oxygen is a gas that
+    the child stops needing. Nothing here leaves a mark on the patient.
+    **THE COST LANDS SOMEWHERE ELSE, AND IT IS LARGE.** A case definition designed
+    to fire on anything gives 140 million courses of antibiotics a year, in
+    children, most of whom have a viral illness — and the register holds three
+    records (`cre`, `mrsa`, `typhoid`) whose entire content is the consequence of
+    exactly that. `toll` is what the cure costs the patient it is given to
+    (gaps.md #130), and this cost is borne by other people's children years later.
+    Recorded as `minor` and not permanent, which is true of the child in front of
+    you and is the wrong answer to the question anybody actually cares about.
+  incidence:
+    value: 0.005
+    units: >
+      fraction-of-treated (significant adverse effect — chiefly antibiotic
+      allergy) — a reasoned estimate
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    **SEVERE PNEUMONIA IN EARLY CHILDHOOD LOWERS A LUNG-FUNCTION TRAJECTORY FOR
+    LIFE, AND THE BILL ARRIVES FIFTY YEARS LATER IN A DIFFERENT RECORD.**
+    Lung growth is not finished at birth; alveolarisation continues through early
+    childhood, and a severe insult during it produces a lower peak lung function
+    in early adulthood than the child would otherwise have reached. Peak function
+    is the ceiling everything afterwards declines from.
+    Follow-up studies of children hospitalised with severe pneumonia find
+    persistent spirometric abnormality, and **severe childhood lower respiratory
+    infection is an established risk factor for chronic obstructive pulmonary
+    disease decades later** — in people who may never smoke. Adenoviral pneumonia
+    and recurrent severe episodes can leave **post-infectious bronchiectasis** and
+    obliterative bronchiolitis outright.
+    `copd` is already a record in this register, and a share of it is generated
+    here. The register has no way to state that (gaps.md #130, #147), and the
+    conventional framing — COPD as a smoking disease of the old — hides a
+    childhood component that would be prevented by oxygen and an antibiotic.
+    Rated against the severe strata; the majority of episodes are mild and leave
+    nothing.
+  incidence:
+    value: 0.05
+    units: >
+      fraction-of-severe-cases (persistent lung function impairment or
+      bronchiectasis) — a reasoned estimate over a literature that is small,
+      long-horizon and mostly from high-income cohorts
+    src: reasoning
+
+window:
+  what: >
+    **A CHILD WITH HYPOXAEMIC PNEUMONIA DIES IN A DAY OR TWO AND THE THING THAT
+    SAVES THEM IS A GAS.**
+    The sequence is short: consolidation impairs gas exchange, saturation falls,
+    the child compensates by breathing faster and then stops being able to, and
+    hypoxia plus exhaustion kills. Antibiotics take a day or more to work even
+    when the organism is bacterial and the antibiotic is right. **Oxygen works
+    immediately and buys the time for everything else.**
+    Most of the delay is before any health worker is involved — recognising that
+    a breathless child is dangerously ill rather than ordinarily ill, deciding to
+    travel, affording the travel, and arriving somewhere that has anything to
+    offer. WHO and UNICEF's care-seeking figures put roughly four in ten sick
+    children as never being taken to a provider at all.
+    **And arriving is not the end of the window**, which is what makes this record
+    different from `malaria`'s. A child who reaches a district hospital in time
+    and finds no working oxygen concentrator has not been saved by arriving.
+  closes_on: >
+    progression of hypoxaemic pneumonia to respiratory failure — hours to a
+    couple of days in a small child
+  caught_in_time:
+    value: 0.45
+    units: >
+      fraction-of-severe-cases (reaching antibiotics and oxygen promptly) — a
+      reasoned estimate combining care-seeking with facility oxygen availability
+    src: reasoning
+
+strata:
+  - name: non-severe pneumonia (fast breathing only)
+    fraction:
+      value: 0.82
+      units: fraction-of-episodes
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.995
+      units: fraction-of-stratum (survival)
+      src: reasoning
+    toll: minor
+    what: >
+      The great majority. Managed at home or at a community health post with oral
+      amoxicillin, and **most of these children would have recovered without it**,
+      because most of them have a viral illness. Almost nobody in this stratum
+      dies, it generates almost all of the antibiotic exposure, and it is the
+      stratum the case definition was built to catch.
+
+  - name: severe pneumonia without hypoxaemia
+    fraction:
+      value: 0.11
+      units: fraction-of-episodes
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.94
+      units: fraction-of-stratum (survival)
+      src: reasoning
+    toll: minor
+    what: >
+      Chest indrawing or inability to feed — referral-level illness needing
+      parenteral antibiotics and observation. Survivable with ordinary hospital
+      care, and this is the stratum where post-infectious lung damage begins to
+      accumulate.
+
+  - name: severe pneumonia with hypoxaemia
+    fraction:
+      value: 0.07
+      units: fraction-of-episodes
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.80
+      units: fraction-of-stratum (survival, where oxygen is available)
+      src: reasoning
+    toll: minor
+    what: >
+      **Seven percent of the episodes and the large majority of the deaths.**
+      Saturation below 90%. With reliable oxygen, most of these children live;
+      without it, a large fraction do not, and a study of systematic oxygen
+      systems in Papua New Guinea found a mortality reduction of roughly a third
+      from oxygen alone.
+      **This stratum is the whole record.** Every scalar above is really a
+      statement about whether this seven percent reaches a working oxygen supply,
+      and the honest efficacy figure for it in a hospital without one is far worse
+      than 0.80.
+
+moved:
+  - date: 2000
+    axis: access
+    from: 0.25
+    to: 0.45
+    why: >
+      **A MILLION FEWER CHILDREN A YEAR, AND IT IS ONE OF THE LEAST-DISCUSSED
+      ACHIEVEMENTS IN THIS REGISTER.**
+      Under-five pneumonia deaths fell from roughly 1.7 million in 2000 to roughly
+      700,000. Four things did it and none alone would have: **Hib conjugate
+      vaccine**, which removed a leading bacterial cause almost entirely wherever
+      it was introduced; **pneumococcal conjugate vaccine**, delivered through Gavi
+      and an advance market commitment designed specifically to get a
+      high-income-market vaccine into low-income countries quickly; **wider
+      community access to oral amoxicillin** through integrated community case
+      management; and **falling household air pollution** as solid-fuel cooking
+      declined.
+      Compare the malaria entry two records ago — same period, same funders,
+      comparable lives saved, and one of them is a global cause with a public
+      profile while the other is a line in a UNICEF report.
+    src:
+      id: PMID:11061761 doi:10.1542/peds.106.5.965
+      retrieved: 2026-08-26
+      quote: >
+        Infants with SCD respond to 7VPnC vaccine with antibody concentrations that
+        are at least as high as infants without SCD.
+
+  - date: 2023
+    axis: prevention
+    from: prophylaxis
+    to: prophylaxis
+    why: >
+      **RSV BECAME PREVENTABLE, AND THIS RECORD'S PREVENTION AXIS CANNOT SEE IT.**
+      RSV is the single largest cause of severe childhood pneumonia and had no
+      prophylaxis worth the name for fifty years. In 2022-2023 two arrived:
+      **nirsevimab**, a long-acting monoclonal antibody given as one dose per
+      season to infants, and **a maternal RSV vaccine** given in pregnancy that
+      protects the baby through transferred antibody. Countries that introduced
+      nirsevimab — Spain, France, the United States among them — reported
+      reductions in infant RSV hospitalisation of roughly seventy to ninety
+      percent in the first season. That is a vaccine-scale effect arriving inside
+      three years.
+      **It moves nothing on this record.** `prevention` was `prophylaxis` before
+      and is `prophylaxis` after, because the axis records the *existence* of
+      prophylaxis and not its coverage or its power (gaps.md #109).
+      **This is the second entry in three records where a major event moves no
+      axis** — `sepsis` recorded the approval and withdrawal of the only sepsis
+      drug in history the same way. Two different fields, same failure: the schema
+      records rungs, and most of what happens in medicine happens between them.
+      And neither product is yet where the deaths are. Gavi has moved on RSV; the
+      gap between a European rollout and a Nigerian one is this record's `cost`
+      blocker.
+    src: recall
+
+witness:
+  mechanism: >
+    `established`, and mechanically simple compared with most of this register.
+    A pathogen reaches the alveoli; the alveolar space fills with inflammatory
+    exudate, neutrophils and fluid; consolidated lung is perfused but not
+    ventilated, which is a shunt; arterial oxygen saturation falls. The child
+    compensates with tachypnoea, nasal flaring and intercostal recession — which
+    is why counting breaths detects it — and decompensates when the work of
+    breathing exceeds what a small child can sustain. Death is from hypoxia,
+    respiratory muscle exhaustion, or progression to sepsis, which is the record
+    immediately before this one.
+    **THE AETIOLOGY IS THE PART THAT MOVED.** The PERCH study, a seven-country
+    case-control investigation reporting in 2019, found viruses responsible for
+    the majority of severe childhood pneumonia, **RSV the largest single cause**,
+    and *Streptococcus pneumoniae* a modest contributor in populations where
+    conjugate vaccine was in use. *Haemophilus influenzae* type b, a leading cause
+    within living memory, is largely absent wherever its vaccine reaches.
+    Bacterial superinfection following a viral illness remains common and is not
+    cleanly separable from viral disease at the bedside or in a study.
+    **THE NAMED HOLE IS WHO PROGRESSES.** Essentially every child gets these
+    viruses; a small minority develop severe pneumonia and a smaller minority die.
+    Malnutrition, low birth weight, non-breastfeeding, household air pollution,
+    HIV exposure and crowding all shift the odds and none identifies the child.
+    That is Engpass's `who-progresses`, and it is the same hole `sepsis` names one
+    record earlier for the same reason — this disease is how many of those
+    children become septic.
+  intervention: >
+    `curative`, cheaply, and the two components are unequal.
+    **Antibiotics.** Oral amoxicillin for non-severe disease, parenteral for
+    severe. A course costs a few cents, the organisms are largely susceptible, and
+    a three-day course is non-inferior to five in non-severe disease. This is one
+    of the cheapest curative interventions in the entire register.
+    **Oxygen, which is the one that decides the outcome.** Hypoxaemia is the
+    strongest predictor of death; systematic oxygen provision has been shown to cut
+    pneumonia mortality by roughly a third. Oxygen has been on the WHO Model List
+    of Essential Medicines since 2017.
+    **AND OXYGEN IS NOT A PRODUCT, WHICH IS WHY THIS RECORD IS STUCK** (gaps.md
+    #154). It cannot be shipped in a box, donated in a consignment, or prescribed
+    per patient. A cylinder needs a refilling chain and transport; a concentrator
+    needs reliable mains electricity and a technician who can service it; a
+    pressure-swing-adsorption plant needs capital, power and a maintenance
+    contract that outlives the grant. There is no manufacturer whose commercial
+    interest is served by its adoption and no unit that `access` can count.
+    Everything else in this register is a thing you can procure. **This is a
+    capability that has to be operated, every day, by somebody local.**
+  prevention: >
+    `prophylaxis`, and it is the richest prevention story in the register after
+    malaria's — which is exactly why one enum value is inadequate for it.
+    **Vaccines against the causes**: Hib and pneumococcal conjugate directly;
+    measles and pertussis, which prevent the illnesses that lead to it; influenza;
+    and since 2023 **nirsevimab and the maternal RSV vaccine**, which address what
+    is now the leading cause.
+    **Everything that is not a vaccine**: exclusive breastfeeding, adequate
+    nutrition and vitamin A, zinc, reduced crowding, handwashing, and **clean
+    cooking**. Household air pollution from solid fuels is a major risk factor and
+    around two billion people still cook over it. A clean cookstove prevents
+    pneumonia, chronic obstructive pulmonary disease, ischaemic heart disease,
+    stroke and lung cancer — five records here — and belongs to an energy ministry
+    (gaps.md #87, #53).
+    The axis says `prophylaxis` and stops.
+  ongoing: >
+    `low`. An episode lasts days and ends. Recurrent severe pneumonia in a
+    malnourished or HIV-exposed child is a different matter and is not what the
+    field is measuring, and the lifelong consequence is in `residue`.
+
+holes:
+  - >
+    **`kind: disease` is arguable and `syndrome` may be more honest.** Mondo
+    defines pneumonia anatomically; the 140 million episodes are counted by an
+    algorithm that fires on several conditions. The record keeps `disease` because
+    the underlying entity is real and anatomical, and flags the tension rather
+    than resolving it (gaps.md #155).
+  - >
+    **The strata fractions are the softest in the file and carry the most weight.**
+    The hypoxaemic share drives every mortality figure here and published estimates
+    vary widely by setting, altitude, and whether saturation was measured at all —
+    which it usually was not.
+  - >
+    Aetiological proportions are taken from PERCH, which studied *severe* pneumonia
+    in seven specific settings after conjugate vaccine introduction. Generalising
+    them to all episodes everywhere is a stretch the record makes knowingly.
+  - >
+    **The residue link to `copd` is real and unquantified.** The life-course
+    literature on childhood lower respiratory infection and adult lung function is
+    consistent and mostly from high-income cohorts, and no figure exists for how
+    much of the world's COPD was manufactured in a childhood chest infection.
+  - >
+    `access: 0.45` averages antibiotic availability, which is decent, against
+    oxygen availability, which is poor, over strata with wildly different needs
+    for each. It is one number doing at least three jobs.
+  - >
+    Adult and elderly lower respiratory infection is a comparably large burden and
+    is not in this register at all.
+
+blockers:
+  - kind: logistics
+    blocks: oxygen existing and working in the hospital the child reaches
+    obstacles: []
+    what: >
+      **THE INTERVENTION THAT WOULD SAVE MOST OF THESE CHILDREN IS A GAS THAT
+      CANNOT BE PROCURED.**
+      Estimates put reliable oxygen in well under half of health facilities across
+      sub-Saharan Africa and South Asia, and pulse oximetry — the five-dollar
+      device that says which child needs it — in fewer still. The failure is not
+      that oxygen is expensive or unknown. It is that oxygen is **infrastructure
+      wearing the costume of a medicine** (gaps.md #154):
+      a cylinder needs a refilling plant, a transport chain and someone to pay per
+      cylinder; a concentrator needs mains electricity that does not fail and a
+      biomedical technician with spare parts; a pressure-swing-adsorption plant
+      needs capital, three-phase power, and a maintenance contract that outlives
+      the grant that bought it.
+      **COVID-19 made this globally visible and did not fix it.** The oxygen
+      shortage was front-page news in 2020 and 2021, an emergency taskforce was
+      convened, and billions were pledged. Much of what followed was capital —
+      plants installed, concentrators delivered — with no operating budget, no
+      technician cadre and no electricity guarantee attached, which is the failure
+      mode this blocker is about. A plant that is not running is indistinguishable
+      from no plant, and it looks like success in a procurement report.
+      Nothing here requires a discovery. It requires somebody to own the running
+      of it for twenty years.
+    who_could: [health-system, government, payer, philanthropy, nonprofit]
+    scale: 6.0e9
+    standing: documented
+    src: recall
+
+  - kind: cost
+    blocks: the RSV products reaching the children who die of RSV
+    obstacles: []
+    what: >
+      **RSV IS THE LEADING CAUSE OF SEVERE CHILDHOOD PNEUMONIA AND BECAME
+      PREVENTABLE IN 2023, IN EUROPE.**
+      Nirsevimab and the maternal RSV vaccine are both effective at a scale that
+      would materially change this record's burden, and both arrived priced for
+      high-income markets. The countries reporting seventy to ninety percent
+      reductions in infant RSV hospitalisation are not the countries where children
+      die of RSV.
+      The precedent is directly relevant and encouraging: **pneumococcal conjugate
+      vaccine faced the same gap and it was closed deliberately**, by Gavi and by
+      an advance market commitment built specifically to pull a high-income
+      vaccine into low-income markets at a tiered price. It worked, and it is part
+      of why this record's death toll fell by a million a year. Gavi has since
+      moved on RSV.
+      So this is a solved *category* of problem awaiting execution rather than an
+      open one, which is why it is filed `cost` and not `no-sponsor`. **The clock
+      matters: every year of delay is a cohort.**
+    who_could: [manufacturer, nonprofit, philanthropy, government, payer]
+    scale: 2.0e9
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    blocks: knowing which child has bacterial pneumonia, and which is hypoxaemic
+    obstacles: []
+    what: >
+      **TWO SEPARATE FAILURES, AND ONE OF THEM IS ALREADY SOLVED AND UNDEPLOYED.**
+      *Which child is hypoxaemic.* A pulse oximeter costs a few dollars, needs no
+      consumables and identifies the children who will die without oxygen. It is
+      not routinely available in the settings that matter. This is the cheapest
+      unexploited intervention anywhere in this register, and it is inseparable
+      from the oxygen blocker above — knowing who needs oxygen is worthless
+      without oxygen, and oxygen is wasted without knowing.
+      *Which child has bacterial disease.* Nothing distinguishes them at the point
+      of care. Since most severe childhood pneumonia is now viral, and the
+      algorithm gives every child an antibiotic, the great majority of the 140
+      million annual courses treat something the drug cannot touch.
+      **The policy is nonetheless correct**, and it is the same argument as
+      `sepsis`'s one-hour bundle one record earlier: with a dead child on one side
+      and a cheap antibiotic on the other, you treat everybody. **The tie-breaker
+      would be a point-of-care test to distinguish bacterial from viral disease in
+      a child, which does not exist**, and it would relieve pressure on three other
+      records in this register.
+    who_could: [manufacturer, health-system, academic, government, philanthropy]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: knowing which child with an ordinary virus will be dead in two days
+    obstacles: [who-progresses, protective-immunity]
+    what: >
+      Essentially every child meets RSV, rhinovirus and the rest in the first
+      years of life. Most have a cold. A small minority develop severe pneumonia
+      and a fraction of those die.
+      Malnutrition, low birth weight, absent breastfeeding, household air
+      pollution, HIV exposure, crowding and prematurity all shift the odds and
+      **none of them identifies the child in front of you.** Host genetics
+      explains little. This is Engpass's `who-progresses` in the same form
+      `sepsis` records one record earlier and for a connected reason — severe
+      pneumonia is one of the commonest routes into paediatric sepsis.
+      The second half is immunological: **fifty years of RSV vaccine failure**,
+      including the 1960s formalin-inactivated candidate that caused
+      **enhanced disease** — vaccinated children who subsequently caught RSV were
+      hospitalised more often and two died. That result shaped RSV vaccinology for
+      half a century, and the products that finally worked in 2023 succeeded by
+      stabilising the pre-fusion conformation of the F protein — a structural
+      insight, not an immunological one. **What protective immunity to RSV
+      consists of is still not stated**, which is the same sentence this register
+      writes for tuberculosis, malaria, dengue and *S. aureus* (gaps.md #70).
+      `scale: null`.
+    who_could: [academic, sponsor, philanthropy, manufacturer]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: policy
+    blocks: two billion people cooking over a fire indoors
+    obstacles: []
+    what: >
+      Household air pollution from solid-fuel cooking is a major risk factor for
+      childhood pneumonia, and around two billion people still cook that way.
+      Clean cooking is prevention, it is not administered by anybody in health, and
+      it belongs to energy and finance ministries.
+      **It also prevents four other records in this register** — chronic
+      obstructive pulmonary disease, ischaemic heart disease, stroke and lung
+      cancer — which is gaps.md #87's problem exactly: a single non-specific
+      intervention whose benefit is spread across entities that are each rated
+      separately, so no record can justify its cost and the register cannot sum it.
+      Clean cookstove programmes have a long history of disappointing trial
+      results, mostly because adoption is partial and households keep the old
+      stove. Rated `documented` on the risk association and the policy failure, not
+      on any claim that a particular stove programme works.
+    who_could: [government, legislator, payer, philanthropy, nonprofit]
+    scale: 8.0e9
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0072
+  rated: 2026-08-24
+  by: [claude, jeremy]

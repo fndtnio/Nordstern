@@ -1,0 +1,594 @@
+slug: maternal-haemorrhage
+id: FND-D-0073
+name: obstetric haemorrhage
+also: [postpartum haemorrhage, PPH, postpartum hemorrhage, antepartum haemorrhage, maternal bleeding]
+mondo: unresolved
+kind: syndrome
+residual: false
+contested: false
+
+# WHY `mondo: unresolved`, AND IT IS THE MOST POINTED EXAMPLE IN THE REGISTER.
+#
+# Mondo contains: `postpartum thyroiditis`, `postpartum depression`, `postpartum
+# psychosis`, `postpartum amenorrhea-galactorrhea syndrome`, `Sheehan syndrome`,
+# `puerperal infection`, `puerperal pulmonary embolism`, and `placenta accreta`.
+#
+# It does not contain postpartum haemorrhage.
+#
+# So the ontology has **Sheehan syndrome — the rare permanent sequela of this
+# condition** — and **placenta accreta, one of its causes** — and no term for the
+# thing itself, which is the leading direct cause of maternal death worldwide and
+# kills on the order of seventy thousand women a year.
+#
+# The reason is structural rather than an oversight: Sheehan's is a named
+# endocrine *disease* and haemorrhage is an obstetric *event*. It is the same
+# reason preterm birth and stillbirth exist only as HPO phenotypes. See gaps.md
+# #158 — the register borrows its identifiers on the unstated assumption that the
+# enumeration covers the world, and for acute high-burden events it does not.
+#
+# SCOPE. This record is obstetric haemorrhage, the largest single direct cause of
+# maternal death — not maternal mortality as a whole (~260,000-290,000 deaths a
+# year, of which hypertensive disorders, sepsis, unsafe abortion and obstructed
+# labour are the other large direct causes). **The register has no maternal
+# mortality record and arguably should.**
+
+burden:
+  cases:
+    value: 1.4e7
+    units: >
+      women/year experiencing postpartum haemorrhage — roughly one birth in ten,
+      and **most of them survive it**, which is the point of the record
+    src: recall
+  deaths:
+    value: 7.0e4
+    units: >
+      deaths/year — about 27% of the world's ~260,000-290,000 maternal deaths,
+      making this the **leading direct cause of maternal death**
+    src: recall
+  note: >
+    **THE INEQUITY HERE IS THE WIDEST IN THE REGISTER AND IT IS NOT CLOSE.**
+    Maternal mortality runs at roughly 545 per 100,000 live births in sub-Saharan
+    Africa and around 12 in high-income countries. Expressed as a woman's lifetime
+    risk of dying a maternal death — which compounds the per-birth risk with the
+    number of births — it is on the order of **1 in 40 in sub-Saharan Africa and 1
+    in 16,000 in Australia or New Zealand.** Nigeria alone accounts for roughly a
+    quarter to a third of the world's maternal deaths.
+    No other record in this register has a four-hundred-fold gap between the best
+    and worst outcome for a condition whose treatment is a drug costing a dollar,
+    a plastic bag of fluid, and blood.
+    **AND THE DENOMINATOR IS BIRTHS AGAIN**, as in `neonatal-conditions`. A
+    maternal death is counted per 100,000 live births, so a fall in fertility
+    lowers the death count without changing anybody's risk, and a rise raises it
+    without anybody's care getting worse.
+
+survival:
+  horizon: 24 hours from onset of postpartum haemorrhage
+  untreated:
+    value: 0.6
+    units: >
+      fraction alive — severe postpartum haemorrhage kills quickly, often within
+      two hours, and it is the largest single cause of maternal death worldwide
+    src: reasoning
+  treated:
+    value: 0.99
+    units: >
+      fraction alive with uterotonics, tranexamic acid, uterine massage, balloon
+      tamponade and blood. **Every one of those is cheap, old and
+      protocolisable**; oxytocin has been available since the 1950s and
+      tranexamic acid works when given within three hours
+    src: reasoning
+  witness: >
+    **The tightest window in the register and one of the largest gaps.** A woman
+    bleeding after delivery has hours, and the interventions that save her are
+    a drug trolley and a trained pair of hands. 70,000 deaths a year is a
+    statement about who delivers where, and nothing else.
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: prophylaxis
+  ongoing: low
+  efficacy:
+    value: 0.97
+    units: >
+      fraction-of-patients (survival, with uterotonics, tranexamic acid,
+      tamponade, blood and a theatre) — **essentially everybody survives this in a
+      hospital that has all five**
+    src: reasoning
+  access:
+    value: 0.45
+    units: >
+      fraction-of-patients (reaching a skilled attendant, a uterotonic that has
+      not been heat-degraded, and **blood**) — the uterotonic is nearly
+      universal, the blood is not
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: partial
+  witness: >
+    **DIAGNOSTIC IS `objective`, AND IT BREAKS THE RUN OF THREE `clinical`
+    RECORDS BECAUSE THE MEASUREMENT GENUINELY EXISTS — IT JUST IS NOT TAKEN.**
+    Postpartum haemorrhage is defined by a volume: 500 ml after vaginal birth,
+    1000 ml after caesarean. Blood loss can be measured properly — a calibrated
+    collection drape under the woman, weighing swabs — and in practice it is
+    **estimated by eye, and clinicians underestimate it substantially and
+    consistently.** A woman is bleeding to death and the number in the notes is a
+    guess that is systematically too low.
+    **The E-MOTIVE trial settled that this is the failure point.** A bundle
+    combining objective drape measurement with an immediate treatment package
+    reduced severe postpartum haemorrhage by around sixty percent, and the
+    detection half was doing real work: you cannot start a treatment cascade you
+    have not noticed you need. **This is a diagnostic gap closed by a piece of
+    calibrated plastic**, which is a rare thing to be able to write.
+    PROGNOSTIC is `partial`. **Shock index** — heart rate over systolic pressure —
+    outperforms either vital sign alone in a young woman, whose compensatory
+    reserve keeps her blood pressure normal until she is close to collapse. That
+    physiological fact is the reason obstetric haemorrhage kills fast and quietly:
+    **she looks well until she is nearly dead.** What nothing predicts is which
+    woman will have an atonic uterus.
+    PREDICTIVE is `partial`, and it is doing more than in most records here.
+    Blood grouping and crossmatch decide what can be given. **Fibrinogen falls
+    early in obstetric haemorrhage and predicts severity**, and viscoelastic
+    testing where available guides which component to give rather than giving all
+    of them. Both require a laboratory.
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    **THE LAST-RESORT TREATMENT IS A HYSTERECTOMY, AND IT WORKS.**
+    When uterotonics, tranexamic acid, balloon tamponade, compression sutures and
+    arterial ligation have failed, an emergency peripartum hysterectomy stops the
+    bleeding and saves her life. It is the correct decision and it is unambiguously
+    curative for the haemorrhage.
+    **It also ends her fertility, permanently, usually in a woman in her twenties,
+    frequently at her first or second birth**, and in many of the settings where
+    it is most often needed her standing in her household and community is bound
+    up with childbearing. The register's `toll` field exists for exactly this — a
+    permanent price paid to be cured — and this is one of its clearest instances,
+    alongside the facial nerve and the bowel.
+    **And the rate is a delivery indicator wearing a clinical costume.** Emergency
+    hysterectomy is common where the earlier rungs of the ladder are missing —
+    where there is no tranexamic acid within three hours, no balloon, no
+    interventional radiology and above all no blood — and rare where they are
+    present. Uterine artery embolisation preserves the uterus and requires a
+    radiology suite.
+    Transfusion carries its own risks, including transmitted infection where donor
+    screening is incomplete, which is a second toll concentrated in the same places.
+  incidence:
+    value: 0.02
+    units: >
+      fraction-of-treated (permanent harm — chiefly emergency hysterectomy) — a
+      reasoned estimate, and several times higher in settings without blood or a
+      full treatment ladder
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    **THE ONTOLOGY HAS A NAME FOR THIS AND NOT FOR ITS CAUSE.**
+    **Sheehan syndrome** is infarction of the pituitary gland caused by the
+    hypotension of severe postpartum haemorrhage. The gland is enlarged and
+    vulnerable in late pregnancy; a period of shock kills it. The result is
+    permanent hypopituitarism — failure of lactation first, then amenorrhoea,
+    hypothyroidism, adrenal insufficiency — requiring lifelong hormone
+    replacement. It is frequently diagnosed years late, because the symptoms are
+    non-specific and nobody connects them to a birth a decade earlier. It is
+    `MONDO:0019618`; the haemorrhage that causes it has no Mondo term at all.
+    **Hypoxic-ischaemic brain injury** from prolonged shock, and **acute kidney
+    injury** that does not fully recover, are the other permanent outcomes.
+    Severe anaemia persists for months in many survivors and is itself disabling.
+    Post-traumatic stress after a near-fatal haemorrhage is common and rarely
+    treated.
+    **AND THE REGISTER COUNTS NONE OF THE SURVIVORS PROPERLY.** Obstetrics has a
+    term for this — **maternal near-miss**, a woman who nearly died and did not —
+    and estimates run to twenty or more near-misses for every maternal death. That
+    is a population of well over a million women a year carrying the consequences
+    of an event the mortality statistics record as not having happened (gaps.md
+    #156).
+  incidence:
+    value: 0.03
+    units: >
+      fraction-of-survivors of severe haemorrhage (permanent sequelae — Sheehan
+      syndrome, renal or neurological injury) — a reasoned estimate over a
+      literature that is thin because the survivors are not followed
+    src: reasoning
+
+window:
+  what: >
+    **A WOMAN CAN BLEED TO DEATH FROM AN ATONIC UTERUS IN UNDER TWO HOURS, AND
+    THE UTERUS AT TERM RECEIVES ABOUT A LITRE OF BLOOD A MINUTE.**
+    That is the whole of it. There is no other organ in the body where the entire
+    cardiac output can be lost through a surface that should have contracted and
+    did not. She is usually young and healthy, she compensates well, and she looks
+    stable until she is not — which is why the shock index matters and why
+    eyeballing the blood loss is so dangerous.
+    **Tranexamic acid has a published cliff.** The WOMAN trial showed it reduces
+    death from bleeding by roughly a third **when given within three hours of
+    onset**, and no benefit after. That is unusually explicit for this register:
+    most windows are inferred from worse outcomes with delay, and this one has a
+    number attached from a twenty-thousand-woman randomised trial.
+    **The canonical framework for the delay is obstetric and predates this
+    register by thirty years.** The *three delays* model separates the delay in
+    deciding to seek care, the delay in reaching a facility, and **the delay in
+    receiving adequate care once there** — which is the one that most exposes the
+    register's habit of treating arrival as the endpoint. A woman who reaches a
+    hospital with no blood in the fridge has not been reached.
+  closes_on: >
+    exsanguination from an atonic or lacerated uterus — under two hours; and the
+    tranexamic acid benefit closes at three
+  caught_in_time:
+    value: 0.50
+    units: >
+      fraction-of-cases (treated before irreversible shock) — a reasoned estimate
+      combining facility birth rates with whether the facility had the ladder
+    src: reasoning
+
+strata:
+  - name: uterine atony
+    fraction:
+      value: 0.70
+      units: fraction-of-postpartum-haemorrhage
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.98
+      units: fraction-of-stratum (survival, with the full ladder)
+      src: reasoning
+    toll: minor
+    what: >
+      The uterus does not contract, so the vessels that supplied the placenta do
+      not close. **Almost all of the preventable deaths are here, and almost all of
+      the cheap wins are too**: a uterotonic given prophylactically to every woman,
+      uterine massage, tranexamic acid, and a balloon — which in the settings that
+      pioneered it is a condom tied to a catheter and filled with saline.
+
+  - name: genital tract trauma
+    fraction:
+      value: 0.15
+      units: fraction-of-postpartum-haemorrhage
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.97
+      units: fraction-of-stratum (survival)
+      src: reasoning
+    toll: minor
+    what: >
+      Cervical and vaginal lacerations, and uterine rupture — the last usually in
+      an obstructed or previously scarred labour, catastrophic, and requiring a
+      theatre within minutes. Uterotonics do nothing for this stratum, which is why
+      examining for trauma is a step in every haemorrhage protocol.
+
+  - name: retained tissue and placenta accreta spectrum
+    fraction:
+      value: 0.10
+      units: fraction-of-postpartum-haemorrhage
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.92
+      units: fraction-of-stratum (survival)
+      src: reasoning
+    toll: major
+    what: >
+      Retained placenta is managed by removing it. **Placenta accreta spectrum —
+      where the placenta has grown into or through the uterine wall — is the
+      stratum medicine manufactured.** It occurs at the site of a previous
+      caesarean scar, its incidence has risen several-fold in step with rising
+      caesarean rates, and it produces catastrophic haemorrhage usually managed by
+      planned hysterectomy. **The commonest major operation in the world is
+      generating a lethal complication of the next pregnancy** (gaps.md #147).
+
+  - name: coagulopathy
+    fraction:
+      value: 0.05
+      units: fraction-of-postpartum-haemorrhage
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.85
+      units: fraction-of-stratum (survival)
+      src: reasoning
+    toll: minor
+    what: >
+      Disseminated intravascular coagulation from abruption, amniotic fluid
+      embolism, sepsis or the dilutional coagulopathy of massive transfusion
+      itself. **This stratum cannot be treated without blood components** —
+      fibrinogen, cryoprecipitate, platelets — and is therefore the one where the
+      register's zero-sum constraint bites hardest (gaps.md #128).
+
+moved:
+  - date: 2017
+    axis: efficacy
+    from: 0.92
+    to: 0.95
+    why: >
+      **THE WOMAN TRIAL, AND IT IS THE KIND OF RESULT THIS REGISTER EXISTS TO
+      NOTICE.**
+      Twenty thousand women across twenty-one countries, randomised to tranexamic
+      acid or placebo for postpartum haemorrhage. Death from bleeding fell by
+      roughly a third **when the drug was given within three hours of onset**, with
+      no benefit afterwards and no increase in thrombotic events.
+      Tranexamic acid is off-patent, costs about a dollar a dose, is stable at room
+      temperature, needs no cold chain and is given intravenously in a minute. It
+      went onto the WHO Essential Medicines List for this indication and into
+      guidelines quickly.
+      **A generic drug from the 1960s, a publicly-funded trial, and one of the
+      largest cheap mortality reductions available anywhere in obstetrics.** It is
+      the counter-example to this register's usual finding that new capability
+      arrives expensive and patented — and it happened because somebody ran the
+      trial, not because anybody had a product to sell.
+    src:
+      id: PMID:28456509 doi:10.1016/S0140-6736(17)30638-4
+      retrieved: 2026-08-26
+      quote: >
+        Tranexamic acid reduces death due to bleeding in women with post-partum
+        haemorrhage with no adverse effects. When used as a treatment for
+        postpartum haemorrhage, tranexamic acid should be given as soon as possible
+        after bleeding onset.
+
+  - date: 2023
+    axis: efficacy
+    from: 0.95
+    to: 0.97
+    why: >
+      **E-MOTIVE, AND THE ACTIVE INGREDIENT IS A PIECE OF CALIBRATED PLASTIC.**
+      The trial paired **objective measurement of blood loss with a calibrated
+      drape** with an immediate bundle — uterine massage, oxytocic drugs,
+      tranexamic acid, intravenous fluid, examination and escalation — delivered as
+      a single triggered response rather than a sequence of decisions. Severe
+      postpartum haemorrhage fell by around sixty percent.
+      **Two things in it are worth separating.** The detection half says the
+      failure was not knowing: eyeballed blood loss is underestimated, so treatment
+      starts late or not at all. The bundle half says that once you know, doing
+      everything at once beats escalating step by step — which is the same
+      structural finding as `sepsis`'s bundles, arrived at independently.
+      Neither half required a discovery. Both required somebody to run a trial on
+      the organisation of care rather than on a molecule, which is chronically
+      underfunded and is where several of this register's remaining gains are.
+    src: recall
+
+witness:
+  mechanism: >
+    `established`, and taught worldwide as **the four Ts**.
+    *Tone.* At term the uterus receives on the order of a litre of blood a minute.
+    Haemostasis after birth is mechanical rather than clotting-driven: the
+    myometrium contracts and the interlacing muscle fibres occlude the spiral
+    arteries where the placenta was — the "living ligatures". **If the uterus does
+    not contract, the entire cardiac output has an exit.** Atony causes roughly
+    seven in ten cases and is why a uterotonic given to every woman after every
+    birth is the single most effective preventive act in obstetrics.
+    *Trauma.* Lacerations and uterine rupture, which uterotonics do not touch.
+    *Tissue.* Retained placenta, and **placenta accreta spectrum**, where
+    defective decidualisation over a previous caesarean scar lets the placenta
+    invade the myometrium so that it cannot separate.
+    *Thrombin.* Coagulopathy, from abruption, amniotic fluid embolism, sepsis, or
+    dilution during massive transfusion.
+    **THE NAMED HOLE IS WHY THIS UTERUS AND NOT THAT ONE.** Prolonged or augmented
+    labour, multiple pregnancy, polyhydramnios, high parity, chorioamnionitis and
+    previous haemorrhage all raise the risk and **none of them identifies the woman
+    who will bleed.** Most postpartum haemorrhage occurs in women with no risk
+    factor at all, which is precisely why prophylaxis is given universally rather
+    than targeted — the register's clearest case of an intervention that must be
+    given to everyone because prediction has failed.
+  intervention: >
+    `curative`, completely, and the ladder is one of the cheapest in medicine
+    until its last two rungs.
+    **Uterotonics** — oxytocin, misoprostol, and since 2018 **heat-stable
+    carbetocin**, which matters more than it sounds: oxytocin requires storage
+    between 2 and 8°C, much of the supply in hot climates is degraded by the time
+    it is used, and a woman can receive a full dose of a drug that no longer works.
+    **Tranexamic acid** within three hours. **Uterine massage** and bimanual
+    compression, which cost nothing. **Balloon tamponade**, which in the settings
+    that pioneered it is a condom tied to a catheter. The **non-pneumatic
+    anti-shock garment**, which buys transfer time. Then **compression sutures**,
+    **arterial ligation or embolisation**, and **hysterectomy**.
+    **AND THEN BLOOD, WHICH IS THE ONE THAT CANNOT BE BOUGHT.** Every other rung
+    can be manufactured, stockpiled or improvised. Blood comes only from another
+    person, expires in about six weeks, needs a cold chain, needs screening for
+    HIV, hepatitis B and C and syphilis, needs typing and crossmatching, and needs
+    a standing institution of voluntary unpaid donors. Many low-income countries
+    collect far below the benchmark of ten donations per thousand population.
+    **This is gaps.md #128's flagship record.** For liver cancer, transplant was
+    one option among several. Here blood is the difference between a survivable
+    event and a fatal one, for a woman who is otherwise healthy, and no amount of
+    money makes more of it.
+  prevention: >
+    `prophylaxis`, and it is unusually effective: **a uterotonic given to every
+    woman immediately after every birth**, as part of active management of the
+    third stage of labour, prevents a large share of haemorrhage. Universal rather
+    than targeted, because risk prediction does not work. Also: preventing
+    prolonged obstructed labour, treating antenatal anaemia so a woman has reserve
+    to lose, and avoiding unnecessary caesareans — which is prevention of the
+    accreta stratum a pregnancy later.
+    **AND THE MOST EFFECTIVE PREVENTION IS NOT MEDICAL AT ALL, WHICH IS THE
+    UNCOMFORTABLE STRUCTURAL FACT ABOUT THIS RECORD** (gaps.md #159).
+    Pregnancy is not a disease. It is a physiological state, usually chosen and
+    usually wanted, and this entity is a complication of it. So the honest reading
+    of `prevention` includes **contraception**: over two hundred million women have
+    an unmet need for modern contraception, and meeting it would prevent maternal
+    deaths arithmetically — fewer pregnancies, fewer haemorrhages, and in
+    particular fewer high-parity and closely-spaced pregnancies, which carry higher
+    risk. Roughly one maternal death in twelve follows unsafe abortion, and its
+    frequency tracks the legal and service environment.
+    **The `prevention` axis was built to record preventing a disease. Here the
+    most powerful lever is preventing the exposure, and the exposure is something
+    people want.** The register has one word — `prophylaxis` — covering a
+    uterotonic given to a woman in labour and a woman deciding not to be pregnant,
+    and those are not the same kind of object.
+  ongoing: >
+    `low`. The event lasts hours and ends, and a woman who receives blood and
+    uterotonics goes home in days, usually fully recovered.
+    The exceptions are in `residue` and one of them is lifelong: a woman with
+    Sheehan syndrome takes replacement hormones for the rest of her life, and
+    frequently does not know why.
+
+holes:
+  - >
+    **This record is obstetric haemorrhage, not maternal mortality**, and the
+    register has no record for the latter. Hypertensive disorders of pregnancy,
+    maternal sepsis, obstructed labour, unsafe abortion and obstetric fistula are
+    all absent, and several have quite different shapes — pre-eclampsia in
+    particular is the register's real *two patients, one body* case, since the only
+    definitive treatment is delivering the baby.
+  - >
+    **The maternal near-miss population is roughly twenty times the death count and
+    appears nowhere.** Over a million women a year survive an event that nearly
+    killed them, some with permanent injury, and the register has no field for a
+    survived catastrophe (gaps.md #156).
+  - >
+    The strata fractions are the conventional teaching proportions and are close to
+    folklore in their precision; the accreta share in particular is rising and
+    setting-dependent.
+  - >
+    `access: 0.45` averages uterotonic availability, which is high, against blood
+    availability, which is very low, over strata that need them unequally. The
+    coagulopathy stratum's real access figure is far below the record's.
+  - >
+    **The degraded-oxytocin problem has no number in this file.** Studies of
+    uterotonic quality in hot climates have found substantial proportions failing
+    assay, which would mean a share of women recorded as having received
+    prophylaxis did not, and the register has no way to record an intervention that
+    was delivered and did not work.
+  - >
+    Every scalar is `recall` or `reasoning`, against a field — maternal health —
+    with unusually good measurement infrastructure that this pass did not consult.
+
+blockers:
+  - kind: logistics
+    blocks: blood, which comes only from another person
+    obstacles: []
+    what: >
+      **THE BINDING CONSTRAINT ON THIS RECORD IS A SUBSTANCE THAT CANNOT BE
+      MANUFACTURED.**
+      Every other rung of the treatment ladder can be bought, stockpiled or
+      improvised. Blood cannot. It comes from a donor, expires in about six weeks,
+      requires refrigeration, requires screening for HIV, hepatitis B and C and
+      syphilis, requires typing and crossmatching, and requires a standing social
+      institution of voluntary unpaid donation that takes years to build. Many
+      low-income countries collect far below the benchmark of ten donations per
+      thousand population, and much of what is collected is from replacement donors
+      recruited from the patient's own family at the moment of crisis — which is
+      slow, and fails exactly when the woman is alone.
+      **This is gaps.md #128 — capability that is rationed rather than
+      under-supplied — and this record is its flagship.** For liver cancer a
+      transplant was one option among several. Here it is the difference between a
+      survivable event and a dead twenty-four-year-old, and `scale` below is a
+      number for building collection and cold-chain systems, not for buying the
+      blood.
+      Everything upstream is cheap and works. **The whole gap between a maternal
+      mortality ratio of 12 and one of 545 is concentrated in the last two rungs of
+      a ladder whose first five cost almost nothing.**
+    who_could: [health-system, government, nonprofit, payer, philanthropy]
+    scale: 5.0e9
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: the three delays, and the third is the one nobody counts
+    obstacles: []
+    what: >
+      Obstetrics has had the right framework for this since 1994 and the register
+      has been reinventing it one record at a time. **The three delays**: deciding
+      to seek care, reaching a facility, and **receiving adequate care once
+      there.**
+      The first is recognition, autonomy and cost. The second is distance, roads
+      and transport at night. **The third is the one this register keeps
+      mis-recording as `access` succeeding** — a woman who reaches a facility with
+      no blood, no theatre, no anaesthetist and no uterotonic that survived the
+      heat has arrived and has not been treated. Facility birth rates have risen
+      substantially across low-income countries over two decades and maternal
+      mortality has fallen much less than that rise would predict, which is the
+      third delay measured at population scale.
+      This is `childhood-pneumonia`'s and `neonatal-conditions`' constraint in a
+      third form — the intervention is a *functioning* facility rather than a
+      procurable thing (gaps.md #154).
+    who_could: [health-system, government, payer, nonprofit]
+    scale: 1.2e10
+    standing: documented
+    src: recall
+
+  - kind: manufacturing
+    blocks: the prophylactic drug still working when it is given
+    obstacles: [cold-chain]
+    what: >
+      **OXYTOCIN REQUIRES STORAGE BETWEEN 2 AND 8°C AND IS GIVEN IN SOME OF THE
+      HOTTEST PLACES ON EARTH.**
+      Surveys of uterotonic quality in low-income settings have repeatedly found
+      substantial proportions of oxytocin failing assay — degraded in transit, in
+      unrefrigerated storerooms, or substandard at manufacture. A woman recorded as
+      having received prophylaxis may have received water.
+      That corrupts two things at once: her care, and **the evidence base**, since
+      trials and programme evaluations conducted with degraded drug will
+      underestimate an effect that is real.
+      **Heat-stable carbetocin, recommended by WHO from 2018, was designed for
+      precisely this** — non-inferior to oxytocin for preventing haemorrhage after
+      vaginal birth, and stable at room temperature. Its adoption is limited by
+      price and procurement rather than by evidence.
+      Filed as `manufacturing` because the failure is in product quality and the
+      supply chain rather than in whether a drug exists — one of only a handful of
+      records using this kind, and the clearest case of it.
+    who_could: [manufacturer, regulator, government, nonprofit, payer]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    blocks: noticing the bleeding, which is currently estimated by eye
+    obstacles: []
+    what: >
+      Blood loss is defined in millilitres and measured by looking. Clinicians
+      underestimate it substantially and consistently, and a young woman
+      compensates well enough to look stable until she is close to collapse — so
+      the two available signals, the visible loss and her vital signs, both
+      reassure until it is late.
+      **E-MOTIVE showed this is the failure point and that it is cheap to fix.** A
+      calibrated drape placed under the woman turns an estimate into a
+      measurement, and paired with an immediate treatment bundle it reduced severe
+      haemorrhage by around sixty percent.
+      **A plastic sheet with graduations on it is among the highest-return
+      unexploited interventions in this register**, sitting alongside
+      `childhood-pneumonia`'s pulse oximeter. Both are cheap, both convert a
+      judgement into a number, and both are undeployed. Shock index costs nothing
+      at all and is not routinely calculated.
+    who_could: [health-system, manufacturer, government, nonprofit, payer]
+    scale: 5.0e8
+    standing: documented
+    src: recall
+
+  - kind: policy
+    blocks: whether a pregnancy happens at all
+    obstacles: []
+    what: >
+      **THE LARGEST PREVENTIVE LEVER ON THIS RECORD IS NOT A MEDICINE.**
+      Over two hundred million women have an unmet need for modern contraception.
+      Meeting it reduces maternal deaths arithmetically — fewer pregnancies produce
+      fewer haemorrhages — and disproportionately, because it removes the
+      high-parity and closely-spaced pregnancies that carry higher risk. It
+      simultaneously reduces neonatal deaths and unsafe abortion, of which the last
+      accounts for roughly one maternal death in twelve and whose frequency tracks
+      the legal and service environment rather than the demand.
+      Filed as `policy` because the constraints are funding, law, service provision
+      and regulation rather than any question about whether contraception works.
+      **The register should be clear about what it is and is not saying.** This is
+      an arithmetic claim about exposure and risk, of the same form as noting that
+      not smoking prevents lung cancer. It is not a claim about what anyone should
+      choose, and the register has no standing to make one. It is recorded because
+      leaving it out would misstate where the preventable deaths are — and because
+      it exposes a real hole in the schema, which has one word for a uterotonic
+      given in labour and for a woman deciding not to be pregnant (gaps.md #159).
+      `standing: documented` covers the unmet-need figure and the association; it
+      is not a rating of any particular policy.
+    who_could: [government, legislator, payer, nonprofit, philanthropy, health-system]
+    scale: 7.0e9
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0074
+  rated: 2026-08-24
+  by: [claude, jeremy]

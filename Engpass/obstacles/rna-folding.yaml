@@ -1,0 +1,138 @@
+slug: rna-folding
+id: FND-O-0006
+name: How does RNA fold, and what does the fold do?
+kind: mechanism
+resolution: partly-answered
+
+# THE FIRST TOP-DOWN RECORD IN THIS REGISTER, AND IT IS HERE AS A TEST OF THE
+# MACHINERY AS MUCH AS OF THE SCIENCE.
+#
+# Every other entry was derived: a Nordstern blocker cited it, so somebody rating
+# that disease said this is what they were waiting on. **No disease record cites
+# this one.** It is here because it is plausibly upstream of a whole class of
+# interventions, which is a different kind of claim and a weaker one.
+#
+# So everything it says it unblocks is filed under `claims`, with a `standing`,
+# and every standing is `alleged`. That is not hedging. It is the only honest
+# way to hold a top-down entry, and when this question is answered the claims
+# become `documented` or `refuted` — which is a record of whether the field's
+# intuitions about payoff were worth anything.
+#
+# Marburg is the standing warning: its reservoir WAS identified, everybody
+# expected that to unblock something, and what followed was advice to miners.
+
+question: >
+  RNA is not a passive message. It folds into structures — hairpins, pseudoknots,
+  three-way junctions, tertiary contacts — and those structures determine
+  whether a transcript is stable, whether it is translated, where it is spliced,
+  what binds it, and whether a drug can be designed against it.
+  **Secondary structure prediction is decent. Almost everything past that is
+  not.**
+  Three distinguishable gaps, in ascending order of difficulty:
+  **Tertiary structure.** Predicting the three-dimensional fold of a large RNA
+  from sequence remains far behind the equivalent problem in proteins, which was
+  substantially changed by deep learning and RNA largely was not. The training
+  data is scarcer, the molecule is more flexible, and the folds are stabilised by
+  ions and by long-range contacts that local rules do not capture.
+  **Kinetics and co-transcriptional folding.** RNA folds *while it is being
+  made*, from the 5' end, and can be trapped in a structure it would never adopt
+  at equilibrium. The functional state is frequently not the lowest-energy state,
+  and predicting a trajectory is a different problem from predicting a minimum.
+  **Structure to function.** Even given a correct fold, saying what it does —
+  which protein binds, which splice site is occluded, how long the transcript
+  survives — is largely empirical.
+
+what_it_unblocks: >
+  **HONESTLY: NOT A DISEASE, AND POSSIBLY NOTHING DIRECTLY.** That is the correct
+  entry for a top-down record and it should stay that way until a Nordstern
+  record cites it.
+  What it plausibly unblocks is **a class of intervention rather than a
+  treatment**, which is why every specific consequence below is a `claim` with a
+  standing rather than a derived link. The general shape of the argument is that
+  RNA is now a drug modality — antisense oligonucleotides, siRNA, mRNA vaccines,
+  and the beginnings of small molecules that bind RNA structure — and every one
+  of those is currently designed with a mixture of rules, screening and
+  iteration rather than from a predicted structure.
+  If designing them became a calculation rather than a campaign, the cost and
+  the failure rate of a whole modality would change. **That is a claim about
+  productivity, not about a cure**, and the register has no way to weigh it
+  against a disease. See `holes`.
+
+why_hard: >
+  Because RNA is a worse-behaved molecule than protein for the exact reasons
+  that make it useful.
+  **The data is thin.** Structural biology has produced orders of magnitude more
+  protein structures than RNA structures, and the deep-learning methods that
+  transformed protein folding were trained on that abundance. RNA has neither
+  the volume nor the diversity.
+  **It is floppy and ion-dependent.** Large RNAs adopt ensembles rather than
+  single conformations, and magnesium is not a spectator — the fold depends on
+  where the ions sit, which is itself hard to predict.
+  **The functional state may not be the stable one.** Co-transcriptional folding
+  means kinetics can win, and riboswitches are the proof of principle: molecules
+  whose entire function is that they get trapped in one of two structures
+  depending on what they meet on the way. A method that finds the global minimum
+  is answering a question the cell did not ask.
+  **And function is not read off structure.** Proteins have an active site; a
+  folded RNA frequently has a surface, and what binds it is contingent.
+
+claims:
+  - unblocks: spinal-muscular-atrophy
+    standing: alleged
+    why: >
+      Nusinersen is a splice-switching antisense oligonucleotide: it binds an
+      intronic site in *SMN2* and changes which exon is included. It works, and
+      it was found by screening walks across the transcript rather than by
+      predicting which site would be accessible. **The claim is that predicting
+      accessible sites from structure would make splice modulation designable
+      rather than discoverable.** Not in the Nordstern queue's record yet — SMA
+      is queued and unwritten.
+  - unblocks: duchenne
+    standing: alleged
+    why: >
+      Exon-skipping oligonucleotides for Duchenne are the same modality with a
+      much worse record: several are approved on surrogate endpoints with
+      contested clinical benefit, and dystrophin restoration is low. **The claim
+      is that part of the failure is a design problem — the wrong sites, poorly
+      accessed — rather than a biology problem.** It is a claim, and the
+      competing explanation (the modality reaches muscle badly, whatever the
+      site) is at least as plausible.
+  - unblocks: covid-19
+    standing: alleged
+    why: >
+      mRNA vaccine potency and stability depend on untranslated-region structure,
+      codon choice and secondary structure in ways that were optimised
+      empirically. **The claim is that a predictive account would shorten design
+      from months to hours**, which matters for the six-month manufacturing
+      window that is the binding constraint on pandemic response. See the
+      `h5n1` record's manufacturing blocker.
+  - unblocks: h5n1
+    standing: alleged
+    why: >
+      Same argument as above and with a sharper edge: H5N1's whole record turns
+      on how fast a matched vaccine can be made after a strain is sequenced.
+      **If mRNA design is the rate-limiting step rather than fill-and-finish,
+      this is upstream of the largest number in that record.** If it is not — and
+      manufacturing capacity is the real constraint — then this claim is worth
+      nothing, which is exactly why it is `alleged`.
+
+holes:
+  - **No Nordstern record cites this**, so the register holds it on the strength
+    of an argument rather than of evidence. If it is still uncited at a hundred
+    disease records, that is a finding about the question and not about the
+    corpus.
+  - Every claim above is `alleged` and at least one is probably wrong. The
+    Duchenne claim has a strong competing explanation; the H5N1 claim depends
+    entirely on which step is actually rate-limiting.
+  - The register has no way to weigh **a productivity gain across a modality**
+    against **a cure for a disease**, and this record is the first thing in
+    either register that is shaped that way. Tooling and platform questions will
+    all have this problem.
+  - `resolution: partly-answered` is doing real work and may be too generous.
+    Secondary structure prediction is genuinely usable; the rest is not; and a
+    single status for three separable gaps is the same flattening Nordstern's
+    `strata` exists to prevent.
+
+asserted:
+  date: 2026-08-24
+  by: [claude, jeremy]

@@ -1,0 +1,88 @@
+slug: who-progresses
+id: FND-O-0001
+name: Why this person and not that one?
+kind: mechanism
+resolution: open
+
+question: >
+  Two people receive the same exposure, the same infection, the same
+  accumulating damage. One progresses to disease and one does not, or one
+  progresses in a decade and the other in a year. **Why?** And — the half that
+  matters clinically — **can it be told in advance?**
+  This is not one question in one tissue. It recurs across the register in forms
+  that look unrelated until they are put side by side: which coronary plaque
+  ruptures and when; which heavy smoker loses lung function; which malnourished
+  child with gingivitis crosses into gangrene; which leprosy patient has an
+  immune reaction; which treated visceral leishmaniasis patient develops PKDL;
+  which third of Chagas patients ever becomes ill; which screen-detected breast
+  tumour was going to matter.
+  The common structure is **a shared insult and a divergent outcome**, with the
+  divergence unexplained and unpredicted.
+
+what_it_unblocks: >
+  MORE THAN ANY OTHER QUESTION IN THIS REGISTER, and the reason is that the
+  treatments frequently already exist.
+  Where an effective intervention is available but carries a cost, the inability
+  to say who needs it produces **overtreatment** — Nordstern derives that flag
+  directly, and it is the register's sharpest argument for funding measurement
+  over therapeutics. Breast cancer's screen-detected disease and Chagas' two
+  thirds who will never be ill are the clean cases: the harm is inflicted on
+  people who were never going to be harmed by the disease, because nobody could
+  say which ones they were.
+  Where the intervention is cheap and the window is short, it produces **missed
+  windows**. Noma is the extreme: antibiotics and food, costing very little,
+  separated by a few days from a lifetime of facial destruction — and no way to
+  know which child is about to cross.
+  And for ischaemic heart disease it would convert a disease managed by treating
+  whole risk strata into one that can be aimed, which is also the only clean way
+  out of the threshold problem (Nordstern gaps.md #90).
+  **It is largely a measurement question rather than a therapeutic one**, which
+  is why it is the largest single cluster in a register that keeps concluding
+  measurement is underfunded.
+
+why_hard: >
+  Because the divergence is almost certainly not one thing. Host genetics,
+  immune history, prior exposures, the microbiome, age at first insult, and
+  chance in the literal sense — a plaque cap thins stochastically — all
+  contribute, in proportions that differ by disease.
+  And the outcome being predicted is frequently rare and distant. Predicting an
+  event that will happen to one in fifty people in the next decade requires
+  either an enormous cohort or a marker with a very large effect, and the
+  markers found so far mostly stratify populations rather than identify
+  individuals. Ischaemic heart disease's risk equations are the best-developed
+  version and a large share of infarctions still occur in people they classified
+  as low or intermediate risk.
+  **Stroke offers the one demonstrated way around it.** Rather than predicting
+  which tissue would die, perfusion imaging measures which tissue is dying now,
+  and that converted a fixed treatment window into a measured one. Measuring the
+  present state may be tractable where predicting the future is not — see
+  Nordstern gaps.md #94.
+
+holes:
+  - Whether these really are one question or a family resemblance is the open
+    methodological issue. They share a shape; they may share nothing mechanistic.
+    The register's position is that the shape is worth naming and that the claim
+    is testable — if answering it in one disease illuminates none of the others,
+    it was a family resemblance.
+  - The burden attached to this question is dominated by ischaemic heart disease
+    and stroke. Weighting a question by the mortality of the diseases citing it
+    inherits every objection to weighting a disease that way.
+  - >
+    **THE BURDEN COLUMN IS NOW DEMONSTRABLY DOUBLE-COUNTING, AND `sepsis` IS HOW
+    WE KNOW.** Nordstern added sepsis on 2026-08-24 with 11 million deaths a year
+    — about one death in five worldwide — of which **not one is its own.** They
+    are already counted under malaria, tuberculosis, pneumonia and every other
+    infectious record, because sepsis is the mode by which those diseases kill
+    rather than a separate disease. Citing this question, it pushed the total here
+    from roughly 24 million to 37 million overnight without a single additional
+    person dying.
+    Engpass already ranks by RECORDS rather than by burden, for a different reason
+    — `unexplained-illness` has zero attributed deaths and is the clearest
+    scientific gap in the corpus. **This is a second, independent reason, and it
+    is arithmetic rather than judgement.** The deaths column should probably carry
+    a warning or be dropped; summing Nordstern burdens across records is only
+    valid if the records are disjoint, and they are not (Nordstern gaps.md #147).
+
+asserted:
+  date: 2026-08-23
+  by: [claude, jeremy]

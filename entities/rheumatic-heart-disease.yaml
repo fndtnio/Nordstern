@@ -1,0 +1,188 @@
+slug: rheumatic-heart-disease
+id: FND-D-0013
+name: rheumatic heart disease
+also: [RHD, acute rheumatic fever]
+mondo: MONDO:0006955
+kind: disease
+residual: false
+contested: false
+
+# A disease prevented by a 1940s injection that periodically cannot be
+# manufactured. The blocker taxonomy's clearest `manufacturing` entry, and the
+# clearest demonstration that "off-patent and cheap" is not the same as available.
+
+burden:
+  prevalence:
+    value: 4.0e7
+    units: people with RHD
+    src: recall
+  deaths:
+    value: 3.0e5
+    units: deaths/year
+    src: recall
+  note: >
+    Concentrated in sub-Saharan Africa, South Asia, the Pacific, and Indigenous
+    populations of Australia and New Zealand — among the widest rich/poor gaps
+    of any condition in the register. Effectively eliminated from Western Europe
+    and North America before any targeted programme, largely by housing and
+    living conditions.
+
+survival:
+  horizon: 10 years from diagnosis
+  untreated:
+    value: 0.7
+    units: >
+      fraction alive — progressive valve destruction from recurrent rheumatic
+      fever, ending in heart failure, stroke or endocarditis
+    src: recall
+  treated:
+    value: 0.9
+    units: >
+      fraction alive with secondary prophylaxis and valve surgery where available.
+      **Monthly penicillin injections prevent the recurrences that destroy the
+      valve** — the drug costs pennies and has never been off patent because it
+      was never on one
+    src: recall
+  witness: >
+    **A disease that has effectively vanished from wealthy countries and kills
+    300,000 people a year elsewhere, prevented by an injection from 1928.**
+    Benzathine penicillin has had recurrent global shortages because no
+    manufacturer finds it worth making — `no-sponsor` for a drug that already
+    exists and already works.
+
+axes:
+  mechanism: partial
+  intervention: disease-modifying
+  prevention: prophylaxis
+  ongoing: high
+  efficacy:
+    value: 0.8
+    units: fraction-of-patients (recurrence prevented on secondary prophylaxis)
+    src: recall
+  access:
+    value: 0.25
+    units: fraction-of-patients (on reliable secondary prophylaxis)
+    src: recall
+
+measurement:
+  diagnostic: objective
+  prognostic: none
+  predictive: partial
+  witness: >
+    The purest overtreatment case in the register, and the cheapest. Only a
+    small minority of children with streptococcal pharyngitis will develop
+    rheumatic fever, and nothing identifies them — so prevention means
+    treating every sore throat, which is both wasteful and, in most of the
+    world, not done at all. Echocardiography detects established valve disease
+    well, which is measurement arriving after the window has closed.
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    Secondary prophylaxis itself is a painful monthly injection over years,
+    with a small anaphylaxis risk — burdensome rather than damaging. The real
+    toll sits with the surgery that late disease requires: a mechanical valve
+    means lifelong warfarin with its bleeding risk and monitoring, in young
+    patients, often women of childbearing age for whom warfarin is
+    teratogenic; a bioprosthetic valve avoids that and will need replacing.
+    Both are permanent consequences of having missed the window.
+  incidence:
+    value: 0.2
+    units: fraction-of-treated (lifelong anticoagulation after mechanical valve replacement)
+    src: recall
+
+window:
+  what: >
+    Two windows, both wide open and both routinely missed. Treating streptococcal
+    pharyngitis prevents rheumatic fever; giving monthly penicillin after a first
+    episode prevents the recurrent attacks that scar the valves. Once the valve is
+    damaged the window is shut for good — scarred valves do not remodel, and the
+    only remaining option is surgery with the toll recorded above. Every valve
+    replaced in a twenty-year-old is a window that closed years earlier.
+  closes_on: valvular scarring, which is irreversible
+  caught_in_time:
+    value: 0.25
+    units: fraction-of-patients (reached before significant valve damage)
+    src: recall
+
+witness:
+  mechanism: >
+    `partial`. The chain is largely assembled: group A streptococcal
+    pharyngitis, an autoimmune cross-reactive response against cardiac tissue,
+    valvular scarring, progressive mitral and aortic disease, heart failure.
+    The named hole is host susceptibility — why a small minority of infected
+    children develop rheumatic fever at all is not explained, and no test
+    identifies them in advance.
+  intervention: >
+    `disease-modifying`. Once valves are damaged, nothing repairs them; monthly
+    benzathine penicillin G prevents recurrent infection and further damage,
+    and valve surgery or replacement treats established disease where cardiac
+    surgery exists, which is largely where the disease does not.
+  prevention: >
+    `prophylaxis`, and this is the register's strongest case of prevention
+    vastly outperforming treatment. Treating streptococcal pharyngitis prevents
+    rheumatic fever; secondary prophylaxis prevents progression. Both use a
+    drug from the 1940s costing well under a dollar a dose.
+  ongoing: >
+    `high`. Secondary prophylaxis is an intramuscular injection every four
+    weeks for a decade or more, often beginning in childhood, and it is
+    painful. Adherence is the predictable consequence.
+
+blockers:
+  - kind: manufacturing
+    blocks: benzathine penicillin G (prophylaxis)
+    what: >
+      Recurrent global shortages of a cheap, off-patent, eighty-year-old
+      injectable. Few manufacturers, thin margins, and periodic exits leave
+      countries unable to buy a drug nobody has to invent. The most literal
+      possible refutation of "if it's cheap and it works, it's available".
+    who_could: [manufacturer, government, nonprofit, philanthropy]
+    scale: 1e8
+    standing: documented
+    src: recall
+  - kind: logistics
+    blocks: secondary prophylaxis
+    what: >
+      A monthly injection for ten-plus years requires a register, a reminder
+      system, a reachable clinic, and someone to give it. Programmes that have
+      done this well (parts of the Pacific, some Australian jurisdictions) show
+      it works; most places have no register at all.
+    who_could: [health-system, nonprofit, software]
+    scale: 1e8
+    standing: documented
+    src: recall
+  - kind: diagnosis
+    blocks: primary prevention (treating strep pharyngitis)
+    what: >
+      Distinguishing streptococcal from viral pharyngitis needs a test that is
+      usually absent, so either everyone or nobody gets penicillin.
+    who_could: [health-system, academic]
+    scale: 1e7
+    standing: documented
+    src: recall
+  - kind: candidate-untested
+    blocks: group A streptococcal vaccine (prophylaxis)
+    what: >
+      A vaccine has been sought for decades and would move prevention to a
+      population instrument. Progress has been slowed by scientific difficulty
+      and, historically, by a US regulatory hold on GAS vaccines lifted only
+      relatively recently — plus a market concentrated in low-income countries.
+    who_could: [sponsor, philanthropy, government]
+    scale: 1e9
+    standing: alleged
+    src: recall
+
+holes:
+  - Host susceptibility: no way to identify the minority who will develop
+    rheumatic fever, so prophylaxis cannot be targeted.
+  - Whether echo screening of asymptomatic children improves outcomes, rather
+    than merely finding disease earlier, is not settled.
+  - How much of the historical decline in rich countries was medical rather
+    than housing and crowding is genuinely uncertain, and it matters for what
+    to prioritise now.
+
+assertion:
+  id: FND-A-0013
+  rated: 2026-08-11
+  by: [claude, jeremy]

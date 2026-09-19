@@ -1,0 +1,502 @@
+slug: melanoma
+id: FND-D-0054
+name: melanoma
+also: [malignant melanoma, cutaneous melanoma, acral melanoma, mucosal melanoma]
+mondo: MONDO:0005105
+kind: disease
+residual: false
+contested: false
+
+# THE LARGEST SURVIVAL TRANSFORMATION IN MODERN ONCOLOGY, AND THE RECORD-LEVEL
+# NUMBER BARELY MOVES.
+#
+# Metastatic melanoma in 2010: median survival six to nine months, five-year
+# survival somewhere under a tenth, and a chemotherapy from 1975 that never
+# demonstrated a survival benefit.
+#
+# Metastatic melanoma now: combination checkpoint blockade gives **roughly half
+# of patients five-year survival**, and — the part that matters more — **the
+# curve flattens.** People stop progressing and stay stopped, some of them years
+# after stopping treatment.
+#
+# THAT CREATES A PROBLEM THE SCHEMA CANNOT SOLVE. Is a flat tail a cure or a
+# suppression? The ladder has a rung for each and **the answer requires a future
+# that has not happened yet.** The register must rate it today. gaps.md #118.
+#
+# AND THE `moved` ENTRY BARELY REGISTERS, because most melanoma was already cured
+# by cutting it out. The largest advance in oncology moves record-level
+# `efficacy` from about 0.65 to about 0.80, and moves one stratum from a death
+# sentence to a coin flip. gaps.md #61, at its widest.
+#
+# TWO OTHER THINGS:
+#
+# 1. **THE CAUSE IS THE REASON IT IS TREATABLE.** Ultraviolet light mutates DNA;
+#    melanoma carries one of the highest mutational burdens of any cancer; those
+#    mutations produce neoantigens; neoantigens are what the immune system sees.
+#    Nothing else in this register has that shape.
+#
+# 2. **THE DIAGNOSTIC THRESHOLD MOVED AND NOBODY VOTED.** Incidence has risen
+#    steeply in many countries while mortality stayed roughly flat — the
+#    overdiagnosis signature — and a substantial part of it is pathologists
+#    calling lesions melanoma that would once have been called atypical naevi.
+#    Not a number, not a committee, not announced. gaps.md #119.
+
+burden:
+  prevalence:
+    value: 3.3e5
+    units: >
+      new cases/year worldwide — and see the note, because this figure has been
+      rising steeply for decades in a way that is partly real and partly a
+      change in what gets called melanoma
+    src: recall
+  deaths:
+    value: 6.0e4
+    units: >
+      deaths/year — low relative to incidence, and low relative to every other
+      cancer in this register, because most melanoma is caught while it is a few
+      millimetres deep
+    src: recall
+  note: >
+    **INCIDENCE UP STEEPLY, MORTALITY ROUGHLY FLAT.** That pattern is the
+    signature of overdiagnosis and it has held across several high-income
+    countries for decades. Some of the rise is real — sun exposure, sunbeds,
+    ageing populations. A substantial part is that thin melanomas and melanoma
+    in situ are now found and named far more often, and part of *that* is
+    reclassification inside the microscope rather than more disease. See gaps.md
+    #119.
+    Incidence is highest in Australia and New Zealand, then northern Europe and
+    North America, and it is overwhelmingly a disease of lightly pigmented skin
+    exposed to ultraviolet light.
+    **BUT NOT ENTIRELY.** Acral melanoma — palms, soles, under the nails — and
+    mucosal melanoma occur at similar absolute rates in all populations, are not
+    UV-driven, carry different mutations, and are diagnosed later and do worse.
+    Because cutaneous melanoma is so much more common in light skin, acral
+    disease makes up a much larger *share* of melanoma in people with darker
+    skin, whose outcomes are worse for reasons that are part biology and part
+    everything else.
+    Australia, which has the highest incidence in the world, has seen incidence
+    begin to fall in younger cohorts following decades of sun-protection
+    campaigning. That is a prevention result and it took forty years to show up.
+
+survival:
+  horizon: 5 years from diagnosis
+  untreated:
+    value: 0.2
+    units: >
+      fraction alive — **a blend that hides the whole story.** Thin melanoma
+      excised early was always survivable; metastatic melanoma before 2011 had
+      a median survival under a year and a five-year survival near 0.05
+    src: reasoning
+  treated:
+    value: 0.94
+    units: >
+      fraction alive — most melanoma is caught thin and cured by excision.
+      **Metastatic disease went from ~0.05 to roughly 0.50 at five years in a
+      decade**, on checkpoint blockade and BRAF-targeted therapy
+    src: reasoning
+  witness: >
+    **THE LARGEST SURVIVAL SHIFT IN ADVANCED SOLID-TUMOUR ONCOLOGY, AND THIS
+    RECORD'S HEADLINE FIGURE HIDES IT.** 0.94 is dominated by early excisions
+    that were always curable. The change that matters — half of metastatic
+    patients now alive at five years where almost none were — is invisible in
+    the average. Another instance of gaps.md's ⧉ problem, and an argument that
+    `strata` should carry survival too.
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: risk-reduction
+  ongoing: low
+  efficacy:
+    value: 0.80
+    units: >
+      fraction-of-patients (cured by excision, or durably controlled on systemic
+      therapy) — high because most melanoma is thin at diagnosis, and inflated to
+      an unknown degree by the overdiagnosis described in the note
+    src: reasoning
+  access:
+    value: 0.45
+    units: >
+      fraction-of-patients (reaching dermatological assessment, excision with
+      competent pathology, and modern systemic therapy if advanced) — the
+      excision is cheap and available; the checkpoint inhibitors are among the
+      most expensive drugs in routine use
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: partial
+  witness: >
+    DIAGNOSTIC is `objective` in form and **subjective in application**, and the
+    gap between those two things is this record's most uncomfortable finding.
+    Histopathology is the standard. Dermoscopy improves clinical selection of
+    what to biopsy. Nothing needs an imaging suite, a laboratory panel or a
+    scanner. **This is the visible cancer** — it sits on the skin and the
+    diagnostic instrument is a trained eye.
+    And for lesions near the boundary, **pathologists disagree with each other
+    and with themselves.** Reproducibility for borderline melanocytic lesions is
+    poor, the threshold for calling a lesion melanoma has drifted toward calling
+    more of them melanoma, and there is no number, no committee and no
+    announcement to point at. That is a large part of why incidence rose while
+    mortality did not (gaps.md #119).
+    PROGNOSTIC is `partial` and unusually good for a cancer. **Breslow
+    thickness** — how many millimetres deep the tumour goes — predicts outcome
+    better than almost any single measurement in oncology, with ulceration,
+    mitotic rate and sentinel node status refining it. Thin melanoma is
+    overwhelmingly survived; thick melanoma is not.
+    PREDICTIVE is `partial`, and it splits cleanly by therapy. **BRAF V600
+    mutation status is a strong predictor** for targeted therapy and is tested
+    routinely. **Nothing reliably predicts response to checkpoint blockade** —
+    PD-L1 expression and tumour mutational burden shift the odds and do not
+    decide the case, and roughly half of patients do not respond to the treatment
+    that transformed the disease. That is the single largest measurement gap in
+    this record, and it matters more every year as immunotherapy moves earlier.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    **THE GENTLEST TREATMENT TOLL OF ANY CANCER IN THIS REGISTER, AND IT IS THE
+    MODAL PATIENT'S TOLL THAT THE FIELD RECORDS.**
+    Most melanoma is a thin lesion removed by wide local excision under local
+    anaesthetic. The permanent consequence is a scar. Set that against a
+    lobectomy, a radical prostatectomy, a colostomy or a hysterectomy — the four
+    cancers preceding this one in the register — and melanoma is a different
+    order of intervention entirely.
+    Sentinel lymph node biopsy adds a small rate of lymphoedema and seroma, and
+    completion lymphadenectomy — largely abandoned after trials showed it did not
+    improve survival — added considerably more. **That abandonment is a toll
+    reduction that moved no axis**, which is gaps.md #26's recurring complaint.
+    THE ADVANCED STRATUM IS DIFFERENT AND IS RECORDED IN `strata`. Checkpoint
+    blockade produces immune-related adverse events that are autoimmune disease
+    by another name, and the endocrine ones are permanent: thyroiditis leaving
+    lifelong thyroxine, hypophysitis leaving lifelong steroid replacement,
+    occasionally type 1 diabetes. Combination ipilimumab and nivolumab has a high
+    rate of severe events. **Permanent hormone replacement in exchange for a
+    metastatic cancer that used to kill within a year is a trade most people
+    would take**, and the register should still record that it is a trade.
+    Rated `minor` at record level because the modal treated patient has a scar,
+    and the strata carry the rest.
+  incidence:
+    value: 0.04
+    units: >
+      fraction-of-treated (permanent harm attributable to treatment) — small,
+      because most patients receive only an excision; concentrated almost
+      entirely in the minority given systemic therapy
+    src: reasoning
+
+# NO `residue` BLOCK. Melanoma excised early leaves a scar and nothing else, and
+# the disease does not damage an organ on the way. `restored` therefore derives
+# **`restored`** — nothing permanent from either side — which is the FIRST CANCER
+# IN THIS REGISTER TO DO SO.
+#
+# Lung, prostate, colorectal and cervical all derived `cure-costs`. Melanoma is
+# the case that shows the pattern was about surgery rather than about cancer:
+# where the tumour can be removed with a scalpel and a margin, the patient
+# genuinely returns to baseline.
+
+window:
+  what: >
+    **MILLIMETRES.** Melanoma's window is not measured in time but in depth, and
+    the conversion between the two is what makes this disease unusual.
+    A melanoma under about a millimetre thick is cured by excision in the large
+    majority of cases. A thick, ulcerated melanoma is a systemic disease. The
+    tumour grows radially before it grows vertically, so there is a period —
+    months to years — during which it is spreading across the skin and not yet
+    down into it.
+    **AND IT IS VISIBLE FOR ALL OF IT.** No imaging, no blood test, no
+    endoscopy. A changing pigmented lesion on the skin, which the patient or
+    anybody who looks at them could see.
+    So the reasons for late presentation are not diagnostic. They are that the
+    lesion is on a back the patient cannot see, that dermatology waiting lists
+    are long, that people ignore a mole that is changing, and — for acral
+    melanoma on a sole or under a nail — that neither the patient nor the
+    clinician is looking there.
+    **This is the cheapest window in the register to catch and one of the
+    hardest to persuade anybody to act on**, which is a different failure from
+    every other window here.
+  closes_on: >
+    vertical growth through the dermis — Breslow thickness — and subsequent
+    lymphatic and haematogenous spread
+  caught_in_time:
+    value: 0.60
+    units: >
+      fraction-of-cases (diagnosed thin enough that excision alone is curative) —
+      high in countries with dermatology access and public awareness campaigns,
+      much lower elsewhere and for acral disease
+    src: reasoning
+
+strata:
+  - name: thin localised (stage I)
+    fraction:
+      value: 0.60
+      units: fraction-of-diagnoses
+      src: recall
+    intervention: curative
+    efficacy:
+      value: 0.95
+      units: fraction-of-stratum (alive at ten years after excision)
+      src: reasoning
+    toll: minor
+    what: >
+      Wide local excision, and that is the whole treatment. Ten-year survival is
+      very high. **This stratum is also where the overdiagnosis lives** — an
+      unknown share of these lesions were never going to do anything, and the
+      excellent survival figure is partly a description of that.
+
+  - name: thick localised and regional (stage II-III)
+    fraction:
+      value: 0.25
+      units: fraction-of-diagnoses
+      src: recall
+    intervention: curative
+    efficacy:
+      value: 0.65
+      units: fraction-of-stratum (cured by excision with adjuvant systemic therapy)
+      src: reasoning
+    toll: major
+    what: >
+      Wider excision, sentinel node biopsy, and — since the checkpoint era —
+      adjuvant immunotherapy for resected node-positive disease, which reduces
+      recurrence and brings the permanent endocrine toll to patients who are
+      already cured. **Adjuvant therapy is where immunotherapy's harms fall on
+      people who did not need it**, and there is no biomarker to aim it.
+
+  - name: metastatic, cutaneous
+    fraction:
+      value: 0.10
+      units: fraction-of-diagnoses
+      src: recall
+    intervention: suppressive
+    efficacy:
+      value: 0.50
+      units: fraction-of-stratum (alive at five years on combination checkpoint blockade)
+      src: reasoning
+    toll: major
+    what: >
+      **THE STRATUM THAT CHANGED, AND THE ONE THE SCHEMA CANNOT RATE.**
+      Five-year survival around half, against under a tenth before 2011. The
+      survival curve flattens, and a proportion remain progression-free years
+      after stopping treatment — which looks like cure and cannot yet be called
+      one.
+      Recorded as `suppressive` rather than `curative` on the conservative
+      reading, and the choice is arbitrary in a way the register should be
+      uncomfortable about. See gaps.md #118.
+      BRAF V600 mutant disease, about half of cutaneous melanoma, has targeted
+      therapy as an alternative or a sequence — faster responses, less durable.
+
+  - name: acral and mucosal, advanced
+    fraction:
+      value: 0.05
+      units: fraction-of-diagnoses
+      src: recall
+    intervention: disease-modifying
+    efficacy:
+      value: 0.20
+      units: fraction-of-stratum (durable meaningful benefit)
+      src: reasoning
+    toll: major
+    what: >
+      **THE REVOLUTION DID NOT ARRIVE HERE.** Melanoma of the palms, soles, nail
+      beds and mucosal surfaces is not caused by ultraviolet light, carries a far
+      lower mutational burden, rarely has BRAF V600, and **responds to checkpoint
+      blockade much less often** — the low mutational burden means few
+      neoantigens, which is the same mechanism that makes cutaneous melanoma
+      responsive, running backwards.
+      It is diagnosed later, because nobody examines the sole of a foot, and it
+      accounts for a much larger share of melanoma in people with darker skin.
+      Same shape as small cell lung cancer: a stratum the era passed over,
+      hidden inside a record whose headline is transformation.
+
+moved:
+  - date: 2011
+    axis: efficacy
+    from: 0.65
+    to: 0.8
+    why: >
+      **CHECKPOINT BLOCKADE AND BRAF INHIBITION, IN THE SAME YEAR.** Ipilimumab
+      became the first therapy ever to show a survival benefit in metastatic
+      melanoma; vemurafenib showed that BRAF V600 tumours could be switched off.
+      PD-1 inhibitors followed within four years, then combinations, then
+      adjuvant use in resected disease.
+      For the metastatic stratum this took five-year survival from under a tenth
+      to roughly half — **arguably the largest single-disease survival
+      improvement in modern oncology.**
+      **AND LOOK AT THE NUMBERS ON THIS ENTRY.** Record-level efficacy moves from
+      about 0.65 to about 0.80, because the great majority of melanoma was
+      already cured by cutting it out and the transformation reached a tenth of
+      diagnoses. The largest advance in oncology is a fifteen-point move in a
+      record-level scalar, and the honest version of it is in `strata` where the
+      register does not report it as a change at all. gaps.md #61.
+
+witness:
+  mechanism: >
+    `established`, and the causal chain has a property nothing else in this
+    register has: **the thing that causes the disease is the reason the disease
+    is treatable.**
+    Ultraviolet light produces characteristic DNA damage — pyrimidine dimers —
+    and melanocytes accumulate mutations carrying an unmistakable UV signature.
+    Melanoma ends up with one of the highest mutational burdens of any human
+    cancer. BRAF V600 in roughly half, NRAS in a fifth, NF1 loss in much of the
+    rest; the MAP kinase pathway is switched on in nearly all of it.
+    **And a high mutational burden means a large number of neoantigens** —
+    peptides the immune system has never seen and can be unleashed against.
+    That is why checkpoint blockade works better in melanoma than in almost
+    anything else, and it is why it works so much less well in acral and mucosal
+    melanoma, which are not UV-driven and carry far fewer mutations. The sun
+    caused the disease and then made it visible to the immune system.
+    THE NAMED HOLES ARE TWO. **Nobody can predict who responds to checkpoint
+    blockade** — roughly half do not, and PD-L1 and mutational burden only shift
+    the odds. **And acral and mucosal melanoma are poorly understood**, driven by
+    KIT and other alterations rather than by UV, with no equivalent breakthrough.
+  intervention: >
+    `curative`, and it has been for a century — a melanoma excised with an
+    adequate margin while it is thin is cured, and that describes most patients.
+    What changed is everything below that line. Before 2011 metastatic melanoma
+    was among the most reliably fatal cancers there was: dacarbazine, approved in
+    1975, produced responses in about a tenth of patients and never demonstrated
+    a survival benefit; high-dose interleukin-2 produced durable remissions in a
+    handful at severe cost.
+    Now: **combination checkpoint blockade gives roughly half of patients
+    five-year survival, and the curve plateaus.** Adjuvant immunotherapy reduces
+    recurrence in resected node-positive disease. BRAF/MEK inhibition offers
+    rapid control in the mutant half.
+    **The plateau is the interesting object and the schema cannot hold it.** A
+    flat tail means people stopped progressing and stayed stopped, some of them
+    years after therapy ended. That is what cure looks like from inside. It is
+    also what a very long suppression looks like from inside, and the difference
+    only becomes visible with time this treatment has not yet had. The record
+    reads `suppressive` for that stratum on the conservative choice, and the
+    choice is arbitrary — see gaps.md #118.
+  prevention: >
+    `risk-reduction`, and it is one of the few in this register with a
+    demonstrated population result.
+    Sun protection, shade, clothing, avoiding peak ultraviolet, and not using
+    sunbeds. **Australia has the highest melanoma incidence in the world and has
+    seen incidence begin to fall in younger cohorts** after decades of sustained
+    public campaigning — a prevention effect that took roughly forty years to
+    appear, which is the same politically hopeless lag tobacco control has.
+    Sunbeds deliver a Group 1 carcinogen for cosmetic purposes and remain legal
+    in much of the world; several countries have banned them for minors and a few
+    outright. That is the closest thing melanoma has to a tobacco-control lever
+    and it is a small one, because most exposure is from the sun.
+    It is `risk-reduction` rather than `prophylaxis` because there is nothing to
+    give anybody — the intervention is behaviour, and behaviour sustained over a
+    lifetime against something that feels pleasant.
+  ongoing: >
+    `low`, and it is the only cancer in this register that can say so.
+    Most patients are cured by an excision and carry skin surveillance — regular
+    self-examination and periodic dermatology review, because a first melanoma is
+    the strongest known risk factor for a second.
+    Patients on checkpoint blockade take it for up to two years and frequently
+    stop, which is unusual among effective cancer therapies and is part of why
+    the cure question is live. Those left with immune-related endocrine failure
+    carry lifelong hormone replacement, which is `toll` rather than `ongoing`.
+
+holes:
+  - Every scalar is `src: recall` or `src: reasoning`. The overdiagnosis fraction
+    is genuinely unknown and estimates vary widely, which means `efficacy: 0.80`
+    and the thin-stratum's 0.95 are both inflated by an amount nobody can state.
+  - The metastatic stratum's five-year figure comes from trials in populations
+    selected for fitness and largely conducted in high-income countries — gaps.md
+    #113 applies squarely.
+  - Whether the plateau represents cure is the record's central uncertainty and
+    is stated as such rather than resolved.
+  - Acral and mucosal melanoma are treated here as one stratum and are probably
+    two or more different diseases; the register has too little to separate them.
+  - Non-melanoma skin cancer — basal and squamous cell carcinoma — is vastly more
+    common, rarely fatal, and absent from this register. It shares the exposure
+    and almost nothing else.
+
+blockers:
+  - kind: cost
+    blocks: the drugs that produced the transformation
+    obstacles: []
+    what: >
+      **THE EXCISION COSTS ALMOST NOTHING AND THE THING THAT CHANGED THE DISEASE
+      COSTS AS MUCH AS ANY DRUG IN MEDICINE.**
+      Checkpoint inhibitors run to six figures per patient-year in list terms,
+      and combination ipilimumab-nivolumab more. They are on patent, they are the
+      standard of care for metastatic disease, and they are unavailable across
+      most of the world — which means the largest survival improvement in modern
+      oncology reached the countries that already had the best outcomes.
+      The asymmetry inside this record is unusually stark. **The cheap
+      intervention cures most patients and the expensive one rescues a tenth**,
+      so a health system that can only afford dermatology and a scalpel still
+      captures most of the available benefit. That is a genuinely useful fact and
+      the register has no way to express it.
+    who_could: [manufacturer, payer, government, health-system]
+    scale: 1.0e10
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: who responds to immunotherapy, and acral and mucosal disease
+    obstacles: [who-progresses]
+    what: >
+      **ROUGHLY HALF OF PATIENTS DO NOT RESPOND TO CHECKPOINT BLOCKADE AND
+      NOBODY CAN SAY WHICH HALF.** PD-L1 expression and tumour mutational burden
+      shift the odds without deciding the case. Those patients receive an
+      expensive therapy with a real permanent toll, for nothing, and find out
+      by waiting. It is the futile-treatment shape and the register's flag does
+      not fire because `predictive` is `partial` rather than `none`.
+      The same gap makes adjuvant therapy worse: node-positive patients already
+      cured by surgery receive immunotherapy, and some of them acquire lifelong
+      hormone replacement in exchange for a benefit they did not need.
+      **AND ACRAL AND MUCOSAL MELANOMA HAVE NO EQUIVALENT ADVANCE.** Not
+      UV-driven, low mutational burden, rarely BRAF V600, poorly responsive to
+      the therapies that transformed cutaneous disease — and disproportionately
+      the melanoma of people with darker skin.
+      `scale: null`.
+    who_could: [academic, sponsor, manufacturer, philanthropy]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    blocks: agreeing what melanoma is, and looking where nobody looks
+    obstacles: []
+    what: >
+      Two problems that pull in opposite directions.
+      **THE THRESHOLD HAS DRIFTED.** Pathologists disagree with one another and
+      with themselves about borderline melanocytic lesions, and the boundary has
+      moved toward calling more of them melanoma. Incidence rose steeply,
+      mortality did not, and a substantial share of the gap is reclassification
+      rather than disease. There is no guideline to point at and no number that
+      changed — see gaps.md #119.
+      **AND ACRAL MELANOMA IS MISSED.** It grows on soles, palms and under nails,
+      where neither patients nor clinicians examine, and it presents late in
+      populations already less likely to reach dermatology. The lesion is
+      visible; nobody is looking at it.
+      Dermoscopy training, teledermatology and automated triage all help with the
+      second problem. Neither they nor anything else has settled the first.
+    who_could: [health-system, academic, government, nonprofit]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+  - kind: policy
+    blocks: the exposure, forty years before the disease
+    obstacles: []
+    what: >
+      Sun protection is a behaviour sustained over a lifetime against something
+      that feels good and is culturally coded as healthy. Australia's campaigning
+      worked and took roughly forty years to show in the incidence data — the
+      same politically impossible lag that tobacco control has, in a country
+      where the case for it was as obvious as it gets.
+      **Sunbeds deliver a Group 1 carcinogen for cosmetic reasons and are still
+      legal in much of the world.** Bans for minors exist in many countries and
+      outright bans in a few; the evidence that use before thirty raises melanoma
+      risk substantially is not contested by anybody serious.
+      It is a smaller lever than tobacco because most exposure is the sun, and it
+      is the only one available that does not depend on individual behaviour.
+    who_could: [government, legislator, nonprofit, health-system]
+    scale: 5.0e8
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0054
+  rated: 2026-08-24
+  by: [claude, jeremy]

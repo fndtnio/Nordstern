@@ -1,0 +1,392 @@
+slug: hpv-infection
+id: FND-D-0119
+name: anogenital HPV infection
+also: [HPV, human papillomavirus infection, genital warts, condyloma acuminatum, high-risk HPV]
+kind: disease
+common: HPV
+mondo: MONDO:0005647
+residual: false
+contested: false
+
+# THE VACCINE THAT BEATS NATURE, AND THE COUNTER-EXAMPLE IT MAKES.
+#
+# 1. SCOPE, BECAUSE THE OVERLAP IS LARGE AND DELIBERATE. This record holds the
+#    INFECTION. The cancers it causes are held elsewhere and are not duplicated
+#    here: `cervical-cancer` carries the necessary-cause argument, the screening
+#    programme and the vaccine's cancer effect; `head-neck-cancer` carries
+#    HPV-positive oropharyngeal disease, the E6/E7 mechanism and the
+#    girls-only-vaccination failure. **What has no home until now is the
+#    infection itself** — eighty percent of sexually active people acquire it,
+#    almost all clear it, and the non-cancer morbidity is invisible in both
+#    cancer records.
+#
+# 2. IT IS THE COUNTER-EXAMPLE TO ENGPASS FND-O-0009'S TEMPLATE ARGUMENT, AND
+#    THAT RECORD ASKED FOR IT BY NAME. `protective-immunity` argues that every
+#    working vaccine copied an immune response nature already makes, and lists
+#    HPV in its own `holes` as the obvious test. **HPV fails the argument.**
+#    Natural infection is a poor immunogen — the virus never enters the
+#    bloodstream, never lyses a cell, and provokes so little innate response that
+#    only around half to two-thirds of infected people seroconvert at all, with
+#    low titres that do not reliably prevent reinfection with the same type.
+#    Nature supplies no template. **The vaccine works anyway, and better than the
+#    virus does**, because the L1 capsid protein self-assembles into a
+#    virus-like particle: a dense, ordered, repetitive array of epitopes that is
+#    a far stronger B-cell stimulus than the pathogen ever presents.
+#    **A structural insight substituted for a natural template** — the same shape
+#    `childhood-pneumonia` records for RSV pre-fusion F, and now the second
+#    independent instance.
+#
+# 3. AND IT MAKES gaps.md #109 UNAVOIDABLE. `capability` derives `preventable`.
+#    The number that matters for a preventable disease is what fraction of people
+#    actually receive the prophylaxis — globally something like a fifth to a
+#    quarter of girls — and **the register has no field that can hold it.**
+#    `access` describes access to treatment, and the treatment here is
+#    irrelevant.
+
+burden:
+  prevalence:
+    value: 3.0e8
+    units: >
+      people with a detectable anogenital HPV infection at any given moment —
+      roughly a tenth of adults, and a very poor guide to anything, because most
+      of those infections will be gone within two years. **Lifetime acquisition
+      is closer to eighty percent of sexually active people**, which makes this
+      the commonest sexually transmitted infection in existence and one of the
+      commonest infections of any kind
+    src: recall
+  incidence:
+    value: 4.0e7
+    units: >
+      new anogenital infections/year worldwide — an order of magnitude, since
+      most are asymptomatic, transient and never tested for
+    src: reasoning
+  deaths:
+    value: 0.0
+    units: >
+      deaths/year — **and this zero is the fourth instance of a pattern that is
+      becoming the register's most common kind.** HPV kills through cervical,
+      oropharyngeal, anal, vulvar, vaginal and penile cancer, and every one of
+      those deaths is counted in a cancer record — two of which exist here and
+      four of which do not. **The infection itself kills nobody**, and reporting
+      a figure would double-count `cervical-cancer` and `head-neck-cancer`
+    src: reasoning
+  note: >
+    **The burden of this record is what the cancer records cannot see.** Genital
+    warts affect tens of millions of people, cause substantial distress, recur
+    after treatment and kill nobody. Recurrent respiratory papillomatosis is
+    rare, acquired at birth from maternal infection, and requires repeated
+    surgical debulking of the airway through childhood. Neither appears in a
+    record about cancer, and neither would be prevented by anything except the
+    vaccine that already exists.
+
+axes:
+  mechanism: established
+  intervention: symptomatic
+  prevention: prophylaxis
+  ongoing: low
+  efficacy:
+    value: 0.55
+    units: >
+      fraction-of-patients (visible lesions cleared) — **and it describes
+      lesions rather than infection, because there is no treatment for the
+      infection at all.** Cryotherapy, imiquimod, podophyllotoxin and excision
+      remove warts; a substantial minority recur, because what is being treated
+      is the manifestation of a virus nobody can eliminate
+    src: reasoning
+  access:
+    value: 0.65
+    units: >
+      fraction-of-patients (able to obtain lesion treatment) — **and this is
+      the wrong number for this record, which is the point of its third header
+      note.** The figure that matters is vaccine coverage, and `access`
+      describes treatment by definition (gaps.md #109). Wart treatment is
+      unremarkable to obtain in most health systems
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: n/a
+  witness: >
+    **DIAGNOSTIC is `objective`, and — as in `genital-herpes` — the guidance is
+    largely not to test.** High-risk HPV DNA testing is sensitive, standardised,
+    works on self-collected samples, and has replaced cytology as the primary
+    cervical screen in a growing number of countries. **But it is a cancer
+    screening tool, not an infection diagnostic**: a positive result in a
+    twenty-five-year-old means very little, since most such infections clear, and
+    testing men or testing for the purpose of knowing one's status is recommended
+    nowhere. There is no serological test in clinical use.
+    Warts are diagnosed by looking at them.
+    PROGNOSTIC is `partial`, and it is the register's clearest statement of what
+    persistence means. **Most infections clear within one to two years and the
+    ones that do not are the entire risk.** HPV16 carries far more oncogenic
+    potential than the other high-risk types, and type plus persistence over
+    repeated tests carries real information — which is why screening intervals
+    lengthened when HPV testing replaced cytology. What cannot be said is which
+    infection in which person will persist, which is `cervical-cancer`'s named
+    hole seen from the infection's side.
+    PREDICTIVE is `n/a`, and it is the **absent** kind rather than the abolished
+    one — the reading `huntington` earns. There is no course-altering treatment
+    to select a patient for, because there is no treatment for this infection.
+    A selection question requires something to select between.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    **Wart treatment, and it is unpleasant rather than dangerous.** Cryotherapy
+    and trichloroacetic acid burn; imiquimod causes local inflammation by design;
+    podophyllotoxin is contraindicated in pregnancy; excision leaves scarring.
+    Repeated courses are common because recurrence is common.
+    **The vaccine's toll is separately worth stating because it has been the
+    subject of sustained public claims.** Large post-licensure safety studies
+    across many millions of doses have found injection-site reactions and
+    syncope, and have not substantiated the chronic syndromes attributed to it in
+    several countries. That is not a matter this record treats as open; the
+    **consequences** of the claims are real and are held as a `policy` blocker.
+  incidence:
+    value: 0.05
+    units: >
+      fraction-of-treated with a lasting adverse consequence of lesion treatment
+      — chiefly scarring; reasoned
+    src: reasoning
+
+residue:
+  severity: minor
+  permanent: false
+  what: >
+    **Almost nothing, for almost everybody, and that is genuinely unusual here.**
+    The overwhelming majority of anogenital HPV infections clear completely and
+    leave no trace — no scarring, no immunity worth having, and no detectable
+    consequence. **This is one of very few records in the corpus where the modal
+    outcome is that nothing happened.**
+    What persists is confined to a small minority and is held in other records:
+    the cancers, and the airway scarring of recurrent respiratory papillomatosis
+    after repeated debulking. Genital warts leave scarring and, in some people,
+    lasting distress out of proportion to a benign lesion — the same
+    stigma-driven harm `genital-herpes` records, at lower intensity.
+  incidence:
+    value: 0.02
+    units: >
+      fraction-of-infected left with any lasting consequence — reasoned, and low
+      because clearance is the norm
+    src: reasoning
+
+witness:
+  mechanism: >
+    `established`. Human papillomaviruses are small double-stranded DNA viruses
+    infecting basal keratinocytes through microabrasions, and their life cycle is
+    **tied to epithelial differentiation**: the genome is maintained at low copy
+    number in the basal layer, amplifies as the cell moves upward, and complete
+    virions are shed with the dying surface cells. **The virus never enters the
+    bloodstream, never lyses a cell, and never triggers the danger signals a
+    lytic infection produces.** That is why it is such a poor immunogen and part
+    of why most infection is invisible.
+    Over two hundred types are known; roughly a dozen are oncogenic, with **HPV16
+    responsible for a disproportionate share**, and types 6 and 11 cause almost
+    all anogenital warts while causing no cancer. The oncogenic mechanism — E6
+    degrading p53, E7 inactivating Rb — is held in `cervical-cancer` and
+    `head-neck-cancer` and not repeated here.
+  intervention: >
+    `symptomatic`, and the rating should be read strictly: **there is no
+    antiviral for HPV and never has been.** Everything available treats a lesion.
+    Warts are frozen, burned, cut out or treated with an immune-response modifier;
+    cervical precancer is excised. **In every case the virus remains**, which is
+    why warts recur and why treated precancer requires continued surveillance.
+    The immune system clears this infection or it does not, and nothing medicine
+    has influences which.
+  prevention: >
+    `prophylaxis`, **and it is among the best entries under that value in the
+    register.** The vaccine presents L1 capsid protein assembled into
+    virus-like particles — empty shells, no viral DNA, structurally
+    indistinguishable to a B cell from the real virion — and produces antibody
+    titres an order of magnitude or more above natural infection, durable beyond
+    fifteen years, with near-complete protection against persistent infection by
+    the types it covers.
+    **The real-world results are the strongest in the corpus.** Scotland reported
+    no cervical cancer at all among women vaccinated at twelve or thirteen;
+    England reported reductions approaching ninety percent in the vaccinated
+    cohort; Australia is on a credible path to eliminating cervical cancer as a
+    public health problem. **WHO's move to a single-dose schedule in 2022 roughly
+    halved the cost per girl protected**, which is a supply-side change of the
+    kind this register rarely gets to record.
+    And global coverage is somewhere around a fifth to a quarter of girls. **The
+    axis cannot say that**, which is this record's third finding.
+  ongoing: >
+    `low`. For almost everyone the infection resolves and there is nothing
+    ongoing at all. Recurrent warts mean repeated clinic visits over months to
+    years; screening after treated precancer continues for years; recurrent
+    respiratory papillomatosis means repeated general anaesthetics through
+    childhood. **Each of those is a small population carrying a real burden
+    inside a record whose modal patient carries none.**
+  efficacy: >
+    See the axis, and read it as a wart-clearance figure. **No number in this
+    record describes clearing the infection**, because nothing does.
+  access: >
+    `access` is rated on lesion treatment because the schema defines it that
+    way, and it is close to meaningless here. **The number this record is
+    actually about is vaccine coverage**, which sits at roughly twenty to
+    twenty-five percent of adolescent girls globally against a WHO target of
+    ninety — and which has no field, because `prevention` is an enum and
+    `delivery` is withheld from `preventable` records by design (gaps.md #109).
+    **A disease that a vaccine prevents almost perfectly, reaching a fifth of the
+    people who need it, produces no low number anywhere in this register.**
+
+moved:
+  - date: 2006
+    axis: prevention
+    from: risk-reduction
+    to: prophylaxis
+    why: >
+      **The first vaccine against a human cancer-causing virus**, and the
+      register should say that plainly. Licensure of the quadrivalent HPV vaccine
+      converted a necessary cause of several cancers into a preventable exposure.
+      `cervical-cancer` and `head-neck-cancer` both record the downstream effect;
+      this is the upstream event.
+    src: recall
+  - date: 2022
+    axis: prevention
+    from: prophylaxis
+    to: prophylaxis
+    why: >
+      **A non-move on the axis and a large move in the world.** WHO's Strategic
+      Advisory Group of Experts endorsed a single-dose schedule as providing
+      comparable protection to two doses, roughly halving cost and dose
+      requirements at a moment when supply constrained coverage. **The enum
+      cannot register it** — `prophylaxis` before and after — which is the same
+      instrument problem the `gonorrhoea` non-moves record from the other
+      direction.
+    src: recall
+
+holes:
+  - >
+    **The overlap with `cervical-cancer` and `head-neck-cancer` is substantial
+    and was managed by scoping rather than resolved.** Whether the register
+    should hold an infection and its cancers as separate records, or the cancers
+    as strata of the infection, is genuinely open. The current arrangement means
+    the vaccine's most important effect is recorded in three places and its
+    coverage figure in none.
+  - >
+    **Four HPV-attributable cancers have no record at all** — anal, vulvar,
+    vaginal and penile. Anal cancer in particular is rising, is concentrated in
+    identifiable high-risk groups, and has a screening question that resembles
+    cervical cancer's from thirty years ago.
+  - >
+    `deaths: 0` is correct and is the fourth instance of a subset-of-another-record
+    zero. The register now has enough of these that the pattern is a schema
+    problem rather than a series of individual notes (gaps.md #182, #211).
+  - >
+    **Survival is deliberately not rated, for a reason distinct from #226 and
+    #232.** The mortality of HPV is real and is already rated in
+    `cervical-cancer` and `head-neck-cancer`. Rating it here would either
+    duplicate those figures into an axis that is supposed to be comparable across
+    records, or report ~1.0 for an infection whose whole significance is the
+    cancers it causes. **Neither is honest, and the axis has no way to say
+    "rated elsewhere".**
+  - The prevalence and incidence figures are weak: most infection is transient,
+    asymptomatic and untested, and point prevalence depends heavily on the age
+    structure of whoever was sampled.
+  - Written from model recall. The VLP immunology, the epithelial life cycle, the
+    Scottish and English post-vaccination results and the single-dose
+    recommendation are the parts most likely right; every number is the part most
+    likely wrong.
+
+blockers:
+  - kind: policy
+    blocks: getting a near-perfect vaccine to more than a fifth of the girls who need it
+    what: >
+      **THE VACCINE IS AMONG THE BEST IN MEDICINE AND REACHES ROUGHLY A FIFTH TO
+      A QUARTER OF ADOLESCENT GIRLS GLOBALLY**, against a WHO target of ninety
+      percent. Ninety percent of cervical cancer deaths occur in low- and
+      middle-income countries, and coverage is lowest in exactly those places.
+      **The binding constraints have changed and the register should record the
+      change.** Price and supply were dominant for a decade; pooled procurement,
+      Gavi support and the 2022 single-dose recommendation between them roughly
+      halved cost per girl protected and released supply. What remains is
+      delivery to a population health systems are not built to reach — adolescents,
+      who are not infants, are not pregnant, and do not attend clinics.
+      **School-based delivery is what works where it exists**, and it fails where
+      girls are not in school, which correlates with everything else this record
+      is about.
+      And in several countries coverage fell after **organised campaigns
+      attributing chronic illness to the vaccine** — Japan suspended its
+      recommendation for years, Denmark and Ireland saw sharp drops, and the
+      Irish recovery took a sustained national effort. **The claims were
+      investigated and not substantiated; the coverage loss was real**, and a
+      cohort of unvaccinated women exists because of it.
+    who_could: [government, health-system, nonprofit, philanthropy, payer]
+    scale: 2.0e9
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: any way to clear an infection that eighty percent of people get
+    what: >
+      **THERE IS NO ANTIVIRAL FOR HPV AND THERE HAS NEVER BEEN ONE.** The virus
+      encodes few enzymatic targets — it relies almost entirely on host
+      replication machinery — and its life cycle is tied to keratinocyte
+      differentiation, so the basal cells maintaining the genome are quiescent
+      and largely inaccessible. Everything available treats the lesion and leaves
+      the infection.
+      **The practical consequence falls on the people the vaccine came too late
+      for.** Adults already infected gain nothing from vaccination against the
+      types they carry, and there is nothing to offer them but surveillance and
+      excision. Therapeutic vaccines aimed at E6 and E7 — the proteins that are
+      expressed in infected and transformed cells and therefore constitute a
+      genuine target — have shown activity against high-grade cervical lesions in
+      trials and none is licensed.
+      **That is the most promising unfinished business in this record**, and it
+      is a therapeutic vaccine rather than a drug: the target is known, the
+      antigen is known, and the effect sizes so far are real and modest.
+      `scale: null`.
+    who_could: [academic, sponsor, manufacturer, philanthropy]
+    scale: null
+    standing: documented
+    src: reasoning
+
+  - kind: knowledge
+    blocks: knowing which infection persists, which is the whole of the risk
+    what: >
+      **MOST HPV INFECTIONS CLEAR AND THE ONES THAT DO NOT ARE THE ENTIRE
+      DISEASE.** Type carries real information — HPV16 far more than the rest —
+      and repeated positivity over time carries more, which is why screening
+      intervals lengthened when DNA testing replaced cytology. **Nothing predicts
+      persistence in an individual at the moment of a first positive test.**
+      The cost is paid in both directions and is unusually concrete: women with
+      transient infections are recalled, colposcoped and sometimes excised, and
+      **cervical excision measurably raises the risk of preterm birth in a later
+      pregnancy** — a harm imposed on a future child to prevent a cancer that in
+      most of these women was never going to occur. `cervical-cancer` records the
+      same question from the cancer's side and files it under `who-progresses`.
+    who_could: [academic, sponsor, health-system]
+    scale: null
+    standing: documented
+    src: reasoning
+    obstacles: [who-progresses]
+
+  - kind: diagnosis
+    blocks: any screening at all for the cancers that are not cervical
+    what: >
+      **CERVICAL CANCER HAS A SCREENING PROGRAMME AND THE OTHER FIVE HPV CANCERS
+      HAVE NOTHING.** Oropharyngeal cancer is now the commonest HPV-associated
+      cancer in men in several high-income countries and is rising; anal cancer
+      is rising and is concentrated in identifiable high-risk groups; vulvar,
+      vaginal and penile cancers are rarer and equally unscreened.
+      The cervix is screenable because it is accessible, has a recognised
+      precursor lesion with a long dwell time, and can be sampled repeatedly at
+      low cost. **The oropharynx has none of those properties** — no accessible
+      precursor, no visible field to inspect, and tumours arising deep in tonsillar
+      crypts. Anal cytology and high-resolution anoscopy exist and are limited by
+      the same problem `cervical-cancer` has: the precursor is common, most of it
+      regresses, and treating all of it causes harm.
+      **This is the clearest case in the corpus of a prevention success that did
+      not generalise**, and the reason is anatomy rather than biology.
+    who_could: [academic, health-system, sponsor, government]
+    scale: 4.0e8
+    standing: documented
+    src: reasoning
+
+assertion:
+  id: FND-A-0120
+  rated: 2026-08-28
+  by: [claude, jeremy]

@@ -1,0 +1,388 @@
+slug: trichomoniasis
+id: FND-D-0121
+name: trichomoniasis
+also: [trich, Trichomonas vaginalis infection, trichomonal vaginitis, TV]
+kind: disease
+mondo: MONDO:0002154
+residual: false
+contested: false
+
+# THE COMMONEST CURABLE STI IN THE WORLD, AND NOBODY COUNTS IT.
+#
+# 1. IT IS LARGER THAN THE OTHER THREE TOGETHER. Roughly 156 million new
+#    infections a year — more than chlamydia, gonorrhoea and syphilis combined —
+#    and **it is notifiable almost nowhere, screened for almost nowhere, and
+#    absent from most national surveillance.** The register has just written
+#    three STI records whose blockers are about screening policy; this one has no
+#    programme to argue about.
+#
+# 2. THE STANDARD DOSE WAS WRONG FOR WOMEN FOR FORTY YEARS. Single-dose
+#    metronidazole was the recommendation from the 1960s. **A randomised trial
+#    reporting in 2017 found a seven-day course roughly halved repeat infection
+#    in women**, and guidelines changed around 2021. Nobody had run the
+#    comparison, in the commonest curable sexually transmitted infection on
+#    earth, using a drug licensed in 1959.
+#
+# 3. AND TREATING IT IN PREGNANCY DID NOT PREVENT PRETERM BIRTH — IT MAY HAVE
+#    CAUSED MORE. A trial reported in 2001 randomised infected pregnant women to
+#    metronidazole or placebo, expecting fewer preterm deliveries, and found
+#    **more** in the treated arm. That result stopped a plausible intervention
+#    and has never been satisfactorily explained. **It belongs beside the vaccine
+#    failures in Engpass FND-O-0009**: an obvious intervention against a real
+#    association, which made things worse.
+#
+# 4. IT IS ALSO A PROTIST, AND A THIRD KIND. *Trichomonas* is a metamonad —
+#    about as related to the apicomplexans of `malaria` and `toxoplasmosis` as we
+#    are to fungi. It has no apicoplast, no mitochondrion, and a hydrogenosome
+#    instead. gaps.md #230 argued there is no shared antiprotozoal target; this
+#    record is the third lineage and it confirms it.
+
+burden:
+  incidence:
+    value: 1.56e8
+    units: >
+      new infections/year worldwide — **the largest incidence figure in this
+      register by a wide margin**, exceeding chlamydia, gonorrhoea and syphilis
+      combined. It is also among the least secure: the estimate is modelled from
+      scattered prevalence surveys rather than assembled from surveillance,
+      because there is essentially no surveillance
+    src: recall
+  deaths:
+    value: 0.0
+    units: >
+      deaths/year — trichomoniasis does not kill people directly. **Its
+      mortality is indirect and lands in other records**: increased HIV
+      acquisition and transmission, and adverse pregnancy outcomes, neither of
+      which is counted here
+    src: reasoning
+  note: >
+    **The most common curable sexually transmitted infection in the world is not
+    a notifiable disease in most countries.** It has no screening programme, no
+    elimination target, no dedicated funding stream and no advocacy
+    organisation. `syphilis`, `gonorrhoea` and `genital-chlamydia` all have
+    national programmes to argue about; this record's problem is that **there is
+    nothing to argue about**, and that is the finding.
+
+survival:
+  horizon: 1 year from infection
+  untreated:
+    value: 0.9999
+    units: >
+      fraction alive — trichomoniasis does not kill directly
+    src: reasoning
+  treated:
+    value: 0.9999
+    units: >
+      fraction alive on metronidazole. Rated for consistency with the other STI
+      records; `gonorrhoea` carries the argument about what this axis cannot see
+      and it is not restated
+    src: reasoning
+  witness: >
+    The third near-identical row in this disease class. **It is recorded so that
+    the STI records can be compared with each other rather than half of them
+    being blank**, and it says nothing about trichomoniasis.
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: risk-reduction
+  ongoing: none
+  efficacy:
+    value: 0.90
+    units: >
+      fraction-of-patients (cured) — **on the seven-day regimen, which became
+      the recommendation for women only around 2021.** Single-dose therapy, the
+      standard for the preceding half-century, cures materially fewer women;
+      the 2017 trial that established this is the most consequential thing to
+      happen to this record in decades
+    src: reasoning
+  access:
+    value: 0.35
+    units: >
+      fraction-of-patients (diagnosed and treated) — **the lowest access figure
+      among the register's sexually transmitted infections, and it is almost
+      entirely a diagnostic and policy failure.** The drug costs cents. Most
+      infection is asymptomatic or mildly symptomatic, wet-mount microscopy
+      misses roughly half of it, molecular testing is recent and unevenly
+      deployed, and no country screens for it at scale
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: partial
+  witness: >
+    **DIAGNOSTIC is `objective`, and the test that was standard for fifty years
+    missed about half the cases.** Wet-mount microscopy — a drop of discharge
+    under a microscope, looking for a motile flagellate — is cheap, immediate,
+    and roughly 50-60% sensitive, with sensitivity falling further as the sample
+    cools. It was the routine method for decades and **it is why every historical
+    prevalence figure for this organism is an underestimate of unknown size.**
+    Nucleic acid amplification is far more sensitive, is now available on the
+    same multiplex platforms that test for chlamydia and gonorrhoea, and **is
+    frequently not ordered alongside them** — so a patient can be tested for two
+    sexually transmitted infections on one swab and not for the commonest.
+    That single fact is most of this record's `access` figure.
+    PROGNOSTIC is `partial`. Infection persists for months in the absence of
+    treatment, and much of it is asymptomatic — but the associations that make
+    it matter, with preterm birth and with HIV acquisition, cannot be predicted
+    in an individual.
+    PREDICTIVE is `partial`, and it has recently become a live question. **Sex
+    predicts the right regimen** — women need seven days, men appear adequately
+    treated by a single dose — which is an unusual axis for a predictive rating
+    and was only established in 2017. Metronidazole resistance is emerging at
+    perhaps a few percent of isolates, susceptibility testing is available in
+    almost no clinical laboratory, and there is essentially nothing to switch to.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    **Metronidazole is a 1959 drug and is tolerated about as well as one would
+    expect.** Metallic taste, nausea, and a disulfiram-like reaction with
+    alcohol that patients are warned about and frequently discover anyway.
+    Peripheral neuropathy occurs with prolonged high-dose use, which is
+    relevant only to resistant infection. The seven-day course is a larger
+    adherence problem than the single dose it replaced — a genuine cost of the
+    2017 result, and a small one against halving reinfection.
+  incidence:
+    value: 0.02
+    units: >
+      fraction-of-treated with a consequential adverse effect — reasoned, and
+      dominated by intolerance rather than harm
+    src: reasoning
+
+residue:
+  severity: minor
+  permanent: false
+  what: >
+    **Rated low, and the reason is a negative trial rather than an absence of
+    association.** Trichomoniasis is associated with preterm birth, low birth
+    weight, pelvic inflammatory disease and — most consequentially — with
+    increased HIV acquisition and transmission. Those associations are
+    consistent and substantial.
+    **But the intervention that should have converted association into prevented
+    harm did the opposite.** A randomised trial of metronidazole in infected
+    pregnant women reported in 2001 found *more* preterm birth in the treated
+    arm, not less. Nobody has satisfactorily explained it — proposed accounts
+    include an inflammatory response to dying organisms, and confounding by
+    coexisting bacterial vaginosis — and the result stands.
+    So the register cannot say that curing this infection prevents the harm it
+    is associated with. **`residue` is rated `minor` because what is
+    demonstrated is discomfort and inflammation that resolve on treatment; the
+    larger claimed harms are held in the blockers as unresolved**, which is
+    where an association without a successful intervention belongs.
+  incidence:
+    value: 0.02
+    units: >
+      fraction-of-infected left with lasting consequence attributable to this
+      organism — reasoned, low, and deliberately conservative given the failed
+      pregnancy trial
+    src: reasoning
+
+witness:
+  mechanism: >
+    `established`. *Trichomonas vaginalis* is a flagellated protozoan parasite of
+    the urogenital tract, transmitted almost exclusively by sexual contact, with
+    **no cyst stage and no environmental reservoir** — it exists only as a
+    trophozoite and dies quickly outside a host. It adheres to and damages
+    squamous epithelium directly, provoking a neutrophilic inflammatory response
+    that is what produces the discharge, irritation and — plausibly — the
+    increased HIV susceptibility, since inflammation recruits the cells HIV
+    infects.
+    **It is a metamonad, and that matters for the register's protist argument.**
+    It has no mitochondrion; it runs anaerobic energy metabolism in a
+    **hydrogenosome**, an organelle no human cell has, and which is precisely
+    what metronidazole exploits — the drug is reductively activated in that
+    anaerobic compartment and not in ours. **That is the same shape as the
+    apicoplast in `malaria` and `toxoplasmosis`: a whole organelle we lack.**
+    Two protist lineages, two unrelated exploitable organelles, and
+    `cryptosporidiosis` — which has neither — with no drug. gaps.md #230's
+    argument survives its third lineage.
+  intervention: >
+    `curative`. A 5-nitroimidazole — metronidazole or tinidazole — and the
+    infection is gone. **The dose was wrong for women for fifty years**: single
+    dose was standard from the 1960s, and a randomised trial reporting in 2017
+    found a seven-day course roughly halved repeat infection in women, with
+    guidelines following around 2021.
+    **There is one drug class and nothing behind it.** Resistance is reported in
+    perhaps a few percent of isolates, is managed by higher doses or tinidazole,
+    and for genuinely refractory infection the options are experimental. That is
+    a thin position for the commonest curable sexually transmitted infection in
+    the world.
+  prevention: >
+    `risk-reduction`. Condoms, partner treatment — which matters more here than
+    in most of these records, because reinfection from an untreated partner is
+    the dominant route to recurrence — and nothing else. **No vaccine exists and
+    none is in serious development.**
+    **And the population most affected does not fit the screening model that was
+    built for the other infections.** Unlike chlamydia and gonorrhoea, which
+    concentrate in adolescents and young adults, trichomoniasis prevalence rises
+    with age and is highest in older women. Screening programmes designed around
+    people under twenty-five would find comparatively little of it, which is one
+    reason it was never folded into them.
+  ongoing: >
+    `none`. A course of tablets and it is over. Reinfection is common and is a
+    new episode rather than a continuing burden.
+  efficacy: >
+    See the axis. The figure is good and it is new — the regimen it describes is
+    about four years old.
+  access: >
+    **The lowest access figure among the register's sexually transmitted
+    infections, and it is a policy artefact rather than a supply one.**
+    Metronidazole costs cents and is on every essential medicines list. The
+    molecular test exists and runs on the same platforms already being used for
+    chlamydia and gonorrhoea. What is missing is anybody deciding to look:
+    **trichomoniasis is not notifiable in most countries, has no screening
+    recommendation for the general population, and is routinely omitted from the
+    multiplex panel a patient is already having.**
+
+moved:
+  - date: 2021
+    axis: efficacy
+    from: 0.75
+    to: 0.90
+    why: >
+      **A dose change, fifty years late.** Guidelines moved to seven-day
+      metronidazole for women following a randomised trial reporting in 2017
+      that found it roughly halved repeat infection compared with the
+      single-dose regimen that had been standard since the 1960s.
+      **Nothing was discovered.** The drug, the organism and the disease were
+      unchanged; somebody finally compared two schedules of a sixty-year-old
+      generic in the commonest curable sexually transmitted infection in the
+      world. It is the cheapest efficacy gain in this register and it is a
+      standing argument for funding trials of things nobody expects to be
+      interesting.
+    src: recall
+
+holes:
+  - >
+    **The burden figure is the least secure headline number in the register.**
+    There is no surveillance to assemble it from, the estimate is modelled from
+    scattered prevalence surveys, and **every historical survey used wet-mount
+    microscopy, which misses roughly half of cases** — so the error has a known
+    direction and an unknown size.
+  - >
+    **The preterm-birth association and the failed trial are both real and the
+    register cannot reconcile them.** The record rates `residue` conservatively
+    on the strength of the negative trial, which may be the wrong call if the
+    trial's harm signal was an artefact. Nothing here should be read as
+    establishing that trichomoniasis is harmless in pregnancy.
+  - >
+    **The HIV interaction is the largest claimed harm and is held in another
+    record's currency.** If treating trichomoniasis meaningfully reduced HIV
+    acquisition it would be among the cheaper HIV interventions available; the
+    trials that would show it have not been done at adequate scale, and the
+    register has no way to express a harm that accrues to a different entity.
+  - >
+    The racial disparity in reported prevalence in the United States is very
+    large — roughly an order of magnitude between Black and white women in
+    several surveys — and is not explained by reported sexual behaviour. It is
+    recorded here because omitting it would be a choice, and the register has no
+    field for a disparity that is documented and unexplained.
+  - Metronidazole resistance prevalence is poorly characterised because
+    susceptibility testing is performed almost nowhere; the few-percent figure
+    comes from reference laboratories testing selected isolates.
+  - Written from model recall. The 2017 dosing trial, the 2001 pregnancy trial,
+    the hydrogenosome mechanism and the absence of notifiability are the parts
+    most likely right; every number is the part most likely wrong.
+
+blockers:
+  - kind: policy
+    blocks: anybody deciding to look for the commonest curable STI there is
+    what: >
+      **IT IS NOT NOTIFIABLE, NOT SCREENED FOR, AND ROUTINELY LEFT OFF THE PANEL
+      A PATIENT IS ALREADY HAVING.** A person can be swabbed once, tested for
+      chlamydia and gonorrhoea on a multiplex platform that could also test for
+      this, and not be tested for the infection they are most likely to have.
+      The drug costs cents. The test exists and needs no new sample.
+      **The reasons are historical rather than reasoned.** Trichomoniasis was
+      classified as a nuisance rather than a disease for decades, on the basis of
+      symptoms in women who were often not asked; wet-mount microscopy was
+      insensitive enough to keep prevalence looking modest; and the population it
+      concentrates in — older women, and in the United States disproportionately
+      Black women — was not the population the sexual-health screening
+      infrastructure was designed around.
+      **This is the register's clearest instance of a disease being invisible
+      because of a decision nobody remembers making**, and the fix is a line in a
+      testing algorithm.
+    who_could: [health-system, government, payer, nonprofit]
+    scale: 2.0e8
+    standing: documented
+    src: reasoning
+
+  - kind: knowledge
+    blocks: knowing whether the harms it is associated with can be prevented
+    what: >
+      **THE OBVIOUS INTERVENTION WAS TRIED AND WENT THE WRONG WAY.**
+      Trichomoniasis is consistently associated with preterm birth, low birth
+      weight and increased HIV acquisition. A randomised trial reporting in 2001
+      gave metronidazole to infected pregnant women expecting fewer preterm
+      deliveries and **found more in the treated arm.** The result has never been
+      satisfactorily explained; candidate accounts include an inflammatory
+      response to organism death and confounding by coexisting bacterial
+      vaginosis, and none is established.
+      **This belongs beside the vaccine failures in Engpass FND-O-0009**, and it
+      is the same lesson in a different modality: an association plus a plausible
+      mechanism plus an obvious intervention is not a prediction, and acting on
+      it harmed people.
+      The HIV question is the larger one and is unresolved. If treating this
+      infection reduced HIV acquisition it would be among the cheapest HIV
+      interventions available; **the trials that would establish it have not been
+      done at adequate scale**, partly because the pregnancy result made the
+      field cautious and partly because nobody funds work on this organism.
+      `scale: null` for the mechanism; the trials are priceable and are somebody
+      else's line item.
+    who_could: [academic, sponsor, government, philanthropy]
+    scale: null
+    standing: documented
+    src: reasoning
+
+  - kind: no-sponsor
+    blocks: a second drug class, for an organism with one
+    what: >
+      **THERE IS ONE DRUG CLASS — THE 5-NITROIMIDAZOLES — AND NOTHING BEHIND
+      IT.** Metronidazole was licensed in 1959; tinidazole is its close relative.
+      Resistance is reported in perhaps a few percent of isolates and is managed
+      by escalating dose within the same class, which is not a strategy. For
+      genuinely refractory infection the options are experimental and the
+      literature is case reports.
+      **The market is the reason and it is the worst possible shape**: a
+      single-course treatment, for a non-fatal infection, in a disease nobody
+      counts, cured today by a generic costing cents. Nobody is going to
+      develop a second class against that.
+      This is the same market failure `gonorrhoea` records, without the
+      mitigating fact that gonorrhoea at least has a resistance emergency
+      commanding attention. **Trichomoniasis has the thin drug position and no
+      emergency**, because the emergency would require somebody to be counting.
+    who_could: [sponsor, manufacturer, philanthropy, government, academic]
+    scale: 5.0e8
+    standing: documented
+    src: reasoning
+
+  - kind: knowledge
+    blocks: counting an infection nobody is required to report
+    what: >
+      **156 MILLION INFECTIONS A YEAR IS A MODELLED FIGURE ASSEMBLED FROM
+      SCATTERED SURVEYS**, because there is essentially no surveillance:
+      trichomoniasis is notifiable almost nowhere and appears in almost no
+      national STI statistics.
+      **The error has a known direction.** Wet-mount microscopy — the routine
+      method for fifty years — misses roughly half of cases, so every historical
+      prevalence estimate understates it, and the shift to molecular testing has
+      been revising figures upward wherever it has happened. The true incidence
+      exceeds the estimate by an amount nobody can bound.
+      That matters because **every argument this record could make is an
+      arithmetic one**: whether to add it to a multiplex panel, whether to fund a
+      second drug class, whether treating it would move HIV incidence. All three
+      need a denominator, and there isn't one.
+    who_could: [government, health-system, academic, nonprofit]
+    scale: 8.0e7
+    standing: documented
+    src: reasoning
+    obstacles: [burden-unknown]
+
+assertion:
+  id: FND-A-0122
+  rated: 2026-08-28
+  by: [claude, jeremy]

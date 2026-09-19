@@ -1,0 +1,597 @@
+slug: covid-19
+id: FND-D-0076
+name: COVID-19
+also: [SARS-CoV-2 infection, coronavirus disease 2019, C-19]
+mondo: MONDO:0100096
+kind: disease
+residual: false
+contested: false
+
+# `contested: false` is a deliberate call and worth defending, because several
+# things about this record ARE disputed: the death toll, the prevalence of the
+# post-acute condition, and the origin of the virus. None of those is a dispute
+# about **whether the entity exists or where its edge lies**, which is what the
+# flag means (gaps.md #6). The disputed quantities are handled where they belong —
+# in `burden.note`, in `residue`, and in `holes`.
+#
+# Long COVID has its own Mondo term (`MONDO:0100233`) and arguably its own record.
+# It is carried here as `residue` and as a stratum, and the file says why in
+# `holes`. It connects this record to `me-cfs`, `pots` and `mcas`, all held.
+
+burden:
+  deaths:
+    value: 2.0e5
+    units: >
+      deaths/year, CURRENT, order of magnitude at best — **and the register cannot
+      do better than that, which is this record's most important finding.**
+      Testing, reporting and genomic surveillance were substantially dismantled
+      from 2022-2023, so the present burden of the disease that closed the world
+      is not being counted (gaps.md #165)
+    src: reasoning
+  note: >
+    **THIS RECORD HAS THREE BURDEN NUMBERS AND THEY DIFFER BY A FACTOR OF FOUR.**
+    **Reported cumulative deaths: about 7 million.** Counted, attributed, and
+    known to be an undercount everywhere that lacked testing.
+    **Estimated cumulative excess deaths: about 15 million for 2020-2021 alone**
+    on the WHO estimate, and modelled figures running to the mid-20-millions
+    through 2022. Excess mortality does not require a test, which is why it is
+    both the more reliable signal and the more arguable one — it includes deaths
+    caused by the *response* as well as by the virus.
+    **Current annual deaths: nobody knows.** That is not a modelling difficulty.
+    It is that the counting stopped.
+    So this is the only record in the register whose burden was measured with more
+    intensity than any disease in history and is now measured worse than
+    tuberculosis. **The apparatus was built, used, and switched off**, and the
+    thing it would have told us is whether switching it off was safe.
+
+survival:
+  horizon: 30 days from a positive test
+  untreated:
+    value: 0.993
+    units: >
+      fraction alive — the unvaccinated 2020 population, with an infection
+      fatality rate near 0.7% that varied over a hundredfold with age. **A
+      figure this close to 1 conceals the entire event**: 0.7% of a population
+      infected in a year is a mass-casualty number
+    src: reasoning
+  treated:
+    value: 0.999
+    units: >
+      fraction alive, vaccinated, with current care — dexamethasone and antivirals
+      for the severe, and **most of the gain from vaccination rather than
+      treatment**
+    src: reasoning
+  witness: >
+    **THE CLEAREST DEMONSTRATION THAT SURVIVAL FRACTIONS COMPRESS BADLY AT THE
+    TOP.** 0.993 to 0.999 is a gain of +0.006, the smallest non-zero number in
+    this column, and it describes tens of millions of deaths averted. **A
+    dashboard sorted by `gain` puts COVID-19 near the bottom and is wrong to.**
+    The axis multiplies badly against prevalence, and the register has no field
+    that carries deaths-averted (gaps.md #221).
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: prophylaxis
+  ongoing: low
+  efficacy:
+    value: 0.97
+    units: >
+      fraction-of-patients (survival of acute infection, with current treatment
+      and against a background of near-universal immunity) — **and this number
+      moved further and faster than any other in the register**, from roughly 0.99
+      overall but far worse in the elderly in 2020, to what it is now
+    src: reasoning
+  access:
+    value: 0.60
+    units: >
+      fraction-of-patients (reaching effective treatment) — dexamethasone is
+      generic and everywhere; **nirmatrelvir-ritonavir is neither**, and the
+      difference between those two facts is most of this figure
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: partial
+  witness: >
+    **DIAGNOSTIC IS `objective` AND IT IS ONE OF THE GREAT DIAGNOSTIC
+    ACHIEVEMENTS IN THIS REGISTER.** A validated PCR assay existed within days of
+    the genome sequence being published. Lateral flow antigen tests went from
+    nothing to a product people used at home, at scale, in about a year — a
+    self-administered diagnostic for an acute infectious disease, distributed by
+    the billion.
+    **AND THE REGISTER SHOULD RECORD WHAT HAPPENED TO IT.** Free testing ended in
+    most countries, reporting became voluntary or ceased, and genomic sequencing
+    volumes collapsed. The test still works. **Almost nobody is running it, and
+    almost nowhere reports the result** (gaps.md #165). `diagnostic: objective`
+    describes a capability that exists and is not being exercised, and the axis
+    has no way to distinguish that from one in routine use.
+    PROGNOSTIC is `partial`, and its useful half is unusually blunt: **age.** Risk
+    of death from acute COVID-19 varies across the adult lifespan by something
+    like three orders of magnitude, which made triage tractable and made
+    individual prediction no better than in any other record. Immune status,
+    comorbidity and obesity add to it. What nothing predicts is who develops the
+    post-acute condition — which is not concentrated in the severely ill, and is
+    the prognostic question that matters now.
+    PREDICTIVE is `partial`. Antiviral eligibility is decided by risk category
+    rather than by any test, and it works well enough to be policy. Two things it
+    cannot do: say which individual benefits from nirmatrelvir, and say anything
+    at all about the post-acute condition, for which there is no test, no
+    biomarker and no treatment to predict a response to.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    **THE TREATMENTS ARE CHEAP AND BENIGN AND ONE OF THEM IS A 1950s STEROID.**
+    Dexamethasone costs pennies and causes hyperglycaemia and a raised risk of
+    secondary infection. Nirmatrelvir-ritonavir causes an unpleasant taste and,
+    more seriously, has **substantial drug interactions through ritonavir**, which
+    is why it is complicated to give to exactly the elderly polypharmacy patients
+    who benefit most. Neither leaves anything permanent.
+    **THE COSTS OF PREVENTION ARE REAL, WERE QUANTIFIED, AND HAVE NO FIELD**
+    (gaps.md #105). Myocarditis after mRNA vaccination, concentrated in young
+    males after the second dose, mostly mild and self-limiting. **Vaccine-induced
+    immune thrombotic thrombocytopenia** after adenovirus-vector vaccines — rare,
+    on the order of one in tens of thousands, with a high case fatality, and it
+    changed national programmes.
+    Both are far outweighed by the benefit, both were detected within months by
+    pharmacovigilance systems working as designed, and **the register has nowhere
+    to put either.** `toll` means what the *cure* costs the patient. A vaccine
+    given to a healthy person who was never going to be infected is a different
+    object, and treating its harms as unrecordable is how a register loses the
+    trust of the people who most want it to be honest.
+  incidence:
+    value: 0.005
+    units: >
+      fraction-of-treated (significant adverse effect of TREATMENT) — a reasoned
+      estimate; the vaccine adverse events discussed above are not in this figure
+      and have no field
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    **LONG COVID IS THE LARGEST THING THIS RECORD STILL CONTAINS AND ITS SIZE IS
+    GENUINELY UNKNOWN.**
+    WHO's case definition is symptoms continuing or appearing three months after
+    infection, lasting at least two months, unexplained by an alternative
+    diagnosis. Fatigue, post-exertional malaise, cognitive impairment, breathlessness,
+    autonomic dysfunction. Prevalence estimates span **5% to 30% of infections**
+    depending on definition, wave, vaccination status and study design — a range so
+    wide it is closer to an admission than an estimate. Vaccination reduces the
+    risk; Omicron appears lower than Delta; many people recover over one to two
+    years and some do not.
+    **AND IT LANDS IN THREE RECORDS THIS REGISTER ALREADY HOLDS.** A substantial
+    share of long COVID patients meet diagnostic criteria for **myalgic
+    encephalomyelitis/chronic fatigue syndrome**. **Postural orthostatic
+    tachycardia syndrome** is a documented post-COVID outcome. **Mast cell
+    activation syndrome** is asserted as one. All three are records here, all
+    three sit under Engpass's `unexplained-illness` obstacle, and the register
+    cannot express that a new disease poured patients into three existing ones
+    (gaps.md #160).
+    **The one genuinely good thing to come out of it is methodological.** ME/CFS
+    research was crippled for decades by not knowing when the illness started.
+    COVID supplied, at enormous cost, **a known index infection at population
+    scale with prospective follow-up** — the cohort that field could never
+    assemble. Whether it is used well is the open question.
+  incidence:
+    value: 0.05
+    units: >
+      fraction-of-infections (post-acute condition persisting beyond a year) — **a
+      deliberately conservative point inside a range spanning roughly 0.03 to
+      0.30**, and against billions of infections even the low end is a very large
+      number of people
+    src: reasoning
+
+window:
+  what: >
+    **TWO WINDOWS, AND ONE OF THEM RUNS BACKWARDS — WHICH IS THE MOST INSTRUCTIVE
+    THING IN THIS FILE.**
+    *Antivirals.* Nirmatrelvir-ritonavir must be started within about five days of
+    symptom onset, because it inhibits viral replication and replication is mostly
+    over by then. That requires a person to recognise symptoms, get a test, get a
+    prescription and get the drug inside five days — a cascade that fails at every
+    step, and fails hardest in the elderly patients who benefit most.
+    *Dexamethasone, and here the sign flips.* **RECOVERY found dexamethasone
+    reduced mortality by roughly a third in ventilated patients, by about a fifth
+    in those needing oxygen, and showed a trend toward HARM in patients not
+    requiring oxygen at all.** Same drug, same disease, same week — and giving it
+    early to somebody who is coping is worse than not giving it.
+    That is because the two phases have opposite problems: **early disease is viral
+    replication, late disease is the immune response to it.** Suppress the immune
+    response early and you help the virus; attack the virus late and there is
+    nothing left to attack.
+    **gaps.md #157 recorded that an intervention's sign can flip with the
+    setting.** This is a sign flip with the *stage* of the same illness in the same
+    patient, and it is arguably the more common form.
+  closes_on: >
+    the transition from viral replication to immune-mediated lung injury — about
+    five to seven days from symptom onset, after which antivirals stop working and
+    steroids start
+  caught_in_time:
+    value: 0.40
+    units: >
+      fraction-of-high-risk-cases (receiving an antiviral inside the five-day
+      window) — a reasoned estimate, and much lower where testing has been
+      withdrawn
+    src: reasoning
+
+strata:
+  - name: acute infection with full recovery
+    fraction:
+      value: 0.90
+      units: fraction-of-infections
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.999
+      units: fraction-of-stratum (survival and recovery)
+      src: reasoning
+    toll: minor
+    what: >
+      Most of it, now. Against a background of near-universal immunity from
+      vaccination, infection or both, and with a virus whose intrinsic severity
+      appears lower than the ancestral strain, the modal infection is a
+      self-limiting upper respiratory illness. **This stratum is why the record's
+      headline numbers look mild and why they looked entirely different in 2020.**
+
+  - name: severe acute infection
+    fraction:
+      value: 0.04
+      units: fraction-of-infections
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.85
+      units: fraction-of-stratum (survival)
+      src: reasoning
+    toll: minor
+    what: >
+      Hypoxaemia, hospital admission, sometimes ventilation — overwhelmingly in the
+      old, the immunosuppressed and the unvaccinated. Dexamethasone, oxygen,
+      tocilizumab or baricitinib, and supportive care. **The oxygen constraint in
+      `childhood-pneumonia` is this stratum's constraint too**, and COVID is the
+      reason the world briefly noticed it.
+
+  - name: post-COVID condition
+    fraction:
+      value: 0.06
+      units: fraction-of-infections
+      src: reasoning
+    intervention: none
+    efficacy:
+      value: 0.0
+      units: fraction-of-stratum (no disease-modifying treatment exists)
+      src: reasoning
+    toll: minor
+    what: >
+      **`intervention: none`, and this is why the record flags ⧉.** There is no
+      treatment for long COVID. There is no diagnostic test. The mechanism is
+      contested between viral persistence, autoimmunity, endothelial and
+      microclot pathology, and autonomic dysfunction, with reasonable evidence for
+      several and consensus on none. Management is symptomatic and rehabilitative,
+      and pacing rather than graded exercise where post-exertional malaise is
+      present — a lesson imported directly from the `me-cfs` record's history.
+      **Six percent of infections is a conservative reading of a range that goes
+      to thirty**, and against billions of infections this stratum contains more
+      people than most whole records in this register.
+
+moved:
+  - date: 2020
+    axis: intervention
+    from: symptomatic
+    to: disease-modifying
+    why: >
+      **THE RECOVERY TRIAL FOUND THAT A SIXTY-YEAR-OLD GENERIC STEROID COSTING
+      PENNIES CUT MORTALITY BY A THIRD, AND IT TOOK THREE MONTHS.**
+      RECOVERY was an adaptive platform trial embedded in the United Kingdom's
+      hospital system, with a protocol short enough to consent a breathless patient
+      and randomisation built into normal care. It enrolled tens of thousands. The
+      dexamethasone result was announced in June 2020 and changed practice
+      worldwide within days; estimates of lives saved run to the high hundreds of
+      thousands and beyond.
+      **It was equally valuable for what it ruled out** — hydroxychloroquine,
+      lopinavir-ritonavir, azithromycin, colchicine and convalescent plasma were
+      all definitively shown not to work, ending an enormous amount of wasted
+      effort and unjustified use.
+      **The contrast is the finding.** Over the same period, hundreds of small
+      underpowered trials elsewhere consumed patients and money and answered
+      almost nothing. **The difference between a health system that can run a
+      trial and one that cannot was worth more than any molecule discovered during
+      the pandemic** — and that capability is not an intervention against any
+      disease, so this register has no way to hold it (gaps.md #164).
+    src: recall
+
+  - date: 2020
+    axis: prevention
+    from: none
+    to: prophylaxis
+    why: >
+      **SEQUENCE PUBLISHED IN JANUARY, AUTHORISED VACCINE IN DECEMBER — ELEVEN
+      MONTHS, AGAINST A PRIOR RECORD MEASURED IN DECADES.**
+      The mRNA design work took days once the genome was public; the rest was
+      trials and manufacturing. **The decisive innovation was organisational rather
+      than scientific**: running phases in parallel instead of in series, and
+      manufacturing at risk before anybody knew whether the product worked. The
+      science had been accumulating for thirty years in lipid nanoparticles,
+      nucleoside modification and pre-fusion antigen stabilisation — the same
+      structural trick that finally produced an RSV vaccine (`childhood-pneumonia`).
+      Around 13 billion doses were administered. Modelling published in 2022
+      estimated something like **14 million deaths averted in the first year of
+      rollout alone.**
+      **And the distribution was the failure everybody could see happening.**
+      High-income countries were administering boosters while low-income countries
+      had not covered their health workers. COVAX under-delivered against its own
+      targets by roughly half. That is `access`, at the largest scale the register
+      contains, and it is documented rather than alleged.
+    src:
+      id: PMID:33301246 doi:10.1056/NEJMoa2034577
+      retrieved: 2026-08-26
+      quote: >
+        A two-dose regimen of BNT162b2 conferred 95% protection against Covid-19 in
+        persons 16 years of age or older. Safety over a median of 2 months was
+        similar to that of other viral vaccines. (Funded by BioNTech and Pfizer;
+        ClinicalTrials.gov number, NCT04368728.).
+
+  - date: 2021
+    axis: intervention
+    from: disease-modifying
+    to: curative
+    why: >
+      **NIRMATRELVIR-RITONAVIR, AND A CAVEAT THAT MATTERS MORE THAN THE HEADLINE.**
+      A protease inhibitor designed against the SARS-CoV-2 main protease, authorised
+      in December 2021, showing roughly a 90% reduction in hospitalisation and
+      death in **unvaccinated high-risk** patients treated within five days.
+      In vaccinated, standard-risk populations the benefit is much smaller and in
+      some trials absent — which is not a failure of the drug but a statement about
+      who still has room to be helped. **The register's `efficacy` axis cannot say
+      "this works enormously in the people who need it and not at all in most
+      people who take it"**, and prescribing has followed the confusion.
+      Monoclonal antibodies belong in this entry as a cautionary note: several were
+      highly effective and **every one was rendered obsolete by variant
+      evolution**, which is `#146`'s degradation applied to a class that lasted
+      months rather than decades.
+      **Three axis moves in eighteen months. Nothing else in this register has
+      moved that fast, and the register cannot show a rate of change** — only a
+      sequence of dated states (gaps.md #91).
+    src: recall
+
+witness:
+  mechanism: >
+    `established`, and it is plausibly the best-characterised disease in this
+    register purely by weight of effort.
+    SARS-CoV-2 enters cells via the spike protein binding **ACE2**, primed by
+    **TMPRSS2** or by cathepsin in the endosomal route. It replicates in the upper
+    airway first, which is why it transmits before it makes people very ill, and
+    that single property is most of why it was uncontainable in a way SARS-CoV-1
+    was not.
+    Severe disease is **immune-mediated and late**: a delayed and dysregulated
+    interferon response, then a hyperinflammatory phase with endothelial injury,
+    microvascular thrombosis and diffuse alveolar damage. That two-phase structure
+    is the mechanistic reason for the sign flip in `window` — antivirals early,
+    immunosuppression late, and each is harmful in the other's phase.
+    Inborn errors of type I interferon immunity and **autoantibodies against type I
+    interferons** together explain a meaningful share of severe disease in
+    otherwise healthy people, which is a rare instance in this register of the
+    "why this person" question being partly answered.
+    **THE NAMED HOLES ARE THE POST-ACUTE CONDITION AND THE REST OF "WHY THIS
+    PERSON".** Long COVID has at least four live mechanistic hypotheses — viral
+    persistence in tissue reservoirs, autoimmunity, endothelial and microclot
+    pathology, and autonomic dysfunction — with real evidence for several and
+    consensus on none, no biomarker, and no treatment. It is the same shape of
+    hole as `me-cfs`, which is why they sit under the same Engpass obstacle.
+  intervention: >
+    `curative` for acute disease, and the ladder was assembled almost entirely in
+    2020-2021.
+    **Dexamethasone** for patients requiring oxygen — generic, pennies, and the
+    single largest mortality reduction found. **Tocilizumab or baricitinib** added
+    for the sickest. **Nirmatrelvir-ritonavir** within five days for high-risk
+    patients. **Oxygen**, which is this record's link to `childhood-pneumonia` and
+    the reason the world briefly noticed the global oxygen gap and then did not
+    close it. Remdesivir, with modest effect. Monoclonal antibodies, all obsolete.
+    **AND `curative` IS TRUE OF THE ACUTE ILLNESS AND FALSE OF THE RECORD.** There
+    is no treatment for the post-COVID condition, which is a stratum rating
+    `intervention: none` containing more people than several whole records here.
+    The record derives `curable` because the axis reads the modal patient, and the
+    ⧉ flag is the only place the register admits the disagreement.
+  prevention: >
+    `prophylaxis`, and the vaccines are the register's fastest and largest
+    prevention achievement — eleven months from sequence, roughly 13 billion doses,
+    on the order of 14 million deaths averted in the first year.
+    They reduce severe disease and death substantially and durably; they reduce
+    infection and transmission partially and temporarily, because immunity at the
+    respiratory mucosa wanes and the virus keeps changing its surface. **That
+    distinction was badly communicated in both directions and remains the source of
+    most public confusion about whether they "work".**
+    **What does not exist is a vaccine that stops transmission or survives variant
+    drift** — a mucosal vaccine producing sterilising immunity, or a
+    pan-sarbecovirus vaccine targeting conserved epitopes. Both are technically
+    plausible, both are funded at a fraction of what the pandemic cost, and either
+    would change this record and the next one.
+    Non-pharmaceutical measures — distancing, ventilation, masks, closures — belong
+    here and the register has no way to rate them. They are administered to
+    populations rather than patients (gaps.md #66's open half, #144), their costs
+    landed on education, mental health and economies rather than on any patient,
+    and the evidence on individual components remains genuinely contested in a way
+    the evidence on vaccines does not.
+  ongoing: >
+    `low` for the acute illness, which lasts days.
+    **And `low` is simply wrong for the post-acute stratum**, where `ongoing`
+    would be `high` — years of limitation, frequently with loss of employment, and
+    no treatment to be adherent to. The record rates the modal patient because the
+    axis has one value, which is #25 again in the record where it is most visible.
+
+holes:
+  - >
+    **THE CURRENT BURDEN IS NOT KNOWN AND THIS RECORD CANNOT FIX THAT.** The
+    `deaths` value is an order-of-magnitude reasoning estimate because testing,
+    reporting and sequencing were withdrawn. It is the least defensible number in
+    the register and the reason is a policy decision rather than a measurement
+    difficulty (gaps.md #165).
+  - >
+    **Long COVID probably deserves its own record.** It has its own Mondo term
+    (`MONDO:0100233`), its own contested definition, `intervention: none`, and a
+    prevalence range spanning an order of magnitude. Holding it as `residue` here
+    understates it and holding it separately would double-count it — which is
+    #160's problem in its most awkward form.
+  - >
+    The strata fractions are a 2026 reading of a disease whose severity
+    distribution changed several times. Applying them to 2020 would be wrong by an
+    enormous margin, and **the register has no date on a rating** other than
+    `assertion.rated`.
+  - >
+    `contested: false` is defensible and the disputed quantities are real: the
+    death toll depends on choosing reported or excess, long COVID prevalence spans
+    5-30%, and the origin of the virus remains unresolved and is outside this
+    register's scope.
+  - >
+    **Non-pharmaceutical interventions are absent from every axis** and were the
+    dominant intervention for the first year. Their costs fell outside health
+    entirely. The register would rate this disease identically if they had never
+    happened.
+  - >
+    Everything here is `recall` or `reasoning` against what is probably the largest
+    body of evidence ever assembled about a single disease, which makes this the
+    record where not citing sources is least excusable.
+
+blockers:
+  - kind: knowledge
+    blocks: any mechanism, test or treatment for the post-acute condition
+    obstacles: [unexplained-illness]
+    what: >
+      **NO BIOMARKER, NO TEST, NO TREATMENT, AND FOUR LIVE HYPOTHESES.**
+      Viral persistence in tissue reservoirs, autoimmunity, endothelial and
+      microclot pathology, autonomic dysfunction — each with real supporting
+      evidence, none established, and quite possibly several are true of different
+      patients, which would make this a final common pathway of the kind gaps.md
+      #39 now wants a field for.
+      The consequence is the one this register has seen before: **without a
+      partition, trials enrol a mixture and dilute toward the null**, which is
+      exactly what the early long COVID treatment trials have done.
+      **It is the same hole as `me-cfs`, which is why it carries the same
+      obstacle**, and the connection runs both ways. COVID handed the ME/CFS field
+      the thing it never had — a known index infection, at population scale, with
+      prospective follow-up — at a price nobody would have chosen to pay. **A
+      solution here would move `me-cfs`, `pots`, `mcas` and this record at once**,
+      which is precisely the calculation Engpass exists to make.
+      `scale: null`.
+    who_could: [academic, sponsor, philanthropy, patient-org]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: policy
+    blocks: knowing what the disease is currently doing
+    obstacles: []
+    what: >
+      **THE MOST INTENSIVELY MEASURED DISEASE IN HISTORY IS NOW MEASURED WORSE
+      THAN TUBERCULOSIS, AND THE INSTRUMENTS STILL WORK.**
+      Free testing ended, case reporting became voluntary or stopped, genomic
+      sequencing volumes collapsed, and wastewater programmes were defunded in many
+      places. The PCR assay, the antigen test and the sequencing pipeline all still
+      exist. **Almost nobody is running them and almost nowhere reports the
+      result.**
+      The decisions were defensible individually — the emergency ended, the money
+      was needed elsewhere, and surveillance at pandemic intensity is not a
+      permanent condition. The aggregate is that **the register cannot state this
+      record's current burden within an order of magnitude**, and neither can
+      anybody else.
+      **The loss is self-concealing, which is what makes it different from every
+      other blocker here.** A dismantled surveillance system removes the signal
+      that would show it was needed, so the evidence for rebuilding it can only
+      arrive as a surprise. And the same infrastructure — sequencing, wastewater,
+      excess-mortality monitoring — is what would detect the next pathogen, so its
+      value is not principally about this record at all (gaps.md #165).
+      **`h5n1` is the record that depends on it**, and that record's whole
+      argument is about a threat rather than a burden.
+    who_could: [government, health-system, payer, legislator, nonprofit]
+    scale: 3.0e9
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: a vaccine that stops transmission and survives the next variant
+    obstacles: [protective-immunity]
+    what: >
+      The vaccines prevent death and severe disease well and durably. They prevent
+      **infection and transmission** partially and temporarily, because circulating
+      antibody at the respiratory mucosa wanes and the spike protein keeps
+      changing.
+      Two things would fix that and neither exists. A **mucosal vaccine** producing
+      secretory IgA in the airway, giving something closer to sterilising immunity
+      — intranasal candidates exist and none has cleared the bar. A
+      **pan-sarbecovirus vaccine** aimed at conserved epitopes rather than at the
+      current spike, which would survive drift and cover the next spillover from
+      the same family.
+      **Both are scientifically plausible, both are underfunded relative to what
+      the pandemic cost by a factor nobody would defend out loud**, and the
+      reason is the shape gaps.md #145 identified for antibiotics: the market for
+      a product whose value is *not having an emergency* is a bad market.
+      Monoclonal antibodies make the same point with a shorter clock — several were
+      excellent and **every one was obsoleted by variant evolution within months.**
+      `scale: null` for the science; the deployment question is a different
+      blocker.
+    who_could: [academic, sponsor, manufacturer, philanthropy, government]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: cost
+    blocks: the antiviral reaching the people the trial showed it saves
+    obstacles: []
+    what: >
+      Dexamethasone is generic, costs pennies, and reached the world within weeks
+      of the RECOVERY result — which is what the register looks like when a
+      blocker is genuinely absent.
+      **Nirmatrelvir-ritonavir went the other way.** Priced for high-income
+      markets, subject to a voluntary licensing arrangement that improved matters
+      unevenly, and in practice largely absent from the countries where the
+      unvaccinated high-risk patients it works best in actually live. Generic
+      supply arrived late and demand had collapsed by then, which is its own kind
+      of failure.
+      **The vaccine distribution failure is the same blocker at larger scale and it
+      is fully documented**: high-income boosters while low-income countries had
+      not covered health workers, COVAX delivering roughly half its target, and
+      manufacturing capacity concentrated in a handful of countries. The
+      technology-transfer hub established afterwards to build mRNA capacity in
+      Africa is the structural answer and it is small and slow.
+      Rated `documented` on the delivery figures, which are public and not in
+      dispute.
+    who_could: [manufacturer, government, payer, nonprofit, philanthropy]
+    scale: 8.0e9
+    standing: documented
+    src: recall
+
+  - kind: evidence-incomplete
+    blocks: most of the world being unable to answer a clinical question
+    obstacles: []
+    what: >
+      **RECOVERY ANSWERED MORE CLINICAL QUESTIONS THAN THE REST OF THE WORLD
+      COMBINED, AND IT WAS NOT BECAUSE THE UNITED KINGDOM HAD BETTER IDEAS.**
+      It had a health system in which a randomised trial could be embedded in
+      routine care, a one-page consent process, and a willingness to randomise at
+      scale during an emergency. It found dexamethasone in three months, and it
+      **ruled out** hydroxychloroquine, lopinavir-ritonavir, azithromycin,
+      colchicine and convalescent plasma, ending enormous waste.
+      Meanwhile hundreds of trials elsewhere were too small to answer anything and
+      consumed the patients who could have been in a trial that would.
+      **The blocker is that the capability to find out is unevenly distributed and
+      is nobody's disease.** No record in this register is improved by "build
+      trial infrastructure", so no record argues for it, and the register cannot
+      express that the highest-return investment of the pandemic was a trial
+      design (gaps.md #164).
+      It generalises immediately: the same absence is why `sepsis` has a hundred
+      failed trials, why `neonatal-conditions` exported interventions whose sign
+      flipped, and why `me-cfs` has almost no evidence base at all.
+    who_could: [government, health-system, academic, sponsor, regulator]
+    scale: 2.0e9
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0077
+  rated: 2026-08-24
+  by: [claude, jeremy]

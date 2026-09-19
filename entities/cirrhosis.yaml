@@ -1,0 +1,601 @@
+slug: cirrhosis
+id: FND-D-0082
+name: cirrhosis
+also: [liver cirrhosis, chronic liver disease, end-stage liver disease, hepatic fibrosis]
+mondo: MONDO:0005155
+kind: syndrome
+residual: false
+contested: false
+
+# `kind: syndrome` RATHER THAN `disease`, DELIBERATELY. Cirrhosis is a
+# histological end-state — fibrosis with regenerative nodules — reachable from
+# hepatitis B, hepatitis C, alcohol, metabolic dysfunction, autoimmune disease,
+# haemochromatosis, biliary disease and more. Mondo files it as a disease and also
+# holds `alcoholic liver cirrhosis` and `hepatitis C induced liver cirrhosis` as
+# separate terms, which is the ontology admitting the same thing.
+#
+# THIS IS THE FOURTH FINAL-COMMON-PATHWAY RECORD (gaps.md #39, which asked for a
+# third and got `sepsis`). It is also the record #110 named by name while it was
+# still queued: "cirrhosis — alcohol, and transplant eligibility is explicitly
+# gated on it." That prediction was correct and the case is worse than #110
+# assumed.
+#
+# UPSTREAM RECORDS: `hepatitis-b`, `hepatitis-c` (both held), `type-2-diabetes`
+# (held), and the queued `alcohol-use-disorder` and `obesity`.
+# DOWNSTREAM: `liver-cancer` (held). The register can express none of it.
+
+burden:
+  prevalence:
+    value: 1.2e8
+    units: >
+      people with cirrhosis worldwide — roughly 112 million compensated and
+      around 11 million decompensated, and **the split is the whole prognosis**:
+      a decade or more of life on one side of it and about two years on the other
+    src: recall
+  deaths:
+    value: 1.5e6
+    units: >
+      deaths/year from cirrhosis and chronic liver disease — around one in forty
+      deaths worldwide, and rising in most high-income countries while most other
+      causes fall
+    src: recall
+  note: >
+    **THE CAUSES HAVE CHANGED COMPLETELY WITHIN ONE GENERATION AND THE ENTITY HAS
+    NOT.**
+    Cirrhosis was a viral hepatitis disease and an alcohol disease. **Hepatitis C
+    became curable in 2014 and hepatitis B has been vaccine-preventable since
+    1982**, so the viral share is falling wherever those two records are
+    delivered — and rising where they are not. **Alcohol-related liver disease has
+    risen sharply**, particularly in younger adults and in women, with a marked
+    acceleration around the pandemic years. And **metabolic dysfunction-associated
+    steatotic liver disease is the fastest-growing cause anywhere**, tracking
+    `type-2-diabetes` and obesity, and is on course to become the leading
+    indication for liver transplantation.
+    So every blocker in this file would have been a different blocker in 1995, and
+    the register stores one dated snapshot with no way to say the mix is moving
+    under it.
+    The nomenclature moved too: **NAFLD became MASLD and NASH became MASH in
+    2023**, a deliberate renaming to remove a term defined by absence and a term
+    patients found stigmatising — which is gaps.md #133's lever, aimed at
+    `#110`'s problem.
+
+survival:
+  horizon: 5 years from first decompensation
+  untreated:
+    value: 0.20
+    units: >
+      fraction alive — median survival after ascites, variceal bleeding or
+      encephalopathy appears is around two years without intervention.
+      **Compensated cirrhosis is a different disease with a far better outlook**,
+      and the horizon here is deliberately set at decompensation because that is
+      where the mortality is
+    src: recall
+  treated:
+    value: 0.55
+    units: >
+      fraction alive — a blend of two very different routes. Removing the cause
+      (alcohol, hepatitis C, hepatitis B, increasingly metabolic disease) allows
+      genuine regression of fibrosis in some patients; transplantation gives
+      around 0.75 at five years to the small minority who receive one. **The
+      figure is dominated by whether the cause can be removed and whether the
+      person can stop**
+    src: reasoning
+  witness: >
+    **Among the very few records here where an organ genuinely repairs itself.**
+    Fibrosis regresses when the insult stops, which is why the rung is `curative`
+    and why this record's `residue` field cannot express what actually happens
+    (gaps.md #176). The survival gap understates the point: for the hepatitis C
+    fraction, curing the virus converts a progressive fatal disease into a
+    recovering liver, and that transition happened inside a decade.
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: prophylaxis
+  ongoing: moderate
+  efficacy:
+    value: 0.70
+    units: >
+      fraction-of-patients (surviving with liver function restored — by removing
+      the cause in compensated disease, or by transplantation in decompensated) —
+      **and fibrosis genuinely regresses when the cause is removed early enough**,
+      which the register's `residue` field cannot express (gaps.md #176)
+    src: reasoning
+  access:
+    value: 0.35
+    units: >
+      fraction-of-patients (reaching cause-directed treatment, or transplantation
+      if they need it) — **and for one large group access is denied by a written
+      eligibility rule rather than by supply** (gaps.md #110)
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: good
+  predictive: partial
+  witness: >
+    **DIAGNOSTIC IS `objective` AND HAS BECOME NON-INVASIVE, WHICH SHOULD HAVE
+    CHANGED THIS RECORD AND HAS NOT.**
+    Liver biopsy was the standard for decades — painful, occasionally fatal,
+    subject to sampling error, and a reason nobody looked. **Transient
+    elastography measures liver stiffness in ten minutes with no needle**, and
+    simple blood-based indices calculated from tests already in the chart perform
+    well enough to triage in primary care.
+    And **most cirrhosis is still diagnosed at decompensation** — a first variceal
+    bleed, ascites, or confusion — because compensated cirrhosis is silent and
+    nobody is screened. In several health systems around half of first diagnoses
+    are made during an emergency admission, at which point the record's `window`
+    has closed.
+    **PROGNOSTIC IS `good`, AND IT IS `good` FOR AN INSTRUCTIVE REASON.** The
+    Model for End-Stage Liver Disease predicts three-month mortality from three
+    routine laboratory values, is among the best-validated prognostic scores in
+    medicine, and **it allocates organs** — it is not advice, it is the queue.
+    That is the second record running with `prognostic: good`, after
+    `chronic-kidney-disease`'s Kidney Failure Risk Equation, and **both are
+    allocation instruments.** The corpus's twelve `good` prognostic ratings are
+    mostly trivial (rabies is uniformly fatal; Huntington's is genetic). The two
+    non-trivial individual predictors both exist because a scarce thing had to be
+    handed out.
+    **AND MELD ENCODES A SEX EFFECT THAT WAS CORRECTED IN 2023.** Creatinine
+    reflects muscle mass, so a woman in identical renal failure scores lower than
+    a man, is ranked lower for a liver, and dies waiting more often. MELD 3.0
+    added a sex adjustment to fix it. **This is gaps.md #175 confirmed one record
+    after it was written, with a different variable and worse consequences** — the
+    kidney equation delayed referral; this one decides who receives the organ.
+    PREDICTIVE is `partial`. Nothing reliably predicts who will relapse to alcohol
+    after transplant, which matters enormously — see the `policy` blocker — and
+    the genetic modifiers of progression (PNPLA3, TM6SF2, HSD17B13) are real,
+    replicated, and not yet clinical.
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    **THE CURE FOR DECOMPENSATED CIRRHOSIS IS SOMEBODY ELSE'S LIVER, AND IT COSTS
+    AN IMMUNE SYSTEM.**
+    Transplantation is the definitive treatment and it substitutes a permanent
+    regimen for a fatal disease. Lifelong immunosuppression brings elevated rates
+    of infection and of malignancy — skin cancers many times the background rate,
+    and post-transplant lymphoproliferative disease. **Calcineurin inhibitors are
+    nephrotoxic, and a substantial fraction of long-term liver recipients develop
+    chronic kidney disease** — which is the record immediately before this one,
+    manufactured by this one's treatment (gaps.md #147).
+    The operation itself is major, mortality is low and not negligible, and
+    biliary and vascular complications are common enough to be routine.
+    **The non-transplant tolls are smaller and real.** Long-term non-selective
+    beta blockade for varices; repeated large-volume paracentesis for refractory
+    ascites, which is a needle in the abdomen every week or two indefinitely;
+    lactulose for encephalopathy, which works and is unpleasant enough that people
+    stop taking it and become confused again. Transjugular intrahepatic
+    portosystemic shunting relieves portal hypertension **and precipitates
+    encephalopathy in a substantial minority** — a treatment that trades one
+    complication for another by design.
+  incidence:
+    value: 0.10
+    units: >
+      fraction-of-treated (permanent harm — chiefly malignancy and calcineurin-
+      induced renal impairment after transplantation) — a reasoned estimate
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    **THE MOST IMPORTANT THING IN THIS BLOCK IS THAT SOME OF IT IS NOT PERMANENT,
+    AND THE FIELD CANNOT SAY SO** (gaps.md #176).
+    The textbook position for a century was that cirrhosis is irreversible. **It is
+    not.** Cure hepatitis C and fibrosis regresses over years — demonstrated in
+    large post-sustained-virological-response cohorts, including regression from
+    histological cirrhosis. Suppress hepatitis B and the same happens. Stop
+    drinking, or lose substantial weight in metabolic liver disease, and fibrosis
+    improves. Hepatic stellate cells deactivate; collagen is degraded; some
+    architecture recovers.
+    **Up to a point.** Past a threshold of vascular remodelling and
+    porto-systemic shunting the distortion is fixed, and regression stops being
+    available. So the residue has its own window, and whether it is permanent
+    depends on when the cause was removed.
+    **What does not regress, and is the reason this block rates `major` and
+    permanent:** the **hepatocellular carcinoma risk persists after cure.** A
+    patient cured of hepatitis C with established cirrhosis still needs six-monthly
+    surveillance for life, because the mutational damage accumulated in the
+    hepatocytes does not reverse when the virus goes. `liver-cancer` is held here,
+    and this is the arrow into it.
+    Established varices, and the neurocognitive deficits left by repeated episodes
+    of overt encephalopathy, also persist.
+  incidence:
+    value: 0.10
+    units: >
+      fraction-of-treated (permanent sequelae after the cause is removed —
+      chiefly persistent hepatocellular carcinoma risk and fixed portal
+      hypertension) — a reasoned estimate, and **strongly dependent on how early
+      the cause was removed**, which is a dependency the field cannot hold
+    src: reasoning
+
+window:
+  what: >
+    **THERE ARE TWO WINDOWS AND ONE OF THEM IS A CLIFF.**
+    *The regression window — years, silent.* Fibrosis is reversible while the
+    stellate cell activation is ongoing and the vascular architecture is not yet
+    fixed. Remove the cause inside it and the liver substantially recovers. Remove
+    it after and you stop progression without undoing damage. **Every intervention
+    in this record works better the earlier it is applied, and the disease produces
+    no symptom to prompt anybody.**
+    *The decompensation cliff — one event.* Compensated cirrhosis has a median
+    survival of well over a decade. The first decompensating event — ascites, a
+    variceal bleed, encephalopathy, jaundice — drops median survival to around two
+    years. **It is a step, not a slope**, and it is frequently precipitated by
+    something reversible: an infection, a binge, a nonsteroidal, a diuretic
+    misjudgement. Spontaneous bacterial peritonitis is the classic, treatable, and
+    routinely missed.
+    So a patient can cross the most consequential prognostic boundary in the
+    record because of an event that was itself preventable, and afterwards the
+    only remaining answer is a transplant.
+    **The tools to find people before the cliff exist and cost very little** — a
+    liver stiffness measurement, or a blood index computed from tests already
+    taken. The people at highest risk are already known to services for diabetes,
+    obesity or alcohol.
+  closes_on: >
+    fixed vascular remodelling — after which fibrosis no longer regresses — and
+    separately the first decompensating event, after which median survival is
+    about two years
+  caught_in_time:
+    value: 0.35
+    units: >
+      fraction-of-cases (identified while compensated and with the cause still
+      removable) — a reasoned estimate; around half of first diagnoses in several
+      health systems are made at emergency presentation
+    src: reasoning
+
+strata:
+  - name: compensated cirrhosis
+    fraction:
+      value: 0.91
+      units: fraction-of-people-with-cirrhosis
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.80
+      units: fraction-of-stratum (stabilised or regressed with the cause removed)
+      src: reasoning
+    toll: minor
+    what: >
+      **Nine in ten, median survival over a decade, and mostly undiagnosed.**
+      Remove the cause — cure the hepatitis, stop the alcohol, treat the metabolic
+      disease — and fibrosis stabilises or regresses. Surveillance for varices and
+      for liver cancer. **This is where the record can be won and where almost
+      nothing is currently done**, because nobody is looking for these people.
+
+  - name: decompensated cirrhosis
+    fraction:
+      value: 0.09
+      units: fraction-of-people-with-cirrhosis
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.55
+      units: fraction-of-stratum (survival, dominated by whether transplant is reached)
+      src: reasoning
+    toll: major
+    what: >
+      Ascites, variceal bleeding, encephalopathy, jaundice, hepatorenal syndrome.
+      Median survival about two years. **Transplantation is the only intervention
+      that restores liver function**, and it is limited by organs, by capacity, and
+      — for the alcohol-related share, which is large and growing — **by an
+      eligibility rule about the patient's conduct.**
+
+moved:
+  - date: 2014
+    axis: efficacy
+    from: 0.50
+    to: 0.62
+    why: >
+      **A MAJOR CAUSE OF CIRRHOSIS BECAME CURABLE IN TWELVE WEEKS, AND THE LIVERS
+      GOT BETTER AFTERWARDS.**
+      Direct-acting antivirals cure over 95% of hepatitis C, and post-treatment
+      cohorts showed something the textbooks had denied: **fibrosis regresses after
+      sustained virological response, including in patients with established
+      cirrhosis**, and a meaningful fraction of decompensated patients recompensate
+      well enough to come off the transplant list.
+      Hepatitis C fell as an indication for liver transplantation in countries that
+      delivered the drugs, which is one of the cleanest examples in this register
+      of solving one record by solving the record upstream of it.
+      **The caveat is the one in `residue`**: cure does not remove the liver cancer
+      risk, and surveillance continues for life.
+    src: recall
+
+  - date: 2019
+    axis: access
+    from: 0.30
+    to: 0.35
+    why: >
+      **A RULE THAT KILLED PEOPLE STARTED TO COME APART, AND IT TOOK A TRIAL TO DO
+      IT.**
+      Severe alcohol-associated hepatitis kills something like three quarters of
+      patients within six months. The near-universal transplant eligibility
+      criterion was **six months of documented abstinence** — which most candidates
+      did not live long enough to complete. The rule's stated justification was
+      prognostic, that abstinence predicted post-transplant relapse.
+      A French-Belgian study in 2011 and then a multicentre American consortium
+      reporting in 2019 performed early transplantation in carefully selected
+      patients without the waiting period, and found **survival transformed** —
+      roughly 94% at six months against about 11% with medical management — with
+      sustained alcohol use afterwards in a minority comparable to other
+      indications.
+      Practice has shifted substantially and unevenly; many centres now transplant
+      early and many still apply a fixed abstinence period.
+      **Note what kind of change this is.** No new drug, no new organ, no new
+      operation. A criterion was tested and found not to do what it claimed, and
+      access moved (gaps.md #110).
+    src: recall
+
+  - date: 2024
+    axis: efficacy
+    from: 0.62
+    to: 0.70
+    why: >
+      **THE FIRST DRUG APPROVED FOR THE CAUSE THAT IS GROWING FASTEST.**
+      Resmetirom, a liver-targeted thyroid hormone receptor-beta agonist, received
+      accelerated approval in 2024 for metabolic dysfunction-associated
+      steatohepatitis with moderate to advanced fibrosis — the first pharmacological
+      treatment for the condition on course to become the leading indication for
+      liver transplantation. It resolves steatohepatitis and improves fibrosis in a
+      minority of treated patients.
+      **The effect is modest and the arrival matters more than the size.** For
+      twenty years the answer to metabolic liver disease was weight loss, which
+      works better than any drug and which health systems cannot deliver — the
+      `type-2-diabetes` record's problem exactly. GLP-1 receptor agonists are in
+      late-stage trials for the same indication and, on current evidence, may
+      matter more than resmetirom does.
+    src: recall
+
+witness:
+  mechanism: >
+    `established`, and it is one mechanism reached by many roads.
+    Chronic hepatocyte injury — viral, alcoholic, metabolic, autoimmune,
+    cholestatic — activates **hepatic stellate cells**, which transform into
+    myofibroblasts and lay down collagen. Fibrous septa divide the parenchyma into
+    regenerative nodules, and the architecture that results does two things at
+    once: it **obstructs portal blood flow**, causing portal hypertension, and it
+    **reduces functioning hepatocyte mass**, causing synthetic failure.
+    Every complication follows from one of those two. Portal hypertension produces
+    varices, ascites, splenomegaly and hepatorenal syndrome; portosystemic
+    shunting lets gut-derived ammonia bypass the liver and produces encephalopathy.
+    Synthetic failure produces coagulopathy, hypoalbuminaemia and jaundice.
+    **THE PART THE TEXTBOOKS HAD WRONG IS THAT IT IS ONE-WAY.** Stellate cell
+    activation is reversible; activated cells can revert or undergo apoptosis, and
+    matrix metalloproteinases degrade collagen. Remove the injury early enough and
+    fibrosis regresses. **What does not reverse is the vascular remodelling** —
+    once the shunts and the architectural distortion are established, the portal
+    hypertension persists whatever happens to the collagen. That threshold is why
+    `residue` in this record is neither permanent nor impermanent (gaps.md #176).
+    **THE NAMED HOLE IS WHY MOST PEOPLE WITH THE EXPOSURE NEVER GET THE DISEASE.**
+    Most heavy drinkers do not develop cirrhosis; most people with hepatic
+    steatosis never progress to fibrosis. Genetic modifiers are real and
+    replicated — PNPLA3, TM6SF2, and a protective HSD17B13 variant — and together
+    they explain a minority of the variance. The rest is not known, and it is the
+    same question the whole register keeps asking under a different name.
+  intervention: >
+    `curative`, and the rating deserves defending against the record before it.
+    **Remove the cause and the liver recovers**, in compensated disease and
+    sometimes beyond it: cure hepatitis C in twelve weeks, suppress hepatitis B,
+    achieve abstinence, lose weight. Fibrosis regresses. Decompensated patients
+    sometimes recompensate and come off the transplant list. That is a finite
+    intervention ending a disease.
+    **And transplantation removes the diseased organ entirely** — which is why this
+    rates `curative` where `chronic-kidney-disease` rates `suppressive` one record
+    earlier, on what looks like the same operation. A kidney recipient still has
+    chronic kidney disease by definition, on an immunosuppressed graft with
+    reduced filtration. **A liver recipient does not have cirrhosis.** The
+    cirrhotic liver is in a bucket. What remains is a permanent immunosuppression
+    regimen, which the schema records as `toll` rather than as the disease
+    continuing.
+    Reasonable people could rate this `suppressive` and the file states the
+    argument rather than hiding it.
+    Everything else is management of complications: beta blockers and banding for
+    varices, diuretics and paracentesis for ascites, lactulose and rifaximin for
+    encephalopathy, antibiotics for spontaneous bacterial peritonitis, and
+    six-monthly ultrasound for liver cancer.
+  prevention: >
+    `prophylaxis`, and the strongest single component is a vaccine for a different
+    record. **Hepatitis B immunisation prevents a large share of the world's
+    cirrhosis**, and the birth-dose problem in that record is this record's
+    prevention problem too.
+    Then: hepatitis C treatment as prevention, blood supply screening, harm
+    reduction for people who inject drugs, and — for the two causes that are
+    growing — **alcohol policy and the food environment**, neither of which is
+    administered by anybody in medicine.
+    The alcohol evidence is unusually good and unusually ignored. Minimum unit
+    pricing, taxation, availability restriction and marketing controls have
+    measurable effects on alcohol-related liver deaths where implemented; Scotland's
+    minimum pricing is the cleanest natural experiment and showed reductions in
+    alcohol-specific deaths. **These are fiscal and licensing decisions**, opposed
+    by a well-resourced industry, and they sit alongside `type-2-diabetes`'s food
+    environment in gaps.md #87's pile of interventions no single record can
+    justify.
+  ongoing: >
+    `moderate` for compensated disease: six-monthly ultrasound surveillance for
+    liver cancer, periodic endoscopy for varices, and the maintenance of whatever
+    removed the cause — which for alcohol-related disease means sustaining
+    abstinence indefinitely, and is a different record's problem.
+    Decompensated disease is `high` by any reading: paracentesis every week or two,
+    a heavy pill burden, repeated admissions, and a life organised around a liver.
+    Post-transplant is a permanent immunosuppression regimen that cannot be missed.
+    **gaps.md #171 asked what kind of ongoing burden a record carries. This one is
+    a fifth kind: SURVEILLANCE.** Nothing is being treated. Somebody is being
+    watched, indefinitely, for a cancer that may never come — and it is the same
+    shape as `hepatitis-b`'s untreated half.
+
+holes:
+  - >
+    **`intervention: curative` disagrees with `chronic-kidney-disease`'s
+    `suppressive` on what looks like the same operation**, and
+    `witness.intervention` argues why. Two records, two transplants, two ratings,
+    and nothing in the schema flags that the disagreement is deliberate — the same
+    problem `influenza` and `h5n1` have over neuraminidase inhibitors.
+  - >
+    **`residue.permanent: true` is wrong for a large part of what this record's
+    residue contains**, and there is no other value to use. Fibrosis regresses;
+    liver cancer risk does not (gaps.md #176).
+  - >
+    **The strata are stages and the aetiologies are not represented**, although
+    aetiology determines whether the cause can be removed at all — a cured
+    hepatitis C is not the same problem as an ongoing alcohol use disorder, and
+    the record's `curative` rating means very different things across them.
+  - >
+    **The causal mix is changing fast and every rating here is dated to it.** Viral
+    causes are falling, alcohol is rising, metabolic disease is rising fastest, and
+    the blockers below would have been different blockers in 1995.
+  - >
+    `access: 0.35` mixes organ scarcity, transplant capacity, hepatitis treatment
+    access and an eligibility rule about conduct into one number, and only the
+    first of those is a supply problem.
+  - >
+    Every scalar is `recall` or `reasoning`.
+
+blockers:
+  - kind: policy
+    blocks: eligibility for a life-saving operation being conditioned on conduct
+    obstacles: []
+    what: >
+      **THIS IS gaps.md #110's FLAGSHIP AND IT IS WORSE THAN THAT GAP ASSUMED.**
+      #110 was forced by `lung-cancer`, where blame is diffuse: less research
+      funding per death, lower screening uptake, and being asked whether you
+      smoked. **Here the blame is operational.** It is a written eligibility
+      criterion, applied to a named individual, with a mortality consequence that
+      has been measured in a trial.
+      The six-month abstinence rule governed liver transplantation for
+      alcohol-related disease for decades. Its stated justification was prognostic
+      — that abstinence predicts post-transplant relapse. **The evidence for that
+      claim is weak**, and severe alcohol-associated hepatitis kills roughly three
+      quarters of patients inside the waiting period, so the rule's practical
+      effect was to exclude most candidates by killing them.
+      Early transplantation without the waiting period produces around 94% six-month
+      survival against about 11% with medical management, with return to drinking
+      in a minority comparable to other indications. Practice has shifted and is
+      uneven, and fixed abstinence periods persist in many centres.
+      **The structure worth naming: a rule justified on clinical grounds and
+      functioning on moral ones is only falsifiable on the clinical claim, so
+      refuting the clinical claim does not remove the rule.** That is why this
+      moved slowly after 2019 and why it has not moved everywhere.
+      The same shape sits elsewhere in medicine — smoking cessation before lung
+      transplantation, BMI and smoking thresholds for elective surgery, and the
+      sobriety requirements United States Medicaid programmes attached to hepatitis
+      C antivirals until they were litigated away. **Rated `documented`: the
+      criteria are published, the trial results are published, and the variation
+      between centres is a matter of record.** The register takes no position on
+      whether the judgement is right; it records that it is made and what it costs.
+    who_could: [health-system, regulator, academic, government, patient-org]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    blocks: finding the nine in ten who are compensated and silent
+    obstacles: []
+    what: >
+      **THE DISEASE IS SILENT FOR A DECADE AND THEN ARRIVES AS AN EMERGENCY.**
+      Compensated cirrhosis produces no symptom. In several health systems around
+      **half of first diagnoses are made at an emergency admission** — a variceal
+      bleed, tense ascites, or confusion — at which point the median survival has
+      already dropped from over a decade to about two years and the regression
+      window has closed.
+      **The tools are cheap and the population is known.** Transient elastography
+      takes ten minutes and needs no needle; blood-based fibrosis indices are
+      calculated from tests already in the chart and cost nothing at all. The
+      people at highest risk — those with type 2 diabetes, obesity, or a heavy
+      alcohol history — are overwhelmingly already attending services for those
+      reasons.
+      Pathways combining a blood index in primary care with elastography for those
+      who score high have been implemented in several regions and find substantial
+      numbers of people with advanced fibrosis who did not know. **They are not
+      standard anywhere at national scale.**
+      This is the cheapest large intervention available in this record, it requires
+      no discovery, and it is the difference between the two strata above.
+    who_could: [health-system, government, payer, academic, manufacturer]
+    scale: 2.0e9
+    standing: documented
+    src: recall
+
+  - kind: policy
+    blocks: alcohol and food policy, which are where the growing causes live
+    obstacles: []
+    what: >
+      **THE TWO CAUSES THAT ARE GROWING ARE BOTH REGULATED BY MINISTRIES THAT ARE
+      NOT HEALTH.**
+      Alcohol-related liver disease has risen sharply, particularly in younger
+      adults and in women. The population-level evidence is unusually good:
+      **minimum unit pricing, taxation, restricted availability and marketing
+      controls all reduce alcohol-related harm**, and Scotland's minimum pricing is
+      the cleanest natural experiment, with reductions in alcohol-specific deaths.
+      These are fiscal and licensing decisions, and they are opposed by a
+      well-resourced industry — which is documented behaviour, not a conspiracy
+      claim.
+      Metabolic liver disease is the fastest-growing cause of all and its levers
+      are `type-2-diabetes`'s: food price, composition and marketing.
+      **So the largest preventive intervention on this record is a tax, and the
+      second is a food policy, and `who_could` has no finance ministry** (gaps.md
+      #87, #53). The benefit is shared with `type-2-diabetes`, `liver-cancer`,
+      several cancers, `road-injury` and the queued `alcohol-use-disorder` — and
+      because it is shared, no record can justify it and nothing sums it.
+    who_could: [government, legislator, payer, nonprofit, philanthropy]
+    scale: 2.0e10
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: organs, and the capacity to use them
+    obstacles: []
+    what: >
+      Liver transplantation is limited by donor organs, which cannot be
+      manufactured (gaps.md #128), and by everything around them: retrieval teams
+      able to operate at any hour, transplant surgical capacity, intensive care
+      beds, and lifelong follow-up.
+      **The supply side is genuinely movable and is moving.** Opt-out consent
+      legislation, living donor liver transplantation — routine in parts of Asia
+      and uncommon in the West — split-liver grafts, donation after circulatory
+      death, and **normothermic machine perfusion**, which keeps a liver
+      functioning outside the body and allows marginal organs to be assessed and
+      used rather than discarded. That last one has measurably increased usable
+      organs where adopted.
+      **The demand side is about to get much worse.** Metabolic liver disease is
+      on course to become the leading indication, in a population that is older and
+      has more cardiovascular and renal comorbidity — which makes them harder to
+      transplant and worse candidates on every axis.
+      And in most of the world liver transplantation is simply unavailable, which
+      makes the compensated-stratum interventions above the only realistic answer
+      for most of this record's patients.
+    who_could: [health-system, government, legislator, payer, nonprofit]
+    scale: 8.0e9
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: why most people with the exposure never get the disease, and how to reverse fibrosis on purpose
+    obstacles: []
+    what: >
+      **MOST HEAVY DRINKERS DO NOT GET CIRRHOSIS AND MOST FATTY LIVERS NEVER
+      PROGRESS.** Genetic modifiers are established and replicated — PNPLA3,
+      TM6SF2, and a protective HSD17B13 variant — and they account for a minority
+      of the variance. The rest is not understood, and it matters practically:
+      **it would identify who to watch and who to leave alone**, in populations
+      numbering hundreds of millions.
+      The second half is antifibrotic therapy. Fibrosis regression happens
+      **spontaneously when the cause is removed** — stellate cells deactivate,
+      collagen is degraded — and it happens slowly and incompletely, and past a
+      threshold of vascular remodelling not at all. **No drug reliably accelerates
+      it**, despite decades of targets, and every candidate class has failed in
+      late-phase trials.
+      A drug that made fibrosis regress on purpose would matter most in exactly the
+      population that cannot remove the cause — the person who cannot stop
+      drinking, the person whose metabolic disease will not shift — and it would
+      convert the `residue` in this file from partly-permanent to treatable.
+      `scale: null`.
+    who_could: [academic, sponsor, manufacturer, philanthropy]
+    scale: null
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0083
+  rated: 2026-08-24
+  by: [claude, jeremy]

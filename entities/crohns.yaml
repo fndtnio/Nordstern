@@ -1,0 +1,203 @@
+slug: crohns
+id: FND-D-0016
+name: Crohn's disease
+also: [Crohn disease, regional enteritis]
+mondo: MONDO:0005011
+kind: disease
+residual: false
+contested: false
+
+# The harder half of the pair that forced `toll`. Pleomorphic adenoma at least
+# trades the nerve for a cure. Here the mutilating intervention is not curative
+# at all: you remove the diseased bowel and the disease returns at the join.
+# The register previously had no way to record a treatment that costs a great
+# deal and buys time rather than an ending.
+
+burden:
+  prevalence:
+    value: 5.0e6
+    units: people
+    src: recall
+  note: >
+    Highest prevalence in North America and Europe, on the order of 0.3% of the
+    population, and rising rapidly in newly industrialised countries — one of
+    the few entities in the register whose burden is growing for reasons nobody
+    can specify.
+
+axes:
+  mechanism: partial
+  intervention: suppressive
+  prevention: risk-reduction
+  ongoing: high
+  efficacy:
+    value: 0.55
+    units: fraction-of-patients (sustained remission on best available therapy)
+    src: recall
+  access:
+    value: 0.4
+    units: fraction-of-patients (able to obtain biologic therapy)
+    src: recall
+
+measurement:
+  diagnostic: objective
+  prognostic: none
+  predictive: none
+  witness: >
+    Diagnosis is good and everything downstream of it is guesswork. There is
+    no way to identify at diagnosis which patient will follow an aggressive
+    fibrostenotic course, so early aggressive therapy either
+    over-immunosuppresses people who would have done well or arrives too late
+    for the ones who will not. And with several mechanistically distinct
+    biologics and no biomarker to choose among them, selection is sequential
+    trial and error while irreversible damage accumulates. Both gaps are
+    absolute, and together they are a better description of what is wrong with
+    Crohn's care than anything on the axes.
+
+toll:
+  severity: catastrophic
+  permanent: true
+  what: >
+    Two tolls, from two different treatments, and the surgical one is the point
+    of this record. SURGERY: roughly half of patients come to resection within a
+    decade of diagnosis, and resection in Crohn's is not curative — unlike
+    ulcerative colitis, where colectomy ends the disease, recurrence at the
+    anastomosis is the expectation rather than the complication. So bowel is
+    removed, the disease comes back at the join, and it is removed again.
+    Repeated resection is how patients arrive at short bowel syndrome and
+    intestinal failure, dependent on parenteral nutrition — a permanently
+    life-shortening state caused by the treatment. A stoma, temporary or
+    permanent, is common along the way. DRUGS: lifelong immunosuppression
+    carries serious infection risk, and thiopurine and anti-TNF exposure carries
+    a small excess lymphoma risk, including the rare hepatosplenic T-cell
+    lymphoma that occurs in young men and is usually fatal.
+    Rated `catastrophic` for the subset that reaches intestinal failure; most
+    patients do not, which is what `incidence` is for.
+  incidence:
+    value: 0.5
+    units: fraction-of-patients (major abdominal surgery within ten years)
+    src: recall
+
+window:
+  what: >
+    The window here is not about a tumour growing but about tissue changing
+    kind. Crohn's inflammation is treatable; the fibrostenotic damage it leaves
+    is not. Strictures are mechanical — no biologic dissolves scar — so once
+    bowel has fibrosed, the only remaining options are dilatation or resection,
+    and the toll above becomes unavoidable. This is the argument behind
+    treating effectively and early rather than escalating only after failure,
+    and it is why diagnostic delay is not a mere inconvenience: the interval
+    from first symptoms to diagnosis is frequently measured in years, and that
+    interval is spent accumulating damage that no later treatment reverses.
+  closes_on: transmural fibrosis, stricture, penetrating complication
+  caught_in_time:
+    value: 0.4
+    units: fraction-of-patients (diagnosed and effectively treated before structural damage)
+    src: recall
+
+witness:
+  mechanism: >
+    `partial`, and genuinely so rather than as a hedge. Real components are
+    established: NOD2 was identified in 2001 as the first susceptibility gene
+    and points at bacterial sensing, autophagy genes (ATG16L1, IRGM) implicate
+    handling of intracellular bacteria, over two hundred loci have been mapped,
+    the intestinal barrier is demonstrably disturbed, and the microbiome is
+    altered. Smoking raises risk and worsens the course — the opposite of its
+    effect in ulcerative colitis, which is itself an unexplained clue. What is
+    missing is the chain: no initiating event, no account of why the disease is
+    patchy and transmural, and nothing that predicts which patient will
+    fibrose. That last gap is what makes the window unusable in practice.
+  intervention: >
+    `suppressive`, and the rung matters. Anti-TNF agents, anti-integrin
+    (vedolizumab), and IL-12/23 and IL-23 blockade induce and maintain
+    remission; steroids cover flares and are not maintenance therapy. Primary
+    non-response runs at perhaps a quarter to a third, and a further fraction
+    loses response each year. Stopping therapy in remission generally means
+    relapse. And — the fact that distinguishes this record from every other
+    `suppressive` entry — the escalation option is not a cure but an amputation:
+    surgery removes disease without ending it.
+  prevention: >
+    `risk-reduction`. Smoking cessation genuinely improves the course of
+    Crohn's, which is one of the few modifiable factors with a real effect. No
+    prophylaxis exists.
+  ongoing: >
+    `high`. Indefinite immunosuppression by infusion or injection, infection and
+    malignancy surveillance, endoscopic monitoring, and a relapsing course that
+    is difficult to plan a life around.
+
+blockers:
+  - kind: knowledge
+    obstacles: [tissue-repair]
+    blocks: cure, and prevention of fibrosis
+    what: >
+      Two research problems, and the second is the one that would change this
+      record most. There is no cure and no anti-fibrotic therapy: every
+      available drug targets inflammation, and none reverses or prevents the
+      scarring that ultimately sends patients to surgery. Nor is there any way
+      to predict which newly diagnosed patient will follow an aggressive
+      fibrostenotic course, so treatment cannot be targeted at the people whose
+      window is closing fastest.
+    who_could: [academic, sponsor]
+    scale: null
+    standing: documented
+    src: recall
+  - kind: diagnosis
+    blocks: treatment inside the window
+    what: >
+      Diagnostic delay is frequently measured in years from first symptoms —
+      abdominal pain and diarrhoea in a young adult are common and usually
+      benign — and the delay is spent accruing irreversible structural damage.
+      Faecal calprotectin is cheap and would triage much of this. A pure timing
+      problem with an existing test.
+    who_could: [health-system, academic, software]
+    scale: 1e8
+    standing: documented
+    src: recall
+  - kind: cost
+    blocks: biologic therapy (suppressive)
+    what: >
+      Biologics dominate the cost of care and are out of reach across much of
+      the world, in a disease whose incidence is rising fastest precisely in
+      countries that cannot afford them. Biosimilars have reduced prices
+      substantially where they are used, so this blocker is partly clearing.
+    who_could: [payer, manufacturer, government]
+    scale: 1e9
+    standing: documented
+    src: recall
+  - kind: evidence-incomplete
+    obstacles: [validation-throughput]
+    blocks: choosing the right drug first
+    what: >
+      With several mechanistically distinct biologics and no biomarker to select
+      among them, patients cycle through agents while damage accumulates. Head-to-head
+      and biomarker-stratified trials are the missing evidence, not new molecules.
+      **Tagged `validation-throughput` (2026-09-02), and this record is where its
+      two candidate readings are hardest to separate.** The volume face says the
+      drugs exist and the comparisons do not: several mechanistically distinct
+      biologics, no head-to-head trial that would order them, and a sequence
+      worked out empirically while bowel is lost. That is trial capacity.
+      **The competing reading is `who-progresses` wearing a capacity costume.**
+      If nothing predicts response, more comparisons produce better population
+      averages and still no answer for the patient in front of you — and this
+      record's own `predictive` rating says nothing does. **Both obstacles are
+      probably real here and the register cannot yet say which binds**, which is
+      the honest reason both are worth naming and neither is worth asserting
+      alone.
+    who_could: [academic, nonprofit, sponsor]
+    scale: 1e8
+    standing: documented
+    src: recall
+
+holes:
+  - The surgery rate is falling in the biologic era and the figure used here is
+    a historical central estimate; it needs a dated source, and the trend is
+    itself the most interesting number about the disease.
+  - Whether early aggressive therapy actually prevents fibrosis, rather than
+    deferring it, is not settled — the whole window argument rests on it.
+  - Whether Crohn's is one disease is open in the same way as depression;
+    ileal, colonic, penetrating and fibrostenotic phenotypes behave differently
+    enough that a single set of ratings may be averaging unlike things.
+
+assertion:
+  id: FND-A-0016
+  rated: 2026-08-11
+  by: [claude, jeremy]

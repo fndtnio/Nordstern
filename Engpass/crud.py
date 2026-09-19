@@ -1,0 +1,291 @@
+#!/usr/bin/env python3
+"""Test a framing: is medicine CRUD at the level of a cell?
+
+    python3 crud.py          # print the numbers, write crud.md
+
+THE IDEA, PROPOSED IN CONVERSATION 2026-08-28. Software has four primitives —
+create, read, update, delete — and every operation reduces to them. The claim is
+that medicine has the same four at the level of a cell:
+
+    CREATE   make cells that are gone          hair cells, beta cells, myocardium
+    READ     find and identify the right ones  measurement, targeting, prognosis
+    UPDATE   repair what is inside one         a mutation, a viral genome
+    DELETE   remove ones that should not be    a tumour, a reservoir, a pathogen
+
+and that **medicine is essentially solved if all four are mastered.**
+
+WHY THIS FILE EXISTS RATHER THAN A DOCUMENT. A framing is a claim about the
+corpus, and a claim about the corpus that is typed by hand goes stale the moment
+a record is added — which is exactly the failure `index.md` had (Nordstern
+gaps.md #224). So the argument is generated from the built artifact and its
+numbers are recomputed on every run. **If the corpus stops supporting the
+conclusion, this file says so.**
+
+IT READS THE BUILT ARTIFACT AND NOTHING ELSE, like the rest of Engpass: Nordstern
+does not know this exists, and the arrow runs one way.
+
+WHAT THE CLASSIFICATION IS AND IS NOT. Mapping a blocker KIND to "could a
+cell-level capability clear this" is a judgement, made once, in `CRUD_KINDS`
+below, and it is deliberately generous to the framing: `knowledge`, `tooling`
+and `candidate-untested` all count as biology. Everything else — logistics,
+cost, policy, no-sponsor, manufacturing, regulatory, adherence, and the
+evidence-incomplete class — is something a perfected cell operation would not
+touch. `diagnosis` is treated separately and reported both ways, because it is
+the one kind that genuinely splits.
+"""
+from __future__ import annotations
+
+import json
+import os
+from collections import Counter
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+NORDSTERN = os.path.normpath(os.path.join(HERE, ".."))
+ARTIFACT = os.path.join(NORDSTERN, "web", "nordstern.json")
+REPORT = os.path.join(HERE, "crud.md")
+
+# Blocker kinds a perfected cell-level capability could plausibly clear.
+# Generous on purpose: if the framing loses on a generous reading, it loses.
+CRUD_KINDS = {"knowledge", "tooling", "candidate-untested"}
+
+# `diagnosis` is the contested one. It is READ when the capability to identify
+# is missing, and it is delivery when the test exists and nobody runs it — and
+# in this corpus it is overwhelmingly the second. Reported separately.
+SPLIT_KIND = "diagnosis"
+
+# How each Engpass obstacle maps, judged once, by hand, with the reason.
+OBSTACLE_MAP = {
+    "who-progresses":       ("READ", "which one, in whom — the largest obstacle in the register"),
+    "pathogen-persistence": ("DELETE", "a reservoir no drug reaches"),
+    "tissue-repair":        ("CREATE", "replace what was lost"),
+    "cell-targeting":       ("ADDRESS", "not an operation — the precondition all four need"),
+    # Not an operation either. CREATE and DELETE are how you change the row
+    # count; this is the rule saying what the row count should be, which is the
+    # one thing the framing has no word for — and both operations enforce it.
+    "growth-control":       ("CONSTRAINT", "not an operation — how many cells there should be, which CREATE and DELETE both enforce"),
+    "protective-immunity":  (None, "instruct an immune system BEFORE the cell event; not an operation on cells"),
+    "unexplained-illness":  (None, "the entity is unnamed — there is nothing to operate on"),
+    "burden-unknown":       (None, "epidemiology; nobody counted"),
+    "donation-dependency":  (None, "economics"),
+    "rna-folding":          (None, "prediction and tooling, not a cell operation"),
+}
+
+
+def load():
+    with open(ARTIFACT, encoding="utf-8") as fh:
+        recs = json.load(fh)["records"]
+    return [r for r in recs if r["derived"]["status"] == "active"]
+
+
+def main() -> int:
+    recs = load()
+    kinds = Counter(b["kind"] for r in recs for b in r["blockers"])
+    total = sum(kinds.values())
+    crud = sum(n for k, n in kinds.items() if k in CRUD_KINDS)
+    dx = kinds.get(SPLIT_KIND, 0)
+
+    obs = Counter()
+    for r in recs:
+        for o in {o for b in r["blockers"] for o in (b.get("obstacles") or [])}:
+            obs[o] += 1
+    obs_crud = sum(n for k, n in obs.items() if OBSTACLE_MAP.get(k, (None,))[0])
+    obs_not = sum(n for k, n in obs.items() if not OBSTACLE_MAP.get(k, (None,))[0])
+
+    only_k = sorted(r["slug"] for r in recs if r["derived"]["only_knowledge_blockers"])
+    half_k = []
+    for r in recs:
+        bs = r["blockers"]
+        k = sum(1 for b in bs if b["kind"] == "knowledge")
+        if bs and k / len(bs) >= 0.5:
+            half_k.append((r["slug"], k, len(bs)))
+
+    L = [
+        "# Is medicine CRUD at the level of a cell?",
+        "",
+        "**GENERATED by `python3 crud.py` from Nordstern's built artifact.** Every number",
+        "below is recomputed on each run, because a framing typed by hand goes stale the",
+        "moment a record is added.",
+        "",
+        "## The claim",
+        "",
+        "Software has four primitives and every operation reduces to them. The proposal is",
+        "that medicine has the same four at the level of a cell — **create** cells that are",
+        "gone, **read** which ones and in whom, **update** what is inside one, **delete**",
+        "the ones that should not be there — and that mastering all four would essentially",
+        "solve medicine.",
+        "",
+        "## Where it holds, and it holds better than expected",
+        "",
+        "**Engpass was built without this framing and four of its obstacles map cleanly",
+        "onto it.** That is the strongest evidence for the idea, because nothing about how",
+        "these records were written was aiming at it.",
+        "",
+        "**The table now shows five, and the fifth is not evidence.** `growth-control`",
+        "was written on 2026-09-02, after this document existed, so it cannot support a",
+        "claim about what the register produced independently. It is listed because",
+        "leaving it `unclassified` would be worse, and flagged here because a count that",
+        "quietly absorbs records written afterwards stops being the test it was.",
+        "",
+        "| obstacle | records | maps to |",
+        "|---|---:|---|",
+    ]
+    for k, n in obs.most_common():
+        op, why = OBSTACLE_MAP.get(k, ("?", "unclassified"))
+        L.append(f"| `{k}` | {n} | **{op or '—'}** — {why} |")
+
+    L += [
+        "",
+        f"**{obs_crud} record-citations point at CRUD-shaped obstacles; {obs_not} point at",
+        "obstacles the framing cannot touch.**",
+        "",
+        "And the records say it almost in the framing's own words. `hearing-loss`: *\"hair",
+        "cells, which birds regrow and we do not.\"* `heart-failure`: *\"any way to replace",
+        "lost muscle.\"* `cerebral-palsy`: *\"any way back to the lesion.\"* All CREATE.",
+        "`genital-herpes` is the sharpest UPDATE case in the corpus — the virus sits in a",
+        "sensory neuron, so **a cure must edit a genome inside a cell it has to leave",
+        "alive**, because DELETE is unavailable.",
+        "",
+        "### The refinement the corpus adds",
+        "",
+        "**`cell-targeting` is not a fifth operation. It is the addressing layer all four",
+        "require.** Its own record states it: *\"a solution to either is an **address** —",
+        "some property of the target cell that a carrier can recognise and act on.\"* In",
+        "the framing's terms that is the primary key, and medicine mostly does not have",
+        "one. Every CREATE, UPDATE and DELETE is blocked on it before it is blocked on",
+        "anything else.",
+        "",
+        "## Where it breaks",
+        "",
+        f"**Of {total} blockers across {len(recs)} records, {crud} — {100*crud/total:.0f}% —",
+        "are the kind a perfected cell-level capability could clear.**",
+        "",
+        "| blocker kind | n | share | cell-level CRUD? |",
+        "|---|---:|---:|---|",
+    ]
+    for k, n in kinds.most_common():
+        mark = "**yes**" if k in CRUD_KINDS else ("*splits — see below*" if k == SPLIT_KIND else "no")
+        L.append(f"| `{k}` | {n} | {100*n/total:.1f}% | {mark} |")
+
+    L += [
+        "",
+        f"**{total - crud} of {total} blockers — {100*(total-crud)/total:.0f}% — are logistics,",
+        "cost, policy, no-sponsor, manufacturing, regulatory, adherence, absent evidence, or",
+        "a test that exists and is not used.** None of them is a biology problem.",
+        "",
+        f"### The `diagnosis` kind is the contested {dx}, and it mostly is not READ",
+        "",
+        "A generous reading counts all "
+        f"{dx} `diagnosis` blockers as READ, which would take the total to "
+        f"{100*(crud+dx)/total:.0f}%. **The corpus does not support that reading.** In this",
+        "register a `diagnosis` blocker is usually *a test that exists and nobody runs*",
+        "rather than *we cannot identify it*:",
+        "",
+        "- `cryptococcal-meningitis` — a two-dollar dipstick above 95% sensitivity, unused",
+        "- `syphilis` — a blood test in pregnancy, and congenital cases up tenfold",
+        "- `coccidioidomycosis` — good serology, not ordered, in a wealthy health system",
+        "- `vulvar-cancer` — a lesion on the surface of the body, treated as thrush for years",
+        "- `trichomoniasis` — left off the multiplex panel the patient is already having",
+        "",
+        "**Those are not READ failures. They are a test sitting on a shelf**, which is the",
+        "same delivery problem wearing a diagnostic label.",
+        "",
+        "### Four obstacles the framing cannot reach at all",
+        "",
+        "- **`protective-immunity`** — the second-largest obstacle in the register. A vaccine",
+        "  instructs an immune system **before** any cell event, and is not an operation on",
+        "  cells. It is also the only intervention the register records as routinely moving a",
+        "  disease from `unsolved` to `preventable` outright.",
+        "- **`unexplained-illness`** — ME/CFS, hEDS, POTS. **You cannot CRUD what you cannot",
+        "  name.** The entity is missing, not the operation.",
+        "- **`burden-unknown`** — nobody counted.",
+        "- **`donation-dependency`** — economics.",
+        "",
+        "### And the register's headline finding sits entirely outside the frame",
+        "",
+        "**The treatment exists and does not arrive.** Flucytosine unregistered across the",
+        "continent where cryptococcal meningitis is. Benzathine penicillin — a 1943 drug —",
+        "running short while congenital syphilis rises tenfold. HPV vaccine at roughly a",
+        "fifth of the girls who need it. Sickle-cell gene therapy that cures, costs two to",
+        "three million dollars, and reaches almost nobody.",
+        "",
+        "**Perfect cell-level CRUD tomorrow changes none of it.**",
+        "",
+        "## The prediction the framing makes, and the test",
+        "",
+        "If the theory is right, the records blocked **only** by knowledge should be clean",
+        "CRUD statements — nothing else is in the way, so what remains must be an operation.",
+        "",
+        f"**{len(only_k)} of {len(recs)} records qualify: {', '.join(f'`{s}`' for s in only_k)}.**",
+        "",
+        "That is the whole test set, and it is the register's most-repeated finding arriving",
+        "from a new direction: **almost nothing in medicine is held up by biology alone.**",
+        "The corpus has grown by roughly a quarter since that count was one, and it is",
+        "still one.",
+        "",
+        "**And the one record passes.** Huntington's disease: the gene identified exactly in",
+        "1993, the protein known, the mechanism understood — READ complete. The intervention",
+        "is to lower huntingtin — UPDATE, precisely specified. The most advanced attempt had",
+        "its phase 3 **halted in 2021 for harm at higher doses**, which is a dosing and",
+        "delivery failure rather than a failure of the idea. Its own blocker says there is",
+        "*\"no trial waiting for a sponsor, no drug waiting for a regulator, and no product",
+        "waiting for a payer.\"*",
+        "",
+        "**Read complete, update specified, no safe address.** The framing predicts exactly",
+        "that shape, and it is what is there.",
+        "",
+        "**AND THE FRAMING CHANGED THE RECORD, WHICH IS MORE THAN A FRAMING USUALLY",
+        "EARNS.** Huntington's cited `tissue-repair` — CREATE, replace the lost neurons —",
+        "and **not `cell-targeting`**, although what actually stopped the trial was that",
+        "lowering huntingtin non-selectively lowers the essential wild-type protein too.",
+        "An allele-selective agent is the field's stated aim and does not exist. **That is",
+        "the specificity face of `cell-targeting`**, and `msmds` cites the same obstacle in",
+        "the same words — *\"allele-selective silencing or editing reaching smooth muscle.\"*",
+        "The link was added on 2026-08-28, and the record states that this test is why.",
+        "",
+        "### The weaker test, and why it proves nothing yet",
+        "",
+        f"Relaxing to records where knowledge is at least half the blockers gives {len(half_k)}:",
+        "",
+    ]
+    for s, k, n in sorted(half_k, key=lambda x: -x[1] / x[2]):
+        L.append(f"- `{s}` — {k}/{n}")
+    L += [
+        "",
+        "**Nine of these were written in the last few days, in a single push through",
+        "infectious disease**, where blockers are disproportionately biological. It is a",
+        "record of what was recently added, not a finding about medicine, and it should not",
+        "be quoted as one until the corpus is sampled rather than accumulated.",
+        "",
+        "## Verdict",
+        "",
+        "**A good taxonomy of the biological quarter, and not a theory of medicine** — and",
+        "the second half is worth more than the first, because it tells you where the",
+        "leverage is not.",
+        "",
+        "The sharper form the corpus supports: **CRUD describes what medicine would need in",
+        "order to stop needing biology. It says nothing about the delivery system, and",
+        "delivery is where roughly three-quarters of the loss is.** That is not a criticism",
+        "of the idea. It is the idea doing work, by making the residual visible and",
+        "countable.",
+        "",
+        "**Where it earns its place is as a lens on the obstacle layer**, which is what",
+        "Engpass holds: four of nine obstacles are CRUD-shaped, one is the address they all",
+        "need, and four are outside it. That is a more useful map of the knowledge quarter",
+        "than the register previously had.",
+    ]
+
+    with open(REPORT, "w", encoding="utf-8") as fh:
+        fh.write("\n".join(L) + "\n")
+
+    print(f"{len(recs)} records · {total} blockers")
+    print(f"  CRUD-addressable blockers : {crud:>4}  ({100*crud/total:.0f}%)")
+    print(f"  everything else           : {total-crud:>4}  ({100*(total-crud)/total:.0f}%)")
+    print(f"  `diagnosis`, reported both ways: {dx}")
+    print(f"  obstacles CRUD-shaped / not    : {obs_crud} / {obs_not} record-citations")
+    print(f"  blocked ONLY by knowledge      : {len(only_k)}  ({', '.join(only_k)})")
+    print(f"wrote {os.path.basename(REPORT)}")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

@@ -1,0 +1,419 @@
+slug: h5n1
+id: FND-D-0047
+name: H5N1 avian influenza
+also: [avian influenza, bird flu, highly pathogenic avian influenza, HPAI H5N1]
+common: bird flu
+mondo: MONDO:0018695
+kind: disease
+residual: false
+contested: false
+
+# MONDO:0018695 IS `avian influenza`, WHICH IS BROADER THAN THIS RECORD.
+# It covers H7N9, H9N2 and the rest. Accepted by hand as the closest available
+# join key, with the imprecision stated rather than hidden — the same call made
+# for ischaemic heart disease against `coronary artery disorder`. If the register
+# ever adds H7N9 separately these two will collide on one identifier.
+
+# THE REGISTER HAS NO WAY TO RATE A THREAT.
+#
+# About 950 confirmed human cases since 2003 and about 465 deaths. Divided by the
+# years, that is roughly 21 deaths a year — smaller than mycetoma, and utterly
+# beside the point.
+#
+# **H5N1 matters because of something that has not happened.** It is not
+# efficiently transmissible between humans. Three or four molecular changes might
+# be enough — receptor preference, polymerase adaptation, haemagglutinin
+# stability — and gain-of-function work in ferrets suggested a small number of
+# mutations suffice. Meanwhile clade 2.3.4.4b has produced the largest animal
+# influenza panzootic ever recorded: wild birds on every continent including
+# Antarctica, mass mortality in seals and sea lions, mink farms, and since 2024
+# sustained spread in US dairy cattle.
+#
+# Every axis in this schema asks about patients. The entire content of this
+# record is a conditional probability about a virus that does not yet exist.
+#
+# AND PREPAREDNESS IS A CAPABILITY NO AXIS HOLDS. Stockpiled vaccines, antiviral
+# reserves, surveillance networks, manufacturing surge capacity. Not
+# `intervention` — there are no patients to give it to. Not `prevention` — none
+# of it reduces spillover. It is a fourth thing and there is no field for it.
+# gaps.md #103.
+#
+# SECOND, AND SHARPER THAN IT LOOKS: the famous ~50% case fatality is an artefact
+# of who gets tested. Confirmation has historically required illness severe
+# enough to reach a hospital and be tested for a rare pathogen. When active
+# surveillance was applied to exposed US dairy workers in 2024, what turned up
+# was mostly **conjunctivitis** — mild, and it would never have been counted
+# under the old regime. gaps.md #104.
+
+burden:
+  prevalence:
+    value: 5.0e2
+    units: >
+      human survivors worldwide since 2003 — a rough figure, and the reason
+      almost nothing is known about long-term sequelae
+    src: reasoning
+  deaths:
+    value: 2.1e1
+    units: >
+      deaths/year — about 465 confirmed human deaths since 2003 divided by the
+      years since. THE SECOND-SMALLEST FIGURE IN THIS REGISTER after Marburg's,
+      and the one that least describes why the entity is here at all
+    src: reasoning
+  note: >
+    **THE NUMBER ABOVE IS NOT WHY THIS RECORD EXISTS**, and unlike Ebola's and
+    Marburg's artefacts it is not merely a bad average — it measures the wrong
+    thing entirely.
+    What has happened in humans: Hong Kong 1997, eighteen cases and six deaths,
+    ended by culling every chicken in the territory. Re-emergence across
+    Southeast Asia and Egypt from 2003, accumulating to roughly 950 confirmed
+    cases with about half of them fatal. Sporadic, occupational, and almost
+    always traceable to direct contact with infected birds.
+    What has happened in animals since about 2021 is on a different scale
+    altogether. Clade 2.3.4.4b has produced **the largest animal influenza
+    panzootic ever recorded**: wild birds across every continent including
+    Antarctica, hundreds of millions of poultry culled, mass mortality in South
+    American sea lions and elephant seals, an outbreak on a Spanish mink farm
+    with evidence of mammal-to-mammal spread, and from 2024 sustained
+    cow-to-cow transmission in US dairy herds with very high viral loads in milk.
+    **The register's unit is the human disease and the story is in the animals.**
+
+survival:
+  course: acute
+  horizon: 30 days from symptom onset
+  untreated:
+    value: 0.4
+    units: >
+      fraction alive — reported case fatality across human H5N1 infections since
+      2003 has been around 50%, **and the denominator is almost certainly wrong**:
+      mild cases go undetected, so the true figure is better than this and
+      nobody knows by how much
+    src: reasoning
+  treated:
+    value: 0.5
+    units: >
+      fraction alive with neuraminidase inhibitors and intensive care. **The
+      evidence is a few hundred cases and no trial**, so this figure carries
+      less weight than any other in the column
+    src: reasoning
+  witness: >
+    **A record where the register's uncertainty is the finding.** Both numbers
+    rest on ascertainment that is known to be incomplete, and the record says so
+    rather than omitting the row. What matters about H5N1 is not its current
+    survival but that human-to-human transmission would change every figure
+    here at once.
+
+axes:
+  mechanism: established
+  intervention: disease-modifying
+  prevention: prophylaxis
+  ongoing: low
+  efficacy:
+    value: 0.55
+    units: >
+      fraction-of-patients (surviving confirmed severe disease with early
+      neuraminidase inhibitor treatment and intensive care) — HEAVILY CONFOUNDED
+      by ascertainment, because the denominator has historically been
+      hospital-detected cases only. See the measurement witness and gaps.md #104
+    src: reasoning
+  access:
+    value: 0.40
+    units: >
+      fraction-of-patients (reaching antivirals early and intensive care if
+      needed) — and the exposed populations are poultry workers in rural Asia
+      and Egypt, and farm labourers in the United States who frequently have no
+      sick pay, no regular healthcare and reason to avoid being tested
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: partial
+  witness: >
+    DIAGNOSTIC is `objective` — RT-PCR subtyping is definitive — and the number
+    everyone quotes about this disease is nonetheless a measurement artefact.
+    **THE ~50% CASE FATALITY IS A STATEMENT ABOUT SURVEILLANCE, NOT ABOUT THE
+    VIRUS.** Confirmed cases have historically been ascertained the same way
+    everywhere: somebody became ill enough to reach a hospital, somebody thought
+    to test for a rare avian subtype, and the test was available. Mild infections
+    in that regime are invisible by construction.
+    Then in 2024 active surveillance was applied to an exposed occupational
+    group — US dairy workers — and what it found was mostly **conjunctivitis**.
+    Mild, self-limiting, and it would never have entered the historical count.
+    The same pathogen family looks like a fifty-percent killer under one
+    ascertainment regime and a nuisance under another, and **the number driving
+    every pandemic plan in the world is the first one.**
+    Some of the difference is probably real — the dairy genotype is not the
+    Asian clades, and the exposure route differs. Some of it is certainly
+    ascertainment. Nobody can currently say how much is which, and that is the
+    finding. See gaps.md #104.
+    PROGNOSTIC is `partial` — viral load, extent of pneumonia and time to
+    antiviral all predict outcome at group level, in a denominator of a few
+    hundred people.
+    PREDICTIVE is `partial` and unusually concrete: antiviral resistance markers
+    are known and testable, and the circulating clade determines whether any
+    stockpiled vaccine antigen is a match. **The second question is about a
+    vaccine nobody has been given**, which is the shape of this whole record.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    Neuraminidase inhibitors are benign. Intensive care for severe viral
+    pneumonia is not gentle — ventilation, sometimes extracorporeal support — but
+    it is a small number of people and the lasting damage belongs to the disease
+    rather than the treatment.
+    **THE LARGEST TOLL OF THE RESPONSE IS NOT PAID BY PATIENTS AT ALL.** Control
+    means culling: hundreds of millions of poultry destroyed, whole flocks
+    depopulated on detection, farms ruined, and in the 1997 Hong Kong outbreak
+    every chicken in the territory. That is an enormous cost, it is deliberately
+    inflicted, it is the intervention that has actually worked — and it falls on
+    farmers and on birds, neither of whom the schema can see.
+    Recorded as `minor` because `toll` means what treatment takes from the
+    patient, and by that definition `minor` is accurate. The rest is gaps.md
+    #100: every field here is scoped to one human.
+  incidence:
+    value: 0.01
+    units: >
+      fraction-of-treated (permanent harm attributable to treatment) — near zero;
+      the antivirals are benign
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    RATED WITH LOW CONFIDENCE. There are on the order of five hundred survivors
+    worldwide and the follow-up literature is correspondingly thin.
+    Severe H5N1 is a viral pneumonia progressing to acute respiratory distress,
+    and what is reported afterwards is what follows severe ARDS from any cause:
+    pulmonary fibrosis, reduced exercise capacity and breathlessness, and in
+    some the neuropsychiatric aftermath of prolonged critical illness.
+    The mild conjunctivitis cases from 2024 appear to leave nothing, which is
+    consistent with them being a different disease in every practical sense —
+    and is another reason the single `efficacy` figure above describes nobody.
+  incidence:
+    value: 0.30
+    units: >
+      fraction-of-severe-survivors (persistent respiratory impairment) — a
+      reasoned estimate carried largely from ARDS generally, because H5N1's own
+      denominator will not support one
+    src: reasoning
+
+window:
+  what: >
+    TWO WINDOWS, AND THE ONE THAT MATTERS IS NOT IN THIS FIELD.
+    THE PATIENT'S WINDOW is about forty-eight hours. Neuraminidase inhibitors
+    work best given early and their benefit falls away as the pneumonia
+    establishes. The obstacle is that early H5N1 looks like influenza, which is
+    to say like everything, and testing for an avian subtype requires somebody to
+    have already suspected it.
+    **THE PANDEMIC'S WINDOW IS ABOUT SIX MONTHS AND IT IS THE WHOLE PROBLEM.**
+    If a transmissible strain emerged, it would be sequenced within days. A
+    matched vaccine manufactured at population scale by conventional egg-based
+    production takes roughly half a year, and the first pandemic wave does not
+    wait. Every stockpiled dose that exists today is matched to a clade that a
+    pandemic strain would probably not be.
+    So the register's most important number for this record would be **time from
+    strain identification to a hundred million matched doses**, and there is no
+    field for it, because `window` is scoped to a patient (gaps.md #99, #103).
+  closes_on: >
+    established viral pneumonia and acute respiratory distress — days, for the
+    individual patient
+  caught_in_time:
+    value: 0.30
+    units: >
+      fraction-of-cases (treated with antivirals inside the window in which they
+      substantially help) — a reasoned estimate over confirmed cases
+    src: reasoning
+
+# NO `strata` BLOCK, AND THE REASON IS ITSELF UNCERTAIN.
+#
+# The tempting split is by clade: the Asian H5N1 lineages that produced severe
+# pneumonia with ~50% mortality, against the 2.3.4.4b dairy-cattle genotype that
+# has produced mild conjunctivitis in farm workers. That looks like two diseases.
+#
+# It is not written as strata because **nobody can currently say how much of the
+# difference is virology and how much is ascertainment** (gaps.md #104). The
+# Asian cases were found by hospitals; the American ones by actively swabbing
+# exposed workers. A stratum asserts that the sub-populations genuinely differ,
+# and here that is the open question rather than the input.
+
+witness:
+  mechanism: >
+    `established`, and unusually so — **we understand not only how this virus
+    causes disease but the specific molecular changes that would make it a
+    pandemic pathogen.**
+    Influenza A carries a segmented genome, which allows reassortment when two
+    strains meet in one host, and this is the mechanism behind every previous
+    influenza pandemic. H5N1's haemagglutinin binds α2,3-linked sialic acid,
+    abundant in bird intestine and in the human lower respiratory tract, and
+    poorly matched to the α2,6-linked receptors that dominate the human upper
+    airway. That mismatch is most of why it infects people deep in the lung —
+    causing severe pneumonia — and why it does not spread by coughing.
+    The other barriers are known too: polymerase adaptations permitting efficient
+    replication at the cooler temperature of the upper airway, and
+    haemagglutinin stability at low pH.
+    **AND THE WORK THAT DEMONSTRATED THIS IS ITSELF CONTESTED.** Ferret
+    transmission experiments around 2011-12 showed a small number of mutations
+    could confer airborne transmissibility, prompted a research moratorium, and
+    became the founding case of the dual-use research debate. The knowledge is
+    real, it is load-bearing for every risk assessment made about this virus, and
+    obtaining it was arguably itself a risk.
+    THE NAMED HOLE IS WHETHER IT WILL HAPPEN, AND WHETHER IT WOULD STILL BE
+    LETHAL. Knowing which mutations *would* suffice is not knowing that they will
+    arise together, in a host that transmits, in a strain that keeps its
+    virulence. There is a widely held intuition that transmissibility and
+    virulence trade off, and it is an intuition rather than a result. **The
+    register's `mechanism` axis is answered about the virus that exists, and the
+    question everyone is asking is about one that does not.**
+  intervention: >
+    `disease-modifying`. Neuraminidase inhibitors — oseltamivir, zanamivir — and
+    the polymerase inhibitor baloxavir reduce viral replication, and observational
+    data support a survival benefit when given early in severe H5N1.
+    They are not curative: mortality among treated, hospitalised, confirmed cases
+    has remained very high, and the antiviral is acting on replication rather
+    than rescuing a lung that has already filled. The rest is intensive care.
+    This is the fourth record in `known & modifiable`, the cell added two records
+    ago (gaps.md #89) — and it is the right cell. The drugs touch the disease
+    process, which Marburg's supportive care does not, and they do not hold or
+    end it, which Ebola's monoclonals arguably do.
+  prevention: >
+    `prophylaxis`, and the rating is true of the disease that exists and says
+    nothing about the one that matters.
+    WHAT IS PROPHYLACTIC TODAY: post-exposure oseltamivir for people who have
+    handled infected animals, and personal protective equipment for cullers and
+    dairy workers. Both real, both aimed at occupational spillover.
+    WHAT IS STOCKPILED: licensed H5N1 vaccines exist, adjuvanted, matched to
+    clades chosen years ago. Nobody is vaccinated with them. They are a hedge
+    against an event, held in quantities that are a rounding error against any
+    national population, and probably mismatched to whatever emerged.
+    WHAT ACTUALLY WORKS IS DONE TO BIRDS: culling, biosecurity, movement
+    restriction, and in some countries poultry vaccination — which is contested
+    partly on trade grounds and partly because it can mask circulation while
+    permitting it.
+    **NONE OF THAT IS WHAT `prophylaxis` MEANS ANYWHERE ELSE IN THIS REGISTER**,
+    where it describes something given to a person to stop them getting a
+    disease. Here the effective prevention is an agricultural programme and the
+    pandemic prevention is a warehouse. See gaps.md #103.
+  ongoing: >
+    `low`. The human illness is acute and there is no maintenance therapy.
+    What is genuinely ongoing is not carried by any patient. It is surveillance —
+    of wild birds, of poultry, of dairy herds, of exposed workers — funded
+    continuously to detect an event that may never come, which is gaps.md #57
+    arriving for the fourth time from the fourth direction.
+
+holes:
+  - Every scalar is `src: recall` or `src: reasoning`, and this record's numbers
+    are the least trustworthy in the register — not because the sources are worse
+    but because the denominators are constructed by surveillance intensity. Do
+    not quote the case fatality.
+  - The 2024-onward dairy cattle situation is recent, was moving quickly, and is
+    the part of this record most likely to be wrong or out of date in its
+    specifics. The general shape — sustained mammal-to-mammal spread in a farmed
+    species, with mild human cases found by active surveillance — is the part
+    worth relying on.
+  - Whether the mild conjunctivitis cases and the severe Asian pneumonia cases
+    are usefully the same entity is unresolved, and the record declines to
+    stratify for that reason.
+  - Seasonal influenza is absent from this register and is the natural contrast:
+    the same virus family, an annual vaccine, hundreds of thousands of deaths a
+    year, and none of the dread. It is in the queue.
+  - The register has no way to represent the counterfactual that is the entire
+    reason this record exists, so everything above describes the wrong disease
+    reasonably well.
+
+blockers:
+  - kind: manufacturing
+    blocks: a matched vaccine at population scale in weeks rather than months
+    what: >
+      THE BINDING CONSTRAINT ON THE THING THAT MATTERS, and it is an industrial
+      problem rather than a scientific one.
+      A pandemic strain would be sequenced within days. Conventional egg-based
+      influenza vaccine manufacture then takes roughly six months to reach
+      population scale, and the first wave of a respiratory pandemic does not
+      take six months. Existing stockpiles are matched to clades selected years
+      in advance and would probably not match.
+      What would close it is surge capacity in platforms that can be
+      reprogrammed from a sequence — which exists now in a way it did not in
+      2009, and is not licensed, built out or contracted for influenza at the
+      scale required.
+      **Third use of the `manufacturing` blocker kind in forty-seven records**,
+      and by a wide margin the largest sum at stake.
+    who_could: [manufacturer, government, philanthropy, regulator, sponsor]
+    scale: 2.0e10
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: seeing it coming, in animals and in the people who work with them
+    what: >
+      Surveillance is the entire early-warning system and it is thin in both
+      halves.
+      IN ANIMALS: wild bird surveillance is patchy, and detection in commercial
+      flocks and dairy herds depends on farmers reporting losses that will get
+      their animals culled and their business ruined. In the 2024 US dairy
+      outbreak, testing was slow and substantially voluntary, and the incentives
+      run against it in every direction.
+      IN PEOPLE: the most exposed humans are poultry workers in rural Asia and
+      Egypt, and farm labourers in the United States — frequently without sick
+      pay, without regular healthcare, sometimes without immigration status, and
+      with excellent reasons to avoid being tested by anyone official.
+      **The people best placed to detect the beginning of a pandemic are the
+      people least able to afford being the ones who report it**, and no field
+      in this register can hold that.
+    who_could: [government, health-system, legislator, nonprofit, payer]
+    scale: 5.0e9
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    obstacles: [burden-unknown]
+    blocks: whether it will happen, and what it would be like if it did
+    what: >
+      Two questions, and the first may be unanswerable in principle.
+      **WILL IT BECOME TRANSMISSIBLE?** The molecular requirements are broadly
+      known. Whether they will arise together, in a host that transmits, is a
+      question about a stochastic process, and no amount of research converts it
+      into a prediction. What research can do is narrow the conditions and watch
+      the right places.
+      **WOULD IT STAY LETHAL?** There is a widespread intuition that
+      transmissibility and virulence trade off. It is an intuition. A
+      transmissible H5N1 that retained anything like the observed case fatality
+      would be a civilisational event; one that attenuated to seasonal-influenza
+      severity would be a bad year. **The register cannot express the difference
+      between those two futures, and neither can anybody else.**
+      `scale: null`, and note what gaps.md #101 says about knowledge blockers:
+      this one should state what becomes possible if answered, and the honest
+      answer for the first question is *better watching, not prediction*.
+    who_could: [academic, government, philanthropy, sponsor]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: policy
+    blocks: agreeing what may be studied, and what farmers are owed
+    what: >
+      Two governance problems that no other record in this register has.
+      **DUAL-USE RESEARCH.** The ferret transmission experiments that produced
+      the knowledge this record depends on prompted a moratorium and remain
+      contested. The register has a `standing` field for whether a blocker is
+      documented or alleged, and no way to record that a body of *knowledge* is
+      itself the subject of a safety argument.
+      **CULLING AND COMPENSATION.** The intervention that has repeatedly worked
+      is destroying animals — hundreds of millions of them — and it works only if
+      farmers report early. They report early only if compensation is prompt and
+      adequate, and where it is not, they do not. Poultry vaccination is
+      similarly a trade question as much as a veterinary one, since vaccinated
+      flocks face export restrictions.
+      **The most effective pandemic prevention available is an agricultural
+      compensation scheme**, which no axis in this schema can represent as
+      capability of any kind.
+    who_could: [government, legislator, regulator, academic, nonprofit]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0047
+  rated: 2026-08-23
+  by: [claude, jeremy]

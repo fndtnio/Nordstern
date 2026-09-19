@@ -1,0 +1,282 @@
+slug: vaginal-cancer
+id: FND-D-0126
+name: vaginal cancer
+also: [vaginal carcinoma, vaginal squamous cell carcinoma, primary carcinoma of the vagina]
+kind: disease
+mondo: MONDO:0001402
+residual: false
+contested: false
+
+# THE RAREST OF THE FOUR, THE MOST HPV-DRIVEN, AND THE ONE WITH A DRUG SCANDAL.
+#
+# 1. IT IS THE MOST VIRAL OF THE HPV CANCERS. Roughly three quarters is
+#    attributable to high-risk HPV — a higher fraction than cervical, anal,
+#    vulvar or oropharyngeal disease. **Vaccination should eventually remove most
+#    of this record**, which is not true of `vulvar-cancer` next door.
+#
+# 2. AND IT CARRIES THE REGISTER'S ONLY TRANSPLACENTAL CARCINOGEN. Clear cell
+#    adenocarcinoma of the vagina in young women was traced in 1971 to
+#    **diethylstilbestrol given to their mothers during pregnancy** — a synthetic
+#    oestrogen prescribed to millions between the 1940s and 1971 to prevent
+#    miscarriage, which it did not do. It was the first demonstration that a drug
+#    could cause cancer in the next generation, decades later. **A different
+#    aetiology, in the same organ, produced by medicine.**
+#
+# 3. ITS RARITY IS PARTLY A DEFINITION. A tumour involving both cervix and vagina
+#    is called cervical; one occurring after a hysterectomy for cervical
+#    neoplasia may be a second primary or a recurrence. **The entity is what is
+#    left after the neighbours have taken what they claim**, which makes every
+#    number here softer than it looks.
+
+burden:
+  incidence:
+    value: 1.8e4
+    units: >
+      new cases/year worldwide — **the smallest incidence figure among the
+      register's cancers**, and partly an artefact of the classification rule
+      that assigns tumours involving the cervix to `cervical-cancer`
+    src: recall
+  deaths:
+    value: 8.0e3
+    units: deaths/year worldwide
+    src: recall
+  note: >
+    **Roughly three quarters HPV-attributable, the highest fraction of any cancer
+    in this register**, and concentrated in older women who were never screened,
+    or who were screened and treated for cervical neoplasia decades earlier and
+    then discharged.
+
+survival:
+  horizon: 5 years from diagnosis
+  untreated:
+    value: 0.08
+    units: fraction alive — untreated vaginal carcinoma invades the pelvis and obstructs the ureters
+    src: reasoning
+  treated:
+    value: 0.50
+    units: >
+      fraction alive on chemoradiation — **the worst of the four HPV cancers**,
+      because the vagina sits between bladder and rectum with no room for a
+      surgical margin, and because presentation is typically late in an older
+      population
+    src: reasoning
+  witness: >
+    **Anatomy sets this figure more than biology does.** The same virus in the
+    same kind of epithelium yields 0.70 at the anus and vulva and 0.50 here,
+    because there is nowhere to cut and the radiation field contains bladder and
+    rectum. `anal-cancer` shows what chemoradiation achieves when the anatomy
+    cooperates.
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: prophylaxis
+  ongoing: low
+  efficacy:
+    value: 0.55
+    units: >
+      fraction-of-patients (cured by stage-appropriate chemoradiation, with
+      brachytherapy) — lower than the other three HPV cancers, and constrained by
+      anatomy rather than by the treatment's potency
+    src: reasoning
+  access:
+    value: 0.50
+    units: >
+      fraction-of-patients (diagnosed and receiving definitive chemoradiation
+      including brachytherapy) — **and brachytherapy is the constraint that
+      matters.** It requires equipment and expertise concentrated in a minority
+      of centres, and outcomes are materially worse without it
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: none
+  witness: >
+    **DIAGNOSTIC is `objective` and most cases are found by accident.** There is
+    no screening programme for this cancer and no case for one — it is too rare
+    for a population test to have acceptable predictive value. In practice it is
+    found on speculum examination or on cytology performed for cervical
+    screening, which is why women discharged from cervical follow-up are a
+    recognised group at risk.
+    **The vaginal vault after hysterectomy for cervical neoplasia is the one
+    site where surveillance is arguable**, and how long to continue it is
+    unsettled.
+    PROGNOSTIC is `partial` — stage predicts outcome, and stage is largely a
+    function of how long the bleeding was attributed to atrophy.
+    PREDICTIVE is `none`, **and it was written as `n/a` — the third time in this
+    corpus that claim has been refused by the same rule**, after
+    `cryptococcal-meningitis` and `genital-herpes`. The argument was that
+    everyone receives the same chemoradiation backbone so there is nothing to
+    select between. But `efficacy` is 0.55: **forty-five percent are not cured,
+    and nobody can say in advance which.** A question with no answer is `none`;
+    `n/a` means the question does not arise, and it arises here every time
+    somebody relapses. The rating reads more honestly for the correction.
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    **Pelvic chemoradiation in a small space between two organs that do not
+    tolerate it.** Vaginal stenosis and shortening — frequently to the point that
+    intercourse and even examination become difficult — vaginal dryness, radiation
+    proctitis and cystitis, fistula formation between vagina, bladder and rectum
+    in a minority, ovarian failure in younger women, and pelvic insufficiency
+    fractures.
+    **Vaginal stenosis is the characteristic toll of this record** and is
+    partially preventable by dilator use, which is prescribed inconsistently and
+    complied with poorly, for reasons nobody has solved.
+  incidence:
+    value: 0.45
+    units: >
+      fraction-of-treated with permanent vaginal, urinary or bowel consequence —
+      reasoned, and high because the radiation field cannot avoid the
+      surrounding organs
+    src: reasoning
+
+witness:
+  mechanism: >
+    `established`. Persistent high-risk HPV drives roughly three quarters of
+    vaginal squamous carcinoma through vaginal intraepithelial neoplasia, by the
+    same E6/E7 route as its neighbours. **The remainder is heterogeneous**:
+    tumours arising in irradiated tissue after previous pelvic cancer, and
+    historically **clear cell adenocarcinoma in women exposed to
+    diethylstilbestrol in utero.**
+    That DES cohort is aging and the tumours have largely stopped appearing, but
+    the episode is the reason transplacental carcinogenesis is a recognised
+    category at all — and the reason regulatory attitudes to prescribing in
+    pregnancy changed.
+  intervention: >
+    `curative` and almost entirely non-surgical. Definitive chemoradiation with
+    brachytherapy is standard for anything beyond the earliest lesions, because
+    **the vagina has no surgical margin to spare** — bladder in front, rectum
+    behind. Surgery is reserved for very early disease or for pelvic exenteration
+    in recurrence, which is among the most morbid operations performed.
+  prevention: >
+    `prophylaxis`. **HPV vaccination addresses the great majority of this
+    record** — the highest attributable fraction of any cancer in the register —
+    and its effect will arrive slowly because the disease occurs decades after
+    infection in an older population.
+    There is no screening programme and no serious case for one at population
+    level. **The exception is the vaginal vault after hysterectomy for cervical
+    neoplasia**, where a woman remains at elevated risk and is frequently
+    discharged from follow-up.
+  ongoing: >
+    `low` medically; vaginal dilator use and management of radiation sequelae
+    continue indefinitely and belong to `toll`.
+  efficacy: >
+    See the axis. The figure is anatomy's, not the treatment's.
+  access: >
+    **Brachytherapy is the binding constraint and it is a capital one.** Outcomes
+    are materially worse without it, it requires equipment and specialist
+    expertise, and it is unavailable across much of the world — the same
+    constraint `cervical-cancer` records for the same reason in the adjacent
+    organ, and the same one that decides whether the curable half of locally
+    advanced disease is cured.
+
+moved:
+  - date: 1971
+    axis: prevention
+    from: none
+    to: risk-reduction
+    why: >
+      **Diethylstilbestrol was withdrawn for use in pregnancy** after clear cell
+      adenocarcinoma of the vagina was traced to in-utero exposure — the first
+      recognised transplacental carcinogen, identified in a cluster of young
+      women with a tumour that should not have occurred at their age.
+      **Recorded as prevention because withdrawing the drug prevented the
+      cancer**, and because it changed how medicines are assessed for use in
+      pregnancy generally. A prevention gain that consisted of stopping doing
+      something.
+    src: recall
+  - date: 2006
+    axis: prevention
+    from: risk-reduction
+    to: prophylaxis
+    why: >
+      HPV vaccination. **The highest attributable fraction of any cancer in the
+      register means this record is more preventable by that vaccine than
+      `cervical-cancer` is**, and it will be the slowest to show it, because the
+      disease arrives decades later in women who were vaccinated as adolescents.
+    src: reasoning
+
+holes:
+  - >
+    **The entity is partly a residual category.** Tumours involving the cervix
+    are assigned to `cervical-cancer`; disease after hysterectomy for cervical
+    neoplasia may be classified as recurrence or as a second primary. The
+    incidence figure is what survives those rules, and comparisons across
+    registries are unreliable for that reason.
+  - >
+    The DES-exposed cohort is aging out and the clear cell adenocarcinoma story
+    is now largely historical. It is retained because **it is the register's only
+    instance of a cancer caused by a prescribed medicine acting across a
+    generation**, and the schema has no field for that at all.
+  - >
+    Whether and for how long to survey the vaginal vault after hysterectomy for
+    cervical neoplasia is genuinely unsettled, and it is the only place where
+    early detection of this cancer is plausible.
+  - Vaginal stenosis after radiotherapy is common, partially preventable by
+    dilator use, and adherence is poor for reasons that have been described
+    repeatedly and addressed rarely.
+  - Written from model recall. The HPV fraction, the DES history, the anatomical
+    constraint on surgery and the brachytherapy dependence are the parts most
+    likely right; every number is the part most likely wrong.
+
+blockers:
+  - kind: logistics
+    blocks: brachytherapy, without which this cancer is much less curable
+    what: >
+      **DEFINITIVE TREATMENT REQUIRES BRACHYTHERAPY AND MOST OF THE WORLD DOES
+      NOT HAVE IT.** External beam radiotherapy alone gives materially worse
+      local control; the boost that cures this disease is delivered from inside
+      the vagina, and it requires equipment, applicators, imaging and a
+      physicist and clinician who do it regularly.
+      `cervical-cancer` records the same constraint in the adjacent organ and
+      notes that radiotherapy capacity across much of sub-Saharan Africa is a
+      small fraction of need. **This record is smaller and depends on the same
+      machine**, which means it will never justify the capital on its own and is
+      entirely dependent on whether cervical cancer does.
+    who_could: [government, health-system, payer, nonprofit]
+    scale: 6.0e8
+    standing: documented
+    src: reasoning
+
+  - kind: diagnosis
+    blocks: bleeding in an older woman attributed to atrophy
+    what: >
+      Postmenopausal bleeding and discharge are the presenting symptoms and are
+      commonly attributed to atrophic vaginitis — a far commoner and entirely
+      benign explanation — without speculum examination. **The tumour is visible
+      to anyone who looks.**
+      The specific and correctable failure is **women discharged from follow-up
+      after hysterectomy for cervical neoplasia**, who remain at elevated risk
+      for decades and are no longer in any surveillance pathway. How long to
+      continue vault cytology is unsettled, which in practice means it stops.
+    who_could: [health-system, academic, government]
+    scale: 5.0e7
+    standing: documented
+    src: reasoning
+
+  - kind: knowledge
+    blocks: a toll that is preventable and is not prevented
+    what: >
+      **Vaginal stenosis after pelvic radiotherapy affects a large share of
+      survivors, can make intercourse and even clinical examination impossible,
+      and is partially preventable by regular dilator use.** Adherence is poor;
+      the reasons — embarrassment, inadequate explanation, pain, absence of
+      follow-up support — have been described repeatedly in qualitative work and
+      addressed almost nowhere.
+      **This is a rare shape in the register: a known, cheap, non-pharmacological
+      intervention against a known permanent harm, that fails at the point of
+      being asked of the patient.** It is filed as `knowledge` because what is
+      missing is a way to make it happen rather than a device.
+    who_could: [academic, health-system, patient-org, nonprofit]
+    scale: 3.0e7
+    standing: documented
+    src: reasoning
+
+assertion:
+  id: FND-A-0127
+  rated: 2026-08-28
+  by: [claude, jeremy]

@@ -1,0 +1,588 @@
+slug: sepsis
+id: FND-D-0070
+name: sepsis
+also: [septic shock, septicaemia, blood poisoning, severe sepsis]
+mondo: unresolved
+kind: syndrome
+residual: false
+contested: true
+
+# WHY `mondo: unresolved`, AND IT IS THE SHARPEST INSTANCE IN THE REGISTER.
+# Mondo merges DOID, OMIM, Orphanet, NCIt and ICD. It has NO disease term for
+# sepsis. What exists is `HP:0100806` — a *phenotype* in the Human Phenotype
+# Ontology — plus `MONDO:0005229` "bacterial infectious disease WITH sepsis" (a
+# modifier on other diseases) and `MONDO:0700217` "neonatal sepsis".
+#
+# The ontology's spine is aetiology, and sepsis has no aetiology of its own. It
+# is a way of dying from other diseases. So the largest single contributor to
+# human mortality in this register — roughly one death in five worldwide — has no
+# address in the enumeration the register borrows from.
+#
+# Third record running where the Mondo join fails structurally rather than
+# accidentally: `cre` (resistance crossing genera), `sepsis` (no aetiology).
+# Recorded rather than forced (gaps.md #82).
+#
+# `contested: true` names real parties and a real dispute — see `witness.contested`.
+
+burden:
+  cases:
+    value: 4.89e7
+    units: >
+      cases/year worldwide — and **roughly 20 million of them are children under
+      five**, which is the fact most easily lost when sepsis is discussed as an
+      intensive-care problem
+    src: recall
+  deaths:
+    value: 1.1e7
+    units: >
+      deaths/year — **about 19.7% of all deaths on Earth**, and roughly 85% of
+      them in low- and middle-income countries
+    src: recall
+  note: >
+    **READ THIS BEFORE ADDING THIS NUMBER TO ANYTHING.**
+    Eleven million is the largest death figure in this register and **not one of
+    those deaths is new.** They are already counted in `malaria`, `tuberculosis`,
+    `childhood-pneumonia`, `cre`, `mrsa`, `typhoid`, `cholera`, `measles` and
+    every other infectious record, plus a large surgical and obstetric share the
+    register does not hold yet.
+    Every other record's burden is at least partly its own. **Sepsis's is
+    entirely somebody else's.** It is not a disease that overlaps others; it is
+    the mode by which the others kill. Adding this record moves the register's
+    death total from about 31 million to about 42 million and adds **zero**
+    deaths to the world.
+    This is gaps.md #147 in its strongest possible form, and it means the
+    register's headline coverage figure is an upper bound wearing a number's
+    clothes.
+    **The count also depends on a definition that changed three times.** Sepsis-1
+    (1991) required SIRS criteria that a bad influenza satisfies; Sepsis-3 (2016)
+    dropped SIRS entirely and required measurable organ dysfunction. Nobody's
+    biology changed and the population did. The figure above uses the
+    organ-dysfunction era (gaps.md #133, #141).
+
+survival:
+  horizon: 90 days from onset
+  untreated:
+    value: 0.10
+    units: >
+      fraction alive — untreated septic shock is close to uniformly fatal; the
+      figure is not zero because milder sepsis resolves
+    src: reasoning
+  treated:
+    value: 0.75
+    units: >
+      fraction alive with full modern critical care, antibiotics and source
+      control. **Substantially lower where intensive care does not exist**, which
+      is most of the world and most of the eleven million deaths
+    src: recall
+  witness: >
+    **THE ONLY ACUTE HORIZON IN THIS FIRST TEN, AND IT SHOWS WHY THE FIELD NEEDED
+    ONE.** Ninety days is the meaningful window for sepsis; five years is not.
+    **And the gap between the two numbers was closed almost entirely by process
+    rather than by drugs** — early recognition, rapid antibiotics, fluids, source
+    control. This record notes that not one sepsis drug was involved.
+
+axes:
+  mechanism: partial
+  intervention: curative
+  prevention: prophylaxis
+  ongoing: low
+  efficacy:
+    value: 0.80
+    units: >
+      fraction-of-patients (survival to hospital discharge, with full modern
+      critical care) — **and about 0.60 for septic shock**, which is where the
+      deaths concentrate
+    src: reasoning
+  access:
+    value: 0.30
+    units: >
+      fraction-of-patients (reaching oxygen, monitoring, vasopressors,
+      ventilation, a laboratory and appropriate antibiotics) — **the treatment
+      for sepsis is an intensive care unit**, and most of the world does not have
+      one within reach
+    src: reasoning
+
+measurement:
+  diagnostic: clinical
+  prognostic: partial
+  predictive: none
+  witness: >
+    **DIAGNOSTIC IS `clinical`, AND THAT IS THE SINGLE MOST STARTLING FACT IN
+    THIS FILE. THERE IS NO TEST FOR SEPSIS.**
+    A condition killing eleven million people a year is diagnosed by noticing
+    that somebody looks infected and that their organs are failing, and scoring
+    it. Blood cultures are positive in only a third to a half of cases and take
+    two days. Lactate measures tissue hypoperfusion, which is a consequence.
+    Procalcitonin distinguishes bacterial from viral infection imperfectly and
+    was not designed for this question. **None of them tests for sepsis**, because
+    the thing the definition asserts — a dysregulated host response — has no
+    assay (gaps.md #153).
+    Compare `cre` two records ago, where a molecular result names the drug in an
+    hour, or `tuberculosis`, where susceptibility testing has answered the
+    treatment question for decades. Those are infections. This is the syndrome
+    that kills through them, and it is invisible to instruments.
+    PROGNOSTIC is `partial`. SOFA, APACHE and qSOFA stratify populations
+    respectably and individuals badly, which is the usual finding and matters more
+    here because the decision they inform — escalate to intensive care now, or
+    watch — is time-critical and irreversible in one direction.
+    **PREDICTIVE IS `none`, AND IT IS `none` FOR AN UNUSUAL REASON: THERE IS
+    NOTHING TO PREDICT BETWEEN.** Predictive measurement asks which treatment will
+    work in this patient. Sepsis has no treatments to choose among — antibiotics
+    are aimed at the infection and everything else is organ support. The one place
+    the question is live is **corticosteroids**, which help some patients and
+    appear to harm others, and nothing at the bedside says which.
+    The research answer is **endotypes**: transcriptomic subtypes (SRS1/SRS2) and
+    clinical phenotypes that retrospectively predict opposite steroid responses.
+    If that holds, `predictive: none` here is not an absence of tests but an
+    absence of a *partition* — and the hundred failed trials below are the price
+    of not having it (gaps.md #39, #64).
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    **THIS RECORD IS WHERE `toll` AND `residue` STOP BEING SEPARABLE, AND THE
+    SPLIT THAT WORKED CLEANLY FOR THE LAST THREE RECORDS FAILS HERE ON
+    PRINCIPLE** (gaps.md #152).
+    What the treatment costs, plainly: **vasopressors** maintain a blood pressure
+    by constricting vessels, and in a minority cause digital, limb or bowel
+    ischaemia and occasionally amputation. **Prolonged mechanical ventilation**
+    leads to tracheostomy, ventilator-associated pneumonia and airway injury.
+    **Renal replacement therapy** does not always end — a fraction of survivors
+    remain dialysis-dependent. **Nephrotoxic antibiotics** — vancomycin,
+    aminoglycosides — are given at exactly the moment the kidney is least able to
+    tolerate them, which is `cre`'s colistin problem inside a different record.
+    **And then the attribution fails.** ICU-acquired weakness — critical illness
+    polyneuropathy and myopathy — leaves survivors unable to walk for months and
+    some permanently weaker. It is caused by immobility, sedation, neuromuscular
+    blockade and corticosteroids, **and by the inflammatory myopathy of sepsis
+    itself**, and no study can apportion it, because **the untreated comparator is
+    death.** The same holds for the cognitive impairment, which is partly delirium
+    from sedation and partly the encephalopathy of the disease.
+    Rated `major` and permanent because a real fraction of survivors carry
+    something lasting from the treatment. The incidence figure below is the least
+    defensible number in the file and the reason is structural, not sloppy.
+  incidence:
+    value: 0.15
+    units: >
+      fraction-of-survivors (permanent harm attributable to TREATMENT — chiefly
+      dialysis dependence, ischaemic amputation, and the treatment's share of
+      ICU-acquired weakness) — **a reasoned estimate over a boundary that cannot
+      be measured**, since the counterfactual to treatment is death
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    **SURVIVING SEPSIS IS NOT THE END OF IT, AND THIS IS THE RECORD TWO OTHER
+    FILES DEFERRED TO** (`cre` and `malaria` both send their long-term sequelae
+    here).
+    **Post-sepsis syndrome** is the umbrella: persistent physical disability,
+    profound and slowly-resolving weakness, cognitive impairment that in some
+    cohorts resembles moderate traumatic brain injury, and a high rate of
+    depression, anxiety and post-traumatic stress. Sleep, concentration and
+    employment are commonly affected for a year or more.
+    The hard numbers are worse than the description. Roughly **a third of sepsis
+    survivors are dead within a year** of discharge, and a large fraction are
+    rehospitalised within ninety days. A substantial share of previously
+    independent older survivors acquire **new dependency in activities of daily
+    living** — they go home needing help they did not need before, and do not get
+    it back. Excess mortality persists for years.
+    **So the survival figure this record reports is not a recovery figure**, and
+    the gap between them is larger here than anywhere else in the register.
+    Sepsis is counted as an acute event, discharged as a success, and a third of
+    the successes are dead in a year.
+  incidence:
+    value: 0.35
+    units: >
+      fraction-of-survivors (persistent physical, cognitive or psychiatric
+      impairment at one year) — wide ranges in the literature, definition-
+      dependent, and **entangled with `toll` above for reasons that are not
+      resolvable by better measurement**
+    src: reasoning
+
+window:
+  what: >
+    **THE MOST OPERATIONALISED WINDOW IN MEDICINE, AND THE ONLY ONE IN THIS
+    REGISTER THAT IS ACTIVELY DISPUTED BY PEOPLE WHO AGREE ABOUT THE DISEASE.**
+    In septic shock, each hour of delay to effective antibiotics is associated
+    with higher mortality. Source control — draining the abscess, removing the
+    line, resecting the bowel — has the same time-dependence and is frequently the
+    thing that actually decides the outcome.
+    That evidence became policy. The Surviving Sepsis Campaign bundles, and in New
+    York State a set of regulations enacted after a twelve-year-old died of
+    undiagnosed sepsis, mandated screening and rapid treatment; the natural
+    experiment that followed found faster bundle completion associated with lower
+    mortality.
+    **AND THE MANDATE MANUFACTURES THE NEXT RECORD.** A one-hour antibiotic
+    requirement, applied to every patient who might be septic, means broad-spectrum
+    antibiotics given immediately to a large number of people who turn out not to
+    be. The Infectious Diseases Society of America declined to endorse the
+    one-hour bundle for precisely this reason. So the intervention that saves
+    septic patients selects the resistant organisms that cause sepsis, and both
+    ends of that loop are records in this register (gaps.md #147).
+    **There is no diagnostic test to break the tie** — which is why this window
+    is a policy argument rather than a clinical one.
+  closes_on: >
+    progression of infection with organ dysfunction to refractory shock and
+    multi-organ failure — hours
+  caught_in_time:
+    value: 0.50
+    units: >
+      fraction-of-cases (receiving effective antibiotics and source control
+      promptly) — a reasoned estimate, and far lower in settings without a
+      laboratory, oxygen or a surgeon
+    src: reasoning
+
+strata:
+  - name: sepsis without shock
+    fraction:
+      value: 0.70
+      units: fraction-of-cases
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.90
+      units: fraction-of-stratum (survival to discharge)
+      src: reasoning
+    toll: minor
+    what: >
+      Organ dysfunction without circulatory collapse. Antibiotics, source control,
+      fluids and monitoring, frequently on a general ward. Most people survive,
+      and **the post-sepsis residue applies to them too** — this stratum
+      contributes the bulk of the survivors carrying long-term impairment,
+      precisely because it is the bulk of the survivors.
+
+  - name: septic shock
+    fraction:
+      value: 0.16
+      units: fraction-of-cases
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.58
+      units: fraction-of-stratum (survival to discharge)
+      src: reasoning
+    toll: major
+    what: >
+      Vasopressor-dependent hypotension with hyperlactataemia despite fluid
+      resuscitation. **Roughly four in ten die even in a well-resourced intensive
+      care unit**, and this is where the treatment's own permanent costs
+      concentrate — ischaemic amputation, dialysis dependence, the worst of the
+      acquired weakness. It is also the stratum every failed trial enrolled.
+
+  - name: neonatal sepsis
+    fraction:
+      value: 0.14
+      units: fraction-of-cases
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.80
+      units: fraction-of-stratum (survival)
+      src: reasoning
+    toll: minor
+    what: >
+      **A different disease under the same name, and it is enormous.** Different
+      organisms — group B *Streptococcus*, *E. coli* and *Klebsiella*, the last
+      increasingly carbapenem-resistant — different presentation (a baby who is
+      simply not right, with none of the adult criteria applicable), and a burden
+      concentrated in South Asia and sub-Saharan Africa where the diagnostics do
+      not exist. Survivors carry neurodevelopmental impairment at rates the adult
+      literature would find alarming.
+      It is the intersection of this record, `cre` and the queued
+      `neonatal-conditions`, and all three under-describe it.
+
+moved:
+  - date: 2000
+    axis: efficacy
+    from: 0.68
+    to: 0.80
+    why: >
+      **MORTALITY FELL SUBSTANTIALLY OVER TWO DECADES AND NOT ONE SEPSIS DRUG WAS
+      INVOLVED.**
+      What worked was supportive and procedural: **lung-protective ventilation**
+      at low tidal volumes, which produced a genuine mortality reduction in acute
+      respiratory distress syndrome and is arguably the single most valuable
+      intervention on this list; **earlier antibiotics and source control**, driven
+      by bundles and screening protocols; **more careful fluid resuscitation**
+      after enthusiasm for aggressive protocolised therapy failed to replicate;
+      **abandoning hydroxyethyl starch**, which was actively harmful; and better
+      sedation, mobilisation and delirium practice.
+      **READ THE NUMBER WITH SUSPICION.** A large and unquantified share of the
+      apparent improvement is definitional and administrative rather than clinical
+      — "sepsis" is coded far more liberally in billing data than it was, pulling
+      milder patients into the denominator, while Sepsis-3 pushed in the opposite
+      direction by requiring organ dysfunction. Two opposing artefacts and a real
+      effect, and no way to separate them from here (gaps.md #141).
+    src: recall
+
+  - date: 2011
+    axis: intervention
+    from: curative
+    to: curative
+    why: >
+      **THE ONLY DRUG EVER APPROVED FOR SEPSIS WAS WITHDRAWN, AND THE RATING DID
+      NOT MOVE — WHICH IS THE ENTRY'S POINT.**
+      Drotrecogin alfa (Xigris), recombinant activated protein C, was approved in
+      2001 on a single trial, promoted for a decade alongside a treatment-guideline
+      campaign that took funding from its manufacturer, and **withdrawn worldwide
+      in 2011** after a confirmatory trial found no benefit.
+      It is recorded here because the register would otherwise have no trace of it.
+      `intervention` was `curative` before Xigris, during Xigris and after Xigris,
+      because the rating is earned by treating the *infection* — so the entire
+      rise and fall of the only sepsis-specific therapy in history is invisible to
+      every axis this schema has (gaps.md #46).
+      Xigris is the marker for a graveyard: over a hundred randomised trials of
+      anti-endotoxin antibodies, anti-TNF, interleukin-1 receptor antagonists,
+      nitric oxide synthase inhibitors, TLR4 antagonists, high-dose steroids,
+      polymyxin B haemoperfusion and a vitamin C cocktail, essentially all
+      negative. **That is the largest confirmation anywhere in medicine of the
+      prediction gaps.md #39 made at `pots`** — an unstratified trial in a final
+      common pathway enrols a mixture and dilutes toward the null.
+    src: recall
+
+witness:
+  mechanism: >
+    `partial`, and the split is unusual: **the molecular pathways are well
+    described and the thing the definition asserts is not measurable at all.**
+    What is established. Pathogen- and damage-associated molecular patterns engage
+    pattern-recognition receptors; NF-κB drives cytokine release; complement is
+    activated; the endothelial glycocalyx sheds and capillaries leak; tissue
+    factor expression drives disseminated intravascular coagulation; mitochondrial
+    dysfunction produces a cytopathic hypoxia in which oxygen is delivered and not
+    used. Simultaneously — not sequentially, which was the old teaching — there is
+    **immunoparalysis**: lymphocyte apoptosis, T-cell exhaustion, monocyte HLA-DR
+    downregulation, and secondary infection with organisms that should not be able
+    to hurt anybody. A patient can be hyperinflammatory and immunosuppressed at
+    once, which is why treatments aimed at either end have failed.
+    **WHAT IS NOT KNOWN IS THE WORD IN THE DEFINITION.** Sepsis-3 reads
+    "life-threatening organ dysfunction caused by a **dysregulated** host response
+    to infection". Nobody can measure dysregulation. There is no assay, no
+    threshold, and no description of what the regulated response would have looked
+    like in this patient. So the diagnosis runs backwards: organ failure is
+    observed, and dysregulation is inferred because the outcome was bad. **The
+    definition contains a causal claim that nothing can verify**, and the
+    `mechanism` axis ends up rating the pathways instead (gaps.md #153).
+    **And the first-order question is open.** Why does this person with pneumonia
+    become septic and the person in the next bed not? Same organism, comparable
+    inoculum, and host genetics explains very little. That is Engpass's
+    `who-progresses` in its purest form, and sepsis may be the largest single
+    instance of it in medicine.
+  intervention: >
+    `curative`, and **the rating is earned entirely by curing something else.**
+    Antibiotics treat the infection. Source control removes it. Everything
+    remaining — fluids, vasopressors, mechanical ventilation, renal replacement,
+    transfusion — holds the organs up until the infection is gone. Most people
+    treated this way survive and the syndrome resolves.
+    **There is no treatment for sepsis. There has never been one.** Over a hundred
+    randomised trials of sepsis-specific therapy have failed; the one agent ever
+    approved was withdrawn after a decade. Corticosteroids remain genuinely
+    unresolved and probably help some patients and harm others.
+    So this record sits at the opposite pole from `chagas`, which forced gaps.md
+    #46. There, curing the cause **failed** to cure the disease — the parasite
+    cleared and the heart still failed. Here, curing the cause **is** the cure,
+    and the entity itself has no therapy at all. **Two records, both showing that
+    the target of the cure and the target of the disease are different objects**,
+    and #46 asked for a third before building the aetiological/clinical
+    distinction. This is it.
+    The practical reading matters for triage: **money aimed at "a drug for sepsis"
+    has a hundred-trial track record of failure, and money aimed at getting oxygen
+    and antibiotics to a district hospital has not been tried at scale.**
+  prevention: >
+    `prophylaxis`, and again it prevents the causes rather than the entity.
+    Conjugate vaccines against pneumococcus, *Haemophilus influenzae* type b and
+    meningococcus prevent a large share of paediatric sepsis. Influenza and
+    COVID-19 vaccination prevent the viral illnesses that precede bacterial
+    superinfection. Maternal group B streptococcal prophylaxis, clean birth
+    practice, and cord care prevent neonatal sepsis. Hand hygiene, line bundles,
+    catheter care and surgical asepsis prevent the healthcare-associated share.
+    **AND THE HEALTHCARE-ASSOCIATED SHARE IS THE POINT OF gaps.md #147.** A large
+    fraction of adult sepsis in wealthy countries is generated by intensive
+    medicine itself — central lines, urinary catheters, ventilators, surgery,
+    chemotherapy-induced neutropenia, transplant immunosuppression. **The register
+    files this as a disease with causes, and one of its largest causes is the rest
+    of the register working.** Sepsis is the flagship for that gap, and `cre` and
+    `mrsa` are the organisms it uses.
+  contested: >
+    **THE DISPUTE IS ABOUT THE DEFINITION, NOT THE EXISTENCE, AND IT IS THREE
+    ARGUMENTS RATHER THAN ONE** (gaps.md #6).
+    *What sepsis is.* **Sepsis-3** was issued in 2016 by a task force convened by
+    the **Society of Critical Care Medicine** and the **European Society of
+    Intensive Care Medicine**. It discarded the SIRS criteria that had defined the
+    condition since 1991 and required measurable organ dysfunction instead. The
+    **American College of Chest Physicians** — co-author of the original 1991
+    definition — declined to endorse it, arguing that a narrower definition would
+    miss patients who are deteriorating and still treatable. Several national
+    bodies adopted it late or partially.
+    *How fast to treat.* The **Surviving Sepsis Campaign** promulgated a one-hour
+    bundle. The **Infectious Diseases Society of America** declined to endorse it,
+    on the grounds that mandating immediate broad-spectrum antibiotics for everyone
+    who might be septic drives antimicrobial overuse in the setting where
+    resistance is bred. That objection is not hypothetical and its consequences are
+    two other records here.
+    *Whether it is one entity at all.* The endotype literature argues it is
+    several, which if true means the definition is the reason a hundred trials
+    failed.
+    **None of these is a fringe position and none is resolved**, and the reason
+    they cannot be resolved is the same in all three cases: there is no test.
+
+  ongoing: >
+    `low`, for the episode, which ends.
+    **And `low` is the most misleading rating in this file**, because the episode
+    ending is not the illness ending. A third of survivors are dead within a year;
+    a large share are readmitted within ninety days; many acquire permanent
+    dependency. The register puts all of that in `residue` and rates `ongoing`
+    against the acute event, which is correct by the schema and reads as though
+    sepsis were something you have for a week.
+
+holes:
+  - >
+    **`contested: true` carries three separate arguments under one boolean** — what
+    sepsis is, how fast to treat it, and whether it is one entity. See
+    `witness.contested`; gaps.md #6.
+  - >
+    **The burden figure is the largest in the register and is entirely
+    double-counted** — see `burden.note`. Do not add it to any total.
+  - >
+    The strata are severity bands because severity is observable. **The strata
+    that would matter are the endotypes**, which are a research finding and not
+    available at any bedside, so the partition that explains the trial graveyard
+    cannot be used to write the record (gaps.md #64).
+  - >
+    **`toll` and `residue` are reported separately and cannot actually be
+    separated here**, because the counterfactual to treatment is death. Both
+    incidence figures are estimates over an unmeasurable boundary (gaps.md #152).
+  - >
+    `efficacy: 0.80` is survival to discharge with full critical care, which is
+    not what most of the world's patients receive and is not recovery either. Two
+    different overstatements pointing in the same direction.
+  - >
+    Every scalar is `recall` or `reasoning` against a literature that is large,
+    contentious, and mostly from high-income intensive care units — describing a
+    disease 85% of whose deaths happen elsewhere.
+
+blockers:
+  - kind: logistics
+    blocks: oxygen, antibiotics and a place to be monitored, for most of the world
+    obstacles: []
+    what: >
+      **THE TREATMENT FOR SEPSIS IS AN INTENSIVE CARE UNIT, AND THE BURDEN IS
+      WHERE THERE ISN'T ONE.** Roughly 85% of sepsis deaths are in low- and
+      middle-income countries. What is missing is not a molecule: it is piped or
+      concentrated **oxygen**, pulse oximeters, functioning laboratories, blood
+      for transfusion, an operating theatre for source control, and nurses in
+      sufficient number to notice deterioration at three in the morning.
+      **The COVID-19 pandemic made the global oxygen gap visible and did not close
+      it.** Oxygen is a listed essential medicine, cannot be donated in a box,
+      requires a plant or a concentrator and a maintenance contract and reliable
+      electricity, and is the single intervention that would move this record
+      furthest.
+      Nurse staffing is the other half and is barely discussed as a health
+      technology, because it is a running cost rather than a commodity and nobody
+      can put it in a funding round.
+    who_could: [health-system, government, payer, philanthropy, nonprofit]
+    scale: 1.0e10
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: knowing who will become septic, and what "dysregulated" means
+    obstacles: [who-progresses]
+    what: >
+      **TWO PEOPLE GET THE SAME PNEUMONIA AND ONE OF THEM DIES OF IT, AND NOBODY
+      CAN SAY WHY.** Host genetics accounts for very little. Age, frailty,
+      immunosuppression and comorbidity shift the odds and predict no individual.
+      This is Engpass's `who-progresses` obstacle in its largest and purest form:
+      the register's other instances ask which patient with a chronic disease will
+      deteriorate over years; this one asks which patient with an ordinary
+      infection will be dead in forty-eight hours, and the answer would change
+      what happens in every emergency department on earth.
+      The second half is the definition itself. Sepsis-3 calls the response
+      **dysregulated**, and there is no measurement of regulation to deviate from
+      — no assay, no threshold, no description of what the appropriate response
+      would have been in this patient. That is why there is no diagnostic test:
+      **you cannot build an assay for a concept that has never been operationally
+      defined** (gaps.md #153).
+      `scale: null`.
+    who_could: [academic, sponsor, philanthropy]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    blocks: there being any test at all for the thing being treated
+    obstacles: []
+    what: >
+      **ELEVEN MILLION DEATHS A YEAR AND NO DIAGNOSTIC TEST.** Sepsis is
+      recognised by a clinician noticing that an infected patient's organs are
+      failing, and scored afterwards. Blood cultures are positive in a minority
+      and report in two days; lactate measures a downstream consequence;
+      procalcitonin answers a different question imperfectly.
+      The cost is paid twice. **Under-recognition** kills — the New York
+      regulations exist because a child was sent home. **Over-recognition** drives
+      broad-spectrum antibiotics into large numbers of patients who are not septic,
+      which selects for the organisms in `cre` and `mrsa`. A test would resolve
+      both and there is nothing to build it on, because the target concept is
+      undefined.
+      What is in development — host-response transcriptomic signatures, rapid
+      pathogen sequencing — is aimed at the right question and is not close to a
+      district hospital in Malawi, which is where the deaths are.
+    who_could: [academic, manufacturer, sponsor, philanthropy, government]
+    scale: 3.0e9
+    standing: documented
+    src: recall
+
+  - kind: evidence-incomplete
+    blocks: a hundred trials producing no therapy, possibly for one reason
+    obstacles: []
+    what: >
+      **THE LARGEST TRIAL GRAVEYARD IN MEDICINE.** Anti-endotoxin antibodies,
+      anti-TNF, interleukin-1 receptor antagonists, bradykinin antagonists, nitric
+      oxide synthase inhibitors, high-dose corticosteroids, TLR4 antagonists,
+      polymyxin B haemoperfusion, a vitamin C and thiamine cocktail that produced a
+      sensational single-centre result and failed every replication — and
+      drotrecogin alfa, approved in 2001 and withdrawn in 2011.
+      **The suspicion is that these were failures of enrolment rather than of
+      chemistry.** If sepsis is several biologically distinct states pooled by a
+      clinical definition, every one of those trials averaged a helped subgroup
+      against a harmed subgroup and correctly reported nothing. The transcriptomic
+      endotypes and clinical phenotypes now described appear to predict **opposite
+      responses to corticosteroids**, which is the shape that hypothesis predicts.
+      Filed as `evidence-incomplete` rather than `knowledge` deliberately: the
+      trials were run, at enormous expense, competently. **What is incomplete is
+      not the evidence about the drugs — it is the evidence about who was in the
+      room** (gaps.md #39, #64).
+    who_could: [academic, sponsor, regulator, philanthropy, manufacturer]
+    scale: 2.0e9
+    standing: documented
+    src: recall
+
+  - kind: policy
+    blocks: the treatment mandate and antibiotic stewardship pulling opposite ways
+    obstacles: []
+    what: >
+      **THE POLICY THAT SAVES SEPTIC PATIENTS MANUFACTURES THE ORGANISMS THAT
+      CAUSE SEPSIS**, and this is a genuine unresolved conflict between two
+      well-evidenced positions rather than one side being wrong.
+      Time-to-antibiotics evidence supports treating fast. Mandated bundles — the
+      Surviving Sepsis Campaign's, and New York State's regulations — improved
+      compliance and were associated with lower mortality. The Infectious Diseases
+      Society of America declined to endorse the one-hour bundle because applying
+      it to everyone who *might* be septic means broad-spectrum antibiotics for
+      large numbers who are not, in a hospital, which is where resistance is bred.
+      Both records at the other end of that loop are in this register.
+      **The tie-breaker would be a diagnostic test, which does not exist**, so the
+      argument is conducted between guideline committees instead. Rated
+      `documented` because both positions are published and institutional, and the
+      dispute is a matter of record.
+    who_could: [regulator, government, health-system, academic, payer]
+    scale: 5.0e8
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0071
+  rated: 2026-08-24
+  by: [claude, jeremy]

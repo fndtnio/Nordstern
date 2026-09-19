@@ -1,0 +1,322 @@
+# DRAFT — THE SECOND PROBE, WRITTEN TO FALSIFY A CLAIM I MADE.
+#
+# After `attempts/parkinsons.yaml` I said the cross-disease argument for a
+# separate register had come out **weak**: sixteen attempts produced exactly one
+# entry that touched another disease. `sepsis` was chosen as the test because its
+# own record calls it **"THE LARGEST TRIAL GRAVEYARD IN MEDICINE"** and names ten
+# failed classes in one sentence.
+#
+# THE PREDICTION WAS WRONG, AND WRONG IN A MORE USEFUL DIRECTION. I expected to
+# find the same approach *failing* in several diseases. What is actually here is
+# the same approach **succeeding elsewhere and failing here** — anti-TNF is
+# transformative in `rheumatoid-arthritis` and `crohns` and killed people in
+# sepsis; interleukin-1 blockade is standard in rheumatoid arthritis, reduced
+# cardiovascular events in `ischaemic-heart-disease`, and failed here.
+#
+# **That is not cross-disease recurrence of failure. It is cross-disease
+# divergence of outcome**, and it is a stronger argument for holding attempts at
+# the level of an approach: the fact only exists when the same molecule's records
+# are read side by side, and no disease record can hold it.
+#
+# It forced a field Parkinson's did not: `succeeded_elsewhere`.
+#
+# EVERY DATE IS `src: recall` AND UNSOURCED. Same caveat as the first file.
+
+disease: sepsis
+drafted: 2026-08-30
+by: [claude, jeremy]
+
+attempts:
+
+  # ---- the anti-mediator wave, and the three that killed people -------------
+  # THE REGISTER CURRENTLY CALLS ALL OF THIS "FAILED". Three of these increased
+  # mortality, one reached market and was withdrawn, and one was negative with a
+  # real subgroup inside it. Those are four different facts.
+
+  - approach: HA-1A (nebacumab)
+    modality: monoclonal antibody (anti-endotoxin)
+    rationale: >
+      endotoxin from Gram-negative bacteria triggers the cascade, so neutralising
+      it should interrupt the syndrome at its origin
+    against: [sepsis]
+    phase: 3
+    read_out: 1993
+    outcome: harmed
+    what_it_ruled_out: >
+      **Licensed in Europe in 1991 and withdrawn in 1993** after a confirmatory
+      trial found higher mortality in the Gram-negative-negative subgroup. The
+      register has no other entry where a sepsis product reached market and was
+      taken off it — **and this is the first of three attempts here that killed
+      people rather than merely failing.**
+    src: recall
+
+  - approach: anti-TNF antibodies and TNF receptor fusion proteins
+    modality: biologic (cytokine neutralisation)
+    rationale: >
+      TNF is the proximal mediator of the septic cascade; blocking it in animal
+      models of endotoxin challenge is dramatically protective
+    against: [sepsis]
+    succeeded_elsewhere: [rheumatoid-arthritis, crohns]
+    phase: 3
+    read_out: 1998
+    outcome: harmed
+    what_it_ruled_out: >
+      **THE MOST IMPORTANT ENTRY IN THIS FILE.** Repeatedly negative across
+      several large trials, and **a higher-dose TNF-receptor-fusion arm showed
+      increased mortality.** Meanwhile the same target became one of the great
+      therapeutic successes of the era in rheumatoid arthritis and Crohn's
+      disease.
+      **The molecule was right and the disease was wrong**, and that sentence is
+      only available if the same approach's records are read across diseases. It
+      is the argument for holding attempts at the level of an approach rather
+      than inside a disease record.
+    src: recall
+
+  - approach: interleukin-1 receptor antagonist (anakinra)
+    modality: biologic (cytokine blockade)
+    rationale: as anti-TNF — block the proximal inflammatory mediator
+    against: [sepsis]
+    succeeded_elsewhere: [rheumatoid-arthritis]
+    phase: 3
+    read_out: 1997
+    outcome: negative
+    what_it_ruled_out: >
+      Negative overall — **and a reanalysis roughly two decades later found a
+      substantial mortality benefit in the subgroup with features of macrophage
+      activation**, hepatobiliary dysfunction and disseminated intravascular
+      coagulation.
+      **So the trial was negative and the drug worked in somebody.** That is not
+      a failure of the mechanism; it is a failure of the entity, and it is the
+      clearest single argument that `sepsis` is a syndrome being trialled as
+      though it were a disease.
+    src: recall
+
+  - approach: nitric oxide synthase inhibition (546C88)
+    modality: small molecule
+    rationale: >
+      excess nitric oxide drives the vasodilatory shock that kills these
+      patients, so inhibiting its synthesis should restore vascular tone
+    against: [sepsis]
+    phase: 3
+    read_out: 2004
+    outcome: harmed
+    what_it_ruled_out: >
+      **Stopped early for increased mortality.** Blood pressure improved and more
+      people died — the cleanest demonstration in this file that **a
+      physiological surrogate moving in the right direction is not evidence of
+      benefit**, which is a lesson the field then had to learn again with
+      glycaemic control.
+    src: recall
+
+  - approach: bradykinin antagonist (deltibant)
+    modality: small molecule
+    rationale: kinin cascade activation in septic shock
+    against: [sepsis]
+    phase: 3
+    read_out: 1997
+    outcome: negative
+    src: recall
+    what_it_ruled_out: >
+      One more mediator, one more negative trial. Included because **the register
+      should record the unremarkable failures too** — a graveyard described only
+      by its famous headstones understates itself.
+
+  - approach: eritoran and other TLR4 antagonists
+    modality: small molecule
+    rationale: >
+      TLR4 is the receptor endotoxin acts through — a later and more specific
+      version of the HA-1A hypothesis
+    against: [sepsis]
+    phase: 3
+    read_out: 2013
+    outcome: negative
+    what_it_ruled_out: >
+      **The endotoxin hypothesis, on its third attempt and with the right
+      target.** HA-1A neutralised the ligand and harmed people; eritoran blocked
+      the receptor cleanly and did nothing. Twenty years apart, same idea, and
+      the second failure is the informative one because the pharmacology was not
+      in doubt.
+    src: recall
+
+  - approach: polymyxin B haemoperfusion
+    modality: device (extracorporeal endotoxin adsorption)
+    rationale: remove circulating endotoxin mechanically
+    against: [sepsis]
+    phase: 3
+    read_out: 2018
+    outcome: negative
+    what_it_ruled_out: >
+      **A fourth attack on endotoxin, by a fourth mechanism, negative.** Widely
+      used in Japan throughout. The device modality matters: it is the only entry
+      here whose failure could not be blamed on pharmacokinetics.
+    src: recall
+
+  # ---- approved, then unapproved --------------------------------------------
+  - approach: drotrecogin alfa (activated protein C)
+    modality: biologic (anticoagulant / anti-inflammatory)
+    rationale: >
+      sepsis is a coagulopathy as much as an inflammatory state; protein C is
+      consumed, and replacing it should interrupt microvascular thrombosis
+    against: [sepsis]
+    phase: 3
+    read_out: 2001
+    outcome: positive
+    what_it_ruled_out: >
+      **PROWESS was positive and the drug was licensed.** For a decade it was the
+      only approved therapy for severe sepsis anywhere in the world, and the
+      register should record that the field was not wrong to believe it.
+    src: recall
+
+  - approach: drotrecogin alfa (activated protein C)
+    modality: biologic
+    follows: drotrecogin alfa PROWESS (2001)
+    rationale: confirmatory, in septic shock
+    against: [sepsis]
+    phase: 3
+    read_out: 2012
+    outcome: negative
+    what_it_ruled_out: >
+      **PROWESS-SHOCK was negative and the product was withdrawn worldwide.**
+      Eleven years between licensure and withdrawal, during which it was standard
+      of care and was in every guideline.
+      **This is the `follows:` field justifying itself for the second time.**
+      Reported as one attempt it is a failed drug; reported as a chain it is a
+      measurement of **how long a single positive phase 3 can hold a field** —
+      and the answer here is eleven years, against seven for exenatide in
+      `parkinsons`.
+    src: recall
+
+  # ---- the ones the field has argued about for forty years ------------------
+  - approach: high-dose corticosteroids
+    modality: small molecule (glucocorticoid)
+    rationale: suppress the inflammatory cascade broadly
+    against: [sepsis]
+    succeeded_elsewhere: [covid-19]
+    phase: 3
+    read_out: 1987
+    outcome: harmed
+    what_it_ruled_out: >
+      Negative, with signals of harm including increased secondary infection.
+      **And the same drug class at a lower dose and in a different disease became
+      the single largest mortality benefit of the COVID-19 pandemic** —
+      dexamethasone, found by RECOVERY. Dose and context, not mechanism.
+    src: recall
+
+  - approach: low-dose hydrocortisone
+    modality: small molecule (glucocorticoid)
+    follows: high-dose corticosteroids (1987)
+    rationale: >
+      relative adrenal insufficiency in septic shock rather than inflammation
+      suppression — a different hypothesis about the same molecule
+    against: [sepsis]
+    phase: 3
+    read_out: 2018
+    outcome: ambiguous
+    what_it_ruled_out: >
+      **Nothing, after forty years and at least four large trials.** Positive in
+      2002, negative in 2008, and in 2018 two trials reported in the same year
+      with opposite conclusions on mortality depending on whether fludrocortisone
+      was co-administered.
+      **This is the register's clearest case of a question that repeated
+      randomisation has not closed**, and `outcome: ambiguous` is doing real work
+      — calling it negative or positive would both be false.
+    src: recall
+
+  # ---- the protocols, which were not drugs ----------------------------------
+  - approach: early goal-directed therapy
+    modality: care protocol
+    rationale: >
+      a single-centre trial reported a large mortality reduction from
+      protocolised resuscitation targeting central venous oxygen saturation
+    against: [sepsis]
+    phase: 3
+    read_out: 2001
+    outcome: positive
+    what_it_ruled_out: >
+      **Nothing, and it changed practice worldwide.** One single-centre trial
+      entered international guidelines and reorganised emergency departments
+      across several countries for more than a decade.
+    src: recall
+
+  - approach: early goal-directed therapy
+    modality: care protocol
+    follows: early goal-directed therapy (2001)
+    rationale: confirmatory, three independent multicentre trials
+    against: [sepsis]
+    phase: 3
+    read_out: 2015
+    outcome: negative
+    what_it_ruled_out: >
+      **Three large multicentre trials on three continents, all negative, all
+      reporting within about a year of each other.** The most decisive
+      falsification in this file — and what it ruled out was **not a drug but a
+      protocol**, which is a category no drug register would contain.
+      The usual reading is that usual care had improved to match the protocol.
+      **That is a failure of the control arm rather than of the hypothesis**, and
+      the distinction has no field here.
+    src: recall
+
+  - approach: intensive insulin therapy (tight glycaemic control)
+    modality: care protocol
+    rationale: hyperglycaemia in critical illness worsens outcome
+    against: [sepsis]
+    phase: 3
+    read_out: 2009
+    outcome: harmed
+    what_it_ruled_out: >
+      A 2001 single-centre trial reported large benefit; **NICE-SUGAR in 2009
+      found increased mortality** in the intensively treated arm, largely
+      attributed to hypoglycaemia.
+      **The second positive-single-centre-then-harm chain in this file**, and
+      with early goal-directed therapy it makes a pattern the register can state:
+      **in critical care, single-centre protocol trials have repeatedly not
+      survived multicentre replication, twice with harm.**
+    src: recall
+
+  # ---- the recent one -------------------------------------------------------
+  - approach: intravenous vitamin C, thiamine and hydrocortisone
+    modality: supplement combination
+    rationale: >
+      a retrospective before-and-after series reported a dramatic mortality
+      reduction, and the mechanism proposed was antioxidant repletion in shock
+    against: [sepsis]
+    phase: 3
+    read_out: 2022
+    outcome: harmed
+    what_it_ruled_out: >
+      **Multiple randomised trials negative, and the largest reported worse
+      outcomes in the treated arm.** The originating evidence was an uncontrolled
+      before-and-after comparison at one hospital, published in 2017, which
+      generated worldwide adoption ahead of any trial.
+      **A retrospective series with no control arm set the agenda for five years
+      and cost several thousand patients' worth of trial enrolment**, and it is
+      the most recent entry here — so this is not only a story about the 1990s.
+    src: recall
+
+holes:
+  - >
+    **Every date is `src: recall` and unsourced**, as in `parkinsons.yaml`. The
+    years are the likeliest thing to be wrong, and `source_moved.py` is the
+    discipline that would fix it — a person picks the paper, the network supplies
+    the verbatim quote.
+  - >
+    **`succeeded_elsewhere` is asserted, not derived.** anti-TNF working in
+    rheumatoid arthritis and Crohn's is real, and this file states it rather than
+    computing it from those records. **In a real register it should be derived**,
+    exactly as Engpass derives its disease list — otherwise the two halves can
+    drift and the register would be storing an opinion it could calculate.
+  - >
+    `outcome: harmed` now covers four entries that differ: a licensed product
+    withdrawn, a trial stopped early for excess deaths, a dose-dependent harm
+    signal, and worse outcomes on a supplement. **Severity and reversibility are
+    missing**, and a register meant to inform funding needs both.
+  - >
+    Two entries are **protocols rather than agents** — early goal-directed
+    therapy and glycaemic control — and one is a **device**. A schema built
+    around drugs would have excluded the most decisively falsified entries in the
+    file.
+  - >
+    Nothing here holds **how many patients were enrolled**, which is the number
+    that turns this from a list into an argument. Sepsis trials are very large,
+    and the cost of the vitamin C episode is measured in enrolments that could
+    have tested something else.

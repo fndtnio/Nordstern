@@ -1,0 +1,568 @@
+slug: pancreatic-cancer
+id: FND-D-0060
+name: pancreatic cancer
+also: [pancreatic ductal adenocarcinoma, PDAC, cancer of the pancreas, malignant pancreatic neoplasm]
+mondo: MONDO:0009831
+kind: disease
+residual: false
+contested: false
+
+# MONDO:0009831 IS `malignant pancreatic neoplasm`, WHICH IS BROADER THAN THIS
+# RECORD — it includes pancreatic neuroendocrine tumours, which behave completely
+# differently and are far more survivable. Accepted by hand as the closest join
+# key, with the imprecision stated, as for ischaemic heart disease and H5N1.
+# This record describes ductal adenocarcinoma, which is the great majority.
+
+# **THE REGISTER NEEDED A CANCER WHERE NOTHING WORKS, AND THIS IS IT.**
+#
+# About 510,000 cases a year and about 470,000 deaths. Five-year survival around
+# twelve percent in the best health systems, up from about five percent in the
+# 1990s — a real improvement, and the smallest in any cancer here.
+#
+# The whole history of therapeutic progress in this disease was **two chemotherapy
+# regimens in fifteen years, each buying a few months** — and then, on
+# **26 August 2026**, KRAS stopped being undruggable. Daraxonrasib roughly
+# doubled median survival in the second line against chemotherapy (13.2 months
+# against 6.7, hazard ratio 0.40), which is the largest effect ever reported in
+# this setting and still leaves a median measured in months. Immunotherapy does
+# not work. Surgery cures perhaps one patient in twenty overall.
+#
+# **This record's `moved` block was one line for fifteen years and the file said
+# so in the present tense.** It now has two, and the second was written the day
+# after it happened — which is the only way `moved:` can do its job.
+#
+# AND IT IS RISING IN RANK WITHOUT CHANGING. Pancreatic cancer is projected to
+# become the second leading cause of cancer death in several high-income
+# countries — **not because it got worse, but because lung, colorectal and breast
+# cancer got better around it.**
+#
+# TWO THINGS IT BREAKS:
+#
+# 1. **NOBODY KNOWS WHETHER THE WINDOW EXISTS.** Every window record in this
+#    corpus assumes catching the disease earlier helps; prostate cancer showed it
+#    can harm. Here there is a real possibility that **the disease is systemic
+#    before it is detectable**, in which case earlier detection buys lead time
+#    and not life. gaps.md #131.
+#
+# 2. **THE EARLIEST SIGN OF THIS DISEASE IS THE ONSET OF ANOTHER ONE.** New
+#    diabetes after fifty is caused by pancreatic cancer in roughly one percent
+#    of cases, months before anything is visible on a scan. A record announcing
+#    itself through a different record has nowhere to go. gaps.md #132.
+
+burden:
+  prevalence:
+    value: 5.1e5
+    units: >
+      new cases/year worldwide — and see the note, because the incidence figure
+      and the deaths figure are nearly the same and that is the record
+    src: recall
+  deaths:
+    value: 4.7e5
+    units: >
+      deaths/year — **about ninety percent of the incidence**, which alongside
+      liver cancer is the closest ratio in this register
+    src: recall
+  note: >
+    **INCIDENCE AND MORTALITY ARE ALMOST THE SAME NUMBER.** Liver cancer runs
+    870,000 against 760,000; pancreatic cancer runs 510,000 against 470,000.
+    Prostate cancer, at the other end of this register, runs 1.5 million against
+    400,000. Those are the two shapes a cancer record can take and this is the
+    worse one.
+    Incidence is rising slowly nearly everywhere, tracking obesity, diabetes and
+    ageing, and smoking accounts for perhaps a fifth to a quarter.
+    **AND IT IS CLIMBING THE RANKINGS WHILE STANDING STILL.** Projections that
+    pancreatic cancer will become the second leading cause of cancer death in
+    several high-income countries are not projections that it is getting worse.
+    They are projections that **lung, colorectal, breast and prostate cancer are
+    getting better** and that this one is not moving. Rank is relative; the
+    register records absolutes; and *what should we work on next* answered by
+    burden rank will increasingly point here for exactly that reason, which is
+    correct and worth understanding.
+
+survival:
+  horizon: 5 years from diagnosis
+  untreated:
+    value: 0.01
+    units: fraction alive — untreated metastatic disease is measured in months
+    src: recall
+  treated:
+    value: 0.13
+    units: >
+      fraction alive across all stages on best available treatment — **carried
+      almost entirely by the fifth of patients who present resectable.** It has
+      roughly doubled over three decades from a very low base
+    src: recall
+  witness: >
+    **THE BAND READS "A CHANCE" AND THAT IS HONEST RATHER THAN GENEROUS.**
+    Thirteen percent is not terminal: a real minority are cured, and they are the
+    ones caught before spread. But it is an average across a record that
+    `spans_ladder`, and for metastatic disease it is close to zero. **The 2026
+    daraxonrasib entry moves months, not this figure.**
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: risk-reduction
+  ongoing: moderate
+  efficacy:
+    value: 0.22
+    units: >
+      fraction-of-patients (cured, or given durable meaningful benefit) — **the
+      lowest of any cancer in this register.** Roughly a fifth are resectable and
+      a quarter of those are alive at five years, which is about one patient in
+      twenty cured
+    src: reasoning
+  access:
+    value: 0.30
+    units: >
+      fraction-of-patients (reaching a high-volume pancreatic surgery centre,
+      and fit enough for combination chemotherapy) — and the volume-outcome
+      relationship in pancreatic surgery is among the steepest in medicine
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: partial
+  witness: >
+    DIAGNOSTIC is `objective` — cross-sectional imaging, endoscopic ultrasound
+    with fine-needle sampling — and it is beside the point, because the failure
+    is entirely one of when.
+    **THE PANCREAS IS RETROPERITONEAL AND THE TUMOUR IS SILENT.** It causes
+    nothing until it obstructs the bile duct, invades the coeliac plexus, or has
+    already spread. Painless jaundice is the *lucky* presentation, because it
+    brings the patient in while a tumour in the head of the pancreas may still be
+    resectable. Back pain and weight loss are the unlucky ones.
+    **AND THERE IS NO SCREENING TEST.** CA 19-9 is a monitoring marker, not a
+    screening one: sensitivity and specificity are both inadequate at population
+    prevalence, and roughly a tenth of people are Lewis-antigen negative and do
+    not produce it at all. Surveillance by MRI and endoscopic ultrasound is
+    offered only to defined high-risk groups — hereditary syndromes and strong
+    family histories.
+    PROGNOSTIC is `partial`: resectability, CA 19-9 level and response to
+    neoadjuvant therapy stratify usefully, and none of it identifies the small
+    group who will be long-term survivors after resection.
+    PREDICTIVE is `partial` and reaches very few. **BRCA1, BRCA2 and PALB2
+    variants — perhaps five to seven percent — predict platinum sensitivity and
+    benefit from a PARP inhibitor**, which is the one properly randomised
+    predictive result in this disease. Mismatch-repair deficiency, around one
+    percent, predicts checkpoint response. KRAS G12C, one to two percent, has an
+    inhibitor.
+    **So there is a predictive marker for roughly one patient in twelve and
+    nothing for the rest**, which is why this reads `partial` where liver
+    cancer's reads `none`.
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    **THE OPERATION THAT CURES THIS DISEASE GIVES YOU TWO OTHERS.**
+    Pancreaticoduodenectomy — the Whipple procedure — removes the head of the
+    pancreas, the duodenum, the gallbladder and part of the bile duct and
+    reconstructs the gastrointestinal tract. It is among the largest operations
+    in general surgery, carries an operative mortality of a few percent even in
+    high-volume centres, and produces pancreatic fistula and delayed gastric
+    emptying in a substantial minority.
+    What it leaves is permanent. **Exocrine insufficiency** requires pancreatic
+    enzyme replacement with every meal for life, and without it patients cannot
+    absorb fat and continue to lose weight. **Endocrine insufficiency** produces
+    diabetes in a large share of resected patients — *the cure for this cancer
+    causes a disease this register holds as two separate queued records.*
+    **CHEMOTHERAPY IS GIVEN TO PEOPLE WHO CAN BARELY TOLERATE IT.** FOLFIRINOX
+    improved survival and is demanding: neutropenia, diarrhoea, and oxaliplatin
+    neuropathy that is frequently permanent, in patients who are already cachectic
+    and whose performance status often excludes them from it entirely.
+    **AND CACHEXIA IS THE DISEASE'S OWN.** Pancreatic cancer produces profound
+    systemic wasting out of proportion to tumour bulk, and it is a mechanism of
+    death independent of where the tumour is. It belongs to the disease rather
+    than the treatment and has no field, because `residue` requires the treatment
+    to have worked.
+  incidence:
+    value: 0.55
+    units: >
+      fraction-of-treated (permanent harm — exocrine insufficiency, post-surgical
+      diabetes, oxaliplatin neuropathy) — a reasoned estimate, and it is high
+      because nearly every resected patient acquires at least one of them
+    src: reasoning
+
+# NO `residue` BLOCK. What a cured pancreatic cancer patient carries is what the
+# Whipple took, which is `toll`. `restored` derives `cure-costs`.
+#
+# The one thing that arguably belongs here — CACHEXIA — is excluded because it
+# afflicts people the treatment did not work on, which is what `residue`
+# requires. It is the disease killing somebody by a route other than tumour bulk,
+# and this schema has no field for a systemic effect of an uncured cancer.
+
+window:
+  what: >
+    **THIS IS THE ONLY WINDOW IN THE REGISTER WHOSE EXISTENCE IS IN DOUBT, AND
+    THAT IS THE FINDING.**
+    The arithmetic looks like every other cancer: about a fifth of patients have
+    resectable disease at diagnosis and a quarter of those are alive at five
+    years; the rest are not curable. Catching it earlier should therefore help.
+    **And there is a serious argument that it may not help nearly as much as that
+    implies.** Genomic and modelling work suggests pancreatic cancer disseminates
+    very early — that cells capable of forming metastases leave the primary
+    before the primary is large enough to find, and that a proportion of patients
+    with apparently localised disease already have micrometastases. If that is
+    right, earlier detection buys **lead time rather than life**, and the survival
+    gain would be partly an artefact of measuring from an earlier starting point.
+    Nobody knows how large that effect is. It is the reason population screening
+    is not recommended even setting cost aside, and the reason high-risk
+    surveillance programmes are studied rather than assumed.
+    So the corpus now has three answers to the same question, and the schema
+    records `has_window: true` for all of them:
+    **colorectal cancer** — catching it earlier is unambiguously good, because
+    the target is a precursor. **prostate cancer** — catching it earlier is
+    harmful for the majority. **pancreatic cancer** — nobody knows.
+    See gaps.md #131.
+  closes_on: >
+    dissemination beyond the pancreas — **which may occur before the tumour is
+    detectable**, and that is the open question rather than a stated fact
+  caught_in_time:
+    value: 0.20
+    units: >
+      fraction-of-cases (resectable at diagnosis) — a reasoned estimate, and
+      note that it measures resectability rather than curability: most of these
+      patients still recur
+    src: reasoning
+
+strata:
+  - name: resectable at diagnosis
+    fraction:
+      value: 0.20
+      units: fraction-of-diagnoses
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.25
+      units: fraction-of-stratum (alive at five years after resection and adjuvant therapy)
+      src: reasoning
+    toll: major
+    what: >
+      Whipple or distal pancreatectomy with adjuvant chemotherapy, increasingly
+      given before surgery instead. **A quarter alive at five years, and the
+      operation costs the survivors their pancreatic function.**
+      This is the stratum every early-detection effort exists to enlarge, and
+      whether enlarging it would translate into lives is the question above.
+
+  - name: borderline resectable and locally advanced
+    fraction:
+      value: 0.30
+      units: fraction-of-diagnoses
+      src: reasoning
+    intervention: disease-modifying
+    efficacy:
+      value: 0.10
+      units: fraction-of-stratum (durable benefit, including conversion to resection)
+      src: reasoning
+    toll: major
+    what: >
+      Tumour involving the mesenteric vessels. Neoadjuvant chemotherapy, with or
+      without radiotherapy, converts a minority into resectable disease. For the
+      rest it is a slower version of the stratum below.
+
+  - name: metastatic, BRCA/PALB2 or mismatch-repair deficient
+    fraction:
+      value: 0.05
+      units: fraction-of-diagnoses
+      src: reasoning
+    intervention: disease-modifying
+    efficacy:
+      value: 0.25
+      units: fraction-of-stratum (durable benefit from platinum, PARP inhibition or checkpoint blockade)
+      src: reasoning
+    toll: major
+    what: >
+      **THE ONLY STRATUM IN THIS RECORD WHERE A TEST CHANGES THE TREATMENT.**
+      Homologous-recombination deficiency predicts platinum sensitivity and
+      maintenance PARP inhibition; mismatch-repair deficiency predicts checkpoint
+      response. Five percent of the record, and it is the entire content of
+      `predictive: partial`.
+      **It also means germline testing should be offered to every patient**,
+      which changes management for the patient's relatives more reliably than for
+      the patient.
+
+  - name: metastatic, unselected
+    fraction:
+      value: 0.45
+      units: fraction-of-diagnoses
+      src: reasoning
+    intervention: disease-modifying
+    efficacy:
+      value: 0.20
+      units: fraction-of-stratum (durable meaningful benefit)
+      src: reasoning
+    toll: major
+    what: >
+      **THE LARGEST STRATUM AND THE ONE THE REGISTER EXISTS TO NAME.** FOLFIRINOX
+      or gemcitabine with nab-paclitaxel, in patients well enough to receive
+      them, buying a median of months. Immunotherapy does not work. **KRAS is mutated
+      in almost all of them and as of 26 August 2026 it is druggable** —
+      daraxonrasib in the second line, hazard ratio 0.40 against chemotherapy, and
+      nobody is cured.
+      Most of what good care does for these patients is **biliary stenting, pain
+      control including coeliac plexus block, enzyme replacement, nutritional
+      support and hospice** — none of which alters the course, and all of which
+      the register scores as nothing (gaps.md #98).
+
+moved:
+  - date: 2011
+    axis: efficacy
+    from: 0.1
+    to: 0.15
+    why: >
+      **FOLFIRINOX**, and then gemcitabine with nab-paclitaxel two years later.
+      Median survival in metastatic disease went from roughly six months to
+      roughly eleven, and adjuvant FOLFIRINOX later improved outcomes after
+      resection.
+      **That is the entire history of therapeutic progress in this disease** —
+      two combination chemotherapy regimens in fifteen years, both built from
+      old cytotoxic agents, each buying months, neither curing anybody who was
+      not curable by surgery.
+      A five-point move at record level, and unlike melanoma's five-point move
+      there is no transformed stratum hiding underneath it. **This record's
+      `moved` block is one line and it is the truth.**
+    src:
+      id: PMID:21864184 doi:10.1056/NEJMc1107627
+      retrieved: 2026-08-26
+      quote: >
+        FOLFIRINOX versus gemcitabine for metastatic pancreatic cancer.
+
+  - date: 2026
+    axis: efficacy
+    from: 0.15
+    to: 0.22
+    why: >
+      **KRAS WAS UNDRUGGABLE FOR FORTY YEARS AND THIS FILE SAID SO IN THE PRESENT
+      TENSE UNTIL 26 AUGUST 2026.**
+      The FDA approved **daraxonrasib** (RASONQUE), a multi-selective inhibitor of
+      the RAS GTPase family, for metastatic pancreatic adenocarcinoma after at
+      least one prior systemic therapy, or in people who are not candidates for
+      multiagent chemotherapy. **RAS is mutated in roughly nine of ten pancreatic
+      adenocarcinomas**, it has been the defining target of this disease since the
+      1980s, and every previous attempt to drug it failed — which is why
+      `mechanism: established` had produced so little here.
+      **The effect size is the largest ever reported in this setting.** RASolute
+      302 (NCT06625320) randomised 500 patients 1:1 against physician's-choice
+      chemotherapy: median overall survival **13.2 months against 6.7**, hazard
+      ratio **0.40**; progression-free survival 7.2 against 3.6 months; objective
+      response 30% against 11%. Second-line metastatic pancreatic cancer is a
+      setting where trials have failed for thirty years and where a hazard ratio
+      of 0.8 would have been publishable.
+      **Three qualifications, because this is the record most likely to be
+      over-read.** It is **second-line**, so it does not touch the fifth of
+      patients who present resectable. **Nobody is cured** — median survival
+      roughly doubles and the disease still kills almost everyone, which is why
+      `intervention` does not move and the stratum stays `disease-modifying`. And
+      the label carries dermatologic and soft tissue toxicity, stomatitis,
+      diarrhoea, gastrointestinal perforation and interstitial lung disease.
+      **AND THE ACCESS ARITHMETIC NOW RUNS BACKWARDS** (gaps.md #215). `efficacy`
+      is defined as what the *best available* treatment achieves, so this entry
+      raises it — and the best available treatment is a once-daily tablet approved
+      in one country and priced like a new oncology drug. **Nobody lost anything
+      and `access` should fall**, because the denominator moved underneath it.
+      Recorded as a separate move when there is a number to put on it.
+      This is the register's **first `moved` entry written the day after the thing
+      happened.** Every other one is history. `moved:` exists to make a second pass
+      a comparison rather than a fresh opinion, and that only works if somebody
+      writes the entry while the change is still legible.
+    src:
+      id: https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-daraxonrasib-metastatic-pancreatic-adenocarcinoma
+      retrieved: 2026-08-27
+      quote: >
+        In the overall population, median OS was 13.2 months (95% CI: 10.0, not
+        estimable [NE]) in the daraxonrasib arm and 6.7 months (95% CI: 5.8, 8.0)
+        in the SOC arm (Hazard ratio 0.40 [95% CI: 0.30, 0.53]; p-value <0.0001).
+
+witness:
+  mechanism: >
+    `established`, and knowing it has helped less than in any other cancer here.
+    The genetic progression is well characterised: **KRAS** mutation in roughly
+    ninety percent, initiating pancreatic intraepithelial neoplasia, followed by
+    loss of **CDKN2A**, **TP53** and **SMAD4** as lesions advance to invasive
+    ductal adenocarcinoma. Four genes, one order, seen in tissue.
+    **AND THREE THINGS ABOUT IT DEFEAT TREATMENT.**
+    *KRAS was undruggable for forty years.* It is a small GTPase with no obvious
+    binding pocket, and it is the most frequently mutated oncogene in human
+    cancer. G12C inhibitors arrived recently and G12C is one to two percent of
+    pancreatic tumours; the common variant here is G12D, and pan-KRAS and G12D
+    inhibitors are the most watched thing in the field.
+    *The tumour is mostly not tumour.* PDAC generates a dense desmoplastic
+    stroma — fibroblasts, matrix, immune cells — that can be most of the mass. It
+    is poorly vascularised, which physically limits drug delivery, and it is
+    immunosuppressive, which is a large part of why checkpoint blockade does
+    nothing here.
+    *It disseminates early.* Sequencing and modelling suggest metastatic capacity
+    is acquired long before the primary is detectable, which is the substance of
+    the `window` question above.
+    **THE NAMED HOLE IS THEREFORE NOT THE MECHANISM.** It is why a disease whose
+    genetics were mapped decades ago has yielded so little, and the honest answer
+    is that the three properties above are all consequences of the mechanism and
+    none of them is fixed by knowing it.
+  intervention: >
+    `curative`, and the rating describes about one patient in twenty.
+    Resection — Whipple for tumours of the head, distal pancreatectomy for the
+    body and tail — with chemotherapy before or after. About a fifth of patients
+    are resectable; about a quarter of those are alive at five years.
+    Everything else is `disease-modifying`. FOLFIRINOX and gemcitabine with
+    nab-paclitaxel for those fit enough. PARP inhibition for the small
+    homologous-recombination-deficient group. Checkpoint blockade for the one
+    percent with mismatch-repair deficiency.
+    **AND FOR THE MAJORITY, WHAT MEDICINE ACTUALLY PROVIDES IS PALLIATIVE.**
+    Biliary stents for jaundice, coeliac plexus neurolysis for the back pain
+    that is this cancer's signature, pancreatic enzymes so food can be absorbed,
+    nutritional support against cachexia, and early hospice referral — which in
+    at least one well-known trial in a comparable setting was associated with
+    living *longer* as well as better.
+    **None of it alters the course and it is the main intervention in the
+    record.** gaps.md #98 has been raised three times before this and pancreatic
+    cancer is where it bites hardest, because here palliation is not the fallback
+    after treatment fails. It is the treatment.
+  prevention: >
+    `risk-reduction`, and it is weak. Smoking accounts for perhaps a fifth to a
+    quarter; obesity, type 2 diabetes and chronic pancreatitis contribute; heavy
+    alcohol acts largely through pancreatitis. Stopping smoking is the only item
+    with a substantial effect and it is shared with four other records (gaps.md
+    #87).
+    **There is no vaccine, no chemoprevention and no screening programme**, and
+    this is one of the few cancers here where population screening is not
+    recommended for reasons beyond cost — the prevalence is too low for any
+    available test's specificity, and the window may not be what it appears.
+    What exists is **surveillance of defined high-risk groups**: carriers of
+    pathogenic *BRCA2*, *PALB2*, *CDKN2A*, *STK11* and mismatch-repair variants,
+    hereditary pancreatitis, and people with strong family histories. MRI and
+    endoscopic ultrasound, in registries, studied rather than assumed.
+    **And the precursor problem here runs backwards from colorectal cancer's.**
+    Intraductal papillary mucinous neoplasms are genuine precursors, they are
+    found incidentally on scans done for other reasons in large numbers, and most
+    of them never progress — so the register's newest field (gaps.md #114) would
+    here describe **an overdiagnosed precursor of an underdiagnosed cancer.**
+  ongoing: >
+    `moderate`, and it is short for most patients because most patients die
+    within a year.
+    Survivors of resection carry pancreatic enzyme replacement with every meal
+    for life, diabetes management in a large share, and surveillance imaging.
+    Patients with advanced disease carry stents that block and are replaced,
+    escalating analgesia, and the nutritional management of a body that is
+    consuming itself.
+
+holes:
+  - Every scalar is `src: recall` or `src: reasoning`, and the strata fractions
+    are estimates. The resectable fraction in particular varies with how
+    aggressively borderline disease is explored.
+  - **The early-dissemination hypothesis is the most consequential uncertainty in
+    this file.** It is supported by sequencing and modelling rather than settled,
+    and if it is wrong then early detection is worth far more than this record
+    implies. If it is right, it is worth considerably less.
+  - `efficacy: 0.15` is the lowest cancer figure in the register and it still
+    flatters the disease, because it counts durable benefit in the metastatic
+    strata generously.
+  - Pancreatic neuroendocrine tumours are a different disease with far better
+    outcomes, share the MONDO identifier used here, and are excluded from every
+    number in this record.
+  - Type 1 and type 2 diabetes are both queued and unwritten, and both are
+    entangled with this record in opposite directions: diabetes is a risk factor,
+    new-onset diabetes is an early sign, and post-surgical diabetes is a
+    consequence of the cure.
+
+blockers:
+  - kind: knowledge
+    blocks: essentially everything
+    obstacles: [who-progresses]
+    what: >
+      **THIS IS THE PUREST KNOWLEDGE BLOCKER IN THE REGISTER AND IT IS NOT
+      CLOSE.**
+      *KRAS.* Mutated in roughly nine tumours in ten, undruggable for four
+      decades, and the recent inhibitors reach a variant that accounts for one to
+      two percent of pancreatic tumours. G12D and pan-KRAS inhibitors are the
+      single most important thing in development for this disease.
+      *The stroma.* The tumour builds a dense, poorly vascularised,
+      immunosuppressive scaffold that is most of its mass. Attempts to strip it
+      have failed and one made outcomes worse, because the stroma appears to
+      restrain the tumour as well as protect it.
+      *Early dissemination.* If metastatic capacity precedes detectability, the
+      entire early-detection strategy needs rethinking rather than funding.
+      *And no early-detection test exists.* CA 19-9 cannot screen; a blood test
+      with adequate performance at population prevalence would change this record
+      more than any drug currently in development.
+      `scale: null` — and this is one of the few records where that is
+      unambiguous. There is nothing to buy.
+    who_could: [academic, sponsor, manufacturer, philanthropy, government]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    blocks: finding it before it is systemic, in a population nobody can define
+    obstacles: []
+    what: >
+      **THE AT-RISK POPULATION IS EVERYBODY OVER SIXTY, WHICH IS NOT A
+      POPULATION.**
+      Unlike liver cancer, whose surveillance group is a list of diagnosed
+      cirrhotics, and unlike lung cancer, whose group can be reconstructed from
+      smoking histories, pancreatic cancer has no identifiable pre-clinical
+      population beyond the five to ten percent with hereditary risk.
+      **The most promising lead is not a scan.** Roughly one percent of people
+      over fifty with new-onset diabetes are found to have pancreatic cancer, and
+      the tumour appears to cause the diabetes months before it is visible. An
+      enrichment of that size in a population that presents itself to primary
+      care is the best available handle on an otherwise undefinable group — and
+      the register has no way to record that the earliest sign of one entity is
+      the onset of another (gaps.md #132).
+      Incidental cystic lesions are the mirror problem: found in large numbers on
+      scans done for other reasons, mostly harmless, and generating surveillance
+      and occasionally surgery in people who would never have developed cancer.
+    who_could: [academic, health-system, sponsor, government, software]
+    scale: 2.0e9
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: getting the operation done where it is done well
+    obstacles: []
+    what: >
+      **THE VOLUME-OUTCOME RELATIONSHIP IN PANCREATIC SURGERY IS AMONG THE
+      STEEPEST IN MEDICINE.** Operative mortality after pancreaticoduodenectomy
+      differs several-fold between high-volume and low-volume centres, and the
+      difference persists after case-mix adjustment.
+      So a patient in the resectable stratum — the only stratum where cure is
+      possible — has their chance substantially determined by which hospital
+      operates on them. **That is gaps.md #122 exactly**: `access` records that
+      they reached surgery, not that they reached surgery that works.
+      Centralisation improves outcomes and is politically difficult, because it
+      means closing a service somewhere and asking patients to travel while
+      jaundiced and unwell. Several health systems have done it and their
+      mortality figures moved.
+    who_could: [health-system, government, payer, regulator]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+  - kind: no-sponsor
+    blocks: research at a scale matching the burden
+    obstacles: []
+    what: >
+      Pancreatic cancer research funding has historically been low relative to
+      its share of cancer deaths, and the gap has been documented and campaigned
+      on for years by patient organisations and by investigators.
+      The reasons compound. **Almost nobody survives to advocate** — the
+      constituency of survivors that drove breast and prostate cancer funding
+      barely exists here, and patients are dead within a year of diagnosis.
+      Trials are hard: patients deteriorate fast, performance status excludes
+      many, and a failed drug is discovered quickly and expensively. **And the
+      field has a long record of disappointment**, which makes it a difficult
+      case for a portfolio.
+      Filed as `documented` rather than `alleged` because the funding-to-burden
+      comparison is a matter of public record, and stated carefully because
+      *funding proportional to burden* is a claim about how research should be
+      allocated rather than a demonstrated blocker.
+    who_could: [sponsor, philanthropy, government, patient-org, academic]
+    scale: 5.0e9
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0060
+  rated: 2026-08-24
+  by: [claude, jeremy]

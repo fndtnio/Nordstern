@@ -1,0 +1,507 @@
+slug: lung-cancer
+id: FND-D-0050
+name: lung cancer
+also: [lung carcinoma, bronchogenic carcinoma, NSCLC, SCLC, non-small cell lung cancer, small cell lung cancer]
+mondo: MONDO:0008903
+kind: disease
+residual: false
+contested: false
+
+# THE FOURTH LEG OF THE TOBACCO QUARTET, AND IT COMPLETES 20.9 MILLION DEATHS A
+# YEAR ACROSS FOUR RECORDS DRIVEN BY ONE EXPOSURE.
+#
+# Ischaemic heart disease, stroke and COPD were the other three. gaps.md #87 —
+# the intervention is non-specific and chargeable to no entity — now has its
+# largest single instance: **tobacco control is worth more than any therapy in
+# this register and belongs to none of these records.**
+#
+# ~1.8 million deaths a year, the largest cancer killer by a wide margin, and
+# roughly a fifth of people diagnosed are alive at five years even in the best
+# health systems.
+#
+# THREE THINGS MAKE IT STRUCTURALLY UNUSUAL:
+#
+# 1. **PREDICTIVE MEASUREMENT ACTUALLY WORKS HERE.** Test the tumour, find EGFR
+#    or ALK or ROS1 or KRAS G12C, give the matched drug, watch a metastatic
+#    cancer melt for years. This is the register's best oncology success and
+#    rating it anything but `good` would make it indistinguishable from records
+#    where nothing is testable. Roughly half of patients have no actionable
+#    target, and that hole is named.
+#
+# 2. **THE TUMOUR MOVES BETWEEN STRATA UNDER TREATMENT PRESSURE.** An
+#    EGFR-mutant adenocarcinoma acquires resistance and can transform into small
+#    cell carcinoma — a different `strata` row, in the same patient, caused by
+#    the treatment. `strata` assumes a partition of fixed things. gaps.md #111.
+#
+# 3. **THE PATIENT IS BLAMED.** Lung cancer research funding per death sits far
+#    below breast or prostate, and patients report being held responsible for
+#    their own disease. Attributed responsibility changes what gets funded, and
+#    no field in this register can record it. gaps.md #110 — and the queue is
+#    full of records that will need it: cirrhosis, alcohol and opioid use
+#    disorder, obesity, type 2 diabetes.
+
+burden:
+  prevalence:
+    value: 2.5e6
+    units: >
+      new cases/year worldwide — incidence rather than prevalence, because
+      survival is short enough that the two are close and incidence is what is
+      actually counted
+    src: recall
+  deaths:
+    value: 1.8e6
+    units: >
+      deaths/year — **the largest cancer killer in the world**, by a margin
+      wider than the gap between second and fourth
+    src: recall
+  note: >
+    WITH ISCHAEMIC HEART DISEASE, STROKE AND COPD THIS IS ROUGHLY 20.9 MILLION
+    DEATHS A YEAR ACROSS FOUR RECORDS, all driven substantially by one exposure.
+    That is close to a third of all human deaths, and the intervention against
+    it is legislation and taxation rather than medicine (gaps.md #87).
+    Roughly 80-90% of lung cancer in high-income countries is attributable to
+    smoking, and incidence in men has fallen sharply wherever smoking fell
+    decades earlier — the lag being roughly twenty to thirty years, which makes
+    lung cancer incidence a **readout of tobacco policy a generation ago.**
+    **BUT NEVER-SMOKER LUNG CANCER IS SUBSTANTIAL AND RISING AS A SHARE** —
+    perhaps a tenth to a quarter in Western populations and considerably higher
+    among East Asian women, where rates in people who never smoked are high and
+    incompletely explained. Radon is the second leading cause in several
+    countries; outdoor air pollution is classified as a lung carcinogen; asbestos,
+    silica and diesel exhaust account for an occupational share.
+    If lung cancer in never-smokers were counted as its own entity it would still
+    be among the larger cancer killers in this register.
+
+survival:
+  horizon: 5 years from diagnosis
+  untreated:
+    value: 0.02
+    units: >
+      fraction alive — untreated non-small-cell lung cancer has a median survival
+      of a few months from diagnosis, and small-cell disease is faster still
+    src: recall
+  treated:
+    value: 0.25
+    units: >
+      fraction alive on stage- and molecularly-appropriate therapy. **The figure
+      has moved more in the last decade than in the preceding four**, on targeted
+      therapy for driver mutations and checkpoint inhibition, and it remains one
+      of the worst among common cancers because most patients present late. See
+      this record's `efficacy` note on gaps.md #95 — the numerator here is a
+      choice, and five-year survival is the strictest of the available ones
+    src: recall
+  witness: >
+    **The clearest case in the register of a large relative gain that is still a
+    bad number.** Five-year survival has roughly doubled and three quarters of
+    patients are still dead at five years. A dashboard reporting the *change*
+    would call this a triumph; one reporting the *level* would call it a failure;
+    both are true and the register should print both.
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: risk-reduction
+  ongoing: moderate
+  efficacy:
+    value: 0.35
+    units: >
+      fraction-of-patients (cure, or durable disease control, on stage- and
+      molecularly-appropriate therapy) — AND THE NUMERATOR IS A CHOICE, which is
+      gaps.md #95 at its worst. Response rate, progression-free survival,
+      five-year survival and overall survival give materially different numbers
+      for the same treatments, and oncology argues about which one counts
+    src: reasoning
+  access:
+    value: 0.25
+    units: >
+      fraction-of-patients (reaching molecular testing, thoracic surgery,
+      radiotherapy and matched systemic therapy) — most lung cancer deaths occur
+      where most of that is unavailable, and molecular testing in particular is
+      absent across much of the world
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: good
+  witness: >
+    DIAGNOSTIC is `objective` — imaging, histology and molecular profiling are
+    definitive — and the failure is entirely one of timing. **Early lung cancer
+    causes no symptoms.** By the time cough, haemoptysis, weight loss or pain
+    appear, roughly half of patients have metastatic disease. There is nothing
+    wrong with the test and almost nobody reaches it in time.
+    PROGNOSTIC is `partial`. Stage predicts outcome strongly and the individual
+    course inside a stage varies enormously — and the specific unanswered
+    question, as in COPD, is **why only a minority of heavy smokers develop
+    lung cancer at all.**
+    **PREDICTIVE IS `good`, AND IT IS THE BEST IN THIS REGISTER OUTSIDE
+    INFECTIOUS DISEASE.** Sequence the tumour; if it carries an EGFR mutation,
+    an ALK or ROS1 rearrangement, BRAF V600E, KRAS G12C, RET, MET, NTRK or HER2
+    alterations, there is a matched drug and the response is frequently dramatic
+    and durable. PD-L1 expression partially predicts benefit from checkpoint
+    blockade. **This is what the whole predictive axis was invented to describe**,
+    and lung cancer is where it was invented.
+    The hole is large and specific: **roughly half of non-small cell lung cancer
+    has no actionable driver**, and for those patients treatment selection falls
+    back on histology and an imperfect PD-L1 score. Rated `good` rather than
+    `partial` because the question is answered as well as it is answered anywhere
+    when a target exists, and grading it down would make lung cancer
+    indistinguishable from records where nothing is testable at all.
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    Every modality here takes something, and the population is one that
+    frequently arrives with COPD already.
+    **SURGERY.** Lobectomy or pneumonectomy removes functioning lung
+    permanently, from people whose remaining lung is often already damaged by
+    the same exposure that caused the cancer. Chronic post-thoracotomy pain is
+    common and can be lifelong.
+    **RADIOTHERAPY.** Pneumonitis, then permanent fibrosis of the irradiated
+    field; oesophagitis; and cardiac exposure with late consequences.
+    **CHEMOTHERAPY.** Platinum-induced peripheral neuropathy and hearing loss are
+    frequently permanent.
+    **IMMUNOTHERAPY.** Immune-related adverse events look like autoimmune
+    disease because they are: colitis, pneumonitis, hepatitis, and endocrine
+    failure — thyroid, adrenal, pituitary — which is **permanent hormone
+    replacement in exchange for a cancer response.**
+    **AND SCREENING HAS A TOLL, WHICH THIS FIELD CANNOT HOLD.** Low-dose CT
+    produces a large majority of false positives; the workup includes biopsies
+    that cause pneumothorax, and occasionally resection of what turns out to be
+    benign. That harm is inflicted by the *diagnostic* process on people who do
+    not have the disease. `toll` means what the cure costs, gaps.md #105 already
+    asked for a prevention scope, and this is a third one — **`toll` needs a
+    scope, and there are at least three: treatment, prevention, diagnosis.**
+  incidence:
+    value: 0.30
+    units: >
+      fraction-of-treated (permanent harm — lost lung function after resection,
+      chronic thoracotomy pain, radiation fibrosis, platinum neuropathy,
+      immune-related endocrine failure) — a reasoned estimate across modalities
+    src: reasoning
+
+# NO `residue` BLOCK, AND THE ABSENCE IS INFORMATIVE.
+#
+# `residue` is what the DISEASE left in somebody the treatment worked on. A
+# stage I lung cancer resected and cured leaves very little: the permanent damage
+# in this record is the lobe that was removed, the nerve that was cut, the lung
+# that was irradiated and the nerve endings the platinum killed — all of it
+# `toll`, all of it inflicted by treatment.
+#
+# So `restored` derives `cure-costs` cleanly, and that is the honest reading.
+# Unlike stroke, COPD or tuberculosis, **lung cancer's permanent price is almost
+# entirely what the cure charged rather than what the disease took.**
+
+window:
+  what: >
+    **THE MOST CONSEQUENTIAL SCREENING QUESTION IN THIS REGISTER, AND IT IS
+    ANSWERED.**
+    Stage I non-small cell lung cancer resected has five-year survival in the
+    range of 70-90%. Stage IV without a targetable driver has a median survival
+    measured in months to a couple of years. Between those is a window during
+    which the disease is entirely silent, and roughly half of patients cross it
+    before anything prompts them to see a doctor.
+    Low-dose CT screening of people with heavy smoking histories **reduces lung
+    cancer mortality by roughly a fifth to a quarter** in randomised trials. That
+    is a large effect for a cheap scan on an identifiable population.
+    **AND ALMOST NOBODY IS SCREENED.** Uptake among eligible people runs in the
+    single digits to low tens of percent even where it is recommended and paid
+    for. There is no scientific obstacle, no missing technology and no
+    unaffordable drug — the test exists, works, and is not being done.
+    The costs are real and they are the reason it is argued about: the large
+    majority of positive scans are false, the workup is invasive, and
+    overdiagnosis is estimated in the range of a tenth to a fifth of
+    screen-detected cancers. **Lung cancer is the case where overdiagnosis is
+    real AND the net effect is still a clear mortality reduction** — which makes
+    it the positive control for a question prostate and thyroid cancer answer
+    differently. See gaps.md #92.
+  closes_on: >
+    local invasion and metastatic spread, which occur before any symptom in
+    roughly half of cases
+  caught_in_time:
+    value: 0.20
+    units: >
+      fraction-of-cases (diagnosed at a stage where resection is curative) — a
+      reasoned global estimate; localised-stage diagnosis reaches roughly a
+      quarter to a third in the best-organised systems and far less elsewhere
+    src: reasoning
+
+strata:
+  - name: NSCLC, early stage, resectable
+    fraction:
+      value: 0.25
+      units: fraction-of-diagnoses
+      src: recall
+    intervention: curative
+    efficacy:
+      value: 0.70
+      units: fraction-of-stratum (alive and disease-free at five years after resection)
+      src: reasoning
+    toll: major
+    what: >
+      The stratum where lung cancer is a curable disease. Surgical resection,
+      increasingly with adjuvant or neoadjuvant systemic therapy, and the price
+      is a permanently smaller lung in a patient who often has COPD.
+      **It is a quarter of diagnoses and it is the whole target of screening.**
+
+  - name: NSCLC, advanced, targetable driver
+    fraction:
+      value: 0.15
+      units: fraction-of-diagnoses
+      src: recall
+    intervention: suppressive
+    efficacy:
+      value: 0.70
+      units: fraction-of-stratum (durable response on matched targeted therapy)
+      src: reasoning
+    toll: minor
+    what: >
+      **THE STRATUM THAT DID NOT EXIST IN 2003.** A metastatic cancer controlled
+      for years by a daily tablet, with a toll of rash and diarrhoea rather than
+      of cytotoxic chemotherapy. For ALK-rearranged disease on a modern inhibitor
+      the reported progression-free survival runs to several years.
+      It is `suppressive` and not `curative` for a precise reason: **resistance
+      is not a possibility, it is a schedule.** The tumour acquires a second
+      mutation, or changes histology entirely, and the stratum stops applying —
+      see gaps.md #111.
+
+  - name: NSCLC, advanced, no actionable driver
+    fraction:
+      value: 0.45
+      units: fraction-of-diagnoses
+      src: recall
+    intervention: disease-modifying
+    efficacy:
+      value: 0.25
+      units: fraction-of-stratum (meaningful benefit from chemo-immunotherapy)
+      src: reasoning
+    toll: major
+    what: >
+      **THE LARGEST STRATUM AND THE WORST SERVED.** Platinum chemotherapy with
+      checkpoint blockade, which produces durable responses in a minority and
+      modest gains in the rest, at a toll that includes permanent neuropathy and
+      permanent endocrine failure.
+      PD-L1 partially predicts benefit and is a much weaker guide than a driver
+      mutation. This is where lung cancer's excellent predictive measurement runs
+      out.
+
+  - name: small cell lung cancer
+    fraction:
+      value: 0.15
+      units: fraction-of-diagnoses
+      src: recall
+    intervention: disease-modifying
+    efficacy:
+      value: 0.15
+      units: fraction-of-stratum (meaningful durable benefit)
+      src: reasoning
+    toll: major
+    what: >
+      A neuroendocrine cancer, almost entirely smoking-caused, and **arguably a
+      different disease sharing an organ.** It is exquisitely chemosensitive at
+      first — tumours shrink dramatically — and it relapses within months, and
+      that pattern has barely changed in four decades.
+      **There is no targeted therapy.** Immunotherapy added a few months to
+      median survival in extensive-stage disease and that is the largest advance
+      since the 1980s. It is the stratum where the molecular revolution did not
+      arrive, and its presence here is why the record spans the ladder.
+
+moved:
+  - date: 2004
+    axis: efficacy
+    from: 0.2
+    to: 0.35
+    why: >
+      **THE MOLECULAR ERA.** The discovery that a subset of lung adenocarcinomas
+      carry activating EGFR mutations, and that those tumours respond
+      dramatically to EGFR inhibitors, converted a fraction of metastatic lung
+      cancer from a chemotherapy disease into a targeted-therapy disease. ALK
+      rearrangements followed, then ROS1, BRAF, RET, MET, NTRK and KRAS G12C,
+      and checkpoint inhibitors arrived from a different direction around 2015.
+      The date marks the start of an arc rather than an event.
+      **What it did not touch: small cell lung cancer, and the half of NSCLC
+      with no actionable driver.** Both remain roughly where they were. This is
+      the register's clearest case of a large advance that reached part of a
+      record and left the rest untouched — and the reason the `strata` block
+      above spans three rungs of the ladder.
+
+witness:
+  mechanism: >
+    `established`, and among the best-attested causal chains in medicine.
+    Tobacco smoke carries dozens of established carcinogens; their metabolites
+    form DNA adducts; misrepair produces mutations; mutations in driver genes —
+    *KRAS*, *TP53*, *EGFR* and others — give a clone a growth advantage;
+    successive clonal expansions produce invasion and metastasis. The
+    dose-response with pack-years, the fall in incidence a generation after
+    smoking falls, and the characteristic mutational signature of tobacco
+    exposure in the tumour genome all agree.
+    **THE NAMED HOLES ARE TWO AND BOTH ARE LARGE.**
+    *Why only a minority of heavy smokers.* Most lifelong heavy smokers do not
+    get lung cancer, and beyond broad familial risk nobody can say who will —
+    the identical question COPD's record asks about the identical exposure,
+    which is why both cite the same obstacle.
+    *Never-smokers.* Lung adenocarcinoma in people who never smoked is a
+    substantial and apparently growing share, is enriched for EGFR mutations, is
+    especially common among East Asian women, and is not adequately explained by
+    radon, second-hand smoke, cooking fumes or air pollution taken together.
+  intervention: >
+    `curative`, on the schema's rule of best-demonstrated value: an early-stage
+    resection cures most of the patients who get one.
+    **The rating describes a quarter of diagnoses**, and the `strata` block
+    carries the rest honestly — from `suppressive` for driver-positive advanced
+    disease down to `disease-modifying` for small cell, which is why ⧉ fires and
+    "is lung cancer solved" is a malformed question.
+    The three modern facts worth stating plainly. **Surgery cures early
+    disease** and always has. **Targeted therapy turned a subset of metastatic
+    disease into something a person lives with for years**, which is as large a
+    change as anything in oncology. **And neither reached small cell lung cancer
+    or the driver-negative half**, where a 1980s platinum doublet plus a
+    checkpoint inhibitor remains the standard.
+  prevention: >
+    `risk-reduction`, and it is worth more than every therapy in this record
+    combined.
+    Tobacco control — taxation, advertising bans, smoke-free legislation, plain
+    packaging, cessation support — is the reason lung cancer incidence in men has
+    fallen substantially across much of the high-income world. **The effect
+    arrives twenty to thirty years after the policy**, which is politically the
+    worst possible property for an intervention to have and is why the record's
+    `policy` blocker is where the money is.
+    Radon mitigation in housing; occupational limits on asbestos, silica and
+    diesel exhaust; outdoor air quality regulation. None of it is medical and
+    none of it is aimed at this record specifically.
+    **This is gaps.md #87's largest instance.** One exposure drives four records
+    in this register — ischaemic heart disease, stroke, COPD and lung cancer —
+    totalling roughly 20.9 million deaths a year, and the intervention against it
+    is chargeable to none of them. Six gaps have pointed at this; it should stop
+    being a gap and become a field.
+  ongoing: >
+    `moderate`, and it splits by stratum more than the axis can show.
+    A cured surgical patient carries surveillance imaging and a permanently
+    reduced lung. A patient on targeted therapy takes a tablet daily and
+    indefinitely, with monitoring and a resistance clock running. A patient on
+    chemo-immunotherapy carries infusion visits and the possibility that an
+    immune-related event will require lifelong hormone replacement.
+    What none of them carries is the burden most cancer records understate: the
+    surveillance itself, and living with a disease whose defining feature is that
+    it comes back.
+
+holes:
+  - Every scalar is `src: recall` or `src: reasoning`, and the strata fractions
+    in particular are approximate and shift by region — the driver-mutation share
+    is much higher in East Asian populations than the 0.15 recorded here.
+  - `efficacy: 0.35` is the least defensible number in this record and says so.
+    Oncology has no agreed numerator, and response rate, progression-free
+    survival, five-year survival and overall survival give materially different
+    answers about the same drugs. See gaps.md #95.
+  - Whether small cell and non-small cell lung cancer should be one record is
+    genuinely doubtful. They share an organ and an exposure and differ in cell of
+    origin, natural history, and every element of capability. Splitting them
+    would be defensible and would also lose the comparison.
+  - The screening figures are drawn from trials in specific high-risk
+    populations, and the eligibility criteria that define "high risk" are a
+    threshold somebody chose — gaps.md #90 applies here as squarely as it does
+    to hypertension.
+  - Lung cancer in never-smokers is treated here as a hole in the mechanism
+    witness. It may deserve its own record.
+
+blockers:
+  - kind: diagnosis
+    blocks: finding it while it is still curable
+    obstacles: []
+    what: >
+      **THE BINDING CONSTRAINT, AND IT IS NOT A MISSING TECHNOLOGY.**
+      Low-dose CT screening reduces lung cancer mortality by roughly a fifth to a
+      quarter in people with heavy smoking histories. The population is
+      identifiable, the scan is cheap, the evidence is randomised, and **uptake
+      among eligible people is in the single digits to low tens of percent** even
+      in health systems that recommend and pay for it.
+      The reasons are not technical: eligibility criteria that primary care does
+      not apply, no organised call-and-recall of the kind breast and cervical
+      screening have, the stigma described below discouraging both offer and
+      acceptance, and a genuine argument about false positives and overdiagnosis
+      that has been read by many clinicians as a reason to wait.
+      Blood-based early detection would change the arithmetic entirely and does
+      not yet exist at usable performance.
+      **A test that works, a defined population, and a fifth of the deaths on the
+      table** — this is the register's largest gap between demonstrated efficacy
+      and delivered screening.
+    who_could: [health-system, government, payer, nonprofit]
+    scale: 4.0e9
+    standing: documented
+    src: recall
+
+  - kind: policy
+    blocks: the exposure, decades before the disease
+    obstacles: []
+    what: >
+      Tobacco control is the intervention, and its defining property is a
+      **twenty-to-thirty-year lag** between the policy and the mortality change.
+      A government that raises tobacco taxes gets the political cost immediately
+      and the benefit after several electoral cycles, in a statistic nobody will
+      attribute to it.
+      Taxation, advertising bans, smoke-free public space, plain packaging and
+      cessation services are all well evidenced and all actively opposed by an
+      industry that has shifted its growth to countries with weaker regulation —
+      where the lung cancer of 2050 is currently being caused.
+      Then radon in housing, asbestos and silica at work, and outdoor air
+      quality, each belonging to a different ministry.
+      **Chargeable to no record.** The same measures prevent ischaemic heart
+      disease, stroke and COPD, and the four together are roughly 20.9 million
+      deaths a year (gaps.md #87).
+    who_could: [government, legislator, health-system, nonprofit, payer]
+    scale: 2.0e10
+    standing: documented
+    src: recall
+
+  - kind: cost
+    blocks: molecular testing and matched therapy, for most of the world
+    obstacles: []
+    what: >
+      The predictive measurement this record rates `good` requires a sequencing
+      panel, and the drugs it selects are among the most expensive medicines in
+      routine use — annual costs in the tens of thousands of dollars per patient,
+      largely on patent.
+      **So the register's best predictive story is available to a minority of the
+      people who have the disease.** Most lung cancer deaths occur where
+      comprehensive molecular profiling is not routine and where the matched
+      inhibitor is not on any formulary. Generic entry for the earlier agents has
+      begun and does not reach the ones that work best.
+      Thoracic surgery and radiotherapy capacity are the same story with
+      buildings instead of molecules.
+      This is the `efficacy` and `access` split doing exactly what it exists to
+      do: the treatment works, and reach is 0.09.
+    who_could: [manufacturer, payer, government, health-system, philanthropy]
+    scale: 1.0e10
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: small cell lung cancer, never-smoker disease, and resistance
+    obstacles: [who-progresses, pathogen-persistence]
+    what: >
+      Three absences, and the first is a four-decade failure hiding inside a
+      record whose other strata look transformed.
+      **SMALL CELL LUNG CANCER HAS NO TARGETED THERAPY.** It responds
+      dramatically to platinum chemotherapy and relapses within months, and that
+      has been true since the 1980s. Adding immunotherapy bought a few months.
+      Fifteen percent of a 1.8-million-death disease is a large frontier and it
+      is not being treated as one.
+      **NEVER-SMOKER LUNG CANCER IS NOT EXPLAINED.** A substantial and apparently
+      rising share, enriched for EGFR mutations, concentrated in East Asian
+      women, and not accounted for by the known exposures.
+      **AND RESISTANCE IS A SCHEDULE RATHER THAN A RISK.** Every targeted therapy
+      works until the tumour changes — a second-site mutation, a bypass pathway,
+      or transformation to a different histology altogether. Nobody can prevent
+      it, and the reason the driver-positive stratum is `suppressive` rather than
+      `curative` is entirely this.
+      `scale: null`.
+    who_could: [academic, sponsor, manufacturer, philanthropy, government]
+    scale: null
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0050
+  rated: 2026-08-24
+  by: [claude, jeremy]

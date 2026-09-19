@@ -1,0 +1,496 @@
+slug: coccidioidomycosis
+id: FND-D-0111
+name: coccidioidomycosis
+also: [Valley fever, San Joaquin Valley fever, cocci, desert rheumatism, Coccidioides infection]
+kind: disease
+mondo: MONDO:0005706
+residual: false
+contested: false
+
+# THE PUREST ENVIRONMENTAL RECORD IN THE REGISTER, AND IT BREAKS THREE THINGS.
+#
+# 1. THE EPIDEMIOLOGY IS A MAP, NOT A NETWORK. There is no person-to-person
+#    transmission — none, other than a handful of transplant and wound
+#    inoculation reports. You get this by breathing air in a specific place. So
+#    there is no chain to interrupt, no contact to trace, no reservoir host, no
+#    vector, and no herd effect from treating anybody. Every other infectious
+#    record in the register is controlled by attacking a transmission route
+#    (gaps.md #70); `cryptococcal-meningitis` was the first with none, and this
+#    is the one where the absence is total and geographic.
+#
+# 2. CLIMATE IS THE EPIDEMIOLOGICAL DRIVER, AND THE REGISTER HAS NO FIELD FOR
+#    THAT. The endemic area is defined by aridity and is moving. Drought
+#    followed by heavy rain drives outbreak years; dust storms and soil
+#    disturbance drive exposure. **Two records mention warming in passing and
+#    nothing holds it as a mechanism.** Incidence here is a function of weather
+#    and land use, which no axis, blocker kind or actor in this schema
+#    describes.
+#
+# 3. NATURE SUPPLIES THE TEMPLATE, AND THAT IS WHY THIS RECORD DOES NOT CITE
+#    `protective-immunity`. Surviving infection confers lifelong immunity —
+#    solid, durable, well documented. So a vaccine is *specifiable*, unlike for
+#    tuberculosis or Staphylococcus. **The blocker is that nobody will pay for a
+#    vaccine against a regional disease.** This is the distinction that obstacle
+#    exists to draw, and this record is the negative control for it. See
+#    Engpass FND-O-0009's `holes`.
+
+burden:
+  incidence:
+    value: 2.5e5
+    units: >
+      estimated infections/year, chiefly the south-western United States,
+      northern Mexico and parts of Central and South America — **against roughly
+      twenty thousand reported annually in the United States.** The order-of-
+      magnitude gap is not uncertainty about the organism; it is that most
+      infection is mild or silent and most symptomatic disease is diagnosed as
+      bacterial pneumonia and never tested for
+    src: recall
+  deaths:
+    value: 2.0e2
+    units: >
+      deaths/year, United States — a small absolute number, **and the smallest
+      in the register attached to a disease this poorly controlled.** Disseminated
+      disease is uncommon; when it reaches the meninges it was uniformly fatal
+      before azoles and is incurable now. The figure excludes Mexico and South
+      America, where surveillance is thinner still
+    src: recall
+  note: >
+    **Roughly 60% of infections cause no illness at all, and that fraction is
+    the whole difficulty of this record.** Of those who fall ill, most have a
+    self-limiting pneumonia that recovers without treatment; a few percent
+    develop chronic lung disease; about one percent disseminate to bone, skin or
+    meninges. **The register is being asked to rate one entity spanning
+    "nothing happened" and "lifelong antifungal therapy or death".** It carries
+    ⧉ for exactly that reason.
+
+survival:
+  horizon: 2 years from diagnosis of disseminated disease
+  untreated:
+    value: 0.20
+    units: >
+      fraction alive — **and the horizon names disseminated disease
+      deliberately.** Across all infection, survival is above 0.99 and the figure
+      would convey nothing, the same compression that makes `asthma` +0.017
+      (gaps.md #221). Untreated dissemination to bone and viscera was frequently
+      fatal in the pre-azole literature, and **untreated coccidioidal meningitis
+      was uniformly fatal within about two years**
+    src: recall
+  treated:
+    value: 0.85
+    units: >
+      fraction alive on fluconazole or itraconazole, with amphotericin B for
+      severe or refractory disease. **Survival is good and cure is not the same
+      question** — meningeal disease requires fluconazole indefinitely, because
+      relapse after stopping approaches four in five
+    src: reasoning
+  witness: >
+    **THE THIRD RECORD RATED ON A NAMED SEVERE SUBPOPULATION RATHER THAN THE
+    WHOLE ENTITY**, after `asthma` and `hypertension`, and the register should
+    now decide whether that is a pattern or a leak. The horizon field carries
+    the qualifier and the rule is doing real work here: across all infection
+    this disease is survived by essentially everyone, and the axis would report
+    a triumph about a condition that puts people on antifungals for life.
+    **The gain from 0.20 to 0.85 is real and it is not a cure.** Azoles converted
+    coccidioidal meningitis from uniformly fatal to indefinitely suppressible —
+    which is a `suppressive` outcome inside a record rated `curative`, and the
+    reason the strata disagree.
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: risk-reduction
+  ongoing: moderate
+  efficacy:
+    value: 0.80
+    units: >
+      fraction-of-patients (disease controlled or resolved among those treated) —
+      **high, and it conceals that most treated patients did not need treating
+      and the ones who did are not cured.** There is no good evidence that
+      antifungals alter the course of uncomplicated primary pneumonia, which is
+      the majority of what gets treated; and meningeal disease responds well and
+      relapses on withdrawal
+    src: reasoning
+  access:
+    value: 0.55
+    units: >
+      fraction-of-patients (diagnosed, and treated appropriately when treatment
+      is indicated) — **the shortfall is diagnostic and it is not a
+      resource-poor-setting story.** This is underdiagnosed in one of the
+      wealthiest health systems on earth, because clinicians outside the endemic
+      area do not think of it and clinicians inside it often do not test.
+      Fluconazole is generic and universally available
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: none
+  witness: >
+    **DIAGNOSTIC is `objective` — the serology works — and the disease is still
+    missed for months.** Enzyme immunoassay, immunodiffusion and complement
+    fixation are established and available; the complement-fixation titre also
+    tracks disease activity, which is unusual and useful. Antibody may be absent
+    early and in the immunosuppressed, so a single negative does not exclude it.
+    **The failure is that the test is not ordered.** Coccidioidomycosis presents
+    as community-acquired pneumonia, and the modal patient receives two or three
+    courses of antibiotics that cannot work before anyone asks where they have
+    been. Estimates that it accounts for a substantial share of
+    community-acquired pneumonia in endemic counties have not changed practice.
+    **This is the same failure as `cryptococcal-meningitis` — a good cheap test
+    not used — arriving in a high-income setting**, which removes the usual
+    explanation and leaves clinical suspicion as the whole problem.
+    PROGNOSTIC is `partial`. Rising complement-fixation titres, and known risk
+    factors for dissemination — pregnancy, immunosuppression, diabetes, and
+    **being of African or Filipino ancestry**, which is well documented and
+    mechanistically unexplained — carry real information. What cannot be said is
+    which individual will disseminate, and since dissemination is the entire
+    severity of this disease, that is the prognostic question.
+    PREDICTIVE is `none`, and it drives a real harm. **Nobody can say who
+    benefits from antifungal treatment of primary pneumonia**, so a large number
+    of people are given months of azoles for an illness that would have resolved
+    — with the teratogenicity, hepatotoxicity and interactions that entails.
+    The register derives `futile_treatment_risk` from this and should.
+
+strata:
+  - name: asymptomatic or self-limiting primary infection
+    fraction:
+      value: 0.94
+      units: fraction-of-infections
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.99
+      units: fraction-of-stratum (recovering fully, with or without treatment)
+      src: reasoning
+    toll: none
+    what: >
+      **The large majority, and most of them never learn they had it.** Sixty
+      percent have no illness; the rest have a pneumonia, often with fatigue,
+      rash and joint pain, that resolves over weeks to months without
+      antifungals. Immunity afterwards is lifelong. **Rated `curative` because
+      the disease ends — although nothing medicine did ends it**, which is a
+      distinction the intervention ladder cannot draw.
+
+  - name: chronic pulmonary and non-meningeal dissemination
+    fraction:
+      value: 0.05
+      units: fraction-of-infections
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.75
+      units: fraction-of-stratum (disease resolved on prolonged azole therapy)
+      src: reasoning
+    toll: major
+    what: >
+      Cavitary or fibrocavitary lung disease, or spread to skin, bone and
+      joints. Months to years of azole therapy, sometimes surgery. **Genuinely
+      curable in most, and the treatment is long enough that its own toll
+      becomes the issue.**
+
+  - name: coccidioidal meningitis
+    fraction:
+      value: 0.01
+      units: fraction-of-infections
+      src: reasoning
+    intervention: suppressive
+    efficacy:
+      value: 0.80
+      units: fraction-of-stratum (controlled on indefinite therapy)
+      src: reasoning
+    toll: catastrophic
+    what: >
+      **UNIFORMLY FATAL BEFORE AZOLES, AND NEVER CURED SINCE.** Fluconazole
+      controls it; stopping it relapses roughly four patients in five, so
+      therapy is lifelong. Hydrocephalus is common and frequently needs a
+      permanent shunt; strokes from basilar vasculitis, and permanent
+      neurological deficit, are not rare. **The one stratum in this record where
+      the answer is `suppressive`, and the reason the entity spans the ladder.**
+      It has no MONDO term of its own, checked the day this record was written.
+
+toll:
+  severity: major
+  permanent: false
+  what: >
+    **The toll is mostly paid by people who did not need the treatment**, which
+    is a shape the register has recorded for cancer screening and not for an
+    infection. Azoles are given for months to years: fluconazole and
+    itraconazole cause hepatotoxicity, alopecia, dry skin and cheilitis, and
+    interact widely; **fluconazole is teratogenic at the doses used here**, which
+    matters because pregnancy is itself a major risk factor for dissemination.
+    Amphotericin B, for severe disease, brings its usual nephrotoxicity.
+    Rated `permanent: false` because these reverse on stopping. **The permanent
+    prices — the shunt, the stroke, the cavity — belong to the disease and are
+    carried in `residue`.**
+  incidence:
+    value: 0.20
+    units: >
+      fraction-of-treated with significant drug toxicity or a
+      management-altering interaction over a prolonged course — reasoned
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    **A shunt, a stroke, or a hole in the lung.** Meningeal disease leaves
+    hydrocephalus needing permanent shunting, and basilar vasculitis causes
+    strokes with lasting neurological deficit. Pulmonary disease leaves cavities
+    that can bleed or rupture, and fibrosis that permanently reduces lung
+    function. Bone and joint disease leaves destroyed joints.
+    **And there is a residue this schema cannot hold at all: the disease is over
+    and the therapy is not.** A person with controlled coccidioidal meningitis is
+    cured of nothing, has no active infection anyone can measure, and takes
+    fluconazole for the rest of their life.
+  incidence:
+    value: 0.06
+    units: >
+      fraction-of-symptomatic patients left with permanent structural or
+      neurological damage — reasoned, dominated by the disseminated strata and
+      close to zero in the self-limiting majority
+    src: reasoning
+
+witness:
+  mechanism: >
+    `established`. *Coccidioides immitis* and *C. posadasii* are soil fungi of
+    arid and semi-arid regions — the San Joaquin Valley, southern Arizona,
+    northern Mexico, and foci in Central and South America. In soil they grow as
+    mycelia that fragment into **arthroconidia**, spores small enough to reach
+    the alveolus and light enough to travel on wind. Inhaled, they convert into
+    spherules that rupture and release endospores, and the resulting granulomatous
+    response is what makes people ill. **Dissemination is a failure of cellular
+    immunity**, which is why the risk factors are pregnancy, immunosuppression
+    and diabetes.
+    **As with the register's other two fungal records, none of this is aimed at
+    us.** Arthroconidium formation is a dispersal strategy for a soil organism in
+    a dry climate; that the particle happens to be respirable and to survive a
+    lung is incidental.
+  intervention: >
+    `curative` at record level and the strata disagree, which is what ⧉ means
+    here. Most primary infection needs no treatment at all and resolves.
+    Disseminated non-meningeal disease is cured by prolonged azoles. **Meningeal
+    disease is `suppressive` and permanently so** — fluconazole controls it,
+    withdrawal relapses about four in five, and there is no endpoint.
+  prevention: >
+    `risk-reduction`, and the levers are **dust and land use rather than
+    medicine.** Soil disturbance releases the spores: construction, agriculture,
+    solar-farm and highway earthworks, military exercises, archaeology.
+    Occupational controls — wetting soil, enclosed cabs, respirators, worker
+    education — are the whole of what works, and they are enforced unevenly.
+    **The most concentrated exposure in the register belongs to people who cannot
+    leave.** State prisons sited in the hyperendemic San Joaquin Valley produced
+    sustained outbreaks with disproportionate harm to Black and Filipino inmates,
+    resolved partly by court-supervised transfer of susceptible prisoners out of
+    the endemic zone. **That is a prevention intervention delivered by a judge**,
+    and the register has no actor for it.
+    There is no vaccine, and see the blockers for why that is a different reason
+    from the usual one.
+  ongoing: >
+    `moderate` across the record and severe in the stratum that matters.
+    Uncomplicated infection ends. Chronic pulmonary and disseminated disease
+    means months to years of azoles with liver monitoring. **Meningitis means a
+    tablet every day for life, and a shunt to maintain** — an ongoing burden the
+    record-level rating understates because 94% of infections carry none.
+  efficacy: >
+    See the axis and the strata. The record-level figure blends people who did
+    not need treatment with people who cannot stop it.
+  access: >
+    **Underdiagnosed in a wealthy health system, which removes every excuse the
+    register normally records.** Fluconazole is generic. The serology is
+    established, available and cheap. Diagnosis is delayed by weeks to months
+    because the illness looks like bacterial pneumonia and nobody asks about
+    travel — and because reporting requirements and clinician awareness stop at
+    state lines that the fungus does not observe.
+
+moved:
+  - date: 1990
+    axis: intervention
+    from: none
+    to: suppressive
+    why: >
+      **Fluconazole converted coccidioidal meningitis from uniformly fatal to
+      indefinitely controllable.** Before the triazoles, treatment was
+      intrathecal amphotericin B — repeated injections into the cerebrospinal
+      space, poorly tolerated and frequently unsuccessful. This is a survival
+      transition the register would otherwise have missed entirely, because the
+      record-level mortality is small.
+    src: recall
+  - date: 2000
+    axis: prevention
+    from: none
+    to: risk-reduction
+    why: >
+      Occupational dust controls and, in California, court-ordered exclusion of
+      susceptible prisoners from hyperendemic institutions. **Dated loosely; the
+      litigation and the guidance developed over roughly two decades.** Recorded
+      because it is the only prevention gain in the register delivered through
+      a court rather than a health system.
+    src: reasoning
+
+holes:
+  - >
+    **The register has no way to hold a disease whose incidence is driven by
+    weather and land use.** Drought-then-rain cycles drive outbreak years, dust
+    storms drive exposure, and the endemic map is projected to expand with
+    aridification — locally acquired cases have appeared well north of the
+    historical range. No axis, blocker kind or actor describes this, and only
+    two other records mention warming at all.
+  - >
+    This is the **third record rated on a named severe subpopulation** rather
+    than the whole entity, after `asthma` and `hypertension`. The horizon field
+    carries the qualifier, but there is no rule saying when that is legitimate,
+    and three instances is enough to need one.
+  - >
+    The strata fractions are the standard textbook shape — roughly 60%
+    asymptomatic, ~1% disseminated — restated as fractions of infection. They
+    are reasoned rather than measured and the denominator is itself estimated.
+  - The disproportionate risk of dissemination in people of African and Filipino
+    ancestry is consistently reported and **mechanistically unexplained**. It is
+    recorded here because it is real and because the register should not quietly
+    omit a risk factor it cannot account for.
+  - >
+    Burden outside the United States is close to unmeasured. Mexico, Guatemala,
+    Argentina, Brazil and Paraguay have endemic foci and thin surveillance, so
+    the global figure is a US figure with a gesture attached.
+  - >
+    `intervention: curative` for the self-limiting stratum is uncomfortable —
+    **the disease ends and nothing medicine did ended it.** The ladder describes
+    what treatment achieves and has no rung for "resolves on its own", which is
+    the same gap `course: acute` patched on the survival axis (gaps.md #222).
+  - Written from model recall. The natural history, the immunity, the prison
+    outbreaks and the meningitis relapse rate are the parts most likely right;
+    every number is the part most likely wrong.
+
+blockers:
+  - kind: diagnosis
+    blocks: anybody thinking of it, in a health system that has the test
+    what: >
+      **THE TEST WORKS, IT IS CHEAP, IT IS AVAILABLE, AND IT IS NOT ORDERED.**
+      Coccidioidomycosis presents as community-acquired pneumonia. The modal
+      patient in an endemic county receives two or three courses of antibiotics
+      that cannot possibly work, over weeks to months, before anyone sends
+      serology. A substantial share of community-acquired pneumonia in the
+      endemic area is thought to be this, and that finding has been published
+      repeatedly without changing practice.
+      **This is `cryptococcal-meningitis`'s blocker arriving in California**,
+      which is the point. There the explanation is a poor health system. Here
+      there is no such explanation: the failure is clinical suspicion, and it
+      compounds at the border of the endemic zone, where a returning traveller
+      meets a clinician who has never seen a case. **The most purchasable
+      intervention in this record is telling doctors the disease exists.**
+    who_could: [health-system, government, academic, nonprofit]
+    scale: 2.0e7
+    standing: documented
+    src: reasoning
+
+  - kind: policy
+    blocks: the dust, which belongs to whoever owns the land
+    what: >
+      **EXPOSURE IS AN OCCUPATIONAL AND LAND-USE QUESTION, AND THE HEALTH SYSTEM
+      DOES NOT OWN EITHER.** Construction, agriculture, highway and solar-farm
+      earthworks, and military training disturb soil and release spores; the
+      controls that work are wetting, enclosed cabs, respirators and worker
+      education, and they are applied unevenly to a workforce that is heavily
+      migrant and often not in a position to insist.
+      **And the register's most concentrated involuntary exposure is a prison
+      siting decision.** State institutions built in the hyperendemic San
+      Joaquin Valley produced sustained outbreaks, with disproportionate harm to
+      Black and Filipino inmates; the remedy was court-supervised transfer of
+      susceptible prisoners out of the zone. **A prevention intervention
+      delivered by a judge, against a state acting as an employer and a
+      jailer** — and this schema has no actor for a court and no blocker kind
+      for an exposure somebody is legally compelled to endure.
+    who_could: [government, legislator, regulator, health-system]
+    scale: 1.0e8
+    standing: documented
+    src: reasoning
+
+  - kind: no-sponsor
+    blocks: a vaccine that is scientifically specifiable and commercially unattractive
+    what: >
+      **THIS RECORD IS THE NEGATIVE CONTROL FOR `protective-immunity`, AND IT
+      DELIBERATELY DOES NOT CITE IT.** Surviving coccidioidomycosis confers
+      **solid lifelong immunity** — durable, well documented, and exactly the
+      natural template that tuberculosis, malaria and *Staphylococcus aureus* do
+      not provide. So the immunological question is answered: protection is
+      possible, nature demonstrates it, and a vaccine is specifiable in a way it
+      is not for the diseases that obstacle holds.
+      A killed-spherule vaccine failed in trial in the 1980s; a live attenuated
+      candidate is in development and **is already licensed for dogs**, which get
+      this disease in the same soil. What has not happened is a human programme,
+      and the reason is arithmetic: the market is a few hundred thousand
+      infections a year in one region of one wealthy country plus underserved
+      parts of Latin America, and most of those infections resolve on their own.
+      **`no-sponsor`, not `knowledge`** — and the distinction is the whole
+      argument for the schema split Engpass has flagged. A record whose vaccine
+      is blocked by money reads identically to one blocked by ignorance under the
+      current `knowledge` kind, and they are opposite problems.
+    who_could: [sponsor, manufacturer, government, philanthropy, academic]
+    scale: 5.0e8
+    standing: documented
+    src: reasoning
+
+  - kind: evidence-incomplete
+    blocks: knowing whether to treat the patient in front of you
+    what: >
+      **THERE IS NO GOOD EVIDENCE THAT ANTIFUNGAL THERAPY ALTERS THE COURSE OF
+      UNCOMPLICATED PRIMARY COCCIDIOIDAL PNEUMONIA**, which is the great majority
+      of diagnosed disease. Guidelines acknowledge the uncertainty and practice
+      varies widely. The trial that would settle it — treat versus observe in
+      uncomplicated primary infection — is feasible, has never been done at
+      adequate scale, and would change management for tens of thousands of people
+      a year.
+      The cost of the ambiguity is paid in both directions: **months of a
+      teratogenic, hepatotoxic, interacting drug given to people who would have
+      recovered**, and delayed treatment in the minority who were going to
+      disseminate. It is the register's clearest case of a `predictive: none`
+      that could be substantially reduced by one trial rather than by a
+      discovery.
+    who_could: [academic, sponsor, government, health-system]
+    scale: 4.0e7
+    standing: documented
+    src: reasoning
+
+  - kind: knowledge
+    blocks: knowing who will disseminate, which is the entire severity of this disease
+    what: >
+      Ninety-nine percent of infections stay in the lung and resolve. About one
+      percent spreads to bone, skin or meninges, and **that one percent is the
+      whole of what makes this disease matter.** Pregnancy, immunosuppression and
+      diabetes raise the risk, and so — consistently and unexplainedly — does
+      African or Filipino ancestry, which points at host genetics nobody has
+      pinned down. None of it identifies the individual.
+      If dissemination could be predicted, treatment could be aimed: the
+      `evidence-incomplete` blocker above would largely dissolve, because the
+      question "treat or observe" is only hard when you cannot tell who is at
+      risk. **Two blockers, one answer**, and it is the register's standing
+      `who-progresses` question in a fungal host.
+    who_could: [academic, sponsor, philanthropy]
+    scale: null
+    standing: documented
+    src: reasoning
+    obstacles: [who-progresses]
+
+  - kind: knowledge
+    blocks: counting a disease that is mostly silent and mostly misdiagnosed
+    what: >
+      Reported United States cases run around twenty thousand a year against an
+      estimated quarter of a million infections — **an order of magnitude, and
+      the gap is diagnosis rather than sampling.** Most infection is silent;
+      most symptomatic disease is treated as bacterial pneumonia; reporting is
+      mandatory in some states and not others, so the surveillance map has
+      administrative edges the fungus does not.
+      Burden outside the United States is worse: endemic foci across Mexico and
+      South America with thin surveillance, so the global figure is essentially a
+      US figure. **Any argument for a vaccine, for occupational regulation or for
+      awareness funding is an arithmetic one**, and this is the arithmetic.
+    who_could: [academic, government, health-system, nonprofit]
+    scale: 3.0e7
+    standing: documented
+    src: reasoning
+    obstacles: [burden-unknown]
+
+assertion:
+  id: FND-A-0112
+  rated: 2026-08-28
+  by: [claude, jeremy]

@@ -1,0 +1,494 @@
+slug: cre
+id: FND-D-0068
+name: infection with carbapenem-resistant Enterobacterales
+also: [CRE, carbapenem-resistant Enterobacteriaceae, CPE, carbapenemase-producing Enterobacterales, carbapenem-resistant Klebsiella pneumoniae]
+common: antibiotic-resistant infection
+mondo: unresolved
+kind: syndrome
+residual: false
+contested: false
+
+# WHY `mondo: unresolved`, AND IT IS INFORMATIVE RATHER THAN LAZY.
+# Mondo has `MONDO:0100073` for methicillin-resistant *S. aureus* infection —
+# one organism, one resistance. It has `MONDO:0030603` for Klebsiella infectious
+# disease. It has NO term for carbapenem resistance at all, in any genus.
+# The reason is structural: the ontology enumerates by ORGANISM, and CRE is
+# defined by a RESISTANCE MECHANISM that crosses several genera and rides on
+# plasmids between them. `Klebsiella infectious disease` would be both too wide
+# (susceptible Klebsiella is a different clinical problem) and too narrow (E.
+# coli and Enterobacter carry the same enzymes).
+# So the join key is missing because the ontology's spine is taxonomy and this
+# entity's spine is a gene. Recorded rather than forced (gaps.md #82).
+#
+# `amr-infection` (FND-D-0014) is the held umbrella; `mrsa` (FND-D-0067) is the
+# other specific instance. This is the hard one.
+
+burden:
+  cases:
+    value: 5.0e5
+    units: >
+      invasive infections/year worldwide, order of magnitude and **the weakest
+      burden figure in the bacterial block.** Surveillance for carbapenem
+      resistance requires a microbiology laboratory capable of doing
+      susceptibility testing on a Gram-negative isolate, which is precisely what
+      the highest-burden settings do not have
+    src: reasoning
+  deaths:
+    value: 5.0e4
+    units: >
+      deaths/year attributable to carbapenem resistance in Enterobacterales —
+      from global antimicrobial resistance modelling, and carbapenem-resistant
+      *K. pneumoniae* is consistently among the top few pathogen-drug
+      combinations by attributable mortality
+    src: recall
+  note: >
+    **THE COUNTED BURDEN AND THE ACTUAL BURDEN ARE IN DIFFERENT PLACES.**
+    CRE is written about as a problem of intensive care units in wealthy
+    hospitals — ventilators, central lines, transplant recipients, haematology
+    wards. That is where it is *measured*, because that is where blood cultures
+    are taken and susceptibility testing is done.
+    **The centre of mass is probably neonatal sepsis in South Asia and
+    sub-Saharan Africa**, where resistant *Klebsiella* kills newborns in numbers
+    that no surveillance system counts, in units with no molecular diagnostics
+    and none of the drugs that would work.
+    So the entity as described in the literature and the entity as it kills are
+    not the same entity, and this record's numbers describe the first one.
+
+survival:
+  horizon: 30 days from onset of bacteraemia
+  untreated:
+    value: 0.3
+    units: >
+      fraction alive — carbapenem-resistant Enterobacterales bacteraemia treated
+      with the older salvage agents, colistin and tigecycline, which are toxic
+      and poorly effective
+    src: reasoning
+  treated:
+    value: 0.55
+    units: >
+      fraction alive on a newer agent — ceftazidime-avibactam,
+      meropenem-vaborbactam, cefiderocol — **where one is available, affordable
+      and the isolate is susceptible to it.** Three conditions, each of which
+      fails somewhere
+    src: reasoning
+  witness: >
+    **The worst treated survival of any curable record in the register.** The
+    rung is `curative` — the drugs do cure the infection — and 45% of patients
+    die anyway. This is what an antimicrobial-resistance blocker looks like
+    expressed as a survival figure rather than as a warning.
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: risk-reduction
+  ongoing: low
+  efficacy:
+    value: 0.60
+    units: >
+      fraction-of-patients (survival of invasive infection) — **with a correctly
+      aimed modern agent**, and materially worse on colistin-based salvage, which
+      is what most of the world's cases receive
+    src: reasoning
+  access:
+    value: 0.25
+    units: >
+      fraction-of-patients (reaching both the test that identifies the enzyme and
+      the drug that beats it) — **the lowest access figure of any curable
+      bacterial infection in this register**, and it is low in exactly the places
+      where the resistant enzymes are most common
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: good
+  witness: >
+    DIAGNOSTIC is `objective` — culture, susceptibility testing, and molecular
+    detection of the carbapenemase gene.
+    PROGNOSTIC is `partial`. Source, severity score, time to effective therapy
+    and host state inform outcome; most CRE patients are already critically ill
+    of something else, and separating what the organism did from what the
+    underlying illness did is the recurring difficulty.
+    **PREDICTIVE IS `good`, AND IT IS DOING MORE WORK HERE THAN IN ANY OTHER
+    RECORD IN THIS REGISTER.** Identifying *which* carbapenemase the organism
+    carries does not merely refine the choice of drug — it *determines* it, and
+    the wrong choice is inactive rather than suboptimal. A serine carbapenemase
+    is beaten by ceftazidime-avibactam; a metallo-beta-lactamase destroys the
+    same combination and needs cefiderocol or aztreonam-avibactam. **One
+    molecular result separates a drug that works from a drug that does nothing.**
+    **AND THIS IS THE THIRD RECORD RUNNING WHERE THE SAME SEVENTY-YEAR-OLD TEST
+    GETS A DIFFERENT RATING.** Typhoid `partial`, MRSA `good`, CRE `good` — and
+    the differences are laboratories, not information. The convention this
+    register has settled on is to rate the test's quality on `measurement` and
+    put its availability in `access`, which is why this record's access figure is
+    a quarter (gaps.md #142).
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    **THE TOLL IN THIS RECORD IS A DRUG THAT MEDICINE HAD ALREADY ABANDONED ONCE
+    AND WENT BACK FOR.**
+    **Colistin** — polymyxin E — was introduced in the 1950s and largely
+    withdrawn in the 1970s because it was too nephrotoxic to justify when safer
+    agents existed. It returned in the 2000s as a last-line agent against
+    carbapenem-resistant Gram-negatives, unchanged, for the same organisms, at
+    the same cost to the kidney. **Acute kidney injury occurs in something like a
+    third to a half of treated patients**, a share of whom do not fully recover;
+    neurotoxicity is common at higher doses.
+    The other salvage agents are not much better. **Aminoglycosides** are
+    nephrotoxic and cause **permanent sensorineural hearing loss**.
+    **Tigecycline** was associated with higher all-cause mortality than
+    comparators across its trial programme, which is a strange thing to say about
+    a treatment.
+    **AND THE TOLL FELL SHARPLY WHERE THE NEW AGENTS ARRIVED.**
+    Ceftazidime-avibactam, meropenem-vaborbactam, imipenem-relebactam and
+    cefiderocol are ordinary, well-tolerated beta-lactams. Trials that compared
+    them against colistin-based regimens found both better survival and
+    substantially less renal failure. **This record is rated `major` rather than
+    `minor` because most of the world's CRE is still treated the old way.**
+    Which raises the thing the schema cannot say: colistin's toxicity never
+    changed. What changed is what it was being compared against (gaps.md #148).
+  incidence:
+    value: 0.20
+    units: >
+      fraction-of-treated (permanent harm — chiefly residual renal impairment
+      after colistin and aminoglycoside hearing loss) — a reasoned estimate
+      weighted toward the colistin-era regimens that remain the global default
+    src: reasoning
+
+window:
+  what: >
+    **THE WINDOW IS SHORTER THAN MRSA'S AND THE DEFAULT GUESS IS ALWAYS WRONG.**
+    Empirical therapy for a septic patient is a carbapenem or something narrower.
+    For CRE that is, by definition, inactive. So unlike MRSA — where empirical
+    vancomycin at least sometimes covers the organism — **a patient with CRE is
+    receiving nothing that works from the moment treatment starts until the
+    laboratory says otherwise**, which is two to three days by conventional
+    culture.
+    Time to effective therapy in carbapenem-resistant Gram-negative bacteraemia
+    is one of the better-established predictors of mortality in infectious
+    disease, and the delay here is close to guaranteed.
+    Rapid molecular panels run directly off a positive blood culture bottle and
+    return the carbapenemase gene in about an hour. They exist, they work, and
+    they cost more per test than the culture they sit on top of.
+  closes_on: >
+    progression of inadequately treated Gram-negative bacteraemia to septic shock
+    and multi-organ failure — hours to days
+  caught_in_time:
+    value: 0.35
+    units: >
+      fraction-of-invasive-cases (receiving an active agent promptly) — a reasoned
+      estimate, and the lowest in the bacterial block for the reason above
+    src: reasoning
+
+strata:
+  - name: serine carbapenemase (KPC, OXA-48-like)
+    fraction:
+      value: 0.55
+      units: fraction-of-carbapenemase-producing-isolates
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.75
+      units: fraction-of-stratum (survival with an active agent)
+      src: reasoning
+    toll: minor
+    what: >
+      The tractable half. **Avibactam, vaborbactam and relebactam all inhibit
+      these enzymes**, so ceftazidime-avibactam or meropenem-vaborbactam is an
+      ordinary, well-tolerated beta-lactam that works. KPC predominates in the
+      United States, Italy, Greece, Israel and much of Latin America; OXA-48-like
+      in Turkey, North Africa and Europe.
+
+  - name: metallo-beta-lactamase (NDM, VIM, IMP)
+    fraction:
+      value: 0.30
+      units: fraction-of-carbapenemase-producing-isolates
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.55
+      units: fraction-of-stratum (survival with an active agent)
+      src: reasoning
+    toll: major
+    what: >
+      **The hard one, and it is a chemistry problem rather than a clinical one.**
+      Metallo-beta-lactamases use a zinc ion rather than a serine residue, so
+      **none of the new inhibitors touch them** — the entire ceftazidime-avibactam
+      generation is inactive. What works is cefiderocol, a siderophore
+      cephalosporin that the bacterium's own iron uptake carries inside, or
+      aztreonam-avibactam, which pairs a monobactam the enzymes cannot cleave with
+      an inhibitor covering whatever else the organism is making.
+      **NDM dominates the Indian subcontinent** and is spreading, which places the
+      enzyme that defeats the cheap answers in the region with the least access to
+      the expensive ones.
+
+  - name: non-carbapenemase (porin loss with ESBL or AmpC)
+    fraction:
+      value: 0.15
+      units: fraction-of-carbapenem-resistant-isolates
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.80
+      units: fraction-of-stratum (survival with an active agent)
+      src: reasoning
+    toll: minor
+    what: >
+      Resistance by a lost doorway rather than a destroying enzyme: the organism
+      stops making the outer-membrane porin the drug enters through, alongside a
+      beta-lactamase it already had. Usually the most tractable — several agents
+      retain activity — and it matters mainly because **it looks identical on a
+      susceptibility report and needs a different answer**, which is the argument
+      for molecular testing in one sentence.
+
+moved:
+  - date: 2015
+    axis: efficacy
+    from: 0.4
+    to: 0.6
+    why: >
+      **THE DECADE WHEN THE PIPELINE ACTUALLY DELIVERED, WHICH IS NOT THE STORY
+      USUALLY TOLD ABOUT ANTIBIOTICS.**
+      Ceftazidime-avibactam (2015), meropenem-vaborbactam (2017),
+      imipenem-relebactam (2019), cefiderocol (2019), plazomicin (2018), and
+      aztreonam-avibactam more recently. Six agents in a decade against the
+      organisms that were being described as the end of the antibiotic era.
+      Trials against colistin-based comparators found better survival, and the
+      before-and-after in centres that adopted them is one of the clearer
+      treatment effects in resistant infection.
+      **The record is dated to the first approval rather than to a threshold**,
+      because the improvement arrived as a class over five years rather than at a
+      moment.
+    src: recall
+
+  - date: 2019
+    axis: toll
+    from: 0.35
+    to: 0.20
+    why: >
+      **MEDICINE PUT COLISTIN BACK ON THE SHELF.**
+      The same agents displaced a 1950s polymyxin whose nephrotoxicity had got it
+      abandoned once already, and the renal-failure rate in treated patients fell
+      with it. Where the modern agents are available, an infection that used to
+      cost a fraction of survivors part of their kidney function now mostly costs
+      them nothing permanent.
+      **Recorded as a partial move, not a completed one**, because the toll on
+      this record is set by global practice and colistin is still the default over
+      most of the world's CRE burden.
+    src: recall
+
+witness:
+  mechanism: >
+    `established`, and it is established at the level of a specific chemical bond.
+    Carbapenems kill by acylating the penicillin-binding proteins that build the
+    bacterial cell wall, and they were the reliable last resort because they
+    survive most beta-lactamases. **Resistance arrives in three ways and the
+    difference between them is the whole clinical problem.**
+    **Serine carbapenemases** — KPC (Ambler class A) and OXA-48-like (class D) —
+    hydrolyse the drug using a serine residue, and **the diazabicyclooctane and
+    boronate inhibitors developed since 2015 block exactly that residue.**
+    **Metallo-beta-lactamases** — NDM, VIM, IMP (class B) — do the same job with
+    a zinc ion coordinated in the active site. **A serine-directed inhibitor has
+    nothing to bind**, which is why an entire generation of new drugs stops at
+    this line. It is not a matter of dose or of unusual robustness; the mechanism
+    the inhibitors exploit is absent.
+    **Porin loss with a pre-existing ESBL or AmpC** is the third: the organism
+    simply stops expressing the channel the drug enters through.
+    All three ride on **plasmids**, which is why the resistance moves between
+    *Klebsiella*, *E. coli* and *Enterobacter* — and between patients — faster
+    than any organism could spread on its own. The reservoir is **asymptomatic
+    gut colonisation**, which persists for months and belongs to well people, the
+    same structure as typhoid's chronic carriers with the gallbladder replaced by
+    the whole intestine.
+    **THE NAMED HOLES ARE DECOLONISATION AND A VACCINE.** Nothing reliably clears
+    CRE from a colonised gut — selective digestive decontamination is contested
+    and may select for worse, and faecal microbiota transplantation has produced
+    mixed results in small series. There is no licensed *Klebsiella* vaccine.
+    So unlike MRSA, where mupirocin and chlorhexidine can remove the organism
+    before surgery, **there is no way to make a carrier not a carrier.**
+  intervention: >
+    `curative`, and this record exists partly to say so, because
+    "carbapenem-resistant" is routinely used as a synonym for untreatable.
+    **THE THREE STRATA DIFFER IN WHICH DRUG WORKS, NOT IN WHETHER ONE DOES.** All
+    three rate `curative` — the same shape typhoid's resistance strata took one
+    record earlier. What resistance has done here is not close the answer but make
+    it **conditional on a molecular test and an expensive drug**, both of which
+    are distributed inversely to need (gaps.md #146).
+    For serine carbapenemases, ceftazidime-avibactam or meropenem-vaborbactam.
+    For metallo-beta-lactamases, cefiderocol or aztreonam-avibactam. For porin
+    loss, several agents retain activity. Source control — removing the line,
+    draining the collection, relieving the obstruction — matters at least as much
+    as the drug, as in every Gram-negative infection.
+    **THE CAVEAT IS THAT `curative` IS TRUE OF A DRUG THAT A QUARTER OF PATIENTS
+    CAN GET.** These are patented agents costing thousands of dollars a course,
+    and using them correctly requires knowing which enzyme you are facing. The
+    combination of an expensive drug and a molecular test is a high bar in a
+    tertiary centre and an unreachable one in a district hospital in the region
+    where NDM is most common.
+    **AND THE COMPANY THAT MADE ONE OF THEM WENT BANKRUPT.** Achaogen's
+    plazomicin was developed specifically for carbapenem-resistant
+    Enterobacterales, was approved in 2018, and the company filed for bankruptcy
+    the following year (gaps.md #145). The pipeline that produced this record's
+    `moved` entry is not a pipeline anybody has a reason to maintain.
+  prevention: >
+    `risk-reduction` rather than `prophylaxis`, and the difference from the MRSA
+    record one line above is real: **there is nothing to give a person.**
+    MRSA earned `prophylaxis` on decolonisation — mupirocin and chlorhexidine
+    before surgery, a dose to a recipient. **CRE has no working decolonisation**,
+    so what remains is entirely infection control: hand hygiene, contact
+    precautions, environmental cleaning, admission screening of high-risk
+    transfers, cohorting outbreaks, and antimicrobial stewardship to reduce the
+    selection pressure that produces the organism in the first place.
+    These work — CRE outbreaks are routinely closed by them — and the register can
+    only record them as `access` improving, because they are applied to staff,
+    surfaces and prescribing rather than to a patient (gaps.md #66's open half,
+    the seventh job for the word).
+    **The prevention with the largest theoretical effect is the one nobody counts
+    as prevention: using fewer carbapenems.** Every course selects for this.
+  ongoing: >
+    `low` for the illness, which is acute.
+    Not low for colonisation, which is not an illness. A patient known to carry
+    CRE is flagged, isolated, and gowned-and-gloved on every subsequent admission,
+    for a state with no symptoms and — unlike MRSA — **no way to end it.**
+    Median duration of gut carriage is measured in months to years, decolonisation
+    does not work, and the flag is generally permanent in practice.
+    Same field, same gap as MRSA (#144), and one degree worse: there the label can
+    at least in principle be removed.
+
+holes:
+  - >
+    **The burden numbers are the softest in the register's bacterial block, and
+    the record says why in `burden.note` rather than pretending otherwise.**
+    Carbapenem resistance is only counted where a laboratory can test for it.
+  - >
+    **No `residue` block, and that is a judgement call.** Survivors of severe
+    Gram-negative sepsis carry real long-term sequelae — persistent organ
+    dysfunction, functional decline, excess mortality for years. That belongs to
+    sepsis, which is a queued record, and attributing it to the resistance would
+    double-count. The consequence is that this record derives `cure-costs` when
+    a fuller account might read `both`.
+  - >
+    The strata fractions are a global composite over a distribution that is
+    strongly geographic and moving. KPC-dominant and NDM-dominant settings would
+    each produce a different record, and this one averages them.
+  - >
+    Efficacy of 0.60 mixes trial populations receiving modern agents with a much
+    larger real-world population receiving colistin, and the honest form of that
+    figure is a range rather than a number.
+  - >
+    **`amr-infection` is the held umbrella and this is the second specific
+    instance filed under it with no way to state the relation.** Engpass can carry
+    the shared obstacle; it cannot carry "this record is an instance of that one".
+  - >
+    Neonatal sepsis in South Asia and sub-Saharan Africa is arguably its own
+    record and is folded in here, which is exactly the merge that
+    `burden.note` complains about.
+
+blockers:
+  - kind: cost
+    blocks: the drug that works reaching the region where the enzyme lives
+    obstacles: []
+    what: >
+      **THE ONLY AGENTS ACTIVE AGAINST METALLO-BETA-LACTAMASES COST THOUSANDS OF
+      DOLLARS A COURSE AND ARE ON PATENT.** NDM predominates in South Asia.
+      Cefiderocol and aztreonam-avibactam are registered in a small number of
+      wealthy markets and are, in practice, absent from most of the countries
+      carrying the burden.
+      The substitute is colistin, which is cheap, generic, available everywhere,
+      and takes a share of the patient's kidney function.
+      **So the geography of the resistance mechanism and the geography of the
+      drugs that beat it are close to inverse**, and this is not a discovery
+      problem — the molecules exist and are approved. Registration, tendering,
+      procurement and price are the whole of it.
+      Neither agent is in a meaningful voluntary licensing or access arrangement
+      of the kind that exists for HIV and hepatitis C antivirals, which is the
+      demonstrated mechanism for exactly this problem.
+    who_could: [manufacturer, government, payer, nonprofit, philanthropy]
+    scale: 3.0e9
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    blocks: knowing which enzyme, which is the whole of the treatment decision
+    obstacles: []
+    what: >
+      **THIS IS THE STRONGEST DIAGNOSIS BLOCKER IN THE REGISTER, BECAUSE THE TEST
+      DOES NOT REFINE THE ANSWER — IT IS THE ANSWER.**
+      Ceftazidime-avibactam against a serine carbapenemase cures; against a
+      metallo-beta-lactamase it does nothing at all. A clinician without the
+      enzyme result is choosing between two drugs of which one is inert, and the
+      conventional route to the answer takes two to three days during which the
+      patient is on an inactive carbapenem.
+      Rapid molecular panels return the gene in about an hour from a positive
+      blood culture bottle. **Two tiers of failure sit under this.** In wealthy
+      hospitals the panels exist and are not universal, because they cost more
+      than the culture and the saving lands in a different budget. In the
+      settings carrying most of the burden **there is frequently no blood culture
+      at all** — no bottles, no incubator, no microbiologist — so the organism is
+      never identified, the resistance is never recorded, and the case does not
+      appear in the burden figures either.
+      **The second tier is why this record's `access` is a quarter and why its
+      `cases` figure is the weakest number in the file.** The same missing
+      laboratory causes the wrong treatment and the invisible epidemiology.
+    who_could: [health-system, manufacturer, payer, government, nonprofit]
+    scale: 5.0e9
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: any way to make a carrier stop being a carrier
+    obstacles: [protective-immunity]
+    what: >
+      **NOTHING RELIABLY CLEARS CRE FROM A COLONISED GUT**, and the gut is the
+      reservoir — for the patient's own later infection and for transmission to
+      the next patient.
+      Selective digestive decontamination with non-absorbable antibiotics is
+      contested, has never resolved into practice, and carries an obvious
+      objection: it applies more antibiotic pressure to the flora that produced
+      the problem. Faecal microbiota transplantation has produced decolonisation
+      in small uncontrolled series and has not been established. Probiotic and
+      bacteriophage approaches remain early.
+      **The underlying ignorance is about the ecology rather than the organism.**
+      What determines whether a resistant *Klebsiella* establishes in a
+      gut, persists for months, or is displaced by the resident flora is not
+      understood well enough to intervene on deliberately — and that is the same
+      question the microbiome records in this register keep arriving at from the
+      other side.
+      There is also no *Klebsiella* vaccine, and a working one would do to this
+      record what conjugate vaccine is doing to typhoid: **make the resistance
+      question much less important.**
+      `scale: null`.
+    who_could: [academic, sponsor, philanthropy, manufacturer]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: infection control in units that are full, understaffed and shared
+    obstacles: []
+    what: >
+      CRE spreads on hands, surfaces, sinks and shared equipment, and the units
+      where it spreads are the ones with the sickest patients and the least
+      slack. **Sink drains are a documented persistent reservoir** and have
+      forced physical refurbishment of intensive care units to clear an outbreak,
+      which is a plumbing problem rather than a medical one.
+      Containment requires single rooms, screening on admission from
+      higher-prevalence settings, cohorting during outbreaks, and staffing ratios
+      that make hand hygiene compliance achievable. **In an overcrowded ward with
+      shared bays and agency staff, essentially none of that is available**, and
+      the regions with the highest carriage rates are the ones least able to
+      supply it.
+      This is #57's maintenance problem with a capital cost attached: MRSA control
+      needed sustained behaviour, CRE control frequently needs the building
+      changed.
+    who_could: [health-system, government, payer]
+    scale: 4.0e9
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0068
+  rated: 2026-08-24
+  by: [claude, jeremy]

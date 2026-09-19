@@ -1,0 +1,500 @@
+slug: migraine
+id: FND-D-0134
+name: Migraine
+also: [migraine with aura, migraine without aura, chronic migraine, episodic migraine, headache disorder]
+mondo: unresolved
+kind: disease
+residual: false
+contested: false
+
+# THE LARGEST THING THIS REGISTER HAD NOT RECORDED.
+#
+# Around a billion people, one of the top two causes of years lived with
+# disability on earth, concentrated in the decades people work and raise
+# children, and no attributed deaths at all. It was absent from 133 records for
+# the same reason it is under-treated everywhere: **a disease that kills nobody
+# and leaves no lesion is easy to file as not serious.**
+#
+# It is also the record where the mechanism was CONFIDENTLY WRONG for fifty
+# years. The vascular theory — constriction causes the aura, dilation causes the
+# pain — was taught as settled from the 1940s and is now abandoned. Migraine is
+# a primary disorder of the brain, and the drug class that followed from getting
+# that right is the clearest mechanism-to-medicine story in the corpus.
+
+burden:
+  prevalence:
+    value: 1.1e9
+    units: >
+      people worldwide with migraine — roughly 14 to 15 per cent of the global
+      population, and about three times commoner in women than in men after
+      puberty. Of these perhaps a tenth have **chronic migraine**: fifteen or
+      more headache days a month, indefinitely
+    src: recall
+  incidence:
+    value: 3.0e7
+    units: >
+      new cases/year worldwide — a reasoned estimate; onset is concentrated in
+      adolescence and early adulthood and the disorder is strongly heritable
+    src: reasoning
+  note: >
+    **THE BURDEN IS ALMOST ENTIRELY DISABILITY AND IT LANDS IN THE WORKING
+    YEARS.** Prevalence peaks between about twenty and fifty — the decades of
+    education, career formation and raising children — and an attack is not a
+    headache in the ordinary sense: it is hours to three days of pain made worse
+    by movement, with nausea, vomiting, and an inability to tolerate light or
+    sound. The person is not working at reduced capacity. They are in a dark
+    room.
+    **NO DEATHS ARE ATTRIBUTED, WITH ONE HONEST QUALIFICATION.** Migraine with
+    aura is an established independent risk factor for ischaemic stroke,
+    particularly in young women, and the risk multiplies with combined hormonal
+    contraception and smoking. Those deaths are counted in `stroke`. `deaths` is
+    absent here rather than zero, as in `glaucoma`,
+    `retinopathy-of-prematurity` and `refractive-error` — **the fourth record in
+    a row where mortality is the wrong question**, which is now less a pattern
+    than a statement about what the register was built to see.
+    The three-to-one female predominance is real, is biological in origin, and
+    is entangled with a documented history of the condition being dismissed. The
+    register records the dismissal as a `diagnosis` blocker below rather than as
+    an accusation, because that is the form in which it can be checked.
+
+axes:
+  mechanism: partial
+  intervention: suppressive
+  prevention: none
+  ongoing: moderate
+  efficacy:
+    value: 0.5
+    units: >
+      fraction-of-patients (meaningful reduction in attack burden on best
+      available therapy) — **and the number is low for a reason worth stating:
+      the field's own trial endpoint for a preventive is a fifty per cent
+      reduction in monthly migraine days.** Success is defined as halving the
+      problem, not removing it. Acute treatment is worse than intuition
+      suggests: two-hour pain freedom on a triptan is achieved in roughly a
+      third of attacks
+    src: reasoning
+  access:
+    value: 0.25
+    units: >
+      fraction-of-patients (correctly diagnosed AND receiving effective
+      treatment) — roughly half of people with migraine have never had the
+      diagnosis made; of those who have, most are on nothing or on
+      over-the-counter analgesia; and the effective new preventives are
+      payer-restricted in rich countries and essentially absent elsewhere
+    src: reasoning
+
+measurement:
+  diagnostic: clinical
+  prognostic: partial
+  predictive: none
+  witness: >
+    DIAGNOSTIC is `clinical` and the criteria are better than that word usually
+    implies here. The International Classification of Headache Disorders gives
+    operational, internationally agreed criteria — attack duration, character,
+    associated features, number of prior attacks — that a trained clinician
+    applies reproducibly. **This is not `me-cfs`, where competing case
+    definitions select different populations; migraine's definition is stable
+    and has been for decades.**
+    What does not exist is any objective confirmation. **No blood test, no
+    imaging finding, no biomarker.** Neuroimaging in migraine is performed to
+    exclude something else and is normal by definition. The consequence is that
+    the diagnosis rests entirely on the patient being believed, which is the
+    hinge this record turns on.
+    PROGNOSTIC is `partial`. The risk factors for chronification are known at
+    population level — high baseline attack frequency, acute medication overuse,
+    obesity, depression, poor sleep — and none predicts the individual. Since
+    chronification is the outcome worth preventing and it is the one thing
+    prediction would buy, `partial` flatters this.
+    PREDICTIVE is `none`, **and it is expensive in a specific way this register
+    has not recorded before: the trial-and-error has a clock on it.** Nothing
+    identifies which preventive will work in whom, and each candidate needs
+    roughly eight to twelve weeks at an adequate dose before it can be judged.
+    A patient working through four preventives has spent a year finding out —
+    a year of attacks — and that is the standard path, not a failure of care.
+
+# NO `survival:` BLOCK. The fourth in this pass, and by now the omission is the
+# argument. Migraine costs somewhere on the order of a tenth of a person's adult
+# life in hours spent unable to function, and the register has no axis that can
+# represent that. `bucket-design.md` records the missing disability-weighted
+# sibling to axis A; this record is the largest single reason to build it.
+
+moved:
+  - date: 1990
+    axis: mechanism
+    from: correlates
+    to: partial
+    why: >
+      **THE VASCULAR THEORY WAS WRONG AND ITS REPLACEMENT PRODUCED THE DRUGS.**
+      From the 1940s migraine was taught as vasoconstriction causing aura and
+      vasodilation causing pain. Through the 1980s and into the 1990s that gave
+      way to a neural account: cortical spreading depression underlying aura,
+      activation of the trigeminovascular system generating the pain, and
+      **calcitonin gene-related peptide released during attacks in humans** —
+      shown by Goadsby and Edvinsson around 1990. Dated here to that
+      demonstration, which is the point the new account became actionable.
+      One of only a handful of `mechanism` moves in this register, and the
+      only one where the previous position was not ignorance but a confident
+      error.
+    src: recall
+  - date: 1991
+    axis: intervention
+    from: symptomatic
+    to: suppressive
+    why: >
+      Sumatriptan, the first serotonin 5-HT1B/1D agonist, reached the market —
+      **the first treatment designed from a mechanism rather than found by
+      accident**, and the first that aborted attacks rather than dulling them.
+      The triptan class remains the acute standard and is now generic and cheap.
+    src: recall
+  - date: 2010
+    axis: intervention
+    from: suppressive
+    to: suppressive
+    why: >
+      Onabotulinumtoxin A was approved for chronic migraine on the PREEMPT
+      trials — a null axis move recording the first preventive licensed
+      specifically for the chronic form, and a treatment discovered by
+      observation rather than designed.
+    src: recall
+  - date: 2018
+    axis: intervention
+    from: suppressive
+    to: suppressive
+    why: >
+      **CGRP MONOCLONAL ANTIBODIES ARRIVED, TWENTY-EIGHT YEARS AFTER THE
+      PEPTIDE WAS IMPLICATED.** Erenumab and its successors are the first
+      preventives ever designed for migraine rather than borrowed from
+      cardiology, epilepsy or psychiatry — every earlier preventive was a drug
+      for something else, found to help by chance. A null move because the rung
+      did not change, recorded because **the register's whole thesis about
+      mechanism paying off eventually rests on cases like this**, and the
+      elapsed time from target to medicine is the number worth keeping: nearly
+      thirty years.
+    src: recall
+
+toll:
+  severity: major
+  permanent: false
+  what: >
+    **THE TREATMENT CAN CAUSE THE CHRONIC FORM OF THE DISEASE, AND THIS IS THE
+    RECORD'S SHARPEST FACT.** Medication overuse headache: taking acute
+    treatment on more than about ten to fifteen days a month converts episodic
+    migraine into chronic daily headache. The patient is doing exactly what they
+    were told — treat the attack early — and the treatment for the attacks
+    becomes the cause of them. Withdrawal reverses it in most people, which is
+    why this is rated `permanent: false`, and the withdrawal period is weeks of
+    worse pain that many cannot complete.
+    Beyond that, the older preventives are borrowed drugs with borrowed side
+    effects: topiramate's cognitive slowing, word-finding difficulty and
+    paraesthesia; amitriptyline's sedation and weight gain; propranolol's
+    fatigue and exercise intolerance. **A patient cycles through these for
+    months each because nothing predicts which will work**, accumulating side
+    effects from drugs that will turn out not to help.
+    **AND ONE PERMANENT HARM THAT FALLS ON SOMEBODY ELSE.** Sodium valproate is
+    an effective migraine preventive and a potent teratogen, causing major
+    congenital malformation and neurodevelopmental harm in a substantial
+    fraction of pregnancies exposed. It was prescribed for years to women of
+    childbearing age without adequate warning. **The register has no field for
+    a treatment's harm to a person who is not the patient** — the same hole
+    `retinopathy-of-prematurity` records for oxygen restriction — so it is
+    recorded here in prose and is invisible to every derived view.
+  incidence:
+    value: 0.1
+    units: >
+      fraction-of-treated experiencing medication overuse headache or a
+      treatment-limiting adverse effect — a reasoned estimate; medication
+      overuse alone affects on the order of one to two per cent of the general
+      population, which is a large share of everyone being treated
+    src: reasoning
+
+strata:
+  - name: episodic migraine
+    fraction:
+      value: 0.9
+      units: fraction-of-people-with-migraine
+      src: reasoning
+    intervention: suppressive
+    efficacy:
+      value: 0.55
+      units: fraction-of-stratum (meaningful reduction in attack burden on best therapy)
+      src: reasoning
+    toll: minor
+    what: >
+      Attacks on fewer than fifteen days a month, often far fewer. Most of this
+      stratum never sees a doctor about it, treats with over-the-counter
+      analgesia, and is never diagnosed. For those who are, acute treatment with
+      a triptan works well enough in most attacks that a preventive is never
+      needed. **This is the group for whom the disease is genuinely manageable
+      and mostly is not managed**, because the diagnosis was never made.
+
+  - name: chronic migraine
+    fraction:
+      value: 0.1
+      units: fraction-of-people-with-migraine (fifteen or more headache days a month)
+      src: reasoning
+    intervention: suppressive
+    efficacy:
+      value: 0.35
+      units: >
+        fraction-of-stratum (meaningful reduction on best available therapy,
+        including CGRP antibodies and botulinum toxin)
+      src: reasoning
+    toll: major
+    what: >
+      **ROUGHLY A HUNDRED MILLION PEOPLE WITH HEADACHE ON MORE DAYS THAN NOT,
+      INDEFINITELY.** This stratum carries most of the disability in the record
+      and almost all of the medication overuse. It is where the expensive new
+      preventives are indicated and where payers restrict them hardest, and it
+      is the endpoint of the chronification the `window` below describes.
+      Treated well, a substantial minority revert to episodic — which is the
+      strongest argument for treating early and the reason this stratum exists
+      as a separate rating.
+
+window:
+  what: >
+    **THE WINDOW IS CHRONIFICATION, AND IT IS THE MOST NEGLECTED ONE IN THE
+    REGISTER BECAUSE NOTHING ABOUT IT LOOKS URGENT.**
+    Episodic migraine converts to chronic migraine at a few per cent per year,
+    and the conversion is driven by things that are visible and modifiable:
+    rising attack frequency, acute medication used too often, untreated
+    depression, poor sleep, obesity. A person treated adequately when they have
+    four attacks a month is much less likely to be having fifteen a decade
+    later.
+    **What closes the window is that nobody is watching.** There is no
+    surveillance, no recall, no register — a person with worsening migraine
+    escalates their own over-the-counter analgesia, which accelerates the
+    process, and presents years later with daily headache and a medication
+    overuse problem on top of the original disease. By then reversion to
+    episodic is achievable in a minority rather than the majority.
+    The reversibility is partial rather than absolute, which is why this window
+    is rated at all rather than filed as ordinary progression: **unlike glaucoma
+    or ROP, some of what is lost here comes back.**
+  closes_on: >
+    established chronic migraine with medication overuse — reversible in a
+    minority, and progressively less so the longer it has run
+  caught_in_time:
+    value: 0.2
+    units: >
+      fraction-of-cases identified and adequately treated while still episodic
+      and before medication overuse is established — a reasoned estimate, and
+      low chiefly because half of all migraine is never diagnosed at all
+    src: reasoning
+
+witness:
+  mechanism: >
+    `partial`, and it has moved further in thirty years than almost anything
+    else in this register.
+    ESTABLISHED: migraine is a primary brain disorder, not a vascular one.
+    Cortical spreading depression — a slow wave of depolarisation followed by
+    suppression — underlies the aura. The pain is generated by activation of the
+    trigeminovascular system and its projections, with **CGRP** as a central
+    mediator: it is released during attacks, infusing it triggers attacks in
+    people with migraine, and blocking it prevents them. Premonitory symptoms
+    beginning up to two days before the pain localise the start of an attack to
+    the hypothalamus and brainstem. The disorder is strongly heritable and
+    polygenic in its common forms.
+    THE HOLE, and it is the one that matters: **nobody knows what starts an
+    attack, or why the disorder is episodic at all.** A person with migraine has
+    the same brain on the day they are well and the day they are not. Why the
+    threshold is crossed on a particular Tuesday, why attacks cluster with
+    menstruation, why some people convert to a chronic daily state — none of it
+    is settled. Trigger folklore is largely unvalidated and some supposed
+    triggers, chocolate and light sensitivity among them, are now thought to be
+    premonitory *symptoms* mistaken for causes.
+  intervention: >
+    `suppressive`, and it is the **weakest suppression in the register**, which
+    the rung name conceals.
+    Preventives reduce attack frequency for as long as they are taken and
+    stopping returns it, which is the definition. But HIV suppression means an
+    undetectable viral load and a normal life; migraine suppression means the
+    field's own trial endpoint — **a fifty per cent reduction in monthly migraine
+    days.** A chronic migraine patient who responds beautifully goes from twenty
+    headache days a month to ten. That is transformative and it is not
+    remission, and rating it alongside `hiv` compresses a real difference.
+    THE LADDER, WHICH IS UNUSUALLY WELL STOCKED AND UNUSUALLY BADLY DISTRIBUTED.
+    Acute: NSAIDs, triptans (generic, cheap, contraindicated in cardiovascular
+    disease, ineffective or intolerable in a third), and newer gepants and
+    ditans that avoid that contraindication. Preventive: propranolol,
+    amitriptyline, topiramate, candesartan — **all borrowed from other
+    specialties** — plus botulinum toxin for the chronic form and the CGRP
+    monoclonals, the first drugs ever designed for this disease.
+    What does not exist is anything curative, or any way to shorten the natural
+    history. Migraine typically declines after middle age and nothing anyone
+    does brings that forward.
+  prevention: >
+    `none`, and the axis is being used strictly. Nothing prevents a person
+    developing migraine: it is substantially genetic, onset is in adolescence,
+    and no exposure, diet or behaviour has been shown to stop it arising.
+    **What can be prevented is the chronic form**, which is the `window` above
+    and is prevention of *progression* rather than of the disease. The schema
+    does not distinguish those, so the axis reads `none` while the record's most
+    actionable opportunity sits one field down. This is the same compression
+    `chagas` records for treating the indeterminate phase, and it is worth a
+    schema note.
+  ongoing: >
+    `moderate`, rated for the episodic majority: a daily preventive tablet for
+    some, acute medication kept to hand, and the attacks themselves. For the
+    chronic stratum it is unambiguously `high` — headache on more days than not,
+    a monthly injection or a quarterly round of thirty-one botulinum injections
+    into the head and neck, and the constant arithmetic of whether today's
+    tablet is one too many this month.
+    **AND AN ONGOING COST THE AXIS CANNOT SEE: THE PLANNING.** People with
+    frequent migraine organise work, childcare, travel and social life around a
+    condition that gives a few hours' warning at best. That is not captured by
+    `ongoing`, which measures the burden of *treatment*, and it is most of what
+    patients describe.
+
+holes:
+  - >
+    **`efficacy: 0.5` IS AN AVERAGE OVER TWO POPULATIONS THAT SHOULD PROBABLY BE
+    SEPARATE RECORDS.** Episodic migraine in a diagnosed patient with a triptan
+    is close to a solved problem; chronic migraine with medication overuse is
+    not. They are held here as strata, which is better than one number, and a
+    future pass may find the split large enough to justify two entries — the
+    same question `glaucoma` raises about open-angle and angle-closure.
+  - >
+    **THE GENDER DIMENSION IS RECORDED CAREFULLY AND IS PROBABLY UNDER-STATED.**
+    A three-to-one female predominance in a condition with no objective test,
+    historically characterised as psychological, is a setup for systematic
+    under-treatment, and the under-diagnosis figures are consistent with it.
+    The register files this as a `diagnosis` blocker rather than a claim about
+    clinicians' motives, because the first is checkable and the second is not.
+    **That framing choice is itself arguable** and a reader who thinks the
+    register is dodging the point has a case.
+  - >
+    **THE VALPROATE HARM HAS NOWHERE TO GO, FOR THE SECOND TIME IN THREE
+    RECORDS.** `retinopathy-of-prematurity` records infant deaths caused by a
+    prevention; this records congenital malformation caused by a treatment given
+    to the mother. Both are harms to a person who is not the patient, both are
+    real and dated, and **the schema has no field for either.** Two independent
+    instances in one week is the threshold this corpus normally uses to justify
+    a field.
+  - >
+    **NO `residue` BLOCK, AND THE OMISSION IS DELIBERATE BUT NOT CONFIDENT.**
+    Migraine leaves no lesion that anybody can point to; the disability is the
+    recurring attack, which the schema puts in `ongoing`. White matter
+    hyperintensities are commoner in migraine with aura and their clinical
+    significance is genuinely unknown. If they turn out to matter, this record
+    needs a residue block and the derived `restored` value changes.
+  - >
+    **EVERY NUMBER IS `recall` OR `reasoning`.** The billion-person prevalence,
+    the three-to-one sex ratio, the fifty-per-cent responder endpoint and the
+    one-third two-hour pain freedom figure all carry the record's argument and
+    none is cited. The 1990, 1991, 2010 and 2018 dates in `moved` are the most
+    checkable claims here and are the natural target for `source_moved.py`.
+  - >
+    Written from model recall. The mechanism shift, the CGRP story, medication
+    overuse headache and the diagnostic criteria are the parts most likely
+    right; every number is the part most likely wrong.
+
+blockers:
+  - kind: diagnosis
+    blocks: the condition being named at all
+    what: >
+      **ROUGHLY HALF OF PEOPLE WITH MIGRAINE HAVE NEVER BEEN DIAGNOSED**, and
+      the reasons are not technical. There is no test to be unavailable and no
+      equipment to be missing; the diagnosis requires a clinician to take a
+      history and apply criteria that have been stable for thirty years.
+      Three failures stack. **People do not present** — the condition is widely
+      understood, by patients as much as anyone, as a bad headache that ordinary
+      people put up with. **When they present they are misfiled** — as sinus
+      headache, tension headache or stress, with the sinus misdiagnosis common
+      enough to be a documented phenomenon. **And the consultation is too
+      short**: applying the criteria properly takes longer than a primary care
+      appointment allows, and there is no shortcut.
+      Structurally this is `pots` and `chagas` — a diagnosis that costs almost
+      nothing and is not made — at the scale of a billion people. Priced as a
+      training and pathway programme.
+    who_could: [health-system, government, academic, patient-org]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+  - kind: cost
+    blocks: the drugs that were designed for this disease
+    what: >
+      **THE FIRST PREVENTIVES EVER DESIGNED FOR MIGRAINE ARE PRICED AS SPECIALTY
+      BIOLOGICS FOR A CONDITION AFFECTING A SEVENTH OF HUMANITY.** CGRP
+      monoclonal antibodies run to several hundred dollars a month in
+      high-income markets and are almost entirely absent from low- and
+      middle-income ones. Payers respond with step therapy — fail two or three
+      of the older borrowed drugs first — which is a rational rationing response
+      and which costs the patient six to nine months of attacks per step, since
+      each trial takes two to three months to judge.
+      **The acute half of the problem is the opposite and is more damning.**
+      Sumatriptan is off patent and costs very little, and remains unavailable or
+      unaffordable across much of the world. This is not a pricing problem; it is
+      the ordinary essential-medicines failure the register records for `asthma`
+      preventers — the effective drug is not what arrives in the box.
+    who_could: [payer, government, manufacturer, health-system, nonprofit]
+    scale: 3.0e9
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    obstacles: [who-progresses]
+    blocks: knowing who will chronify, and which drug will work
+    what: >
+      Two prediction failures with the same shape and very different costs.
+      **WHICH PATIENT CHRONIFIES.** A few per cent of episodic migraine converts
+      to chronic each year. Population risk factors are known and none identifies
+      the individual, so nobody knows whom to treat aggressively early — which
+      is exactly what would keep them episodic. A direct instance of
+      `who-progresses` (FND-O-0001).
+      **WHICH DRUG WORKS.** Nothing predicts response to any preventive, and
+      each candidate takes eight to twelve weeks at adequate dose to judge. The
+      standard path through four options is a year, spent having attacks, and
+      accumulating the side effects of drugs that will turn out not to help.
+      **A response biomarker would be worth more here than a new drug class**,
+      which is unusual and worth recording.
+      `scale: null` — neither is purchasable.
+    who_could: [academic, sponsor, nonprofit]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: what actually starts an attack
+    what: >
+      The mechanism is `partial` in a specific place: the field can describe an
+      attack in progress in considerable molecular detail and cannot say why it
+      began. **A person with migraine has the same brain on a good day and a bad
+      one**, and nothing explains the threshold, the periodicity, or the
+      relationship to the menstrual cycle.
+      This is the difference between a treatment that aborts or suppresses
+      attacks and one that stops them occurring, and it is why every therapy in
+      the record is the former. It is also why trigger advice remains largely
+      folklore: several classical triggers are now suspected to be premonitory
+      symptoms of an attack that had already started, which would mean patients
+      have been avoiding chocolate on the strength of a reversed causal arrow
+      for fifty years.
+      `scale: null`.
+    who_could: [academic, nonprofit, philanthropy]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: policy
+    blocks: the condition being taken seriously enough to fund
+    what: >
+      Headache disorders receive research funding far below what their
+      disability burden would imply on any consistent rule, and headache
+      medicine is a small subspecialty with few dedicated services in most
+      countries. The register's target refrain — *it is solvable but somebody
+      will not allow it* — does not apply: nothing is being suppressed and no
+      regulator has refused anything. **The failure is that a non-fatal
+      condition with no visible lesion does not compete for attention against
+      diseases that kill**, which is a description of how health systems
+      prioritise rather than of anyone's decision.
+      `standing: documented` because the funding-to-burden discrepancy is
+      published and repeatedly quantified, not because anyone has been shown to
+      have chosen it.
+    who_could: [government, sponsor, health-system, patient-org, philanthropy]
+    scale: 5.0e8
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0135
+  rated: 2026-09-01
+  by: [claude, jeremy]

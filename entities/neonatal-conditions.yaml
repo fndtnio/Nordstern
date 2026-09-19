@@ -1,0 +1,587 @@
+slug: neonatal-conditions
+id: FND-D-0072
+name: neonatal conditions
+also: [neonatal disorders, preterm birth complications, birth asphyxia, neonatal encephalopathy, neonatal sepsis, perinatal conditions]
+mondo: MONDO:0100086
+kind: syndrome
+residual: false
+contested: false
+
+# `MONDO:0100086` is `perinatal disease`, a grouping term, and it is the least
+# satisfying join in the register — FOURTH RECORD RUNNING where the Mondo mapping
+# fails structurally, and the reason is new again.
+#
+#   cre                  — resistance crosses genera; the spine is taxonomy
+#   sepsis               — no aetiology of its own; the spine is aetiology
+#   childhood-pneumonia  — the term is age-agnostic (minor)
+#   THIS                 — the two largest components are EVENTS, NOT DISEASES
+#
+# **Preterm birth** is `HP:0001622` and **stillbirth** is `HP:0003826` — both
+# *phenotypes* in the Human Phenotype Ontology, neither a disease anywhere. There
+# is no disease called "born too early" and none called "died before being born",
+# because an ontology of diseases has no category for a thing that happens to a
+# pregnancy. Between them they account for most of what this record is about.
+#
+# THE PATIENT IS HOURS OLD. No history, no reported symptom, no consent, and a
+# physiology that was a different system yesterday — lungs filling with air for the
+# first time, ductus arteriosus closing, circulation rerouting. Every other record
+# here assumes a patient who can be asked something.
+
+burden:
+  deaths:
+    value: 2.3e6
+    units: >
+      neonatal deaths/year (first 28 days) — **about 47% of all under-five
+      deaths**, a share that has RISEN as deaths in older children fell faster,
+      and roughly a third of them occur in the first 24 hours of life
+    src: recall
+  cases:
+    value: 1.34e7
+    units: >
+      preterm births/year — about one birth in ten, and the largest single
+      contributor to the deaths above; **not a case count for the record as a
+      whole**, which has no coherent one
+    src: recall
+  note: >
+    **THE NUMBER THAT BELONGS HERE AND IS NOT IN IT: ROUGHLY 1.9 MILLION
+    STILLBIRTHS A YEAR.**
+    That is comparable to the neonatal death figure above and larger than malaria,
+    and it appears in **no** global mortality total, generates **no** DALYs under
+    standard methodology, and was absent from the Sustainable Development Goals as
+    originally written. A death before the first breath is not counted as a death
+    (gaps.md #156).
+    **THE DENOMINATOR IS ALSO UNLIKE EVERY OTHER RECORD'S.** Neonatal mortality is
+    reported per thousand *live births*, not per population — and "live birth" is a
+    definitional boundary that countries draw differently. A baby born at 22 weeks
+    who gasps once may be a live birth in one registry and a stillbirth or
+    miscarriage in another, which moves the numerator and the denominator in
+    opposite directions and makes international comparison of the extreme-preterm
+    end partly an artefact of paperwork.
+    Composition, approximately: preterm birth complications a third, intrapartum
+    events about a quarter, infections about a quarter, the remainder congenital
+    anomalies, jaundice and other causes.
+
+survival:
+  horizon: 28 days from birth
+  untreated:
+    value: 0.8
+    units: >
+      fraction alive — prematurity, birth asphyxia and neonatal sepsis without
+      facility care. **A blend across an entire ICD chapter**, and the register
+      already flags this record as holding too much
+    src: reasoning
+  treated:
+    value: 0.97
+    units: >
+      fraction alive with neonatal intensive care. **Survival at 28 weeks'
+      gestation exceeds 95% in a high-income unit**, and this figure describes a
+      standard of care most of the world's babies never encounter
+    src: reasoning
+  witness: >
+    **2.3 million deaths a year, and the treatment is a functioning hospital.**
+    Warmth, feeding support, antibiotics, resuscitation and oxygen — the
+    interventions are not new and are not patented. **The largest absolute
+    survival gap in the register that is purely a delivery figure.**
+
+axes:
+  mechanism: partial
+  intervention: curative
+  prevention: prophylaxis
+  ongoing: low
+  efficacy:
+    value: 0.95
+    units: >
+      fraction-of-patients (survival, with full neonatal intensive care) —
+      survival at 28 weeks' gestation exceeds 95% in a high-income unit, and the
+      figure describes a standard of care most of these babies never encounter
+    src: reasoning
+  access:
+    value: 0.35
+    units: >
+      fraction-of-patients (reaching warmth, feeding support, oxygen with a
+      blender, and somebody trained to ventilate a newborn) — **and the binding
+      constraint is a trained pair of hands at the birth itself**
+    src: reasoning
+
+measurement:
+  diagnostic: clinical
+  prognostic: partial
+  predictive: none
+  witness: >
+    **THIRD RECORD RUNNING WITH `clin·part·none`, AND THAT IS ITSELF A FINDING.**
+    `sepsis`, `childhood-pneumonia` and now this one. The register's diagnostic
+    floor is not distributed evenly across medicine — **it is concentrated in
+    acute severe illness in the very young**, which is also where the deaths are.
+    Thyroid cancer has a measurement apparatus that can find disease nobody needed
+    found; a dying newborn has a nurse's judgement.
+    DIAGNOSTIC is `clinical`. A sick newborn is recognised by poor feeding,
+    lethargy, respiratory distress, temperature instability — signs that are the
+    same for sepsis, hypoglycaemia, congenital heart disease, inborn errors of
+    metabolism and simply being cold. **Neonatal sepsis has particularly poor
+    diagnostics**: blood cultures need a volume of blood that is a meaningful
+    fraction of the baby's circulation, yield is low, and the result arrives after
+    the decision has been made.
+    Objective measures exist and are cheap — birthweight, temperature, pulse
+    oximetry, glucose, bilirubin — and are not universally taken.
+    **PROGNOSTIC IS `partial`, AND THE SINGLE MOST IMPORTANT VARIABLE IS OFTEN A
+    GUESS.** Gestational age predicts nearly everything about a preterm baby's
+    prospects and determines whether antenatal steroids should have been given.
+    Establishing it requires an early ultrasound, which a large fraction of the
+    world's pregnancies never receive, so it is estimated from a remembered last
+    menstrual period or from the baby's appearance. **A dating error of three
+    weeks changes the treatment and can invert its sign** (see `toll`, and
+    gaps.md #157).
+    PREDICTIVE is `none`. Nothing at the cot-side says which baby with
+    encephalopathy will benefit from cooling, which will be harmed by it, or which
+    infant's clinical deterioration is the resistant *Klebsiella* in the `cre`
+    record rather than something the first-line antibiotic covers.
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    **THE CLASSIC IATROGENIC BLINDNESS OF THE TWENTIETH CENTURY IS HAPPENING
+    AGAIN, IN DIFFERENT COUNTRIES, FOR THE SAME REASON.**
+    **Retinopathy of prematurity.** Unmonitored supplemental oxygen given to
+    premature babies in the 1940s and 1950s blinded tens of thousands of them
+    before the cause was identified — one of the largest iatrogenic epidemics in
+    medical history. The lesson was learned and oxygen was titrated. **A third
+    epidemic of ROP is now under way in middle-income countries**, where neonatal
+    units exist and keep babies alive who would previously have died, but oxygen
+    blenders, continuous saturation monitoring and retinal screening programmes do
+    not reliably exist alongside them. The blindness is the price of the survival
+    and of the missing five-dollar accessory, in that order.
+    **Bronchopulmonary dysplasia** — chronic lung disease caused by ventilating an
+    unfinished lung — is the second, and it is the beginning of a trajectory that
+    ends in the `copd` record decades later. **Necrotising enterocolitis** is
+    associated with formula feeding in preterm infants and destroys bowel.
+    **And antenatal corticosteroids, the cheapest life-saving drug in obstetrics,
+    increased neonatal deaths when scaled into low-resource settings** — see the
+    `moved` entry and gaps.md #157. A dollar of dexamethasone given to the right
+    baby saves a life and given to the wrong one takes one.
+    Rated `major` and permanent on the strength of blindness and chronic lung
+    disease in survivors of intensive care.
+  incidence:
+    value: 0.05
+    units: >
+      fraction-of-intensively-treated (permanent harm — chiefly retinopathy of
+      prematurity and bronchopulmonary dysplasia) — a reasoned estimate, higher in
+      units with monitoring gaps than in either the best-equipped or the
+      least-equipped settings
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    **THIS RECORD MANUFACTURES AT LEAST THREE OTHERS, AND THE ARROWS ARE
+    DOCUMENTED.**
+    **Cerebral palsy.** Neonatal encephalopathy after an intrapartum event, and
+    intraventricular haemorrhage and periventricular leukomalacia in the very
+    preterm, are the leading causes. `cerebral-palsy` is queued as its own record
+    and is, in the queue's own words, the permanent residue of this one.
+    **Neurodevelopmental impairment short of cerebral palsy** — cognitive,
+    attentional and behavioural — scales steeply with decreasing gestational age
+    and is the commonest outcome of extreme prematurity in survivors.
+    **Chronic lung disease into adulthood.** Preterm birth lowers peak lung
+    function and raises COPD risk, arriving at the same record from a different
+    direction than `childhood-pneumonia` does.
+    **And a metabolic tail nobody attributes.** Preterm and growth-restricted
+    infants carry elevated adult risk of hypertension and chronic kidney disease —
+    nephron endowment is complete before term and is not added to afterwards — and
+    of cardiometabolic disease generally. Three queued records (`hypertension`,
+    `chronic-kidney-disease`, `type-2-diabetes`) have an input here that none of
+    them will be able to name.
+    Sensorineural hearing loss and, from ROP, blindness complete it.
+  incidence:
+    value: 0.10
+    units: >
+      fraction-of-survivors (permanent neurodevelopmental, sensory or respiratory
+      impairment) — dominated by the very preterm and the encephalopathic, and a
+      reasoned estimate over cohorts that are almost entirely high-income
+    src: reasoning
+
+window:
+  what: >
+    **THE SHORTEST WINDOW IN THE REGISTER, AND IT IS MEASURED IN SECONDS.**
+    Neonatal resuscitation training calls it **the Golden Minute**: a baby who
+    does not breathe at birth needs bag-and-mask ventilation started within sixty
+    seconds. Not a drug, not a machine — air, a mask, and somebody who has been
+    taught. Programmes built entirely around teaching that one skill to birth
+    attendants have reduced intrapartum-related deaths and early neonatal
+    mortality in the settings that ran them.
+    The other windows here are barely longer. **Therapeutic hypothermia for
+    neonatal encephalopathy must begin within six hours** to work at all, in the
+    settings where it works. Hypoglycaemia and hypothermia in a small baby kill
+    within hours and are corrected with sugar and a blanket. A third of all
+    neonatal deaths occur in the first twenty-four hours of life and about three
+    quarters within the first week.
+    **So this record's window closes before most of medicine could be brought to
+    bear on it**, which is why almost everything that works here is something a
+    person already in the room can do — dry the baby, keep it warm, put it on the
+    mother's chest, ventilate it if it does not breathe.
+  closes_on: >
+    failure to establish breathing at birth, or progression of hypothermia,
+    hypoglycaemia or infection in a newborn — sixty seconds to a few hours
+  caught_in_time:
+    value: 0.40
+    units: >
+      fraction-of-cases (receiving competent immediate newborn care) — a reasoned
+      estimate; a large share of the world's births still occur without an
+      attendant trained to resuscitate
+    src: reasoning
+
+strata:
+  - name: preterm birth complications
+    fraction:
+      value: 0.36
+      units: fraction-of-neonatal-deaths
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.95
+      units: fraction-of-stratum (survival, with full neonatal intensive care)
+      src: reasoning
+    toll: major
+    what: >
+      The largest single cause, and the one where the gap between best and typical
+      care is widest — survival at 28 weeks exceeds 95% in a well-equipped unit
+      and is close to zero in a health post. **The interventions that carry most of
+      the achievable gain are not intensive care**: warmth, kangaroo mother care,
+      support with feeding, bubble CPAP, and antenatal steroids given to the right
+      mother. This stratum also carries the record's whole `toll`.
+
+  - name: intrapartum-related events (birth asphyxia)
+    fraction:
+      value: 0.24
+      units: fraction-of-neonatal-deaths
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.85
+      units: fraction-of-stratum (survival)
+      src: reasoning
+    toll: minor
+    what: >
+      A baby that does not breathe. **The window is sixty seconds and the
+      intervention is a bag and a mask**, which makes this the cheapest large
+      mortality reduction available anywhere in this register. The survivors carry
+      the encephalopathy, and cooling — standard of care in high-income units —
+      **increased mortality in a randomised trial in South Asia** (gaps.md #157).
+
+  - name: neonatal infections
+    fraction:
+      value: 0.25
+      units: fraction-of-neonatal-deaths
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.80
+      units: fraction-of-stratum (survival)
+      src: reasoning
+    toll: minor
+    what: >
+      Sepsis, pneumonia, meningitis and — still, where immunisation has not reached
+      — tetanus. **This stratum is where the `cre` record does its killing.**
+      Carbapenem-resistant *Klebsiella* in South Asian and sub-Saharan neonatal
+      units is, on that record's own reading, probably the centre of mass of the
+      global CRE burden, in babies whose infection is never cultured and never
+      counted. Chlorhexidine cord care, clean birth practice and maternal group B
+      streptococcal prophylaxis are the cheap end.
+
+  - name: congenital anomalies, jaundice and other
+    fraction:
+      value: 0.15
+      units: fraction-of-neonatal-deaths
+      src: reasoning
+    intervention: disease-modifying
+    efficacy:
+      value: 0.60
+      units: fraction-of-stratum (survival)
+      src: reasoning
+    toll: minor
+    what: >
+      Congenital heart disease and other structural anomalies — surgically
+      correctable in principle, and the access gap is among the widest in medicine
+      (`congenital-heart-disease` is queued). Severe jaundice progressing to
+      **kernicterus** belongs here and should not: it causes permanent
+      choreoathetoid cerebral palsy and deafness, it is prevented by a
+      bilirubin measurement and a phototherapy lamp, and it still happens.
+
+moved:
+  - date: 2000
+    axis: access
+    from: 0.15
+    to: 0.35
+    why: >
+      **NEONATAL DEATHS ROUGHLY HALVED — FROM ABOUT FIVE MILLION A YEAR IN 1990 TO
+      ABOUT 2.3 MILLION — AND THE SHARE OF CHILD DEATHS THEY REPRESENT WENT UP.**
+      Both halves matter. Skilled birth attendance, maternal and neonatal tetanus
+      elimination across most of the world, resuscitation training, chlorhexidine
+      cord care, kangaroo mother care and antenatal steroids together produced one
+      of the larger mortality reductions of the period.
+      **And neonatal mortality fell more slowly than mortality in older children**,
+      so the neonatal share of under-five deaths rose from roughly 40% to roughly
+      47%. That is the register's clearest demonstration of a general rule it
+      cannot state: **as a burden falls, what remains is the part that was hardest
+      to prevent.** Diarrhoea and pneumonia in a two-year-old yield to vaccines,
+      oral rehydration and antibiotics. A baby that does not breathe at birth
+      requires somebody competent to be standing there at that moment, and that is
+      not a commodity.
+    src: recall
+
+  - date: 2021
+    axis: efficacy
+    from: 0.93
+    to: 0.95
+    why: >
+      **THE LARGEST RECENT GAIN IN THIS RECORD IS A MOTHER HOLDING HER BABY, AND
+      IT COSTS NOTHING.**
+      Kangaroo mother care — continuous skin-to-skin contact with exclusive
+      breastfeeding — had been known for decades to reduce mortality in low
+      birthweight infants, on the assumption that the baby must first be
+      stabilised in an incubator. The WHO immediate-KMC trial, reporting in 2021,
+      randomised infants between 1.0 and 1.8 kg to skin-to-skin contact **starting
+      before stabilisation**, and was stopped early because mortality was
+      substantially lower in the intervention group.
+      It requires no electricity, no consumables, no maintenance and no supply
+      chain — which makes it the exact inverse of the oxygen problem in
+      `childhood-pneumonia` (gaps.md #154). What it requires is a ward that lets
+      mothers stay with their babies, which is an organisational choice.
+      **A trial that cheap and that large would be the headline result of the
+      decade in most fields.**
+    src: recall
+
+witness:
+  mechanism: >
+    `partial`, and it is a genuinely mixed rating over a genuinely mixed entity.
+    **What is well understood** is the physiology of transition and what goes wrong
+    with it. The fetal lung is fluid-filled and surfactant-deficient before roughly
+    34 weeks, so a preterm baby cannot maintain alveolar patency — which is why
+    surfactant and CPAP work and why antenatal corticosteroids given to the mother
+    accelerate the fetal lung's maturation. Thermoregulation fails because a small
+    baby has a large surface-to-mass ratio and no brown fat reserve. Hypoxic
+    ischaemic injury to the neonatal brain follows a known cascade of primary
+    energy failure, a latent phase, and secondary delayed injury — **and the latent
+    phase is precisely why cooling within six hours can work at all.**
+    **WHAT IS NOT UNDERSTOOD IS WHY LABOUR STARTS EARLY**, which governs the
+    largest stratum. Thirteen million preterm births a year, and for spontaneous
+    preterm labour — most of them — the mechanism is not known. Infection,
+    inflammation, cervical insufficiency, uterine overdistension and stress are
+    associated; none predicts an individual pregnancy; and the interventions that
+    exist (progesterone, cervical cerclage) help narrow selected groups. **Almost
+    everything medicine does about prematurity is care for the baby afterwards
+    rather than prevention of the event**, and that is a statement about ignorance
+    rather than about priorities.
+    The second hole is which newborn is infected, which is `sepsis`'s hole in a
+    patient too small to give a blood culture.
+  intervention: >
+    `curative` — a baby supported through the transition becomes a well child, and
+    the intervention is finite — and **the things that work are startlingly
+    low-technology**, which is the most useful thing this record has to say.
+    **Drying and warming.** **Kangaroo mother care**, which the 2021 trial showed
+    should start immediately rather than after stabilisation. **Bag-and-mask
+    ventilation within the first minute.** **Support with breastfeeding**, and
+    donor milk where available. **Chlorhexidine to the cord.** **Antenatal
+    corticosteroids** to a mother in genuine preterm labour, costing about a
+    dollar. **Bubble CPAP**, which can be built from tubing and a bottle of water
+    and does most of what a ventilator does for most preterm babies.
+    Then the expensive end: surfactant, mechanical ventilation, parenteral
+    nutrition, therapeutic hypothermia, neonatal surgery.
+    **AND THIS IS THE RECORD WHERE TWO STANDARD INTERVENTIONS WERE SHOWN TO KILL
+    BABIES IN THE SETTINGS THAT NEEDED THEM MOST** — antenatal steroids scaled into
+    low-resource communities, and therapeutic hypothermia trialled in South Asia.
+    Both are unambiguous standard of care elsewhere. See gaps.md #157; it is the
+    single most important thing in this file.
+  prevention: >
+    `prophylaxis`, and most of it is administered to somebody else — the mother —
+    weeks before the patient exists.
+    Antenatal care itself; **tetanus toxoid**, which has all but eliminated
+    neonatal tetanus; **syphilis screening and treatment**, which prevents
+    stillbirth and congenital syphilis for the price of a test and an injection and
+    is still missed at scale; **intermittent preventive treatment for malaria in
+    pregnancy**, which prevents the low birthweight in `malaria`'s residue;
+    **maternal group B streptococcal prophylaxis**; **folic acid**, which prevents
+    neural tube defects; and **maternal RSV vaccination**, which arrived in 2023
+    and belongs as much to this record as to `childhood-pneumonia`.
+    Then birth itself: skilled attendance, clean delivery, appropriate caesarean
+    section — **and both too few and too many are harmful**, which is a shape the
+    register has no way to express, since `access` assumes more is better.
+    Preventing prematurity, as opposed to managing it, barely exists.
+  ongoing: >
+    `low` for the episode: the neonatal period is twenty-eight days and it ends.
+    **And the field is close to meaningless here**, because the survivors who
+    matter carry decades of it. A child with cerebral palsy from neonatal
+    encephalopathy, or chronic lung disease from ventilation, has an `ongoing`
+    burden the register files under `residue` and then rates as though it were
+    over. The queued `cerebral-palsy` record exists to hold what this one cannot.
+
+holes:
+  - >
+    **THE STILLBIRTHS ARE NOT IN THE BURDEN FIGURE AND THE RECORD CANNOT PUT THEM
+    THERE.** Roughly 1.9 million a year, prevented by the same antenatal and
+    intrapartum care as the deaths that are counted, and invisible to every metric
+    used to prioritise that care (gaps.md #156).
+  - >
+    **This is four or five entities in a trench coat.** Preterm birth, intrapartum
+    hypoxia, neonatal infection and congenital anomaly share a denominator and an
+    age band and almost nothing else — different mechanisms, different
+    interventions, different windows, different residues. GBD groups them and this
+    record follows, which is the strongest `strata`-should-be-records case in the
+    corpus so far.
+  - >
+    `efficacy: 0.95` describes a neonatal intensive care unit and is therefore a
+    statement about roughly the same population that `access: 0.35` says cannot
+    reach one. The pair is close to circular and the strata carry the honest
+    numbers.
+  - >
+    **Gestational age is unknown or wrong for a large fraction of the pregnancies
+    in this record**, and it is the variable that everything else depends on. The
+    register has no way to record that an input to a rating is systematically
+    mismeasured.
+  - >
+    The residue figure is drawn almost entirely from high-income follow-up cohorts
+    of babies who received intensive care. The neurodevelopmental outcome of
+    surviving extreme prematurity without it is barely studied.
+  - >
+    Maternal outcomes are absent. The mother is a patient in every one of these
+    events, receives some of the interventions, and appears nowhere —
+    `maternal-haemorrhage` is queued and will have the mirror-image problem.
+
+blockers:
+  - kind: logistics
+    blocks: somebody competent being in the room at the moment of birth
+    obstacles: []
+    what: >
+      **THE INTERVENTION WITH THE BEST RETURN IN THIS RECORD IS A TRAINED PERSON
+      AND A BAG-VALVE MASK, AND IT CANNOT BE PROCURED.**
+      A baby who does not breathe needs ventilation within sixty seconds. The
+      equipment costs a few dollars and lasts years. **The constraint is that
+      somebody who has been taught the skill, and practised it recently, is
+      standing there** — at a birth that may happen at night, at home, or in a
+      facility with one midwife covering a ward.
+      This is `childhood-pneumonia`'s oxygen problem in its purest form (gaps.md
+      #154): not a product, no unit, no manufacturer with an interest, and a
+      failure mode that is invisible in any procurement report. Resuscitation
+      training decays measurably within months without practice, so it is a
+      recurring operating cost disguised as a one-off intervention — which is
+      exactly the shape #57 says the register cannot value.
+      Add to it warmth, a clean surface, a bilirubin meter and a phototherapy lamp,
+      an oxygen blender and a saturation monitor. Every item is cheap. **The system
+      that keeps all of them working, at three in the morning, is the thing that
+      does not exist.**
+    who_could: [health-system, government, payer, nonprofit, philanthropy]
+    scale: 8.0e9
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: knowing why labour starts early, which governs the largest stratum
+    obstacles: []
+    what: >
+      **THIRTEEN MILLION PRETERM BIRTHS A YEAR AND NOBODY KNOWS WHY MOST OF THEM
+      HAPPEN.**
+      Spontaneous preterm labour — the majority — has no established mechanism.
+      Intrauterine infection and inflammation, cervical insufficiency, uterine
+      overdistension, and maternal stress and undernutrition are all associated.
+      None of them predicts an individual pregnancy, and the two interventions that
+      work — vaginal progesterone and cervical cerclage — work in narrowly selected
+      women identified by a short cervix or a previous preterm birth, which is a
+      small share of the total.
+      The consequence is that **essentially the entire global response to
+      prematurity is care for the baby afterwards.** That is not a misallocation:
+      it is what you do when you cannot prevent the event. But it means the largest
+      single cause of death in children under five has no preventive programme
+      aimed at the cause, and the register has no way to say that a `prophylaxis`
+      rating is being carried entirely by interventions aimed downstream.
+      **This blocker has no Engpass obstacle and should have one.** "Why does
+      labour start early" is a mechanism question cited by exactly one record so
+      far, which is below Engpass's granularity threshold, and it is the largest
+      untagged knowledge blocker in the corpus.
+      `scale: null`.
+    who_could: [academic, sponsor, philanthropy]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: evidence-incomplete
+    blocks: knowing whether a proven intervention will help or kill in this setting
+    obstacles: []
+    what: >
+      **TWO STANDARD-OF-CARE INTERVENTIONS HAVE BEEN SHOWN IN RANDOMISED TRIALS TO
+      INCREASE NEONATAL DEATHS IN THE SETTINGS WITH THE MOST DEATHS.**
+      *Antenatal corticosteroids.* A cluster-randomised trial across six
+      low-and-middle-income countries, reporting in 2015, promoted their use at
+      community level and found **higher neonatal mortality overall and more
+      maternal infection.** The mechanism is not mysterious: without reliable
+      dating, the drug reaches term babies who do not benefit and are harmed, and
+      without newborn care the surviving preterm babies gain little. A subsequent
+      WHO trial in 2020, restricted to hospitals with adequate newborn care and
+      confirmed gestational age, found the expected **reduction** in neonatal
+      death.
+      *Therapeutic hypothermia.* Standard of care for neonatal encephalopathy in
+      high-income units for two decades. A randomised trial across India, Sri Lanka
+      and Bangladesh, reporting in 2021, found **increased mortality.**
+      **So the register's model — capability is a property of medicine, access is a
+      property of a place — is wrong for these two interventions.** Their effect
+      has a sign, and the sign depends on co-requisite capabilities the register
+      records as `access` (gaps.md #157).
+      Filed as `evidence-incomplete` rather than `knowledge`: the trials were run,
+      well, and answered the question. What is missing is the same work for
+      everything else that was proven in a Boston NICU and exported.
+    who_could: [academic, sponsor, regulator, philanthropy, nonprofit]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    blocks: knowing how old the pregnancy is, and which newborn is infected
+    obstacles: []
+    what: >
+      **GESTATIONAL AGE IS THE MOST IMPORTANT NUMBER IN THIS RECORD AND A LARGE
+      FRACTION OF THE WORLD'S PREGNANCIES DO NOT HAVE ONE.**
+      It decides whether antenatal steroids help or harm, what a birthweight means,
+      what to expect, and what to attempt. Establishing it requires an ultrasound
+      before about 22 weeks; without one it is estimated from a remembered last
+      menstrual period or from the baby's appearance after birth, both of which
+      carry errors of weeks. Portable and AI-assisted ultrasound aimed at exactly
+      this is one of the more promising things in global health and is not
+      deployed at scale.
+      The second half is neonatal sepsis. **A blood culture from a newborn requires
+      a volume of blood that is a meaningful fraction of their circulation**, yield
+      is poor, and the answer arrives after the antibiotic decision. So babies are
+      treated empirically, in units where — per the `cre` record — the organisms
+      are increasingly carbapenem-resistant, and nobody finds out what was actually
+      there. **The invisible epidemiology and the wrong treatment have the same
+      cause**, which is the sentence that record already wrote.
+    who_could: [manufacturer, health-system, academic, nonprofit, government]
+    scale: 2.0e9
+    standing: documented
+    src: recall
+
+  - kind: cost
+    blocks: the expensive end, where the cheap end has run out
+    obstacles: []
+    what: >
+      Warmth, kangaroo care and a bag-valve mask are free or nearly so, and they
+      are not sufficient. Surfactant costs hundreds of dollars a dose. Neonatal
+      ventilators, parenteral nutrition, therapeutic hypothermia equipment, retinal
+      screening and neonatal surgery are all real costs in units that do not have
+      them, and **bubble CPAP is the demonstrated cheap substitute for one of
+      them** and not for the rest.
+      Congenital heart disease is the sharpest instance: surgically correctable,
+      done routinely in high-income countries with excellent results, and largely
+      unavailable across much of the world — an access gap among the widest
+      anywhere in medicine, and queued as its own record.
+      Rated `documented` and priced conservatively, because the honest reading is
+      that most of the achievable gain in this record is at the free end and the
+      money is the second constraint rather than the first.
+    who_could: [government, payer, philanthropy, nonprofit, manufacturer]
+    scale: 5.0e9
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0073
+  rated: 2026-08-24
+  by: [claude, jeremy]

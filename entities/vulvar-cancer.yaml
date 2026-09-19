@@ -1,0 +1,278 @@
+slug: vulvar-cancer
+id: FND-D-0125
+name: vulvar cancer
+also: [vulva cancer, vulvar squamous cell carcinoma, carcinoma of the vulva]
+kind: disease
+mondo: MONDO:0001528
+residual: false
+contested: false
+
+# TWO DISEASES SHARING AN ORGAN, AND THE COMMONER ONE IS NOT HPV.
+#
+# 1. THE AETIOLOGY SPLITS AND SO DOES EVERYTHING ELSE. Roughly 40% is
+#    HPV-driven, arising from high-grade vulvar intraepithelial neoplasia in
+#    younger women, and carries a better prognosis. The rest is
+#    **HPV-independent**, arising on **lichen sclerosus** in older women, carrying
+#    TP53 mutation and a worse outcome. **The same tumour name, two mechanisms,
+#    two age groups, two prognoses** — the pattern `head-neck-cancer` records for
+#    the oropharynx, in a site nobody discusses.
+#
+# 2. AND THE COMMONER HALF HAS A TREATABLE PRECURSOR THAT IS ROUTINELY MISSED.
+#    Lichen sclerosus is a chronic inflammatory skin condition, diagnosable by
+#    looking, treatable with potent topical steroids, and there is reasonable
+#    evidence that **treating it reduces progression to cancer.** It is
+#    under-recognised, frequently mistaken for thrush for years, and
+#    under-treated when it is found.
+#
+# 3. THE TOLL FELL FURTHER HERE THAN ALMOST ANYWHERE. Standard treatment was
+#    radical vulvectomy with bilateral inguinofemoral lymphadenectomy through a
+#    single butterfly incision — disfiguring, with wound breakdown in most
+#    patients and lifelong lymphoedema. It is now wide local excision with
+#    sentinel node biopsy. **Same cure, a fraction of the price.**
+
+burden:
+  incidence:
+    value: 4.5e4
+    units: new cases/year worldwide
+    src: recall
+  deaths:
+    value: 1.7e4
+    units: deaths/year worldwide
+    src: recall
+  note: >
+    **Rising in younger women and stable in older ones**, which is the aetiology
+    split showing through the epidemiology: the HPV-driven half is increasing
+    with cohort exposure while the lichen sclerosus half tracks the ageing
+    population. HPV vaccination will remove roughly forty percent of this record
+    and none of the rest.
+
+survival:
+  horizon: 5 years from diagnosis
+  untreated:
+    value: 0.10
+    units: fraction alive — untreated vulvar squamous carcinoma invades locally and spreads to inguinal nodes
+    src: reasoning
+  treated:
+    value: 0.70
+    units: >
+      fraction alive — **and nodal status dominates, as in `penile-cancer`.**
+      Node-negative disease approaches 0.90; inguinal nodal involvement roughly
+      halves it. HPV-positive tumours do better than HPV-independent ones at
+      equivalent stage
+    src: reasoning
+  witness: >
+    A good figure concealing two diseases. **The HPV-independent half — older
+    women, lichen sclerosus, TP53-mutant — carries the worse prognosis and is the
+    larger share**, so the average flatters the part of this record that
+    vaccination will never touch.
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: risk-reduction
+  ongoing: low
+  efficacy:
+    value: 0.72
+    units: >
+      fraction-of-patients (cured by stage-appropriate surgery with or without
+      chemoradiation) — good, and achieved with far less anatomical loss than
+      thirty years ago
+    src: reasoning
+  access:
+    value: 0.55
+    units: >
+      fraction-of-patients (diagnosed in time and reaching a centre offering
+      conservative surgery and sentinel node biopsy) — **held down by delay, and
+      the delay is symptomatic vulvar itching treated as thrush for months or
+      years**
+    src: reasoning
+
+measurement:
+  diagnostic: clinical
+  prognostic: good
+  predictive: none
+  witness: >
+    **DIAGNOSTIC is `clinical` and it should be `objective`, which is the
+    problem.** The lesion is on the surface of the body and biopsy settles it —
+    and vulvar symptoms are treated empirically as candidiasis, sometimes for
+    years, by patients self-medicating and by clinicians who do not examine. The
+    definitive test is trivial and is not performed. **This is the third record
+    in a fortnight where an accessible lesion is diagnosed late for reasons of
+    embarrassment**, after `penile-cancer` and `anal-cancer`.
+    **There is no screening programme and no realistic candidate for one**: the
+    disease is uncommon, has no accessible transformation zone to sample, and
+    its precursors are diagnosed by looking rather than by a test.
+    PROGNOSTIC is `good`: stage and inguinal nodal status predict outcome
+    reliably, and sentinel node biopsy identifies nodal disease well enough to
+    spare most women a full groin dissection.
+    PREDICTIVE is `none`. **HPV status carries real prognostic information and
+    does not change treatment** — the same unexploited stratification
+    `penile-cancer` records, and the one `head-neck-cancer` has spent a decade
+    trying to act on.
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    **The toll here fell further than in almost any record in the corpus, and
+    what remains is still substantial.** Radical vulvectomy with en-bloc
+    bilateral inguinofemoral lymphadenectomy — the standard into the 1980s —
+    produced wound breakdown in the majority, disfigurement, sexual loss and
+    lifelong lymphoedema. Wide local excision with sentinel node biopsy achieves
+    equivalent survival with a fraction of that.
+    What is left: **chronic leg lymphoedema in those who still need full groin
+    dissection**, sexual dysfunction, altered body image, urinary spraying after
+    anterior resections, and wound complications in an elderly comorbid
+    population. Chemoradiation for advanced disease adds vaginal stenosis and
+    skin toxicity in a site that tolerates it badly.
+  incidence:
+    value: 0.35
+    units: >
+      fraction-of-treated with permanent lymphoedema, sexual or urinary
+      consequence — reasoned, and far lower where sentinel node biopsy is
+      available
+    src: reasoning
+
+witness:
+  mechanism: >
+    `established`, and it is two mechanisms. **The HPV-driven pathway** —
+    roughly forty percent — runs through high-grade vulvar intraepithelial
+    neoplasia in younger women, by the E6/E7 route held in `hpv-infection`.
+    **The HPV-independent pathway** arises on a background of **lichen
+    sclerosus**, a chronic inflammatory dermatosis, through differentiated VIN,
+    typically carries TP53 mutation, occurs in older women and behaves more
+    aggressively.
+    They are separated by immunohistochemistry in routine practice and are
+    increasingly treated as distinct entities in classification — **which the
+    register cannot express, because they share one name and one record.**
+  intervention: >
+    `curative`. Wide local excision with adequate margins, sentinel node biopsy
+    for clinically node-negative disease, inguinofemoral lymphadenectomy where
+    nodes are involved, and chemoradiation for locally advanced tumours.
+    **The change over forty years was in how much tissue is removed, not in how
+    many people are cured.**
+  prevention: >
+    `risk-reduction`, and it is genuinely mixed. **HPV vaccination prevents the
+    forty percent that is viral.** The larger non-viral share is prevented, if at
+    all, by recognising and treating lichen sclerosus — for which potent topical
+    corticosteroids are effective and there is reasonable evidence that adherent
+    treatment reduces cancer risk.
+    Not rated `prophylaxis` because the vaccine addresses a minority of the
+    disease, and the intervention for the majority is the recognition of a skin
+    condition that is routinely missed.
+  ongoing: >
+    `low` medically. Lymphoedema management, where needed, is lifelong and is
+    `toll`. Women with lichen sclerosus require indefinite topical treatment and
+    surveillance, which is a genuine ongoing burden attached to the precursor
+    rather than to the cancer.
+  efficacy: >
+    See the axis.
+  access: >
+    Delay dominates, and sentinel node biopsy requires the case volume a rare
+    cancer does not generate outside specialist centres — **the same
+    centralisation argument `penile-cancer` makes, for the same reason, in the
+    adjacent organ.**
+
+moved:
+  - date: 1990
+    axis: toll
+    from: catastrophic
+    to: major
+    why: >
+      **Radical en-bloc vulvectomy with butterfly incision gave way to separate
+      incisions, then to wide local excision with sentinel node biopsy**, over
+      roughly two decades. Survival was unchanged; wound breakdown,
+      disfigurement and lymphoedema fell dramatically. Dated loosely — this was a
+      progressive change in surgical practice rather than an event.
+      **One of the largest toll reductions in the register, in a cancer almost
+      nobody discusses.**
+    src: reasoning
+
+holes:
+  - >
+    **This record should probably be two.** The HPV-driven and HPV-independent
+    diseases differ in age, precursor, molecular profile, prognosis and what
+    prevents them. They are not held as `strata` here because the register would
+    then need stratum-level prevention, which the schema does not carry — and the
+    result is a record whose single `prevention` rating describes forty percent
+    of it.
+  - >
+    Lichen sclerosus has no record of its own and is a common, treatable,
+    frequently-missed condition affecting a substantial number of women
+    independently of cancer risk. It appears here only as a precursor.
+  - The HPV-attributable fraction varies between series and by region; forty
+    percent is a central estimate over a range.
+  - >
+    `diagnostic: clinical` is rated on what happens rather than on what is
+    possible. A biopsy is definitive and trivial; the rating reflects that the
+    working diagnosis is frequently made — wrongly — by empirical treatment for
+    thrush.
+  - Written from model recall. The dual aetiology, the lichen sclerosus
+    association and the surgical de-escalation are the parts most likely right;
+    every number is the part most likely wrong.
+
+blockers:
+  - kind: diagnosis
+    blocks: vulvar symptoms treated as thrush for years
+    what: >
+      **THE LESION IS ON THE SURFACE OF THE BODY AND THE DIAGNOSIS IS ROUTINELY
+      DELAYED BY MONTHS OR YEARS.** Vulvar itching, soreness and skin change are
+      treated empirically as candidiasis — by women self-medicating with
+      over-the-counter antifungals, and by clinicians who prescribe without
+      examining. Lichen sclerosus, the precursor of the commoner half of this
+      disease, is missed by the same mechanism.
+      **Two harms follow.** Cancers present at a stage requiring more surgery
+      than they would have needed. And the precursor goes untreated, when
+      treating it is cheap, topical and reduces progression.
+      The intervention is examination and biopsy of persistent vulvar symptoms,
+      which requires no technology and is a training and consultation-length
+      problem. **It is the same failure `penile-cancer` and `anal-cancer` record
+      in adjacent anatomy, and all three are about embarrassment rather than
+      access.**
+    who_could: [health-system, government, academic, patient-org]
+    scale: 1.0e8
+    standing: documented
+    src: reasoning
+
+  - kind: knowledge
+    blocks: the sixty percent of this disease a vaccine will never touch
+    what: >
+      **HPV VACCINATION WILL REMOVE ROUGHLY FORTY PERCENT OF THIS RECORD AND
+      NOTHING OF THE REST.** The HPV-independent disease arises on lichen
+      sclerosus through differentiated VIN, carries TP53 mutation, occurs in
+      older women and is more aggressive stage for stage.
+      **It is also the less studied half.** Differentiated VIN is harder to
+      recognise histologically than the HPV-driven kind, its natural history is
+      poorly characterised, and how much treating lichen sclerosus reduces cancer
+      risk rests on observational cohorts rather than trials. **The commoner and
+      worse half of a cancer has the thinner evidence base**, which is a pattern
+      the register keeps finding where a disease has a viral and a non-viral
+      form.
+      `scale: null` for the biology; the cohort work is priceable and nobody is
+      doing it at scale.
+    who_could: [academic, sponsor, health-system]
+    scale: null
+    standing: documented
+    src: reasoning
+
+  - kind: logistics
+    blocks: sentinel node biopsy in a cancer too rare for most hospitals
+    what: >
+      Sentinel node biopsy spares most women a full inguinofemoral dissection and
+      its lifelong lymphoedema, and it requires case volume, nuclear medicine
+      support and a surgeon who does it often enough to be reliable. **Vulvar
+      cancer is rare enough that most units see a handful a year**, and a surgeon
+      operating occasionally will reasonably default to the dissection they trust.
+      This is the centralisation argument `penile-cancer` makes in the adjacent
+      organ, with the same evidence and the same non-adoption. **Two rare genital
+      cancers, one organisational fix, and most health systems have made it for
+      neither.**
+    who_could: [health-system, government, payer]
+    scale: 1.2e8
+    standing: documented
+    src: reasoning
+
+assertion:
+  id: FND-A-0126
+  rated: 2026-08-28
+  by: [claude, jeremy]

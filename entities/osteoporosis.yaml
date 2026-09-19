@@ -1,0 +1,652 @@
+slug: osteoporosis
+id: FND-D-0101
+name: osteoporosis
+also: [osteopenia, fragility fracture, postmenopausal osteoporosis, low bone density, brittle bones, glucocorticoid-induced osteoporosis]
+common: brittle bones
+mondo: MONDO:0005298
+kind: disease
+residual: false
+contested: true
+
+# gaps.md #179 NAMED THIS RECORD BEFORE IT EXISTED. Its table of entities that
+# are a number rather than a disease reads: *"osteoporosis (not held) | bone
+# density | fracture"*. That was written at `hypertension` and it is exactly
+# right — nobody suffers from osteoporosis. They suffer from a hip fracture.
+#
+# BUT THE REASON TO WRITE THE RECORD IS THE OTHER THING IT CARRIES, AND NOTHING
+# ELSE IN THE CORPUS HAS IT TWICE.
+#
+# **This is a disease whose treatments were abandoned, at population scale, on the
+# perception of their harm rather than on its size.** Hormone therapy after 2002
+# and bisphosphonates after 2010: two effective, fracture-preventing therapies,
+# two rare and vivid adverse effects, two collapses in use of a size that no
+# efficacy trial has ever produced in the opposite direction.
+#
+# The register's `toll` field records severity and incidence — a number. **What
+# decides whether a treatment is used is not the number. It is how vivid the harm
+# is, and whether it can be pointed at** (gaps.md #212). An atypical femoral
+# fracture is rare, dramatic, unmistakably attributable, and named after the drug
+# that caused it. The fractures prevented are counterfactuals nobody sees.
+#
+# It is also `heart-failure`'s #210 with a different engine. There the therapy is
+# not given through inertia and diffuse responsibility. **Here it is actively
+# stopped, by patients and prescribers both, and they are wrong.**
+
+burden:
+  prevalence:
+    value: 5.0e8
+    units: >
+      people with osteoporosis by bone-density criteria, approximately and
+      softly — **the figure is a count of people on one side of a statistical
+      convention, see `witness.contested`** — of whom the large majority are women
+      over fifty. Roughly **nine million fragility fractures a year**, and the
+      lifetime risk of one is around one in three for women and one in five for
+      men
+    src: recall
+  deaths:
+    value: 0.0
+    units: >
+      deaths/year attributed — **a sixth kind of zero, and this one is filed under
+      the physical event rather than the condition.** Hip fracture carries a
+      one-year mortality of roughly 20-30%, and those deaths are counted as
+      **falls**, an injury cause. A fall from standing height kills a person with
+      osteoporosis and does not kill a person without one; **the fall is recorded
+      and the reason the bone broke is not**
+    src: reasoning
+  note: >
+    **THE LOWEST REACH IN THE REGISTER FOR A DISEASE TREATED WITH A CHEAP GENERIC
+    TABLET.** The drugs work, cost pennies, are taken weekly, and after a fragility
+    fracture — the single clearest indication in the whole of preventive medicine
+    — fewer than a quarter of patients are treated, and in many systems fewer
+    than one in five. That figure was higher fifteen years ago and fell.
+
+axes:
+  mechanism: established
+  intervention: suppressive
+  prevention: risk-reduction
+  ongoing: low
+  efficacy:
+    value: 0.50
+    units: >
+      fraction-of-patients (meaningful fracture risk reduction on treatment) —
+      **and the units are strained in the way gaps.md #179 predicts for a record
+      that is a risk factor.** Bisphosphonates cut vertebral fractures by roughly
+      40-70% and hip fractures by around 40%; nobody's fracture is prevented
+      individually and nobody knows whose was
+    src: reasoning
+  access:
+    value: 0.15
+    units: >
+      fraction-of-patients (identified and treated, and still on treatment a year
+      later) — **among the lowest figures in this register, for one of its
+      cheapest treatments.** Post-fracture treatment rates under a quarter in most
+      wealthy systems, persistence at one year around half of those started, and
+      DXA scanning largely absent across low- and middle-income countries
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: good
+  predictive: none
+  witness: >
+    **DIAGNOSTIC IS `objective`, THE TEST IS EXCELLENT, AND IT IDENTIFIES A
+    MINORITY OF THE PEOPLE WHO WILL FRACTURE.**
+    Dual-energy X-ray absorptiometry measures bone mineral density in minutes at
+    trivial radiation dose, and the result is expressed as a **T-score** —
+    standard deviations below the mean of a young adult reference population.
+    Osteoporosis is defined as a T-score of −2.5 or below. **That number was
+    chosen by a working group in 1994 as a convention**, and it is #206 and #90 in
+    one figure: a cut-point selected for its consequences, applied to a
+    distribution derived from a reference population.
+    **And the arithmetic of it defeats the purpose.** Fracture risk rises
+    continuously as density falls, but there are far more people in the
+    *osteopenic* range between −1.0 and −2.5 than below it — so **the majority of
+    fragility fractures occur in people who do not meet the diagnostic criteria
+    for the disease.** A test that is objective, cheap and accurate correctly
+    identifies a group that suffers a minority of the outcome it was built to
+    predict.
+    PROGNOSTIC is `good`, and it is the field's genuine success. **FRAX** and
+    similar calculators combine age, sex, prior fracture, parental hip fracture,
+    smoking, glucocorticoid use, rheumatoid arthritis and alcohol — with or
+    without a bone density measurement — to give a ten-year absolute probability
+    of major fracture. It works, it is free, it runs on a phone, and it moved the
+    field from *treating a T-score* to *treating a risk*, exactly as
+    cardiovascular risk scores did. **The best prognostic instrument in this
+    register that requires no test at all.**
+    PREDICTIVE is `none`, and it is the crux of the whole record. Nothing predicts
+    who benefits from which drug. **And nothing whatever predicts who will suffer
+    the two rare harms — atypical femoral fracture and osteonecrosis of the jaw —
+    that stopped this treatment being given** (gaps.md #212). A harm that cannot
+    be predicted in an individual cannot be avoided by selection, so the only
+    available responses are to accept it or to stop treating everybody. **The
+    field largely chose the second.**
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    **THE HARM IS REAL, IT IS PERMANENT, IT IS RARE, AND IT IS THE MOST
+    CONSEQUENTIAL THING IN THIS RECORD — NOT BECAUSE OF WHAT IT DID TO THE
+    PATIENTS WHO HAD IT, BUT BECAUSE OF WHAT ITS PUBLICITY DID TO EVERYONE ELSE**
+    (gaps.md #212).
+    **Atypical femoral fracture**: a transverse fracture of the femoral shaft,
+    often after prodromal thigh pain, associated with long-duration bisphosphonate
+    and denosumab use. It needs surgery, heals slowly, and frequently occurs
+    bilaterally. Risk rises with duration of treatment and falls quickly after
+    stopping. **Osteonecrosis of the jaw**: exposed necrotic bone, chronic,
+    difficult to treat, disfiguring. It is common at the high intravenous doses
+    used in cancer and **rare at osteoporosis doses**, on the order of one in
+    ten thousand to one in a hundred thousand patient-years.
+    **State the balance plainly, because the record turns on it.** For every
+    atypical femoral fracture caused, many times more typical fragility fractures
+    are prevented; the number needed to harm is in the thousands and the number
+    needed to treat is in the tens. **The balance is not close and it is not
+    disputed by anybody who has computed it.**
+    **Denosumab has a third and stranger toll: you cannot stop it.** Withdrawal
+    produces a rebound in bone turnover and a burst of vertebral fractures, in
+    some patients to below their pre-treatment state. **So this record contains one
+    drug that guidelines say to stop after three to five years, and another that
+    must never be stopped without transitioning to something else** — a treatment
+    whose discontinuation is worse than never having started, which nothing in
+    this schema can express.
+    Ordinary tolls too: oesophagitis from oral bisphosphonates, an acute-phase
+    reaction after the first intravenous dose, hypocalcaemia.
+  incidence:
+    value: 0.002
+    units: >
+      fraction-of-treated (atypical femoral fracture, osteonecrosis of the jaw, or
+      rebound vertebral fracture after denosumab withdrawal) — a reasoned
+      estimate, weighted toward long-duration use. **The number is small and the
+      point of this record is that it did not behave like a small number**
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    **THE FRACTURE IS THE DISEASE ARRIVING, AND WHAT IT LEAVES IS THE WHOLE
+    BURDEN.**
+    **Hip fracture** is the one that matters. Around a fifth to a third of
+    patients are dead within a year; of the survivors, **roughly half never regain
+    their previous level of function**, and a substantial minority who were living
+    independently enter long-term care and do not leave. The bone is fixed
+    surgically and heals; the independence does not come back. That is a textbook
+    `residue` — an episode that ended, leaving permanent damage in someone the
+    treatment worked on.
+    **Vertebral fractures are the quiet ones.** Most are never diagnosed, because
+    they present as back pain or as nothing. Accumulated, they produce height
+    loss, kyphosis, chronic pain, abdominal compression and restrictive
+    ventilatory impairment — and **each one roughly quintuples the risk of the
+    next**, which is why the `window` below is the sharpest in the corpus.
+    **And there is a residue that is not physical.** Fear of falling after a
+    fracture reduces activity, which reduces strength and balance, which increases
+    fall risk — a self-sustaining loop that has a name in the literature and no
+    field here. It is `osteoarthritis`'s deconditioning spiral in a second
+    musculoskeletal record.
+  incidence:
+    value: 0.25
+    units: >
+      fraction-of-affected (permanent loss of function, independence or spinal
+      structure following a fragility fracture) — a reasoned estimate across
+      people who sustain one
+    src: reasoning
+
+window:
+  what: >
+    **THE FIRST FRAGILITY FRACTURE IS THE CLEAREST, CHEAPEST, MOST COMPLETELY
+    WASTED SIGNAL IN THIS ENTIRE REGISTER.**
+    A person who breaks a wrist, a humerus, a vertebra or a pelvis from a fall
+    from standing height at sixty-five has announced their diagnosis. They have
+    presented to a hospital. They are in the system, on a list, with an X-ray. A
+    prior fragility fracture roughly doubles the risk of the next one, the risk is
+    highest in the following one to two years — **an "imminent risk" window** —
+    and around half of hip fracture patients had an earlier fragility fracture
+    that nobody acted on.
+    **Fewer than a quarter of them are investigated or treated.**
+    **The fix exists, is named, is cheap and is cost-saving.** A Fracture Liaison
+    Service systematically identifies everyone over fifty presenting with a
+    fracture, assesses them, and starts treatment. Where implemented it raises
+    treatment rates several-fold and reduces refractures. It is recommended
+    everywhere and implemented patchily, which puts it in the same category as
+    `cerebral-palsy`'s hip surveillance and `osteoarthritis`'s joint registries:
+    **a boring administrative intervention with better evidence than most drugs.**
+    **The second window is bone mass itself and it closes at about thirty.** Peak
+    bone mass is attained in early adulthood and everything afterwards is
+    withdrawal from that account — so childhood and adolescent nutrition, vitamin
+    D and weight-bearing activity set the ceiling for a disease that presents at
+    seventy-five. That is `copd`'s gaps.md #96 in a third tissue, after
+    `asthma`'s lung-growth window: **a determinative period with nothing to
+    diagnose and no patient.**
+    **And a third window nobody defends: the menopause.** Bone loss accelerates
+    sharply for roughly a decade afterwards, and the intervention that prevents it
+    is the one abandoned in 2002.
+  closes_on: >
+    the second fracture — the one-to-two-year period of imminent risk after a
+    first fragility fracture, during which the patient is already in the health
+    system and is discharged untreated; and, decades earlier, the attainment of
+    peak bone mass in early adulthood
+  caught_in_time:
+    value: 0.20
+    units: >
+      fraction-of-cases (assessed and treated after a first fragility fracture) —
+      a reasoned estimate, and it is close to the published post-fracture
+      treatment rates rather than generous
+    src: reasoning
+
+strata:
+  - name: primary prevention — low bone density, no prior fracture
+    fraction:
+      value: 0.75
+      units: fraction-of-people-with-osteoporosis
+      src: reasoning
+    intervention: suppressive
+    efficacy:
+      value: 0.40
+      units: fraction-of-stratum (meaningful absolute risk reduction)
+      src: reasoning
+    toll: major
+    what: >
+      **The large stratum, the weaker indication, and the one the safety scares
+      hit hardest.** Absolute risk is lower, so the number needed to treat is
+      higher and the same rare harm looms larger against the benefit — which makes
+      the retreat here partly rational and, in the higher-risk part of the group,
+      not. **This is where FRAX earns its place**: it converts a density into an
+      absolute probability, which is the only way to have the conversation
+      honestly.
+
+  - name: secondary prevention — after a fragility fracture
+    fraction:
+      value: 0.25
+      units: fraction-of-people-with-osteoporosis
+      src: reasoning
+    intervention: suppressive
+    efficacy:
+      value: 0.65
+      units: fraction-of-stratum (meaningful absolute risk reduction)
+      src: reasoning
+    toll: major
+    what: >
+      **The strongest indication in preventive medicine, and fewer than a quarter
+      receive treatment.** The patient has already fractured, their risk is
+      highest in the next two years, the drug is generic, and the number needed to
+      treat is low enough that the rare harms are not a serious counterargument.
+      **No stratum anywhere in this corpus has a wider gap between the strength of
+      its indication and the rate at which it is acted on.**
+
+moved:
+  - date: 1995
+    axis: intervention
+    from: none
+    to: suppressive
+    why: >
+      **THE FIRST DRUG SHOWN TO PREVENT FRACTURES, AND IT CAME FROM DETERGENT
+      CHEMISTRY.**
+      Bisphosphonates were developed industrially as water-softening agents before
+      anyone knew they bound avidly to bone mineral and poisoned the osteoclasts
+      that resorb it. Alendronate was approved in 1995, and the Fracture
+      Intervention Trial and its successors established large reductions in
+      vertebral and hip fracture.
+      **A disease that had been considered an inevitability of ageing became a
+      treatable one**, with an oral drug that is now generic and costs almost
+      nothing. Denosumab followed in 2010 from the opposite direction — a
+      monoclonal antibody against RANKL, designed from a signalling pathway worked
+      out in the 1990s, and one of the register's cleaner instances of rational
+      design delivering. Anabolic agents — teriparatide, and later romosozumab —
+      **build** bone rather than preserving it, and are more effective than the
+      antiresorptives in high-risk patients.
+      **Everything in this record has existed for a decade or more. Nothing that
+      follows is about discovery.**
+    src:
+      id: PMID:8950879 doi:10.1016/s0140-6736(96)07088-2
+      retrieved: 2026-08-26
+      quote: >
+        We conclude that among women with low bone mass and existing vertebral
+        fractures, alendronate is well tolerated and substantially reduces the
+        frequency of morphometric and clinical vertebral fractures, as well as
+        other clinical fractures.
+
+  - date: 2002
+    axis: access
+    from: 0.30
+    to: 0.22
+    why: >
+      **THE FIRST COLLAPSE. THE WOMEN'S HEALTH INITIATIVE, AND A FRACTURE
+      PREVENTION THAT WAS REAL WENT WITH IT.**
+      Hormone therapy was widely used around and after the menopause and it
+      prevented fractures — the WHI itself found a **reduction in hip fracture**,
+      one of its clearest results. It also found increases in breast cancer and
+      cardiovascular events in the population studied, whose mean age was
+      sixty-three, a decade or more past menopause. **Use fell by something like
+      eighty percent within a few years, worldwide.**
+      Subsequent analysis and long-term follow-up gave a substantially more
+      favourable picture for women starting therapy near the menopause, and
+      guidelines now support its use for menopausal symptoms in that group and
+      recognise the bone benefit. **The prescribing has not returned**, and a
+      generation of clinicians trained after 2002 was taught to be afraid of it.
+      **Record it as a `moved` entry that goes backwards**, which is rare in this
+      register and should be commoner: `moved` exists to make a second pass a
+      comparison rather than a fresh opinion, and a register that only records
+      improvement cannot do that.
+    src: recall
+
+  - date: 2010
+    axis: access
+    from: 0.22
+    to: 0.15
+    why: >
+      **THE SECOND COLLAPSE, AND IT IS THE CASE gaps.md #212 IS BUILT ON.**
+      Osteonecrosis of the jaw was reported from 2003 onward, mostly in cancer
+      patients on high intravenous doses. Atypical femoral fracture was described
+      from 2005 and formally characterised around 2010. Both are real, both are
+      permanent, both are **rare at osteoporosis doses**, and both are
+      unmistakably attributable to the drug — an atypical femoral fracture looks
+      like nothing else and has the drug's fingerprint on the radiograph.
+      **Oral bisphosphonate use in the United States fell by more than half
+      between roughly 2008 and 2012**, post-fracture treatment rates fell with it,
+      and the long decline in hip fracture rates flattened. Similar retreats
+      occurred across other wealthy countries.
+      **Nothing about the benefit changed.** No trial was retracted, no efficacy
+      estimate was revised, and every quantitative analysis of the trade-off
+      continued to favour treatment by a wide margin. **What changed was that one
+      side of the ledger acquired a name, a picture and a story, and the other
+      side remained a counterfactual.**
+      This record therefore contains **two population-scale therapeutic retreats
+      driven by the salience of harm rather than its size, eight years apart, in
+      the same disease.** That is not an anecdote. It is a mechanism.
+    src: recall
+
+witness:
+  mechanism: >
+    `established`, and unusually completely — this is one of the better-understood
+    diseases in the register, which is precisely why the record is not about
+    knowledge.
+    Bone is continuously remodelled: osteoclasts resorb it, osteoblasts rebuild
+    it, and the two are coupled. **The coupling is controlled by the
+    RANK/RANKL/osteoprotegerin axis**, worked out through the 1990s, and that
+    pathway was converted directly into a drug — denosumab is an antibody against
+    RANKL. **Sclerostin, secreted by osteocytes, restrains bone formation**, and
+    that too became a drug: romosozumab is an anti-sclerostin antibody. Two
+    pathways understood and two therapies designed from them, which is a better
+    hit rate than most records here manage.
+    **Loss occurs when resorption outpaces formation.** Oestrogen restrains
+    osteoclasts, so its withdrawal at the menopause produces a decade of
+    accelerated loss; ageing reduces osteoblast function in both sexes; and
+    trabecular bone, being metabolically active, goes first — which is why
+    vertebrae and the femoral neck fail and the skull does not.
+    **The secondary causes matter more than the textbooks imply, and one of them
+    is this register's own prescribing.** Glucocorticoids suppress osteoblasts and
+    increase resorption, and produce rapid bone loss in the first months of use.
+    **`asthma`, `copd`, `rheumatoid-arthritis` and `crohns` all record repeated or
+    maintenance oral corticosteroid courses in their `toll` blocks — and this is
+    where those fractures land** (gaps.md #160). Add hypogonadism, hyperthyroidism
+    and hyperparathyroidism, coeliac disease, myeloma, and androgen and aromatase
+    deprivation for `prostate-cancer` and `breast-cancer`.
+    **What is not understood is small and specific**: why a rare few develop
+    atypical femoral fractures on treatment, and why bone turnover rebounds so
+    violently when denosumab is withdrawn.
+  contested: >
+    **THE DIAGNOSTIC THRESHOLD IS A CONVENTION AND THE FIELD KNOWS IT.**
+    A T-score of −2.5 was adopted by a working group in 1994 as an operational
+    definition, and it has two acknowledged problems. It is defined against a
+    **young adult reference population**, so it measures departure from youth
+    rather than from health, which is a version of gaps.md #206. And **most
+    fragility fractures occur in people above the threshold**, because the
+    osteopenic range contains far more people. One position is that the definition
+    should be abandoned in favour of absolute fracture risk, which FRAX already
+    computes; the other is that a density threshold is what makes the disease
+    diagnosable, reimbursable and countable at all.
+    **The larger dispute is whether treatment is being under-used or over-used,
+    and both positions are argued in good faith.** The under-use case is this
+    record's spine: post-fracture treatment rates under a quarter, a favourable
+    benefit-harm ratio, and generic drugs. The over-use case is that screening
+    healthy women converts a risk factor into a diagnosis, that number needed to
+    treat in low-risk primary prevention is high, and that a rare permanent harm
+    inflicted on people who were never going to fracture is a real cost — which is
+    gaps.md #90's argument and is not silly.
+    **The register takes no position on primary prevention and records that the
+    two positions do not conflict where it matters**: after a fragility fracture,
+    nobody argues for not treating, and fewer than a quarter are treated.
+  intervention: >
+    `suppressive`, and precisely: **the drugs work while taken, and one of them
+    cannot be stopped at all.**
+    **Antiresorptives** are the mainstay. Oral bisphosphonates — alendronate,
+    risedronate — weekly, generic, pennies; intravenous zoledronate once a year,
+    which solves adherence outright; denosumab, six-monthly by subcutaneous
+    injection. **Anabolics** — teriparatide and abaloparatide, daily injections,
+    and romosozumab — build bone and outperform antiresorptives in high-risk
+    patients, and are given for a limited period and then followed by an
+    antiresorptive to hold the gain. **Sequence matters and is frequently got
+    wrong**: anabolic-then-antiresorptive works considerably better than the
+    reverse.
+    **Bisphosphonates persist in bone after the drug is stopped**, so guidelines
+    recommend a **drug holiday** after three to five years to limit the atypical
+    fracture risk — a treatment with a duration ceiling set by its own toll, which
+    is `osteoarthritis`'s service life (gaps.md #202) in pharmacological form.
+    **Denosumab is the opposite and it is the sharper fact: it must never be
+    stopped** without transition to another agent, because withdrawal produces
+    rebound vertebral fractures. **One disease, two first-line drugs, one of which
+    you are told to stop and one of which you can never stop**, and the register
+    has one `ongoing` rating for the record.
+    **Non-drug measures are real and are not treatment**: calcium and vitamin D
+    adequacy, weight-bearing and resistance exercise, and — the one with the best
+    evidence for the outcome that matters — **fall prevention**, since the
+    fracture requires both a fragile bone and a fall.
+  prevention: >
+    `risk-reduction`, and the strongest levers sit decades before the disease or
+    in another record entirely.
+    **Peak bone mass** is attained by about thirty and everything after is
+    withdrawal from it — so childhood and adolescent calcium, vitamin D and
+    weight-bearing activity set the ceiling. It is `copd`'s gaps.md #96 shape in a
+    third tissue: a determinative window with no patient, no diagnosis, and no
+    health system that owns it.
+    **Not smoking, moderate alcohol, and maintaining weight and muscle** across
+    adulthood. **Fall prevention in the old** — strength and balance training,
+    medication review, vision correction, home hazard assessment — reduces
+    fractures without touching bone, and it is delivered by physiotherapists,
+    occupational therapists and housing services rather than by anyone
+    prescribing.
+    **And the largest single preventable slice is iatrogenic.** Anyone starting
+    long-term glucocorticoids should have bone protection from the outset; the
+    guidance is unambiguous and compliance with it is poor. **The fractures that
+    result belong to `asthma`, `copd`, `rheumatoid-arthritis` and `crohns` and are
+    counted here**, and no arrow in this register connects them.
+    **Menopausal hormone therapy prevents fractures** and is the intervention this
+    record's 2002 `moved` entry describes losing.
+  ongoing: >
+    `low`, and the rating is doing real work in this record because it removes the
+    usual excuse.
+    A weekly tablet taken on an empty stomach sitting upright, or an annual
+    infusion, or a six-monthly injection. A DXA scan every few years. Calcium and
+    vitamin D. **There is no monitoring burden worth the name, no titration, no
+    blood tests, and no daily symptom to manage** — which is exactly why the
+    treatment is forgotten, and why persistence at one year is around half and at
+    two years lower still. **A disease with no symptoms, treated with a drug with
+    no perceptible effect, to prevent an event that may not happen** is the purest
+    statement of gaps.md #161 in the corpus.
+    **Two exceptions.** Anabolic agents are daily self-injections for eighteen to
+    twenty-four months. And denosumab imposes a hidden burden that patients are
+    rarely told about: **a missed or delayed dose is not a missed dose, it is a
+    rebound risk**, so this "convenient six-monthly injection" is in fact a
+    commitment with no exit.
+
+holes:
+  - >
+    **Two population-scale therapeutic retreats driven by the salience of a harm
+    rather than its size** (gaps.md #212), eight years apart, in one disease.
+    `toll` records severity and incidence and has no field for attributability or
+    vividness — which is what actually determined whether this treatment was
+    used.
+  - >
+    **gaps.md #179 named this record before it existed** — *"osteoporosis (not
+    held) | bone density | fracture"* — and every problem it predicted holds:
+    `efficacy` units are strained, `deaths` reads zero, and the outcome is another
+    entity.
+  - >
+    **The diagnostic threshold identifies a minority of the people who will
+    fracture**, because there are more osteopenic people than osteoporotic ones.
+    The test is objective, accurate, and aimed at the smaller half of its own
+    problem.
+  - >
+    **One first-line drug must be stopped after five years and another must never
+    be stopped**, and the record carries one `ongoing` rating and no field for a
+    treatment whose withdrawal is worse than never starting.
+  - >
+    **The largest preventable slice is iatrogenic and belongs to four other
+    records** — glucocorticoids prescribed in `asthma`, `copd`,
+    `rheumatoid-arthritis` and `crohns` (gaps.md #160).
+  - >
+    Every scalar is `recall` or `reasoning`. The prescribing collapse this record
+    rests on is documented in published pharmacoepidemiology with real numbers,
+    and none of it is cited.
+
+blockers:
+  - kind: adherence
+    blocks: a treatment that patients and prescribers both stopped
+    obstacles: []
+    what: >
+      **THIS IS THE ONLY `adherence` BLOCKER IN THE REGISTER WHERE THE PRESCRIBER
+      IS AS MUCH OF THE PROBLEM AS THE PATIENT, AND WHERE BOTH ARE REASONING FROM
+      PUBLICITY RATHER THAN FROM EVIDENCE** (gaps.md #212).
+      **The patient side is the ordinary shape and it is bad**: persistence on
+      oral bisphosphonates is around half at one year and lower at two, for a
+      disease with no symptoms, a drug with no perceptible effect, awkward dosing
+      instructions, and a benefit that is the non-occurrence of an event. That is
+      gaps.md #161 with nothing to counterbalance it.
+      **The prescriber side is what makes this record.** After the atypical
+      femoral fracture reports around 2010, oral bisphosphonate use in the United
+      States fell by more than half within about four years, and post-fracture
+      treatment rates fell with it. **No efficacy estimate changed.** The same
+      thing had happened eight years earlier to hormone therapy after the Women's
+      Health Initiative, on a larger scale, and that prescribing never returned.
+      **What the register cannot express is why the small number won.** An
+      atypical femoral fracture is rare, permanent, unmistakably attributable and
+      photogenic on a radiograph. A prevented hip fracture is a counterfactual
+      nobody experiences. **`toll` holds severity and incidence; the deciding
+      variables were attributability and vividness**, and there is no field for
+      either.
+      **The fixes are known and mostly communicative**: absolute risk framing on
+      both sides of the ledger, drug holidays that bound the exposure honestly,
+      zoledronate infusions that remove the daily decision, and — the largest —
+      the Fracture Liaison Services in the blocker below.
+    who_could: [health-system, academic, patient-org, regulator, government]
+    scale: 2.0e9
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: acting on a fracture that already presented to a hospital
+    obstacles: []
+    what: >
+      **THE PATIENT IS ALREADY IN THE BUILDING.**
+      Someone over fifty who breaks a bone falling from standing height has
+      presented to a hospital, been imaged, and been treated. Their risk of a
+      further fracture is roughly doubled and is highest over the following one to
+      two years. **Fewer than a quarter are assessed for osteoporosis or started
+      on treatment**, and around half of hip fracture patients had an earlier
+      fragility fracture that nobody acted on.
+      **The intervention that fixes it is administrative and has a name.** A
+      Fracture Liaison Service systematically identifies every such presentation,
+      assesses fracture risk, initiates treatment and arranges follow-up. Where
+      implemented it raises treatment rates several-fold, reduces refracture, and
+      **saves money**. It is recommended by every relevant body and implemented in
+      a minority of hospitals.
+      **The reason it is not done is that nobody owns the outcome.** The orthopaedic
+      surgeon fixes the bone and discharges; the general practitioner sees a
+      healed fracture; the patient believes they had an accident. **The disease is
+      invisible at the exact moment it announces itself**, and no specialty's
+      metrics include the fracture that did not happen three years later.
+      This is the third record in a row — after `osteoarthritis`'s joint
+      registries and `cerebral-palsy`'s hip surveillance — where **the highest-
+      value intervention is a register and a rule rather than a technology.**
+    who_could: [health-system, payer, government, nonprofit, patient-org]
+    scale: 3.0e9
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    blocks: a scanner most of the world does not have, aimed at the smaller half
+    obstacles: []
+    what: >
+      **DXA IS CHEAP, QUICK AND SAFE, AND IT IS ABSENT ACROSS MOST OF THE WORLD.**
+      Scanner density in low- and middle-income countries is a small fraction of
+      that in high-income ones — many countries have a handful of machines for
+      tens of millions of people — and fracture rates in those countries are
+      rising fastest as populations age. **The disease is arriving where the test
+      is not.**
+      **And where the test exists it is aimed at the smaller half of the
+      problem.** Because fracture risk rises continuously with falling density and
+      the osteopenic range holds far more people, **most fragility fractures occur
+      in people who do not meet the density-based diagnostic criteria** — so a
+      screening strategy built on the T-score alone will miss the majority of the
+      events it exists to prevent.
+      **The correction already exists and is under-used.** FRAX computes ten-year
+      absolute fracture probability from clinical risk factors **with or without a
+      bone density measurement**, which makes risk assessment possible in every
+      setting that has a clinician and none that has a scanner. **A tool that
+      works without the test is the obvious answer to the test being absent**, and
+      it is not systematically deployed in the places that need it most.
+    who_could: [health-system, academic, government, manufacturer, nonprofit]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: predicting the rare harm that stopped the treatment
+    obstacles: [who-progresses]
+    what: >
+      **THE MISSING KNOWLEDGE IS SMALL, SPECIFIC, AND WORTH MORE THAN A NEW DRUG.**
+      **Nobody can predict who will suffer an atypical femoral fracture or
+      osteonecrosis of the jaw.** There is no marker, no genotype, no imaging
+      finding that identifies the susceptible few in advance. A harm that cannot
+      be predicted cannot be avoided by selection, so the only responses available
+      are to accept it across the treated population or to withhold treatment from
+      everybody — **and the field largely chose the second, which is the whole of
+      this record's `access` figure.** A test that identified the susceptible
+      would restore treatment to the rest, and it would do more for fracture
+      prevention than any agent currently in development.
+      **Second: why bone turnover rebounds after denosumab withdrawal**, which
+      determines whether a convenient six-monthly injection is safe to prescribe
+      to a population that misses appointments.
+      **Third, and larger: nothing restores lost trabecular architecture.**
+      Anabolic agents add bone mass, and the trabecular struts that have been
+      perforated do not reconnect — so density improves and the structure does
+      not fully recover. That is the same sentence this register has now written
+      about the cochlear hair cell, the chondrocyte and the cardiomyocyte.
+      `scale: null`.
+      **Tagged `who-progresses` (2026-08-28), and it stretches that obstacle usefully.** Its question is *the same exposure, a divergent outcome, unexplained and unpredicted* — and here the exposure is a drug rather than a disease. `leprosy`'s immune reactions are filed there on similar logic. If the obstacle should cover only disease progression, this is the record that forces the decision.
+    who_could: [academic, sponsor, manufacturer, philanthropy]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: cost
+    blocks: everything except the drug that works
+    obstacles: []
+    what: >
+      **THE ORAL DRUGS COST PENNIES AND EVERYTHING AROUND THEM DOES NOT.**
+      Generic alendronate is among the cheapest effective medicines in this
+      register, which is why the `access` figure of 0.15 cannot be explained by
+      price in wealthy systems. **The cost problem is real everywhere else and it
+      is not the tablet**: a DXA scanner and the service to run it, and the newer
+      agents — denosumab, teriparatide, romosozumab — which cost orders of
+      magnitude more and are the ones indicated in the highest-risk patients.
+      **Zoledronate is the interesting case.** A single annual infusion is generic,
+      cheap, removes the adherence problem entirely, and requires an infusion
+      slot — so the barrier is a chair and a nurse rather than a molecule, and it
+      is under-used in exactly the frail population least likely to persist with
+      tablets.
+      **And the comparison that should end the argument.** A hip fracture costs a
+      health system tens of thousands of dollars in acute care, rehabilitation and
+      long-term care, and around a fifth to a third of those patients die within a
+      year. **Preventing it costs a few dollars a year.** Fracture Liaison
+      Services are cost-saving rather than cost-effective, which is a category
+      almost nothing else in this register occupies.
+    who_could: [payer, government, health-system, manufacturer, nonprofit]
+    scale: 5.0e9
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0102
+  rated: 2026-08-26
+  by: [claude, jeremy]

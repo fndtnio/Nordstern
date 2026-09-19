@@ -1,0 +1,420 @@
+slug: uterine-fibroids
+id: FND-D-0139
+name: Uterine fibroids
+also: [uterine leiomyoma, leiomyomata, myoma, fibromyoma]
+mondo: unresolved
+kind: disease
+residual: false
+contested: false
+
+# THE SECOND OF THE THREE BENIGN-OVERGROWTH RECORDS ADDED ON 2026-09-02 TO TEST
+# `growth-control` (FND-O-0015). See the header of
+# `benign-prostatic-hyperplasia` for why that provenance is declared.
+#
+# THE LEADING INDICATION FOR HYSTERECTOMY IN THE WORLD. A benign clonal tumour
+# of smooth muscle, present in the majority of women by the age of fifty,
+# symptomatic in a large minority, and definitively cured by removing the organ
+# it grows in. That sentence is the record: the cure rate is essentially 100%
+# and the price is the uterus.
+#
+# It is also the register's second consecutive entry — after `endometriosis` —
+# where the effective treatments work by suppressing ovulation, so relief and
+# fertility are incompatible by construction, and the third in which a woman's
+# bleeding was called normal for years.
+
+burden:
+  prevalence:
+    value: 1.5e8
+    units: >
+      women with symptomatic fibroids at any time — a reasoned estimate, and the
+      denominator problem is the same one `benign-prostatic-hyperplasia` has.
+      By imaging or pathology, fibroids are present in something approaching
+      seventy percent of women by age fifty and in a higher proportion of Black
+      women; **symptomatic** disease is perhaps a quarter to a third of that.
+      Counting the imaging figure would make this the largest record in the
+      register and would be describing a common tissue finding rather than an
+      illness
+    src: reasoning
+  incidence:
+    value: 6.0e5
+    units: >
+      hysterectomies performed for fibroids each year worldwide — a reasoned
+      estimate, offered because it is the number that actually describes this
+      disease's cost. Fibroids are the single commonest indication for
+      hysterectomy in most countries that report one
+    src: reasoning
+  note: >
+    `deaths` absent rather than zero. Fibroids kill through routes attributed
+    elsewhere — iron deficiency anaemia from years of heavy menstrual bleeding,
+    and peripartum haemorrhage in a fibroid uterus that will not contract. Both
+    are counted against `anaemia` and `maternal-haemorrhage`.
+    No `ylds`, on the standing rule: a recalled YLD is two guesses multiplied.
+    **It would matter more here than almost anywhere**, because chronic heavy
+    bleeding and pelvic pressure are precisely the kind of burden that mortality
+    cannot see and GBD does publish.
+
+axes:
+  mechanism: partial
+  intervention: curative
+  prevention: none
+  ongoing: moderate
+  efficacy:
+    value: 0.9
+    units: >
+      fraction-of-treated women achieving durable relief of bleeding and pressure
+      symptoms with the best available intervention — a reasoned estimate,
+      carried almost entirely by hysterectomy, which is definitive by
+      construction. **The number is high and it is measuring the wrong thing**:
+      the intervention with near-perfect efficacy is the one that ends fertility,
+      and the uterus-sparing options — myomectomy, uterine artery embolisation,
+      GnRH antagonists with hormonal add-back — are substantially less durable,
+      with myomectomy recurrence on the order of a quarter within five years
+    src: reasoning
+  access:
+    value: 0.55
+    units: >
+      fraction-of-affected women reaching effective treatment — a reasoned
+      estimate that splits three ways. Surgery requires a theatre and a
+      gynaecologist. The newer oral GnRH antagonists are effective, expensive,
+      and unavailable across most of the world. **And a large share of women
+      never enter the pathway at all**, because heavy menstrual bleeding is
+      treated as a variant of normal — see the diagnosis blocker
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: none
+  predictive: none
+  witness: >
+    **DIAGNOSIS IS EASY, WHICH MAKES EVERYTHING ELSE IN THIS RECORD HARDER TO
+    EXCUSE.** Transvaginal ultrasound shows fibroids, their number, their size
+    and their position, cheaply and in minutes. There is no diagnostic mystery
+    and no test to invent. The delay between a woman's first complaint and that
+    scan is a decision, not a limitation.
+    PROGNOSTIC is `none` and this is the whole clinical problem. **Nothing
+    predicts which fibroid will grow, which will stay silent, or which woman will
+    become symptomatic** — and fibroids commonly regress after menopause, so a
+    substantial number of the hysterectomies performed for them are performed on
+    disease that would have resolved on its own within a few years. A test that
+    identified the fibroids that were going to matter would be the single highest
+    value measurement in this record and there is no candidate for one.
+    PREDICTIVE is `none`. Nothing says in advance which woman will get durable
+    relief from embolisation rather than needing surgery, which myomectomy will
+    be followed by recurrence, or who will respond to medical therapy. Choice of
+    treatment is made on fibroid position and the woman's fertility intentions
+    rather than on any predictor of response.
+    **BOTH DERIVED RISKS FIRE HERE — overtreatment AND futile treatment — AND
+    THE COMBINATION IS RARE.** A permanent price, no way to say who needed it,
+    and no way to say who the lesser options will work for.
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    **HYSTERECTOMY ENDS FERTILITY PERMANENTLY AND IT IS THE MOST COMMON DEFINITIVE
+    TREATMENT FOR A BENIGN CONDITION IN MEDICINE.** Abdominal, laparoscopic or
+    vaginal, it is a major operation with the usual surgical risks — bleeding,
+    infection, ureteric and bladder injury at low rates, venous thromboembolism —
+    and one consequence that is not a risk but a certainty. Where the ovaries are
+    also removed, surgical menopause follows immediately, with the vasomotor,
+    bone and cardiovascular consequences of losing ovarian function decades
+    early; ovarian conservation is now usual and does not always preserve
+    function, since ovarian blood supply is disturbed.
+    **THE UTERUS-SPARING OPTIONS HAVE THEIR OWN AND THEY ARE NOT MINOR.**
+    Myomectomy leaves a scarred myometrium, which raises the risk of uterine
+    rupture in a later labour and makes caesarean delivery usual afterwards; it
+    also produces adhesions, which is the same property `endometriosis` and
+    `obstetric-fistula` both record — **an operation that makes the next
+    operation harder.** Uterine artery embolisation is non-surgical and carries a
+    real risk of diminished ovarian reserve and of premature ovarian
+    insufficiency in older women, and its effect on future pregnancy is
+    unsettled. GnRH antagonists suppress oestrogen and therefore bone density,
+    which is why they are given with hormonal add-back and are still not
+    indefinite therapy in most licences.
+    **THE SEVERITY RATING IS THE HARDEST JUDGEMENT IN THE RECORD AND IT IS
+    ALMOST CERTAINLY WRONG FOR SOMEBODY.** Rated `major`. For a woman of
+    forty-eight who has completed her family, hysterectomy is a major operation
+    with a good outcome. For a woman of twenty-nine who has not, the same
+    operation is catastrophic. **The schema stores one value and the disease has
+    two**, and the difference is not a property of the disease at all — it is
+    the patient's stage of life. See `holes`.
+  incidence:
+    value: 0.45
+    units: >
+      fraction-of-treated left with a permanent consequence of treatment —
+      dominated by hysterectomy, and including myomectomy scarring and
+      embolisation effects on ovarian reserve. A reasoned estimate
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    **THE DISEASE'S OWN PERMANENT DAMAGE IS DONE BEFORE ANYBODY TREATS IT, AND IT
+    IS DONE TO FERTILITY AND TO IRON.**
+    Years of heavy menstrual bleeding produce iron deficiency and iron deficiency
+    anaemia, which is not merely a laboratory value: it is fatigue, breathlessness
+    and reduced capacity for work over the decade that the bleeding is being
+    called normal. It is correctable and it is not usually corrected promptly.
+    **And the delay costs fertility twice over.** Submucosal fibroids distorting
+    the cavity reduce implantation and raise miscarriage rates; and a woman whose
+    symptoms are dismissed through her early thirties reaches definitive
+    treatment at an age when the treatment she is offered is the one that ends
+    the question. **Time is the mechanism** — the same shape `endometriosis`
+    records, arrived at independently.
+    Obstetric consequences persist in women who do conceive: malpresentation,
+    obstructed labour, and a uterus that contracts poorly after delivery.
+  incidence:
+    value: 0.3
+    units: >
+      fraction-of-affected women left with permanent consequences of the disease
+      itself — reproductive, obstetric or the sequelae of prolonged anaemia. A
+      reasoned estimate
+    src: reasoning
+
+window:
+  what: >
+    **THE WINDOW IS A WOMAN'S REPRODUCTIVE LIFE, AND WHAT CLOSES IT IS THE DELAY
+    RATHER THAN THE DISEASE.** Fibroids grow slowly and regress after menopause,
+    so the biology imposes no deadline. What imposes one is that the
+    uterus-sparing treatments are hardest and least durable in exactly the women
+    who need them — young women with numerous or large fibroids — and that every
+    year of dismissal moves a woman closer to the age at which hysterectomy is
+    the offered answer and the loss is no longer felt as a loss by the person
+    offering it.
+    **This is a window created by the health system rather than by the tumour**,
+    and the register has met the shape before in `endometriosis`. It is the
+    cheapest kind to close, because nothing needs to be invented: the diagnostic
+    test is a fifteen-minute ultrasound.
+  closes_on: >
+    the end of a woman's intention or ability to conceive — after which the
+    definitive treatment costs nothing she is still using, and before which it
+    costs everything; a social and reproductive deadline rather than a
+    pathological one
+  caught_in_time:
+    value: 0.5
+    units: >
+      fraction-of-affected women reaching effective treatment while
+      uterus-sparing options are still realistic and wanted — a reasoned
+      estimate, and among the least confident numbers in this record because
+      nobody measures the interval from first complaint to diagnosis in fibroids
+      the way it has now been measured in endometriosis
+    src: reasoning
+
+witness:
+  mechanism: >
+    `partial`, and it is better than most `partial` ratings in this register —
+    good enough that the gap is sharply defined rather than vague.
+    **ESTABLISHED**: a fibroid is a benign clonal neoplasm of a single myometrial
+    smooth muscle cell. Recurrent driver mutations are known — somatic *MED12*
+    mutations in roughly seventy percent of them, *HMGA2* rearrangements in most
+    of the rest — so different fibroids in the same uterus are independent
+    tumours with different drivers, which is why removing one does nothing about
+    the next. Growth is oestrogen- and progesterone-dependent, which is why they
+    grow in reproductive life, enlarge in pregnancy and shrink after menopause,
+    and why every effective drug works by removing that dependence.
+    **THE HOLE IS EVERYTHING ABOUT WHY.** Why a benign monoclonal tumour of
+    smooth muscle should be nearly universal — a tumour occurring in most members
+    of a species is not a normal tumour. Why the incidence, the age of onset and
+    the severity are so much worse in Black women, an association that is large,
+    reproducible, decades old, and unexplained by anything anyone has been able
+    to measure. Why some fibroids grow to fill a pelvis while others sit
+    unchanged for twenty years. **And why they do not stop** — the hormonal
+    dependence is permissive, as androgen is in `benign-prostatic-hyperplasia`,
+    and permission is not instruction.
+  intervention: >
+    `curative`, and the reservation is severe enough that the witness is most of
+    the record. **Hysterectomy cures fibroids completely and permanently by
+    removing the organ they grow in**, and the register has to rate the best
+    available. It is the same construction as `benign-prostatic-hyperplasia` and
+    `cataract` — a cure by subtraction — with the difference that the subtracted
+    thing has a function the patient may still want.
+    Below it: myomectomy removes the fibroids and keeps the uterus, at the cost
+    of recurrence in around a quarter within five years and a scarred myometrium.
+    Uterine artery embolisation infarcts them without surgery, works well for
+    bleeding, and has an unsettled relationship with future fertility.
+    High-intensity focused ultrasound exists and is niche. Oral GnRH antagonists
+    with hormonal add-back — relugolix, elagolix — are genuinely new and
+    genuinely effective, and they are `suppressive`: stop them and the fibroids
+    return. A levonorgestrel intrauterine system treats the bleeding without
+    touching the fibroid, which for many women is the thing that mattered.
+    **THE LADDER CANNOT SAY THAT THE TOP RUNG COSTS THE MOST**, and here it does.
+  prevention: >
+    `none`. Nothing prevents fibroids. Associations exist — earlier menarche,
+    nulliparity, obesity, vitamin D status, and the large unexplained association
+    with African ancestry — and none of them is an intervention. Combined
+    hormonal contraception may modestly reduce incidence and is not prescribed
+    for that purpose.
+    Recorded as a clean `none` rather than `risk-reduction` because there is no
+    intervention anybody offers to prevent this disease, and the register should
+    not credit an association with being a strategy.
+  ongoing: >
+    `moderate`. A woman who has a hysterectomy has nothing further, forever,
+    which is `none`. A woman managing fibroids medically has daily therapy,
+    monitoring of bone density on a GnRH antagonist, iron replacement, and a
+    disease that continues underneath all of it until menopause — which may be
+    fifteen years away. `moderate` is the average of those and describes neither,
+    the same compression `benign-prostatic-hyperplasia` records.
+    **What the axis genuinely cannot hold is that the years before diagnosis are
+    the heaviest**, and they are not `ongoing` at all because the register does
+    not consider a woman to be under treatment yet.
+
+holes:
+  - >
+    **`toll.severity` IS A PROPERTY OF THE PATIENT'S LIFE STAGE HERE, NOT OF THE
+    TREATMENT, AND THE SCHEMA HAS NO FIELD FOR THAT.** Hysterectomy at
+    twenty-nine before children and at forty-eight after them is the same
+    operation with two different severities — `catastrophic` and `major` — and
+    one value is stored. `strata` cannot hold it, because strata divide a disease
+    by its own severity and this divides a population by age and intention.
+    **This is the second record to hit it** — `benign-prostatic-hyperplasia`
+    logs the same complaint about retrograde ejaculation at fifty-two versus
+    seventy-eight — which puts it at the corpus's two-instance threshold for a
+    schema change. Candidate for `gaps.md`.
+  - >
+    **THE RACIAL DISPARITY IS THE LARGEST UNEXPLAINED EFFECT IN THIS RECORD AND
+    IT IS CARRIED IN PROSE.** Black women have higher incidence, earlier onset,
+    larger and more numerous fibroids, more severe symptoms and more
+    hysterectomies. The register has no field for a disparity of effect, so it
+    appears here as a sentence in `witness.mechanism` and in a blocker, and it
+    cannot be queried, counted or compared against the same pattern elsewhere.
+    **`migraine` and `endometriosis` recorded a gender dimension the schema could
+    not hold; this is the same absence along a different axis**, and the two
+    together are the argument for a `disparity` field.
+  - >
+    **THE PREVALENCE FIGURE IS A THRESHOLD DECISION, NOT A MEASUREMENT** — the
+    same hole `benign-prostatic-hyperplasia` logs. Imaging finds fibroids in most
+    women; the record counts the symptomatic minority; where that line sits was
+    chosen. Do not quote the number.
+  - >
+    **`efficacy: 0.9` IS TRUE AND MISLEADING AND THE RECORD CANNOT FIX IT.** The
+    figure is carried by an operation that cures by removing the organ, so the
+    axis reports near-success for a disease whose central problem is that the
+    successful treatment is unacceptable to a large share of the women who have
+    it. **A high efficacy with a high toll is a different object from a high
+    efficacy with a low one**, and `reach` — which multiplies efficacy by access
+    — does not know that.
+  - >
+    **THE CITATION OF `growth-control` IS NOT INDEPENDENT EVIDENCE.** Written on
+    the same day, by the same author, in response to that obstacle's holes naming
+    fibroids as a missing test case. Declared in all three records and in the
+    obstacle.
+  - >
+    Written from model recall. The MED12 and HMGA2 drivers, the hormone
+    dependence, the direction of the racial disparity and the mechanism of every
+    treatment are the parts most likely right; every fraction, and the
+    hysterectomy count, are the parts most likely wrong.
+
+blockers:
+  - kind: knowledge
+    obstacles: [growth-control]
+    blocks: why a benign tumour occurs in most of a species, and why it grows
+    what: >
+      **A MONOCLONAL TUMOUR PRESENT IN THE MAJORITY OF WOMEN IS NOT A NORMAL
+      TUMOUR AND NOBODY CAN SAY WHY IT IS SO COMMON.** The drivers are known —
+      *MED12*, *HMGA2* — and knowing them has produced no therapy, because they
+      explain how a fibroid starts and not why the myometrium tolerates it, why
+      it grows for years, or why it stops in one woman and fills a pelvis in
+      another.
+      **EVERY EFFECTIVE DRUG WORKS BY WITHDRAWING A PERMISSIVE HORMONE, WHICH IS
+      WHY EVERY EFFECTIVE DRUG COSTS FERTILITY.** GnRH antagonists, and before
+      them the agonists, suppress oestrogen and progesterone; the fibroid shrinks
+      because the permission is gone. **Nothing acts on the growth itself.** That
+      is the same structure as `endometriosis`, where relief and conception are
+      incompatible by construction, and the same structure as
+      `benign-prostatic-hyperplasia`, where withdrawing androgen removes a fifth
+      of the volume and nothing tells the tissue to stop.
+      A drug that acted on the setpoint rather than the hormone would be a
+      uterus-sparing, fertility-sparing treatment for the leading cause of
+      hysterectomy in the world. Tagged `growth-control` (FND-O-0015).
+      `scale: null`.
+    who_could: [academic, sponsor]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    obstacles: [who-progresses]
+    blocks: which fibroid matters, in which woman
+    what: >
+      Fibroids are extremely common and mostly silent, and **nothing distinguishes
+      the ones that will cause disease from the ones that will not.** No marker,
+      no imaging feature, no clinical rule. Since they also regress after
+      menopause, a share of the hysterectomies done for them are done on disease
+      that had a few years left to run.
+      This is what makes `overtreatment_risk` fire on this record: a real
+      capability, a permanent price, and no way to say in advance who needed to
+      pay it. **The equivalent measurement in `prostate-cancer` — distinguishing
+      the indolent tumour from the lethal one — is the most-discussed
+      overdiagnosis problem in medicine, and the benign version affecting more
+      people is barely discussed at all.**
+      A direct instance of `who-progresses` (FND-O-0001). `scale: null`.
+    who_could: [academic, health-system]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    blocks: years in which heavy bleeding was called normal
+    what: >
+      **THE TEST IS A FIFTEEN-MINUTE ULTRASOUND AND THE DELAY IS MEASURED IN
+      YEARS.** Heavy menstrual bleeding is the presenting symptom and it is
+      routinely normalised — by women who have no comparison, and by clinicians
+      who treat it symptomatically without imaging. Iron deficiency is treated as
+      the diagnosis rather than as the consequence of one.
+      Filed as `diagnosis` and it is the shelf-test shape again: nothing needs
+      inventing. **The cost of the delay is not a worse fibroid — fibroids are
+      slow — it is a woman arriving at treatment older**, with anaemia behind her
+      and with the uterus-sparing options narrowed by size, number and age.
+      **This is the third record in this pass to state it** — `endometriosis`
+      has a measured delay of years, `migraine` records the same dismissal — and
+      the corpus is now making a claim about gynaecological symptoms in general
+      that no single record can support and that nothing here can query.
+    who_could: [health-system, academic, patient-org, government]
+    scale: 3.0e8
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: why Black women have this disease worse, at every measure
+    what: >
+      **HIGHER INCIDENCE, EARLIER ONSET, LARGER AND MORE NUMEROUS FIBROIDS, MORE
+      SEVERE SYMPTOMS, MORE HYSTERECTOMIES — AND NO EXPLANATION.** The
+      association is large, long-established and reproducible. Genetic ancestry,
+      vitamin D status, chemical hair-product exposures, differences in the age
+      at which women are believed, and differences in what is offered once they
+      are, have all been proposed. None accounts for the size of the effect.
+      Recorded as `knowledge` because the question — what causes it — is
+      genuinely open, and **the register should not file a disparity as
+      `policy` by default**, which would assume the answer. If it turns out to be
+      access and treatment choice rather than biology, this blocker is wrong and
+      should be refiled; that would itself be a finding worth having.
+      `scale: null`, and the null is doing real work: this is a question money
+      cannot triage until somebody knows which kind of question it is.
+    who_could: [academic, government, patient-org]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: cost
+    blocks: the drugs that would spare a uterus
+    what: >
+      The oral GnRH antagonists with hormonal add-back are the first medical
+      therapy that controls fibroid bleeding well enough to defer or avoid
+      surgery. They are on patent, priced accordingly, and effectively absent
+      outside high-income systems — while hysterectomy, the definitive
+      alternative, is a fixed one-time cost that many health systems find easier
+      to authorise.
+      **A payment structure that makes the organ-removing option the cheaper one
+      is not a neutral fact about prices.** Filed as `cost` rather than `policy`
+      because the binding constraint is the price of the molecule; it will move
+      when the patents do.
+    who_could: [payer, manufacturer, government, sponsor]
+    scale: 2.0e9
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0140
+  rated: 2026-09-02
+  by: [claude, jeremy]

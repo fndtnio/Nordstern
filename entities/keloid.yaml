@@ -1,0 +1,446 @@
+slug: keloid
+id: FND-D-0140
+name: Keloid scarring
+also: [keloid, keloid scar, keloid disorder]
+mondo: unresolved
+kind: disease
+residual: false
+contested: false
+
+# THE THIRD OF THE THREE BENIGN-OVERGROWTH RECORDS ADDED ON 2026-09-02, AND THE
+# ONE THAT ACTUALLY EARNS THE OBSTACLE.
+#
+# BPH and fibroids are growths in an organ. A keloid is a WOUND-HEALING
+# PROGRAMME THAT DOES NOT TERMINATE — the repair response continues past the
+# point of repair, invades skin that was never injured, and keeps going for
+# years. That makes it the only record in the register sitting on both faces of
+# `growth-control` (FND-O-0015) at once: it is not "will not start" and it is
+# not cancer. **It is repair that will not stop**, which is the single sharpest
+# argument that the obstacle's two faces are one brake.
+#
+# It is also, on the register's own numbers, close to the least treatable
+# condition here that nobody dies of. Standard surgical excision of a lump makes
+# this lump worse — recurrence after excision alone runs from about 45% to
+# essentially all of them — which makes it one of very few entries where the
+# obvious intervention is contraindicated.
+
+burden:
+  prevalence:
+    value: 1.0e8
+    units: >
+      people living with one or more keloids — a reasoned estimate and the
+      weakest number in the record by a wide margin. Reported frequencies range
+      from well under one percent in populations of European ancestry to figures
+      quoted between roughly four and sixteen percent in some African and
+      Afro-Caribbean populations, with elevated rates in Asian and Hispanic
+      populations. **Those figures come from clinic series and small surveys
+      rather than from any population survey**, and the range they span is more
+      than an order of magnitude
+    src: reasoning
+  note: >
+    `deaths` absent. Keloids do not kill and have no recognised route to doing
+    so; the rare reports of malignancy arising in long-standing scars concern
+    burn scars rather than keloids.
+    No `ylds`, on the standing rule. **This record would benefit from one more
+    than most**, because disfigurement of the face, ear, jawline and chest is
+    precisely the burden that neither mortality nor prevalence conveys, and the
+    disability weights for disfigurement are among the ones GBD does publish.
+
+axes:
+  mechanism: correlates
+  intervention: symptomatic
+  prevention: risk-reduction
+  ongoing: moderate
+  efficacy:
+    value: 0.35
+    units: >
+      fraction-of-treated achieving durable flattening without recurrence — a
+      reasoned estimate, and the spread behind it is the record. Excision alone
+      recurs in something between 45% and nearly 100%. Excision with adjuvant
+      radiotherapy brings recurrence down to roughly 10-25%, and is
+      radiotherapy, for a benign condition, often in a young person.
+      Intralesional corticosteroid, alone or with 5-fluorouracil, softens and
+      flattens many keloids and cures few. Silicone, pressure and cryotherapy
+      help at the margins. **Nothing removes the tendency**, so a person who
+      keloids once keloids again, including along the scar of the operation that
+      removed the last one
+    src: reasoning
+  access:
+    value: 0.7
+    units: >
+      fraction-of-affected able to obtain the treatments that exist — a reasoned
+      estimate, and deliberately high. Intralesional triamcinolone is an old,
+      cheap generic available almost anywhere a clinician can inject. **This
+      record's low reach is an efficacy failure and not a delivery failure**,
+      which is unusual here and is the reason the derived `cannot-reach-people`
+      tag is misleading — see `holes`. Excision with radiotherapy needs a
+      specialist service and is much less available
+    src: reasoning
+
+measurement:
+  diagnostic: clinical
+  prognostic: none
+  predictive: none
+  witness: >
+    DIAGNOSTIC is `clinical` and the distinction it rests on is genuinely
+    load-bearing. **A keloid extends beyond the boundary of the original wound
+    and does not regress; a hypertrophic scar stays within it and usually
+    does.** That difference decides whether to operate, and it is made by
+    looking, by history, and by time. There is no test, no stain and no marker,
+    and the two are frequently conflated in both clinical practice and the
+    literature — which quietly contaminates the efficacy figures, since a series
+    that includes hypertrophic scars reports better outcomes than a series of
+    keloids.
+    PROGNOSTIC is `none` **and this is the most consequential measurement gap in
+    the record, because it should change a decision that is made every day.**
+    Nothing identifies, before a wound is made, who will keloid. Ancestry and
+    family history raise the prior and do not decide the individual case. So
+    elective operations, piercings, and caesarean sections are performed on
+    people who will be left with a keloid worse than the thing that was treated,
+    and nobody could have told them. A test with even moderate performance would
+    change surgical planning, incision siting, and whether an elective procedure
+    happens at all.
+    PREDICTIVE is `none`. Nothing says which keloid will respond to steroid,
+    which needs radiotherapy, or which will recur regardless. Treatment is a
+    ladder climbed by trial, on a lesion that grows during the trial.
+    **Neither derived risk fires, because `capability` is `unsolved` and the
+    register requires a real capability before it will call something
+    overtreatment.** That is correct and it hides something: the harm here is
+    done by treatments that do not work, which is a category the schema has no
+    name for.
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    **THE TREATMENTS LEAVE PERMANENT MARKS OF THEIR OWN, WHICH IS A HARD THING TO
+    SAY ABOUT A CONDITION WHOSE COMPLAINT IS A MARK.**
+    Repeated intralesional corticosteroid causes dermal atrophy, telangiectasia
+    and hypopigmentation at the injection site — permanent, and conspicuous in
+    exactly the skin types that keloid most. Cryotherapy causes hypopigmentation
+    reliably enough that it is a stated limitation of the technique.
+    **Adjuvant radiotherapy is the most effective option and the register should
+    be plain about what it is**: ionising radiation delivered to a benign lesion,
+    frequently on the ear, jawline or chest of somebody in their twenties. The
+    doses are low and fractionated and the long-term malignancy risk is small and
+    genuinely contested; small is not zero, and the calculus over a fifty-year
+    remaining lifespan is not the same as it would be in an older patient.
+    **And excision is the one that must be named as a harm.** Cutting out a
+    keloid without adjuvant therapy recurs in most cases and the recurrence is
+    commonly larger than the original, along a longer scar. **The standard
+    response to a lump makes this lump worse**, and it is still performed, by
+    clinicians who have not met the rule.
+  incidence:
+    value: 0.4
+    units: >
+      fraction-of-treated left with a permanent consequence of treatment —
+      injection-site atrophy and pigment change predominantly, plus the
+      irreversible enlargement that follows failed excision. A reasoned estimate
+    src: reasoning
+
+# NO `residue:` BLOCK, AND THE REGISTER'S OWN GUARD IS WHY.
+#
+# This record was first written with one, on the reasoning that "the keloid
+# itself is the residue, because most of them are never eliminated." That is
+# precisely the error `tool.test.js` exists to catch: **a residue on a record
+# with no capability is usually the disease still running**, and the test says
+# so in its failure message — if the disease is still causing the damage, it
+# belongs in the axes, not here.
+#
+# It is. A persisting keloid is untreated disease, and it is already stated by
+# `intervention: symptomatic` and `efficacy: 0.35`. Writing it twice would have
+# double-counted the same damage and, worse, would have made this record derive
+# `restored: partly` — implying somebody had been treated successfully and left
+# with a mark, when what happened is that the treatment did not work.
+#
+# What the disease leaves is therefore described in `witness.intervention`
+# below. The guard fired on the first run and the record changed, not the guard.
+
+window:
+  what: >
+    **A REAL AND VERY EARLY WINDOW, AND IT IS ONE OF THE CHEAPEST IN THE
+    REGISTER TO ACT ON.** A wound in a susceptible person can be managed from the
+    day it closes: silicone sheeting or gel, pressure, tension-reducing closure
+    and siting, and early intralesional steroid at the first sign of raised scar.
+    These measures work far better at preventing a keloid from establishing than
+    anything works at removing an established one.
+    The window closes as the lesion matures over months into dense, poorly
+    vascularised collagen that drugs penetrate badly and that has already
+    recruited the surrounding skin. **After that the disease is chronic, and
+    every option on the table is the one with a permanent price.**
+    Almost nobody is inside this window, because being inside it requires knowing
+    in advance that the person is susceptible — and that is precisely the
+    `prognostic: none` above. **The window and the measurement gap are the same
+    fact seen twice**, which is the pattern `retinopathy-of-prematurity` and
+    `glaucoma` both show.
+  closes_on: >
+    maturation of the lesion into dense avascular collagen over roughly three to
+    twelve months, after which prophylactic measures no longer work and
+    treatment means steroid, radiotherapy or an excision that may make it worse
+  caught_in_time:
+    value: 0.15
+    units: >
+      fraction-of-affected receiving preventive management while the wound is
+      fresh — a reasoned estimate and a low one, because it requires identifying
+      susceptibility before the scar declares itself and nothing does that
+      reliably
+    src: reasoning
+
+witness:
+  mechanism: >
+    `correlates`, and it is one of a small number of records here that deserves
+    the rating outright. **What is known is a list of associations and a
+    description of the tissue, and there is no causal account at all.**
+    Described, reliably: excessive and disorganised type I and III collagen; a
+    fibroblast population that behaves abnormally in culture, resisting apoptosis
+    and over-producing matrix; TGF-β signalling elevated; chronic low-grade
+    inflammation; a hypoxic, poorly vascularised core.
+    Associated, robustly: ancestry, with a large effect that has no identified
+    genetic basis; family history, with the inheritance pattern unresolved;
+    anatomical sites of high skin tension — chest, shoulder, jaw — and near-total
+    sparing of the palms, soles and eyelids; adolescence and pregnancy, hinting
+    at a hormonal input nobody has characterised.
+    **NONE OF THAT SAYS WHY THE PROGRAMME DOES NOT END.** Wound healing is a
+    sequence with a termination step: inflammation, proliferation, then
+    remodelling and resolution, with fibroblasts undergoing apoptosis and the
+    scar maturing and flattening. **In a keloid the sequence runs and the
+    termination does not**, and the tissue keeps building past the wound margin
+    into skin that was never injured, for years. Nobody can say what the stop
+    signal is or what fails to deliver it.
+    That is why this record cites `growth-control`, and it is the only record in
+    the corpus that sits on both of that obstacle's faces at once: **this is
+    repair, and it will not stop.**
+  intervention: >
+    `symptomatic`, and the rating is generous rather than harsh. Nothing on the
+    list acts on the disease. Corticosteroid suppresses inflammation and matrix
+    production for a while; 5-fluorouracil and bleomycin are antiproliferative
+    agents borrowed from oncology and used empirically; silicone and pressure act
+    on hydration and mechanics; cryotherapy destroys tissue; radiotherapy kills
+    the fibroblasts that would rebuild it. **Every one of them is a way of
+    interfering with a process nobody understands**, and the best of them is
+    aimed at the population of cells rather than at the signal that should have
+    stopped them.
+    Excision belongs in a category the ladder does not have. It is definitive for
+    the lesion and it starts a new wound in a person whose wounds do this, which
+    is why it is done only with adjuvant therapy and why it is the clearest
+    example in the register of a standard intervention being **contraindicated by
+    the mechanism of the disease.**
+    **WHAT SYMPTOMATIC TREATMENT LEAVES IN PLACE IS THE DISEASE, AND THIS IS
+    WHERE THE RECORD HAS TO SAY WHAT THAT MEANS**, because there is no `residue`
+    field for it — see the note above. Roughly three quarters of affected people
+    keep a permanent visible or symptomatic lesion after whatever treatment they
+    receive, and what it costs them depends almost entirely on where it is. On
+    the earlobe after a piercing, a mass that distorts the ear. On the jaw, chest
+    and shoulders, raised, tethered, discoloured plaques in the places clothing
+    does not cover. Across a joint or the anterior chest, contracture that
+    restricts movement and breathing. Most itch, many are painful, and both
+    persist for years.
+    **AND THE PART THAT APPEARS IN NO CLINICAL MEASURE.** Keloids are
+    disfiguring; they are on visible skin because visible skin is where wounds
+    and piercings are; and they fall disproportionately on people already subject
+    to assumptions about their appearance. Quality-of-life instruments in keloid
+    patients report impacts comparable to conditions this register takes far more
+    seriously. **The register has no field for stigma**, and this is the third
+    record — after `noma` and `obstetric-fistula` — where that absence removes
+    the main thing.
+  prevention: >
+    `risk-reduction`, and it is genuine rather than nominal. Avoiding elective
+    skin trauma in a susceptible person prevents keloids — not piercing the ears
+    of somebody with a family history, siting an unavoidable incision along
+    tension lines, closing without tension, and applying silicone or pressure
+    from the day of healing.
+    It is not `prophylaxis`, because none of it reliably prevents the disease in
+    somebody who is going to have surgery anyway, and because it depends entirely
+    on identifying susceptibility in advance. **A prevention strategy gated on a
+    prognostic test that does not exist is `risk-reduction` at best**, and the
+    register's rule that prevention only rescues a record from "nothing can be
+    done" is why `capability` still reads `unsolved` here.
+  ongoing: >
+    `moderate`. Established keloids are managed rather than cured: injections
+    every few weeks in a treatment cycle, repeated over months and often
+    repeated again years later when the lesion or a new one recurs, with silicone
+    or pressure garments worn in between. There is no daily drug and there is no
+    end.
+    Rated `moderate` rather than `low` because the treatment is delivered by
+    needle into a painful lesion, on a schedule, indefinitely, and because the
+    itch and pain that prompt it persist between visits.
+
+holes:
+  - >
+    **THE PREVALENCE NUMBER IS THE WEAKEST IN ANY RECORD IN THIS PASS AND THE
+    RECORD SHOULD NOT BE USED FOR SCALE.** The quoted population frequencies span
+    more than an order of magnitude and come from clinic series, not surveys. If
+    the true global figure is a tenth of the estimate here, every ranking that
+    includes this record changes and none of its qualitative claims do.
+  - >
+    **A HOLE THIS RECORD WAS WRITTEN TO LOG AND THE REGISTER TURNED OUT TO HAVE
+    ALREADY CLOSED, WHICH IS WORTH RECORDING IN THAT DIRECTION FOR ONCE.**
+    `reach` is efficacy multiplied by access, so a treatment that is universally
+    available and does not work produces the same number as one that works and
+    does not arrive — 0.245 here, which is `barely` on the delivery bands, which
+    would have earned the `cannot-reach-people` tag saying *"it works and it does
+    not arrive"* about a disease whose truth is *"it arrives and it does not
+    work."* **It does not fire**: `delivery` is withheld entirely when
+    `capability` is `unsolved`, so this record derives `—` and carries no such
+    tag. The gate was already there.
+    **THE UNDERLYING AMBIGUITY IS STILL REAL FOR EVERY RECORD ON THE OTHER SIDE
+    OF THAT GATE.** Among records with a real capability, a low `reach` still
+    cannot say which of its two factors produced it, and the buckets read the
+    composite. Keloid is protected by an accident of its own hopelessness rather
+    than by the derivation distinguishing the two states.
+  - >
+    **THE EFFICACY LITERATURE IS CONTAMINATED BY THE DIAGNOSTIC BOUNDARY THIS
+    RECORD RESTS ON.** Hypertrophic scars regress on their own and are routinely
+    included in keloid series. Any treatment studied in a mixed population looks
+    better than it is, and `efficacy: 0.35` is a reasoned estimate over a
+    literature with that bias baked in — biased upward, so the honest reading is
+    that this record is optimistic.
+  - >
+    **THERE IS NO ANIMAL MODEL BECAUSE NO OTHER SPECIES DOES THIS**, which is
+    tagged `no-model-system` below and belongs in the holes too: it means every
+    mechanistic claim in this record comes from cultured fibroblasts or from
+    excised human tissue, both of which are the disease removed from the
+    conditions that produced it.
+  - >
+    **THE REGISTER HAS NO FIELD FOR STIGMA OR DISFIGUREMENT AND IT IS MOST OF
+    WHAT THIS DISEASE DOES.** `witness.intervention` carries it in prose, and
+    only because the `residue` block it was first written into turned out to be
+    the wrong home. `noma` and
+    `obstetric-fistula` have the same hole and it is now three records; nothing
+    in the derived views, the buckets or the query language can see it. **A
+    condition with zero deaths whose entire burden is appearance is invisible to
+    every ranking this register produces**, which is the same argument the
+    non-mortality pass was started to make.
+  - >
+    **THE CITATION OF `growth-control` IS NOT INDEPENDENT EVIDENCE** — same
+    declaration as the other two records in this trio. This one has the strongest
+    substantive claim on the obstacle and was still written to order.
+  - >
+    Written from model recall. The clinical description, the excision recurrence
+    problem, the ancestry association, the site distribution and the absence of
+    an animal model are the parts most likely right; every fraction is the part
+    most likely wrong.
+
+blockers:
+  - kind: knowledge
+    obstacles: [growth-control]
+    blocks: what ends wound healing, and what fails to end it here
+    what: >
+      **WOUND HEALING HAS A TERMINATION STEP AND NOBODY KNOWS WHAT IT IS.** The
+      normal sequence resolves: fibroblasts undergo apoptosis, the matrix
+      remodels, the scar flattens and matures. In a keloid the building phase
+      continues for years and spreads into skin that was never wounded. The
+      literature describes what the persisting tissue is made of and what
+      pathways are elevated in it; it does not describe the signal whose absence
+      allows it.
+      **THAT IS WHY EVERY TREATMENT IS DESTRUCTIVE OR SUPPRESSIVE.** Steroid,
+      5-fluorouracil, cryotherapy and radiotherapy all reduce the population of
+      cells doing the building. **None of them delivers the stop signal, because
+      nobody knows what it is**, and the tendency survives all of them — which is
+      why the lesion returns and why the next wound does the same thing.
+      Tagged `growth-control` (FND-O-0015), and this is the corpus's only record
+      that sits on both of that obstacle's faces simultaneously: it is the repair
+      programme, and it will not stop. **If the obstacle's unifying claim is
+      right anywhere, it is right here**; if keloid turns out to be unrelated to
+      the mechanism that limits organ size, the obstacle should split.
+      `scale: null`.
+    who_could: [academic, sponsor]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    obstacles: [who-progresses]
+    blocks: knowing before you cut who will keloid
+    what: >
+      **THIS IS A PROGNOSTIC GAP THAT SHOULD BE CHANGING SURGICAL DECISIONS EVERY
+      DAY AND CHANGES NONE.** Nothing identifies, in advance of a wound, who will
+      form a keloid. Ancestry and family history shift the prior and do not
+      decide the case, so elective incisions, piercings and caesarean sections
+      proceed and a share of the people who have them are left with a lesion
+      worse than what was treated.
+      **The value of even a mediocre test is unusually easy to state**: it would
+      redirect incisions, add prophylaxis from day one — which is the one thing
+      that reliably works — and let some elective procedures be declined by
+      somebody who knew what they were choosing. It converts this disease from
+      one that is treated badly into one that is largely prevented, and the
+      window blocker below is the same fact.
+      A direct instance of `who-progresses` (FND-O-0001), and among the most
+      tractable in the corpus: the outcome is visible, appears within months, and
+      the population having elective skin incisions is enormous. `scale: null`.
+    who_could: [academic, health-system, sponsor]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: tooling
+    obstacles: [no-model-system]
+    blocks: there is no animal that does this
+    what: >
+      **KELOIDS ARE NOT KNOWN TO OCCUR SPONTANEOUSLY IN ANY SPECIES BUT OURS.**
+      No mouse, no rat, no pig, no primate model reproduces the defining feature
+      — invasion beyond the original wound margin with no regression. The
+      substitutes are implanted human keloid tissue in immunodeficient mice,
+      which studies the lesion detached from the immune system that may be
+      producing it, and cultured keloid fibroblasts, which studies the cells
+      detached from everything.
+      **So there is no system in which to test a drug against the thing that
+      actually defines the disease**, and the field has proceeded by trying
+      agents borrowed from oncology and dermatology directly on patients. That is
+      not a criticism of the field; it is what is available.
+      A direct instance of `no-model-system` (FND-O-0013), and an unusual one —
+      the register's other entries there concern organisms that will not grow
+      outside a host. **This is a disease that exists only in humans**, which is
+      the same wall reached from the opposite direction. `scale: null`.
+    who_could: [academic, nonprofit]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: no-sponsor
+    blocks: a benign, disfiguring, non-fatal disease of the wrong populations
+    what: >
+      **NOTHING ABOUT THIS DISEASE ATTRACTS DEVELOPMENT MONEY.** It kills nobody,
+      so it carries no mortality argument. It is frequently coded as cosmetic, so
+      it is excluded from insurance coverage in many systems and the market is
+      out of pocket. Its burden falls disproportionately on populations of
+      African, Asian and Hispanic ancestry, which historically correlates with
+      less research funding across this register. And the existing treatments are
+      generic injectables costing pennies, so the commercial bar for a new agent
+      is set against a competitor that is nearly free and only partly works.
+      **The result is that a condition affecting an enormous number of people has
+      no approved drug developed for it** — every agent in use was developed for
+      something else. This is `hearing-loss`'s complaint about `deaths: 0`
+      shaping research priorities, in a much smaller and much clearer case.
+      `standing: documented` for the absence of approved agents; the attribution
+      to coverage and to population is `alleged` and is stated in prose rather
+      than as a separate blocker.
+    who_could: [sponsor, payer, philanthropy, patient-org]
+    scale: 5.0e8
+    standing: documented
+    src: recall
+
+  - kind: policy
+    blocks: coverage that calls it cosmetic
+    what: >
+      Keloids itch, hurt, contract across joints, and restrict movement, and they
+      are routinely classified as a cosmetic problem for the purposes of
+      reimbursement. That classification decides whether a course of injections
+      or an excision-and-radiotherapy service is funded, and it is made on the
+      appearance of the lesion rather than on its symptoms.
+      Filed as `policy` because the fix is a coding and coverage decision that
+      requires no discovery. **It is also the cheapest thing on this record's
+      list**, and it would move a disease whose treatments are old, generic and
+      available from unaffordable to affordable without anybody inventing
+      anything.
+      `standing: alleged` — coverage rules vary by country and by payer and
+      nothing here measures them.
+    who_could: [payer, regulator, government, patient-org]
+    scale: 1.0e8
+    standing: alleged
+    src: recall
+
+assertion:
+  id: FND-A-0141
+  rated: 2026-09-02
+  by: [claude, jeremy]

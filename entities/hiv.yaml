@@ -1,0 +1,205 @@
+slug: hiv
+id: FND-D-0004
+name: HIV infection
+also: [HIV/AIDS, human immunodeficiency virus infection]
+mondo: MONDO:0005109
+kind: disease
+residual: false
+contested: false
+
+# The record the `suppressive` rung was created for. Not a death sentence and
+# not over: near-normal lifespan, purchased with indefinite daily treatment.
+
+burden:
+  prevalence:
+    value: 4.0e7
+    units: people living with HIV
+    src: recall
+  deaths:
+    value: 6.3e5
+    units: deaths/year
+    src: recall
+
+survival:
+  horizon: 15 years from infection
+  untreated:
+    value: 0.05
+    units: >
+      fraction alive — untreated HIV progresses to AIDS in a median of around a
+      decade and is then rapidly fatal
+    src: recall
+  treated:
+    value: 0.92
+    units: >
+      fraction alive on suppressive antiretroviral therapy; life expectancy on
+      effective treatment started early approaches that of the general population
+    src: recall
+  witness: >
+    **THE SECOND FLAGSHIP, AND THE FASTEST.** The transition took about two years
+    from 1996, and it is why the ladder has a `suppressive` rung at all: **HIV is
+    no longer a death sentence and it is not over.** `survival` reports the first
+    half and cannot see the second.
+
+axes:
+  mechanism: established
+  intervention: suppressive
+  prevention: prophylaxis
+  ongoing: low
+  efficacy:
+    value: 0.95
+    units: fraction-of-patients (viral suppression once on ART)
+    src: recall
+  access:
+    value: 0.76
+    units: fraction-of-patients (on antiretroviral therapy)
+    src: recall
+
+measurement:
+  diagnostic: objective
+  prognostic: good
+  predictive: good
+  witness: >
+    The best-measured disease in the register, on every question. Viral load
+    and CD4 count give quantitative diagnosis, staging and prognosis;
+    genotypic resistance testing predicts which regimen will work before it is
+    given. This is what a solved measurement problem looks like, and it is
+    worth noting that it arrived alongside effective treatment rather than
+    before it — the two were developed against each other.
+
+toll:
+  severity: minor
+  permanent: true
+  what: >
+    Modern regimens are well tolerated, but decades of exposure are not
+    nothing: tenofovir disoproxil carries renal and bone effects, some
+    integrase inhibitors are associated with weight gain, and accelerated
+    cardiovascular and renal comorbidity is observed. Earlier eras were far
+    worse — the lipodystrophy and neuropathy of the first regimens were
+    disfiguring and permanent.
+  incidence:
+    value: 0.05
+    units: fraction-of-treated (significant long-term drug toxicity)
+    src: recall
+
+residue:
+  severity: minor
+  permanent: true
+  what: >
+    A suppressive record, where the question this field answers has to be asked
+    differently: nobody finishes treatment, so "back to the state before" means
+    "back to baseline while treated". Started early, the answer is close to
+    yes, which is the whole triumph of this record.
+    Started late, it is not. CD4 recovery is often incomplete and never
+    catches up; persistent immune activation and inflammation continue on full
+    suppression and are the suspected driver of the excess cardiovascular,
+    renal, bone and neurocognitive disease seen at younger ages than expected.
+    The residue is therefore a function of how late the diagnosis was — which
+    makes it, like hepatitis C's, an argument for the diagnosis blocker rather
+    than a separate problem.
+  incidence:
+    value: 0.2
+    units: >
+      fraction-of-treated (incomplete immune reconstitution and residual
+      excess comorbidity despite full viral suppression) — higher in late
+      presenters
+    src: reasoning
+
+witness:
+  mechanism: >
+    HIV-1 isolated in 1983 (Barré-Sinoussi and Montagnier; Nobel 2008). The
+    chain is complete and quantitative: CD4 receptor and CCR5/CXCR4 tropism,
+    reverse transcription, integration, progressive CD4 depletion, opportunistic
+    infection. The mechanism is understood well enough that the reason it is
+    not cured is itself understood — the latent proviral reservoir in resting
+    memory CD4 cells is invisible to both drugs and immunity, and rebounds on
+    interruption.
+  intervention: >
+    Combination antiretroviral therapy suppresses plasma virus below detection
+    and restores near-normal life expectancy. One pill daily for most, or
+    long-acting injectable every one to two months. But: interrupt it and the
+    reservoir rebounds within weeks. That is precisely `suppressive` —
+    restores the life, does not end the disease, and never finishes.
+    Sterilising cures exist and must be recorded honestly: the Berlin, London
+    and Düsseldorf patients and a handful of others were cured by allogeneic
+    stem-cell transplant from CCR5-delta-32 donors. A procedure with
+    transplant-level mortality, justifiable only for a concurrent haematologic
+    malignancy, demonstrated in single figures. Proof that cure is physically
+    possible; not a rung the population can stand on. (See gaps.md — the
+    schema currently has no way to say "curative, demonstrated in n=6, not
+    generalisable".)
+  prevention: >
+    Rated `prophylaxis` on strong grounds: pre-exposure prophylaxis is highly
+    effective when adhered to, treatment-as-prevention means a virally
+    suppressed person does not transmit sexually, and vertical transmission
+    falls below a per cent with maternal ART. Prevention here outperforms
+    treatment as a public-health instrument, which the intervention ladder
+    alone would never reveal.
+  ongoing: >
+    Rated `low`, not `none`: one well-tolerated pill is a genuine achievement
+    against 1996's regimens, but lifelong adherence, drug interactions,
+    accelerated comorbidities and stigma are not nothing.
+
+holes:
+  - The latent reservoir: its size, anatomic distribution and how to measure
+    it are all contested, and everything about cure depends on them.
+  - No vaccine, after four decades and several large failed trials. Whether
+    broadly neutralising antibodies change this is open.
+  - `access` is the largest remaining source of death, and it is
+    geographically concentrated rather than uniformly thin.
+
+blockers:
+  - kind: knowledge
+    obstacles: [pathogen-persistence]
+    blocks: cure
+    what: >
+      The latent proviral reservoir. Its size, distribution and measurement are
+      unsettled, and no approach has cleared it outside the handful of
+      transplant cases. This is a research problem and no amount of delivery
+      funding touches it.
+    who_could: [academic, sponsor]
+    scale: null
+    standing: documented
+    src: recall
+  - kind: logistics
+    blocks: antiretroviral therapy (suppressive)
+    what: >
+      Roughly a quarter of people living with HIV are not on treatment, and the
+      remaining gap is last-mile: testing, linkage, retention and supply rather
+      than drug availability. The drugs are cheap generics.
+    who_could: [health-system, government, nonprofit]
+    scale: 1e9
+    standing: documented
+    src: recall
+  - kind: policy
+    blocks: PrEP and testing (prophylaxis)
+    what: >
+      Criminalisation of drug use, sex work and same-sex relationships keeps the
+      populations at highest risk away from services that exist and are funded.
+      A legal obstacle to a solved intervention.
+    who_could: [government, legislator, nonprofit]
+    scale: null
+    standing: documented
+    src: recall
+
+moved:
+  - date: 1996
+    axis: intervention
+    from: symptomatic
+    to: suppressive
+    why: >
+      Combination therapy (HAART) turned a fatal illness into a managed one
+      within about two years. The single largest rung change in this register,
+      and it did not involve any new understanding of the virus.
+    src:
+      id: PMID:9287227 doi:10.1056/NEJM199709113371101
+      retrieved: 2026-08-26
+      quote: >
+        Treatment with indinavir, zidovudine, and lamivudine as compared with
+        zidovudine and lamivudine alone significantly slows the progression of
+        HIV-1 disease in patients with 200 CD4 cells or fewer per cubic millimeter
+        and prior exposure to zidovudine.
+
+assertion:
+  id: FND-A-0004
+  rated: 2026-08-11
+  by: [claude, jeremy]

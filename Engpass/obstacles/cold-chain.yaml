@@ -1,0 +1,123 @@
+slug: cold-chain
+id: FND-O-0014
+name: The treatment works and does not survive the journey to the patient
+kind: manufacturing
+resolution: open
+
+question: >
+  A drug or vaccine that is effective in a trial has to arrive at a person still
+  effective. For a large group of the register's products it does not: **it
+  requires refrigeration, and it is given in the hottest and least electrified
+  places on earth.**
+  `maternal-haemorrhage` states it in one line: **"OXYTOCIN REQUIRES STORAGE
+  BETWEEN 2 AND 8°C AND IS GIVEN IN SOME OF THE HOTTEST PLACES ON EARTH,"** and
+  surveys of uterotonic quality in low-income settings have repeatedly found
+  substantial proportions degraded. The drug was administered. It did nothing.
+  Nobody was ever going to find out.
+  **THIS IS A TWENTY-THREE-YEAR-OLD GRAND CHALLENGE AND IT IS STILL OPEN.**
+  Varmus and the Gates/NIH scientific board named it in *Science* in 2003 as
+  **Grand Challenge 2 — "Prepare vaccines that do not require refrigeration"** —
+  alongside GC 1, single-dose vaccines usable soon after birth, and GC 3,
+  needle-free delivery. All three are the same underlying problem: the product
+  is fine and the last hundred kilometres are not. Two decades and a substantial
+  funding programme later, seven records in this register are still blocked by
+  it.
+
+what_it_unblocks: >
+  **IT IS THE CHEAPEST OBSTACLE HERE BY WHAT IT WOULD BUY**, because every
+  product concerned already exists, already works, and is already paid for.
+  Nothing has to be discovered. What has to change is the formulation, or the
+  container, or the requirement itself.
+  The seven records and what each is losing:
+  **`maternal-haemorrhage`** — oxytocin degraded before it is given, in the
+  leading direct cause of maternal death. And **blood**, which the record notes
+  cannot be stockpiled or improvised: it expires in about six weeks, needs
+  refrigeration, screening, typing and a standing institution of voluntary
+  donation. *"A woman who reaches a facility with no blood, no theatre, no
+  anaesthetist and no uterotonic that survived the heat has arrived and has not
+  been treated."*
+  **`measles`** — *"the vaccine is cheap and the delivery is not: two doses, on a
+  schedule, with a cold chain, to a child who must be found twice"*, and the
+  children missed are in conflict zones and settlements *"where the cold chain
+  ends before the road does."*
+  **`hepatitis-b`** — the birth dose has to be given within hours, and a large
+  share of births in the highest-prevalence settings happen at home or in
+  facilities with no working cold chain. A vaccine that prevents a cancer,
+  defeated by a refrigerator.
+  **`visceral-leishmaniasis`** — *"the sharpest logistics blocker in the
+  register, because the science could not be more finished."* One infusion cures
+  it, and it needs a cold chain and a drip.
+  **`cryptococcal-meningitis`** — liposomal amphotericin B *"adds a price and a
+  cold chain on top"* of a treatment the record already calls the cleanest
+  instance of something that exists, works, and is absent.
+  **`type-1-diabetes`** — a real constraint in hot climates with unreliable
+  electricity, partly softened by clay-pot coolers and by insulin's tolerance of
+  room temperature for limited periods.
+  **`snakebite`** — antivenom, time-critical, rural, needing refrigeration and a
+  facility able to manage severe reactions.
+  **AND IT IS THE OBSTACLE MOST LIKELY TO BE SOLVED BY CHEMISTRY RATHER THAN BY
+  MONEY.** Heat-stable carbetocin exists as an oxytocin alternative. Lyophilised
+  and controlled-temperature-chain formulations exist for some vaccines. The
+  question is why so few products have had the treatment.
+
+why_hard: >
+  **BECAUSE THE INCENTIVE POINTS THE WRONG WAY AT EVERY STEP.** A manufacturer
+  registering a product for a wealthy market has a cold chain available and no
+  reason to pay for reformulation. The places that need thermostability are the
+  ones least able to fund the work, and reformulating an off-patent generic
+  produces a better product with no additional exclusivity to sell. This is
+  `nobody-makes-it` (FND-O-0013's economic cousin) arriving one step earlier:
+  **nobody is failing to manufacture the drug, they are failing to manufacture
+  the version that would survive.**
+  **BECAUSE A REFORMULATION IS A NEW PRODUCT TO A REGULATOR.** Changing an
+  excipient, lyophilising, or moving to a controlled-temperature chain requires
+  stability data, bioequivalence work and a new registration in every country
+  where it will be used. For a cheap generic in poor markets, that cost is
+  frequently larger than the revenue.
+  **BECAUSE SOME OF IT IS NOT REFORMULABLE.** Blood is the clean case. Live
+  attenuated vaccines need their organisms alive. Cell and gene therapies are
+  worse than anything here and are moving in the wrong direction — the
+  register's newest curative products have the most demanding chains of any.
+  **AND BECAUSE THE FAILURE IS INVISIBLE.** A degraded vial looks like a working
+  one. The patient is treated, does not improve, and is recorded as a treatment
+  failure or as a severe case, not as a supply-chain event. **There is no signal
+  to act on**, which is why the surveys that find degraded stock are surprising
+  each time and why the register mis-files this as `access` succeeding.
+
+holes:
+  - >
+    **`kind: manufacturing` IS ARGUABLE AND `logistics` IS THE OBVIOUS
+    ALTERNATIVE.** Six of the seven records file their own blocker as
+    `logistics` — a delivery problem — and only `maternal-haemorrhage` files the
+    oxytocin one as `manufacturing`. It is recorded as `manufacturing` here
+    because **the fix is a different product rather than a better journey**:
+    heat-stable carbetocin is chemistry, not a cool box. If a future pass
+    decides the answer is really more refrigerators, the kind should change.
+  - >
+    **IT MAY BE TWO OBSTACLES AND THE SPLIT IS BETWEEN REFORMULABLE AND NOT.**
+    Oxytocin, vaccines and antivenom are candidates for heat-stable versions;
+    **blood is not**, and neither is a live attenuated organism. Lumping them
+    means the record has one name for a chemistry problem and a
+    civil-infrastructure problem. Kept together because the seven records
+    experience the same thing — the product is fine and does not arrive working —
+    but the fixes diverge completely, which is the same doubt `cell-targeting`
+    and `animal-translation` both log about themselves.
+  - >
+    **THE DEGRADATION FIGURES ARE QUOTED FROM RECALL AND THE ARGUMENT LEANS ON
+    THEM.** "Substantial proportions of uterotonic stock found degraded" is
+    stated in `maternal-haemorrhage` without citation. If the real proportion is
+    small, this obstacle is a nuisance rather than a cause of death, and the
+    whole record should shrink. **This is the single most checkable claim in
+    Engpass and it is not checked** — it is exactly the kind of number
+    `source_moved.py` was built to go and get.
+  - >
+    **AND THE UNCOMFORTABLE DIRECTION OF TRAVEL.** Every product in this record
+    is old and cheap. The register's newest curative therapies — cell and gene
+    products — have cold-chain requirements far more severe than anything listed
+    here, sometimes cryogenic. **If this obstacle is real, medicine is currently
+    making it worse**, and `sickle-cell`'s gene therapy reaching nearly nobody is
+    the first instance rather than an exception.
+
+asserted:
+  date: 2026-08-31
+  by: [claude, jeremy]

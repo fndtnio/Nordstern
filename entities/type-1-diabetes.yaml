@@ -1,0 +1,557 @@
+slug: type-1-diabetes
+id: FND-D-0079
+name: type 1 diabetes
+also: [type 1 diabetes mellitus, T1D, T1DM, insulin-dependent diabetes, juvenile diabetes]
+mondo: MONDO:0005147
+kind: disease
+residual: false
+contested: false
+
+# THE SCHEMA'S OWN EXEMPLAR FOR `suppressive`, WRITTEN AT RECORD 79.
+# SCHEMA.md has used "insulin, and a life of it" to explain the rung since the
+# register began, and the record was never made. It is worth having because the
+# rung it defines turns out to be doing more work than the definition admits:
+# `hiv` is one tablet a day and rates `ongoing: low`; this is a hundred dosing
+# decisions a day with lethal consequences for arithmetic errors and rates
+# `ongoing: high`, alongside `pku`'s diet and `crohns`' flares. Four values are
+# carrying at least three different kinds of demand (gaps.md #171).
+#
+# Type 2 diabetes is a different disease with the same name and is queued
+# separately. They share a symptom, a monitoring technology and almost nothing
+# else.
+
+burden:
+  prevalence:
+    value: 9.0e6
+    units: >
+      people living with type 1 diabetes worldwide, and **rising for reasons
+      nobody can explain** — incidence has been climbing at roughly 2-4% a year
+      for decades, faster than genetics can account for
+    src: recall
+  deaths:
+    value: 1.75e5
+    units: >
+      deaths/year — and the modelling that produced it estimates that **roughly
+      35,000 people a year die within twelve months of onset without ever being
+      diagnosed**, mistaken for influenza or gastroenteritis until the
+      ketoacidosis kills them
+    src: recall
+  note: >
+    **THE MOST USEFUL NUMBER FOR THIS RECORD IS NOT A DEATH COUNT — IT IS THE
+    MISSING PEOPLE.**
+    Modelling published in 2022 estimated that about **3.9 million people were
+    "missing" from the world's type 1 diabetes population**: alive if they had
+    received the care available since 1922, and dead. It is a prevalence deficit
+    rather than a mortality figure, and it captures something no field in this
+    register does — **not how many died, but how many are not here.**
+    The arithmetic behind it is the record's whole argument. Insulin is 103 years
+    old. Its discoverers sold the patent for a dollar each. **A child diagnosed in
+    Helsinki has a near-normal life expectancy and a child diagnosed in rural
+    Mali frequently has months**, and the difference is not knowledge.
+    Life expectancy loss runs from a few years in the best-served health systems
+    to something like three decades in the worst.
+
+survival:
+  horizon: 20 years from diagnosis
+  untreated:
+    value: 0.0
+    units: >
+      fraction alive — **before 1922 a child diagnosed with type 1 diabetes died,
+      usually within months.** The pre-insulin treatment was starvation, which
+      bought a little time and was itself lethal
+    src: recall
+  treated:
+    value: 0.95
+    units: >
+      fraction alive at twenty years with insulin and modern glucose management.
+      Life expectancy remains several years below the general population, which
+      this axis does not show
+    src: recall
+  witness: >
+    **THE FLAGSHIP TRANSITION IN THIS REGISTER: 0.0 TO 0.95, AND THE DATE IS
+    1922.** Nothing else here moves that far. It is also the cleanest
+    demonstration of why `untreated` is the more interesting column — the treated
+    figure says medicine is good at this, and only the untreated figure says what
+    that is worth.
+    **And the axis is silent about the rest of the record.** `ongoing: high`, a
+    permanent daily burden, a toll this field cannot see. Surviving is not the
+    same as being well, which is why `survival` is an addition to the register
+    rather than a replacement for it.
+
+axes:
+  mechanism: established
+  intervention: suppressive
+  prevention: risk-reduction
+  ongoing: high
+  efficacy:
+    value: 0.75
+    units: >
+      fraction-of-patients (achieving glucose control that substantially prevents
+      complications) — **with automated insulin delivery**, which most people with
+      this disease will never see
+    src: reasoning
+  access:
+    value: 0.40
+    units: >
+      fraction-of-patients (reliable insulin, a way to measure glucose, and
+      somebody who taught them to use both) — **insulin alone is not treatment**;
+      without the means to measure, the dose is a guess with a lethal tail
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: partial
+  witness: >
+    **DIAGNOSTIC IS `objective` AND TRIVIAL — A GLUCOSE METER AND A URINE DIPSTICK
+    — AND TENS OF THOUSANDS OF PEOPLE A YEAR DIE UNDIAGNOSED.**
+    The presentation is unmistakable once considered: thirst, weight loss,
+    polyuria, and then vomiting and Kussmaul breathing. It is mistaken for
+    gastroenteritis or influenza because the clinician did not think of it, and in
+    much of the world a child in ketoacidosis reaches somebody without a glucose
+    meter at all. Roughly a third of children in many countries are already in
+    diabetic ketoacidosis at diagnosis. **This is the register's widest gap
+    between how easy a test is and how often it is not done.**
+    PROGNOSTIC is `partial`. HbA1c predicts microvascular complications well at
+    population level and imperfectly for an individual — a substantial minority
+    with poor control escape retinopathy and nephropathy, and a minority with good
+    control do not, and nothing explains either.
+    **PREDICTIVE IS `partial`, AND THE INTERESTING HALF IS ABOUT PEOPLE WHO DO NOT
+    YET HAVE THE DISEASE.** Islet autoantibody testing — GAD65, IA-2, ZnT8,
+    insulin — identifies preclinical disease years in advance: **two or more
+    autoantibodies confer roughly an 85% probability of clinical diabetes within
+    fifteen years**, which is close to determinism by the standards of this
+    register. That is what makes teplizumab possible, and it is what pulled the
+    disease definition backwards in time (gaps.md #170).
+    What is *not* predictable is anything about treatment response: who preserves
+    beta cell function, who benefits most from teplizumab, who develops
+    complications despite good control.
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    **THE TREATMENT KILLS PEOPLE FASTER THAN THE DISEASE DOES, AND THE FEAR OF IT
+    CAUSES THE COMPLICATIONS.**
+    Insulin has no therapeutic window worth the name: the dose that normalises
+    glucose and the dose that causes coma differ by a small factor, and the right
+    dose changes with food, exercise, illness, sleep, alcohol, menstrual cycle and
+    the injection site. Severe hypoglycaemia causes confusion, seizure, coma and
+    death; recurrent severe episodes are associated with lasting cognitive
+    effects; **"dead in bed" describes young people with type 1 diabetes found
+    dead in the morning with no other explanation.** Insulin is consistently among
+    the commonest drugs in medication-related emergency admissions.
+    **AND THE FEEDBACK LOOP IS THE PART THE REGISTER CANNOT SEE.** People who have
+    had a severe hypoglycaemic episode, or who care for a child who has, run their
+    glucose deliberately high to avoid another one. That is a rational response to
+    the toll, and it produces exactly the chronic hyperglycaemia that causes
+    retinopathy, nephropathy and neuropathy twenty years later. **The toll of the
+    treatment causes the disease's complications**, and `toll` and `efficacy` are
+    stored as independent quantities.
+    Automated insulin delivery has reduced severe hypoglycaemia substantially,
+    which is most of why it matters (see the 2020 `moved` entry). Also here:
+    lipohypertrophy, weight gain, and the cumulative burden of injections and
+    infusion sets over a lifetime that starts in childhood.
+  incidence:
+    value: 0.015
+    units: >
+      fraction-of-treated (permanent harm from treatment — death or lasting
+      neurological injury from severe hypoglycaemia) — a reasoned estimate, and
+      substantially lower with automated delivery than without
+    src: reasoning
+
+window:
+  what: >
+    **TWO WINDOWS, AND THE SECOND ONE ONLY EXISTS BECAUSE A DRUG ARRIVED.**
+    *Diabetic ketoacidosis at presentation — hours.* Untreated type 1 diabetes is
+    universally fatal within weeks to months, and the terminal phase is fast: as
+    insulin fails entirely, ketoacidosis produces vomiting, dehydration, cerebral
+    oedema in children, and death. It is the window in which those 35,000 people
+    a year are lost, and it closes because somebody did not do a glucose test.
+    *The preclinical window — years, and invisible without screening.* Islet
+    autoimmunity begins months to years before symptoms. **Teplizumab, given in
+    Stage 2 disease, delays clinical onset by a median of about two years**, and
+    can only be given to somebody identified by autoantibody screening. Screening
+    programmes exist in a few research settings and essentially nowhere as
+    routine care.
+    **So this record has a treatable window that is real, measurable, and almost
+    entirely unentered**, because entering it requires testing well children who
+    have no symptoms — which no health system currently does, and which raises
+    every question `prostate-cancer` and `thyroid-cancer` raise about screening,
+    with one important difference: **the autoantibody-positive really do nearly all
+    progress.** This is not overdiagnosis. It is a diagnosis nobody is looking
+    for.
+  closes_on: >
+    progression to ketoacidosis at presentation — days to hours; and separately,
+    progression from Stage 2 to clinical disease, which teplizumab delays
+  caught_in_time:
+    value: 0.55
+    units: >
+      fraction-of-cases (diagnosed before severe ketoacidosis) — a reasoned
+      estimate; roughly a third of children present in DKA even in well-served
+      systems and the figure is far worse elsewhere
+    src: reasoning
+
+moved:
+  - date: 1922
+    axis: intervention
+    from: none
+    to: suppressive
+    why: >
+      **THE RUNG THIS RECORD DEFINES, AND ONE OF THE FASTEST BENCH-TO-BEDSIDE
+      TRANSFORMATIONS IN THE HISTORY OF MEDICINE.**
+      Before insulin, type 1 diabetes was a death sentence measured in months, and
+      the only treatment was a starvation diet that bought a little time at the
+      cost of everything else. Banting and Best extracted pancreatic secretion in
+      Toronto in 1921; Collip purified it; **Leonard Thompson, aged 14, was treated
+      in January 1922 and lived another thirteen years.** Children in ketoacidotic
+      comas woke up on the wards while their families watched.
+      **Banting, Best and Collip sold the patent to the University of Toronto for
+      one dollar each** — "insulin does not belong to me, it belongs to the world"
+      — specifically so that nobody would be priced out of it.
+      **A century later, roughly a quarter of people with this disease in the
+      United States have reported rationing it**, and about 3.9 million people are
+      missing from the world's prevalence because they could not get it. The `cost`
+      blocker below is the register's most direct refutation of the idea that
+      solving the science is the hard part.
+    src:
+      id: PMID:20314141
+      retrieved: 2026-08-26
+      quote: >
+        Pancreatic Extract and Diabetes.
+
+  - date: 1993
+    axis: efficacy
+    from: 0.45
+    to: 0.60
+    why: >
+      **THE DIABETES CONTROL AND COMPLICATIONS TRIAL SETTLED AN ARGUMENT THAT HAD
+      RUN FOR SIXTY YEARS.**
+      Until 1993 it was genuinely disputed whether tight glucose control prevented
+      the complications of diabetes or whether those complications were an
+      independent consequence of the disease. DCCT randomised intensive versus
+      conventional therapy and found large reductions in retinopathy, nephropathy
+      and neuropathy — on the order of a half to three quarters.
+      The follow-up study found something stranger and more important: **the
+      benefit persisted for decades after the two groups' control converged.**
+      "Metabolic memory" — early glycaemic exposure sets a trajectory that later
+      improvement does not undo — which means this record has a window measured in
+      years of accumulated exposure rather than in a decision point, and the
+      schema's `window` has no shape for that.
+      The cost of intensive control was a threefold increase in severe
+      hypoglycaemia, which is the trade-off the next entry finally improved.
+    src:
+      id: PMID:8366922 doi:10.1056/NEJM199309303291401
+      retrieved: 2026-08-26
+      quote: >
+        Intensive therapy effectively delays the onset and slows the progression of
+        diabetic retinopathy, nephropathy, and neuropathy in patients with IDDM.
+
+  - date: 2020
+    axis: efficacy
+    from: 0.60
+    to: 0.75
+    why: >
+      **AUTOMATED INSULIN DELIVERY, AND THE PATIENTS BUILT IT FIRST.**
+      Continuous glucose monitoring replaced fingersticks with a number every five
+      minutes and an alarm before a hypoglycaemic episode rather than after it.
+      Then algorithms closed the loop: a pump, a sensor, and control software
+      adjusting insulin automatically — the "artificial pancreas" promised since
+      the 1970s.
+      **The remarkable part is who did it.** From about 2013, under the banner
+      *#WeAreNotWaiting*, patients and their families reverse-engineered pump
+      communication protocols and built open-source closed-loop systems —
+      Nightscout, OpenAPS, Loop — and ran them on themselves and their children,
+      years before any regulated product existed. **The components had existed for
+      a decade and no manufacturer would connect them**, for reasons of liability
+      and regulatory pathway rather than engineering. A randomised trial of an
+      open-source system published in 2022 found it worked.
+      Commercial hybrid closed-loop systems followed from 2016 and are now standard
+      of care where they are funded. They improve time-in-range and, more
+      importantly, **cut severe hypoglycaemia** — which breaks the feedback loop in
+      `toll` and is the largest quality-of-life change in this record's history.
+      **It is also the clearest case in the register of an `ongoing` burden being
+      engineered away rather than endured** (gaps.md #171).
+    src: recall
+
+  - date: 2022
+    axis: prevention
+    from: none
+    to: risk-reduction
+    why: >
+      **TEPLIZUMAB — THE FIRST DRUG TO CHANGE THE COURSE OF TYPE 1 DIABETES, AND
+      IT IS GIVEN TO PEOPLE WHO DO NOT HAVE IT YET.**
+      An anti-CD3 monoclonal antibody, approved in the United States in 2022 for
+      Stage 2 disease — two or more islet autoantibodies plus dysglycaemia, and no
+      symptoms. A fourteen-day course **delays clinical onset by a median of about
+      two years**, and longer in extended follow-up. A second trial in newly
+      diagnosed patients found it preserved residual beta cell function.
+      **Two things about this are structurally interesting and neither moves the
+      `intervention` axis.**
+      It delays rather than prevents, so `prevention` moves only to
+      `risk-reduction`. And the disease-modifying effect in established disease
+      **cannot raise the intervention rung, because `suppressive` already sits
+      above `disease-modifying`** — insulin outranks it by construction. So the
+      first therapy in a century to touch the underlying process is invisible to
+      the ladder (gaps.md #123).
+      **And it required the disease to be redefined backwards in time to have
+      anybody to give it to** (gaps.md #170).
+    src: recall
+
+witness:
+  mechanism: >
+    `established` for what the disease is, and open for why it starts.
+    T-cell mediated autoimmune destruction of the insulin-producing beta cells of
+    the pancreatic islets. Strongly HLA-linked — class II haplotypes carry most of
+    the genetic risk — with islet autoantibodies against GAD65, IA-2, ZnT8 and
+    insulin appearing months to years before symptoms and serving as the marker of
+    the preclinical disease. By clinical presentation most beta cell mass is gone,
+    though residual C-peptide secretion persists longer than was once thought and
+    matters clinically.
+    Downstream everything is understood completely: no insulin means glucose
+    cannot enter cells, so the body behaves as though starving — lipolysis,
+    ketogenesis, ketoacidosis — while blood glucose rises. Chronic hyperglycaemia
+    damages small and large vessels through glycation, polyol flux and oxidative
+    stress, producing retinopathy, nephropathy, neuropathy and accelerated
+    atherosclerosis over decades.
+    **THE NAMED HOLE IS THE TRIGGER, AND IT IS EXPENSIVE.** Genetics explains part
+    of the risk and cannot explain the epidemiology: **incidence has been rising by
+    roughly 2-4% a year for decades**, far faster than a gene pool changes, with
+    strong latitude gradients and season-of-birth effects. Enteroviral infection,
+    early infant diet, vitamin D, the gut microbiome and the hygiene hypothesis
+    have all been proposed; large prospective birth cohorts have been running for
+    years; nothing is established.
+    **Whatever is driving that increase is causing a large and growing number of
+    children to acquire a lifelong disease**, and it is the highest-value unanswered
+    question in this record by a wide margin.
+  intervention: >
+    `suppressive` — and this record is where the rung was defined, so it is worth
+    saying exactly what it means here.
+    **Insulin replacement, forever, titrated by the patient.** Multiple daily
+    injections or a pump; rapid-acting analogues at meals and long-acting for
+    background; doses calculated from carbohydrate content, current glucose, recent
+    trend, planned activity, illness and a dozen other things. **There is no
+    version of this that the patient does not have to run themselves**, and the
+    consequences of arithmetic errors are seizures at one end and blindness at the
+    other.
+    Around that: glucose monitoring, ideally continuous; education, which is a
+    genuine intervention and is chronically unfunded; and screening for
+    complications — retinal photography, urine albumin, foot checks — for life.
+    **Automated insulin delivery is the single biggest change and it is a change in
+    kind, not degree**: an algorithm making the decisions the patient was making,
+    which is why it improved control and cut severe hypoglycaemia at the same time,
+    something no amount of patient effort had achieved.
+    **What does not exist is a cure.** Islet and whole-pancreas transplantation
+    work and require lifelong immunosuppression, which is a worse disease than the
+    one being treated for most patients — so they are reserved for people with
+    kidney transplants already immunosuppressed, or with hypoglycaemia unawareness
+    so severe it is life-threatening. Stem-cell-derived islet replacement is in
+    early trials and is the most plausible route to something better; encapsulation
+    to avoid immunosuppression has repeatedly failed on fibrosis.
+  prevention: >
+    `risk-reduction`, and it is brand new.
+    Nothing prevents type 1 diabetes. **Teplizumab delays clinical onset by about
+    two years** in people identified with Stage 2 disease, which is a real and
+    unprecedented result and is not prevention. Trials of nicotinamide, insulin,
+    gluten avoidance and others all failed.
+    **The rating understates something and overstates nothing.** Two years of
+    normal childhood before a lifelong disease is worth having, especially if it
+    arrives with more residual beta cell function. But the disease still comes.
+    **And the practical barrier is that almost nobody is screened**, so almost
+    nobody is eligible. General-population autoantibody screening in children has
+    been piloted, would identify the preclinical population, and would create the
+    same question every screening programme creates — with the unusual feature that
+    here the test is nearly deterministic, so the usual overdiagnosis objection
+    does not apply.
+  ongoing: >
+    `high`, and this record is the argument that `high` is not enough of a word.
+    Compare within the rung. `hiv` rates `ongoing: low` — one tablet a day, and
+    the register is right to say so. `pku` rates `high` — a lifelong restrictive
+    diet. `crohns` rates `high` — flares and immunosuppression. **This record rates
+    `high` for something different again: a continuous computation.**
+    Roughly a hundred and eighty diabetes-related decisions a day, by published
+    estimates. Every meal is arithmetic. Exercise, illness, alcohol and sleep all
+    change the answer. Errors in one direction cause seizures and in the other
+    cause blindness in twenty years' time. It begins at whatever age the disease
+    begins — frequently four or five — and it is done by the patient, or by a
+    parent who does not sleep properly for a decade.
+    "Diabetes distress" and burnout are well described, common, and largely
+    untreated.
+    **The reason this matters for the schema rather than being a complaint: this
+    burden turned out to be automatable, and the others do not.** Nobody can write
+    an algorithm for PKU's diet. An algorithm for insulin dosing is exactly what
+    automated delivery is, and it worked (gaps.md #171).
+
+holes:
+  - >
+    **NO `strata` BLOCK, AND THE REASON IS A FINDING.** The stratification that
+    determines outcomes in this disease is **by technology**: automated insulin
+    delivery, versus pump plus continuous monitoring, versus injections plus
+    fingersticks, versus injections and no way to measure at all. That is an
+    access tier, and SCHEMA.md correctly forbids access tiers as strata. The
+    biological staging (Stage 1/2/3) is legitimate and describes a population that
+    is more than 90% unidentified because nobody screens. **So the honest
+    partition is forbidden and the permitted partition is unobservable.**
+  - >
+    `efficacy: 0.75` describes control achievable with automated delivery, and
+    `access: 0.40` describes a population most of whom will never see it. The pair
+    is close to circular, as in `alzheimers`.
+  - >
+    **`toll` and `efficacy` are coupled here and the schema stores them as
+    independent.** Fear of hypoglycaemia causes deliberate hyperglycaemia causes
+    complications. The treatment's harm produces the disease's harm.
+  - >
+    The "missing people" figure — roughly 3.9 million — is a modelled prevalence
+    deficit, not a count, and it is the most useful number in the record. Nothing
+    in the schema can hold it.
+  - >
+    Latent autoimmune diabetes in adults sits on a boundary with type 2 diabetes,
+    is frequently misdiagnosed as it, and is folded into this record without
+    comment.
+  - >
+    Every scalar is `recall` or `reasoning`. Type 1 diabetes has unusually good
+    registry data in several countries and none of it is cited here.
+
+blockers:
+  - kind: cost
+    blocks: a hundred-year-old off-patent molecule being unaffordable
+    obstacles: []
+    what: >
+      **THE DISCOVERERS SOLD THE PATENT FOR A DOLLAR EACH SO THIS COULD NOT
+      HAPPEN.**
+      Three manufacturers supply roughly 90% of the world's insulin. In the United
+      States, list prices rose by an order of magnitude over two decades — one
+      widely-used analogue went from about $21 a vial in the mid-1990s to about
+      $275 by 2019 — and survey work found roughly **one in four patients
+      rationing their insulin**, with documented deaths from doing so.
+      **The mechanism was not research cost.** It was incremental patenting of
+      delivery devices and formulations, a rebate system that rewarded high list
+      prices, and the absence of a working biosimilar pathway for a biologic that
+      predates the concept of biosimilars — so a century-old molecule faced
+      essentially no generic competition until the 2020s.
+      **It moved, which is the useful part.** A $35 monthly cap for Medicare
+      beneficiaries and sustained public pressure preceded all three manufacturers
+      cutting US list prices by around 70% in 2023. Nothing about the science
+      changed. Interchangeable biosimilars are now available.
+      **The global picture is less improved.** Human insulin is cheap to make and
+      analogues are not priced as though they were; supply in low-income countries
+      is intermittent, and insulin without a way to measure glucose is not
+      treatment. This is the record where "the science is the hard part" is most
+      clearly false.
+    who_could: [manufacturer, government, payer, legislator, regulator, nonprofit]
+    scale: 4.0e9
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: everything that has to arrive alongside the insulin, every month, forever
+    obstacles: [cold-chain]
+    what: >
+      **INSULIN IS NECESSARY AND IS NOT SUFFICIENT, AND THE REGISTER'S `access`
+      FIELD KEEPS BEING READ AS THOUGH IT WERE.**
+      A person with type 1 diabetes needs, indefinitely: insulin that has stayed
+      cold, syringes or pen needles, a way to measure glucose — strips, or a sensor
+      — and somebody who taught them how to use all of it. Remove any one and the
+      others stop working. Dosing insulin without measuring glucose is a guess
+      with a lethal tail, which is why the modelled 3.9 million "missing people"
+      cannot be recovered by donating insulin alone.
+      The cold chain is a real constraint in hot climates with unreliable
+      electricity, and the practical answers — clay pot coolers, and the fact that
+      insulin tolerates room temperature longer than the label suggests — are
+      workarounds rather than solutions.
+      **Structured education is the intervention nobody funds.** It has good
+      evidence behind it, it changes outcomes as much as some technologies, and it
+      is staff time rather than a product — which is gaps.md #154's shape in a
+      chronic disease: **a capability that has to be operated, not a thing that
+      can be procured.**
+    who_could: [health-system, government, nonprofit, payer, philanthropy]
+    scale: 5.0e9
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: why this is happening to more children every year, and how to stop it
+    obstacles: []
+    what: >
+      **INCIDENCE HAS BEEN RISING BY ROUGHLY 2-4% A YEAR FOR DECADES AND NOBODY
+      KNOWS WHY.**
+      It is too fast to be genetic. The candidates — enteroviral infection, early
+      infant feeding, vitamin D, the gut microbiome, the hygiene hypothesis — have
+      been pursued through large prospective birth cohorts for many years and none
+      is established. Latitude gradients and season-of-birth effects are real and
+      unexplained.
+      **This is the highest-value question in the record and it is not the one
+      attracting the investment.** Understanding the trigger is the only route to
+      genuine prevention; everything else in this file manages a disease that has
+      already happened.
+      The second half is **beta cell replacement**. Islet and pancreas
+      transplantation work and cost lifelong immunosuppression, which is a worse
+      illness than the one being treated. Stem-cell-derived islets are in early
+      trials and are the most plausible route to a cure; **encapsulation devices
+      intended to avoid immunosuppression have failed repeatedly on foreign-body
+      fibrosis**, which is a materials problem as much as an immunological one.
+      `scale: null`.
+    who_could: [academic, sponsor, philanthropy, manufacturer, patient-org]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    blocks: two different things, and one of them kills people this week
+    obstacles: []
+    what: >
+      **THE FIRST IS A GLUCOSE TEST THAT WAS NOT DONE.** Roughly 35,000 people a
+      year die within a year of onset without ever being diagnosed, and about a
+      third of children reach diagnosis already in ketoacidosis even in
+      well-resourced systems. The presentation is unmistakable if considered and is
+      mistaken for gastroenteritis or influenza when it is not. Awareness campaigns
+      aimed at parents and primary care have measurably reduced DKA at presentation
+      where they have been run, which makes this among the cheapest interventions
+      anywhere in this register.
+      **THE SECOND IS A SCREENING PROGRAMME THAT DOES NOT EXIST.** Islet
+      autoantibody testing identifies preclinical disease years ahead, with roughly
+      85% progression at fifteen years for multiple antibodies. It is the entry
+      ticket to teplizumab, and to the trial pipeline behind it.
+      **So a licensed disease-modifying therapy has almost no eligible patients,
+      because nobody is looking for them** (gaps.md #162 — but here the gate is
+      cheap and simply is not run). General-population screening in children has
+      been piloted and raises the ordinary questions about screening well people,
+      with the unusual feature that the test is close to deterministic, so this is
+      not an overdiagnosis problem. It is a diagnosis nobody is looking for.
+    who_could: [health-system, government, academic, payer, nonprofit]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+  - kind: regulatory
+    blocks: a century-old biologic having no generic
+    obstacles: []
+    what: >
+      **INSULIN SPENT MOST OF A CENTURY WITHOUT A GENERIC, AND THE REASON IS
+      CATEGORICAL RATHER THAN TECHNICAL.**
+      Insulin is a biologic, and until recently it sat in a regulatory category
+      that had no abbreviated approval pathway — small-molecule generics had one
+      and biosimilars did not, so a molecule characterised in 1922 was treated as
+      unrepeatable. Around that, manufacturers accumulated patents on **delivery
+      devices, formulations and manufacturing processes** rather than on the
+      molecule, which is enough to deter entrants without owning the thing itself.
+      A 2020 change in United States law reclassified insulin as a biologic
+      eligible for interchangeable biosimilar approval, and interchangeable
+      products followed within a year — after decades in which none had been
+      possible.
+      **This blocker is one of only a handful in the register using
+      `regulatory`**, and it earns it: the barrier was a classification, the fix
+      was a statute, and nothing about the chemistry, the manufacturing or the
+      clinical evidence changed. It is worth recording precisely because this
+      register's default finding is that regulation is rarely the binding
+      constraint — and here it demonstrably was, for a very long time, for the
+      oldest biologic in medicine.
+    who_could: [regulator, legislator, government, manufacturer]
+    scale: 5.0e8
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0080
+  rated: 2026-08-24
+  by: [claude, jeremy]

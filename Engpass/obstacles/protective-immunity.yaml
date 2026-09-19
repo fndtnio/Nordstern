@@ -1,0 +1,226 @@
+slug: protective-immunity
+id: FND-O-0009
+name: What does a protective immune response actually consist of?
+kind: mechanism
+resolution: open
+
+question: >
+  For a pathogen with no vaccine, the missing thing is usually not a candidate.
+  It is a **specification of what the candidate should do.**
+  Four Nordstern records write the sentence in nearly the same words.
+  `tuberculosis`: *"nobody knows what protective immunity looks like, so there is
+  no correlate of protection."* `malaria`: *"Nobody can state what protective
+  immunity to Plasmodium consists of… the vaccinologist has no target to
+  imitate."* `mrsa`: *"nobody adequately understands what protective immunity to
+  S. aureus looks like — in an organism a fifth of humanity carries in their nose
+  without harm."* `childhood-pneumonia`: *"What protective immunity to RSV
+  consists of is still not stated, which is the same sentence this register
+  writes for tuberculosis, malaria, dengue and S. aureus."*
+  **THE EVIDENCE THAT THIS IS ONE QUESTION AND NOT EIGHTEEN IS THAT GUESSING HAS
+  KILLED PEOPLE, THREE SEPARATE TIMES.** A formalin-inactivated RSV vaccine in
+  the 1960s caused *enhanced* disease — vaccinated children who later met the
+  virus were hospitalised more often and two of them died. A single-antigen
+  *Staphylococcus aureus* vaccine trialled before cardiac surgery was stopped
+  because vaccinated patients who became infected anyway **died at a higher rate
+  than placebo recipients.** Dengvaxia reached a national immunisation campaign
+  before anyone understood that it worsened outcomes in seronegative children,
+  because antibody-dependent enhancement means the same antibody response
+  protects against one serotype and enhances another.
+  **In each case immunity was elicited successfully and it was the wrong
+  immunity.** That is not eighteen separate engineering failures. It is one
+  missing piece of knowledge, and the register recorded it three times without
+  naming it.
+  The question has a **measurable** form and an **explanatory** one, and the
+  first is what the field actually asks for: a **correlate of protection** — some
+  quantity in a blood sample that predicts whether this person is protected.
+
+what_it_unblocks: >
+  **A WAY TO SCREEN VACCINE CANDIDATES WITHOUT A FULL EFFICACY TRIAL**, which is
+  the binding constraint on the entire remaining vaccine pipeline.
+  `tuberculosis` states the mechanism of the block precisely: with no correlate,
+  *"there is no way to screen candidates short of running a full efficacy trial
+  in a high-burden population — which is slow, enormous and expensive, and only a
+  handful of such trials can run at once."* `dengue` says the same thing about
+  four serotypes and mixed prior exposure. **So the field is rate-limited by
+  trial capacity rather than by ideas**, and a correlate converts a decade-long
+  population trial into an immunogenicity assay — which is exactly the transition
+  that made influenza strain updates routine and hepatitis B licensure fast.
+  The records citing it are the largest infectious burdens the register holds:
+  tuberculosis, malaria, and the RSV and *Shigella* fractions of childhood
+  pneumonia and diarrhoeal disease. **Between them these are on the order of four
+  million deaths a year, most of them children.**
+  **And it is worth stating what a vaccine does to a record here, because the
+  register has watched it happen.** `cervical-cancer` and `hepatitis-b` both
+  record a cancer prevented by vaccinating against a virus. `mrsa` and `cre` both
+  argue that a working vaccine would *"make the resistance question much less
+  important"* — a route around antimicrobial resistance that does not require
+  winning the arms race. **A vaccine is the only intervention in this register
+  that routinely moves a record from `unsolved` to `preventable` outright**,
+  rather than up one rung.
+  A partial answer pays: a correlate for one pathogen does not generalise, but
+  each one independently converts that pathogen's programme from trial-limited to
+  design-limited.
+
+why_hard: >
+  **BECAUSE EVERY VACCINE THAT WORKS WAS COPIED OFF AN IMMUNE RESPONSE NATURE
+  ALREADY MAKES, AND THE REMAINING PATHOGENS DO NOT SUPPLY THE TEMPLATE.**
+  Measles, smallpox, hepatitis B, HPV, polio: survive it once — or meet the
+  antigen once — and you are protected for a very long time. The vaccinologist's
+  job was to imitate a response the host already demonstrated, and the correlate
+  was often obvious because natural infection supplied it.
+  The pathogens without vaccines are, with striking consistency, the ones where
+  **natural infection does not confer durable protection either**:
+  *tuberculosis*, where reinfection is ordinary; *malaria*, where immunity takes
+  years of repeated infection to acquire, never becomes sterilising, and decays
+  without exposure; *Staphylococcus aureus*, carried harmlessly in the nose of a
+  fifth of humanity, which is a natural experiment in immunity failing to
+  sterilise; *influenza*, where immunity is real and strain-specific; *EBV*,
+  which establishes lifelong latency in essentially every adult; *Shigella*,
+  *hookworm*, the schistosomes, HIV. **Nature has not solved these, so there is
+  nothing to copy — and a correlate cannot be read off a protected population
+  that does not exist.**
+  **The immune system's own priorities are the obstacle in the drifting
+  pathogens.** For influenza and the sarbecoviruses the conserved epitopes are
+  known — the haemagglutinin stem, the M2 ectodomain — and immunodominance points
+  the response at the variable head instead. The problem is not identifying the
+  target but **steering immunity to a subdominant one**, against the host's
+  default. `influenza` adds imprinting: everyone's response is conditioned by a
+  childhood exposure, so the same vaccine does different things in different
+  birth cohorts, which a trial must stratify on or average away.
+  **Compartment matters and is usually ignored.** `covid-19` records vaccines
+  that prevent death durably and infection only partially, because circulating
+  antibody wanes at the respiratory mucosa. Serum antibody is what is easy to
+  measure; secretory IgA in an airway is what would have been needed.
+  **And the host can be the failure.** `diarrhoeal-disease` records rotavirus
+  vaccine efficacy of 85-98% in high-income countries against 40-60% in
+  low-income ones, with environmental enteric dysfunction the leading explanation
+  — *"a described histological state with no accepted biomarker, no animal model
+  that satisfies everyone, and no treatment."* **A correlate derived in a
+  well-nourished population may not transfer to the children who need it**, which
+  is a second-order version of the same ignorance.
+  **The counter-evidence, because it is what makes this a target rather than a
+  lament.** RSV was solved in 2023 after fifty years — by stabilising the
+  pre-fusion conformation of the F protein. `childhood-pneumonia` is careful
+  about what that was: *"a structural insight, not an immunological one."* The
+  right antigen was found without ever stating what protection consists of, which
+  proves the problem is sometimes routable and **does not answer the question.**
+
+claims:
+  - unblocks: hiv
+    standing: alleged
+    why: >
+      Forty years and no vaccine, against a virus for which **nobody has ever
+      documented a person who cleared an established infection by immunity
+      alone** — so the protected population that a correlate would be read from
+      does not exist. RV144 produced roughly 31% efficacy that waned, and the
+      correlates analysis that followed is the field's most serious attempt at
+      exactly this question. `alleged` rather than derived because **`hiv`'s own
+      knowledge blocker is the latent reservoir, not the vaccine** — that record
+      is about curing infected people, and asserting a vaccine link on its behalf
+      would be putting words in it. Broadly neutralising antibodies are the
+      strongest counter-argument: their targets are known, which makes this
+      arguably an elicitation problem rather than a specification one.
+  - unblocks: rheumatic-heart-disease
+    standing: alleged
+    why: >
+      **A Group A streptococcal vaccine would end this record**, which is
+      currently held together by monthly injections of a 1928 antibiotic that
+      manufacturers keep running short of. It has been blocked for decades partly
+      by fear of **rheumatogenic epitopes** — the immune response to
+      streptococcal M protein cross-reacts with cardiac tissue, and that
+      molecular mimicry is what causes rheumatic heart disease in the first
+      place. **This is the fourth instance of the pattern**: the disease is
+      itself an immune response aimed wrongly, so a vaccine must elicit
+      protection while provably avoiding the mimicry, and nobody can specify
+      either half. `alleged` because that record files no knowledge blocker at
+      all — it rates the problem as delivery and supply, which is defensible.
+  - unblocks: amr-infection
+    standing: alleged
+    why: >
+      Two records already make this argument for their own organisms — `mrsa` and
+      `cre` both say a working vaccine would *"make the resistance question much
+      less important"* — and the general form is that **vaccines reduce
+      antibiotic demand rather than competing with resistance.** Pneumococcal
+      conjugate and typhoid conjugate vaccines are the worked examples. `alleged`
+      because `amr-infection` files no knowledge blocker of this kind, and
+      because the claim is about aggregate antibiotic pressure rather than any
+      single treatment failure — which is the hardest kind of payoff to evidence.
+
+holes:
+  - >
+    **This has a mechanism face and a measurement face, and it is filed as
+    `mechanism`.** *What does protection consist of* is a mechanism question; *no
+    correlate, therefore no way to screen* is the measurement consequence that
+    actually blocks the work. `who-progresses` sits on the same seam from the
+    other side. If Engpass ever wants a rule for this, the case is here.
+  - >
+    **Two of the twelve citing records are mixed and should be watched.**
+    `schistosomiasis` and `soil-transmitted-helminths` name a missing vaccine,
+    but the dominant content of both blockers is *there is only one drug and no
+    second line* — which is not a knowledge question at all. **That is
+    `no-sponsor` wearing a lab coat**, and it belongs to the pending
+    `mechanism-unknown` / `no-candidate` split rather than here. If that split is
+    made, these two links should be re-examined first.
+  - >
+    **`cre`'s citation is half about ecology, not immunity.** Its blocker asks
+    what determines whether a resistant *Klebsiella* establishes in a gut — a
+    microbiome question — and separately notes there is no *Klebsiella* vaccine.
+    Only the second half belongs here, and the first may eventually earn a
+    colonisation-resistance record of its own.
+  - >
+    **`scale: null` is asserted and not tested.** A correlate of protection
+    cannot be bought, which is the standard argument. But the *systems serology*,
+    challenge-model and controlled-human-infection work that would look for one
+    is buyable, parallelisable and currently underfunded — and controlled human
+    infection models exist for malaria, typhoid, cholera, influenza and
+    *Shigella*, which is a purchasable route to exactly the protected population
+    this record says does not exist. **This is the second entry after
+    `cell-targeting` where the register's headline finding may not hold.**
+  - >
+    **THE HPV TEST WAS RUN ON 2026-08-28 AND THE TEMPLATE ARGUMENT LOST.**
+    `hpv-infection` (FND-D-0119) confirms the counter-example this hole
+    predicted. Natural HPV infection is a poor immunogen for a specific and
+    understood reason — the virus is confined to epithelium, never viraemic,
+    never lyses a cell, and provokes so little innate response that **only around
+    half to two-thirds of infected people seroconvert at all**, at low titres
+    that do not reliably prevent reinfection with the same type. Nature supplies
+    no template.
+    **The vaccine works anyway, and better than the virus does.** L1 capsid
+    protein self-assembles into a virus-like particle — a dense, ordered,
+    repetitive epitope array that is a far stronger B-cell stimulus than the
+    pathogen ever presents — producing titres an order of magnitude above natural
+    infection, durable beyond fifteen years, with Scotland reporting no cervical
+    cancer at all in women vaccinated at twelve or thirteen.
+    **So the claim in `why_hard` is now weakened to the version this hole
+    proposed**: *nature usually supplies the template, and where it does not, a
+    structural insight sometimes substitutes.* There are two independent
+    instances of that substitution and they have the same shape — **HPV's VLP and
+    RSV's stabilised pre-fusion F**, the latter recorded in `childhood-pneumonia`
+    as *"a structural insight, not an immunological one."*
+    **This strengthens the obstacle rather than refuting it.** The question is
+    still *what does protection consist of*; what HPV and RSV show is that it can
+    sometimes be answered by structural biology instead of by observing a
+    protected population that does not exist. **That is a second route in, and it
+    is the one worth funding where the first is blocked** — which is a
+    concrete prioritisation claim this record could not previously make.
+  - >
+    **A NEGATIVE CONTROL ARRIVED ON 2026-08-28 AND IT SUPPORTS THE TEMPLATE
+    ARGUMENT.** `coccidioidomycosis` (FND-D-0111) has no vaccine and
+    **deliberately does not cite this record.** Surviving the infection confers
+    solid lifelong immunity — the natural template that tuberculosis, malaria and
+    *S. aureus* do not supply — so protection is demonstrable and a vaccine is
+    *specifiable*. A live attenuated candidate exists and **is already licensed
+    for dogs.** What is missing is a human programme, because the market is one
+    region of one wealthy country plus underserved parts of Latin America, and
+    most infections resolve unaided. That record files its blocker as
+    `no-sponsor`.
+    **This is the distinction this obstacle exists to draw, tested against a case
+    that could have gone the other way.** A vaccine absent for want of money and
+    a vaccine absent for want of a specification read identically under
+    Nordstern's single `knowledge` blocker kind, and they are opposite problems.
+    It is the sharpest argument yet for the pending `mechanism-unknown` /
+    `no-candidate` split.
+
+asserted:
+  date: 2026-08-28
+  by: [claude, jeremy]

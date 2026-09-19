@@ -1,0 +1,162 @@
+slug: low-back-pain
+id: FND-D-0010
+name: low back pain
+also: [LBP, non-specific low back pain, lumbago]
+mondo: unresolved
+kind: complaint
+residual: true
+contested: false
+
+# The single largest cause of years lived with disability on earth, and it is a
+# COMPLAINT rather than a disease. This is the neck-pain problem in its most
+# consequential form: the biggest unsolved thing in medicine by disability is an
+# entity whose mechanism cannot be rated, because it is not one entity.
+
+burden:
+  prevalence:
+    value: 6.2e8
+    units: people
+    src: recall
+  ylds:
+    value: 6.0e7
+    units: YLD/year
+    src: recall
+  note: >
+    Consistently ranked the leading global cause of years lived with disability
+    in GBD. Projected to rise substantially by 2050 with population ageing.
+    This single record likely carries more disability than the other nine in
+    this seed set combined, and it is the one the schema handles worst.
+
+axes:
+  mechanism: none
+  intervention: symptomatic
+  prevention: risk-reduction
+  ongoing: moderate
+  efficacy:
+    value: 0.3
+    units: fraction-of-patients (clinically meaningful benefit over placebo)
+    src: recall
+  access:
+    value: 0.8
+    units: fraction-of-patients (care available; usually low-value care)
+    src: recall
+
+measurement:
+  diagnostic: complaint
+  prognostic: none
+  predictive: none
+  witness: >
+    Measurement is not merely absent here, it is actively misleading: imaging
+    finds degeneration in people without pain and licenses intervention that
+    harms them. No way to identify at presentation which acute episode becomes
+    the chronic minority that carries essentially all of the burden — risk
+    tools exist and stratify populations rather than individuals. And nothing
+    predicts who responds to what, in a condition where nothing works well
+    anyway.
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    The register's largest iatrogenic toll by absolute numbers, because the
+    denominator is enormous. Opioid prescribing for back pain was a principal
+    channel of the opioid crisis, producing dependence, overdose and death.
+    Spinal fusion for non-specific pain produces a well-recognised population
+    of worse-off patients. Imaging causes harm indirectly by finding
+    incidental degeneration and licensing intervention. This is why the
+    record's `policy` blocker is about taking care AWAY from people.
+  incidence:
+    value: 0.05
+    units: fraction-of-treated (persistent iatrogenic harm)
+    src: recall
+
+witness:
+  mechanism: >
+    `none`, and the rating is about the category rather than about ignorance of
+    anatomy. In roughly 85-90% of presentations no specific nociceptive source
+    is identified, which is why the standard term is "non-specific". The
+    imaging evidence is actively unhelpful: disc degeneration, bulges and
+    annular fissures are common in wholly asymptomatic people and correlate
+    poorly with pain, so the findings cannot carry causal weight. A minority
+    have identifiable pathology — radiculopathy with a compressive lesion,
+    fracture, infection, malignancy, axial spondyloarthritis — and those are
+    separate entities that should get their own records rather than be
+    averaged into this one.
+  intervention: >
+    `symptomatic`, and weakly so. Exercise and staying active have the best
+    support; NSAIDs give small average benefits; paracetamol does not beat
+    placebo for acute back pain; opioids are recommended against on both
+    efficacy and harm grounds and their use here was a major contributor to the
+    opioid crisis. Surgery is appropriate for specific structural indications
+    and not for non-specific pain. Most guidelines now lead with reassurance,
+    education and activity — which is honest advice and not a treatment for
+    anything.
+  prevention: >
+    `risk-reduction`. Exercise programmes reduce recurrence modestly; ergonomic
+    and lifting interventions and back belts have largely failed to show
+    benefit. The strongest predictors of chronicity are psychosocial rather
+    than biomechanical, which is itself a mechanistic clue nobody has cashed.
+  access: >
+    Rated high and deliberately awkward: care is widely *available* and much of
+    it is low-value or harmful — imaging, injections, opioids, fusion for
+    non-specific pain. This is the one record where a high access number is not
+    good news, and the schema has no way to say so.
+  ongoing: >
+    `moderate`. Most acute episodes settle; a substantial minority becomes
+    chronic and disabling, and that minority carries nearly all the burden.
+
+holes:
+  - This should probably not be one record. Splitting the specific causes out
+    and leaving an explicitly residual bucket would let the register state how
+    much of the world's leading disability sits in a bucket labelled
+    "non-specific" — which is arguably the single most useful number the whole
+    project could produce.
+  - Why acute pain becomes chronic in some people is the substantive question,
+    and central sensitisation is a description of the phenomenon rather than a
+    mechanism for it.
+  - A high `access` figure attached to predominantly low-value care means the
+    field cannot currently distinguish "treated" from "helped".
+
+blockers:
+  - kind: knowledge
+    obstacles: [unexplained-illness]
+    blocks: any mechanism-based treatment
+    what: >
+      For the non-specific majority there is no identified nociceptive source,
+      so there is nothing to aim at. Why acute pain becomes chronic is the
+      substantive question and central sensitisation names the phenomenon rather
+      than explaining it.
+    who_could: [academic]
+    scale: null
+    standing: documented
+    src: recall
+  - kind: policy
+    blocks: de-implementation of low-value care
+    what: >
+      The inverted blocker, and the register's only one: the obstacle is not
+      getting a treatment TO people but getting harmful treatment AWAY from them
+      — routine imaging that finds irrelevant abnormalities and drives
+      intervention, opioid prescribing, injections, and fusion for non-specific
+      pain. Guidelines already say so and practice has been slow to follow,
+      because the incentives point the other way. Clearing this would improve
+      outcomes and cost less, which is why its persistence is informative.
+    who_could: [payer, health-system, government]
+    scale: null
+    standing: documented
+    src: recall
+  - kind: tooling
+    blocks: identifying the specific minority
+    what: >
+      A reliable way to separate the ten to fifteen per cent with specific,
+      treatable pathology from the non-specific remainder would prevent both
+      missed diagnoses and unnecessary intervention. Currently done by clinical
+      judgement over a very large denominator.
+    who_could: [academic, software, health-system]
+    scale: 1e8
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0010
+  rated: 2026-08-11
+  by: [claude, jeremy]

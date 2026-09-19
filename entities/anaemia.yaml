@@ -1,0 +1,661 @@
+slug: anaemia
+id: FND-D-0098
+name: anaemia
+also: [anemia, iron deficiency anaemia, iron-deficiency anemia, low haemoglobin, low hemoglobin, pernicious anaemia]
+mondo: MONDO:0002280
+kind: syndrome
+residual: false
+contested: true
+
+# THE LARGEST PREVALENCE FIGURE IN THIS REGISTER — ROUGHLY ONE PERSON IN FOUR
+# ALIVE — AND IT IS NOT A DISEASE. IT IS A LABORATORY VALUE.
+#
+# `kind: syndrome` is the least wrong of the three available and none of them
+# fits. Anaemia is a **sign**: a haemoglobin concentration below a threshold,
+# produced by dozens of causes, and **most of those causes are already rows in
+# this register** — sickle-cell, malaria, soil-transmitted-helminths,
+# schistosomiasis, chronic-kidney-disease, colorectal-cancer, h-pylori-ulcer,
+# tuberculosis, hiv. This is gaps.md #39's fourth and most extreme record, and the
+# thing that makes it extreme is that the components are not unnamed mechanisms;
+# they are entities the corpus has already rated separately.
+#
+# TWO NEW GAPS CAME OUT OF IT AND BOTH ARE ABOUT THE MACHINERY RATHER THAN THE
+# BIOLOGY. **The threshold that defines the disease was derived from reference
+# populations that were themselves widely iron-deficient** (gaps.md #206) — a
+# normal range that encodes the disease as normal. And **the best intervention in
+# the record is delivered to a population containing no patients**: flour
+# fortification reaches people who are never diagnosed, never prescribed to, and
+# never know they were treated, which `access` cannot express (gaps.md #207).
+#
+# It also closes the disability block honestly. `hearing-loss`, `cataract` and
+# `osteoarthritis` read `deaths: 0` and mean it. **Anaemia reads `deaths: 0` and
+# does not** — it is a multiplier on other records' mortality, and the deaths are
+# filed under the haemorrhage, the malaria episode and the operation.
+
+burden:
+  prevalence:
+    value: 1.92e9
+    units: >
+      people — **roughly a quarter of everyone alive, and by a wide margin the
+      largest figure in this register.** Concentrated in women of reproductive
+      age, pregnant women and young children in South Asia and sub-Saharan
+      Africa, where prevalence in those groups commonly exceeds forty percent
+    src: recall
+  ylds:
+    value: 5.0e7
+    units: >
+      YLD/year, approximately — **among the top few causes of years lived with
+      disability worldwide**, and one that almost never appears in a discussion of
+      what medicine should work on next
+    src: recall
+  deaths:
+    value: 0.0
+    units: >
+      deaths/year attributed — **and this zero is a third distinct kind, after
+      `hearing-loss`'s literal one and `osteoarthritis`'s accounting one.**
+      Anaemia's contribution to mortality is **multiplicative**: it does not kill,
+      it makes other things lethal. An anaemic woman who bleeds after delivery
+      dies at a lower blood loss, and that death is filed under
+      `maternal-haemorrhage`. A severely anaemic child with malaria dies of
+      malaria. A patient anaemic before surgery has a worse operation. **Every
+      such death is in another record, correctly, and nothing in the schema can
+      say this record helped cause it** (gaps.md #179, #182)
+    src: reasoning
+  note: >
+    **THE LARGEST TREATABLE THING IN THE REGISTER, AND ALMOST NOBODY'S JOB.** The
+    commonest cause is iron deficiency; the treatment is ferrous sulphate, which
+    is among the cheapest medicines that exist; and roughly two billion people
+    have it. It is diagnosed by a test costing about a dollar. **This is
+    gaps.md #48's other half** — not a disease whose burden is invisible because
+    it is disability rather than death, but one whose burden is invisible because
+    it has been distributed across every other record in the corpus.
+
+axes:
+  mechanism: partial
+  intervention: curative
+  prevention: prophylaxis
+  ongoing: low
+  efficacy:
+    value: 0.80
+    units: >
+      fraction-of-patients (haemoglobin corrected and sustained by treating the
+      cause — oral or intravenous iron, B12 or folate, deworming, antimalarials,
+      stopping the bleeding) — **high, because for the largest stratum the
+      treatment is a cheap tablet that works**
+    src: reasoning
+  access:
+    value: 0.45
+    units: >
+      fraction-of-patients (identified and adequately treated) — **and the number
+      is the wrong shape for this record**, because the largest single
+      intervention is population food fortification, which reaches people who
+      were never identified and are not patients (gaps.md #207)
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: partial
+  witness: >
+    **THE TEST FOR THE DISEASE COSTS A DOLLAR AND THE TEST FOR ITS CAUSE IS
+    BROKEN IN EXACTLY THE POPULATION THAT HAS IT.**
+    Haemoglobin is measured on a drop of capillary blood by a hand-held device in
+    under a minute, needs no laboratory and no cold chain, and is as `objective`
+    as anything in this register. **That is the whole of the good news, because
+    haemoglobin tells you the person is anaemic and nothing about why**, and the
+    treatment depends entirely on why.
+    **Ferritin is the test for iron deficiency and ferritin is an acute-phase
+    reactant.** It rises with infection and inflammation, so in populations with
+    high burdens of malaria, helminths, tuberculosis and chronic infection —
+    which is precisely where anaemia is commonest — **a normal ferritin does not
+    exclude iron deficiency.** Correction factors using C-reactive protein exist,
+    require a second test, and are approximations. This is gaps.md #175's shape
+    with a different cause and the same direction of effect: the instrument
+    degrades where the disease concentrates, and it degrades toward
+    **undertreating the poorest.**
+    **And the threshold itself is contested — see `witness.contested`.** The
+    haemoglobin cut-offs were set decades ago from reference populations that
+    were small, non-representative, and quite possibly iron-deficient themselves
+    (gaps.md #206). They were revised in 2024. A prevalence of two billion is a
+    count of people on one side of a line whose position has moved within the
+    last two years.
+    PROGNOSTIC is `partial`. Severity bands predict transfusion need and
+    perioperative risk reasonably. What is poorly predicted is **who will be
+    harmed by their anaemia**, which matters because most of the two billion are
+    mildly anaemic and asymptomatic, and the burden figure treats them all alike.
+    PREDICTIVE is `partial`. Ferritin and transferrin saturation identify who will
+    respond to iron, when they can be trusted. Nothing predicts who will tolerate
+    oral iron, which decides the outcome as often as biology does.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    **THE TREATMENT IS ONE OF THE SAFEST IN THE REGISTER AND IT HAS ONE
+    SPECTACULAR EXCEPTION.**
+    Oral iron causes nausea, constipation, abdominal pain and black stools in a
+    large minority — trivial as harm, decisive as an obstacle, and the reason the
+    `adherence` blocker exists. Intravenous iron is now safe enough for routine
+    outpatient use, with rare hypersensitivity reactions and a
+    formulation-dependent transient hypophosphataemia. Transfusion carries the
+    usual risks and, given repeatedly, **iron overload**, which is a genuine
+    permanent toll concentrated in the transfusion-dependent inherited stratum.
+    **THE EXCEPTION IS IRON IN A HIGH-MALARIA SETTING.** A large trial of routine
+    iron and folic acid supplementation in children in a malaria-endemic area was
+    stopped early because supplemented children had **more serious adverse events
+    and more deaths**, and the finding changed global policy: universal iron
+    supplementation is not recommended where malaria transmission is intense
+    without malaria control alongside it. The mechanism is contested and the
+    result is not.
+    **That is gaps.md #157 in its clearest form** — an intervention whose effect
+    has a *sign*, and the sign flips depending on which other record in this
+    register the patient also has. A cheap tablet that prevents disability in one
+    setting kills children in another, and nothing in the schema can hold a
+    conditional like that.
+  incidence:
+    value: 0.01
+    units: >
+      fraction-of-treated (serious or permanent harm — chiefly transfusional iron
+      overload in the inherited stratum, and the malaria-setting risk where
+      supplementation is given without malaria control) — a reasoned estimate
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    **THE DAMAGE IS DONE TO A DEVELOPING BRAIN AND CORRECTING THE HAEMOGLOBIN
+    DOES NOT UNDO IT.**
+    Iron is required for myelination, for monoamine neurotransmitter synthesis and
+    for hippocampal development, and the demand peaks in the first two years of
+    life. Iron deficiency during that period is associated with lasting deficits
+    in cognition, motor development and behaviour, **and the observational
+    evidence is that iron repletion afterwards does not fully reverse them.** The
+    child's blood count normalises; the developmental trajectory does not return
+    to where it would have been.
+    **In pregnancy the residue lands in a second person.** Maternal anaemia is
+    associated with low birth weight, preterm birth and impaired infant iron
+    stores — so an untreated deficiency in a mother becomes a deficiency in an
+    infant during exactly the window above, which is a two-generation loop the
+    register has no way to draw.
+    **State the honest qualification, because this record's importance rests on
+    it.** Almost all of this is association rather than trial evidence. The
+    correlations are large and consistent and confounded by everything that
+    accompanies childhood iron deficiency — poverty, infection, malnutrition,
+    education — and supplementation trials measuring cognitive outcomes have been
+    inconsistent. **See the `knowledge` blocker**, which exists so that this
+    record does not quietly become advocacy.
+  incidence:
+    value: 0.10
+    units: >
+      fraction-of-affected (permanent cognitive, motor or developmental deficit
+      attributable to iron deficiency during early brain development, or to
+      transfusional iron overload) — a reasoned estimate, and see the caveat above
+    src: reasoning
+
+window:
+  what: >
+    **THE FIRST THOUSAND DAYS, AND IT IS THE ONLY WINDOW IN THIS REGISTER WHERE
+    THE INTERVENTION IS FOOD.**
+    Brain iron demand peaks during gestation and the first two years. Deficiency
+    during that period is the `residue` above; the same deficiency at thirty is
+    fatigue and is fully reversible. **So the identical laboratory value carries a
+    permanent price in one patient and none in another, and the variable is age.**
+    That is the same shape `osteoarthritis` forced two records ago from the other
+    direction — an axis that ought to be a function of age and is not
+    (gaps.md #202).
+    The interventions that fit inside the window are unusually cheap and
+    unusually unglamorous: iron and folic acid in pregnancy, **delayed cord
+    clamping**, which costs nothing at all and raises an infant's iron stores for
+    months, exclusive breastfeeding followed by iron-adequate complementary food,
+    fortified staples, and deworming and malaria control where those are the
+    cause.
+    **A second window closes on the acute end.** Severe anaemia in a child with
+    malaria, or a bleeding patient, needs blood within hours, and the constraint
+    there is a functioning transfusion service rather than a diagnosis — which is
+    `maternal-haemorrhage`'s constraint, in a record that is one of the reasons
+    that haemorrhage is fatal.
+  closes_on: >
+    the completion of early brain development — roughly the first two years, and
+    gestation before it — after which a deficit is not recovered by correcting the
+    haemoglobin; and separately, hours, in severe anaemia with acute blood loss or
+    malaria
+  caught_in_time:
+    value: 0.40
+    units: >
+      fraction-of-cases (iron adequacy maintained through gestation and early
+      childhood, or severe acute anaemia reaching transfusion in time) — a
+      reasoned estimate
+    src: reasoning
+
+strata:
+  - name: iron and other nutritional deficiency
+    fraction:
+      value: 0.55
+      units: fraction-of-people-with-anaemia
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.90
+      units: fraction-of-stratum (corrected by iron, B12 or folate replacement)
+      src: reasoning
+    toll: minor
+    what: >
+      **The largest stratum and one of the most completely solved problems in
+      medicine, biologically.** Ferrous sulphate is pennies, works in weeks, and
+      pernicious anaemia — universally fatal within living memory — is now a
+      three-monthly injection. **Everything that remains is diagnosis, supply and
+      tolerability**, and the ongoing cause matters more than the deficiency: iron
+      given to a woman with heavy menstrual bleeding or a man with a colonic
+      tumour corrects a number and treats nothing.
+
+  - name: anaemia of inflammation and chronic disease
+    fraction:
+      value: 0.20
+      units: fraction-of-people-with-anaemia
+      src: reasoning
+    intervention: symptomatic
+    efficacy:
+      value: 0.40
+      units: fraction-of-stratum (meaningful correction without treating the underlying disease)
+      src: reasoning
+    toll: minor
+    what: >
+      **The stratum where iron does not work, and since 2001 we know exactly
+      why.** Inflammation raises hepcidin, hepcidin degrades ferroportin, and iron
+      is locked inside macrophages and enterocytes where the marrow cannot reach
+      it — so oral iron is absorbed poorly and does not correct the anaemia.
+      Includes the anaemia of `chronic-kidney-disease`, of cancer, of
+      `rheumatoid-arthritis`, of chronic infection. **Erythropoiesis-stimulating
+      agents and the HIF prolyl-hydroxylase inhibitors treat it and carry
+      cardiovascular risk**, and the real treatment is the underlying disease,
+      which is another record.
+
+  - name: infection-driven — malaria, hookworm, schistosomiasis
+    fraction:
+      value: 0.15
+      units: fraction-of-people-with-anaemia
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.85
+      units: fraction-of-stratum (resolved by treating the infection)
+      src: reasoning
+    toll: minor
+    what: >
+      **Every entity in this stratum's name is already a record in this
+      register**, each with its own `capability`, `access` and blockers — and this
+      is where the corpus most obviously double-counts itself. The treatments are
+      among the cheapest in medicine: albendazole, praziquantel, artemisinin
+      combination therapy, a bednet. **And this is the stratum where iron
+      supplementation can do harm** if given without malaria control.
+
+  - name: inherited haemoglobin disorders
+    fraction:
+      value: 0.10
+      units: fraction-of-people-with-anaemia
+      src: reasoning
+    intervention: suppressive
+    efficacy:
+      value: 0.50
+      units: fraction-of-stratum (adequately supported, chiefly by transfusion)
+      src: reasoning
+    toll: major
+    what: >
+      Thalassaemia and `sickle-cell`, which has its own record and its own
+      `curative` rating reaching almost nobody. For anaemia specifically the
+      answer is **transfusion, indefinitely, plus iron chelation to manage the
+      overload the transfusions cause** — which is why this stratum's toll is
+      `major` while the record's is `minor`. It is also the only stratum where the
+      anaemia is the disease rather than a sign of one.
+
+moved:
+  - date: 1926
+    axis: intervention
+    from: none
+    to: curative
+    why: >
+      **A UNIVERSALLY FATAL DISEASE WAS CURED BY FEEDING PEOPLE RAW LIVER, AND
+      NOBODY KNEW WHY FOR TWENTY-TWO YEARS.**
+      Pernicious anaemia killed everyone who got it. Minot and Murphy reported in
+      1926 that a diet of large quantities of liver produced remission, and the
+      work took a Nobel Prize in 1934. **The active ingredient — vitamin B12 —
+      was not isolated until 1948**, and its structure was not solved until the
+      1950s.
+      **It belongs in this register as one of the cleanest instances of the
+      pattern that keeps arriving**: `cystic-fibrosis`, `spinal-muscular-atrophy`
+      and `duchenne` show the order of gene discovery running inverse to
+      therapeutic success (gaps.md #193, #198); `osteoarthritis` has an excellent
+      intervention and a `partial` mechanism; and here **a complete cure preceded
+      the identification of the molecule by two decades.** Understanding is not
+      on the critical path as often as the field's own narrative implies.
+    src: recall
+
+  - date: 1941
+    axis: prevention
+    from: risk-reduction
+    to: prophylaxis
+    why: >
+      **FLOUR ENRICHMENT, AND IT IS ONE OF THE HIGHEST-RETURN INTERVENTIONS IN THE
+      HISTORY OF PUBLIC HEALTH.**
+      The United States began adding iron, thiamine, riboflavin and niacin to
+      white flour by regulation in 1941, and mandatory fortification of staples —
+      wheat and maize flour, rice, and in some countries salt double-fortified
+      with iron and iodine — has since spread across much of the world. It costs a
+      fraction of a cent per person per year, requires no clinical encounter, and
+      the recipients do not know it happened.
+      **It is also the reason this record forced gaps.md #207.** There is no
+      patient, no diagnosis, no prescription and no adherence. `access` is defined
+      as the fraction of *patients* who can obtain treatment, and the denominator
+      here is everyone who eats bread. A record whose best intervention cannot be
+      expressed by its own delivery axis is a schema problem, not a data problem.
+      **Coverage is the live issue and it is legislative.** Mandatory
+      fortification is absent or unenforced across much of South Asia and
+      sub-Saharan Africa, and where staples are milled locally rather than
+      industrially there is no chokepoint to fortify at.
+    src: recall
+
+  - date: 2001
+    axis: mechanism
+    from: correlates
+    to: partial
+    why: >
+      **HEPCIDIN, AND IT EXPLAINED WHY IRON DOES NOT WORK IN THE PATIENTS WHO LOOK
+      MOST IRON-DEFICIENT.**
+      The discovery of hepcidin as the master regulator of iron, and of ferroportin
+      as the single cellular iron exporter it controls, resolved a century-old
+      clinical puzzle: in inflammation, hepcidin rises, ferroportin is degraded,
+      and iron is sequestered inside macrophages and enterocytes where the marrow
+      cannot use it. **The patient has iron and cannot get at it**, absorption from
+      the gut is blocked, and oral iron fails.
+      **It changed practice in three places.** It explained the anaemia of chronic
+      disease as a regulated response rather than a failure. It made intravenous
+      iron the rational choice in inflammation. And it produced the finding that
+      **alternate-day dosing of oral iron is absorbed better than daily dosing**,
+      because a dose raises hepcidin for about a day and blocks the next one —
+      which means the standard regimen used for decades was partly self-defeating,
+      and the fix costs nothing.
+      **Record the move as `correlates` to `partial` rather than to
+      `established`.** One stratum's mechanism became excellent. The entity still
+      has no mechanism, because it is not one disease (gaps.md #39).
+    src:
+      id: PMID:11447267 doi:10.1073/pnas.151179498
+      retrieved: 2026-08-26
+      quote: >
+        We previously reported the disruption of the murine gene encoding the
+        transcription factor USF2 and its consequences on glucose-dependent gene
+        regulation in the liver.
+
+witness:
+  mechanism: >
+    `partial`, and the rating is about the entity rather than about ignorance.
+    **Each cause is understood, several of them beautifully.** Iron deficiency:
+    inadequate intake, poor bioavailability of non-haem iron in cereal-based
+    diets, blood loss from menstruation, hookworm or gastrointestinal lesions, and
+    demand exceeding supply in pregnancy and infancy. Anaemia of inflammation:
+    the hepcidin–ferroportin axis, worked out from 2001, which is the newest
+    mechanistic win here and immediately changed practice. B12 and folate:
+    impaired DNA synthesis in erythroid precursors, with pernicious anaemia an
+    autoimmune destruction of gastric parietal cells. Haemoglobinopathies: single
+    point mutations whose consequences are traced atom by atom. Renal anaemia:
+    loss of erythropoietin production.
+    **The entity has no mechanism because it is not an entity.** It is a
+    haemoglobin concentration below a line, and gaps.md #39 predicts exactly what
+    this record shows — mechanism reads `partial` forever while every
+    sub-mechanism is individually solid, prognosis is a population statement, and
+    an unstratified trial enrols a mixture.
+    **What is genuinely open sits underneath the burden figure rather than the
+    biology.** Nobody has established how much of the disability attributed to
+    mild anaemia is caused by the anaemia, as opposed to by the poverty,
+    infection and undernutrition that travel with it — see the `knowledge`
+    blocker.
+  contested: >
+    **THE THRESHOLD IS DISPUTED, IT MOVED IN 2024, AND THE REASON IT IS DISPUTED
+    IS UNCOMFORTABLE** (gaps.md #206).
+    A "normal range" is conventionally the central portion of a distribution
+    measured in a reference population presumed healthy. The haemoglobin cut-offs
+    in near-universal use were derived decades ago from reference samples that
+    were small, geographically narrow and **not screened for iron deficiency** —
+    and iron deficiency is the commonest nutritional disorder on earth,
+    overwhelmingly in women of reproductive age. **If the reference women were
+    iron-deficient, the threshold encodes the deficiency as normal**, and the
+    disease was defined by measuring people who had it. WHO revised the values in
+    2024 after a re-analysis of healthier reference populations.
+    **The sex difference is the sharpest form of the argument.** The accepted
+    cut-off for women is roughly a gram per decilitre below the male one, and it
+    is routinely explained by menstruation and by hormonal differences in
+    erythropoiesis. The counter-position is that at least part of the gap is an
+    artefact of the same problem — a lower "normal" learned from a population
+    whose iron stores were depleted by the very process being normalised. **The
+    register takes no position and records that this is an argument about
+    two billion people's diagnostic status.**
+    **A second dispute: is mild anaemia a disease at all?** Most of the two
+    billion are mildly anaemic and asymptomatic, and one position is that
+    treating a number in an asymptomatic adult is medicalising a laboratory
+    result. The counter is the `window` and the `residue` — in a pregnant woman or
+    a two-year-old the same number is not benign. **Both are right about different
+    people**, which is why the record has four strata and a window.
+  intervention: >
+    `curative`, and it is one of the least equivocal `curative` ratings in this
+    register **for the stratum that matters most.**
+    **Oral iron** — ferrous sulphate, fumarate or gluconate — corrects iron
+    deficiency anaemia in weeks, costs almost nothing, and is on every essential
+    medicines list. **Give it on alternate days**, which is better absorbed than
+    daily dosing for the hepcidin reason above and is not yet universal practice.
+    **Intravenous iron** corrects it in days, is now safe enough for routine
+    outpatient use, and is the rational choice in inflammation, malabsorption,
+    intolerance or when the deadline is short — before surgery, or late in
+    pregnancy. **B12 and folate** replacement is definitive. **Transfusion** for
+    severe or acutely symptomatic anaemia.
+    **And the intervention that is not a drug: treat the cause.** Deworming,
+    antimalarials, stopping a bleeding lesion, investigating iron deficiency in a
+    man or a post-menopausal woman as a colonic cancer until proved otherwise.
+    **Iron given to someone still losing blood corrects a number and treats
+    nothing**, which is the commonest error in this record.
+    Nothing exists for the inherited stratum beyond transfusion and chelation —
+    `sickle-cell` carries that story and its own `reach` of 0.0009.
+  prevention: >
+    `prophylaxis`, and the strongest interventions are not medical.
+    **Food fortification** is the largest — mandatory addition of iron to milled
+    staples, and double-fortified salt where flour is not the vehicle. It costs a
+    fraction of a cent per person per year and is delivered by millers, food
+    regulators and legislators. **Iron and folic acid supplementation in
+    pregnancy** is standard policy nearly everywhere and adherence-limited nearly
+    everywhere. **Delayed cord clamping** is free, takes a minute, and raises an
+    infant's iron stores for months. **Deworming and malaria control** remove the
+    infection-driven stratum and belong to four other records.
+    **Two qualifications this record must not omit.** Universal iron
+    supplementation in children is not recommended where malaria transmission is
+    intense without malaria control alongside, following the trial in `toll`. And
+    fortification of a staple only works where the staple is industrially milled;
+    where grain is ground locally there is no chokepoint, which is why coverage
+    maps look the way they do.
+  ongoing: >
+    `low`, and it is one of the few genuinely low ratings in the register. For the
+    largest stratum a course of tablets ends it, provided the cause was found. A
+    recurrent cause — heavy menstrual bleeding, a chronic gastrointestinal lesion,
+    coeliac disease, gastric surgery — means intermittent repletion and periodic
+    testing, which is minor.
+    **The exception is the transfusion-dependent tenth**, whose burden is a
+    different order entirely: transfusion every few weeks, iron chelation daily,
+    monitoring for the organ damage the iron causes, and a life organised around
+    a hospital.
+    **The burden that is not medical and has no field is fatigue**, which is what
+    people with anaemia actually complain of, is not proportional to haemoglobin,
+    and is the reason so much of this record is dismissed — by clinicians and by
+    patients alike.
+
+holes:
+  - >
+    **This record double-counts most of the corpus and there is no way to say so.**
+    Its causes include `sickle-cell`, `malaria`, `soil-transmitted-helminths`,
+    `schistosomiasis`, `chronic-kidney-disease`, `colorectal-cancer`,
+    `h-pylori-ulcer`, `tuberculosis` and `hiv` — all already rated separately.
+    gaps.md #39's fourth and most extreme record.
+  - >
+    **The threshold that defines the disease may have been derived from a
+    population that had the disease** (gaps.md #206), it was revised in 2024, and
+    the register stores a prevalence of 1.92 billion computed against it.
+  - >
+    **The largest intervention reaches a population containing no patients**
+    (gaps.md #207). Fortification has no diagnosis, no prescription and no
+    encounter, and `access` is a fraction of patients.
+  - >
+    **`deaths: 0` is a third distinct kind of zero** — not literal, not an
+    attribution artefact, but **multiplicative**. Anaemia makes other records'
+    events lethal, and the deaths are correctly filed elsewhere.
+  - >
+    **A cheap tablet that prevents disability in one setting killed children in
+    another** (gaps.md #157), and no field can hold a conditional whose condition
+    is another record in the register.
+  - >
+    **Most of this record's importance rests on association rather than trial
+    evidence**, and the `knowledge` blocker says so deliberately, so that the
+    largest prevalence figure in the corpus does not become an argument by
+    assertion.
+
+blockers:
+  - kind: diagnosis
+    blocks: knowing why, once you know that
+    obstacles: []
+    what: >
+      **HAEMOGLOBIN COSTS A DOLLAR AND ANSWERS THE EASY QUESTION.**
+      A point-of-care device gives a haemoglobin concentration in a minute on a
+      fingerprick, anywhere, with no laboratory. **What it cannot say is which of
+      a dozen causes produced it**, and the treatments diverge completely: iron,
+      B12, albendazole, an antimalarial, an endoscopy, a nephrologist, or a
+      transfusion service.
+      **The test for the commonest cause is confounded by the commonest
+      co-condition.** Ferritin is an acute-phase reactant, so infection and
+      inflammation raise it, and a normal ferritin in a population with endemic
+      malaria and helminths does not exclude iron deficiency. Correcting for it
+      needs a second inflammatory marker and yields an estimate. **The result is
+      systematic undertreatment in exactly the settings with the highest
+      prevalence** — gaps.md #175's direction of effect, arrived at by a different
+      route.
+      **And the diagnosis that is most often skipped is the dangerous one.** Iron
+      deficiency in a man or a post-menopausal woman is a gastrointestinal lesion
+      until proved otherwise, and iron prescribed without that investigation
+      treats the number and delays a cancer.
+      **What would fix it is a cheap point-of-care iron test that works in
+      inflammation.** That is a development problem, not a scientific one.
+    who_could: [academic, manufacturer, health-system, software, nonprofit]
+    scale: 5.0e8
+    standing: documented
+    src: recall
+
+  - kind: policy
+    blocks: fortification, which is legislation rather than medicine
+    obstacles: []
+    what: >
+      **THE HIGHEST-RETURN INTERVENTION IN THIS RECORD IS A REGULATION ABOUT
+      FLOUR.**
+      Mandatory fortification of milled staples with iron costs a fraction of a
+      cent per person per year, needs no clinical contact, and works. Coverage is
+      the entire issue: mandatory standards are absent, weakly drafted or
+      unenforced across much of South Asia and sub-Saharan Africa, and where they
+      exist they often cover wheat flour in countries that eat rice or maize.
+      **The obstacles are the ordinary ones of food policy** — industry cost,
+      fragmented milling, monitoring capacity, and the fact that no ministry of
+      health owns a flour mill. Where grain is ground locally rather than
+      industrially there is **no chokepoint to fortify at**, which is why the
+      coverage map and the prevalence map are close to inverses of each other.
+      Salt double-fortified with iron and iodine is the answer designed for that
+      problem and its adoption is patchy.
+      **This is the record's clearest statement of what it is**: two billion
+      people, a disability burden among the world's largest, and the lever is held
+      by legislators and food regulators rather than by anyone in medicine.
+    who_could: [legislator, government, regulator, nonprofit, philanthropy]
+    scale: 2.0e9
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: supplementation programmes that exist on paper
+    obstacles: []
+    what: >
+      **IRON AND FOLIC ACID IN PREGNANCY IS POLICY ALMOST EVERYWHERE AND PRACTICE
+      IN A MINORITY.**
+      The gap is the familiar chain: antenatal contact happening late or not at
+      all, stock-outs at the facility, a supply of thirty tablets against a need
+      for a hundred and eighty, and no mechanism for resupply between visits.
+      **Coverage of the full recommended course is low across the countries with
+      the highest maternal anaemia**, and partial courses are the norm.
+      **Intravenous iron is the intervention that would change this and it is
+      logistically trapped.** A single infusion corrects a deficiency in a day and
+      solves adherence outright — decisive for a woman presenting anaemic at
+      thirty-four weeks, where oral iron cannot work in time. It needs a clean
+      infusion setting, trained staff, and observation for a rare reaction, which
+      most antenatal clinics do not have. **Trials of single-dose IV iron in
+      pregnancy in low-income settings are among the more promising things in this
+      record**, and the constraint is service delivery rather than the drug.
+      Add the transfusion services this record shares with
+      `maternal-haemorrhage` and `malaria`, whose absence turns severe anaemia
+      into a death filed under something else.
+    who_could: [health-system, government, payer, nonprofit, manufacturer]
+    scale: 3.0e9
+    standing: documented
+    src: recall
+
+  - kind: adherence
+    blocks: a tablet that makes you feel worse before it makes you feel better
+    obstacles: []
+    what: >
+      **ORAL IRON'S SIDE EFFECTS ARE TRIVIAL AS HARM AND DECISIVE AS AN
+      OBSTACLE.**
+      Nausea, abdominal pain, constipation and black stools affect a large
+      minority, they begin immediately, and the benefit — a slow lifting of a
+      fatigue the person may have had for years and stopped noticing — arrives
+      weeks later. **The patient's own evidence says the tablet is making them
+      unwell**, which is gaps.md #161's structure precisely, and it is the reason
+      three- to six-month courses are so often abandoned in weeks.
+      **Two fixes are cheap and under-used.** Alternate-day dosing is better
+      absorbed than daily and better tolerated, following the hepcidin finding —
+      **the standard regimen used for decades was partly self-defeating**, and
+      correcting it costs nothing. And a single intravenous infusion removes the
+      adherence question entirely, if the service exists.
+      **This is also `asthma`'s lesson one record earlier**: the best answer to an
+      adherence problem was not education but a change to the product. Here it is a
+      change to the schedule, and it came out of understanding the mechanism —
+      which is a small, honest point in favour of mechanism after several records
+      arguing the other way.
+    who_could: [health-system, academic, manufacturer, patient-org, nonprofit]
+    scale: 2.0e8
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: whether correcting it delivers what the association promises
+    obstacles: []
+    what: >
+      **THIS BLOCKER EXISTS SO THAT THE LARGEST PREVALENCE FIGURE IN THE REGISTER
+      IS NOT AN ARGUMENT BY ASSERTION.**
+      Anaemia is associated with impaired child cognition and motor development,
+      with maternal and perinatal complications, with reduced work capacity, with
+      worse surgical outcomes and with mortality across many settings. **The
+      associations are large, consistent, and confounded by everything that
+      accompanies anaemia** — poverty, undernutrition, infection, education,
+      access to care. Iron supplementation trials measuring cognitive and
+      developmental outcomes have been inconsistent, and the effect sizes where
+      present are smaller than the observational literature implies.
+      **So the honest position is that we are confident about the biochemistry and
+      much less confident about the payoff**, and the register should say so about
+      a record it might otherwise place near the top of a priority list. The
+      strongest evidence sits at the severe end — severe anaemia in pregnancy,
+      severe anaemia with malaria — and that is not where most of the two billion
+      are.
+      Two related unknowns: **how much of mild anaemia's attributed disability is
+      the anaemia**, which is what a burden-weighted ranking would need
+      (gaps.md #48); and **the mechanism of the malaria-setting harm**, which
+      remains contested and decides how safely iron can be given at scale
+      (gaps.md #157).
+      `scale: null`.
+    who_could: [academic, sponsor, philanthropy, nonprofit]
+    scale: null
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0099
+  rated: 2026-08-26
+  by: [claude, jeremy]

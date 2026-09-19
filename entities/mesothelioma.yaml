@@ -1,0 +1,695 @@
+slug: mesothelioma
+id: FND-D-0107
+name: mesothelioma
+also: [malignant mesothelioma, malignant pleural mesothelioma, peritoneal mesothelioma, asbestos cancer]
+mondo: MONDO:0005065
+kind: disease
+residual: false
+contested: true
+
+# THE ONLY RECORD IN THE `terminal` BAND THAT IS ALSO ALMOST ENTIRELY
+# PREVENTABLE, AND THE PREVENTION IS A TRADE REGULATION.
+#
+# `rabies`, `huntington`, `prion-disease` and `glioblastoma` are terminal for
+# reasons of biology. **This one is terminal because of a commercial decision
+# taken decades ago and, in much of the world, still being taken.** Roughly 80%
+# of cases are caused by one identified, industrially mined, commercially sold
+# mineral. Around seventy countries have banned it. **The largest producers and
+# users have not**, and something like 1.3 million tonnes a year is still mined.
+#
+# THE LATENCY IS THE LONGEST IN THE REGISTER — TWENTY TO FIFTY YEARS.
+#
+# That single fact reorganises everything. The people dying now were exposed in
+# the 1970s and 80s. The United Kingdom banned asbestos in 1999 and its deaths
+# peaked around 2019. **Countries banning it today are preventing deaths in
+# 2070**, and countries still using it are committing to a mortality curve that
+# will run past the lifetime of everybody making the decision. **No other record
+# here has a prevention window measured in generations.**
+#
+# AND THE COMPENSATION IS THE OTHER THING THIS RECORD HAS THAT NOTHING ELSE
+# DOES. Because the cause is single, identified and attributable to an employer,
+# mesothelioma has dedicated statutory compensation schemes in several countries.
+# **It is the register's only disease with a defendant.**
+
+burden:
+  deaths:
+    value: 3.0e4
+    units: >
+      deaths/year worldwide, approximately — **and the figure is an
+      undercount whose size is unknown**, because diagnosis requires
+      histopathology that much of the world cannot perform and because incidence
+      is rising in countries that have no mesothelioma surveillance at all
+    src: recall
+  cases:
+    value: 3.4e4
+    units: >
+      new cases/year, approximately. **Cases and deaths are nearly equal**, the
+      same arithmetic `als`, `glioblastoma` and `prion-disease` carry
+    src: recall
+  note: >
+    **THIS IS THE SENTINEL AND NOT THE BURDEN.** Asbestos causes mesothelioma,
+    and it also causes **lung cancer — more deaths than mesothelioma does** —
+    along with asbestosis, laryngeal cancer and ovarian cancer. Total
+    asbestos-attributable mortality is usually placed well above 200,000 a year.
+    **Mesothelioma is nearly pathognomonic for asbestos and therefore countable;
+    asbestos-caused lung cancer is indistinguishable from any other lung cancer
+    and sits inside `lung-cancer` where nothing marks it.** The register counts
+    the visible fraction of a much larger harm (gaps.md #160).
+    **And the geography is inverted relative to most of this corpus.** The
+    highest death rates are in wealthy countries — the United Kingdom has among
+    the highest in the world, having imported more amphibole asbestos per head
+    than anywhere — because they industrialised first. **The rising curve is
+    everywhere else, and it has not arrived yet.**
+
+survival:
+  horizon: 5 years from diagnosis
+  untreated:
+    value: 0.02
+    units: >
+      fraction alive — untreated pleural mesothelioma has a median survival of
+      roughly six to nine months
+    src: recall
+  treated:
+    value: 0.08
+    units: >
+      fraction alive on best available treatment. **Median survival is around
+      eighteen months** with chemotherapy or immunotherapy. The figure is pulled
+      up by **peritoneal disease**, where selected patients treated with
+      cytoreductive surgery do far better, and pulled down by sarcomatoid pleural
+      disease, where almost nobody survives two years
+    src: recall
+  witness: >
+    **TERMINAL, AND UNIQUELY AMONG THE TERMINAL RECORDS IT DID NOT HAVE TO BE.**
+    The other four in this band are terminal because nobody knows how to treat
+    them. **This one is terminal because somebody sold asbestos**, and the
+    difference matters for what the register is for: `rabies` and `prion-disease`
+    are waiting on science, and this is waiting on a decision that seventy
+    countries have already taken.
+    **The gap between the columns is real and small.** Six to nine months
+    untreated, around eighteen treated — pemetrexed in 2003, immunotherapy in
+    2020, each adding months. **Two decades of therapeutic progress against a
+    twenty-to-fifty-year latency**: everybody who will die of this before 2060 was
+    already exposed before the first of those drugs existed.
+
+axes:
+  mechanism: established
+  intervention: disease-modifying
+  prevention: prophylaxis
+  ongoing: moderate
+  efficacy:
+    value: 0.20
+    units: >
+      fraction-of-patients (meaningful survival extension from best available
+      treatment) — **and it is months rather than years for the pleural
+      majority.** The peritoneal minority is a different disease by this measure
+    src: reasoning
+  access:
+    value: 0.30
+    units: >
+      fraction-of-patients (reaching pathological diagnosis, a specialist centre
+      and systemic therapy) — **and this figure is meaningless in most of the
+      world**, where the disease is not diagnosed rather than not treated
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: good
+  predictive: none
+  witness: >
+    **DIAGNOSTIC IS `objective` AND IT IS ONE OF THE HARDEST OBJECTIVE DIAGNOSES
+    IN THIS REGISTER.**
+    It requires tissue — usually thoracoscopic pleural biopsy, because cytology
+    from a pleural effusion is frequently insufficient — and then a
+    pathologist distinguishing malignant mesothelioma from **reactive mesothelial
+    hyperplasia**, which is benign and looks similar, and from metastatic
+    adenocarcinoma, which is far commoner. An immunohistochemical panel is
+    essential; **BAP1 loss and CDKN2A deletion** by FISH have made the distinction
+    from reactive change substantially more reliable in the last decade.
+    **The practical consequence is delay.** Presentation is breathlessness from a
+    pleural effusion or non-specific chest pain, which is worked up as infection
+    or heart failure first; median time from symptom to diagnosis runs to
+    several months, against a median survival of eighteen.
+    **And there is no screening, deliberately.** Populations with known asbestos
+    exposure are identifiable, which makes this look like a screening opportunity,
+    and low-dose CT and blood markers such as mesothelin have been evaluated
+    without demonstrating that earlier detection changes outcome. **A known
+    high-risk population and no test worth offering them is unusual in this
+    corpus** and is the honest position rather than a gap.
+    PROGNOSTIC is `good`: histological subtype — epithelioid, biphasic,
+    sarcomatoid — performance status and stage predict survival reliably, and
+    the subtype difference is large enough to be a different disease.
+    PREDICTIVE is `none`. **Nothing selects who benefits from chemotherapy,
+    immunotherapy or surgery**, and the surgical question was answered in the
+    negative for everybody rather than resolved for anybody — see the 2024
+    `moved` entry.
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    **THE HEAVIEST THING THIS DISEASE'S TREATMENT DID WAS AN OPERATION THAT DID
+    NOT WORK.**
+    **Extrapleural pneumonectomy** removes the lung, the pleura, the diaphragm
+    and the pericardium in one procedure. It carries substantial operative
+    mortality and leaves survivors with permanently reduced pulmonary reserve.
+    **Randomised evidence did not support it, and the less radical alternative was
+    then also tested and did not improve survival either** (2024 `moved` entry).
+    Thousands of people underwent major thoracic surgery for a disease it did not
+    extend their lives against.
+    **Pleurodesis** — deliberately obliterating the pleural space with talc to
+    stop fluid reaccumulating — is genuinely useful palliation and permanently
+    fuses the lung to the chest wall. **Indwelling pleural catheters** are the
+    alternative and carry infection risk.
+    **Chemotherapy and immunotherapy** carry their ordinary prices: cytopenias
+    and neuropathy from platinum-pemetrexed; immune-related colitis,
+    pneumonitis, hepatitis and endocrinopathy from combined checkpoint blockade,
+    a proportion of which is permanent.
+    **What no field holds is that this disease is somebody's fault.** Patients
+    frequently know exactly when and where they were exposed, often at work,
+    often decades earlier, sometimes because an employer knew the hazard and did
+    not say. **The anger is a documented and consistent feature of the illness**
+    and is not a side effect of any treatment.
+  incidence:
+    value: 0.25
+    units: >
+      fraction-of-treated (permanent harm — reduced pulmonary reserve after
+      radical surgery, permanent immune-related toxicity, pleurodesis sequelae) —
+      a reasoned estimate, and higher historically when radical surgery was
+      routine
+    src: reasoning
+
+window:
+  what: >
+    **THE LONGEST PREVENTION WINDOW IN THE REGISTER, AND IT IS MEASURED IN
+    GENERATIONS.**
+    Latency from first asbestos exposure to mesothelioma is **twenty to fifty
+    years**, with a median around forty. Everything about this record follows from
+    that number.
+    **For the patient there is no window at all.** By the time the disease
+    exists it has been developing for decades, there is no premalignant lesion to
+    find, no screening test worth offering, and no evidence that earlier
+    diagnosis changes survival. This is `glioblastoma`'s situation reached by a
+    completely different route.
+    **For the population the window is enormous and mostly closed in the wrong
+    direction.** The people dying now were exposed in the 1970s and 80s. The
+    United Kingdom banned asbestos in 1999 and deaths peaked around 2019 —
+    **twenty years after the ban, which is the ban working exactly as the latency
+    predicts.** Countries banning asbestos today prevent deaths in the 2060s and
+    70s. Countries still using it are writing a mortality curve that will run past
+    the careers of everybody involved in the decision.
+    **And there is a third window nobody manages: the buildings.** Asbestos
+    installed before the bans is still in schools, hospitals and housing across
+    every country that used it. It is safe undisturbed and dangerous when
+    disturbed, so **removal, renovation and demolition are ongoing exposure
+    events**, and the occupational groups now most at risk in banned-asbestos
+    countries are tradespeople rather than manufacturing workers.
+  closes_on: >
+    nothing, for the patient — there is no detectable premalignant phase and no
+    screening test worth offering. The window is entirely upstream: the exposure,
+    twenty to fifty years earlier, and the regulatory decision that permitted it
+  caught_in_time:
+    value: 0.0
+    units: >
+      fraction-of-cases reached before the disease is established — **zero, and
+      the field is recorded rather than omitted because the absence is the
+      point.** There is a known high-risk population and nothing useful to offer
+      it
+    src: reasoning
+
+strata:
+  - name: epithelioid pleural
+    fraction:
+      value: 0.60
+      units: fraction-of-people-with-mesothelioma
+      src: reasoning
+    intervention: disease-modifying
+    efficacy:
+      value: 0.25
+      units: fraction-of-stratum (meaningful survival extension)
+      src: reasoning
+    toll: major
+    what: >
+      The commonest subtype and the one that responds best to what exists —
+      platinum-pemetrexed, or combined checkpoint blockade. Median survival
+      around eighteen to twenty-four months. **This is the stratum every trial is
+      powered on and it is still measured in months.**
+
+  - name: sarcomatoid or biphasic pleural
+    fraction:
+      value: 0.25
+      units: fraction-of-people-with-mesothelioma
+      src: reasoning
+    intervention: symptomatic
+    efficacy:
+      value: 0.05
+      units: fraction-of-stratum (meaningful survival extension)
+      src: reasoning
+    toll: major
+    what: >
+      **Chemotherapy does very little here and median survival is under a year.**
+      The one thing that differs is that immunotherapy appears to work
+      *relatively* better in sarcomatoid disease than chemotherapy does — a rare
+      instance of the worst-prognosis subtype having the clearer treatment
+      choice, and it is a choice between two poor options.
+
+  - name: peritoneal
+    fraction:
+      value: 0.15
+      units: fraction-of-people-with-mesothelioma
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.50
+      units: fraction-of-stratum (long-term survival after cytoreductive surgery with intraperitoneal chemotherapy)
+      src: reasoning
+    toll: catastrophic
+    what: >
+      **A DIFFERENT DISEASE WEARING THE SAME NAME, AND IT IS THE REASON THIS
+      RECORD SPANS THE LADDER.** Selected patients with peritoneal mesothelioma
+      treated by cytoreductive surgery with heated intraperitoneal chemotherapy
+      achieve median survivals measured in years, and a real minority are
+      long-term survivors. **The operation is enormous** — multivisceral
+      resection, stripping of peritoneal surfaces, significant mortality and
+      permanent consequences — which is why the toll is `catastrophic` in the one
+      stratum where the intervention is `curative`. It is delivered in a small
+      number of specialist centres and is nearly unavailable outside them.
+
+moved:
+  - date: 1960
+    axis: mechanism
+    from: none
+    to: established
+    why: >
+      **THE PAPER THAT NAMED THE CAUSE, AND IT CAME FROM A MINING DISTRICT.**
+      Wagner and colleagues described a series of mesothelioma cases in the
+      asbestos-mining region of the North Western Cape in South Africa, linking
+      the tumour to crocidolite exposure — including in people who had never
+      worked in the mines but lived near them.
+      **That last detail is why this entry matters as much as it does.** Domestic
+      and environmental exposure counted, not only occupational, which
+      established that the hazard was not confined to the workforce and made the
+      case for banning the material rather than protecting the workers.
+      **And then it took forty years.** The United Kingdom banned all asbestos in
+      1999, the European Union in 2005. **The interval between knowing and
+      stopping is the finding**, and it is longer than the latency of the disease.
+    src:
+      id: PMID:13782506 doi:10.1136/oem.17.4.260
+      retrieved: 2026-08-28
+      quote: >
+        Primary malignant tumours of the pleura are uncommon. Thirty-three cases
+        (22 males, 11 females, ages 31 to 68) of diffuse pleural mesothelioma are
+        described; all but one have a probable exposure to crocidolite asbestos
+        (Cape blue).
+
+  - date: 1999
+    axis: prevention
+    from: none
+    to: prophylaxis
+    why: >
+      **A NATIONAL BAN, AND YOU CAN SEE IT IN THE MORTALITY CURVE TWENTY YEARS
+      LATER.**
+      The United Kingdom prohibited all remaining asbestos use in 1999; the
+      European Union followed in 2005; around seventy countries have now banned
+      it. **UK mesothelioma deaths peaked around 2019 and have begun to fall** —
+      two decades after the ban, exactly as a twenty-to-fifty-year latency
+      predicts.
+      **It is one of the cleanest demonstrations of primary prevention in this
+      register and it is invisible on any short timescale.** A policy whose effect
+      appears two decades after it is enacted is one no electoral cycle can
+      evaluate, and the register's `moved` field — which pairs a date with an
+      effect — is the only place this shape can be recorded at all.
+      **The rating is `prophylaxis` rather than `risk-reduction` deliberately**:
+      removing the exposure does not reduce the risk of asbestos-caused
+      mesothelioma, it eliminates it. Roughly a fifth of cases are not
+      attributable to asbestos and remain.
+    src: recall
+
+  - date: 2003
+    axis: efficacy
+    from: 0.10
+    to: 0.15
+    why: >
+      **THE FIRST REGIMEN EVER SHOWN TO EXTEND SURVIVAL IN THIS DISEASE.**
+      Adding pemetrexed to cisplatin improved median survival from around nine
+      to twelve months against cisplatin alone, and became the standard of care
+      for seventeen years on the strength of about three months.
+      **Record the magnitude honestly**: this is the same shape as `als`'s
+      riluzole and `glioblastoma`'s temozolomide — a genuine, replicated,
+      licensed advance measured in months, in a disease measured in months, held
+      as standard for the better part of two decades because nothing displaced it.
+    src:
+      id: PMID:12860938 doi:10.1200/JCO.2003.11.136
+      retrieved: 2026-08-28
+      quote: >
+        Treatment with pemetrexed plus cisplatin and vitamin supplementation
+        resulted in superior survival time, time to progression, and response rates
+        compared with treatment with cisplatin alone in patients with malignant
+        pleural mesothelioma.
+
+  - date: 2020
+    axis: efficacy
+    from: 0.15
+    to: 0.20
+    why: >
+      **CHECKPOINT BLOCKADE, AND IT WORKED BEST IN THE SUBTYPE THAT RESPONDS
+      WORST TO EVERYTHING ELSE.**
+      Nivolumab with ipilimumab improved overall survival against
+      platinum-pemetrexed as first-line treatment, and the benefit was
+      concentrated in **non-epithelioid** disease — the sarcomatoid and biphasic
+      tumours that chemotherapy barely touches.
+      **That inversion is worth recording.** In most of this register the
+      best-prognosis stratum is the one that gains most from a new agent; here the
+      worst-prognosis stratum did, which is the first thing to happen to those
+      patients in the register's history of this disease. **It is still months.**
+    src:
+      id: PMID:33485464 doi:10.1016/S0140-6736(20)32714-8
+      retrieved: 2026-08-28
+      quote: >
+        Nivolumab plus ipilimumab provided significant and clinically meaningful
+        improvements in overall survival versus standard-of-care chemotherapy,
+        supporting the use of this first-in-class regimen that has been approved in
+        the USA as of October, 2020, for previously untreated unresectable MPM.
+
+  - date: 2024
+    axis: toll
+    from: major
+    to: major
+    why: >
+      **A MAJOR OPERATION WAS TESTED AND FOUND NOT TO HELP, AND STOPPING IT IS
+      THE PROGRESS.**
+      Radical surgery for pleural mesothelioma has been performed for decades in
+      two forms — extrapleural pneumonectomy, which removes the lung, and
+      extended pleurectomy decortication, which spares it. **Randomised evidence
+      did not support the first, and a randomised trial reporting in 2024 found
+      the second did not improve survival either, with more serious adverse events
+      in the surgical arm.**
+      **This is a toll reduction achieved by subtraction**, and it is the fourth
+      such entry the register has recorded in a month — after `head-neck-cancer`'s
+      organ preservation and IMRT, and `nasopharyngeal-carcinoma`'s IMRT.
+      **`toll.severity` does not move, for the same reason it did not move in any
+      of them**: the severe cases still exist, `terms` reads severity, and the
+      register cannot say a toll became rarer without becoming milder
+      (gaps.md #183). **Four entries in four records now, and it is the most
+      frequently unrecordable kind of progress in this corpus.**
+      Note also what it is not: the surgery was not a fraud or a fringe practice.
+      It was mainstream, offered in specialist centres, and believed in — and it
+      took two randomised trials across two decades to establish that it should
+      not be done.
+    src:
+      id: PMID:38740044 doi:10.1016/S2213-2600(24)00119-X
+      retrieved: 2026-08-28
+      quote: >
+        Extended pleurectomy decortication was associated with worse survival to 2
+        years, and more serious adverse events for individuals with resectable
+        pleural mesothelioma, compared with chemotherapy alone.
+
+witness:
+  mechanism: >
+    `established`, and unusually completely for a cancer, because the cause is a
+    single identified physical agent.
+    **Asbestos fibres reach the pleura and cannot be cleared.** Inhaled fibres —
+    particularly the long, thin amphiboles, crocidolite and amosite — migrate to
+    the pleural surface, where macrophages attempt phagocytosis and fail, a
+    process described as **frustrated phagocytosis**. The result is chronic
+    release of reactive oxygen species, persistent inflammation, and direct
+    mechanical interference with mitosis, over decades. **The fibre is
+    biopersistent: it stays there, so the insult never stops.**
+    **The genomics are dominated by loss rather than gain, and that matters
+    therapeutically.** *BAP1*, *NF2* and *CDKN2A* are the recurrent lesions and
+    all three are **tumour suppressors that are deleted or inactivated.** There is
+    no activating oncogene to inhibit. **You cannot drug the absence of a
+    protein**, which is a large part of why targeted therapy has produced nothing
+    here while it transformed `cml`, `melanoma` and `lung-cancer`.
+    **Germline *BAP1* mutation** causes a tumour predisposition syndrome including
+    mesothelioma, which accounts for a small share and identifies families.
+    **Not all of it is asbestos.** Roughly a fifth of cases have no identified
+    exposure. **Erionite**, a naturally occurring fibrous zeolite, produces
+    extraordinary mesothelioma rates in several Cappadocian villages in Turkey —
+    a natural experiment demonstrating that the mechanism is about fibre geometry
+    and biopersistence rather than about asbestos specifically. Prior therapeutic
+    radiation accounts for a few. **The SV40 hypothesis, once prominent, is no
+    longer supported.**
+  contested: >
+    **THE DISPUTE IS NOT ABOUT THE BIOLOGY. IT IS ABOUT WHETHER ONE FORM OF
+    ASBESTOS CAN BE USED SAFELY, AND IT IS A LIVE COMMERCIAL AND DIPLOMATIC
+    ARGUMENT.**
+    **The position of WHO and IARC** is that all forms of asbestos, including
+    chrysotile, cause mesothelioma and lung cancer, that no safe threshold of
+    exposure has been established, and that the only effective control is to stop
+    using it.
+    **The counter-position, stated fairly**, is advanced by chrysotile-producing
+    countries and industry associations: that chrysotile is a serpentine mineral
+    with markedly lower biopersistence than the amphiboles that caused the
+    historical epidemic, that the epidemiological evidence conflates the two, and
+    that **controlled use** under modern industrial hygiene poses acceptable risk.
+    It is on this basis that chrysotile has repeatedly been blocked from listing
+    in Annex III of the Rotterdam Convention — a listing that would require
+    exporters only to obtain informed consent from importing countries, not to
+    stop trading.
+    **The register takes no position on the mineralogy and records the structure
+    of the disagreement**, because that structure is what its `standing` axis
+    exists for. This is the corpus's **second `disputed` blocker in 449**, and it
+    is the clearest case in the register of a health claim with a commercial
+    interest attached on one side — which is precisely the refrain the `standing`
+    axis was built to test rather than to echo.
+    **One asymmetry worth stating without adjudicating the science:** the
+    consequence of the WHO position being wrong is forgone economic activity, and
+    the consequence of the industry position being wrong is a mesothelioma
+    epidemic that becomes visible in forty years.
+  intervention: >
+    `disease-modifying`, and the honest magnitude is months for the pleural
+    majority.
+    **Systemic therapy** is platinum with pemetrexed, or nivolumab with
+    ipilimumab, each established by a single practice-changing trial seventeen
+    years apart. Bevacizumab added to chemotherapy improves survival modestly in
+    some guidelines. **At progression there is very little.**
+    **Surgery is the part that changed most, and it changed by being withdrawn.**
+    Extrapleural pneumonectomy and extended pleurectomy decortication were both
+    mainstream and both failed to demonstrate a survival benefit in randomised
+    trials — see the 2024 entry. **What remains is that surgery for mesothelioma
+    is palliative or investigational, not curative**, in the pleural cavity.
+    **Peritoneal disease is the exception and it is a genuine one.**
+    Cytoreductive surgery with heated intraperitoneal chemotherapy produces
+    long-term survival in selected patients, which is why one stratum of this
+    record rates `curative` while the record rates `disease-modifying`.
+    **Palliation is a large and under-recorded part of what is actually done**:
+    talc pleurodesis or an indwelling catheter for recurrent effusion, which is
+    the single intervention that most reliably improves how somebody feels;
+    radiotherapy for chest wall pain; and early specialist palliative care.
+  prevention: >
+    `prophylaxis`, and the whole of it is a regulatory decision rather than
+    anything applied to a patient.
+    **Banning asbestos eliminates asbestos-caused mesothelioma.** Around seventy
+    countries have done so — the United Kingdom in 1999, the European Union in
+    2005, Australia in 2003. **The largest producers and consumers have not.**
+    Roughly 1.3 million tonnes are mined annually, principally in Russia and
+    Kazakhstan, and used principally in construction across Asia. On any
+    reasonable projection the global mesothelioma curve has not peaked; **it has
+    peaked in the countries that stopped, and has not begun in most of the
+    countries that did not.**
+    **This is the register's clearest instance of prevention that is not medicine
+    at all** (gaps.md #87, #207). The actors are legislators, trade negotiators,
+    labour inspectorates and building regulators. No clinician is involved at any
+    point, there is no patient, and the effect appears two decades after the act.
+    **The second half is legacy asbestos and it is nobody's clear
+    responsibility.** Material installed before the bans remains in schools,
+    hospitals and housing throughout the countries that banned it, safe while
+    undisturbed and hazardous when disturbed. **The occupational group now at
+    highest risk in those countries is tradespeople** — electricians, plumbers,
+    carpenters — who encounter it unexpectedly during renovation, rather than the
+    manufacturing workforce the regulations were written for.
+  ongoing: >
+    `moderate`, and the illness is short enough that the rating strains.
+    Recurrent pleural effusion is the dominant symptom and its management —
+    drainage, pleurodesis or an indwelling catheter — is the intervention
+    patients notice most. Chest pain from chest wall invasion is often severe and
+    frequently needs specialist input. Breathlessness, weight loss, fatigue.
+    **Early palliative care involvement is standard practice in the centres that
+    have it** and is one of the few things in this record with good evidence
+    behind it.
+    **And there is an administrative burden that exists in no other record.**
+    Because the cause is attributable, patients and families pursue statutory
+    compensation and civil claims: documenting an exposure that occurred forty
+    years ago, tracing employers that may no longer exist, and providing
+    testimony while acutely ill. **It is a real and consuming part of the illness,
+    it has no field anywhere in this schema, and for many families it is the
+    thing that continues after the death.**
+
+holes:
+  - >
+    **The register counts the sentinel and not the harm.** Asbestos kills more
+    people through lung cancer than through mesothelioma, and those deaths are
+    indistinguishable inside `lung-cancer`. Total asbestos-attributable mortality
+    is several times this record's figure and appears nowhere (gaps.md #160).
+  - >
+    **`prevention: prophylaxis` is a trade regulation with a forty-year lag**, and
+    the axis is scoped to what protects a patient. No clinician is involved at any
+    point (gaps.md #87, #207), and the effect appears two decades after the act —
+    a timescale no other record here has.
+  - >
+    **A fourth `moved` entry recording a toll reduction that moves no derived
+    figure** (2024, surgery withdrawn), after three in the two head-and-neck
+    records. `terms` reads `toll.severity`, the severe cases persist, and
+    gaps.md #183 remains unbuilt.
+  - >
+    **`caught_in_time: 0.0` with a known, identifiable high-risk population.**
+    There is nothing worth offering people known to have been exposed, which is
+    an unusual and honest position — and the field records it as a failure rather
+    than as a finding.
+  - >
+    **The compensation process has no home.** A disease with an attributable
+    cause and a legal defendant imposes a documentary and evidential burden on
+    dying patients and their families that is genuinely part of the illness, and
+    the schema has no field for it.
+  - >
+    Burden is `recall` and is a known undercount of unknown size — diagnosis
+    requires histopathology, and incidence is rising fastest where surveillance
+    does not exist. Both survival values are `sourceable`.
+
+blockers:
+  - kind: policy
+    obstacles: []
+    blocks: a mineral that is still mined, sold and installed
+    what: >
+      **THE CAUSE OF FOUR IN FIVE CASES IS STILL IN COMMERCIAL PRODUCTION.**
+      Around 1.3 million tonnes of chrysotile asbestos are mined each year,
+      principally in Russia and Kazakhstan, and used principally in construction
+      materials across South and South-East Asia. Roughly seventy countries have
+      banned all forms. **The largest producers, the largest consumers and
+      several of the fastest-growing construction markets have not.**
+      **Chrysotile has repeatedly been blocked from Annex III of the Rotterdam
+      Convention**, which would require exporting countries only to obtain the
+      prior informed consent of importers — a disclosure requirement rather than
+      a prohibition. The blocking has been done by a small number of producing
+      and importing states, and the convention operates by consensus.
+      **THE STANDING IS `disputed` AND THAT IS THE POINT OF RECORDING IT.**
+      This blocker is not agreed to be a blocker. The chrysotile industry and
+      several governments hold that the serpentine mineral is materially less
+      hazardous than the amphiboles that caused the historical epidemic, that its
+      biopersistence is far lower, and that **controlled use** under modern
+      industrial hygiene is acceptable. WHO and IARC hold that all forms cause
+      mesothelioma with no established safe threshold. **The register records
+      that the dispute exists, who holds each position, and that a commercial
+      interest is attached to one of them** — and does not adjudicate the
+      mineralogy.
+      This is the **second `disputed` blocker in 449**, and the register's stated
+      reason for having the field is to test the *"it's solvable but somebody
+      won't allow it"* refrain rather than to echo it. **Here the refrain is
+      substantially true and the counter-argument is real**, which is exactly the
+      case the axis was built for.
+      **And the legacy half is not disputed by anybody.** Asbestos already
+      installed in buildings across every country that used it is a continuing
+      exposure hazard during renovation and demolition, it is nobody's clear
+      responsibility, and it is why tradespeople are now the highest-risk
+      occupational group in banned-asbestos countries.
+    who_could: [legislator, government, regulator, nonprofit, health-system]
+    scale: 1.0e10
+    standing: disputed
+    src: recall
+
+  - kind: knowledge
+    obstacles: []
+    blocks: a tumour defined by what it has lost
+    what: >
+      **YOU CANNOT INHIBIT A DELETED GENE, AND THAT IS MOST OF WHY TARGETED
+      THERAPY HAS PRODUCED NOTHING HERE.**
+      The recurrent genomic lesions in mesothelioma are *BAP1*, *NF2* and
+      *CDKN2A* — **all tumour suppressors, all lost rather than activated.**
+      Targeted oncology is built on inhibiting a protein that is doing too much;
+      this tumour is defined by proteins that are absent. `cml`, `melanoma` and
+      `lung-cancer` all had an activating lesion to point a drug at, and this
+      record has the opposite.
+      **The routes being tried are the ones available when the target is a
+      loss**: synthetic lethality — exploiting a second vulnerability created by
+      the first deletion, as PARP inhibition does in BRCA-mutant cancers — and
+      restoring pathway output downstream. Neither has produced a licensed
+      therapy.
+      **Second: nothing predicts who benefits from what.** `predictive: none` in a
+      disease with three treatment options and eighteen months to use them means
+      the choice is made on histology and performance status.
+      **And third, the biology of latency is unexplained.** Forty years between
+      exposure and tumour, with the fibre present throughout — what happens in
+      those decades, and whether there is any interruptible intermediate state, is
+      not known. **If there were, the identifiable exposed population becomes the
+      most tractable prevention target in this register.**
+      `scale: null`.
+    who_could: [academic, sponsor, philanthropy, manufacturer]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    obstacles: []
+    blocks: tissue, a specialist pathologist, and months
+    what: >
+      **THE DIAGNOSIS NEEDS A THORACOSCOPIC BIOPSY AND A PATHOLOGIST WHO HAS SEEN
+      IT BEFORE.**
+      Pleural fluid cytology is frequently insufficient. Distinguishing malignant
+      mesothelioma from **reactive mesothelial hyperplasia** — benign, and
+      morphologically similar — and from metastatic adenocarcinoma requires an
+      immunohistochemical panel and, increasingly, BAP1 and CDKN2A testing.
+      **In a district hospital without thoracic surgery and specialist
+      pathology, this diagnosis is not made.**
+      **Which is why the burden figure is an undercount of unknown size.**
+      Mesothelioma is nearly pathognomonic for asbestos exposure and therefore the
+      sentinel by which asbestos harm is measured — **so a country without the
+      pathology to diagnose it also has no evidence of its own asbestos
+      problem**, and that circularity is doing real work in the policy dispute
+      above.
+      **The delay for individuals is months** against a median survival of
+      eighteen, because breathlessness from an effusion is investigated as
+      infection or heart failure first.
+      **What would help is not a new test so much as pathology capacity and
+      referral pathways** in the countries where incidence is rising — which is
+      unglamorous, cheap relative to the alternatives, and would also produce the
+      surveillance data that the asbestos debate currently lacks.
+    who_could: [health-system, government, academic, nonprofit, patient-org]
+    scale: 5.0e8
+    standing: documented
+    src: recall
+
+  - kind: evidence-incomplete
+    obstacles: [validation-throughput]
+    blocks: a rare cancer that cannot power the trials it needs
+    what: >
+      **THIRTY THOUSAND CASES A YEAR, SCATTERED ACROSS EVERY COUNTRY THAT EVER
+      USED ASBESTOS, AND TWO PRACTICE-CHANGING TRIALS IN TWENTY YEARS.**
+      Pemetrexed in 2003 and combined checkpoint blockade in 2020. Between them,
+      almost nothing succeeded, and the surgical question took two randomised
+      trials across two decades to answer in the negative.
+      **The trial problem is structural.** The disease is uncommon, the population
+      is elderly with occupational lung disease, survival is short enough that
+      accrual competes with attrition, and the histological subtypes behave
+      differently enough that stratification splits an already small sample.
+      **It is `marburg`'s problem with the numbers changed** — not too few
+      patients in one place, but too few anywhere.
+      **The consequence is that mainstream practice ran ahead of evidence for
+      decades and had to be walked back.** Radical surgery was standard in
+      specialist centres, believed in, and offered to patients, and it took until
+      2024 to establish that it should not be. **That is the system correcting
+      itself and it is also thousands of major operations that should not have
+      happened.**
+      **What would change it is what has changed it elsewhere**: international
+      platform trials with shared control arms, which for a disease this rare is
+      not an efficiency but the only way to ask a question at all.
+      **Tagged `validation-throughput` (2026-09-02), and this record is the floor
+      face of that obstacle rather than the volume one.** Everywhere else the
+      complaint is that there are more candidates than capacity to test them.
+      Here the gate is not too narrow — **it is too wide.** The minimum viable
+      trial is larger than the disease, and no budget changes that, because the
+      constraint is how many people have the illness rather than how much anyone
+      is willing to spend on them.
+      What follows is the reason this record keeps arriving at single-arm studies
+      against historical controls, which is the evidentiary standard four
+      withdrawn drugs in this register are a warning about. **The obstacle's two
+      faces want opposite things from a regulator and this record is one of
+      them.**
+    who_could: [academic, sponsor, regulator, patient-org, philanthropy]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0108
+  rated: 2026-08-28
+  by: [claude, jeremy]

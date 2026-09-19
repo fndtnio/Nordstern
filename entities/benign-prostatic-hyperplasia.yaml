@@ -1,0 +1,402 @@
+slug: benign-prostatic-hyperplasia
+id: FND-D-0138
+name: Benign prostatic hyperplasia
+also: [BPH, benign prostatic enlargement, prostatism]
+common: enlarged prostate
+mondo: unresolved
+kind: disease
+residual: false
+contested: false
+
+# THE FIRST OF THREE RECORDS ADDED TO TEST AN OBSTACLE RATHER THAN TO FILL A GAP
+# IN THE DISEASE LIST, AND THAT PROVENANCE IS DECLARED HERE BECAUSE IT AFFECTS
+# HOW THE CITATION BELOW SHOULD BE READ.
+#
+# `growth-control` (FND-O-0015) was written on 2026-09-02 and its own holes said
+# the register had no benign overgrowths — no BPH, no fibroids, no keloid — and
+# that those were the records that would test it honestly, because in cancer
+# growth control is one of several things wrong and its contribution cannot be
+# isolated. This record, `uterine-fibroids` and `keloid` were written the same
+# day in response. **They are not independent evidence for that obstacle and the
+# obstacle's holes now say so.**
+#
+# What they ARE is the register's cleanest statement of a shape it had been
+# missing entirely: a tissue grows, will not stop, kills nobody, and the only
+# reliable treatment is to cut out what grew. Every man who lives long enough
+# gets this one.
+
+burden:
+  prevalence:
+    value: 1.0e8
+    units: >
+      men with lower urinary tract symptoms attributable to prostatic
+      enlargement at a level that warrants treatment — a reasoned estimate.
+      **The denominator problem is the record**: histological BPH is present in
+      roughly half of men in their sixties and in eighty to ninety percent of men
+      over eighty, which makes the *tissue* change close to universal, while the
+      *disease* — bothersome obstruction — affects a minority of them. Quoting
+      the histological figure would make this the largest record in the register
+      and would be describing ageing rather than illness
+    src: reasoning
+  note: >
+    **`deaths` IS ABSENT RATHER THAN ZERO, AND THE DISTINCTION MATTERS MORE HERE
+    THAN IN THE OTHER NON-MORTALITY RECORDS.** Untreated chronic retention causes
+    obstructive uropathy and renal failure, and that route is not hypothetical —
+    it is how the condition ended lives before transurethral resection, and it
+    still does where surgery is not reachable. Those deaths are attributed to
+    renal failure, so they are invisible here, and the register has no way to
+    carry a death caused by an untreated benign condition.
+    No `ylds` field, on the same rule as `clubfoot`: a YLD is a prevalence
+    multiplied by a published disability weight, and a recalled YLD is two
+    guesses multiplied. The field is `sourceable` and is left absent until
+    somebody sources it against GBD.
+
+axes:
+  mechanism: partial
+  intervention: curative
+  prevention: none
+  ongoing: moderate
+  efficacy:
+    value: 0.82
+    units: >
+      fraction-of-treated men achieving durable meaningful relief of obstructive
+      symptoms with the best available intervention — a reasoned estimate
+      weighted toward surgical outcomes, which are far better than medical ones.
+      Transurethral resection and holmium enucleation relieve obstruction
+      durably in the large majority; alpha-blockers and 5-alpha-reductase
+      inhibitors produce modest symptom score improvements and do not resolve
+      obstruction. **The residual is not a mystery**: a substantial part of it is
+      men whose symptoms were never obstructive in the first place — see
+      `measurement`
+    src: reasoning
+  access:
+    value: 0.6
+    units: >
+      fraction-of-affected men reaching an intervention appropriate to their
+      disease — a reasoned estimate that splits sharply. Generic alpha-blockers
+      and finasteride are cheap and near-universally available. **Surgery is
+      not**: transurethral resection needs a theatre, an endoscopic stack, an
+      anaesthetist and a trained urologist, and the global distribution of those
+      is the same distribution that limits every other elective operation in
+      this register
+    src: reasoning
+
+measurement:
+  diagnostic: complaint
+  prognostic: partial
+  predictive: partial
+  witness: >
+    **`complaint` FOR A CONDITION WITH A VISIBLE, MEASURABLE, PALPABLE
+    ANATOMICAL LESION, AND THE PARADOX IS THE POINT.**
+    The prostate can be felt, imaged and measured to the millilitre. None of
+    that diagnoses the disease. **Prostate volume correlates poorly with symptoms
+    and poorly with obstruction**: men with very large glands are often
+    untroubled, men with small ones are often severely obstructed, and the
+    threshold for treatment is set by a symptom questionnaire — the
+    International Prostate Symptom Score — which is a patient's own account of
+    how often they get up at night. A man with a big prostate and no symptoms
+    does not have this disease. A man with symptoms and a small prostate does.
+    So the objective test exists, is easy, and measures the wrong thing. Compare
+    `me-cfs` or `low-back-pain`, where `complaint` records that nothing objective
+    exists at all. **This is the opposite failure and the register cannot
+    currently tell them apart** — see `holes`.
+    Objective testing does real work in *exclusion* — ruling out prostate cancer,
+    urethral stricture, bladder stone and neurogenic bladder — which is why this
+    is not rated worse than it is.
+    PROGNOSTIC is `partial`. Baseline prostate volume and PSA do stratify the
+    risk of progressing to acute urinary retention or surgery, which is genuine
+    prognostic information and better than most of this register has. It is
+    weak, it is population-level, and it does not tell an individual man whether
+    he will end up in retention.
+    PREDICTIVE is `partial` **and it is the most interesting rating in the
+    record.** A test exists that identifies the men who will not benefit from
+    surgery: pressure-flow urodynamics separates bladder outlet obstruction from
+    detrusor underactivity, and a man with an underactive bladder gets the
+    operation's permanent price and none of its benefit. It is invasive,
+    unpleasant, and rarely performed before routine surgery. **So the failure
+    here is not that medicine cannot tell — it is that medicine does not ask**,
+    which puts this alongside the `diagnosis` blockers elsewhere in the corpus
+    that are a test sitting on a shelf rather than a test that does not exist.
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    **RETROGRADE EJACULATION IN ROUGHLY TWO THIRDS TO THREE QUARTERS OF MEN
+    AFTER TRANSURETHRAL RESECTION, AND IT IS PERMANENT.** The bladder neck is
+    resected as part of relieving the obstruction, so semen passes backwards into
+    the bladder. It does not impair erection or orgasm and it does end fertility
+    by the normal route. It is near-universal, it is not reversible, and it is
+    the single commonest permanent consequence of any elective operation in this
+    register.
+    Erectile dysfunction attributable to the procedure is uncommon and disputed.
+    Stress incontinence from sphincter injury is uncommon — on the order of one
+    to two percent — and when it happens it is life-altering. Bleeding requiring
+    transfusion, urethral stricture and bladder neck contracture all occur at low
+    rates. TUR syndrome — dilutional hyponatraemia from irrigation fluid
+    absorption — was a genuine hazard of monopolar resection and has largely
+    disappeared with bipolar and saline systems, which is a small clean instance
+    of a toll falling for an engineering reason.
+    **THE DRUGS CARRY THEIR OWN AND THEY ARE NOT SMALL.** 5-alpha-reductase
+    inhibitors cause sexual dysfunction in a minority and are the subject of a
+    contested claim of persistent symptoms after stopping. Alpha-blockers cause
+    orthostatic hypotension — **falls in exactly the age group taking them** —
+    and intraoperative floppy iris syndrome, which complicates the cataract
+    operation many of the same men will need. That last one is the register's
+    tidiest example of a treatment for one entry making the treatment for another
+    entry harder, and nothing in the schema connects them.
+  incidence:
+    value: 0.7
+    units: >
+      fraction-of-surgically-treated left with a permanent consequence, almost
+      entirely retrograde ejaculation — a reasoned estimate. Newer
+      ejaculation-preserving procedures reduce it substantially and are not yet
+      the majority of what is done
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    **A BLADDER OBSTRUCTED FOR LONG ENOUGH DOES NOT RECOVER WHEN THE OBSTRUCTION
+    IS RELIEVED, AND THIS IS THE PART OF THE DISEASE NOBODY DISCUSSES.**
+    Sustained outflow resistance drives detrusor hypertrophy, then trabeculation
+    and diverticula, then decompensation into a large, thin, poorly contractile
+    bladder. That change is structural and it is permanent. A man who reaches
+    surgery at that stage has the obstruction removed and is left emptying by
+    catheter, sometimes for the rest of his life. Upper tract dilatation and
+    impaired renal function from long-standing high-pressure retention are on the
+    same road and are equally not reversed by fixing the prostate.
+    **THIS IS WHY THE RECORD HAS A `window`.** The operation is a good operation
+    performed on the wrong organ if the bladder has already gone, and no test in
+    routine use says how close a given bladder is to that point.
+  incidence:
+    value: 0.12
+    units: >
+      fraction-of-treated left with permanent detrusor dysfunction or upper
+      tract change — a reasoned estimate, and heavily weighted toward men treated
+      late or not at all. In systems with early access it is much lower
+    src: reasoning
+
+window:
+  what: >
+    **A LONG, SILENT, ENTIRELY UNGUARDED WINDOW**, which is the most
+    underappreciated fact in the record. Obstruction develops over years and the
+    bladder compensates for most of them, so the symptoms a man reports track his
+    tolerance rather than his physiology. By the time the complaint is loud
+    enough to reach a urologist, the detrusor may already be failing.
+    Nothing screens for this. There is no equivalent of tonometry in `glaucoma`
+    or retinal examination in `retinopathy-of-prematurity` — no cheap test
+    performed on asymptomatic men to find the ones whose bladders are being
+    damaged. Post-void residual measurement by ultrasound would do much of the
+    job, costs almost nothing, and is not a programme anywhere.
+    **The window closes on the bladder, not on the prostate**, and the whole
+    clinical conversation is about the prostate.
+  closes_on: >
+    detrusor decompensation — irreversible loss of bladder contractility after
+    prolonged high-pressure obstruction, and above it renal impairment from
+    chronic retention; a gradual closure over years rather than a date
+  caught_in_time:
+    value: 0.65
+    units: >
+      fraction-of-affected men reaching treatment while the bladder is still
+      compensated — a reasoned estimate, and it is optimistic for high-income
+      systems and much too high for settings where a man in chronic retention
+      presents for the first time with renal failure
+    src: reasoning
+
+witness:
+  mechanism: >
+    `partial`, and the two halves are as lopsided as `clubfoot`'s.
+    **ESTABLISHED, AND CLEANLY**: the growth is androgen-dependent, and the
+    evidence for that is about as good as causal evidence in this register gets.
+    Men castrated before puberty do not develop BPH. Men with congenital
+    5-alpha-reductase type 2 deficiency, who cannot convert testosterone to
+    dihydrotestosterone, do not develop it either — and blocking that same enzyme
+    pharmacologically shrinks the gland by roughly a fifth to a quarter. **A
+    natural experiment, a drug built on it, and the drug does what the experiment
+    predicts.** The hyperplasia is stromal as much as epithelial and arises
+    specifically in the transition zone around the urethra, which is why a
+    modest volume increase produces a large functional effect.
+    **THE HOLE IS THE WHOLE QUESTION.** Androgen is permissive, not causal —
+    testosterone levels fall with age while the prostate grows, so the hormone
+    explains why the tissue *can* grow and not why it *does*. Nobody can say why
+    the transition zone and not the peripheral one, why growth begins in the
+    fifth decade, why it continues in some men and plateaus in others, or **why
+    it does not stop.** Stromal-epithelial signalling, chronic inflammation and
+    a reawakening of embryonic inductive programmes are all proposed and none is
+    established.
+    **This is the register's clearest instance of a growth that will not stop in
+    a tissue that is not malignant**, which is why it cites `growth-control`
+    below.
+  intervention: >
+    `curative`, and the witness has to say what is cured, because it is not the
+    disease. **The hyperplasia is not treated at all; the obstructing tissue is
+    removed.** Transurethral resection, holmium laser enucleation and the newer
+    minimally invasive procedures all take away what grew, and for the large
+    majority of men that ends the problem permanently — retreatment rates at ten
+    years are in the single figures to low teens. The gland is still hyperplastic
+    and the man is still cured, which is a distinction the ladder cannot make.
+    The precedent is `cataract`, also rated `curative` and also a matter of
+    removing an organ's contents rather than reversing a process.
+    Medical therapy sits two rungs down and is what most men actually get:
+    alpha-blockers relax smooth muscle and act within days without changing the
+    disease; 5-alpha-reductase inhibitors shrink the gland over months and reduce
+    progression to retention and surgery, which is `disease-modifying` behaviour.
+    Combination therapy is better than either. **None of it is close to what an
+    operation achieves**, and the axis records the best available.
+  prevention: >
+    `none`, deliberately, and it is worth defending because a case can be made
+    for `risk-reduction`. Long-term 5-alpha-reductase inhibition reduces the
+    incidence of acute urinary retention and of surgery. But that is treatment of
+    an established process in men who already have the disease, not prevention of
+    the disease in men who do not, and the register's rule is that prevention
+    means the entity does not occur.
+    **Nothing prevents this.** No modifiable exposure has been shown to stop the
+    prostate growing. Metabolic syndrome and obesity are associated with more
+    severe disease and are worth treating for reasons found across a dozen
+    records here; neither is a prevention strategy for this one.
+  ongoing: >
+    `moderate`, and the rating hides the same shape `clubfoot` complained about,
+    running the other way. **The two treatment paths have opposite time
+    profiles**: a man who has an operation has an intense fortnight and then
+    nothing at all for the rest of his life, while a man on medical therapy takes
+    a tablet every day, indefinitely, with sexual side effects and a fall risk,
+    and the disease continues underneath it.
+    Most men are on the second path. `moderate` is the average of a `none` and a
+    `high`, and the axis cannot say that the choice between them is the main
+    decision in the disease.
+
+holes:
+  - >
+    **THE PREVALENCE FIGURE IS A JUDGEMENT ABOUT WHERE A DISEASE STARTS, NOT A
+    MEASUREMENT**, and it is the softest number in the record. Histological BPH
+    is close to universal in old men; symptomatic obstruction is not. Everything
+    downstream — how large this record looks, what `access` is a fraction of —
+    moves with a threshold that was chosen rather than found. State it as
+    reasoning and do not quote it.
+  - >
+    **`diagnostic: complaint` MEANS TWO OPPOSITE THINGS IN THIS REGISTER AND THE
+    SCHEMA CANNOT SEPARATE THEM.** In `me-cfs` and `low-back-pain` it records
+    that no objective measure exists. Here it records that objective measures
+    exist, are trivial to perform, and **do not correspond to the disease.** A
+    field that means *nothing to measure* and *measuring the wrong thing* with
+    one value is under-specified, and this is the second instance — the first
+    being the same complaint in the endometriosis record about a test that got
+    less invasive. Candidate for `gaps.md`.
+  - >
+    **THE TOLL IS RATED FOR AN OPERATION MOST MEN IN THE WORLD WILL NEVER
+    RECEIVE.** Retrograde ejaculation in seventy percent is a fact about
+    transurethral resection, and `access: 0.6` says a large minority never reach
+    any procedure. The register weights `toll` by what the best available
+    treatment costs, so a record's toll can describe a smaller population than
+    its efficacy does, and nothing flags that.
+  - >
+    **THE AGE AT WHICH THE PERMANENT PRICE IS PAID IS NOT RECORDED AND CHANGES
+    ITS MEANING COMPLETELY.** Retrograde ejaculation at seventy-eight and at
+    fifty-two are not the same event. `uterine-fibroids` records the same problem
+    much more sharply — hysterectomy before and after a completed family — and
+    the two records together are the argument that `toll.severity` needs a
+    life-stage qualifier. Logged in both.
+  - >
+    **THE CITATION OF `growth-control` IS NOT INDEPENDENT EVIDENCE FOR THAT
+    OBSTACLE.** This record was written on the same day, by the same author, in
+    direct response to that obstacle's holes naming BPH as a missing test case.
+    The blocker below is a genuine reading of the disease and it is also exactly
+    what somebody looking for confirmation would write. The obstacle's own holes
+    now record this.
+  - >
+    Written from model recall. The androgen mechanism, the natural experiments,
+    the direction of the surgical outcomes and the existence of the detrusor
+    decompensation problem are the parts most likely right; every fraction is
+    the part most likely wrong.
+
+blockers:
+  - kind: knowledge
+    obstacles: [growth-control]
+    blocks: why the gland grows at all, and why it does not stop
+    what: >
+      **ANDROGEN EXPLAINS WHY THE TISSUE CAN GROW AND NOTHING EXPLAINS WHY IT
+      DOES.** Testosterone falls with age and the prostate grows; the hormonal
+      account is permissive and the trigger is unidentified. Nobody can say why
+      growth starts in the fifth decade, why it is confined to the transition
+      zone, why it continues indefinitely in some men, or what a normal prostate
+      is measuring when it holds its size for fifty years beforehand.
+      **THE THERAPEUTIC CONSEQUENCE IS THAT EVERY TREATMENT IS SUBTRACTIVE.**
+      The best drug removes a fifth of the volume by withdrawing a permissive
+      signal. The best operation cuts out what grew. **Nothing tells the tissue
+      to stop**, because nobody knows what it would be told. A drug that restored
+      the setpoint would replace an operation whose permanent price two thirds of
+      recipients pay.
+      Tagged `growth-control` (FND-O-0015) — the largest benign overgrowth in
+      medicine, in a tissue nobody wants removed. `scale: null`.
+    who_could: [academic, sponsor]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    blocks: a test that exists, predicts failure, and is not done
+    what: >
+      **PRESSURE-FLOW URODYNAMICS DISTINGUISHES THE MEN WHOSE SYMPTOMS ARE
+      OBSTRUCTION FROM THE MEN WHOSE BLADDERS ARE SIMPLY WEAK**, and only the
+      first group benefits from surgery. The second group receives the operation,
+      keeps the symptoms, and acquires the permanent price. The test is invasive
+      and uncomfortable, adds cost and a clinic visit, and trial evidence for
+      routine use before surgery has been equivocal enough to leave practice
+      unchanged.
+      Recorded as `diagnosis` rather than `knowledge` on the corpus's own rule:
+      **this is a test sitting on a shelf, not a test that does not exist**, and
+      `crud.md` argues that most of this register's diagnosis blockers are that
+      shape. What makes this one unusual is that the cost of not doing it is not
+      a missed diagnosis but an unnecessary permanent injury.
+      **And nothing at all measures the bladder before it fails** — see the
+      window. Post-void residual by ultrasound is cheap, non-invasive and not
+      systematically done anywhere.
+    who_could: [health-system, academic, payer]
+    scale: 2.0e8
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: an operating theatre and a urologist
+    what: >
+      The definitive treatment is an endoscopic operation. It needs a theatre, an
+      anaesthetist, a resection or laser system, and a surgeon trained on it —
+      the same stack that limits `cataract` surgery and every other elective
+      procedure in the register, competing for the same rooms.
+      Where it is out of reach the disease does not become mild; it becomes
+      chronic retention managed with an indwelling catheter, or not managed.
+      **The endpoint of untreated obstruction is renal failure**, and it is
+      recorded nowhere in this file because those deaths are counted against the
+      kidney.
+    who_could: [health-system, government, philanthropy]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+  - kind: policy
+    blocks: telling men what the operation costs before they consent to it
+    what: >
+      **A PERMANENT, NEAR-CERTAIN SEXUAL CONSEQUENCE OF AN ELECTIVE OPERATION FOR
+      A BENIGN CONDITION IS FREQUENTLY NOT DISCUSSED IN TERMS THE PATIENT
+      UNDERSTANDS.** Retrograde ejaculation is listed on consent forms and is
+      often described in language that does not convey what will happen.
+      Ejaculation-preserving techniques exist, have somewhat lower symptom
+      efficacy, and are not routinely offered as a trade-off.
+      Filed as `policy` rather than `adherence` because the fix is a standard of
+      consent and a service that offers alternatives, not a change in patient
+      behaviour. Included because the register keeps finding that **the toll is
+      the part of a treatment nobody is accountable for**, and this is a case
+      where the information exists and simply is not transmitted.
+      `standing: alleged` — the practice varies widely and nothing here measures
+      it.
+    who_could: [health-system, regulator, patient-org]
+    scale: 1.0e7
+    standing: alleged
+    src: recall
+
+assertion:
+  id: FND-A-0139
+  rated: 2026-09-02
+  by: [claude, jeremy]

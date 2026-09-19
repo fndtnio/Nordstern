@@ -1,0 +1,5810 @@
+{
+ "checked": "2026-09-06",
+ "release": "2026-09-01",
+ "terms": {
+  "MONDO:0000240": {
+   "definition": "An aspergillosis that is a serious fungal infection of the lung with pneumonia caused by Aspergillus, which spreads to other parts of the body through bloodstream in patients with acute leukemia and recipients of tissue transplants. Clinical symptoms include pulmonary nodules and hemorrhage.",
+   "id": "MONDO:0000240",
+   "label": "invasive aspergillosis",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {},
+   "xrefs": {
+    "DOID": [
+     "0050073"
+    ],
+    "GARD": [
+     "0022735"
+    ],
+    "MEDGEN": [
+     "922866"
+    ],
+    "SCTID": [
+     "721798004"
+    ],
+    "UMLS": [
+     "C0238013"
+    ],
+    "icd11.foundation": [
+     "1314810340"
+    ]
+   }
+  },
+  "MONDO:0000327": {
+   "definition": "A cutaneous infection caused by Mycobacterium ulcerans. It presents with painless nodular swelling of the skin, leading to the formation of necrotizing ulcers.",
+   "id": "MONDO:0000327",
+   "label": "Buruli ulcer disease",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "Buruli ulcer": "hasExactSynonym",
+    "Mycobacterium ulcerans caused disease or disorder": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "0050456"
+    ],
+    "GARD": [
+     "0009520"
+    ],
+    "MEDGEN": [
+     "43206"
+    ],
+    "MESH": [
+     "D054312"
+    ],
+    "NCIT": [
+     "C84604"
+    ],
+    "SCTID": [
+     "15845006"
+    ],
+    "UMLS": [
+     "C0085568"
+    ],
+    "icd11.foundation": [
+     "1974989140"
+    ]
+   }
+  },
+  "MONDO:0000405": {
+   "definition": "A malignant neoplasm involving the anal canal",
+   "id": "MONDO:0000405",
+   "label": "anal canal cancer",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "anal canal cancer": "hasExactSynonym",
+    "cancer of anal canal": "hasExactSynonym",
+    "malignant anal canal neoplasm": "hasExactSynonym",
+    "malignant neoplasm of anal canal": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "0050688"
+    ],
+    "ICD10CM": [
+     "C21.1"
+    ],
+    "ICD9": [
+     "154.2"
+    ],
+    "MEDGEN": [
+     "509296"
+    ],
+    "SCTID": [
+     "363352004"
+    ],
+    "UMLS": [
+     "C0153445"
+    ],
+    "icd11.foundation": [
+     "655574575"
+    ]
+   }
+  },
+  "MONDO:0000870": {
+   "definition": "An acute lymphoblastic leukemia occurring during childhood. The majority of cases are B-acute lymphoblastic leukemias. Approximately 15% of the cases are T-acute lymphoblastic leukemias.",
+   "id": "MONDO:0000870",
+   "label": "childhood acute lymphoblastic leukemia",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "acute lymphoblastic leukaemia (ALL)": "hasBroadSynonym",
+    "childhood ALL": "hasExactSynonym",
+    "childhood acute lymphoblastic leukemia": "hasExactSynonym",
+    "childhood acute lymphocytic leukaemia": "hasExactSynonym",
+    "childhood acute lymphocytic leukemia": "hasExactSynonym",
+    "childhood acute lymphogenous leukaemia": "hasExactSynonym",
+    "childhood acute lymphogenous leukemia": "hasExactSynonym",
+    "childhood acute lymphoid leukaemia": "hasExactSynonym",
+    "childhood acute lymphoid leukemia": "hasExactSynonym",
+    "childhood precursor lymphoblastic leukaemia": "hasExactSynonym",
+    "childhood precursor lymphoblastic leukemia": "hasExactSynonym",
+    "paediatric ALL": "hasExactSynonym",
+    "paediatric acute lymphoblastic leukaemia": "hasExactSynonym",
+    "paediatric acute lymphocytic leukaemia": "hasExactSynonym",
+    "paediatric acute lymphocytic leukaemia (ALL)": "hasExactSynonym",
+    "paediatric acute lymphogenous leukaemia": "hasExactSynonym",
+    "paediatric acute lymphoid leukaemia": "hasExactSynonym",
+    "pediatric ALL": "hasExactSynonym",
+    "pediatric acute lymphoblastic leukemia": "hasExactSynonym",
+    "pediatric acute lymphocytic leukemia": "hasExactSynonym",
+    "pediatric acute lymphocytic leukemia (ALL)": "hasExactSynonym",
+    "pediatric acute lymphogenous leukemia": "hasExactSynonym",
+    "pediatric acute lymphoid leukemia": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "0080144"
+    ],
+    "GARD": [
+     "0009240"
+    ],
+    "MEDGEN": [
+     "44122"
+    ],
+    "NCIT": [
+     "C3168"
+    ],
+    "UMLS": [
+     "C0023452"
+    ]
+   }
+  },
+  "MONDO:0001056": {
+   "definition": "A primary or metastatic malignant neoplasm involving the stomach.",
+   "id": "MONDO:0001056",
+   "label": "gastric cancer",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "GC": "hasExactSynonym",
+    "cancer of stomach": "hasExactSynonym",
+    "gastric cancer": "hasExactSynonym",
+    "malignant gastric neoplasm": "hasExactSynonym",
+    "malignant gastric tumor": "hasExactSynonym",
+    "malignant gastric tumour": "hasExactSynonym",
+    "malignant neoplasm of stomach": "hasExactSynonym",
+    "malignant neoplasm of the stomach": "hasExactSynonym",
+    "malignant stomach neoplasm": "hasExactSynonym",
+    "malignant tumor of stomach": "hasExactSynonym",
+    "malignant tumor of the stomach": "hasExactSynonym",
+    "malignant tumour of body of stomach": "hasExactSynonym",
+    "malignant tumour of greater curve of stomach": "hasExactSynonym",
+    "malignant tumour of lesser curve of stomach": "hasExactSynonym",
+    "malignant tumour of stomach": "hasExactSynonym",
+    "malignant tumour of the stomach": "hasExactSynonym",
+    "stomach cancer": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "10534"
+    ],
+    "GARD": [
+     "0007704"
+    ],
+    "ICD10CM": [
+     "C16"
+    ],
+    "ICD9": [
+     "151",
+     "151.4",
+     "151.5",
+     "151.6",
+     "151.9"
+    ],
+    "MEDGEN": [
+     "44264"
+    ],
+    "NCIT": [
+     "C9331"
+    ],
+    "OMIM": [
+     "613659"
+    ],
+    "UMLS": [
+     "C0024623"
+    ],
+    "icd11.foundation": [
+     "1397617262"
+    ]
+   }
+  },
+  "MONDO:0001187": {
+   "definition": "A primary or metastatic malignant neoplasm involving the bladder.",
+   "id": "MONDO:0001187",
+   "label": "urinary bladder cancer",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "cancer of urinary bladder": "hasExactSynonym",
+    "malignant bladder neoplasm": "hasExactSynonym",
+    "malignant bladder tumor": "hasExactSynonym",
+    "malignant bladder tumour": "hasExactSynonym",
+    "malignant neoplasm of bladder": "hasExactSynonym",
+    "malignant neoplasm of the bladder": "hasExactSynonym",
+    "malignant neoplasm of the urinary bladder": "hasExactSynonym",
+    "malignant neoplasm of urinary bladder": "hasExactSynonym",
+    "malignant neoplasm, bladder": "hasExactSynonym",
+    "malignant neoplasm, urinary bladder": "hasExactSynonym",
+    "malignant tumor of bladder": "hasExactSynonym",
+    "malignant tumor of the bladder": "hasExactSynonym",
+    "malignant tumor of the urinary bladder": "hasExactSynonym",
+    "malignant tumor of urinary bladder": "hasExactSynonym",
+    "malignant tumor, urinary bladder": "hasExactSynonym",
+    "malignant tumour of bladder": "hasExactSynonym",
+    "malignant tumour of the bladder": "hasExactSynonym",
+    "malignant tumour of the urinary bladder": "hasExactSynonym",
+    "malignant tumour of urinary bladder": "hasExactSynonym",
+    "malignant urinary bladder neoplasm": "hasExactSynonym",
+    "malignant urinary bladder tumor": "hasExactSynonym",
+    "malignant urinary bladder tumour": "hasExactSynonym",
+    "tumour of the bladder": "hasBroadSynonym",
+    "urinary bladder cancer": "hasExactSynonym",
+    "urinary bladder malignant neoplasm": "hasExactSynonym",
+    "urinary bladder malignant tumor": "hasExactSynonym",
+    "urinary bladder malignant tumour": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "11054"
+    ],
+    "ICD10CM": [
+     "C67"
+    ],
+    "ICD9": [
+     "188",
+     "188.8",
+     "188.9"
+    ],
+    "MEDGEN": [
+     "14150"
+    ],
+    "NCIT": [
+     "C9334"
+    ],
+    "OMIM": [
+     "109800"
+    ],
+    "Orphanet": [
+     "157980"
+    ],
+    "SCTID": [
+     "399326009"
+    ],
+    "UMLS": [
+     "C0005684"
+    ],
+    "icd11.foundation": [
+     "1244512758"
+    ]
+   }
+  },
+  "MONDO:0001249": {
+   "definition": "A chronic infection of the conjunctiva and cornea caused by chlamydia trachomatis.",
+   "id": "MONDO:0001249",
+   "label": "trachoma",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {},
+   "xrefs": {
+    "DOID": [
+     "11265"
+    ],
+    "ICD10CM": [
+     "A71"
+    ],
+    "ICD10WHO": [
+     "A71"
+    ],
+    "ICD9": [
+     "076",
+     "076.0",
+     "076.1",
+     "076.9"
+    ],
+    "MEDGEN": [
+     "52801"
+    ],
+    "MESH": [
+     "D014141"
+    ],
+    "SCTID": [
+     "2576002"
+    ],
+    "UMLS": [
+     "C0040592"
+    ],
+    "icd11.foundation": [
+     "372424530"
+    ]
+   }
+  },
+  "MONDO:0001325": {
+   "definition": "A primary or metastatic malignant neoplasm that affects the penis. Representative examples include penile carcinoma and penile sarcoma.",
+   "id": "MONDO:0001325",
+   "label": "penile cancer",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "cancer of penis": "hasExactSynonym",
+    "malignant neoplasm of penis": "hasExactSynonym",
+    "malignant neoplasm of the penis": "hasExactSynonym",
+    "malignant penile neoplasm": "hasExactSynonym",
+    "malignant penile tumor": "hasExactSynonym",
+    "malignant penile tumour": "hasExactSynonym",
+    "malignant penis neoplasm": "hasExactSynonym",
+    "malignant tumor of penis": "hasExactSynonym",
+    "malignant tumor of the penis": "hasExactSynonym",
+    "malignant tumour of penis": "hasExactSynonym",
+    "malignant tumour of the penis": "hasExactSynonym",
+    "penile cancer": "hasExactSynonym",
+    "penis cancer": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "11615"
+    ],
+    "GARD": [
+     "0009366"
+    ],
+    "ICD10CM": [
+     "C60"
+    ],
+    "ICD9": [
+     "187.3",
+     "187.4"
+    ],
+    "MEDGEN": [
+     "102277"
+    ],
+    "NCIT": [
+     "C7547"
+    ],
+    "Orphanet": [
+     "398043"
+    ],
+    "SCTID": [
+     "363516004"
+    ],
+    "UMLS": [
+     "C0153601"
+    ],
+    "icd11.foundation": [
+     "969101922"
+    ]
+   }
+  },
+  "MONDO:0001402": {
+   "definition": "A primary or metastatic malignant neoplasm involving the vagina. Representative examples include carcinomas and sarcomas.",
+   "id": "MONDO:0001402",
+   "label": "vaginal cancer",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "cancer of vagina": "hasExactSynonym",
+    "malignant neoplasm of the vagina": "hasExactSynonym",
+    "malignant neoplasm of vagina": "hasExactSynonym",
+    "malignant tumor of the vagina": "hasExactSynonym",
+    "malignant tumor of vagina": "hasExactSynonym",
+    "malignant tumour of the vagina": "hasExactSynonym",
+    "malignant tumour of vagina": "hasExactSynonym",
+    "malignant vagina neoplasm": "hasExactSynonym",
+    "malignant vagina tumor": "hasExactSynonym",
+    "malignant vagina tumour": "hasExactSynonym",
+    "malignant vaginal neoplasm": "hasExactSynonym",
+    "malignant vaginal tumor": "hasExactSynonym",
+    "malignant vaginal tumour": "hasExactSynonym",
+    "vagina cancer": "hasExactSynonym",
+    "vaginal tumour": "hasBroadSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "119"
+    ],
+    "ICD10CM": [
+     "C52"
+    ],
+    "ICD9": [
+     "184.0"
+    ],
+    "MEDGEN": [
+     "12040"
+    ],
+    "MESH": [
+     "D014625"
+    ],
+    "NCIT": [
+     "C7410"
+    ],
+    "SCTID": [
+     "363445000"
+    ],
+    "UMLS": [
+     "C0042237"
+    ],
+    "icd11.foundation": [
+     "798353632"
+    ]
+   }
+  },
+  "MONDO:0001444": {
+   "definition": "A parasitic infection caused by Trypanosoma cruzi. It is transmitted by insect bites. It is characterized by an acute and chronic phase; in the acute phase patients may have fever, malaise, and swelling at the site of the insect bite. In the chronic phase patients develop hepatosplenomegaly, lymphadenopathy, cardiomyopathy and arrhythmias.",
+   "id": "MONDO:0001444",
+   "label": "Chagas disease",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "Chagas disease": "hasExactSynonym",
+    "Chagas' disease": "hasExactSynonym",
+    "Trypanosoma cruzi caused disease or disorder": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "12140"
+    ],
+    "GARD": [
+     "0018795"
+    ],
+    "ICD10CM": [
+     "B57"
+    ],
+    "ICD10WHO": [
+     "B57"
+    ],
+    "ICD9": [
+     "086.2"
+    ],
+    "MEDGEN": [
+     "11935"
+    ],
+    "MESH": [
+     "D014355"
+    ],
+    "MedDRA": [
+     "10001935"
+    ],
+    "NCIT": [
+     "C84629"
+    ],
+    "Orphanet": [
+     "3386"
+    ],
+    "SCTID": [
+     "77506005"
+    ],
+    "UMLS": [
+     "C0041234"
+    ],
+    "icd11.foundation": [
+     "1365585570"
+    ]
+   }
+  },
+  "MONDO:0001528": {
+   "definition": "A primary or metastatic malignant neoplasm involving the vulva.",
+   "id": "MONDO:0001528",
+   "label": "vulva cancer",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "cancer of mammalian vulva": "hasExactSynonym",
+    "malignant mammalian vulva neoplasm": "hasExactSynonym",
+    "malignant neoplasm of mammalian vulva": "hasExactSynonym",
+    "malignant neoplasm of the vulva": "hasExactSynonym",
+    "malignant neoplasm of vulva": "hasExactSynonym",
+    "malignant neoplasm of vulva, unspecified": "hasExactSynonym",
+    "malignant tumor of the vulva": "hasExactSynonym",
+    "malignant tumor of vulva": "hasExactSynonym",
+    "malignant tumour of the vulva": "hasExactSynonym",
+    "malignant tumour of vulva": "hasExactSynonym",
+    "malignant vulva neoplasm": "hasExactSynonym",
+    "malignant vulva tumor": "hasExactSynonym",
+    "malignant vulva tumour": "hasExactSynonym",
+    "malignant vulvar neoplasm": "hasExactSynonym",
+    "malignant vulvar tumor": "hasExactSynonym",
+    "malignant vulvar tumour": "hasExactSynonym",
+    "mammalian vulva cancer": "hasExactSynonym",
+    "vulval cancer": "hasExactSynonym",
+    "vulvar cancer": "hasExactSynonym",
+    "vulvar tumour": "hasBroadSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "1245"
+    ],
+    "GARD": [
+     "0027581"
+    ],
+    "ICD10CM": [
+     "C51"
+    ],
+    "ICD9": [
+     "184.4"
+    ],
+    "MEDGEN": [
+     "91196"
+    ],
+    "MESH": [
+     "D014846"
+    ],
+    "NCIT": [
+     "C7502"
+    ],
+    "SCTID": [
+     "363367000"
+    ],
+    "UMLS": [
+     "C0375071"
+    ],
+    "icd11.foundation": [
+     "1530443809"
+    ]
+   }
+  },
+  "MONDO:0001673": {
+   "definition": "The condition of having at least three loose or liquid bowel movements each day.",
+   "id": "MONDO:0001673",
+   "label": "diarrheal disease",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "diarrhea": "hasExactSynonym",
+    "diarrheal disease": "hasExactSynonym",
+    "diarrhoea": "hasExactSynonym",
+    "diarrhoea of presumed infectious origin": "hasRelatedSynonym",
+    "frequent stools": "hasExactSynonym",
+    "loose stools": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "13250"
+    ],
+    "HP": [
+     "0002014"
+    ],
+    "ICD9": [
+     "009.2"
+    ],
+    "MEDGEN": [
+     "713159"
+    ],
+    "MESH": [
+     "D003967"
+    ],
+    "NCIT": [
+     "C2987"
+    ],
+    "SCTID": [
+     "128333008"
+    ],
+    "UMLS": [
+     "C1290807"
+    ],
+    "icd11.foundation": [
+     "116759077"
+    ]
+   }
+  },
+  "MONDO:0002009": {
+   "definition": "An episode of depression lasting two or more weeks without an intervening episode of mania.",
+   "id": "MONDO:0002009",
+   "label": "major depressive disorder",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "major depression": "hasExactSynonym",
+    "major depressive disorder": "hasExactSynonym",
+    "unipolar depression": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "1470"
+    ],
+    "EFO": [
+     "0003761"
+    ],
+    "ICD9": [
+     "296.2",
+     "296.20",
+     "296.3",
+     "296.30"
+    ],
+    "MEDGEN": [
+     "266123"
+    ],
+    "MESH": [
+     "D003865"
+    ],
+    "MFOMD": [
+     "0000143"
+    ],
+    "NCIT": [
+     "C35094"
+    ],
+    "OMIM": [
+     "608516"
+    ],
+    "SCTID": [
+     "370143000"
+    ],
+    "UMLS": [
+     "C1269683"
+    ]
+   }
+  },
+  "MONDO:0002108": {
+   "definition": "A malignant neoplasm involving the thyroid gland",
+   "id": "MONDO:0002108",
+   "label": "thyroid cancer",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "cancer of thyroid gland": "hasExactSynonym",
+    "malignant neoplasm of the thyroid": "hasExactSynonym",
+    "malignant neoplasm of the thyroid gland": "hasExactSynonym",
+    "malignant neoplasm of thyroid": "hasExactSynonym",
+    "malignant neoplasm of thyroid gland": "hasExactSynonym",
+    "malignant thyroid gland neoplasm": "hasExactSynonym",
+    "malignant thyroid gland tumor": "hasExactSynonym",
+    "malignant thyroid gland tumour": "hasExactSynonym",
+    "malignant thyroid neoplasm": "hasExactSynonym",
+    "malignant thyroid tumor": "hasExactSynonym",
+    "malignant thyroid tumour": "hasExactSynonym",
+    "malignant tumor of the thyroid": "hasExactSynonym",
+    "malignant tumor of the thyroid gland": "hasExactSynonym",
+    "malignant tumor of thyroid": "hasExactSynonym",
+    "malignant tumor of thyroid gland": "hasExactSynonym",
+    "malignant tumour of the thyroid": "hasExactSynonym",
+    "malignant tumour of the thyroid gland": "hasExactSynonym",
+    "malignant tumour of thyroid": "hasExactSynonym",
+    "malignant tumour of thyroid gland": "hasExactSynonym",
+    "thyroid gland cancer": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "1781"
+    ],
+    "ICD10CM": [
+     "C73"
+    ],
+    "ICD9": [
+     "193"
+    ],
+    "MEDGEN": [
+     "2869"
+    ],
+    "NANDO": [
+     "2200074"
+    ],
+    "NCIT": [
+     "C7510"
+    ],
+    "SCTID": [
+     "363478007"
+    ],
+    "UMLS": [
+     "C0007115"
+    ],
+    "icd11.foundation": [
+     "447433352"
+    ]
+   }
+  },
+  "MONDO:0002154": {
+   "definition": "An infection that is caused by Trichomonas.",
+   "id": "MONDO:0002154",
+   "label": "trichomoniasis",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "Trichomonas infection": "hasExactSynonym",
+    "infections, Trichomonas": "hasRelatedSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "1947"
+    ],
+    "ICD10CM": [
+     "A59"
+    ],
+    "ICD10WHO": [
+     "A59"
+    ],
+    "ICD9": [
+     "131",
+     "131.8",
+     "131.9"
+    ],
+    "MEDGEN": [
+     "52838"
+    ],
+    "MESH": [
+     "D014245"
+    ],
+    "NCIT": [
+     "C35720"
+    ],
+    "SCTID": [
+     "56335008"
+    ],
+    "UMLS": [
+     "C0040921"
+    ],
+    "icd11.foundation": [
+     "1220564554"
+    ]
+   }
+  },
+  "MONDO:0002280": {
+   "definition": "A reduction in the number of red blood cells, the amount of hemoglobin, and/or the volume of packed red blood cells. Clinically, anemia represents a reduction in the oxygen-transporting capacity of a designated volume of blood, resulting from an imbalance between blood loss (through hemorrhage or hemolysis) and blood production. Signs and symptoms of anemia may include pallor of the skin and mucous membranes, shortness of breath, palpitations of the heart, soft systolic murmurs, lethargy, and fatigability.",
+   "id": "MONDO:0002280",
+   "label": "anemia",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "anaemia (disease)": "hasExactSynonym",
+    "anemia": "hasExactSynonym",
+    "anemia (disease)": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "2355"
+    ],
+    "HP": [
+     "0001903"
+    ],
+    "ICD9": [
+     "285.8",
+     "285.9"
+    ],
+    "MEDGEN": [
+     "1526"
+    ],
+    "MESH": [
+     "D000740"
+    ],
+    "NCIT": [
+     "C2869"
+    ],
+    "SCTID": [
+     "271737000"
+    ],
+    "UMLS": [
+     "C0002871"
+    ]
+   }
+  },
+  "MONDO:0002691": {
+   "definition": "An epithelial or non-epithelial malignant neoplasm that arises from the liver. Representative examples include hepatocellular carcinoma, intrahepatic cholangiocarcinoma, lymphoma, and sarcoma.",
+   "id": "MONDO:0002691",
+   "label": "liver cancer",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "cancer of liver": "hasExactSynonym",
+    "hepatic cancer": "hasExactSynonym",
+    "liver cancer": "hasExactSynonym",
+    "malignant liver neoplasm": "hasExactSynonym",
+    "malignant neoplasm of liver": "hasExactSynonym",
+    "malignant neoplasm of liver, not specified as primary or secondary": "hasExactSynonym",
+    "malignant neoplasm of liver, primary": "hasExactSynonym",
+    "malignant tumour of liver": "hasExactSynonym",
+    "primary cancer of liver": "hasRelatedSynonym",
+    "primary liver cancer": "hasExactSynonym",
+    "primary malignant liver neoplasm": "hasExactSynonym",
+    "primary malignant neoplasm of liver": "hasExactSynonym",
+    "primary tumor of the liver": "hasRelatedSynonym",
+    "primary tumour of the liver": "hasRelatedSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "3571"
+    ],
+    "GARD": [
+     "0027613"
+    ],
+    "ICD9": [
+     "155.0",
+     "155.2"
+    ],
+    "MEDGEN": [
+     "87520"
+    ],
+    "NCIT": [
+     "C34803"
+    ],
+    "SCTID": [
+     "93870000"
+    ],
+    "UMLS": [
+     "C0345904"
+    ],
+    "icd11.foundation": [
+     "1605020868"
+    ]
+   }
+  },
+  "MONDO:0002974": {
+   "definition": "A primary or metastatic malignant neoplasm involving the cervix.",
+   "id": "MONDO:0002974",
+   "label": "cervical cancer",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "cancer of uterine cervix": "hasExactSynonym",
+    "malignant cervical neoplasm": "hasExactSynonym",
+    "malignant cervical tumor": "hasExactSynonym",
+    "malignant cervical tumour": "hasExactSynonym",
+    "malignant cervix neoplasm": "hasExactSynonym",
+    "malignant cervix tumor": "hasExactSynonym",
+    "malignant cervix tumour": "hasExactSynonym",
+    "malignant cervix uteri neoplasm": "hasExactSynonym",
+    "malignant cervix uteri tumor": "hasExactSynonym",
+    "malignant cervix uteri tumour": "hasExactSynonym",
+    "malignant neoplasm of cervix": "hasExactSynonym",
+    "malignant neoplasm of cervix uteri": "hasExactSynonym",
+    "malignant neoplasm of the cervix": "hasExactSynonym",
+    "malignant neoplasm of the cervix uteri": "hasExactSynonym",
+    "malignant neoplasm of the uterine cervix": "hasExactSynonym",
+    "malignant neoplasm of uterine cervix": "hasExactSynonym",
+    "malignant tumor of cervix": "hasExactSynonym",
+    "malignant tumor of cervix uteri": "hasExactSynonym",
+    "malignant tumor of the cervix": "hasExactSynonym",
+    "malignant tumor of the cervix uteri": "hasExactSynonym",
+    "malignant tumor of the uterine cervix": "hasExactSynonym",
+    "malignant tumor of uterine cervix": "hasExactSynonym",
+    "malignant tumour of cervix": "hasExactSynonym",
+    "malignant tumour of cervix uteri": "hasExactSynonym",
+    "malignant tumour of the cervix": "hasExactSynonym",
+    "malignant tumour of the cervix uteri": "hasExactSynonym",
+    "malignant tumour of the uterine cervix": "hasExactSynonym",
+    "malignant tumour of uterine cervix": "hasExactSynonym",
+    "malignant uterine cervix neoplasm": "hasExactSynonym",
+    "malignant uterine cervix tumor": "hasExactSynonym",
+    "malignant uterine cervix tumour": "hasExactSynonym",
+    "tumour of the cervix uteri": "hasBroadSynonym",
+    "uterine cervix cancer": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "4362"
+    ],
+    "ICD10CM": [
+     "C53"
+    ],
+    "ICD9": [
+     "180",
+     "180.8",
+     "180.9"
+    ],
+    "MEDGEN": [
+     "890252"
+    ],
+    "NCIT": [
+     "C9311"
+    ],
+    "OMIM": [
+     "603956"
+    ],
+    "SCTID": [
+     "363354003"
+    ],
+    "UMLS": [
+     "C4048328"
+    ],
+    "icd11.foundation": [
+     "1256072522"
+    ]
+   }
+  },
+  "MONDO:0003781": {
+   "definition": "An acute or chronic inflammatory process affecting the bronchi.",
+   "id": "MONDO:0003781",
+   "label": "bronchitis",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "bronchus inflammation": "hasExactSynonym"
+   },
+   "xrefs": {
+    "CSP": [
+     "2596-1500"
+    ],
+    "DOID": [
+     "6132"
+    ],
+    "EFO": [
+     "0009661"
+    ],
+    "ICD9": [
+     "466.0",
+     "490",
+     "491"
+    ],
+    "MEDGEN": [
+     "2736"
+    ],
+    "MESH": [
+     "D001991"
+    ],
+    "NCIT": [
+     "C2911"
+    ],
+    "SCTID": [
+     "32398004"
+    ],
+    "UMLS": [
+     "C0006277"
+    ],
+    "icd11.foundation": [
+     "11753425"
+    ]
+   }
+  },
+  "MONDO:0004247": {
+   "definition": "A digestive system disease characterized by discontinuation in the inner lining of the gastrointestinal (GI) tract because of gastric acid secretion or pepsin.",
+   "id": "MONDO:0004247",
+   "label": "peptic ulcer disease",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "acute peptic ulcer with haemorrhage": "hasExactSynonym",
+    "acute peptic ulcer with haemorrhage and perforation": "hasExactSynonym",
+    "acute peptic ulcer without haemorrhage and without perforation": "hasExactSynonym",
+    "peptic ulcer": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "750"
+    ],
+    "ICD9": [
+     "533"
+    ],
+    "MEDGEN": [
+     "45384"
+    ],
+    "MESH": [
+     "D010437"
+    ],
+    "NCIT": [
+     "C3318"
+    ],
+    "SCTID": [
+     "13200003"
+    ],
+    "UMLS": [
+     "C0030920"
+    ]
+   }
+  },
+  "MONDO:0004277": {
+   "definition": "A common sexually transmitted bacterial infection caused by Neisseria gonorrhoeae. It is transmitted through vaginal, oral, or anal intercourse. Infected individuals may be asymptomatic. Symptoms in males include burning sensation during urination, discharge from the penis, and painful swelling of the testes. Symptoms in females include painful urination, vaginal discharge, and vaginal bleeding between periods. If untreated, the infection may lead to pelvic inflammatory disease.",
+   "id": "MONDO:0004277",
+   "label": "gonorrhea",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "Crosti-gianotti syndrome": "hasRelatedSynonym",
+    "GC": "hasExactSynonym",
+    "Gianotti Crosti syndrome": "hasRelatedSynonym",
+    "Neisseria gonorrhoeae infection": "hasExactSynonym",
+    "PAC": "hasRelatedSynonym",
+    "PAS": "hasRelatedSynonym",
+    "acrodermatitis, infantile lichenoid": "hasRelatedSynonym",
+    "acrodermatitis, papular infantile": "hasRelatedSynonym",
+    "infections, Neisseria gonorrhoeae": "hasRelatedSynonym",
+    "papular acrodermatitis of childhood": "hasRelatedSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "7551"
+    ],
+    "ICD9": [
+     "098",
+     "098.2",
+     "098.32",
+     "098.89"
+    ],
+    "MEDGEN": [
+     "9077"
+    ],
+    "MESH": [
+     "D006069"
+    ],
+    "NCIT": [
+     "C92950"
+    ],
+    "Orphanet": [
+     "100642"
+    ],
+    "SCTID": [
+     "15628003"
+    ],
+    "UMLS": [
+     "C0018081"
+    ]
+   }
+  },
+  "MONDO:0004525": {
+   "definition": "A contagious skin infection that is caused by the burrowing parasitic mite, Sarcoptes scabiei, and is characterized by intense itching and small, raised red spots in the area of the mite burrows.",
+   "id": "MONDO:0004525",
+   "label": "scabies",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "Sarcoptes scabiei caused disease or disorder": "hasExactSynonym",
+    "sarcoptic itch": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "8295"
+    ],
+    "ICD10CM": [
+     "B86"
+    ],
+    "ICD10WHO": [
+     "B86"
+    ],
+    "ICD9": [
+     "133.0"
+    ],
+    "MEDGEN": [
+     "48566"
+    ],
+    "MESH": [
+     "D012532"
+    ],
+    "NCIT": [
+     "C34998"
+    ],
+    "SCTID": [
+     "128869009"
+    ],
+    "UMLS": [
+     "C0036262"
+    ],
+    "icd11.foundation": [
+     "876005123"
+    ]
+   }
+  },
+  "MONDO:0004619": {
+   "definition": "A highly contagious viral infection caused by the measles virus. Symptoms appear 8-12 days after exposure and include a rash, cough, fever and muscle pains that can last 4-7 days. Measles vaccines are available to provide prophylaxis, usually combined with mumps and rubella vaccines (MMR).",
+   "id": "MONDO:0004619",
+   "label": "measles",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "Measles morbillivirus caused disease or disorder": "hasExactSynonym",
+    "morbilli": "hasExactSynonym",
+    "rubeola": "hasRelatedSynonym",
+    "rubeola infection": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "8622"
+    ],
+    "EFO": [
+     "1002025"
+    ],
+    "GARD": [
+     "0027345"
+    ],
+    "ICD10CM": [
+     "B05"
+    ],
+    "ICD10WHO": [
+     "B05"
+    ],
+    "ICD9": [
+     "055"
+    ],
+    "MEDGEN": [
+     "6252"
+    ],
+    "MESH": [
+     "D008457"
+    ],
+    "NCIT": [
+     "C96406"
+    ],
+    "SCTID": [
+     "14189004"
+    ],
+    "UMLS": [
+     "C0025007"
+    ],
+    "icd11.foundation": [
+     "1826431497"
+    ]
+   }
+  },
+  "MONDO:0004651": {
+   "definition": "A condition that is caused by infection with Variola, and that is characterized by small, raised bumps.",
+   "id": "MONDO:0004651",
+   "label": "smallpox",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "Variola": "hasRelatedSynonym",
+    "Variola virus caused disease or disorder": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "8736"
+    ],
+    "ICD10CM": [
+     "B03"
+    ],
+    "ICD10WHO": [
+     "B03"
+    ],
+    "ICD9": [
+     "050",
+     "050.9"
+    ],
+    "MEDGEN": [
+     "20785"
+    ],
+    "MESH": [
+     "D012899"
+    ],
+    "NCIT": [
+     "C35027"
+    ],
+    "SCTID": [
+     "67924001"
+    ],
+    "UMLS": [
+     "C0037354"
+    ],
+    "icd11.foundation": [
+     "2054716425"
+    ]
+   }
+  },
+  "MONDO:0004975": {
+   "definition": "A progressive, neurodegenerative disease characterized by loss of function and death of nerve cells in several areas of the brain leading to loss of cognitive function such as memory and language.",
+   "id": "MONDO:0004975",
+   "label": "Alzheimer disease",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "AD": "hasExactSynonym",
+    "Alzheimer disease": "hasExactSynonym",
+    "Alzheimer disease, familial": "hasNarrowSynonym",
+    "Alzheimer's dementia": "hasExactSynonym",
+    "Alzheimer's disease": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "10652"
+    ],
+    "HP": [
+     "0002511"
+    ],
+    "ICD10CM": [
+     "G30"
+    ],
+    "ICD10WHO": [
+     "G30"
+    ],
+    "ICD9": [
+     "290.1",
+     "331.0"
+    ],
+    "MEDGEN": [
+     "1853"
+    ],
+    "MESH": [
+     "D000544"
+    ],
+    "NCIT": [
+     "C2866"
+    ],
+    "Orphanet": [
+     "238616"
+    ],
+    "SCTID": [
+     "142811000119104"
+    ],
+    "UMLS": [
+     "C0002395"
+    ],
+    "birnlex": [
+     "2092"
+    ],
+    "icd11.foundation": [
+     "1611724421"
+    ]
+   }
+  },
+  "MONDO:0004976": {
+   "definition": "https://github.com/monarch-initiative/mondo/issues/8505",
+   "id": "MONDO:0004976",
+   "label": "amyotrophic lateral sclerosis",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "ALS": "hasExactSynonym",
+    "Charcot disease": "hasExactSynonym",
+    "Lou Gehrig disease": "hasExactSynonym",
+    "amyotrophic lateral sclerosis": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "332"
+    ],
+    "GARD": [
+     "0005786"
+    ],
+    "HP": [
+     "0007354"
+    ],
+    "ICD10CM": [
+     "G12.21"
+    ],
+    "ICD9": [
+     "335.20"
+    ],
+    "MEDGEN": [
+     "274"
+    ],
+    "MESH": [
+     "D000690"
+    ],
+    "MedDRA": [
+     "10002026"
+    ],
+    "NANDO": [
+     "1200002"
+    ],
+    "NCIT": [
+     "C34373"
+    ],
+    "NORD": [
+     "768"
+    ],
+    "Orphanet": [
+     "803"
+    ],
+    "SCTID": [
+     "86044005"
+    ],
+    "UMLS": [
+     "C0002736"
+    ],
+    "birnlex": [
+     "12566"
+    ],
+    "icd11.foundation": [
+     "1982355687"
+    ]
+   }
+  },
+  "MONDO:0004979": {
+   "definition": "A bronchial disease that is characterized by chronic inflammation and narrowing of the airways, which is caused by a combination of environmental and genetic factors resulting in recurring periods of wheezing (a whistling sound while breathing), chest tightness, shortness of breath, mucus production and coughing. The symptoms appear due to a variety of triggers such as allergens, irritants, respiratory infections, weather changes, exercise, stress, reflux disease, medications, foods and emotional anxiety.",
+   "id": "MONDO:0004979",
+   "label": "asthma",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {},
+   "xrefs": {
+    "DOID": [
+     "2841"
+    ],
+    "HP": [
+     "0002099"
+    ],
+    "ICD10CM": [
+     "J45"
+    ],
+    "ICD10WHO": [
+     "J45"
+    ],
+    "ICD9": [
+     "493",
+     "493.81",
+     "493.9"
+    ],
+    "MEDGEN": [
+     "2109"
+    ],
+    "MESH": [
+     "D001249"
+    ],
+    "NCIT": [
+     "C28397"
+    ],
+    "SCTID": [
+     "31387002"
+    ],
+    "UMLS": [
+     "C0004096"
+    ],
+    "icd11.foundation": [
+     "1656445230"
+    ]
+   }
+  },
+  "MONDO:0004981": {
+   "definition": "A disorder characterized by an electrocardiographic finding of a supraventricular arrhythmia characterized by the replacement of consistent P waves by rapid oscillations or fibrillatory waves that vary in size, shape and timing and are accompanied by an irregular ventricular response. (CDISC)",
+   "id": "MONDO:0004981",
+   "label": "atrial fibrillation",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "AF": "hasExactSynonym",
+    "AFib": "hasExactSynonym",
+    "atrial fibrillation": "hasExactSynonym",
+    "atrial fibrillation (disease)": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "0060224"
+    ],
+    "EFO": [
+     "0000275"
+    ],
+    "HP": [
+     "0005110"
+    ],
+    "ICD9": [
+     "427.31"
+    ],
+    "MEDGEN": [
+     "445"
+    ],
+    "MESH": [
+     "D001281"
+    ],
+    "NANDO": [
+     "2100051",
+     "2200226"
+    ],
+    "NCIT": [
+     "C50466"
+    ],
+    "SCTID": [
+     "49436004"
+    ],
+    "UMLS": [
+     "C0004238"
+    ],
+    "icd11.foundation": [
+     "171698302"
+    ]
+   }
+  },
+  "MONDO:0004985": {
+   "definition": "A disorder of the brain that causes unusual shifts in mood, energy, activity levels and the ability to carry out day-to-day tasks. Often these moods range and shift from periods of elation and energized behavior to those of hopelessness and depression.",
+   "id": "MONDO:0004985",
+   "label": "bipolar disorder",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "MAFD": "hasRelatedSynonym",
+    "bipolar disorder": "hasExactSynonym",
+    "major affective disorder": "hasExactSynonym",
+    "manic-depression": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "3312"
+    ],
+    "ICD10CM": [
+     "F31"
+    ],
+    "ICD10WHO": [
+     "F31"
+    ],
+    "ICD9": [
+     "296.40",
+     "296.60",
+     "296.80",
+     "296.89"
+    ],
+    "MEDGEN": [
+     "2649"
+    ],
+    "MESH": [
+     "D001714"
+    ],
+    "NCIT": [
+     "C34423"
+    ],
+    "SCTID": [
+     "13746004"
+    ],
+    "UMLS": [
+     "C0005586"
+    ],
+    "birnlex": [
+     "12754"
+    ]
+   }
+  },
+  "MONDO:0005002": {
+   "definition": "A chronic and progressive lung disorder characterized by the loss of elasticity of the bronchial tree and the air sacs, destruction of the air sacs wall, thickening of the bronchial wall, and mucous accumulation in the bronchial tree. The pathologic changes result in the disruption of the air flow in the bronchial airways. Signs and symptoms include shortness of breath, wheezing, productive cough, and chest tightness. The two main types of chronic obstructive pulmonary disease are chronic obstructive bronchitis and emphysema.",
+   "id": "MONDO:0005002",
+   "label": "chronic obstructive pulmonary disease",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "COLD": "hasExactSynonym",
+    "COPD": "hasExactSynonym",
+    "chronic obstructive airways disease": "hasExactSynonym",
+    "chronic obstructive lung disease": "hasExactSynonym",
+    "chronic obstructive pulmonary disease (COPD)": "hasExactSynonym",
+    "cold": "hasExactSynonym",
+    "obstructive lung disease, chronic": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "3083"
+    ],
+    "EFO": [
+     "0000341"
+    ],
+    "ICD9": [
+     "490-496",
+     "496"
+    ],
+    "MEDGEN": [
+     "9818"
+    ],
+    "MESH": [
+     "D029424"
+    ],
+    "NCIT": [
+     "C3199"
+    ],
+    "OMIM": [
+     "606963"
+    ],
+    "SCTID": [
+     "13645005"
+    ],
+    "UMLS": [
+     "C0024117"
+    ],
+    "icd11.foundation": [
+     "133207228"
+    ]
+   }
+  },
+  "MONDO:0005010": {
+   "definition": "Narrowing of the coronary arteries due to fatty deposits inside the arterial walls. The diagnostic criteria may include documented history of any of the following: documented coronary artery stenosis greater than or equal to 50% (by cardiac catheterization or other modality of direct imaging of the coronary arteries); previous coronary artery bypass surgery (CABG); previous percutaneous coronary intervention (PCI); previous myocardial infarction. (ACC)",
+   "id": "MONDO:0005010",
+   "label": "coronary artery disorder",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "CAD": "hasExactSynonym",
+    "coronary artery disease": "hasExactSynonym",
+    "coronary artery disease or disorder": "hasExactSynonym",
+    "coronary disease": "hasExactSynonym",
+    "coronary heart disease": "hasExactSynonym",
+    "disease of coronary artery": "hasExactSynonym",
+    "disorder of coronary artery": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "3393"
+    ],
+    "EFO": [
+     "0001645"
+    ],
+    "ICD9": [
+     "410-414",
+     "414.0",
+     "414.9"
+    ],
+    "MEDGEN": [
+     "365486"
+    ],
+    "MESH": [
+     "D003324"
+    ],
+    "NCIT": [
+     "C26732"
+    ],
+    "SCTID": [
+     "414024009"
+    ],
+    "UMLS": [
+     "C1956346"
+    ],
+    "icd11.foundation": [
+     "1059873720"
+    ]
+   }
+  },
+  "MONDO:0005011": {
+   "definition": "A gastrointestinal disorder characterized by chronic inflammation involving all layers of the intestinal wall, noncaseating granulomas affecting the intestinal wall and regional lymph nodes, and transmural fibrosis. Crohn disease most commonly involves the terminal ileum; the colon is the second most common site of involvement.",
+   "id": "MONDO:0005011",
+   "label": "Crohn disease",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "Crohn disease": "hasExactSynonym",
+    "Crohn's disease": "hasExactSynonym",
+    "Crohn's disease of large bowel": "hasExactSynonym",
+    "paediatric Crohn's disease": "hasExactSynonym",
+    "pediatric Crohn's disease": "hasExactSynonym",
+    "regional enteritis": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "8778"
+    ],
+    "EFO": [
+     "0000384"
+    ],
+    "ICD10CM": [
+     "K50"
+    ],
+    "ICD9": [
+     "555.1"
+    ],
+    "MEDGEN": [
+     "3664"
+    ],
+    "MESH": [
+     "D003424"
+    ],
+    "NANDO": [
+     "1200444",
+     "1200446",
+     "2200921"
+    ],
+    "NCIT": [
+     "C2965"
+    ],
+    "Orphanet": [
+     "206"
+    ],
+    "SCTID": [
+     "7620006"
+    ],
+    "UMLS": [
+     "C0010346"
+    ],
+    "icd11.foundation": [
+     "1267652425"
+    ]
+   }
+  },
+  "MONDO:0005027": {
+   "definition": "A brain disorder characterized by episodes of abnormally increased neuronal discharge resulting in transient episodes of sensory or motor neurological dysfunction, or psychic dysfunction. These episodes may or may not be associated with loss of consciousness or convulsions.",
+   "id": "MONDO:0005027",
+   "label": "epilepsy",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "epilepsy": "hasExactSynonym",
+    "seizure disorder": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "1826"
+    ],
+    "EFO": [
+     "0000474"
+    ],
+    "ICD10CM": [
+     "G40"
+    ],
+    "ICD10WHO": [
+     "G40"
+    ],
+    "ICD9": [
+     "345",
+     "345.8",
+     "345.80",
+     "345.9",
+     "345.90",
+     "345.91"
+    ],
+    "MEDGEN": [
+     "4506"
+    ],
+    "MESH": [
+     "D004827"
+    ],
+    "NCIT": [
+     "C3020"
+    ],
+    "SCTID": [
+     "84757009"
+    ],
+    "UMLS": [
+     "C0014544"
+    ],
+    "birnlex": [
+     "12718"
+    ]
+   }
+  },
+  "MONDO:0005044": {
+   "definition": "Persistently high systemic arterial blood pressure. Based on multiple readings (blood pressure determination), hypertension is currently defined as when systolic pressure is consistently greater than 140 mm Hg or when diastolic pressure is consistently 90 mm Hg or more.",
+   "id": "MONDO:0005044",
+   "label": "hypertensive disorder",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "HTN": "hasBroadSynonym",
+    "high blood pressure": "hasExactSynonym",
+    "hypertensive disease": "hasExactSynonym",
+    "vascular hypertensive disorder": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "10763"
+    ],
+    "EFO": [
+     "0000537"
+    ],
+    "HP": [
+     "0000822"
+    ],
+    "ICD10CM": [
+     "I10-I16",
+     "I15"
+    ],
+    "ICD9": [
+     "401-405",
+     "997.91"
+    ],
+    "MEDGEN": [
+     "6969"
+    ],
+    "MESH": [
+     "D006973"
+    ],
+    "NCIT": [
+     "C3117"
+    ],
+    "SCTID": [
+     "38341003"
+    ],
+    "UMLS": [
+     "C0020538"
+    ]
+   }
+  },
+  "MONDO:0005065": {
+   "definition": "A usually malignant and aggressive neoplasm of the mesothelium which is often associated with exposure to asbestos.",
+   "id": "MONDO:0005065",
+   "label": "mesothelioma",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "mesothelioma": "hasExactSynonym"
+   },
+   "xrefs": {
+    "EFO": [
+     "0000588"
+    ],
+    "ICD10CM": [
+     "C45"
+    ],
+    "MEDGEN": [
+     "9975"
+    ],
+    "MESH": [
+     "D008654"
+    ],
+    "NCIT": [
+     "C3234"
+    ],
+    "UMLS": [
+     "C0025500"
+    ]
+   }
+  },
+  "MONDO:0005086": {
+   "definition": "A carcinoma that arises from glandular epithelial cells of the kidney",
+   "id": "MONDO:0005086",
+   "label": "renal cell carcinoma",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "RCC": "hasExactSynonym",
+    "kidney adenocarcinoma": "hasRelatedSynonym",
+    "renal cell adenocarcinoma": "hasRelatedSynonym",
+    "renal cell carcinoma": "hasExactSynonym",
+    "renal cell carcinoma (disease)": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "4450"
+    ],
+    "EFO": [
+     "0000681"
+    ],
+    "GARD": [
+     "0013215"
+    ],
+    "HP": [
+     "0005584"
+    ],
+    "ICD9": [
+     "189.0"
+    ],
+    "MEDGEN": [
+     "766"
+    ],
+    "MESH": [
+     "D002292"
+    ],
+    "MedDRA": [
+     "10067946"
+    ],
+    "NANDO": [
+     "2200045"
+    ],
+    "NORD": [
+     "1657"
+    ],
+    "ONCOTREE": [
+     "RCC"
+    ],
+    "Orphanet": [
+     "217071"
+    ],
+    "SCTID": [
+     "702391001"
+    ],
+    "UMLS": [
+     "C0007134"
+    ]
+   }
+  },
+  "MONDO:0005090": {
+   "definition": "A major psychotic disorder characterized by abnormalities in the perception or expression of reality. It affects the cognitive and psychomotor functions. Common clinical signs and symptoms include delusions, hallucinations, disorganized thinking, and retreat from reality.",
+   "id": "MONDO:0005090",
+   "label": "schizophrenia",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "SCZD": "hasRelatedSynonym",
+    "schizophrenia": "hasExactSynonym",
+    "schizophrenia (disease)": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "5419"
+    ],
+    "HP": [
+     "0100753"
+    ],
+    "ICD10CM": [
+     "F20"
+    ],
+    "ICD10WHO": [
+     "F20"
+    ],
+    "ICD9": [
+     "295",
+     "295.8",
+     "295.80",
+     "295.85",
+     "295.9",
+     "295.90"
+    ],
+    "MEDGEN": [
+     "48574"
+    ],
+    "NCIT": [
+     "C3362"
+    ],
+    "OMIM": [
+     "181500"
+    ],
+    "Orphanet": [
+     "3140"
+    ],
+    "SCTID": [
+     "58214004"
+    ],
+    "UMLS": [
+     "C0036341"
+    ],
+    "birnlex": [
+     "2104"
+    ],
+    "icd11.foundation": [
+     "1683919430"
+    ]
+   }
+  },
+  "MONDO:0005098": {
+   "definition": "Stroke includes two main types, hemorrhagic and ischemic. Both types of stroke can cause acute seizures at the time of the acute event, as well as epilepsy as a long-term complication. In the elderly, cerebrovascular disease and stroke are the most common cause of acute seizures and epilepsy. (https://www.epilepsydiagnosis.org/etiology/stroke-overview.html, https://orcid.org/0000-0001-5208-3432)",
+   "id": "MONDO:0005098",
+   "label": "stroke disorder",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "CVA": "hasExactSynonym",
+    "cerebrovascular accident": "hasExactSynonym",
+    "stroke": "hasExactSynonym",
+    "stroke syndrome": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "0051061"
+    ],
+    "EFO": [
+     "0000712"
+    ],
+    "HP": [
+     "0001297"
+    ],
+    "MEDGEN": [
+     "52522"
+    ],
+    "MESH": [
+     "D020521"
+    ],
+    "NCIT": [
+     "C3390"
+    ],
+    "SCTID": [
+     "230690007"
+    ],
+    "UMLS": [
+     "C0038454"
+    ],
+    "birnlex": [
+     "12783"
+    ]
+   }
+  },
+  "MONDO:0005105": {
+   "definition": "A malignant, usually aggressive tumor composed of atypical, neoplastic melanocytes. Most often, melanomas arise in the skin (cutaneous melanomas) and include the following histologic subtypes: superficial spreading melanoma, nodular melanoma, acral lentiginous melanoma, and lentigo maligna melanoma. Cutaneous melanomas may arise from acquired or congenital melanocytic or dysplastic nevi. Melanomas may also arise in other anatomic sites including the gastrointestinal system, eye, urinary tract, and reproductive system. Melanomas frequently metastasize to lymph nodes, liver, lungs, and brain.",
+   "id": "MONDO:0005105",
+   "label": "melanoma",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "malignant melanoma": "hasExactSynonym",
+    "melanoma": "hasExactSynonym",
+    "melanoma (disease)": "hasExactSynonym",
+    "melanoma, malignant": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "1909"
+    ],
+    "EFO": [
+     "0000756"
+    ],
+    "HP": [
+     "0002861"
+    ],
+    "ICDO": [
+     "8720/3"
+    ],
+    "MEDGEN": [
+     "9944"
+    ],
+    "MESH": [
+     "D008545"
+    ],
+    "NANDO": [
+     "2200077"
+    ],
+    "NCIT": [
+     "C3224"
+    ],
+    "ONCOTREE": [
+     "MEL"
+    ],
+    "Orphanet": [
+     "411533"
+    ],
+    "SCTID": [
+     "372244006"
+    ],
+    "UMLS": [
+     "C0025202"
+    ]
+   }
+  },
+  "MONDO:0005109": {
+   "definition": "An infection caused by the human immunodeficiency virus.",
+   "id": "MONDO:0005109",
+   "label": "HIV infectious disease",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "HIV infection": "hasExactSynonym",
+    "Human immunodeficiency virus caused disease or disorder": "hasExactSynonym",
+    "Human immunodeficiency virus infectious disease": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "526"
+    ],
+    "EFO": [
+     "0000764"
+    ],
+    "ICD10CM": [
+     "B20-B20"
+    ],
+    "ICD9": [
+     "042",
+     "042-042"
+    ],
+    "MEDGEN": [
+     "5583"
+    ],
+    "MESH": [
+     "D015658"
+    ],
+    "NANDO": [
+     "2200810"
+    ],
+    "NCIT": [
+     "C3108"
+    ],
+    "SCTID": [
+     "86406008"
+    ],
+    "UMLS": [
+     "C0019693"
+    ]
+   }
+  },
+  "MONDO:0005124": {
+   "definition": "Leprosy is a chronic infectious disease affecting primarily the skin and peripheral nervous system.",
+   "id": "MONDO:0005124",
+   "label": "leprosy",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "Hansen disease": "hasExactSynonym",
+    "Hansen's disease": "hasExactSynonym",
+    "Mycobacterium leprae caused disease or disorder": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "1024"
+    ],
+    "EFO": [
+     "0001054"
+    ],
+    "GARD": [
+     "0006886"
+    ],
+    "ICD10CM": [
+     "A30"
+    ],
+    "ICD9": [
+     "030",
+     "030.8",
+     "030.9"
+    ],
+    "MEDGEN": [
+     "6049"
+    ],
+    "MESH": [
+     "D007918"
+    ],
+    "MedDRA": [
+     "10024229"
+    ],
+    "NCIT": [
+     "C84824"
+    ],
+    "NORD": [
+     "1362"
+    ],
+    "Orphanet": [
+     "548"
+    ],
+    "SCTID": [
+     "81004002"
+    ],
+    "UMLS": [
+     "C0023343"
+    ],
+    "icd11.foundation": [
+     "149072669"
+    ]
+   }
+  },
+  "MONDO:0005129": {
+   "definition": "Partial or complete opacity of the crystalline lens of one or both eyes that decreases visual acuity and eventually results in blindness. Some cataracts appear in infancy or in childhood, but most develop in older individuals. (Sternberg Diagnostic Surgical Pathology, 3rd ed.)",
+   "id": "MONDO:0005129",
+   "label": "cataract",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "cataract": "hasExactSynonym",
+    "cataract (disease)": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "83"
+    ],
+    "HP": [
+     "0000518"
+    ],
+    "ICD9": [
+     "366",
+     "366.44",
+     "366.8",
+     "366.9"
+    ],
+    "MEDGEN": [
+     "39462"
+    ],
+    "MESH": [
+     "D002386"
+    ],
+    "NCIT": [
+     "C26713"
+    ],
+    "OMIMPS": [
+     "116200"
+    ],
+    "SCTID": [
+     "193570009"
+    ],
+    "UMLS": [
+     "C0086543"
+    ],
+    "icd11.foundation": [
+     "109841337"
+    ]
+   }
+  },
+  "MONDO:0005132": {
+   "definition": "A herpesvirus infection caused by Cytomegalovirus. Healthy individuals generally do not produce symptoms. However, the infection may be life-threatening in affected immunocompromised patients. The virus may cause retinitis, esophagitis, gastritis, and colitis. Morphologically, it is characterized by the presence of intranuclear inclusion bodies.",
+   "id": "MONDO:0005132",
+   "label": "cytomegalovirus infection",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "CMV infection": "hasExactSynonym",
+    "Cytomegaloviral infection": "hasExactSynonym",
+    "HCMV infection": "hasExactSynonym"
+   },
+   "xrefs": {
+    "EFO": [
+     "0001062"
+    ],
+    "ICD9": [
+     "078.5"
+    ],
+    "MEDGEN": [
+     "8239"
+    ],
+    "MESH": [
+     "D003586"
+    ],
+    "NCIT": [
+     "C53649"
+    ],
+    "SCTID": [
+     "28944009"
+    ],
+    "UMLS": [
+     "C0010823"
+    ]
+   }
+  },
+  "MONDO:0005136": {
+   "definition": "Malaria is a serious and sometimes fatal disease caused by a parasite that commonly infects a certain type of mosquito which feeds on humans. Infection with malaria parasites may result in a wide variety of symptoms, ranging from absent or very mild symptoms to severe disease and even death. People who get malaria are typically very sick with high fevers, shaking chills, and flu-like illness. In general, malaria is a curable disease if diagnosed and treated promptly and correctly.Treatment depends on many factors including disease severity, the species of malaria parasite causing the infection and the part of the world in which the infection was acquired.",
+   "id": "MONDO:0005136",
+   "label": "malaria",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {},
+   "xrefs": {
+    "DOID": [
+     "12365"
+    ],
+    "EFO": [
+     "0001068"
+    ],
+    "GARD": [
+     "0006961"
+    ],
+    "ICD10CM": [
+     "B53"
+    ],
+    "ICD9": [
+     "084",
+     "084.6"
+    ],
+    "MEDGEN": [
+     "7443"
+    ],
+    "MESH": [
+     "D008288"
+    ],
+    "MedDRA": [
+     "10025487"
+    ],
+    "NCIT": [
+     "C34797"
+    ],
+    "NORD": [
+     "1395"
+    ],
+    "Orphanet": [
+     "673"
+    ],
+    "SCTID": [
+     "61462000"
+    ],
+    "UMLS": [
+     "C0024530"
+    ],
+    "icd11.foundation": [
+     "1439886552"
+    ]
+   }
+  },
+  "MONDO:0005147": {
+   "definition": "A chronic condition characterized by minimal or absent production of insulin by the pancreas.",
+   "id": "MONDO:0005147",
+   "label": "type 1 diabetes mellitus",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "IDDM": "hasExactSynonym",
+    "T1D": "hasExactSynonym",
+    "T1DM": "hasExactSynonym",
+    "immune mediated diabetes": "hasExactSynonym",
+    "insulin dependent diabetes": "hasExactSynonym",
+    "juvenile diabetes": "hasExactSynonym",
+    "type 1 diabetes": "hasExactSynonym",
+    "type I diabetes": "hasExactSynonym",
+    "type I diabetes mellitus": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "9744"
+    ],
+    "ICD10CM": [
+     "E10"
+    ],
+    "ICD10WHO": [
+     "E10"
+    ],
+    "MEDGEN": [
+     "41522"
+    ],
+    "MESH": [
+     "D003922"
+    ],
+    "NANDO": [
+     "2200460"
+    ],
+    "NCIT": [
+     "C2986"
+    ],
+    "OMIM": [
+     "222100"
+    ],
+    "Orphanet": [
+     "243377"
+    ],
+    "SCTID": [
+     "46635009"
+    ],
+    "UMLS": [
+     "C0011854"
+    ],
+    "icd11.foundation": [
+     "1651053999"
+    ]
+   }
+  },
+  "MONDO:0005148": {
+   "definition": "A type of diabetes mellitus that is characterized by insulin resistance or desensitization and increased blood glucose levels. This is a chronic disease that can develop gradually over the life of a patient and can be linked to both environmental factors and heredity.",
+   "id": "MONDO:0005148",
+   "label": "type 2 diabetes mellitus",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "NIDDM": "hasExactSynonym",
+    "T2D": "hasExactSynonym",
+    "T2DM": "hasExactSynonym",
+    "T2DM - type 2 diabetes mellitus": "hasExactSynonym",
+    "adult onset diabetes": "hasExactSynonym",
+    "adult-onset diabetes": "hasExactSynonym",
+    "diabetes mellitus, noninsulin-dependent": "hasExactSynonym",
+    "diabetes mellitus, type 2": "hasExactSynonym",
+    "diabetes, type 2": "hasExactSynonym",
+    "non-insulin dependent diabetes": "hasExactSynonym",
+    "non-insulin dependent diabetes mellitus": "hasExactSynonym",
+    "noninsulin dependent diabetes": "hasExactSynonym",
+    "noninsulin-dependent diabetes mellitus": "hasExactSynonym",
+    "type 2 diabetes": "hasExactSynonym",
+    "type 2 diabetes mellitus": "hasExactSynonym",
+    "type 2 diabetes mellitus non-insulin dependent": "hasExactSynonym",
+    "type II diabetes": "hasExactSynonym",
+    "type II diabetes mellitus": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "9352"
+    ],
+    "ICD10CM": [
+     "E11"
+    ],
+    "ICD10WHO": [
+     "E11"
+    ],
+    "MEDGEN": [
+     "41523"
+    ],
+    "MESH": [
+     "D003924"
+    ],
+    "NANDO": [
+     "2200461"
+    ],
+    "NCIT": [
+     "C26747"
+    ],
+    "OMIM": [
+     "125853"
+    ],
+    "SCTID": [
+     "44054006"
+    ],
+    "UMLS": [
+     "C0011860"
+    ],
+    "icd11.foundation": [
+     "119724091"
+    ]
+   }
+  },
+  "MONDO:0005155": {
+   "definition": "A disorder characterized by replacement of the liver parenchyma with fibrous tissue and regenerative nodules. It is usually caused by alcoholism, hepatitis B, and hepatitis C. Complications include the development of ascites, esophageal varices, bleeding, and hepatic encephalopathy.",
+   "id": "MONDO:0005155",
+   "label": "cirrhosis of liver",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "cirrhosis": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "5082"
+    ],
+    "EFO": [
+     "0001422"
+    ],
+    "ICD9": [
+     "571.5"
+    ],
+    "MEDGEN": [
+     "7368"
+    ],
+    "MESH": [
+     "D008103"
+    ],
+    "NANDO": [
+     "2100268",
+     "2200937"
+    ],
+    "NCIT": [
+     "C2951"
+    ],
+    "SCTID": [
+     "19943007"
+    ],
+    "UMLS": [
+     "C0023890"
+    ]
+   }
+  },
+  "MONDO:0005178": {
+   "definition": "A noninflammatory degenerative joint disease occurring chiefly in older persons, characterized by degeneration of the articular cartilage, hypertrophy of bone at the margins and changes in the synovial membrane. It is accompanied by pain and stiffness, particularly after prolonged activity.",
+   "id": "MONDO:0005178",
+   "label": "osteoarthritis",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "degenerative joint disease": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "8398"
+    ],
+    "HP": [
+     "0002758"
+    ],
+    "ICD10CM": [
+     "M15-M19",
+     "M19"
+    ],
+    "ICD9": [
+     "715.3"
+    ],
+    "MEDGEN": [
+     "45244"
+    ],
+    "MESH": [
+     "D010003"
+    ],
+    "NCIT": [
+     "C3293"
+    ],
+    "SCTID": [
+     "396275006"
+    ],
+    "UMLS": [
+     "C0029408"
+    ],
+    "icd11.foundation": [
+     "558562409"
+    ]
+   }
+  },
+  "MONDO:0005180": {
+   "definition": "A progressive degenerative disorder of the central nervous system characterized by loss of dopamine producing neurons in the substantia nigra and the presence of Lewy bodies in the substantia nigra and locus coeruleus. Signs and symptoms include tremor which is most pronounced during rest, muscle rigidity, slowing of the voluntary movements, a tendency to fall back, and a mask-like facial expression.",
+   "id": "MONDO:0005180",
+   "label": "Parkinson disease",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "PD": "hasExactSynonym",
+    "Parkinson disease": "hasExactSynonym",
+    "Parkinson's disease": "hasExactSynonym",
+    "paralysis agitans": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "14330"
+    ],
+    "ICD10CM": [
+     "G20"
+    ],
+    "ICD10WHO": [
+     "G20"
+    ],
+    "ICD9": [
+     "332",
+     "332.0"
+    ],
+    "MEDGEN": [
+     "10590"
+    ],
+    "MESH": [
+     "D010300"
+    ],
+    "NANDO": [
+     "1200010"
+    ],
+    "NCIT": [
+     "C26845"
+    ],
+    "OMIMPS": [
+     "168600"
+    ],
+    "Orphanet": [
+     "319705"
+    ],
+    "SCTID": [
+     "49049000"
+    ],
+    "UMLS": [
+     "C0030567"
+    ],
+    "birnlex": [
+     "2098"
+    ],
+    "icd11.foundation": [
+     "296066191"
+    ]
+   }
+  },
+  "MONDO:0005249": {
+   "definition": "An acute, acute and chronic, or chronic inflammation focally or diffusely affecting the lung parenchyma, caused by an infection in one or both of the lungs (by bacteria, viruses, fungi, or mycoplasma.). Symptoms include cough, shortness of breath, fevers, chills, chest pain, headache, sweating, and weakness.",
+   "id": "MONDO:0005249",
+   "label": "pneumonia",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {},
+   "xrefs": {
+    "DOID": [
+     "552"
+    ],
+    "EFO": [
+     "0003106"
+    ],
+    "ICD10CM": [
+     "J15",
+     "J18.9"
+    ],
+    "ICD9": [
+     "483",
+     "483.8",
+     "484.8",
+     "486"
+    ],
+    "MEDGEN": [
+     "10813"
+    ],
+    "MESH": [
+     "D011014"
+    ],
+    "NCIT": [
+     "C3333"
+    ],
+    "SCTID": [
+     "233604007"
+    ],
+    "UMLS": [
+     "C0032285"
+    ],
+    "icd11.foundation": [
+     "142052508"
+    ]
+   }
+  },
+  "MONDO:0005252": {
+   "definition": "Inability of the heart to pump blood at an adequate rate to meet tissue metabolic requirements. Clinical symptoms of heart failure include: unusual dyspnea on light exertion, recurrent dyspnea occurring in the supine position, fluid retention or rales, jugular venous distension, pulmonary edema on physical exam, or pulmonary edema on chest x-ray presumed to be cardiac dysfunction.",
+   "id": "MONDO:0005252",
+   "label": "heart failure",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "cardiac failure": "hasExactSynonym",
+    "heart failure": "hasExactSynonym"
+   },
+   "xrefs": {
+    "EFO": [
+     "0003144"
+    ],
+    "ICD10CM": [
+     "I50"
+    ],
+    "ICD10WHO": [
+     "I50"
+    ],
+    "ICD9": [
+     "428",
+     "428.9"
+    ],
+    "MEDGEN": [
+     "6749"
+    ],
+    "MESH": [
+     "D006333"
+    ],
+    "NCIT": [
+     "C50577"
+    ],
+    "SCTID": [
+     "84114007"
+    ],
+    "UMLS": [
+     "C0018801"
+    ],
+    "icd11.foundation": [
+     "1458683894"
+    ]
+   }
+  },
+  "MONDO:0005298": {
+   "definition": "A condition of reduced bone mass, with decreased cortical thickness and a decrease in the number and size of the trabeculae of cancellous bone (but normal chemical composition), resulting in increased fracture incidence. Osteoporosis is classified as primary (Type 1, postmenopausal osteoporosis; Type 2, age-associated osteoporosis; and idiopathic, which can affect juveniles, premenopausal women, and middle-aged men) and secondary osteoporosis (which results from an identifiable cause of bone mass loss).",
+   "id": "MONDO:0005298",
+   "label": "osteoporosis",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "bone mineral density quantitative trait locus": "hasExactSynonym",
+    "osteoporosis, involutional": "hasExactSynonym",
+    "osteoporosis, postmenopausal": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "11476"
+    ],
+    "EFO": [
+     "0003882"
+    ],
+    "ICD10CM": [
+     "M81"
+    ],
+    "ICD9": [
+     "733.0",
+     "733.00",
+     "733.09"
+    ],
+    "MEDGEN": [
+     "14535"
+    ],
+    "MESH": [
+     "D010024"
+    ],
+    "NCIT": [
+     "C3298"
+    ],
+    "OMIM": [
+     "166710"
+    ],
+    "SCTID": [
+     "64859006"
+    ],
+    "UMLS": [
+     "C0029456"
+    ],
+    "icd11.foundation": [
+     "2113001430"
+    ]
+   }
+  },
+  "MONDO:0005300": {
+   "definition": "Impairment of the renal function secondary to chronic kidney damage persisting for three or more months.",
+   "id": "MONDO:0005300",
+   "label": "chronic kidney disease",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "CKD - chronic kidney disease": "hasExactSynonym",
+    "chronic kidney disease": "hasExactSynonym",
+    "chronic renal disease": "hasExactSynonym",
+    "kidney disease, chronic": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "784"
+    ],
+    "EFO": [
+     "0003884"
+    ],
+    "ICD10CM": [
+     "N18",
+     "N18.9"
+    ],
+    "ICD10WHO": [
+     "N18"
+    ],
+    "ICD9": [
+     "585"
+    ],
+    "MEDGEN": [
+     "473458"
+    ],
+    "MESH": [
+     "D007676"
+    ],
+    "NANDO": [
+     "2100008",
+     "2100023"
+    ],
+    "NCIT": [
+     "C80078"
+    ],
+    "SCTID": [
+     "709044004"
+    ],
+    "UMLS": [
+     "C1561643"
+    ],
+    "icd11.foundation": [
+     "412389819"
+    ]
+   }
+  },
+  "MONDO:0005301": {
+   "definition": "A progressive autoimmune disorder affecting the central nervous system resulting in demyelination. Patients develop physical and cognitive impairments that correspond with the affected nerve fibers.",
+   "id": "MONDO:0005301",
+   "label": "multiple sclerosis",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "generalised multiple sclerosis": "hasNarrowSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "2377"
+    ],
+    "ICD10CM": [
+     "G35"
+    ],
+    "ICD10WHO": [
+     "G35"
+    ],
+    "ICD9": [
+     "340"
+    ],
+    "MEDGEN": [
+     "10123"
+    ],
+    "MESH": [
+     "D009103"
+    ],
+    "NANDO": [
+     "1200023",
+     "2100250",
+     "2200904"
+    ],
+    "NCIT": [
+     "C3243"
+    ],
+    "Orphanet": [
+     "802"
+    ],
+    "SCTID": [
+     "24700007"
+    ],
+    "UMLS": [
+     "C0026769"
+    ],
+    "icd11.foundation": [
+     "1298865187"
+    ]
+   }
+  },
+  "MONDO:0005354": {
+   "definition": "Chronic form of hepatitis C infection.",
+   "id": "MONDO:0005354",
+   "label": "chronic hepatitis C virus infection",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "chronic Hepatitis C": "hasExactSynonym",
+    "hepatitis C infection, chronic": "hasExactSynonym",
+    "hepatitis C, chronic": "hasExactSynonym"
+   },
+   "xrefs": {
+    "EFO": [
+     "0004220"
+    ],
+    "ICD9": [
+     "070.44"
+    ],
+    "MESH": [
+     "D019698"
+    ],
+    "icd11.foundation": [
+     "1615937473"
+    ]
+   }
+  },
+  "MONDO:0005365": {
+   "definition": "A partial or complete loss of hearing in one or both ears. It is classified as conductive, sensory, or central.",
+   "id": "MONDO:0005365",
+   "label": "hearing loss disorder",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "deafness": "hasNarrowSynonym",
+    "hearing impairment": "hasRelatedSynonym",
+    "hearing loss": "hasExactSynonym",
+    "hypoacuses": "hasExactSynonym",
+    "hypoacusis": "hasExactSynonym",
+    "loss, hearing": "hasExactSynonym"
+   },
+   "xrefs": {
+    "EFO": [
+     "0004238"
+    ],
+    "ICD10CM": [
+     "H90"
+    ],
+    "ICD9": [
+     "389",
+     "389.8",
+     "389.9"
+    ],
+    "MEDGEN": [
+     "235586"
+    ],
+    "MESH": [
+     "D034381"
+    ],
+    "NCIT": [
+     "C35731"
+    ],
+    "SCTID": [
+     "15188001"
+    ],
+    "UMLS": [
+     "C1384666"
+    ]
+   }
+  },
+  "MONDO:0005366": {
+   "definition": "Chronic form of hepatitis B infection.",
+   "id": "MONDO:0005366",
+   "label": "chronic hepatitis B virus infection",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "chronic Hepatitis B": "hasExactSynonym",
+    "hepatitis B infection, chronic": "hasExactSynonym",
+    "hepatitis B, chronic": "hasExactSynonym"
+   },
+   "xrefs": {
+    "EFO": [
+     "0004239"
+    ],
+    "MEDGEN": [
+     "99834"
+    ],
+    "MESH": [
+     "D019694"
+    ],
+    "UMLS": [
+     "C0524909"
+    ],
+    "icd11.foundation": [
+     "352087872"
+    ]
+   }
+  },
+  "MONDO:0005404": {
+   "definition": "A medical condition characterized by long-term fatigue and other symptoms that limit a person's ability to carry out ordinary daily activities.",
+   "id": "MONDO:0005404",
+   "label": "myalgic encephalomeyelitis/chronic fatigue syndrome",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "CFS": "hasExactSynonym",
+    "chronic fatigue syndrome": "hasExactSynonym",
+    "myalgic encephalitis": "hasExactSynonym",
+    "myalgic encephalomyelitis": "hasExactSynonym",
+    "systemic exertion intolerance disease": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "8544"
+    ],
+    "EFO": [
+     "0004540"
+    ],
+    "ICD9": [
+     "780.71",
+     "780.79"
+    ],
+    "MEDGEN": [
+     "5130"
+    ],
+    "MESH": [
+     "D015673"
+    ],
+    "NCIT": [
+     "C3037"
+    ],
+    "Orphanet": [
+     "1983"
+    ],
+    "SCTID": [
+     "51771007"
+    ],
+    "UMLS": [
+     "C0015674"
+    ]
+   }
+  },
+  "MONDO:0005429": {
+   "definition": "Editor note: check relationship to spongiform encephalopathy NCIT:C27585",
+   "id": "MONDO:0005429",
+   "label": "prion disease",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "spongiform encephalopathy": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "649"
+    ],
+    "EFO": [
+     "0004720"
+    ],
+    "GARD": [
+     "0024183"
+    ],
+    "ICD9": [
+     "046.19"
+    ],
+    "MEDGEN": [
+     "56445"
+    ],
+    "MESH": [
+     "D017096"
+    ],
+    "NANDO": [
+     "1200186"
+    ],
+    "NCIT": [
+     "C128346"
+    ],
+    "SCTID": [
+     "230284004"
+    ],
+    "UMLS": [
+     "C0162534"
+    ]
+   }
+  },
+  "MONDO:0005445": {
+   "definition": "Editor note: split out susceptibility/PS",
+   "id": "MONDO:0005445",
+   "label": "visceral leishmaniasis",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "kala-azar": "hasExactSynonym",
+    "viscus leishmaniasis": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "9146"
+    ],
+    "EFO": [
+     "0005045"
+    ],
+    "GARD": [
+     "0024188"
+    ],
+    "ICD10CM": [
+     "B55.0"
+    ],
+    "ICD9": [
+     "085.0"
+    ],
+    "MEDGEN": [
+     "44098"
+    ],
+    "MESH": [
+     "D007898"
+    ],
+    "NCIT": [
+     "C34771"
+    ],
+    "OMIMPS": [
+     "608207"
+    ],
+    "SCTID": [
+     "186803007"
+    ],
+    "UMLS": [
+     "C0023290"
+    ],
+    "icd11.foundation": [
+     "1646564717"
+    ]
+   }
+  },
+  "MONDO:0005453": {
+   "definition": "A heart disease that is present at birth. Representative examples include atrial septal defect, ventricular septal defect, tetralogy of Fallot, and patent foramen ovale.",
+   "id": "MONDO:0005453",
+   "label": "congenital heart disease",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "Abnormality, heart": "hasRelatedSynonym",
+    "abnormalities, heart": "hasRelatedSynonym",
+    "congenital anomaly of heart": "hasExactSynonym",
+    "congenital heart defect": "hasExactSynonym",
+    "congenital heart defects": "hasExactSynonym",
+    "defect, congenital heart": "hasRelatedSynonym",
+    "defects, congenital heart": "hasRelatedSynonym",
+    "heart abnormalities": "hasRelatedSynonym",
+    "heart abnormality": "hasRelatedSynonym",
+    "heart defect, congenital": "hasRelatedSynonym",
+    "heart, malformation Of": "hasRelatedSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "1682"
+    ],
+    "EFO": [
+     "0005207"
+    ],
+    "ICD9": [
+     "746.84",
+     "746.89",
+     "746.9"
+    ],
+    "MEDGEN": [
+     "57501"
+    ],
+    "MESH": [
+     "D006330"
+    ],
+    "NCIT": [
+     "C95834"
+    ],
+    "SCTID": [
+     "13213009"
+    ],
+    "UMLS": [
+     "C0152021"
+    ],
+    "icd11.foundation": [
+     "2004408087"
+    ]
+   }
+  },
+  "MONDO:0005459": {
+   "definition": "A parasitic disorder caused by protozoa of the Trypanosoma brucei species. It is transmitted by flies and is endemic in various regions of Sub-Saharan Africa. Signs and symptoms include fever, joint pain, headache, and significant swelling of the lymph nodes. If left untreated, the parasitic infection causes anemia, heart, kidney, and endocrine failure, and neurologic damage. Subsequently patients develop confusion, disruption of the sleep cycle, and mental deterioration. The infection may lead to coma and death.",
+   "id": "MONDO:0005459",
+   "label": "human African trypanosomiasis",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "Africam sleeping sickness": "hasExactSynonym",
+    "African trypanosomiasis": "hasExactSynonym",
+    "sleeping sickness": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "10112"
+    ],
+    "EFO": [
+     "0005225"
+    ],
+    "GARD": [
+     "0007826"
+    ],
+    "ICD9": [
+     "086.5"
+    ],
+    "MEDGEN": [
+     "21714"
+    ],
+    "MESH": [
+     "D014353"
+    ],
+    "MedDRA": [
+     "10001461"
+    ],
+    "NCIT": [
+     "C84541"
+    ],
+    "Orphanet": [
+     "3385"
+    ],
+    "SCTID": [
+     "27031003"
+    ],
+    "UMLS": [
+     "C0041228"
+    ]
+   }
+  },
+  "MONDO:0005502": {
+   "definition": "Dengue fever (DF), caused by dengue virus, is an arboviral disease characterized by an initial non-specific febrile illness that can sometimes progress to more severe forms manifesting capillary leakage and hemorrhage (dengue hemorrhagic fever, or DHF) and shock (dengue shock syndrome, or DSS).",
+   "id": "MONDO:0005502",
+   "label": "dengue disease",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "DF": "hasExactSynonym",
+    "Dengue": "hasExactSynonym",
+    "Dengue fever": "hasExactSynonym",
+    "Dengue virus caused disease or disorder": "hasExactSynonym",
+    "Dengue virus infection": "hasExactSynonym",
+    "Philippine hemorrhagic fever": "hasRelatedSynonym",
+    "Singapore hemorrhagic fever": "hasRelatedSynonym",
+    "Thai hemorrhagic fever": "hasRelatedSynonym",
+    "break bone fever": "hasExactSynonym",
+    "hemorrhagic dengue": "hasRelatedSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "12205"
+    ],
+    "EFO": [
+     "0005547"
+    ],
+    "GARD": [
+     "0006254"
+    ],
+    "ICD10CM": [
+     "A90"
+    ],
+    "ICD9": [
+     "061"
+    ],
+    "MEDGEN": [
+     "3721"
+    ],
+    "MESH": [
+     "D003715"
+    ],
+    "MedDRA": [
+     "10012310"
+    ],
+    "NCIT": [
+     "C34528"
+    ],
+    "Orphanet": [
+     "99828"
+    ],
+    "SCTID": [
+     "38362002"
+    ],
+    "UMLS": [
+     "C0011311"
+    ]
+   }
+  },
+  "MONDO:0005575": {
+   "definition": "Editor note: some sources make distinct classes for colorectal vs large intestine. We follow NCIT and make these equivalent",
+   "id": "MONDO:0005575",
+   "label": "colorectal cancer",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "CRC": "hasRelatedSynonym",
+    "cancer of colorectum": "hasExactSynonym",
+    "colorectal cancer": "hasExactSynonym",
+    "colorectum cancer": "hasExactSynonym",
+    "malignant colorectal neoplasm": "hasExactSynonym",
+    "malignant colorectal tumor": "hasExactSynonym",
+    "malignant colorectal tumour": "hasExactSynonym",
+    "malignant colorectum neoplasm": "hasExactSynonym",
+    "malignant large bowel tumour": "hasExactSynonym",
+    "malignant large intestine tumour": "hasExactSynonym",
+    "malignant neoplasm of colorectum": "hasExactSynonym",
+    "malignant tumour of large bowel": "hasExactSynonym",
+    "malignant tumour of large intestine": "hasExactSynonym",
+    "malignant tumour of the large bowel": "hasExactSynonym",
+    "malignant tumour of the large intestine": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "5672",
+     "9256"
+    ],
+    "MEDGEN": [
+     "83428"
+    ],
+    "NCIT": [
+     "C4978"
+    ],
+    "OMIM": [
+     "114500"
+    ],
+    "Orphanet": [
+     "466667"
+    ],
+    "SCTID": [
+     "363510005"
+    ],
+    "UMLS": [
+     "C0346629"
+    ]
+   }
+  },
+  "MONDO:0005608": {
+   "definition": "A highly contagious viral infection caused by the varicella zoster virus. Clinically, it may be manifested as shingles or chicken pox.",
+   "id": "MONDO:0005608",
+   "label": "varicella zoster infection",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "Varicella-zoster Virus infection": "hasExactSynonym",
+    "varicella zoster infection": "hasExactSynonym"
+   },
+   "xrefs": {
+    "EFO": [
+     "0006509"
+    ],
+    "ICD9": [
+     "052.7"
+    ],
+    "MEDGEN": [
+     "668886"
+    ],
+    "NCIT": [
+     "C96407"
+    ],
+    "SCTID": [
+     "309465005"
+    ],
+    "UMLS": [
+     "C0586989"
+    ]
+   }
+  },
+  "MONDO:0005619": {
+   "definition": "A bacterial infectious disorder contracted by consumption of food or drink contaminated with Salmonella typhi. This disorder is common in developing countries and can be treated with antibiotics.",
+   "id": "MONDO:0005619",
+   "label": "typhoid fever",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "typhoid": "hasExactSynonym",
+    "typhoid fever": "hasExactSynonym",
+    "typhoidal salmonellosis": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "13258"
+    ],
+    "EFO": [
+     "0006789"
+    ],
+    "GARD": [
+     "0009564"
+    ],
+    "ICD10CM": [
+     "A01.0"
+    ],
+    "ICD9": [
+     "002.0"
+    ],
+    "MEDGEN": [
+     "11973"
+    ],
+    "MESH": [
+     "D014435"
+    ],
+    "NCIT": [
+     "C35089"
+    ],
+    "Orphanet": [
+     "99745"
+    ],
+    "SCTID": [
+     "4834000"
+    ],
+    "UMLS": [
+     "C0041466"
+    ],
+    "icd11.foundation": [
+     "1528414070"
+    ]
+   }
+  },
+  "MONDO:0005647": {
+   "definition": "A sexually transmitted papillary growth caused by the human papillomavirus. It usually arises in the skin and mucous membranes of the perianal region and external genitalia.",
+   "id": "MONDO:0005647",
+   "label": "anogenital human papillomavirus infection",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "anogenital Human Papillomavirus infection": "hasExactSynonym",
+    "anogenital Human papilloma Virus infection": "hasExactSynonym",
+    "condyloma acuminatum": "hasRelatedSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "11168"
+    ],
+    "EFO": [
+     "0007147"
+    ],
+    "ICD9": [
+     "078.11"
+    ],
+    "MEDGEN": [
+     "108217"
+    ],
+    "MESH": [
+     "D003218"
+    ],
+    "NCIT": [
+     "C4820"
+    ],
+    "SCTID": [
+     "266113007"
+    ],
+    "UMLS": [
+     "C0554632"
+    ]
+   }
+  },
+  "MONDO:0005701": {
+   "definition": "An infection that is caused by Chlamydia trachomatis.",
+   "id": "MONDO:0005701",
+   "label": "chlamydia trachomatis infectious disease",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "Chlamydia trachomatis caused disease or disorder": "hasExactSynonym",
+    "Chlamydial infection": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "11263"
+    ],
+    "EFO": [
+     "0007205"
+    ],
+    "ICD9": [
+     "078.88",
+     "079.88",
+     "079.98"
+    ],
+    "NCIT": [
+     "C34463"
+    ],
+    "SCTID": [
+     "105629000"
+    ]
+   }
+  },
+  "MONDO:0005706": {
+   "definition": "A fungal infection caused by Coccidioides immitis. Affected individuals usually have mild flu-like symptoms. However, pneumonia and systemic involvement with the formation of abscesses may develop as complications of the disease.",
+   "id": "MONDO:0005706",
+   "label": "coccidioidomycosis",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "California disease": "hasExactSynonym",
+    "Coccidioides immitis caused disease or disorder": "hasExactSynonym",
+    "Coccidioides infection": "hasExactSynonym",
+    "San Joaquin valley fever": "hasExactSynonym",
+    "Valley fever": "hasExactSynonym",
+    "desert fever": "hasExactSynonym",
+    "desert rheumatism": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "13450"
+    ],
+    "EFO": [
+     "0007211"
+    ],
+    "GARD": [
+     "0009525"
+    ],
+    "ICD10CM": [
+     "B38"
+    ],
+    "ICD10WHO": [
+     "B38"
+    ],
+    "ICD9": [
+     "114",
+     "114.1",
+     "114.9"
+    ],
+    "MEDGEN": [
+     "3137"
+    ],
+    "MESH": [
+     "D003047"
+    ],
+    "MedDRA": [
+     "10009825"
+    ],
+    "NCIT": [
+     "C84642"
+    ],
+    "Orphanet": [
+     "228123"
+    ],
+    "SCTID": [
+     "23247008"
+    ],
+    "UMLS": [
+     "C0009186"
+    ],
+    "icd11.foundation": [
+     "132287989"
+    ]
+   }
+  },
+  "MONDO:0005723": {
+   "definition": "Meningeal inflammation produced by cryptococcus neoformans, an encapsulated yeast that tends to infect individuals with acquired immunodeficiency syndrome and other immunocompromised states. The organism enters the body through the respiratory tract, but symptomatic infections are usually limited to the lungs and nervous system. The organism may also produce parenchymal brain lesions (torulomas). Clinically, the course is subacute and may feature headache; nausea; photophobia; focal neurologic deficits; seizures; cranial neuropathies; and hydrocephalus. (From Adams et al., Principles of Neurology, 6th ed, pp721-2)",
+   "id": "MONDO:0005723",
+   "label": "Cryptococcal meningitis",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "Cryptococcus neoformans caused infectious meningitis": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "0080159"
+    ],
+    "EFO": [
+     "0007228"
+    ],
+    "GARD": [
+     "0024223"
+    ],
+    "ICD9": [
+     "321.0"
+    ],
+    "MEDGEN": [
+     "88410"
+    ],
+    "MESH": [
+     "D016919"
+    ],
+    "NCIT": [
+     "C174113"
+    ],
+    "SCTID": [
+     "14232007"
+    ],
+    "UMLS": [
+     "C0085436"
+    ]
+   }
+  },
+  "MONDO:0005737": {
+   "definition": "A viral hemorrhagic fever that is caused by the Ebola virus, which is transmitted by contact with infected animals or humans; it is characterized by high fever, unexplained bleeding, and a high mortality rate.",
+   "id": "MONDO:0005737",
+   "label": "Ebola hemorrhagic fever",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "EHF": "hasExactSynonym",
+    "Ebola": "hasExactSynonym",
+    "Ebola fever": "hasExactSynonym",
+    "Ebola virus disease": "hasExactSynonym",
+    "Ebolavirus caused disease or disorder": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "4325"
+    ],
+    "EFO": [
+     "0007243"
+    ],
+    "GARD": [
+     "0002035"
+    ],
+    "ICD10CM": [
+     "A98.4"
+    ],
+    "MEDGEN": [
+     "129219"
+    ],
+    "MESH": [
+     "D019142"
+    ],
+    "MedDRA": [
+     "10014071"
+    ],
+    "NCIT": [
+     "C36171"
+    ],
+    "Orphanet": [
+     "319218"
+    ],
+    "SCTID": [
+     "37109004"
+    ],
+    "UMLS": [
+     "C0282687"
+    ],
+    "icd11.foundation": [
+     "792755706"
+    ]
+   }
+  },
+  "MONDO:0005738": {
+   "definition": "A parasitic infection caused by tapeworm larvae of Echinococcus. It affects livestock and humans. It is characterized by the formation of hydatid cysts mainly in the liver, lungs, spleen, and kidneys. Rupture of the cysts may lead to shock.",
+   "id": "MONDO:0005738",
+   "label": "echinococcosis",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "Echinococcus caused disease or disorder": "hasExactSynonym",
+    "echinococcosis": "hasExactSynonym",
+    "echinococcosis, unspecified, of liver": "hasNarrowSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "1496"
+    ],
+    "EFO": [
+     "0007245"
+    ],
+    "ICD10CM": [
+     "B67"
+    ],
+    "ICD10WHO": [
+     "B67"
+    ],
+    "ICD9": [
+     "122",
+     "122.9"
+    ],
+    "MEDGEN": [
+     "4438"
+    ],
+    "MESH": [
+     "D004443"
+    ],
+    "NCIT": [
+     "C84682"
+    ],
+    "SCTID": [
+     "74942003"
+    ],
+    "UMLS": [
+     "C0013502"
+    ],
+    "icd11.foundation": [
+     "1456802165"
+    ]
+   }
+  },
+  "MONDO:0005761": {
+   "definition": "Parasitic infestation of the human lymphatic system by wuchereria bancrofti or brugia malayi. It is also called lymphatic filariasis.",
+   "id": "MONDO:0005761",
+   "label": "filarial elephantiasis",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "Bancroftian filariasis": "hasRelatedSynonym",
+    "Elephantiasis": "hasBroadSynonym",
+    "Malayi tropical eosinphilia": "hasRelatedSynonym",
+    "Wuchereria Bancrofti infection": "hasRelatedSynonym",
+    "Wuchereriasis": "hasRelatedSynonym",
+    "elephantiasis": "hasBroadSynonym",
+    "eyelid elephantiasis": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "12211"
+    ],
+    "EFO": [
+     "0007272"
+    ],
+    "GARD": [
+     "0003321"
+    ],
+    "ICD9": [
+     "374.83"
+    ],
+    "MEDGEN": [
+     "8583"
+    ],
+    "MESH": [
+     "D004605"
+    ],
+    "MedDRA": [
+     "10016675"
+    ],
+    "NCIT": [
+     "C128360"
+    ],
+    "NORD": [
+     "1082"
+    ],
+    "Orphanet": [
+     "2035"
+    ],
+    "SCTID": [
+     "14100003",
+     "240820001"
+    ],
+    "UMLS": [
+     "C0013884"
+    ],
+    "icd11.foundation": [
+     "247221550"
+    ]
+   }
+  },
+  "MONDO:0005770": {
+   "definition": "Herpes simplex infection of the genitals, most commonly caused by the herpes simplex-2 virus.",
+   "id": "MONDO:0005770",
+   "label": "genital herpes",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "herpes genitalia": "hasExactSynonym",
+    "herpes genitalis": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "8704"
+    ],
+    "EFO": [
+     "0007282"
+    ],
+    "ICD9": [
+     "054.1",
+     "054.10",
+     "054.19"
+    ],
+    "MEDGEN": [
+     "42436"
+    ],
+    "MESH": [
+     "D006558"
+    ],
+    "NCIT": [
+     "C14364"
+    ],
+    "SCTID": [
+     "33839006"
+    ],
+    "UMLS": [
+     "C0019342"
+    ]
+   }
+  },
+  "MONDO:0005812": {
+   "definition": "An acute viral infection of the respiratory tract, occurring in isolated cases, in epidemics, or in pandemics; it is caused by serologically different strains of viruses (influenzaviruses) designated A, B, and C, has a 3-day incubation period, and usually lasts for 3 to 10 days. It is marked by inflammation of the nasal mucosa, pharynx, and conjunctiva; headache; myalgia; often fever, chills, and prostration; and occasionally involvement of the myocardium or central nervous system.",
+   "id": "MONDO:0005812",
+   "label": "influenza",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "Influenza with other manifestations": "hasExactSynonym",
+    "flu": "hasExactSynonym",
+    "influenza infection": "hasExactSynonym",
+    "orthomyxoviridae caused disease or disorder": "hasExactSynonym",
+    "orthomyxoviridae infectious disease": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "8469"
+    ],
+    "EFO": [
+     "0007328"
+    ],
+    "ICD9": [
+     "487",
+     "487.8"
+    ],
+    "MEDGEN": [
+     "9466"
+    ],
+    "MESH": [
+     "D007251",
+     "D009976"
+    ],
+    "NCIT": [
+     "C53482"
+    ],
+    "SCTID": [
+     "61700007"
+    ],
+    "UMLS": [
+     "C0021400"
+    ],
+    "icd11.foundation": [
+     "145723401"
+    ]
+   }
+  },
+  "MONDO:0005976": {
+   "definition": "A contagious bacterial infection caused by the spirochete Treponema pallidum. It is a sexually transmitted disorder, although it can also be transmitted from the mother to the fetus in utero. Typically, it is initially manifested with a single sore which heals without treatment. If the infection is left untreated, the initial stage is followed by skin rash and mucous membrane lesions. A late stage follows, which is characterized by damage of the internal organs, including the nervous system.",
+   "id": "MONDO:0005976",
+   "label": "syphilis",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "Treponema pallidum caused disease or disorder": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "4166"
+    ],
+    "EFO": [
+     "0007504"
+    ],
+    "GARD": [
+     "0027732"
+    ],
+    "ICD9": [
+     "097.9"
+    ],
+    "MEDGEN": [
+     "21447"
+    ],
+    "MESH": [
+     "D013587"
+    ],
+    "MedDRA": [
+     "10062120"
+    ],
+    "NCIT": [
+     "C35055"
+    ],
+    "SCTID": [
+     "76272004"
+    ],
+    "UMLS": [
+     "C0039128"
+    ],
+    "icd11.foundation": [
+     "455894495"
+    ]
+   }
+  },
+  "MONDO:0005989": {
+   "definition": "A parasitic disease contracted by the ingestion or fetal transmission of toxoplasma gondii.",
+   "id": "MONDO:0005989",
+   "label": "toxoplasmosis",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "Toxoplasma gondii caused disease or disorder": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "9965"
+    ],
+    "EFO": [
+     "0007517"
+    ],
+    "ICD10CM": [
+     "B58"
+    ],
+    "ICD10WHO": [
+     "B58"
+    ],
+    "ICD9": [
+     "130",
+     "130.7",
+     "130.9"
+    ],
+    "MEDGEN": [
+     "21597"
+    ],
+    "MESH": [
+     "D014123"
+    ],
+    "NCIT": [
+     "C3418"
+    ],
+    "SCTID": [
+     "187192000"
+    ],
+    "UMLS": [
+     "C0040558"
+    ],
+    "icd11.foundation": [
+     "738999268"
+    ]
+   }
+  },
+  "MONDO:0006003": {
+   "definition": "Editor note: NCIT has terms for both UC malignant neoplasm (NCIT:C3556) and cancer.",
+   "id": "MONDO:0006003",
+   "label": "uterine corpus cancer",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "body of uterus cancer": "hasExactSynonym",
+    "cancer of body of uterus": "hasExactSynonym",
+    "cancer of the corpus uteri": "hasExactSynonym",
+    "corpus uteri cancer": "hasExactSynonym",
+    "malignant body of uterus neoplasm": "hasExactSynonym",
+    "malignant neoplasm of body of uterus": "hasExactSynonym",
+    "uterine corpus cancer": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "9460"
+    ],
+    "EFO": [
+     "0007532"
+    ],
+    "ICD9": [
+     "182"
+    ],
+    "NCIT": [
+     "C61574"
+    ],
+    "SCTID": [
+     "371972005"
+    ]
+   }
+  },
+  "MONDO:0006019": {
+   "definition": "An endemic, infectious, nonvenereal disease in humans that presents mainly in children younger than 15 years. The disease occurs primarily in warm, humid, tropical areas of Africa, Asia, South America, and Oceania, among poor rural populations where conditions of overcrowding and poor sanitation prevail. Infection with Treponema pertenue, a subspecies of Treponema pallidum, causes the disease.",
+   "id": "MONDO:0006019",
+   "label": "yaws",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "Bouba": "hasExactSynonym",
+    "Treponema pallidum subsp. pertenue caused disease or disorder": "hasExactSynonym",
+    "Treponema pertenue infection": "hasRelatedSynonym",
+    "endemic treponematoses": "hasRelatedSynonym",
+    "frambesia": "hasExactSynonym",
+    "frambesia tropica": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "10371"
+    ],
+    "GARD": [
+     "0007913"
+    ],
+    "ICD10CM": [
+     "A66"
+    ],
+    "ICD10WHO": [
+     "A66"
+    ],
+    "ICD9": [
+     "102",
+     "102.7",
+     "102.9"
+    ],
+    "MEDGEN": [
+     "12186"
+    ],
+    "MESH": [
+     "D015001"
+    ],
+    "NCIT": [
+     "C41353"
+    ],
+    "NORD": [
+     "1872"
+    ],
+    "SCTID": [
+     "70647001"
+    ],
+    "UMLS": [
+     "C0043388"
+    ],
+    "icd11.foundation": [
+     "840525023"
+    ]
+   }
+  },
+  "MONDO:0006486": {
+   "definition": "A melanoma derived from melanocytes of the uveal tract. It is the most common primary intraocular tumor in the United States and Western Europe. Similar to melanoma of the skin, it is rare in Africa and Asia. Diagnostic procedures include ophthalmoscopic exam, fluorescein angiography and ultrasound. Treatment includes: surgical excision of the eye, iridocyclectomy and tumor resection. Recent treatments also include radiotherapy or photo coagulation. Classification of uveal melanomas recognizes four cell types within these tumors: epithelioid, intermediate, mixed cell, and spindle cell types. The spindle cell type uveal melanomas are further sub-classified as spindle cell type A and spindle cell type B.",
+   "id": "MONDO:0006486",
+   "label": "uveal melanoma",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "intraocular melanoma": "hasExactSynonym",
+    "melanoma of the uvea": "hasExactSynonym",
+    "melanoma of uvea": "hasExactSynonym",
+    "melanoma, uveal, malignant": "hasExactSynonym",
+    "uvea melanoma (disease)": "hasExactSynonym",
+    "uveal melanoma": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "6039"
+    ],
+    "EFO": [
+     "1000616"
+    ],
+    "GARD": [
+     "0008621"
+    ],
+    "MEDGEN": [
+     "65077"
+    ],
+    "MESH": [
+     "C536494"
+    ],
+    "MedDRA": [
+     "10061252"
+    ],
+    "NCIT": [
+     "C7712"
+    ],
+    "OMIM": [
+     "155720"
+    ],
+    "ONCOTREE": [
+     "UM"
+    ],
+    "Orphanet": [
+     "39044"
+    ],
+    "UMLS": [
+     "C0220633"
+    ]
+   }
+  },
+  "MONDO:0006497": {
+   "definition": "A group of disorders affecting the development of movement and posture, often accompanied by disturbances of sensation, perception, cognition, and behavior. It results from damage to the fetal or infant brain.",
+   "id": "MONDO:0006497",
+   "label": "cerebral palsy",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "infantile cerebral palsy": "hasExactSynonym"
+   },
+   "xrefs": {
+    "CSP": [
+     "0723-4729"
+    ],
+    "DOID": [
+     "1969"
+    ],
+    "EFO": [
+     "1000632"
+    ],
+    "HP": [
+     "0100021"
+    ],
+    "ICD10CM": [
+     "G80"
+    ],
+    "ICD10WHO": [
+     "G80"
+    ],
+    "ICD9": [
+     "343.8",
+     "343.9"
+    ],
+    "MEDGEN": [
+     "854"
+    ],
+    "MESH": [
+     "D002547"
+    ],
+    "NCIT": [
+     "C34460"
+    ],
+    "SCTID": [
+     "128188000"
+    ],
+    "UMLS": [
+     "C0007789"
+    ],
+    "icd11.foundation": [
+     "76906748"
+    ]
+   }
+  },
+  "MONDO:0006670": {
+   "definition": "Inflammation of the membranes surrounding the brain and spinal cord due to a bacterial infection.",
+   "id": "MONDO:0006670",
+   "label": "bacterial meningitis",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "Bacteria caused infectious meningitis": "hasExactSynonym",
+    "meningitis, bacterial": "hasRelatedSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "9470"
+    ],
+    "EFO": [
+     "1000831"
+    ],
+    "GARD": [
+     "0005881"
+    ],
+    "ICD9": [
+     "320",
+     "320.7",
+     "320.89",
+     "320.9"
+    ],
+    "MEDGEN": [
+     "39048"
+    ],
+    "MESH": [
+     "D016920"
+    ],
+    "MedDRA": [
+     "10004049"
+    ],
+    "NCIT": [
+     "C118297"
+    ],
+    "SCTID": [
+     "95883001"
+    ],
+    "UMLS": [
+     "C0085437"
+    ],
+    "icd11.foundation": [
+     "684930313"
+    ]
+   }
+  },
+  "MONDO:0006955": {
+   "definition": "An autoinflammatory condition following an infection with Group A Beta Hemolytic Streptococcus (GABHS), in which the heart is attacked by antibodies formed in reaction to a recent GABHS infection. Chief anatomic changes of the valve include leaflet thickening, commissural fusion, and shortening and thickening of the tendinous cords, all of which can result in valvular dysfunction.",
+   "id": "MONDO:0006955",
+   "label": "rheumatic heart disease",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "RHD": "hasExactSynonym",
+    "rheumatic carditis": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "0050827"
+    ],
+    "EFO": [
+     "1001161"
+    ],
+    "ICD9": [
+     "398.90",
+     "398.99"
+    ],
+    "MEDGEN": [
+     "20565"
+    ],
+    "MESH": [
+     "D012214"
+    ],
+    "MedDRA": [
+     "10062110"
+    ],
+    "NCIT": [
+     "C34882"
+    ],
+    "SCTID": [
+     "23685000"
+    ],
+    "UMLS": [
+     "C0035439"
+    ],
+    "icd11.foundation": [
+     "291726710"
+    ]
+   }
+  },
+  "MONDO:0007254": {
+   "definition": "A primary or metastatic malignant neoplasm involving the breast. The vast majority of cases are carcinomas arising from the breast parenchyma or the nipple. Malignant breast neoplasms occur more frequently in females than in males.",
+   "id": "MONDO:0007254",
+   "label": "breast cancer",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "breast cancer": "hasExactSynonym",
+    "breast tumour": "hasBroadSynonym",
+    "cancer of breast": "hasExactSynonym",
+    "malignant breast neoplasm": "hasExactSynonym",
+    "malignant breast tumor": "hasExactSynonym",
+    "malignant breast tumour": "hasExactSynonym",
+    "malignant neoplasm of breast": "hasExactSynonym",
+    "malignant neoplasm of the breast": "hasExactSynonym",
+    "malignant tumor of breast": "hasExactSynonym",
+    "malignant tumor of the breast": "hasExactSynonym",
+    "malignant tumour of breast": "hasExactSynonym",
+    "malignant tumour of the breast": "hasExactSynonym",
+    "mammary tumour": "hasBroadSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "1612"
+    ],
+    "ICD10CM": [
+     "C50"
+    ],
+    "ICD9": [
+     "174.8"
+    ],
+    "MEDGEN": [
+     "651"
+    ],
+    "NCIT": [
+     "C9335"
+    ],
+    "SCTID": [
+     "254837009"
+    ],
+    "UMLS": [
+     "C0006142"
+    ],
+    "icd11.foundation": [
+     "1047754165"
+    ]
+   }
+  },
+  "MONDO:0007523": {
+   "definition": "Ehlers-Danlos syndrome, hypermobility type (HT-EDS) is the most frequent form of EDS, a group of hereditary connective tissue diseases, and is characterized by joint hyperlaxity, mild skin hyperextensibility, tissue fragility and extra-musculoskeletal manifestations.",
+   "id": "MONDO:0007523",
+   "label": "Ehlers-Danlos syndrome, hypermobility type",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "EDS III": "hasExactSynonym",
+    "EDS3 (formerly)": "hasRelatedSynonym",
+    "EDSHMB": "hasExactSynonym",
+    "Ehlers-Danlos syndrome type 3": "hasExactSynonym",
+    "Ehlers-Danlos syndrome type 3 (formerly)": "hasExactSynonym",
+    "Ehlers-Danlos syndrome, hypermobility type": "hasExactSynonym",
+    "Ehlers-Danlos syndrome, type 3": "hasExactSynonym",
+    "Ehlers-Danlos syndrome, type III": "hasExactSynonym",
+    "hEDS": "hasRelatedSynonym",
+    "hypermobile EDS": "hasRelatedSynonym",
+    "hypermobile Ehlers-Danlos syndrome": "hasRelatedSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "14757"
+    ],
+    "GARD": [
+     "0002081"
+    ],
+    "MEDGEN": [
+     "75670"
+    ],
+    "MESH": [
+     "C536196"
+    ],
+    "NANDO": [
+     "1200647",
+     "2201257"
+    ],
+    "NCIT": [
+     "C125698"
+    ],
+    "OMIM": [
+     "130020"
+    ],
+    "Orphanet": [
+     "285"
+    ],
+    "SCTID": [
+     "30652003"
+    ],
+    "UMLS": [
+     "C0268337"
+    ]
+   }
+  },
+  "MONDO:0007739": {
+   "definition": "Huntington disease (HD) is a rare neurodegenerative disorder of the central nervous system characterized by unwanted choreatic movements, behavioral and psychiatric disturbances and dementia.",
+   "id": "MONDO:0007739",
+   "label": "Huntington disease",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "HD": "hasExactSynonym",
+    "Huntington chorea": "hasExactSynonym",
+    "Huntington disease": "hasExactSynonym",
+    "Huntington's Disease": "hasExactSynonym",
+    "Huntington's chorea": "hasExactSynonym",
+    "Huntington's disease": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "12858"
+    ],
+    "GARD": [
+     "0006677"
+    ],
+    "ICD10CM": [
+     "G10"
+    ],
+    "ICD10WHO": [
+     "G10"
+    ],
+    "ICD9": [
+     "333.4"
+    ],
+    "MEDGEN": [
+     "5654"
+    ],
+    "MESH": [
+     "D006816"
+    ],
+    "MedDRA": [
+     "10070668"
+    ],
+    "NANDO": [
+     "1200012"
+    ],
+    "NCIT": [
+     "C82342"
+    ],
+    "NORD": [
+     "1256"
+    ],
+    "OMIM": [
+     "143100"
+    ],
+    "Orphanet": [
+     "399"
+    ],
+    "SCTID": [
+     "58756001"
+    ],
+    "UMLS": [
+     "C0020179"
+    ],
+    "icd11.foundation": [
+     "2132180242"
+    ]
+   }
+  },
+  "MONDO:0008315": {
+   "definition": "A primary or metastatic malignant tumor involving the prostate gland. The vast majority are carcinomas.",
+   "id": "MONDO:0008315",
+   "label": "prostate cancer",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "cancer of prostate gland": "hasExactSynonym",
+    "malignant neoplasm of prostate": "hasExactSynonym",
+    "malignant neoplasm of prostate gland": "hasExactSynonym",
+    "malignant neoplasm of the prostate": "hasExactSynonym",
+    "malignant prostate gland neoplasm": "hasExactSynonym",
+    "malignant prostate neoplasm": "hasExactSynonym",
+    "malignant prostate tumor": "hasExactSynonym",
+    "malignant prostate tumour": "hasExactSynonym",
+    "malignant tumor of prostate": "hasExactSynonym",
+    "malignant tumor of the prostate": "hasExactSynonym",
+    "malignant tumour of prostate": "hasExactSynonym",
+    "malignant tumour of the prostate": "hasExactSynonym",
+    "prostate cancer, familial": "hasNarrowSynonym",
+    "prostate gland cancer": "hasExactSynonym",
+    "tumour of the prostate": "hasBroadSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "10283"
+    ],
+    "ICD10CM": [
+     "C61"
+    ],
+    "ICD9": [
+     "185"
+    ],
+    "MEDGEN": [
+     "138169"
+    ],
+    "MESH": [
+     "D011471"
+    ],
+    "NCIT": [
+     "C7378"
+    ],
+    "SCTID": [
+     "399068003"
+    ],
+    "UMLS": [
+     "C0376358"
+    ]
+   }
+  },
+  "MONDO:0008383": {
+   "definition": "A chronic, systemic autoimmune disorder characterized by inflammation in the synovial membranes and articular surfaces. It manifests primarily as a symmetric, erosive polyarthritis that spares the axial skeleton and is typically associated with the presence in the serum of rheumatoid factor.",
+   "id": "MONDO:0008383",
+   "label": "rheumatoid arthritis",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "RA": "hasExactSynonym",
+    "rheumatoid arthritis": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "7148"
+    ],
+    "EFO": [
+     "0000685"
+    ],
+    "HP": [
+     "0001370"
+    ],
+    "ICD9": [
+     "714.0"
+    ],
+    "MEDGEN": [
+     "2078"
+    ],
+    "MESH": [
+     "D001172"
+    ],
+    "NCIT": [
+     "C2884"
+    ],
+    "OMIM": [
+     "180300"
+    ],
+    "Orphanet": [
+     "284130"
+    ],
+    "SCTID": [
+     "69896004"
+    ],
+    "UMLS": [
+     "C0003873"
+    ],
+    "icd11.foundation": [
+     "576319925"
+    ]
+   }
+  },
+  "MONDO:0008401": {
+   "definition": "A neoplasm characterized by the presence of benign epithelial and myoepithelial cells and a mesenchymal component that may contain mucoid, myxoid, cartilaginous, or osseous areas. It may be completely or partially encapsulated. It occurs in the parotid gland, submandibular gland, minor salivary glands in the oral cavity, upper respiratory tract, and nasal cavity and paranasal sinuses. It usually presents as a slow growing painless mass. Infrequently, patients may present with pain and facial palsy. It may recur after excision or transform to a malignant neoplasm (carcinoma ex pleomorphic adenoma).",
+   "id": "MONDO:0008401",
+   "label": "pleomorphic adenoma",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "mixed tumour of the salivary gland": "hasRelatedSynonym",
+    "pleomorphic adenoma": "hasExactSynonym",
+    "tumor, mixed, benign": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "452"
+    ],
+    "GARD": [
+     "0017789"
+    ],
+    "ICDO": [
+     "8940/0"
+    ],
+    "MEDGEN": [
+     "275400"
+    ],
+    "MESH": [
+     "D008949"
+    ],
+    "NCIT": [
+     "C8602"
+    ],
+    "OMIM": [
+     "181030"
+    ],
+    "Orphanet": [
+     "454821"
+    ],
+    "SCTID": [
+     "447888006"
+    ],
+    "UMLS": [
+     "C1519176"
+    ]
+   }
+  },
+  "MONDO:0008903": {
+   "definition": "A malignant neoplasm involving the lung.",
+   "id": "MONDO:0008903",
+   "label": "lung cancer",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "cancer of lung": "hasExactSynonym",
+    "lung cancer": "hasExactSynonym",
+    "malignant lung neoplasm": "hasExactSynonym",
+    "malignant lung tumor": "hasExactSynonym",
+    "malignant lung tumour": "hasExactSynonym",
+    "malignant neoplasm of lung": "hasExactSynonym",
+    "malignant neoplasm of the lung": "hasExactSynonym",
+    "malignant tumor of lung": "hasExactSynonym",
+    "malignant tumor of the lung": "hasExactSynonym",
+    "malignant tumour of lung": "hasExactSynonym",
+    "malignant tumour of the lung": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "1324"
+    ],
+    "ICD9": [
+     "162.3",
+     "162.4",
+     "162.5",
+     "162.8",
+     "162.9"
+    ],
+    "MEDGEN": [
+     "66885"
+    ],
+    "NCIT": [
+     "C7377"
+    ],
+    "OMIM": [
+     "211980"
+    ],
+    "SCTID": [
+     "363358000"
+    ],
+    "UMLS": [
+     "C0242379"
+    ]
+   }
+  },
+  "MONDO:0009061": {
+   "definition": "Diagnosis of CF requires **one clinical indicator** (positive newborn screen, symptoms consistent with CF, or family history) **plus one functional/genetic indicator**:\n1. Sweat chloride concentration \u226560 mmol/L, or\n2. Identification of two CF-causing CFTR pathogenic variants, or\n3. Abnormal nasal potential difference measurement\n\nSee also CFTR-related disorders (MONDO:7770004), which involve CFTR dysfunction limited to a single organ system and do not meet CF diagnostic criteria.",
+   "id": "MONDO:0009061",
+   "label": "cystic fibrosis",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "CF": "hasExactSynonym",
+    "cystic fibrosis": "hasExactSynonym",
+    "fibrocystic disease of the pancreas": "hasRelatedSynonym",
+    "mucoviscidosis": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "1485"
+    ],
+    "GARD": [
+     "0006233"
+    ],
+    "ICD10CM": [
+     "E84"
+    ],
+    "ICD10WHO": [
+     "E84"
+    ],
+    "ICD9": [
+     "277.0"
+    ],
+    "MEDGEN": [
+     "41393"
+    ],
+    "MESH": [
+     "D003550"
+    ],
+    "MedDRA": [
+     "10011762"
+    ],
+    "NANDO": [
+     "1200922",
+     "1201021",
+     "2100035",
+     "2200205"
+    ],
+    "NCIT": [
+     "C2975"
+    ],
+    "NORD": [
+     "1026"
+    ],
+    "OMIM": [
+     "219700"
+    ],
+    "Orphanet": [
+     "586"
+    ],
+    "SCTID": [
+     "190905008"
+    ],
+    "UMLS": [
+     "C0010674"
+    ],
+    "icd11.foundation": [
+     "514403112"
+    ]
+   }
+  },
+  "MONDO:0009831": {
+   "definition": "A malignant neoplasm involving the pancreas.",
+   "id": "MONDO:0009831",
+   "label": "malignant pancreatic neoplasm",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "cancer of pancreas": "hasExactSynonym",
+    "malignant neoplasm of pancreas": "hasExactSynonym",
+    "malignant neoplasm of the pancreas": "hasExactSynonym",
+    "malignant pancreas neoplasm": "hasExactSynonym",
+    "malignant pancreatic neoplasm": "hasExactSynonym",
+    "pancreas cancer": "hasExactSynonym",
+    "pancreatic cancer": "hasExactSynonym",
+    "pancreatic tumour": "hasRelatedSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "1793"
+    ],
+    "EFO": [
+     "1000359"
+    ],
+    "GARD": [
+     "0027792"
+    ],
+    "ICD10CM": [
+     "C25"
+    ],
+    "ICD9": [
+     "157.0",
+     "157.1",
+     "157.2",
+     "157.8"
+    ],
+    "MEDGEN": [
+     "138068"
+    ],
+    "NCIT": [
+     "C9005"
+    ],
+    "UMLS": [
+     "C0346647"
+    ],
+    "icd11.foundation": [
+     "542147910"
+    ]
+   }
+  },
+  "MONDO:0009861": {
+   "definition": "Phenylketonuria (PKU) is the most common inborn error of amino acid metabolism and is characterized by mild to severe mental disability in untreated patients.",
+   "id": "MONDO:0009861",
+   "label": "phenylketonuria",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "PAH deficiency": "hasExactSynonym",
+    "PKU": "hasExactSynonym",
+    "phenylalanine hydroxylase deficiency": "hasExactSynonym",
+    "phenylketonuria": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "9281"
+    ],
+    "GARD": [
+     "0007383"
+    ],
+    "ICD9": [
+     "270.1"
+    ],
+    "MEDGEN": [
+     "19244"
+    ],
+    "MESH": [
+     "D010661"
+    ],
+    "MedDRA": [
+     "10034872"
+    ],
+    "NANDO": [
+     "1200784",
+     "1200785",
+     "2200467",
+     "2201075"
+    ],
+    "NCIT": [
+     "C81315"
+    ],
+    "NORD": [
+     "1574"
+    ],
+    "OMIM": [
+     "261600"
+    ],
+    "Orphanet": [
+     "716"
+    ],
+    "SCTID": [
+     "7573000"
+    ],
+    "UMLS": [
+     "C0031485"
+    ],
+    "icd11.foundation": [
+     "444122923"
+    ]
+   }
+  },
+  "MONDO:0010150": {
+   "definition": "A squamous cell carcinoma that arises from any of the following anatomic sites: lip and oral cavity, nasal cavity, paranasal sinuses, pharynx, larynx, and salivary glands.",
+   "id": "MONDO:0010150",
+   "label": "head and neck squamous cell carcinoma",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "HNSCC": "hasExactSynonym",
+    "SCCHN": "hasExactSynonym",
+    "craniocervical region squamous cell carcinoma": "hasExactSynonym",
+    "head and neck squamous cell carcinoma": "hasExactSynonym",
+    "squamous cell carcinoma of head and neck": "hasExactSynonym",
+    "squamous cell carcinoma of the head and neck": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "5520"
+    ],
+    "EFO": [
+     "0000181"
+    ],
+    "GARD": [
+     "0008503"
+    ],
+    "MEDGEN": [
+     "257911"
+    ],
+    "MESH": [
+     "C535575"
+    ],
+    "MedDRA": [
+     "10060121"
+    ],
+    "NCIT": [
+     "C34447"
+    ],
+    "OMIM": [
+     "275355"
+    ],
+    "ONCOTREE": [
+     "HNSC"
+    ],
+    "Orphanet": [
+     "67037"
+    ],
+    "SCTID": [
+     "716659002"
+    ],
+    "UMLS": [
+     "C1168401"
+    ]
+   }
+  },
+  "MONDO:0010679": {
+   "definition": "Duchenne muscular dystrophy (DMD) is a neuromuscular disease characterized by rapidly progressive muscle weakness and wasting due to degeneration of skeletal, smooth and cardiac muscle.",
+   "id": "MONDO:0010679",
+   "label": "Duchenne muscular dystrophy",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "DMD": "hasExactSynonym",
+    "Duchenne muscular dystrophy": "hasExactSynonym",
+    "severe dystrophinopathy, Duchenne type": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "11723"
+    ],
+    "GARD": [
+     "0006291"
+    ],
+    "MEDGEN": [
+     "3925"
+    ],
+    "MESH": [
+     "D020388"
+    ],
+    "MedDRA": [
+     "10013801"
+    ],
+    "NANDO": [
+     "1200488",
+     "2200856"
+    ],
+    "NCIT": [
+     "C75482"
+    ],
+    "NORD": [
+     "1065"
+    ],
+    "OMIM": [
+     "310200"
+    ],
+    "Orphanet": [
+     "98896"
+    ],
+    "SCTID": [
+     "76670001"
+    ],
+    "UMLS": [
+     "C0013264"
+    ],
+    "icd11.foundation": [
+     "1479561744"
+    ]
+   }
+  },
+  "MONDO:0011122": {
+   "definition": "Obesity is a complex disease that may involve multiple environmental and genetic causes. See the subclass monogenic disease for genetic subtypes",
+   "id": "MONDO:0011122",
+   "label": "obesity disorder",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "obesity": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "9970"
+    ],
+    "EFO": [
+     "0001073"
+    ],
+    "HP": [
+     "0001513"
+    ],
+    "ICD9": [
+     "278.0",
+     "278.00"
+    ],
+    "MEDGEN": [
+     "18127"
+    ],
+    "NCIT": [
+     "C3283"
+    ],
+    "Orphanet": [
+     "521399"
+    ],
+    "SCTID": [
+     "414916001"
+    ],
+    "UMLS": [
+     "C0028754"
+    ]
+   }
+  },
+  "MONDO:0011382": {
+   "definition": "Sickle cell anemias are chronic hemolytic diseases that may induce three types of acute accidents: severe anemia, severe bacterial infections, and ischemic vasoocclusive accidents (VOA) caused by sickle-shaped red blood cells obstructing small blood vessels and capillaries. Many diverse complications can occur.",
+   "id": "MONDO:0011382",
+   "label": "sickle cell disease",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "HPA1": "hasRelatedSynonym",
+    "Haemoglobin S disease": "hasRelatedSynonym",
+    "Haemoglobin S disease without crisis": "hasExactSynonym",
+    "Hb-S/Hb-C disease": "hasExactSynonym",
+    "HbS disease": "hasRelatedSynonym",
+    "Hemoglobin S disease": "hasRelatedSynonym",
+    "Sickle Cell Disease": "hasExactSynonym",
+    "sickle cell anemia": "hasExactSynonym",
+    "sickle cell disease": "hasExactSynonym",
+    "sickle-cell/Hb-C disease without crisis": "hasExactSynonym",
+    "sickling disorder due to Haemoglobin S": "hasExactSynonym",
+    "sickling disorder due to Hemoglobin S": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "0081445",
+     "10923"
+    ],
+    "GARD": [
+     "0008614"
+    ],
+    "ICD10CM": [
+     "D57.2"
+    ],
+    "ICD9": [
+     "282.6",
+     "282.60",
+     "282.63"
+    ],
+    "MEDGEN": [
+     "287"
+    ],
+    "MESH": [
+     "D000755"
+    ],
+    "MedDRA": [
+     "10040641"
+    ],
+    "NANDO": [
+     "2200624"
+    ],
+    "NCIT": [
+     "C34383"
+    ],
+    "NORD": [
+     "1714"
+    ],
+    "OMIM": [
+     "603903"
+    ],
+    "Orphanet": [
+     "232"
+    ],
+    "UMLS": [
+     "C0002895"
+    ]
+   }
+  },
+  "MONDO:0011996": {
+   "definition": "A chronic myeloproliferative neoplasm characterized by the expression of the BCR-ABL1 fusion gene. It presents with neutrophilic leukocytosis. It can appear at any age, but it mostly affects middle aged and older individuals. Patients usually present with fatigue, weight loss, anemia, night sweats, and splenomegaly. If untreated, it follows a biphasic or triphasic natural course; an initial indolent chronic phase which is followed by an accelerated phase, a blast phase, or both. Allogeneic stem cell transplantation and tyrosine kinase inhibitors delay disease progression and prolong overall survival.",
+   "id": "MONDO:0011996",
+   "label": "chronic myeloid leukemia",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "BCR-ABL Positive chronic myelogenous leukaemia": "hasExactSynonym",
+    "BCR-ABL Positive chronic myelogenous leukemia": "hasExactSynonym",
+    "CML": "hasExactSynonym",
+    "CML - chronic myelogenous leukaemia": "hasExactSynonym",
+    "CML - chronic myelogenous leukemia": "hasExactSynonym",
+    "chronic granulocytic leukemia": "hasExactSynonym",
+    "chronic myelocytic leukaemia": "hasExactSynonym",
+    "chronic myelocytic leukemia": "hasExactSynonym",
+    "chronic myelogenous leukaemia (CML)": "hasExactSynonym",
+    "chronic myelogenous leukemia": "hasExactSynonym",
+    "chronic myelogenous leukemia (CML)": "hasExactSynonym",
+    "chronic myelogenous leukemia, BCR-ABL1 Positive": "hasExactSynonym",
+    "chronic myelogenous leukemias": "hasExactSynonym",
+    "chronic myeloid leukemia": "hasExactSynonym",
+    "hematopoeitic - chronic myelocytic leukaemia (CML)": "hasExactSynonym",
+    "hematopoeitic - chronic myelocytic leukemia (CML)": "hasExactSynonym",
+    "myeloid leukemia, chronic": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "0081088",
+     "8552"
+    ],
+    "EFO": [
+     "0000339"
+    ],
+    "GARD": [
+     "0006105"
+    ],
+    "ICD9": [
+     "205.1"
+    ],
+    "ICDO": [
+     "9863/3",
+     "9875/3"
+    ],
+    "MEDGEN": [
+     "75993"
+    ],
+    "MedDRA": [
+     "10009013"
+    ],
+    "NANDO": [
+     "2200013"
+    ],
+    "NCIT": [
+     "C3174"
+    ],
+    "OMIM": [
+     "608232"
+    ],
+    "ONCOTREE": [
+     "CML"
+    ],
+    "Orphanet": [
+     "521"
+    ],
+    "UMLS": [
+     "C0279543"
+    ]
+   }
+  },
+  "MONDO:0013452": {
+   "definition": "A spectrum of conditions caused by monoallelic pathogenic variants in ACTA2. Phenotypes can present in isolation or in combination and can include, but are not limited to: cardiovascular manifestations (heritable thoracic aortic aneurysm and dissection, coronary artery disease, patent ductus arteriosus, aortic pulmonary window, and/or early-onset atherosclerosis), smooth muscle cell dysfunction (hypoperistalsis, hydronephrosis and hydroureter, megacystis), ophthalmological manifestations (retinal vessel disease, congenital mydriasis and iris flocculi/hypoplasia), and a Moyamoya-like cerebrovascular disease.",
+   "id": "MONDO:0013452",
+   "label": "multisystemic smooth muscle dysfunction syndrome",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "ACTA2-related smooth muscle dysfunction syndrome": "hasExactSynonym",
+    "congenital mydriasis, patent ductus arteriosus, thoracic aortic aneurysm, and vasculopathy": "hasRelatedSynonym",
+    "multisystemic smooth muscle dysfunction syndrome": "hasExactSynonym"
+   },
+   "xrefs": {
+    "GARD": [
+     "0012811"
+    ],
+    "MEDGEN": [
+     "462551"
+    ],
+    "OMIM": [
+     "613834"
+    ],
+    "Orphanet": [
+     "404463"
+    ],
+    "UMLS": [
+     "C3151201"
+    ]
+   }
+  },
+  "MONDO:0015254": {
+   "definition": "An infectious disease caused by parasitic trematodes of the genus Schistosoma that colonize human blood vessels and release eggs that can cause granulomatous reactions leading to acute (swimmer's itch or acute schistosomiasis syndrome) or chronic disease. Depending on where the eggs lodge, manifestations of chronic schistosomiasis can include diarrhea, abdominal pain, loss of appetite, anemia (intestines), hepatosplenism, periportal fibrosis with portal hypertension (liver), urogenital inflammation and scarring, hematuria and dysuria (genitourinary system). Other patients may be asymptomatic.",
+   "id": "MONDO:0015254",
+   "label": "schistosomiasis",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "Bilharzia": "hasExactSynonym",
+    "bilharziasis": "hasExactSynonym",
+    "schistosomiasis": "hasExactSynonym",
+    "snail fever": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "1395"
+    ],
+    "EFO": [
+     "1001475"
+    ],
+    "GARD": [
+     "0009687"
+    ],
+    "ICD10CM": [
+     "B65"
+    ],
+    "ICD9": [
+     "120.8",
+     "120.9"
+    ],
+    "MEDGEN": [
+     "48573"
+    ],
+    "MESH": [
+     "D012552"
+    ],
+    "MedDRA": [
+     "10039603"
+    ],
+    "NCIT": [
+     "C35000"
+    ],
+    "Orphanet": [
+     "1247"
+    ],
+    "SCTID": [
+     "10087007"
+    ],
+    "UMLS": [
+     "C0036323"
+    ],
+    "icd11.foundation": [
+     "1194562592"
+    ]
+   }
+  },
+  "MONDO:0015459": {
+   "definition": "A carcinoma arising from the nasopharyngeal epithelium. It includes the following types: keratinizing squamous cell carcinoma, nonkeratinizing carcinoma (differentiated and undifferentiated), basaloid squamous cell carcinoma, and papillary adenocarcinoma.",
+   "id": "MONDO:0015459",
+   "label": "nasopharyngeal carcinoma",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "NPC": "hasExactSynonym",
+    "carcinoma of nasopharynx": "hasExactSynonym",
+    "carcinoma of the nasopharynx": "hasExactSynonym",
+    "malignant nasopharyngeal tumour": "hasBroadSynonym",
+    "malignant neoplasm of nasopharynx": "hasBroadSynonym",
+    "malignant tumor of anterior wall of nasopharynx": "hasBroadSynonym",
+    "malignant tumor of lateral wall of nasopharynx": "hasBroadSynonym",
+    "malignant tumor of posterior wall of nasopharynx": "hasBroadSynonym",
+    "malignant tumour of anterior wall of nasopharynx": "hasBroadSynonym",
+    "malignant tumour of lateral wall of nasopharynx": "hasBroadSynonym",
+    "malignant tumour of posterior wall of nasopharynx": "hasBroadSynonym",
+    "nasopharyngeal carcinoma": "hasExactSynonym",
+    "nasopharynx carcinoma": "hasExactSynonym",
+    "squamous cell carcinoma of the nasopharynx": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "9261"
+    ],
+    "GARD": [
+     "0007163"
+    ],
+    "ICD9": [
+     "147",
+     "147.0",
+     "147.1",
+     "147.2",
+     "147.3"
+    ],
+    "MEDGEN": [
+     "419909"
+    ],
+    "MESH": [
+     "C538339",
+     "D00007727",
+     "D000077274"
+    ],
+    "MedDRA": [
+     "10028793"
+    ],
+    "NCIT": [
+     "C3871"
+    ],
+    "ONCOTREE": [
+     "NPC"
+    ],
+    "Orphanet": [
+     "150"
+    ],
+    "SCTID": [
+     "363398003"
+    ],
+    "UMLS": [
+     "C2931822"
+    ],
+    "icd11.foundation": [
+     "1883313543"
+    ]
+   }
+  },
+  "MONDO:0015474": {
+   "definition": "Intestinal infection with organisms of the genus Cryptosporidium. It occurs in both animals and humans. Symptoms include severe diarrhea.",
+   "id": "MONDO:0015474",
+   "label": "cryptosporidiosis",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "Cryptosporidioses": "hasRelatedSynonym",
+    "Cryptosporidium caused disease or disorder": "hasExactSynonym",
+    "Cryptosporidium infection": "hasExactSynonym",
+    "intestinal cryptosporidiosis": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "1733"
+    ],
+    "ICD10CM": [
+     "A07.2"
+    ],
+    "ICD9": [
+     "007.4"
+    ],
+    "MEDGEN": [
+     "41362"
+    ],
+    "MESH": [
+     "D003457"
+    ],
+    "MedDRA": [
+     "10011502"
+    ],
+    "NCIT": [
+     "C128408"
+    ],
+    "Orphanet": [
+     "1549",
+     "697096"
+    ],
+    "SCTID": [
+     "66160001"
+    ],
+    "UMLS": [
+     "C0010418"
+    ],
+    "icd11.foundation": [
+     "1837013982"
+    ]
+   }
+  },
+  "MONDO:0015766": {
+   "definition": "Cholera is an infectious disease, caused by intestinal infection with Vibrio cholerae, characterized by massive watery diarrhea and severe dehydration that can lead to shock and death if left untreated.",
+   "id": "MONDO:0015766",
+   "label": "cholera",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "Vibrio cholerae caused disease or disorder": "hasExactSynonym",
+    "Vibrio cholerae infection": "hasRelatedSynonym",
+    "cholera due to Vibrio cholerae": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "1498"
+    ],
+    "GARD": [
+     "0006043"
+    ],
+    "ICD10CM": [
+     "A00"
+    ],
+    "ICD10WHO": [
+     "A00"
+    ],
+    "ICD9": [
+     "001",
+     "001.0",
+     "001.9"
+    ],
+    "MEDGEN": [
+     "40263"
+    ],
+    "MESH": [
+     "D002771"
+    ],
+    "MedDRA": [
+     "10008631"
+    ],
+    "NCIT": [
+     "C157812"
+    ],
+    "NORD": [
+     "928"
+    ],
+    "Orphanet": [
+     "173"
+    ],
+    "SCTID": [
+     "63650001"
+    ],
+    "UMLS": [
+     "C0008354"
+    ],
+    "icd11.foundation": [
+     "257068234"
+    ]
+   }
+  },
+  "MONDO:0016472": {
+   "definition": "Dracunculiasis (Guinea worm disease) is a neglected tropical disease (NTD) characterized by a painful burning skin lesion from which the Dracunculus medinensis parasite emerges approximately 1 year after infection resulting from consumption of unsafe drinking water containing parasite-infected copepods (Cyclops spp., microcrustacea also called water fleas).",
+   "id": "MONDO:0016472",
+   "label": "dracunculiasis",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "Dracunculosis": "hasExactSynonym",
+    "Dracunculus medinensis caused disease or disorder": "hasExactSynonym",
+    "GWD": "hasRelatedSynonym",
+    "Guinea worm disease": "hasExactSynonym",
+    "Guinea worm infection": "hasRelatedSynonym",
+    "Medina worm disease": "hasExactSynonym",
+    "dracontiasis": "hasExactSynonym",
+    "medinensis": "hasExactSynonym",
+    "parasitic infection caused by Dracunculus medinensis": "hasRelatedSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "14418"
+    ],
+    "EFO": [
+     "0007241"
+    ],
+    "GARD": [
+     "0006286"
+    ],
+    "ICD10CM": [
+     "B72"
+    ],
+    "ICD10WHO": [
+     "B72"
+    ],
+    "ICD9": [
+     "125.7"
+    ],
+    "MEDGEN": [
+     "41653"
+    ],
+    "MESH": [
+     "D004320"
+    ],
+    "MedDRA": [
+     "10013618"
+    ],
+    "NCIT": [
+     "C84677"
+    ],
+    "NORD": [
+     "1060"
+    ],
+    "Orphanet": [
+     "231"
+    ],
+    "SCTID": [
+     "396334002"
+    ],
+    "UMLS": [
+     "C0013100"
+    ],
+    "icd11.foundation": [
+     "1662537619"
+    ]
+   }
+  },
+  "MONDO:0016823": {
+   "definition": "Mycetomas are subcutaneous inflammatory pseudotumors containing fungal or actinomycetic (bacteria with branched filaments) granules or grains.",
+   "id": "MONDO:0016823",
+   "label": "mycetoma",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "Madura foot": "hasExactSynonym"
+   },
+   "xrefs": {
+    "GARD": [
+     "0003862"
+    ],
+    "ICD10CM": [
+     "B47"
+    ],
+    "ICD10WHO": [
+     "B47"
+    ],
+    "MEDGEN": [
+     "44241"
+    ],
+    "MESH": [
+     "D008271"
+    ],
+    "MedDRA": [
+     "10028427"
+    ],
+    "NCIT": [
+     "C85505"
+    ],
+    "Orphanet": [
+     "2583"
+    ],
+    "SCTID": [
+     "410039003"
+    ],
+    "UMLS": [
+     "C0024449"
+    ]
+   }
+  },
+  "MONDO:0017124": {
+   "definition": "Noma is a gangrenous disease that causes severe destruction of the soft and osseous tissues of the face.",
+   "id": "MONDO:0017124",
+   "label": "noma",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "cancrum oris": "hasExactSynonym",
+    "gangrenous stomatitis": "hasExactSynonym",
+    "noma neonatorum": "hasRelatedSynonym",
+    "oral gangrene": "hasRelatedSynonym",
+    "oro-facial gangrene": "hasRelatedSynonym",
+    "oro-facial noma": "hasRelatedSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "9672"
+    ],
+    "EFO": [
+     "1001063"
+    ],
+    "GARD": [
+     "0004001"
+    ],
+    "ICD10CM": [
+     "A69.0"
+    ],
+    "ICD9": [
+     "528.1"
+    ],
+    "MEDGEN": [
+     "10366"
+    ],
+    "MESH": [
+     "D009625"
+    ],
+    "MedDRA": [
+     "10029502"
+    ],
+    "NCIT": [
+     "C34852"
+    ],
+    "Orphanet": [
+     "2700"
+    ],
+    "SCTID": [
+     "18116006"
+    ],
+    "UMLS": [
+     "C0028271"
+    ],
+    "icd11.foundation": [
+     "340823130"
+    ]
+   }
+  },
+  "MONDO:0017137": {
+   "definition": "Onchocerciasis is a form of filariasis, caused by the parasitic worm Onchocerca volvulus, transmitted by the black fly. The infection can either be asymptomatic or manifest as an ocular disease (river blindness) with itchy eyes, erythema, photophobia, onchodermatitis or onchocercal skin disease (classified into acute papular, chronic papular, lichenified, atrophic, and depigmentated) and onchocercomas (over bony prominences). Other classic clinical manifestations are ichthyosis-like lesions (''lizard skin'') and ''hanging groin'', which may be associated with lymphadenopathy.",
+   "id": "MONDO:0017137",
+   "label": "onchocerciasis",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "Onchocerca volvulus infection": "hasExactSynonym",
+    "River blindness": "hasRelatedSynonym",
+    "Robles' disease": "hasRelatedSynonym",
+    "infection by Onchocerca volvulus": "hasExactSynonym",
+    "onchocerciasis": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "11678"
+    ],
+    "EFO": [
+     "0007402"
+    ],
+    "GARD": [
+     "0007252"
+    ],
+    "ICD10CM": [
+     "B73"
+    ],
+    "ICD10WHO": [
+     "B73"
+    ],
+    "ICD9": [
+     "125.3"
+    ],
+    "MEDGEN": [
+     "14477"
+    ],
+    "MESH": [
+     "D009855"
+    ],
+    "MedDRA": [
+     "10030314",
+     "10039202"
+    ],
+    "NCIT": [
+     "C34861"
+    ],
+    "Orphanet": [
+     "2737"
+    ],
+    "SCTID": [
+     "38539003"
+    ],
+    "UMLS": [
+     "C0029001"
+    ],
+    "icd11.foundation": [
+     "106136071"
+    ]
+   }
+  },
+  "MONDO:0018076": {
+   "definition": "A chronic, recurrent infection caused by the bacterium Mycobacterium tuberculosis. Tuberculosis (TB) may affect almost any tissue or organ of the body with the lungs being the most common site of infection. The clinical stages of TB are primary or initial infection, latent or dormant infection, and recrudescent or adult-type TB. Ninety to 95% of primary TB infections may go unrecognized. Histopathologically, tissue lesions consist of granulomas which usually undergo central caseation necrosis. Local symptoms of TB vary according to the part affected; acute symptoms include hectic fever, sweats, and emaciation; serious complications include granulomatous erosion of pulmonary bronchi associated with hemoptysis. If untreated, progressive TB may be associated with a high degree of mortality. This infection is frequently observed in immunocompromised individuals with AIDS or a history of illicit IV drug use.",
+   "id": "MONDO:0018076",
+   "label": "tuberculosis",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "Kochs disease": "hasRelatedSynonym",
+    "TB": "hasRelatedSynonym",
+    "tuberculosis disease": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "399"
+    ],
+    "GARD": [
+     "0007827"
+    ],
+    "ICD10CM": [
+     "A15-A19"
+    ],
+    "ICD10WHO": [
+     "A15-A19"
+    ],
+    "ICD9": [
+     "017.90",
+     "017.92",
+     "017.94",
+     "017.96"
+    ],
+    "MEDGEN": [
+     "22513"
+    ],
+    "MESH": [
+     "D014376"
+    ],
+    "MedDRA": [
+     "10044755"
+    ],
+    "NCIT": [
+     "C3423"
+    ],
+    "NORD": [
+     "1801"
+    ],
+    "Orphanet": [
+     "3389"
+    ],
+    "SCTID": [
+     "56717001"
+    ],
+    "UMLS": [
+     "C0041296"
+    ],
+    "icd11.foundation": [
+     "2072728114"
+    ]
+   }
+  },
+  "MONDO:0018177": {
+   "definition": "The most malignant astrocytic tumor (WHO grade IV). It is composed of poorly differentiated neoplastic astrocytes and it is characterized by the presence of cellular polymorphism, nuclear atypia, brisk mitotic activity, vascular thrombosis, microvascular proliferation and necrosis. It typically affects adults and is preferentially located in the cerebral hemispheres. It may develop from diffuse astrocytoma WHO grade II or anaplastic astrocytoma (secondary glioblastoma, IDH-mutant), but more frequently, it manifests after a short clinical history de novo, without evidence of a less malignant precursor lesion (primary glioblastoma, IDH- wildtype). (Adapted from WHO)",
+   "id": "MONDO:0018177",
+   "label": "glioblastoma",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "GBM": "hasExactSynonym",
+    "GBM (glioblastoma)": "hasExactSynonym",
+    "giant cell glioblastoma (histologic variant)": "hasRelatedSynonym",
+    "glioblastoma": "hasExactSynonym",
+    "glioblastoma (disease)": "hasExactSynonym",
+    "glioblastoma multiforme": "hasExactSynonym",
+    "glioblastoma multiforme (disease)": "hasExactSynonym",
+    "gliosarcoma (histologic variant)": "hasRelatedSynonym",
+    "grade IV adult astrocytic tumour": "hasNarrowSynonym",
+    "grade IV astrocytic tumour": "hasExactSynonym",
+    "spongioblastoma multiforme": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "3068"
+    ],
+    "EFO": [
+     "0000519"
+    ],
+    "GARD": [
+     "0002491"
+    ],
+    "HP": [
+     "0012174",
+     "0100843"
+    ],
+    "ICDO": [
+     "9440/3"
+    ],
+    "MEDGEN": [
+     "42228"
+    ],
+    "MESH": [
+     "D005909"
+    ],
+    "MedDRA": [
+     "10018336",
+     "10018337"
+    ],
+    "NANDO": [
+     "2200087"
+    ],
+    "NCIT": [
+     "C3058"
+    ],
+    "NORD": [
+     "1187"
+    ],
+    "ONCOTREE": [
+     "GB",
+     "GBM"
+    ],
+    "Orphanet": [
+     "360"
+    ],
+    "SCTID": [
+     "393563007"
+    ],
+    "UMLS": [
+     "C0017636"
+    ]
+   }
+  },
+  "MONDO:0018669": {
+   "definition": "",
+   "id": "MONDO:0018669",
+   "label": "snakebite envenomation",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {},
+   "xrefs": {
+    "GARD": [
+     "0021881"
+    ],
+    "Orphanet": [
+     "449285"
+    ],
+    "SCTID": [
+     "61288004"
+    ]
+   }
+  },
+  "MONDO:0018695": {
+   "definition": "Infection of domestic and wild fowl and other birds with influenza A virus. Avian influenza usually does not sicken birds, but can be highly pathogenic and fatal in domestic poultry.",
+   "id": "MONDO:0018695",
+   "label": "avian influenza",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {},
+   "xrefs": {
+    "DOID": [
+     "4492"
+    ],
+    "EFO": [
+     "0005222"
+    ],
+    "GARD": [
+     "0021897"
+    ],
+    "MEDGEN": [
+     "42091"
+    ],
+    "MESH": [
+     "D005585"
+    ],
+    "Orphanet": [
+     "454836"
+    ],
+    "SCTID": [
+     "55604004"
+    ],
+    "UMLS": [
+     "C0016627"
+    ]
+   }
+  },
+  "MONDO:0018908": {
+   "definition": "Distinct from Hodgkin lymphoma both morphologically and biologically, non-Hodgkin lymphoma (NHL) is characterized by the absence of Reed-Sternberg cells, can occur at any age, and usually presents as a localized or generalized lymphadenopathy associated with fever and weight loss. The clinical course varies according to the morphologic type. NHL is clinically classified as indolent, aggressive, or having a variable clinical course. NHL can be of B-or T-/NK-cell lineage.",
+   "id": "MONDO:0018908",
+   "label": "non-Hodgkin lymphoma",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "NHL": "hasExactSynonym",
+    "non-Hodgkin lymphoma": "hasExactSynonym",
+    "non-Hodgkin's lymphoma": "hasExactSynonym",
+    "non-Hodgkin's lymphoma (NHL)": "hasExactSynonym",
+    "non-Hodgkins lymphoma": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "0060060"
+    ],
+    "EFO": [
+     "0005952"
+    ],
+    "ICDO": [
+     "9591/3"
+    ],
+    "MEDGEN": [
+     "6160"
+    ],
+    "MESH": [
+     "D008228"
+    ],
+    "MedDRA": [
+     "10029547"
+    ],
+    "NCIT": [
+     "C3211"
+    ],
+    "ONCOTREE": [
+     "NHL"
+    ],
+    "Orphanet": [
+     "547"
+    ],
+    "UMLS": [
+     "C0024305"
+    ]
+   }
+  },
+  "MONDO:0019079": {
+   "definition": "Proximal spinal muscular atrophies are a group of neuromuscular disorders characterized by progressive muscle weakness resulting from the degeneration and loss of the lower motor neurons in the spinal cord and the brain stem nuclei.",
+   "id": "MONDO:0019079",
+   "label": "proximal spinal muscular atrophy",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "SMA": "hasExactSynonym"
+   },
+   "xrefs": {
+    "GARD": [
+     "0004531"
+    ],
+    "MEDGEN": [
+     "870510"
+    ],
+    "NANDO": [
+     "2100231"
+    ],
+    "NORD": [
+     "1729"
+    ],
+    "Orphanet": [
+     "70"
+    ],
+    "UMLS": [
+     "C4024957"
+    ]
+   }
+  },
+  "MONDO:0019173": {
+   "definition": "Rabies is a viral zoonosis leading to a fatal encephalopathy if not treated.",
+   "id": "MONDO:0019173",
+   "label": "rabies",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "lyssa": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "11260"
+    ],
+    "GARD": [
+     "0007516"
+    ],
+    "ICD10CM": [
+     "A82"
+    ],
+    "ICD10WHO": [
+     "A82"
+    ],
+    "ICD9": [
+     "071"
+    ],
+    "MEDGEN": [
+     "48308"
+    ],
+    "MESH": [
+     "D011818"
+    ],
+    "MedDRA": [
+     "10037742"
+    ],
+    "NCIT": [
+     "C28182"
+    ],
+    "NORD": [
+     "1644"
+    ],
+    "Orphanet": [
+     "770"
+    ],
+    "SCTID": [
+     "14168008"
+    ],
+    "UMLS": [
+     "C0034494"
+    ],
+    "icd11.foundation": [
+     "854762584"
+    ]
+   }
+  },
+  "MONDO:0020500": {
+   "definition": "Marburg hemorrhagic fever (MHF), caused by Marburg virus, is a severe viral hemorrhagic disease characterized by initial fever and malaise followed by gastrointestinal symptoms, bleeding, shock, and multi-organ system failure.",
+   "id": "MONDO:0020500",
+   "label": "Marburg hemorrhagic fever",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "Green monkey disease": "hasExactSynonym",
+    "MHF": "hasExactSynonym",
+    "Marburg disease": "hasExactSynonym",
+    "Marburg virus disease": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "4327"
+    ],
+    "EFO": [
+     "0007358"
+    ],
+    "GARD": [
+     "0009444"
+    ],
+    "ICD10CM": [
+     "A98.3"
+    ],
+    "ICD9": [
+     "078.89"
+    ],
+    "MEDGEN": [
+     "9888"
+    ],
+    "MESH": [
+     "D008379"
+    ],
+    "MedDRA": [
+     "10026822"
+    ],
+    "NCIT": [
+     "C84883"
+    ],
+    "Orphanet": [
+     "99826"
+    ],
+    "SCTID": [
+     "77503002"
+    ],
+    "UMLS": [
+     "C0024788"
+    ],
+    "icd11.foundation": [
+     "696598707"
+    ]
+   }
+  },
+  "MONDO:0044070": {
+   "definition": "A form of invasive candidiasis where species of candida are present in the blood.",
+   "id": "MONDO:0044070",
+   "label": "candidemia",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "Candidemias": "hasRelatedSynonym"
+   },
+   "xrefs": {
+    "GARD": [
+     "0025878"
+    ],
+    "MEDGEN": [
+     "163760"
+    ],
+    "MESH": [
+     "D058387"
+    ],
+    "SCTID": [
+     "432261003"
+    ],
+    "UMLS": [
+     "C0877445"
+    ]
+   }
+  },
+  "MONDO:0100004": {
+   "definition": "A clinically defined disease states with a largely unknown morphological background. Acute mast cell activation (MCA) is commonly seen in allergic reactions and often leads to the clinical signs and symptoms of anaphylaxis. Severe or even life\u2010threatening MCA may occur when the burden of mast cells is high and/or these cells are in an hyperactivated state. Mastocytosis may be associated with mast cell activation syndrome (MCAS).",
+   "id": "MONDO:0100004",
+   "label": "mast cell activation syndrome",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "MACS": "hasExactSynonym",
+    "disorder of mast cell activation": "hasExactSynonym",
+    "mast cell activation disease": "hasExactSynonym"
+   },
+   "xrefs": {
+    "GARD": [
+     "0012981"
+    ],
+    "MEDGEN": [
+     "1698540"
+    ],
+    "MESH": [
+     "D000090267"
+    ],
+    "UMLS": [
+     "C5200989"
+    ]
+   }
+  },
+  "MONDO:0100073": {
+   "definition": "Infections caused by a strain of Staphylococcus aureus that is non-susceptible to the action of the antibiotic, methicillin. The mechanism of resistance usually involves modification of normal or the presence of acquired penicillin binding proteins.",
+   "id": "MONDO:0100073",
+   "label": "methicillin-resistant staphylococcus aureus infectious disease",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "MRSA": "hasExactSynonym"
+   },
+   "xrefs": {
+    "EFO": [
+     "0008555"
+    ],
+    "MEDGEN": [
+     "575565"
+    ],
+    "UMLS": [
+     "C0343401"
+    ]
+   }
+  },
+  "MONDO:0100086": {
+   "definition": "A condition affecting an unborn or newly born individual, where the perinatal period is defined in humans as commencing at 22 completed weeks (154 days) of gestation and ending seven completed days after birth. Other, broader definitions of perinatal period cover five months before birth to one month after birth.",
+   "id": "MONDO:0100086",
+   "label": "perinatal disease",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {},
+   "xrefs": {
+    "EFO": [
+     "0010238"
+    ],
+    "ICD10CM": [
+     "P00-P96"
+    ],
+    "MEDGEN": [
+     "75717"
+    ],
+    "UMLS": [
+     "C0270075"
+    ]
+   }
+  },
+  "MONDO:0100096": {
+   "definition": "A disease caused by infection with severe acute respiratory syndrome coronavirus 2.",
+   "id": "MONDO:0100096",
+   "label": "COVID-19",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "2019 novel coronavirus": "hasRelatedSynonym",
+    "2019 novel coronavirus infection": "hasExactSynonym",
+    "2019-nCoV": "hasRelatedSynonym",
+    "2019-nCoV infection": "hasExactSynonym",
+    "SARS-CoV-2": "hasRelatedSynonym",
+    "SARS-coronavirus 2": "hasRelatedSynonym",
+    "beta-CoV": "hasRelatedSynonym",
+    "beta-CoVs": "hasRelatedSynonym",
+    "betacoronavirus": "hasRelatedSynonym",
+    "coronavirus disease 2019": "hasExactSynonym",
+    "severe acute respiratory syndrome coronavirus 2": "hasRelatedSynonym",
+    "severe acute respiratory syndrome coronavirus 2 infectious disease": "hasExactSynonym",
+    "\u03b2-CoV": "hasRelatedSynonym",
+    "\u03b2-CoVs": "hasRelatedSynonym",
+    "\u03b2-coronavirus": "hasRelatedSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "0080600"
+    ],
+    "ICD10CM": [
+     "U07.1"
+    ],
+    "MEDGEN": [
+     "1699653"
+    ],
+    "MESH": [
+     "C000657245",
+     "D000086382"
+    ],
+    "SCTID": [
+     "840539006"
+    ],
+    "UMLS": [
+     "C5203670"
+    ],
+    "icd11.foundation": [
+     "1730556128"
+    ]
+   }
+  },
+  "MONDO:0800504": {
+   "definition": "An interstitial lung disease with a poor prognosis, that is characterized by the progressive formation of scar tissue within the lungs in the absence of any known cause.",
+   "id": "MONDO:0800504",
+   "label": "idiopathic pulmonary fibrosis",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "IPF": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "0050156"
+    ],
+    "GARD": [
+     "0028067"
+    ],
+    "ICD10CM": [
+     "J84.112"
+    ],
+    "MEDGEN": [
+     "321462"
+    ],
+    "MESH": [
+     "D054990"
+    ],
+    "NCIT": [
+     "C35716"
+    ],
+    "Orphanet": [
+     "2032"
+    ],
+    "UMLS": [
+     "C1800706"
+    ],
+    "icd11.foundation": [
+     "1074069640"
+    ]
+   }
+  },
+  "MONDO:1030003": {
+   "definition": "A disease caused by infection with Mycoplasmoides.",
+   "id": "MONDO:1030003",
+   "label": "Mycoplasmoides infection",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "mycoplasma infection": "hasRelatedSynonym",
+    "mycoplasmosis": "hasExactSynonym"
+   },
+   "xrefs": {}
+  }
+ }
+}

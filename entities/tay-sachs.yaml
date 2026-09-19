@@ -1,0 +1,357 @@
+slug: tay-sachs
+id: FND-D-0143
+name: Tay-Sachs disease
+also: [TSD, GM2 gangliosidosis type 1, hexosaminidase A deficiency, infantile Tay-Sachs]
+mondo: unresolved
+kind: disease
+residual: false
+contested: false
+
+# THE THIRD OF THE THREE `ends-it` RECORDS WRITTEN ON 2026-09-02, and the one
+# that carries a schema problem the register has never met.
+#
+# TWO THINGS MAKE IT WORTH A RECORD RATHER THAN A LINE IN A LIST.
+#
+# **A perfect diagnosis that buys nothing.** The enzyme was identified in 1969.
+# A cheap, accurate blood test has existed for over fifty years. Newborn
+# screening finds the disease and changes nothing at all — there is no
+# treatment to start earlier. Every other record in this corpus where a test
+# exists and is not used is a delivery failure; this is a test that is used and
+# is therapeutically inert, and the register has nothing else like it.
+#
+# **And prevention that works by preventing the patient.** Community carrier
+# screening reduced the incidence of infantile Tay-Sachs among Ashkenazi Jewish
+# populations by something like 90% within a generation — one of the largest
+# proportional falls in this register, achieved with no drug, no treatment and
+# no cure. It worked by identifying couples at risk before conception.
+# **The `prevention` axis has no vocabulary for that**, and pretending it is the
+# same kind of object as a vaccine would be a mistake with an ethical dimension
+# rather than only a bookkeeping one. See `witness.prevention` and `holes`.
+
+burden:
+  incidence:
+    value: 1.5e-7
+    units: >
+      births per person per year worldwide with the infantile form — a reasoned
+      estimate and a very soft one. **The rate is population-specific to an
+      extreme degree**: historically about one in 3,500 births among Ashkenazi
+      Jewish populations before screening, with comparable founder frequencies in
+      French-Canadian, Cajun and Old Order Amish communities, against something
+      on the order of one in 300,000 elsewhere. Screening has since removed most
+      of the high-incidence numerator
+    src: reasoning
+  deaths:
+    value: 3.0e2
+    units: >
+      deaths per year worldwide — a reasoned estimate, and every one of them a
+      child under about five. **Incidence and mortality are the same number in
+      this disease**, offset by a few years
+    src: reasoning
+  note: >
+    No `ylds`. The register's smallest burden figures so far, and the record is
+    not here for its size — it is here because it is the clearest instance in the
+    corpus of established mechanism, perfect diagnosis and zero capability
+    sitting together.
+
+axes:
+  mechanism: established
+  intervention: symptomatic
+  prevention: risk-reduction
+  ongoing: high
+  efficacy:
+    value: 0.05
+    units: >
+      fraction-of-treated getting meaningful benefit — a reasoned estimate that
+      describes comfort and nothing else. Anticonvulsants control some of the
+      seizures; suction, positioning and feeding support manage secretions and
+      swallowing. **Nothing affects the disease.** Substrate reduction and enzyme
+      approaches have not worked in the infantile form, and gene therapy trials
+      are early
+    src: reasoning
+  access:
+    value: 0.6
+    units: >
+      fraction-of-affected reaching competent palliative and supportive care — a
+      reasoned estimate. What is required is symptom control and family support
+      over two to four years, which is a paediatric palliative service, and those
+      are unevenly distributed everywhere and absent in most of the world
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: good
+  predictive: none
+  witness: >
+    **DIAGNOSTIC IS `objective` AND IT IS AMONG THE BEST IN THE REGISTER.**
+    Hexosaminidase A enzyme activity in serum or leukocytes, confirmed by *HEXA*
+    sequencing. Cheap, definitive, available since 1969, and it identifies
+    carriers as reliably as it identifies patients. There is no diagnostic
+    problem here of any kind.
+    **AND THAT IS THE POINT THE RECORD EXISTS TO MAKE.** Newborn screening for
+    this disease finds it accurately and early and **changes nothing about what
+    happens to the child**, because there is nothing to start. Everywhere else in
+    this corpus a diagnostic gap is a treatment lost — `retinopathy-of-prematurity`
+    at 48 hours, `glaucoma` before the field goes. Here the test is perfect, it is
+    used, and the outcome is identical. **A measurement axis built to ask whether
+    medicine can tell has no way to say that telling was of no use.**
+    What early diagnosis does buy is real and is not clinical: it ends a
+    diagnostic odyssey, it allows a family to plan, and it informs subsequent
+    reproductive decisions. The register cannot record any of those as a benefit.
+    PROGNOSTIC is `good`, in the same dark sense as `dipg` and `huntington` —
+    the course is known with near-certainty and the knowledge is worth nothing on
+    its own. Three records now share that pairing and they are the register's
+    argument that measurement pays only where a treatment exists to aim.
+    PREDICTIVE is `none` and it is the same category error `dipg` logs: there is
+    nothing to select between, which is neither *we cannot say who will respond*
+    nor `n/a`'s *a treatment made the question moot*.
+
+survival:
+  horizon: 5 years from birth
+  untreated:
+    value: 0.0
+    units: >
+      fraction alive. The infantile form follows a fixed course: normal at birth,
+      an exaggerated startle response in the first months, developmental
+      regression from around six months, blindness, seizures and paralysis, death
+      usually between the ages of two and five
+    src: recall
+  treated:
+    value: 0.0
+    units: >
+      fraction alive on best available care. **There is no treatment that alters
+      this.** Supportive care may extend life somewhat and is directed at comfort
+    src: recall
+  witness: >
+    **UNCHANGED SINCE THE DISEASE WAS FIRST DESCRIBED IN THE 1880s.** Warren Tay
+    described the cherry-red spot in 1881 and Bernard Sachs the clinical course in
+    1887. The enzyme defect was identified in 1969 and the gene in 1985. **Neither
+    number in this block has ever moved.** The juvenile and adult-onset forms of
+    HEXA deficiency run a slower course and are not what this record rates.
+
+moved:
+  - date: 1970
+    axis: prevention
+    from: none
+    to: risk-reduction
+    why: >
+      **THE LARGEST PROPORTIONAL FALL IN INCIDENCE IN THIS REGISTER, ACHIEVED
+      WITH NO TREATMENT WHATSOEVER.** Community carrier-screening programmes
+      began around 1970, shortly after the enzyme assay made carrier detection
+      cheap, and infantile Tay-Sachs among Ashkenazi Jewish populations in North
+      America and Israel fell by roughly 90% within a generation. In some
+      communities the programme operates before matchmaking rather than after
+      conception.
+      **It is recorded as `risk-reduction` and not as `prophylaxis`, and the
+      distinction is the whole difficulty.** Nothing was given to anybody and no
+      one was made immune to anything. What changed is which children were
+      conceived and born. That is a real, measured, enormous public health
+      effect and it is a different kind of object from a vaccine — see
+      `witness.prevention`. The date is approximate.
+    src: recall
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    Anticonvulsants, with their sedation and their interactions. Anticholinergics
+    for secretions. A feeding tube, in most children, at the point where
+    swallowing fails — which is a permanent intervention in a child who will not
+    live long enough for permanence to be the right word.
+    Rated `minor` because almost nothing is done, which is the same objection
+    `multiple-system-atrophy` logs about its own rating: **an axis measuring what
+    treatment takes from you scores well when there is no treatment.** The
+    derived `terms: clean` that follows is not something this record should be
+    read as claiming.
+  incidence:
+    value: 0.6
+    units: >
+      fraction-of-treated undergoing a significant supportive intervention,
+      dominated by gastrostomy — a reasoned estimate
+    src: reasoning
+
+# NO `window:` BLOCK, AND ITS ABSENCE IS THE MOST DELIBERATE IN THIS RECORD.
+#
+# Everything about this disease looks like a window. It is detectable before
+# symptoms; it is detectable at birth; it is detectable in the carrier parents
+# before conception. **None of that is a window in this schema, because a window
+# is an interval in which acting changes the outcome for the patient, and no
+# action changes it.** A child diagnosed on day one and a child diagnosed at
+# eighteen months die at the same age.
+#
+# Recording a window here would place this record in `ends-it-unless-caught`
+# beside `rabies` and would assert that catching it in time saves the child. It
+# does not. **The prevention that works operates before the patient exists**,
+# which the `prevention` axis records and the `window` field cannot.
+
+witness:
+  mechanism: >
+    `established`, without reservation, and it is worth stating how completely.
+    Biallelic loss-of-function variants in *HEXA* abolish the alpha subunit of
+    **beta-hexosaminidase A**. That enzyme, with its GM2 activator protein,
+    degrades GM2 ganglioside in the lysosome. Without it the ganglioside
+    accumulates, most destructively in neurons, which are packed with it — the
+    swollen retinal ganglion cells around the fovea are what make the surrounding
+    retina pale and leave the normal choroid visible through it as the **cherry-red
+    spot**, a physical sign that is a direct readout of the biochemistry.
+    Substrate, enzyme, gene, organelle, cell type and clinical sign form a single
+    unbroken chain. **There is no mechanistic hole here at all.**
+    **AND THE CAPABILITY IS ZERO.** This is the register's most complete
+    dissociation between understanding and doing: `mechanism: established`,
+    `capability: unsolved`. Set beside `anaesthesia-mechanism` in Engpass, which
+    argues the converse — an intervention that works superbly and is not
+    understood — the two together are the corpus's clearest statement that
+    understanding and capability are not the same axis and do not move together.
+  intervention: >
+    `symptomatic`, and there is very little of it: seizure control, management of
+    secretions, feeding support, and paediatric palliative care.
+    **WHY THE OBVIOUS FIXES DO NOT WORK.** Enzyme replacement therapy transformed
+    several lysosomal storage diseases — Gaucher above all — and fails here
+    because infused enzyme does not cross the blood-brain barrier, and this
+    disease is in the brain. Substrate reduction with miglustat has not altered
+    the infantile course. Haematopoietic stem cell transplantation, which helps in
+    some leukodystrophies, does not arrive in time or in sufficient degree.
+    Gene therapy delivered to the central nervous system is the current attempt
+    and is in early trials.
+    **So the blocker is delivery, and it is the same wall `dipg` describes from
+    the other side.** The molecule that would fix this is known — the enzyme —
+    and it cannot be got to the cells that need it. That is `cell-targeting`'s
+    reach face, in a disease where everything else is solved.
+  prevention: >
+    `risk-reduction`, **and this is the most uncomfortable axis rating in the
+    register.**
+    What exists is carrier screening, and it has been extraordinarily effective:
+    a roughly 90% fall in incidence in the screened populations within a
+    generation, from a programme built on a cheap enzyme assay. By outcome it
+    outperforms most of the `prophylaxis` entries in this corpus.
+    **It is not rated `prophylaxis` because nothing is administered to anybody
+    and nobody is protected.** The mechanism is that at-risk couples learn they
+    are at risk and make reproductive decisions — not to marry, in the
+    matchmaking-based programmes; to use donor gametes, preimplantation genetic
+    testing, prenatal diagnosis, or to accept the risk. **The disease is
+    prevented by preventing the birth of the child who would have had it.**
+    The register's `prevention` axis was built for exposures avoided and
+    prophylaxis given. It has no vocabulary for this, and inventing one casually
+    would be a mistake: the same mechanism spans a community programme that
+    people participate in willingly and things this register should want no part
+    of. `risk-reduction` is recorded as the least wrong available value and the
+    hole is logged rather than papered over.
+  ongoing: >
+    `high`. Within a year of onset this is a child who cannot sit, see, swallow
+    or move, with seizures, needing suction, feeding, positioning and constant
+    attendance, for two to four years, at home, delivered almost entirely by
+    parents. **The burden is on a family and the register has no field for it** —
+    the same absence `cerebral-palsy`, `disorders-of-consciousness` and
+    `multiple-system-atrophy` all record, and this is its most extreme instance.
+
+holes:
+  - >
+    **THE `prevention` AXIS IS BEING ASKED A QUESTION IT WAS NOT BUILT FOR, AND
+    THE ANSWER MATTERS BEYOND THIS RECORD.** Carrier screening prevents affected
+    births rather than preventing disease in a person. Rated `risk-reduction`
+    because it is the least wrong value; `prophylaxis` would be false and
+    `none` would erase the single most effective intervention this disease has
+    ever had. **A dedicated value would need to be designed carefully rather than
+    added for tidiness**, because the category spans consensual community
+    programmes and coercive population genetics, and a register that scored them
+    identically would be saying something it does not mean. Logged for
+    `gaps.md`; not resolved here.
+  - >
+    **`predictive: none` IS THE SAME CATEGORY ERROR `dipg` LOGS, AND THIS IS THE
+    SECOND INSTANCE.** Nothing works, so there is no selection question to fail
+    at. `n/a` is reserved for a question abolished by a good-enough treatment.
+    Two records now need a value for **a question abolished by having nothing to
+    choose between**, which is the corpus's two-instance threshold.
+  - >
+    **A TEST THAT WORKS PERFECTLY AND BUYS NOTHING CLINICAL HAS NOWHERE TO LIVE
+    EITHER.** `measurement` exists to ask whether medicine can tell in time. Here
+    it can tell before birth and it makes no difference to the child. The
+    benefits that are real — ending a diagnostic odyssey, letting a family plan,
+    informing later reproductive decisions — are not clinical outcomes and the
+    schema records none of them. Related to `multiple-system-atrophy`'s complaint
+    that a diagnostic delay costing only planning is invisible: **both are the
+    schema treating measurement solely as an input to treatment.**
+  - >
+    **THE INCIDENCE FIGURE IS A GLOBAL AVERAGE OVER A DISEASE THAT HAS NO GLOBAL
+    RATE.** Founder effects make it population-specific across three orders of
+    magnitude, and screening has since removed most of the high-incidence
+    numerator, so the number describes neither the historical disease nor the
+    present one. It should not be quoted.
+  - >
+    **THE JUVENILE AND ADULT FORMS ARE NOT RATED HERE AND ARGUABLY SHOULD BE
+    SEPARATE RECORDS.** Late-onset *HEXA* deficiency runs a slow course with
+    normal or near-normal lifespan and a quite different clinical problem. This
+    record rates the infantile form only, which is what the name is usually taken
+    to mean, and the elision is the `strata` question the register flags ⧉
+    elsewhere.
+  - >
+    Written from model recall. The enzymology, the cherry-red spot, the clinical
+    course, the failure of enzyme replacement to cross the blood-brain barrier
+    and the direction and rough size of the screening effect are the parts most
+    likely right; every number is the part most likely wrong.
+
+blockers:
+  - kind: knowledge
+    obstacles: [cell-targeting]
+    blocks: the enzyme is known and cannot be got into the brain
+    what: >
+      **THE MISSING MOLECULE IS NOT MISSING.** Beta-hexosaminidase A has been
+      characterised since 1969 and can be produced. Enzyme replacement therapy
+      built on exactly this logic transformed Gaucher disease. It fails here for
+      one reason: **infused enzyme does not cross the blood-brain barrier**, and
+      the substrate accumulates in neurons.
+      That is `cell-targeting` (FND-O-0008) in its reach face and in the cleanest
+      form the register holds. There is no mechanism gap, no diagnostic gap, no
+      candidate gap and no target gap. **The entire disease is a delivery
+      problem**, and it has been one for fifty years.
+      Intrathecal and intracerebroventricular delivery, AAV gene therapy to the
+      central nervous system, and engineered enzymes carrying receptor-binding
+      domains that cross the barrier are the current attempts. `scale: null`
+      here, though that obstacle's own record notes that delivery modalities are
+      buyable engineering in a way most knowledge blockers are not — **this is
+      one of the records that makes that argument.**
+    who_could: [academic, sponsor, philanthropy]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: no-sponsor
+    blocks: a disease screening made rarer, in a population that funded the screening
+    what: >
+      A few hundred children a year worldwide, falling, with the fall
+      concentrated in exactly the wealthy screened populations that would
+      otherwise sustain an advocacy base. **Successful prevention has made the
+      remaining treatment problem commercially smaller**, which is a genuinely
+      awkward thing for this register to record and is not an argument against
+      screening.
+      What survives is rare-disease gene therapy economics: a tiny population, an
+      expensive modality, and a trial that has to recruit infants across
+      countries. Recorded as `no-sponsor` rather than `cost`, because the
+      constraint is that nobody is developing the thing, not that its price is
+      too high.
+    who_could: [sponsor, philanthropy, government, patient-org]
+    scale: 5.0e8
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: paediatric palliative care, for two to four years, at home
+    what: >
+      The only thing that helps is competent symptom control and family support
+      over the whole course of the illness, and paediatric palliative care is
+      thin everywhere and absent across most of the world. Where it exists,
+      seizures, secretions, feeding and pain are managed and a family is
+      supported; where it does not, a parent does all of it alone.
+      **This is the entire `access: 0.6` in this record.** It is worth naming
+      because the register's delivery failures are usually about a product, and
+      here there is no product — the scarce thing is a service, as it is in
+      `refractive-error` and `clubfoot`, and this is its most extreme form:
+      a service whose whole purpose is to make a death bearable.
+    who_could: [health-system, government, nonprofit, philanthropy]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0144
+  rated: 2026-09-02
+  by: [claude, jeremy]

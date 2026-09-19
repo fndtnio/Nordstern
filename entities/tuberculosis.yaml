@@ -1,0 +1,591 @@
+slug: tuberculosis
+id: FND-D-0023
+name: tuberculosis
+also: [TB, pulmonary tuberculosis, consumption, phthisis]
+mondo: MONDO:0018076
+kind: disease
+residual: false
+contested: false
+
+# THE RECORD THAT SHOWS THE REGISTER CANNOT RANK.
+#
+# Every form of tuberculosis is curable. The mechanism has been established
+# since 1882, the drugs are older than most of the people taking them, and a
+# course costs on the order of fifty dollars. Reach here is about 0.6 — the
+# highest of any record with a serious blocker list — and it kills roughly
+# 1.25 million people a year, more than any other infection on earth.
+#
+# Nothing in this register surfaces that. `orphaned`, the $10M question and
+# every triage view sort on FRACTIONS and PRICES. A rare disease at reach 0.03
+# ranks above TB at reach 0.6, while closing TB's gap would save more lives than
+# closing every other gap in the register combined. Reach is a proportion;
+# burden is a magnitude; nothing multiplies them. See gaps.md #48 — and note
+# that this is the register's stated purpose ("based on the data, what should
+# the next project be") failing on the single largest entry it contains.
+
+burden:
+  incidence:
+    value: 1.08e7
+    units: new cases of active disease/year, worldwide
+    src: recall
+  deaths:
+    value: 1.25e6
+    units: >
+      deaths/year — again the deadliest single infectious disease worldwide,
+      having reclaimed that position from COVID-19
+    src: recall
+  prevalence:
+    value: 2.0e9
+    units: >
+      people with latent infection — READ THE NOTE BEFORE USING THIS. It is not
+      the same population as the incidence figure and is not comparable to any
+      other prevalence in this register
+    src: recall
+  note: >
+    THE DENOMINATOR PROBLEM, and it is a fifth distinct failure of this field.
+    About a quarter of humanity carries Mycobacterium tuberculosis; roughly five
+    to ten percent of them will ever develop disease. So "how many people have
+    tuberculosis" has two well-measured answers two hundred times apart, and the
+    schema has one field. Every downstream figure depends on which is meant:
+    rate the infected and reach collapses; rate the diseased and the two billion
+    people offered preventive therapy vanish from the record.
+    This file rates ACTIVE DISEASE, because that is what is counted, treated and
+    dies. Latent infection is carried in the witness and in the blockers, and
+    the mismatch is logged rather than resolved.
+    Burden concentrates where crowding, ventilation, malnutrition, HIV, diabetes
+    and smoking concentrate. As with Chagas, the social determinants are not
+    context around the mechanism — for an airborne organism they ARE part of the
+    transmission chain.
+
+survival:
+  horizon: 5 years from diagnosis
+  untreated:
+    value: 0.30
+    units: >
+      fraction alive — **and this is one of the few natural histories in medicine
+      that was measured properly**, from sanatorium-era cohorts before
+      chemotherapy. Roughly 70% of smear-positive tuberculosis is fatal within
+      ten years; smear-negative disease kills about 20%. The rest self-cure or
+      become chronically infectious, which is why the untreated figure is not
+      near zero
+    src: recall
+  treated:
+    value: 0.90
+    units: >
+      fraction alive on a complete course of first-line therapy for
+      drug-susceptible disease. **Multidrug-resistant tuberculosis is a different
+      record inside this one** — treatment success there has risen sharply with
+      bedaquiline-based regimens but remains well below this figure
+    src: recall
+  witness: >
+    **The largest untreated-to-treated gap in the register from a drug alone**,
+    and it is seventy years old. Streptomycin's 1948 trial is the origin of the
+    randomised controlled trial as an institution, so this row is simultaneously
+    the register's biggest single therapeutic gain and the methodological event
+    that made the rest of the column measurable.
+    **The gap between 0.90 and the actual global figure is not biology.** It is
+    diagnosis, adherence support and drug supply — this record's `access` axis —
+    which is why tuberculosis still kills over a million people a year with a
+    curative regimen that costs a few tens of dollars.
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: prophylaxis
+  ongoing: moderate
+  efficacy:
+    value: 0.85
+    units: >
+      fraction-of-patients (treatment success, drug-susceptible disease, among
+      those who start a full course)
+    src: recall
+  access:
+    value: 0.72
+    units: >
+      fraction-of-patients (diagnosed, notified and started on treatment) —
+      roughly three million of the ten to eleven million annual cases are never
+      diagnosed at all; coverage of drug-susceptibility testing is worse again
+    src: recall
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: good
+  witness: >
+    THE STRONGEST MEASUREMENT PROFILE OF ANY RECORD HERE THAT IS STILL KILLING
+    PEOPLE AT SCALE, and that is the point of reading it.
+    DIAGNOSTIC is `objective` and genuinely good: sputum smear, culture as a
+    slow gold standard, and rapid molecular testing that returns a result in
+    hours AND reports rifampicin resistance in the same run. Chest imaging with
+    automated reading extends it further. The gaps are real but narrow — sputum
+    is unreliable in children, in HIV-associated paucibacillary disease and in
+    extrapulmonary TB, and a substantial minority of notified cases are never
+    bacteriologically confirmed.
+    PREDICTIVE is `good`, which almost nothing else in this register achieves.
+    Drug susceptibility testing answers "will this regimen work in this patient"
+    directly, by testing the organism rather than inferring from the patient.
+    That is what predictive measurement is supposed to look like, and TB has had
+    it for decades. The failure is coverage, not capability — a large share of
+    notified patients never get a full susceptibility profile — and that is an
+    access problem wearing a measurement problem's clothes.
+    PROGNOSTIC is `partial`, and the missing half sits in latent infection
+    rather than in active disease. Untreated active TB kills roughly half of
+    those who have it, which is well characterised. What nothing predicts is
+    which of the two billion latently infected people will progress. That single
+    absence is what makes preventive therapy a lottery played at the scale of a
+    quarter of humanity — see the LTBI discussion under `intervention`, and
+    gaps.md #47.
+    Read all three together: measurement here is close to as good as medicine
+    gets, and 1.25 million people a year still die. Huntington's showed
+    measurement without capability is useless. TB shows the converse — excellent
+    measurement AND real capability, defeated by delivery. Neither is the lever.
+
+strata:
+  - name: drug-susceptible, HIV-negative
+    fraction:
+      value: 0.86
+      units: fraction-of-notified-cases
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.88
+      units: fraction-of-stratum (treatment success)
+      src: recall
+    toll: minor
+    what: >
+      Six months of four drugs, then two, all of them older than fifty years and
+      costing on the order of fifty dollars. Cure is the expected outcome. What
+      remains is the residue the schema does not record: up to half of those
+      cured of pulmonary TB carry permanent lung damage — bronchiectasis,
+      fibrosis, cavities, reduced function — which is the price of having HAD
+      the disease rather than the price of the cure. See gaps.md #50.
+
+  - name: drug-susceptible, HIV-associated
+    fraction:
+      value: 0.08
+      units: fraction-of-notified-cases
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.77
+      units: fraction-of-stratum (treatment success; mortality is substantially higher)
+      src: reasoning
+    toll: minor
+    what: >
+      The same regimen against a far worse baseline. TB is the leading cause of
+      death in people with HIV; disease is often paucibacillary and harder to
+      confirm, presentation is more often extrapulmonary, and the two treatments
+      interact — rifampicin induces the enzymes that clear several antiretrovirals.
+      Capability is unchanged and outcomes are not, which is exactly the sort of
+      thing a single record-level efficacy figure hides.
+
+  - name: multidrug- or rifampicin-resistant (MDR/RR-TB)
+    fraction:
+      value: 0.05
+      units: fraction-of-notified-cases
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.65
+      units: >
+        fraction-of-stratum (treatment success, mixed old and new regimens) —
+        the newer all-oral six-month regimens report close to 0.9, and this
+        figure is a rollout average rather than a ceiling
+      src: reasoning
+    toll: major
+    what: >
+      Still curable, and until very recently at a savage price: eighteen to
+      twenty-four months, injectable aminoglycosides causing PERMANENT DEAFNESS
+      in a substantial minority, and success around six in ten. The all-oral
+      six-month combination recommended from 2022 is one of the largest single
+      improvements in this register — comparable in shape to hepatitis C's
+      direct-acting antivirals, and almost unnoticed outside the field. Rollout
+      is partial, which is why the stratum figure lags the regimen.
+      Note where this stratum comes from: incomplete treatment of the stratum
+      above. It is manufactured, not encountered.
+
+  - name: pre-extensively and extensively drug-resistant
+    fraction:
+      value: 0.01
+      units: fraction-of-notified-cases
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.5
+      units: fraction-of-stratum (treatment success)
+      src: reasoning
+    toll: major
+    what: >
+      The far end of the same manufacturing process. Fewer drugs left, longer
+      courses, worse outcomes, and linezolid toxicity — peripheral and optic
+      neuropathy, marrow suppression — doing much of the damage that the
+      injectables used to. Still not incurable, which is worth saying plainly:
+      no stratum of tuberculosis has fallen off the ladder.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    Rated for the modal patient, who has drug-susceptible disease and takes six
+    months of isoniazid, rifampicin, pyrazinamide and ethambutol. Hepatotoxicity
+    requires monitoring and occasionally stops the course; ethambutol can cause
+    optic neuritis, usually reversible on withdrawal; isoniazid causes peripheral
+    neuropathy that is largely prevented by giving pyridoxine alongside it. Very
+    little of this is permanent, so `minor` and `clean`.
+    TWO COSTS SIT OUTSIDE THIS FIELD AND BOTH ARE LARGER THAN WHAT IS IN IT.
+    First, post-tuberculosis lung disease — permanent damage in people the
+    treatment CURED. That now has a home: see `residue` below, the field this
+    record forced. Until it existed the register derived `terms: clean` for a
+    disease that permanently damages the lungs of millions of survivors.
+    Second, and still homeless: incomplete treatment of one patient produces a
+    resistant organism that infects OTHER people. The cost lands on third
+    parties, in the form of a harder disease, and the entire MDR stratum above is
+    that cost made visible. Nothing in this schema counts a harm to anyone other
+    than the treated patient — `toll` is the price to them, `residue` is the
+    price to them, and this is a price to everybody else. See gaps.md #50.
+  incidence:
+    value: 0.05
+    units: >
+      fraction-of-treated (permanent sequelae attributable to the DRUGS —
+      chiefly deafness in those who received injectables, and linezolid
+      neuropathy; excludes post-TB lung disease, which is the disease's residue)
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    The record that forced this field, and the reason `terms: clean` was a lie.
+    The drugs take almost nothing permanent. The DISEASE takes lung: cavities
+    that do not close, bronchiectasis, fibrosis, airway obstruction, and a
+    measurably raised mortality for years after the bacterium is gone. Chronic
+    pulmonary aspergillosis colonises the cavities left behind in some.
+    Note what "cured" means in tuberculosis. The WHO outcome categories are
+    MICROBIOLOGICAL — sputum-negative at the end of treatment. That is a
+    statement about the bacterium, not about the patient's lungs, and it is
+    being read as a statement about the patient. The treatment genuinely works
+    and the destruction it arrives too late to prevent is permanent.
+    Roughly ten million people get tuberculosis every year and most are cured,
+    so post-tuberculosis lung disease is being generated at a rate of millions
+    a year and is essentially uncounted — global burden estimates attribute it
+    to chronic obstructive pulmonary disease, not to tuberculosis. It may be
+    the largest disease burden in the world with nobody's name on it.
+  incidence:
+    value: 0.3
+    units: >
+      fraction-of-cured (permanent lung function impairment; wide range in the
+      literature — around a third to a half report ANY spirometric
+      abnormality, fewer have clinically significant disease, and the spread
+      is definition-dependent rather than measurement error)
+    src: reasoning
+
+moved:
+  - date: 1952
+    axis: intervention
+    from: none
+    to: curative
+    why: >
+      **THE LARGEST SINGLE CAPABILITY MOVE AVAILABLE TO ANY RECORD IN THIS
+      REGISTER, AND IT IS THE ONE THAT INVENTED THE IDEA.**
+      Before chemotherapy, tuberculosis was managed with rest, altitude, fresh
+      air, and surgery whose purpose was to collapse a lung — thoracoplasty,
+      artificial pneumothorax, phrenic crush. Sanatoria were the infrastructure
+      of a disease nobody could treat. Roughly half of those with active disease
+      died of it.
+      Streptomycin (1944) was the first drug that worked and **the first
+      treatment in history evaluated by a randomised controlled trial** — the MRC
+      streptomycin trial of 1948, which is as much a founding artefact of modern
+      medicine as the drug was. Resistance emerged within months, which is how
+      combination therapy was discovered. **Isoniazid (1952)** made cure routine
+      and cheap; **rifampicin (1966)** made it fast.
+      Dated to isoniazid because that is when the answer became a tablet rather
+      than a scarce injectable, and the sanatoria began to close.
+    src: recall
+
+  - date: 1980
+    axis: ongoing
+    from: high
+    to: moderate
+    why: >
+      **SHORT-COURSE CHEMOTHERAPY, AND IT IS WORTH REMEMBERING THAT "SIX MONTHS"
+      WAS THE ACHIEVEMENT.**
+      The rifampicin- and pyrazinamide-containing regimens developed through the
+      1970s — largely by the British Medical Research Council units in East
+      Africa, Hong Kong and Singapore — cut treatment for drug-susceptible
+      disease from eighteen to twenty-four months down to six, with equal or
+      better cure rates. That is what made mass treatment programmes possible at
+      all, and DOTS is built on top of it.
+      Six months is now the thing everybody in the field complains about, and it
+      is a complaint about a triumph. **A four-month regimen of rifapentine and
+      moxifloxacin was shown non-inferior in 2021** and is recommended for
+      selected patients; adoption is limited by rifapentine supply and price
+      rather than by evidence.
+    src: recall
+
+  - date: 2019
+    axis: toll
+    from: 0.12
+    to: 0.05
+    why: >
+      **DEAFNESS STOPPED BEING A ROUTINE PRICE OF SURVIVING RESISTANT
+      TUBERCULOSIS.**
+      For decades, treating multidrug-resistant TB meant months of daily
+      injected aminoglycosides — kanamycin, capreomycin, amikacin — which cause
+      **permanent sensorineural hearing loss in a substantial fraction of those
+      who receive them.** It was standard of care. It was also, in a disease
+      concentrated among poor adults of working age, frequently the end of their
+      employment.
+      WHO's 2018-2019 revision moved bedaquiline and linezolid up the priority
+      ordering and injectables down, and all-oral regimens became the default.
+      **Nothing about amikacin changed.** What changed is that an alternative
+      existed, and the moment it did, a toll that had been accepted for fifty
+      years became unacceptable (gaps.md #148 — and this is a cleaner instance of
+      that gap than the colistin case that forced it).
+    src: recall
+
+  - date: 2022
+    axis: efficacy
+    from: 0.83
+    to: 0.85
+    why: >
+      **BPaLM — AND THE NUMBERS ON THIS ENTRY ARE THE POINT OF IT.**
+      Bedaquiline, pretomanid, linezolid and moxifloxacin: **six months, entirely
+      oral, with treatment success around 89%**, WHO-recommended from 2022 for
+      multidrug- and rifampicin-resistant disease. It replaced a regimen of
+      eighteen to twenty-four months, daily injections, permanent deafness in
+      many, and success around six in ten. Bedaquiline's approval in 2012 had
+      already ended a **forty-nine year** gap since the last novel TB drug.
+      In shape it is hepatitis C's direct-acting antivirals — a savage regimen
+      replaced by a short tolerable one that works better — achieved with almost
+      none of the attention.
+      **AND IT MOVES THIS RECORD'S EFFICACY BY TWO POINTS**, because MDR/RR-TB is
+      about five percent of notified cases. The stratum went from 0.65 to
+      something approaching 0.9; the record-level scalar can barely see it.
+      A register that ranked diseases by how much they had moved would rank
+      tuberculosis as barely moving in the decade when its hardest stratum was
+      transformed (gaps.md #151).
+    src:
+      id: PMID:36053506 doi:10.1056/NEJMoa2119430
+      retrieved: 2026-08-26
+      quote: >
+        A total of 84 to 93% of the participants across all four
+        bedaquiline-pretomanid-linezolid treatment groups had a favorable outcome.
+
+# NO `window` BLOCK, and the absence is a finding rather than an omission.
+# Tuberculosis stays curable. Late disease means more lung destroyed, more
+# people infected in the interval, and a worse fight — but capability does not
+# change with timing, which is the test this schema applies. Compare Crohn's,
+# where fibrosis becomes mechanical and no drug reaches it, or Chagas, where the
+# conduction tissue is gone. Here the drugs still work on the last day. What
+# accumulates is residual damage and transmission, and those are gaps.md #50,
+# not a window.
+
+witness:
+  mechanism: >
+    Rated `established`, and it is the oldest such rating in the register.
+    Robert Koch identified the organism in 1882; airborne transmission, the
+    granuloma, caseous necrosis, cavitation and the drug targets are all
+    thoroughly characterised. The chain from exposure to death would survive any
+    refutation attempt.
+    The named holes are on the HOST side and they are the reason the vaccine
+    problem is unsolved. Nobody knows what immunological state constitutes
+    protection — there is no correlate of protection, which is why vaccine
+    candidates cannot be screened without full efficacy trials. Nobody knows
+    what latency physically is: dormant bacilli, continuous low-level
+    replication contained by the immune system, or a spectrum between them.
+    Nobody knows why five to ten percent progress. These are holes in the
+    immunology of a disease whose pathology is not in doubt, which is a
+    different shape from Huntington's `partial` and, on balance, a smaller one.
+  intervention: >
+    `curative`, at every stratum, with drugs mostly older than the patients.
+    Isoniazid dates from 1952 and rifampicin from 1966. Six months of combination
+    therapy cures the great majority of drug-susceptible disease for roughly
+    fifty dollars of medicine. Even extensively resistant disease is curable.
+    THAT IS THE WHOLE RECORD: capability is real, cheap, old, and it kills 1.25
+    million people a year anyway.
+    LATENT INFECTION IS A SEPARATE AND UNCOMFORTABLE PROBLEM, and it is Chagas
+    at two hundred times the scale. Preventive therapy works — historically six
+    to nine months of isoniazid, now three months of weekly rifapentine and
+    isoniazid, or one month of daily therapy. But five to ten percent of the
+    latently infected will ever progress, nothing identifies which, and there is
+    no test of cure, so treating them means giving drugs to ten or twenty people
+    to prevent one case, with no way to tell any of them whether it worked. The
+    register's overtreatment flags cannot see this — the toll is not permanent —
+    and the population concerned is a quarter of the human race.
+    What is new is genuinely new: bedaquiline in 2012 ended a FORTY-NINE YEAR
+    gap since the last novel TB drug, and **BPaLM** — bedaquiline, pretomanid,
+    linezolid and moxifloxacin, six months and entirely oral, recommended from
+    2022 for resistant disease — is a transformation on the scale of hepatitis
+    C's, achieved with almost none of the attention. For drug-susceptible disease
+    **a four-month rifapentine-moxifloxacin regimen** was shown non-inferior in
+    2021, and preventive therapy has come down from nine months of isoniazid to
+    three months of weekly rifapentine or one month of daily therapy.
+    **WHAT RESISTANCE TOOK HERE WAS NEVER CURABILITY.** It took six months and
+    made it eighteen; it took tablets and made them injections; it took an
+    outpatient course and made it a job somebody had to give up. BPaLM has now
+    taken most of that back. No stratum of tuberculosis has ever fallen off the
+    ladder, and the register has one word — `curative` — for every step of that
+    staircase (gaps.md #146).
+  prevention: >
+    `prophylaxis`, and this rating is where the axis breaks. BCG dates from 1921
+    and is the most widely administered vaccine in human history. It works: it
+    reliably prevents disseminated and meningeal tuberculosis in young children,
+    which is why it is still given. It also largely fails at the thing that
+    drives the epidemic — measured efficacy against adult pulmonary TB ranges
+    from roughly nothing to eighty percent depending on latitude and population,
+    a spread that has never been satisfactorily explained.
+    The schema records `prophylaxis` and stops. It has no efficacy figure for
+    prevention, so a vaccine that works in essentially everyone and a vaccine
+    that may do nothing against the dominant form of the disease receive the
+    identical rating (gaps.md #49). Compare rheumatic heart disease, where
+    monthly penicillin prophylaxis is close to fully protective and reads the
+    same on this axis.
+    The first genuinely promising new candidate in a century is in late-stage
+    trials. If it works it moves nothing on this record, which is itself the
+    argument for the missing field.
+  ongoing: >
+    `moderate`. Treatment is finite, which is the important thing — but six
+    months of multi-drug therapy with liver monitoring, often directly observed,
+    frequently while unable to work and while the household is investigated, is
+    not the one-tablet-a-day of the HIV record. For resistant disease it was
+    until recently two years. Finite, and heavy while it lasts.
+
+holes:
+  - What constitutes immune protection. No correlate of protection means vaccine
+    candidates cannot be triaged short of full efficacy trials, which is why one
+    century has produced one vaccine.
+  - What latency physically is, and what predicts progression from it. This
+    governs whether treating two billion people is a sane policy or a very large
+    mistake.
+  - Whether BCG's latitude-dependent efficacy is explained by environmental
+    mycobacteria, strain variation, or something else. Unresolved for decades.
+  - How much post-tuberculosis lung disease there is and what it costs. Widely
+    acknowledged, poorly quantified, and entirely absent from this record's
+    numbers.
+  - The strata fractions are reasoned from the commonly cited proportions of
+    resistant and HIV-associated disease among NOTIFIED cases; undiagnosed cases
+    are not in that denominator and are unlikely to be distributed the same way.
+  - `access: 0.72` is the load-bearing number and the least firm. It is built
+    from the roughly three million annually undiagnosed against the estimated
+    incidence, and it treats notification as equivalent to treatment.
+  - Written from model recall. The regimens, the 1882 and 1952 and 1966 and 2012
+    dates, and the shape of the resistance problem are the parts most likely
+    right; every number is the part most likely wrong.
+  - >
+    **THE RECORD-LEVEL SCALARS CANNOT SEE THIS RECORD'S BIGGEST RECENT EVENT.**
+    MDR/RR-TB is five percent of notified cases, so transforming it moves
+    `efficacy` from 0.83 to 0.85. The strata carry the truth and the record-level
+    figure is a weighted average that structurally under-reports progress in
+    small severe strata — which is where progress usually happens, because that
+    is where the unmet need and the trial incentive are (gaps.md #151).
+  - >
+    **The four-month regimen and BPaLM rollout are both partial**, so every
+    efficacy figure in this file is a rollout average rather than a ceiling, and
+    the gap between them is a delivery number nobody reports.
+
+blockers:
+  - kind: diagnosis
+    blocks: finding the roughly three million people a year who are never diagnosed
+    what: >
+      The largest single delivery gap in the register in absolute terms, and the
+      third record in a row to carry a `diagnosis` blocker of the POTS variety —
+      the test exists, works, and is not reaching people. Here it is rapid
+      molecular testing that returns a result and a resistance call in hours,
+      and the constraint is instrument placement, sample transport, and people
+      with a cough presenting to a system that looks for TB.
+      What separates this from Chagas is magnitude rather than kind. Chagas
+      misses over ninety percent of six and a half million; TB misses about a
+      quarter of eleven million a year, every year, and each missed case
+      transmits while it waits. Closing this gap is the highest-yield
+      intervention available anywhere in this register and nothing in the
+      derived views says so.
+    who_could: [health-system, government, nonprofit, philanthropy]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+  - kind: adherence
+    blocks: completing six months of therapy, and thereby not manufacturing resistance
+    what: >
+      The paradigm case for this blocker kind, and the only one in the register
+      where non-adherence does not merely fail the patient but PRODUCES A WORSE
+      PATHOGEN for everybody else. Six months of daily multi-drug therapy, begun
+      when the patient often already feels better after two, in populations
+      facing displacement, informal work, stigma and cost. Partial treatment
+      selects for resistance; the MDR stratum in this record is what that looks
+      like at scale.
+      This is why regimen shortening is not a convenience feature. Cutting six
+      months to four, or resistant treatment from two years to six months, is an
+      adherence intervention delivered as pharmacology, and it acts on
+      transmission and resistance as well as on the individual.
+    who_could: [health-system, government, nonprofit, patient-org]
+    scale: 5.0e8
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: a vaccine that prevents adult pulmonary tuberculosis
+    obstacles: [protective-immunity]
+    what: >
+      One vaccine in a century, and it does not do the job that matters. The
+      binding constraint is that nobody knows what protective immunity looks
+      like, so there is no correlate of protection and therefore no way to screen
+      candidates short of running a full efficacy trial in a high-burden
+      population — which is slow, enormous and expensive, and only a handful of
+      such trials can run at once.
+      This is the one genuinely scientific blocker in the record. Everything else
+      here is delivery. `scale: null` because a correlate of protection cannot be
+      bought; the trials that follow it can.
+    who_could: [academic, sponsor, philanthropy]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: no-sponsor
+    blocks: development of new drugs, for the forty-nine years it did
+    what: >
+      Recorded as a documented historical instance rather than a current one,
+      because it is the register's clearest example of the market failure and of
+      what ends it. Between rifampicin in 1966 and bedaquiline in 2012 there was
+      no new tuberculosis drug — forty-nine years, for the leading infectious
+      cause of death, in an era of extraordinary pharmaceutical productivity.
+      The reason was not scientific difficulty alone. The patients were poor, the
+      market was public, and the trials were long. What broke it was
+      philanthropic and public funding plus nonprofit product development
+      partnerships, not a change of heart in the industry — the same institutional
+      answer as Chagas, arrived at independently.
+      It is a live warning rather than a solved problem: the pipeline behind
+      bedaquiline is thin, and nothing has changed about the underlying
+      economics.
+    who_could: [sponsor, philanthropy, government, nonprofit]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+  - kind: cost
+    blocks: access to the newer resistant-disease regimens
+    what: >
+      The closest thing in this register to the refrain it was built to test,
+      and the reason to record it carefully rather than triumphantly.
+      Bedaquiline is the key drug of the regimens that turned resistant TB from
+      a two-year ordeal into a six-month course. Its price and its secondary
+      patents were contested publicly, generic entry was argued to be blocked in
+      countries carrying most of the burden, and after sustained pressure the
+      originator undertook in 2023 not to enforce those patents across most
+      low- and middle-income countries.
+      So: a working therapy, a genuine access barrier, an identifiable actor, and
+      public pressure that MOVED IT. That is the refrain's strongest instance in
+      the register — and it is also the instance that resolved, which is the part
+      that usually goes unmentioned. What remains is the ordinary cost of
+      delivering multi-drug regimens and universal susceptibility testing in
+      low-income health systems, which is money rather than obstruction.
+    who_could: [manufacturer, government, payer, nonprofit, philanthropy]
+    scale: 5.0e8
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0070
+  rated: 2026-08-24
+  supersedes: FND-A-0023
+  by: [claude, jeremy]

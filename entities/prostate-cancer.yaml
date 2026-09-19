@@ -1,0 +1,504 @@
+slug: prostate-cancer
+id: FND-D-0051
+name: prostate cancer
+also: [prostate carcinoma, prostatic adenocarcinoma, carcinoma of the prostate]
+mondo: MONDO:0008315
+kind: disease
+residual: false
+contested: false
+
+# THE CANONICAL OVERDIAGNOSIS CASE, WHICH gaps.md #92 NAMED AS MISSING FROM THE
+# CORPUS. It is also, unexpectedly, the register's best evidence for its own
+# central claim.
+#
+# **MOST MEN WHO GET PROSTATE CANCER DIE OF SOMETHING ELSE.** Autopsy series find
+# it in a large fraction of men who died of unrelated causes — rising steeply
+# with age, and in men over seventy plausibly the majority. It is close to a
+# normal feature of ageing that occasionally kills.
+#
+# ~1.5 million diagnoses a year and ~400,000 deaths. That ratio is the record.
+#
+# SO THE WINDOW IS ONLY SOMETIMES WORTH CATCHING. Every other window in this
+# register assumes that catching the disease earlier is good. Here it is good for
+# the minority who would have died of it and actively harmful for the majority
+# who would not — and nobody can reliably tell which at the time. `window_toll_link`
+# fires on this record and reports *"the toll is the price of missing it →
+# diagnosis is the cheap lever"*, which is **exactly backwards**: the toll is the
+# price of CATCHING it. See gaps.md #112.
+#
+# AND THE TOLL IS NOT ABSTRACT. Radical prostatectomy leaves most men with
+# erectile dysfunction and a substantial minority incontinent, permanently, for a
+# cancer that in a large share was never going to hurt them.
+#
+# BUT — AND THIS IS WHY THE RECORD MATTERS — **IT IS GETTING BETTER, BY EXACTLY
+# THE ROUTE THIS REGISTER KEEPS ARGUING FOR.** Grade grouping, MRI-targeted
+# biopsy and genomic classifiers improved prognostic measurement; active
+# surveillance became standard for low-risk disease; and the fraction of
+# diagnosed men subjected to definitive treatment collapsed. Same mortality
+# benefit, far less harm, **achieved by measuring better rather than by treating
+# better.** That is the register's thesis, demonstrated.
+
+burden:
+  prevalence:
+    value: 1.5e6
+    units: >
+      new diagnoses/year worldwide — and see the note: the number is a function
+      of how hard the disease is looked for, more than of how often it occurs
+    src: recall
+  deaths:
+    value: 4.0e5
+    units: >
+      deaths/year — second-largest cancer killer of men worldwide, and roughly a
+      quarter of the annual diagnosis count
+    src: recall
+  note: >
+    **THE INCIDENCE FIGURE IS NOT A FACT ABOUT THE DISEASE.** Where PSA testing
+    is widespread, recorded incidence roughly doubled within a few years of its
+    introduction and mortality did not move in step. Where testing is rare,
+    incidence is low and mortality is proportionally much higher. The same
+    population, looked at harder, has more prostate cancer.
+    Autopsy studies are the control. Prostate cancer is found in a large fraction
+    of men who died of other causes — commonly cited around a third of men in
+    their sixties and higher above seventy. **Most of it never declares itself.**
+    Which corrupts the survival statistic in a way worth stating plainly.
+    Five-year survival for prostate cancer is very high, and screening improves
+    it further — partly by curing people, and partly by **adding to the
+    denominator cancers that were never going to kill anyone.** Lead-time bias
+    and length bias both push the same direction. A rising survival rate here is
+    not straightforwardly good news (gaps.md #104).
+    Mortality is roughly twice as high in men of African ancestry, with earlier
+    onset, and the trials that set screening policy under-enrolled them.
+
+survival:
+  horizon: 5 years from diagnosis
+  untreated:
+    value: 0.6
+    units: >
+      fraction alive — **and this figure is not what it looks like.** Much of
+      prostate cancer is indolent enough that men die *with* it rather than
+      *of* it, so untreated survival is high for reasons that are about the
+      disease's tempo rather than about any treatment
+    src: reasoning
+  treated:
+    value: 0.95
+    units: >
+      fraction alive — near-universal for localised disease, and falling steeply
+      for metastatic. **INFLATED BY OVERDIAGNOSIS AND IT CANNOT BE CLEANLY
+      CORRECTED**: every indolent cancer detected and counted as a cure raises
+      this number without anybody having been saved
+    src: reasoning
+  witness: >
+    **THE RECORD WHERE BOTH COLUMNS ARE WRONG IN THE SAME DIRECTION.** A high
+    untreated survival and a very high treated one, and the gap between them is
+    smaller than the register's other cancers precisely because so much of what
+    is counted never needed treating. This record's `overtreatment_risk` flag
+    and this row are the same fact seen from two sides.
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: none
+  ongoing: moderate
+  efficacy:
+    value: 0.75
+    units: >
+      fraction-of-patients (cured of localised disease, or durably controlled if
+      advanced) — INFLATED BY OVERDIAGNOSIS and it cannot be cleanly corrected.
+      Every indolent cancer counted as a cure raises this number without anybody
+      having been saved
+    src: reasoning
+  access:
+    value: 0.45
+    units: >
+      fraction-of-patients (reaching MRI-targeted biopsy, definitive treatment or
+      structured surveillance, and modern systemic therapy if advanced) — better
+      than most cancers because PSA is cheap and surgery is widespread, and the
+      advanced-disease agents are not
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: partial
+  witness: >
+    DIAGNOSTIC is `objective` and **the problem is that it works.** PSA is a
+    cheap blood test; biopsy gives tissue; the finding is unambiguous. What it
+    finds, very often, is a cancer that satisfies every histological criterion
+    and would never have caused a symptom. **The test is not failing to detect
+    disease. It is detecting things that are disease by definition and not by
+    consequence** — which is gaps.md #92's sharpest instance, and the reason PSA
+    is the most argued-about test in medicine.
+    MRI before biopsy, and targeted rather than systematic sampling, has
+    materially reduced the detection of clinically insignificant disease. That is
+    a measurement fix to an overdiagnosis problem and it worked.
+    PROGNOSTIC is `partial`, **and this axis is the whole story of the record.**
+    Grade Group 1 disease — Gleason 6 — essentially never metastasises, to the
+    point where there is a serious and continuing argument that it should not be
+    called cancer. Grade Group 5 kills. Between them, grade, PSA density, MRI
+    findings and genomic classifiers give real and improving information.
+    It is `partial` rather than `good` because at the individual level the
+    indolent majority and the lethal minority still overlap, and men on
+    surveillance are monitored precisely because nobody trusts the classification
+    enough to stop looking.
+    **NOTE THAT `overtreatment_risk` DOES NOT FIRE ON THIS RECORD**, which is the
+    definitive overtreatment disease. The flag requires `prognostic: none`, and
+    prostate's prognostic measurement improved *out of that band* — which is why
+    the overtreatment fell. The flag is a snapshot; the story is a trajectory
+    (gaps.md #91), and it would have fired in 1995.
+    PREDICTIVE is `partial` and better than it was: BRCA2 and other
+    homologous-recombination defects select for PARP inhibitors, and PSMA PET
+    selects for radioligand therapy. For localised disease the choice between
+    surgery, radiotherapy and surveillance is largely preference-sensitive rather
+    than predictor-driven.
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    **THIS IS WHY PROSTATE CANCER IS THE OVERTREATMENT CASE AND NOT MERELY THE
+    OVERDIAGNOSIS ONE.** What definitive treatment takes is specific, permanent,
+    and central to how men experience their own lives.
+    **RADICAL PROSTATECTOMY.** Erectile dysfunction in the large majority, with
+    recovery incomplete even in the best hands and best-selected patients.
+    Urinary incontinence in a substantial minority, and persistent in some.
+    Nerve-sparing technique improves both and does not abolish either.
+    **RADIOTHERAPY.** Urinary and bowel toxicity, radiation proctitis, and
+    erectile dysfunction arriving later rather than immediately. A small
+    long-term risk of second malignancy in the irradiated field.
+    **ANDROGEN DEPRIVATION**, given for months to years in intermediate-risk and
+    advanced disease: hot flushes, loss of libido, muscle wasting, osteoporosis
+    and fracture, metabolic syndrome, cardiovascular risk, and cognitive and mood
+    effects. It is the oldest effective systemic cancer therapy there is and it
+    is not gentle.
+    Set that against the diagnosis. A large share of the men receiving it had a
+    cancer that would never have surfaced. **The register has no way to express
+    that a toll is inflicted disproportionately on the people who needed the
+    treatment least** — which is what overdiagnosis plus effective treatment
+    produces, and it is the reverse of the usual failure.
+  incidence:
+    value: 0.45
+    units: >
+      fraction-of-treated (permanent harm — erectile dysfunction, incontinence,
+      bowel toxicity, or the metabolic and skeletal consequences of androgen
+      deprivation) — a reasoned estimate over men receiving definitive treatment,
+      and it EXCLUDES those on surveillance, which is the point of surveillance
+    src: reasoning
+
+# NO `residue` BLOCK. Localised prostate cancer cured by surgery or radiation
+# leaves the patient very little; what is permanent is what the treatment took.
+# `restored` therefore derives `cure-costs`, cleanly, and it is the second
+# consecutive record where the entire permanent price is the cure's rather than
+# the disease's. For lung cancer that read as a fact about thoracic surgery. Here
+# it reads as an indictment.
+
+window:
+  what: >
+    **THE ONLY WINDOW IN THIS REGISTER THAT IS NOT ALWAYS WORTH CATCHING.**
+    Localised prostate cancer is curable by surgery or radiotherapy. Metastatic
+    prostate cancer is not curable, though it is controllable for years. So there
+    is a genuine window, and PSA screening does reduce prostate cancer mortality
+    — the European trial found roughly a fifth at long follow-up.
+    **And catching it is harmful for most of the men it is caught in.** Somewhere
+    between a fifth and a half of screen-detected cancers — estimates vary widely
+    and the uncertainty is real — would never have caused a symptom. Those men
+    gain nothing and can lose continence and sexual function permanently.
+    Every other window in this corpus is unambiguous: reach the stroke in ninety
+    minutes, the noma in three days, the anaphylaxis in ten minutes, and the
+    answer is straightforwardly better. **Here the same act helps a minority and
+    harms a majority, and cannot be aimed** — which is why the recommendation
+    reversed twice in a decade and now says *discuss it*.
+    `caught_in_time` below is high and its meaning is contested. A high number
+    means many cancers were found while localised. It does not mean many lives
+    were saved, and the gap between those two statements is this record.
+    **`window_toll_link` fires here and reports that diagnosis is the cheap
+    lever. For prostate cancer, more diagnosis is the problem.** See gaps.md
+    #112.
+  closes_on: >
+    metastatic spread, principally to bone — after which the disease is
+    controllable for years and not curable
+  caught_in_time:
+    value: 0.75
+    units: >
+      fraction-of-cases (diagnosed while localised and potentially curable) —
+      high, and A HIGH NUMBER HERE IS NOT UNAMBIGUOUSLY GOOD, because it counts
+      the overdiagnosed as caught in time
+    src: reasoning
+
+strata:
+  - name: localised, low-risk (Grade Group 1)
+    fraction:
+      value: 0.40
+      units: fraction-of-diagnoses
+      src: recall
+    intervention: curative
+    efficacy:
+      value: 0.99
+      units: fraction-of-stratum (alive and free of prostate cancer death at ten years)
+      src: reasoning
+    toll: minor
+    what: >
+      **THE STRATUM THAT SHOULD MOSTLY NOT BE TREATED**, and increasingly is not.
+      Gleason 6 disease essentially never metastasises, and the standard of care
+      is active surveillance: PSA, MRI and repeat biopsy, with definitive
+      treatment held in reserve for the minority who reclassify upward.
+      Its `toll: minor` is the surveillance itself — repeat biopsies, and living
+      with an untreated cancer, which is a real burden this schema records as
+      nothing.
+      There is a live argument that this stratum should not carry the word
+      cancer at all. That is a proposal to solve an overdiagnosis problem by
+      renaming, and it is not obviously wrong.
+
+  - name: localised, intermediate and high-risk
+    fraction:
+      value: 0.42
+      units: fraction-of-diagnoses
+      src: recall
+    intervention: curative
+    efficacy:
+      value: 0.80
+      units: fraction-of-stratum (cured by surgery or radiotherapy, with androgen deprivation where indicated)
+      src: reasoning
+    toll: major
+    what: >
+      The stratum where treatment is clearly right and the price is the one
+      described in `toll`: incontinence, erectile dysfunction, bowel toxicity,
+      and months or years of androgen deprivation.
+      **Everything that has improved about prostate cancer care is about telling
+      this stratum apart from the one above it**, and the improvement has been
+      real.
+
+  - name: metastatic at diagnosis, or recurrent
+    fraction:
+      value: 0.18
+      units: fraction-of-diagnoses
+      src: recall
+    intervention: suppressive
+    efficacy:
+      value: 0.60
+      units: fraction-of-stratum (durable disease control on modern systemic therapy)
+      src: reasoning
+    toll: major
+    what: >
+      Androgen deprivation, now given from the outset with an AR-pathway
+      inhibitor or docetaxel, controls metastatic disease for years — a
+      substantial extension over what was possible fifteen years ago. PARP
+      inhibitors for homologous-recombination-defective tumours and PSMA-targeted
+      radioligand therapy add further lines.
+      **It is not curable.** Castration resistance emerges, and the disease that
+      returns is a different one — the same shape gaps.md #111 named in lung
+      cancer, and here the selection pressure is applied by a therapy that has
+      been in use since 1941.
+
+moved:
+  - date: 1941
+    axis: intervention
+    from: none
+    to: suppressive
+    why: >
+      Huggins and Hodges showed that castration causes metastatic prostate cancer
+      to regress — **the first effective systemic therapy for any cancer**, and
+      it won a Nobel Prize.
+      Every modern agent for advanced prostate cancer is a refinement of the same
+      idea: deprive the tumour of androgen, or block the receptor it signals
+      through. The oldest entry in this register after smallpox's 1796, and the
+      only one that founded a field.
+    src:
+      id: PMID:12050481 doi:10.1016/s0022-5347(05)64820-3
+      retrieved: 2026-08-26
+      quote: >
+        Studies on prostatic cancer: I. The effect of castration, of estrogen and
+        of androgen injection on serum phosphatases in metastatic carcinoma of the
+        prostate. 1941.
+
+  - date: 2012
+    axis: toll
+    from: 0.85
+    to: 0.45
+    why: >
+      **ACTIVE SURVEILLANCE, AND IT IS THE REGISTER'S BEST EVIDENCE FOR ITS OWN
+      ARGUMENT.**
+      Grade grouping, MRI-targeted biopsy and genomic classifiers made it
+      possible to identify low-risk disease with enough confidence to watch it.
+      The share of low-risk men receiving immediate radical treatment fell
+      sharply — in some health systems from the large majority to a small
+      minority. Prostate cancer mortality did not rise.
+      **Same benefit, far less harm, achieved by measuring better rather than by
+      treating better.** No new drug, no new operation. The register keeps
+      concluding that measurement is underfunded relative to therapeutics; this
+      is the clearest case where investing in it paid.
+      NOTE WHAT THIS ENTRY CANNOT SAY. The toll's *severity* did not change —
+      prostatectomy is exactly as damaging as it was. What fell is the *fraction
+      of men subjected to it*, which is `toll.incidence`, and `moved` records a
+      change on an axis rather than in one of its components. The numbers above
+      are the incidence and the field cannot say so. gaps.md #26 asked for
+      `axis: toll`; this asks for one level finer.
+
+witness:
+  mechanism: >
+    `established` for how the disease is driven, and thin on where it comes from.
+    Prostate cancer is androgen-dependent, and the proof is therapeutic: removing
+    androgen makes metastatic disease regress, which has been known since 1941
+    and is still the backbone of treatment. Androgen receptor signalling drives
+    proliferation; castration resistance emerges through receptor amplification,
+    splice variants, and intratumoural androgen synthesis, which is why
+    successive generations of AR-pathway inhibitors keep working for a while.
+    The genomics are well described — ETS family fusions in about half of
+    tumours, PTEN loss, TP53, and germline BRCA2 and other
+    homologous-recombination genes conferring both higher risk and a therapeutic
+    target.
+    **TWO NAMED HOLES, AND BOTH ARE LARGE.**
+    *Nothing explains why men get it.* Age, family history, BRCA2 and African
+    ancestry are the established risk factors and none of them is modifiable.
+    There is no smoking here — no dominant environmental cause has ever been
+    established, which is why `prevention` reads `none` and why this record has
+    no equivalent of the tobacco quartet's policy lever.
+    *Nothing reliably separates the indolent from the lethal.* Grade does most of
+    the work and does not finish it. This is the same question COPD asks about
+    smokers and ischaemic heart disease asks about plaques, and here it is not
+    about who progresses to disease but **which disease was ever going to
+    matter.**
+  intervention: >
+    `curative` for localised disease, which is most diagnoses — radical
+    prostatectomy or radiotherapy, with androgen deprivation added for higher
+    risk. The `strata` block carries the rest, from a low-risk group that should
+    largely be left alone to metastatic disease that is `suppressive` and not
+    curable.
+    **The interesting thing about this record is not the treatment.** The
+    treatments have been broadly the same for decades and they work. What
+    changed, and what made prostate cancer care better, was deciding **whom not
+    to treat** — see the 2012 `moved` entry.
+    For advanced disease the last fifteen years have been genuinely good:
+    abiraterone and enzalutamide moved earlier, docetaxel and cabazitaxel,
+    PARP inhibitors for HRR-defective tumours, and PSMA-targeted radioligand
+    therapy. Metastatic prostate cancer now runs for years rather than months.
+  prevention: >
+    `none`, and it is one of the few records in this register that can say so
+    honestly rather than for want of looking.
+    There is no vaccine, no established modifiable exposure, and no dietary or
+    lifestyle intervention with a demonstrated effect on mortality.
+    5-alpha-reductase inhibitors reduce the incidence of *detected* prostate
+    cancer and are not used for prevention — partly because of an unresolved
+    signal for higher-grade disease and partly because reducing the detection of
+    a cancer that mostly does not matter is not obviously a benefit.
+    **Which puts this record in sharp contrast with the four that precede it.**
+    Lung cancer, COPD, stroke and ischaemic heart disease share a preventable
+    exposure worth more than every therapy in them combined. Prostate cancer has
+    nothing to prevent, so all of its capability is downstream — and its only
+    lever on mortality is deciding, better, who needs treating.
+  ongoing: >
+    `moderate`, and it divides unevenly.
+    A man on active surveillance carries PSA tests, periodic MRI and repeat
+    biopsies, indefinitely — plus the fact of knowing he has an untreated cancer,
+    which is a burden the schema records as `minor` toll and which the men
+    concerned do not always experience that way.
+    A man on long-term androgen deprivation carries hot flushes, fatigue, bone
+    density monitoring, cardiovascular risk and the loss of libido, for years.
+    A man cured by surgery carries whatever the surgery left him with, which is
+    `toll` rather than `ongoing`, and PSA surveillance for a decade.
+
+holes:
+  - Every scalar is `src: recall` or `src: reasoning`. The overdiagnosis estimate
+    in particular is genuinely uncertain — published ranges span from about a
+    fifth to about a half of screen-detected cancers, and the answer depends on
+    assumptions about lead time that cannot be observed directly.
+  - `efficacy: 0.75` is inflated by overdiagnosis and cannot be cleanly
+    corrected. Comparing it to any other record's efficacy is meaningless.
+  - The strata fractions describe a screened, high-income population. Where PSA
+    testing is uncommon the metastatic-at-diagnosis fraction is far larger and
+    the low-risk fraction far smaller, which inverts the whole record.
+  - The register records nothing about the roughly two-fold mortality difference
+    in men of African ancestry, or about the fact that the trials underpinning
+    screening policy under-enrolled them. See gaps.md #113.
+  - Whether Grade Group 1 disease should be called cancer is an open question
+    with real consequences for every number in this file, including the
+    denominator of `deaths` and the meaning of `caught_in_time`.
+
+blockers:
+  - kind: diagnosis
+    blocks: telling the cancer that will kill from the cancer that will not
+    obstacles: [who-progresses]
+    what: >
+      **THE BINDING CONSTRAINT, AND IT IS A PROGNOSTIC PROBLEM WEARING A
+      DIAGNOSTIC NAME.**
+      Finding prostate cancer is easy and that is the difficulty. PSA plus biopsy
+      finds a great deal of disease; a large share of it would never have
+      surfaced; and the treatments that cure the dangerous fraction leave the
+      harmless fraction incontinent and impotent.
+      Everything that has improved has improved here. Grade grouping separated
+      Gleason 6 from everything above it. MRI before biopsy reduced the detection
+      of insignificant disease. Genomic classifiers added information at the
+      margin. Active surveillance turned that information into fewer operations.
+      **What is still missing is a test that says *this one will kill you*.** Not
+      a risk stratum — an answer. It would eliminate the overdiagnosis harm
+      without giving up the mortality benefit, and it is the single highest-value
+      measurement target in this register, because unlike ischaemic heart
+      disease's plaque question the tissue is already in a pot.
+    who_could: [academic, sponsor, manufacturer, health-system, philanthropy]
+    scale: 2.0e9
+    standing: documented
+    src: recall
+
+  - kind: evidence-incomplete
+    blocks: knowing whether the policy applies to the men at highest risk
+    obstacles: []
+    what: >
+      Men of African ancestry have roughly twice the prostate cancer mortality of
+      white men, with earlier onset and more aggressive disease at presentation.
+      **The randomised trials that set screening policy under-enrolled them
+      substantially**, and the guidelines derived from those trials — including
+      the age bands and the risk-benefit arithmetic — are applied to them anyway.
+      The harm is two-sided and both directions are documented. A screening
+      policy calibrated on a lower-risk population may under-serve a higher-risk
+      one; and where testing is offered without the surveillance infrastructure
+      that makes it safe, the same policy delivers the overtreatment without the
+      benefit.
+      This is not a prostate-specific failure. **`efficacy` everywhere in this
+      register is a number measured in one population and applied to another**,
+      and nothing records which population it came from. See gaps.md #113.
+    who_could: [academic, sponsor, government, health-system, patient-org]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: why men get it, and why castration stops working
+    obstacles: [who-progresses]
+    what: >
+      **NOTHING EXPLAINS THE AETIOLOGY.** Age, family history, BRCA2 and African
+      ancestry, none modifiable. No dominant environmental cause has ever been
+      established despite a great deal of looking, which is why this record's
+      `prevention` reads `none` while the four records before it share one
+      exposure worth more than all their therapies combined.
+      **AND CASTRATION RESISTANCE IS A SCHEDULE.** Androgen deprivation has
+      worked since 1941 and has always eventually stopped working — through
+      receptor amplification, splice variants, intratumoural androgen synthesis,
+      and lineage plasticity into neuroendocrine disease that no longer needs the
+      receptor at all. Each new AR-pathway agent buys time against the same
+      inevitability.
+      `scale: null`.
+    who_could: [academic, sponsor, manufacturer, philanthropy]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: cost
+    blocks: modern systemic therapy for advanced disease
+    obstacles: []
+    what: >
+      The drugs that turned metastatic prostate cancer from a months-long illness
+      into a years-long one — abiraterone, enzalutamide and successors, PARP
+      inhibitors, PSMA-targeted radioligand therapy — are expensive, and the
+      radioligand therapy additionally requires nuclear medicine infrastructure
+      that most of the world does not have.
+      Abiraterone's generic entry has helped and the newer agents remain on
+      patent. Androgen deprivation itself is cheap, which is why the *floor* of
+      prostate cancer care is affordable almost everywhere and the ceiling is not.
+    who_could: [manufacturer, payer, government, health-system]
+    scale: 5.0e9
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0051
+  rated: 2026-08-24
+  by: [claude, jeremy]

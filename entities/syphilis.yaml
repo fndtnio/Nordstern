@@ -1,0 +1,495 @@
+slug: syphilis
+id: FND-D-0116
+name: syphilis
+also: [Treponema pallidum infection, congenital syphilis, neurosyphilis, tertiary syphilis, the great imitator]
+kind: disease
+mondo: MONDO:0005976
+residual: false
+contested: false
+
+# THE DRUG NEVER STOPPED WORKING AND THE DISEASE CAME BACK ANYWAY.
+#
+# 1. EIGHTY YEARS OF PENICILLIN AND NO RESISTANCE. *Treponema pallidum* has
+#    never developed clinically significant penicillin resistance — not once,
+#    not anywhere, over eight decades of continuous global use. **No other
+#    record in this register can say that.** A single intramuscular injection of
+#    benzathine penicillin cures early syphilis, costs a few dollars, and works
+#    as well in 2026 as it did in 1945. It is the inverse of `gonorrhoea`, which
+#    has lost every drug class it was ever given.
+#
+# 2. AND CONGENITAL SYPHILIS IS RISING IN WEALTHY COUNTRIES. Reported United
+#    States cases rose roughly tenfold in a decade. **Every one of those is a
+#    baby harmed by a disease that a single injection to the mother would have
+#    prevented**, and the failures are antenatal care that was not attended, a
+#    test that was not repeated, a result that was not followed up, and a drug
+#    that was intermittently out of stock. This is the register's purest
+#    instance of a solved problem coming undone through delivery alone.
+#
+# 3. THE MISTRUST IS A DOCUMENTED BLOCKER, NOT AN ALLEGED ONE. The United
+#    States Public Health Service withheld treatment from Black men with
+#    syphilis at Tuskegee from 1932 to 1972 — for twenty-five years after
+#    penicillin became standard care — and separately infected people
+#    deliberately in Guatemala. The register's `standing` vocabulary exists to
+#    separate documented institutional harm from alleged; this is the clearest
+#    `documented` case it holds.
+
+burden:
+  incidence:
+    value: 8.0e6
+    units: >
+      new adult infections/year worldwide, plus roughly seven hundred thousand
+      congenital cases. **Incidence has risen in most high-income countries for
+      two decades**, concentrated in men who have sex with men in some settings
+      and rising in heterosexual and antenatal populations in others
+    src: recall
+  deaths:
+    value: 2.0e5
+    units: >
+      deaths/year, **overwhelmingly stillbirths and neonatal deaths from
+      congenital syphilis.** Adult mortality from cardiovascular and
+      neurosyphilis is real, slow and poorly attributed — an aortic aneurysm
+      rupturing thirty years after an untreated infection is not usually
+      certified as syphilis
+    src: recall
+  note: >
+    **The mortality is almost entirely in babies, and almost entirely
+    preventable by an injection that costs less than a sandwich.** That single
+    fact is what makes this record different from the register's other
+    infectious entries: there is no missing science, no resistance, no
+    unaffordable drug and no diagnostic gap of consequence. There is a chain of
+    ordinary administrative steps, and it breaks.
+
+survival:
+  horizon: 20 years from untreated primary infection
+  untreated:
+    value: 0.88
+    units: >
+      fraction alive — **and the natural history is known unusually well, for
+      one defensible reason and one indefensible one.** The Oslo cohort followed
+      untreated patients retrospectively from 1891 to 1910, before any treatment
+      existed; roughly a tenth died of cardiovascular or neurological syphilis
+      over decades. The Tuskegee study obtained comparable prospective data by
+      withholding a cure. **The register records where the number came from**
+    src: recall
+  treated:
+    value: 0.99
+    units: >
+      fraction alive after a single intramuscular injection of benzathine
+      penicillin in early infection — **curative in essentially everyone, first
+      time, with no resistance in eighty years.** Late and tertiary disease is
+      cured microbiologically and the damage already done is permanent
+    src: reasoning
+  witness: >
+    **THE LARGEST GAP BETWEEN WHAT A TREATMENT ACHIEVES AND WHAT IT COSTS IN THE
+    WHOLE REGISTER.** A few dollars and one injection converts a disease that
+    kills roughly one in eight of the people it infects, slowly and horribly,
+    into one that kills essentially none. Nothing else here has that ratio.
+    **And the horizon is the entity rather than a narrowed subpopulation**,
+    which is worth stating explicitly given gaps.md #226: every person who
+    contracts syphilis is in this denominator, so no rule about narrowing is
+    being stretched to produce an interesting number.
+    The figure also understates the harm badly, because most of what untreated
+    syphilis does is not kill people. It blinds, deafens, causes strokes and
+    dementia, ruptures aortas, and destroys fetuses — carried in `residue`.
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: risk-reduction
+  ongoing: none
+  efficacy:
+    value: 0.97
+    units: >
+      fraction-of-patients (cured by a single injection of benzathine penicillin
+      in early infection) — **among the highest figures in the register, and it
+      has not moved since 1945.** Late disease requires three weekly doses and
+      neurosyphilis intravenous therapy, and all of them cure the infection
+    src: recall
+  access:
+    value: 0.45
+    units: >
+      fraction-of-patients (diagnosed and treated in time) — **and every point
+      of the shortfall is administrative.** Antenatal screening not offered or
+      not repeated in the third trimester; a positive result not acted on;
+      partners not traced; recurrent global shortages of benzathine penicillin;
+      and populations who avoid the health system for reasons this record's own
+      history helps explain
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: n/a
+  witness: >
+    **DIAGNOSTIC is `objective` and the algorithm is genuinely confusing, which
+    costs patients.** Two classes of test answer different questions.
+    **Treponemal** tests confirm you have ever been infected and stay positive
+    for life, so they cannot distinguish an active infection from one cured
+    twenty years ago. **Non-treponemal** tests — RPR, VDRL — produce a titre that
+    rises with activity and falls with cure, so they are the only way to follow
+    a patient, and they carry false positives in pregnancy, autoimmune disease
+    and other infections.
+    Reverse-sequence algorithms produce discordant results that clinicians
+    misread routinely, and the **serofast** state — a titre that never fully
+    falls after adequate treatment — has no agreed meaning and generates
+    retreatment of people who were already cured. *T. pallidum* cannot be grown
+    from a patient in any routine laboratory, so **there is no culture and no
+    test of cure**: you infer cure from a falling titre.
+    PROGNOSTIC is `partial`. Stage predicts a great deal and is often
+    unknowable, because early syphilis is frequently painless and unnoticed —
+    the chancre heals whether or not anything is done. What cannot be predicted
+    is who among the untreated progresses to tertiary disease, which is roughly
+    one in ten and is the whole of the long-term harm.
+    PREDICTIVE is `n/a`, and it is the abolished kind — the reading
+    `hepatitis-c` earns. **There is no selection question**, because one drug
+    cures essentially everybody and no resistance has emerged in eighty years.
+    Penicillin allergy changes the regimen and not the outcome; desensitisation
+    is standard in pregnancy precisely because nothing else is good enough.
+
+strata:
+  - name: early syphilis
+    fraction:
+      value: 0.72
+      units: fraction-of-cases
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.98
+      units: fraction-of-stratum (cured by a single injection)
+      src: recall
+    toll: none
+    what: >
+      Primary chancre, secondary rash and systemic illness, and early latent
+      infection. **One intramuscular injection, cured, no sequelae.** The great
+      majority of cases, and the stage at which this disease costs nobody
+      anything if it is found.
+
+  - name: late latent and tertiary syphilis
+    fraction:
+      value: 0.20
+      units: fraction-of-cases
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.70
+      units: fraction-of-stratum (infection cured; existing damage not reversed)
+      src: reasoning
+    toll: minor
+    what: >
+      **The infection is still curable and the damage is not.** Three weekly
+      injections, or intravenous penicillin for neurosyphilis, reliably clear the
+      organism. Gummatous destruction, aortitis with aneurysm, tabes dorsalis,
+      general paresis and the ocular and auditory forms are permanent. **Cure and
+      restoration come apart completely here**, which is why `residue` carries
+      more weight in this record than `toll`.
+
+  - name: congenital syphilis
+    fraction:
+      value: 0.08
+      units: fraction-of-cases
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.60
+      units: fraction-of-stratum (infection cleared; outcome depends entirely on timing)
+      src: reasoning
+    toll: minor
+    what: >
+      **Preventable by treating the mother, and the treatment is the same
+      injection.** Untreated maternal syphilis causes stillbirth, prematurity,
+      neonatal death, and in survivors the classical late stigmata — interstitial
+      keratitis, deafness, bone and dental deformity. Treating the mother before
+      the third trimester prevents nearly all of it. **Cases are rising in
+      several wealthy countries**, which is the finding this record exists to
+      carry.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    **Almost nothing, and that is the point of the record.** Benzathine
+    penicillin is one intramuscular injection, painful for a day. The
+    Jarisch-Herxheimer reaction — fever, rigors and worsening rash within hours
+    of the first dose, as killed organisms release their contents — is common,
+    self-limiting, and frightening if nobody warned the patient; in pregnancy it
+    can provoke contractions and fetal distress, which is why treatment late in
+    pregnancy is monitored.
+    Penicillin allergy is the only real complication, and it is managed by
+    **desensitisation rather than substitution**, because in pregnancy nothing
+    else works well enough to accept. Doxycycline is an alternative outside
+    pregnancy.
+    Rated `minor`: this is one of the cheapest cures in medicine, in every sense.
+  incidence:
+    value: 0.03
+    units: >
+      fraction-of-treated with a significant adverse reaction — reasoned, and
+      dominated by allergy rather than by the drug's own toxicity
+    src: reasoning
+
+residue:
+  severity: catastrophic
+  permanent: true
+  what: >
+    **WHAT UNTREATED SYPHILIS DOES IS MOSTLY NOT KILLING PEOPLE.** Tertiary
+    disease destroys the ascending aorta, causing aneurysm and aortic
+    regurgitation; invades the central nervous system, causing stroke, tabes
+    dorsalis, general paresis and dementia; takes sight through uveitis and
+    optic atrophy, and hearing through otosyphilis. **Every one of those persists
+    after the organism is cured**, because penicillin kills a spirochaete and
+    does not rebuild an aorta.
+    In congenital infection the residue is imposed before birth and lasts a
+    lifetime: interstitial keratitis and blindness, sensorineural deafness, bone
+    and dental deformity, and neurodevelopmental impairment. **The register has
+    no other record where a single injection at the right moment prevents this
+    much permanent damage, and where the injection is so routinely not given.**
+  incidence:
+    value: 0.10
+    units: >
+      fraction-of-untreated left with permanent damage — roughly the proportion
+      progressing to tertiary disease, plus the congenital stratum, which is
+      damaged at a far higher rate
+    src: reasoning
+
+witness:
+  mechanism: >
+    `established`. *Treponema pallidum* subspecies *pallidum* is a spirochaete
+    transmitted sexually and transplacentally, with a strikingly small genome and
+    almost no biosynthetic capacity — it scavenges nearly everything from the
+    host, which is part of why it **could not be grown continuously in vitro
+    until 2018.** It has very few surface proteins exposed to antibody, which is
+    the leading explanation both for its ability to persist for decades and for
+    the absence of a vaccine.
+    Untreated infection moves through primary, secondary, latent and tertiary
+    stages over decades, with the central nervous system invadable at any point.
+    **It is called the great imitator because it can look like almost anything**,
+    which is a diagnostic problem the serology solves and clinical suspicion
+    frequently does not reach.
+  intervention: >
+    `curative`, as decisively as anything in this register. **Benzathine
+    penicillin G, one intramuscular injection for early disease, and eighty
+    years without clinically significant resistance.** Azithromycin resistance is
+    widespread and is precisely why azithromycin is no longer recommended — the
+    one drug that could have replaced the injection with a tablet was lost, and
+    penicillin was not.
+    Three weekly doses for late latent disease; intravenous penicillin for
+    neurosyphilis. Nothing about the treatment of this disease is an open
+    question.
+  prevention: >
+    `risk-reduction`. Condoms, partner notification, and **antenatal screening —
+    which is the single highest-yield intervention in this record** and is
+    recommended universally at the first visit, with repeat testing in the third
+    trimester in higher-incidence settings. Screening plus treatment before the
+    third trimester prevents nearly all congenital syphilis.
+    **Doxycycline post-exposure prophylaxis is the live development**: a dose
+    after condomless sex substantially reduces syphilis and chlamydia incidence
+    in trials among men who have sex with men and transgender women, and is being
+    adopted in some guidelines. It works, and it is a large new source of
+    antibiotic pressure in an era when `gonorrhoea` is running out of drugs —
+    which is a genuine tension, not a settled question.
+    There is no vaccine, and the surface-protein poverty that lets this organism
+    persist is why.
+  ongoing: >
+    `none`. The infection is cured and finished. Serological follow-up continues
+    for months to confirm the titre falls, and then it is over. **The permanent
+    burden in this record belongs to people who were not treated in time**, and
+    is `residue`.
+  efficacy: >
+    See the axis. The number has not moved since 1945 and does not need to.
+  access: >
+    **EVERY POINT OF THE SHORTFALL IS ADMINISTRATIVE, AND THAT IS WHY THIS RECORD
+    MATTERS.** No missing science, no resistance, no unaffordable drug, no
+    serious diagnostic gap. What fails is a chain of ordinary steps: attending
+    antenatal care at all, being screened, being screened again later in
+    pregnancy, having a positive result acted on within days, receiving a drug
+    that is periodically out of stock worldwide, and having partners traced.
+    **The benzathine penicillin supply is the same shortage `rheumatic-heart-disease`
+    records**, for the same reason — a cheap off-patent injectable that too few
+    manufacturers find worth making. One shortage, two diseases, both of them
+    otherwise solved.
+    And a share of the shortfall is people who will not come. **This record's own
+    history is part of why**: see the `policy` blocker.
+
+moved:
+  - date: 1943
+    axis: intervention
+    from: none
+    to: curative
+    why: >
+      **Penicillin, and the transition is as clean as any in the register.**
+      Before it, treatment was mercury, arsenicals (Salvarsan) and deliberate
+      malarial fever therapy — toxic, prolonged and unreliable. Afterwards, one
+      injection. John Mahoney's demonstration of penicillin in early syphilis is
+      one of the most consequential small trials ever run.
+    src: recall
+  - date: 2015
+    axis: access
+    from: 0.60
+    to: 0.45
+    why: >
+      **A record moving BACKWARDS, and it is the second the register has logged.**
+      Congenital syphilis rose roughly tenfold in the United States over the
+      following decade, with increases across several other high-income
+      countries, driven by rising adult incidence, gaps in antenatal screening
+      and repeated global shortages of benzathine penicillin. Dated loosely; the
+      deterioration was gradual and is continuing.
+    src: reasoning
+
+holes:
+  - >
+    Adult mortality is poorly attributed and the `deaths` figure is dominated by
+    the congenital stratum for that reason. **An aortic aneurysm rupturing three
+    decades after an unnoticed infection is not certified as syphilis**, so the
+    tertiary contribution is systematically invisible in exactly the way gaps.md
+    #182 describes.
+  - >
+    **The untreated survival figure rests partly on the Tuskegee study**, and the
+    record states this rather than laundering the provenance. The Oslo cohort is
+    retrospective and ethically unremarkable; Tuskegee was prospective and
+    obtained its data by withholding a known cure for twenty-five years. Both are
+    cited in the literature; only one should be cited without comment.
+  - The strata fractions are reasoned from the shape of reported case
+    distributions and vary enormously by setting — the early-disease fraction is
+    much higher where screening is good, which is a fact about surveillance
+    rather than about biology.
+  - >
+    `predictive: n/a` is claimed on the grounds that one drug cures everybody.
+    **If penicillin resistance ever appeared this rating would invert overnight**,
+    and it is worth recording that the register's confidence here rests on eight
+    decades of a negative result rather than on any understood barrier to
+    resistance.
+  - >
+    Doxycycline post-exposure prophylaxis is recent, effective and its
+    resistance consequences are genuinely unknown. **The register is recording an
+    intervention whose second-order cost may land on a different record**
+    (`gonorrhoea`, `amr-infection`) — a shape it has no way to express.
+  - Written from model recall. The absence of penicillin resistance, the
+    congenital rise, the Tuskegee history and the serological algorithm are the
+    parts most likely right; every number is the part most likely wrong.
+
+blockers:
+  - kind: diagnosis
+    blocks: a chain of ordinary antenatal steps, any one of which ends a baby's chance
+    what: >
+      **THE HIGHEST-YIELD INTERVENTION IN THIS RECORD IS A BLOOD TEST IN
+      PREGNANCY, AND CONGENITAL SYPHILIS IS RISING ANYWAY.** Reported United
+      States cases rose roughly tenfold in a decade; other high-income countries
+      report increases. Every case represents a chain that broke: antenatal care
+      not attended or attended late, a first-visit screen not repeated in the
+      third trimester when incidence is rising, a positive result not acted on
+      within the days that matter, or a partner not traced so the mother is
+      reinfected before delivery.
+      **None of this is a technical problem.** The test is cheap and accurate,
+      point-of-care treponemal tests exist and work in field conditions, and the
+      treatment is one injection. What is missing is a system that reaches
+      pregnant women who are unhoused, using drugs, uninsured, incarcerated or
+      simply not attending — which is the population in which the rise is
+      concentrated.
+      **This is the register's clearest case of a solved disease coming undone**,
+      and the lever is antenatal care rather than anything in a laboratory.
+    who_could: [health-system, government, payer, nonprofit]
+    scale: 5.0e8
+    standing: documented
+    src: reasoning
+
+  - kind: manufacturing
+    blocks: a supply of the 1943 injection that keeps running out
+    what: >
+      **BENZATHINE PENICILLIN G HAS HAD RECURRENT GLOBAL SHORTAGES**, and it is
+      the only drug adequate for syphilis in pregnancy — nothing else is
+      established to prevent congenital infection, which is why penicillin-allergic
+      pregnant women are desensitised rather than given an alternative. A
+      shortage therefore does not degrade care; it removes it.
+      The cause is the ordinary one for cheap sterile injectables: few
+      manufacturers, thin margins, a single facility carrying a large share of
+      global supply, and no commercial reason to hold buffer stock. **This is the
+      same shortage `rheumatic-heart-disease` records for the same molecule** —
+      one supply chain, two diseases that are otherwise solved, both of them
+      failing on the availability of an eighty-year-old injection.
+      A drug this old and this essential has no advocate: it is nobody's growth
+      product and nobody's research programme.
+    who_could: [manufacturer, government, regulator, payer, nonprofit]
+    scale: 3.0e8
+    standing: documented
+    src: recall
+
+  - kind: policy
+    blocks: people who will not come, for reasons this record helped create
+    what: >
+      **THE UNITED STATES PUBLIC HEALTH SERVICE WITHHELD TREATMENT FROM BLACK MEN
+      WITH SYPHILIS AT TUSKEGEE FROM 1932 TO 1972**, continuing for twenty-five
+      years after penicillin became standard care, and separately infected people
+      deliberately in Guatemala in the 1940s. Both are documented, both were
+      government programmes, and both were about this disease specifically.
+      The register's `standing` vocabulary exists to separate documented
+      institutional harm from the alleged kind, and this is the clearest
+      `documented` case in the corpus. **It also has measurable downstream
+      effects** — research associating awareness of Tuskegee with reduced medical
+      trust and engagement among Black Americans is substantial, and syphilis
+      incidence and congenital syphilis are markedly higher in the same
+      population.
+      **The blocker is not history; it is that a disease requiring people to
+      attend, disclose partners and accept an injection is being managed in
+      populations with documented reasons for distrust**, and no antenatal
+      programme design has solved that. Trust is not purchasable in the way a
+      screening programme is, which is why this is filed as `policy` and priced
+      at what outreach and community-delivered care cost rather than at what the
+      problem is worth.
+    who_could: [government, health-system, nonprofit, legislator]
+    scale: 2.0e8
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: a vaccine, for an organism nobody could grow until 2018
+    what: >
+      **There is no syphilis vaccine and the reason is the organism's
+      minimalism.** *T. pallidum* exposes very few proteins on its surface, which
+      is the leading explanation for how it survives decades of an antibody
+      response — and it leaves a vaccinologist with almost nothing to aim at.
+      Natural infection confers only partial and strain-limited protection, so
+      **nature supplies a poor template**, which puts this with tuberculosis and
+      malaria rather than with `coccidioidomycosis`.
+      It was also, until 2018, **impossible to culture continuously in vitro** —
+      so for a century there was no way to grow the organism, screen against it,
+      or produce antigen at scale. That constraint has only just lifted, and the
+      field is correspondingly immature.
+      **The counter-argument is real and should be stated: a vaccine may not be
+      the right thing to want here.** One cheap injection already cures this
+      disease and no resistance has emerged; the failure is entirely in reaching
+      people. A vaccine would route around that failure, which is an argument for
+      it — and it would be a large investment against a problem whose existing
+      solution works perfectly when delivered. `scale: null`.
+    who_could: [academic, sponsor, philanthropy, manufacturer]
+    scale: null
+    standing: documented
+    src: reasoning
+    obstacles: [protective-immunity]
+
+  - kind: evidence-incomplete
+    obstacles: [no-model-system]
+    blocks: knowing what the serology means after treatment
+    what: >
+      **THERE IS NO TEST OF CURE.** Treponemal antibody stays positive for life,
+      so cure is inferred from a falling non-treponemal titre — and the
+      **serofast** state, in which the titre plateaus without ever fully
+      resolving after adequate treatment, has no agreed interpretation. Patients
+      in it are variously retreated, investigated for neurosyphilis, or
+      reassured, depending on who is looking.
+      The related unsettled question is **when to perform a lumbar puncture**.
+      Neurosyphilis can occur at any stage, cerebrospinal fluid criteria are
+      imperfect, and guidelines differ between countries. So people are given
+      intravenous therapy they may not need, or miss it when they do.
+      Both are downstream of the same fact: the organism cannot be cultured from
+      a patient, so **every clinical decision rests on an antibody titre that is
+      a proxy for something nobody can measure directly.** This is the register's
+      third record in a row where the absence of a culture system is the root of
+      a clinical problem, after `cryptosporidiosis`.
+    who_could: [academic, health-system, sponsor]
+    scale: 6.0e7
+    standing: documented
+    src: reasoning
+
+assertion:
+  id: FND-A-0117
+  rated: 2026-08-28
+  by: [claude, jeremy]

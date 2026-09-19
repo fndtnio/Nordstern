@@ -1,0 +1,10 @@
+# resolve_mondo.py's on-disk response cache. Deleting it only costs a re-fetch;
+# it is not provenance — that lives in mondo.md, which IS committed.
+.mondo-cache.json
+__pycache__/
+.DS_Store
+
+# Working notes, reading inboxes and downloaded papers. The repo is the
+# artifact; the thinking that produced it stays local. See private/README.md.
+private/
+*.org

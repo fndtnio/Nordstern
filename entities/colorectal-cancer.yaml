@@ -1,0 +1,501 @@
+slug: colorectal-cancer
+id: FND-D-0052
+name: colorectal cancer
+also: [bowel cancer, colon cancer, rectal cancer, colorectal carcinoma, CRC]
+mondo: MONDO:0005575
+kind: disease
+residual: false
+contested: false
+
+# THE POSITIVE CONTROL FOR SCREENING, AND IT WORKS BY A MECHANISM NEITHER OF THE
+# PREVIOUS TWO RECORDS HAS.
+#
+# Lung cancer screening finds cancer earlier. Prostate cancer screening finds
+# cancer that should not have been found. **Colorectal screening removes the
+# thing before it becomes cancer at all.**
+#
+# An adenomatous polyp takes something like a decade to become carcinoma.
+# Colonoscopy finds it and takes it out in the same act. So screening here does
+# not merely shift the stage at diagnosis — **it lowers incidence**, and where
+# programmes are established both incidence and mortality have fallen in the
+# screened age groups.
+#
+# That makes overdiagnosis nearly irrelevant here, which is the thing prostate
+# cannot say. Removing a polyp does not make anyone a cancer patient.
+#
+# TWO THINGS IT BREAKS:
+#
+# 1. **THE PRECURSOR HAS NOWHERE TO LIVE.** An adenoma is not cancer and not
+#    health. The register has two states and the highest-value intervention in
+#    this record acts on a third. Same for cervical CIN, Barrett's oesophagus,
+#    MGUS, actinic keratosis. gaps.md #114.
+#
+# 2. **ONE ACT IS SCREEN, DIAGNOSIS AND PREVENTION SIMULTANEOUSLY.** The schema
+#    separates `measurement`, `prevention` and `intervention`; colonoscopy with
+#    polypectomy is all three in ten minutes, and `prevention: prophylaxis` is
+#    recorded here on the strength of a procedure rather than a drug — the first
+#    time in the register.
+#
+# AND THE SCREENING TEST IS ONE PEOPLE DECLINE. Participation runs 40-70% where
+# it is free and offered. Not from distrust and not from false belief — because
+# the test is unpleasant and undignified. **Fourth record needing a blocker kind
+# that does not exist**, and the fourth distinct reason. gaps.md #115.
+
+burden:
+  prevalence:
+    value: 1.9e6
+    units: >
+      new cases/year worldwide — third most commonly diagnosed cancer, and
+      rising in absolute terms with population ageing
+    src: recall
+  deaths:
+    value: 9.0e5
+    units: >
+      deaths/year — second-largest cause of cancer death worldwide, behind lung
+      cancer
+    src: recall
+  note: >
+    **INCIDENCE AND MORTALITY HAVE BOTH FALLEN IN OLDER ADULTS ACROSS COUNTRIES
+    WITH ESTABLISHED SCREENING**, which is a claim no other cancer in this
+    register can make. Falling mortality can come from better treatment; falling
+    *incidence* can only come from preventing the disease.
+    **AND IT IS RISING IN THE YOUNG.** Incidence in adults under fifty has been
+    climbing since roughly the 1990s across many high-income countries, and the
+    cause is not known. Diet, obesity, the microbiome, antibiotic exposure and
+    something about birth cohorts have all been proposed and none is established.
+    The response has been to lower the screening age from fifty to forty-five,
+    which treats a symptom of the problem with a threshold.
+    Incidence is highest in high-income countries and mortality is shifting
+    toward middle-income ones, where the disease is arriving with rising
+    prosperity ahead of the endoscopy capacity to screen for it.
+
+survival:
+  horizon: 5 years from diagnosis
+  untreated:
+    value: 0.05
+    units: >
+      fraction alive — untreated colorectal cancer obstructs, perforates or
+      metastasises, and surgical resection has been the only route to survival
+      for as long as there has been one
+    src: recall
+  treated:
+    value: 0.65
+    units: >
+      fraction alive with stage-appropriate surgery and adjuvant or palliative
+      systemic therapy. **Unlike prostate cancer's figure this one is not badly
+      inflated by overdiagnosis**, because screening here removes adenomas before
+      they become cancer rather than relabelling indolent tumours — the detected
+      cancers are genuine ones caught earlier
+    src: reasoning
+  witness: >
+    **The one cancer in the register where screening prevents the disease rather
+    than finding it sooner**, since a polypectomy removes the precursor. That
+    makes this the cleanest large cancer gain here: the untreated-to-treated gap
+    is real, and the prevention axis is doing work the survival axis cannot show.
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: prophylaxis
+  ongoing: moderate
+  efficacy:
+    value: 0.65
+    units: >
+      fraction-of-patients (cured, or durably controlled if metastatic) — and
+      unlike prostate cancer's figure this one is not badly inflated by
+      overdiagnosis, because screening here removes precursors rather than
+      relabelling indolent cancers
+    src: reasoning
+  access:
+    value: 0.35
+    units: >
+      fraction-of-patients (reaching colonoscopy, surgery, adjuvant therapy and
+      modern systemic therapy where needed) — the binding item is endoscopy
+      capacity, which needs trained endoscopists and facilities rather than a
+      supply chain
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: partial
+  witness: >
+    DIAGNOSTIC is `objective`, and in this record the diagnostic act is also the
+    therapeutic one. Colonoscopy visualises the lesion, samples it, and — if it
+    is a polyp — removes it, finishing the matter. Faecal immunochemical testing
+    is a cheap, non-invasive front end that triages who needs the scope.
+    PROGNOSTIC is `partial`. Stage does most of the work and does it well. What
+    is genuinely improving is **circulating tumour DNA after surgery**, which
+    detects minimal residual disease and identifies who actually needs adjuvant
+    chemotherapy — a live and promising attempt to stop giving oxaliplatin, and
+    its permanent neuropathy, to people already cured by the operation.
+    PREDICTIVE is `partial`, and rating it below lung cancer's `good` is
+    deliberate.
+    What works is real and famous. **RAS mutation status is a negative predictor
+    for anti-EGFR antibodies** — roughly half of tumours carry it, those patients
+    get no benefit, and testing became mandatory around 2009. That is one of the
+    cleanest examples in oncology of measurement preventing futile treatment.
+    **MSI-high or mismatch-repair-deficient tumours respond to checkpoint
+    blockade spectacularly**, including a small series of locally advanced rectal
+    cancers that achieved complete clinical response and avoided surgery
+    altogether. BRAF V600E and HER2 amplification each select a regimen.
+    **And that leaves the majority unguided.** Microsatellite-stable, RAS-mutant
+    metastatic disease is most of the metastatic population, and for those
+    patients treatment selection is chemotherapy chosen by tolerability. Lung
+    cancer earns `good` because a targetable driver is found in a large minority;
+    here the markers mostly tell you what *not* to give.
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    **THE STOMA IS THE EMBLEM AND THE LESS VISIBLE THING IS MORE COMMON.**
+    A permanent colostomy after abdominoperineal resection for low rectal cancer
+    is life-altering, and it is the harm patients fear most. It is also a
+    minority — sphincter-preserving surgery has become the norm where the tumour
+    allows it.
+    **LOW ANTERIOR RESECTION SYNDROME** is what replaced it, and it is
+    underappreciated: urgency, frequency, clustering, incontinence and fragmented
+    defaecation after sphincter-preserving rectal surgery, affecting a large
+    share of those patients and frequently permanent. **The operation that avoids
+    the bag does not restore normal function**, and the register would record the
+    stoma and miss this if the prose did not say so.
+    **OXALIPLATIN** causes peripheral neuropathy that is permanent in a
+    substantial minority — numb fingers and feet, for life, from adjuvant
+    treatment given to prevent a recurrence that in most of those patients was
+    never going to happen. That is the toll the ctDNA work above is trying to
+    stop inflicting.
+    **PELVIC RADIOTHERAPY** for rectal cancer: bowel and bladder dysfunction,
+    sexual dysfunction, infertility.
+    **AND THE SCREEN ITSELF HAS A TOLL.** Colonoscopy perforates the bowel in
+    roughly one in a thousand procedures and causes bleeding more often than
+    that, in people who are well. That harm is inflicted by the process of
+    looking — gaps.md #105's third scope, second record in a row to need it.
+  incidence:
+    value: 0.35
+    units: >
+      fraction-of-treated (permanent harm — stoma, low anterior resection
+      syndrome, oxaliplatin neuropathy, pelvic radiation sequelae) — a reasoned
+      estimate across the treated population
+    src: reasoning
+
+# NO `residue` BLOCK, AND IT IS THE THIRD CANCER IN A ROW.
+#
+# A colorectal cancer resected and cured leaves the patient very little; what is
+# permanent is the bowel that was removed, the sphincter that was damaged and the
+# nerves the oxaliplatin killed. `restored` derives `cure-costs`.
+#
+# Lung, prostate and colorectal now all read the same way, and the pattern is
+# worth stating: **for a solid tumour cured by surgery, the permanent price is
+# essentially always the cure's rather than the disease's.** The exceptions in
+# this register are the diseases that damage an organ before they are treated —
+# stroke, COPD, tuberculosis — and cancer surgery mostly is not one of those.
+
+window:
+  what: >
+    **THERE ARE TWO WINDOWS HERE AND THE FIRST ONE IS TEN YEARS LONG.**
+    An adenomatous polyp progresses to carcinoma over something like a decade,
+    through a well-characterised sequence of mutations. For that whole period the
+    lesion is visible to a colonoscope, removable in a few minutes, and **not yet
+    cancer.** Screening in that window does not catch the disease early — it
+    stops the disease existing.
+    That is why colorectal screening lowers incidence and not only mortality, and
+    it is why overdiagnosis, the argument that dominates prostate and complicates
+    lung, is nearly beside the point here. **Nobody is turned into a cancer
+    patient by having a polyp removed.**
+    The second window is the ordinary one: localised disease is curable, and
+    survival falls steeply through regional to distant spread.
+    So this is the unambiguous case that gaps.md #112 needs. Prostate's window is
+    good for a minority and harmful for the majority. Lung's is good on net with a
+    real overdiagnosis tax. **Colorectal's is good, full stop** — and the
+    register cannot currently express the difference between the three.
+    `caught_in_time` below counts cancers found while curable. It does not count
+    the cancers that never happened, which are the programme's largest effect and
+    which no field here can hold.
+  closes_on: >
+    progression of an adenoma to invasive carcinoma over roughly a decade, and
+    then invasion through the bowel wall to nodes and to liver
+  caught_in_time:
+    value: 0.40
+    units: >
+      fraction-of-cases (diagnosed while localised or regional and curable) — a
+      reasoned global estimate, considerably higher in screened populations and
+      much lower where colonoscopy is unavailable. IT UNDERCOUNTS THE
+      PROGRAMME'S BENEFIT, because the polyps removed never become cases
+    src: reasoning
+
+strata:
+  - name: localised and regional (stage I-III)
+    fraction:
+      value: 0.62
+      units: fraction-of-diagnoses
+      src: recall
+    intervention: curative
+    efficacy:
+      value: 0.80
+      units: fraction-of-stratum (cured by resection with adjuvant therapy where indicated)
+      src: reasoning
+    toll: major
+    what: >
+      Surgery, with adjuvant chemotherapy for node-positive disease and
+      neoadjuvant chemoradiotherapy for rectal tumours. Most of these patients
+      are cured, and a substantial share of them carry a stoma, a damaged
+      sphincter, or permanent neuropathy from a treatment they may not have
+      needed.
+
+  - name: metastatic, resectable (liver- or lung-limited)
+    fraction:
+      value: 0.06
+      units: fraction-of-diagnoses
+      src: recall
+    intervention: curative
+    efficacy:
+      value: 0.35
+      units: fraction-of-stratum (long-term survival after metastasectomy)
+      src: reasoning
+    toll: major
+    what: >
+      **STAGE IV THAT IS SOMETIMES CURED**, which almost nothing else in this
+      register can say. Liver-limited colorectal metastases resected, often after
+      chemotherapy to shrink them, give long-term survival in a meaningful
+      fraction. The register generally treats metastatic disease as a wall; here
+      it is a door for a small group, and identifying that group is a surgical
+      judgement rather than a biomarker.
+
+  - name: metastatic, MSI-high / mismatch-repair deficient
+    fraction:
+      value: 0.02
+      units: fraction-of-diagnoses
+      src: recall
+    intervention: suppressive
+    efficacy:
+      value: 0.50
+      units: fraction-of-stratum (durable response to checkpoint blockade)
+      src: reasoning
+    toll: minor
+    what: >
+      A small stratum with a completely different disease. Mismatch-repair
+      deficiency produces a hypermutated tumour the immune system can see, and
+      checkpoint blockade produces durable responses in about half — some of them
+      lasting long enough that cure is arguable.
+      **The toll is `minor` where every other stratum's is `major`**: an
+      immune-related adverse event risk instead of chemotherapy and surgery. It
+      is the best-treated two percent in this record and it is defined by a test.
+
+  - name: metastatic, microsatellite-stable
+    fraction:
+      value: 0.30
+      units: fraction-of-diagnoses
+      src: recall
+    intervention: disease-modifying
+    efficacy:
+      value: 0.12
+      units: fraction-of-stratum (durable meaningful benefit)
+      src: reasoning
+    toll: major
+    what: >
+      **THE LARGEST METASTATIC GROUP AND THE ONE NOTHING NEW HAS REACHED.**
+      Chemotherapy backbones with an anti-VEGF or, in RAS wild-type left-sided
+      tumours, an anti-EGFR antibody. Median survival has roughly doubled over
+      two decades to a couple of years, by sequencing more lines rather than by
+      any conceptual advance.
+      Checkpoint blockade does not work here, and why microsatellite-stable
+      colorectal cancer is immunologically cold is a live and unanswered
+      question.
+
+moved:
+  - date: 2000
+    axis: access
+    from: 0.15
+    to: 0.35
+    why: >
+      **ORGANISED SCREENING, AND IT IS THE ONLY ENTRY IN THIS REGISTER WHERE
+      DELIVERY LOWERED INCIDENCE RATHER THAN MORTALITY.**
+      Faecal occult blood testing, then faecal immunochemical testing and
+      sigmoidoscopy and colonoscopy, rolled out as organised programmes across
+      much of the high-income world from the 1990s onward. Randomised trials of
+      sigmoidoscopy showed reductions in both incidence and mortality; incidence
+      and mortality in screened age groups have fallen in the countries that did
+      it.
+      The date marks an arc rather than an event, and the number is `access`
+      because there is nowhere else to put it — **what actually rose was
+      screening participation, which is prevention coverage, and prevention has
+      no coverage field** (gaps.md #109).
+
+witness:
+  mechanism: >
+    `established`, and it is the textbook case — the adenoma-carcinoma sequence
+    is probably the best-characterised stepwise carcinogenesis in any human
+    cancer.
+    Loss of *APC* opens the Wnt pathway and produces a benign adenoma; *KRAS*
+    mutation drives clonal expansion; loss of *SMAD4* and *TP53* carries it to
+    invasive carcinoma. It takes roughly a decade, each step is visible in tissue,
+    and **the whole intervention of colorectal screening is built on the fact
+    that the sequence is slow and interruptible.**
+    Two other routes matter. The **microsatellite instability** pathway, through
+    mismatch-repair deficiency, sporadic or inherited as Lynch syndrome, gives
+    hypermutated tumours that behave differently and respond to immunotherapy.
+    The **serrated** pathway, through *BRAF* mutation and CpG island methylation,
+    produces flat lesions that colonoscopy misses more often and that account for
+    a disproportionate share of interval cancers.
+    **LYNCH SYNDROME IS A PREVENTION SUCCESS HIDING INSIDE A CANCER RECORD.**
+    Roughly one in thirty colorectal cancers arises in a carrier of an inherited
+    mismatch-repair defect. Universal tumour testing identifies them, cascade
+    testing finds their relatives, and intensive surveillance plus risk-reducing
+    surgery prevents cancers in people who do not have cancer. It is the register's
+    clearest case of a *diagnosis in one patient producing prevention in another*,
+    and no field can express it.
+    **THE NAMED HOLE IS YOUNG-ONSET DISEASE.** Incidence under fifty has risen
+    since roughly the 1990s in many countries, it is not explained by Lynch
+    syndrome or any known familial cause, and diet, obesity, the microbiome, early
+    antibiotic exposure and birth-cohort effects are all candidates with none
+    established.
+  intervention: >
+    `curative`, and the surgery has been the backbone for a century.
+    Resection cures most localised and regional disease. Adjuvant chemotherapy
+    reduces recurrence in node-positive disease at the price of permanent
+    neuropathy in some. Rectal cancer adds neoadjuvant chemoradiotherapy and total
+    mesorectal excision, and increasingly a **watch-and-wait** strategy for
+    complete clinical responders, which is the same measurement-over-treatment
+    trade prostate cancer's record describes.
+    For metastatic disease the last twenty years roughly doubled median survival
+    by sequencing more lines rather than by any single advance — with two
+    exceptions that are genuinely different in kind: **liver-limited disease that
+    can be resected for cure**, and **mismatch-repair-deficient disease that
+    responds to checkpoint blockade.** Both are small strata and both are found
+    by a test.
+  prevention: >
+    `prophylaxis`, **and it is the first time in this register that the word
+    describes a procedure rather than a drug or a vaccine.**
+    Removing an adenomatous polyp prevents the cancer it would have become. That
+    is prevention by the schema's own meaning — an intervention on a person who
+    does not have the disease, which stops them getting it — and it is delivered
+    by an endoscopist with a snare rather than by a syringe.
+    The difference matters and the enum hides it. A vaccine is a dose, costs a
+    few dollars, is given once or twice, and needs a cold chain. **Polypectomy
+    needs a trained endoscopist, a facility, sedation, and repeating every few
+    years for decades**, and it perforates the bowel about once in a thousand
+    procedures. Recording both as `prophylaxis` is the open half of gaps.md #66 —
+    *prevention is one word doing five jobs* — and this is the fifth job.
+    Beyond it: aspirin reduces incidence modestly and bleeds people; obesity,
+    processed meat, alcohol and inactivity are risk-reduction with weak
+    individual effects; and Lynch syndrome carriers get surveillance and
+    risk-reducing surgery, which is prophylaxis aimed by a genetic test.
+  ongoing: >
+    `moderate`. Surveillance colonoscopy at intervals for years after treatment,
+    and for anyone who has ever had an adenoma.
+    For the substantial minority left with a stoma or with low anterior resection
+    syndrome it is not moderate and it is not really `ongoing` in the sense the
+    axis means — appliance care, dietary management, planning a day around
+    proximity to a lavatory. As with stroke, most of what this disease costs a
+    household is the cost of the residue, and the axis measures the cost of being
+    treated.
+
+holes:
+  - Every scalar is `src: recall` or `src: reasoning`. The strata fractions
+    describe a screened high-income population; where colonoscopy is unavailable
+    the metastatic fraction is far larger.
+  - The colonoscopy evidence is genuinely contested at the margin. A large
+    randomised trial reported a modest incidence reduction and a
+    non-significant mortality reduction on intention-to-screen, with much larger
+    effects among those actually screened — and the argument about which analysis
+    answers the policy question has not settled.
+  - `efficacy: 0.65` inherits gaps.md #95's problem like every cancer record, and
+    the strata carry the honest numbers.
+  - The young-onset rise is stated as unexplained because it is. Any number in
+    this record about people under fifty is moving.
+  - Screening ages — fifty, then forty-five — are thresholds somebody chose, and
+    the register records the consequence and not the choice (gaps.md #90).
+
+blockers:
+  - kind: logistics
+    blocks: endoscopy capacity, which is people and rooms rather than product
+    obstacles: []
+    what: >
+      **THE BINDING CONSTRAINT, AND IT CANNOT BE SHIPPED.**
+      Faecal immunochemical testing is cheap, non-invasive and postable — and
+      every positive result needs a colonoscopy, which needs a trained
+      endoscopist, a room, sedation, decontamination and a pathologist. A
+      screening programme's throughput is set by that, not by the test.
+      Where capacity is short the programme rations by raising the FIT threshold,
+      which means deliberately missing cancers to fit the diary. Where it does not
+      exist at all — most of the world — the strategy is unavailable regardless
+      of how cheap the front-end test is.
+      **This is the register's clearest case of a prevention limited by trained
+      humans rather than by supply**, and it is why lowering the screening age
+      from fifty to forty-five is a capacity decision as much as an
+      epidemiological one.
+    who_could: [health-system, government, payer, nonprofit]
+    scale: 1.0e10
+    standing: documented
+    src: recall
+
+  - kind: adherence
+    blocks: people accepting a test they find degrading
+    obstacles: []
+    what: >
+      Participation in organised colorectal screening runs roughly 40-70% where
+      it is free, offered and reminded — well below breast or cervical screening
+      in the same populations.
+      **The reason is not distrust and not false belief.** It is that the test
+      involves stool, or a scope, or bowel preparation that is genuinely
+      unpleasant, and that the whole subject is one people avoid discussing. Men
+      participate less than women. Deprivation lowers participation further, so
+      the programme widens the gap it was meant to close.
+      **This is the fourth record needing a blocker kind that does not exist, and
+      the fourth distinct reason** — after Ebola's Kivu distrust, H5N1's farm
+      workers who cannot afford to be tested, and measles refusal on a refuted
+      belief. Here the intervention is simply unacceptable to a large minority of
+      the people offered it. Filed as `adherence`, which the schema defines as
+      continuing a therapy, and which is the closest available fit rather than a
+      correct one. See gaps.md #115.
+      Non-invasive alternatives — stool DNA, and blood-based tests now
+      appearing — are worth more here for acceptability than for accuracy.
+    who_could: [health-system, government, nonprofit, patient-org]
+    scale: 2.0e9
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: why the young, and why most metastatic disease is immunologically cold
+    obstacles: [who-progresses]
+    what: >
+      Two absences and both are live.
+      **YOUNG-ONSET COLORECTAL CANCER IS RISING AND NOBODY KNOWS WHY.** Incidence
+      under fifty has climbed for three decades across many countries, it is not
+      Lynch syndrome, and diet, obesity, the microbiome, antibiotic exposure and
+      birth-cohort effects are all candidates with none established. Screening
+      ages have been lowered in response, which manages the consequence.
+      **AND MICROSATELLITE-STABLE METASTATIC DISEASE IS IMMUNOLOGICALLY COLD.**
+      Checkpoint blockade transformed the mismatch-repair-deficient two percent
+      and does nothing for the other thirty. Why, and whether it can be changed,
+      is the single question that would matter most to the largest metastatic
+      stratum in this record.
+      `scale: null`.
+    who_could: [academic, sponsor, manufacturer, philanthropy]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: cost
+    blocks: systemic therapy for metastatic disease, and the tests that aim it
+    obstacles: []
+    what: >
+      The chemotherapy backbones are generic and cheap. The antibodies —
+      anti-VEGF, anti-EGFR — and the checkpoint inhibitors are not, and neither
+      is the molecular testing that decides who should get which.
+      **RAS testing is the cheapest thing in this paragraph and the one that
+      saves the most money**, because it identifies the half of patients for whom
+      an expensive antibody does nothing. Where testing is unavailable the drug is
+      either withheld from everyone or given to everyone, and both are wrong.
+      Surgery and endoscopy capacity are the same story with buildings, and they
+      are in the `logistics` blocker above.
+    who_could: [manufacturer, payer, government, health-system]
+    scale: 5.0e9
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0052
+  rated: 2026-08-24
+  by: [claude, jeremy]

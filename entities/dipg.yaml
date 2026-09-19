@@ -1,0 +1,390 @@
+slug: dipg
+id: FND-D-0141
+name: Diffuse intrinsic pontine glioma
+also: [DIPG, diffuse midline glioma H3 K27-altered, brainstem glioma]
+common: childhood brainstem tumour
+mondo: unresolved
+kind: disease
+residual: false
+contested: false
+
+# THE FIRST RECORD WRITTEN TO FILL A BUCKET RATHER THAN TO EXERCISE THE SCHEMA,
+# AND THE PROVENANCE IS DECLARED BECAUSE IT AFFECTS HOW TO READ IT.
+#
+# `ends-it` — *it ends your life, whenever you find it* — held one record, and
+# that was queried on 2026-09-02 as implausible. It was checked: the rule was
+# not under-firing, the corpus had nothing for it to catch. Rapidly fatal
+# paediatric disease is a quadrant of medicine this register had never entered,
+# because every selection pass so far chose for schema diversity or for burden
+# and this shape falls through both.
+#
+# WHAT IT TEACHES THAT NO OTHER RECORD DOES: **the operation is impossible
+# because of WHERE the tumour is, not because of what it is.** DIPG grows
+# diffusely through the pons, threaded among the nuclei that run breathing,
+# swallowing, eye movement and consciousness. There is no plane to dissect and
+# no margin to take. Every other cancer here is limited by biology, by money or
+# by how late it was found; this one is limited by anatomy, and no amount of
+# earlier detection moves it.
+
+burden:
+  incidence:
+    value: 3.0e-6
+    units: >
+      new cases per person per year, dominated by children aged roughly five to
+      ten — on the order of 300-400 a year in the United States and perhaps a
+      few thousand worldwide. A reasoned estimate. **It is a small number and it
+      is roughly a tenth of all paediatric brain tumours**, which are the leading
+      cause of cancer death in children
+    src: reasoning
+  deaths:
+    value: 3.0e3
+    units: >
+      deaths per year worldwide — a reasoned estimate, and it is very close to
+      the incidence because almost nobody survives. **Incidence and mortality
+      being the same number is the whole record**
+    src: reasoning
+  note: >
+    No `ylds` field, on the standing rule: a recalled YLD is two guesses
+    multiplied. It would in any case be a small figure attached to a large
+    number of years of life lost, which is the opposite of the disability
+    records this register added last.
+
+axes:
+  mechanism: partial
+  intervention: disease-modifying
+  prevention: none
+  ongoing: moderate
+  efficacy:
+    value: 0.02
+    units: >
+      fraction-of-treated surviving — a reasoned estimate. Radiotherapy shrinks
+      the tumour and improves symptoms in most children for a matter of months,
+      then it regrows. **More than 250 clinical trials have been run and none
+      has changed survival.** Long survivors exist and are rare enough that they
+      are studied as a separate question
+    src: reasoning
+  access:
+    value: 0.55
+    units: >
+      fraction-of-affected reaching radiotherapy and paediatric neuro-oncology
+      care — a reasoned estimate. It needs an MRI to diagnose and a radiotherapy
+      centre able to treat a small child, which is a high bar in much of the
+      world. **Access here buys months, which is the least this register has
+      ever recorded access buying**
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: good
+  predictive: none
+  witness: >
+    DIAGNOSTIC is `objective` and unusually so: **the MRI appearance is the
+    diagnosis.** A diffuse expansile lesion of the pons in a child with the
+    classic triad — cranial nerve palsies, long-tract signs and ataxia over
+    weeks — was for decades diagnosed without touching it, because biopsy of the
+    brainstem was judged too dangerous to justify when the answer changed no
+    decision. Stereotactic biopsy is now performed at experienced centres, and
+    what changed was not the diagnosis but the availability of tissue.
+    PROGNOSTIC is `good` **and it is the darkest use of that value in the
+    register.** Prognosis is close to certain: median survival of nine to eleven
+    months, essentially nobody alive at five years. The axis measures whether
+    medicine can say what will happen untreated, and here it can say so exactly.
+    **A perfect prognostic and no capability is `huntington`'s pairing**, which
+    is the other resident of this bucket, and the two are the register's argument
+    that knowing precisely what will happen is worth nothing on its own.
+    PREDICTIVE is `none`, **and the value is wrong in a way the schema cannot
+    express.** `none` means nobody can say who will respond. Here there is
+    nothing to respond to — no agent has ever altered survival, so there is no
+    selection question to get wrong. That is not `n/a` either, which the schema
+    reserves for a question *abolished by a good-enough treatment*. The register
+    has no value for **a question abolished by having nothing to choose between**,
+    and this is the second record to need one. See `holes`.
+
+survival:
+  horizon: 5 years from diagnosis
+  untreated:
+    value: 0.0
+    units: >
+      fraction alive. Untreated, median survival is a small number of months from
+      the onset of symptoms; the tumour compresses the structures that run
+      breathing
+    src: recall
+  treated:
+    value: 0.01
+    units: >
+      fraction alive on best available treatment — radiotherapy, which is the
+      only thing that has ever helped and helps for months. **Two-year survival
+      is under 10% and five-year survival is on the order of 1%.** The horizon is
+      declared at five years because that is where oncology sets it; at two years
+      the number is barely different, which is not true of any other cancer in
+      this register
+    src: recall
+  witness: >
+    **THE NUMBERS HAVE NOT MOVED SINCE RADIOTHERAPY WAS INTRODUCED IN THE 1960s.**
+    That is the sentence this record exists for. Paediatric oncology is the part
+    of medicine with the most dramatic improvement in this whole register —
+    `childhood-all` went from uniformly fatal to roughly 90% cured within one
+    professional lifetime — and it happened alongside this, in the same
+    hospitals, with the same trial machinery, and here nothing happened at all.
+
+moved:
+  - date: 2012
+    axis: mechanism
+    from: none
+    to: partial
+    why: >
+      **THE H3K27M MUTATION, AND IT IS THE REGISTER'S CLEANEST CASE OF A MAJOR
+      MECHANISTIC ADVANCE BUYING NOTHING YET.** Sequencing of tumour tissue —
+      largely from autopsy donation programmes, because biopsy had been avoided
+      for thirty years — found that the great majority of these tumours carry a
+      single recurrent substitution in a histone H3 gene. A tumour defined by a
+      mutation in a *histone*: not a growth-factor receptor, not a kinase, but
+      the protein DNA is wound around, altering the epigenetic state of the whole
+      cell.
+      It reclassified the disease — the WHO now names it by the mutation rather
+      than by its location — and it has not changed survival by a day. The axis
+      moves; nothing else does.
+    src: recall
+
+toll:
+  severity: major
+  permanent: false
+  what: >
+    **RATED `major` AND `permanent: false`, WHICH IS A COMBINATION THAT ONLY
+    MAKES SENSE FOR A DISEASE NOBODY SURVIVES**, and stating it plainly is
+    better than leaving the field empty.
+    Radiotherapy over six weeks in a young child, frequently under daily general
+    anaesthesia to keep them still. And **dexamethasone**, which is what actually
+    shapes the last months: it reduces the oedema and it produces weight gain,
+    a changed face, mood and behavioural disturbance, sleeplessness, myopathy and
+    diabetes. Families in this disease consistently describe the steroid as
+    changing the child before the tumour does.
+    Nothing here is permanent because the horizon is not long enough for
+    permanence to mean anything, and the register has no way to say that.
+  incidence:
+    value: 0.9
+    units: >
+      fraction-of-treated experiencing significant treatment burden — a reasoned
+      estimate; almost every child treated receives both radiotherapy and
+      corticosteroids
+    src: reasoning
+
+# NO `residue:` BLOCK, AND THE REASON IS THE RECORD. `residue` is what the
+# disease leaves in somebody the treatment worked on. Essentially nobody reaches
+# that state, so the field would be describing a population of about one percent.
+# The guard in `tool.test.js` — a residue on a no-capability record is usually
+# the disease still running — points the same way.
+
+# NO `window:` BLOCK, AND ITS ABSENCE IS WHAT PUTS THIS RECORD IN `ends-it`
+# RATHER THAN `ends-it-unless-caught`.
+#
+# This is the deliberate part. 97 of 140 records have a window; almost every
+# cancer here has one, because finding it before it spreads is the difference
+# between cure and death. **Not this one.** The tumour is diffusely infiltrative
+# within the pons from the beginning — there is no localised early phase to
+# catch, no plane to resect along, and no margin. A child diagnosed at the first
+# cranial nerve palsy and a child diagnosed a month later receive the same
+# treatment and have the same outcome.
+#
+# **That is the entire meaning of the `ends-it` bucket**: not "we have no cure",
+# which describes most of oncology, but "the date of diagnosis is irrelevant
+# because nothing follows from it."
+
+witness:
+  mechanism: >
+    `partial`, and it is the most lopsided `partial` in the register — a great
+    deal is known about what the tumour *is* and nothing is known about what to
+    do to it.
+    **ESTABLISHED:** the defining lesion is a lysine-to-methionine substitution
+    at position 27 of histone H3 (H3K27M), present in the large majority of these
+    tumours, which disrupts the polycomb repressive complex and produces a
+    global loss of H3K27 trimethylation. The cell of origin appears to be a
+    pontine precursor population present transiently in mid-childhood, which is
+    why the disease has an age peak. Frequent co-mutations — *TP53*, *ACVR1*,
+    *PDGFRA* — are described.
+    **THE HOLE IS THAT NONE OF IT IS DRUGGABLE IN THE WAY A KINASE IS.** The
+    lesion is a change to the chromatin state of the entire cell rather than a
+    signalling protein with an active site. Agents aimed at the consequence —
+    histone deacetylase inhibitors, and ONC201/dordaviprone, which has produced
+    responses in some patients and is the first thing in decades that might be
+    something — are the current attempts. **Compare `cml` in this register**,
+    where identifying a single fusion kinase produced a drug that converted a
+    fatal leukaemia into a managed condition. Same shape of discovery, and the
+    lesion here is not the kind you can put a molecule into.
+  intervention: >
+    `disease-modifying`, and the rung is generous. **Radiotherapy is the only
+    thing that has ever worked and it works for months.** Roughly seven or eight
+    children in ten improve neurologically during and after treatment — the
+    palsies lift, swallowing returns — and then between six and twelve months
+    later the tumour regrows and the improvement is undone. Re-irradiation buys
+    a further short interval in some.
+    **THERE IS NO SURGERY. THAT IS THE RECORD.** For every other solid tumour in
+    this register, resection is the curative act and the question is whether it
+    was caught in time to be resectable. Here the tumour is threaded through the
+    pons, among the nuclei that run respiration, cardiac rhythm, swallowing, eye
+    movement and consciousness, with no boundary between tumour and brainstem.
+    There is nothing to remove and nowhere to remove it to. **The impossibility
+    is anatomical, not oncological.**
+    Chemotherapy does not work; more than 250 trials of it and of targeted agents
+    have not moved survival. Convection-enhanced delivery, which infuses a drug
+    directly into the brainstem through an implanted catheter, exists precisely
+    because the blood-brain barrier and the location defeat every ordinary route
+    — and it is still experimental.
+  prevention: >
+    `none`, cleanly. No exposure is known to cause it, no screening would find it
+    earlier to any purpose, and there is no inherited predisposition in the great
+    majority of cases. The H3K27M mutation is somatic and arises in a precursor
+    cell during childhood. Nothing a parent did or could do bears on it, and the
+    register should say so plainly because families are told otherwise.
+  ongoing: >
+    `moderate`, and like `clubfoot` the axis is measuring the wrong shape. There
+    is no chronic phase: six weeks of daily radiotherapy, then a period of
+    improvement in which the child is at home and reasonably well, then a decline
+    over weeks into palliative care. **The axis describes a steady state and this
+    disease has none** — it has a short arc, and the burden is concentrated at
+    both ends of it.
+
+holes:
+  - >
+    **EVERY NUMBER HERE IS RECALLED AND THE INCIDENCE IS THE WEAKEST.** Roughly
+    300-400 cases a year in the United States is the figure usually quoted;
+    scaling it to a world total assumes a uniform rate and diagnostic capacity
+    that certainly does not exist. **In settings without paediatric MRI this
+    disease is not diagnosed at all**, so the global figure is not merely
+    uncertain, it is structurally an undercount, and the deaths are attributed to
+    something else or to nothing.
+  - >
+    **`predictive: none` IS THE WRONG VALUE AND THERE IS NO RIGHT ONE.** The
+    field asks whether medicine can say in advance who a treatment will work for.
+    Here nothing works for anyone, so the question does not arise — which is not
+    the same as asking it and failing. `n/a` is reserved for a question
+    *abolished by a good-enough treatment* (`hepatitis-c` genotyping). The
+    register needs a value for **a question abolished by having nothing to choose
+    between**, and `tay-sachs` needs it too. Candidate for `gaps.md`.
+  - >
+    **THE `toll` FIELD ASSUMES A SURVIVOR AND THIS RECORD HAS ALMOST NONE.**
+    `toll` is what the cure takes, permanently, from the person it worked on.
+    Rated `major` / `permanent: false` here, which is close to a category error:
+    the steroid changes the child profoundly and then the child dies. The burden
+    is real, it is most of what families remember, and the schema can only record
+    it as a cost of a treatment that did not save anybody.
+  - >
+    **ONC201 MAY DATE THIS RECORD AND IT IS RATED AS THOUGH IT WILL NOT.**
+    Responses have been reported and the agent is under active study. The record
+    takes the conservative position — fifty years of hopeful agents in this
+    disease have all come to nothing — and if that is wrong, the `efficacy` and
+    `intervention` axes here are the first things that should move. Recorded so
+    the eventual `moved:` entry has something to move from.
+  - >
+    **THE DERIVED TAG `nobody-makes-it` IS WRONG ON THIS RECORD AND THE RULE IS
+    WHY.** Its guard admits any capability that is not `unsolved`, and
+    `disease-modifying` derives `partial` — so radiotherapy buying six months is
+    enough to make this look like a disease whose solution nobody manufactures.
+    **The bucket should require a capability that actually solves something.**
+    First instance in the corpus; a second would make it a `buckets.yaml` v5
+    change. Noted in the blocker below and here so it is not discovered as a
+    surprise on the public page.
+  - >
+    Written from model recall. The anatomy, the surgical impossibility, the
+    H3K27M discovery and the flatness of the survival curve are the parts most
+    likely right; every figure is the part most likely wrong.
+
+blockers:
+  - kind: knowledge
+    obstacles: [cell-targeting]
+    blocks: getting any molecule into the pons at a dose that does anything
+    what: >
+      **TWO BARRIERS IN SERIES, AND THE SECOND ONE IS GEOMETRY.** The blood-brain
+      barrier is intact in much of this tumour — it is diffusely infiltrative
+      rather than a mass that has broken through — so systemically administered
+      agents reach it poorly. And even a drug that crossed would have to act
+      throughout a structure that cannot tolerate swelling or injury, because
+      every millimetre of it is doing something the child needs.
+      **This is `cell-targeting`'s reach face in its purest form** (FND-O-0015's
+      sibling, FND-O-0008): not *the drug also hits other cells*, but *the drug
+      cannot get there at all*. Convection-enhanced delivery — a catheter
+      implanted into the brainstem, infusing directly — exists because every
+      ordinary route has failed, and the fact that anybody is attempting it says
+      how completely the ordinary routes have failed.
+      `scale: null` — this is the modality question, and the record's own
+      obstacle notes that delivery engineering may be the one knowledge problem
+      that money can buy.
+    who_could: [academic, sponsor, philanthropy]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: a chromatin lesion that is not a drug target
+    what: >
+      **THE DEFINING MUTATION IS IN A HISTONE, AND MEDICINE HAS NO PLAYBOOK FOR
+      THAT.** Fifty years of cancer therapeutics is built on inhibiting proteins
+      with active sites — kinases above all, and `cml` is this register's proof
+      that it can convert a fatal disease into a managed one in a single step.
+      H3K27M is not that. It changes the epigenetic state of the whole nucleus,
+      and there is no pocket to occupy.
+      So the field is reduced to acting on consequences rather than on the
+      lesion, which is where every trial has been aimed and where all of them
+      have stopped. **Identifying the cause of a cancer has, in this one case,
+      produced no route to a treatment at all** — which is worth recording
+      precisely because the register's standing assumption runs the other way.
+      `scale: null`.
+    who_could: [academic, sponsor]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: tooling
+    obstacles: [no-model-system]
+    blocks: thirty years in which there was no tissue to study
+    what: >
+      **BIOPSY OF THE BRAINSTEM WAS AVOIDED FROM THE 1980s BECAUSE THE RESULT
+      CHANGED NO DECISION**, which was defensible clinical reasoning and had a
+      consequence nobody weighed: **there were no cell lines, no xenografts and
+      no molecular data, for a generation.** A disease cannot be studied out of
+      an MRI image.
+      What broke it was autopsy donation — families consenting to tissue being
+      taken after death — which produced the first usable models and, from them,
+      the H3K27M discovery in 2012. **The mechanism of this disease was found by
+      asking bereaved parents for tissue**, roughly thirty years after the
+      relevant question could first have been asked.
+      A direct instance of `no-model-system` (FND-O-0013), and an unusual one:
+      the register's other entries there concern organisms that will not grow.
+      Here the material existed in every patient and the field had decided not to
+      take it. `scale: null`.
+    who_could: [academic, nonprofit, health-system]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: no-sponsor
+    blocks: a few thousand children a year, worldwide
+    what: >
+      Small numbers, uniformly fatal, no surrogate endpoint short of survival,
+      and a trial population of dying children — every feature that makes
+      commercial development unattractive at once. Most of what has been tried
+      here was funded by families, by small foundations set up in the name of a
+      child who died, and by academic groups.
+      **AND THIS RECORD DERIVES THE `nobody-makes-it` TAG, WHICH IS WRONG, AND IT
+      IS THE FIRST RECORD IN THE CORPUS TO EXPOSE THAT.** That tag means *the
+      solution exists and nobody produces it* — a factory or a buyer is missing.
+      Its guard requires that the record's capability be real, precisely to keep
+      out diseases where nothing works: `me-cfs` carries `no-sponsor` and is
+      excluded because nobody is failing to manufacture its cure.
+      The guard tests `capability != unsolved`, and this record derives
+      `partial`, because radiotherapy is genuinely `disease-modifying` — it buys
+      months. **So a disease with no solution at all satisfies a bucket about
+      unproduced solutions.** No record before this one had a `no-sponsor`
+      blocker together with a merely partial capability, which is why it has
+      never fired wrongly. Logged in `holes` rather than fixed: one instance is
+      not yet the corpus forcing a change, and changing it is a versioned
+      `buckets.yaml` decision.
+    who_could: [sponsor, philanthropy, government, patient-org]
+    scale: 3.0e8
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0142
+  rated: 2026-09-02
+  by: [claude, jeremy]

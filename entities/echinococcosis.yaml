@@ -1,0 +1,384 @@
+slug: echinococcosis
+id: FND-D-0032
+name: echinococcosis
+also: [hydatid disease, cystic echinococcosis, alveolar echinococcosis, hydatidosis]
+mondo: MONDO:0005738
+kind: disease
+residual: false
+contested: false
+
+# THE FIRST RECORD WHERE THE RIGHT ANSWER FOR MANY PATIENTS IS DELIBERATELY
+# NOTHING — AND WHERE A CHEAP TEST TELLS YOU WHICH ONES.
+#
+# Hydatid cysts are staged by ultrasound on the WHO-IWGE scale, CE1 to CE5.
+# Active cysts are treated by puncture-aspiration, surgery or albendazole.
+# CE4 and CE5 cysts are degenerated and inactive, and the correct management is
+# to WATCH AND WAIT: operating on them harms the patient for no benefit.
+#
+# The intervention ladder has no rung for that. `none` means "nothing alters the
+# course" — a statement of incapacity, which is what Huntington's has. Knowing
+# that a cyst should be left alone is the opposite: it is capability, and it is
+# bought with a portable ultrasound in a village. See gaps.md #68.
+#
+# AND THE PREVENTION IS ADMINISTERED TO OTHER SPECIES. This is a dog-sheep
+# parasite that gets into humans by accident. Control is deworming dogs, keeping
+# raw offal away from them, and vaccinating sheep — for which a licensed vaccine
+# exists and works. The `prevention` axis is human-scoped, so the most effective
+# preventive tool in this record does not count, and `who_could` has no term for
+# a veterinary service. See gaps.md #69.
+
+burden:
+  prevalence:
+    value: 1.0e6
+    units: >
+      people with cystic echinococcosis at any time; alveolar echinococcosis
+      adds roughly 18,000 new cases a year, most of them in western China and
+      Central Asia
+    src: recall
+  deaths:
+    value: 2.0e4
+    units: >
+      deaths/year across both forms — wide uncertainty, and dominated by
+      alveolar disease, which is over ninety percent fatal within ten to fifteen
+      years if untreated
+    src: recall
+  note: >
+    A pastoral disease. Transmission needs dogs eating the offal of infected
+    livestock, so the burden sits where people herd sheep and keep dogs and
+    slaughter at home: Central Asia, the Tibetan plateau, the Mediterranean,
+    East Africa, South America. Some Tibetan communities carry among the
+    highest recorded rates of either form anywhere.
+    Both forms are chronically underdiagnosed, because both are silent for
+    years. A cystic hydatid can sit in a liver for a decade before anything
+    happens, and alveolar disease is usually found when it is already
+    behaving like a tumour.
+
+survival:
+  horizon: 5 years from diagnosis
+  untreated:
+    value: 0.5
+    units: >
+      fraction alive — **the two forms diverge completely.** Cystic echinococcosis
+      is often survivable untreated; alveolar echinococcosis behaves like a slow
+      liver malignancy and was over 90% fatal at ten years before albendazole
+    src: reasoning
+  treated:
+    value: 0.9
+    units: >
+      fraction alive — surgery, PAIR puncture, or albendazole depending on form and
+      stage. **Alveolar disease is controlled rather than cured** and usually
+      requires lifelong albendazole
+    src: reasoning
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: risk-reduction
+  ongoing: moderate
+  efficacy:
+    value: 0.80
+    units: >
+      fraction-of-patients (cure or durable control with stage-appropriate
+      management) — high for cystic disease treated correctly, substantially
+      lower for alveolar disease, which is why the strata matter here
+    src: reasoning
+  access:
+    value: 0.35
+    units: >
+      fraction-of-patients (reaching imaging, staging and stage-appropriate
+      treatment) — the binding constraint is a trained ultrasonographer and a
+      surgical or interventional service within reach of a pastoral community
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: good
+  predictive: partial
+  witness: >
+    ONE OF THE BEST MEASUREMENT STORIES IN THE REGISTER, and it is worth reading
+    against everything this page has argued about measurement so far.
+    DIAGNOSTIC is `objective` and the instrument is a portable ultrasound.
+    A hydatid cyst has a characteristic appearance; serology supports; and the
+    same scan that finds the cyst also stages it. Cheap, battery-powered, and
+    deployable to a herding community by a vehicle.
+    PROGNOSTIC is `good`, which almost nothing else here achieves, and it is the
+    heart of the record. The WHO-IWGE ultrasound stages CE1 to CE5 predict
+    natural history: CE1 and CE3a are active, CE2 and CE3b are transitional or
+    complicated, and **CE4 and CE5 are degenerated and inactive and will most
+    likely stay that way.** That single reading determines whether a patient is
+    punctured, operated on, given a long course of albendazole, or sent home and
+    scanned again in a year.
+    EVERY MEASUREMENT ARGUMENT IN THIS REGISTER HAS BEEN ABOUT AIMING TREATMENT
+    BETTER. This is the first record where good measurement pays by telling you
+    to STOP — an ultrasound that says leave it alone prevents a laparotomy on a
+    dead cyst. Note also that `overtreatment_risk` correctly does not fire here,
+    and the reason is the achievement: the flag requires `prognostic: none`, and
+    prognosis is precisely what is good.
+    PREDICTIVE is `partial`. Stage maps to treatment well in cystic disease and
+    that mapping is codified; response to albendazole is variable and not well
+    predicted, and alveolar disease drags the rating down — there, the decisive
+    question is whether the lesion can be resected, which is an anatomical
+    judgement rather than a prediction about the drug.
+
+strata:
+  - name: cystic echinococcosis (Echinococcus granulosus)
+    fraction:
+      value: 0.95
+      units: fraction-of-cases
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.85
+      units: fraction-of-stratum (cure or durable inactivation, stage-appropriate management)
+      src: reasoning
+    toll: major
+    what: >
+      The dog-sheep tapeworm, and the ordinary case. Slow fluid-filled cysts,
+      about seventy percent in the liver and twenty in the lung, silent for
+      years. Management is by ultrasound stage: puncture-aspiration-injection-
+      reaspiration for suitable active cysts, surgery for complicated ones,
+      albendazole as adjunct or alone, and observation for the inactive.
+      Cure is the expected outcome when the staging is done and the right thing
+      follows from it. The risks are real — anaphylaxis if cyst fluid spills,
+      secondary spread, the ordinary hazards of hepatic surgery — and they are
+      largely the risks of intervening, which is what makes knowing when not to
+      so valuable.
+
+  - name: alveolar echinococcosis (Echinococcus multilocularis)
+    fraction:
+      value: 0.05
+      units: fraction-of-cases
+      src: reasoning
+    intervention: suppressive
+    efficacy:
+      value: 0.50
+      units: >
+        fraction-of-stratum (durable control) — radical resection cures where
+        the lesion is operable; where it is not, albendazole is parasitostatic
+        and taken indefinitely
+      src: reasoning
+    toll: catastrophic
+    what: >
+      A different disease wearing the same name. The fox tapeworm produces not a
+      cyst but an infiltrating, budding lesion that invades liver tissue and
+      spreads to other organs — it behaves like a malignancy and is staged with a
+      system borrowed from oncology. Untreated it kills more than nine in ten
+      within ten to fifteen years.
+      Radical surgical resection cures it if the lesion is operable, and
+      operability is decided by how late it was found. Where it is not
+      resectable, albendazole holds it — parasitostatic, not parasitocidal —
+      taken for life, with liver transplantation as a last option in some
+      centres. That is `suppressive`, in a record whose other stratum is
+      straightforwardly curable.
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    Almost all of it is the price of intervening. Hepatic surgery for a cyst
+    carries the hazards of hepatic surgery; puncture risks spilling cyst fluid,
+    which can cause anaphylaxis and can seed new cysts; albendazole in long
+    courses is hepatotoxic, teratogenic and needs monitoring; and radical
+    resection for alveolar disease is major liver surgery, with transplantation
+    at the extreme.
+    THE INTERESTING PART IS THAT MOST OF THIS IS AVOIDABLE BY MEASUREMENT. An
+    inactive CE4 or CE5 cyst operated on because nobody staged it delivers the
+    entire toll and none of the benefit — and the thing that prevents it is a
+    scan. This is the inverse of the register's usual shape, where a missing test
+    means people are harmed by being under-treated or wrongly treated; here the
+    test that exists mainly prevents people being treated at all.
+  incidence:
+    value: 0.10
+    units: >
+      fraction-of-treated (permanent surgical or drug-related sequelae) — a
+      reasoned estimate, concentrated in those undergoing resection
+    src: reasoning
+
+window:
+  what: >
+    Two windows of different kinds, and the alveolar one is decisive.
+    In CYSTIC disease the window is soft: a small uncomplicated cyst can be
+    handled by puncture-aspiration, while a large, daughter-cyst-filled or
+    biliary-communicating one needs surgery, and a ruptured one is an emergency.
+    Later means bigger and more dangerous, and it does not usually mean
+    incurable.
+    In ALVEOLAR disease the window changes what is possible outright. Found
+    early, the lesion is resectable and resection is curative. Found late — which
+    is usual, because it is silent while it infiltrates — it is inoperable, and
+    the patient moves from `curative` to `suppressive`: albendazole for the rest
+    of their life. That is a capability change with a date on it, and it is why
+    ultrasound screening programmes in high-prevalence communities are worth
+    running for a disease with eighteen thousand cases a year.
+  closes_on: >
+    for alveolar disease, infiltration beyond the limits of resection; for cystic
+    disease, cyst growth, daughter cyst formation, biliary communication or
+    rupture
+  caught_in_time:
+    value: 0.40
+    units: >
+      fraction-of-patients (found while the simpler option is still available) —
+      a reasoned estimate; both forms are silent for years and most present late
+    src: reasoning
+
+witness:
+  mechanism: >
+    `established`, and unusually the whole of the disease's control follows from
+    the life cycle rather than from anything about the patient.
+    Echinococcus granulosus cycles between dogs and livestock: a dog eats offal
+    containing hydatid cysts, adult tapeworms mature in its gut, eggs pass in its
+    faeces, sheep graze and are infected, and the cycle closes at the next home
+    slaughter. E. multilocularis cycles between foxes — and dogs — and small
+    rodents. **Humans are accidental intermediate hosts in both and are a dead
+    end**: a person with a hydatid cyst infects nobody.
+    That is the fact that makes this disease unusual here. There is no human
+    reservoir to treat, no transmission to interrupt by finding cases, and no
+    epidemiological reason to screen except for the patient's own benefit.
+    Everything about control happens in dogs, sheep and abattoirs.
+    Named holes: why some cysts degenerate spontaneously into the inactive CE4
+    and CE5 stages while others grow and complicate, and what governs the
+    infiltrative growth of alveolar lesions. The first would sharpen watch-and-
+    wait from a good rule into an individual prediction.
+  intervention: >
+    `curative` at record level because cystic disease dominates numerically and
+    is genuinely curable, with the alveolar stratum carrying the harder case.
+    The available options are a procedure (puncture-aspiration-injection-
+    reaspiration), surgery, a drug (albendazole, often alongside either), and
+    OBSERVATION — and the fourth is a real clinical decision rather than an
+    absence of one.
+    THE LADDER CANNOT SAY THAT. `intervention: none` means nothing alters the
+    course, which is a statement about incapacity: it is what Huntington's and
+    ME/CFS have. Deciding not to treat a CE4 cyst is the opposite — it requires
+    knowing the natural history, staging the lesion, and acting on the knowledge
+    that intervention would take something from the patient and give nothing
+    back. It is one of the more sophisticated things in this register and the
+    axis has no room for it. See gaps.md #68.
+  prevention: >
+    `risk-reduction`, and the rating is again the least informative field in the
+    file. The interventions that control echinococcosis are:
+    deworming dogs with praziquantel, at intervals; preventing dogs from eating
+    raw offal, which means abattoir controls and changing home slaughter
+    practice; controlling stray dog populations; and VACCINATING SHEEP, for
+    which a licensed vaccine exists and works.
+    Not one of those is administered to a human being. The `prevention` axis
+    describes what protects the patient, `who_could` names actors drawn from
+    health systems and payers and manufacturers, and the entity that would
+    actually end this disease is a veterinary service working with an
+    agriculture ministry. A licensed, effective vaccine sits in this record and
+    does not register as prevention, because it is given to sheep. See gaps.md
+    #69.
+    Iceland is the standing proof that it works: cystic echinococcosis was
+    eliminated there through dog control and slaughter practice, without any
+    medical intervention at all.
+  ongoing: >
+    `moderate`. For cystic disease, months of albendazole around a procedure and
+    then follow-up scans — finite, and heavier than a tablet. For inoperable
+    alveolar disease it is albendazole indefinitely with liver monitoring, which
+    is `high` and is carried in the strata.
+
+holes:
+  - Why some cysts spontaneously degenerate and others grow. Watch-and-wait rests
+    on a stage-level rule where an individual-level prediction would be better.
+  - How much echinococcosis there is. Both forms are silent for years, both are
+    underdiagnosed, and prevalence estimates rest on ultrasound surveys in a
+    handful of well-studied communities.
+  - Whether albendazole can ever be curative in alveolar disease, or is
+    permanently parasitostatic. The answer decides whether that stratum is
+    `suppressive` forever.
+  - Comparative effectiveness of puncture-aspiration against surgery against
+    albendazole alone. The stage-specific guidance rests substantially on
+    observational series rather than on trials.
+  - No `residue` block is asserted. Successfully treated cystic disease usually
+    leaves a calcified remnant and no functional deficit; alveolar disease leaves
+    real hepatic and biliary damage, in a small stratum, on thin evidence. See
+    the dengue record for the same decision.
+  - Written from model recall. The WHO-IWGE staging and its watch-and-wait
+    implication, the two life cycles, and the existence of a sheep vaccine are
+    the parts most likely right; every number is the part most likely wrong.
+
+blockers:
+  - kind: logistics
+    blocks: veterinary control, which is where this disease is actually solved
+    what: >
+      THE ANSWER IS IN A DIFFERENT SECTOR, AND UNLIKE MOST SUCH CASES IT HAS
+      ALREADY BEEN DEMONSTRATED. Regular praziquantel deworming of dogs,
+      preventing dogs from eating raw offal, abattoir control, stray dog
+      management and sheep vaccination together interrupt the cycle — Iceland
+      eliminated cystic echinococcosis this way, and New Zealand and Tasmania
+      ran successful long-running programmes.
+      What it requires is a veterinary service with reach into pastoral
+      communities, sustained across decades, coordinated with an agriculture
+      ministry and a slaughter industry, for a disease that appears in the health
+      budget. Every part of that is ordinary public administration and none of it
+      is a health intervention.
+      Priced for programme delivery. This is the largest single lever in the
+      record and the register's `who_could` vocabulary cannot name the actor who
+      would pull it.
+    who_could: [government, legislator, nonprofit, philanthropy]
+    scale: 2.0e8
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    blocks: getting an ultrasound to the people who need staging
+    what: >
+      The POTS variant at pastoral scale: the test exists, it is portable, it is
+      cheap, and it is not being performed. A battery-powered ultrasound and a
+      trained operator diagnose the cyst AND stage it, and the stage decides
+      everything that follows — including, for a substantial fraction of
+      patients, that nothing should follow.
+      Two things make this unusually high-value. First, alveolar disease found
+      early is resectable and curable, and found late is a lifetime of
+      albendazole, so screening in high-prevalence communities changes capability
+      rather than merely timing. Second, staging PREVENTS treatment: an inactive
+      cyst that gets operated on because nobody scanned it delivers the whole
+      surgical toll for nothing.
+      The constraint is trained operators and referral pathways in herding
+      communities, not equipment cost.
+    who_could: [health-system, government, nonprofit, philanthropy, academic]
+    scale: 1.0e8
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    obstacles: [pathogen-persistence]
+    blocks: a drug that kills the parasite rather than holding it
+    what: >
+      Albendazole is parasitostatic in alveolar echinococcosis: it stops the
+      lesion growing and does not clear it, which is why inoperable patients take
+      it for life and why that stratum rates `suppressive`. There is no
+      alternative class. For cystic disease the drug is an adjunct to a procedure
+      more than a treatment in its own right, with cure rates alone that are
+      modest.
+      The second gap is the one that would improve watch-and-wait: nothing
+      predicts which active cyst will degenerate on its own. A marker for that
+      would move a stage-level rule to a patient-level one and further reduce the
+      amount of surgery done.
+      `scale: null` — no priced path to either.
+    who_could: [academic, sponsor, nonprofit]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: evidence-incomplete
+    blocks: knowing which of four options is best, for which cyst
+    what: >
+      The stage-specific guidance that makes this record work is built
+      substantially on observational series and expert consensus rather than on
+      randomised comparison. Puncture-aspiration against surgery against
+      albendazole alone against observation, by stage, has not been settled the
+      way it would have been for a disease of wealthy countries.
+      This is not the schistosomiasis problem, where mass administration makes
+      measurement impossible, nor the mycetoma problem, where no framework
+      existed to fund a trial. Here the trials are feasible and the patient
+      numbers at any one centre are small, so the answer requires
+      multi-country collaboration across pastoral regions that do not otherwise
+      collaborate.
+    who_could: [academic, sponsor, nonprofit, health-system]
+    scale: 5.0e7
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0032
+  rated: 2026-08-22
+  by: [claude, jeremy]

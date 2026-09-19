@@ -1,0 +1,623 @@
+slug: type-2-diabetes
+id: FND-D-0080
+name: type 2 diabetes
+also: [type 2 diabetes mellitus, T2D, T2DM, non-insulin-dependent diabetes, adult-onset diabetes]
+mondo: MONDO:0005148
+kind: disease
+residual: false
+contested: false
+
+# A DIFFERENT DISEASE FROM `type-1-diabetes` WITH THE SAME NAME. They share a
+# symptom, a monitoring technology and a set of complications, and almost nothing
+# else — different cause, different age, different treatment, different
+# reversibility. Holding them separately is correct and the shared name causes
+# real clinical harm: adults with type 1 are routinely misdiagnosed as type 2 and
+# given the wrong treatment.
+#
+# THE MOST ARGUABLE INTERVENTION RATING IN THE REGISTER IS IN THIS FILE.
+# `curative` — because type 2 diabetes can be put into remission by weight loss,
+# in a finite intervention, and this was established by randomised trial in 2018.
+# It is defensible, it is contestable, and `witness.intervention` argues it out
+# rather than asserting it. See also gaps.md #173, on cures that decay.
+
+burden:
+  prevalence:
+    value: 5.3e8
+    units: >
+      adults living with type 2 diabetes worldwide — the ~90% type 2 share of
+      roughly 589 million adults with diabetes, **of whom about 43% do not know
+      they have it**
+    src: recall
+  deaths:
+    value: 3.4e6
+    units: >
+      deaths/year attributed to diabetes — **and this is an attribution, not a
+      count.** Most people with type 2 diabetes die of cardiovascular disease or
+      kidney failure, and those deaths are counted in
+      `ischaemic-heart-disease`, `stroke` and the queued `chronic-kidney-disease`
+    src: recall
+  note: >
+    **THE NUMBER IS RISING FAST AND THE PROJECTION IS THE POINT**: roughly 589
+    million adults with diabetes now, projected to something like 853 million by
+    2050, at a health expenditure already above a trillion dollars a year.
+    **ROUGHLY 43% ARE UNDIAGNOSED**, which matters far more here than the same
+    figure would elsewhere, because this record has a `window` — remission is
+    achievable early and not late — and undiagnosed years are spent inside it.
+    And a definitional caution before any of these numbers are used: **"prediabetes"
+    is defined differently by different bodies** — the American Diabetes
+    Association's HbA1c band starts lower than the World Health Organization's —
+    and the wider definition labels well over a billion people worldwide. That is
+    gaps.md #90 at the largest scale in the corpus, and none of those people are
+    in the figure above.
+
+survival:
+  horizon: 20 years from diagnosis
+  untreated:
+    value: 0.5
+    units: >
+      fraction alive — untreated type 2 diabetes kills through cardiovascular
+      disease, kidney failure and infection, and shortened life expectancy by
+      roughly a decade before modern management
+    src: reasoning
+  treated:
+    value: 0.8
+    units: >
+      fraction alive on current management — glycaemic control, blood pressure
+      control, statins, and now SGLT2 inhibitors and GLP-1 agonists with
+      independent cardiovascular and renal benefit. **Most of this gain is
+      cardiovascular risk reduction rather than glucose**
+    src: reasoning
+  witness: >
+    **The rung is `curative` and almost nobody is cured.** Durable remission is
+    achievable — bariatric surgery, and intensive weight management in the
+    first years — and reaches a small fraction. The survival figure describes
+    the other 95%, who are managed indefinitely. This is the widest divergence
+    in the register between what the ladder says is possible and what happens.
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: risk-reduction
+  ongoing: moderate
+  efficacy:
+    value: 0.35
+    units: >
+      fraction-of-patients (achieving durable remission with an adequate
+      intervention) — **remission at one year runs near 46% in trial conditions
+      and decays substantially over five**, and this figure is the durable
+      fraction rather than the initial one (gaps.md #173)
+    src: reasoning
+  access:
+    value: 0.10
+    units: >
+      fraction-of-patients (offered a structured remission programme or metabolic
+      surgery) — **hundreds of millions receive metformin, which is `suppressive`
+      and does not set this rung**; almost nobody is offered the thing that could
+      end the disease
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: partial
+  witness: >
+    **DIAGNOSTIC IS `objective` AND THE THRESHOLD IS A CHOICE — WHICH MATTERS
+    MORE IN THIS RECORD THAN ANYWHERE ELSE IN THE CORPUS.**
+    HbA1c, fasting glucose and the oral glucose tolerance test are cheap,
+    standardised and reproducible. **The cut-point of HbA1c 6.5% was chosen
+    because that is roughly where the prevalence of diabetic retinopathy begins to
+    inflect** — a defensible choice on a continuum with no natural boundary, and a
+    choice. Below it sits "prediabetes", defined differently by the American
+    Diabetes Association and the World Health Organization, with the wider
+    definition labelling well over a billion people.
+    **And about 43% of people who meet the criteria have not been tested**, in a
+    disease that is asymptomatic for years and whose treatable window closes
+    during those years.
+    PROGNOSTIC is `partial`. HbA1c, blood pressure, lipids, albuminuria and
+    duration predict complications well in populations and poorly in individuals.
+    **PREDICTIVE IS `partial`, AND THE MOST USEFUL PREDICTION IN THIS RECORD IS
+    ABOUT REMISSION RATHER THAN ABOUT DRUGS.** Duration of diabetes and the amount
+    of weight lost together predict remission strongly — in the trial that
+    established it, **86% of participants who lost fifteen kilograms or more were
+    in remission at a year.** That is a genuinely actionable predictive
+    relationship and it is almost never used to decide anything, because almost
+    nobody is offered the intervention it predicts.
+    What is not predictable is drug response. A 2018 cluster analysis split adult
+    diabetes into five subgroups with materially different complication risks —
+    severe insulin-deficient, severe insulin-resistant, mild obesity-related, mild
+    age-related, and autoimmune — and it remains a research finding rather than a
+    clinical tool. **The register's `strata` cannot use it and neither can a
+    clinic.**
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    **THE TOLL IS RATED AGAINST THE INTERVENTION THAT EARNS THE `curative`
+    RATING, WHICH IS SURGERY — NOT AGAINST THE METFORMIN MOST PATIENTS TAKE.**
+    **Metabolic surgery** is the most reliable route to durable remission and it
+    permanently rearranges the gastrointestinal tract. Perioperative mortality is
+    low but not zero. Lifelong micronutrient deficiency — iron, B12, calcium,
+    vitamin D — requires lifelong supplementation and monitoring; dumping syndrome
+    and hypoglycaemia occur; a fraction need revision surgery; and there is a
+    documented increase in **alcohol use disorder and in self-harm** after gastric
+    bypass, which is among the most under-discussed findings in the field.
+    The drug tolls are milder and real. **Sulfonylureas cause hypoglycaemia and
+    kill people**, which is why they have fallen down the guidelines despite being
+    the cheapest option and remaining first-line in much of the world. Metformin:
+    gastrointestinal upset and B12 depletion. SGLT2 inhibitors: genital mycotic
+    infection, euglycaemic ketoacidosis, and a historical amputation signal. GLP-1
+    receptor agonists: gastrointestinal effects, gallstones, and loss of lean mass
+    alongside the fat.
+    **And the historical toll is the argument in `witness.mechanism`.**
+    Rosiglitazone lowered glucose beautifully and was withdrawn or restricted over
+    cardiovascular harm. **The ACCORD trial's intensive glucose-lowering arm was
+    stopped early because those patients were dying more often.**
+  incidence:
+    value: 0.05
+    units: >
+      fraction-of-treated (permanent harm — chiefly the nutritional and
+      anatomical consequences of metabolic surgery, and severe hypoglycaemia on
+      sulfonylureas or insulin) — a reasoned estimate weighted to the curative
+      route
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    **REMISSION DOES NOT GIVE THE EYES, KIDNEYS OR NERVES BACK.**
+    Established diabetic retinopathy, nephropathy, neuropathy and the vascular
+    damage underlying amputation and myocardial infarction do not reverse when
+    glucose normalises. A person whose diabetes is in remission after fifteen years
+    of hyperglycaemia keeps whatever those fifteen years cost.
+    **The legacy effect makes this concrete and directional.** Long-term follow-up
+    of the landmark glucose-control trial found that people randomised to better
+    control early retained a survival and complication advantage a decade later,
+    **after the two groups' control had converged.** Early glycaemic exposure sets
+    a trajectory that later improvement does not undo — which is the same
+    "metabolic memory" phenomenon `type-1-diabetes` records, and it means this
+    disease's damage is integrated over time rather than determined by a current
+    value.
+    Blindness, dialysis and lower-limb amputation are the endpoints people fear,
+    and each of them is also somebody else's record: the queued
+    `chronic-kidney-disease`, and the held `ischaemic-heart-disease` and `stroke`
+    (gaps.md #160).
+  incidence:
+    value: 0.15
+    units: >
+      fraction-of-patients (permanent complication established before adequate
+      control or remission) — a reasoned estimate, dominated by those diagnosed
+      late or never
+    src: reasoning
+
+window:
+  what: >
+    **THE WINDOW FOR CURE IS THE FIRST FEW YEARS AFTER ONSET, AND ABOUT 43% OF
+    PEOPLE SPEND THOSE YEARS UNDIAGNOSED.**
+    The mechanism gives the window its shape. Beta cells under chronic lipid
+    exposure first dedifferentiate and lose function — recoverable — and later
+    die, which is not. Remission rates in the trials fall steeply with duration of
+    diabetes: substantial in people diagnosed within about six years, poor beyond
+    that. **The question is not whether somebody is willing to lose weight. It is
+    whether there is enough beta cell function left to rescue when they do.**
+    Two things close the window, and both are ordinary.
+    **The disease is silent.** Hyperglycaemia produces no symptom for years, so
+    the diagnosis arrives at a routine test, an insurance medical, or a
+    complication — and roughly half of newly diagnosed patients in some series
+    already have evidence of tissue damage at diagnosis, meaning the window was
+    already closing before anybody looked.
+    **And nobody is offered the intervention.** Even where the diagnosis is early,
+    the standard response is metformin and an annual review. A structured
+    remission programme or a surgical referral is unusual, and in most of the
+    world unavailable, so the window closes while the patient is under active
+    management for the disease.
+  closes_on: >
+    irreversible beta cell loss, and the accumulation of vascular complications —
+    a few years from onset
+  caught_in_time:
+    value: 0.10
+    units: >
+      fraction-of-cases (diagnosed early AND offered an intervention capable of
+      producing remission) — a reasoned estimate, and it is low because both
+      conditions must hold
+    src: reasoning
+
+strata:
+  - name: recent-onset without complications
+    fraction:
+      value: 0.30
+      units: fraction-of-cases
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.45
+      units: fraction-of-stratum (durable remission with an adequate intervention)
+      src: reasoning
+    toll: major
+    what: >
+      **The stratum where the disease can be ended**, and the one the `curative`
+      rating rests on. Beta cell function is recoverable, substantial weight loss
+      produces remission in a large minority, and the standard of care almost
+      everywhere is a tablet and a yearly appointment.
+
+  - name: established disease without major complications
+    fraction:
+      value: 0.45
+      units: fraction-of-cases
+      src: reasoning
+    intervention: suppressive
+    efficacy:
+      value: 0.70
+      units: fraction-of-stratum (adequate control on therapy)
+      src: reasoning
+    toll: minor
+    what: >
+      The modal patient. Metformin, then a second agent, then often a third, and
+      for many eventually insulin — a progressive escalation that reflects
+      continuing beta cell loss. **Modern agents make this stratum much better
+      than it was**, and it is management rather than reversal.
+
+  - name: with established complications
+    fraction:
+      value: 0.25
+      units: fraction-of-cases
+      src: reasoning
+    intervention: disease-modifying
+    efficacy:
+      value: 0.50
+      units: fraction-of-stratum (meaningful slowing of complication progression)
+      src: reasoning
+    toll: minor
+    what: >
+      Chronic kidney disease, established cardiovascular disease, retinopathy,
+      neuropathy. **This is the stratum where SGLT2 inhibitors and GLP-1 receptor
+      agonists earn their place**, slowing kidney decline and reducing
+      cardiovascular death — and doing so by mechanisms that are not principally
+      about glucose. The damage already present does not reverse, which is why the
+      rung is `disease-modifying` and why the record flags ⧉.
+
+moved:
+  - date: 1998
+    axis: efficacy
+    from: 0.30
+    to: 0.50
+    why: >
+      **THE TRIAL THAT ESTABLISHED THAT CONTROLLING GLUCOSE PREVENTS
+      COMPLICATIONS — AND, ON LONGER FOLLOW-UP, THAT WHEN YOU DO IT MATTERS.**
+      The United Kingdom Prospective Diabetes Study ran for two decades and showed
+      that intensive glucose control reduced microvascular complications in type 2
+      diabetes. Its ten-year post-trial follow-up found the **legacy effect**:
+      participants originally randomised to intensive control retained advantages
+      in myocardial infarction and all-cause mortality long after the groups'
+      HbA1c had converged.
+      It also found, less comfortably, that the macrovascular benefit was modest
+      and slow to appear — the first hint that glucose was not the whole story,
+      which the next entry makes explicit.
+    src:
+      id: PMID:9742976
+      retrieved: 2026-08-26
+      quote: >
+        Intensive blood-glucose control by either sulphonylureas or insulin
+        substantially decreases the risk of microvascular complications, but not
+        macrovascular disease, in patients with type 2 diabetes.(ABSTRACT
+        TRUNCATED)
+
+  - date: 2015
+    axis: efficacy
+    from: 0.50
+    to: 0.65
+    why: >
+      **THE FIRST DRUGS TO REDUCE CARDIOVASCULAR DEATH IN TYPE 2 DIABETES, AND
+      THEY DO NOT DO IT BY LOWERING GLUCOSE.**
+      Regulators had required cardiovascular safety trials for new diabetes drugs
+      after the rosiglitazone affair — trials designed to prove absence of harm.
+      **Several of them found benefit instead.** An SGLT2 inhibitor trial reporting
+      in 2015 showed large reductions in cardiovascular death and heart failure
+      hospitalisation; GLP-1 receptor agonist trials followed with reductions in
+      major adverse cardiovascular events; later trials showed both classes slow
+      the progression of chronic kidney disease.
+      **The effect sizes do not track the HbA1c reductions**, appear too early to
+      be explained by them, and — for the SGLT2 inhibitors — hold in people
+      *without* diabetes. These are now heart failure and kidney drugs that happen
+      to have arrived through diabetes.
+      **So a class of drugs approved on a glucose endpoint turned out to save
+      lives through haemodynamics, natriuresis and weight**, and the fifty years of
+      therapy that preceded them had been optimising the wrong variable (gaps.md
+      #172).
+    src: recall
+
+  - date: 2018
+    axis: intervention
+    from: suppressive
+    to: curative
+    why: >
+      **TYPE 2 DIABETES WAS RECLASSIFIED FROM A PROGRESSIVE LIFELONG CONDITION TO
+      ONE THAT CAN BE ENDED, BY A TRIAL RUN IN ORDINARY PRIMARY CARE PRACTICES
+      USING SOUP AND SHAKES.**
+      DiRECT randomised primary care practices to a structured weight management
+      programme — a total diet replacement of roughly 850 kcal a day for three to
+      five months, then staged food reintroduction and maintenance support, with
+      all diabetes medication stopped at the outset. **Remission — HbA1c below
+      6.5% off all glucose-lowering drugs — was achieved by 46% at one year and
+      36% at two.** Among those who lost fifteen kilograms or more, 86% were in
+      remission at a year.
+      The underlying model is specific and testable: fat accumulating in liver and
+      pancreas beyond a **personal threshold** causes insulin resistance and beta
+      cell dedifferentiation, and removing it lets beta cells recover. The
+      threshold is personal, which is why some people develop the disease at a
+      body mass index that looks unremarkable.
+      Metabolic surgery reaches remission more reliably and holds it longer, with
+      long-term cohorts showing durable remission in roughly a third at fifteen
+      years.
+      **Two honest caveats, and they are in the rating rather than hidden.**
+      Remission decays — the five-year figures are much lower than the one-year
+      ones, and the register's `curative` rung has no way to say so (gaps.md
+      #173). And **the intervention is not a treatment**: it cannot be
+      manufactured, prescribed or shipped, and the health system's role is to
+      provide structure and support for something the patient does.
+    src: recall
+
+witness:
+  mechanism: >
+    `established`, and the useful version of it is more specific than the textbook
+    one.
+    Insulin resistance in muscle, liver and fat, combined with progressive failure
+    of pancreatic beta cells to compensate. The part that has become clear more
+    recently is **why**: **ectopic fat**. When adipose tissue exceeds an
+    individual's capacity to store fat safely, triglyceride accumulates in liver
+    and pancreas. Hepatic fat drives insulin resistance and excess glucose output;
+    pancreatic fat exposes beta cells to lipid, which causes them to
+    **dedifferentiate and stop working before they die.**
+    That model — the personal fat threshold — makes three predictions that have
+    held. It explains why type 2 diabetes occurs at body mass indices that look
+    normal, particularly in South Asian populations, since the threshold is
+    individual rather than a population cut-off. It explains why remission is
+    possible at all: **dedifferentiated beta cells can redifferentiate.** And it
+    explains the `window`: they can, until they die.
+    Downstream, chronic hyperglycaemia damages vessels through glycation, polyol
+    flux and oxidative stress, producing the same complications as
+    `type-1-diabetes` on a background of the insulin resistance, hypertension and
+    dyslipidaemia that travel with it.
+    **THE NAMED HOLE IS HETEROGENEITY.** A 2018 cluster analysis divided adult
+    diabetes into five subgroups with different complication profiles, and a
+    substantial part of the field now argues "type 2 diabetes" is a residual
+    category — everything that is not type 1 — rather than a disease. If that is
+    right, this record's every scalar is an average over things that should be
+    separate, and its `strata` are staging rather than partition.
+  intervention: >
+    **`curative`, AND THIS IS THE REGISTER'S MOST ARGUABLE INTERVENTION RATING.
+    THE ARGUMENT IS WORTH MAKING EXPLICITLY.**
+    *The case for.* A finite intervention — three to five months of total diet
+    replacement, or a single operation — produces remission, defined as normal
+    HbA1c off all glucose-lowering medication, in a substantial fraction of
+    people. It was demonstrated by randomised trial in ordinary primary care. That
+    satisfies the schema's definition of `curative`: **a finite intervention ends
+    it.**
+    *The case against.* Remission decays. Regain the weight and the disease
+    returns, so what has been produced is a state requiring lifelong maintenance
+    rather than a cure in the sense that hepatitis C is cured. The one-year figure
+    is roughly 46% and the five-year figure is a fraction of that.
+    *Why the record rates `curative` anyway.* Because the alternative rating —
+    `suppressive` — asserts that the disease cannot be ended, which was the
+    consensus until 2018 and is now false. Getting that wrong in the safe
+    direction would have this register repeating a claim that a randomised trial
+    refuted. **The decay is recorded in `efficacy`, in `window`, and in a gap
+    (#173), rather than by demoting the rung.**
+    *What most patients actually get* is `suppressive`: metformin, then SGLT2
+    inhibitors or GLP-1 receptor agonists, then often insulin. Those are good
+    drugs — see the 2015 `moved` entry — and they manage rather than end the
+    disease.
+    **The queue that scheduled this record called it "a curative intervention that
+    is not a treatment", and that is exactly right.** It cannot be manufactured,
+    patented, shipped, stockpiled or prescribed. There is no product. The health
+    system's contribution is structure, food replacement and sustained support,
+    which is staff time — and this register has learned repeatedly that staff time
+    is the hardest thing for it to buy (gaps.md #154).
+  prevention: >
+    `risk-reduction`, and it is among the best-evidenced in the register.
+    The Diabetes Prevention Program randomised people with impaired glucose
+    tolerance to lifestyle intervention, metformin or placebo. **Lifestyle reduced
+    incidence by about 58% and metformin by about 31% — the behaviour beat the
+    drug, decisively**, and long-term follow-up of a comparable Chinese study
+    found reductions in cardiovascular events and all-cause mortality decades
+    later.
+    Scaled national programmes followed in several countries. Their real-world
+    effects are real and smaller than the trials, for the ordinary reason that a
+    trial's support is not a programme's.
+    **AND THE HONEST READING OF THIS AXIS IS THAT THE LEVER IS NOT IN HEALTH.**
+    The dominant drivers are the availability and price of energy-dense food, the
+    design of places people live in, and how much of the day is spent sitting.
+    Those belong to agriculture, trade, planning and finance ministries, and the
+    interventions with the best population evidence — sugar taxation, reformulation,
+    marketing restriction — are legislative. This is gaps.md #87 and #53 in the
+    largest chronic-disease record here: **the prevention that works is not
+    administered by anybody in medicine.**
+    GLP-1 receptor agonists complicate the picture in a way worth noting: they
+    prevent progression from prediabetes and reduce cardiovascular events in
+    people without diabetes, which is a pharmacological answer to a problem
+    everybody agrees is environmental.
+  ongoing: >
+    `moderate` for the modal patient: one to three oral agents, an annual review,
+    retinal screening, foot checks, and eventually injections for many.
+    **And the rating hides a split that gaps.md #171 just named.** The
+    `suppressive` route is a regimen — tablets and appointments, a supply problem.
+    **The `curative` route is a restriction, permanently**, and the maintenance of
+    remission is the patient's work with no drug to be adherent to. Same record,
+    two entirely different kinds of ongoing demand, and one enum value covering
+    both.
+
+holes:
+  - >
+    **`intervention: curative` is the most contestable rating in the register and
+    `witness.intervention` argues both sides.** A reasonable reader could rate
+    `suppressive` and would then be asserting something a randomised trial has
+    refuted.
+  - >
+    **`access: 0.10` describes access to remission programmes and metabolic
+    surgery, not to metformin.** Hundreds of millions of people receive
+    glucose-lowering therapy; almost nobody is offered the intervention that could
+    end the disease. The record therefore derives a very low reach while most
+    patients are under active treatment, which is the axes working as designed and
+    reads wrongly at a glance — the same artefact as `alzheimers`.
+  - >
+    **The deaths figure is an attribution, and the deaths themselves are counted in
+    other records** — `ischaemic-heart-disease`, `stroke`, and the queued
+    `chronic-kidney-disease` (gaps.md #160).
+  - >
+    **The strata are stages rather than a partition of kinds.** The partition that
+    may matter — the five metabolic clusters — is a research finding unavailable in
+    any clinic, and a substantial part of the field argues that "type 2 diabetes"
+    is a residual category rather than a disease.
+  - >
+    **"Prediabetes" is excluded from every number here and its definition varies
+    between bodies**, with the wider one labelling over a billion people. Whether
+    those people belong in this record is exactly gaps.md #90 and the file does
+    not resolve it.
+  - >
+    Every scalar is `recall` or `reasoning`, against one of the best-evidenced
+    fields in medicine.
+
+blockers:
+  - kind: policy
+    blocks: the environment that produces the disease
+    obstacles: []
+    what: >
+      **THE CAUSE IS NOT IN THE HEALTH SYSTEM AND NEITHER IS THE FIX.**
+      Type 2 diabetes tracks the availability, price and marketing of energy-dense
+      food, the design of built environments, and occupational and transport
+      patterns that removed physical activity from ordinary life. The
+      interventions with the strongest population evidence are legislative and
+      fiscal — sugar-sweetened beverage taxation, mandatory reformulation,
+      marketing restrictions to children, front-of-pack labelling — and several
+      have measurable effects where they have been implemented.
+      They sit in finance, agriculture, trade and planning, and they are opposed by
+      well-resourced commercial interests, which is documented and is not a
+      conspiracy claim: it is what industries do about regulation that reduces
+      consumption of their product.
+      **The register cannot hold any of it.** `who_could` has no agriculture
+      ministry, no finance ministry and no planning authority. The benefit is
+      spread across this record, the queued `hypertension`, `cirrhosis` and
+      `chronic-kidney-disease`, and the held `ischaemic-heart-disease`, `stroke`
+      and several cancers — **so no single record can justify the cost and nothing
+      sums it** (gaps.md #87, #53).
+      Rated `documented` on the association and on the effects of implemented
+      policies, not on any claim about a particular measure's sufficiency.
+    who_could: [government, legislator, payer, nonprofit, philanthropy]
+    scale: 5.0e10
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: the curative intervention being staff time rather than a product
+    obstacles: []
+    what: >
+      **REMISSION REQUIRES A PROGRAMME, AND A PROGRAMME IS PEOPLE.**
+      What produced 46% remission was not a discovery — it was total diet
+      replacement plus structured support plus a maintenance phase, delivered by
+      dietitians and practice nurses over a year. It cannot be manufactured,
+      shipped, patented or stockpiled. **There is no product to procure**, which
+      means every lesson this register has learned about infrastructure applies
+      (gaps.md #154): it must be operated, locally, indefinitely, by trained people
+      who are already busy.
+      Metabolic surgery is the more reliable route and is capacity-limited
+      everywhere — surgeons, theatre time, and follow-up for life. Referral rates
+      run at a small fraction of the eligible population even in health systems
+      that fund it, and it carries a stigma that no other operation of comparable
+      effectiveness attracts.
+      **So the register's most striking capability finding — that this disease can
+      be ended — is gated on the thing it is worst at buying.** England's national
+      remission programme is the largest attempt and reaches a small share of
+      those who would qualify.
+    who_could: [health-system, government, payer, nonprofit]
+    scale: 1.5e10
+    standing: documented
+    src: recall
+
+  - kind: cost
+    blocks: the drugs that work best being the most expensive ones
+    obstacles: []
+    what: >
+      **THE THERAPEUTIC HIERARCHY AND THE PRICE HIERARCHY ARE THE SAME LIST.**
+      Metformin costs pennies. Sulfonylureas cost pennies and cause hypoglycaemia
+      and remain first-line across much of the world for that reason alone. **SGLT2
+      inhibitors and GLP-1 receptor agonists — the agents that reduce
+      cardiovascular death and slow kidney disease — are on patent and priced
+      accordingly**, with GLP-1 list prices around a thousand dollars a month in
+      the United States.
+      Demand for GLP-1 agents from the obesity indication has also produced
+      sustained supply shortages affecting people using them for diabetes, which is
+      an unusual failure mode: **a manufacturing constraint created by a second
+      indication in a different record.**
+      Generic entry for the earliest SGLT2 inhibitors is beginning and will move
+      this substantially. Semaglutide's key patents expire in several jurisdictions
+      over the next few years, and what happens then is the single largest
+      determinant of this record's access figure for the coming decade.
+      **The comparison worth making is internal.** The intervention that could end
+      the disease costs staff time and food replacement; the drugs that manage it
+      cost a thousand dollars a month; and health systems buy the second.
+    who_could: [manufacturer, payer, government, regulator, nonprofit]
+    scale: 3.0e10
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    blocks: 43% not knowing, during the years when it could be reversed
+    obstacles: []
+    what: >
+      **THE TEST IS A DOLLAR AND ROUGHLY FOUR IN TEN PEOPLE WITH THIS DISEASE DO
+      NOT KNOW.**
+      Type 2 diabetes is asymptomatic for years, so nothing brings anybody in. The
+      diagnosis arrives at a routine screen, at an unrelated admission, or at a
+      complication — and a substantial share of newly diagnosed patients already
+      have tissue damage, meaning the disease had been present for years.
+      **This blocker is worse here than the same figure would be elsewhere,
+      because of the `window`.** Remission depends on beta cell function that is
+      recoverable early and gone later. **Every undiagnosed year is spent inside
+      the only period in which the disease can be ended**, and the patient does not
+      know there is a clock.
+      Opportunistic screening in primary care, risk scores and community testing
+      all work and are unevenly applied. In much of the world the constraint is
+      that there is no primary care encounter in which to screen.
+      There is a second-order cost worth stating: because the disease is diagnosed
+      late, the trials that matter most — of remission in early disease — recruit
+      from a population that has already partly lost the window.
+    who_could: [health-system, government, payer, nonprofit]
+    scale: 5.0e9
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: whether this is one disease, and why remission fails in most people
+    obstacles: []
+    what: >
+      **TWO QUESTIONS, AND THE SECOND IS MORE ACTIONABLE THAN IT SOUNDS.**
+      *Is this one disease?* A 2018 cluster analysis split adult-onset diabetes
+      into five subgroups with materially different complication risks and
+      treatment implications, and the finding has replicated. A substantial part of
+      the field argues "type 2 diabetes" is a residual category — everything that
+      is not type 1 — rather than an entity. If so, every average in this record is
+      an average over different things, and the failure to find consistent drug
+      responders is explained (gaps.md #39's final-common-pathway shape, in a
+      non-infectious record).
+      *Why does remission fail in most people, and decay in most of the rest?*
+      Roughly half achieve it initially and a minority hold it. The obvious
+      explanation — they regained the weight — is true and incomplete: the
+      physiology of weight regain is itself a strong homeostatic response, and
+      whether beta cell recovery is durable or merely deferred is unresolved. **A
+      pharmacological way to hold the remitted state would convert a decaying cure
+      into a stable one**, and GLP-1 agents may already be that and have not been
+      tested for it in those terms.
+      Understanding what sets the **personal fat threshold** would explain why the
+      disease appears at very different body compositions, and would make
+      prevention targetable rather than general.
+      `scale: null`.
+    who_could: [academic, sponsor, philanthropy, manufacturer]
+    scale: null
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0081
+  rated: 2026-08-24
+  by: [claude, jeremy]

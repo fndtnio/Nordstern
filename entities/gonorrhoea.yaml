@@ -1,0 +1,428 @@
+slug: gonorrhoea
+id: FND-D-0117
+name: gonorrhoea
+also: [gonorrhea, Neisseria gonorrhoeae infection, the clap, gonococcal infection]
+kind: disease
+mondo: MONDO:0004277
+residual: false
+contested: false
+
+# THE ORGANISM THAT HAS DEFEATED EVERY DRUG CLASS IT WAS EVER GIVEN.
+#
+# 1. IT IS THE EXACT INVERSE OF `syphilis`, AND THE PAIR IS THE POINT. Two
+#    sexually transmitted bacteria, treated in the same clinics by the same
+#    people for eighty years. **Syphilis has never developed penicillin
+#    resistance. Gonorrhoea has lost sulfonamides, penicillin, tetracyclines,
+#    macrolides, the earlier cephalosporins and the fluoroquinolones, in that
+#    order** — and ceftriaxone, the last reliable option, now has documented
+#    resistant strains on several continents. Nothing about the two diseases'
+#    management explains the difference; the difference is the organism.
+#
+# 2. AND `amr-infection` CANNOT SEE IT. That record is scoped in its own name to
+#    *multidrug-resistant bacteria* and its content is hospital organisms —
+#    carbapenem-resistant Enterobacterales, *Acinetobacter*, MRSA — with
+#    stewardship and infection control as its levers. **Gonorrhoea is a
+#    community organism acquired by healthy people during sex**, and none of
+#    those levers touches it. It is the register's second demonstration in a week
+#    that `amr-infection`'s scope is doing damage, after `invasive-aspergillosis`
+#    found antifungal resistance had nowhere to live.
+#
+# 3. THE ORGANISM IS BUILT FOR THIS. *Neisseria gonorrhoeae* is naturally
+#    competent — it takes up DNA from its environment continuously and
+#    recombines it — so it acquires resistance from commensal *Neisseria* in the
+#    throat rather than having to evolve it. **The pharyngeal infection nobody
+#    tests for is where the next resistant strain is being assembled.**
+
+burden:
+  incidence:
+    value: 8.2e7
+    units: >
+      new infections/year worldwide — **among the largest incidence figures in
+      this register**, and rising in most high-income countries after two decades
+      of increase. A large share is asymptomatic, particularly pharyngeal and
+      rectal infection, so the true figure exceeds the estimated one by an
+      unknown margin
+    src: recall
+  deaths:
+    value: 0.0
+    units: >
+      deaths/year — **and this is a genuinely clean zero of the kind
+      `acute-bronchitis` earns.** Gonorrhoea kills almost nobody directly;
+      disseminated gonococcal infection and gonococcal endocarditis are rare.
+      The harm is infertility, pelvic inflammatory disease, ectopic pregnancy,
+      neonatal blindness and facilitated HIV transmission — none of which the
+      mortality column can hold
+    src: reasoning
+  note: >
+    **Eighty-two million infections a year and no deaths is the register's
+    starkest mismatch between magnitude and the field that measures it.** The
+    burden is reproductive: tubal damage and infertility in women, which arrives
+    years later and is attributed to infertility rather than to this. gaps.md
+    #182 says the register's magnitude is deaths and some diseases are
+    disability; this one is neither — it is a **future child who does not
+    exist**, and there is no field for that at all.
+
+survival:
+  horizon: 1 year from infection
+  untreated:
+    value: 0.999
+    units: >
+      fraction alive — **rated because the axis should be able to say that a
+      disease does not kill, rather than leaving a blank that reads as unrated.**
+      Untreated gonorrhoea is a serious infection that is very rarely fatal;
+      disseminated infection and endocarditis account for the rest
+    src: reasoning
+  treated:
+    value: 0.9999
+    units: >
+      fraction alive on an effective antibiotic. **The gain is +0.001 and it is
+      close to meaningless**, which is the honest reading and is exactly the
+      compression gaps.md #221 describes: the axis cannot see a disease whose
+      entire harm is reproductive
+    src: reasoning
+  witness: >
+    **THIS ROW IS RECORDED IN ORDER TO SHOW THE AXIS FAILING.** Survival is the
+    one measure in this register that means the same thing everywhere, and here
+    it means nothing at all: 99.9% to 99.99%, a gain of one part in a thousand,
+    on a disease with eighty-two million cases a year whose real cost is
+    infertility, ectopic pregnancy and blindness in newborns.
+    **`asthma` at +0.017 and `covid-19` at +0.006 were the previous worst cases
+    of this compression. This is an order of magnitude beyond both**, and it is
+    the clearest argument in the corpus that a survival-ranked view of medicine
+    must be read beside `residue` or not at all.
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: risk-reduction
+  ongoing: none
+  efficacy:
+    value: 0.95
+    units: >
+      fraction-of-patients (cured by first-line therapy) — **high, and it is the
+      number in this register most likely to fall.** Ceftriaxone still cures
+      almost everyone; the figure is a snapshot of a resistance frontier that has
+      moved five times already, and pharyngeal infection is cured less reliably
+      than genital
+    src: reasoning
+  access:
+    value: 0.55
+    units: >
+      fraction-of-patients (diagnosed and treated) — **held down by the fact that
+      most infection causes no symptoms**, especially at the pharynx and rectum,
+      so people do not present. Where screening programmes exist the drug is
+      cheap and available; where they do not, the infection is invisible
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: partial
+  witness: >
+    **DIAGNOSTIC is `objective`, and the test that replaced culture created the
+    resistance problem's blind spot.** Nucleic acid amplification is sensitive,
+    fast, works on urine and self-collected swabs, and detects far more infection
+    than culture ever did — it is why screening programmes are possible at all.
+    **But it does not grow the organism, so it yields no susceptibility result.**
+    Culture is now performed in a minority of cases, chiefly at reference
+    laboratories and after treatment failure, which means **global resistance
+    surveillance rests on a shrinking and non-random sample** — and the shift
+    happened for good clinical reasons, with the surveillance cost as an
+    unintended consequence.
+    PROGNOSTIC is `partial`. Site of infection and sex predict complications
+    reasonably: ascending infection causing pelvic inflammatory disease and tubal
+    damage is the outcome that matters, and nothing identifies which untreated
+    woman it will happen to.
+    PREDICTIVE is `partial`, **and this is the fixable one.** Molecular assays
+    that detect resistance determinants directly from a specimen exist —
+    ciprofloxacin susceptibility can be called from a NAAT-compatible test — and
+    would allow older, narrower drugs to be used where they still work, sparing
+    ceftriaxone. **They are barely deployed.** Reviving a drug the organism
+    defeated in the 1990s, in the patients whose strain is still susceptible, is
+    the cheapest available way to slow the frontier.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    **A single intramuscular injection of ceftriaxone, and essentially nothing
+    else.** No monitoring, no course to complete, no interactions of consequence.
+    The treatment of this disease has never been the problem and is not becoming
+    one — what is being lost is the drug's *effectiveness*, not its tolerability.
+    Rated `minor` rather than `none`: an intramuscular injection hurts and rare
+    allergy exists, and the validator correctly refused a `none` sitting beside a
+    non-zero incidence. The substance stands — **this is a disease whose cure
+    costs the patient almost nothing and is running out anyway**, which is the
+    opposite of the register's usual shape, where the treatment that works
+    exacts a price.
+  incidence:
+    value: 0.01
+    units: >
+      fraction-of-treated with a significant adverse reaction — essentially
+      injection-site pain and rare allergy
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    **TUBAL INFERTILITY, AND IT IS THE ENTIRE POINT OF TREATING THIS DISEASE.**
+    Ascending infection causes pelvic inflammatory disease; scarring of the
+    fallopian tubes causes infertility and ectopic pregnancy, and each episode
+    raises the risk. The damage is permanent, it arrives years after an infection
+    that was often asymptomatic and never diagnosed, and it is recorded in the
+    health system as infertility rather than as gonorrhoea.
+    **Ophthalmia neonatorum** — gonococcal conjunctivitis acquired at birth —
+    caused a large share of childhood blindness before silver nitrate
+    prophylaxis, and still does where neither screening nor prophylaxis reaches.
+    Chronic pelvic pain persists in a substantial minority after PID.
+    **This is the record's real burden, and like `cryptosporidiosis` it lands on
+    people who were never diagnosed** — an infertile woman and a blind child, in
+    a record whose `deaths` column reads zero.
+  incidence:
+    value: 0.10
+    units: >
+      fraction-of-infected women left with tubal damage — reasoned, rises steeply
+      with repeated infection, and is essentially unmeasurable because the
+      infections that cause it are the ones nobody found
+    src: reasoning
+
+witness:
+  mechanism: >
+    `established`, and the organism's biology is the record. *Neisseria
+    gonorrhoeae* is a Gram-negative diplococcus infecting the mucosa of urethra,
+    cervix, rectum, pharynx and conjunctiva. **It is naturally competent** — it
+    continuously takes up DNA from its surroundings and recombines it into its
+    chromosome — so it does not have to evolve resistance from scratch. It
+    borrows it, most importantly from the commensal *Neisseria* species living in
+    the same throat, which have been exposed to every antibiotic the host ever
+    took for anything.
+    **That is why the pharynx matters out of all proportion.** Pharyngeal
+    infection is usually asymptomatic, is not tested for in most settings, is
+    cured less reliably than genital infection, and is where resistance is
+    assembled. It also antigenically varies its surface pili and Opa proteins
+    continuously, which is why infection confers no useful immunity and
+    reinfection is ordinary.
+  intervention: >
+    `curative` — one injection — **and the register should be explicit that this
+    rating has an expiry date nobody can name.** The sequence is documented and
+    one-directional: sulfonamides in the 1930s and lost in the 1940s; penicillin,
+    lost by the 1980s; tetracyclines; ciprofloxacin, recommended and then
+    abandoned in the 2000s; cefixime; azithromycin, added as dual therapy and
+    then dropped as resistance rose. **Ceftriaxone is what is left**, resistant
+    strains have been reported in several countries, and dual therapy was
+    abandoned in some guidelines because the partner drug stopped working.
+    New agents exist — zoliflodacin, a first-in-class oral inhibitor, completed a
+    phase 3 trial — and **a single new drug against an organism that has taken
+    six is a reprieve, not a solution.**
+  prevention: >
+    `risk-reduction`. Condoms, partner notification, and screening of
+    asymptomatic people at higher incidence — which is the main lever, because
+    most transmission comes from infections nobody knew about.
+    **There is no vaccine, and one unexpected finding is the most interesting
+    thing in this record**: the meningococcal serogroup B outer-membrane-vesicle
+    vaccine, made for a different *Neisseria*, has repeatedly been associated
+    with roughly 30-40% protection against gonorrhoea in observational studies,
+    and gonococcal-specific candidates have followed. **A vaccine against this
+    organism looked impossible and now looks merely difficult.**
+    Doxycycline post-exposure prophylaxis reduces syphilis and chlamydia
+    substantially and gonorrhoea much less — and adds tetracycline pressure to an
+    organism that has already defeated tetracyclines. See `syphilis`, which
+    records the same intervention from the side where it works.
+  ongoing: >
+    `none`. One injection, cured, finished. **The burden that persists belongs to
+    the untreated** and is in `residue`.
+  efficacy: >
+    See the axis. It is the register's most perishable number.
+  access: >
+    The drug is cheap, off-patent and universally available; the diagnosis is
+    what is missing. **Most infection is asymptomatic**, particularly at the
+    pharynx and rectum, so people do not present — and where screening
+    programmes reach asymptomatic populations, they find a great deal. Extragenital
+    testing is not routine in many systems that test for this disease at all,
+    which leaves the transmission reservoir and the resistance incubator both
+    unexamined.
+
+moved:
+  - date: 2007
+    axis: efficacy
+    from: 0.95
+    to: 0.95
+    why: >
+      **RECORDED AS A NON-MOVE ACROSS A REPLACED DRUG, WHICH IS THE POINT.** The
+      CDC withdrew fluoroquinolones as recommended therapy after resistance
+      became widespread, and cephalosporins took over. Cure rates did not fall,
+      because the guideline moved first. **The axis is stable and the position is
+      not**: this record has burned through six drug classes without its
+      `efficacy` figure ever dropping, because each time a drug failed another
+      was available. That is what the last one running out would look like — and
+      the register would not see it coming in this column.
+    src: reasoning
+  - date: 2020
+    axis: intervention
+    from: curative
+    to: curative
+    why: >
+      Dual therapy with ceftriaxone plus azithromycin was abandoned in several
+      guidelines in favour of higher-dose ceftriaxone monotherapy, because
+      azithromycin resistance had risen far enough that the partner drug was no
+      longer contributing. **Retreating to monotherapy on the last effective
+      class is the opposite of how resistance is supposed to be managed**, and it
+      was the right call given what was available. Recorded as a non-move for the
+      same reason as above.
+    src: reasoning
+
+holes:
+  - >
+    **`efficacy: 0.95` is a snapshot of a moving frontier and the register has no
+    way to say so.** The axis has been stable for eighty years across six drug
+    classes because a replacement was always found; it would remain stable right
+    up to the point where one was not. **A field that cannot fall until it falls
+    catastrophically is a bad instrument**, and both `moved:` entries here are
+    non-moves recorded to make that visible.
+  - >
+    **The `deaths: 0` and the survival row are both technically honest and
+    together they misrepresent the disease.** Eighty-two million infections, a
+    survival gain of one part in a thousand, and a burden made of infertility and
+    neonatal blindness. The residue field carries it; no ranking view in this
+    register reads residue.
+  - >
+    The residue incidence is close to unmeasurable in principle. Tubal damage
+    follows infections that were asymptomatic and undiagnosed, presents years
+    later as infertility, and is attributed to infertility. **The number is a
+    reasoned estimate of something nobody counts.**
+  - Incidence rests on modelled estimates over a largely asymptomatic infection
+    with very uneven testing — extragenital sites in particular are untested in
+    most systems, so the true figure exceeds the estimate by an unknown margin.
+  - >
+    The meningococcal B vaccine cross-protection finding is observational and
+    the effect size varies between studies. It is recorded because it changed
+    what the field thinks is possible, not because it is settled.
+  - Written from model recall. The drug-class sequence, natural competence, the
+    pharyngeal reservoir and the NAAT surveillance problem are the parts most
+    likely right; every number is the part most likely wrong.
+
+blockers:
+  - kind: knowledge
+    blocks: the last drug class, against an organism that has taken six
+    what: >
+      **THE SEQUENCE IS DOCUMENTED, ONE-DIRECTIONAL AND NEARLY COMPLETE.**
+      Sulfonamides, penicillin, tetracyclines, fluoroquinolones, cefixime and
+      azithromycin have each been recommended and each been abandoned.
+      **Ceftriaxone is what remains**, resistant isolates have been reported on
+      several continents, and dual therapy was given up in some guidelines
+      because the partner drug had already failed — a retreat to monotherapy on
+      the last effective class.
+      The organism is built for this. **Natural competence means it acquires
+      resistance rather than evolving it**, recombining DNA from commensal
+      *Neisseria* that share the pharynx and have been exposed to every
+      antibiotic their host ever took for anything else. The pharyngeal
+      infection is asymptomatic, untested in most settings, and cured least
+      reliably — so the reservoir, the incubator and the blind spot are the same
+      anatomical site.
+      Zoliflodacin is the first genuinely new class to complete phase 3 in
+      decades. **One new drug against an organism that has taken six is a
+      reprieve.** `scale: null` for the discovery; the development half is
+      priceable and is `no-sponsor`'s problem.
+    who_could: [academic, sponsor, manufacturer, philanthropy]
+    scale: null
+    standing: documented
+    src: reasoning
+
+  - kind: diagnosis
+    blocks: the susceptibility result the better test stopped producing
+    what: >
+      **THE DIAGNOSTIC IMPROVEMENT CREATED THE SURVEILLANCE GAP.** Nucleic acid
+      amplification replaced culture because it is more sensitive, works on urine
+      and self-collected swabs, and made screening asymptomatic people practical.
+      **It does not grow the organism, so it produces no susceptibility result.**
+      Culture is now done in a minority of cases, mostly at reference laboratories
+      and after treatment failure — so the global picture of where resistance
+      stands rests on a shrinking, non-random sample, at exactly the moment the
+      last drug class is under pressure.
+      **The fix exists and is not deployed.** Molecular assays can call
+      resistance determinants directly from a specimen — ciprofloxacin
+      susceptibility in particular — which would let an old drug be used in the
+      patients whose strain never lost it, sparing ceftriaxone for those who need
+      it. **Reviving a drug the organism defeated thirty years ago, one patient
+      at a time, is the cheapest way to slow the frontier**, and it needs an
+      assay and a guideline rather than a discovery.
+      Extragenital testing is the other half: the pharynx is where resistance is
+      assembled and most systems do not swab it.
+    who_could: [manufacturer, health-system, academic, government, payer]
+    scale: 4.0e8
+    standing: documented
+    src: reasoning
+
+  - kind: no-sponsor
+    blocks: developing antibiotics for an infection that is cured in one dose
+    what: >
+      **THE MARKET IS THE WORST SHAPE THERE IS.** A gonorrhoea antibiotic is
+      given once, to an otherwise healthy person, is cured by generic ceftriaxone
+      today, and a genuinely new agent would be reserved for resistant infection
+      — the smallest and least profitable possible use. Every incentive points
+      away from developing exactly the drug the world will need.
+      Zoliflodacin reaching phase 3 happened through a non-profit
+      product-development partnership rather than through a commercial
+      programme, which is the tell. **This is gaps.md #145's antibiotic market
+      failure in its purest form**, because unlike a hospital antibiotic there is
+      not even a severe-illness price to charge.
+      It is filed separately from the `knowledge` blocker deliberately: *nobody
+      knows what to target* and *nobody will pay to develop what has been
+      targeted* are different objects, and this record has both — which is the
+      pending `mechanism-unknown` / `no-candidate` split that Engpass has flagged
+      and the register has not made.
+    who_could: [sponsor, manufacturer, government, philanthropy, payer]
+    scale: 1.0e9
+    standing: documented
+    src: reasoning
+
+  - kind: knowledge
+    blocks: a vaccine that stopped looking impossible
+    what: >
+      **NATURAL INFECTION CONFERS NO USEFUL IMMUNITY AND REINFECTION IS
+      ORDINARY**, because the gonococcus antigenically varies its pili and Opa
+      proteins continuously. On the register's own template argument that puts it
+      firmly with tuberculosis, malaria and *Staphylococcus aureus*: **nature
+      supplies no protected population to read a correlate from.**
+      **And then something unexpected happened.** Outer-membrane-vesicle vaccines
+      made against *Neisseria meningitidis* serogroup B — a different organism,
+      for a different disease — were repeatedly associated with roughly 30-40%
+      protection against gonorrhoea in observational studies, presumably through
+      shared surface antigens. Gonococcal-specific candidates have followed into
+      trials.
+      **That is a correlate arriving by accident**, and it is the most
+      encouraging thing in this record. It is also modest protection from an
+      observational signal, and a 30-40% vaccine against an 82-million-case
+      infection would be transformative for transmission while leaving individual
+      patients still needing the drug that is running out. `scale: null`.
+    who_could: [academic, sponsor, manufacturer, philanthropy]
+    scale: null
+    standing: documented
+    src: reasoning
+    obstacles: [protective-immunity]
+
+  - kind: policy
+    blocks: screening the sites and the people that carry it
+    what: >
+      **MOST TRANSMISSION COMES FROM INFECTIONS NOBODY KNEW ABOUT.** Pharyngeal
+      and rectal infection is largely asymptomatic and is not routinely tested
+      for in many systems that test for this disease at all; a large share of
+      cervical infection is silent too. So the reservoir is invisible, the
+      resistance incubator is unexamined, and partner notification runs on the
+      minority who had symptoms.
+      Where extragenital screening of higher-incidence populations exists it
+      finds a great deal, and where sexual health services have been cut,
+      incidence has risen. **This is an ordinary delivery problem attached to an
+      extraordinary resistance problem** — and it is the half that money moves,
+      which is worth stating in a record whose other blockers are all
+      `scale: null` or a billion dollars.
+    who_could: [health-system, government, payer, nonprofit]
+    scale: 3.0e8
+    standing: documented
+    src: reasoning
+
+assertion:
+  id: FND-A-0118
+  rated: 2026-08-28
+  by: [claude, jeremy]

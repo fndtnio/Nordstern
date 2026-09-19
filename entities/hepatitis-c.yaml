@@ -1,0 +1,200 @@
+slug: hepatitis-c
+id: FND-D-0002
+name: chronic hepatitis C
+also: [HCV infection]
+mondo: MONDO:0005354
+kind: disease
+residual: false
+contested: false
+
+# Knowledge and capability both at the ceiling; ACCESS is the entire remaining
+# problem. The register's best argument for splitting efficacy from access.
+
+burden:
+  prevalence:
+    value: 5.0e7
+    units: people (chronic infection)
+    src: recall
+  deaths:
+    value: 2.4e5
+    units: deaths/year
+    src: recall
+
+survival:
+  horizon: 20 years from established chronic infection
+  untreated:
+    value: 0.8
+    units: >
+      fraction alive — chronic hepatitis C progresses to cirrhosis in roughly a
+      fifth to a third over two to three decades
+    src: recall
+  treated:
+    value: 0.97
+    units: >
+      fraction alive after a direct-acting antiviral course — **eight to twelve
+      weeks of tablets, cure in over 95%, and the disease is over.** Residual
+      mortality is in those who reach treatment with established cirrhosis,
+      where cancer risk persists after the virus is gone
+    src: recall
+  witness: >
+    **The register's cleanest cure, and it is worth stating what that means on
+    this axis.** A chronic progressive fatal illness converted into a finite
+    course of tablets, inside a decade, for a disease with no vaccine. The
+    remaining deaths are entirely about who gets diagnosed and who gets
+    treated — every blocker on this record is delivery or price.
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: risk-reduction
+  ongoing: none
+  efficacy:
+    value: 0.95
+    units: fraction-of-patients (sustained virologic response)
+    src: recall
+  access:
+    value: 0.2
+    units: fraction-of-patients (diagnosed and treated)
+    src: recall
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: n/a
+  witness: >
+    The register's most important measurement record, because of what happened
+    to it. `predictive` is `n/a` — not missing, but ABOLISHED. Interferon-era
+    treatment depended on genotype and host IL28B status to predict who might
+    respond; pan-genotypic direct-acting antivirals cure above 95% of
+    everyone, so the question stopped being worth asking. A measurement gap
+    can be closed by building a better treatment rather than a better test,
+    and this is the proof. Fibrosis staging remains prognostically useful for
+    post-cure cancer surveillance.
+
+toll:
+  severity: none
+  permanent: false
+  what: >
+    Eight to twelve weeks of well-tolerated oral tablets. The interferon era
+    it replaced was a different matter entirely — months of flu-like illness,
+    depression and cytopenias, with many patients unable to finish — so this
+    is also a record of a toll being ENGINEERED AWAY, which is a kind of
+    progress the intervention ladder alone cannot show. Note the standing
+    caveat: cure of the infection does not reverse cirrhosis already present.
+  incidence:
+    value: 0.0
+    units: fraction-of-treated (permanent harm)
+    src: recall
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    Direct-acting antivirals clear the virus in well over ninety percent, and
+    the liver does not necessarily come back. Fibrosis regresses in many, but
+    established cirrhosis frequently persists, and hepatocellular carcinoma
+    risk remains elevated after cure — which is why guidance keeps cured
+    cirrhotic patients in six-monthly surveillance indefinitely. Portal
+    hypertension and its complications persist with the architecture that
+    causes them.
+    The window and the residue are the same fact seen twice: cure before
+    cirrhosis and there is nothing left, cure after and the residue is
+    permanent. The register's brightest success story is brighter for people
+    who were reached early, and it has never been able to say so.
+  incidence:
+    value: 0.2
+    units: >
+      fraction-of-cured (established cirrhosis persisting after sustained
+      virological response, with lifelong cancer surveillance)
+    src: reasoning
+
+witness:
+  mechanism: >
+    The virus was identified by molecular cloning in 1989 without ever having
+    been seen — Choo, Houghton and colleagues pulled it out of a chimpanzee
+    infectious serum library; Nobel Prize 2020 to Alter, Houghton and Rice.
+    Replication, the NS3/4A protease, NS5A and the NS5B polymerase are
+    characterised well enough that three drug classes were designed against
+    them deliberately rather than found.
+  intervention: >
+    Direct-acting antivirals, from sofosbuvir in 2013 onward: 8-12 weeks,
+    oral, sustained virologic response above 95% across genotypes, and SVR is
+    a genuine cure — the virus does not return absent reinfection. Note the
+    limit the witness must record: curing the infection does not reverse
+    cirrhosis already established, so a cured patient may keep a residual
+    cancer risk. "Cured of the disease" and "restored to health" are not the
+    same claim.
+  prevention: >
+    No vaccine, and the antigenic variability that defeated vaccine efforts is
+    the same property the DAAs simply overpowered. Prevention is needle
+    programmes, blood-supply screening and infection control — real, but
+    `risk-reduction`.
+  access: >
+    The binding constraint by a wide margin. Most infections are undiagnosed;
+    of those diagnosed, a minority are treated. This is a screening,
+    financing and delivery failure sitting on top of a solved problem, and it
+    is why WHO elimination targets keep slipping despite a cure existing.
+
+holes:
+  - Why a minority clear the virus spontaneously while most do not is
+    incompletely explained.
+  - No vaccine, which matters for reinfection in ongoing-exposure populations
+    and means elimination depends entirely on find-and-treat.
+
+blockers:
+  - kind: diagnosis
+    blocks: direct-acting antivirals (curative)
+    what: >
+      The dominant blocker: most people with chronic hepatitis C do not know
+      they have it. A cure that requires being found is capped by screening,
+      and the infection is asymptomatic for decades. Nothing about this is
+      scientific.
+    who_could: [health-system, government, nonprofit]
+    scale: 1e9
+    standing: documented
+    src: recall
+  - kind: cost
+    blocks: direct-acting antivirals (curative)
+    what: >
+      Launch pricing was famously high in wealthy markets and rationing
+      followed. Voluntary licensing and generic manufacture have since brought
+      per-course costs in many low- and middle-income countries down by orders
+      of magnitude, so this blocker has genuinely receded — a useful case of a
+      `cost` blocker being cleared without new science.
+    who_could: [payer, manufacturer, government]
+    scale: 1e9
+    standing: documented
+    src: recall
+  - kind: logistics
+    blocks: find-and-treat programmes
+    what: >
+      The remaining burden sits disproportionately in populations that health
+      systems reach badly — people who inject drugs, prisoners, migrants —
+      where the obstacle is outreach and continuity, not medicine.
+    who_could: [health-system, nonprofit]
+    scale: 1e9
+    standing: documented
+    src: recall
+
+moved:
+  - date: 2014
+    axis: intervention
+    from: disease-modifying
+    to: curative
+    why: >
+      Interferon/ribavirin was toxic, long, and cured perhaps half. DAA
+      regimens moved the rung in roughly three years — the fastest transition
+      in this register, and the reason `moved` is a required field.
+    src:
+      id: PMID:24725239 doi:10.1056/NEJMoa1402454
+      retrieved: 2026-08-26
+      quote: >
+        Once-daily ledipasvir-sofosbuvir with or without ribavirin for 12 or 24
+        weeks was highly effective in previously untreated patients with HCV
+        genotype 1 infection. (Funded by Gilead Sciences; ION-1 ClinicalTrials.gov
+        number NCT01701401.).
+
+assertion:
+  id: FND-A-0002
+  rated: 2026-08-11
+  by: [claude, jeremy]

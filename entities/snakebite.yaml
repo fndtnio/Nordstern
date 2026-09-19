@@ -1,0 +1,196 @@
+slug: snakebite
+id: FND-D-0012
+name: snakebite envenoming
+also: [venomous snakebite]
+mondo: MONDO:0018669
+kind: disease
+residual: false
+contested: false
+
+# The canonical no-champion case, and the reason the blocker axis exists. A
+# curative treatment has existed since the 1890s. The market for it collapsed.
+# Roughly a hundred thousand people a year die of a solved problem.
+
+burden:
+  incidence:
+    value: 2.7e6
+    units: envenomings/year
+    src: recall
+  deaths:
+    value: 1.0e5
+    units: deaths/year
+    src: recall
+  disability:
+    value: 4.0e5
+    units: survivors/year with permanent sequelae (amputation, contracture, blindness)
+    src: recall
+
+survival:
+  horizon: 30 days from envenoming
+  untreated:
+    value: 0.85
+    units: >
+      fraction alive — **an average across species that differ enormously**, from
+      near-uniformly survivable to rapidly fatal without antivenom
+    src: reasoning
+  treated:
+    value: 0.98
+    units: >
+      fraction alive with appropriate antivenom given in time. **Three conditions,
+      each of which fails**: the right antivenom for the local species, a cold
+      chain to keep it, and arrival within hours
+    src: reasoning
+  witness: >
+    **The register's purest logistics record on this axis.** The treatment has
+    existed since 1895, costs little to make, and 100,000 people a year die
+    because it is not in the building they reach. Antivenom production has
+    *contracted* in Africa as manufacturers withdrew — a survival figure moving
+    backwards for commercial reasons.
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: risk-reduction
+  ongoing: low
+  efficacy:
+    value: 0.9
+    units: fraction-of-patients (timely, correctly matched antivenom)
+    src: recall
+  access:
+    value: 0.25
+    units: fraction-of-patients (receiving effective antivenom in time)
+    src: recall
+
+measurement:
+  diagnostic: clinical
+  prognostic: partial
+  predictive: none
+  witness: >
+    A measurement gap that is pure logistics rather than science. Antivenoms
+    are species-specific and the biting snake is usually unidentified, so the
+    right product is chosen by syndrome and geography and may simply not work.
+    A cheap point-of-care venom-detection dipstick would raise efficacy
+    without any new therapeutic — one of the highest-leverage and least
+    glamorous measurement problems in the register.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    Antivenom is heterologous animal protein: early anaphylactic reactions
+    occur in a substantial minority and serum sickness later, both usually
+    manageable where staff and adrenaline are present — which is not
+    everywhere. The permanent disability in this record comes from the VENOM
+    and from delay, not from the treatment, which is exactly why the access
+    blocker is the whole story.
+  incidence:
+    value: 0.05
+    units: fraction-of-treated (serious reaction to antivenom)
+    src: recall
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    Antivenom neutralises circulating venom. It does not reverse tissue that
+    the venom has already digested, which is why the delay between bite and
+    treatment decides the limb even when it does not decide the life.
+    Cytotoxic envenoming produces necrosis, compartment syndrome, secondary
+    infection, contracture and amputation; survivors are frequently left unable
+    to do the agricultural work they were doing when bitten, in populations
+    with no disability support and no alternative livelihood.
+    This is the record where the residue plainly exceeds the mortality in total
+    burden and is counted even less well. Deaths are estimated; permanent
+    disability after survival is barely estimated at all.
+  incidence:
+    value: 0.2
+    units: >
+      fraction-of-survivors (permanent physical disability — amputation,
+      contracture, chronic ulceration, or lasting loss of function)
+    src: reasoning
+
+witness:
+  mechanism: >
+    Venom toxinology is well characterised for the medically important species:
+    haemotoxic, neurotoxic and cytotoxic components are identified down to
+    individual toxin families, and the pathophysiology of coagulopathy,
+    neuromuscular blockade and local necrosis follows from them. Antivenom
+    works by direct neutralisation — as mechanistically clean as medicine gets.
+  intervention: >
+    `curative`. Adequate antivenom given in time reverses envenoming and the
+    patient goes home; the disease does not persist or recur. The technology is
+    from the 1890s — hyperimmunised animal plasma, essentially unchanged in
+    principle.
+  prevention: >
+    `risk-reduction`. Footwear, torches, protective agricultural practice and
+    bed nets all help; none is prophylaxis.
+  ongoing: >
+    `low` for survivors of systemic envenoming, but the amputations and
+    contractures are permanent and heavily concentrated in young agricultural
+    workers, so the disability burden substantially exceeds the death count.
+  access: >
+    The whole story. Antivenom is expensive relative to rural incomes, requires
+    cold chain, must be given in a facility able to manage anaphylaxis, and is
+    time-critical. Some products marketed in Africa have been shown to be
+    ineffective against local species — an active harm, since a family may sell
+    assets to buy a vial that cannot work.
+
+blockers:
+  - kind: no-sponsor
+    blocks: antivenom (curative)
+    what: >
+      A textbook market failure. Sanofi discontinued Fav-Afrique, an
+      effective pan-African antivenom, in 2014 — the stated reason was
+      commercial, and no equivalent replaced it. Buyers are among the poorest
+      rural populations on earth, so willingness-to-pay is near zero while
+      manufacturing cost is not. WHO added snakebite envenoming to its
+      neglected tropical diseases list in 2017 and set a target of halving
+      death and disability by 2030.
+    who_could: [nonprofit, philanthropy, government]
+    scale: 1e8
+    standing: documented
+    src: recall
+  - kind: manufacturing
+    blocks: antivenom (curative)
+    what: >
+      Production is 19th-century technology: immunise a horse, harvest and
+      purify plasma. Few producers, batch-variable potency, no requirement in
+      many markets to demonstrate efficacy against local species, and a cold
+      chain the destination cannot always keep. Recombinant or broadly
+      neutralising alternatives are in development and unproven.
+    who_could: [manufacturer, nonprofit, academic]
+    scale: 1e8
+    standing: documented
+    src: recall
+  - kind: diagnosis
+    blocks: antivenom (curative)
+    what: >
+      No cheap point-of-care test identifies the venom, so the right antivenom
+      is chosen by syndrome and geography. A dipstick would raise efficacy
+      without any new therapeutic.
+    who_could: [academic, nonprofit]
+    scale: 1e7
+    standing: documented
+    src: recall
+  - kind: logistics
+    obstacles: [cold-chain]
+    blocks: antivenom (curative)
+    what: >
+      Time-critical treatment for a rural population, needing refrigeration and
+      a facility able to handle severe reactions.
+    who_could: [health-system, nonprofit]
+    scale: 1e8
+    standing: documented
+    src: recall
+
+holes:
+  - Incidence and mortality are poorly measured because most deaths occur at
+    home and never enter a health system; published ranges are wide and the
+    true burden is probably understated.
+  - Whether recombinant antivenoms can match polyclonal plasma across the
+    breadth of species is unproven.
+
+assertion:
+  id: FND-A-0012
+  rated: 2026-08-11
+  by: [claude, jeremy]

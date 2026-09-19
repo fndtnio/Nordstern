@@ -1,0 +1,455 @@
+slug: cholera
+id: FND-D-0065
+name: cholera
+also: [Vibrio cholerae infection, Asiatic cholera]
+mondo: MONDO:0015766
+kind: disease
+residual: false
+contested: false
+
+# **THE TREATMENT IS SALT AND SUGAR DISSOLVED IN WATER, IT TAKES CASE FATALITY
+# FROM ABOUT FIFTY PERCENT TO UNDER ONE, AND THIS REGISTER RATES IT
+# `symptomatic`.**
+#
+# Oral rehydration solution costs a few cents a sachet. It rests on one
+# physiological insight — cholera toxin destroys the intestine's ability to
+# secrete water and leaves glucose-coupled sodium absorption intact — so adding
+# sugar to the salt lets a dying person absorb what they are losing.
+#
+# It does not touch the bacterium. The infection runs its course either way. **It
+# keeps you alive while it passes**, which is the schema's definition of
+# `symptomatic`, and gaps.md #98 has never had a sharper case: Marburg's
+# supportive care and COPD's bronchodilators were the previous ones, and neither
+# is a fifty-fold mortality reduction delivered by a sachet.
+#
+# This record rates `disease-modifying`, and **it earns that from the antibiotic**,
+# which is an optional adjunct that shortens the illness. **The intervention that
+# does the work scores lower than the one that does not.**
+#
+# TWO OTHER THINGS:
+#
+# 1. **THE BURDEN FIGURE IS NEGOTIATED, NOT MEASURED.** WHO's own estimate spans
+#    an order of magnitude, and the reason is that countries suppress cholera
+#    reporting because of what it does to trade and tourism. gaps.md #141.
+#
+# 2. **PEOPLE DIE OF CHOLERA WHERE THERE IS NO LONGER ANYBODY IN CHARGE.** Yemen,
+#    Haiti, Sudan, DRC, Syria. Not cost, not supply, not distance, not refusal —
+#    war and collapsed water infrastructure. The blocker taxonomy has twelve kinds
+#    and none of them is *there is no functioning state.* gaps.md #142.
+
+burden:
+  prevalence:
+    value: 2.9e6
+    units: >
+      cases/year worldwide — a midpoint of a WHO estimate spanning roughly 1.3 to
+      4 million, and the width of that range is the finding rather than a
+      limitation of the estimate
+    src: recall
+  deaths:
+    value: 9.5e4
+    units: >
+      deaths/year — a midpoint of an estimated range running from about 21,000 to
+      about 143,000, **nearly a seven-fold spread**, in a disease with a
+      pathognomonic presentation and a definitive rapid test
+    src: recall
+  note: >
+    **THE UNCERTAINTY IS DELIBERATE AND IT IS NOT EPIDEMIOLOGICAL.**
+    Cholera is notifiable under the International Health Regulations, and
+    declaring it has consequences: trade restrictions, tourism collapse,
+    reputational damage, and a signal that a state cannot supply clean water.
+    Countries report late, report partially, report under the heading of *acute
+    watery diarrhoea*, or do not report. The result is an official count that
+    everyone involved knows is low by a factor nobody can state.
+    So the register's two burden numbers here are **the product of a negotiation
+    between health ministries and their trade ministries**, and no `src` value in
+    this schema describes that (gaps.md #141).
+    The seventh cholera pandemic began in 1961 and has not ended. The current
+    burden concentrates in **Yemen — the largest outbreak in modern history, on
+    the order of 2.5 million suspected cases — Haiti, the Democratic Republic of
+    the Congo, Sudan, Syria and Zimbabwe.** The list is not a list of the poorest
+    countries. It is a list of the countries at war.
+
+survival:
+  course: acute
+  horizon: 7 days from onset of severe cholera
+  untreated:
+    value: 0.5
+    units: >
+      fraction alive — untreated severe cholera kills up to half of those it
+      affects, sometimes within hours, purely through fluid loss
+    src: recall
+  treated:
+    value: 0.995
+    units: >
+      fraction alive with aggressive rehydration — **case fatality below 1% with
+      salt, sugar and clean water, given fast enough.** Antibiotics shorten
+      shedding and are not what saves the patient
+    src: recall
+  witness: >
+    **Alongside `diarrhoeal-disease`, the largest survival gain in the register
+    achieved with no drug at all.** The intervention is rehydration and the
+    blocker is a functioning treatment centre within reach — which is why
+    cholera case fatality still exceeds 2% in outbreaks where that does not
+    exist.
+
+axes:
+  mechanism: established
+  intervention: disease-modifying
+  prevention: prophylaxis
+  ongoing: none
+  efficacy:
+    value: 0.98
+    units: >
+      fraction-of-patients (surviving with adequate rehydration) — **among the
+      highest in the register**, and it is achieved with fluid rather than with
+      medicine
+    src: recall
+  access:
+    value: 0.55
+    units: >
+      fraction-of-patients (reaching oral or intravenous rehydration within
+      hours) — and where outbreak case fatality runs at several percent instead
+      of under one, **this is the number that has failed**, not the efficacy
+    src: reasoning
+
+measurement:
+  diagnostic: clinical
+  prognostic: good
+  predictive: n/a
+  witness: >
+    DIAGNOSTIC is `clinical` and it is the right answer rather than a concession.
+    Profuse painless watery diarrhoea with the appearance of rice water, in an
+    adult, during an outbreak, is cholera. **Treatment does not wait for
+    confirmation and should not** — a person losing a litre an hour needs fluid
+    now, and a rapid diagnostic test or a stool culture changes nothing about what
+    to do next.
+    Confirmation matters for surveillance rather than for the patient: declaring
+    an outbreak, choosing where to vaccinate, and tracking resistance. Which is
+    precisely where the reporting incentives bite (gaps.md #141).
+    PROGNOSTIC is `good`, and it is assessed by looking at the patient. **Degree
+    of dehydration** — skin turgor, pulse, consciousness, whether they can drink —
+    sorts patients into three categories in under a minute and decides whether
+    they get a sachet, a sachet under observation, or a cannula. It is one of the
+    few `good` prognostic ratings in this register and the only one that requires
+    no instrument at all.
+    PREDICTIVE is `n/a` and it is the **good** version, the hepatitis C version:
+    the treatment works in essentially everybody, so there is no selection
+    question worth asking. Everyone gets rehydrated. The only real choice —
+    which antibiotic — turns on local resistance patterns rather than on the
+    patient.
+
+toll:
+  severity: none
+  permanent: false
+  what: >
+    **THE TREATMENT TAKES NOTHING. NOTHING AT ALL.**
+    Oral rehydration solution is glucose, sodium chloride, potassium chloride and
+    trisodium citrate in clean water. It has no toxicity, no permanent
+    consequence, no contraindication that matters, and it is given by a family
+    member with a cup. Intravenous Ringer's lactate for the severely dehydrated
+    is fluid.
+    A few days of doxycycline or azithromycin as an adjunct is the only
+    pharmacological exposure most patients have.
+    **So `toll: none`, `terms: clean`, `restored: restored`** — and cholera is
+    among the very few records in this corpus where a disease that kills half its
+    severe cases untreated leaves survivors exactly as they were.
+    That combination is worth stating on its own: **enormous lethality, complete
+    recovery, and a treatment that costs cents and harms nobody.** Nothing else in
+    the register looks like this, and the register's own capability rating does
+    not reflect it.
+  incidence:
+    value: 0.0
+    units: >
+      fraction-of-treated (permanent harm attributable to treatment) — zero, and
+      it is one of the few places in this register where that is literally true
+      rather than a rounding
+    src: reasoning
+
+# NO `residue` BLOCK, AND NONE IS NEEDED. Cholera survivors recover completely.
+# There is no chronic carriage of consequence, no organ damage in people who were
+# adequately rehydrated, and no sequelae. `restored` derives `restored`.
+#
+# The exception worth naming: children who survive severe dehydration with
+# inadequate or delayed treatment can suffer acute kidney injury and, rarely,
+# lasting renal impairment — which is a consequence of the treatment arriving
+# late rather than of the disease, and which the schema cannot express.
+
+window:
+  what: >
+    **HOURS. IT IS AMONG THE SHORTEST WINDOWS IN THIS REGISTER AND THE CHEAPEST
+    TO MEET.**
+    Severe cholera — *cholera gravis* — produces stool volumes that can exceed a
+    litre an hour and twenty litres a day. A previously healthy adult goes from
+    well to hypovolaemic shock in **six to twelve hours**, and dies of circulatory
+    collapse rather than of anything the bacterium does to tissue.
+    What closes the window is fluid loss. What holds it open is a sachet of
+    powder and clean water.
+    **Compare the rest of the corpus.** Stroke's window is ninety minutes and
+    needs a catheterisation laboratory. Myocardial infarction's is minutes and
+    needs a cardiologist. **Cholera's is hours and needs a cup**, and people still
+    die inside it — in Yemen, in Haiti, in Sudan — because there is no
+    rehydration point within reach.
+    The operational answer is well established and unglamorous: **oral rehydration
+    points pushed out into communities**, so that treatment is walking distance
+    rather than a day's travel, plus treatment centres for the severe. Where that
+    is done, outbreak case fatality falls below one percent. Where it is not, it
+    runs at several.
+  closes_on: >
+    hypovolaemic shock from fluid loss — six to twelve hours in severe disease,
+    and it is the volume rather than the organism that kills
+  caught_in_time:
+    value: 0.60
+    units: >
+      fraction-of-severe-cases (reaching rehydration before shock) — a reasoned
+      global estimate that varies enormously between a well-run camp and a
+      besieged city
+    src: reasoning
+
+# NO `strata` BLOCK. Roughly three quarters of infections are asymptomatic or
+# mild, a fifth moderate, and a few percent are cholera gravis — but **the answer
+# is the same for all of them**: rehydrate according to deficit. Severity changes
+# the volume and the route, not the capability.
+#
+# The split that would matter is not clinical. It is between cholera in a
+# functioning treatment centre and cholera in a conflict zone, where the
+# difference in case fatality is several-fold. **SCHEMA.md explicitly forbids
+# strata that are access tiers**, and that rule is right and it means the most
+# consequential division in this disease has nowhere to go except a single
+# `access` scalar.
+
+moved:
+  - date: 1971
+    axis: efficacy
+    from: 0.5
+    to: 0.98
+    why: >
+      **ORAL REHYDRATION SOLUTION, AND IT IS THE LARGEST EFFICACY MOVE IN THIS
+      REGISTER.**
+      The physiology was worked out in the 1960s: cholera toxin drives secretion
+      through cAMP and CFTR, and **glucose-coupled sodium co-transport in the
+      small intestine survives it untouched.** Add sugar to the salt and a dying
+      person can absorb what they are pouring out.
+      It was proven at scale in 1971, during the Bangladesh war, when Dilip
+      Mahalanabis ran out of intravenous fluid in a refugee camp and used oral
+      solution instead. Case fatality in his camps fell to a small fraction of
+      what it had been.
+      The Lancet later called it potentially the most important medical advance of
+      the twentieth century, and it is a sachet of powder.
+      **THE REGISTER RECORDS THIS ON THE `efficacy` AXIS BECAUSE THERE IS NOWHERE
+      ELSE TO PUT IT.** ORS does not change the `intervention` rung — it is
+      `symptomatic` by the schema's own words, and it stayed `symptomatic` through
+      the largest mortality reduction any single intervention in this corpus has
+      produced.
+    src:
+      id: PMID:28612784 doi:10.4103/2224-3151.206906
+      retrieved: 2026-08-26
+      quote: >
+        Oral fluid therapy of cholera among Bangladesh refugees[1].
+
+  - date: 2013
+    axis: prevention
+    from: risk-reduction
+    to: prophylaxis
+    why: >
+      **THE GLOBAL ORAL CHOLERA VACCINE STOCKPILE.** Killed whole-cell oral
+      vaccines had existed for years; the stockpile made them deployable into
+      outbreaks and into endemic hotspots, which converted a licensed product
+      into an actual prevention.
+      Roughly two-thirds protective for three to five years, with herd protection
+      at coverage, and **chronically short of supply** — see the manufacturing
+      blocker.
+      The much larger prevention predates all of it and is not medical: **sewers.**
+      Cholera left Europe and North America with water treatment and sanitation,
+      deliberately built, and the vaccine is a stopgap for places that do not yet
+      have them.
+
+witness:
+  mechanism: >
+    `established`, and **it may be the most completely specified chain in this
+    register — gene to toxin to second messenger to ion channel to the volume on
+    the floor to the treatment.**
+    *Vibrio cholerae* O1 or O139 is swallowed in contaminated water, survives the
+    stomach in sufficient numbers, colonises the small intestine, and secretes
+    **cholera toxin**. The toxin's A subunit ADP-ribosylates the Gs alpha subunit,
+    locking adenylate cyclase on; cAMP rises without limit; **CFTR opens and stays
+    open**; chloride pours into the lumen and water follows it osmotically. The
+    mucosa is not damaged and the patient is not septic. They are simply losing
+    water faster than any human can drink it.
+    **AND THE SAME MECHANISM EXPLAINS THE CURE.** The toxin acts on secretion and
+    leaves **glucose-coupled sodium co-transport intact**, so the absorptive
+    machinery still works. Salt alone is not absorbed; salt with glucose is. That
+    is the whole of oral rehydration therapy, and it is a therapy derived
+    directly from knowing the mechanism — which the register keeps looking for
+    and rarely finds.
+    **THE NAMED HOLE IS THE ENVIRONMENT.** *V. cholerae* is a free-living aquatic
+    organism, persisting in estuaries in association with copepods and plankton,
+    entering a viable-but-nonculturable state between epidemics. Why particular
+    lineages become pandemic, and how environmental reservoirs seed outbreaks, is
+    incompletely understood.
+    **It also settles a question dracunculiasis raised (gaps.md #85): cholera
+    cannot be eradicated.** The reservoir is the ocean.
+  intervention: >
+    `disease-modifying`, **and the rating is earned by the wrong thing.**
+    What saves lives is fluid. Oral rehydration solution for the great majority,
+    intravenous Ringer's lactate for the severely shocked, replaced according to
+    ongoing losses. Case fatality falls from around fifty percent in untreated
+    severe disease to **under one percent**. It is the largest and cheapest
+    mortality reduction in this corpus.
+    **And it is `symptomatic` by the schema's own definition** — it masks nothing
+    and cures nothing, it substitutes for a physiological function while the
+    infection runs its three to seven days.
+    The record reads `disease-modifying` because **antibiotics shorten the
+    illness**, roughly halving the duration and volume of diarrhoea and reducing
+    shedding. They are an adjunct. They are optional. Cholera is treated with
+    fluid alone every day, everywhere.
+    So the ladder's answer for this disease is supplied by the dispensable half
+    of the treatment, and the indispensable half is invisible to it. **gaps.md
+    #98 asked for a way to record benefit that is not course alteration. This is
+    the record that should settle it**: a fifty-fold mortality reduction, from a
+    sachet, scored below a doxycycline course.
+  prevention: >
+    `prophylaxis`, on the strength of the oral cholera vaccines — killed
+    whole-cell products, roughly two-thirds protective for three to five years,
+    delivered from a global stockpile into outbreaks and endemic hotspots since
+    2013, with real herd protection at coverage.
+    **THE REAL PREVENTION IS PLUMBING, AND IT WORKED COMPLETELY.**
+    John Snow removed the handle from the Broad Street pump in 1854 and founded
+    epidemiology doing it. Cholera then left Europe and North America — not
+    because of a drug or a vaccine, but because sewers were built and water was
+    treated. It is a **deliberate**, **non-medical**, and **total** prevention.
+    That matters for gaps.md #129, which said prevention can be unintentional and
+    the register can only record deliberate acts. **Cholera is the control case:
+    the prevention here was entirely deliberate, and it is still unrecordable**,
+    because it was civil engineering rather than medicine and it belongs to a
+    water ministry.
+    The vaccine is a stopgap for places that do not have the plumbing yet, and it
+    is correct to treat it that way.
+  ongoing: >
+    `none`, and it is meant literally. Cholera is an acute illness of a few days.
+    Survivors who were adequately rehydrated have no sequelae, no chronic
+    carriage of consequence, and nothing to take.
+    What is genuinely ongoing belongs to the population: surveillance,
+    prepositioned supplies, trained staff, and a stockpile funded continuously in
+    order to be used intermittently — the maintenance problem gaps.md #57 keeps
+    finding.
+
+holes:
+  - **The burden figures are the least reliable in this register and the reason is
+    political rather than technical.** WHO's own range spans roughly seven-fold on
+    deaths. Any analysis that ranks diseases by mortality will place cholera
+    somewhere between rabies and tuberculosis depending on which end of the range
+    is used.
+  - `access: 0.55` is a global average over settings that differ by an order of
+    magnitude — a well-run treatment centre and a besieged city — and the schema
+    forbids splitting them because access tiers are not strata.
+  - The relative contribution of vaccination, water and sanitation, and treatment
+    to any particular outbreak's outcome is contested and setting-specific.
+  - Antimicrobial resistance in *V. cholerae* is rising and is not quantified in
+    this record. It matters less than it would elsewhere because antibiotics are
+    adjunctive.
+  - Diarrhoeal disease generally is queued and unwritten, is a far larger burden,
+    and shares the entire treatment. Cholera is the dramatic member of a family
+    the register has not yet described.
+
+blockers:
+  - kind: logistics
+    blocks: getting a sachet of powder to somebody within hours
+    obstacles: []
+    what: >
+      **THE PRODUCT COSTS CENTS, IS ON EVERY ESSENTIAL MEDICINES LIST, AND PEOPLE
+      DIE SIX HOURS FROM IT.**
+      Cholera kills through fluid loss in half a day. The intervention is oral
+      rehydration solution, prepared with clean water, given by whoever is there.
+      Nothing about it is technically difficult and nothing about it is
+      expensive.
+      What is required is **presence**: oral rehydration points distributed into
+      communities so that treatment is walking distance rather than a day's
+      journey, treatment centres with intravenous fluid for the severe, clean
+      water to make the solution with, and staff who are not fleeing.
+      Where that exists, outbreak case fatality falls below one percent. Where it
+      does not, it runs at several percent, and the difference is entirely
+      delivery.
+      **This is the register's largest gap between what a treatment costs and
+      what it fails to reach** — and it sits inside the `access` scalar as a
+      single number.
+    who_could: [health-system, government, nonprofit, philanthropy]
+    scale: 2.0e9
+    standing: documented
+    src: recall
+
+  - kind: policy
+    blocks: water and sanitation, and honest reporting
+    obstacles: []
+    what: >
+      **TWO POLICY FAILURES AND THE SECOND MAKES THE FIRST HARDER TO SEE.**
+      *Water and sanitation.* Cholera is a faecal-oral disease and it left the
+      rich world with sewers. The intervention is pipes, treatment plants and
+      latrines, it belongs to water and infrastructure ministries, it costs
+      enormously more than any vaccine, and **it also prevents typhoid, hepatitis
+      A, most diarrhoeal disease and much of the soil-transmitted helminth burden
+      simultaneously** — four more records, and chargeable to none of them
+      (gaps.md #87).
+      *Reporting.* Declaring cholera triggers trade restrictions, tourism
+      collapse and international scrutiny, so countries report late, report
+      partially, or report *acute watery diarrhoea* instead. The undercount is
+      strategic rather than technical, and it distorts stockpile allocation,
+      research priority and every burden comparison this register might make
+      (gaps.md #141).
+      Article-by-article, the International Health Regulations exist to prevent
+      exactly this, and the incentives have proved stronger than the obligation.
+    who_could: [government, legislator, health-system, regulator, nonprofit]
+    scale: 5.0e10
+    standing: documented
+    src: recall
+
+  - kind: manufacturing
+    blocks: enough oral cholera vaccine to use it properly
+    obstacles: []
+    what: >
+      **SIXTH USE OF `manufacturing` IN SIXTY-FIVE RECORDS AND THE SIXTH TIME THE
+      PRODUCT IS OLD, CHEAP, BIOLOGICAL AND ESSENTIAL.**
+      Oral cholera vaccine demand has exceeded supply for years. Manufacturers
+      have left the market; production has at times rested on essentially a single
+      supplier; and in 2022 the international coordinating group **suspended the
+      standard two-dose regimen in favour of a single dose** specifically to
+      stretch the stockpile across more outbreaks. That is rationing, announced
+      as such, of a product costing a few dollars a course.
+      The pattern is now unmistakable across the register: snakebite antivenom,
+      benzathine penicillin, pandemic influenza vaccine, smallpox vaccine, BCG,
+      and cholera vaccine. **Every one is decades old, cheap, biologically
+      produced, essential, and chronically short**, and the reason is the same in
+      each case — a low-margin product that is difficult to make, for buyers who
+      cannot pay much, with no commercial reason for a second manufacturer to
+      enter.
+    who_could: [manufacturer, government, philanthropy, regulator, nonprofit]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: where it lives between outbreaks
+    obstacles: [burden-unknown]
+    what: >
+      The clinical science of cholera is close to finished — the toxin, the
+      second messenger, the channel and the therapy are all understood, and the
+      therapy follows from the mechanism.
+      **What is not understood is the environment.** *Vibrio cholerae* is a
+      free-living marine organism, persisting in estuaries with copepods and
+      plankton, entering a viable-but-nonculturable state between epidemics. Why
+      particular lineages become pandemic, how environmental reservoirs seed
+      outbreaks, and whether outbreaks can be predicted from climate and water
+      conditions are open.
+      **It also settles the eradication question definitively and negatively.**
+      Dracunculiasis' record warned that eradicability is revisable (gaps.md
+      #85); cholera's answer is not revisable, because **the reservoir is the
+      ocean.** No amount of case-finding removes it.
+      `scale: null`.
+    who_could: [academic, government, philanthropy, nonprofit]
+    scale: null
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0065
+  rated: 2026-08-24
+  by: [claude, jeremy]

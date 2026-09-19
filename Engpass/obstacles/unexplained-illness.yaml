@@ -1,0 +1,67 @@
+slug: unexplained-illness
+id: FND-O-0004
+name: What is actually wrong in these people?
+kind: entity
+resolution: open
+
+question: >
+  A patient has reproducible, disabling symptoms. Examination and investigation
+  find nothing that explains them. The illness is named after the symptoms
+  because there is nothing else to name it after.
+  ME/CFS, hypermobile Ehlers-Danlos syndrome, POTS, mast cell activation
+  syndrome, chronic low back pain, and — differently but not as differently as
+  is usually assumed — major depression and bipolar disorder.
+  **What is physically happening, and is each of these one thing?**
+  The second half is not rhetorical. These entities are defined by criteria
+  rather than by mechanism, so it is entirely possible that each name covers
+  several distinct diseases, or that several names cover one.
+
+what_it_unblocks: >
+  **NOTHING IS CURRENTLY POSSIBLE FOR THESE PATIENTS THAT DEPENDS ON KNOWING**,
+  which is the strongest form of unblocking there is. Every one of these records
+  in Nordstern rates its intervention `symptomatic` or worse, and every one rates
+  its mechanism `partial`, `correlates` or `none`.
+  It would also stop active harm. Two of these records appear in Nordstern's
+  *permanent toll while the course is unchanged* table: low back pain, with
+  opioid dependence and failed fusion inflicted at the scale of the world's
+  leading cause of disability, and ME/CFS, where graded exercise therapy was
+  standard for years and is reported to have caused lasting deterioration.
+  **hEDS is the sharpest case**: treatment is offered *in place of* a treatment
+  that does not exist, including craniocervical fusion on disputed indications.
+  And it would settle the arguments about whether these entities are real, which
+  currently consume energy that could go into answering the question. Nordstern
+  records `contested: true` on several of them and takes no side; the question
+  register is where the side gets taken, by evidence.
+
+why_hard: >
+  Because the entities may be wrong. Every tool available — a trial, a
+  biomarker search, a genetic study — requires a defined population, and the
+  populations here are defined by symptom criteria that were written by
+  committees to be usable rather than to be true. If hEDS is four diseases, a
+  study of hEDS finds nothing in all four.
+  **That is a circular trap and it is the specific difficulty**: you need the
+  mechanism to define the entity and the entity to find the mechanism. It is why
+  progress in this cluster has historically come from carving something
+  identifiable *out* of a symptom label — as coeliac disease, narcolepsy and
+  several autoimmune encephalitides were carved out of what had been functional
+  diagnoses.
+  There is also a sociological difficulty that is not incidental. These illnesses
+  are disproportionately diagnosed in women, have been treated as psychological
+  by default, and carry a research funding history far below their burden —
+  which suppressed exactly the work that would settle the question.
+
+holes:
+  - This is the entry most likely to be several questions, and the register
+    expects it to split. Grouping depression with hEDS is defensible only on the
+    structural ground that both are defined by criteria rather than mechanism.
+  - **Zero deaths are attached to any record citing this**, which makes it
+    invisible to any burden-weighted ranking and is the reason it is stated here
+    at all. The disability is very large and the mortality is near zero.
+  - It is not obvious that a mechanism exists to be found in every case. Some of
+    these may be genuinely emergent — real, disabling, and not reducible to a
+    lesion — and the register should be able to record that as an answer rather
+    than as a failure.
+
+asserted:
+  date: 2026-08-23
+  by: [claude, jeremy]

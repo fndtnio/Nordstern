@@ -1,0 +1,158 @@
+slug: me-cfs
+id: FND-D-0009
+name: myalgic encephalomyelitis / chronic fatigue syndrome
+also: [ME/CFS, chronic fatigue syndrome, SEID]
+common: chronic fatigue syndrome
+mondo: MONDO:0005404
+kind: syndrome
+residual: false
+contested: true
+
+# The frontier quadrant, and the record that forced `contested` to say
+# contested-BY-WHOM. Nothing is known and nothing works, and on top of that the
+# definition itself is disputed — which means even the prevalence figure is a
+# function of whose criteria you use.
+
+burden:
+  prevalence:
+    value: 2.0e7
+    units: people
+    src: recall
+  note: >
+    Estimates span roughly 0.1% to 0.8% of the population depending entirely on
+    which case definition is applied — an eightfold range that is a property of
+    the definitions, not of measurement error. Post-COVID cohorts have raised
+    both attention and counts. Any burden-weighted use of this file must carry
+    the range, not the midpoint.
+
+axes:
+  mechanism: correlates
+  intervention: none
+  prevention: none
+  ongoing: high
+  efficacy:
+    value: 0.0
+    units: fraction-of-patients (disease course altered by any proven therapy)
+    src: reasoning
+  access:
+    value: 0.0
+    units: fraction-of-patients (no course-altering treatment to access)
+    src: reasoning
+
+measurement:
+  diagnostic: clinical
+  prognostic: none
+  predictive: n/a
+  witness: >
+    The most fundamental measurement failure here, and it sits upstream of
+    everything else: with no biomarker there is no way to assemble a
+    comparable cohort, so trials cannot be pooled and the literature is partly
+    incommensurable with itself. Prognosis is unpredictable. `predictive` is
+    `n/a` rather than `none` because there is no course-altering therapy whose
+    response could be predicted — the gap is the treatment, not the test.
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    Uniquely in this register, the toll attaches to a therapy that is no
+    longer recommended. Graded exercise therapy was standard for years and is
+    reported by many patients to have caused lasting deterioration through
+    post-exertional malaise; NICE withdrew the recommendation in 2021 and
+    warned of harm. Current incidence is zero because nothing is offered, but
+    recording the historical toll matters — it is why the patient community's
+    distrust is a fact about the field rather than a personality trait.
+  incidence:
+    value: 0.0
+    units: fraction-of-treated (no treatment currently offered)
+    src: recall
+
+witness:
+  mechanism: >
+    `correlates`, and only just. Onset frequently follows an infection, which is
+    the most robust observation available. Reported findings include impaired
+    cellular energy metabolism, autonomic dysfunction, altered natural killer
+    cell function and reduced exercise capacity on two-day cardiopulmonary
+    testing — reproducible in some hands and not others, and not assembled into
+    any chain. There is no candidate mechanism that would survive a refutation
+    attempt.
+  intervention: >
+    `none`. Pacing and energy management help patients live with the illness
+    without claiming to alter it. The PACE trial (2011) reported benefit from
+    graded exercise therapy and CBT; it was heavily criticised for outcome
+    switching and for thresholds under which a participant could be
+    simultaneously "recovered" and eligible at entry, and reanalyses of the
+    released data found much smaller effects. NICE withdrew its recommendation
+    of graded exercise therapy in its 2021 guideline and warned of harm. The
+    honest state is: nothing proven, and a formerly recommended therapy now
+    considered potentially harmful. That is a rung below "we have tried and
+    failed" and should be legible as such.
+  prevention: >
+    `none`. With no established cause there is no exposure to avoid, beyond the
+    general prevention of the infections that often precede onset.
+  ongoing: >
+    `high`. Substantial fractions are housebound or bedbound; measured
+    quality-of-life scores compare unfavourably with many cancers and with
+    multiple sclerosis. The burden falls almost entirely on the patient because
+    there is no treatment burden to speak of — an inversion the schema should
+    not lose sight of.
+  contested: >
+    Contested along two separate lines, and the schema currently conflates them.
+    (1) Scientific: whether it is one entity, and whether the case definitions
+    select the same population. (2) Political and historical: whether it is
+    "real", a long dispute in which patient organisations and parts of the
+    psychiatric research community have been in open conflict, with real
+    consequences for research funding relative to burden. Recording a bare
+    `true` here loses the fact that these are different arguments with
+    different resolutions.
+
+holes:
+  - Whether it is one condition or several with a shared presentation. Everything
+    downstream depends on this and it is completely open.
+  - No biomarker, therefore no way to assemble a comparable cohort, therefore
+    trials that cannot be pooled. The methodological hole is upstream of the
+    biological one.
+  - Long COVID's relationship to ME/CFS is the most likely route to a mechanism
+    and to funding, precisely because it supplies a dated exposure and a
+    prospective cohort.
+
+blockers:
+  - kind: knowledge
+    obstacles: [unexplained-illness]
+    blocks: any treatment
+    what: >
+      No mechanism, therefore no target. The primary blocker and it is total.
+    who_could: [academic]
+    scale: null
+    standing: documented
+    src: recall
+  - kind: tooling
+    blocks: trials that can be pooled
+    what: >
+      Competing case definitions select different populations, so trials are
+      partly incommensurable with each other and no meta-analysis can be
+      trusted. An agreed cohort definition with a biomarker is upstream of every
+      therapeutic question — a measurement and coordination problem, and one a
+      well-run consortium could clear without any biological breakthrough.
+    who_could: [academic, nonprofit, patient-org, software]
+    scale: 1e8
+    standing: documented
+    src: recall
+  - kind: no-sponsor
+    blocks: research at a scale matching the burden
+    what: >
+      Research funding has been widely described as low relative to disease
+      burden compared with conditions of similar prevalence and severity. The
+      broad claim is commonly made and the specific comparison depends heavily
+      on which years, funders and denominators are chosen, so it is recorded as
+      `alleged` pending a proper look — precisely the kind of assertion this
+      field exists to force into the open.
+    who_could: [government, philanthropy, patient-org]
+    scale: 1e8
+    standing: alleged
+    src: recall
+
+assertion:
+  id: FND-A-0009
+  rated: 2026-08-11
+  by: [claude, jeremy]

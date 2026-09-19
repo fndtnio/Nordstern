@@ -1,0 +1,2049 @@
+{
+ "entries": {
+  "als|1993|mechanism": {
+   "accept": "8446170",
+   "candidates": [
+    {
+     "doi": "10.1038/362059a0",
+     "journal": "Nature",
+     "pmid": "8446170",
+     "quote": "Amyotrophic lateral sclerosis (ALS) is a degenerative disorder of motor neurons in the cortex, brainstem and spinal cord. Its cause is unknown and it is uniformly fatal, typically within five years. About 10% of cases are inherited as an autosomal dominant trait, with high penetrance after the sixth decade.",
+     "title": "Mutations in Cu/Zn superoxide dismutase gene are associated with familial amyotrophic lateral sclerosis.",
+     "year": "1993"
+    }
+   ],
+   "looked_at": "2026-08-28",
+   "query": "mutations[ti] AND superoxide[ti] AND dismutase[ti] AND familial[ti] AND 1993[dp]"
+  },
+  "als|1995|intervention": {
+   "accept": "8302340",
+   "candidates": [
+    {
+     "doi": "10.1056/NEJM199403033300901",
+     "journal": "N Engl J Med",
+     "pmid": "8302340",
+     "quote": "The antiglutamate agent riluzole appears to slow the progression of amyotrophic lateral sclerosis, and it may improve survival in patients with disease of bulbar onset.",
+     "title": "A controlled trial of riluzole in amyotrophic lateral sclerosis. ALS/Riluzole Study Group.",
+     "year": "1994"
+    }
+   ],
+   "looked_at": "2026-08-28",
+   "query": "controlled[ti] AND trial[ti] AND riluzole[ti] AND 1994[dp]"
+  },
+  "als|2011|mechanism": {
+   "accept": "21944778",
+   "candidates": [
+    {
+     "doi": "10.1016/j.neuron.2011.09.011",
+     "journal": "Neuron",
+     "pmid": "21944778",
+     "quote": "Several families have been reported with autosomal-dominant frontotemporal dementia (FTD) and amyotrophic lateral sclerosis (ALS), genetically linked to chromosome 9p21.",
+     "title": "Expanded GGGGCC hexanucleotide repeat in noncoding region of C9ORF72 causes chromosome 9p-linked FTD and ALS.",
+     "year": "2011"
+    }
+   ],
+   "looked_at": "2026-08-28",
+   "query": "DeJesus-Hernandez[au] AND C9ORF72[ti] AND 2011[dp]"
+  },
+  "als|2023|efficacy": {
+   "accept": "36129998",
+   "candidates": [
+    {
+     "doi": "10.1056/NEJMoa2204705",
+     "journal": "N Engl J Med",
+     "pmid": "36129998",
+     "quote": "In persons with SOD1 ALS, tofersen reduced concentrations of SOD1 in CSF and of neurofilament light chains in plasma over 28 weeks but did not improve clinical end points and was associated with adverse events.",
+     "title": "Trial of Antisense Oligonucleotide Tofersen for SOD1 ALS.",
+     "year": "2022"
+    }
+   ],
+   "looked_at": "2026-08-28",
+   "query": "antisense[ti] AND tofersen[ti] AND SOD1[ti] AND 2022[dp]"
+  },
+  "als|2024|efficacy": {
+   "candidates": [],
+   "looked_at": "2026-08-28",
+   "note": "PHOENIX phase 3 has no PubMed-indexed primary publication I could locate; results were announced by press release and the drug withdrawn. Left uncited rather than cited to a commentary.",
+   "query": "PHOENIX[ti] AND amyotrophic[ti]"
+  },
+  "alzheimers|1996|intervention": {},
+  "alzheimers|2023|intervention": {
+   "candidates": [
+    {
+     "doi": "10.1177/09727531231189925",
+     "journal": "Ann Neurosci",
+     "pmid": "38694720",
+     "quote": "Lecanemab: A Hopeful Alzheimer's Disease Treatment.",
+     "title": "Lecanemab: A Hopeful Alzheimer's Disease Treatment.",
+     "year": "2024"
+    },
+    {
+     "doi": "10.3233/JAD-221004",
+     "journal": "Dement Neuropsychol",
+     "pmid": "38189032",
+     "quote": "Alzheimer's research after full approval of lecanemab: impetus and variety.",
+     "title": "Alzheimer's research after full approval of lecanemab: impetus and variety.",
+     "year": "2023"
+    },
+    {
+     "doi": "10.1177/10600280231218253",
+     "journal": "Ann Pharmacother",
+     "pmid": "38095619",
+     "quote": "Lecanemab is a humanized monoclonal antibody that is selective for soluble amyloid-beta (A\u03b2) aggregates. Lecanemab has exhibited a decrease in brain A\u03b2 plaques and moderately less decline on clinical measures of cognitive function.",
+     "title": "Lecanemab: A Humanized Monoclonal Antibody for the Treatment of Early Alzheimer Disease.",
+     "year": "2024"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "lecanemab[ti] AND alzheimer[ti] AND 2023[dp]"
+  },
+  "anaemia|1926|intervention": {},
+  "anaemia|1941|prevention": {},
+  "anaemia|2001|mechanism": {
+   "accept": "11447267",
+   "candidates": [
+    {
+     "doi": "10.1073/pnas.151179498",
+     "journal": "Proc Natl Acad Sci U S A",
+     "pmid": "11447267",
+     "quote": "We previously reported the disruption of the murine gene encoding the transcription factor USF2 and its consequences on glucose-dependent gene regulation in the liver.",
+     "title": "Lack of hepcidin gene expression and severe tissue iron overload in upstream stimulatory factor 2 (USF2) knockout mice.",
+     "year": "2001"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "hepcidin[ti] AND iron[ti] AND overload[ti] AND 2001[dp]"
+  },
+  "asthma|1972|intervention": {},
+  "asthma|2015|efficacy": {},
+  "asthma|2019|efficacy": {},
+  "atrial-fibrillation|1989|efficacy": {
+   "accept": "2233931",
+   "candidates": [
+    {
+     "doi": "10.1056/NEJM199011293232201",
+     "journal": "N Engl J Med",
+     "pmid": "2233931",
+     "quote": "Long-term low-dose warfarin therapy is highly effective in preventing stroke in patients with non-rheumatic atrial fibrillation, and can be quite safe with careful monitoring.",
+     "title": "The effect of low-dose warfarin on the risk of stroke in patients with nonrheumatic atrial fibrillation.",
+     "year": "1990"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "warfarin[ti] AND atrial[ti] AND fibrillation[ti] AND stroke[ti] AND 1990[dp]"
+  },
+  "atrial-fibrillation|2010|toll": {
+   "candidates": [
+    {
+     "doi": "",
+     "journal": "Kardiol Pol",
+     "pmid": "20209677",
+     "quote": "[Dabigatran is better than warfarin in patients with atrial fibrillation and stroke risk - Re-Ly studies].",
+     "title": "[Dabigatran is better than warfarin in patients with atrial fibrillation and stroke risk - Re-Ly studies].",
+     "year": "2009"
+    },
+    {
+     "doi": "",
+     "journal": "N Engl J Med",
+     "pmid": "20050386",
+     "quote": "Dabigatran versus warfarin in patients with atrial fibrillation.",
+     "title": "Dabigatran versus warfarin in patients with atrial fibrillation.",
+     "year": "2009"
+    },
+    {
+     "doi": "",
+     "journal": "N Engl J Med",
+     "pmid": "20050385",
+     "quote": "Dabigatran versus warfarin in patients with atrial fibrillation.",
+     "title": "Dabigatran versus warfarin in patients with atrial fibrillation.",
+     "year": "2009"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "dabigatran[ti] AND warfarin[ti] AND fibrillation[ti] AND 2009[dp]"
+  },
+  "atrial-fibrillation|2020|efficacy": {},
+  "bladder-cancer|1976|toll": {},
+  "bladder-cancer|2023|efficacy": {},
+  "buruli-ulcer|2004|toll": {},
+  "cataract|1949|efficacy": {
+   "accept": "39983943",
+   "candidates": [
+    {
+     "doi": "10.1016/j.ajo.2025.02.020",
+     "journal": "Am J Ophthalmol",
+     "pmid": "39983943",
+     "quote": "Design and construction of the first intraocular lens by Ridley in 1949 proceeded rapidly, and early mistakes were made.",
+     "title": "Sir Harold Ridley (1906-2001) and His Cure for Aphakia: New Historical Insights Into the Invention of the Intraocular Lens.",
+     "year": "2025"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "Ridley intraocular acrylic lens implantation cataract history"
+  },
+  "cataract|1967|efficacy": {},
+  "cataract|1992|access": {},
+  "cerebral-palsy|1958|prevention": {},
+  "cerebral-palsy|2009|access": {},
+  "cerebral-palsy|2010|access": {
+   "accept": "16221780",
+   "candidates": [
+    {
+     "doi": "10.1056/NEJMcps050929",
+     "journal": "N Engl J Med",
+     "pmid": "16221780",
+     "quote": "Whole-body hypothermia reduces the risk of death or disability in infants with moderate or severe hypoxic-ischemic encephalopathy.",
+     "title": "Whole-body hypothermia for neonates with hypoxic-ischemic encephalopathy.",
+     "year": "2005"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "hypothermia[ti] AND neonates[ti] AND encephalopathy[ti] AND 2005[dp]"
+  },
+  "cerebral-palsy|2017|measurement": {},
+  "cervical-cancer|1960|access": {},
+  "cervical-cancer|2006|prevention": {
+   "accept": "17494925",
+   "candidates": [
+    {
+     "doi": "10.1056/NEJMoa061741",
+     "journal": "N Engl J Med",
+     "pmid": "17494925",
+     "quote": "In young women who had not been previously infected with HPV-16 or HPV-18, those in the vaccine group had a significantly lower occurrence of high-grade cervical intraepithelial neoplasia related to HPV-16 or HPV-18 than did those in the placebo group. (ClinicalTrials.gov number, NCT00092534 [ClinicalTrials.gov].).",
+     "title": "Quadrivalent vaccine against human papillomavirus to prevent high-grade cervical lesions.",
+     "year": "2007"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "quadrivalent vaccine against human papillomavirus to prevent high-grade cervical lesions FUTURE II"
+  },
+  "childhood-all|1948|intervention": {
+   "accept": "16803563",
+   "candidates": [
+    {
+     "doi": "10.1111/j.1365-2141.2006.06119.x",
+     "journal": "Br J Haematol",
+     "pmid": "16803563",
+     "quote": "Sidney Farber, world-renowned paediatric pathologist, made major contributions to his field but is acknowledged as the father of the modern era of chemotherapy. He recognised that folic acid stimulated leukaemic cell growth and enhanced disease progression.",
+     "title": "A tribute to Sidney Farber-- the father of modern chemotherapy.",
+     "year": "2006"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "Farber temporary remissions in acute leukemia in children produced by folic acid antagonist aminopterin 1948"
+  },
+  "childhood-all|1970|intervention": {},
+  "childhood-all|2000|efficacy": {},
+  "childhood-pneumonia|2000|access": {
+   "accept": "11061761",
+   "candidates": [
+    {
+     "doi": "10.1542/peds.106.5.965",
+     "journal": "Pediatrics",
+     "pmid": "11061761",
+     "quote": "Infants with SCD respond to 7VPnC vaccine with antibody concentrations that are at least as high as infants without SCD.",
+     "title": "Safety and immunogenicity of heptavalent pneumococcal vaccine conjugated to CRM(197) among infants with sickle cell disease. Pneumococcal Conjugate Vaccine Study Group.",
+     "year": "2000"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "heptavalent[ti] AND pneumococcal[ti] AND conjugate[ti] AND 2000[dp]"
+  },
+  "childhood-pneumonia|2023|prevention": {},
+  "cholera|1971|efficacy": {
+   "accept": "28612784",
+   "candidates": [
+    {
+     "doi": "10.4103/2224-3151.206906",
+     "journal": "WHO South East Asia J Public Health",
+     "pmid": "28612784",
+     "quote": "Oral fluid therapy of cholera among Bangladesh refugees[1].",
+     "title": "Oral fluid therapy of cholera among Bangladesh refugees[1].",
+     "year": "2012"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "oral[ti] AND fluid[ti] AND cholera[ti] AND refugees[ti]"
+  },
+  "cholera|2013|prevention": {},
+  "chronic-kidney-disease|1972|access": {},
+  "chronic-kidney-disease|2020|efficacy": {
+   "candidates": [
+    {
+     "doi": "10.1016/j.revmed.2020.11.008",
+     "journal": "Rev Med Interne",
+     "pmid": "33309055",
+     "quote": "[In patients with moderate chronic kidney disease with albuminuria, including non-diabetic patients, does dapagliflozin provide renal and cardiovascular benefit compared to placebo?].",
+     "title": "[In patients with moderate chronic kidney disease with albuminuria, including non-diabetic patients, does dapagliflozin provide renal and cardiovascular benefit compared to placebo?].",
+     "year": "2021"
+    },
+    {
+     "doi": "10.1093/eurheartj/ehaa890",
+     "journal": "Eur Heart J",
+     "pmid": "33188396",
+     "quote": "Management of chronic kidney disease and its cardiovascular complications: has the dawn of a new era arrived? Comment on 'Dapagliflozin in Patients with Chronic Kidney Disease'.",
+     "title": "Management of chronic kidney disease and its cardiovascular complications: has the dawn of a new era arrived? Comment on 'Dapagliflozin in Patients with Chronic Kidney Disease'.",
+     "year": "2020"
+    },
+    {
+     "doi": "10.1161/CIRCULATIONAHA.120.051675",
+     "journal": "Circulation",
+     "pmid": "33186054",
+     "quote": "Dapagliflozin reduced the risk of kidney failure, death from cardiovascular causes or hospitalization for heart failure, and prolonged survival in people with chronic kidney disease, with or without type 2 diabetes, independently of the presence of concomitant cardiovascular disease.",
+     "title": "Effect of Dapagliflozin on Clinical Outcomes in Patients With Chronic Kidney Disease, With and Without Cardiovascular Disease.",
+     "year": "2021"
+    }
+   ],
+   "error": "HTTP Error 500: Internal Server Error",
+   "looked_at": "2026-08-26",
+   "query": "dapagliflozin[ti] AND chronic[ti] AND kidney[ti] AND 2020[dp]"
+  },
+  "chronic-kidney-disease|2021|access": {},
+  "cirrhosis|2014|efficacy": {},
+  "cirrhosis|2019|access": {},
+  "cirrhosis|2024|efficacy": {
+   "candidates": [
+    {
+     "doi": "10.1097/MS9.0000000000002770",
+     "journal": "Ann Med Surg (Lond)",
+     "pmid": "40213239",
+     "quote": "FDA approves Resmetirom: groundbreaking treatment for NASH liver scarring in moderate to advanced fibrosis.",
+     "title": "FDA approves Resmetirom: groundbreaking treatment for NASH liver scarring in moderate to advanced fibrosis.",
+     "year": "2025"
+    },
+    {
+     "doi": "",
+     "journal": "Gastroenterol Hepatol (N Y)",
+     "pmid": "39896969",
+     "quote": "Effect of Resmetirom or Placebo in NASH Fibrosis Patients With <5% or >5% Weight Loss and/or on Baseline GLP-1 Therapy in the MAESTRO-NASH 52-Week Serial Liver Biopsy Study.",
+     "title": "Effect of Resmetirom or Placebo in NASH Fibrosis Patients With <5% or >5% Weight Loss and/or on Baseline GLP-1 Therapy in the MAESTRO-NASH 52-Week Serial Liver Biopsy Study.",
+     "year": "2024"
+    },
+    {
+     "doi": "",
+     "journal": "Gastroenterol Hepatol (N Y)",
+     "pmid": "39896967",
+     "quote": "Resmetirom Effects on NASH With Liver Fibrosis in Patients With NASH Genetic Risk Alleles.",
+     "title": "Resmetirom Effects on NASH With Liver Fibrosis in Patients With NASH Genetic Risk Alleles.",
+     "year": "2024"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "resmetirom[ti] AND NASH[ti] AND 2024[dp]"
+  },
+  "cml|2001|intervention": {
+   "accept": "11287972",
+   "candidates": [
+    {
+     "doi": "10.1056/NEJM200104053441401",
+     "journal": "N Engl J Med",
+     "pmid": "11287972",
+     "quote": "STI571 is well tolerated and has significant antileukemic activity in patients with CML in whom treatment with interferon alfa had failed.",
+     "title": "Efficacy and safety of a specific inhibitor of the BCR-ABL tyrosine kinase in chronic myeloid leukemia.",
+     "year": "2001"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "Efficacy and safety of a specific inhibitor of the BCR-ABL tyrosine kinase in chronic myeloid leukemia Druker 2001"
+  },
+  "cml|2016|access": {},
+  "colorectal-cancer|2000|access": {},
+  "congenital-heart-disease|1944|intervention": {},
+  "congenital-heart-disease|1954|intervention": {},
+  "congenital-heart-disease|2011|access": {},
+  "covid-19|2020|intervention": {
+   "candidates": [
+    {
+     "doi": "10.1016/j.eclinm.2020.100590",
+     "journal": "BMC Infect Dis",
+     "pmid": "34937556",
+     "quote": "Ruxolitinib may be an alternative initial anti-cytokine therapy with comparable effectiveness in patients with potential risks of steroid administration. Patients with a high fever (\u2265 38.5 \u00b0C) at admission may potentially benefit from ruxolitinib administration.",
+     "title": "Ruxolitinib versus dexamethasone in hospitalized adults with COVID-19: multicenter matched cohort study.",
+     "year": "2021"
+    },
+    {
+     "doi": "10.1016/j.thromres.2015.12.001",
+     "journal": "J Thromb Thrombolysis",
+     "pmid": "34498156",
+     "quote": "Direct oral anticoagulants (DOACs) are not recommended in COVID-19 patients receiving dexamethasone because of potential drug-drug and drug-disease interactions affecting anticoagulant concentration and activity.",
+     "title": "Direct oral anticoagulant plasma levels in hospitalized COVID-19 patients treated with dexamethasone.",
+     "year": "2022"
+    },
+    {
+     "doi": "10.1001/jama.2020.22389",
+     "journal": "Ann Intern Med",
+     "pmid": "34399060",
+     "quote": "Dexamethasone, an evidence-based treatment of COVID-19, may be underused among persons who are mechanically ventilated. The use of remdesivir and dexamethasone varied across health systems, suggesting variation in patient case mix, drug access, treatment protocols, and quality of care.",
+     "title": "Use of Hydroxychloroquine, Remdesivir, and Dexamethasone Among Adults Hospitalized With COVID-19 in the United States : A Retrospective Cohort Study.",
+     "year": "2021"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "dexamethasone[ti] AND hospitalized[ti] AND covid[ti] AND 2021[dp]"
+  },
+  "covid-19|2020|prevention": {
+   "accept": "33301246",
+   "candidates": [
+    {
+     "doi": "10.1056/NEJMoa2027906",
+     "journal": "N Engl J Med",
+     "pmid": "33301246",
+     "quote": "A two-dose regimen of BNT162b2 conferred 95% protection against Covid-19 in persons 16 years of age or older. Safety over a median of 2 months was similar to that of other viral vaccines. (Funded by BioNTech and Pfizer; ClinicalTrials.gov number, NCT04368728.).",
+     "title": "Safety and Efficacy of the BNT162b2 mRNA Covid-19 Vaccine.",
+     "year": "2020"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "BNT162b2[ti] AND vaccine[ti] AND 2020[dp]"
+  },
+  "covid-19|2021|intervention": {
+   "candidates": [
+    {
+     "doi": "10.1016/j.ijsu.2014.07.013",
+     "journal": "J Am Coll Clin Pharm",
+     "pmid": "36718381",
+     "quote": "A comprehensive program to mitigate drug interactions and prescribe nirmatrelvir-ritonavir ensured timely access to COVID-19 therapy, which may be associated with the prevention of hospitalization and death.",
+     "title": "Nirmatrelvir-ritonavir treatment of COVID-19 in a high-risk patient population: A retrospective observational study.",
+     "year": "2023"
+    },
+    {
+     "doi": "10.3389/fimmu.2021.763412",
+     "journal": "Front Med (Lausanne)",
+     "pmid": "36698815",
+     "quote": "COVID-19 in immunocompromised patients is difficult to treat. SARS-CoV-2 interaction with the host immune system and the role of therapy still remains only partly understood. There are no data regarding the use of monoclonal antibodies and the combination of two antivirals in fighting viral replication and disease progression.",
+     "title": "Case report: Sotrovimab, remdesivir and nirmatrelvir/ritonavir combination as salvage treatment option in two immunocompromised patients hospitalized for COVID-19.",
+     "year": "2022"
+    },
+    {
+     "doi": "",
+     "journal": "Acta Med Indones",
+     "pmid": "36624705",
+     "quote": "Coronavirus disease 2019 (COVID-19) is a respiratory tract disease caused by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). With the complexity of multimorbidity in Indonesia, it is crucial to find another line of antiviral for COVID-19.",
+     "title": "Molnupiravir and Nirmatrelvir/Ritonavir: The New Available Antiviral Options for COVID-19.",
+     "year": "2022"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "nirmatrelvir[ti] AND covid[ti] AND 2022[dp]"
+  },
+  "cre|2015|efficacy": {},
+  "cre|2019|toll": {},
+  "cystic-fibrosis|1989|mechanism": {
+   "candidates": [
+    {
+     "doi": "",
+     "journal": "Lakartidningen",
+     "pmid": "2593759",
+     "quote": "[Identification of the cystic fibrosis gene. Better therapeutic methods can be expected].",
+     "title": "[Identification of the cystic fibrosis gene. Better therapeutic methods can be expected].",
+     "year": "1989"
+    },
+    {
+     "doi": "10.1126/science.2772657",
+     "journal": "Science",
+     "pmid": "2772657",
+     "quote": "An understanding of the basic defect in the inherited disorder cystic fibrosis requires cloning of the cystic fibrosis gene and definition of its protein product. In the absence of direct functional information, chromosomal map position is a guide for locating the gene.",
+     "title": "Identification of the cystic fibrosis gene: chromosome walking and jumping.",
+     "year": "1989"
+    },
+    {
+     "doi": "10.1126/science.2570460",
+     "journal": "Science",
+     "pmid": "2570460",
+     "quote": "Approximately 70 percent of the mutations in cystic fibrosis patients correspond to a specific deletion of three base pairs, which results in the loss of a phenylalanine residue at amino acid position 508 of the putative product of the cystic fibrosis gene.",
+     "title": "Identification of the cystic fibrosis gene: genetic analysis.",
+     "year": "1989"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "identification[ti] AND cystic[ti] AND fibrosis[ti] AND gene[ti] AND 1989[dp]"
+  },
+  "cystic-fibrosis|2012|intervention": {
+   "accept": "22047557",
+   "candidates": [
+    {
+     "doi": "10.1056/NEJMoa1105185",
+     "journal": "N Engl J Med",
+     "pmid": "22047557",
+     "quote": "Ivacaftor was associated with improvements in lung function at 2 weeks that were sustained through 48 weeks. Substantial improvements were also observed in the risk of pulmonary exacerbations, patient-reported respiratory symptoms, weight, and concentration of sweat chloride.",
+     "title": "A CFTR potentiator in patients with cystic fibrosis and the G551D mutation.",
+     "year": "2011"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "potentiator[ti] AND G551D[ti] AND 2011[dp]"
+  },
+  "cystic-fibrosis|2019|efficacy": {
+   "accept": "31697873",
+   "candidates": [
+    {
+     "doi": "10.1056/NEJMoa1908639",
+     "journal": "N Engl J Med",
+     "pmid": "31697873",
+     "quote": "Elexacaftor-tezacaftor-ivacaftor was efficacious in patients with cystic fibrosis with Phe508del-minimal function genotypes, in whom previous CFTR modulator regimens were ineffective. (Funded by Vertex Pharmaceuticals; VX17-445-102 ClinicalTrials.gov number, NCT03525444.).",
+     "title": "Elexacaftor-Tezacaftor-Ivacaftor for Cystic Fibrosis with a Single Phe508del Allele.",
+     "year": "2019"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "elexacaftor[ti] AND phe508del[ti] AND 2019[dp]"
+  },
+  "diarrhoeal-disease|1980|access": {},
+  "diarrhoeal-disease|2004|efficacy": {
+   "candidates": [
+    {
+     "doi": "10.1016/j.jss.2018.01.018",
+     "journal": "J Surg Res",
+     "pmid": "29661284",
+     "quote": "Pyruvate was advantageous over citrate in low-osmolar ORS for protection of organs and survival; pyruvate, but not citrate, in the ORS corrected hypoxic lactic acidosis in rats subjected to lethal burn shock in 24 h.",
+     "title": "Pyruvate in reduced osmolarity oral rehydration salt corrected lactic acidosis in sever scald rats.",
+     "year": "2018"
+    },
+    {
+     "doi": "",
+     "journal": "Zhonghua Er Ke Za Zhi",
+     "pmid": "17706059",
+     "quote": "ROORS was shown to be effective and safe in the treatment of mild and moderate dehydration induced by acute diarrhea. Compared to ORS II, ROORS could decrease the intravenous supplement of fluid and lower the risk of hypernatremia.",
+     "title": "[Efficacy and safety of reduced osmolarity oral rehydration salts in treatment of dehydration in children with acute diarrhea--a multicenter, randomized, double blind clinical trial].",
+     "year": "2007"
+    },
+    {
+     "doi": "10.1001/jama.296.5.567",
+     "journal": "JAMA",
+     "pmid": "16882963",
+     "quote": "The risk of symptoms associated with hyponatremia in patients treated with the reduced osmolarity ORS is minimal and did not increase with the change in formulation.",
+     "title": "Symptomatic hyponatremia during treatment of dehydrating diarrheal disease with reduced osmolarity oral rehydration solution.",
+     "year": "2006"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "reduced-osmolarity[ti] AND rehydration[ti]"
+  },
+  "duchenne|1986|mechanism": {
+   "accept": "3773991",
+   "candidates": [
+    {
+     "doi": "10.1038/323646a0",
+     "journal": "Nature",
+     "pmid": "3773991",
+     "quote": "Duchenne muscular dystrophy (DMD) and the less severe Becker muscular dystrophy (BMD) are human X-linked muscle-wasting disorders that have been localized to the band Xp21 by genetic linkage analysis and cytologically detectable abnormalities.",
+     "title": "Isolation of candidate cDNAs for portions of the Duchenne muscular dystrophy gene.",
+     "year": "1986"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "Isolation of candidate cDNAs for portions of the Duchenne muscular dystrophy gene Monaco Kunkel 1986"
+  },
+  "duchenne|1989|intervention": {
+   "accept": "2811967",
+   "candidates": [
+    {
+     "doi": "10.1056/NEJM198911233212117",
+     "journal": "N Engl J Med",
+     "pmid": "2811967",
+     "quote": "Prednisone therapy for Duchenne's muscular dystrophy.",
+     "title": "Prednisone therapy for Duchenne's muscular dystrophy.",
+     "year": "1989"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "prednisone[ti] AND duchenne[ti] AND 1989[dp]"
+  },
+  "duchenne|2004|efficacy": {},
+  "gastric-cancer|1994|prevention": {
+   "accept": "7715068",
+   "candidates": [
+    {
+     "doi": "",
+     "journal": "IARC Monogr Eval Carcinog Risks Hum",
+     "pmid": "7715068",
+     "quote": "Schistosomes, liver flukes and Helicobacter pylori.",
+     "title": "Schistosomes, liver flukes and Helicobacter pylori.",
+     "year": "1994"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "schistosomes[ti] AND helicobacter[ti] AND 1994[dp]"
+  },
+  "gastric-cancer|2000|toll": {},
+  "glioblastoma|2005|efficacy": {
+   "accept": "15758009",
+   "candidates": [
+    {
+     "doi": "10.1056/NEJMoa043330",
+     "journal": "N Engl J Med",
+     "pmid": "15758009",
+     "quote": "The addition of temozolomide to radiotherapy for newly diagnosed glioblastoma resulted in a clinically meaningful and statistically significant survival benefit with minimal additional toxicity.",
+     "title": "Radiotherapy plus concomitant and adjuvant temozolomide for glioblastoma.",
+     "year": "2005"
+    }
+   ],
+   "looked_at": "2026-08-28",
+   "query": "radiotherapy[ti] AND concomitant[ti] AND adjuvant[ti] AND temozolomide[ti] AND 2005[dp]"
+  },
+  "glioblastoma|2015|efficacy": {
+   "accept": "26670971",
+   "candidates": [
+    {
+     "doi": "10.1001/jama.2015.16669",
+     "journal": "JAMA",
+     "pmid": "26670971",
+     "quote": "In this interim analysis of 315 patients with glioblastoma who had completed standard chemoradiation therapy, adding TTFields to maintenance temozolomide chemotherapy significantly prolonged progression-free and overall survival.",
+     "title": "Maintenance Therapy With Tumor-Treating Fields Plus Temozolomide vs Temozolomide Alone for Glioblastoma: A Randomized Clinical Trial.",
+     "year": "2015"
+    }
+   ],
+   "looked_at": "2026-08-28",
+   "query": "tumor-treating[ti] AND fields[ti] AND glioblastoma[ti] AND 2017[dp]"
+  },
+  "glioblastoma|2021|measurement": {
+   "accept": "34185076",
+   "candidates": [
+    {
+     "doi": "10.1093/neuonc/noab106",
+     "journal": "Neuro Oncol",
+     "pmid": "34185076",
+     "quote": "The fifth edition of the WHO Classification of Tumors of the Central Nervous System (CNS), published in 2021, is the sixth version of the international standard for the classification of brain and spinal cord tumors.",
+     "title": "The 2021 WHO Classification of Tumors of the Central Nervous System: a summary.",
+     "year": "2021"
+    }
+   ],
+   "looked_at": "2026-08-28",
+   "query": "Louis[au] AND WHO[ti] AND classification[ti] AND 2021[dp] AND \"Neuro-oncology\"[ta]"
+  },
+  "hat|2019|toll": {},
+  "head-neck-cancer|1991|toll": {
+   "accept": "2034244",
+   "candidates": [
+    {
+     "doi": "10.1056/NEJM199106133242402",
+     "journal": "N Engl J Med",
+     "pmid": "2034244",
+     "quote": "These preliminary results suggest a new role for chemotherapy in patients with advanced laryngeal cancer and indicate that a treatment strategy involving induction chemotherapy and definitive radiation therapy can be effective in preserving the larynx in a high percentage of patients, without compromising overall survival.",
+     "title": "Induction chemotherapy plus radiation compared with surgery plus radiation in patients with advanced laryngeal cancer.",
+     "year": "1991"
+    }
+   ],
+   "looked_at": "2026-08-27",
+   "query": "induction[ti] AND surgery[ti] AND laryngeal[ti] AND 1991[dp]"
+  },
+  "head-neck-cancer|2006|efficacy": {
+   "accept": "16467544",
+   "candidates": [
+    {
+     "doi": "10.1056/NEJMoa053422",
+     "journal": "N Engl J Med",
+     "pmid": "16467544",
+     "quote": "Treatment of locoregionally advanced head and neck cancer with concomitant high-dose radiotherapy plus cetuximab improves locoregional control and reduces mortality without increasing the common toxic effects associated with radiotherapy to the head and neck. (ClinicalTrials.gov number, NCT00004227.)",
+     "title": "Radiotherapy plus cetuximab for squamous-cell carcinoma of the head and neck.",
+     "year": "2006"
+    }
+   ],
+   "looked_at": "2026-08-27",
+   "query": "radiotherapy[ti] AND cetuximab[ti] AND head[ti] AND neck[ti] AND 2006[dp]"
+  },
+  "head-neck-cancer|2011|toll": {
+   "accept": "21236730",
+   "candidates": [
+    {
+     "doi": "10.1016/S1470-2045(10)70290-4",
+     "journal": "Lancet Oncol",
+     "pmid": "21236730",
+     "quote": "Sparing the parotid glands with IMRT significantly reduces the incidence of xerostomia and leads to recovery of saliva secretion and improvements in associated quality of life, and thus strongly supports a role for IMRT in squamous-cell carcinoma of the head and neck.",
+     "title": "Parotid-sparing intensity modulated versus conventional radiotherapy in head and neck cancer (PARSPORT): a phase 3 multicentre randomised controlled trial.",
+     "year": "2011"
+    }
+   ],
+   "looked_at": "2026-08-27",
+   "query": "parotid-sparing[ti] AND intensity-modulated[ti] AND 2011[dp]"
+  },
+  "head-neck-cancer|2019|efficacy": {
+   "accept": "31679945",
+   "candidates": [
+    {
+     "doi": "10.1016/S0140-6736(19)32591-7",
+     "journal": "Lancet",
+     "pmid": "31679945",
+     "quote": "Based on the observed efficacy and safety, pembrolizumab plus platinum and 5-fluorouracil is an appropriate first-line treatment for recurrent or metastatic HNSCC and pembrolizumab monotherapy is an appropriate first-line treatment for PD-L1-positive recurrent or metastatic HNSCC.",
+     "title": "Pembrolizumab alone or with chemotherapy versus cetuximab with chemotherapy for recurrent or metastatic squamous cell carcinoma of the head and neck (KEYNOTE-048): a randomised, open-label, phase 3 study.",
+     "year": "2019"
+    }
+   ],
+   "looked_at": "2026-08-27",
+   "query": "pembrolizumab[ti] AND cetuximab[ti] AND recurrent[ti] AND 2019[dp]"
+  },
+  "head-neck-cancer|2026|efficacy": {
+   "accept": "42218660",
+   "candidates": [
+    {
+     "doi": "10.1200/JCO-26-01042",
+     "journal": "J Clin Oncol",
+     "pmid": "42218660",
+     "quote": "Single-agent paclitaxel or cetuximab after immune checkpoint inhibitor (ICI) and chemotherapy demonstrated objective response rates (ORRs) of 21%-24% in recurrent/metastatic (R/M) head/neck squamous cell cancer (HNSCC). Epidermal growth factor receptor (EGFR) and MET are overexpressed in R/M HNSCC.",
+     "title": "Amivantamab in Recurrent/Metastatic Head and Neck Squamous Cell Cancer After Checkpoint Inhibitor and Chemotherapy: Pivotal Results From the Phase Ib/II OrigAMI-4 Study.",
+     "year": "2026"
+    }
+   ],
+   "looked_at": "2026-08-27",
+   "query": "amivantamab[ti] AND head[ti] AND neck[ti] AND 2026[dp]"
+  },
+  "hearing-loss|1984|intervention": {},
+  "hearing-loss|1999|access": {},
+  "hearing-loss|2022|access": {},
+  "heart-failure|1987|intervention": {
+   "accept": "2883575",
+   "candidates": [
+    {
+     "doi": "10.1056/NEJM198706043162301",
+     "journal": "N Engl J Med",
+     "pmid": "2883575",
+     "quote": "To evaluate the influence of the angiotensin-converting-enzyme inhibitor enalapril (2.5 to 40 mg per day) on the prognosis of severe congestive heart failure (New York Heart Association [NYHA] functional class IV), we randomly assigned 253 patients in a double-blind study to receive either placebo (n = 126) or enalapril (n = 127).",
+     "title": "Effects of enalapril on mortality in severe congestive heart failure. Results of the Cooperative North Scandinavian Enalapril Survival Study (CONSENSUS).",
+     "year": "1987"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "CONSENSUS enalapril severe congestive heart failure mortality 1987 N Engl J Med"
+  },
+  "heart-failure|1999|efficacy": {
+   "accept": "10376614",
+   "candidates": [
+    {
+     "doi": "",
+     "journal": "Lancet",
+     "pmid": "10376614",
+     "quote": "Metoprolol CR/XL once daily in addition to optimum standard therapy improved survival. The drug was well tolerated.",
+     "title": "Effect of metoprolol CR/XL in chronic heart failure: Metoprolol CR/XL Randomised Intervention Trial in Congestive Heart Failure (MERIT-HF).",
+     "year": "1999"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "MERIT-HF metoprolol CR/XL randomised intervention trial congestive heart failure Lancet 1999"
+  },
+  "heart-failure|2021|efficacy": {
+   "candidates": [
+    {
+     "doi": "10.26442/00403660.2021.12.201281",
+     "journal": "Ter Arkh",
+     "pmid": "36286678",
+     "quote": "\u041d\u0430 \u0441\u043e\u0441\u0442\u043e\u044f\u0432\u0448\u0435\u043c\u0441\u044f 16 \u0441\u0435\u043d\u0442\u044f\u0431\u0440\u044f 2021 \u0433. \u043c\u0435\u0436\u0434\u0443\u043d\u0430\u0440\u043e\u0434\u043d\u043e\u043c \u043e\u043d\u043b\u0430\u0439\u043d-\u0441\u043e\u0432\u0435\u0449\u0430\u043d\u0438\u0438 \u044d\u043a\u0441\u043f\u0435\u0440\u0442\u043e\u0432 \u0440\u0430\u0441\u0441\u043c\u043e\u0442\u0440\u0435\u043d\u044b \u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u044b \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u044b \u0438\u0441\u0441\u043b\u0435\u0434\u043e\u0432\u0430\u043d\u0438\u0439 \u044d\u043c\u043f\u0430\u0433\u043b\u0438\u0444\u043b\u043e\u0437\u0438\u043d\u0430: EMPA-REG Outcome, EMPEROR-Reduced \u0438 EMPEROR-Preserved. \u041f\u0440\u043e\u0430\u043d\u0430\u043b\u0438\u0437\u0438\u0440\u043e\u0432\u0430\u043d\u044b \u0434\u0430\u043d\u043d\u044b\u0435 \u043e \u0447\u0430\u0441\u0442\u043e\u0442\u0435 \u0440\u0430\u0437\u0432\u0438\u0442\u0438\u044f \u043e\u0441\u043b\u043e\u0436\u043d\u0435\u043d\u0438\u0439 \u0441\u0435\u0440\u0434\u0435\u0447\u043d\u043e-\u0441\u043e\u0441\u0443\u0434\u0438\u0441\u0442\u044b\u0445 \u0437\u0430\u0431\u043e\u043b\u0435\u0432\u0430\u043d\u0438\u0439 \u0438 \u0431\u043e\u043b\u0435\u0437\u043d\u0438 \u043f\u043e\u0447\u0435\u043a \u043f\u0440\u0438 \u043f\u0440\u0438\u043c\u0435\u043d\u0435\u043d\u0438\u0438 \u044d\u043c\u043f\u0430\u0433\u043b\u0438\u0444\u043b\u043e\u0437\u0438\u043d\u0430 \u043f\u043e \u0441\u0440\u0430\u0432\u043d\u0435\u043d\u0438\u044e",
+     "title": "[Empagliflozin and heart failure: position paper of the experts on the results of the online meeting and discussion of the EMPEROR-Preserved Trial].",
+     "year": "2021"
+    },
+    {
+     "doi": "10.1161/CIRCULATIONAHA.121.057812",
+     "journal": "Circulation",
+     "pmid": "34779658",
+     "quote": "In patients with heart failure with preserved ejection fraction, empagliflozin reduced the risk for major heart failure outcomes across the range of baseline KCCQ scores. Empagliflozin improved health-related quality of life, an effect that appeared early and was sustained for at least 1 year.",
+     "title": "Empagliflozin, Health Status, and Quality of Life in Patients With Heart Failure and Preserved Ejection Fraction: The EMPEROR-Preserved Trial.",
+     "year": "2022"
+    },
+    {
+     "doi": "10.1038/s41569-020-0406-8",
+     "journal": "Nat Rev Cardiol",
+     "pmid": "34526679",
+     "quote": "Empagliflozin improves clinical outcomes for HFpEF in EMPEROR-Preserved.",
+     "title": "Empagliflozin improves clinical outcomes for HFpEF in EMPEROR-Preserved.",
+     "year": "2021"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "empagliflozin[ti] AND preserved[ti] AND 2021[dp]"
+  },
+  "hepatitis-b|1982|prevention": {},
+  "hepatitis-b|1984|prevention": {
+   "accept": "9197213",
+   "query": "universal[ti] AND hepatitis[ti] AND taiwan[ti] AND hepatocellular[ti]"
+  },
+  "hepatitis-b|1998|intervention": {
+   "candidates": [
+    {
+     "doi": "10.1002/(sici)1099-1654(199807/09)8:3<153::aid-rmv228>3.0.co;2-y",
+     "journal": "Rev Med Virol",
+     "pmid": "10398503",
+     "quote": "Several new nucleoside analogues have been developed which can inhibit hepatitis B replication by at least two logs. Lamivudine is the most widely studied of these new agents. Extensive phase II and III studies in patients with chronic hepatitis B have been completed.",
+     "title": "Lamivudine treatment of chronic hepatitis B.",
+     "year": "1998"
+    },
+    {
+     "doi": "10.1056/NEJM199812103392413",
+     "journal": "N Engl J Med",
+     "pmid": "9867557",
+     "quote": "Lamivudine for chronic hepatitis B.",
+     "title": "Lamivudine for chronic hepatitis B.",
+     "year": "1998"
+    },
+    {
+     "doi": "10.1046/j.1365-2893.1998.00121.x",
+     "journal": "J Viral Hepat",
+     "pmid": "9795914",
+     "quote": "Lamivudine, a novel cytosine analogue, exhibits potent antiviral activity against hepatitis B virus (HBV) in vitro and in vivo. The standard HBV DNA hybridization assay used in phase II clinical studies has a low sensitivity, the detection limit of HBV DNA levels being approximately 10(7) genome equivalents per ml (geq ml-1).",
+     "title": "Quantitative hepatitis B virus DNA assessment by the limiting-dilution polymerase chain reaction in chronic hepatitis B patients: evidence of continuing viral suppression with longer duration and higher dose of lamivudine therapy.",
+     "year": "1998"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "lamivudine[ti] AND chronic[ti] AND hepatitis[ti] AND 1998[dp]"
+  },
+  "hepatitis-c|2014|intervention": {
+   "accept": "24725239",
+   "candidates": [
+    {
+     "doi": "10.1056/NEJMoa1402454",
+     "journal": "N Engl J Med",
+     "pmid": "24725239",
+     "quote": "Once-daily ledipasvir-sofosbuvir with or without ribavirin for 12 or 24 weeks was highly effective in previously untreated patients with HCV genotype 1 infection. (Funded by Gilead Sciences; ION-1 ClinicalTrials.gov number NCT01701401.).",
+     "title": "Ledipasvir and sofosbuvir for untreated HCV genotype 1 infection.",
+     "year": "2014"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "ledipasvir[ti] AND sofosbuvir[ti] AND untreated[ti] AND 2014[dp]"
+  },
+  "hiv|1996|intervention": {
+   "accept": "9287227",
+   "candidates": [
+    {
+     "doi": "10.1056/NEJM199709113371101",
+     "journal": "N Engl J Med",
+     "pmid": "9287227",
+     "quote": "Treatment with indinavir, zidovudine, and lamivudine as compared with zidovudine and lamivudine alone significantly slows the progression of HIV-1 disease in patients with 200 CD4 cells or fewer per cubic millimeter and prior exposure to zidovudine.",
+     "title": "A controlled trial of two nucleoside analogues plus indinavir in persons with human immunodeficiency virus infection and CD4 cell counts of 200 per cubic millimeter or less. AIDS Clinical Trials Group 320 Study Team.",
+     "year": "1997"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "indinavir[ti] AND nucleoside[ti] AND 1997[dp]"
+  },
+  "hypertension|1967|intervention": {},
+  "hypertension|2013|access": {},
+  "hypertension|2015|efficacy": {
+   "accept": "26551272",
+   "candidates": [
+    {
+     "doi": "10.1056/NEJMoa1511939",
+     "journal": "N Engl J Med",
+     "pmid": "26551272",
+     "quote": "Among patients at high risk for cardiovascular events but without diabetes, targeting a systolic blood pressure of less than 120 mm Hg, as compared with less than 140 mm Hg, resulted in lower rates of fatal and nonfatal major cardiovascular events and death from any cause, although significantly higher rates of some adverse events were",
+     "title": "A Randomized Trial of Intensive versus Standard Blood-Pressure Control.",
+     "year": "2015"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "intensive[ti] AND standard[ti] AND blood-pressure[ti] AND 2015[dp]"
+  },
+  "idiopathic-pulmonary-fibrosis|2011|measurement": {
+   "accept": "21471066",
+   "candidates": [
+    {
+     "doi": "10.1164/rccm.2009-040GL",
+     "journal": "Am J Respir Crit Care Med",
+     "pmid": "21471066",
+     "pubtypes": [
+      "Journal Article",
+      "Practice Guideline",
+      "Research Support, Non-U.S. Gov't"
+     ],
+     "quote": "This document is an international evidence-based guideline on the diagnosis and management of idiopathic pulmonary fibrosis, and is a collaborative effort of the American Thoracic Society, the European Respiratory Society, the Japanese Respiratory Society, and the Latin American Thoracic Association.",
+     "title": "An official ATS/ERS/JRS/ALAT statement: idiopathic pulmonary fibrosis: evidence-based guidelines for diagnosis and management.",
+     "year": "2011"
+    }
+   ],
+   "looked_at": "2026-08-28",
+   "query": "ATS[ti] AND ERS[ti] AND idiopathic[ti] AND pulmonary[ti] AND fibrosis[ti] AND 2011[dp]"
+  },
+  "idiopathic-pulmonary-fibrosis|2012|toll": {
+   "accept": "22607134",
+   "candidates": [
+    {
+     "doi": "10.1056/NEJMc1207471",
+     "journal": "N Engl J Med",
+     "pmid": "22931325",
+     "pubtypes": [
+      "Letter",
+      "Comment"
+     ],
+     "quote": "Prednisone, azathioprine, and N-acetylcysteine for pulmonary fibrosis.",
+     "title": "Prednisone, azathioprine, and N-acetylcysteine for pulmonary fibrosis.",
+     "year": "2012"
+    }
+   ],
+   "looked_at": "2026-08-28",
+   "query": "prednisone[ti] AND azathioprine[ti] AND acetylcysteine[ti] AND pulmonary[ti]"
+  },
+  "idiopathic-pulmonary-fibrosis|2014|intervention": {
+   "accept": "24836312",
+   "candidates": [
+    {
+     "doi": "10.1056/NEJMoa1402582",
+     "journal": "N Engl J Med",
+     "pmid": "24836312",
+     "pubtypes": [
+      "Clinical Trial, Phase III",
+      "Journal Article",
+      "Multicenter Study",
+      "Randomized Controlled Trial",
+      "Research Support, Non-U.S. Gov't"
+     ],
+     "quote": "Pirfenidone, as compared with placebo, reduced disease progression, as reflected by lung function, exercise tolerance, and progression-free survival, in patients with idiopathic pulmonary fibrosis. Treatment was associated with an acceptable side-effect profile and fewer deaths.",
+     "title": "A phase 3 trial of pirfenidone in patients with idiopathic pulmonary fibrosis.",
+     "year": "2014"
+    }
+   ],
+   "looked_at": "2026-08-28",
+   "query": "pirfenidone[ti] AND idiopathic[ti] AND pulmonary[ti] AND fibrosis[ti] AND 2014[dp]"
+  },
+  "influenza|1945|prevention": {},
+  "influenza|1999|intervention": {
+   "accept": "10697061",
+   "candidates": [
+    {
+     "doi": "10.1001/jama.283.8.1016",
+     "journal": "JAMA",
+     "pmid": "10697061",
+     "quote": "Our data suggest that oral oseltamivir treatment reduces the duration and severity of acute influenza in healthy adults and may decrease the incidence of secondary complications.",
+     "title": "Efficacy and safety of the oral neuraminidase inhibitor oseltamivir in treating acute influenza: a randomized controlled trial. US Oral Neuraminidase Study Group.",
+     "year": "2000"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "oseltamivir treatment of acute influenza randomized controlled trial Treanor 2000"
+  },
+  "leprosy|1982|intervention": {
+   "accept": "6806990",
+   "candidates": [
+    {
+     "doi": "",
+     "journal": "World Health Organ Tech Rep Ser",
+     "pmid": "6806990",
+     "quote": "Chemotherapy of leprosy for control programmes.",
+     "title": "Chemotherapy of leprosy for control programmes.",
+     "year": "1982"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "chemotherapy[ti] AND leprosy[ti] AND control[ti] AND 1982[dp]"
+  },
+  "liver-cancer|1984|prevention": {
+   "accept": "9197213",
+   "candidates": [
+    {
+     "doi": "10.1056/NEJM199706263362602",
+     "journal": "N Engl J Med",
+     "pmid": "9197213",
+     "quote": "Since the institution of Taiwan's program of universal hepatitis B vaccination, the incidence of hepatocellular carcinoma in children has declined.",
+     "title": "Universal hepatitis B vaccination in Taiwan and the incidence of hepatocellular carcinoma in children. Taiwan Childhood Hepatoma Study Group.",
+     "year": "1997"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "Universal hepatitis B vaccination in Taiwan and the incidence of hepatocellular carcinoma in children Chang 1997"
+  },
+  "liver-cancer|2020|efficacy": {},
+  "lung-cancer|2004|efficacy": {
+   "candidates": [
+    {
+     "doi": "10.1158/1078-0432.CCR-04-0690",
+     "journal": "Clin Cancer Res",
+     "pmid": "15623643",
+     "quote": "ATC cells consistently overexpress EGFR, rendering this receptor a potential target for molecular therapy. Gefitinib effectively blocks activation of EGFR by EGF, inhibits ATC cellular proliferation, and induces apoptosis in vitro.",
+     "title": "Epidermal growth factor receptor (EGFR) is overexpressed in anaplastic thyroid cancer, and the EGFR inhibitor gefitinib inhibits the growth of anaplastic thyroid cancer.",
+     "year": "2004"
+    },
+    {
+     "doi": "10.1517/17410541.1.1.27",
+     "journal": "Per Med",
+     "pmid": "29793222",
+     "quote": "Gefitinib (ZD1839, Iressa\u00ae; AstraZeneca) has produced objective tumor responses and symptom improvement in some patients with non-small cell lung cancer.",
+     "title": "The impact of EGFR mutations on gefitinib sensitivity in non-small cell lung cancer.",
+     "year": "2004"
+    },
+    {
+     "doi": "",
+     "journal": "Oncol Rep",
+     "pmid": "15492792",
+     "quote": "The epidermal growth factor receptor (EGFR) tyrosine kinase inhibitor, gefitinib (\"Iressa\", ZD1839) has demonstrated anti-tumor activity in non-small cell lung cancer (NSCLC) and has been approved in over 20 countries. NSCLC has been reported to express high levels of EGFR.",
+     "title": "Small cell lung cancer cells express EGFR and tyrosine phosphorylation of EGFR is inhibited by gefitinib (\"Iressa\", ZD1839).",
+     "year": "2004"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "EGFR[ti] AND gefitinib[ti] AND 2004[dp]"
+  },
+  "malaria|2015|access": {
+   "accept": "26375008",
+   "candidates": [
+    {
+     "doi": "10.1038/nature15535",
+     "journal": "Nature",
+     "pmid": "26375008",
+     "quote": "Since the year 2000, a concerted campaign against malaria has led to unprecedented levels of intervention coverage across sub-Saharan Africa. Understanding the effect of this control effort is vital to inform future control planning.",
+     "title": "The effect of malaria control on Plasmodium falciparum in Africa between 2000 and 2015.",
+     "year": "2015"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "The effect of malaria control on Plasmodium falciparum in Africa between 2000 and 2015 Bhatt Nature"
+  },
+  "malaria|2020|access": {},
+  "malaria|2023|efficacy": {},
+  "maternal-haemorrhage|2017|efficacy": {
+   "accept": "28456509",
+   "candidates": [
+    {
+     "doi": "10.1016/S0140-6736(17)30638-4",
+     "journal": "Lancet",
+     "pmid": "28456509",
+     "quote": "Tranexamic acid reduces death due to bleeding in women with post-partum haemorrhage with no adverse effects. When used as a treatment for postpartum haemorrhage, tranexamic acid should be given as soon as possible after bleeding onset.",
+     "title": "Effect of early tranexamic acid administration on mortality, hysterectomy, and other morbidities in women with post-partum haemorrhage (WOMAN): an international, randomised, double-blind, placebo-controlled trial.",
+     "year": "2017"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "WOMAN trial tranexamic acid postpartum haemorrhage randomised placebo-controlled Lancet 2017"
+  },
+  "maternal-haemorrhage|2023|efficacy": {
+   "candidates": [
+    {
+     "doi": "10.1016/j.ijoa.2023.103893",
+     "journal": "Int J Obstet Anesth",
+     "pmid": "37142509",
+     "quote": "Incorporating a postpartum hemorrhage bundle on the labor and delivery unit: a state-wide survey of anesthesiologists in Massachusetts.",
+     "title": "Incorporating a postpartum hemorrhage bundle on the labor and delivery unit: a state-wide survey of anesthesiologists in Massachusetts.",
+     "year": "2023"
+    },
+    {
+     "doi": "10.1002/ijgo.14612",
+     "journal": "Int J Gynaecol Obstet",
+     "pmid": "36511785",
+     "quote": "Implementation of PPH EmC in Migori County, Kenya was feasible and positively impacted PPH emergency care.",
+     "title": "Feasibility and impact of a postpartum hemorrhage emergency care package using a bundle approach in Migori County, Kenya.",
+     "year": "2023"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "postpartum[ti] AND hemorrhage[ti] AND bundle[ti] AND 2023[dp]"
+  },
+  "measles|1963|prevention": {
+   "accept": "19198559",
+   "candidates": [
+    {
+     "doi": "10.1007/978-3-540-70523-9_1",
+     "journal": "Curr Top Microbiol Immunol",
+     "pmid": "19198559",
+     "quote": "Following their initial isolation in cell culture of the virus in 1954, a succession of investigators under the mentorship of John E Enders conducted the research, development, and initial clinical studies responsible for the licensure in 1963 of a successful live attenuated measles virus vaccine.",
+     "title": "John F. Enders and measles virus vaccine--a reminiscence.",
+     "year": "2009"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "measles vaccine live attenuated Edmonston licensed 1963 Katz Enders"
+  },
+  "measles|2000|access": {},
+  "measles|2020|access": {},
+  "melanoma|2011|efficacy": {
+   "candidates": [
+    {
+     "doi": "10.1586/era.10.144",
+     "journal": "Expert Rev Anticancer Ther",
+     "pmid": "21080797",
+     "quote": "Evaluation of: Hodi FS, O'Day SJ, McDermott DF et al. Improved survival with ipilimumab in patients with metastatic melanoma. N. Engl. J. Med. 363(8), 711-723 (2010).",
+     "title": "Ipilimumab: attenuation of an inhibitory immune checkpoint improves survival in metastatic melanoma.",
+     "year": "2010"
+    },
+    {
+     "doi": "10.1111/j.1755-148X.2010.00737.x",
+     "journal": "Pigment Cell Melanoma Res",
+     "pmid": "20609175",
+     "quote": "Improved melanoma survival at last! Ipilimumab and a paradigm shift for immunotherapy.",
+     "title": "Improved melanoma survival at last! Ipilimumab and a paradigm shift for immunotherapy.",
+     "year": "2010"
+    },
+    {
+     "doi": "10.1056/NEJMoa1003466",
+     "journal": "N Engl J Med",
+     "pmid": "20525992",
+     "quote": "Ipilimumab, with or without a gp100 peptide vaccine, as compared with gp100 alone, improved overall survival in patients with previously treated metastatic melanoma. Adverse events can be severe, long-lasting, or both, but most are reversible with appropriate treatment.",
+     "title": "Improved survival with ipilimumab in patients with metastatic melanoma.",
+     "year": "2010"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "ipilimumab[ti] AND survival[ti] AND melanoma[ti] AND 2010[dp]"
+  },
+  "mesothelioma|1960|mechanism": {
+   "accept": "13782506",
+   "candidates": [
+    {
+     "doi": "10.1136/oem.17.4.260",
+     "journal": "Br J Ind Med",
+     "pmid": "13782506",
+     "quote": "Primary malignant tumours of the pleura are uncommon. Thirty-three cases (22 males, 11 females, ages 31 to 68) of diffuse pleural mesothelioma are described; all but one have a probable exposure to crocidolite asbestos (Cape blue).",
+     "title": "Diffuse pleural mesothelioma and asbestos exposure in the North Western Cape Province.",
+     "year": "1960"
+    }
+   ],
+   "looked_at": "2026-08-28",
+   "query": "Wagner[au] AND mesothelioma[ti] AND asbestos[ti] AND 1960[dp]"
+  },
+  "mesothelioma|1999|prevention": {
+   "candidates": [
+    {
+     "doi": "10.1136/oemed-2019-105878",
+     "journal": "Occup Environ Med",
+     "pmid": "31662422",
+     "quote": "For most districts age-adjusted mesothelioma mortality rates increased through 2002-2015 but the relative contribution from districts with a dockyard fell.",
+     "title": "Mesothelioma mortality in Great Britain: how much longer will dockyards dominate?",
+     "year": "2019"
+    },
+    {
+     "doi": "10.1093/occmed/kqi034",
+     "journal": "Occup Med (Lond)",
+     "pmid": "15757980",
+     "quote": "These data reinforce earlier findings that geographical areas and occupations associated with high exposure to asbestos in the past continue to drive the mesothelioma epidemic in Great Britain.",
+     "title": "Mesothelioma mortality in Great Britain from 1968 to 2001.",
+     "year": "2005"
+    },
+    {
+     "doi": "10.1038/sj.bjc.6602307",
+     "journal": "Br J Cancer",
+     "pmid": "15668716",
+     "quote": "The British mesothelioma register contains all deaths from 1968 to 2001 where mesothelioma was mentioned on the death certificate. These data were used to predict the future burden of mesothelioma mortality in Great Britain.",
+     "title": "The expected burden of mesothelioma mortality in Great Britain from 2002 to 2050.",
+     "year": "2005"
+    }
+   ],
+   "looked_at": "2026-08-28",
+   "note": "A national ban is a statutory instrument, not a paper. No single peer-reviewed primary source evidences it; left uncited rather than cited to a modelling study of somebody else's ban.",
+   "query": "mesothelioma[ti] AND mortality[ti] AND Great[ti] AND Britain[ti]"
+  },
+  "mesothelioma|2003|efficacy": {
+   "accept": "12860938",
+   "candidates": [
+    {
+     "doi": "10.1200/JCO.2003.11.136",
+     "journal": "J Clin Oncol",
+     "pmid": "12860938",
+     "quote": "Treatment with pemetrexed plus cisplatin and vitamin supplementation resulted in superior survival time, time to progression, and response rates compared with treatment with cisplatin alone in patients with malignant pleural mesothelioma.",
+     "title": "Phase III study of pemetrexed in combination with cisplatin versus cisplatin alone in patients with malignant pleural mesothelioma.",
+     "year": "2003"
+    }
+   ],
+   "looked_at": "2026-08-28",
+   "query": "pemetrexed[ti] AND cisplatin[ti] AND mesothelioma[ti] AND 2003[dp]"
+  },
+  "mesothelioma|2020|efficacy": {
+   "accept": "33485464",
+   "candidates": [
+    {
+     "doi": "10.1016/S0140-6736(20)32714-8",
+     "journal": "Lancet",
+     "pmid": "33485464",
+     "quote": "Nivolumab plus ipilimumab provided significant and clinically meaningful improvements in overall survival versus standard-of-care chemotherapy, supporting the use of this first-in-class regimen that has been approved in the USA as of October, 2020, for previously untreated unresectable MPM.",
+     "title": "First-line nivolumab plus ipilimumab in unresectable malignant pleural mesothelioma (CheckMate 743): a multicentre, randomised, open-label, phase 3 trial.",
+     "year": "2021"
+    }
+   ],
+   "looked_at": "2026-08-28",
+   "query": "Baas[au] AND nivolumab[ti] AND ipilimumab[ti] AND mesothelioma[ti]"
+  },
+  "mesothelioma|2024|toll": {
+   "accept": "38740044",
+   "candidates": [
+    {
+     "doi": "10.1016/S2213-2600(24)00119-X",
+     "journal": "Lancet Respir Med",
+     "pmid": "38740044",
+     "quote": "Extended pleurectomy decortication was associated with worse survival to 2 years, and more serious adverse events for individuals with resectable pleural mesothelioma, compared with chemotherapy alone.",
+     "title": "Extended pleurectomy decortication and chemotherapy versus chemotherapy alone for pleural mesothelioma (MARS 2): a phase 3 randomised controlled trial.",
+     "year": "2024"
+    }
+   ],
+   "looked_at": "2026-08-28",
+   "query": "extended[ti] AND pleurectomy[ti] AND decortication[ti] AND 2024[dp]"
+  },
+  "mrsa|2004|access": {},
+  "multiple-sclerosis|1993|intervention": {},
+  "multiple-sclerosis|2006|intervention": {
+   "candidates": [
+    {
+     "doi": "10.1038/ncpneuro0286",
+     "journal": "Nat Clin Pract Neurol",
+     "pmid": "16932610",
+     "quote": "Does natalizumab have a role in the treatment of relapsing multiple sclerosis?",
+     "title": "Does natalizumab have a role in the treatment of relapsing multiple sclerosis?",
+     "year": "2006"
+    },
+    {
+     "doi": "",
+     "journal": "N Engl J Med",
+     "pmid": "16742009",
+     "quote": "Natalizumab for relapsing multiple sclerosis.",
+     "title": "Natalizumab for relapsing multiple sclerosis.",
+     "year": "2006"
+    },
+    {
+     "doi": "",
+     "journal": "N Engl J Med",
+     "pmid": "16742008",
+     "quote": "Natalizumab for relapsing multiple sclerosis.",
+     "title": "Natalizumab for relapsing multiple sclerosis.",
+     "year": "2006"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "natalizumab[ti] AND relapsing[ti] AND 2006[dp]"
+  },
+  "multiple-sclerosis|2017|efficacy": {
+   "candidates": [
+    {
+     "doi": "10.1177/1060028017747635",
+     "journal": "Ann Pharmacother",
+     "pmid": "29232960",
+     "quote": "Ocrelizumab demonstrated efficacy in the treatment of relapsing and PPMS and is the first therapy approved for patients with PPMS.",
+     "title": "Ocrelizumab: A New B-cell Therapy for Relapsing Remitting and Primary Progressive Multiple Sclerosis.",
+     "year": "2018"
+    },
+    {
+     "doi": "10.1056/NEJMc1702076",
+     "journal": "N Engl J Med",
+     "pmid": "28447771",
+     "quote": "Ocrelizumab in Primary Progressive and Relapsing Multiple Sclerosis.",
+     "title": "Ocrelizumab in Primary Progressive and Relapsing Multiple Sclerosis.",
+     "year": "2017"
+    },
+    {
+     "doi": "10.1056/NEJMc1702076",
+     "journal": "N Engl J Med",
+     "pmid": "28447770",
+     "quote": "Ocrelizumab in Primary Progressive and Relapsing Multiple Sclerosis.",
+     "title": "Ocrelizumab in Primary Progressive and Relapsing Multiple Sclerosis.",
+     "year": "2017"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "ocrelizumab[ti] AND primary[ti] AND progressive[ti] AND 2017[dp]"
+  },
+  "multiple-sclerosis|2022|mechanism": {
+   "accept": "35025605",
+   "candidates": [
+    {
+     "doi": "10.1126/science.abj8222",
+     "journal": "Science",
+     "pmid": "35025605",
+     "quote": "Multiple sclerosis (MS) is a chronic inflammatory demyelinating disease of the central nervous system of unknown etiology.",
+     "title": "Longitudinal analysis reveals high prevalence of Epstein-Barr virus associated with multiple sclerosis.",
+     "year": "2022"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "Longitudinal analysis reveals high prevalence of Epstein-Barr virus associated with multiple sclerosis Bjornevik Science 2022"
+  },
+  "nasopharyngeal-carcinoma|1998|efficacy": {
+   "accept": "9552031",
+   "candidates": [
+    {
+     "doi": "10.1200/JCO.1998.16.4.1310",
+     "journal": "J Clin Oncol",
+     "pmid": "9552031",
+     "quote": "We conclude that chemoradiotherapy is superior to radiotherapy alone for patients with advanced nasopharyngeal cancers with respect to PFS and overall survival.",
+     "title": "Chemoradiotherapy versus radiotherapy in patients with advanced nasopharyngeal cancer: phase III randomized Intergroup study 0099.",
+     "year": "1998"
+    }
+   ],
+   "looked_at": "2026-08-27",
+   "query": "chemoradiotherapy[ti] AND radiotherapy[ti] AND nasopharyngeal[ti] AND 1998[dp]"
+  },
+  "nasopharyngeal-carcinoma|2007|toll": {
+   "accept": "17971582",
+   "candidates": [
+    {
+     "doi": "10.1200/JCO.2007.11.5501",
+     "journal": "J Clin Oncol",
+     "pmid": "17971582",
+     "quote": "IMRT is superior to 2DRT in preserving parotid function and results in less severe delayed xerostomia in the treatment of early-stage NPC. Incomplete improvement in patient's subjective xerostomia with parotid-sparing IMRT reflects the need to enhance protection of other salivary glands.",
+     "title": "Prospective randomized study of intensity-modulated radiotherapy on salivary gland function in early-stage nasopharyngeal carcinoma patients.",
+     "year": "2007"
+    }
+   ],
+   "looked_at": "2026-08-27",
+   "query": "Kam[au] AND intensity-modulated[ti] AND nasopharyngeal[ti] AND 2007[dp]"
+  },
+  "nasopharyngeal-carcinoma|2017|measurement": {
+   "accept": "28792880",
+   "candidates": [
+    {
+     "doi": "10.1056/NEJMoa1701717",
+     "journal": "N Engl J Med",
+     "pmid": "28792880",
+     "quote": "Analysis of EBV DNA in plasma samples was useful in screening for early asymptomatic nasopharyngeal carcinoma. Nasopharyngeal carcinoma was detected significantly earlier and outcomes were better in participants who were identified by screening than in those in a historical cohort.",
+     "title": "Analysis of Plasma Epstein-Barr Virus DNA to Screen for Nasopharyngeal Cancer.",
+     "year": "2017"
+    }
+   ],
+   "looked_at": "2026-08-27",
+   "query": "plasma[ti] AND Epstein-Barr[ti] AND screen[ti] AND 2017[dp]"
+  },
+  "nasopharyngeal-carcinoma|2019|efficacy": {
+   "accept": "31150573",
+   "candidates": [
+    {
+     "doi": "10.1056/NEJMoa1905287",
+     "journal": "N Engl J Med",
+     "pmid": "31150573",
+     "quote": "Induction chemotherapy added to chemoradiotherapy significantly improved recurrence-free survival and overall survival, as compared with chemoradiotherapy alone, among patients with locoregionally advanced nasopharyngeal carcinoma.",
+     "title": "Gemcitabine and Cisplatin Induction Chemotherapy in Nasopharyngeal Carcinoma.",
+     "year": "2019"
+    }
+   ],
+   "looked_at": "2026-08-27",
+   "query": "gemcitabine[ti] AND cisplatin[ti] AND induction[ti] AND nasopharyngeal[ti] AND 2019[dp]"
+  },
+  "nasopharyngeal-carcinoma|2023|efficacy": {
+   "accept": "38015220",
+   "candidates": [
+    {
+     "doi": "10.1016/j.ccell.2022.02.007",
+     "journal": "JAMA",
+     "pmid": "38015220",
+     "quote": "The addition of toripalimab to chemotherapy as first-line treatment for RM-NPC provided statistically significant and clinically meaningful progression-free survival and overall survival benefits compared with chemotherapy alone, with a manageable safety profile.",
+     "title": "Toripalimab Plus Chemotherapy for Recurrent or Metastatic Nasopharyngeal Carcinoma: The JUPITER-02 Randomized Clinical Trial.",
+     "year": "2023"
+    }
+   ],
+   "looked_at": "2026-08-27",
+   "query": "toripalimab[ti] AND nasopharyngeal"
+  },
+  "neonatal-conditions|2000|access": {},
+  "neonatal-conditions|2021|efficacy": {
+   "candidates": [
+    {
+     "doi": "10.7759/cureus.20428",
+     "journal": "Cureus",
+     "pmid": "35047265",
+     "quote": "Background Kangaroo Mother Care (KMC) is a widely implemented intervention developed as an alternative form of care in low- and middle-income countries (LMICs) for neonates. The implementation of KMC has significantly reduced morbidity and mortality in very-low-birth-weight infants (VLBWIs).",
+     "title": "A Review of Very-Low-Birth-Weight Infants Admitted to the Kangaroo Mother Care Unit in Johannesburg, South Africa.",
+     "year": "2021"
+    },
+    {
+     "doi": "10.2471/BLT.15.157818",
+     "journal": "Bull World Health Organ",
+     "pmid": "35017753",
+     "quote": "Implementation of kangaroo mother care interventions is feasible in low-resource settings. Such care has the potential to reduce mortality among low-birth-weight and premature babies. Challenges include low coverage, expanding the programme to the community and strengthening the monitoring system.",
+     "title": "Implementation research on kangaroo mother care, Bangladesh.",
+     "year": "2022"
+    },
+    {
+     "doi": "10.1186/s12884-021-03646-3",
+     "journal": "Child Health Nurs Res",
+     "pmid": "35004523",
+     "quote": "Efforts to promote KMC are recommended, specifically for infants with birthweights greater than 1,500 g. KMC for infants with other conditions can also be considered based on the infants' stability.",
+     "title": "Kangaroo mother care practices for low birthweight newborns in a district hospital in Indonesia.",
+     "year": "2021"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "kangaroo[ti] AND mother[ti] AND care[ti] AND 2021[dp]"
+  },
+  "non-hodgkin-lymphoma|1997|efficacy": {
+   "accept": "9704735",
+   "candidates": [
+    {
+     "doi": "10.1200/JCO.1998.16.8.2825",
+     "journal": "J Clin Oncol",
+     "pmid": "9704735",
+     "quote": "The response rate of 48% with IDEC-C2B8 is comparable to results with single-agent cytotoxic chemotherapy. Toxicity was mild. Attention needs to be paid to the rate of antibody infusion, with titration according to toxicity. Further investigation of this agent is warranted, including its use in conjunction with standard chemotherapy.",
+     "title": "Rituximab chimeric anti-CD20 monoclonal antibody therapy for relapsed indolent lymphoma: half of patients respond to a four-dose treatment program.",
+     "year": "1998"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "rituximab chimeric anti-CD20 monoclonal antibody relapsed low-grade non-Hodgkin lymphoma McLaughlin 1998"
+  },
+  "non-hodgkin-lymphoma|2017|efficacy": {
+   "accept": "29226797",
+   "candidates": [
+    {
+     "doi": "10.1056/NEJMoa1707447",
+     "journal": "N Engl J Med",
+     "pmid": "29226797",
+     "quote": "In this multicenter study, patients with refractory large B-cell lymphoma who received CAR T-cell therapy with axi-cel had high levels of durable response, with a safety profile that included myelosuppression, the cytokine release syndrome, and neurologic events.",
+     "title": "Axicabtagene Ciloleucel CAR T-Cell Therapy in Refractory Large B-Cell Lymphoma.",
+     "year": "2017"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "axicabtagene[ti] AND refractory[ti] AND 2017[dp]"
+  },
+  "obesity|1991|intervention": {
+   "candidates": [
+    {
+     "doi": "10.1016/S0002-8223(95)00182-4",
+     "journal": "J Am Diet Assoc",
+     "pmid": "7759742",
+     "quote": "Mean recognition thresholds for sucrose were 0.047 +/- 0.03 mol/L preoperatively and fell significantly to 0.024 +/- 0.01 and 0.019 +/- 0.01 mol/L at 6 and 12 weeks postoperatively, respectively.",
+     "title": "Changes in patients' taste acuity after Roux-en-Y gastric bypass for clinically severe obesity.",
+     "year": "1995"
+    },
+    {
+     "doi": "10.1381/096089295765557962",
+     "journal": "Obes Surg",
+     "pmid": "10733806",
+     "quote": "BACKGROUND: The search for replicable predictors of the outcomes of surgical intervention for obesity has proven challenging, with patient selection being a recurrent theme in bariatric literature. METHODS: In this study, 20 gastric bypass patients were interviewed at an average of 2 years following surgery.",
+     "title": "An Exploration of the Outcomes of Gastric Bypass Surgery for Morbid Obesity: Patient Characteristics and Indeces of Success.",
+     "year": "1995"
+    },
+    {
+     "doi": "10.1381/096089295765558141",
+     "journal": "Obes Surg",
+     "pmid": "10733792",
+     "quote": "BACKGROUND: vertical banded gastroplasty (VBG) and gastric bypass Roux-en-Y (GBP) are adjunctive to lifelong commitment to energy restricted diet in the attempt by the severely obese to lose weight and maintain weight loss. METHODS: the outcome of 48 subjects (36 VBG and 12 GBP) is presented.",
+     "title": "Weight Loss and Food Intake 18 Months following Vertical Banded Gastroplasty or Gastric Bypass for Severe Obesity.",
+     "year": "1995"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "gastric[ti] AND bypass[ti] AND obesity[ti] AND 1995[dp]"
+  },
+  "obesity|2021|efficacy": {
+   "candidates": [
+    {
+     "doi": "10.1111/dom.14612",
+     "journal": "Diabetes Obes Metab",
+     "pmid": "34866313",
+     "quote": "Once-weekly semaglutide for obesity or overweight: A systematic review and meta-analysis.",
+     "title": "Once-weekly semaglutide for obesity or overweight: A systematic review and meta-analysis.",
+     "year": "2022"
+    },
+    {
+     "doi": "10.1001/jama.2021.13021",
+     "journal": "JAMA",
+     "pmid": "34581745",
+     "quote": "Semaglutide vs Placebo as an Adjunct to Intensive Behavioral Therapy and Body Weight in Adults With Overweight or Obesity.",
+     "title": "Semaglutide vs Placebo as an Adjunct to Intensive Behavioral Therapy and Body Weight in Adults With Overweight or Obesity.",
+     "year": "2021"
+    },
+    {
+     "doi": "10.1001/jama.2021.13024",
+     "journal": "JAMA",
+     "pmid": "34581743",
+     "quote": "Semaglutide vs Placebo as an Adjunct to Intensive Behavioral Therapy and Body Weight in Adults With Overweight or Obesity-Reply.",
+     "title": "Semaglutide vs Placebo as an Adjunct to Intensive Behavioral Therapy and Body Weight in Adults With Overweight or Obesity-Reply.",
+     "year": "2021"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "semaglutide[ti] AND overweight[ti] AND obesity[ti] AND 2021[dp]"
+  },
+  "obesity|2023|efficacy": {
+   "candidates": [
+    {
+     "doi": "10.1016/j.cmet.2016.06.009",
+     "journal": "J Endocrinol Invest",
+     "pmid": "38157134",
+     "quote": "Comment on: Semaglutide and cardiovascular outcomes in obesity without diabetes.",
+     "title": "Comment on: Semaglutide and cardiovascular outcomes in obesity without diabetes.",
+     "year": "2024"
+    },
+    {
+     "doi": "10.1056/NEJMoa2307563",
+     "journal": "N Engl J Med",
+     "pmid": "37952131",
+     "quote": "In patients with preexisting cardiovascular disease and overweight or obesity but without diabetes, weekly subcutaneous semaglutide at a dose of 2.4 mg was superior to placebo in reducing the incidence of death from cardiovascular causes, nonfatal myocardial infarction, or nonfatal stroke at a mean follow-up of 39.8 months.",
+     "title": "Semaglutide and Cardiovascular Outcomes in Obesity without Diabetes.",
+     "year": "2023"
+    },
+    {
+     "doi": "10.1016/j.cpcardiol.2023.102060",
+     "journal": "Curr Probl Cardiol",
+     "pmid": "37640171",
+     "quote": "Cardiovascular disease (CVD) is a leading global cause of death, with preventable risk factors like obesity contributing most to it. Obesity's association with CVD originate from factors like inflammation, insulin resistance, and altered lipid profiles. Obesity also raises the risk of atrial fibrillation (AF) and sudden cardiac death.",
+     "title": "Obesity, Cardiovascular Disease, and the Promising Role of Semaglutide: Insights from the SELECT Trial.",
+     "year": "2024"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "semaglutide[ti] AND cardiovascular[ti] AND obesity[ti] AND 2023[dp]"
+  },
+  "osteoarthritis|1962|intervention": {},
+  "osteoarthritis|1979|efficacy": {},
+  "osteoarthritis|2024|efficacy": {
+   "accept": "39476339",
+   "candidates": [
+    {
+     "doi": "10.1056/NEJMoa2403664",
+     "journal": "N Engl J Med",
+     "pmid": "39476339",
+     "quote": "Among participants with obesity and knee osteoarthritis with moderate-to-severe pain, treatment with once-weekly injectable semaglutide resulted in significantly greater reductions in body weight and pain related to knee osteoarthritis than placebo. (Funded by Novo Nordisk; STEP 9 ClinicalTrials.gov number, NCT05064735.).",
+     "title": "Once-Weekly Semaglutide in Persons with Obesity and Knee Osteoarthritis.",
+     "year": "2024"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "Once-Weekly Semaglutide in Persons with Obesity and Knee Osteoarthritis STEP 9"
+  },
+  "osteoporosis|1995|intervention": {
+   "accept": "8950879",
+   "candidates": [
+    {
+     "doi": "10.1016/s0140-6736(96)07088-2",
+     "journal": "Lancet",
+     "pmid": "8950879",
+     "quote": "We conclude that among women with low bone mass and existing vertebral fractures, alendronate is well tolerated and substantially reduces the frequency of morphometric and clinical vertebral fractures, as well as other clinical fractures.",
+     "title": "Randomised trial of effect of alendronate on risk of fracture in women with existing vertebral fractures. Fracture Intervention Trial Research Group.",
+     "year": "1996"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "alendronate[ti] AND fracture[ti] AND vertebral[ti] AND 1996[dp]"
+  },
+  "osteoporosis|2002|access": {
+   "candidates": [
+    {
+     "doi": "",
+     "journal": "Climacteric",
+     "pmid": "12626213",
+     "quote": "In postmenopausal hypercholesterolemic women, pravastatin and hormone therapy exhibited divergent effects.",
+     "title": "Differing effects of low-dose estrogen-progestin therapy and pravastatin in postmenopausal hypercholesterolemic women.",
+     "year": "2002"
+    },
+    {
+     "doi": "10.1016/s0002-9343(02)01270-6",
+     "journal": "Am J Med",
+     "pmid": "12459399",
+     "quote": "Among older postmenopausal women with coronary disease, 4 years of treatment with postmenopausal hormone therapy did not result in better cognitive function as measured on six standardized tests. Whether these results also apply to elderly women without coronary disease cannot be determined from this study.",
+     "title": "Effect of postmenopausal hormone therapy on cognitive function: the Heart and Estrogen/progestin Replacement Study.",
+     "year": "2002"
+    },
+    {
+     "doi": "10.1016/s0029-7844(02)02245-7",
+     "journal": "Obstet Gynecol",
+     "pmid": "12423841",
+     "quote": "The bleeding measures for conjugated equine estrogen plus micronized progesterone cyclical showed consistent advantages over those for cyclical conjugated equine estrogen plus medroxyprogesterone acetate in terms of quantity, length, and episodes of bleeding.",
+     "title": "Bleeding patterns of the hormone replacement therapies in the postmenopausal estrogen and progestin interventions trial.",
+     "year": "2002"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "estrogen[ti] AND progestin[ti] AND postmenopausal[ti] AND 2002[dp]"
+  },
+  "osteoporosis|2010|access": {},
+  "pancreatic-cancer|2011|efficacy": {
+   "accept": "21864184",
+   "candidates": [
+    {
+     "doi": "10.1056/NEJMc1107627",
+     "journal": "N Engl J Med",
+     "pmid": "21864184",
+     "quote": "FOLFIRINOX versus gemcitabine for metastatic pancreatic cancer.",
+     "title": "FOLFIRINOX versus gemcitabine for metastatic pancreatic cancer.",
+     "year": "2011"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "FOLFIRINOX[ti] AND gemcitabine[ti] AND 2011[dp]"
+  },
+  "parkinsons|1967|intervention": {
+   "accept": "5334614",
+   "candidates": [
+    {
+     "doi": "10.1056/NEJM196702162760703",
+     "journal": "N Engl J Med",
+     "pmid": "5334614",
+     "quote": "Aromatic amino acids and modification of parkinsonism.",
+     "title": "Aromatic amino acids and modification of parkinsonism.",
+     "year": "1967"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "Cotzias Van Woert Schiffer aromatic amino acids and modification of parkinsonism 1967"
+  },
+  "parkinsons|1997|efficacy": {},
+  "prion-disease|1982|mechanism": {
+   "accept": "6801762",
+   "candidates": [
+    {
+     "doi": "10.1126/science.6801762",
+     "journal": "Science",
+     "pmid": "6801762",
+     "quote": "After infection and a prolonged incubation period, the scrapie agent causes a degenerative disease of the central nervous system in sheep and goats. Six lines of evidence including sensitivity to proteases demonstrate that this agent contains a protein that is required for infectivity.",
+     "title": "Novel proteinaceous infectious particles cause scrapie.",
+     "year": "1982"
+    }
+   ],
+   "looked_at": "2026-08-28",
+   "query": "novel[ti] AND proteinaceous[ti] AND infectious[ti] AND scrapie[ti]"
+  },
+  "prion-disease|1996|prevention": {
+   "accept": "8598754",
+   "candidates": [
+    {
+     "doi": "10.1016/s0140-6736(96)91412-9",
+     "journal": "Lancet",
+     "pmid": "8598754",
+     "quote": "These cases appear to represent a new variant of CJD, which may be unique to the UK. This raises the possibility that they are causally linked to BSE. Although this may be the most plausible explanation for this cluster of cases, a link with BSE cannot be confirmed on the basis of this evidence alone.",
+     "title": "A new variant of Creutzfeldt-Jakob disease in the UK.",
+     "year": "1996"
+    }
+   ],
+   "looked_at": "2026-08-28",
+   "query": "Will[au] AND variant[ti] AND Creutzfeldt-Jakob[ti] AND 1996[dp]"
+  },
+  "prion-disease|2017|measurement": {
+   "accept": "27942718",
+   "candidates": [
+    {
+     "doi": "10.1001/jamaneurol.2016.4614",
+     "journal": "JAMA Neurol",
+     "pmid": "27942718",
+     "quote": "A proposed diagnostic algorithm for sporadic CJD combines CSF and OM RT-QuIC testing to provide virtually 100% diagnostic sensitivity and specificity in the clinical phase of the disease.",
+     "title": "Diagnosis of Human Prion Disease Using Real-Time Quaking-Induced Conversion Testing of Olfactory Mucosa and Cerebrospinal Fluid Samples.",
+     "year": "2017"
+    }
+   ],
+   "looked_at": "2026-08-28",
+   "query": "Orru[au] AND quaking[ti]"
+  },
+  "prostate-cancer|1941|intervention": {
+   "accept": "12050481",
+   "candidates": [
+    {
+     "doi": "10.1016/s0022-5347(05)64820-3",
+     "journal": "J Urol",
+     "pmid": "12050481",
+     "quote": "Studies on prostatic cancer: I. The effect of castration, of estrogen and of androgen injection on serum phosphatases in metastatic carcinoma of the prostate. 1941.",
+     "title": "Studies on prostatic cancer: I. The effect of castration, of estrogen and of androgen injection on serum phosphatases in metastatic carcinoma of the prostate. 1941.",
+     "year": "2002"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "Huggins Hodges studies on prostatic cancer effect of castration of estrogen 1941"
+  },
+  "prostate-cancer|2012|toll": {
+   "candidates": [
+    {
+     "doi": "10.1016/j.juro.2012.10.096",
+     "journal": "J Urol",
+     "pmid": "23312160",
+     "quote": "Re: factors influencing treatment decision making and information preferences of prostate cancer patients on active surveillance.",
+     "title": "Re: factors influencing treatment decision making and information preferences of prostate cancer patients on active surveillance.",
+     "year": "2013"
+    },
+    {
+     "doi": "10.1111/iju.12061",
+     "journal": "Int J Urol",
+     "pmid": "23278942",
+     "quote": "In men with prostate cancer, standard and saturation transrectal prostate biopsies techniques are equally predictive of candidates for active surveillance.",
+     "title": "Standard and saturation transrectal prostate biopsy techniques are equally accurate among prostate cancer active surveillance candidates.",
+     "year": "2013"
+    },
+    {
+     "doi": "10.1093/jncimonographs/lgs026",
+     "journal": "J Natl Cancer Inst Monogr",
+     "pmid": "23271780",
+     "quote": "Active surveillance is an important arrow in the quiver of physicians advising men with prostate cancer. Quality-of-life considerations are paramount for patient-centered decision making.",
+     "title": "Quality of life in men undergoing active surveillance for localized prostate cancer.",
+     "year": "2012"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "active[ti] AND surveillance[ti] AND prostate[ti] AND 2012[dp]"
+  },
+  "renal-cell-carcinoma|2006|efficacy": {},
+  "renal-cell-carcinoma|2018|efficacy": {
+   "candidates": [
+    {
+     "doi": "10.1016/j.ctrv.2016.06.002",
+     "journal": "J Immunother Cancer",
+     "pmid": "30458884",
+     "quote": "Nivolumab plus ipilimumab as first-line treatment could gain more health benefits for advanced RCC in comparison with standard sunitinib, which is considered to be cost-effective in the US and China but not in the UK.",
+     "title": "Cost-effectiveness of nivolumab plus ipilimumab as first-line therapy in advanced renal-cell carcinoma.",
+     "year": "2018"
+    },
+    {
+     "doi": "10.1056/NEJMc1711583",
+     "journal": "Cancer Biol Ther",
+     "pmid": "30332546",
+     "quote": "Nivolumab is a programmed death 1 (PD-1) inhibitor currently approved as second-line treatment for advanced renal cell carcinomas (RCC) after failure of standard antiangiogenic treatment.",
+     "title": "Frontline immunotherapy treatment with nivolumab and ipilimumab in metastatic renal cell cancer: a new standard of care.",
+     "year": "2019"
+    },
+    {
+     "doi": "10.1016/j.eururo.2018.08.029",
+     "journal": "Eur Urol",
+     "pmid": "30201510",
+     "quote": "A Joint Statement from the European Association of Urology Renal Cell Cancer Guidelines Panel and the International Kidney Cancer Coalition: The Rejection of Ipilimumab and Nivolumab for Renal Cancer by the Committee for Medicinal Products for Human Use Does not Change Evidence-based Guideline Recommendations.",
+     "title": "A Joint Statement from the European Association of Urology Renal Cell Cancer Guidelines Panel and the International Kidney Cancer Coalition: The Rejection of Ipilimumab and Nivolumab for Renal Cancer by the Committee for Medicinal Products for Human Use Does not Change Evidence-based Guideline Recommendations.",
+     "year": "2018"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "nivolumab[ti] AND ipilimumab[ti] AND renal-cell[ti] AND 2018[dp]"
+  },
+  "rheumatoid-arthritis|1988|intervention": {},
+  "rheumatoid-arthritis|1998|intervention": {
+   "accept": "9380131",
+   "candidates": [
+    {
+     "doi": "",
+     "journal": "N Engl J Med",
+     "pmid": "9380131",
+     "quote": "Treatment of rheumatoid arthritis with a tumor necrosis factor receptor-Fc fusion protein.",
+     "title": "Treatment of rheumatoid arthritis with a tumor necrosis factor receptor-Fc fusion protein.",
+     "year": "1997"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "necrosis[ti] AND receptor[ti] AND fusion[ti] AND rheumatoid[ti] AND 1997[dp]"
+  },
+  "rheumatoid-arthritis|2010|efficacy": {},
+  "rheumatoid-arthritis|2018|access": {},
+  "schizophrenia|1952|intervention": {},
+  "schizophrenia|1988|efficacy": {
+   "accept": "3046553",
+   "candidates": [
+    {
+     "doi": "10.1001/archpsyc.1988.01800330013001",
+     "journal": "Arch Gen Psychiatry",
+     "pmid": "3046553",
+     "quote": "The treatment of schizophrenic patients who fail to respond to adequate trials of neuroleptics is a major challenge. Clozapine, an atypical antipsychotic drug, has long been of scientific interest, but its clinical development has been delayed because of an associated risk of agranulocytosis.",
+     "title": "Clozapine for the treatment-resistant schizophrenic. A double-blind comparison with chlorpromazine.",
+     "year": "1988"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "Clozapine for the treatment-resistant schizophrenic a double-blind comparison with chlorpromazine Kane 1988"
+  },
+  "schizophrenia|2024|toll": {},
+  "sepsis|2000|efficacy": {},
+  "sepsis|2011|intervention": {
+   "candidates": [
+    {
+     "doi": "",
+     "journal": "Minerva Anestesiol",
+     "pmid": "23174922",
+     "quote": "DAA is not associated with improved survival in patients with severe sepsis or septic shock. Further studies should be done to determine whether changes in supportive therapy for sepsis explain the variable efficacy of DAA in randomized controlled clinical trials observed over time.",
+     "title": "An updated meta-analysis to understand the variable efficacy of drotrecogin alfa (activated) in severe sepsis and septic shock.",
+     "year": "2013"
+    },
+    {
+     "doi": "10.1056/NEJMc1207701",
+     "journal": "N Engl J Med",
+     "pmid": "22931268",
+     "quote": "Drotrecogin alfa (activated) in septic shock.",
+     "title": "Drotrecogin alfa (activated) in septic shock.",
+     "year": "2012"
+    },
+    {
+     "doi": "10.1056/NEJMc1207701",
+     "journal": "N Engl J Med",
+     "pmid": "22931267",
+     "quote": "Drotrecogin alfa (activated) in septic shock.",
+     "title": "Drotrecogin alfa (activated) in septic shock.",
+     "year": "2012"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "drotrecogin[ti] AND septic[ti] AND shock[ti] AND 2012[dp]"
+  },
+  "sickle-cell|2023|intervention": {
+   "candidates": [
+    {
+     "doi": "10.1126/science.ade6967",
+     "journal": "Genet Med Open",
+     "pmid": "39822266",
+     "quote": "Casgevy (exagamglogene autotemcel) and Lyfgenia (lovotibeglogene autotemcel) for individuals 12 years and older with sickle cell disease (SCD) and recurrent vaso-occlusive crises (VOC): A therapeutics bulletin of the American College of Medical Genetics and Genomics (ACMG).",
+     "title": "Casgevy (exagamglogene autotemcel) and Lyfgenia (lovotibeglogene autotemcel) for individuals 12 years and older with sickle cell disease (SCD) and recurrent vaso-occlusive crises (VOC): A therapeutics bulletin of the American College of Medical Genetics and Genomics (ACMG).",
+     "year": "2024"
+    },
+    {
+     "doi": "10.1080/14712598.2024.2399134",
+     "journal": "Expert Opin Biol Ther",
+     "pmid": "39222044",
+     "quote": "Based on the currently available safety and efficacy data of the two published clinical results on gene therapy with Crispr-Cas9 modified autologous stem cells (exagamglogene autotemcel), it can be anticipated that this approach will add significantly to the therapeutic options for patients with sickle cell disease and beta-thalassemia",
+     "title": "An evaluation of exagamglogene autotemcel for the treatment of sickle cell disease and transfusion-dependent beta-thalassaemia.",
+     "year": "2024"
+    },
+    {
+     "doi": "10.1056/NEJMoa2309676",
+     "journal": "N Engl J Med",
+     "pmid": "38661449",
+     "quote": "Treatment with exa-cel eliminated vaso-occlusive crises in 97% of patients with sickle cell disease for a period of 12 months or more. (CLIMB SCD-121; ClinicalTrials.gov number, NCT03745287.).",
+     "title": "Exagamglogene Autotemcel for Severe Sickle Cell Disease.",
+     "year": "2024"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "exagamglogene[ti] AND sickle[ti] AND 2024[dp]"
+  },
+  "smallpox|1796|prevention": {},
+  "smallpox|1967|access": {},
+  "smallpox|1980|prevention": {
+   "candidates": [
+    {
+     "doi": "10.17730/humo.39.2.9627647878315507",
+     "journal": "Hum Organ",
+     "pmid": "10247228",
+     "quote": "Tapping the flow of information in a rural region: the example of the smallpox eradication program in Bihar, India.",
+     "title": "Tapping the flow of information in a rural region: the example of the smallpox eradication program in Bihar, India.",
+     "year": "1980"
+    },
+    {
+     "doi": "10.1056/NEJM198011273032204",
+     "journal": "N Engl J Med",
+     "pmid": "6252467",
+     "quote": "In December 1979, an independent scientific commission certified global eradication of smallpox. This conclusion was accepted at the 33d World Health Assembly of the World Health Organization (WHO) in May 1980.",
+     "title": "The confirmation and maintenance of smallpox eradication.",
+     "year": "1980"
+    },
+    {
+     "doi": "",
+     "journal": "Minerva Med",
+     "pmid": "7005749",
+     "quote": "[Worldwide eradication of smallpox. From Sarah Nelmes to Ali Maow Maalin].",
+     "title": "[Worldwide eradication of smallpox. From Sarah Nelmes to Ali Maow Maalin].",
+     "year": "1980"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "smallpox[ti] AND eradication[ti] AND 1980[dp]"
+  },
+  "spinal-muscular-atrophy|1995|mechanism": {
+   "candidates": [
+    {
+     "doi": "10.1038/ng1195-335",
+     "journal": "Nat Genet",
+     "pmid": "7581461",
+     "quote": "Spinal muscular atrophy (SMA) is a frequent autosomal recessive disease characterized by degeneration of the motor neurons of the spinal cord causing proximal paralysis with muscle atrophy.",
+     "title": "A frame-shift deletion in the survival motor neuron gene in Spanish spinal muscular atrophy patients.",
+     "year": "1995"
+    },
+    {
+     "doi": "10.1002/ajmg.1320590121",
+     "journal": "Am J Med Genet",
+     "pmid": "8849000",
+     "quote": "Presymptomatic diagnosis of spinal muscular atrophy (SMA) III confirmed by deletion analysis of the survival motor neuron gene.",
+     "title": "Presymptomatic diagnosis of spinal muscular atrophy (SMA) III confirmed by deletion analysis of the survival motor neuron gene.",
+     "year": "1995"
+    },
+    {
+     "doi": "",
+     "journal": "Am J Hum Genet",
+     "pmid": "7573039",
+     "quote": "DNA studies in 103 spinal muscular atrophy (SMA) patients from The Netherlands revealed homozygosity for a survival motor neuron (SMN) deletion in 96 (93%) of 103. Neuronal apoptosis inhibitory protein deletions were found in 38 (37%) of 103 and occurred most frequently in SMA type I.",
+     "title": "Deletions of the survival motor neuron gene in unaffected siblings of patients with spinal muscular atrophy.",
+     "year": "1995"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "survival[ti] AND motor[ti] AND neuron[ti] AND gene[ti] AND 1995[dp]"
+  },
+  "spinal-muscular-atrophy|2016|intervention": {
+   "accept": "29091570",
+   "candidates": [
+    {
+     "doi": "10.1056/NEJMoa1702752",
+     "journal": "N Engl J Med",
+     "pmid": "29091570",
+     "quote": "Among infants with spinal muscular atrophy, those who received nusinersen were more likely to be alive and have improvements in motor function than those in the control group. Early treatment may be necessary to maximize the benefit of the drug. (Funded by Biogen and Ionis Pharmaceuticals; ENDEAR ClinicalTrials.gov number, NCT02193074 .).",
+     "title": "Nusinersen versus Sham Control in Infantile-Onset Spinal Muscular Atrophy.",
+     "year": "2017"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "nusinersen[ti] AND infantile-onset[ti] AND 2017[dp]"
+  },
+  "spinal-muscular-atrophy|2019|efficacy": {
+   "accept": "29091557",
+   "candidates": [
+    {
+     "doi": "10.1056/NEJMoa1706198",
+     "journal": "N Engl J Med",
+     "pmid": "29091557",
+     "quote": "In patients with SMA1, a single intravenous infusion of adeno-associated viral vector containing DNA coding for SMN resulted in longer survival, superior achievement of motor milestones, and better motor function than in historical cohorts. Further studies are necessary to confirm the safety and efficacy of this gene therapy.",
+     "title": "Single-Dose Gene-Replacement Therapy for Spinal Muscular Atrophy.",
+     "year": "2017"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "gene-replacement[ti] AND muscular[ti] AND atrophy[ti] AND 2017[dp]"
+  },
+  "thyroid-cancer|2014|toll": {},
+  "trachoma|1999|ongoing": {
+   "accept": "8102427",
+   "candidates": [
+    {
+     "doi": "10.1016/0140-6736(93)91591-9",
+     "journal": "Lancet",
+     "pmid": "8102427",
+     "quote": "Azithromycin is effective against Chlamydia trachomatis in vitro and as a single dose for the treatment of chlamydia infection of the genital tract.",
+     "title": "Randomised controlled trial of single-dose azithromycin in treatment of trachoma.",
+     "year": "1993"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "azithromycin[ti] AND trachoma[ti] AND 1993[dp]"
+  },
+  "tuberculosis|1952|intervention": {},
+  "tuberculosis|1980|ongoing": {},
+  "tuberculosis|2019|toll": {},
+  "tuberculosis|2022|efficacy": {
+   "accept": "36053506",
+   "candidates": [
+    {
+     "doi": "10.1056/NEJMoa2119430",
+     "journal": "N Engl J Med",
+     "pmid": "36053506",
+     "quote": "A total of 84 to 93% of the participants across all four bedaquiline-pretomanid-linezolid treatment groups had a favorable outcome.",
+     "title": "Bedaquiline-Pretomanid-Linezolid Regimens for Drug-Resistant Tuberculosis.",
+     "year": "2022"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "bedaquiline[ti] AND pretomanid[ti] AND linezolid[ti] AND 2022[dp]"
+  },
+  "type-1-diabetes|1922|intervention": {
+   "accept": "20314141",
+   "candidates": [
+    {
+     "doi": "",
+     "journal": "Can Med Assoc J",
+     "pmid": "20314141",
+     "quote": "Pancreatic Extract and Diabetes.",
+     "title": "Pancreatic Extract and Diabetes.",
+     "year": "1922"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "pancreatic[ti] AND extract[ti] AND diabetes[ti] AND 1922[dp]"
+  },
+  "type-1-diabetes|1993|efficacy": {
+   "accept": "8366922",
+   "candidates": [
+    {
+     "doi": "10.1056/NEJM199309303291401",
+     "journal": "N Engl J Med",
+     "pmid": "8366922",
+     "quote": "Intensive therapy effectively delays the onset and slows the progression of diabetic retinopathy, nephropathy, and neuropathy in patients with IDDM.",
+     "title": "The effect of intensive treatment of diabetes on the development and progression of long-term complications in insulin-dependent diabetes mellitus.",
+     "year": "1993"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "intensive[ti] AND treatment[ti] AND diabetes[ti] AND complications[ti] AND 1993[dp]"
+  },
+  "type-1-diabetes|2020|efficacy": {},
+  "type-1-diabetes|2022|prevention": {
+   "candidates": [
+    {
+     "doi": "10.1056/NEJMc1912500",
+     "journal": "N Engl J Med",
+     "pmid": "31693818",
+     "quote": "Teplizumab in Relatives at Risk for Type 1 Diabetes. Reply.",
+     "title": "Teplizumab in Relatives at Risk for Type 1 Diabetes. Reply.",
+     "year": "2019"
+    },
+    {
+     "doi": "10.1056/NEJMc1912500",
+     "journal": "N Engl J Med",
+     "pmid": "31693817",
+     "quote": "Teplizumab in Relatives at Risk for Type 1 Diabetes.",
+     "title": "Teplizumab in Relatives at Risk for Type 1 Diabetes.",
+     "year": "2019"
+    },
+    {
+     "doi": "10.1056/NEJMc1912500",
+     "journal": "N Engl J Med",
+     "pmid": "31693816",
+     "quote": "Teplizumab in Relatives at Risk for Type 1 Diabetes.",
+     "title": "Teplizumab in Relatives at Risk for Type 1 Diabetes.",
+     "year": "2019"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "teplizumab[ti] AND relatives[ti] AND 2019[dp]"
+  },
+  "type-2-diabetes|1998|efficacy": {
+   "accept": "9742976",
+   "candidates": [
+    {
+     "doi": "",
+     "journal": "Lancet",
+     "pmid": "9742976",
+     "quote": "Intensive blood-glucose control by either sulphonylureas or insulin substantially decreases the risk of microvascular complications, but not macrovascular disease, in patients with type 2 diabetes.(ABSTRACT TRUNCATED)",
+     "title": "Intensive blood-glucose control with sulphonylureas or insulin compared with conventional treatment and risk of complications in patients with type 2 diabetes (UKPDS 33). UK Prospective Diabetes Study (UKPDS) Group.",
+     "year": "1998"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "sulphonylureas[ti] AND insulin[ti] AND conventional[ti] AND 1998[dp]"
+  },
+  "type-2-diabetes|2015|efficacy": {
+   "candidates": [
+    {
+     "doi": "",
+     "journal": "Rev Med Liege",
+     "pmid": "26738271",
+     "quote": "EMPA-REG OUTCOME is an international, prospective, placebo-controlled clinical trial investigating the cardiovascular outcomes of empagliflozin, an inhibitor of sodium-glucose cotransporters type 2 (SGLT2), in patients with type 2 diabetes mellitus and known cardiovascular disease.",
+     "title": "[EMPA-REG OUTCOME: Empagliflozin reduces mortality in patients with type 2 diabetes at high cardiovascular risk].",
+     "year": "2015"
+    },
+    {
+     "doi": "10.1016/j.semerg.2015.10.010",
+     "journal": "Semergen",
+     "pmid": "26671327",
+     "quote": "[Empagliflozin reduces cardiovascular mortality in diabetic patients with previous cardiovascular events].",
+     "title": "[Empagliflozin reduces cardiovascular mortality in diabetic patients with previous cardiovascular events].",
+     "year": "2016"
+    },
+    {
+     "doi": "10.1056/NEJMoa1504720",
+     "journal": "N Engl J Med",
+     "pmid": "26378978",
+     "quote": "Patients with type 2 diabetes at high risk for cardiovascular events who received empagliflozin, as compared with placebo, had a lower rate of the primary composite cardiovascular outcome and of death from any cause when the study drug was added to standard care.",
+     "title": "Empagliflozin, Cardiovascular Outcomes, and Mortality in Type 2 Diabetes.",
+     "year": "2015"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "empagliflozin[ti] AND cardiovascular[ti] AND mortality[ti] AND 2015[dp]"
+  },
+  "type-2-diabetes|2018|intervention": {
+   "candidates": [
+    {
+     "doi": "10.1016/S2213-8587(18)30346-2",
+     "journal": "Lancet Diabetes Endocrinol",
+     "pmid": "30581081",
+     "quote": "Within-trial cost and 1-year cost-effectiveness of the DiRECT/Counterweight-Plus weight-management programme to achieve remission of type 2 diabetes.",
+     "title": "Within-trial cost and 1-year cost-effectiveness of the DiRECT/Counterweight-Plus weight-management programme to achieve remission of type 2 diabetes.",
+     "year": "2019"
+    },
+    {
+     "doi": "10.7326/ACPJC-2018-168-6-030",
+     "journal": "Ann Intern Med",
+     "pmid": "29554668",
+     "quote": "Intensive weight management in primary care improved weight loss and remission of type 2 diabetes.",
+     "title": "Intensive weight management in primary care improved weight loss and remission of type 2 diabetes.",
+     "year": "2018"
+    },
+    {
+     "doi": "10.1136/dtb.2018.2.0586",
+     "journal": "Drug Ther Bull",
+     "pmid": "29431614",
+     "quote": "Intensive weight management for remission of type 2 diabetes.",
+     "title": "Intensive weight management for remission of type 2 diabetes.",
+     "year": "2018"
+    }
+   ],
+   "looked_at": "2026-08-26",
+   "query": "weight-management[ti] AND remission[ti] AND diabetes[ti] AND 2018[dp]"
+  },
+  "typhoid|1948|intervention": {},
+  "typhoid|2016|efficacy": {},
+  "typhoid|2018|access": {},
+  "uterine-cancer|2013|toll": {},
+  "uterine-cancer|2023|efficacy": {},
+  "visceral-leishmaniasis|2011|toll": {},
+  "yaws|1964|access": {}
+ }
+}

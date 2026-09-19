@@ -1,0 +1,611 @@
+slug: congenital-heart-disease
+id: FND-D-0094
+name: congenital heart disease
+also: [CHD, congenital heart defect, congenital heart malformation, structural heart disease of the newborn]
+mondo: MONDO:0005453
+kind: disease
+residual: false
+contested: false
+
+# THE COUNTER-CASE TO THE THREE RECORDS BEFORE IT, AND IT BREAKS THE ARC.
+#
+#   cystic-fibrosis    gene 1989 → drug 2012, twenty-three years
+#   spinal-muscular-atrophy  gene 1995 → drug 2016, twenty-one years
+#   duchenne           gene 1986 → still nothing that works well
+#   THIS RECORD        **operation 1944. Genes irrelevant then and irrelevant now.**
+#
+# The Blalock-Taussig shunt was performed in 1944 and cardiopulmonary bypass in
+# 1953, decades before anybody had sequenced anything. Since then genetics has
+# identified 22q11.2, NKX2-5, GATA4, TBX5 and the rest — **and has produced no
+# therapy whatever, and would not be expected to.** You do not need to know why a
+# septum failed to close in order to close it.
+#
+# **The register's implicit model is understand-then-treat, and for structural
+# disease it is simply wrong** (gaps.md #198).
+
+burden:
+  cases:
+    value: 1.35e6
+    units: >
+      affected births/year — roughly eight to nine per thousand live births, which
+      makes this **the commonest birth defect in the world** and about a third of
+      all major congenital anomalies
+    src: recall
+  deaths:
+    value: 2.2e5
+    units: >
+      deaths/year from congenital heart anomalies — **and more than nine in ten
+      are in low- and middle-income countries**, in children whose lesions would
+      be routinely corrected elsewhere
+    src: recall
+  note: >
+    **THE ACCESS GAP HERE IS THE WIDEST IN THE REGISTER, AND IT IS NOT ABOUT A
+    DRUG.**
+    In a country with paediatric cardiac surgery, most children born with a heart
+    defect now survive to adulthood — **there are more adults than children living
+    with congenital heart disease** in several high-income countries, which is a
+    sentence that would have been meaningless in 1950. In much of the world the
+    estimate is that **around nine in ten children with congenital heart disease
+    receive no appropriate care at all.**
+    The physical constraint is stark: cardiac surgical centres per head of
+    population differ between regions by something like two orders of magnitude,
+    and several countries have no paediatric cardiac surgery programme of any
+    kind.
+    **Nothing about this is a discovery problem.** The operations were worked out
+    between 1944 and the 1980s. What is missing is surgeons, perfusionists,
+    paediatric cardiac intensivists, trained nurses, an intensive care unit and a
+    blood bank — none of which can be imported in a box (gaps.md #154).
+
+survival:
+  horizon: 18 years from birth
+  untreated:
+    value: 0.25
+    units: >
+      fraction alive — **the natural history of significant congenital heart
+      disease before surgery: roughly a quarter reached adulthood.** Transposition
+      of the great arteries was near-uniformly fatal in infancy
+    src: reasoning
+  treated:
+    value: 0.9
+    units: >
+      fraction alive with modern paediatric cardiac surgery and catheter
+      intervention — **over 90% now reach adulthood**, and there are for the
+      first time more adults than children living with congenital heart disease
+    src: reasoning
+  witness: >
+    **One of the great surgical results of the twentieth century, and the register
+    should say so plainly.** From a quarter to nine tenths, in one lifetime, by
+    operating on newborn hearts.
+    **And the success created a new specialty out of nothing**: adult congenital
+    heart disease, a population that did not exist in 1960, now carrying
+    arrhythmia, heart failure and reoperation. The same pattern as ischaemic
+    heart disease feeding `heart-failure` — a victory that manufactures its own
+    follow-on burden, which this register has no field for.
+
+axes:
+  mechanism: partial
+  intervention: curative
+  prevention: risk-reduction
+  ongoing: moderate
+  efficacy:
+    value: 0.90
+    units: >
+      fraction-of-patients (surviving to adulthood with good functional status,
+      given full surgical care) — **near-total for simple lesions and much lower
+      for single-ventricle physiology**, which is palliated rather than repaired
+    src: reasoning
+  access:
+    value: 0.15
+    units: >
+      fraction-of-patients (reaching timely surgical care) — **the lowest access
+      figure in the register attached to the highest efficacy**, which is what
+      makes this the widest capability-delivery gap in the corpus
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: partial
+  witness: >
+    **DIAGNOSTIC IS `objective` AND THE SCREEN COSTS ALMOST NOTHING.**
+    Echocardiography defines the anatomy completely and non-invasively; there is
+    no diagnostic uncertainty worth arguing about once a child reaches a
+    machine and somebody who can read it.
+    **The screen that matters is a pulse oximeter on a newborn's foot.** Critical
+    congenital heart disease — the duct-dependent lesions that collapse when the
+    ductus arteriosus closes in the first days of life — is detectable by
+    measuring oxygen saturation before discharge. It was added to national newborn
+    screening panels from 2011 and it is cheap, quick and effective.
+    **And it carries the flaw this register flagged at `chronic-kidney-disease`:
+    pulse oximetry accuracy varies with skin pigmentation** (gaps.md #175). In a
+    screen whose entire job is detecting a few percentage points of desaturation
+    in a newborn, that is not a theoretical concern, and it is a third record in
+    which the register has recommended this device without qualifying the rating.
+    **Prenatal detection is the other half and it is worse than people assume.**
+    Fetal echocardiography can identify major structural disease, and detection
+    rates for major lesions run between roughly a third and two thirds even in
+    well-resourced systems, depending on who performs the anomaly scan and what
+    views they are trained to obtain.
+    PROGNOSTIC is `partial`: the anatomical diagnosis predicts a great deal,
+    and within a lesion the range of outcomes is wide and not individually
+    predictable. PREDICTIVE is `partial` — the anatomy determines the operation,
+    which is a genuine prediction, and nothing predicts who will develop late
+    ventricular failure or arrhythmia.
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    **THE COST OF FIXING A HEART IN A NEWBORN IS PAID PARTLY IN THE BRAIN, AND IT
+    IS UNDER-DISCUSSED.**
+    Children who undergo cardiac surgery as neonates have measurably worse
+    neurodevelopmental outcomes than their peers — executive function, attention,
+    motor skills, academic attainment. The contributions are argued over:
+    cardiopulmonary bypass and circulatory arrest, pre-operative hypoxia,
+    prolonged intensive care, and abnormalities of brain development that are
+    present *before* any operation in some lesions. **Neurodevelopmental
+    surveillance is now a formal part of congenital cardiac care**, which is a
+    field acknowledging a permanent cost of its own success.
+    Then the ordinary surgical tolls, at scale: a sternotomy in infancy and often
+    several more, arrhythmias arising from surgical scar, permanent pacemakers,
+    prosthetic valves and the anticoagulation that goes with mechanical ones, and
+    for many lesions **planned reoperation** — a repaired tetralogy of Fallot
+    typically needs its pulmonary valve replaced in adult life.
+    **And the imposition that has no field**: a childhood organised around a heart
+    condition, the restrictions and the surveillance, and — for parents — a
+    decision taken on a newborn's behalf under conditions of extreme urgency.
+  incidence:
+    value: 0.20
+    units: >
+      fraction-of-treated (permanent harm — chiefly neurodevelopmental impairment
+      after neonatal surgery, and surgical arrhythmia requiring a device) — a
+      reasoned estimate, concentrated in the complex lesions
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    **THE FONTAN CIRCULATION IS THE CLEAREST EXAMPLE IN THIS REGISTER OF MEDICINE
+    BUILDING SOMETHING THAT WORKS AND HAS A KNOWN EXPIRY.**
+    A child born with one functional ventricle cannot be repaired, so surgeons
+    **substitute a different circulation**: systemic venous blood is routed
+    directly to the lungs without a pump, and the single ventricle serves the body.
+    It works. Children who died in infancy now reach adulthood.
+    **And it was understood from the start that it produces chronically elevated
+    systemic venous pressure**, because passive pulmonary flow requires it. Three
+    decades later the consequences are catalogued: **Fontan-associated liver
+    disease**, in which fibrosis is close to universal with time and cirrhosis and
+    hepatocellular carcinoma occur; **protein-losing enteropathy**; **plastic
+    bronchitis**; lymphatic failure; and progressive ventricular dysfunction
+    ending in transplantation.
+    **A cardiac operation produces a liver disease, predictably, on a
+    thirty-year timetable** — and `cirrhosis` is a record in this register with no
+    way to say where a share of it came from (gaps.md #147, #160).
+    Beyond the Fontan: repaired lesions leave residual defects, scar-related
+    arrhythmias, and in late-repaired shunts **irreversible pulmonary vascular
+    disease** (see `window`). Almost nobody with complex congenital heart disease
+    has a normal heart afterwards; they have a **different** one.
+  incidence:
+    value: 0.25
+    units: >
+      fraction-of-survivors (permanent residual disease — arrhythmia, ventricular
+      dysfunction, Fontan-associated organ failure, or the need for further
+      surgery) — a reasoned estimate
+    src: reasoning
+
+window:
+  what: >
+    **THIS RECORD HAS THREE WINDOWS AND ONE OF THEM CLOSES BY MAKING THE
+    OPERATION LETHAL** (gaps.md #199).
+    *Days.* Duct-dependent lesions depend on the ductus arteriosus staying open;
+    it closes in the first days of life and the infant collapses. **Prostaglandin
+    E1 holds it open** — a cheap infusion that buys time for transfer — and the
+    window between a well-looking newborn and a dying one is measured in hours.
+    Pulse oximetry screening exists to catch exactly this.
+    *Months.* Most repairs are timed to a lesion's natural history: too early and
+    the child is small and the repair fragile, too late and damage accrues.
+    ***Years, and then it inverts.*** A large unrepaired left-to-right shunt —
+    a ventricular septal defect, an atrioventricular septal defect — sends
+    excessive flow to the lungs, and the pulmonary arterioles remodel
+    irreversibly. Once pulmonary vascular resistance exceeds systemic, the shunt
+    **reverses**: this is **Eisenmenger syndrome**, and at that point **closing the
+    defect is contraindicated and would kill the patient**, because the shunt has
+    become the right ventricle's only escape from a circulation it can no longer
+    drive.
+    **The same operation, on the same anatomy, that would have cured this child at
+    six months will kill them at five years.** The window did not expire. It
+    inverted.
+    Children with Down syndrome and atrioventricular septal defects develop this
+    especially early, which is why timely repair in that group is a specific and
+    frequently missed priority.
+  closes_on: >
+    ductal closure in the first days of life; and, for unrepaired shunts,
+    irreversible pulmonary vascular remodelling, after which the corrective
+    operation becomes fatal
+  caught_in_time:
+    value: 0.20
+    units: >
+      fraction-of-cases (reaching surgery while it is still both possible and
+      corrective) — a reasoned estimate; it approaches one in countries with
+      screening and surgery and near zero where neither exists
+    src: reasoning
+
+strata:
+  - name: simple lesions
+    fraction:
+      value: 0.55
+      units: fraction-of-cases
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.98
+      units: fraction-of-stratum (anatomical correction with normal life expectancy)
+      src: reasoning
+    toll: minor
+    what: >
+      Atrial and ventricular septal defects, patent ductus arteriosus, mild
+      pulmonary stenosis. **Many close spontaneously; most of the rest are
+      corrected by a catheter device or a straightforward operation, and the child
+      is then normal.** This is the largest stratum, the cheapest to treat, and the
+      one where the global access gap costs the most preventable deaths for the
+      least money.
+
+  - name: complex lesions amenable to biventricular repair
+    fraction:
+      value: 0.37
+      units: fraction-of-cases
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.90
+      units: fraction-of-stratum (survival to adulthood with good function)
+      src: reasoning
+    toll: major
+    what: >
+      Tetralogy of Fallot, transposition of the great arteries, atrioventricular
+      septal defect, coarctation. **These required the invention of
+      cardiopulmonary bypass and are now routine**, with survival to adulthood the
+      expectation. Repaired is not the same as normal: residual lesions,
+      scar-related arrhythmia, and **planned reoperation** — a repaired tetralogy
+      usually needs a pulmonary valve in adult life.
+
+  - name: single-ventricle physiology
+    fraction:
+      value: 0.08
+      units: fraction-of-cases
+      src: reasoning
+    intervention: disease-modifying
+    efficacy:
+      value: 0.65
+      units: fraction-of-stratum (survival to adolescence and beyond)
+      src: reasoning
+    toll: major
+    what: >
+      Hypoplastic left heart syndrome and its relatives — hearts that cannot be
+      repaired because a pumping chamber is missing. **Three staged operations
+      substitute a circulation rather than correcting one**, and it is the stratum
+      the register's ladder fits worst: not curative, nothing continuously
+      administered, and a designed-in failure mode arriving decades later. **The
+      record flags ⧉ because of this stratum**, and `residue` above is mostly about
+      it.
+
+moved:
+  - date: 1944
+    axis: intervention
+    from: none
+    to: disease-modifying
+    why: >
+      **THE BLUE BABY OPERATION, AND THE PERSON WHO WORKED OUT HOW TO DO IT WAS
+      NOT ALLOWED TO BE A DOCTOR.**
+      Helen Taussig, a paediatric cardiologist, observed that infants with
+      tetralogy of Fallot deteriorated as the ductus arteriosus closed, and
+      proposed building an artificial one. **Vivien Thomas**, a surgical technician
+      at Johns Hopkins who had no medical degree and had been hired as a
+      janitor's-wage laboratory assistant, developed the operation in dogs and
+      then **stood behind Alfred Blalock coaching him through the first human
+      case** in 1944. Thomas's role went formally uncredited for decades; he
+      received an honorary doctorate in 1976.
+      The shunt did not repair anything. It routed a subclavian artery to a
+      pulmonary artery so that cyanotic children turned pink. **It was the first
+      demonstration that a congenital cardiac malformation could be operated on at
+      all**, and everything in this record descends from it.
+      **Note what it was not.** It was not derived from any molecular
+      understanding, and there was none to derive it from (gaps.md #198).
+    src: recall
+
+  - date: 1954
+    axis: intervention
+    from: disease-modifying
+    to: curative
+    why: >
+      **CARDIOPULMONARY BYPASS TURNED PALLIATION INTO REPAIR.**
+      A shunt improves the circulation around a defect. Correcting one requires
+      opening the heart, which requires stopping it, which requires something else
+      to do the heart's job. Gibbon's heart-lung machine achieved the first
+      successful open intracardiac repair in 1953; Lillehei's **cross-circulation**
+      — using a parent's own circulation to oxygenate the child's blood, an
+      operation with a theoretical mortality of two hundred percent — bridged the
+      gap while the machines improved.
+      Within two decades most structural defects had a described repair, and the
+      field's problem changed from *can this be done* to *who can do it and where.*
+      **That transition is where this record's central fact was set**: the science
+      finished, essentially, in the twentieth century, and the delivery problem has
+      barely moved since.
+    src: recall
+
+  - date: 2011
+    axis: access
+    from: 0.12
+    to: 0.15
+    why: >
+      **A PULSE OXIMETER ON A NEWBORN'S FOOT, AND IT WAS ADDED TO NATIONAL
+      SCREENING PANELS SEVENTY YEARS AFTER THE FIRST OPERATION.**
+      Critical congenital heart disease presents as sudden collapse when the
+      ductus arteriosus closes, often after discharge, in a baby who looked well.
+      Measuring oxygen saturation before discharge detects a substantial share of
+      those lesions in time to start prostaglandin and transfer the child.
+      It was recommended for universal newborn screening in the United States in
+      2011 and adopted widely since, and it is cheap, fast and requires no
+      specialist.
+      **The move recorded here is small on purpose.** Screening changes outcomes
+      only where there is a cardiac centre to transfer to, so the intervention that
+      transformed detection has moved the global access figure very little — which
+      is the honest shape of this record and the reason the `logistics` blocker
+      below is the one that matters.
+    src: recall
+
+witness:
+  mechanism: >
+    `partial`, and **this record is the register's clearest case of a mechanism
+    rating that has nothing to do with its treatment.**
+    The embryology is well described: cardiac looping, septation of the atria and
+    ventricles, division of the outflow tract by neural-crest-derived cushions, and
+    the transition from fetal to neonatal circulation. Failure at each step
+    produces a recognisable family of lesions.
+    **The aetiology of most cases is not known.** Perhaps a fifth to a third have
+    an identifiable genetic cause — **trisomy 21**, where roughly half of children
+    have a cardiac defect; **22q11.2 deletion**; Turner and Noonan syndromes; and
+    single genes including *NKX2-5*, *GATA4* and *TBX5*. Maternal factors are
+    established and modest in aggregate: pregestational diabetes, rubella
+    infection, valproate, isotretinoin, alcohol, and untreated maternal
+    phenylketonuria. **The majority is multifactorial and unexplained.**
+    **AND NONE OF THAT IS ON THE PATH TO THE TREATMENT.** The Blalock-Taussig
+    shunt was performed in 1944 and cardiopulmonary bypass in 1953, decades before
+    any of those genes existed as concepts. Genetics has since explained a
+    minority of cases and produced **no therapy at all**, and would not be expected
+    to — you do not need to know why a septum failed to close in order to close
+    it.
+    Compare the three records immediately before this one, where the gene was
+    found and the therapy took twenty to thirty-five years to follow. **Here the
+    therapy came first, by fifty years, and the mechanism has contributed nothing
+    to it** (gaps.md #198).
+  intervention: >
+    `curative`, and it is carpentry.
+    **Simple lesions** — septal defects, patent ductus — are closed by a catheter
+    device or a straightforward operation, and the child is then normal. **Complex
+    biventricular lesions** — tetralogy of Fallot, transposition, atrioventricular
+    septal defect — are anatomically corrected on cardiopulmonary bypass, with
+    survival to adulthood the expectation, though "repaired" means residual lesions
+    and often a planned reoperation decades later.
+    **Single-ventricle physiology cannot be repaired**, and what is done instead is
+    the most interesting thing in the record: three staged operations that
+    **substitute a different circulation**, routing venous blood passively to the
+    lungs. It works, it is not a repair, and it has a known failure trajectory
+    (see `residue`).
+    Around all of it: prostaglandin to keep a duct open, catheter interventions
+    that have replaced many operations, transplantation for failing physiology, and
+    lifelong specialist follow-up.
+    **What does not exist and is not being sought is a molecular treatment.** No
+    drug prevents or corrects a structural malformation, and the field has never
+    organised itself around finding one — correctly, because the mechanical problem
+    has a mechanical answer and it works.
+  prevention: >
+    `risk-reduction`, and honestly weak, because most congenital heart disease has
+    no identified preventable cause.
+    What exists: **rubella immunisation**, which eliminates congenital rubella
+    syndrome and its cardiac lesions and belongs largely to another record;
+    **control of maternal diabetes** before and during pregnancy, which is a real
+    and growing contribution as `type-2-diabetes` rises in women of reproductive
+    age; avoidance of teratogens including valproate, isotretinoin and alcohol;
+    treatment of maternal phenylketonuria; and periconceptional folic acid, whose
+    effect on cardiac defects is smaller and less certain than on neural tube
+    defects.
+    **And prenatal diagnosis raises the same question this register met at
+    `cystic-fibrosis` and `spinal-muscular-atrophy`, in a sharper form.** Fetal
+    echocardiography identifies major lesions, and a substantial share of
+    pregnancies with severe diagnoses — hypoplastic left heart in particular — are
+    terminated. **That is prevention of a birth rather than of a disease**, and it
+    is sharper here because many of these lesions are correctable, so what is being
+    weighed is not a fatal condition but a difficult one (gaps.md #159). The
+    register records it in the same field it uses for a bed net and takes no
+    position on it.
+  ongoing: >
+    `moderate` for most, and it never ends.
+    Simple repaired lesions need little more than occasional review. Complex
+    repairs need lifelong specialist cardiology: echocardiography, arrhythmia
+    surveillance, anticoagulation for mechanical valves, endocarditis prophylaxis
+    for some, and planned reoperations. Single-ventricle patients need all of that
+    plus liver surveillance, and increasingly transplant assessment.
+    **The failure mode is administrative and it is large.** Congenital cardiac
+    surgery created a population of adults who need specialist congenital care, and
+    **a substantial share of them are lost to follow-up at the transition from
+    paediatric to adult services** — reappearing years later with arrhythmias or
+    heart failure that would have been manageable. The specialty of adult
+    congenital heart disease exists because paediatric cardiac surgery worked, and
+    it is undersized relative to the population its predecessor created.
+
+holes:
+  - >
+    **`access: 0.15` alongside `efficacy: 0.90` is the widest capability-delivery
+    gap in the register**, and both numbers are reasoned rather than sourced. The
+    access figure is the important one and deserves a citation more than almost any
+    other number in the corpus.
+  - >
+    **`intervention: curative` is true of the two large strata and false of the
+    third.** Single-ventricle palliation substitutes a circulation rather than
+    repairing one and has a designed-in failure trajectory; the ladder has no rung
+    for that and the record flags ⧉ instead.
+  - >
+    **A share of `cirrhosis` originates here.** Fontan-associated liver disease is
+    a predictable consequence of a cardiac operation, and neither record can say
+    so (gaps.md #147, #160).
+  - >
+    **The pulse oximetry screen carries a known population-dependent inaccuracy**
+    and the `objective` rating does not qualify it — the third record in which this
+    register has recommended the device without noting it (gaps.md #175).
+  - >
+    Prenatal detection and its consequences are recorded under `prevention` in the
+    same field used for vaccination, which is a category error the schema forces
+    (gaps.md #159).
+  - >
+    Every scalar is `recall` or `reasoning`. Congenital cardiac surgery has
+    unusually good outcome registries in high-income countries and essentially none
+    elsewhere, so the global figures are modelled from the places that do least of
+    the dying.
+
+blockers:
+  - kind: logistics
+    blocks: a surgical programme, which is people rather than product
+    obstacles: []
+    what: >
+      **NINE IN TEN CHILDREN WITH CONGENITAL HEART DISEASE RECEIVE NO APPROPRIATE
+      CARE, AND THE OPERATIONS HAVE ALL BEEN DESCRIBED SINCE THE 1980s.**
+      A paediatric cardiac programme requires, simultaneously: a congenital
+      cardiac surgeon, a paediatric cardiac anaesthetist, a **perfusionist**, a
+      cardiac intensive care unit with nurses trained specifically in it, an
+      echocardiographer who can read a neonate, a catheterisation laboratory, a
+      **blood bank**, and a reliable supply of oxygen and consumables. Remove any
+      one and the rest cannot function. **The training pipeline for every role runs
+      to years.**
+      Cardiac surgical capacity per head differs between regions by roughly two
+      orders of magnitude, and several countries have no paediatric cardiac surgery
+      at all.
+      **The two delivery models are in genuine tension and the register should name
+      it.** Visiting surgical missions operate on children who would otherwise die,
+      and leave; **local capacity building** trains a team that operates for
+      decades and takes far longer to show results. The evidence favours the
+      second and the funding favours the first, because a mission produces
+      photographs of children in a defined budget cycle and a training programme
+      produces a surgeon in ten years.
+      This is gaps.md #154 in its most capital- and personnel-intensive form:
+      **nothing here can be procured, donated or shipped.**
+    who_could: [health-system, government, payer, nonprofit, philanthropy, academic]
+    scale: 1.5e10
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    blocks: a well-looking newborn who collapses at home
+    obstacles: []
+    what: >
+      **CRITICAL CONGENITAL HEART DISEASE LOOKS LIKE A NORMAL BABY UNTIL THE DUCT
+      CLOSES.**
+      Duct-dependent lesions are compensated in the first days of life by the fetal
+      circulation's remnant. When it closes, the infant collapses — frequently at
+      home, after discharge, and frequently too late. **Pulse oximetry before
+      discharge detects a substantial share of them**, costs almost nothing, takes
+      minutes, and requires no specialist. It reached national screening panels
+      only in 2011.
+      **Prenatal detection is the larger and less-solved half.** Fetal
+      echocardiography can identify major lesions, and detection rates for major
+      structural disease run between roughly a third and two thirds even in
+      well-resourced systems — the variable being whether the person performing the
+      routine anomaly scan was trained to obtain and interpret the outflow tract
+      views. **It is a training problem, in a scan almost every pregnancy already
+      receives.**
+      **And screening without surgery is close to useless**, which is the
+      uncomfortable arithmetic of this blocker: detecting a duct-dependent lesion in
+      a district hospital with no cardiac centre to transfer to identifies a baby
+      who will die, earlier.
+    who_could: [health-system, government, academic, payer, nonprofit]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+  - kind: cost
+    blocks: a one-time operation with a lifetime of benefit, financed as an expense
+    obstacles: []
+    what: >
+      **CONGENITAL CARDIAC SURGERY IS EXPENSIVE ONCE AND THEN THE CHILD IS A
+      NORMAL ADULT**, which is among the best health-economic propositions in
+      medicine and one of the hardest to finance.
+      An operation costing a few thousand dollars in a well-run programme buys
+      seventy years of normal life. The cost-effectiveness is comparable to the
+      strongest interventions in this register — **and it is a lump sum, in a
+      hospital budget, in the same year**, competing against recurring programmes
+      with annual line items and international funding streams. `cataract` and
+      `spinal-muscular-atrophy` document the same problem: **a one-time cure fits no
+      financing instrument** (gaps.md #124).
+      The out-of-pocket picture is worse and is where most of the world's families
+      sit: surgery, travel to a distant city, accommodation, lost income, and
+      follow-up — catastrophic health expenditure for a household, for a child who
+      appears well between episodes.
+      There is no patent here and no manufacturer to negotiate with. **This is a
+      cost blocker with nobody on the other side of the table**, which makes it
+      unusual in the register and, in principle, easier.
+    who_could: [government, payer, health-system, philanthropy, nonprofit]
+    scale: 5.0e9
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: what a substituted circulation does over sixty years
+    obstacles: []
+    what: >
+      **THE FONTAN CIRCULATION IS A HUMAN EXPERIMENT NOW ENTERING ITS SIXTH DECADE
+      AND NOBODY KNOWS HOW IT ENDS.**
+      Routing systemic venous blood to the lungs without a pump requires
+      permanently elevated venous pressure, and that was understood in 1971. What
+      has emerged since is the catalogue: **liver fibrosis approaching universal
+      with time**, with cirrhosis and hepatocellular carcinoma; protein-losing
+      enteropathy; plastic bronchitis; lymphatic failure; and progressive
+      ventricular dysfunction.
+      **What is not known is the trajectory** — how many will need transplantation
+      and when, whether liver disease can be modified, whether earlier or different
+      staging changes the outcome, and what the ceiling on survival actually is.
+      The oldest Fontan patients are only now in their fifties, and every
+      surveillance recommendation is an extrapolation.
+      **This is gaps.md #191's horizon problem in a surgical record**, and it has
+      the additional property that the intervention cannot be undone (#192): a
+      Fontan cannot be reversed, and the alternative in infancy was death.
+      The older question — **why most congenital heart disease happens** — remains
+      open and is, unusually for this register, **not on the critical path to
+      anything.** It would inform prevention and would not change a single
+      operation.
+      `scale: null`.
+    who_could: [academic, sponsor, philanthropy, patient-org, health-system]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: the adults that paediatric surgery created, and the service that does not exist for them
+    obstacles: []
+    what: >
+      **THERE ARE NOW MORE ADULTS THAN CHILDREN LIVING WITH CONGENITAL HEART
+      DISEASE IN SEVERAL COUNTRIES, AND THEY ARE A POPULATION NOBODY PLANNED
+      FOR.**
+      A repaired heart is not a normal heart. Adults with congenital heart disease
+      develop arrhythmias from surgical scar, ventricular dysfunction, valve
+      degeneration requiring reoperation, pulmonary hypertension, and — for Fontan
+      patients — liver and lymphatic failure. Managing that requires specialists
+      trained in an anatomy that adult cardiologists were never taught.
+      **The documented failure is the transition.** A substantial share of patients
+      are lost to specialist follow-up when they leave paediatric services in their
+      late teens — the point at which they feel well, dislike hospitals, and are
+      handed to a system that may not have a congenital service. They reappear years
+      later with problems that were manageable and are no longer.
+      **This is gaps.md #147 producing an administrative rather than a biological
+      consequence**: capability created a cohort, and the cohort has no home.
+      `cystic-fibrosis` and `spinal-muscular-atrophy` are generating the same
+      problem now, a generation behind.
+    who_could: [health-system, government, payer, academic, patient-org]
+    scale: 2.0e9
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0095
+  rated: 2026-08-25
+  by: [claude, jeremy]

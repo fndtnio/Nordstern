@@ -1,0 +1,383 @@
+slug: mycetoma
+id: FND-D-0030
+name: mycetoma
+also: [Madura foot, maduromycosis, eumycetoma, actinomycetoma]
+mondo: MONDO:0016823
+kind: disease
+residual: false
+contested: false
+
+# ONE NAME, TWO DISEASES, AND YOU OFTEN CANNOT TELL WHICH ONE IS IN FRONT OF YOU.
+#
+# Mycetoma is caused either by FUNGI (eumycetoma) or by filamentous BACTERIA
+# (actinomycetoma). The two are clinically near-identical — a painless
+# subcutaneous swelling on a foot, discharging grains through sinus tracts — and
+# the treatments have nothing in common:
+#
+#   actinomycetoma  antibiotics. Curable, cheaply, in most patients.
+#   eumycetoma      antifungals for a year or more, cure in a minority, and
+#                   frequently amputation.
+#
+# Telling them apart needs grain microscopy, culture, histopathology or PCR — in
+# rural Sudan, Chad, Somalia, Senegal, Mexico. Guess wrong and the patient takes
+# the wrong drug for months while the disease eats the bone.
+#
+# TWO THINGS THAT BREAKS.
+#
+# 1. `strata` PRESUME THE PARTITION IS OBSERVABLE. Every other strata set here —
+#    breast cancer stage, Chagas phase, TB resistance, the hydrocele/lymphoedema
+#    split — can be assigned at the bedside or by a routine test. These cannot.
+#    A stratum a clinician cannot sort a patient into is a research category,
+#    not a clinical one, and the schema treats them identically. gaps.md #64.
+#
+# 2. THE REGISTER INHERITS SOMEBODY ELSE'S ATTENTION. Described in 1842. Added
+#    to the WHO neglected tropical disease list in 2016. First randomised
+#    controlled trial in the 2020s. For 174 years this happened to people
+#    without being counted, and there is still no reliable burden figure. Every
+#    record in this register exists because somebody already decided it was a
+#    disease worth naming. gaps.md #65.
+
+burden:
+  prevalence:
+    value: 1.0e-6
+    units: >
+      fraction-of-population — A PLACEHOLDER, NOT AN ESTIMATE. There is no
+      reliable global figure; what exists is hospital series and case reports,
+      dominated by the one centre in Khartoum that has systematically collected
+      them
+    src: unknown
+  deaths:
+    value: 0.0
+    units: >
+      deaths/year directly attributable — mycetoma disables and disfigures and
+      rarely kills directly; secondary sepsis and the consequences of amputation
+      are not counted under this heading
+    src: reasoning
+  note: >
+    THE ABSENCE OF DATA IS THE FINDING, and it is downstream of the absence of
+    attention rather than of any measurement difficulty. The disease is
+    concentrated in a "mycetoma belt" — Sudan, Chad, Ethiopia, Somalia, Senegal,
+    Mauritania, and separately India, Mexico and Venezuela — among barefoot
+    agricultural workers and herders, and it has been described in the medical
+    literature since the 1840s.
+    It received formal recognition as a neglected tropical disease in 2016. Not
+    1916. The burden estimate does not exist because nobody was counting, the
+    evidence base is thin because nobody was funding trials, and the drugs are
+    poor because nobody was developing them — three blockers below that all have
+    the same upstream cause and no field to record it in.
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: risk-reduction
+  ongoing: high
+  efficacy:
+    value: 0.50
+    units: >
+      fraction-of-patients (cure, blended across the two forms) — and the blend
+      conceals everything: roughly 0.9 for actinomycetoma on antibiotics against
+      something like 0.35 medical cure for eumycetoma, where a substantial share
+      of the remainder ends in amputation, which the register must count as a
+      cure because it ends the disease
+    src: reasoning
+  access:
+    value: 0.20
+    units: >
+      fraction-of-patients (reaching care capable of identifying and treating
+      it) — specialist capacity is concentrated in a handful of centres, and the
+      largest of them is in a country at war
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: none
+  predictive: none
+  witness: >
+    THE DIAGNOSTIC AXIS ASKS THE WRONG QUESTION HERE. It asks whether the
+    disease can be shown to be present, and it can — a painless swelling with
+    sinus tracts discharging grains is close to unmistakable, and grain
+    colour gives a first hint. The question that decides the patient's life is
+    not *is it mycetoma* but **WHICH mycetoma**, and the schema has nowhere to
+    put that.
+    Answering it needs grain microscopy, culture over weeks, histopathology or
+    PCR, and species-level expertise. None of that is available in the districts
+    where the disease occurs. Black grains are usually fungal; pale grains can
+    be either; and clinical judgement alone is unreliable.
+    PREDICTIVE is therefore `none`, and this record is the textbook case the
+    flag was built for. There are two treatments, they share nothing, one is
+    cheap antibiotics that work and the other is a year of antifungals that
+    mostly do not — and choosing between them is routinely a guess. Get it
+    wrong and the patient takes the wrong drug for months while bone is
+    destroyed. The register's `futile treatment risk` fires here exactly as
+    designed, after several records where it failed to.
+    PROGNOSTIC is `none`. Nothing says who will respond to antifungals, who will
+    recur after apparently successful surgery, and who will lose the leg.
+
+strata:
+  - name: actinomycetoma (bacterial)
+    fraction:
+      value: 0.40
+      units: >
+        fraction-of-cases — varies enormously by region; predominant in Mexico
+        and Latin America, a minority of Sudanese cases
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.90
+      units: fraction-of-stratum (cure with combination antibiotic therapy)
+      src: reasoning
+    toll: minor
+    what: >
+      The good outcome, and it is genuinely good: filamentous bacteria —
+      Nocardia, Actinomadura, Streptomyces — responding to combination
+      antibiotic regimens built around co-trimoxazole, with high cure rates and
+      no surgery in most cases. Cheap, oral, and effective.
+      Everything about this stratum is a solved problem EXCEPT knowing that the
+      patient is in it.
+
+  - name: eumycetoma (fungal)
+    fraction:
+      value: 0.60
+      units: fraction-of-cases — predominant in the Sudanese belt
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.35
+      units: >
+        fraction-of-stratum (medical cure with prolonged antifungal therapy) —
+        excludes cure by amputation, which is common and which the intervention
+        axis has to count as curative because it ends the disease
+      src: reasoning
+    toll: catastrophic
+    what: >
+      Madurella mycetomatis and relatives, treated with itraconazole or
+      related azoles for twelve months or more, often with wide local excision,
+      with cure in a minority and recurrence common. A substantial share of
+      patients lose the foot or the leg.
+      Amputation is worth pausing on as a category. It cures — the disease is
+      gone — so the ladder must call it `curative`, and it costs the patient a
+      limb, which is what `toll` is for. The register can therefore say
+      `curable` and `harsh` in the same row, and this is the record where that
+      combination is least euphemistic.
+
+toll:
+  severity: catastrophic
+  permanent: true
+  what: >
+    AMPUTATION IS A TREATMENT HERE, and it is why this record rates the toll
+    axis at its ceiling. For eumycetoma that does not respond to a year or more
+    of antifungal therapy, removing the foot or the lower leg is what ends the
+    disease — in a population of subsistence farmers and herders, in settings
+    with no prosthetics service, no disability support and no alternative
+    livelihood.
+    The antifungals themselves are not free either: twelve months or more of
+    azole therapy carries hepatotoxicity and drug interactions and requires
+    monitoring that mostly is not available, and the cost of a year of
+    itraconazole is prohibitive where the disease occurs.
+    Actinomycetoma pays almost none of this, which is carried in the strata.
+    Note the entanglement the schema cannot separate: if the limb is not
+    amputated the disease destroys it anyway, so the toll and the disease's own
+    damage are the same tissue, arrived at by two routes.
+  incidence:
+    value: 0.15
+    units: >
+      fraction-of-treated (amputation) — a reasoned estimate blended across both
+      forms; far higher within eumycetoma and near zero within actinomycetoma
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    For the patients cured without losing the limb, the limb is not what it was.
+    Mycetoma destroys bone and deforms the foot before anyone reaches treatment,
+    and a medically cured patient is frequently left with a deformed, painful,
+    partly functional foot, chronic sinus scarring, and the social consequences
+    of visible disfigurement in a community where the disease is recognised and
+    stigmatised.
+    Recorded separately from `toll` because the causes differ and so do the
+    levers: the amputation is the price of the cure and a better antifungal
+    would reduce it; the deformity is what the disease did while nobody could
+    identify it, and only earlier treatment reduces that. Both are permanent,
+    and this is the register's second record to derive `both`.
+  incidence:
+    value: 0.30
+    units: >
+      fraction-of-cured (residual deformity and functional loss in patients who
+      keep the limb) — a reasoned estimate; late presentation is the norm and
+      bone involvement is usual by then
+    src: reasoning
+
+window:
+  what: >
+    Wide, quiet, and almost always missed. Early mycetoma is a painless
+    subcutaneous nodule, which is precisely the presentation nobody walks a day
+    to a clinic for — and the disease is slow, so it stays painless while it
+    spreads through subcutaneous tissue and into fascia and bone. Median delay
+    from first lesion to presentation is measured in years.
+    Caught early, actinomycetoma is cured with tablets and eumycetoma is
+    treatable by wide local excision with a reasonable chance. Caught after bone
+    involvement, the fungal form is a year of antifungals with a poor prospect
+    and an amputation at the end of it. The window's price is paid in `toll` and
+    in `residue` at once, which is unusual, and the lever is unambiguously
+    `diagnosis` — both the recognising and the typing.
+  closes_on: >
+    invasion of fascia and bone, at which point medical cure becomes unlikely and
+    surgery becomes mutilating rather than local
+  caught_in_time:
+    value: 0.20
+    units: >
+      fraction-of-patients (presenting before bone involvement) — a reasoned
+      estimate; late presentation is the rule in every published series
+    src: reasoning
+
+witness:
+  mechanism: >
+    `established`, and unusually the whole difficulty of the disease follows from
+    one fact about its cause: THERE ARE TWO KINDS OF CAUSE. Fungi in the case of
+    eumycetoma, chiefly Madurella mycetomatis in the African belt; filamentous
+    actinomycete bacteria in the case of actinomycetoma. Both are soil and thorn
+    organisms, both are introduced through minor penetrating trauma to a bare
+    foot, and both produce the same thing — a granulomatous mass, aggregates of
+    organism called grains, and sinus tracts discharging them.
+    The pathology is well characterised. The named hole is host susceptibility:
+    the organisms are ubiquitous in endemic soil and enormous numbers of people
+    are exposed with bare feet, and very few develop mycetoma. Why is essentially
+    unknown, and a genetic contribution is suspected and unestablished. This is
+    the same shape as the schistosomiasis and tuberculosis susceptibility gaps,
+    and here it has an extra consequence: a disease this rare among the exposed
+    is a disease nobody thinks of.
+  intervention: >
+    `curative`, and the rating is doing more work than usual, so it is set out.
+    ACTINOMYCETOMA is genuinely and cheaply curable with combination antibiotic
+    therapy in the great majority of patients. EUMYCETOMA is treated with
+    prolonged azole therapy, cures a minority, recurs often, and ends
+    substantially in surgery — and amputation ends the disease, so the ladder
+    has to count it as curative. The register can therefore report `curable`
+    alongside `harsh` for the same row, which is accurate and which most readers
+    will not expect.
+    A first randomised controlled trial in this disease was only run in the
+    2020s, comparing a newer azole against itraconazole in eumycetoma in Sudan.
+    That a disease described in 1842 waited until the 2020s for its first
+    randomised trial says more about the record than any rating here does. The
+    author is not confident of that trial's result and does not state one.
+  prevention: >
+    `risk-reduction`, and thinly. The organisms enter through minor penetrating
+    injury to bare feet in people who farm and herd, so footwear is the obvious
+    intervention — obvious, cheap, and so far as the author is aware never
+    properly trialled for this indication. There is nothing to vaccinate
+    against, no person-to-person transmission to interrupt, and no reservoir to
+    control: the organisms live in the soil and will continue to.
+    So prevention here is a pair of shoes and an unanswered question about
+    whether distributing them would work, which is an unusually cheap and
+    unusually untested proposition to find sitting in a register of hard
+    problems.
+  ongoing: >
+    `high`, and it is one of the heavier ratings among the curable records. A
+    year or more of daily antifungal therapy with hepatic monitoring, repeated
+    travel to one of very few centres capable of managing it, surgery, and for
+    those who lose a limb a lifetime of disability in a setting with no
+    prosthetics service. Actinomycetoma is months of antibiotics rather than
+    years of azoles, which is lighter and still not light.
+
+holes:
+  - The burden. There is no reliable global figure, and the number in this file
+    is a placeholder that should not be computed with.
+  - Which form a given patient has, in the field. This is the record's central
+    problem and it is a diagnostic capability question rather than a knowledge
+    question.
+  - Why so few of the enormous exposed population develop the disease. Host
+    susceptibility is suspected to matter and is not established.
+  - Whether footwear distribution prevents it. Obvious, cheap, and untested.
+  - The strata fractions vary enormously by region — eumycetoma dominates in
+    Sudan, actinomycetoma in Mexico — so a single global split is close to
+    meaningless and is given only because the schema requires one.
+  - The author is not confident of the outcome of the first randomised trial in
+    eumycetoma and has deliberately not stated one. Treat any efficacy figure
+    here as reasoning from case series.
+  - Written from model recall. The two-cause structure, the treatment split and
+    the 2016 NTD listing are the parts most likely right; every number is the
+    part most likely wrong.
+
+blockers:
+  - kind: diagnosis
+    blocks: knowing which of two diseases the patient has
+    what: >
+      THE BINDING CONSTRAINT, and a shape this register has not had before.
+      Every other `diagnosis` blocker here concerns finding cases: a test nobody
+      performs (POTS), a test that does not exist (hEDS), a test skipped on
+      purpose (schistosomiasis), a test to decide whom to exclude
+      (onchocerciasis). This one is about **telling two diseases apart when the
+      answer decides between cheap tablets and losing a leg.**
+      Grain microscopy, culture over weeks, histopathology and PCR can all do
+      it, and none of them is available where the disease is. Grain colour helps
+      and is not reliable. So the clinician in front of the patient guesses,
+      often wrongly, and the patient takes the wrong drug for months while the
+      disease reaches bone.
+      A field-deployable test that said fungal or bacterial would be
+      transformative in a way almost nothing else in this register would be: it
+      would move roughly forty percent of patients straight onto a cure, and it
+      is an assay development problem rather than a scientific one. Priced for
+      that.
+    who_could: [academic, nonprofit, manufacturer, philanthropy, health-system]
+    scale: 5.0e7
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: an antifungal that works for eumycetoma
+    what: >
+      The second half of the problem, and the half money cannot shortcut. Even
+      with a perfect diagnosis, the patient who turns out to have the fungal
+      form faces a year or more of azole therapy that cures a minority. There is
+      no good drug. Recurrence after apparently successful excision is common,
+      and the reason is not well understood — grains are structurally protected
+      and the organism is difficult to kill in situ.
+      This is the difference between the two strata in one sentence: for
+      actinomycetoma the science is finished and the problem is knowing;
+      for eumycetoma the problem is that the treatment is bad.
+      `scale: null` — no priced path to a better antifungal.
+    who_could: [academic, sponsor, nonprofit, philanthropy]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: evidence-incomplete
+    blocks: knowing what any current treatment actually achieves
+    what: >
+      A disease described in the 1840s received its first double-blind
+      randomised controlled trial in the 2020s. Everything known about treatment
+      response before that came from case series at a handful of centres, mostly
+      one, with no control arms and no standard endpoints — so the cure rates
+      quoted in this record, including the ones above, rest on evidence that
+      would not be accepted for any disease of the wealthy world.
+      This is not the schistosomiasis situation, where mass administration makes
+      measurement impossible. Here trials are perfectly feasible and were simply
+      never run, because until 2016 there was no international framework under
+      which anyone would fund one.
+    who_could: [academic, sponsor, philanthropy, nonprofit]
+    scale: 1.0e8
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: reaching the few places that can manage it, from the places it occurs
+    what: >
+      Specialist capacity is concentrated in a very small number of centres, of
+      which the largest and most productive is in Khartoum — in a country that
+      has been at war since 2023, with the consequences for a referral service
+      that implies.
+      Patients are subsistence farmers and herders in rural districts, with a
+      painless lesion that gives them no reason to travel and every reason not
+      to, facing a journey of days to the only place that could type the
+      organism. The disease is slow enough that this is survivable and slow
+      enough that it destroys the foot while they decide.
+    who_could: [health-system, government, nonprofit, philanthropy]
+    scale: 5.0e7
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0030
+  rated: 2026-08-21
+  by: [claude, jeremy]

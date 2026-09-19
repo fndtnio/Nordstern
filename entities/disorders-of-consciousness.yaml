@@ -1,0 +1,455 @@
+slug: disorders-of-consciousness
+id: FND-D-0130
+name: Disorders of consciousness
+also: [vegetative state, unresponsive wakefulness syndrome, minimally conscious state, coma, persistent vegetative state]
+mondo: unresolved
+kind: syndrome
+residual: false
+contested: false
+
+# `mondo: unresolved` — THE STATED ABSENCE, NOT A GUESS.
+#
+# Terms exist in the ontology for coma and for persistent vegetative state, and
+# this record covers a spectrum that includes both plus the minimally conscious
+# state, which was only defined in 2002. Picking one would misdescribe the
+# entity and inventing a plausible-looking identifier is the exact failure
+# `TestMondoIdentifiers` was written for after MONDO:0005704 turned out to name
+# a real but wrong term. `resolve_mondo.py --apply` writes only exact matches; a
+# person decides the rest.
+#
+# THE RECORD THAT `anaesthesia-mechanism` PREDICTED.
+#
+# That obstacle was written yesterday with `claims: []` and a hole saying: "the
+# register has no record for disorders of consciousness — vegetative and
+# minimally conscious states, where the question *is this person in there* is
+# the whole clinical problem and has no reliable answer. If this obstacle has a
+# bottom-up citation waiting anywhere, it is there." This is that citation, and
+# it makes FND-O-0011 bottom-up rather than top-down.
+
+burden:
+  prevalence:
+    value: 3.0e5
+    units: >
+      people worldwide in a prolonged disorder of consciousness — AN ORDER OF
+      MAGNITUDE AT BEST. Published estimates for the vegetative state alone
+      differ by roughly tenfold between countries and between methods, and the
+      minimally conscious state has no reliable denominator anywhere because
+      the category is twenty years old, is missed about 40% of the time, and is
+      not recorded in any registry that covers a population
+    src: unknown
+  incidence:
+    value: 5.0e4
+    units: >
+      new prolonged disorders of consciousness/year worldwide — a reasoned
+      estimate from severe traumatic brain injury and post-cardiac-arrest
+      hypoxic-ischaemic injury volumes, not a counted figure
+    src: reasoning
+  note: >
+    **THE NUMBERS HERE ARE THE WORST IN THE REGISTER AND THE REASON IS ITSELF
+    THE FINDING.** You cannot count a population defined by a diagnosis that is
+    wrong about 40% of the time, whose central category did not exist before
+    2002, and most of whose members are in nursing facilities rather than in any
+    system that reports. `burden-unknown` (FND-O-0005) is cited below and this
+    is close to its purest instance.
+    The spectrum, because the words are used loosely and the distinctions carry
+    the whole record. **COMA**: no arousal and no awareness; eyes closed; almost
+    always resolves within two to four weeks into one of the states below, or
+    into death, or into recovery. **VEGETATIVE STATE / UNRESPONSIVE WAKEFULNESS
+    SYNDROME**: arousal without awareness — eyes open, sleep-wake cycles
+    present, no reproducible purposeful response. **MINIMALLY CONSCIOUS STATE**:
+    inconsistent but reproducible evidence of awareness — visual pursuit,
+    command-following, contingent emotional response. **EMERGENCE**: reliable
+    communication or functional object use.
+    **LOCKED-IN SYNDROME IS NOT IN THIS RECORD AND MUST NOT BE CONFUSED WITH
+    IT.** A locked-in patient is fully conscious with almost no motor output —
+    typically a ventral pontine lesion. It is a motor problem, and it is
+    routinely mistaken for a consciousness problem, which is one more instance
+    of exactly the failure this record is about.
+
+axes:
+  mechanism: partial
+  intervention: symptomatic
+  prevention: risk-reduction
+  ongoing: high
+  efficacy:
+    value: 0.15
+    units: >
+      fraction-of-patients (course meaningfully altered by anything medicine
+      offers) — specialised rehabilitation and the single positive drug trial
+      between them. **The dominant determinant of outcome is the injury and the
+      time since it, neither of which is a treatment**
+    src: reasoning
+  access:
+    value: 0.15
+    units: >
+      fraction-of-patients (receiving assessment by a team trained in the
+      standardised behavioural scale, in a unit that specialises in this) — most
+      patients worldwide are discharged to long-term care with no repeat expert
+      assessment ever performed
+    src: reasoning
+
+measurement:
+  diagnostic: clinical
+  prognostic: partial
+  predictive: none
+  witness: >
+    **THIS RECORD IS A MEASUREMENT FAILURE WEARING A DISEASE'S CLOTHES, AND IT IS
+    THE PUREST ONE IN THE REGISTER.** For almost every other entity here,
+    measurement decides how well an existing treatment is aimed. Here there is
+    barely a treatment, and the measurement question — *is anybody in there* —
+    **is the entire clinical problem.**
+    DIAGNOSTIC is `clinical` and generously so. The reference standard is a
+    trained observer administering a standardised behavioural scale repeatedly,
+    because a single bedside examination misclassifies a large minority: studies
+    across two decades keep finding **roughly 40% of patients labelled
+    vegetative to be minimally conscious** on structured assessment. The error
+    runs in the direction that matters — awareness recorded as its absence.
+    **AND THE BEHAVIOURAL FLOOR IS NOT THE REAL FLOOR.** A run of studies has
+    found patients with no behavioural response at all who **follow commands on
+    functional imaging or EEG** — asked to imagine playing tennis, they generate
+    the expected motor-imagery signal, reproducibly, to instruction. Estimates of
+    this cognitive-motor dissociation run from roughly 15% to a quarter of
+    behaviourally unresponsive patients. **These people are conscious by any
+    definition that means anything and are recorded as unconscious**, and the
+    equipment that would find them is in research centres.
+    PROGNOSTIC is `partial`, and asymmetrically. After cardiac arrest there are
+    reasonably validated markers of a *poor* outcome. Predicting a *good* one is
+    much weaker, prediction after traumatic injury is weaker still, and late
+    recoveries beyond a year are documented well enough that the word
+    "permanent" was dropped from the guideline terminology.
+    PREDICTIVE is `none`. Nothing identifies who will respond to amantadine, who
+    is among the rare paradoxical responders to zolpidem, or who might benefit
+    from thalamic stimulation.
+
+# NO `survival:` BLOCK, AND THE OMISSION IS DELIBERATE AND ARGUABLE.
+#
+# The axis asks what fraction is alive at a stated horizon. **This is the one
+# record where "alive" is precisely the contested term** — the patient is
+# breathing, the dispute is whether anyone is present — and a bare survival
+# fraction would answer a question nobody in this field is asking while
+# appearing to answer the one they are.
+#
+# It is also unrateable in practice for a second reason, recorded in the window
+# below: **most deaths here follow a decision to stop treatment**, so a survival
+# figure would substantially measure the withdrawal practice of the country the
+# cohort was drawn from rather than the biology of the injury.
+#
+# The consequence is that this record sits in the buckets on `ongoing: high` and
+# a catastrophic residue rather than on mortality — which is the case the
+# life-impact spine was built for. See `bucket-design.md`.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    Rated against what the register means by `toll` — **what the treatment
+    takes** — and the answer is very little, because there is barely a treatment.
+    Amantadine is well tolerated. Rehabilitation is not harmful. Nothing here
+    imposes the permanent price that `head-neck-cancer` or `bladder-cancer` pay.
+    **THAT RATING IS TECHNICALLY RIGHT AND READS AS ABSURD, AND THE REASON IS
+    WORTH STATING.** The tracheostomy, the feeding gastrostomy, the contractures,
+    the pressure injuries and the recurrent aspiration pneumonias are real and
+    they are severe — but they are consequences of the *condition* and of
+    keeping a person alive in it, not the price of a cure. The register files
+    them under `residue`, which is where they belong and where they are rated
+    catastrophic. Same two-field split that `chagas` needed: what the disease
+    does is permanent, what the treatment does is not.
+  incidence:
+    value: 0.02
+    units: >
+      fraction-of-treated (permanent harm attributable to an intervention rather
+      than to the injury or to supportive care) — a reasoned estimate, and small
+      because the interventions are few and mild
+    src: reasoning
+
+residue:
+  severity: catastrophic
+  permanent: true
+  what: >
+    **THE MOST SEVERE RESIDUE IN THE REGISTER, MEASURED BY WHAT IS LOST.** The
+    injury that produces this state — diffuse axonal injury, global
+    hypoxic-ischaemic damage, extensive haemorrhage — destroys cortex and
+    thalamus and the connections between them, and that tissue does not
+    regenerate. `tissue-repair` (FND-O-0002) is cited below and this is one of
+    its starkest cases.
+    What remains for those who improve is a spectrum with almost nobody at the
+    good end. Emergence from the minimally conscious state is not recovery: the
+    usual result is severe cognitive impairment, dense amnesia, spasticity and
+    contracture, dysphagia with permanent aspiration risk, epilepsy, and total
+    dependence for every function. **Full return to prior life is rare enough
+    that it is reported as a case rather than as a rate.**
+    And the residue is carried by more than the patient. A family is placed in
+    charge of decisions about a person whose presence nobody can confirm, for
+    years, usually without expert reassessment. **The register has no field for
+    that and this is the record that most obviously needs one.**
+    **THE RESIDUE GUARD ASKS WHETHER THE EPISODE ENDS, AND HERE IT DOES.** The
+    injury is a completed event — the anoxia is over, the impact was a moment —
+    and what persists is the damage it left, exactly as in `stroke`. This record
+    is not the progressive case the guard warns about, where the disease is
+    still doing harm and the damage belongs in `ongoing` instead.
+  incidence:
+    value: 0.9
+    units: >
+      fraction-of-survivors left with severe permanent impairment — a reasoned
+      estimate; the small remainder who recover functional independence are
+      concentrated in the traumatic rather than the hypoxic-ischaemic group
+    src: reasoning
+
+window:
+  what: >
+    **THE MOST CONSEQUENTIAL WINDOW IN THE REGISTER, AND THE ONLY ONE THAT
+    CLOSES BECAUSE SOMEBODY DECIDES IT HAS.**
+    Two windows, and they run in opposite directions. The biological one is
+    long and is still being revised upwards: recovery from a disorder of
+    consciousness continues over months and is documented past a year,
+    particularly after traumatic injury, which is why the guideline terminology
+    abandoned "permanent". Early access to a specialised unit and a standardised
+    repeated assessment changes what is found and therefore what is offered.
+    The decision window is measured in days. **In severe brain injury, most
+    deaths follow withdrawal of life-sustaining treatment, and those decisions
+    are commonly taken within the first seventy-two hours** — before the
+    biological picture has declared itself, on a prognosis the previous field
+    rates `partial`. A prediction of poor outcome made early, acted on, becomes
+    a poor outcome; nothing in the record afterwards can distinguish an accurate
+    prognosis from a self-fulfilling one.
+    **This is not an accusation of bad practice.** Families and clinicians are
+    forced to decide under exactly the uncertainty this record documents, and
+    prolonging a life nobody is living is its own harm. The point is narrower
+    and harder: the decision is taken at the moment the information is worst,
+    and improving the information is a measurement problem rather than an
+    ethical one.
+  closes_on: >
+    withdrawal of life-sustaining treatment, or discharge to long-term care
+    without further specialist reassessment — after which the diagnosis, right
+    or wrong, is rarely revisited
+  caught_in_time:
+    value: 0.2
+    units: >
+      fraction-of-cases (reaching specialist assessment while the diagnosis and
+      the trajectory can still change what is offered) — a reasoned estimate,
+      high in a handful of national referral centres and near zero across most
+      of the world
+    src: reasoning
+
+witness:
+  mechanism: >
+    `partial`, and the two halves are very unevenly developed.
+    ESTABLISHED: the injuries. Diffuse axonal shearing, global hypoxic-ischaemic
+    damage after cardiac arrest, large haemorrhages and their sequelae are well
+    characterised, as is the anatomy that arousal depends on — the ascending
+    reticular activating system and its thalamic relays. The leading account of
+    the *state* is a mesocircuit story about thalamocortical and frontostriatal
+    loops falling below the activity needed to sustain integrated cortical
+    function, and it has some predictive traction: it is why a drug acting on
+    dopaminergic transmission was tried, and why thalamic stimulation was tried.
+    THE HOLE: **what consciousness is such that this abolishes it.** There is no
+    account that says which circuits must be intact for a person to be present,
+    and therefore no principled way to look at a scan and say whether anyone is.
+    That is the same gap `anaesthesia-mechanism` (FND-O-0011) records from the
+    other end — **anaesthesia switches consciousness off reliably and reversibly
+    without anybody knowing how; this record cannot tell whether it is off.**
+    One is the mechanism unknown in a system that works, the other the same
+    mechanism unknown in a system that has failed, and neither can be settled
+    without the thing neither has: a measure of consciousness that does not
+    depend on the patient being able to move.
+  intervention: >
+    `symptomatic`, and the rung is contestable in one direction only.
+    The case for lifting it rests on **amantadine**, which in a randomised
+    controlled trial in post-traumatic disorders of consciousness accelerated
+    functional recovery during the treatment period — the one clearly positive
+    drug trial this field has. It does not lift the rung here because the
+    between-group difference narrowed after the drug was stopped, which is a
+    statement about rate rather than about destination, and the register has
+    already held that changing how fast something happens is not the same as
+    changing what happens.
+    Everything else is thinner. **Zolpidem** produces a striking transient
+    restoration of responsiveness in a small minority — a genuine and repeatable
+    phenomenon in perhaps a few percent of patients, unpredictable in advance,
+    and a strong hint that some of these brains retain more capacity than they
+    express. **Thalamic deep brain stimulation** rests on case reports and small
+    series. **Transcranial stimulation** shows short-lived effects on
+    behavioural scores.
+    What does the most work is unglamorous: specialised rehabilitation,
+    prevention of the complications that kill people in this state, and
+    **repeated structured assessment by somebody trained to administer it** —
+    which changes the diagnosis often enough that it is arguably the highest-
+    yield intervention in the record and is not a treatment at all.
+  prevention: >
+    `risk-reduction`, and it is the strongest part of this record by some way,
+    because almost all of it happens outside this record entirely. Road safety
+    legislation, speed enforcement, helmets, restraint use and fall prevention
+    reduce severe traumatic brain injury. Bystander CPR, defibrillator
+    availability and post-arrest temperature management reduce hypoxic-ischaemic
+    injury after cardiac arrest.
+    Not `prophylaxis`: nothing is given to a person to prevent this. The
+    measures are environmental, legislative and systemic — which is why the
+    incidence of this syndrome in a country is substantially a fact about its
+    transport policy and its emergency medical services rather than about its
+    neurology.
+  ongoing: >
+    `high`, and the word is doing less work than it should. This is total
+    dependence for feeding, breathing in many cases, positioning, hygiene and
+    every other function, sustained for years to decades, in a person who cannot
+    consent to any of it. The cost falls on a family that is also acting as
+    proxy decision-maker on a question — *is he still here* — that the treating
+    team cannot answer either.
+
+holes:
+  - >
+    **EVERY NUMBER IN THIS FILE IS WEAKER THAN USUAL AND THE BURDEN FIGURES ARE
+    BARELY NUMBERS.** Prevalence is marked `src: unknown` because published
+    estimates differ by an order of magnitude between countries and methods.
+    Anything computed from it — and the buckets deliberately do not use it — is
+    an order of magnitude at best.
+  - >
+    **THE 40% MISDIAGNOSIS FIGURE AND THE COGNITIVE-MOTOR DISSOCIATION RATE ARE
+    QUOTED FROM RECALL AND CARRY THE RECORD'S ARGUMENT.** They are consistently
+    reported across independent groups over two decades, which is why they are
+    stated with confidence, but neither is cited here and the CMD estimates in
+    particular span 15% to 25% depending on cohort, technique and how
+    command-following is scored. If the true CMD rate is at the low end, the
+    diagnosis blocker is smaller than this record implies.
+  - >
+    **THE WINDOW ARGUMENT IS THE MOST LOAD-BEARING AND THE LEAST SETTLED CLAIM
+    HERE.** That most severe-brain-injury deaths follow withdrawal, and that
+    withdrawal often occurs early, is well described. That earlier withdrawal
+    *causes* worse outcomes through self-fulfilling prophecy is an inference
+    from that pattern, not a demonstrated effect, and it cannot be tested by
+    the obvious experiment. Rated as a `policy` blocker with `standing:
+    disputed` below for exactly this reason.
+  - >
+    **`efficacy: 0.15` is close to arbitrary.** It is trying to combine a drug
+    that speeds recovery without changing its endpoint, a rehabilitation effect
+    that is real and poorly quantified, and an assessment practice that changes
+    the diagnosis rather than the patient. Three different kinds of benefit
+    compressed into one fraction, which is gaps.md's standing complaint about
+    this axis appearing in an unusually sharp form.
+  - >
+    **THE RESIDUE FIELD CANNOT HOLD WHAT THIS COSTS A FAMILY**, and this record
+    is the strongest argument yet that the schema needs somewhere to record
+    third-party burden. Caregiver harm appears in `alzheimers`, `cerebral-palsy`
+    and `duchenne` as prose and nowhere as a field.
+  - >
+    **`kind: syndrome` is right and hides something.** The traumatic and the
+    hypoxic-ischaemic groups differ in prognosis, in recovery trajectory and
+    probably in mechanism, enough that a future pass may want them as strata or
+    as separate records. They are rated together here because the diagnostic and
+    measurement failure — the thing this record exists to document — is common
+    to both.
+  - >
+    Written from model recall. The clinical categories, the direction of the
+    misdiagnosis error, the existence of covert command-following on imaging and
+    the amantadine result are the parts most likely right; every number is the
+    part most likely wrong.
+
+blockers:
+  - kind: diagnosis
+    obstacles: [anaesthesia-mechanism]
+    blocks: establishing whether a patient is conscious
+    what: >
+      **THE CENTRAL BLOCKER, AND IT IS THE RECORD.** There is no test for
+      consciousness. The reference standard is behavioural — a trained assessor
+      looking for reproducible purposeful response — and behaviour requires
+      motor output that a substantial fraction of these patients do not have.
+      The consequence is measured and consistent: roughly 40% of patients
+      labelled vegetative are found to be minimally conscious when somebody
+      applies the standardised scale repeatedly, and a further group with no
+      behavioural signs at all follow commands on imaging or EEG.
+      Two different failures sit inside this. The first is **cheap and is not
+      being done**: the standardised scale needs a trained assessor and several
+      sessions, not a single bedside look, and that is a training and staffing
+      problem of the kind `chagas` and `pots` also record. The second is **not
+      cheap and may not be soluble**: detecting awareness in a brain that cannot
+      move requires knowing what awareness looks like in a signal, which is the
+      obstacle cited here and which anaesthesia demonstrates nobody has.
+    who_could: [health-system, academic, government, nonprofit]
+    scale: 5.0e8
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    obstacles: [anaesthesia-mechanism, tissue-repair]
+    blocks: restoring consciousness once it is lost
+    what: >
+      Two absences stacked. Nobody knows what arrangement of brain activity
+      constitutes a conscious person, so there is no target to aim an
+      intervention at; and the tissue that supported it in this patient has been
+      destroyed, so there may be nothing left to aim at even with a target.
+      The therapeutic history reflects it. Amantadine, zolpidem and thalamic
+      stimulation were all tried on the strength of a circuit-level story rather
+      than a mechanism, all produce something in some patients, and none can say
+      which patients or why. **`scale: null` — no sum of money buys a definition
+      of consciousness**, and the delivery-shaped part of this problem is
+      already priced in the blocker above.
+    who_could: [academic, nonprofit, philanthropy]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: getting patients to anyone able to assess them
+    what: >
+      Specialised disorders-of-consciousness units exist in a small number of
+      countries and take a small number of patients. The default path after the
+      intensive care unit is a long-term care facility with no neurologist, no
+      trained assessor and no mechanism for re-examination — so a diagnosis made
+      in the first weeks, when it is least reliable, is the diagnosis the person
+      keeps.
+      This is the same shape as `cirrhosis` and `chronic-kidney-disease`: not a
+      missing product but a missing programme, and one whose cost is dominated
+      by staff time rather than by anything that has to be manufactured.
+    who_could: [health-system, government, payer, patient-org]
+    scale: 2.0e8
+    standing: documented
+    src: recall
+
+  - kind: policy
+    blocks: deciding under uncertainty, early, irreversibly
+    what: >
+      Most deaths in severe brain injury follow withdrawal of life-sustaining
+      treatment, and those decisions are frequently taken in the first days, on
+      a prognosis this record rates `partial`. Practice varies widely between
+      jurisdictions and between units in ways that track local law and local
+      culture as much as the patient in front of them.
+      **`standing: disputed`, deliberately.** That the pattern exists is well
+      described. That it produces worse outcomes through a self-fulfilling
+      prophecy is an inference, is contested, and cannot be settled by the
+      experiment that would settle it. It is recorded because the register's
+      blocker axis exists to *test* claims of this shape rather than to repeat
+      them — and because the opposite failure, sustaining a body for decades
+      when nobody is present, is a harm this record takes equally seriously.
+    who_could: [health-system, government, legislator, regulator]
+    scale: null
+    standing: disputed
+    src: recall
+
+  - kind: logistics
+    obstacles: [burden-unknown]
+    blocks: knowing how many people are in this state
+    what: >
+      Nobody can count a population whose defining diagnosis is wrong 40% of the
+      time, whose central category was defined in 2002, and most of whose
+      members live in facilities that report to no registry. Published
+      prevalence estimates differ tenfold.
+      The consequence is concrete rather than academic: **there is no
+      denominator, so there is no trial population, no cost-effectiveness case
+      for a specialised unit, and no way to argue for the staffing the blocker
+      above prices.** An epidemiological question is holding up a delivery
+      argument, which is the pattern `burden-unknown` was created to name.
+      **Filed as `logistics` rather than `knowledge`, and the distinction is the
+      register's own rule rather than a preference.** A knowledge blocker carries
+      `scale: null` because no sum of money answers it. This one has a price:
+      what is missing is a surveillance programme and a registry that reaches
+      long-term care, which is buyable work. `buruli-ulcer` and `dracunculiasis`
+      cite the same obstacle as `knowledge` with no price because for them the
+      uncounted thing is genuinely unknowable at present; here it is merely
+      uncounted. Same call `cholera` and `trachoma` made.
+    who_could: [academic, government, health-system, nonprofit]
+    scale: 3.0e7
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0131
+  rated: 2026-08-31
+  by: [claude, jeremy]

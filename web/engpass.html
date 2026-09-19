@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Engpass — what is in the way</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper:#f7f2e6; --paper-deep:#efe7d3; --card:#fbf8ef;
+    --ink:#22304a; --ink-soft:rgba(34,48,74,.55); --ink-faint:rgba(34,48,74,.16);
+    --vermilion:#c8451f; --teal:#1f7a6d; --water:#3d7fa6; --gold:#b98a1d;
+  }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body {
+    background:var(--paper);
+    background-image:
+      repeating-linear-gradient(0deg,transparent 0 23px,rgba(34,48,74,.045) 23px 24px),
+      repeating-linear-gradient(90deg,transparent 0 23px,rgba(34,48,74,.045) 23px 24px);
+    color:var(--ink); font-family:'IBM Plex Mono',monospace; font-size:13px;
+    padding:16px clamp(14px,4vw,44px) 40px; line-height:1.5;
+  }
+  .wrap { max-width:1180px; margin:0 auto; }
+
+  header { border-bottom:2px solid var(--ink); padding-bottom:9px; margin-bottom:14px;
+           display:flex; align-items:baseline; justify-content:space-between;
+           gap:14px; flex-wrap:wrap; }
+  h1 { font-family:Fraunces,serif; font-weight:600; font-style:italic; font-size:24px; }
+  h1 .fig { font-family:'IBM Plex Mono',monospace; font-style:normal; font-weight:500;
+            font-size:10px; letter-spacing:.18em; color:var(--vermilion);
+            text-transform:uppercase; margin-right:9px; vertical-align:3px; }
+  header .sub { font-size:11.5px; color:var(--ink-soft); max-width:54ch; }
+  header .sub b { color:var(--ink); font-weight:500; }
+  header .links { display:flex; gap:8px; flex-wrap:wrap; }
+  header a.tool { font-size:11px; border:2px solid var(--ink); background:var(--paper);
+                  box-shadow:2px 2px 0 var(--ink); padding:5px 10px; color:var(--ink);
+                  text-decoration:none; letter-spacing:.06em; white-space:nowrap; }
+  header a.tool:hover { background:var(--paper-deep); }
+
+  .prov { border:2px solid var(--vermilion); background:#fdf1ec; color:var(--vermilion);
+          padding:9px 12px; margin-bottom:16px; font-size:11.5px; line-height:1.55; }
+  .prov b { font-weight:500; }
+  .prov .big { font-family:Fraunces,serif; font-style:italic; font-size:19px;
+               display:block; margin-bottom:3px; }
+  .prov a { color:inherit; }
+  .prov .provmore { margin-top:5px; }
+  .prov .provmore > summary { cursor:pointer; opacity:.8; font-size:11px; }
+  .prov .provmore > summary:hover { opacity:1; }
+  .prov .provmore > div { margin-top:6px; padding-top:6px;
+    border-top:1px solid rgba(200,69,31,.3); }
+
+  h2 { font-family:Fraunces,serif; font-style:italic; font-weight:600; font-size:16px;
+       margin:26px 0 3px; }
+  h2 .n { font-family:'IBM Plex Mono',monospace; font-style:normal; font-size:9.5px;
+          letter-spacing:.18em; text-transform:uppercase; color:var(--vermilion);
+          margin-right:8px; vertical-align:2px; }
+  .lede { font-size:11.5px; color:var(--ink-soft); max-width:78ch; margin-bottom:10px; }
+  .lede b { color:var(--ink); font-weight:500; }
+  .standfirst { font-size:12.5px; line-height:1.62; max-width:80ch;
+    border-left:2px solid var(--vermilion); padding:2px 0 2px 13px; margin-bottom:14px; }
+  .subh { font-family:Fraunces,serif; font-style:italic; font-weight:600;
+          font-size:13.5px; margin:22px 0 3px; }
+
+  .card { border:2px solid var(--ink); background:var(--card); padding:12px 14px;
+          box-shadow:3px 3px 0 var(--ink-faint); }
+  .grid { display:grid; gap:12px; }
+  .g2 { grid-template-columns:repeat(auto-fit,minmax(330px,1fr)); }
+  .g3 { grid-template-columns:repeat(auto-fit,minmax(215px,1fr)); }
+
+  a.q { color:inherit; text-decoration:none; display:block; }
+  a.q:hover .card { background:#fff; box-shadow:3px 3px 0 var(--water);
+                    border-color:var(--water); }
+  a.q:hover .qhint { opacity:1; }
+  .qhint { font-size:9.5px; color:var(--water); opacity:.42; margin-top:7px;
+           letter-spacing:.02em; word-break:break-word; transition:opacity 90ms; }
+  .qhint::before { content:"→ "; }
+  .qhint.noq { color:var(--ink-soft); opacity:.55; }
+  .qhint.noq::before { content:"— "; }
+
+  .stat { font-family:Fraunces,serif; font-style:italic; font-size:31px; line-height:1.05; }
+  .stat.sm { font-size:23px; }
+  .statlbl { font-size:10px; letter-spacing:.15em; text-transform:uppercase;
+             color:var(--ink-soft); margin-top:4px; }
+  .note { font-size:11px; color:var(--ink-soft); margin-top:7px; line-height:1.5; }
+  .note b { color:var(--ink); font-weight:500; }
+
+  table { border-collapse:collapse; width:100%; font-size:11.5px; }
+  td, th { text-align:left; padding:3px 6px 3px 0; vertical-align:middle; }
+  th { font-size:9.5px; letter-spacing:.14em; text-transform:uppercase;
+       color:var(--ink-soft); font-weight:400; border-bottom:1px solid var(--ink-faint); }
+  td.num { text-align:right; font-variant-numeric:tabular-nums; width:3.4em; }
+  .bar { height:9px; background:var(--water); display:block; }
+  .bar.v { background:var(--vermilion); } .bar.t { background:var(--teal); }
+  .bar.g { background:var(--gold); } .bar.f { background:var(--ink-faint); }
+  td.barcell { width:56%; }
+
+  /* ---- OBSTACLE SECTIONS: this page's spine -----------------------------
+     Nordstern's spine is a partition — seven states, every record in exactly
+     one. THIS register has no partition and must not pretend to one: an
+     obstacle blocks any number of diseases, a disease is blocked by several,
+     and the useful direction is backwards — answering this releases those. So
+     the sections are ranked by how much each holds up, and the ones holding up
+     nothing yet come last, marked. */
+  .ob { border:2px solid var(--ink); background:var(--card);
+        box-shadow:3px 3px 0 var(--ink-faint); margin-bottom:6px; }
+  .ob > .obhead { display:flex; align-items:baseline; gap:11px; flex-wrap:wrap;
+        padding:10px 14px; border-bottom:1px solid var(--ink-faint); }
+  .ob .obn { font-family:Fraunces,serif; font-style:italic; font-size:27px; line-height:1; }
+  .ob .oblbl { font-size:10px; letter-spacing:.14em; text-transform:uppercase;
+        color:var(--ink-soft); }
+  .ob .obbody { padding:11px 14px 13px; }
+  /* earned vs claimed is the register's central distinction, so it is the one
+     thing the border colour encodes */
+  .ob.earned { border-left:7px solid var(--water); }
+  .ob.topdown { border-left:7px solid var(--gold); }
+  .ob.thin { border-left:7px solid var(--ink-faint); }
+
+  .pill { display:inline-block; border:1px solid var(--ink-faint); padding:0 6px;
+          font-size:9.5px; letter-spacing:.1em; text-transform:uppercase;
+          color:var(--ink-soft); }
+  .pill.open { border-color:var(--vermilion); color:var(--vermilion); }
+  .pill.partly { border-color:var(--gold); color:var(--gold); }
+  .pill.answered { border-color:var(--teal); color:var(--teal); }
+
+  .chips { display:flex; flex-wrap:wrap; gap:4px; }
+  .chip { display:inline-block; border:1px solid var(--ink-faint); background:var(--paper);
+        padding:1px 6px; font-size:10.5px; color:var(--ink); text-decoration:none;
+        white-space:nowrap; }
+  .chip:hover { border-color:var(--water); color:var(--water); background:#fff; }
+  .chip .d { color:var(--vermilion); opacity:.65; margin-left:4px; font-size:9px; }
+  /* a claimed link is drawn differently from an earned one on purpose — the
+     whole register turns on not confusing the two */
+  .chip.claim { border-style:dashed; border-color:var(--gold); color:var(--gold);
+        background:transparent; }
+
+  .chg { font-size:10.5px; margin-top:9px; padding:5px 9px;
+         border:1px dashed var(--ink-faint); color:var(--ink-soft); }
+  .chg b { color:var(--ink); font-weight:500; }
+  .chg.first { border-color:var(--water); color:var(--water); }
+  .chg.moved { border:1px solid var(--teal); color:var(--teal); }
+
+  .untag { font-size:11px; line-height:1.6; }
+  .untag li { list-style:none; padding:3px 0; border-bottom:1px solid var(--ink-faint); }
+  .untag li b { font-weight:500; }
+  .untag a { color:var(--water); text-decoration:none; }
+
+  footer { margin-top:34px; border-top:2px solid var(--ink); padding-top:10px;
+           font-size:11px; color:var(--ink-soft); line-height:1.6; }
+  footer b { color:var(--ink); font-weight:500; }
+  footer a { color:var(--water); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div>
+    <h1><span class="fig">Engpass</span>what is in the way</h1>
+    <div class="sub"><b>What medicine does not know</b>, and how much each gap holds
+      up. Nordstern asks, per disease, <i>can anything be done</i>. This asks the
+      question that only a second register can answer: <b>answer this one, and how
+      many diseases move?</b></div>
+  </div>
+  <div class="links">
+    <a class="tool" href="index.html">← the diseases</a>
+    <a class="tool" href="query.html">the query tool →</a>
+  </div>
+</header>
+
+<div class="prov" id="prov"></div>
+<div id="body"></div>
+
+<footer>
+  <b>Engpass</b> reads Nordstern's built artifact and never the reverse — the
+  dependency runs one way, and <code>Engpass/test_boundary.py</code> enforces it
+  rather than trusting it. Nordstern records <code>blockers[].obstacles</code>
+  and does not validate the slugs; this register reconciles them.
+  <b>The disease list under each obstacle is derived, never stored</b>, because a
+  blocker is a claim about that disease made by whoever rated it — and a link
+  stored in two files is a link that can disagree with itself.
+  <br><br>Generated by <code>Engpass/check.py --build</code>. Every figure links
+  to the query that produces it, in Nordstern's tool.
+</footer>
+
+</div>
+
+<script src="banner.js"></script>
+<script src="slim.js"></script>
+<script src="snapshots.js"></script>
+<script src="engpass-snapshots.js"></script>
+<script>
+/* =============================================================================
+   THE ENGPASS DASHBOARD — the register of ignorance.
+
+   IT IS NOT A COPY OF THE DISEASE PAGE WITH DIFFERENT NUMBERS, and the reason
+   is structural. Nordstern's spine is a PARTITION: seven states, every record
+   in exactly one, so the counts are shares and a stacked bar is honest. This
+   register has no partition and never will — an obstacle blocks any number of
+   diseases and a disease is blocked by several. Drawing it as one would be the
+   same error the axis-B tags carry a warning about.
+
+   So the spine here is the thing this register exists to supply: **the backward
+   direction.** Nordstern can say *this disease is blocked by that question*.
+   Only a second file can say *answering this unblocks these thirteen* — which
+   is the form "what should we work on next" actually needs.
+
+   THE ONE DISTINCTION EVERYTHING ELSE HANGS ON: a DERIVED link is evidence,
+   because somebody rating that disease said this is what they were waiting on.
+   A CLAIM is an assertion that may simply be wrong. They are drawn differently
+   everywhere on this page, and the border colour of a section encodes which
+   kind it has.
+
+   Zero dependencies. No derivation happens here — every number comes from
+   `engpass-snapshots.js` or `slim.js`, both generated by check.py.
+   ========================================================================== */
+
+const SLIM   = window.NORDSTERN_SLIM || [];
+const NSNAPS = window.NORDSTERN_SNAPSHOTS || [];
+const SNAPS  = window.ENGPASS_SNAPSHOTS || [];
+const DIFFS  = window.ENGPASS_DIFFS || [];
+const S  = SNAPS[SNAPS.length - 1] || null;
+const NS = NSNAPS[NSNAPS.length - 1] || null;
+const LAST_DIFF = DIFFS.length ? DIFFS[DIFFS.length - 1] : null;
+
+const qurl = q => "query.html?q=" + encodeURIComponent(q);
+const esc  = s => String(s).replace(/[&<>"]/g, c =>
+  ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;" }[c]));
+const pct  = (n, d) => d ? Math.round(100 * n / d) : 0;
+const num  = n => n.toLocaleString("en-US");
+
+/* Nordstern's records, for names, burden and the permanent id a chip links by.
+   THIS IS THE PERMITTED CROSSING AND IT IS ONE-WAY: this page reads Nordstern's
+   generated artifacts. Nothing in Nordstern reads anything of Engpass's. */
+const REC = {};
+SLIM.forEach(r => { REC[r.slug] = r; });
+const ID_OF = {};
+if (NS && NS.buckets && NS.buckets.members)
+  Object.entries(NS.buckets.members).forEach(([slug, v]) => { ID_OF[slug] = v.id; });
+
+function stat(n, label, note, query, cls = "") {
+  const inner = `<div class="card">
+    <div class="stat ${cls}" ${query ? 'data-count="records"' : ""}>${n}</div>
+    <div class="statlbl">${label}</div>
+    ${note ? `<div class="note">${note}</div>` : ""}
+    ${query ? `<div class="qhint">${esc(query)}</div>`
+            : `<div class="qhint noq">not expressible as a query — this counts
+                 obstacles or links, and the query language counts records</div>`}
+  </div>`;
+  return query ? `<a class="q" href="${qurl(query)}">${inner}</a>` : inner;
+}
+
+function bars(rows, max, counts = "records") {
+  const m = max || Math.max(...rows.map(r => r[1]), 1);
+  return `<table>${rows.map(([lbl, v, q, cls]) => `<tr>
+      <td>${q ? `<a class="q" style="display:inline" href="${qurl(q)}">${esc(lbl)}</a>`
+              : esc(lbl)}</td>
+      <td class="num" data-count="${counts}">${num(v)}</td>
+      <td class="barcell"><span class="bar ${cls || ""}"
+          style="width:${Math.max(1.5, 100 * v / m)}%"></span></td>
+    </tr>`).join("")}</table>`;
+}
+
+/* THE BANNER IS NORDSTERN'S, ON PURPOSE AND WITH ONE SENTENCE ADDED.
+   Every number on this page is derived from Nordstern's ratings, so this
+   register inherits that register's provenance exactly — and a second,
+   separately-worded warning is the drift banner.js was written to end. What is
+   added is the part that is only true here: these links are reconciliation, and
+   the claims are not links at all. */
+function banner() {
+  const base = NS ? window.NordsternBanner.render(NS,
+                { tone: "warn", queryHref: "query.html?q=" }) : "";
+  document.getElementById("prov").innerHTML = base +
+    `<div style="margin-top:6px;padding-top:6px;
+        border-top:1px solid rgba(200,69,31,.3)">
+      <b>And one thing that is only true on this page.</b> A disease listed under
+      an obstacle is there because somebody rating that disease said so — that
+      link is <b>derived</b> and it is evidence. A <b>claim</b> is this register
+      asserting a payoff nobody has confirmed, and it is drawn differently
+      everywhere below. Do not read the two as the same thing.</div>`;
+}
+
+/* ---------------------------------------------------------------- chips -- */
+function chips(slugs, cls = "") {
+  return `<div class="chips">${slugs.map(s => {
+    const r = REC[s] || {};
+    const q = ID_OF[s] ? "id:" + ID_OF[s] : "slug:" + s;
+    return `<a class="chip ${cls}" href="${qurl(q)}"
+      title="${esc(r.name || s)}">${esc(s)}${
+      r.deaths > 0 ? '<span class="d">●</span>' : ""}</a>`;
+  }).join("")}</div>`;
+}
+
+/* --------------------------------------------------------- change line --
+   WHAT MOVES HERE IS NOT WHAT MOVES ON THE DISEASE PAGE. There, a record
+   changing bucket is medicine changing. Here, the signal is an obstacle's
+   `resolution` moving — a question getting answered — and a claim being graded
+   from `alleged` to `documented` or `refuted`, which is the register scoring
+   its own guesses about payoff. Records-blocked moves mostly because Nordstern
+   grew, so it is reported and never headlined. */
+function changeRow(slug) {
+  if (!LAST_DIFF) {
+    return `<div class="chg first">baseline — nothing earlier to compare against</div>`;
+  }
+  if (LAST_DIFF.skipped) {
+    return slug === null
+      ? `<div class="chg first" style="margin-top:12px"><b>No comparison yet.</b>
+         ${esc(LAST_DIFF.skipped)}. <b>This snapshot is the first that can be
+         compared against</b>, so the change line under each obstacle starts
+         carrying a number at the next pass.</div>`
+      : `<div class="chg first">baseline — no earlier resolution recorded</div>`;
+  }
+  if (slug === null) {
+    const r = LAST_DIFF.resolutions.length, g = LAST_DIFF.graded.length;
+    return `<div class="chg ${r || g ? "moved" : ""}" style="margin-top:12px">
+      <b>${r} question${r === 1 ? "" : "s"} changed resolution</b> and
+      <b>${g} claim${g === 1 ? "" : "s"} were graded</b> between
+      ${esc(LAST_DIFF.from)} and ${esc(LAST_DIFF.to)}, alongside
+      ${LAST_DIFF.added.length} obstacles written and
+      ${LAST_DIFF.gone.length} deprecated.</div>`;
+  }
+  const moved = LAST_DIFF.resolutions.find(x => x.slug === slug);
+  const graded = LAST_DIFF.graded.filter(x => x.obstacle === slug);
+  const d = LAST_DIFF.blocks_delta[slug];
+  const bits = [];
+  if (moved) bits.push(`<b>resolution moved ${esc(moved.from)} → ${esc(moved.to)}</b>`);
+  graded.forEach(g => bits.push(
+    `claim on <code>${esc(g.unblocks)}</code> went ${esc(g.from)} → <b>${esc(g.to)}</b>`));
+  if (d) bits.push(`records blocked ${d.was} → ${d.now}, which moves mostly
+    because the disease register grew`);
+  if (!bits.length) return `<div class="chg">unchanged since ${esc(LAST_DIFF.from)}</div>`;
+  return `<div class="chg ${moved || graded.length ? "moved" : ""}">${
+    bits.join(" · ")}</div>`;
+}
+
+/* ------------------------------------------------------ obstacle section -- */
+const RES_CLASS = { "open":"open", "partly-answered":"partly",
+                    "answered":"answered", "dissolved":"answered" };
+
+function obstacleSection(slug, n) {
+  const m = S.resolution_members[slug];
+  const blocked = S.blocks_members[slug] || [];
+  const claims = (S.claims_by_obstacle || {})[slug] || [];
+  const total = S.against_nordstern_records;
+  const kind = blocked.length ? (blocked.length >= 2 ? "earned" : "thin") : "topdown";
+  return `<h2><span class="n">${String(n).padStart(2, "0")}</span>${esc(m.name)}</h2>
+    <div class="ob ${kind}">
+      <div class="obhead">
+        <span class="obn">${blocked.length}</span>
+        <span class="oblbl">record${blocked.length === 1 ? "" : "s"} blocked ·
+          ${pct(blocked.length, total)}% of the register</span>
+        <span class="pill">${esc(m.kind)}</span>
+        <span class="pill ${RES_CLASS[m.resolution] || ""}">${esc(m.resolution)}</span>
+        <span class="oblbl" style="margin-left:auto">${esc(slug)} · ${esc(m.id)}</span>
+      </div>
+      <div class="obbody">
+        ${blocked.length ? chips(blocked)
+          : `<div class="note" style="margin-top:0"><b>Nothing cites this yet.</b>
+             It is held on the strength of its claims alone, which is the position
+             this register is most suspicious of — see below.</div>`}
+        ${claims.length ? `<div class="note"><b>Claims —
+          ${claims.length} disease${claims.length === 1 ? "" : "s"} this register
+          asserts would move, that nobody has confirmed.</b> Drawn dashed because
+          they are not links. When the question is answered these become
+          <code>documented</code> or <code>refuted</code>, and that is the record
+          of whether the field's intuitions about payoff were any good.</div>
+          ${chips(claims.map(c => c.unblocks), "claim")}` : ""}
+        ${changeRow(slug)}
+      </div>
+    </div>`;
+}
+
+/* ============================================================== assemble == */
+function render() {
+  if (!S) { document.getElementById("body").innerHTML =
+    "<p>No snapshot found — run <code>Engpass/check.py --build</code>.</p>"; return; }
+  banner();
+
+  const out = [];
+  const O = S.obstacles, total = S.against_nordstern_records;
+  const ranked = Object.keys(S.resolution_members)
+    .sort((a, b) => (S.blocks_members[b] || []).length -
+                    (S.blocks_members[a] || []).length ||
+                    a.localeCompare(b));
+  const earned = ranked.filter(s => (S.blocks_members[s] || []).length >= 2);
+  const thin   = ranked.filter(s => (S.blocks_members[s] || []).length === 1);
+  const top    = ranked.filter(s => (S.blocks_members[s] || []).length === 0);
+
+  /* ---- 01 the register ---- */
+  out.push(`<h2><span class="n">01</span>${O.active} obstacles, and what each one holds up</h2>
+  <div class="lede standfirst"><b>This register exists because the useful
+    direction is backwards.</b> Nordstern can tell you that a disease is blocked
+    by a question. Only a second file can tell you that <b>answering the largest
+    one here would move ${(S.blocks_members[ranked[0]] || []).length} of
+    them</b> — and that is the form the question "what should we work on next"
+    actually takes.
+    It is also where the register keeps its most uncomfortable finding: the
+    obstacles collected here are, by design, the ones <b>money cannot
+    triage</b>. A knowledge blocker carries no price in Nordstern, deliberately,
+    and that asymmetry is the argument for the whole split.</div>
+  <div class="grid g3">
+    ${stat(S.distinct_links, "links between a disease and an obstacle",
+      `Across <b>${S.records_blocked_at_least_once} of ${total}</b> disease
+       records. <b>Derived, never stored</b> — Nordstern is truth for the link,
+       because a blocker is a claim about that disease made by whoever rated it.`,
+      null, "sm")}
+    ${stat(S.claims.total, "claims, of which " +
+      (S.claims.by_standing.alleged || 0) + " still alleged",
+      `The top-down half. <b>A claim may simply be wrong</b>, and
+       <code>rna-folding</code> is the standing warning — asserted with
+       confidence, cited by nobody, still.`, null, "sm")}
+    ${stat(S.untagged_knowledge_blockers, "knowledge blockers filed under nothing",
+      `<b>The pile is a finding, not a backlog.</b> Several are not questions at
+       all — a TB vaccine, an antifungal for eumycetoma — which is
+       <code>no-sponsor</code> wearing a lab coat. Listed in full below.`,
+      null, "sm")}
+  </div>
+  <div class="grid g2" style="margin-top:12px">
+    <div class="card"><div class="statlbl" style="margin:0 0 7px">by kind</div>
+      ${bars(Object.entries(O.by_kind).map(([k, v]) => [k, v, null, "f"]), null, "items")}
+      <div class="note">Tracking Nordstern's blocker kinds deliberately, because
+        an obstacle here <b>is</b> a cluster of Nordstern blockers. Knowledge was
+        the obvious one; the others cluster at least as hard.</div></div>
+    <div class="card"><div class="statlbl" style="margin:0 0 7px">by resolution</div>
+      ${bars(Object.entries(O.by_resolution).map(([k, v]) =>
+        [k, v, null, k === "open" ? "v" : k === "answered" ? "t" : "g"]), null, "items")}
+      <div class="note"><b>This is the axis that moves</b>, and the one the
+        annual comparison watches. It is distinct from a record's
+        <code>status</code>: an answered question is still an active record, and
+        a deprecated record may hold a question nobody ever answered.</div></div>
+  </div>
+  ${changeRow(null)}
+  <div class="note" style="margin-top:10px"><b>The sections below are the
+    obstacles themselves, ranked by how many disease records cite them.</b>
+    A blue rule means the link was <b>earned</b> — two or more records name it.
+    Grey means one, which is below this register's own threshold. Gold means
+    <b>nothing cites it</b> and it is held on claims alone.</div>`);
+
+  /* ---- 02.. one section per obstacle ---- */
+  let n = 2;
+  earned.forEach(s => out.push(obstacleSection(s, n++)));
+  if (thin.length) {
+    out.push(`<h3 class="subh">Below the threshold</h3>
+      <div class="lede"><b>A question earns a record when two disease records
+      cite it.</b> These have one. That is a record somebody agreed with once,
+      not a record that has been established — and the honest test is whether a
+      second rating pass cites it without being prompted.</div>`);
+    thin.forEach(s => out.push(obstacleSection(s, n++)));
+  }
+  if (top.length) {
+    out.push(`<h3 class="subh">Cited by nothing</h3>
+      <div class="lede"><b>Top-down: written because somebody thought the question
+      mattered, with no disease record naming it.</b> The hard part of the whole
+      idea is that you often cannot know what answering a question buys until you
+      have answered it. <code>marburg</code> is the standing warning — its
+      reservoir <i>is</i> established, and what followed was advice to miners.
+      <b>These are the entries most likely to be wrong</b>, and they are kept
+      visible rather than quietly dropped.</div>`);
+    top.forEach(s => out.push(obstacleSection(s, n++)));
+  }
+
+  /* ---- the untagged pile ---- */
+  const U = S.untagged_list || [];
+  out.push(`<h2><span class="n">${String(n++).padStart(2, "0")}</span>The pile
+    nobody has filed</h2>
+  <div class="lede"><b>${U.length} knowledge blockers carry no obstacle at
+    all</b>, and reading them is the point. Several are not questions — they are
+    a product nobody has built, which is <code>no-sponsor</code> in a lab coat.
+    <b>That is the evidence for splitting Nordstern's <code>knowledge</code> kind
+    into <code>mechanism-unknown</code> and <code>no-candidate</code></b>, a
+    schema change this register surfaced and which has not been made.</div>
+  <div class="card"><ul class="untag">${U.map(u =>
+    `<li><a href="${qurl(ID_OF[u.record] ? "id:" + ID_OF[u.record]
+                                         : "slug:" + u.record)}"><b>${
+      esc(u.record)}</b></a> — ${esc(u.blocks)}</li>`).join("")}</ul></div>`);
+
+  /* ---- how this is tracked ---- */
+  const withRes = SNAPS.filter(s => s.resolution_members).length;
+  out.push(`<h2><span class="n">${String(n++).padStart(2, "0")}</span>How this is
+    meant to change</h2>
+  <div class="lede"><b>An obstacle register shrinks differently from a disease
+    register.</b> There, the signal is a disease changing state. Here it is a
+    <code>resolution</code> moving — a question getting answered — and a claim
+    being graded from <code>alleged</code> to <code>documented</code> or
+    <code>refuted</code>. <b>Records-blocked is not the signal</b>: it moves
+    mostly because Nordstern grew, and reading it as progress would be reading
+    the corpus rather than the field.</div>
+  <div class="grid g3">
+    ${stat(SNAPS.length, "dated snapshots",
+      `Oldest ${esc(SNAPS[0].date)}. Written into Nordstern's <code>web/</code>
+       rather than appearing inside Nordstern's own snapshot — the arrow runs
+       that way and only that way, and the dashboard reads two files.`,
+      null, "sm")}
+    ${stat(withRes, "that record each obstacle's resolution",
+      `<b>A tally cannot say which one moved.</b> Earlier snapshots hold
+       <code>by_resolution</code> counts only and are not backfilled, because
+       reconstructing them from today's records would fabricate the history this
+       exists to keep.`, null, "sm")}
+    ${stat((S.claims.by_standing.documented || 0) +
+           (S.claims.by_standing.refuted || 0), "claims graded so far",
+      `Out of ${S.claims.total}. <b>This is the register grading its own
+       guesses</b> — a claim that becomes <code>refuted</code> is as valuable as
+       one that becomes <code>documented</code>, and considerably rarer in
+       print.`, null, "sm")}
+  </div>
+  <div class="note" style="margin-top:10px"><b>A question can be answered and
+    change nothing.</b> Every record here must state <code>what_it_unblocks</code>
+    and <code>check.py</code> errors without it — the rule Marburg forced.
+    "Nothing much" is a legal answer; silence is not. Without that field this
+    register would be an infinite list of things nobody knows.</div>`);
+
+  const page = out.join("");
+  document.getElementById("body").innerHTML = page;
+}
+
+render();
+</script>
+</body>
+</html>

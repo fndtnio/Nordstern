@@ -1,0 +1,514 @@
+slug: bacterial-meningitis
+id: FND-D-0129
+name: bacterial meningitis
+also: [meningococcal meningitis, pneumococcal meningitis, Haemophilus influenzae type b meningitis, meningococcal disease, meningitis]
+kind: disease
+mondo: MONDO:0006670
+residual: false
+contested: false
+
+# A WINDOW THAT CLOSES WHILE THE ILLNESS STILL LOOKS TRIVIAL.
+#
+# 1. IT KILLS IN HOURS — **and that is not rare here, which two earlier drafts of
+#    this comment got wrong.** 86 of 129 records carry a `window`, and 19 of them
+#    close in hours: cholera, maternal haemorrhage, infant diarrhoea, asthma,
+#    sepsis, myocardial infarction. This record is not the one the field was
+#    waiting for.
+#    **What is distinctive is the combination.** In cholera the patient is
+#    visibly dehydrated; in maternal haemorrhage she is visibly bleeding; in
+#    sepsis the patient is visibly ill. **Here the first hours look like a viral
+#    illness** — fever, malaise, aching legs — and the classical signs arrive
+#    after the window has partly closed, or in infants never arrive at all. So
+#    the window is short *and* the thing that would prompt action is absent for
+#    most of it, which is a harder problem than either alone.
+#
+# 2. `hearing-loss` HAS NAMED IT AS A PREVENTABLE CAUSE ALL ALONG, AND THERE WAS
+#    NO RECORD. That record lists meningococcal, pneumococcal and *Haemophilus
+#    influenzae* type b vaccination among the things preventing childhood
+#    deafness. **Sensorineural hearing loss is the commonest permanent sequela of
+#    this disease** — up to roughly a third of pneumococcal survivors — so the
+#    link runs both ways and neither end existed. Second instance in three days
+#    after congenital CMV (gaps.md #242).
+#
+# 3. AND IT HOLDS ONE OF THE CLEAREST VACCINE SUCCESSES OF THE CENTURY, WHICH THE
+#    REGISTER HAS NEVER RECORDED. MenAfriVac was developed by a public-private
+#    project **to a target price of fifty cents a dose, for a region rather than
+#    a market**, and serogroup A epidemics across the African meningitis belt
+#    essentially stopped. The register keeps finding that the market fails
+#    diseases of poor countries; this is the counter-example, and it should be
+#    held as carefully as the failures.
+
+burden:
+  incidence:
+    value: 2.5e6
+    units: >
+      estimated cases/year worldwide of bacterial meningitis and meningococcal
+      septicaemia — **down very substantially from the pre-conjugate-vaccine era
+      and still concentrated in infants, adolescents and the African meningitis
+      belt**, where dry-season epidemics recur from December to June
+    src: recall
+  deaths:
+    value: 2.4e5
+    units: >
+      deaths/year worldwide. **Case fatality runs roughly 10-20% with prompt
+      treatment in a well-resourced system and far higher where treatment is
+      delayed or unavailable** — and unlike most of this register's infectious
+      records, a large share of these deaths occur within a day or two of a
+      person being entirely well
+    src: recall
+  note: >
+    **The deaths understate it by roughly the same amount again.** Around one
+    survivor in five is left with a permanent sequela — hearing loss, epilepsy,
+    cognitive impairment, hydrocephalus, or amputated limbs after meningococcal
+    septicaemia. **A disease that kills a quarter of a million people a year and
+    disables a comparable number of the survivors it spares** is not well
+    described by its mortality alone.
+
+survival:
+  horizon: 30 days from onset
+  untreated:
+    value: 0.05
+    units: >
+      fraction alive — **untreated bacterial meningitis was very close to
+      uniformly fatal**, which is why the pre-antibiotic literature is
+      unambiguous and why this is one of the register's cleanest counterfactuals
+    src: recall
+  treated:
+    value: 0.78
+    units: >
+      fraction alive on prompt parenteral antibiotics with adjunctive
+      corticosteroids where indicated. **A blend across settings that differ
+      enormously**: high-income case fatality around 10-20%, and considerably
+      worse where the first dose is hours or days later
+    src: reasoning
+  witness: >
+    **The gain is +0.73, which ranks eleventh of ninety-two rated records** — a
+    large gain and not an exceptional one, and an earlier draft of this witness
+    called it *"one of the largest, comparable to `hat` and
+    `visceral-leishmaniasis`."* Those are +0.95 and +0.90. **The claim was
+    checkable and wrong**, and it is corrected here rather than quietly deleted.
+    **And survival is the wrong headline for this record.** One survivor in five
+    carries a permanent injury, so the axis that says *four in five live* is
+    silent about the deafness, epilepsy and amputations that are the disease's
+    other half. Read this row beside `residue`, which is rated `catastrophic`.
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: prophylaxis
+  ongoing: none
+  efficacy:
+    value: 0.80
+    units: >
+      fraction-of-patients (surviving without major sequelae, on prompt
+      appropriate therapy) — **and the figure is a function of the clock more
+      than of the drug.** Third-generation cephalosporins reliably kill the
+      organisms; what varies is how many hours passed
+    src: reasoning
+  access:
+    value: 0.55
+    units: >
+      fraction-of-patients (receiving appropriate antibiotics within the window
+      that matters) — **the drugs are generic and stocked almost everywhere**, so
+      this is not a supply figure. It is recognition, transport, and the interval
+      between a worried parent and a first dose
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: good
+  predictive: partial
+  witness: >
+    **DIAGNOSTIC is `objective` and the test is the delay.** Lumbar puncture with
+    cerebrospinal fluid microscopy, culture and PCR is definitive and cheap. The
+    documented harm is the sequence around it: **CT before LP to exclude raised
+    intracranial pressure delays antibiotics by hours in patients who mostly did
+    not need the scan**, and guidelines now say to give the antibiotic first —
+    advice that is unevenly followed because the fear of coning is vivid and the
+    cost of delay is statistical.
+    Early presentation is the harder problem. **The first hours of meningococcal
+    disease look like a viral illness** — fever, malaise, aching legs — and the
+    classical signs, neck stiffness and a non-blanching rash, appear late or not
+    at all in infants. Nothing distinguishes it at the point where distinguishing
+    it would help most, which is the diagnostic gap this record actually has.
+    PROGNOSTIC is `good`: level of consciousness, seizures, shock and CSF
+    parameters predict death and disability well. **What is predicted is mostly
+    unmodifiable by then**, which is what a `window` disease looks like from the
+    measurement side.
+    PREDICTIVE is `partial`. Organism and susceptibility guide therapy and arrive
+    a day or two late; adjunctive dexamethasone helps in pneumococcal meningitis
+    in high-income settings and **has not shown benefit in low-income,
+    HIV-prevalent populations** — a geographic divergence in a randomised result
+    that nobody has satisfactorily explained.
+
+window:
+  what: >
+    **Hours.** A well person can be dead within a day, and among survivors the
+    interval between onset and the first dose of antibiotic predicts permanent
+    hearing loss, epilepsy and cognitive impairment. Most windows in this
+    register are measured in years — but nineteen close in hours, so the duration
+    is not what sets this apart. **What does is that for most of those hours
+    there is nothing to see.** The intervention is not a programme but a decision
+    made once, quickly, by somebody who is not sure and has no test.
+  closes_on: >
+    hours from symptom onset — through septic shock, raised intracranial
+    pressure, cerebral infarction and cochlear damage
+  caught_in_time:
+    value: 0.55
+    units: >
+      fraction-of-patients receiving appropriate parenteral antibiotics early
+      enough to alter the outcome — reasoned, and far lower where the nearest
+      facility is hours away
+    src: reasoning
+
+strata:
+  - name: meningococcal meningitis
+    fraction:
+      value: 0.30
+      units: fraction-of-cases
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.82
+      units: fraction-of-stratum (surviving without major sequelae on prompt therapy)
+      src: reasoning
+    toll: minor
+    what: >
+      **The fastest and the most epidemic.** *Neisseria meningitidis* causes
+      both meningitis and a fulminant septicaemia — purpura fulminans,
+      Waterhouse-Friderichsen adrenal haemorrhage, and limb loss in survivors.
+      It is the form that produces outbreaks in schools, barracks and pilgrimages,
+      and the one behind the African meningitis belt's dry-season epidemics.
+
+  - name: pneumococcal meningitis
+    fraction:
+      value: 0.45
+      units: fraction-of-cases
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.70
+      units: fraction-of-stratum (surviving without major sequelae)
+      src: reasoning
+    toll: minor
+    what: >
+      **The commonest and the most damaging.** *Streptococcus pneumoniae* carries
+      the highest case fatality and the highest rate of permanent sequelae —
+      **sensorineural hearing loss in up to roughly a third of survivors** — and
+      it is where adjunctive dexamethasone was shown to help, in high-income
+      settings.
+
+  - name: Haemophilus influenzae type b meningitis
+    fraction:
+      value: 0.10
+      units: fraction-of-cases
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.80
+      units: fraction-of-stratum (surviving without major sequelae)
+      src: reasoning
+    toll: minor
+    what: >
+      **Once the commonest cause of bacterial meningitis in children and now
+      close to absent wherever the conjugate vaccine is used.** The stratum is
+      small because the vaccine worked, and it remains substantial where coverage
+      does not reach — which makes this fraction a measure of vaccination rather
+      than of biology.
+
+  - name: neonatal and other organisms
+    fraction:
+      value: 0.15
+      units: fraction-of-cases
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.65
+      units: fraction-of-stratum (surviving without major sequelae)
+      src: reasoning
+    toll: minor
+    what: >
+      Group B streptococcus, *Escherichia coli* and *Listeria* in newborns;
+      *Listeria* again in the elderly, the pregnant and the immunosuppressed.
+      **Different organisms, different empirical antibiotics, and worse outcomes
+      in newborns**, whose presentation is least specific of all.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    **A short course of generic antibiotics, and the treatment has never been the
+    problem.** Ceftriaxone or cefotaxime, with vancomycin added where pneumococcal
+    resistance is a concern and amoxicillin where *Listeria* is possible, for one
+    to three weeks. Dexamethasone alongside, where indicated.
+    Rated `minor`: cephalosporins are well tolerated, the course is short, and
+    nothing here is given long enough to accumulate. **The permanent damage in
+    this record belongs entirely to the disease and to the delay**, and is in
+    `residue`.
+  incidence:
+    value: 0.02
+    units: >
+      fraction-of-treated with a consequential adverse drug effect — reasoned,
+      and dominated by allergy rather than toxicity
+    src: reasoning
+
+residue:
+  severity: catastrophic
+  permanent: true
+  what: >
+    **AROUND ONE SURVIVOR IN FIVE IS PERMANENTLY INJURED, AND THIS IS WHAT THE
+    RECORD IS ABOUT.**
+    **Sensorineural hearing loss is the commonest** — up to roughly a third of
+    pneumococcal survivors — caused by cochlear inflammation and ossification,
+    and it is why urgent audiological assessment and, where needed, cochlear
+    implantation before the cochlea ossifies is a genuine emergency in its own
+    right. **`hearing-loss` names vaccination against these organisms among the
+    interventions preventing childhood deafness; this is the disease at the other
+    end of that sentence.**
+    Then epilepsy, cognitive and behavioural impairment, hydrocephalus requiring
+    shunting, cerebral palsy in infants, and — after meningococcal septicaemia
+    rather than meningitis — **skin necrosis and amputated limbs**, in children
+    who were well the previous day.
+    **A large share of it is a function of hours.** That is what makes the
+    `window` field load-bearing here rather than descriptive.
+  incidence:
+    value: 0.20
+    units: >
+      fraction-of-survivors with a permanent neurological, auditory or limb
+      sequela — reasoned, higher in the pneumococcal stratum and in neonates,
+      lower with prompt treatment
+    src: reasoning
+
+witness:
+  mechanism: >
+    `established`. Encapsulated bacteria colonise the nasopharynx — asymptomatic
+    carriage of meningococcus runs around ten percent of adults and far higher in
+    adolescents — invade the bloodstream in a small minority, cross the
+    blood-brain barrier and provoke an intense inflammatory response in the
+    subarachnoid space. **Much of the damage is the host's**: cytokine-driven
+    inflammation causes cerebral oedema, raised intracranial pressure, vasculitis
+    and infarction, which is the rationale for giving a corticosteroid alongside
+    an antibiotic that will itself release more inflammatory cell-wall material
+    as it kills.
+    **Why one carrier in thousands develops disease is not known**, and it is the
+    `who-progresses` question in a form where the shared insult is nearly
+    universal.
+  intervention: >
+    `curative`, and unambiguously so where it is given in time. Third-generation
+    cephalosporins reliably sterilise the cerebrospinal fluid; the organisms
+    remain largely susceptible; and **the drugs are generic and stocked almost
+    everywhere.** Adjunctive dexamethasone reduces hearing loss and mortality in
+    pneumococcal meningitis in high-income settings.
+    **Nothing about the pharmacology is an open question. The open question is
+    the interval.**
+  prevention: >
+    `prophylaxis`, **and it holds one of the clearest vaccine successes of the
+    century alongside one of the clearest immunological obstacles.**
+    **The successes.** *Haemophilus influenzae* type b conjugate vaccine
+    essentially abolished what had been the commonest cause of childhood
+    bacterial meningitis wherever it is used. Pneumococcal conjugate vaccines cut
+    invasive disease sharply. Meningococcal C conjugate did the same in the
+    United Kingdom within a year of introduction.
+    **And MenAfriVac, which the register should hold as a counter-example to its
+    own findings.** Developed by a public-private project explicitly for the
+    African meningitis belt, **to a target price of about fifty cents a dose
+    because that was what the countries could pay** — not to a market. Rolled out
+    from 2010, and serogroup A epidemics essentially stopped. This register
+    repeatedly records that no-sponsor failures follow from small poor markets;
+    **this is the case where somebody designed around that and it worked.**
+    **The obstacle is serogroup B**, and it is immunological rather than
+    commercial: the B capsule is polysialic acid, which **mimics a sugar on human
+    neural cell adhesion molecule**, so it is a poor immunogen and a conjugate
+    vaccine against it risks autoimmunity. The answer was a protein-based
+    outer-membrane-vesicle vaccine instead — **and that is the vaccine `gonorrhoea`
+    records as unexpectedly cross-protecting against a different Neisseria.**
+    Chemoprophylaxis for close contacts is standard and works.
+  ongoing: >
+    `none`. The infection is treated and finished in one to three weeks. **The
+    burden that persists is `residue` and belongs to the survivors** — hearing
+    aids, cochlear implants, anticonvulsants, shunt revisions, prostheses — none
+    of which is treatment for meningitis.
+  efficacy: >
+    See the axis, and read it as a statement about elapsed time rather than about
+    drugs.
+  access: >
+    **Not a supply problem, which is unusual for this register.** Ceftriaxone is
+    generic and available almost everywhere. What fails is the sequence: a parent
+    recognising that this illness is different, reaching a facility, a clinician
+    considering it before the rash, and a first dose given before imaging.
+    **In the meningitis belt the failure is distance and epidemic surge**;
+    in wealthy systems it is the several hours between a first presentation that
+    looked viral and a second that did not.
+
+moved:
+  - date: 1990
+    axis: prevention
+    from: none
+    to: prophylaxis
+    why: >
+      **Haemophilus influenzae type b conjugate vaccination**, which removed the
+      commonest cause of childhood bacterial meningitis in every country that
+      introduced it. Dated loosely across the introduction period. One of the
+      most complete disease eliminations any vaccine has achieved, and it is
+      almost never named as one.
+    src: recall
+  - date: 2010
+    axis: access
+    from: 0.35
+    to: 0.55
+    why: >
+      **MenAfriVac.** A conjugate vaccine developed for the African meningitis
+      belt at a target price the affected countries could afford, rolled out from
+      2010, after which serogroup A epidemics — which had produced tens of
+      thousands of cases in a season — essentially stopped.
+      Recorded on `access` because the achievement was a price and a delivery
+      route rather than a discovery: the immunology was standard conjugate
+      chemistry and **what was new was designing the product to the buyer.**
+    src: recall
+
+holes:
+  - >
+    **The strata fractions describe a world that vaccination is actively
+    changing**, and they differ by an order of magnitude between a country with
+    universal Hib and pneumococcal conjugate vaccination and one without. A single
+    global split describes neither.
+  - >
+    Meningococcal **septicaemia** without meningitis is folded into this record
+    and is arguably a different disease — the deaths are faster, the mechanism is
+    shock rather than central nervous system inflammation, and the residue is limb
+    loss rather than deafness. Mondo holds `meningococcemia` separately.
+  - >
+    **Tuberculous meningitis is excluded** and belongs with `tuberculosis`,
+    where treatment, duration and outcomes are entirely different. Cryptococcal
+    meningitis has its own record.
+  - >
+    `caught_in_time: 0.55` is the least evidenced number here. **Time-to-antibiotic
+    distributions are measured in individual health systems and not globally**,
+    and the figure is reasoned from the shape of those studies rather than from a
+    denominator anybody has.
+  - >
+    The dexamethasone divergence — benefit in high-income trials, none in
+    low-income, HIV-prevalent populations — is real, repeatedly replicated and
+    **unexplained**. The record states it rather than resolving it, and it is a
+    caution about assuming trial results transfer.
+  - Written from model recall. The Hib and MenAfriVac results, the serogroup B
+    self-antigen problem and hearing loss as the commonest sequela are the parts
+    most likely right; every number is the part most likely wrong.
+
+blockers:
+  - kind: diagnosis
+    blocks: the several hours in which this disease looks like a virus
+    what: >
+      **THE FIRST HOURS OF MENINGOCOCCAL DISEASE ARE INDISTINGUISHABLE FROM A
+      VIRAL ILLNESS**, and by the time the classical signs appear — neck
+      stiffness, photophobia, a non-blanching rash — the window that determines
+      survival and disability has partly closed. In infants the classical signs
+      may never appear at all.
+      **There is no point-of-care test that separates the child who needs
+      parenteral antibiotics now from the hundreds who do not.** Clinical
+      prediction rules exist and are not sensitive enough to withhold treatment
+      on. So the system runs on suspicion, and suspicion is unevenly distributed:
+      a first presentation is sent home, a second is admitted.
+      A secondary and correctable failure sits alongside it: **CT before lumbar
+      puncture delays the first dose by hours** in patients who did not need the
+      scan, and guidance to treat first is unevenly followed because the feared
+      harm is vivid and the cost of waiting is statistical.
+      **This is the register's clearest case of a diagnostic gap whose cost is
+      counted in hours** rather than in years of delayed diagnosis.
+    who_could: [academic, sponsor, manufacturer, health-system]
+    scale: 5.0e8
+    standing: documented
+    src: reasoning
+
+  - kind: logistics
+    blocks: a first dose of a generic antibiotic, given in time
+    what: >
+      **THE DRUG IS CHEAP, STOCKED AND EFFECTIVE, AND THE OUTCOME TURNS ON HOW
+      MANY HOURS PASSED.** That makes this a delivery problem of an unusually
+      pure kind: no discovery is needed, no registration, no price negotiation —
+      only recognition, transport and a decision.
+      In the African meningitis belt the constraint is distance and epidemic
+      surge: a health post hours away, and case loads in a dry-season epidemic
+      that exceed what any facility can absorb. **Pre-referral parenteral
+      antibiotics given at the periphery are the intervention**, and they require
+      a trained person and a supply chain at a level of the system that often has
+      neither.
+      In wealthy systems the constraint is the interval between a presentation
+      that looked viral and one that did not, and the fix is safety-netting,
+      recall and clinician education rather than anything material.
+    who_could: [health-system, government, nonprofit, payer]
+    scale: 8.0e8
+    standing: documented
+    src: reasoning
+
+  - kind: knowledge
+    blocks: a vaccine against a capsule that looks like human tissue
+    what: >
+      **THE MENINGOCOCCAL SEROGROUP B CAPSULE IS POLYSIALIC ACID, WHICH MIMICS A
+      SUGAR ON HUMAN NEURAL CELL ADHESION MOLECULE.** So it is a poor immunogen —
+      the immune system is tolerant of it — and a conjugate vaccine of the kind
+      that solved serogroups A, C, W and Y would risk provoking autoimmunity
+      against neural tissue. **The obstacle is not that nature supplies no
+      template; it is that the target is indistinguishable from self.**
+      That is a distinct entry under `protective-immunity`, and it was routed
+      around rather than solved: outer-membrane-vesicle and recombinant protein
+      vaccines target subcapsular antigens instead, with the cost that coverage
+      depends on strain-by-strain antigen expression rather than on serogroup.
+      **The pneumococcal problem is the mirror image**: the conjugate approach
+      works, and **serotype replacement refills the niche** — non-vaccine
+      serotypes rise to occupy the nasopharynx the vaccine cleared, so each
+      valency buys a period rather than a solution.
+      **One organism whose capsule cannot be targeted, and one where targeting
+      the capsule selects around it.** `scale: null`.
+    who_could: [academic, sponsor, manufacturer, philanthropy]
+    scale: null
+    standing: documented
+    src: reasoning
+    obstacles: [protective-immunity]
+
+  - kind: knowledge
+    blocks: knowing which carrier becomes a case
+    what: >
+      **AROUND ONE ADULT IN TEN CARRIES MENINGOCOCCUS IN THE NASOPHARYNX AND
+      ALMOST NONE OF THEM BECOMES ILL**, with carriage far higher in adolescents.
+      What determines invasion in a particular person at a particular moment is
+      not understood: complement deficiency, recent viral infection, smoking and
+      crowding all raise risk, and none identifies the individual.
+      The same question governs epidemics. **Nobody can say why the meningitis
+      belt's dry season produces them**, why a serogroup sweeps and recedes, or
+      why a school outbreak stops. Vaccination has controlled the epidemics
+      without answering it.
+      **This is `who-progresses` with a nearly universal shared insult** — the
+      cleanest version of that obstacle in the corpus, because the exposure is
+      not a rare event but ordinary carriage.
+    who_could: [academic, sponsor, health-system]
+    scale: null
+    standing: documented
+    src: reasoning
+    obstacles: [who-progresses]
+
+  - kind: policy
+    blocks: hearing that is lost after the infection is cured
+    what: >
+      **SENSORINEURAL HEARING LOSS IS THE COMMONEST PERMANENT SEQUELA** — up to
+      roughly a third of pneumococcal survivors — and a share of it is
+      recoverable only within a narrow second window. The cochlea can **ossify**
+      in the weeks after meningitis, and once it has, cochlear implantation
+      becomes difficult or impossible. **So a child cured of meningitis has weeks
+      in which an audiological assessment and, if needed, an implant will work,
+      and after which they will not.**
+      Urgent post-meningitis audiology is recommended and unevenly delivered,
+      because the acute illness is over, the team has changed, and the child has
+      been discharged. **The register has recorded a cheap unused test
+      (`cryptococcal-meningitis`) and a cheap unused procedure
+      (`candidaemia`'s fundoscopy); this is a cheap unused referral, and it costs
+      the same thing `hearing-loss` spends a whole record on.**
+    who_could: [health-system, government, payer]
+    scale: 1.0e8
+    standing: documented
+    src: reasoning
+
+assertion:
+  id: FND-A-0130
+  rated: 2026-08-30
+  by: [claude, jeremy]

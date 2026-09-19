@@ -1,0 +1,308 @@
+# DRAFT — ONE RECORD'S ATTEMPTS, WRITTEN TO DISCOVER A SCHEMA RATHER THAN TO FILL ONE.
+#
+# `attempts-extract.md` found that 74 of 126 Nordstern records already describe
+# something that was tried and did not work, and that **only 13% of those
+# sentences carry a year** — so the register records *that* things failed and
+# almost never *when*. A register of attempts whose whole value is sequence
+# cannot be built by extraction; it has to be written.
+#
+# So this is the probe: `parkinsons` had the most already written (13 sentences),
+# and its own blocker says **"EVERY NEUROPROTECTION TRIAL IN PARKINSON'S DISEASE
+# HAS FAILED."** If the unit "attempt" is workable, writing that sentence out
+# properly should produce something the blocker does not already say. If it does
+# not, nothing has been built on it.
+#
+# NOTHING VALIDATES THIS FILE. `check.py` globs `entities/*.yaml`, so this
+# directory is inert. That is deliberate: no schema is committed to until the
+# shape has been looked at.
+#
+# WHAT I WAS REACHING FOR WHILE WRITING, WHICH IS THE ACTUAL OUTPUT:
+#   approach / modality      what was tried, and what kind of thing it is
+#   rationale                WHY it was tried — and this turned out to matter most
+#   phase, read_out, outcome the sequence
+#   what_it_ruled_out        the payload; a failure that rules nothing out is noise
+#   against                  which diseases — the cross-disease key
+#   follows                  the chain; phase 2 -> phase 3 is one story, not two
+#
+# EVERY DATE HERE IS `src: recall` AND SHOULD BE VERIFIED BEFORE ANY OF IT IS
+# QUOTED. Nordstern's own rule: a plausible citation is exactly what a model
+# emits when it does not know. These are years I believe; they are not sourced.
+
+disease: parkinsons
+drafted: 2026-08-30
+by: [claude, jeremy]
+
+attempts:
+
+  # ---- the epidemiology-led wave -------------------------------------------
+  # FOUR TRIALS, ONE RATIONALE, AND THE RATIONALE IS THE FINDING. Each of these
+  # began with an observational signal — people taking X, or with high Y, seemed
+  # to get Parkinson's less or progress slower — and each converted it into a
+  # phase 3 that failed. Read as four separate failures they look like bad luck.
+  # Read as one, they are a demonstration that observational neuroprotection
+  # signals in this disease do not survive randomisation.
+
+  - approach: selegiline
+    modality: small molecule (MAO-B inhibitor)
+    rationale: >
+      MPTP toxicity requires MAO-B, so inhibiting it was expected to block an
+      analogous endogenous process
+    against: [parkinsons]
+    phase: 3
+    read_out: 1993
+    outcome: ambiguous
+    what_it_ruled_out: >
+      **Nothing, and that is why it mattered for a decade.** DATATOP delayed the
+      need for levodopa — and selegiline has its own symptomatic effect, so the
+      delay could not be attributed to neuroprotection. **The first trial in this
+      list established the confound that every later one had to design around.**
+    src: recall
+
+  - approach: coenzyme Q10
+    modality: supplement (mitochondrial)
+    rationale: mitochondrial complex I deficiency in PD substantia nigra
+    against: [parkinsons]
+    phase: 3
+    read_out: 2014
+    outcome: negative
+    what_it_ruled_out: >
+      Terminated for futility. Rules out high-dose CoQ10 at the doses tested and
+      leaves the mitochondrial hypothesis itself untouched — **which is the
+      recurring problem: a negative agent is not a negative mechanism.**
+    src: recall
+
+  - approach: creatine
+    modality: supplement (bioenergetic)
+    rationale: mitochondrial energetics, as above
+    against: [parkinsons, huntington]
+    phase: 3
+    read_out: 2015
+    outcome: negative
+    what_it_ruled_out: >
+      Terminated early for futility after five years. **Also failed in
+      Huntington's disease on the same rationale**, which is the first
+      cross-disease entry in this file and the reason `against` is a list.
+    src: recall
+
+  - approach: isradipine
+    modality: small molecule (L-type calcium channel blocker)
+    rationale: >
+      dihydropyridine users had lower observed PD incidence; nigral neurons use
+      L-type calcium channels for pacemaking, and the calcium load is proposed to
+      drive their selective vulnerability
+    against: [parkinsons]
+    phase: 3
+    read_out: 2020
+    outcome: negative
+    what_it_ruled_out: >
+      **The cleanest mechanistic hypothesis in this list, and it failed.** The
+      pacemaking-calcium account explained why *these particular* neurons die,
+      which almost nothing else does. STEADY-PD III leaves it standing as biology
+      and dead as a therapy at tolerable doses.
+    src: recall
+
+  - approach: inosine
+    modality: supplement (urate-elevating)
+    rationale: higher serum urate associated with slower progression
+    against: [parkinsons]
+    phase: 3
+    read_out: 2021
+    outcome: negative
+    what_it_ruled_out: >
+      Terminated for futility. **Fourth epidemiology-derived hypothesis to fail in
+      phase 3**, and at this point the pattern is the result: the association was
+      real and the intervention was not.
+    src: recall
+
+  # ---- the alpha-synuclein wave --------------------------------------------
+  - approach: prasinezumab
+    modality: monoclonal antibody (anti-alpha-synuclein)
+    rationale: >
+      alpha-synuclein aggregates define the pathology and propagate between
+      neurons, so clearing extracellular species should slow spread
+    against: [parkinsons]
+    phase: 2
+    read_out: 2022
+    outcome: negative
+    what_it_ruled_out: >
+      Missed its primary endpoint (PASADENA), with subgroup signals the sponsor
+      pursued into a further trial. **Read alongside `alzheimers`: the same
+      modality against the same kind of target — an aggregating protein that
+      defines the pathology — where anti-amyloid antibodies did eventually slow
+      decline.** Whether synuclein is a worse target or the trials were worse
+      designed is the open question.
+    src: recall
+
+  - approach: cinpanemab
+    modality: monoclonal antibody (anti-alpha-synuclein)
+    rationale: as above, different epitope
+    against: [parkinsons]
+    phase: 2
+    read_out: 2021
+    outcome: negative
+    what_it_ruled_out: >
+      Failed on all endpoints and was discontinued. **Two antibodies, two
+      sponsors, two epitopes, both negative** — which is a stronger statement
+      about the target than either alone, and is the kind of claim only a register
+      of attempts can make.
+    src: recall
+
+  # ---- the repurposing wave, and the one that is not finished ---------------
+  - approach: exenatide
+    modality: GLP-1 receptor agonist (repurposed from type 2 diabetes)
+    rationale: >
+      neuroprotective signals in preclinical models; epidemiology suggesting
+      lower PD incidence in people treated for diabetes with GLP-1 agonists
+    against: [parkinsons]
+    phase: 2
+    read_out: 2017
+    outcome: positive
+    what_it_ruled_out: >
+      **Nothing — and it set the field's agenda for seven years.** A positive
+      phase 2 in a disease with no disease-modifying therapy became the leading
+      hope, drew substantial funding, and is the reason the entry below matters.
+    src: recall
+
+  - approach: exenatide
+    modality: GLP-1 receptor agonist
+    follows: exenatide phase 2 (2017)
+    rationale: as above, confirmatory
+    against: [parkinsons]
+    phase: 3
+    read_out: 2024
+    outcome: negative
+    what_it_ruled_out: >
+      **The largest single disappointment in this record and the reason `follows`
+      exists as a field.** Seven years, the field's leading hope, and the phase 3
+      did not confirm the phase 2. Reported as one attempt it is a failure;
+      reported as a chain it is **a measurement of how long a phase 2 signal can
+      hold a field**, which is the more useful fact.
+    src: recall
+
+  - approach: lixisenatide
+    modality: GLP-1 receptor agonist
+    rationale: as exenatide
+    against: [parkinsons]
+    phase: 2
+    read_out: 2024
+    outcome: positive
+    what_it_ruled_out: >
+      **Reported positive in the same period the exenatide phase 3 read out
+      negative**, which leaves the GLP-1 hypothesis genuinely unresolved rather
+      than closed. A register that recorded only failures would have shown this
+      class as dead; it is not.
+    src: recall
+
+  - approach: nilotinib
+    modality: small molecule (c-Abl kinase inhibitor, repurposed from CML)
+    rationale: c-Abl activation implicated in alpha-synuclein clearance failure
+    against: [parkinsons]
+    phase: 2
+    read_out: 2021
+    outcome: negative
+    what_it_ruled_out: >
+      No benefit and poor central nervous system exposure at tolerated doses.
+      **A dosing/delivery failure as much as a mechanistic one** — which makes it
+      the entry in this file that belongs to Engpass's `cell-targeting` rather
+      than to a hypothesis about the disease.
+    src: recall
+
+  # ---- the ones that caused harm -------------------------------------------
+  # THESE ARE THE ENTRIES THAT JUSTIFY THE WHOLE EXERCISE. A blocker sentence
+  # saying "trials have failed" cannot distinguish a null result from an injury.
+  - approach: fetal nigral cell transplantation
+    modality: cell therapy
+    rationale: replace the lost dopaminergic neurons directly
+    against: [parkinsons]
+    phase: 2
+    read_out: 2001
+    outcome: harmed
+    what_it_ruled_out: >
+      Two randomised sham-controlled trials missed their primary endpoints, and
+      **a substantial minority of grafted patients developed disabling
+      graft-induced dyskinesia** that could not be switched off. It stopped cell
+      therapy in this disease for roughly two decades.
+    src: recall
+
+  - approach: deferiprone
+    modality: small molecule (iron chelator)
+    rationale: iron accumulation in the substantia nigra
+    against: [parkinsons]
+    phase: 2
+    read_out: 2022
+    outcome: harmed
+    what_it_ruled_out: >
+      **Worse motor outcomes in the treated arm than placebo.** Not a null
+      result — a signal in the wrong direction, which argues that nigral iron is
+      doing something other than driving the damage. **The register currently
+      calls this "negative", which is wrong.**
+    src: recall
+
+  - approach: AAV-neurturin (CERE-120)
+    modality: gene therapy (neurotrophic factor delivery)
+    rationale: trophic support for surviving dopaminergic neurons
+    against: [parkinsons]
+    phase: 2
+    read_out: 2013
+    outcome: negative
+    what_it_ruled_out: >
+      Negative in two successive trials, the second after redesigning delivery to
+      target the substantia nigra as well as the putamen. **The redesign is the
+      informative part: the first failure was attributed to delivery, the
+      delivery was fixed, and it failed again.** That is a genuine mechanistic
+      refutation rather than a dosing excuse.
+    src: recall
+
+  - approach: GDNF (glial cell line-derived neurotrophic factor)
+    modality: protein infusion, intraputamenal
+    rationale: as above
+    against: [parkinsons]
+    phase: 2
+    read_out: 2019
+    outcome: negative
+    what_it_ruled_out: >
+      Missed its primary endpoint despite convincing target engagement on
+      imaging. **Engagement without benefit is the most informative kind of
+      negative trial and the register has no field for it** — it separates "the
+      drug did not reach the target" from "the target is wrong", and only the
+      second is knowledge.
+    src: recall
+
+  # ---- in flight -----------------------------------------------------------
+  - approach: bemdaneprocel and other iPSC-derived dopaminergic grafts
+    modality: cell therapy
+    rationale: >
+      replace the lost neurons, with a manufactured and characterised cell
+      product rather than fetal tissue
+    against: [parkinsons]
+    phase: 1
+    read_out: 2023
+    outcome: in-flight
+    what_it_ruled_out: >
+      Nothing yet — early safety reported, efficacy trials running. **Included
+      because a register of attempts that holds only failures is a graveyard
+      rather than a map**, and because this is the first serious return to the
+      approach that caused harm in 2001.
+    src: recall
+
+holes:
+  - >
+    **Every date is `src: recall` and none is sourced.** Nordstern's own rule is
+    that a plausible citation is exactly what a model emits when it does not
+    know, and the `source_moved.py` discipline — a person chooses the paper, the
+    network supplies the verbatim quote — is what this needs before any of it is
+    quoted. **The years are the most likely thing here to be wrong.**
+  - >
+    Selection is not stated and is not neutral. These are the attempts a person
+    writing about Parkinson's would name; **failed phase 2s that nobody
+    remembers are absent by construction**, which biases the record toward
+    well-publicised failures and against quiet ones.
+  - >
+    `outcome: negative` is doing too much work and the harm entries prove it —
+    deferiprone was worse than placebo and fetal grafts caused disabling
+    dyskinesia. Lumping those with "did not meet its endpoint" loses the most
+    decision-relevant distinction in the file.
+  - >
+    Nothing here holds **cost or duration**, and the exenatide chain suggests it
+    should: seven years and the field's leading hope is a quantity, and it is the
+    quantity a funder would want.

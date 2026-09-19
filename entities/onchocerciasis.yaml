@@ -1,0 +1,392 @@
+slug: onchocerciasis
+id: FND-D-0027
+name: onchocerciasis
+also: [river blindness, Onchocerca volvulus infection]
+mondo: MONDO:0017137
+kind: disease
+residual: false
+contested: false
+
+# TWO THINGS THIS RECORD BREAKS.
+#
+# 1. THE INTERVENTION AXIS IS PATIENT-SCOPED AND THIS DRUG IS NOT. Ivermectin
+#    kills microfilariae and does NOT kill the adult worm. It never cures
+#    anybody. What it does is suppress the parasite for the ten to fifteen
+#    years an adult worm lives, until the worms die of old age and are not
+#    replaced — so the individual gets suppression and the COMMUNITY gets
+#    elimination, from the same annual tablet. Four countries in the Americas
+#    have been verified free of a disease that is rated `suppressive` here,
+#    because that is what it does to a person. See gaps.md #58.
+#
+# 2. THE TREATMENT IS LETHAL IN THE PRESENCE OF A DIFFERENT PARASITE. Where
+#    Loa loa is co-endemic, ivermectin given to someone with a high Loa
+#    microfilarial load can cause encephalopathy, coma and death. The register
+#    has no row for Loa loa and no way to say that one disease's treatment is
+#    contraindicated by another's presence. And the answer built for it — a
+#    field video-microscope that counts Loa in a finger-prick in minutes — is a
+#    diagnostic whose entire purpose is to decide WHO NOT TO TREAT, which is
+#    the opposite of every diagnosis blocker in this register. See gaps.md #59.
+
+burden:
+  prevalence:
+    value: 2.1e7
+    units: >
+      people infected, roughly 99% of them in sub-Saharan Africa, with a small
+      remaining focus in the Amazon
+    src: recall
+  deaths:
+    value: 0.0
+    units: >
+      deaths/year directly attributable — onchocerciasis blinds and does not
+      itself kill; a fifth morbidity-dominant record
+    src: reasoning
+  note: >
+    Around 1.15 million people have vision loss from it, which is the burden the
+    disease is named for and is not the burden most people carry. THE DOMINANT
+    MORBIDITY IS ITCHING — relentless, disfiguring onchocercal skin disease,
+    with depigmentation and atrophy, in far more people than are blinded, and
+    consistently underweighted because it does not kill and is not blindness.
+    Historical scale is worth stating. The Onchocerciasis Control Programme in
+    West Africa, running from 1974 largely on aerial larviciding of blackfly
+    breeding sites, is credited with preventing on the order of six hundred
+    thousand cases of blindness and with returning tens of millions of hectares
+    of river valley to settlement and farming. The benefit was partly measured
+    in ARABLE LAND RECLAIMED, which no health register would think to record.
+
+axes:
+  mechanism: established
+  intervention: suppressive
+  prevention: risk-reduction
+  ongoing: low
+  efficacy:
+    value: 0.90
+    units: >
+      fraction-of-patients (microfilarial suppression, and therefore prevention
+      of further eye and skin damage, on annual ivermectin)
+    src: reasoning
+  access:
+    value: 0.75
+    units: >
+      fraction-of-patients (reached by community-directed treatment) —
+      therapeutic coverage in programme areas has been high; the shortfall is
+      concentrated in Loa loa co-endemic districts where mass treatment is
+      restricted, and in conflict areas
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: none
+  predictive: partial
+  witness: >
+    DIAGNOSTIC is `objective` — skin snip microscopy counts microfilariae,
+    nodules are palpable, Ov16 antibody serology maps exposure and is the tool
+    of choice for elimination surveillance in children. As with schistosomiasis,
+    individuals are largely not diagnosed: mapping decides which communities are
+    treated and everyone in them takes the tablet.
+    PROGNOSTIC is `none`. Nothing says which infected person goes blind, which
+    develops disabling skin disease, and which carries the worm for a decade
+    with little to show for it. Microfilarial load and duration correlate at
+    population level and predict nothing about an individual.
+    PREDICTIVE IS WHERE THIS RECORD EXPOSES A HOLE IN THE SCHEMA. The field
+    asks "will this treatment work in this patient", which here is close to
+    trivial — ivermectin clears microfilariae in essentially everyone. The
+    question that actually matters is the opposite one: **will this treatment
+    KILL this patient?** In Loa loa co-endemic districts, ivermectin given to
+    someone carrying a heavy Loa microfilarial load can produce encephalopathy,
+    coma and death.
+    `predictive` has no room for harm, only for benefit. And the answer that was
+    built for it is remarkable and invisible here: a point-of-care video
+    microscope that counts Loa microfilariae from a finger-prick in about two
+    minutes, in a village, so that the few people at risk can be identified and
+    NOT given the drug. A diagnostic whose entire purpose is exclusion. Rated
+    `partial` because the question is answerable where that device is deployed
+    and not elsewhere. See gaps.md #59.
+
+strata:
+  - name: outside Loa loa co-endemic areas
+    fraction:
+      value: 0.85
+      units: fraction-of-infected
+      src: reasoning
+    intervention: suppressive
+    efficacy:
+      value: 0.92
+      units: fraction-of-stratum (microfilarial suppression on annual treatment)
+      src: reasoning
+    toll: minor
+    what: >
+      The ordinary case, and it is close to ideal for a mass programme. One or
+      two tablets a year, given by a community-selected distributor, with a
+      transient Mazzotti reaction — itching, fever, swelling — as dying
+      microfilariae provoke inflammation. Nothing permanent. This is the stratum
+      in which annual treatment sustained for the lifespan of the adult worm has
+      driven transmission to zero across whole countries.
+
+  - name: Loa loa co-endemic areas
+    fraction:
+      value: 0.15
+      units: >
+        fraction-of-infected (parts of Cameroon, the Democratic Republic of the
+        Congo, the Central African Republic and Congo)
+      src: reasoning
+    intervention: suppressive
+    efficacy:
+      value: 0.60
+      units: >
+        fraction-of-stratum — lower not because the drug works less well but
+        because mass treatment is restricted, modified or suspended here
+      src: reasoning
+    toll: catastrophic
+    what: >
+      Where the programme's own drug is the danger. A person carrying a heavy
+      Loa loa microfilarial load who takes ivermectin can develop
+      encephalopathy, coma and death — rare per treatment and unacceptable at
+      any rate, and enough to stop mass distribution in the districts where
+      onchocerciasis most persists.
+      The consequence is exactly backwards: the areas hardest to clear are the
+      areas where the tool cannot safely be used, so the last reservoir of a
+      nearly-eliminable disease is protected by a second parasite the register
+      does not have a row for. "Test and not treat" with a field
+      video-microscope is the workaround, and it works, and it has to be
+      carried to every village where it is needed.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    For the great majority — the stratum above — ivermectin is about as benign
+    as a mass-administered drug gets: one or two tablets a year, a transient
+    Mazzotti reaction from dying microfilariae, nothing permanent. That safety
+    is what made community-directed distribution possible at the scale of
+    hundreds of millions of treatments a year.
+    RATED `minor` FOR THE MODAL PATIENT, AND THE RATING IS A PROBLEM WORTH
+    NAMING. In Loa loa co-endemic districts the same tablet can kill, and the
+    strata above carry that as `catastrophic` where it belongs. But the schema
+    has no way to say WHY: the toll here is a function of a co-infection with a
+    different parasite that has no record in this register, so the record can
+    show the split and cannot show its cause. See gaps.md #59, and note that
+    this is the same missing-edges problem as female genital schistosomiasis
+    raising HIV acquisition — one disease determining another's outcome, in a
+    table with no relations in it.
+  incidence:
+    value: 0.0
+    units: >
+      fraction-of-treated (permanent harm outside Loa co-endemic areas) — the
+      Loa-associated severe adverse events are rare per treatment and are
+      carried in the strata rather than averaged into this figure
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    Ivermectin stops the damage and does not repair it. Onchocercal eye disease
+    — sclerosing keratitis, chorioretinitis, optic atrophy — scars, and scarred
+    cornea and dead retina do not come back. Someone whose infection is
+    suppressed after they have lost vision stays blind for the rest of their
+    life, and the disease is named for exactly that outcome.
+    The skin does the same thing more quietly. Years of onchocercal dermatitis
+    leave permanent depigmentation and atrophy, and the itching that dominates
+    this disease's burden can persist after treatment where the skin is already
+    damaged.
+    So the whole value of the programme is arriving before the residue, which is
+    what the `window` says from the other side. It is also why the disease
+    burden and the programme's benefit are measured in completely different
+    units: treatment prevents blindness in people who would have gone blind, and
+    does nothing whatever for the 1.15 million who already have.
+  incidence:
+    value: 0.05
+    units: >
+      fraction-of-infected (irreversible vision loss) — roughly 1.15 million
+      against 21 million infected; permanent skin change is far commoner and is
+      not counted here
+    src: reasoning
+
+window:
+  what: >
+    Wide, slow and entirely about arriving first. Adult worms live ten to
+    fifteen years releasing millions of microfilariae, and it is the cumulative
+    inflammatory response to dying microfilariae in the eye and skin that
+    scars. Suppress the microfilariae early and the scarring never happens;
+    suppress them after the cornea has clouded and the retina has scarred and
+    the infection is controlled around damage that is now permanent.
+    That is why community-directed treatment is annual and indefinite rather
+    than reactive, and why the programme's benefit is counted in blindness
+    PREVENTED rather than in sight restored. There is nothing to restore.
+  closes_on: >
+    irreversible ocular scarring — sclerosing keratitis, chorioretinal
+    destruction, optic atrophy — and established skin atrophy
+  caught_in_time:
+    value: 0.70
+    units: >
+      fraction-of-infected (reached by treatment before irreversible ocular
+      damage) — tracks programme coverage and duration, and is far lower in the
+      districts where distribution is restricted
+    src: reasoning
+
+witness:
+  mechanism: >
+    `established`, with one elegant feature and one live controversy.
+    A filarial nematode transmitted by blackflies that breed in fast-flowing
+    rivers — which is why the disease depopulated river valleys and why its
+    control freed farmland. Adult worms live in subcutaneous nodules for a
+    decade or more, producing millions of microfilariae that migrate through
+    skin and eye. THE PATHOLOGY IS THE MICROFILARIAE DYING, not the worms
+    living: the inflammatory response to dead and dying microfilariae is what
+    clouds the cornea, scars the retina and destroys the skin. That single fact
+    explains the disease, explains the Mazzotti reaction after treatment, and
+    explains why a drug that kills microfilariae both helps and briefly hurts.
+    The elegant feature is Wolbachia, an obligate bacterial endosymbiont of the
+    worm. Kill the bacterium with doxycycline and the worm is sterilised and
+    eventually dies — the only route to killing an adult worm currently
+    available to anyone.
+    The live controversy is onchocerciasis-associated epilepsy and nodding
+    syndrome. The epidemiological association with high infection intensity is
+    strong and repeated; the causal mechanism is not established. Left out of
+    the ratings deliberately rather than assumed, and recorded in `holes`.
+  intervention: >
+    Rated `suppressive`, and this is the rating that makes the record
+    interesting, so the reasoning is set out rather than asserted.
+    IVERMECTIN DOES NOT KILL THE ADULT WORM. It kills microfilariae. Given
+    annually it keeps the microfilarial load near zero, which stops the eye and
+    skin damage and stops transmission — and the adult worms go on living for
+    their ten to fifteen years and then die of old age. Nobody is cured by the
+    drug. The infection ends by attrition while being suppressed.
+    So at the level of the patient this is `suppressive`, and at the level of a
+    community treated for fifteen years it is elimination — Colombia, Ecuador,
+    Mexico and Guatemala have all been verified free of it. Same tablet, two
+    completely different verdicts, and the axis only has room for the first.
+    See gaps.md #58.
+    A CURATIVE TREATMENT EXISTS AND CANNOT BE DELIVERED. Doxycycline anti-
+    Wolbachia therapy kills adult worms, and requires four to six weeks of
+    daily antibiotic, is contraindicated in young children and in pregnancy,
+    and is therefore unusable in mass administration. That is the sickle cell
+    shape — real capability with no route to the people who need it — inside a
+    programme otherwise defined by its reach. A deployable macrofilaricide is
+    the field's stated priority and would collapse a fifteen-year commitment
+    into a course of treatment.
+  prevention: >
+    `risk-reduction`. Vector control was the original strategy and it worked:
+    the West African programme ran on aerial larviciding of blackfly breeding
+    sites from 1974 and prevented blindness on an enormous scale before
+    ivermectin existed. Since 1987 the strategy has been mass drug
+    administration, which reduces transmission as well as morbidity because
+    treated people stop infecting flies. There is no vaccine.
+    Worth recording for its own sake: the delivery model is COMMUNITY-DIRECTED
+    TREATMENT, in which villages select their own distributors and set their own
+    timing rather than receiving a vertical health-system programme. It is one
+    of the few genuinely community-owned delivery mechanisms operating at this
+    scale, and the register's `who_could` vocabulary has no term for the
+    affected community as an actor — `patient-org` means an advocacy
+    organisation, which is a different thing.
+  ongoing: >
+    `low` for the patient and misleading for everyone else. One or two tablets a
+    year is as light as treatment gets. But because the drug does not kill adult
+    worms, the PROGRAMME must sustain that for ten to fifteen years without
+    interruption, and stopping early loses much of what was bought. The axis
+    measures the burden on the patient and there is nothing in this schema that
+    records the duration of commitment an intervention demands — a single
+    curative dose and a fifteen-year suppression programme read identically
+    here.
+
+holes:
+  - Whether onchocerciasis causes epilepsy and nodding syndrome. The
+    epidemiological association is strong and the mechanism is unproven, and the
+    answer would materially change this disease's burden.
+  - Whether a deployable macrofilaricide is achievable. Everything about the
+    duration and cost of control follows from the answer.
+  - How much onchocercal skin disease there is and what it costs. It is the
+    dominant morbidity, it is not blindness, and it is consistently
+    underweighted.
+  - What Loa loa co-endemicity ultimately costs the elimination effort. The
+    districts where treatment is restricted are the districts where the disease
+    persists.
+  - The strata fractions are reasoned from the geography of Loa co-endemicity,
+    not measured.
+  - Written from model recall. The microfilaricide-not-macrofilaricide
+    distinction, the Wolbachia route and the Loa loa contraindication are the
+    parts most likely right; every number is the part most likely wrong.
+
+blockers:
+  - kind: knowledge
+    obstacles: [pathogen-persistence]
+    blocks: a drug that kills the adult worm and can be given in a village
+    what: >
+      The binding constraint, and it is what turns a treatable disease into a
+      fifteen-year institutional commitment. Ivermectin suppresses; nothing
+      deployable cures. Anti-Wolbachia therapy with doxycycline does kill adult
+      worms and needs four to six weeks of daily antibiotic with
+      contraindications in children and pregnancy, which rules it out of mass
+      administration entirely.
+      A macrofilaricide that could be given as a short course would collapse the
+      whole programme structure — no fifteen-year commitment, no sustained
+      coverage requirement, and far less exposure to the political risk of a
+      donor or a government losing interest partway through. It is the single
+      highest-leverage unsolved problem in this record.
+      `scale: null` — no priced path.
+    who_could: [academic, sponsor, philanthropy, nonprofit]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    blocks: identifying who must NOT be treated
+    what: >
+      The register's second inverted diagnosis blocker and a different inversion
+      from schistosomiasis's. There the test is skipped because the drug is
+      cheaper. Here the test exists to EXCLUDE: a point-of-care video microscope
+      that counts Loa loa microfilariae from a finger-prick in about two
+      minutes, so that people at risk of fatal encephalopathy can be identified
+      and denied the tablet everybody else is given.
+      Every other diagnosis blocker in this register is about finding people to
+      treat. This one is about finding the few people to withhold treatment
+      from, and it is the thing standing between a nearly-eliminable disease and
+      the districts where it persists.
+      Priced for device manufacture, distribution and training rather than for
+      research — the instrument exists and works.
+    who_could: [health-system, nonprofit, philanthropy, manufacturer, government]
+    scale: 5.0e7
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: sustaining coverage for fifteen years, in the hardest districts
+    what: >
+      Community-directed treatment is one of the most effective delivery
+      mechanisms in global health and it still has to run annually, in every
+      endemic village, for longer than the adult worm lives, without a gap large
+      enough to let transmission recover. That is a fifteen-year operational
+      commitment rather than a campaign, and it has to survive conflict,
+      displacement and donor fatigue.
+      The remaining burden sits disproportionately in exactly the places that
+      makes hardest: Loa co-endemic districts where distribution is restricted,
+      and unstable areas of Central Africa.
+    who_could: [health-system, government, nonprofit, philanthropy]
+    scale: 2.0e8
+    standing: documented
+    src: recall
+
+  - kind: no-sponsor
+    obstacles: [donation-dependency]
+    blocks: a drug supply not dependent on a donation continuing
+    what: >
+      The fifth instance of the same pattern and the largest of them. Ivermectin
+      for onchocerciasis has been donated by its manufacturer since 1987 through
+      what became the first and biggest drug donation programme in history,
+      billions of treatments, given for as long as needed. It has worked
+      completely and it is a donation.
+      Recorded here for the same reason as Chagas, tuberculosis, visceral
+      leishmaniasis and sleeping sickness: the answer to neglected-disease
+      economics keeps being an improvised institution rather than a market, and
+      the register reads each of those institutions as a solution rather than as
+      a dependency. This one has held for nearly four decades, which is evidence
+      that it can work and not evidence that it cannot stop.
+    who_could: [manufacturer, philanthropy, government, nonprofit]
+    scale: 1.0e8
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0027
+  rated: 2026-08-21
+  by: [claude, jeremy]

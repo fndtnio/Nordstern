@@ -1,0 +1,483 @@
+slug: ebola
+id: FND-D-0045
+name: Ebola virus disease
+also: [Ebola, Ebola haemorrhagic fever, EVD, Zaire ebolavirus infection, Sudan virus disease]
+mondo: MONDO:0005737
+kind: disease
+residual: false
+contested: false
+
+# THE FIRST OUTBREAK-SHAPED DISEASE IN THIS REGISTER, AND EVERY FIELD ASSUMES A
+# STEADY STATE.
+#
+# Ebola's burden is zero in most years, eleven thousand deaths in 2014-16, two
+# thousand in 2018-20, and zero again. `burden.deaths` wants deaths per year.
+# `access` wants the fraction of patients who can get the treatment — but between
+# outbreaks there are no patients, and during one, access means *how fast an
+# emergency deploys into a place that may be at war*. That is not the same
+# quantity as whether a pharmacy stocks a drug. See gaps.md #99.
+#
+# AND THE CAPABILITY IS REAL AND SITS IN A FREEZER. A licensed vaccine used in
+# ring vaccination, and two licensed monoclonal antibodies that substantially
+# cut mortality. Ebola went from untreatable to treatable in about five years —
+# one of the fastest capability transitions in modern medicine.
+#
+# It happened because eleven thousand people died. The vaccine had existed since
+# the early 2000s and sat unlicensed for a decade for want of a market.
+#
+# TWO OTHER THINGS:
+#
+# 1. `strata` works here exactly as designed, which is worth noting one record
+#    after stroke broke it. Zaire ebolavirus has a vaccine and monoclonals;
+#    Sudan ebolavirus has neither. Same disease, same presentation, and "is
+#    Ebola solved" depends entirely on which Ebola.
+#
+# 2. Cure does not end transmissibility. Virus persists in immune-privileged
+#    sites — the eye, the testis — for months to years, and sexual transmission
+#    from recovered survivors has restarted outbreaks. The schema is
+#    patient-scoped and has nowhere to put that. gaps.md #100.
+
+burden:
+  prevalence:
+    value: 1.7e4
+    units: >
+      survivors living with the aftermath — the only prevalence figure here that
+      means anything, because between outbreaks the number of active cases is
+      usually zero
+    src: recall
+  deaths:
+    value: 3.1e2
+    units: >
+      deaths/year — AND THIS NUMBER IS AN ARTEFACT. It is roughly fifteen
+      thousand deaths since 1976 divided by the years since, and no year has
+      ever resembled it. See the note; this is gaps.md #99 in a single field
+    src: reasoning
+  note: >
+    THE ANNUAL FIGURE ABOVE DESCRIBES NO YEAR THAT HAS EVER HAPPENED, and a
+    burden-ranked register would file Ebola below mycetoma on the strength of it.
+    What actually happened:
+    1976-2013 — roughly two dozen outbreaks, most of them dozens of cases, the
+    largest a few hundred. A disease of remote villages, contained by isolation
+    and burial practice, and of interest to almost nobody.
+    2014-2016 West Africa — about 28,600 cases and 11,300 deaths across Guinea,
+    Liberia and Sierra Leone, with health systems collapsing under it and
+    secondary mortality from everything that stopped being treated.
+    2018-2020 Democratic Republic of the Congo (Kivu) — about 3,470 cases and
+    2,300 deaths, in an active conflict zone, with treatment centres attacked
+    and responders killed.
+    Since — repeated smaller outbreaks caught in weeks rather than months.
+    **The difference between a dozen cases and twenty-eight thousand is not
+    biology.** It is how long the index case went unrecognised, which is a window
+    measured at the level of an outbreak rather than a patient, and nothing in
+    this schema can hold it.
+
+survival:
+  horizon: 28 days from symptom onset
+  untreated:
+    value: 0.35
+    units: >
+      fraction alive — case fatality across outbreaks of Zaire ebolavirus has
+      ranged from roughly 40% to 90% with supportive care alone, and the figure
+      moves with how early people present and how good the fluid management is
+    src: recall
+  treated:
+    value: 0.70
+    units: >
+      fraction alive on a monoclonal antibody — ansuvimab or the REGN-EB3
+      cocktail, from the 2018-2020 PALM trial in the Democratic Republic of the
+      Congo. **Survival is far better again for those treated with a low viral
+      load**, which makes presentation time nearly as important as the drug
+    src: recall
+  witness: >
+    **The most recent large survival shift in the register, and it happened
+    during an outbreak.** A randomised controlled trial run inside an active
+    Ebola epidemic in a conflict zone is among the harder things medicine has
+    done, and it converted a disease that killed most of the people it infected
+    into one that most people survive. The register carries `deaths: 0` for this
+    record because outbreak mortality does not appear in an annual global figure
+    — **the second record after `heart-failure` where the survival axis sees a
+    disease the burden column cannot.**
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: prophylaxis
+  ongoing: low
+  efficacy:
+    value: 0.70
+    units: >
+      fraction-of-patients (surviving with monoclonal antibody therapy and
+      modern supportive care) — against roughly 0.5 or worse untreated, and
+      substantially better than 0.70 for patients reached early with a low viral
+      load. Zaire ebolavirus only; see `strata`
+    src: reasoning
+  access:
+    value: 0.35
+    units: >
+      fraction-of-patients (reached by a deployed treatment centre with
+      monoclonals available) — AND THE SCALAR IS THE WRONG SHAPE. Between
+      outbreaks it is undefined; during one it is a function of how fast a
+      response arrives, whether the area is at war, and whether the community
+      will come to the centre at all
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: partial
+  witness: >
+    DIAGNOSTIC is `objective` — RT-PCR is definitive, and rapid antigen tests
+    exist for field use. The difficulty is not the assay.
+    **THE EARLY PRESENTATION IS INDISTINGUISHABLE FROM MALARIA**, which is
+    endemic everywhere Ebola emerges. Fever, headache, fatigue, myalgia. Typhoid
+    and Lassa fever look the same. So the first cases of an outbreak are treated
+    as malaria — correctly, on the base rates — and the disease is recognised
+    only once a cluster forms or a health worker dies. That delay is the whole
+    difference between a dozen cases and twenty-eight thousand, and no
+    improvement to the test fixes it.
+    And in an outbreak the laboratory has to be *brought to the outbreak*, into
+    places chosen by the virus rather than by anyone's logistics.
+    PROGNOSTIC is `partial` and unusually actionable: viral load at presentation
+    predicts mortality strongly, and so does age. That is what makes the patient
+    window below real — a low viral load means early, and early means the
+    monoclonals work far better.
+    PREDICTIVE is `partial`, and **the decisive question is which species**, not
+    which patient. The licensed vaccine and both licensed monoclonals target
+    *Zaire ebolavirus*. Against *Sudan ebolavirus* there is nothing licensed —
+    the 2022 Uganda outbreak was fought with supportive care and candidate
+    products that had never been through efficacy trials.
+    This is stroke's shape again: a laboratory test doing predictive work under a
+    diagnostic name, where the answer decides whether a treatment exists at all.
+    Within Zaire disease there is little to select between the two monoclonals.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    The monoclonals are well tolerated and the vaccine is reactogenic but not
+    dangerous. There is almost no permanent physical price for treatment here,
+    which is rare in this register for a disease this lethal.
+    **THE COST IS THE ISOLATION, AND THE SCHEMA CANNOT PRICE IT.** Treatment
+    means an Ebola treatment unit: plastic sheeting, staff encased in protective
+    equipment with only their eyes visible, no touching, no visitors. People die
+    without their families, and families are not permitted to wash and bury their
+    dead in the way their culture requires — which is both epidemiologically
+    necessary and a profound harm.
+    That harm is real, it is caused by the treatment, and it is not permanent
+    damage to a body, so `toll` records `minor` and means it. The register has
+    no field for what a treatment costs a family or a community, and this is the
+    record where the absence is loudest.
+    It also has a direct epidemiological consequence: fear of the treatment unit
+    keeps people away, which delays presentation, which is the one thing that
+    most determines whether they live.
+  incidence:
+    value: 0.01
+    units: >
+      fraction-of-treated (permanent physical harm attributable to treatment) —
+      a reasoned estimate, and low because the drugs are benign
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    Surviving Ebola is not the end of it, and this was barely documented before
+    2014 because there had never been enough survivors to study.
+    POST-EBOLA SYNDROME affects a large share of survivors: joint and muscle
+    pain, profound fatigue, and headache, persisting for years.
+    THE EYE. Uveitis is common and can destroy vision. Live virus has been
+    recovered from the aqueous humour of a survivor months after his blood
+    cleared — the virus was still there, inside an eye, in a man who had been
+    declared cured.
+    Hearing loss, and neurological and cognitive symptoms, in a smaller
+    fraction.
+    STIGMA, which is severe — survivors have lost homes, jobs and marriages. And
+    here it differs from leprosy's and noma's in an uncomfortable way: those
+    stigmas are baseless, and this one has a **factual kernel**, because
+    survivors genuinely can transmit the virus months later. A community's fear
+    is wrong about the individual in front of them and not wrong about the
+    biology, and nothing in this register can hold that distinction.
+    **AND VIRAL PERSISTENCE IS NOT REALLY A RESIDUE AT ALL.** Virus surviving in
+    the testis is not damage to the patient; it is a risk to other people, and
+    it has restarted outbreaks — flare-ups traced to sexual transmission from a
+    survivor who recovered many months earlier. `toll` is what treatment took,
+    `residue` is what the disease left in the patient, and there is no field for
+    *what the cured patient still carries for everybody else*. See gaps.md #100.
+  incidence:
+    value: 0.50
+    units: >
+      fraction-of-survivors (persistent symptoms — arthralgia, fatigue, ocular
+      or auditory involvement) — a reasoned estimate; serious vision loss
+      affects a much smaller share
+    src: reasoning
+
+window:
+  what: >
+    **TREATED EARLY THIS IS A SURVIVABLE DISEASE, AND TREATED LATE IT IS NOT.**
+    Viral load at presentation is the strongest predictor of death, and the
+    monoclonals work dramatically better in patients who arrive before it climbs.
+    In the trials that licensed them, patients presenting with low viral load had
+    mortality in the low tens of percent or better; those presenting late died at
+    rates not far off the untreated figure.
+    So the intervention is excellent and the arrival is the problem, and the
+    reasons people arrive late are not medical. The early symptoms look like
+    malaria. The treatment unit is where people are known to die, and in early
+    outbreaks going there means dying without your family. Transport is hard,
+    and in Kivu the response itself was attacked.
+    **THERE IS A SECOND WINDOW AND IT IS THE MORE IMPORTANT ONE.** Not the time
+    from symptom to treatment for one patient, but the time from the index case
+    to recognition of the outbreak. West Africa 2014 went roughly three months
+    unrecognised and produced 28,600 cases. Outbreaks detected within weeks have
+    produced dozens.
+    The schema holds the first window and not the second. `caught_in_time` below
+    is per patient; the number that actually decides the death toll is per
+    outbreak, and there is no field for it (gaps.md #99).
+  closes_on: >
+    rising viral load and progression to hypovolaemic shock and multi-organ
+    failure — days, and earlier is better continuously rather than at a threshold
+  caught_in_time:
+    value: 0.30
+    units: >
+      fraction-of-cases (reaching a treatment centre early enough for
+      monoclonals to give their full benefit) — a reasoned estimate across
+      recent outbreaks, and it varies enormously between them
+    src: reasoning
+
+strata:
+  - name: Zaire ebolavirus
+    fraction:
+      value: 0.93
+      units: fraction-of-recorded-cases
+      src: recall
+    intervention: curative
+    efficacy:
+      value: 0.70
+      units: fraction-of-stratum (survival with monoclonals and supportive care)
+      src: reasoning
+    toll: minor
+    what: >
+      The species behind every large outbreak, and the only one anything is
+      licensed against — a vaccine used in ring vaccination, and two monoclonal
+      antibodies. Historically the most lethal, and now the most treatable.
+
+  - name: Sudan ebolavirus
+    fraction:
+      value: 0.06
+      units: fraction-of-recorded-cases
+      src: recall
+    intervention: symptomatic
+    efficacy:
+      value: 0.40
+      units: fraction-of-stratum (survival with supportive care alone)
+      src: reasoning
+    toll: minor
+    what: >
+      **NO LICENSED VACCINE AND NO LICENSED THERAPEUTIC.** Clinically
+      indistinguishable from Zaire disease, comparably lethal, and the products
+      do not cross-protect — they target the Zaire glycoprotein.
+      The 2022 Uganda outbreak was fought with isolation, contact tracing and
+      supportive care, while candidate vaccines were rushed toward a trial that
+      the outbreak ended before it could complete. **An outbreak that stops too
+      soon to test the countermeasure is a specific and vicious failure mode**,
+      and it is why Sudan virus still has nothing.
+      This stratum is why the record spans the ladder.
+
+  - name: Bundibugyo and other species
+    fraction:
+      value: 0.01
+      units: fraction-of-recorded-cases
+      src: recall
+    intervention: symptomatic
+    efficacy:
+      value: 0.40
+      units: fraction-of-stratum (survival with supportive care alone)
+      src: reasoning
+    toll: minor
+    what: >
+      Bundibugyo has caused two known outbreaks; Taï Forest virus has caused one
+      recorded human case, who survived. Nothing licensed, and too few cases to
+      ever justify a product on its own terms.
+
+witness:
+  mechanism: >
+    `established` for what the virus does, with a fifty-year-old hole in where it
+    comes from.
+    The filovirus enters via macrophages and dendritic cells, using NPC1 as its
+    entry receptor, and disables the interferon response with dedicated proteins.
+    It replicates enormously, infects hepatocytes and adrenal cortex, and drives
+    a cytokine storm with vascular endothelial dysfunction. The result is massive
+    fluid and electrolyte loss — vomiting and diarrhoea measured in litres —
+    coagulopathy, and shock.
+    **MOST PEOPLE DIE OF DEHYDRATION AND ELECTROLYTE DERANGEMENT, NOT OF
+    BLEEDING**, despite the name. Frank haemorrhage occurs in a minority. That
+    fact is the reason aggressive fluid and electrolyte management alone —
+    before any antiviral or antibody — substantially reduces mortality, and it
+    is why the disease is far more survivable in a hospital with a laboratory
+    than in one without.
+    THE NAMED HOLE IS THE RESERVOIR. Nearly fifty years after the 1976
+    discovery, the animal in which Ebola virus persists between outbreaks is
+    **strongly suspected to be fruit bats and not conclusively established.**
+    Antibodies and fragments have been found; infectious virus has essentially
+    not been isolated from a wild reservoir.
+    Note that this is a hole in a different *kind* of question from the ones this
+    register usually records. `mechanism` asks how the cause produces the
+    phenotype, and that is answered. What is missing is the chain *before the
+    first human* — where it lives, what triggers spillover, why here and why now.
+    For an emerging zoonosis that is the question that decides everything, and
+    the schema has no axis for it.
+  intervention: >
+    `curative`, and the rating is about five years old.
+    Before 2014 there was nothing: isolation, oral rehydration where possible,
+    and a case fatality that ran from a quarter to ninety percent depending on
+    species and setting.
+    Now, for Zaire disease: **rVSV-ZEBOV**, a single-dose vaccine deployed in
+    ring vaccination — vaccinate the contacts of a case and their contacts, the
+    strategy that finished smallpox — and **two licensed monoclonal antibodies**,
+    ansuvimab and the REGN-EB3 cocktail, which in a randomised trial run *during*
+    an outbreak cut mortality substantially. Alongside them, supportive care
+    with real laboratory monitoring.
+    `curative` on the ladder's own terms: a finite intervention, the infection
+    ends, the survivor is not chronically infected. The large residual mortality
+    lives in `efficacy` and the arrival problem lives in `window`.
+    **AND ALL OF IT EXISTS BECAUSE ELEVEN THOUSAND PEOPLE DIED.** rVSV-ZEBOV was
+    constructed in the early 2000s and sat unlicensed for roughly a decade
+    because there was no market for a vaccine against a disease that killed a few
+    dozen people in a bad year. The science was finished long before the product
+    was. What changed was not a discovery.
+  prevention: >
+    `prophylaxis`, and it is genuine — ring vaccination around a confirmed case,
+    plus vaccination of health workers and responders ahead of exposure.
+    The rest of prevention is not medical at all and never has been: contact
+    tracing, isolation, safe and dignified burial, and infection control in
+    health facilities, which have repeatedly amplified outbreaks rather than
+    contained them.
+    **AND THE BINDING CONSTRAINT ON ALL OF IT IS WHETHER THE COMMUNITY TRUSTS
+    THE RESPONSE.** In Kivu, treatment centres were burned and responders were
+    killed. Safe burial teams were resisted because what they were asking for was
+    that families not touch their dead. Where trust failed, every technical
+    capability in the paragraph above was unusable.
+    The register's blocker taxonomy has twelve kinds and none of them is
+    *the affected community does not trust the people who arrived*.
+  ongoing: >
+    `low`. Acute treatment is a matter of weeks and there is no maintenance
+    therapy afterwards.
+    What survivors carry is in `residue`, and it includes something the axis was
+    not built for: **a semen testing and counselling programme**, because virus
+    can persist in the testis for months to years. That is not treatment of the
+    patient. It is surveillance of the patient on everyone else's behalf, it
+    lasts as long as it lasts, and there is no field for it.
+
+holes:
+  - Every scalar is `src: recall` or `src: reasoning`, and the burden figures are
+    worse than usual because the annual rate is a construct rather than a
+    measurement. Do not quote it; see the note.
+  - The strata fractions are historical case shares dominated by two Zaire
+    outbreaks. They describe the past, not the risk going forward, and a single
+    large Sudan virus outbreak would invert them.
+  - `efficacy: 0.70` is drawn from trial arms in one outbreak in one country with
+    one health system, and the gradient with time-to-presentation is steeper than
+    any single number can carry.
+  - Whether Ebola and Marburg should be one record or two is genuinely open.
+    Same family, comparable presentation and lethality, and the difference in
+    capability is entirely a difference in who invested. Marburg is next in the
+    queue precisely as the control.
+  - The count of survivors is soft, and post-Ebola syndrome was scarcely
+    described before 2014 because there had never been a cohort large enough.
+
+blockers:
+  - kind: logistics
+    blocks: getting a response to the outbreak faster than the outbreak moves
+    what: >
+      THE BINDING CONSTRAINT, and it is a speed problem rather than a supply
+      problem.
+      The vaccine requires ultra-cold storage. The monoclonals, the laboratory,
+      the treatment unit, the trained staff and the protective equipment all have
+      to be moved to somewhere remote, sometimes at war, on a timescale of days.
+      Between outbreaks all of it sits in a stockpile, and the stockpile has to
+      be paid for continuously to be useful intermittently — which is the same
+      problem gap #57 named for the dracunculiasis endgame, arriving from a
+      completely different direction.
+      **`access` in this record is really a measure of deployment speed**, which
+      is not what that field means anywhere else in the register.
+    who_could: [health-system, government, nonprofit, philanthropy, manufacturer]
+    scale: 2.0e9
+    standing: documented
+    src: recall
+
+  - kind: policy
+    blocks: a response the affected community will accept
+    what: >
+      In the Kivu outbreak treatment centres were attacked and burned and
+      responders were killed. Safe burial teams were resisted, because what they
+      were asking of families was that they not wash and bury their own dead.
+      Contact tracing depends on people naming their contacts to strangers who
+      arrived with an armed escort.
+      Where trust failed, every technical capability in this record became
+      unusable — the vaccine, the monoclonals, the tracing, all of it. And it is
+      not irrational: these are places with long histories of extraction and
+      violence, where an international response arrives only when the disease
+      threatens somewhere else.
+      **THE BLOCKER TAXONOMY HAS NO KIND FOR THIS.** Twelve kinds, and none of
+      them is *the affected community does not trust the people who arrived*.
+      Recorded as `policy` for want of anywhere better, which is the honest
+      admission rather than a claim that it fits.
+    who_could: [government, health-system, nonprofit, patient-org]
+    scale: 5.0e8
+    standing: documented
+    src: recall
+
+  - kind: no-sponsor
+    blocks: anything at all against Sudan ebolavirus
+    what: >
+      There is no licensed vaccine and no licensed therapeutic for Sudan
+      ebolavirus. Candidates exist and have existed for years.
+      The reason is the arithmetic every outbreak disease faces: **a product for
+      a disease that kills nobody in most years has no market**, and the trial
+      that would license it can only be run during an outbreak — which then ends
+      before the trial completes. The 2022 Uganda outbreak was over before its
+      vaccine trial could enrol enough people. Success at containment is failure
+      at evidence.
+      Zaire disease escaped this only because 2014 was catastrophic enough. The
+      vaccine that now protects against it had been sitting unlicensed for
+      roughly a decade. **The science was finished long before the product was,
+      and what changed was not a discovery.**
+      Marburg, next in this register, is the same story with no rescuing
+      catastrophe yet.
+    who_could: [sponsor, manufacturer, philanthropy, government, regulator]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    obstacles: [pathogen-persistence, burden-unknown]
+    blocks: where it lives, and what the cured still carry
+    what: >
+      Two absences, both nearly fifty years old.
+      **THE RESERVOIR IS NOT ESTABLISHED.** Fruit bats are strongly suspected;
+      infectious virus has essentially never been isolated from a wild animal
+      population. Without it there is no way to predict a spillover, no way to
+      target surveillance, and no possibility of acting before the first human
+      case.
+      THAT LAST CLAUSE ORIGINALLY READ "which is the only intervention that would
+      ever be cheap", AND THE NEXT RECORD DISPROVED IT. Marburg's reservoir *is*
+      established — Egyptian rousette bats, infectious virus isolated from wild
+      colonies, outbreaks traced to named caves and mines — and what followed was
+      advice to miners. No product, no surveillance system, no capability. So
+      identifying the reservoir is necessary and nowhere near sufficient, and
+      this blocker should be read as a question whose payoff is unproven rather
+      than as a lever waiting to be pulled. See gaps.md #101.
+      **VIRAL PERSISTENCE IS POORLY UNDERSTOOD.** Virus survives in the eye and
+      the testis for months to years after recovery, and transmission from
+      survivors has restarted outbreaks. Nobody can say how long, in whom, or how
+      to clear it. Every survivor is therefore counselled and monitored on a
+      timescale set by guesswork.
+      `scale: null` — neither is a purchasing decision.
+    who_could: [academic, philanthropy, government, nonprofit]
+    scale: null
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0045
+  rated: 2026-08-23
+  by: [claude, jeremy]

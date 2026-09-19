@@ -1,0 +1,210 @@
+slug: in-silico-physiology
+id: FND-O-0012
+name: Can a specific person be simulated well enough to predict what a treatment will do to them?
+kind: tooling
+resolution: partly-answered
+
+question: >
+  The proposition is a ladder: **cell → tissue → organ → person**, each rung a
+  model faithful enough that the rung above can be assembled from it, ending in a
+  simulation of *this patient* that you can run an intervention on before doing
+  it to them. A digital twin.
+  `partly-answered` and not `open`, because **narrow versions of this already
+  work and are accepted by regulators**, which is the fact that keeps this record
+  out of the hype pile. Physiologically-based pharmacokinetic models are used to
+  waive certain human drug-interaction and paediatric dosing studies. In-silico
+  cardiomyocyte models are used in proarrhythmia risk assessment in place of part
+  of the clinical work that preceded them. Virtual-heart models have been taken
+  into trials for planning arrhythmia ablation and for epilepsy surgery. And the
+  **type 1 diabetes simulator** was accepted by the FDA in 2008 as a substitute
+  for animal testing in closed-loop insulin delivery — *a computational model
+  that displaced animal experiments inside a regulatory pathway*, which is the
+  single most concrete thing anyone can point at here.
+  **WHAT DOES NOT EXIST IS THE COMPOSITION.** Every one of those is a thin
+  vertical slice — one organ, one drug's disposition, one physiological loop —
+  built by hand, validated against its own domain, and not assembled from the
+  rung below or into the rung above. The only organism with a published
+  whole-cell computational model is *Mycoplasma genitalium*, at 525 genes, and
+  **it is a disease in this register whose patients that model has never
+  helped.** Nothing resembling a person exists, and it is not obvious that
+  stacking the slices would produce one.
+  So the question is not *can we simulate biology* — in places, yes. It is:
+  **does the ladder compose, and can it be parameterised for an individual?**
+
+what_it_unblocks: >
+  **THE LARGEST SINGLE PRIZE IS `who-progresses` (FND-O-0001), WHICH 41 NORDSTERN
+  RECORDS ARE WAITING ON** — more than any other obstacle here. That question is
+  *which of these people will get worse*, asked separately for prostate cancer,
+  cirrhosis, hepatitis B, ductal carcinoma in situ and thirty-seven others. A
+  model you could run forward for a named patient is one of the few things that
+  would answer it in general rather than one disease at a time.
+  **AND IT IS THE CONSTRUCTIVE HALF OF `animal-translation` (FND-O-0010).** That
+  record documents a gate nobody can calibrate and says the obvious alternatives
+  are not yet better. This is the alternative, and the type 1 diabetes simulator
+  is the one case where it demonstrably worked: the animal experiment was not
+  improved, it was **deleted**, and the regulator agreed.
+  It would also reach the register's `cannot-aim-it` tag — 20 records where a
+  treatment works for some people and nobody can say which, in advance. That is a
+  prediction problem about an individual, which is exactly what a twin claims to
+  do and exactly what a population trial cannot.
+  And it changes what a trial is. A model good enough to substitute for a control
+  arm makes it possible to test things that cannot ethically or practically be
+  randomised — rare disease, paediatrics, pandemic response — which is the same
+  argument `marburg` records from inside the Animal Rule.
+  **THE HONEST DISCOUNT: none of that follows from a twin of a system nobody
+  understands.** See `why_hard`.
+
+why_hard: >
+  **BECAUSE A MODEL IS DOWNSTREAM OF MECHANISM, NOT A SUBSTITUTE FOR IT.** This is
+  the load-bearing objection and it is why this record must not be read as a
+  shortcut past the rest of Engpass. You cannot simulate what you cannot specify.
+  `anaesthesia-mechanism` records that nobody can say what makes a person
+  conscious; `unexplained-illness` covers seven records with no causal account at
+  all; `who-progresses` is unanswered precisely because the mechanism of
+  progression is unknown. **A twin of any of those is a curve fitted to outcomes
+  and dressed as physiology**, and it will be confidently wrong in exactly the
+  cases that matter, because those are the cases outside the fitted range.
+  **BECAUSE THE SCALES DO NOT COMPOSE.** Ion-channel gating is milliseconds,
+  transcription is minutes, cell cycles are hours, remodelling is years —
+  roughly ten orders of magnitude in time, and a similar span in space. Nobody
+  has a general method for coarse-graining a lower rung into a higher one
+  without either losing the behaviour that mattered or producing something
+  computationally intractable. **Every working model above is hand-built at one
+  scale**, which is evidence about how the field succeeds rather than a criticism
+  of it.
+  **BECAUSE AN INDIVIDUAL'S PARAMETERS ARE MOSTLY UNMEASURABLE.** A generic model
+  is a physiology textbook that runs. A *twin* needs this person's conductances,
+  clearances, compliances and reserve — and most of those cannot be measured in a
+  living person without performing the intervention you were trying to avoid.
+  **BECAUSE MANY DIFFERENT MODELS FIT THE SAME DATA.** Parameter identifiability
+  is a real and well-characterised problem: a model can reproduce every
+  observation and be wrong about every internal quantity, which is fine for
+  interpolation and fatal for predicting a novel intervention.
+  **BECAUSE BIOLOGY HAS NEITHER A NAVIER-STOKES NOR A WIND TUNNEL.** Kitano's
+  2010 *Grand challenges in systems physiology* puts the objection better than
+  the paragraphs above, by asking why the analogous thing worked elsewhere.
+  Computational fluid dynamics became trustworthy enough to design aircraft for
+  **three** reasons: a **governing equation** that provides an accepted
+  computational basis; a **wind tunnel** — a highly controlled physical
+  experiment, adjustable to within a fraction of a percent, against which models
+  are calibrated and improved; and **decades of sustained effort** on both.
+  Biology has the third and neither of the first two. There is no set of basic
+  equations, and there is no calibration instrument of comparable precision, so
+  a biological model has nothing to be wrong against.
+  He also names the composition problem more precisely than "multi-scale". It is
+  **three** problems: *problem scaling* — models large enough to cover a
+  substantial part of an organism, which he says exceeds what a single
+  laboratory or even a single country can build; *layer scaling* — sub-cellular
+  to cellular to tissue to organism, where **each layer has a different modality
+  of operation** and no consistent way to represent them together is known; and
+  *scope scaling* — treating interaction networks and physical structures in one
+  model, which almost nothing does. Models that combine cytoskeletal dynamics
+  and cell deformation with gene regulation are, in his words, at best rare and
+  more typically absent.
+  **AND THERE IS AN ASSEMBLY PROBLEM NOBODY OWNS.** Models built by different
+  groups must be shareable and *mergeable* into one consistent whole, which is
+  what SBML and SBGN exist for and what no funding structure rewards. A
+  workshop in Tokyo in 2008 launched a thirty-year project to build a "virtual
+  human"; that clock now has about twelve years left on it.
+  **AND BECAUSE VALIDATION IS COUNTERFACTUAL.** To check that a twin predicted
+  what a drug would do to *this* patient, you need what the drug did to *this*
+  patient — and once you have it you did not need the twin. Every validation is
+  therefore either against a population, in which case it is not a twin, or
+  against the one arm that was actually run. **There is no established standard
+  for how accurate a twin has to be before it may replace an experiment**, and
+  the domains that have crossed that line — pharmacokinetics, cardiac
+  electrophysiology, insulin dosing — crossed it by narrowing the claim until it
+  was checkable, not by making the model more complete.
+
+claims:
+  - unblocks: type-1-diabetes
+    standing: documented
+    why: >
+      **THE ONE CLAIM HERE THAT IS ALREADY SETTLED, AND IT IS WHY THIS RECORD
+      EXISTS.** The UVA/Padova metabolic simulator was accepted by the FDA in
+      2008 in place of animal testing for closed-loop insulin delivery. Every
+      artificial-pancreas system since has been developed against it. `documented`
+      is not a prediction: a narrow, well-posed version of this obstacle was
+      answered for one disease and it changed how that disease's devices are
+      built. It also bounds the claim — the model covers glucose-insulin
+      dynamics, which is one loop with one input, one output and a mechanism
+      that is genuinely understood. That is the shape that works.
+  - unblocks: epilepsy
+    standing: alleged
+    why: >
+      Personalised brain-network models built from a patient's own imaging have
+      been taken into trial for planning epilepsy surgery — deciding where to cut
+      by simulating seizure propagation in that person's connectome. `alleged`
+      because the trial evidence is not yet in, and because this record's
+      register entry states that roughly 30% of epilepsy is drug-resistant in the
+      richest systems, of whom only a fraction are surgical candidates. Even if
+      it works it addresses a slice of a slice.
+  - unblocks: atrial-fibrillation
+    standing: alleged
+    why: >
+      Patient-specific atrial models have been used to predict where fibrosis
+      will sustain re-entry and therefore where to ablate — the closest thing to
+      a working organ twin steering a real procedure. `alleged` because that
+      record's blockers are dominated by capacity and waiting lists rather than
+      by target selection, so a better-aimed ablation may not move it much.
+  - unblocks: heart-failure
+    standing: alleged
+    why: >
+      Cardiac electromechanical models have been proposed for selecting who
+      benefits from resynchronisation, a decision currently made on a crude
+      electrocardiographic criterion that is wrong often. `alleged`, and this
+      record's own diagnosis is that heart failure's largest blocker is a proven
+      cheap therapy not reaching people — a delivery problem no simulation
+      touches.
+
+holes:
+  - >
+    **THIS IS A TOP-DOWN RECORD WITH ZERO BOTTOM-UP CITATIONS, AND IT IS THE
+    SECOND ONE.** No Nordstern blocker asks for a computational model. All eleven
+    `tooling` blockers in the register are wet-lab or clinical instruments — a
+    bedside susceptibility test, a culture system, a structural endpoint that
+    reads out faster than an X-ray gap. The only two records mentioning model
+    systems at all (`cryptosporidiosis`, `syphilis`) want **organoids and culture
+    systems, not simulations.** So the claims above are assertions about payoff
+    that nobody rating a disease has made, which is exactly the failure mode
+    `rna-folding` was written to demonstrate. **Read this record as a bet, and
+    grade it later.**
+  - >
+    **"DIGITAL TWIN" IS A MARKETING TERM AND THAT IS A HAZARD TO THIS RECORD.**
+    It is used for everything from a wearable dashboard to a finite-element mesh,
+    and the vendor claims are far ahead of the demonstrations. The entry is
+    deliberately written around what regulators have accepted rather than around
+    what is announced, and the phrase is avoided in the name for that reason. If
+    a future pass finds this record citing press releases, it has drifted.
+  - >
+    **IT MAY BE THE SAME OBSTACLE AS `animal-translation`, VIEWED FROM THE OTHER
+    SIDE.** That record says the transfer function from a model organism to a
+    human is unstated; this one says the transfer function from a simulation to a
+    human is unstated. **Both are asking for a calibrated mapping from a proxy to
+    a person**, and the fact that one proxy is made of cells and the other of
+    equations may not be the important difference. Kept separate because the
+    fixes differ completely — one is a study-design and scaling problem, the
+    other is computational and epistemic — but this is the same doubt
+    `pathogen-persistence` and `animal-translation` both log about themselves.
+  - >
+    **THE PRICING IS GENUINELY UNCLEAR AND CUTS BOTH WAYS.** Building models,
+    compute, and the measurement infrastructure to parameterise them is buyable
+    engineering of exactly the kind money accelerates — the same argument
+    `cell-targeting` makes about itself. But **the mechanisms the models would
+    need are not buyable**, and the validation standard is a question about
+    epistemology rather than a line item. A funder reading only the first
+    sentence would spend a great deal on the wrong half.
+  - >
+    **AND THE MOST UNCOMFORTABLE FACT IN THIS FILE: the one organism with a
+    whole-cell model is in the register as a disease.** *Mycoplasma genitalium*
+    has 525 genes, a published whole-cell simulation, and a Nordstern record
+    whose blockers are rising antimicrobial resistance, a single remaining drug
+    class and no commercial interest. **The model did not touch any of them.**
+    That is one data point and it is the only one of its kind, so it should not
+    be over-read — but it is the clearest available evidence that a complete
+    simulation of an organism is not the same thing as help for the people it
+    infects.
+
+asserted:
+  date: 2026-08-31
+  by: [claude, jeremy]

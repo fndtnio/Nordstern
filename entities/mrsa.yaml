@@ -1,0 +1,503 @@
+slug: mrsa
+id: FND-D-0067
+name: MRSA infection
+also: [methicillin-resistant Staphylococcus aureus, MRSA, meticillin-resistant Staphylococcus aureus]
+mondo: MONDO:0100073
+kind: disease
+residual: false
+contested: false
+
+# **THE RESISTANCE RECORD WHERE THE RESISTANCE WENT DOWN, AND NO NEW DRUG WAS
+# INVOLVED.**
+#
+# Typhoid, one record ago, is capability eroding because the antibiotics are being
+# used. MRSA is the opposite and it is the only one in this register: **bacteraemia
+# rates in England fell by something like eighty percent from the mid-2000s**, and
+# comparable declines happened elsewhere, achieved with hand hygiene, line care
+# bundles, admission screening, decolonisation, isolation, mandatory surveillance
+# — and national targets that a hospital chief executive could be fired over.
+#
+# **Nobody discovered anything. It was delivered.** The register has almost no
+# examples of that as a mechanism of progress (gaps.md #120) and this is the
+# cleanest.
+#
+# TWO THINGS IT BREAKS:
+#
+# 1. **AN ANTIBIOTIC'S COMMERCIAL VALUE IS INVERSELY PROPORTIONAL TO ITS CORRECT
+#    USE.** Achaogen got plazomicin approved and went bankrupt within a year.
+#    Melinta followed. **Good stewardship means holding a new drug in reserve,
+#    which means not selling it**, and no company survives a product it is
+#    supposed to withhold. gaps.md #145.
+#
+# 2. **RESISTANCE HERE DOES NOT MEAN NOTHING WORKS — IT MEANS THE SECOND-BEST
+#    DRUG.** MRSA bacteraemia kills more people than MSSA bacteraemia partly
+#    because vancomycin is a worse antibiotic than flucloxacillin. **The excess
+#    mortality belongs to the replacement drug rather than to the organism**, and
+#    `efficacy` cannot tell those apart. gaps.md #146.
+
+burden:
+  prevalence:
+    value: 1.5e6
+    units: >
+      invasive infections/year worldwide, order of magnitude — a very soft
+      figure, because MRSA is counted through blood culture surveillance that
+      exists in a minority of countries and skin and soft tissue infections are
+      not counted at all
+    src: reasoning
+  deaths:
+    value: 1.0e5
+    units: >
+      deaths/year attributable to methicillin resistance — from global
+      antimicrobial resistance modelling, and **the associated figure is several
+      times higher**, which is a different question about the same deaths
+    src: recall
+  note: >
+    **THIS RECORD'S BURDEN NUMBER HAS TWO ANSWERS AND THE DIFFERENCE IS
+    CONCEPTUAL RATHER THAN EMPIRICAL.** *Attributable* deaths ask how many would
+    not have died if the organism had been susceptible; *associated* deaths ask
+    how many died with the infection. The second is several times the first, both
+    are published, and they answer different questions.
+    **AND THE EPIDEMIOLOGY SPLIT IN TWO WHILE THE TOTAL FELL.** Hospital-associated
+    MRSA declined sharply from the mid-2000s in the United Kingdom, France and
+    elsewhere. Over the same period **community-associated MRSA rose** — a
+    genetically distinct organism carrying a smaller resistance cassette and
+    frequently the Panton-Valentine leukocidin toxin, causing skin and soft tissue
+    infections in healthy young people with no healthcare contact at all.
+    So the headline decline is real, deliberate, and partial. One MRSA was pushed
+    out of hospitals and a different one arrived in the community, and a single
+    incidence figure conceals both.
+
+survival:
+  horizon: 30 days from onset of bacteraemia
+  untreated:
+    value: 0.2
+    units: >
+      fraction alive — untreated *Staphylococcus aureus* bacteraemia killed around
+      80% in the pre-antibiotic era, and this is one of the few figures here
+      that was recorded before there was anything to compare it to
+    src: recall
+  treated:
+    value: 0.8
+    units: >
+      fraction alive on vancomycin, daptomycin or ceftaroline, with source control.
+      **Mortality is still around 20%, which is worse than several cancers in
+      this register** and is not widely thought of that way
+    src: recall
+  witness: >
+    **Methicillin resistance moved this record backwards and then partly back.**
+    The organism is the same one penicillin cured in 1942; what changed is what
+    it will tolerate. This is the register's clearest case of a survival figure
+    that can *fall* without the disease changing at all.
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: prophylaxis
+  ongoing: low
+  efficacy:
+    value: 0.80
+    units: >
+      fraction-of-patients (cured) — near-total for skin and soft tissue
+      infection, and **bacteraemia still kills a fifth to a third**, which is
+      partly the disease and partly the drugs available for it
+    src: reasoning
+  access:
+    value: 0.60
+    units: >
+      fraction-of-patients (reaching susceptibility testing and an effective
+      agent) — vancomycin is generic and widely available; **the laboratory that
+      tells you it is MRSA is the constraint**, and the newer agents are not
+      generic
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: good
+  witness: >
+    DIAGNOSTIC is `objective` — culture with susceptibility testing, and rapid
+    molecular assays detecting *mecA* directly from blood cultures or nasal swabs
+    in hours rather than days.
+    PROGNOSTIC is `partial`. Source of infection, persistent bacteraemia beyond
+    seventy-two hours, presence of endocarditis or a prosthesis, and vancomycin
+    minimum inhibitory concentration all inform outcome without deciding it.
+    **PREDICTIVE IS `good`, AND IT IS THE PARADIGM CASE OF THE WHOLE AXIS.**
+    Antimicrobial susceptibility testing does exactly what predictive measurement
+    is supposed to do: it tells you, for this patient and this organism, which
+    drug will work. It has done so for seventy years, it is cheap, and it is
+    unglamorous enough that nobody calls it precision medicine.
+    **Compare the record before this one.** Typhoid's susceptibility testing is
+    equally definitive and is rated `partial`, because it requires a blood culture
+    that mostly does not happen. **Same test, same information, different rating —
+    and the difference is a laboratory.** Which is `access` doing work the
+    measurement axis is being blamed for, and worth noticing.
+    What the test cannot do is tell you fast enough. The gap between starting
+    empirical therapy and knowing what you are treating is where people die, and
+    it is what the rapid molecular assays exist to close.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    **THE TREATMENT IS MOSTLY BENIGN AND THE SECOND-LINE DRUGS ARE WORSE THAN THE
+    ONES THEY REPLACED.**
+    **Vancomycin** is the workhorse and is a mediocre antibiotic: slow to kill,
+    poor tissue penetration, requiring serum level monitoring, and nephrotoxic —
+    particularly alongside other nephrotoxins in a sick patient. Acute kidney
+    injury from vancomycin is common and mostly reversible.
+    **Linezolid** is effective and oral, and with prolonged use causes
+    myelosuppression and **peripheral and optic neuropathy that can be
+    permanent.** **Daptomycin** causes myopathy and does not work in pneumonia,
+    because surfactant inactivates it.
+    Most patients get a course and recover with nothing lasting.
+    **AND THE LARGEST IMPOSITION IN THIS RECORD IS NOT A DRUG.** A patient
+    colonised with MRSA is flagged in the record, placed in contact precautions,
+    frequently in a side room, on every admission, potentially for years. There is
+    documented evidence that isolated patients receive **less clinical contact,
+    more anxiety and depression, and more preventable adverse events.**
+    That is done to them for the protection of other patients, it follows a
+    colonisation they have no symptoms from, and `toll` means what the cure costs
+    the patient (gaps.md #144, #134).
+  incidence:
+    value: 0.05
+    units: >
+      fraction-of-treated (permanent harm — chiefly linezolid neuropathy and
+      residual renal impairment after vancomycin) — a reasoned estimate
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    Invasive *S. aureus* destroys structures, and what it destroys does not grow
+    back even when the organism is eradicated.
+    **Endocarditis** damages valves; survivors frequently need replacement and
+    then carry lifelong anticoagulation or a bioprosthesis with a finite life.
+    **Osteomyelitis** leaves dead bone, chronic sinuses, and occasionally
+    amputation. **Septic arthritis** destroys cartilage and leaves a joint that
+    does not work. **Prosthetic joint infection** usually means the prosthesis
+    comes out, and a two-stage revision is a year of a person's life.
+    Recorded as `major` with a low incidence because it applies to the invasive
+    minority rather than to the skin and soft tissue majority — and for those
+    patients it is the largest thing in the record.
+  incidence:
+    value: 0.10
+    units: >
+      fraction-of-invasive-cases (permanent structural damage — valve, bone,
+      joint or prosthesis) — a reasoned estimate
+    src: reasoning
+
+window:
+  what: >
+    **THE WINDOW IS THE GAP BETWEEN GUESSING AND KNOWING.**
+    In *S. aureus* bacteraemia, time to effective therapy predicts survival, and
+    each hour of inappropriate treatment in severe sepsis costs. The clinician
+    starting antibiotics does not yet know whether the organism is
+    methicillin-susceptible or resistant, and the two answers require different
+    drugs — **and the wrong guess is costly in both directions.**
+    Cover for MRSA empirically and a patient with MSSA gets vancomycin, which is
+    a worse drug for their infection. Do not cover, and a patient with MRSA gets
+    nothing that works for a day or two.
+    Conventional culture and susceptibility takes forty-eight to seventy-two
+    hours. **Rapid molecular testing collapses that to hours**, and it is one of
+    the few diagnostics in this register whose value is entirely in the time it
+    saves rather than in the answer it gives.
+    So this is a window measured in hours, closed by a laboratory rather than by a
+    journey, and the intervention is a machine that already exists.
+  closes_on: >
+    progression of untreated or inappropriately treated bacteraemia to septic
+    shock, metastatic seeding and endocarditis — hours to days
+  caught_in_time:
+    value: 0.60
+    units: >
+      fraction-of-invasive-cases (receiving an effective agent promptly) — a
+      reasoned estimate, and higher where rapid molecular diagnostics are in
+      routine use
+    src: reasoning
+
+strata:
+  - name: skin and soft tissue infection
+    fraction:
+      value: 0.70
+      units: fraction-of-infections
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.97
+      units: fraction-of-stratum (cured)
+      src: reasoning
+    toll: minor
+    what: >
+      Abscesses, boils, cellulitis — and **the main treatment is a scalpel.**
+      Incision and drainage cures most of them; oral agents help. This is where
+      community-associated MRSA lives, it is most of the infections, and it kills
+      almost nobody.
+
+  - name: bacteraemia without endovascular focus
+    fraction:
+      value: 0.18
+      units: fraction-of-infections
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.80
+      units: fraction-of-stratum (survival)
+      src: reasoning
+    toll: minor
+    what: >
+      Two weeks of intravenous therapy, source control, and repeat cultures to
+      confirm clearance. **Mortality is a fifth**, and a share of that is
+      attributable to being on vancomycin rather than on an antistaphylococcal
+      beta-lactam (gaps.md #146).
+
+  - name: endocarditis, bone and joint, prosthetic infection
+    fraction:
+      value: 0.10
+      units: fraction-of-infections
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.65
+      units: fraction-of-stratum (cured, with acceptable function)
+      src: reasoning
+    toll: major
+    what: >
+      Six weeks or more of intravenous therapy, usually with surgery — valve
+      replacement, debridement, removal and staged reimplantation of a
+      prosthesis. **This is where the `residue` block applies**, and where a cure
+      still leaves a damaged valve or a joint that does not bend.
+
+  - name: vancomycin-intermediate or persistent
+    fraction:
+      value: 0.02
+      units: fraction-of-infections
+      src: reasoning
+    intervention: disease-modifying
+    efficacy:
+      value: 0.40
+      units: fraction-of-stratum (durable clearance)
+      src: reasoning
+    toll: major
+    what: >
+      Reduced vancomycin susceptibility, or bacteraemia that will not clear
+      despite appropriate therapy. Combination regimens, daptomycin with a
+      beta-lactam, ceftaroline, and salvage that is largely empirical.
+      **Small, and it is where the next decade's problem lives** if the reserve
+      agents in the blockers below stop arriving.
+
+moved:
+  - date: 2004
+    axis: access
+    from: 0.4
+    to: 0.6
+    why: >
+      **THE LARGEST DELIBERATE REDUCTION IN A RESISTANT ORGANISM ANYWHERE IN THIS
+      REGISTER, AND NO NEW DRUG WAS INVOLVED.**
+      England's MRSA bacteraemia rate fell by roughly eighty percent from the
+      mid-2000s. France, and hospital-onset MRSA in the United States, moved in
+      the same direction. What did it: **mandatory national surveillance with
+      published trust-level data, a national reduction target with political
+      accountability attached, an alcohol-gel hand hygiene campaign, central line
+      insertion and maintenance bundles, admission screening, decolonisation with
+      mupirocin and chlorhexidine, and isolation.**
+      Every element was known beforehand. **What changed was that somebody was
+      held responsible for doing them.**
+      **THE AXIS IS WRONG AND THERE IS NOWHERE RIGHT.** Nothing about treatment
+      access improved. What improved was the delivery of *infection control*,
+      which is prevention applied to staff and environments rather than to
+      patients — a sixth job for `prevention` (gaps.md #66's open half) and a
+      fifth record forced to file prevention coverage under `access` (gaps.md
+      #109).
+      **And the decline itself moved no capability rating at all** — the same
+      thing thyroid cancer's fifteen-fold incidence swing did in the other
+      direction.
+
+witness:
+  mechanism: >
+    `established`, and it is one gene.
+    *Staphylococcus aureus* acquires **SCC*mec***, a mobile genetic element
+    carrying ***mecA*** (or *mecC*), which encodes **PBP2a** — a penicillin-binding
+    protein with low affinity for beta-lactams. The organism keeps building its
+    cell wall while every penicillin, cephalosporin and carbapenem is present.
+    That is the whole of methicillin resistance. **One acquired gene turns the
+    best drug class in medicine into nothing**, and it says something about the
+    fragility of the arrangement that it is not more complicated than that.
+    *S. aureus* itself is a commensal: roughly a fifth of people are persistent
+    nasal carriers and another third intermittent. **Most infections are with the
+    patient's own organism**, which is why decolonisation before surgery works and
+    why colonisation is treated as a risk factor rather than as a disease.
+    Community-associated strains carry a smaller, more mobile SCC*mec* cassette
+    and frequently the Panton-Valentine leukocidin toxin, and they behave like a
+    different pathogen.
+    **THE NAMED HOLE IS THE VACCINE, AND IT IS A GRAVEYARD.** Every *S. aureus*
+    vaccine candidate has failed in late-stage trials. One of them — a
+    single-antigen candidate against an iron-scavenging protein — was stopped
+    because vaccinated patients who nonetheless became infected **died more often
+    than the placebo group.** A very well-studied organism, an enormous burden,
+    decades of effort, and no product. Nobody adequately understands what
+    protective immunity to *S. aureus* would even look like.
+  intervention: >
+    `curative`, and the drugs work — which is worth saying because MRSA is
+    frequently discussed as though it were untreatable.
+    Vancomycin remains the backbone for invasive disease. Daptomycin,
+    linezolid, ceftaroline, and the long-acting lipoglycopeptides all have real
+    roles. For skin and soft tissue infection — most of the record — **the
+    treatment is incision and drainage**, and the antibiotic is adjunctive.
+    **BUT THE SECOND-BEST DRUG IS GENUINELY SECOND-BEST.** For
+    methicillin-*susceptible* *S. aureus* bacteraemia, an antistaphylococcal
+    beta-lactam outperforms vancomycin — faster killing, better tissue
+    penetration, lower mortality. MRSA takes that option away, and a share of the
+    excess mortality of MRSA over MSSA is therefore **attributable to the
+    replacement drug rather than to the organism** (gaps.md #146).
+    That is a different thing from resistance meaning nothing works, and the two
+    are routinely conflated. **Resistance here removes the best option; it does
+    not remove all of them.**
+  prevention: >
+    `prophylaxis`, on the strength of **decolonisation** — mupirocin to the nose
+    and chlorhexidine to the skin before surgery, which reduces surgical site
+    infection with the patient's own organism — and perioperative antibiotic
+    prophylaxis.
+    **AND THE INTERVENTION THAT ACTUALLY WORKED IS NOT GIVEN TO ANYBODY.** Hand
+    hygiene, contact precautions, environmental cleaning, line insertion bundles,
+    admission screening and surveillance are prevention applied to **staff,
+    surfaces and procedures**, not to a person at risk. There is no dose and no
+    recipient.
+    The `prevention` enum has four values and every one of them presumes something
+    administered to somebody. **Infection control is a sixth job for the word
+    `prophylaxis`** after a childhood vaccine, a monthly injection, a
+    seventy-two-hour post-exposure course, a bed net and a colonoscopic
+    polypectomy (gaps.md #66's open half).
+    **It is also the most effective intervention in this record by a wide
+    margin**, and the register can only record it as `access` improving.
+  ongoing: >
+    `low` for the illness, which is acute and resolves.
+    Not low for **colonisation**, which is not an illness at all. A patient
+    labelled MRSA-positive carries that flag in their record, and on every
+    subsequent admission it means contact precautions, gowns and gloves, and
+    frequently a side room — for a state they have no symptoms from and derive no
+    benefit from knowing about.
+    Isolated patients have been shown to receive **less clinical contact, more
+    anxiety and depression, and more preventable adverse events.** It is imposed
+    for other patients' benefit, indefinitely, and the register has no field for
+    it (gaps.md #144).
+
+holes:
+  - **The burden figures are the softest in the bacterial block.** Attributable
+    and associated death estimates differ several-fold and answer different
+    questions; skin and soft tissue infections are essentially uncounted; and
+    surveillance exists in a minority of countries.
+  - The strata fractions are a reasoned composite and shift enormously between a
+    community setting dominated by abscesses and a tertiary hospital dominated by
+    line infections and prostheses.
+  - The proportion of MRSA's excess mortality over MSSA that is attributable to
+    vancomycin rather than to the organism is genuinely contested; this record
+    states it as a substantial contributor rather than a quantified one.
+  - `amr-infection` is a held record and this is a specific instance of it, with
+    no way to say so. **Engpass's obstacle register is the natural home for that
+    link and it does not exist yet.**
+  - Community-associated and hospital-associated MRSA arguably deserve separate
+    records, and merging them is why the note above has to explain that the
+    headline fell while a component rose.
+
+blockers:
+  - kind: no-sponsor
+    blocks: anybody being willing to develop the next one
+    obstacles: []
+    what: >
+      **THE COMPANIES THAT SOLVED THIS PROBLEM WENT BANKRUPT FOR SOLVING IT.**
+      Achaogen developed plazomicin, took it through approval in 2018, and filed
+      for bankruptcy within a year. Melinta Therapeutics, with several approved
+      antibacterials, filed in 2019. Tetraphase and Aradigm followed. **These were
+      not failed drugs. They were approved products with real activity against
+      resistant organisms, owned by companies that could not survive selling
+      them.**
+      The reason is structural and it is the inverse of every other market in
+      medicine. **A new antibiotic's correct use is to be held in reserve** — used
+      sparingly, only when the older agents fail, precisely so that resistance
+      does not develop. Good stewardship is a policy of not selling the product.
+      Meanwhile the drug is compared against generics costing pennies, is used for
+      a week rather than for a lifetime, and its patent expires while it sits on
+      a shelf.
+      **So the value of an antibiotic to society and its value to whoever made it
+      point in opposite directions**, and this is the only class of medicine in
+      the register where that is true (gaps.md #145).
+      Subscription and delinkage models — the United Kingdom's and Japan's pilot
+      schemes, and the PASTEUR Act proposed in the United States — exist
+      specifically to pay for availability rather than for volume. They are the
+      right shape and they are small.
+    who_could: [government, legislator, payer, regulator, manufacturer, philanthropy]
+    scale: 1.0e10
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: keeping infection control working after the attention moves on
+    obstacles: []
+    what: >
+      **THE THING THAT WORKED IS THE THING THAT DECAYS.**
+      England's eighty percent reduction was produced by hand hygiene compliance,
+      line bundles, screening, decolonisation and isolation — sustained, audited,
+      and attached to a target somebody could lose their job over. Every element
+      requires continuous effort by people who are busy, and **compliance falls
+      the moment measurement and accountability stop.**
+      That is gaps.md #57's maintenance problem in its most concrete form: an
+      achievement that must be re-earned every day, whose success looks like
+      nothing happening, and which competes for attention with whatever the
+      current crisis is.
+      **The COVID-19 pandemic demonstrated both directions at once** — enormous
+      attention to hand hygiene and personal protective equipment alongside
+      disrupted routine infection control, and reported increases in several
+      resistant hospital organisms.
+      Cheap, known, unglamorous, and reversible.
+    who_could: [health-system, government, payer, regulator]
+    scale: 2.0e9
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: a vaccine, after thirty years and one that made things worse
+    obstacles: [protective-immunity]
+    what: >
+      **EVERY *STAPHYLOCOCCUS AUREUS* VACCINE HAS FAILED**, and one of them
+      failed in a way that should be recorded rather than forgotten: a
+      single-antigen candidate tested before cardiac surgery was stopped because
+      **vaccinated patients who became infected anyway died at a higher rate than
+      placebo recipients.**
+      That is a rare and instructive outcome. It suggests the problem is not
+      insufficient immunity but the wrong kind of it, and that nobody adequately
+      understands what protective immunity to *S. aureus* looks like — in an
+      organism a fifth of humanity carries in their nose without harm.
+      A working vaccine would do to this record what the conjugate vaccine is
+      doing to typhoid: **make the resistance question much less important.**
+      `scale: null`.
+    who_could: [academic, sponsor, manufacturer, philanthropy]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    blocks: knowing what you are treating before you have to decide
+    obstacles: []
+    what: >
+      Conventional culture and susceptibility testing takes two to three days.
+      The clinician facing a septic patient must choose immediately, and **both
+      wrong answers cost.** Empirical vancomycin gives a patient with
+      methicillin-*susceptible* infection a worse drug for their disease;
+      withholding it gives a patient with MRSA a day or two of nothing.
+      Rapid molecular assays detect *mecA* directly from a positive blood culture
+      in hours, and paired with stewardship they measurably shorten time to
+      appropriate therapy and time on unnecessary vancomycin. **The value is
+      entirely in the hours saved rather than in the answer given** — the same
+      answer arrives either way.
+      They cost more per test than culture and are not routine outside
+      well-resourced hospitals, which is the ordinary reason: the saving is in
+      somebody else's budget line.
+    who_could: [health-system, manufacturer, payer, government]
+    scale: 2.0e9
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0067
+  rated: 2026-08-24
+  by: [claude, jeremy]

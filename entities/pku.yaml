@@ -1,0 +1,188 @@
+slug: pku
+id: FND-D-0003
+name: phenylketonuria
+also: [PKU, PAH deficiency]
+common: PKU
+mondo: MONDO:0009861
+kind: disease
+residual: false
+contested: false
+
+# The record that forces `prevention` to be an independent axis rather than the
+# top of the intervention ladder: the phenotype is prevented outright and the
+# disease is never cured. Also the register's clearest `ongoing: high`.
+
+burden:
+  incidence:
+    value: 7.0e-5
+    units: fraction-of-births (varies widely by population)
+    src: recall
+  note: >
+    Roughly 1 in 10,000-15,000 births in European-ancestry populations, with
+    real geographic variation (higher in Turkey, lower in Finland and Japan).
+    Global patient counts are small; the entry is here for what it teaches the
+    schema, not for its burden.
+
+axes:
+  mechanism: established
+  intervention: suppressive
+  prevention: prophylaxis
+  ongoing: high
+  efficacy:
+    value: 0.95
+    units: fraction-of-patients (normal cognitive development if treated from birth)
+    src: recall
+  access:
+    value: 0.7
+    units: fraction-of-patients (newborn screening coverage, globally uneven)
+    src: recall
+
+measurement:
+  diagnostic: objective
+  prognostic: good
+  predictive: good
+  witness: >
+    Measurement is the entire treatment. A bloodspot detects it before
+    symptoms exist, serial phenylalanine levels predict and control outcome,
+    and genotype plus a BH4 loading test predicts who will respond to
+    sapropterin. Where the screening programme exists, all three questions are
+    answered; where it does not, none of them are, and the damage is done
+    before anyone asks.
+
+toll:
+  severity: none
+  permanent: false
+  what: >
+    The treatment takes nothing permanent; the burden is entirely `ongoing`
+    and it is severe. The permanent harm in PKU comes from NOT treating, and
+    in time, which is what the window records.
+  incidence:
+    value: 0.0
+    units: fraction-of-treated (permanent harm)
+    src: recall
+
+residue:
+  severity: minor
+  permanent: true
+  what: >
+    The most careful entry in this field, because PKU is the register's
+    strongest prevention story and it should not be overstated in either
+    direction. Newborn screening and lifelong dietary treatment prevent the
+    catastrophic intellectual disability entirely — that is not in question and
+    it is one of medicine's genuine triumphs.
+    What is documented in early- and continuously-treated adults is subtler:
+    differences in executive function, processing speed and attention, and a
+    raised prevalence of anxiety and depression, against population norms
+    rather than against catastrophe. Whether that is residual disease,
+    consequence of the diet, or the burden of lifelong management is not
+    settled — which is stated here rather than resolved.
+    Missed at birth the picture is entirely different and the damage is total;
+    that is the `window`, not the residue.
+  incidence:
+    value: 0.5
+    units: >
+      fraction-of-treated (subtle executive-function, attention and
+      mental-health differences in early- and continuously-treated patients)
+    src: reasoning
+
+window:
+  what: >
+    Newborn screening is the register's purest window, and it is measured in
+    weeks. Detected on a bloodspot in the first days of life and started on a
+    phenylalanine-restricted diet, a child develops normally. Missed, the
+    phenylalanine accumulates during the period of most rapid brain development
+    and the resulting intellectual disability is severe and irreversible — the
+    same disease, the same treatment, and an entirely different life, decided by
+    whether a heel was pricked.
+  closes_on: irreversible neurodevelopmental damage in the first months of life
+  caught_in_time:
+    value: 0.7
+    units: fraction-of-births (covered by newborn screening)
+    src: recall
+
+witness:
+  mechanism: >
+    Følling described the condition in 1934 from urine that smelled wrong.
+    Autosomal recessive loss of phenylalanine hydroxylase; phenylalanine
+    accumulates and is neurotoxic to the developing brain. The chain is
+    complete from genotype to enzyme to metabolite to phenotype — one of the
+    most thoroughly established mechanisms in medicine, and the reason this
+    sits in the `known` column despite the disease being untouched.
+  intervention: >
+    A phenylalanine-restricted diet from the first weeks of life prevents the
+    intellectual disability entirely. Sapropterin helps a responsive subset;
+    pegvaliase (2018) offers enzyme substitution for adults. None of these
+    repairs the PAH gene: stop the diet and phenylalanine rises again. It is
+    `suppressive` in the same formal sense as HIV, but the treatment is a
+    lifelong severely restricted diet with medical formula, which is why
+    `ongoing: high` is doing real work here.
+  prevention: >
+    Rated `prophylaxis` because screening plus diet prevents the disease
+    phenotype in nearly everyone reached — an outcome the intervention ladder
+    cannot express, since nothing is cured and yet essentially nothing
+    happens. Maternal PKU is the counterexample that keeps it off
+    `eradicated`: a treated woman who relaxes the diet in pregnancy can still
+    have an affected child.
+  ongoing: >
+    "Diet for life" is the current standard, and adherence in adolescence and
+    adulthood is poor for reasons no one should find surprising. The burden of
+    being treated is the dominant remaining harm — a fact invisible in any
+    schema that stops at "treatable".
+
+holes:
+  - Why phenylalanine is neurotoxic in the specific way it is remains less
+    settled than the metabolic chain above it.
+  - Whether adult brain is harmed by relaxed control, and how much, is
+    genuinely unsettled and determines whether `ongoing: high` is necessary
+    or merely traditional.
+  - Gene therapy or genome editing would move `intervention` to `curative` and
+    `ongoing` to `none`; nothing else would.
+
+blockers:
+  - kind: diagnosis
+    blocks: dietary treatment (suppressive)
+    what: >
+      The entire treatment depends on newborn screening, which is absent or
+      partial across much of the world. A bloodspot assay from the early 1960s,
+      costing very little, is the difference between a normal life and severe
+      irreversible intellectual disability — and where it is missing the damage
+      is done before anyone knows there was something to treat. Among the
+      highest-leverage `diagnosis` blockers in the register.
+    who_could: [government, health-system, nonprofit, philanthropy]
+    scale: 1e8
+    standing: documented
+    src: recall
+  - kind: cost
+    blocks: dietary treatment (suppressive)
+    what: >
+      Medical formula and low-protein foods are expensive and inconsistently
+      reimbursed even in wealthy systems, so the treatment can fail for
+      household-budget reasons.
+    who_could: [payer, government]
+    scale: 1e7
+    standing: documented
+    src: recall
+  - kind: adherence
+    blocks: dietary treatment (suppressive)
+    what: >
+      Lifelong severe dietary restriction, with predictable falling adherence
+      through adolescence and adulthood. The dominant residual harm in
+      well-served populations, and a behavioural rather than biological problem.
+    who_could: [health-system, patient-org]
+    scale: 1e7
+    standing: documented
+    src: recall
+  - kind: knowledge
+    blocks: cure
+    what: >
+      Gene therapy or editing of PAH would end the disease and the diet. Not
+      demonstrated.
+    who_could: [academic, sponsor]
+    scale: null
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0003
+  rated: 2026-08-11
+  by: [claude, jeremy]

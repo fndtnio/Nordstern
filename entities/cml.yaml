@@ -1,0 +1,474 @@
+slug: cml
+id: FND-D-0056
+name: chronic myeloid leukaemia
+also: [CML, chronic myelogenous leukemia, chronic granulocytic leukaemia]
+common: a leukaemia
+mondo: MONDO:0011996
+kind: disease
+residual: false
+contested: false
+
+# THE CLEANEST CAUSAL CHAIN IN CANCER, AND THE CASE THAT PROVED TARGETED THERAPY
+# WAS POSSIBLE AT ALL.
+#
+# One translocation, t(9;22), found in 1960 and identified as a translocation in
+# 1973. One fusion protein, BCR-ABL1, a tyrosine kinase switched permanently on.
+# One drug, imatinib, designed to sit in its ATP pocket, approved in 2001.
+#
+# Chronic-phase CML went from a median survival of a few years to **near-normal
+# life expectancy on a daily tablet.**
+#
+# AND IT EXPOSES SOMETHING ABOUT THE LADDER THIS REGISTER IS BUILT ON.
+#
+# Before 2001 there WAS a cure: allogeneic stem cell transplant. It was available
+# to a minority, it cured perhaps half of them, and it killed a substantial
+# fraction outright. Imatinib is `suppressive` — stop it and most patients
+# relapse — and it made the curative option obsolete for almost everybody, and it
+# was unambiguously the right call.
+#
+# **The ladder puts `curative` above `suppressive`. Here the lower rung was
+# better.** gaps.md #123.
+#
+# AND THE ECONOMICS ARE STRUCTURALLY UNLIKE ANY OTHER RECORD HERE. **Because the
+# drug works, patients stop dying, so prevalence climbs, so the market grows at
+# constant incidence.** Imatinib's price rose over its patented life while the
+# population taking it grew for the reason the drug existed. In 2013 roughly a
+# hundred CML specialists published a joint objection to the pricing.
+# A cure is a one-time sale; a suppression is an annuity. gaps.md #124.
+
+burden:
+  prevalence:
+    value: 1.0e5
+    units: >
+      new cases/year worldwide — a rough figure. THE PREVALENT POPULATION IS THE
+      INTERESTING ONE AND IT IS RISING FAST, because patients on tyrosine kinase
+      inhibitors are not dying: incidence is flat and the number of people living
+      with CML climbs every year
+    src: reasoning
+  deaths:
+    value: 3.5e4
+    units: >
+      deaths/year — and the figure is now almost entirely a statement about who
+      has access to a generic tablet, not about the disease
+    src: reasoning
+  note: >
+    **THE PREVALENCE-INCIDENCE RELATIONSHIP HERE IS THE OPPOSITE OF EVERY OTHER
+    RECORD IN THIS REGISTER**, and it is a direct consequence of the drug
+    working.
+    Before 2001, CML incidence and CML mortality were nearly the same number —
+    people were diagnosed and died within a few years. Now incidence is unchanged
+    and mortality has collapsed in treated populations, so the prevalent
+    population accumulates. In high-income countries the number of people living
+    with CML is projected to keep rising for decades before it stabilises.
+    That is a success, and it is also the reason the drug's economics look the
+    way they do: **a growing market with a fixed incidence, produced by
+    efficacy.** See gaps.md #124.
+    Where TKIs are unavailable or unaffordable, CML remains what it was in 1999.
+    The disease is the same everywhere; the outcome is a function of whether a
+    generic tablet and a molecular monitoring service exist.
+
+survival:
+  horizon: 10 years from diagnosis
+  untreated:
+    value: 0.02
+    units: >
+      fraction alive — before targeted therapy, chronic myeloid leukaemia
+      progressed to blast crisis with a median survival of a few years
+    src: recall
+  treated:
+    value: 0.90
+    units: >
+      fraction alive on a tyrosine kinase inhibitor; life expectancy approaches
+      normal, and a subset sustain remission after stopping
+    src: recall
+  witness: >
+    **THE FOUNDING CASE OF TARGETED THERAPY, AND THE SURVIVAL NUMBERS ARE WHY.**
+    One mutation, one drug, 0.02 to 0.90. It is the result every subsequent
+    targeted-therapy programme has been measured against and almost none has
+    matched — because most cancers are not one mutation.
+
+axes:
+  mechanism: established
+  intervention: suppressive
+  prevention: none
+  ongoing: moderate
+  efficacy:
+    value: 0.90
+    units: >
+      fraction-of-patients (durable major molecular response on a tyrosine
+      kinase inhibitor, with near-normal life expectancy) — chronic phase, which
+      is the great majority of diagnoses
+    src: recall
+  access:
+    value: 0.45
+    units: >
+      fraction-of-patients (receiving a TKI with the quantitative molecular
+      monitoring that makes it manageable) — the drug is now generic and costs
+      little; **the monitoring is the expensive part**, and second- and
+      third-line agents are not generic at all
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: good
+  predictive: good
+  witness: >
+    **THE BEST-MONITORED CANCER IN MEDICINE**, and the second record in a row to
+    earn `good` on both axes.
+    DIAGNOSTIC is `objective` and singular. The Philadelphia chromosome, or its
+    molecular equivalent — *BCR-ABL1* by FISH or PCR. One finding, present in
+    essentially every case, absent in every mimic. There is no borderline
+    category and no inter-observer problem; melanoma's #119 could not happen
+    here.
+    PROGNOSTIC is `good`. *BCR-ABL1* transcript level, quantified on the
+    International Scale, at three, six and twelve months predicts outcome
+    strongly, and the milestones are explicit: failure to reach a defined
+    threshold at a defined time triggers a change of drug. **The disease is
+    managed by watching a number fall.**
+    PREDICTIVE is `good` and unusually concrete. When response is lost, sequencing
+    the kinase domain identifies the resistance mutation, and **the mutation
+    chooses the next drug** — T315I is resistant to first- and second-generation
+    inhibitors and sensitive to ponatinib and to asciminib, which binds a
+    different pocket entirely. Nothing else in this register selects therapy
+    quite so mechanically.
+    And the same number governs stopping: sustained deep molecular response is
+    the entry criterion for attempting treatment-free remission. **The measurement
+    decides who is allowed to try to stop**, which is a use of prognostic
+    information nothing else here has.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    **CML TAKES ALMOST NOTHING PERMANENT FROM YOU. IT SIMPLY NEVER LETS YOU
+    STOP.**
+    Imatinib's chronic toxicities — periorbital oedema, muscle cramps, nausea,
+    diarrhoea, fatigue, rash — are common, genuinely bothersome, and reversible.
+    They matter because they are lifelong: adherence is a real clinical problem
+    in a disease where missing doses costs molecular response.
+    The later inhibitors trade that for something sharper. Dasatinib causes
+    pleural effusions and occasionally pulmonary hypertension; nilotinib and
+    especially **ponatinib cause arterial occlusive events** — myocardial
+    infarction, stroke, peripheral arterial occlusion — which are permanent when
+    they happen and are the reason ponatinib is a later-line drug.
+    **AND THE DRUGS ARE TERATOGENIC**, which in a disease people now live with
+    for forty years is not a footnote. A woman who wants to conceive must plan an
+    interruption, accept a period off therapy with the molecular risk that
+    carries, and be monitored through it. The register has no field for a toll
+    that consists of *having to arrange your life around a medicine*.
+    Rated `minor` because the modal patient on generic imatinib carries nothing
+    permanent, and `restored` therefore derives **`restored`** — which is correct
+    and slightly strange for a disease nobody is cured of. That is `ongoing`
+    doing the work `toll` cannot.
+  incidence:
+    value: 0.05
+    units: >
+      fraction-of-treated (permanent harm attributable to treatment — chiefly
+      arterial occlusive events on later-generation inhibitors) — a reasoned
+      estimate, concentrated in the minority who need second- or third-line
+      therapy
+    src: reasoning
+
+window:
+  what: >
+    **CML IS USUALLY FOUND BY ACCIDENT, AND THAT IS THE WINDOW WORKING.**
+    Untreated, the disease runs a chronic phase of several years, then an
+    accelerated phase, then **blast crisis** — which is an acute leukaemia, is
+    largely refractory, and is what CML used to kill people with. Diagnosed in
+    chronic phase, outcomes are excellent. Diagnosed in blast crisis, they are
+    not.
+    The chronic phase is long, and it is detectable by a **full blood count** —
+    a test costing almost nothing that is ordered constantly for other reasons.
+    Most CML in high-income countries is picked up as unexplained leukocytosis in
+    someone who came in about something else.
+    **So the effective screening programme for CML is other people's blood
+    tests**, which is why `caught_in_time` below is high and why it collapses
+    wherever a routine full blood count is not part of ordinary care.
+    Since TKIs, progression to blast crisis has become uncommon in treated
+    patients, which means **the window is now mostly closed by the treatment
+    rather than by the clock** — a shape no other window record has.
+  closes_on: >
+    progression from chronic phase through accelerated phase to blast crisis —
+    several years untreated, and uncommon in anyone taking a TKI
+  caught_in_time:
+    value: 0.80
+    units: >
+      fraction-of-cases (diagnosed in chronic phase) — high where a full blood
+      count is routinely available and much lower where it is not
+    src: reasoning
+
+strata:
+  - name: chronic phase
+    fraction:
+      value: 0.90
+      units: fraction-of-diagnoses
+      src: recall
+    intervention: suppressive
+    efficacy:
+      value: 0.92
+      units: fraction-of-stratum (durable molecular response, near-normal life expectancy)
+      src: recall
+    toll: minor
+    what: >
+      A daily tablet, a blood test every three months, and a normal life. **This
+      is what a solved chronic cancer looks like**, and it is ninety percent of
+      the record.
+      Roughly half of those achieving a sustained deep molecular response can
+      attempt treatment-free remission, and roughly half of those succeed — see
+      the `intervention` witness and gaps.md #118.
+
+  - name: accelerated phase
+    fraction:
+      value: 0.05
+      units: fraction-of-diagnoses
+      src: reasoning
+    intervention: suppressive
+    efficacy:
+      value: 0.50
+      units: fraction-of-stratum (durable response on a second- or third-generation TKI)
+      src: reasoning
+    toll: major
+    what: >
+      Additional cytogenetic changes, rising blast counts, loss of response.
+      Managed with more potent inhibitors and, for some, transplant. The toll
+      rises with the drug generation — arterial events on ponatinib, and the
+      transplant's own price.
+
+  - name: blast crisis
+    fraction:
+      value: 0.05
+      units: fraction-of-diagnoses
+      src: reasoning
+    intervention: disease-modifying
+    efficacy:
+      value: 0.20
+      units: fraction-of-stratum (durable benefit)
+      src: reasoning
+    toll: major
+    what: >
+      **CML'S OLD ENDING, AND THE ONE PLACE THE STORY DOES NOT HOLD.** Blast
+      crisis behaves as an acute leukaemia, responds poorly to TKIs alone, and is
+      treated with intensive chemotherapy plus a TKI and taken to allogeneic
+      transplant if possible.
+      It is now uncommon because patients are caught and treated in chronic
+      phase — **the stratum shrank because the treatment worked**, which is a
+      form of progress the register records nowhere.
+
+moved:
+  - date: 2001
+    axis: intervention
+    from: disease-modifying
+    to: suppressive
+    why: >
+      **IMATINIB, AND IT IS THE FOUNDING CASE OF TARGETED THERAPY.**
+      Before it: hydroxyurea and busulfan controlled the white count and changed
+      nothing; interferon-alfa produced durable responses in a minority at
+      considerable cost in side effects; and **allogeneic stem cell transplant
+      cured perhaps half of the minority eligible for it, while killing a
+      substantial fraction outright.**
+      After it: a daily oral inhibitor of the causative kinase, near-normal life
+      expectancy, and transplant reserved for failure.
+      **NOTE WHAT THIS ENTRY DOES ON THE LADDER.** The best pre-2001 option was
+      `curative` for the few who could have it. Imatinib is `suppressive`. By the
+      ladder's ordering that is a step down, and it was the largest advance in
+      the disease's history. See gaps.md #123.
+    src:
+      id: PMID:11287972 doi:10.1056/NEJM200104053441401
+      retrieved: 2026-08-26
+      quote: >
+        STI571 is well tolerated and has significant antileukemic activity in
+        patients with CML in whom treatment with interferon alfa had failed.
+
+  - date: 2016
+    axis: access
+    from: 0.2
+    to: 0.45
+    why: >
+      **GENERIC IMATINIB.** Patent expiry brought the price of the drug down by
+      orders of magnitude, in some markets to a few dollars a month, and made
+      the standard of care affordable in places where it had previously depended
+      on a manufacturer's donation programme.
+      The date marks an arc across the mid-2010s and the effect is uneven —
+      second- and third-generation inhibitors remain on patent, and **the
+      quantitative molecular monitoring the drug needs did not become generic
+      with it.** A cheap tablet without a monitoring service is a tablet nobody
+      can manage properly.
+      It is filed under `access` and it is the register's clearest instance of
+      cost falling for the ordinary reason: the patent ran out.
+
+witness:
+  mechanism: >
+    `established`, **and it is the most completely specified causal chain in this
+    register.**
+    A reciprocal translocation between chromosomes 9 and 22 fuses *BCR* to
+    *ABL1*. The resulting protein is a tyrosine kinase with its regulatory domain
+    removed — constitutively active, permanently signalling proliferation and
+    survival to a myeloid progenitor. The Philadelphia chromosome was described in
+    1960, the first consistent chromosomal abnormality ever linked to a human
+    cancer; it was shown to be a translocation in 1973; the fusion gene was
+    characterised in the 1980s; and imatinib was designed to occupy the kinase's
+    ATP-binding pocket.
+    **Cause, mechanism, and drug are the same object seen three ways.** Nothing
+    else in this register has that, and it is why CML became the proof that
+    rational targeted therapy could work.
+    THE NAMED HOLES ARE SMALL AND REAL. **What causes the translocation** is
+    unknown for almost every patient — ionising radiation is established and
+    accounts for very little. **And why some patients hold remission after
+    stopping** the drug and others do not is not understood, which matters
+    because it is the difference between `suppressive` and `curative` for half of
+    them.
+  intervention: >
+    `suppressive`, and the rating is contested by the data in a way the schema
+    cannot express.
+    Tyrosine kinase inhibitors control chronic-phase CML indefinitely. Stop them
+    and most patients relapse, which is the definition of the rung. Life
+    expectancy on treatment approaches normal.
+    **BUT TREATMENT-FREE REMISSION IS REAL AND IS BEING TESTED ON PURPOSE.**
+    Patients with a sustained deep molecular response who stop the drug under
+    monitoring: roughly half remain in remission long-term, and those who relapse
+    almost always respond again on restarting. That is a substantial fraction of
+    a large prevalent population, and whether it is cure or a very long
+    suppression is not settled.
+    **It is melanoma's problem (gaps.md #118) with an important difference:
+    here the experiment is deliberate.** CML is the one record in this register
+    where the field is systematically stopping an effective therapy to find out
+    whether the disease is gone. The register still has to pick one rung, today,
+    for a question being actively resolved.
+    The record reads `suppressive` on the conservative choice, and roughly half
+    of the largest stratum may be on the other one.
+  prevention: >
+    `none`. Nothing prevents CML because nothing reliably causes it — ionising
+    radiation is an established cause of a very small share, and for everybody
+    else the translocation occurs for reasons unknown.
+    Third record in the corpus with `prevention: none` alongside prostate cancer
+    and childhood ALL, and the three of them share a shape worth noting: **a
+    well-understood disease mechanism and no understood aetiology at all.** The
+    register's `mechanism` axis rates how the cause produces the phenotype, and
+    for these three the chain from cause to phenotype is complete while the cause
+    itself is missing.
+  ongoing: >
+    `moderate`, **and for this record `ongoing` is carrying what `toll` cannot.**
+    A daily tablet for life. A quantitative PCR every three months, indefinitely,
+    on a scale that requires a standardised laboratory. Chronic low-grade side
+    effects — cramps, oedema, fatigue, diarrhoea — that are individually minor
+    and permanently present, and that drive an adherence problem in a disease
+    where missed doses cost molecular response.
+    And the shape of a life arranged around a medicine: a woman planning a
+    pregnancy must plan an interruption; a patient travelling must carry supply
+    and access monitoring; anybody attempting treatment-free remission accepts
+    more frequent testing in exchange for stopping.
+    None of that is permanent damage, so `toll` reads `minor` and `restored`
+    derives `restored`. **Both are correct and the record is not, quite** —
+    which is the clearest thing this file says about the schema.
+
+holes:
+  - Incidence and deaths are both `src: reasoning` and soft. CML registration is
+    reasonable in high-income countries and poor elsewhere, and the global deaths
+    figure is dominated by places where TKIs are not reliably available.
+  - The treatment-free remission fractions are stated as roughly half of a
+    selected group, and both the eligibility criteria and the success rate are
+    still moving as trials mature.
+  - `access: 0.45` conflates two very different things — availability of a cheap
+    generic tablet, and availability of standardised molecular monitoring. They
+    are unbundled in the blockers and not in the scalar.
+  - The strata fractions for accelerated phase and blast crisis are estimates and
+    have fallen substantially since 2001, because the treatment prevents
+    progression. They describe a moving target.
+  - Ph-positive acute lymphoblastic leukaemia shares the fusion and is a
+    different disease; it is covered inside the childhood ALL record and not
+    here.
+
+blockers:
+  - kind: cost
+    blocks: the drugs that are not generic yet, and the price of the one that is
+    obstacles: []
+    what: >
+      **THE MOST DOCUMENTED PRICING OBJECTION IN THIS REGISTER, MADE BY THE
+      PEOPLE WHO TREAT THE DISEASE.**
+      Imatinib's price rose substantially over its patented life in the United
+      States — in a disease where the manufacturing cost is low and where **the
+      treated population was growing precisely because the drug worked.** In 2013
+      roughly a hundred CML specialists published a joint statement objecting to
+      it. The objection is a matter of record, the prices are public, and this is
+      exactly the kind of claim `standing` exists to test rather than repeat.
+      Generic entry from the mid-2010s largely resolved it for first-line
+      therapy. **It did not resolve anything for second- and third-generation
+      inhibitors**, which remain on patent and which are what a patient needs
+      when the first one fails or when a resistance mutation appears.
+      The structural point sits underneath: a suppressive therapy is an annuity
+      and a curative one is a single sale, and the incentives differ accordingly.
+      See gaps.md #124.
+    who_could: [manufacturer, payer, government, regulator, health-system]
+    scale: 2.0e9
+    standing: documented
+    src: recall
+
+  - kind: tooling
+    blocks: managing a cheap drug without the test that steers it
+    obstacles: []
+    what: >
+      **THE DRUG IS GENERIC AND THE MONITORING IS NOT, WHICH IS THE INVERSE OF
+      EVERY OTHER RECORD HERE.**
+      CML is managed by watching a number: *BCR-ABL1* transcript level, quantified
+      by PCR and reported on the International Scale, every three months. That
+      number decides whether the drug is working, when to switch, which mutation
+      to look for, and who may attempt to stop.
+      It requires a standardised molecular laboratory with external quality
+      assessment. Without it a patient can take a tablet and nobody can tell
+      whether it is working until the disease progresses — which is how CML was
+      managed before 2001 and is not how it should be managed now.
+      **A cheap tablet plus no monitoring is a substantially worse intervention
+      than the same tablet with it**, and the register's `access` scalar cannot
+      express a treatment whose value depends on a test.
+    who_could: [health-system, government, academic, nonprofit, manufacturer]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: who can stop, and what to do when the kinase stops caring
+    obstacles: [pathogen-persistence]
+    what: >
+      Two absences, and the first would change the rating on the ladder.
+      **NOBODY CAN PREDICT WHO WILL HOLD TREATMENT-FREE REMISSION.** Roughly half
+      of eligible patients who stop stay in remission and roughly half relapse,
+      and the current selection criteria are duration and depth of response —
+      which are proxies, not mechanisms. The leukaemic stem cell persists in some
+      people and not others and nobody can say which. **A marker would convert
+      half of the largest stratum in this record from `suppressive` to something
+      that looks like cure.**
+      **AND RESISTANCE IS STILL A SCHEDULE FOR SOME.** Kinase domain mutations,
+      T315I above all, and the compound mutations that follow sequential therapy.
+      Asciminib binding a different pocket helped; blast crisis remains largely
+      refractory and is what CML kills with.
+      `scale: null`.
+    who_could: [academic, sponsor, manufacturer, philanthropy]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: forty years of continuous supply, monitoring and follow-up
+    obstacles: [donation-dependency]
+    what: >
+      A `suppressive` disease is a delivery problem that never ends. A patient
+      diagnosed at thirty-five needs a tablet every day and a molecular test four
+      times a year **for the rest of their life**, and any interruption costs
+      response.
+      Before generic entry, access across much of the world depended on a
+      manufacturer's patient assistance programme, which supplied tens of
+      thousands of patients and was a corporate decision rather than an
+      entitlement — the same fragility five other records record about donated
+      drugs, and the reason this blocker cites it.
+      Generics changed the supply question and not the follow-up question. **The
+      prevalent population is growing every year by construction**, so the
+      service required grows with it even though the incidence does not.
+    who_could: [health-system, government, manufacturer, nonprofit, philanthropy]
+    scale: 3.0e9
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0056
+  rated: 2026-08-24
+  by: [claude, jeremy]

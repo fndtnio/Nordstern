@@ -1,0 +1,402 @@
+slug: mycoplasma-genitalium
+id: FND-D-0122
+name: Mycoplasma genitalium infection
+also: [MG, Mgen, Mycoplasmoides genitalium infection, non-gonococcal urethritis]
+kind: disease
+mondo: MONDO:1030003
+residual: false
+contested: false
+
+# THE INFECTION WE MADE RESISTANT BY TREATING A DIFFERENT ONE.
+#
+# 1. THE MACROLIDE RESISTANCE WAS MANUFACTURED BY CHLAMYDIA TREATMENT. Single-dose
+#    azithromycin was the standard cure for `genital-chlamydia` for two decades.
+#    A large share of people with chlamydia also carry *M. genitalium*,
+#    undiagnosed because until recently there was no test — so they received a
+#    single dose of a macrolide against an organism it does not reliably clear.
+#    **Macrolide resistance now exceeds fifty percent across much of the
+#    high-income world and approaches eighty in some settings.** The register has
+#    repeatedly noted that it cannot express a harm landing on somebody other
+#    than the patient (gaps.md #51, #228). **This is that harm, landing on a
+#    different disease.**
+#
+# 2. IT IS THE PROOF OF CONCEPT FOR WHAT `gonorrhoea` IS ASKING FOR.
+#    Resistance-guided therapy — test the 23S rRNA mutation at diagnosis, choose
+#    the drug accordingly — is deployed in Australia and parts of Europe and
+#    raises cure rates substantially. `gonorrhoea`'s `diagnosis` blocker asks for
+#    exactly this and does not have it. **Here it exists, works, and is the
+#    reason this record is not worse than it is.**
+#
+# 3. AND THE GUIDELINES SAY DO NOT SCREEN — FOR A NEW REASON. `genital-herpes`
+#    carries the register's first "do not look" recommendation, on the grounds
+#    that a diagnosis harms the person. **This one is not about the patient at
+#    all**: screening asymptomatic people leads to treatment, treatment selects
+#    resistance, and the natural history is unclear enough that nobody can say
+#    the infection needed treating. **Do not look, because looking harms people
+#    who are not yet infected.**
+#
+# 4. THERE IS NO MONDO TERM FOR IT. The ontology holds *Mycoplasma haemocanis*
+#    (dogs), *haemofelis* (cats), *wenyonii* (cattle), *gallisepticum* (poultry)
+#    and *pulmonis* (rodents), plus *M. pneumoniae* pneumonia and Mycoplasma
+#    encephalitis in humans — and **nothing for the sexually transmitted human
+#    pathogen with fifty percent macrolide resistance.** This record points at
+#    the genus. Sixth instance of gaps.md #227 and the most extreme.
+
+burden:
+  prevalence:
+    value: 1.0e8
+    units: >
+      people infected at any given time worldwide — reasoned from population
+      prevalence of roughly one to three percent in adults, which is comparable
+      to or above `gonorrhoea` in several surveyed settings. **It is a very soft
+      figure**: there is no surveillance, and the commercial test only became
+      widely available around 2019
+    src: reasoning
+  deaths:
+    value: 0.0
+    units: >
+      deaths/year — it does not kill people. Whatever harm it does is
+      reproductive and inflammatory, and how much of it is real is this record's
+      central open question
+    src: reasoning
+  note: >
+    **This is the newest pathogen in the register's sexually transmitted set and
+    the one whose importance is least settled.** It was identified in 1981, spent
+    thirty years without a usable diagnostic, and arrived in clinical practice
+    already resistant to the drug that would have been used against it. **Its
+    resistance profile is better characterised than its natural history**, which
+    is an unusual and uncomfortable position for a disease record.
+
+survival:
+  horizon: 1 year from infection
+  untreated:
+    value: 0.9999
+    units: fraction alive — it does not kill directly
+    src: reasoning
+  treated:
+    value: 0.9999
+    units: fraction alive on effective therapy
+    src: reasoning
+  witness: >
+    The fourth near-identical row in this disease class, rated so the sexually
+    transmitted records can be compared with each other. `gonorrhoea` carries the
+    argument about what this axis cannot see.
+
+axes:
+  mechanism: partial
+  intervention: curative
+  prevention: risk-reduction
+  ongoing: none
+  efficacy:
+    value: 0.70
+    units: >
+      fraction-of-patients (cured) — **and it is a blend of two very different
+      systems.** Where resistance-guided therapy is used, cure exceeds ninety
+      percent. Where first-line azithromycin is still given blind, it cures
+      perhaps forty percent, because most circulating strains are already
+      resistant. **The figure describes a policy, not a drug**
+    src: reasoning
+  access:
+    value: 0.30
+    units: >
+      fraction-of-patients (diagnosed and given a drug that will work) — **the
+      lowest in the register's STI set alongside `trichomoniasis`, and for a
+      newer reason.** The molecular test became widely available only around
+      2019; resistance testing is rarer still and is what the treatment actually
+      depends on. Most infection is neither found nor correctly treated
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: none
+  predictive: good
+  witness: >
+    **THIS RECORD INVERTS THE USUAL PATTERN AND IT IS THE MOST INTERESTING THING
+    ABOUT IT.** Almost everywhere in this register, prognosis is better
+    understood than treatment selection: we know roughly what a disease will do
+    and cannot say which drug will work. Here it is the other way round.
+    PREDICTIVE is **`good`, which almost nothing here earns.** Macrolide
+    resistance is conferred by identifiable point mutations in the 23S rRNA
+    gene, they can be detected directly from the same sample that made the
+    diagnosis, and **resistance-guided therapy raises cure rates from around
+    forty percent to above ninety.** It is deployed in Australia and parts of
+    Europe. This is precisely the capability `gonorrhoea`'s diagnosis blocker
+    asks for and does not have, working, in the clinic next door.
+    PROGNOSTIC is **`none`, and that is the record's real problem.** Nobody can
+    say which infection matters. The association with urethritis in men is
+    solid; the associations with cervicitis, pelvic inflammatory disease,
+    preterm birth and infertility in women are inconsistent and confounded, and
+    a large share of infection appears to clear without ever causing anything.
+    **So the field can tell you exactly which antibiotic will cure an infection
+    it cannot tell you needed curing** — which is why guidelines recommend
+    against screening asymptomatic people, and why this record's central blocker
+    is a natural-history question rather than a drug one.
+    DIAGNOSTIC is `objective` and recent: the organism is effectively
+    unculturable in routine practice — it is among the slowest-growing bacteria
+    known — so molecular testing is not merely better than culture, it is the
+    only option, and it arrived thirty years after the organism did.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    Doxycycline then azithromycin, or moxifloxacin where resistance requires it.
+    **Moxifloxacin is the one worth naming**: fluoroquinolones carry tendon
+    rupture, peripheral neuropathy and central nervous system effects, and
+    regulators have specifically warned against using them for infections where
+    milder options exist. **Resistance is steadily making this the option that
+    exists**, so the toll of this record rises as its resistance does.
+    Pristinamycin and minocycline are the salvage agents, poorly evidenced and
+    poorly available.
+  incidence:
+    value: 0.04
+    units: >
+      fraction-of-treated with a consequential adverse effect — reasoned, and
+      rising with the share of patients reaching fluoroquinolone therapy
+    src: reasoning
+
+residue:
+  severity: minor
+  permanent: false
+  what: >
+    **Rated low because the harm is not established, not because it is absent.**
+    Persistent urethritis in men is well documented and resolves with effective
+    treatment. The consequences that would matter — pelvic inflammatory disease,
+    tubal infertility, preterm birth — are associated with this organism in some
+    studies and not others, with substantial confounding by coexisting chlamydia
+    and by sexual-behaviour variables.
+    **`genital-chlamydia` and `gonorrhoea` both carry `major` permanent residue
+    for the same anatomy on much stronger evidence.** This record deliberately
+    does not, and the difference is the evidence rather than the biology. If the
+    reproductive associations turn out to be causal, this rating is badly wrong
+    and the natural-history blocker below is why nobody can say.
+  incidence:
+    value: 0.02
+    units: >
+      fraction-of-infected left with lasting consequence — reasoned and
+      conservative, pending the natural-history question
+    src: reasoning
+
+witness:
+  mechanism: >
+    `partial`, and the split is unusual: **the organism is well characterised and
+    what it does to people is not.** *M. genitalium* — reclassified by some
+    taxonomies into genus *Mycoplasmoides* — has the smallest genome of any
+    self-replicating free-living bacterium at around 580 kilobases, which is why
+    it became the template for the minimal-genome and synthetic-cell work. It has
+    **no cell wall**, so every beta-lactam is useless against it, and it adheres
+    to and damages urogenital epithelium with a terminal organelle.
+    It is among the slowest-growing bacteria known and is effectively
+    unculturable in routine practice, which is why it went thirty years between
+    identification and a usable diagnostic.
+    **What is not established is the natural history**: what fraction of
+    infections cause disease, whether it causes the reproductive harms attributed
+    to it, and whether an asymptomatic infection is worth finding.
+  intervention: >
+    `curative` where the right drug is chosen, and the qualifier carries the
+    record. Doxycycline first to reduce organism load, then azithromycin if the
+    strain is macrolide-susceptible or moxifloxacin if it is not. **With
+    resistance testing, cure exceeds ninety percent; without it, blind
+    azithromycin cures perhaps forty**, because most circulating strains are
+    already resistant.
+    **The options were narrow from the start and are narrowing.** No cell wall
+    means no beta-lactams. Macrolide resistance is above fifty percent across
+    much of the high-income world; fluoroquinolone resistance is rising fastest
+    in the Asia-Pacific; and pristinamycin is a salvage agent most countries
+    cannot obtain. **Genuinely untreatable cases are reported.**
+  prevention: >
+    `risk-reduction`. Condoms, partner treatment, and **explicitly not screening
+    asymptomatic people** — which is the recommendation of every major guideline
+    and is worth stating as a prevention position rather than an omission.
+    The reasoning is unlike anything else here: finding an asymptomatic infection
+    leads to treating it; treating it selects resistance; and because the
+    prognostic question is unanswered, nobody can say the infection was going to
+    harm the person. **The intervention's cost falls on future patients and its
+    benefit is unproven for the present one.**
+    There is no vaccine and no serious programme toward one.
+  ongoing: >
+    `none`. A course of antibiotics, and either it works or a different course
+    follows. **The burden this record imposes is on the antibiotic supply rather
+    than on the patient.**
+  efficacy: >
+    See the axis, and read it as a description of health systems rather than of
+    pharmacology. The same organism is cured nine times in ten in Melbourne and
+    four times in ten where resistance testing is unavailable.
+  access: >
+    **The test is four years old in most markets and the resistance test is
+    rarer.** That is the whole of the access problem: the drugs are generic and
+    stocked, and choosing between them requires information most clinicians
+    cannot obtain. A patient with persistent urethritis in a system without
+    resistance testing receives sequential empirical courses — which is the
+    behaviour that produced the resistance in the first place.
+
+moved:
+  - date: 2019
+    axis: mechanism
+    from: none
+    to: partial
+    why: >
+      **A diagnostic, not a discovery.** Commercial nucleic-acid tests for
+      *M. genitalium* reached general availability around 2019, roughly
+      thirty-eight years after the organism was identified — because it cannot
+      practically be cultured. Its prevalence, its resistance profile and its
+      clinical associations only became measurable at that point. **The organism
+      had been causing urethritis throughout; the register could not have rated
+      it.**
+    src: recall
+  - date: 2021
+    axis: efficacy
+    from: 0.45
+    to: 0.70
+    why: >
+      **Resistance-guided therapy**, adopted in Australian and European
+      guidelines: test the 23S rRNA mutation at diagnosis and choose the drug
+      accordingly, rather than giving azithromycin blind to a population in which
+      most strains resist it. Cure rates roughly doubled where it was
+      implemented. **No new drug was involved** — the gain is entirely from
+      knowing which of two existing ones to use.
+    src: reasoning
+
+holes:
+  - >
+    **There is no Mondo term for this organism's infection.** The ontology holds
+    five veterinary *Mycoplasma* species and two human syndromes and not this
+    one, so the record points at the genus. Sixth instance of gaps.md #227 and
+    the most extreme — a pathogen with fifty percent macrolide resistance and no
+    address.
+  - >
+    **The natural history is the hole, and every rating here depends on it.** If
+    the reproductive associations are causal, `residue: minor` is badly wrong and
+    the screening recommendation is harming women. If they are confounding, the
+    record is close to right and the main cost of this organism is the
+    antibiotics spent on it. **Nobody can currently say**, and the register is
+    rating a disease whose importance is unresolved.
+  - >
+    Prevalence is reasoned from a handful of surveys taken since the test
+    existed, in populations that are not representative. The figure could be
+    wrong by a factor of two in either direction.
+  - >
+    `mechanism: partial` is doing unusual work: the *organism* is exceptionally
+    well characterised — it is the minimal-genome model organism — and the
+    *disease* is not. The axis conflates those, and this is the clearest record
+    in the corpus where they come apart.
+  - >
+    The claim that chlamydia treatment drove macrolide resistance is
+    well-supported and is **an inference from timing, ecology and mechanism
+    rather than a controlled demonstration**, which no design could have
+    provided.
+  - >
+    **`overtreatment_risk` does not fire on this record and it should.** The
+    derivation requires real capability, `prognostic: none`, and a
+    `costly`/`harsh` toll. The first two hold exactly — nobody can say who needed
+    treating — and the toll is `minor`, because a course of antibiotics does the
+    patient little harm. **The price of overtreating here is paid in resistance,
+    by people who are not yet infected**, which is the externality gaps.md #51,
+    #228 and this record's own `policy` blocker all describe and no field holds.
+    `acute-bronchitis` fails the same flag for the same reason. **Two records now
+    where the register's overtreatment guard is blind precisely because the harm
+    is not the patient's.**
+  - Written from model recall. The resistance prevalence, resistance-guided
+    therapy, the absence of a cell wall and the diagnostic timeline are the parts
+    most likely right; every number is the part most likely wrong.
+
+blockers:
+  - kind: knowledge
+    blocks: knowing whether this infection matters, which decides everything else
+    what: >
+      **THE FIELD CAN CHOOSE THE RIGHT ANTIBIOTIC FOR AN INFECTION IT CANNOT SAY
+      NEEDED TREATING.** Urethritis in men is a solid association. Cervicitis,
+      pelvic inflammatory disease, preterm birth and tubal infertility are
+      associated in some studies and not others, confounded by coexisting
+      chlamydia and by behaviour, and a substantial share of infection appears to
+      clear spontaneously without causing anything.
+      **Every other decision in this record is downstream of that gap.** Whether
+      to screen asymptomatic people; whether the current guideline advice not to
+      is protecting the antibiotic supply or leaving women with preventable tubal
+      damage; how much to invest in resistance testing; whether a second drug
+      class is urgent. All of it turns on a natural-history question that
+      requires long cohorts with reproductive endpoints, and those have not been
+      done.
+      **`genital-chlamydia` has the same question and forty years of data.** This
+      record has the same question and four. `scale: null` for the biology; the
+      cohort study is priceable and nobody is running it.
+    who_could: [academic, sponsor, government, health-system]
+    scale: null
+    standing: documented
+    src: reasoning
+    obstacles: [who-progresses]
+
+  - kind: policy
+    blocks: the treatment of one infection that made another one resistant
+    what: >
+      **SINGLE-DOSE AZITHROMYCIN FOR CHLAMYDIA IS THE LEADING EXPLANATION FOR
+      MACROLIDE RESISTANCE IN THIS ORGANISM**, which now exceeds fifty percent
+      across much of the high-income world and approaches eighty in some
+      populations. The mechanism is not disputed: co-infection is common, the
+      test for this organism did not exist, and a single macrolide dose that
+      reliably cures chlamydia does not reliably clear *M. genitalium* — it
+      selects within it.
+      **This register has repeatedly recorded that it cannot express a harm
+      landing on somebody other than the patient** — `acute-bronchitis`'s
+      resistance externality, `syphilis`'s doxycycline prophylaxis,
+      tuberculosis's transmission. **This is the sharpest instance: the harm
+      landed on a different disease**, and it is now `genital-chlamydia`'s
+      partial reason for moving to doxycycline.
+      The lever is prescribing policy and it has already moved. **What has not
+      moved is the resistance**, which persists in the population regardless of
+      what is prescribed now, and there is no mechanism by which it reverses.
+    who_could: [health-system, government, regulator, academic]
+    scale: 2.0e8
+    standing: documented
+    src: reasoning
+
+  - kind: diagnosis
+    blocks: the resistance test that makes the difference between 40% and 90%
+    what: >
+      **THE CAPABILITY `gonorrhoea` IS ASKING FOR EXISTS HERE AND IS UNEVENLY
+      DEPLOYED.** Macrolide resistance is conferred by identifiable 23S rRNA
+      mutations detectable from the same specimen that made the diagnosis.
+      Resistance-guided therapy — sequential doxycycline then azithromycin or
+      moxifloxacin according to genotype — raises cure from roughly forty percent
+      to above ninety, and is standard in Australia and parts of Europe.
+      **Most of the world has neither the organism test nor the resistance test.**
+      A patient with persistent urethritis then receives sequential empirical
+      antibiotic courses, which is precisely the behaviour that generated the
+      resistance being worked around.
+      This is an unusually clean purchasable intervention: **the assay exists, the
+      drugs are generic, and the gain is a doubling of cure rate with no new
+      science.** It is also the strongest available argument for the equivalent
+      investment in `gonorrhoea`, where the same approach would let a defeated
+      drug be used in the patients whose strain never lost it.
+    who_could: [manufacturer, health-system, payer, government]
+    scale: 3.0e8
+    standing: documented
+    src: reasoning
+
+  - kind: no-sponsor
+    blocks: a drug class for an organism with two and a half
+    what: >
+      **NO CELL WALL MEANS NO BETA-LACTAMS**, so the options were narrow before
+      resistance began. Macrolides are largely gone. Fluoroquinolone resistance
+      is rising fastest in the Asia-Pacific and moxifloxacin carries warnings
+      that discourage its use for exactly this kind of infection. Pristinamycin
+      and minocycline are salvage agents that are poorly evidenced and, in most
+      countries, unobtainable. **Untreatable cases are reported.**
+      Nothing is in development. The market is the familiar one and slightly
+      worse than `gonorrhoea`'s: a single course, for a non-fatal infection, in a
+      disease most clinicians have not heard of, **whose importance is
+      unestablished** — so there is not even an agreed size of problem to
+      motivate an investment.
+      **The resistance emergency and the natural-history uncertainty compound
+      each other**: nobody will fund a drug against a disease nobody has shown
+      matters, and nobody will fund the cohort study while the disease seems
+      treatable.
+    who_could: [sponsor, manufacturer, government, philanthropy]
+    scale: 8.0e8
+    standing: documented
+    src: reasoning
+
+assertion:
+  id: FND-A-0123
+  rated: 2026-08-28
+  by: [claude, jeremy]

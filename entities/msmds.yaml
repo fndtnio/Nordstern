@@ -1,0 +1,279 @@
+slug: msmds
+id: FND-D-0018
+name: multisystemic smooth muscle dysfunction syndrome
+also: [MSMDS, ACTA2 R179 syndrome, congenital mydriasis with patent ductus arteriosus]
+common: a rare ACTA2 syndrome
+mondo: MONDO:0013452
+kind: syndrome
+residual: false
+contested: false
+
+# The first record where the mechanism is `established` with NOTHING crossed off
+# the intervention ladder. Huntington's is the register's engineering-problem
+# control case and it is rated `partial`, because why mutant huntingtin kills
+# striatal neurons first is unexplained. Here there is no equivalent hole: one
+# recurrent codon, one protein, one tissue type, and every organ that tissue
+# serves fails in a way the mechanism predicts. Complete understanding, nothing
+# to do — this is the cleanest statement of that pair the register contains.
+#
+# It also breaks two things (see holes and gaps.md #33, #34): the burden is not
+# unverified but genuinely UNKNOWN, and the heterogeneity here runs across organ
+# systems WITHIN a patient, which `strata` cannot express because organs do not
+# partition a population.
+
+burden:
+  prevalence:
+    value: 1.0e-7
+    units: >
+      fraction-of-population (ORDER OF MAGNITUDE ONLY — see note; this is a
+      placeholder standing in for a number nobody has published)
+    src: unknown
+  note: >
+    There is no prevalence POINT ESTIMATE for this syndrome, and that is a
+    different condition from the rest of the register's numbers being unverified.
+    GBD does not cover it and the literature counts CASE REPORTS rather than
+    patients — on the order of one to two hundred
+    described since the syndrome was delineated around 2010, which is a count of
+    publications and of specialist referrals, not an incidence. The true figure
+    is unknowable from published sources and is certainly higher than the
+    reported one, because a neonate who dies of aortic dissection or an
+    unexplained stroke without ACTA2 sequencing is never counted. Treat the value
+    above as a placeholder that exists only to keep the field's shape; do not
+    compute with it.
+    CORRECTION, 2026-08-22, from `mondo_sync.py`: this record's Mondo term
+    carries cross-references to **Orphanet:404463** and **OMIM:613834**, and
+    Orphanet publishes prevalence CLASSES ("<1/1,000,000" and similar) rather
+    than point estimates. So "no registry publishes a denominator" was too
+    strong — there is very likely a published prevalence class that nobody here
+    has looked up. `src: unknown` should become a citation, and the fact that a
+    tool found this rather than a person is the argument for the tool.
+
+axes:
+  mechanism: established
+  intervention: symptomatic
+  prevention: none
+  ongoing: high
+  efficacy:
+    value: 0.0
+    units: fraction-of-patients (disease course altered)
+    src: reasoning
+  access:
+    value: 0.0
+    units: fraction-of-patients (no course-altering treatment to access)
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: n/a
+  witness: >
+    A refinement of the Huntington's lesson rather than a repeat of it, and the
+    difference is the whole reason to add this record. DIAGNOSTIC measurement is
+    as good as it gets: ACTA2 sequencing is definitive, and the clinical gestalt
+    is nearly pathognomonic before the test is sent — a neonate with fixed
+    dilated pupils that do not react to light and a patent ductus that will not
+    close is very unlikely to be anything else. PROGNOSTIC measurement is
+    `partial`, and the missing half has teeth. Genotype establishes that the
+    course will be severe, but nothing predicts WHEN the aorta will dissect or
+    when the cerebral arteries will stroke, and those two events are what kills
+    people here. PREDICTIVE is `n/a` on the same grounds as Huntington's: there
+    is no course-altering therapy whose response could be predicted.
+    Here is the refinement. In Huntington's, prognostic measurement is excellent
+    and buys nothing, because there is no decision downstream of the answer. Here
+    prognostic measurement is worse AND there is a live decision downstream —
+    when to replace the aortic root — currently made on diameter thresholds
+    borrowed from Marfan syndrome and other aortopathies, in a vessel wall whose
+    failure mode is not the same. So this is a rare shape: a measurement gap in
+    an entity with no capability at all, which nevertheless has something real to
+    aim. "Work on measurement where a treatment exists and is aimed badly" needs
+    widening — the treatment need not alter the disease to be worth aiming.
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    Paid in full by people whose disease is not altered by any of it. Prophylactic
+    aortic root and arch replacement, often in childhood and often more than once
+    as the rest of the vessel fails; a mechanical valve where one is used commits
+    the patient to lifelong anticoagulation and its bleeding risk. Bladder smooth
+    muscle that cannot contract means clean intermittent catheterisation
+    indefinitely, with the urinary tract infections that follow. Intestinal
+    hypoperistalsis means feeding difficulty, and in the worst cases parenteral
+    nutrition with its line sepsis and liver disease. The ductus is closed
+    surgically or by device in infancy. None of these is reversible and none of
+    them touches the actin.
+    THE FLAG THIS RECORD TRIPS IS HALF WRONG, and that is worth stating rather
+    than hiding: `harm_without_benefit` fires because the toll is major and
+    permanent on an entity rated `unsolved`. But aortic replacement buys
+    something real — not a cure, and not a modified course, but a specific death
+    that does not happen. See gaps.md #35; the rule conflates "the entity is
+    unsolved" with "this intervention gives nothing".
+  incidence:
+    value: 0.8
+    units: >
+      fraction-of-treated (any permanent surgical or supportive sequela) — a
+      reasoned estimate from the reported phenotype, not a measured figure
+    src: reasoning
+
+window:
+  what: >
+    The window is diagnostic, not therapeutic, which makes it unusual here.
+    Nothing done early alters the smooth muscle. What changes is whether anyone
+    is watching the aorta: a child known to carry an R179 variant enters
+    surveillance imaging and gets a planned operation, and a child who does not
+    presents with a dissection or a stroke. Congenital mydriasis is the sign that
+    should trigger sequencing, and it is visible in the first days of life at no
+    cost, by looking. Where the window closes it closes suddenly and the event is
+    frequently the presentation.
+  closes_on: first aortic dissection or cerebrovascular event
+  caught_in_time:
+    value: 0.6
+    units: >
+      fraction-of-patients (identified before a first vascular event) — a guess;
+      no denominator exists, and ascertainment bias inflates any figure computed
+      from case reports
+    src: unknown
+
+witness:
+  mechanism: >
+    Rated `established`, and it is the strongest such rating in the register.
+    ACTA2 encodes smooth muscle alpha-actin, the actin isoform of the contractile
+    apparatus in vascular and visceral smooth muscle. A recurrent de novo
+    missense substitution at arginine 179 — most often p.Arg179His, with Cys, Leu
+    and Ser also reported — acts in a DOMINANT-NEGATIVE fashion: the altered
+    protein is incorporated into filaments and poisons them, so a cell with one
+    good copy still cannot generate normal contractile force. Other ACTA2
+    variants cause familial thoracic aortic aneurysm and dissection without the
+    rest of the picture; R179 is the position that produces the syndrome, which
+    is itself evidence the mechanism is understood at residue resolution.
+    What makes it `established` rather than `partial` is that the chain explains
+    every feature without remainder, and explains them by ONE step. Fixed dilated
+    pupils: the iris muscles cannot contract. A ductus arteriosus that stays
+    patent: the ductal wall cannot constrict at birth. Aneurysm and dissection:
+    the aortic media cannot bear load. A characteristic cerebral arteriopathy
+    with a dilated internal carotid and narrowed distal branches, distinct from
+    idiopathic moyamoya. Hypotonic bladder. Intestinal hypoperistalsis and
+    malrotation. Pulmonary hypertension. There is no cell-type-selectivity
+    puzzle of the kind that keeps Huntington's at `partial` — the selectivity IS
+    the explanation. Every affected organ is an organ that runs on smooth muscle.
+  intervention: >
+    Rated `symptomatic`, and this is the rating most open to argument in the
+    record, so the argument is stated rather than buried. Everything available
+    manages a consequence: prophylactic aortic surgery, device or surgical
+    closure of the ductus, antiplatelet therapy and revascularisation for the
+    cerebrovascular disease, catheterisation for the bladder, nutritional support
+    for the gut. Beta blockers and angiotensin receptor blockers are used by
+    extrapolation from Marfan syndrome, where the wall biology is not the same
+    and where the evidence is about aortic growth rate rather than this
+    syndrome's outcomes.
+    THE COUNTERARGUMENT, which a reader should be able to press: prophylactic
+    aortic surgery in Marfan syndrome converted a median survival around forty
+    into something near normal, and if it does the same here then it is
+    disease-modifying by any reasonable reading. Two things hold the rating at
+    `symptomatic`. First, there is no MSMDS-specific evidence that it does —
+    the natural history is assembled from case reports. Second, and more
+    decisively, the aorta is one of at least six failing systems: the cerebral
+    arteries, the bladder and the gut are untouched by any of it, so even a
+    complete success at the aorta leaves the syndrome running. Rate this
+    `disease-modifying` and the register would be claiming something about the
+    course that nobody has shown.
+  prevention: >
+    `none`. The causative variants arise de novo; there is no exposure, no
+    behaviour and no prophylaxis. As with Huntington's, reproductive options
+    prevent the birth of an affected person and are not a preventive treatment,
+    and the register should not blur the two.
+  ongoing: >
+    `high`. Lifelong surveillance imaging, cardiac and vascular surgery often
+    beginning in infancy and repeated, daily catheterisation, feeding support,
+    and simultaneous care from cardiology, neurosurgery, urology,
+    gastroenterology and genetics. The coordination burden alone is substantial
+    and falls on families.
+
+holes:
+  - Prevalence is unknown rather than unverified, and the register currently has
+    no way to say so. The value in `burden` is a placeholder; see gaps.md #33.
+  - Whether prophylactic aortic surgery extends life IN THIS SYNDROME is unknown.
+    It is assumed from Marfan syndrome and other aortopathies, and the assumption
+    is load-bearing for the `symptomatic` rating being argued above.
+  - Whether beta blockers or angiotensin receptor blockers do anything here is
+    unknown, and they are prescribed anyway. This is a futile-treatment shape
+    that the register's flag cannot see, because `predictive: n/a` excludes it.
+  - Natural history, survival and the distribution of first events come from case
+    reports and small series, so every figure is ascertainment-biased toward the
+    severe. Nothing quantitative in this record should be trusted.
+  - The organ-by-organ heterogeneity has no home in the schema. `strata` cannot
+    hold it, because organ systems do not partition a population — every patient
+    has all of them. See gaps.md #34.
+  - This record was written from model recall of the clinical literature and has
+    not been checked against a primary source. The residue name, the inheritance
+    mechanism and the phenotype list are the parts most likely to be right; every
+    number is the part most likely to be wrong.
+
+blockers:
+  - kind: knowledge
+    obstacles: [tissue-repair]
+    blocks: any treatment that alters the smooth muscle defect
+    what: >
+      The binding constraint, and it is total. The target is a dominant-negative
+      point mutation in a structural protein expressed in every smooth muscle
+      cell in the body. Correcting it means either removing the mutant product or
+      repairing the allele, in the aorta and the cerebral arteries and the
+      bladder and the gut, without disturbing the wild-type copy that the cell
+      still needs. Nothing in clinical use does that in any tissue. `scale: null`
+      because there is no priced path to buy — which is the signature of a
+      research problem and the reason this record sits beside Huntington's rather
+      than beside sickle cell.
+    who_could: [academic, sponsor]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: tooling
+    obstacles: [cell-targeting]
+    blocks: allele-selective silencing or editing reaching smooth muscle
+    what: >
+      Named separately from the knowledge blocker because it is a different kind
+      of stuck, and because it is the one that has actually moved in the last
+      decade. A recurrent single-nucleotide dominant-negative variant is, in
+      principle, exactly what allele-selective antisense or base editing is for:
+      the mutant allele differs from the wild type at one position, which is the
+      discrimination such tools are built to make. What does not exist is
+      delivery — no modality reaches vascular and visceral smooth muscle
+      throughout the body at therapeutic dose. So the conceptual route is open
+      and the physical route is not.
+      `scale: null` is deliberate and is itself the finding: a delivery problem
+      that cannot be priced is not procurement, it is research wearing
+      procurement's clothes. Contrast every `documented` delivery blocker
+      elsewhere in the register, which comes with a number.
+    who_could: [academic, sponsor]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: no-sponsor
+    blocks: development of any therapy, IF one becomes possible
+    what: >
+      Recorded as `alleged` rather than `documented`, and the distinction is the
+      point of having the axis. It is obvious that a syndrome with perhaps a
+      hundred described patients worldwide has no commercial route, and it would
+      be easy to file that as documented market failure. But no sponsor has
+      declined anything here, because there is nothing to decline: with no
+      candidate, "no sponsor" is not currently binding on anyone. It is a
+      CONDITIONAL blocker — it would bind the moment the knowledge and tooling
+      blockers cleared — and the schema has no way to say that, so it is recorded
+      at the weaker standing rather than overstated. See gaps.md #36.
+      The comparison worth drawing: antivenom and benzathine penicillin are
+      documented market failures because a working product exists and was
+      withdrawn or under-supplied. Nothing was withdrawn here. The refrain this
+      register exists to test — "it is solvable but nobody will fund it" — is
+      simply not what is happening in this record, and saying so is as much the
+      job as finding the cases where it is.
+    who_could: [nonprofit, philanthropy, sponsor, patient-org]
+    scale: null
+    standing: alleged
+    src: reasoning
+
+assertion:
+  id: FND-A-0018
+  rated: 2026-08-20
+  by: [claude, jeremy]

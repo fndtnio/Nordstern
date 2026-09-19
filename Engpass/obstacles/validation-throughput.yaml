@@ -1,0 +1,276 @@
+slug: validation-throughput
+id: FND-O-0016
+name: How many candidates can actually be tested, and how fast?
+kind: tooling
+resolution: partly-answered
+
+question: >
+  Generating things to try has become cheap and is getting cheaper. **Finding
+  out whether any of them works has not.**
+  Every candidate has to pass a gate — assay, animal, phase 1, phase 2, phase 3 —
+  and the gate's capacity is measured in units that do not scale with compute:
+  animal-years, trial slots, eligible patients, clinicians willing to randomise,
+  and **follow-up time, which cannot be compressed at all.** A five-year survival
+  endpoint takes five years whatever else improves.
+  **THIS IS THE FOURTH SHAPE OF MODEL PROBLEM AND THE REGISTER HAD FILED THREE.**
+  `animal-translation` (FND-O-0010) is the gate that **misleads** — its own holes
+  say *"the gate is not empty, it is uncalibrated."* `no-model-system`
+  (FND-O-0013) is the gate that is **absent** — there is nowhere outside a
+  patient to study this. That record's opening even notes the pair: *"One says
+  the proxy lies; this one says there is no proxy."*
+  **Neither covers a gate that works well enough and is the wrong size**, and
+  `animal-translation` names three shapes and excludes a third on purpose without
+  ever asking how many things fit through per year. That omission is this record.
+  **TWO FACES, AND THEY ARE THE SAME GATE MEASURED FROM OPPOSITE ENDS.**
+  **VOLUME**: more candidates than capacity. Once a disease has several
+  treatments, knowing which to give first is an N-by-N comparison nobody funds —
+  `crohns` is blocked on *"choosing the right drug first"*, `rheumatoid-arthritis`
+  on *"what order to give them in, and whether anyone can stop"*,
+  `multiple-sclerosis` on the same, `schizophrenia` on *"not knowing which drug,
+  and finding out only by failing"*. **The drugs exist. The comparisons do not.**
+  **FLOOR**: fewer patients than a trial needs. `mesothelioma` is blocked by
+  being *"a rare cancer that cannot power the trials it needs"*; `prion-disease`
+  by *"running a trial in a disease that kills before it can be studied"*. Here
+  the gate is not too narrow, it is too wide — the minimum viable trial is larger
+  than the disease.
+  `partly-answered`, and the movement is real. Adaptive platform trials —
+  RECOVERY above all, which randomised tens of thousands of patients inside
+  routine care and answered several questions in months at trivial cost per
+  patient — demonstrate that this gate can be widened by an order of magnitude
+  with organisation rather than technology. **Almost nowhere has done it since**,
+  which is why `covid-19`'s own blocker is *"most of the world being unable to
+  answer a clinical question."*
+
+what_it_unblocks: >
+  **THE HONEST HEADLINE FIRST: A WIDER GATE WITH THE SAME SELECTION PROCESS FAILS
+  FASTER, IT DOES NOT SUCCEED MORE.** Nordstern gaps.md #101, and this record is
+  unusually exposed to it. Multiplying the numerator of a fraction whose
+  denominator is fixed produces a queue, not a therapy; doubling trial capacity
+  while choosing candidates the same way doubles the number of negative trials.
+  **So this obstacle is only worth money alongside `who-progresses`** (FND-O-0001,
+  the largest in this register at 49 records), which is the selection question at
+  the bedside and is the same question at the front of the funnel: *which one, in
+  whom.* Filed as a separate obstacle because the fix is different — one is a
+  prediction problem and one is capacity — and because conflating them is how
+  "we can generate a million molecules" gets mistaken for progress.
+  **WHAT IS ACTUALLY WAITING HERE IS 36 RECORDS**, a quarter of the register,
+  each carrying an `evidence-incomplete` or `candidate-untested` blocker: a
+  plausible thing exists and nobody has established whether it works. Read the
+  `blocks:` lines together and they are one complaint in thirty-six voices.
+  **THE COMPARISON PROBLEM IS THE LARGEST AND THE LEAST DISCUSSED.**
+  `spinal-muscular-atrophy`: *"three drugs, no comparisons, and questions that
+  take decades."* Three approved therapies for a disease that was uniformly fatal
+  a decade ago, and no head-to-head evidence, so the choice is made on route of
+  administration and price. The same shape in `crohns`, `rheumatoid-arthritis`,
+  `multiple-sclerosis`, `schizophrenia`, `depression`, `pots` and `echinococcosis`
+  — **eight records where the treatments exist and the knowledge of how to use
+  them does not**, because the trial that would settle it has no sponsor and
+  would take a decade.
+  **AND TIME IS THE PART NOTHING FIXES.** `cystic-fibrosis` is blocked on
+  *"knowing what a lifetime of this drug does, when the answer arrives in 2080."*
+  `parkinsons` on *"being able to measure whether anything slowed the disease."*
+  No amount of candidate generation touches either.
+  **WHAT IT WOULD BUY, STATED CONSERVATIVELY:** the ability to run the
+  comparisons that already-approved drugs have never had, in diseases where the
+  molecules are sitting on the shelf. That is not a cure for anything. It is the
+  difference between a patient getting the right one of four drugs first and
+  getting it fourth, which in `crohns` and `rheumatoid-arthritis` is measured in
+  bowel and in eroded bone.
+
+why_hard: >
+  **BECAUSE EVERY ATTEMPT TO WIDEN THE GATE BY LOWERING THE BAR IS IN THIS
+  CORPUS AS A WITHDRAWAL.** This is the strongest argument against the obvious
+  fix and it is entirely made of the register's own records. Accelerated approval
+  on a surrogate endpoint is exactly "get through the gate faster", and:
+  `alzheimers` — approved 2021 on amyloid clearance, coverage restricted,
+  **discontinued 2024**. `als` — approved 2022, phase 3 negative, **withdrawn
+  2024**. `duchenne` — a readthrough agent held conditional European authorisation
+  for about a decade, confirmatory trial failed, **authorisation lapsed**.
+  `sepsis` — the only drug ever approved for it, promoted for a decade,
+  **withdrawn worldwide in 2011** after a confirmatory trial found no benefit.
+  **Four independent instances, all in the last twenty years, all of them the
+  gate being widened and the thing that came through being wrong.**
+  **BECAUSE MOST OF THE GATE'S WIDTH IS TIME, AND TIME IS THE ENDPOINT.** In a
+  chronic disease the question *does this extend life* is answered by waiting.
+  Surrogate markers are the only compression available and the paragraph above is
+  what happens when they are trusted.
+  **BECAUSE THE FLOOR CANNOT BE LOWERED BY SPENDING.** `mesothelioma`,
+  `prion-disease`, `mycetoma` and `dipg` do not have enough patients in the world
+  to power a conventional trial at any budget. That is arithmetic, not funding,
+  and it is why rare disease keeps arriving at single-arm studies against
+  historical controls — which is the evidentiary standard the withdrawals above
+  are a warning about. **The two faces of this obstacle pull in opposite
+  directions and the same regulator has to hold both.**
+  **BECAUSE NOBODY OWNS THE COMPARISON.** A head-to-head trial between two
+  approved drugs has a clear beneficiary — patients and payers — and no sponsor:
+  each manufacturer risks losing and neither gains. This is `no-sponsor` applied
+  to a question rather than to a product, and it is why eight records here are
+  waiting on trials that would be cheap relative to what they would save.
+  **AND BECAUSE THE DEMONSTRATION EXISTS AND WAS NOT COPIED.** RECOVERY showed
+  the volume face is soluble with organisation — embed randomisation in routine
+  care, keep the protocol to one page, accept the outcome data the health system
+  already collects. It ran during an emergency, it answered questions in months,
+  and **five years later almost no health system has a standing platform.** A
+  capability that has been demonstrated and not adopted is a different kind of
+  hard from one that has not been invented, and this register has a name for it:
+  `clubfoot`'s 1963 method, ignored for forty years.
+
+claims:
+  # `mesothelioma` AND `spinal-muscular-atrophy` WERE CLAIMED HERE AND WERE
+  # DELETED ON 2026-09-02, HOURS AFTER THIS RECORD WAS WRITTEN.
+  #
+  # Both blockers were then tagged `validation-throughput` by the person rating
+  # them, which made those links DERIVED — and `check.py` errors on a claim
+  # naming a disease that already cites the record, because the link would be
+  # stored twice and the copies could drift. It fired on both.
+  #
+  # This is the second time the transition has happened (`growth-control` /
+  # `hearing-loss` was the first) and the schema still has no name for it. A
+  # claim is GRADED — `documented` or `refuted` — when the QUESTION is answered.
+  # These were not graded. They stopped being claims because somebody rating the
+  # disease agreed with them, which is a different and far cheaper event.
+  #
+  # RESTORED THE SAME DAY AS `standing: derived`, WHICH IS WHY THAT VALUE EXISTS.
+  # Deleting them destroyed the only evidence the assertion came first, and an
+  # assertion that was later earned is the most interesting kind this register
+  # holds. They are receipts for links that live in Nordstern, not second copies
+  # of them: `check.py` errors if the citation they point at disappears, and they
+  # are excluded from the claim count and from the dashboard's claim chips.
+  - unblocks: mesothelioma
+    standing: derived
+    why: >
+      **ASSERTED HERE FIRST, AND EARNED HOURS LATER.** Filed as `alleged` on the
+      day this obstacle was written, on the strength of the record's own blocker
+      text — *"a rare cancer that cannot power the trials it needs"* — which is
+      this obstacle's floor face almost verbatim. The blocker was then tagged
+      `validation-throughput` by the person rating it, and the link became
+      derived.
+      **The competing explanation was recorded at the time and still stands**:
+      that mesothelioma's problem is that nothing works, not that nothing was
+      tested. Being cited does not settle that; it records that somebody looking
+      at the disease agreed the trial constraint was real.
+  - unblocks: spinal-muscular-atrophy
+    standing: derived
+    why: >
+      **THE PUREST COMPARISON FAILURE IN THE REGISTER, ASSERTED AND THEN AGREED
+      WITH.** *"Three drugs, no comparisons, and questions that take decades."* A
+      disease uniformly fatal within a professional lifetime now has three
+      approved therapies and no head-to-head evidence, so the choice is made on
+      route and price. Nothing needs discovering; a trial needs running and
+      nobody will run it.
+      Earned on 2026-09-02. **The honest caveat survives the earning**: this may
+      be `no-sponsor` wearing a lab coat, and the boundary between *the evidence
+      is missing* and *nobody will pay for the evidence* is thin enough that the
+      record says so in its own blocker.
+
+  # FOUR EARNED, ONE STILL ASSERTED, AND THE FOUR COVER ALL THREE FACES:
+  # `spinal-muscular-atrophy` and `crohns` for volume, `mesothelioma` for the
+  # floor, `cystic-fibrosis` for time. **That is a better spread than this record
+  # had any right to expect on its first day, and it is worth being suspicious
+  # of** — all four were tagged by the same person who wrote the obstacle, in the
+  # same session, from a candidate set of 36. See `holes`.
+  #
+  # `prion-disease` below is the one nobody has agreed with.
+  - unblocks: cystic-fibrosis
+    standing: derived
+    why: >
+      **THE TIME FACE, ASSERTED AND THEN EARNED THE SAME DAY.** Blocked on
+      *"knowing what a lifetime of this drug does, when the answer arrives in
+      2080"* — the face nothing on the discovery side touches, because the
+      question is answered by waiting.
+      What a wider gate buys here was stated conservatively when this was a claim
+      and did not change when it became a link: a standing registry with
+      prospective randomisation embedded in routine care answers long-horizon
+      questions decades earlier than a series of fixed trials does. **It does not
+      compress the horizon**, and saying otherwise would be the surrogate-endpoint
+      mistake this record's `why_hard` is built around.
+  - unblocks: crohns
+    standing: derived
+    why: >
+      *"Choosing the right drug first."* Several biologics, no reliable ordering,
+      and the cost of getting it wrong measured in bowel resected while the
+      sequence is worked out empirically. Earned on 2026-09-02.
+      **AND THE COUNTER-ARGUMENT SURVIVES THE EARNING, WHICH IS WHY THESE
+      RECEIPTS ARE WORTH KEEPING.** It may be `who-progresses` wearing a capacity
+      costume: if nothing predicts response — and this record's `predictive`
+      rating says nothing does — then more comparisons produce better population
+      averages and still no answer for the patient in front of you. **Being cited
+      records that somebody rating the disease agreed the trial constraint was
+      real. It does not establish that it is the binding one**, and this is the
+      clearest case in the register of two obstacles that cannot yet be
+      separated.
+  - unblocks: prion-disease
+    standing: alleged
+    why: >
+      **"Running a trial in a disease that kills before it can be studied."** The
+      floor face at its most extreme: by the time the diagnosis is made the
+      patient has months, the population is tiny and dispersed, and there is no
+      pre-symptomatic cohort outside a few known inherited kindreds. The claim is
+      that trial infrastructure built around those kindreds — enrolling before
+      symptoms, on a biomarker — is the only design that could ever produce
+      evidence here. **It is also the claim most likely to be refuted**, because
+      it assumes a candidate worth testing, and this record's `intervention` is
+      `none`.
+
+holes:
+  - >
+    **THE TWO FACES MAY BE TWO OBSTACLES, AND THE FIX FOR ONE MAKES THE OTHER
+    WORSE.** Volume wants a wider, faster, cheaper gate. The floor wants a gate
+    that will accept weaker evidence from smaller populations. **A regulator
+    loosening the standard to help `mesothelioma` is loosening it for everybody**,
+    and this record's own `why_hard` lists four drugs that came through a loosened
+    gate and were withdrawn. Held together because they are the same measurement —
+    how much evidence can be produced per unit of time and population — and it may
+    be that only the coupling is shared and nothing else is. Same doubt
+    `cell-targeting` and `growth-control` both log against themselves.
+  - >
+    **FOUR DERIVED CITATIONS, ALL TAGGED ON THE DAY THIS RECORD WAS WRITTEN, BY
+    THE PEOPLE WHO WROTE IT.** `mesothelioma` (floor), `spinal-muscular-atrophy`
+    and `crohns` (volume), `cystic-fibrosis` (time) — a clean sweep of all three
+    faces on day one, out of a candidate set of thirty-six.
+    **That is the shape of a confirmed hypothesis and also the shape of an author
+    marking their own homework**, and `growth-control` logs the identical problem
+    from the same afternoon: an obstacle names the records that would test it,
+    and then those records get tagged. The links are real — each blocker's text
+    predates the obstacle and each argues for the tag in its own words — and
+    **they are not independent evidence.** Engpass still has no field for how a
+    link was obtained, and after two instances in one day it plainly needs one.
+    **The alternative reading is untouched by any of this.** Those records may be
+    waiting on money, on a sponsor, or on `who-progresses`, and "not enough trial
+    capacity" may be `no-sponsor` in a lab coat — which is exactly the accusation
+    this register makes about the untagged `knowledge` pile. `crohns` says so in
+    its own blocker and cannot resolve it. **The clean test is whether a rating
+    pass by somebody else, on a record this obstacle never named, tags a fifth.**
+  - >
+    **IT IS THE OBSTACLE MOST LIKELY TO BE A COMPLAINT ABOUT INCENTIVES RATHER
+    THAN A CAPABILITY GAP.** Nothing prevents a head-to-head trial of three SMA
+    drugs except that nobody with the money wants the answer. If that is the whole
+    of it, this belongs in Nordstern as a `no-sponsor` blocker on eight records
+    and not here at all. The counter-argument is the floor face, which is
+    arithmetic and would survive unlimited funding — but that face covers far
+    fewer records than the volume face does.
+  - >
+    **`partly-answered` LEANS ENTIRELY ON RECOVERY AND ONE DEMONSTRATION IS THIN.**
+    It ran in one country, in a pandemic, on an acute disease with a short
+    endpoint, with emergency governance and a population that was in hospital
+    anyway. **Nothing about it establishes that the same design works for a
+    ten-year outcome in an outpatient chronic disease**, which is where most of
+    the 36 records are. If it does not generalise, this record should be `open`.
+  - >
+    **THE 36-RECORD FIGURE IS A LOWER BOUND AND THE OBSTACLE'S REAL SUBJECT IS
+    UNCOUNTABLE.** It counts candidates somebody wrote into a record. The argument
+    that prompted this obstacle — *millions of generated compounds against a fixed
+    number of mice* — concerns candidates that exist in no register anywhere. The
+    register can measure the queue it can see and has no way to measure the queue
+    behind it, so **every number here understates the thing being described.**
+  - >
+    **`scale: null` is not asserted, because Engpass does not price obstacles.**
+    Were a blocker to cite this, the pricing would be unusually clear for once —
+    a platform trial has a budget, and unlike most knowledge blockers this is
+    buyable, parallelisable work. That makes it the second entry after
+    `cell-targeting` to threaten the register's headline finding that knowledge
+    blockers cannot be triaged with money.
+
+asserted:
+  date: 2026-09-02
+  by: [claude, jeremy]

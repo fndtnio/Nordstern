@@ -1,0 +1,207 @@
+slug: amr-infection
+id: FND-D-0014
+name: infection with multidrug-resistant bacteria
+also: [AMR, antimicrobial resistance, drug-resistant bacterial infection]
+common: antibiotic-resistant infection
+mondo: unresolved
+kind: syndrome
+residual: false
+contested: false
+
+# The record that tests whether the "it's solvable, industry/regulators won't"
+# refrain survives contact with specifics. It holds one blocker that is squarely
+# `documented` (the antibiotic market has demonstrably failed) and one that is
+# `disputed` (phage therapy), and keeping them in different epistemic categories
+# is the point of the exercise.
+#
+# Note the schema convention: a TREATMENT is never an entity. Phage therapy
+# appears here, as a blocker on this disease.
+
+burden:
+  deaths_attributable:
+    value: 1.27e6
+    units: deaths/year (directly attributable to resistance)
+    src: recall
+  deaths_associated:
+    value: 4.95e6
+    units: deaths/year (associated with resistance)
+    src: recall
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: risk-reduction
+  ongoing: low
+  efficacy:
+    value: 0.75
+    units: fraction-of-patients (an effective agent exists and works)
+    src: recall
+  access:
+    value: 0.5
+    units: fraction-of-patients (able to obtain the right agent)
+    src: recall
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: partial
+  witness: >
+    The predictive test exists, works, and is too slow to matter when it
+    matters: culture and susceptibility take two to three days, so the first
+    and most consequential days of treatment are empiric. That single latency
+    drives both worse outcomes and the broad-spectrum prescribing that
+    generates more resistance. This is measurement as a `tooling` problem
+    rather than a `knowledge` one — the biology is understood and the assay is
+    the bottleneck.
+
+toll:
+  severity: minor
+  permanent: true
+  what: >
+    Last-line agents are last-line partly because of what they cost the
+    patient: aminoglycosides cause irreversible hearing loss and vestibular
+    injury, colistin and amphotericin cause nephrotoxicity. Salvaging a
+    resistant infection can mean trading it for permanent deafness — a toll
+    that has largely disappeared from view in settings where better agents are
+    available and remains routine where they are not.
+  incidence:
+    value: 0.1
+    units: fraction-of-treated (drug-induced organ injury on last-line agents)
+    src: recall
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    Surviving a severe drug-resistant infection is not the same as being
+    returned. Post-sepsis syndrome is well described — lasting physical
+    deconditioning, cognitive impairment, and raised mortality for months to
+    years afterwards; septic shock with peripheral ischaemia takes fingers,
+    toes and limbs; acute kidney injury sometimes does not fully recover.
+    Rated with a wide margin of doubt because this record covers a category
+    rather than an entity, and the residue of a resistant urinary infection and
+    of resistant septic shock are not the same thing. What is not in doubt is
+    that the register was recording `terms: clean` for it.
+  incidence:
+    value: 0.25
+    units: >
+      fraction-of-survivors (persistent impairment after severe infection —
+      post-sepsis physical and cognitive decline, amputation, organ
+      dysfunction)
+    src: reasoning
+
+witness:
+  mechanism: >
+    `established`, unusually completely: beta-lactamases and carbapenemases,
+    efflux pumps, porin loss, target-site modification, and the population
+    genetics of horizontal transfer are all characterised, and resistance
+    evolution is one of the best-documented instances of natural selection in
+    any field. Nothing about this problem is a mystery.
+  intervention: >
+    `curative` for most, and the average conceals the important part. For the
+    majority of resistant infections an effective agent still exists and cures
+    the patient. For pan-resistant organisms — some Acinetobacter baumannii,
+    Pseudomonas aeruginosa, carbapenem-resistant Enterobacterales — there may
+    be nothing, and for those patients the honest rating is `none`. This entity
+    should be split; see holes.
+  prevention: >
+    `risk-reduction`, and the largest available lever: infection prevention and
+    control, stewardship, water and sanitation, and vaccines that remove the
+    occasion for antibiotics at all. Prevention here competes well with any
+    therapeutic.
+
+blockers:
+  - kind: no-sponsor
+    blocks: novel antibiotics
+    what: >
+      The clearest documented market failure in pharmaceuticals, and it fails in
+      an unusual direction: a successful new antibiotic is one that is *held in
+      reserve and barely sold*, so commercial reward is inversely related to
+      good stewardship. Achaogen filed for bankruptcy in 2019, shortly after
+      winning FDA approval for plazomicin; Melinta followed. Large companies
+      have largely exited the field. Proposed fixes are "pull" incentives that
+      pay for availability rather than volume — NHS England has piloted a
+      subscription model, and the PASTEUR Act has been introduced in the US
+      Congress without being enacted. This blocker is not a matter of opinion.
+    who_could: [government, legislator, philanthropy, nonprofit]
+    scale: 1e9
+    standing: documented
+    src: recall
+  - kind: regulatory
+    blocks: bacteriophage therapy
+    what: >
+      The claim commonly heard is "phage therapy works and the FDA will not
+      approve it". Decomposed, it is partly true and mostly not, and the
+      distinctions matter for anyone thinking of funding it.
+      TRUE: there is a real framework mismatch. Phages self-replicate and must
+      be matched to the patient's specific bacterial strain, so the product
+      differs per patient — which a licensing regime built around a fixed
+      molecule at a fixed dose fits badly. Phage therapy is also used routinely
+      in Georgia (the Eliava Institute) and historically in Poland and the
+      former USSR, so "nobody uses it" is false.
+      FALSE, as usually stated: access is not refused. US patients have been
+      treated under single-patient emergency expanded-access INDs, repeatedly
+      and with documented successes — the 2016 Acinetobacter case at UC San
+      Diego that led to the IPATH centre, and a 2019 Mycobacterium abscessus
+      case in a cystic fibrosis patient in London. Regulators have engaged
+      rather than obstructed.
+      UNRESOLVED, and probably the actual bottleneck: randomised evidence is
+      thin and what exists is largely unconvincing — PhagoBurn was underpowered
+      with manufacturing potency problems, and a trial in paediatric diarrhoea
+      was negative. Whether that reflects the therapy or the trial designs is
+      exactly what is unknown.
+      So: `disputed`, not `documented`. Anyone wanting to clear this should
+      probably fund manufacturing standards, phage banks and matching
+      infrastructure plus a properly powered trial, not a legal campaign.
+      **AND THIS RECORD IS SCOPED TO BACTERIA, WHICH LOSES THE BEST CASE.** The
+      2019 result was *Mycobacterium abscessus* in cystic fibrosis — a
+      mycobacterium, not one of the ESKAPE organisms this entity holds — and
+      `cystic-fibrosis` now carries it as a `candidate-untested` blocker in its
+      own right. **The same modality, filed under two blocker kinds, because the
+      two records are waiting for different things**: this one wants an evidence
+      and manufacturing framework, that one wants a phage matching one patient's
+      organism. The compassionate-use series that followed is the honest
+      counterweight and is recorded there — mixed responses, neutralising
+      antibodies, and **no suitable phage found at all for a substantial share of
+      isolates screened.**
+    who_could: [regulator, academic, nonprofit, philanthropy]
+    scale: 1e8
+    standing: disputed
+    src: recall
+  - kind: tooling
+    blocks: targeted therapy from the first dose
+    what: >
+      Rapid strain identification and susceptibility testing at the bedside
+      would narrow empiric therapy, improve outcomes and slow resistance —
+      without any new drug. Also the missing infrastructure for phage matching.
+      A software-and-assay problem, not a biology problem.
+    who_could: [software, academic, nonprofit]
+    scale: 1e8
+    standing: documented
+    src: recall
+  - kind: policy
+    blocks: stewardship and prevention
+    what: >
+      Over-the-counter antibiotic sales, agricultural growth-promotion use, and
+      absent infection-control regulation. Known, quantified, and politically
+      hard rather than technically hard.
+    who_could: [government, legislator]
+    scale: null
+    standing: documented
+    src: recall
+
+holes:
+  - The entity must be split. "Effective agent exists" and "nothing exists" are
+    different diseases sharing a name, and averaging them produces a rating
+    (`curative`, efficacy 0.75) that describes no actual patient.
+  - Whether phage therapy works, in whom, is genuinely open — and the register
+    should record that the usual explanation for the uncertainty is not the
+    correct one.
+  - Attributable-versus-associated mortality differs roughly fourfold and the
+    two are frequently quoted interchangeably; any burden-weighted use must
+    pick one and say which.
+
+assertion:
+  id: FND-A-0014
+  rated: 2026-08-11
+  by: [claude, jeremy]

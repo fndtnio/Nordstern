@@ -1,0 +1,560 @@
+slug: glioblastoma
+id: FND-D-0105
+name: glioblastoma
+also: [GBM, glioblastoma multiforme, grade 4 astrocytoma, high-grade glioma, brain cancer]
+mondo: MONDO:0018177
+kind: disease
+residual: false
+contested: true
+
+# THE SECOND RECORD IN THE `terminal` BAND, AND THE ONE THAT SHOWS WHY EARLIER
+# DETECTION IS NOT ALWAYS THE ANSWER.
+#
+# Median survival with surgery, radiotherapy and temozolomide is around fifteen
+# months. Five-year survival is roughly six percent. **The standard of care was
+# established in 2005 and nothing has displaced it in twenty-one years** — the
+# longest unbroken standard of any cancer in this register.
+#
+# **AND THIS RECORD CARRIES NO `window` BLOCK, DELIBERATELY.** Almost every other
+# cancer here has one: catch it before it spreads and the outcome changes.
+# Glioblastoma is **diffusely infiltrative from before it is detectable** —
+# tumour cells migrate along white matter tracts centimetres beyond anything
+# visible on MRI, which is why "complete resection" is a description of the
+# imaging rather than of the disease, and why it recurs at the margin every time.
+# There is no premalignant phase, no screening, and **no good reason to think
+# finding it earlier would change the outcome much.** That absence is a finding
+# and the register should be able to state it.
+#
+# It is also the clearest `cell-targeting` record in the corpus. The barrier is
+# not one thing but two: the blood-brain barrier keeps drugs out, and the cells
+# that matter are individually dispersed through brain you cannot remove or
+# irradiate.
+
+burden:
+  cases:
+    value: 1.5e5
+    units: >
+      new cases/year worldwide, approximately — **a soft figure.** GBD counts
+      "brain and central nervous system cancer" at roughly 300,000 cases;
+      glioblastoma is the commonest malignant primary brain tumour and roughly
+      half of them, and registry practice for what counts has changed (see the
+      2021 `moved` entry)
+    src: recall
+  deaths:
+    value: 1.4e5
+    units: >
+      deaths/year, approximately. **Cases and deaths are nearly the same number,
+      which is the arithmetic of a disease that kills almost everybody within two
+      years** — the same signature `als` carries
+    src: recall
+  note: >
+    **THE BURDEN IS SMALL AND THE ATTENTION IS NOT, AND BOTH FACTS ARE
+    DEFENSIBLE.** A hundred and fifty thousand cases against lung cancer's two
+    million. But it kills young and middle-aged adults, it takes cognition and
+    personality before it takes life, and it has been a target of enormous
+    research investment for four decades — which makes it one of the register's
+    best tests of whether effort tracks anything at all.
+
+survival:
+  horizon: 5 years from diagnosis
+  untreated:
+    value: 0.0
+    units: >
+      fraction alive — untreated glioblastoma has a median survival of roughly
+      three to four months
+    src: recall
+  treated:
+    value: 0.06
+    units: >
+      fraction alive on maximal safe resection, radiotherapy and temozolomide.
+      **Median survival is around fifteen months**, and the five-year figure is
+      carried disproportionately by younger patients with MGMT-methylated tumours
+    src: recall
+  witness: >
+    **`terminal` BY THE BAND AND BY EVERY OTHER READING.**
+    Six percent at five years, and unlike `als` a small number of those people
+    are genuinely long-term survivors rather than slowly dying — which makes this
+    record the *other* side of gaps.md #216. **ALS at 0.20 is entirely delay;
+    glioblastoma at 0.06 is mostly delay with a real tail of something closer to
+    cure.** One axis, three meanings, and the field still cannot tell them apart.
+    **The number has moved and it is worth being precise about how much.** Before
+    2005, median survival on radiotherapy alone was around twelve months; adding
+    temozolomide took it to about fifteen and roughly doubled two-year survival.
+    That is a real gain and it is two and a half months of median life, in a
+    disease that has absorbed four decades of the best-funded cancer research
+    there is.
+
+axes:
+  mechanism: partial
+  intervention: disease-modifying
+  prevention: none
+  ongoing: high
+  efficacy:
+    value: 0.20
+    units: >
+      fraction-of-patients (meaningful survival extension from best available
+      treatment) — **concentrated almost entirely in the MGMT-methylated
+      minority**, for whom temozolomide does substantial work, and close to
+      nothing in the unmethylated majority
+    src: reasoning
+  access:
+    value: 0.30
+    units: >
+      fraction-of-patients (reaching neurosurgery with intraoperative
+      navigation, radiotherapy planning and temozolomide) — **this is a
+      neurosurgical service, not a prescription**, and most of the world does not
+      have one within reach of a person who has weeks to be operated on
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: good
+  predictive: partial
+  witness: >
+    **DIAGNOSTIC IS `objective` AND THE DEFINITION MOVED UNDERNEATH IT IN 2021.**
+    MRI is characteristic and tissue is definitive, but **what counts as
+    glioblastoma is now a molecular question rather than a microscopic one.** The
+    2021 WHO classification restricted the term to **IDH-wildtype** tumours;
+    IDH-mutant tumours that used to be called glioblastoma became grade 4
+    astrocytoma, a different and better-prognosis disease. See the 2021 `moved`
+    entry, because the consequence is a survival statistic that improved without
+    anybody being treated differently.
+    PROGNOSTIC is `good`, which is a strange thing to say about a disease this
+    lethal and it is accurate: **age, performance status, extent of resection and
+    MGMT promoter methylation predict survival with real reliability.** The
+    register's `prognostic` axis asks whether we can say what it will do
+    untreated, and here we can, precisely, and the answer is always bad.
+    PREDICTIVE is `partial` and rests on one marker. **MGMT promoter methylation
+    predicts benefit from temozolomide** — present in roughly four in ten tumours,
+    and in the unmethylated majority the drug does little. It is a genuine
+    predictive biomarker doing real work in a register where that column is mostly
+    empty. **What is not predicted is anything about the other treatments**,
+    because there are no other treatments.
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    **THE TREATMENT IS APPLIED TO THE ORGAN THAT MAKES THE PERSON.**
+    **Craniotomy** for maximal safe resection is a balance between removing
+    tumour, which extends survival, and removing brain, which does not come back.
+    Awake mapping exists precisely because the surgeon needs to know where speech
+    and movement are before cutting. Post-operative neurological deficit is
+    common and permanent.
+    **Radiotherapy** to the brain produces fatigue, and months to years later,
+    **radiation necrosis** — irradiated brain that dies — and cognitive decline
+    that is difficult to disentangle from the tumour's own effect.
+    **And the drug nobody counts is dexamethasone.** Most patients take
+    corticosteroids for months to control oedema, and the register has an entire
+    record — `osteoporosis` — about what that does. Myopathy, hyperglycaemia,
+    weight gain, insomnia, psychiatric effects, immunosuppression and bone loss,
+    in a patient who has fifteen months.
+    **Temozolomide itself is comparatively gentle**: myelosuppression, nausea,
+    fatigue. The heavy prices here are paid by the brain and by the steroid.
+    **What the schema cannot record is that the tumour takes personality.**
+    Frontal and temporal disease alters judgement, inhibition and recognition
+    before it alters anything measurable, and families describe losing the person
+    well before the death. `toll` holds what treatment took; there is no field for
+    what the disease takes that is not function.
+  incidence:
+    value: 0.50
+    units: >
+      fraction-of-treated (permanent harm — post-operative neurological deficit,
+      radiation necrosis, cognitive decline attributable to treatment, and
+      corticosteroid sequelae) — a reasoned estimate, and difficult to separate
+      from the disease
+    src: reasoning
+
+strata:
+  - name: MGMT-methylated
+    fraction:
+      value: 0.40
+      units: fraction-of-people-with-glioblastoma
+      src: reasoning
+    intervention: disease-modifying
+    efficacy:
+      value: 0.35
+      units: fraction-of-stratum (meaningful survival extension on temozolomide)
+      src: reasoning
+    toll: major
+    what: >
+      **THE STRATUM THE STANDARD OF CARE ACTUALLY WORKS IN.** A methylated MGMT
+      promoter silences the repair enzyme that undoes temozolomide's damage, so
+      the drug does what it is supposed to. Median survival is materially longer
+      and the five-year tail is drawn almost entirely from here. **It is one
+      biomarker, it is cheap, and it is the only thing in this record that selects
+      a treatment.**
+
+  - name: MGMT-unmethylated
+    fraction:
+      value: 0.45
+      units: fraction-of-people-with-glioblastoma
+      src: reasoning
+    intervention: symptomatic
+    efficacy:
+      value: 0.08
+      units: fraction-of-stratum (meaningful survival extension)
+      src: reasoning
+    toll: major
+    what: >
+      **THE LARGEST STRATUM, AND TEMOZOLOMIDE DOES LITTLE FOR IT.** The tumour
+      repairs the damage as fast as the drug does it. These patients receive the
+      same protocol anyway, because there is nothing else to give them and
+      withholding it on a biomarker has never been shown to be safe — **which is
+      a predictive marker that identifies futility without offering an
+      alternative**, and the register's `futile_treatment_risk` flag exists for
+      exactly this.
+
+  - name: elderly or poor performance status
+    fraction:
+      value: 0.15
+      units: fraction-of-people-with-glioblastoma
+      src: reasoning
+    intervention: symptomatic
+    efficacy:
+      value: 0.05
+      units: fraction-of-stratum (meaningful survival extension)
+      src: reasoning
+    toll: major
+    what: >
+      Hypofractionated radiotherapy with or without temozolomide, or
+      best supportive care. **Median survival is measured in months and the
+      trade against treatment toxicity is genuinely close**, which is why this
+      row exists separately: the right answer for a frail eighty-year-old is
+      sometimes not to treat, and the register's axes have no way to say that a
+      *decision not to treat* can be good medicine.
+
+moved:
+  - date: 2005
+    axis: efficacy
+    from: 0.12
+    to: 0.20
+    why: >
+      **THE STUPP PROTOCOL, AND THE FACT ABOUT IT THAT MATTERS IS THE DATE.**
+      Adding temozolomide to radiotherapy after surgery increased median survival
+      from about 12.1 to 14.6 months and roughly doubled survival at two years.
+      It became the standard of care immediately and **it is still the standard of
+      care twenty-one years later.**
+      **No cancer in this register has gone longer without its standard being
+      displaced.** Compare `melanoma`, transformed twice since 2011;
+      `non-hodgkin-lymphoma`, twice since 1997; `cml`, once and completely.
+      Dozens of phase 3 trials in glioblastoma have failed in the intervening
+      period — anti-angiogenics that improved progression-free survival and not
+      overall survival, checkpoint inhibitors that did nothing, vaccines,
+      oncolytic viruses, targeted agents against EGFR.
+      **Two and a half months of median survival is the whole of what four decades
+      of the best-funded cancer research has bought this disease**, and stating
+      that plainly is more useful than the alternative.
+    src:
+      id: PMID:15758009 doi:10.1056/NEJMoa043330
+      retrieved: 2026-08-28
+      quote: >
+        The addition of temozolomide to radiotherapy for newly diagnosed
+        glioblastoma resulted in a clinically meaningful and statistically
+        significant survival benefit with minimal additional toxicity.
+
+  - date: 2015
+    axis: efficacy
+    from: 0.20
+    to: 0.22
+    why: >
+      **TUMOUR TREATING FIELDS, AND IT IS THE MOST CONTESTED ENTRY IN THIS
+      RECORD.**
+      Alternating electric fields delivered through scalp electrodes worn
+      continuously; a randomised trial reported a median survival gain of several
+      months when added to temozolomide. It is approved and used, and **it is not
+      accepted everywhere** — the trial was open-label with no sham device, the
+      mechanism is debated, the device must be worn most of the day with a shaved
+      scalp, and several national bodies have declined to fund it.
+      **Record the disagreement rather than adjudicating it.** A treatment that
+      cannot be blinded, in a disease with no alternatives and a desperate
+      population, is exactly the situation in which the evidence is hardest to
+      read and the pressure to accept it is highest. `witness.contested` carries
+      the argument.
+    src:
+      id: PMID:26670971 doi:10.1001/jama.2015.16669
+      retrieved: 2026-08-28
+      quote: >
+        In this interim analysis of 315 patients with glioblastoma who had
+        completed standard chemoradiation therapy, adding TTFields to maintenance
+        temozolomide chemotherapy significantly prolonged progression-free and
+        overall survival.
+
+  - date: 2021
+    axis: measurement
+    from: glioblastoma defined by histology
+    to: glioblastoma defined as IDH-wildtype
+    why: >
+      **A DEFINITION CHANGED AND THE SURVIVAL STATISTICS IMPROVED WITHOUT ANYBODY
+      BEING TREATED DIFFERENTLY.**
+      The 2021 WHO classification of central nervous system tumours restricted
+      "glioblastoma" to **IDH-wildtype** tumours. Tumours with IDH mutations that
+      had been called glioblastoma — a younger population with markedly better
+      prognosis — were reclassified as grade 4 astrocytoma, a separate entity.
+      **The reclassification is biologically correct and it is also a
+      denominator change.** Removing the better-prognosis tumours from the
+      category makes glioblastoma's reported survival *worse*, and makes the new
+      astrocytoma category look better, and no patient's outcome changed. **Any
+      survival series that crosses 2021 is comparing two different diseases.**
+      This is gaps.md #90 and #206 in a cancer: the threshold decides who has the
+      disease, and this register's `survival` axis — added three days ago —
+      inherits the problem in its first week. **Recorded on the `measurement` axis
+      deliberately** (gaps.md #184): nothing about the treatment changed, only
+      what the word means.
+    src:
+      id: PMID:34185076 doi:10.1093/neuonc/noab106
+      retrieved: 2026-08-28
+      quote: >
+        The fifth edition of the WHO Classification of Tumors of the Central
+        Nervous System (CNS), published in 2021, is the sixth version of the
+        international standard for the classification of brain and spinal cord
+        tumors.
+
+witness:
+  mechanism: >
+    `partial`, and the gap is not where the money has been spent.
+    **What is well characterised is the molecular anatomy.** IDH-wildtype status
+    now defines the entity. TERT promoter mutation, EGFR amplification, chromosome
+    7 gain with 10 loss, CDKN2A deletion, PTEN loss. Transcriptional subtypes
+    have been described and redescribed. **MGMT promoter methylation** predicts
+    temozolomide benefit and is the one molecular finding that changes what
+    happens to a patient.
+    **What makes it incurable is anatomical rather than molecular, and that is the
+    part that has not moved.** Glioblastoma is **diffusely infiltrative**: single
+    cells and small clusters migrate along white matter tracts and perivascular
+    spaces, centimetres beyond the contrast-enhancing tumour, into brain that is
+    functioning and cannot be removed. **Every "complete" resection is subtotal**,
+    every recurrence is at or beyond the margin, and the surgical question is not
+    how much tumour to take but how much brain.
+    **Two further properties compound it.** Marked **intratumoural
+    heterogeneity** means a targeted agent kills a subclone and selects for the
+    rest — the reason single-target therapies have failed here more consistently
+    than anywhere else. And the **blood-brain barrier** excludes most systemic
+    agents; temozolomide is standard partly because it crosses.
+    **What is genuinely unknown:** the cell of origin, why the immune system is so
+    ineffective against it despite the tumour being antigenic, and whether the
+    infiltrating cells that cause recurrence are biologically the same as the ones
+    in the mass that gets removed.
+  contested: >
+    **TWO DISPUTES, AND ONE OF THEM IS ABOUT WHETHER A TREATMENT IN ROUTINE USE
+    WORKS.**
+    **Tumour treating fields.** The trial was open-label with no sham comparator,
+    the proposed mechanism is debated, and the device requires continuous wear.
+    Proponents point to a randomised survival benefit that has been reproduced in
+    registry data; sceptics point to the absence of blinding in a disease where
+    expectation and attention effects are plausible, and to the fact that several
+    national assessment bodies have declined to fund it. **The register takes no
+    position and notes that a treatment nobody can blind, in a disease with
+    nothing else, is the hardest evidential situation there is.**
+    **And whether "glioblastoma" is one disease.** The 2021 reclassification
+    settled one boundary by molecular criteria and left the transcriptional
+    subtypes unresolved: they were proposed as distinct entities, they turn out to
+    coexist within single tumours, and they shift under treatment. If the entity
+    is a mixture then the phase 3 record is partly a gaps.md #39 problem rather
+    than a pharmacology problem — the eleventh record to make that argument.
+
+  intervention: >
+    `disease-modifying`, and the honest magnitude is months.
+    **Maximal safe resection** is the intervention with the largest effect and the
+    least trial evidence — greater extent of resection is consistently associated
+    with longer survival, and it has never been randomised because it could not
+    be. Intraoperative navigation, fluorescence guidance with 5-ALA, and awake
+    mapping all serve the same goal: take more tumour, keep more brain.
+    **Radiotherapy** to a defined margin, and **temozolomide** concurrently and
+    then adjuvantly — the 2005 protocol, unchanged. **Tumour treating fields** in
+    some countries. **Bevacizumab** improves progression-free survival and
+    radiological appearances without improving overall survival, which is a
+    cautionary result the field cites often and regulators handled differently on
+    each side of the Atlantic.
+    **At recurrence there is essentially nothing.** Re-resection in selected
+    patients, re-irradiation, lomustine, or a trial. **Most patients at
+    recurrence are offered a clinical trial as the standard of care**, which is
+    an unusual thing to be able to say about any disease and is a fair summary of
+    the state of it.
+    **And the failures deserve naming because they are informative.** Checkpoint
+    inhibitors, which transformed `melanoma`, have not worked here. CAR-T against
+    glioma antigens is in trials and is being delivered intraventricularly —
+    around the barrier rather than through it, the same move that made tofersen
+    work in `als`.
+  prevention: >
+    `none`, and it is one of very few records in this register that rates it.
+    **There is no known modifiable cause.** The only established environmental
+    risk factor is prior therapeutic ionising radiation to the head, which
+    accounts for a tiny fraction. Mobile phone use has been examined extensively
+    and repeatedly and the evidence does not support a causal role. A handful of
+    inherited syndromes — Li-Fraumeni, Lynch, neurofibromatosis type 1, Turcot —
+    raise risk and explain a very small share of cases.
+    **There is no screening and no premalignant phase to screen for**, and unlike
+    almost every other cancer in this register there is no good reason to think
+    earlier detection would help — see the header. Glioblastoma appears to be
+    diffusely infiltrative before it is detectable, so a smaller tumour found
+    sooner is still a whole-brain problem.
+    **The honest position is that nobody knows what causes it and there is
+    nothing to avoid.**
+  ongoing: >
+    `high`, and the arc is short and steep.
+    Six weeks of daily radiotherapy with concurrent temozolomide, then monthly
+    cycles. **Dexamethasone for oedema, often for months**, with everything that
+    entails. Anti-epileptic drugs in the majority. Serial MRI every two to three
+    months, on which **pseudoprogression** — treatment-induced change that looks
+    exactly like tumour growth — is common enough that the field had to name it,
+    and which means a scan showing progression may or may not mean the disease is
+    progressing.
+    **The burden that dominates is cognitive and it falls on the family.**
+    Progressive impairment of memory, executive function, language and
+    personality, in a person who was working a year earlier, with care delivered
+    largely at home. **Early palliative care involvement is recommended and
+    frequently late.**
+    The register's `ongoing` axis measures the burden of being treated. In this
+    record most of the burden is the disease, over fifteen months, and there is no
+    field for it.
+
+holes:
+  - >
+    **No `window` block, and that is the finding.** Almost every other cancer here
+    has one; glioblastoma is diffusely infiltrative before it is detectable, there
+    is no premalignant phase, no screening, and no good reason to think earlier
+    detection would change the outcome. **The register can record that a window
+    exists and cannot record that one does not** — the field is simply absent, and
+    absence reads as unrated rather than as a claim.
+  - >
+    **The 2021 reclassification is a denominator change that improves reported
+    survival without treating anybody** (gaps.md #90, #206, #184). Any survival
+    series crossing 2021 compares two different diseases, and the `survival` axis
+    added three days ago inherits the problem in its first week.
+  - >
+    **`survival: 0.06` is mostly delay with a real tail of something like cure**,
+    and gaps.md #216 says the axis cannot tell those apart. Glioblastoma is the
+    mirror of `als`: same inability, opposite composition.
+  - >
+    **MGMT is a predictive marker that identifies futility without offering an
+    alternative.** The unmethylated majority receive temozolomide anyway because
+    there is nothing else, which is `futile_treatment_risk` in its purest form.
+  - >
+    **The tumour takes personality before it takes life** and no field holds that.
+    `toll` records what treatment took; there is no column for what the disease
+    takes that is not measurable function.
+  - >
+    Burden figures are a sum over a category whose definition changed in 2021, and
+    every scalar is `recall` or `reasoning`. Both burden values and both survival
+    values are `sourceable`.
+
+blockers:
+  - kind: knowledge
+    obstacles: [cell-targeting]
+    blocks: reaching cells that are individually dispersed through working brain
+    what: >
+      **THIS IS THE CLEAREST `cell-targeting` RECORD IN THE CORPUS AND THE
+      BARRIER IS TWO THINGS AT ONCE.**
+      **The blood-brain barrier excludes most systemic agents**, which is why
+      temozolomide — a small lipophilic alkylator with modest potency — remains
+      standard: not because it is good but because it gets in. Convection-enhanced
+      delivery, focused ultrasound to open the barrier transiently, and
+      intraventricular administration are all being tried, and none is standard.
+      **And the cells that matter are not in the tumour.** They have migrated
+      along white matter tracts into brain that is working, individually and in
+      small clusters, centimetres from anything visible. **You cannot resect them
+      without taking function, you cannot irradiate them without irradiating
+      brain, and a systemic drug that reached them would also reach every neuron
+      around them.** That is the specificity half of gaps.md #216's obstacle
+      record stated as sharply as this register can state it: **an address is
+      needed that distinguishes a glioma cell from the neuron beside it, and none
+      is known.**
+      **Two further unknowns behind it.** Intratumoural heterogeneity means a
+      single-target agent selects for the subclones it does not kill — the
+      likeliest explanation for a phase 3 record worse than almost any other
+      cancer's. And why the immune system does so little against an antigenic
+      tumour, when checkpoint blockade transformed `melanoma`.
+      `scale: null`.
+    who_could: [academic, sponsor, philanthropy, manufacturer]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    obstacles: []
+    blocks: a neurosurgical service, within weeks
+    what: >
+      **CURATIVE-INTENT TREATMENT HERE IS A NEUROSURGICAL THEATRE AND A LINEAR
+      ACCELERATOR, AND THE PATIENT HAS WEEKS.**
+      Maximal safe resection requires a neurosurgeon with tumour experience,
+      intraoperative navigation, and ideally fluorescence guidance or awake
+      mapping — and **extent of resection is the intervention with the largest
+      effect size in this record**, so where the operation happens changes how
+      long somebody lives. Radiotherapy planning follows within weeks, then
+      temozolomide, then MRI surveillance able to distinguish progression from
+      pseudoprogression.
+      **Neurosurgical capacity is among the most unevenly distributed in
+      medicine.** Large parts of Africa and South Asia have a few neurosurgeons
+      per hundred million people, and glioblastoma does not wait for a referral
+      pathway. Add radiotherapy access, which this register documents in
+      `nasopharyngeal-carcinoma` and `head-neck-cancer` as a capital problem
+      rather than a purchasing one.
+      **The result is that in most of the world this disease is diagnosed late or
+      not at all, and treated palliatively**, which does not appear in the
+      register's mortality figures because the deaths are recorded as something
+      else or not recorded.
+    who_could: [health-system, government, payer, academic, nonprofit]
+    scale: 5.0e9
+    standing: documented
+    src: recall
+
+  - kind: evidence-incomplete
+    obstacles: []
+    blocks: knowing why twenty-one years of trials have failed
+    what: >
+      **DOZENS OF PHASE 3 TRIALS SINCE 2005 AND THE STANDARD OF CARE HAS NOT
+      CHANGED.**
+      The candidate explanations have different consequences and the field has not
+      settled between them. **The agents did not work** — likely for most.
+      **They did not reach the tumour**, which is the blocker above and would mean
+      the compounds were never fairly tested. **The entity is a mixture**, in
+      which case unstratified trials have been diluting real effects toward the
+      null (gaps.md #39, eleventh record). **Or the endpoints mislead**:
+      progression-free survival in a disease with pseudoprogression is a
+      genuinely unreliable measure, and bevacizumab is the worked example — it
+      improved PFS and radiological appearance and not survival, and was handled
+      differently by regulators on each side of the Atlantic.
+      **What would move it is not another agent.** It is trial designs that
+      account for delivery — window-of-opportunity studies that biopsy after
+      dosing to confirm the drug arrived — and stratification by molecular
+      subgroup. Both are being done now and neither is standard.
+      **And there is a structural problem worth naming: at recurrence, a clinical
+      trial IS the standard of care.** That is unusual, it is honest, and it
+      means the evidence base is generated on patients who have already failed
+      everything, which is the population in whom anything is least likely to
+      work.
+    who_could: [academic, sponsor, regulator, philanthropy, patient-org]
+    scale: 2.0e9
+    standing: documented
+    src: recall
+
+  - kind: cost
+    obstacles: []
+    blocks: the device, the theatre and the scanner
+    what: >
+      **AS IN EVERY RECORD WHERE THE TREATMENT IS SURGERY AND RADIATION, THE
+      EXPENSIVE PART IS CAPITAL AND THE CURATIVE PART IS CHEAP.**
+      Temozolomide is generic and costs comparatively little. Neurosurgical
+      capability, intraoperative navigation and fluorescence systems, a linear
+      accelerator with planning, and serial MRI are capital and staffing, and none
+      of it goes off patent.
+      **Tumour treating fields are the outlier and the argument.** The device
+      carries a substantial monthly cost, its benefit is contested
+      (`witness.contested`), and several national bodies have declined to fund it
+      on cost-effectiveness grounds while others reimburse it. **A disease with
+      nothing else creates enormous pressure to fund a marginal and unblinded
+      benefit**, and the register should record that the disagreement is about
+      evidence and money together rather than either alone.
+      Then the uncounted: months of dexamethasone and its consequences,
+      anti-epileptics, rehabilitation, and home care during a rapid cognitive
+      decline.
+    who_could: [payer, government, health-system, manufacturer, regulator]
+    scale: 3.0e9
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0106
+  rated: 2026-08-28
+  by: [claude, jeremy]

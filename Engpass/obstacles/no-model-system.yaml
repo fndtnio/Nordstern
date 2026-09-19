@@ -1,0 +1,130 @@
+slug: no-model-system
+id: FND-O-0013
+name: There is nowhere outside a patient to study this
+kind: tooling
+resolution: partly-answered
+
+question: >
+  Before anything can be screened, measured or understood, it has to be
+  **available somewhere other than in a sick person.** For a large group of
+  diseases in this register it is not: the organism will not grow outside a
+  human, or the tissue state has no model that anybody accepts, so **there is no
+  assay, no test, no target and no way to try anything.**
+  **THIS IS THE OPPOSITE COMPLAINT TO `animal-translation` (FND-O-0010), AND
+  THAT RECORD RESERVED THE SPACE FOR IT.** Its holes say so explicitly: *"a
+  third shape is in the corpus and this record excludes it on purpose —
+  `cryptosporidiosis`, `heds` and `diarrhoeal-disease`'s enteric dysfunction are
+  blocked by there being **no animal model at all** — a missing tool, not a
+  misleading one. That is the opposite complaint and has the opposite fix."*
+  This is that record. One says the proxy lies; this one says there is no proxy.
+  `partly-answered`, and the movement is real and recent. *Treponema pallidum*
+  resisted continuous in vitro culture for a century and was cultured in 2018.
+  *Cryptosporidium* now completes its life cycle in air-liquid-interface
+  intestinal cultures, stem-cell-derived organoids and hollow-fibre systems, and
+  became genetically tractable in the mid-2010s. Both are cases where the wall
+  came down, and **in both the clinical consequence has not arrived yet**, which
+  is the part worth watching.
+
+what_it_unblocks: >
+  **THE THING IT UNBLOCKS IS THE ABILITY TO START.** Every other kind of
+  obstacle here assumes a research programme is possible and asks what is holding
+  it up. This one sits underneath that: with no system to work in there is no
+  screening cascade, no susceptibility test, no measure of cure and no way to
+  count anything.
+  The corpus states each consequence in its own words. **`cryptosporidiosis`:**
+  *"For decades Cryptosporidium could not be maintained in continuous culture,
+  and there is no small-animal model that reproduces human disease in an
+  immunocompetent host. **So there was no assay.**"* One weak drug since 1976,
+  and it is the second leading infectious cause of diarrhoeal death in young
+  children.
+  **`leprosy`:** the organism cannot be cultured, so diagnosis rests on a
+  clinician recognising a skin patch with sensory loss — and the register already
+  records that everything leprosy is feared for follows from nerve damage that is
+  **permanent once it has happened**. A test that worked would convert a
+  disabling disease into a treatable infection, and the missing test is missing
+  because the organism will not grow.
+  **`syphilis`:** *"every clinical decision rests on an antibody titre that is a
+  proxy for something nobody can measure directly"* — which is why patients are
+  given intravenous therapy they may not need, or miss it when they do.
+  **`malaria`:** the dormant *P. vivax* liver stage cannot be cultured and cannot
+  be seen in a patient, so elimination requires clearing a reservoir that is
+  undetectable by any means.
+  **`diarrhoeal-disease`:** environmental enteric dysfunction has no accepted
+  biomarker and no animal model that satisfies everyone — and that record argues
+  solving it *"would raise the efficacy of every oral vaccine in the childhood
+  schedule at once."*
+  **AND `heds` SHOWS THE NON-INFECTIOUS FORM.** Its holes read: *"No gene, no
+  biomarker, no animal model, and therefore no way to assemble a cohort that
+  anyone else can reproduce."* The missing model is upstream of the missing
+  cohort, which is upstream of every trial that record will never have.
+
+why_hard: >
+  **BECAUSE FASTIDIOUSNESS IS USUALLY ADAPTATION, NOT AWKWARDNESS.** Organisms
+  that will not grow in a dish have typically discarded the machinery to live
+  anywhere else. *Treponema pallidum* and *Mycobacterium leprae* both have
+  heavily reduced genomes — *M. leprae* has lost a large fraction of its genes
+  to pseudogenes — and depend on the host for what they no longer make. **You
+  cannot culture them until you know what they need, and finding out what they
+  need is most of what you wanted the culture for.** That circularity is why
+  these take decades rather than grant cycles.
+  **BECAUSE A HOST STATE IS HARDER THAN AN ORGANISM.** Environmental enteric
+  dysfunction is not a pathogen to be grown but a histological condition
+  produced by chronic exposure, malnutrition and the microbiome together. There
+  is nothing to isolate. Modelling it means reproducing the conditions of a
+  childhood, which is why "no animal model that satisfies everyone" has stood
+  for so long.
+  **BECAUSE THE FIX IS SLOW EVEN AFTER IT WORKS.** Both wins named above are
+  recent and neither has yet changed a patient's outcome. A culture system is
+  the beginning of a drug-discovery programme, not the end of one, and the
+  discount rate on that is the reason the work is unattractive to anybody but a
+  public funder.
+  **AND BECAUSE THE DISEASES CONCERNED ARE POOR.** Cryptosporidiosis, leprosy,
+  vivax malaria and enteric dysfunction are diseases of children and of poverty.
+  The `no-sponsor` pattern the register documents elsewhere applies with extra
+  force to a tool that is a precondition for research rather than a product —
+  **nobody sells a culture system.** This is the one respect in which this
+  obstacle is priceable, and `cryptosporidiosis` already prices it: *"building
+  culture systems and screening libraries is buyable work of a very ordinary
+  kind."*
+
+holes:
+  - >
+    **THE BOUNDARY WITH `animal-translation` IS CLEAN IN THE CORPUS AND WILL NOT
+    STAY CLEAN.** Three records mention an animal model and are NOT this
+    obstacle: `cataract` (aldose reductase inhibitors that worked in diabetic
+    animals and not in people — a *misleading* model, already tagged
+    `animal-translation`), `marburg` (the regulatory Animal Rule, where animal
+    data is the only permissible evidence), and `parkinsons` (MPTP as a
+    historical note). **Three uses of the same word, three different obstacles,
+    and only the absence is this one.** A future pass will be tempted to merge
+    them; the fixes are opposite — build a model, calibrate a model, or accept a
+    model as sole evidence — so it should not.
+  - >
+    **IT MAY BE TWO OBSTACLES AND THE CORPUS SPLITS 4:2.** *An organism that will
+    not grow* (cryptosporidiosis, leprosy, syphilis, vivax hypnozoites) is
+    microbiology with a known shape and a known kind of answer. *A host state
+    with no model* (enteric dysfunction, hEDS) is not — there is nothing to
+    isolate and the thing being modelled is a chronic condition of a whole
+    organism. They share the consequence — no assay, no cohort, no trial — and
+    possibly nothing else. Same doubt `animal-translation` and
+    `pathogen-persistence` log about themselves.
+  - >
+    **THE TWO CITED SUCCESSES ARE QUOTED FROM RECALL AND THEY CARRY THE
+    `partly-answered` RATING.** Continuous in vitro culture of *T. pallidum*
+    (2018) and the *Cryptosporidium* organoid and air-liquid-interface systems
+    are stated here without citation. If either is weaker than recorded — a
+    system that works in one laboratory is not a platform — this record should
+    read `open`.
+  - >
+    **AND THE HARDEST QUESTION FOR THIS RECORD: does a model system actually
+    deliver?** Both walls that came down are recent enough that the answer is
+    genuinely unknown, and the corpus holds one uncomfortable data point against
+    it — `in-silico-physiology` records that *Mycoplasma genitalium* has a
+    complete whole-cell computational model and a Nordstern record whose
+    blockers it did not touch. **A model is a precondition, not a cure**, and an
+    obstacle whose payoff is "now the work can begin" is exactly the shape
+    Nordstern gaps.md #101 was written to interrogate.
+
+asserted:
+  date: 2026-08-31
+  by: [claude, jeremy]

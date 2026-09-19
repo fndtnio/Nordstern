@@ -1,0 +1,488 @@
+slug: cervical-cancer
+id: FND-D-0053
+name: cervical cancer
+also: [cancer of the cervix, cervical carcinoma, carcinoma of the uterine cervix]
+mondo: MONDO:0002974
+kind: disease
+residual: false
+contested: false
+
+# EVERY TOOL EXISTS AND IT KILLS ABOUT 350,000 WOMEN A YEAR, ROUGHLY NINE IN TEN
+# OF THEM IN LOW- AND MIDDLE-INCOME COUNTRIES.
+#
+# A necessary cause, identified and Nobel-recognised. A vaccine that stops the
+# infection. A cheap test that finds the precursor. A ten-minute procedure that
+# removes it. Curative surgery and chemoradiation if it becomes cancer anyway.
+# **Nothing on that list is missing and nothing on it is new.**
+#
+# In countries that screen, cervical cancer has become uncommon. In countries
+# that do not, it is among the leading causes of cancer death in women. Same
+# disease, same tools, opposite outcomes, one row (gaps.md #52 — and this is a
+# purer case than the one that forced it, because here the difference is ONLY
+# access).
+#
+# THREE THINGS THIS RECORD BREAKS:
+#
+# 1. **THREE INTERVENTIONS ON ONE CAUSAL CHAIN AND TWO SLOTS TO PUT THEM IN.**
+#    Vaccinate before infection; remove the precursor after infection and before
+#    cancer; treat the cancer. The schema has `prevention` and `intervention`.
+#    gaps.md #114, second record running.
+#
+# 2. **SOMEBODY HAS ALREADY DEFINED "SOLVED" FOR THIS DISEASE, NUMERICALLY.**
+#    WHO's elimination initiative sets 90-70-90 by 2030 and defines elimination
+#    as fewer than four cases per 100,000 women-years. That is a dated,
+#    quantified target with coverage thresholds — **precisely the artefact this
+#    register is trying to build in general** — and Nordstern neither uses it nor
+#    says why not. gaps.md #116.
+#
+# 3. **THE PRECURSOR TREATMENT DAMAGES A FUTURE PREGNANCY.** Excising a cervical
+#    lesion raises the risk of preterm birth in a later pregnancy. Roughly half
+#    of CIN2 in young women regresses on its own. So the harm is real, it is
+#    inflicted on women who may not have needed it, and **it is paid by a person
+#    who does not yet exist.** gaps.md #117.
+
+burden:
+  prevalence:
+    value: 6.6e5
+    units: >
+      new cases/year worldwide — fourth most commonly diagnosed cancer in women,
+      and the leading cause of cancer death in women in a number of sub-Saharan
+      African countries
+    src: recall
+  deaths:
+    value: 3.5e5
+    units: >
+      deaths/year — and roughly nine in ten of them occur in low- and
+      middle-income countries
+    src: recall
+  note: >
+    **THE DISPARITY IS THE RECORD, AND IT IS THE STARKEST IN THIS REGISTER.**
+    Where organised cytology screening was introduced from the mid-twentieth
+    century, cervical cancer incidence and mortality fell by large multiples and
+    the disease became uncommon. Where it was not, nothing changed. Age-standardised
+    mortality differs roughly tenfold between the highest- and lowest-burden
+    countries.
+    Unlike visceral leishmaniasis, which forced gaps.md #52, **none of the
+    difference is biology.** The virus is the same, the vaccine works the same,
+    the test works the same, the excision works the same. The entire gap is
+    whether a girl was vaccinated and whether a woman was ever screened.
+    HIV co-infection multiplies risk several-fold and accelerates progression,
+    which is why the burden concentrates further in southern and eastern Africa —
+    two records in this register compounding, and no field that can say so.
+    The disease kills women in their thirties, forties and fifties: mothers,
+    disproportionately, in the middle of their working lives.
+
+survival:
+  horizon: 5 years from diagnosis
+  untreated:
+    value: 0.05
+    units: >
+      fraction alive — untreated invasive cervical cancer is fatal within a few
+      years, usually through local invasion and renal failure
+    src: recall
+  treated:
+    value: 0.65
+    units: >
+      fraction alive with stage-appropriate surgery or chemoradiotherapy — above
+      0.90 for early-stage disease and falling steeply with stage. **The global
+      figure is set by how late women present**
+    src: recall
+  witness: >
+    **The register's clearest case of a cancer that should not exist.** HPV
+    vaccination prevents it, screening catches the precursor, and treatment
+    works when it is early — three independent interventions, all of them
+    decades old, and 350,000 women a year still die. Every blocker on this
+    record is delivery.
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: prophylaxis
+  ongoing: moderate
+  efficacy:
+    value: 0.60
+    units: >
+      fraction-of-patients (cured by stage-appropriate surgery or
+      chemoradiotherapy) — high for early-stage disease and falling steeply with
+      stage, and the global figure is dragged down by how late most women present
+    src: reasoning
+  access:
+    value: 0.30
+    units: >
+      fraction-of-patients (reaching staging, radical surgery or chemoradiation
+      with brachytherapy) — AND A SINGLE GLOBAL FRACTION HIDES A BIMODAL WORLD.
+      Radiotherapy capacity in particular is close to absent across much of
+      sub-Saharan Africa, where most of the deaths are
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: partial
+  witness: >
+    DIAGNOSTIC is `objective`, and it has quietly become one of the best-designed
+    screening pathways in medicine. **HPV DNA testing is more sensitive than
+    cytology, needs no cytologist, and can be self-collected** — a woman takes her
+    own swab, which removes the pelvic examination that stops many women
+    attending. Positive results triage to cytology or direct visual inspection,
+    then colposcopy and biopsy.
+    In the lowest-resource settings, **visual inspection with acetic acid** and
+    immediate cryotherapy or thermal ablation compresses screening and treatment
+    into one visit, because a second visit is a visit that does not happen.
+    PROGNOSTIC is `partial`. Stage predicts outcome well. **What cannot be
+    predicted is which CIN2 lesion will progress** — roughly half regress
+    spontaneously in young women — and that is the whole of the argument about
+    how aggressively to treat precursors, with a consequence described in `toll`.
+    PREDICTIVE is `partial`. HPV genotype stratifies risk, with 16 and 18
+    carrying most of it. PD-L1 selects for checkpoint blockade in recurrent and
+    metastatic disease. Beyond that, chemoradiotherapy is chemoradiotherapy and
+    there is little to choose between patients.
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    **THE TREATMENT COSTS FERTILITY, IN A DISEASE THAT KILLS WOMEN IN THEIR
+    THIRTIES AND FORTIES.**
+    Radical hysterectomy ends the possibility of pregnancy permanently.
+    Chemoradiotherapy destroys ovarian function, producing immediate surgical
+    menopause in a woman who may be thirty-five, along with vaginal stenosis that
+    makes intercourse painful or impossible, and bladder, bowel and lymphatic
+    damage. Fistula is a recognised late complication and is life-ruining.
+    Fertility-sparing surgery exists for small early tumours and is available to
+    a minority.
+    **AND THE PRECURSOR TREATMENT HAS ITS OWN TOLL, WHICH LANDS SOMEWHERE THE
+    SCHEMA CANNOT SEE.** Excising a cervical lesion — LEEP, or a cone biopsy —
+    removes part of the cervix and **raises the risk of preterm birth in a
+    subsequent pregnancy**, with the risk rising with the depth of tissue taken.
+    Roughly half of CIN2 in young women regresses without treatment. So a
+    proportion of these women are being made to have a premature baby to prevent
+    a cancer that was not coming.
+    That harm is not paid by the patient. **It is paid by a child who does not
+    exist yet**, and `toll` records what the cure costs *the patient*. See
+    gaps.md #117 — and #105, which has now asked three times for `toll` to
+    have a scope.
+  incidence:
+    value: 0.50
+    units: >
+      fraction-of-treated (permanent harm — loss of fertility, surgical
+      menopause, vaginal stenosis, bladder or bowel injury, lymphoedema) — a
+      reasoned estimate over women receiving definitive treatment for invasive
+      disease
+    src: reasoning
+
+# NO `residue` BLOCK. FOURTH CANCER IN A ROW, AND THE PATTERN IS NOW SETTLED.
+#
+# A cervical cancer cured leaves the patient very little; what is permanent is
+# the uterus that was removed, the ovaries the radiation destroyed, and the
+# tissue the excision took. `restored` derives `cure-costs`.
+#
+# Lung, prostate, colorectal and cervical all read the same way. **For a solid
+# tumour cured by surgery or radiation, the permanent price is essentially always
+# the cure's rather than the disease's** — the exceptions being diseases that
+# damage an organ before treatment arrives, which cancer surgery mostly is not.
+
+window:
+  what: >
+    **FIFTEEN TO TWENTY YEARS. IT IS THE LONGEST WINDOW IN THIS REGISTER AND
+    350,000 WOMEN A YEAR ARE MISSED INSIDE IT.**
+    A high-risk HPV infection is acquired, usually in the twenties. Most clear
+    within a year or two. A minority persist. Persistent infection produces
+    low-grade then high-grade intraepithelial lesions, and a fraction of those
+    become invasive carcinoma — typically fifteen to twenty years after the
+    original infection.
+    For essentially that entire period the disease is detectable by a test that
+    a woman can perform on herself, and the lesion is removable in a single
+    outpatient visit.
+    **Compare the rest of the corpus.** Stroke's window is ninety minutes.
+    Noma's is three days. Dengue's is hours. This one is two decades, the test is
+    cheap, the treatment of the precursor is minor surgery — and the outcome is
+    among the leading causes of cancer death in women worldwide.
+    There is a window before the window, too: **vaccination prevents the
+    infection that starts the clock**, and it must be given before sexual debut,
+    which makes the delivery target adolescent girls rather than patients.
+    `caught_in_time` below counts cancers found while curable and, as in
+    colorectal cancer, structurally undercounts the programme's benefit — the
+    lesions excised never became cases.
+  closes_on: >
+    progression of a high-grade intraepithelial lesion to invasive carcinoma,
+    typically fifteen to twenty years after the initiating infection
+  caught_in_time:
+    value: 0.35
+    units: >
+      fraction-of-cases (diagnosed at a stage where cure is likely) — a reasoned
+      global estimate, high in screened populations and low where most of the
+      deaths occur
+    src: reasoning
+
+strata:
+  - name: early-stage invasive (I-IIA)
+    fraction:
+      value: 0.45
+      units: fraction-of-diagnoses
+      src: recall
+    intervention: curative
+    efficacy:
+      value: 0.85
+      units: fraction-of-stratum (cured by radical surgery or chemoradiotherapy)
+      src: reasoning
+    toll: major
+    what: >
+      Radical hysterectomy with lymph node assessment, or chemoradiotherapy.
+      Cure is the expectation. The price is fertility, and for a woman in her
+      thirties that is not a footnote to the treatment, it is frequently the
+      thing she asks about first.
+
+  - name: locally advanced (IIB-IVA)
+    fraction:
+      value: 0.35
+      units: fraction-of-diagnoses
+      src: recall
+    intervention: curative
+    efficacy:
+      value: 0.50
+      units: fraction-of-stratum (cured by chemoradiotherapy with brachytherapy)
+      src: reasoning
+    toll: major
+    what: >
+      Concurrent chemoradiotherapy with **brachytherapy**, which is not optional
+      — omitting it materially worsens survival, and it requires equipment and
+      trained staff that most of the highest-burden countries do not have.
+      **This is the stratum where the access gap kills**: the treatment is
+      curative in half of these women and unavailable to most of them.
+
+  - name: metastatic or recurrent
+    fraction:
+      value: 0.20
+      units: fraction-of-diagnoses
+      src: recall
+    intervention: disease-modifying
+    efficacy:
+      value: 0.15
+      units: fraction-of-stratum (durable meaningful benefit)
+      src: reasoning
+    toll: major
+    what: >
+      Platinum chemotherapy with bevacizumab, and checkpoint blockade for
+      PD-L1-positive disease, which added a meaningful survival increment. It is
+      not curable. Late presentation is why this stratum is a fifth of diagnoses
+      in a disease with a twenty-year window.
+
+moved:
+  - date: 1960
+    axis: access
+    from: 0.05
+    to: 0.3
+    why: >
+      **ORGANISED CYTOLOGY SCREENING**, following Papanicolaou's method, rolled
+      out across much of the high-income world through the middle of the
+      twentieth century. Incidence and mortality fell by large multiples in the
+      countries that did it, and cervical cancer went from a leading cause of
+      cancer death in women to an uncommon disease.
+      It is filed under `access` because there is nowhere else to put it. **What
+      rose was screening participation, which is prevention coverage**, and
+      prevention has no coverage field (gaps.md #109). The date marks an arc.
+
+  - date: 2006
+    axis: prevention
+    from: none
+    to: prophylaxis
+    why: >
+      **THE FIRST VACCINE AGAINST A HUMAN CANCER**, licensed after the
+      demonstration that persistent high-risk HPV infection is a necessary cause.
+      Real-world results have exceeded the trial expectations. Countries that
+      vaccinated adolescent girls early and at high coverage report large falls
+      in high-grade lesions and now in invasive cancer, with **Scotland reporting
+      no invasive cervical cancer at all among women vaccinated at twelve or
+      thirteen.**
+      Second entry on this axis in the register after measles' 1963, and the
+      only one where the vaccine prevents a cancer.
+    src:
+      id: PMID:17494925 doi:10.1056/NEJMoa061741
+      retrieved: 2026-08-26
+      quote: >
+        In young women who had not been previously infected with HPV-16 or HPV-18,
+        those in the vaccine group had a significantly lower occurrence of
+        high-grade cervical intraepithelial neoplasia related to HPV-16 or HPV-18
+        than did those in the placebo group. (ClinicalTrials.gov number,
+        NCT00092534 [ClinicalTrials.gov].).
+
+witness:
+  mechanism: >
+    `established`, **and it is the strongest causal chain in this register.**
+    Persistent infection with a high-risk human papillomavirus is a *necessary*
+    cause of cervical cancer — not a risk factor, a requirement. Types 16 and 18
+    account for roughly seventy percent. The identification won a Nobel Prize in
+    2008, and it is one of very few human cancers with a single necessary cause.
+    The molecular chain is complete. Viral E6 targets p53 for degradation and E7
+    inactivates Rb; the two together disable the cell's principal brakes on
+    proliferation and its principal route to apoptosis. Integration of viral DNA
+    into the host genome dysregulates their expression further. Genomic
+    instability accumulates; a high-grade lesion becomes invasive.
+    **THE NAMED HOLE IS PERSISTENCE.** Most HPV infections clear within a year or
+    two, and cervical cancer requires that they do not. Why a minority persist —
+    HLA type, immune competence, smoking, oral contraceptive use, HIV
+    co-infection, the vaginal microbiome — is only partly answered, and the
+    corresponding clinical question is the same one in different clothes: **which
+    high-grade lesion will progress**, given that about half regress on their
+    own.
+  intervention: >
+    `curative` for the localised and locally advanced disease that is most of the
+    burden. Radical hysterectomy for early tumours; concurrent chemoradiotherapy
+    with brachytherapy for locally advanced disease, curing roughly half.
+    Fertility-sparing surgery for small early tumours in women who want children.
+    Metastatic and recurrent disease is not curable; platinum, bevacizumab and
+    checkpoint blockade extend it.
+    **None of this is where the record's leverage is**, and that is worth saying
+    plainly. Treatment matters for the women who already have invasive cancer.
+    Everything that has actually reduced cervical cancer mortality — screening,
+    excision of precursors, and now vaccination — happens before this axis
+    applies.
+  prevention: >
+    `prophylaxis`, and **this is the only cancer in the register that a vaccine
+    prevents.**
+    HPV vaccination, given to adolescents before sexual debut, is highly
+    effective against persistent infection with the covered types and against the
+    high-grade lesions they cause. The real-world data has been better than the
+    trials: countries with early, high-coverage programmes report collapses in
+    CIN and now in invasive cancer.
+    Then screening, which is prevention by a different route — finding and
+    removing the precursor, as in colorectal cancer, so the cancer never occurs
+    (gaps.md #114).
+    **SO THE AXIS HAS TO CARRY TWO DIFFERENT THINGS AND CANNOT.** A vaccine given
+    twice at age twelve is not the same object as HPV testing every five to ten
+    years from thirty followed by an excisional procedure, and both are
+    `prophylaxis`. They differ in who delivers them, what they cost, whether they
+    need repeating, what they harm, and which population they are aimed at.
+    This is the open half of gaps.md #66 — *prevention is one word doing five
+    jobs* — and cervical cancer needs two of the five at once.
+    **AND WHO HAS ALREADY SET THE NUMBERS.** The elimination initiative asks for
+    90% of girls vaccinated by fifteen, 70% of women screened twice with a
+    high-performance test, and 90% of those with disease treated — with
+    elimination defined as fewer than four cases per 100,000 women-years. Three
+    coverage fractions and a threshold. **The register has nowhere to record any
+    of them** (gaps.md #116).
+  ongoing: >
+    `moderate`. Surveillance after treatment; hormone replacement after
+    radiation-induced menopause; vaginal dilation to manage stenosis, which is
+    routinely recommended and rarely discussed; lymphoedema management.
+    For women treated for a precursor, the ongoing cost is surveillance and — if
+    they later become pregnant — a pregnancy monitored for preterm labour that
+    the treatment made more likely.
+
+holes:
+  - Every scalar is `src: recall` or `src: reasoning`. The strata fractions
+    describe a mixed global population and differ enormously between screened and
+    unscreened settings, which is the record's whole point and makes any single
+    set of fractions misleading.
+  - The regression rate of CIN2 is given as roughly half in young women, and the
+    literature spans a wide range depending on age, lesion grade and follow-up.
+    The preterm birth risk after excision rises with depth and the size of the
+    effect is debated.
+  - HIV co-infection multiplies cervical cancer risk substantially and
+    concentrates the burden further; the register holds both records and cannot
+    connect them.
+  - The vaccine's effect on invasive cancer is still emerging, because the
+    earliest vaccinated cohorts are only now reaching the ages at which invasive
+    disease appears. The results so far are strong and the follow-up is short
+    relative to a twenty-year natural history.
+  - Anal, oropharyngeal, vulvar, vaginal and penile cancers are also
+    HPV-driven and are not in this register. The vaccine prevents them too, which
+    means every cost-effectiveness figure attributed to this record understates
+    what the intervention buys — gaps.md #87 in miniature.
+
+blockers:
+  - kind: logistics
+    blocks: reaching adolescent girls, and women who have never been screened
+    obstacles: []
+    what: >
+      **THE BINDING CONSTRAINT, AND IT IS TWO DELIVERY PROBLEMS THAT SHARE
+      NOTHING.**
+      *Vaccination* must reach girls around age nine to fourteen, before sexual
+      debut — a population that is not in routine infant immunisation contact and
+      is reached, where it is reached at all, through schools. That works where
+      girls are in school and does not where they are not. Single-dose schedules,
+      now supported, halve the delivery problem at a stroke.
+      *Screening* must reach women who feel entirely well, once or twice in a
+      lifetime, and then bring back the ones who test positive. **The second
+      visit is the one that fails.** Screen-and-treat in a single visit — HPV
+      test or visual inspection, then immediate ablation — exists precisely
+      because of that, and it trades precision for completion.
+      Then brachytherapy, which is not optional for locally advanced disease and
+      which requires a machine, a shielded room and trained staff. Radiotherapy
+      capacity across much of sub-Saharan Africa is a small fraction of need, and
+      **that is where the curable half of the locally advanced stratum dies.**
+    who_could: [health-system, government, nonprofit, philanthropy, payer]
+    scale: 1.0e10
+    standing: documented
+    src: recall
+
+  - kind: policy
+    blocks: vaccinating adolescents against a sexually transmitted infection
+    obstacles: []
+    what: >
+      **A FIFTH DISTINCT REASON FOR REFUSAL, AND IT IS NOT ABOUT THE VACCINE.**
+      Objection to HPV vaccination is substantially about what vaccinating a
+      twelve-year-old girl against a sexually transmitted infection is taken to
+      imply or to license. That is a values objection rather than a factual one,
+      and it does not yield to safety data, because safety data is not what is
+      being disputed.
+      Separately and additionally, safety scares have collapsed national
+      programmes. Japan suspended its proactive recommendation after reports of
+      adverse events; coverage fell from very high to near zero and took the
+      better part of a decade to begin recovering, during which an identifiable
+      cohort of girls went unprotected.
+      **So this record needs two of gaps.md #115's categories at once** — a moral
+      objection that argument does not touch, and a refuted safety claim that
+      behaves exactly like measles'. Filed as `policy`, which is what Ebola's
+      Kivu blocker was filed as for the same reason: nothing else fits.
+    who_could: [government, health-system, legislator, nonprofit, patient-org]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+  - kind: cost
+    blocks: the vaccine, the test, and the machine
+    obstacles: []
+    what: >
+      HPV vaccine prices have fallen substantially through pooled procurement and
+      Gavi support, and the move to a single-dose schedule roughly halves the cost
+      per girl protected. It remains a real budget line for a middle-income
+      country that Gavi does not cover — **and middle-income countries are where a
+      growing share of the burden is**, which is the classic gap between donor
+      eligibility and need.
+      HPV testing costs more per test than cytology and less per case detected,
+      and the arithmetic only works if the follow-up exists.
+      Brachytherapy equipment is capital, not commodity. It cannot be donated in a
+      box and it is the single most expensive item standing between the locally
+      advanced stratum and a cure.
+    who_could: [manufacturer, payer, government, philanthropy, nonprofit]
+    scale: 5.0e9
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: which lesions progress, and treatment for advanced disease
+    obstacles: [who-progresses]
+    what: >
+      **WHICH CIN2 WILL BECOME CANCER.** Roughly half regress in young women, and
+      nobody can say which half. So they are excised, and the excision raises the
+      risk of preterm birth in a later pregnancy. A marker that identified the
+      regressing lesions would remove a real harm from a large number of young
+      women without giving up any of the prevention — the same shape prostate
+      cancer's active surveillance took, and here the beneficiary is a future
+      child (gaps.md #117).
+      **AND METASTATIC DISEASE HAS LITTLE.** Checkpoint blockade added an
+      increment; there is no targeted therapy of consequence; and the stratum is
+      a fifth of diagnoses because of late presentation rather than because of
+      biology.
+      `scale: null`.
+    who_could: [academic, sponsor, manufacturer, philanthropy]
+    scale: null
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0053
+  rated: 2026-08-24
+  by: [claude, jeremy]

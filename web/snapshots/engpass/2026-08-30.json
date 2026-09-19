@@ -1,0 +1,41 @@
+{
+ "date": "2026-08-30",
+ "register": "engpass",
+ "obstacles": {
+  "active": 10,
+  "by_kind": {
+   "mechanism": 4,
+   "capability": 2,
+   "economic": 1,
+   "entity": 1,
+   "epidemiology": 1,
+   "tooling": 1
+  },
+  "by_resolution": {
+   "open": 9,
+   "partly-answered": 1
+  }
+ },
+ "against_nordstern_records": 129,
+ "blocks": {
+  "who-progresses": 41,
+  "protective-immunity": 21,
+  "burden-unknown": 17,
+  "pathogen-persistence": 13,
+  "cell-targeting": 12,
+  "tissue-repair": 11,
+  "unexplained-illness": 8,
+  "donation-dependency": 6,
+  "animal-translation": 2,
+  "rna-folding": 0
+ },
+ "records_blocked_at_least_once": 91,
+ "distinct_links": 131,
+ "untagged_knowledge_blockers": 41,
+ "claims": {
+  "total": 13,
+  "by_standing": {
+   "alleged": 13
+  }
+ }
+}

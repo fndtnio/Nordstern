@@ -1,0 +1,721 @@
+slug: nasopharyngeal-carcinoma
+id: FND-D-0103
+name: nasopharyngeal carcinoma
+also: [NPC, nasopharynx cancer, Canton tumour, EBV-associated nasopharyngeal carcinoma, undifferentiated carcinoma of nasopharyngeal type]
+common: a throat cancer
+mondo: MONDO:0015459
+kind: disease
+residual: false
+contested: true
+
+# SPLIT OUT OF `head-neck-cancer` DELIBERATELY, AND EVERY REASON IS A DIFFERENT
+# COLUMN OF THIS FILE. Epstein-Barr virus rather than tobacco or HPV.
+# Radiotherapy rather than surgery — the nasopharynx sits behind the nose at the
+# skull base and is not somewhere an operation can reach, and the tumour is
+# unusually radiosensitive anyway. Southern China, South-East Asia and the
+# Maghreb rather than everywhere. Filing it with the others would have averaged
+# a surgical disease into a radiotherapeutic one and hidden the geography
+# (gaps.md #4).
+#
+# THE REASON IT EARNS A RECORD IS THE BLOOD TEST.
+#
+# **This is the only cancer in the corpus with a working blood-based screening
+# test**, and the register has nothing else of that shape at a moment when a
+# great deal of money is going into multi-cancer early detection. Plasma
+# Epstein-Barr virus DNA, measured in >20,000 men in Hong Kong, found 47% of
+# cancers at stage I against a historical 5-7%. **Read the caveats in
+# `measurement` before quoting that** — the comparator was historical, not
+# randomised.
+#
+# AND IT COMPLETES A THREE-WAY THE REGISTER COULD NOT PREVIOUSLY DRAW.
+# HPV → `cervical-cancer` and `head-neck-cancer`, and there is a vaccine.
+# HBV → `liver-cancer`, and there is a vaccine. **EBV → here, and there is not.**
+# Same structure, three viruses, one missing intervention (gaps.md #160).
+
+burden:
+  cases:
+    value: 1.3e5
+    units: >
+      new cases/year, approximately — **and roughly 70% of them are in East and
+      South-East Asia.** Historic incidence in Guangdong province reached 20-30
+      per 100,000 against under 1 per 100,000 across most of the world, which is
+      a geographic concentration matched by almost nothing else in oncology
+    src: recall
+  deaths:
+    value: 8.0e4
+    units: >
+      deaths/year, approximately. Secondary clusters in the Maghreb — Algeria,
+      Tunisia, Morocco — and among Inuit populations in Greenland and Alaska,
+      which is a distribution no purely environmental or purely genetic account
+      explains on its own
+    src: recall
+  note: >
+    **THE INCIDENCE HAS BEEN FALLING IN THE ENDEMIC AREAS FOR DECADES AND NOBODY
+    INTERVENED.** Hong Kong and Singapore have recorded substantial declines,
+    attributed largely to changing diet — less salted fish in early childhood —
+    alongside falling smoking rates. **A cancer receded because a cuisine
+    changed**, which is prevention with no programme, no budget and no
+    attributable actor, and the register has no way to record it (gaps.md #87).
+
+survival:
+  horizon: 5 years from diagnosis
+  untreated:
+    value: 0.05
+    units: >
+      fraction alive — untreated nasopharyngeal carcinoma invades the skull base
+      and metastasises widely
+    src: recall
+  treated:
+    value: 0.7
+    units: >
+      fraction alive with chemoradiotherapy — **an anatomically unresectable tumour
+      cured by radiation**, which is unusual enough to be worth stating. Early
+      stage exceeds 0.90
+    src: recall
+  witness: >
+    **The Epstein-Barr virus screening story is the interesting half.** Plasma EBV
+    DNA detects this cancer years before symptoms in endemic populations, and
+    the register holds that as a `window`. Survival here is good and it is much
+    better when the window is caught.
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: risk-reduction
+  ongoing: moderate
+  efficacy:
+    value: 0.70
+    units: >
+      fraction-of-patients (alive and disease-free at five years on modern
+      intensity-modulated radiotherapy with chemotherapy where indicated) —
+      **markedly better than any other record in the head and neck**, because
+      this tumour is radiosensitive and the treatment reaches it
+    src: reasoning
+  access:
+    value: 0.40
+    units: >
+      fraction-of-patients (reaching modern conformal radiotherapy with adequate
+      planning) — **and the number hides the sharpest geography in the corpus.**
+      Near-universal in Hong Kong, Singapore and urban southern China; far lower
+      across the Maghreb, rural Asia and everywhere the disease is sporadic and
+      the radiotherapy queue is set by commoner cancers
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: good
+  predictive: partial
+  witness: >
+    **THE ONLY CANCER IN THIS REGISTER WITH A BLOOD TEST THAT FINDS IT EARLY, AND
+    THE EVIDENCE IS BETTER THAN ANYTHING ELSE HAS AND WEAKER THAN IT IS USUALLY
+    REPORTED.**
+    Diagnosis itself is straightforward once suspected — nasopharyngoscopy and
+    biopsy, with EBV-encoded RNA in situ hybridisation confirming the
+    association. **The problem is suspicion**: the nasopharynx is not visible
+    without an endoscope, and the disease announces itself late (see `window`).
+    **THE SCREENING RESULT, STATED PRECISELY.** Circulating cell-free
+    Epstein-Barr virus DNA was measured in more than 20,000 Hong Kong men aged
+    40-62. Among those screened, **47% of the cancers found were stage I,
+    against a historical 5-7%**, and three-year progression-free survival was
+    97% against 70%. A single positive test has a high false-positive rate
+    because transient EBV reactivation is common; **repeating it four weeks later
+    removed most of them**, and that two-step protocol is what makes the test
+    usable.
+    **Now the caveat that is almost always dropped.** The comparison was against
+    a **historical cohort**, not a randomised unscreened arm. So what is
+    demonstrated is a stage shift and better progression-free survival in the
+    screened; **a randomised mortality benefit is not.** Stage shift can be
+    produced by lead time and by overdiagnosis without anybody living longer, and
+    this register has `prostate-cancer` and `thyroid-cancer` in it precisely
+    because that is not a hypothetical.
+    A newer antibody test against the EBV **BNLF2b** protein has reported better
+    performance in a large Chinese screening study and is the live alternative.
+    PROGNOSTIC is `good`, and plasma EBV DNA is doing that work too. **Detectable
+    EBV DNA after radiotherapy is one of the strongest post-treatment prognostic
+    markers in oncology** — it identifies residual disease before imaging does.
+    PREDICTIVE is `partial` and improving for the same reason: trials are using
+    post-treatment EBV DNA to decide who needs adjuvant chemotherapy, which is a
+    biomarker selecting a treatment rather than merely forecasting an outcome.
+    **One blood test doing screening, prognosis and treatment selection in a
+    single disease is a shape this register has not seen before.**
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    **THE TREATMENT IS RADIATION TO THE BASE OF THE SKULL, AND EVERYTHING WITHIN
+    A FEW CENTIMETRES OF THE TUMOUR IS SOMETHING YOU WOULD RATHER KEEP.**
+    Permanent **xerostomia** from the salivary glands, as in every head and neck
+    record. **Sensorineural hearing loss** from cochlear dose, compounded by
+    cisplatin — which is the same combination `hearing-loss` and `tuberculosis`
+    document from the other side, and it lands here as a permanent iatrogenic
+    deafness that this register counts twice and connects never (gaps.md #160).
+    **Hypopituitarism**, because the pituitary sits in the field, requiring
+    lifelong hormone replacement in a substantial minority.
+    **Hypothyroidism.** **Trismus** and neck fibrosis. **Cranial neuropathies.**
+    **Carotid stenosis** and consequent stroke a decade later.
+    **And the one the field fears: radiation-induced temporal lobe necrosis** —
+    irradiated brain that dies, presenting years afterwards with seizures or
+    cognitive decline. It is uncommon and it is the reason conformal planning
+    matters so much here.
+    **The toll is `major` rather than `catastrophic`, and the contrast with
+    `head-neck-cancer` is the point.** Nobody loses a larynx or a jaw, because
+    surgery is not the primary treatment. What they lose is saliva, hearing and
+    endocrine function — permanent, life-altering, and not disfiguring. **Two
+    diseases in the same anatomy, and the reason their tolls differ is that one
+    is operated on and one is not.**
+  incidence:
+    value: 0.50
+    units: >
+      fraction-of-treated (permanent harm — xerostomia, hearing loss,
+      hypothyroidism or hypopituitarism, fibrosis) — a reasoned estimate, and
+      high because most of these are near-inevitable consequences of adequate
+      dose rather than complications of it. Catastrophic harm, chiefly temporal
+      lobe necrosis and disabling cranial neuropathy, is a small fraction of it
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    **THIS RECORD HAS A REAL RESIDUE AND `head-neck-cancer` DOES NOT, WHICH IS A
+    CONSEQUENCE OF WHERE THE TUMOUR SITS.**
+    The nasopharynx is a few millimetres from the skull base and the cranial
+    nerves that pass through it. A tumour large enough to cause symptoms has
+    frequently already eroded bone or invaded a nerve, so patients present with
+    **cranial nerve palsies — double vision, facial numbness, a paralysed vocal
+    cord — and with conductive hearing loss from a blocked Eustachian tube.**
+    **Curing the cancer does not give the nerve back.** A patient rendered
+    disease-free may keep a palsy, a deaf ear, or double vision for life, and
+    that damage was inflicted by the disease before treatment began rather than
+    by the treatment. It is the textbook case the `residue` field was added for,
+    and it is why the `window` below matters more here than the survival figures
+    suggest: **the price of a late diagnosis is paid in nerves rather than in
+    deaths.**
+  incidence:
+    value: 0.15
+    units: >
+      fraction-of-affected (permanent cranial nerve deficit or hearing loss
+      caused by the tumour itself and persisting after successful treatment) — a
+      reasoned estimate, concentrated in those presenting with skull base
+      involvement
+    src: reasoning
+
+window:
+  what: >
+    **A CANCER THAT HIDES BEHIND THE NOSE, AND WHOSE COMMONEST FIRST SIGN IS
+    ALREADY A METASTASIS.**
+    The most frequent presenting complaint is **a painless lump in the neck** —
+    which is a nodal metastasis, not the primary. The others are a blocked ear or
+    one-sided hearing loss from Eustachian tube obstruction, blood-stained nasal
+    discharge, headache, and later cranial nerve palsies. **Every one of them is
+    mistaken for something ordinary**: a blocked ear is treated as glue ear, a
+    neck lump as a reactive node, epistaxis as nothing at all. In non-endemic
+    countries, where a clinician may see one case in a career, the delay is
+    routinely measured in months.
+    **This is the window the blood test exists to reach**, and it is the reason
+    the screening result matters more than a stage-shift statistic normally
+    would: the difference between stage I and stage IVA here is the difference
+    between radiotherapy alone and radiotherapy with chemotherapy across the
+    skull base, and — per `residue` — between keeping and losing a cranial nerve.
+    **The prevention window closes in early childhood**, which is unusual for a
+    cancer of the fifth decade. The salted-fish association is with consumption
+    during **weaning and early childhood**, not with adult diet, so the
+    exposure that matters happened forty years before the tumour. That is
+    `copd`'s gaps.md #96 shape in a fourth tissue — a determinative period with
+    no patient, nothing to diagnose, and no health system that owns it.
+  closes_on: >
+    progression from localised disease treatable by radiotherapy alone to skull
+    base and nodal involvement requiring chemoradiation — and, before the cancer
+    exists at all, the early-childhood exposure window that sets the risk
+  caught_in_time:
+    value: 0.35
+    units: >
+      fraction-of-cases (diagnosed at stage I-II) — a reasoned estimate, and it
+      is the figure the Hong Kong screening study moved to roughly 0.47 within
+      its screened population while the unscreened background sat near 0.05-0.07
+    src: reasoning
+
+strata:
+  - name: early stage (I-II)
+    fraction:
+      value: 0.20
+      units: fraction-of-people-with-nasopharyngeal-carcinoma
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.90
+      units: fraction-of-stratum (alive and disease-free at five years)
+      src: reasoning
+    toll: minor
+    what: >
+      **Radiotherapy alone cures around nine in ten**, with a materially smaller
+      toll because no chemotherapy is added and the fields are tighter. This is
+      the row that screening is trying to fill, and it is currently the smallest
+      one — which is the whole argument.
+
+  - name: locally advanced (III-IVA)
+    fraction:
+      value: 0.60
+      units: fraction-of-people-with-nasopharyngeal-carcinoma
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.75
+      units: fraction-of-stratum (alive and disease-free at five years)
+      src: reasoning
+    toll: major
+    what: >
+      **The modal patient, and the outcome is remarkably good for a locally
+      advanced head and neck cancer** — induction chemotherapy, then concurrent
+      chemoradiation, with three-quarters alive and disease-free at five years.
+      Compare the equivalent row in `head-neck-cancer` at 0.40 with a
+      catastrophic toll. **The difference is radiosensitivity and the absence of
+      surgery**, and it is the clearest demonstration in the corpus that anatomy
+      and biology decide the toll more than effort does.
+
+  - name: recurrent or metastatic
+    fraction:
+      value: 0.20
+      units: fraction-of-people-with-nasopharyngeal-carcinoma
+      src: reasoning
+    intervention: disease-modifying
+    efficacy:
+      value: 0.25
+      units: fraction-of-stratum (meaningful survival benefit)
+      src: reasoning
+    toll: major
+    what: >
+      Platinum-gemcitabine with a PD-1 inhibitor, and this is the stratum where
+      **the drugs came from where the disease is**. Toripalimab, camrelizumab and
+      tislelizumab were developed and trialled in China; toripalimab's 2023 US
+      approval was the first the FDA had ever granted for this cancer.
+      Re-irradiation and salvage nasopharyngectomy exist for local recurrence and
+      carry a much heavier price than first treatment.
+
+moved:
+  - date: 1998
+    axis: efficacy
+    from: 0.45
+    to: 0.58
+    why: >
+      **CONCURRENT CHEMORADIATION, AND IT IS THE MOVE THAT MADE THIS A CURABLE
+      DISEASE RATHER THAN A RADIOSENSITIVE ONE.**
+      Intergroup 0099 randomised radiotherapy alone against radiotherapy with
+      concurrent cisplatin followed by adjuvant chemotherapy in advanced
+      nasopharyngeal carcinoma, and the survival difference was large enough that
+      the trial was stopped early. Concurrent chemoradiation has been the
+      backbone ever since.
+      **Worth noting what did not happen.** No new molecule was involved —
+      cisplatin dates from the 1970s and radiotherapy from before that. What
+      changed was **giving them at the same time instead of one after the
+      other**, which is a scheduling result rather than a discovery, and it is the
+      same shape as `asthma`'s 2019 guideline entry and `rheumatoid-arthritis`'s
+      treat-to-target. The register keeps finding that a substantial share of
+      progress is arrangement rather than invention.
+    src:
+      id: PMID:9552031 doi:10.1200/JCO.1998.16.4.1310
+      retrieved: 2026-08-27
+      quote: >
+        We conclude that chemoradiotherapy is superior to radiotherapy alone for
+        patients with advanced nasopharyngeal cancers with respect to PFS and
+        overall survival.
+
+  - date: 2007
+    axis: toll
+    from: major
+    to: major
+    why: >
+      **INTENSITY-MODULATED RADIOTHERAPY MATTERS MORE HERE THAN ANYWHERE ELSE IN
+      THE CORPUS, BECAUSE OF WHAT IS NEXT TO THE TUMOUR.**
+      Dated to the randomised trial that demonstrated it rather than to the year
+      the technique diffused — the register's `moved` dates should be the dates
+      of the evidence, since that is what the citation can support.
+      The nasopharynx is surrounded by the parotid glands, the cochleae, the
+      pituitary, the optic apparatus, the brainstem and the temporal lobes.
+      Conformal planning let the dose be shaped around all of them, and it
+      reduced xerostomia substantially while improving local control — the
+      hearing, endocrine and temporal-lobe consequences in `toll` are all
+      dose-to-adjacent-structure problems that better planning directly
+      addresses.
+      **The severity rating does not move, for the same reason it did not move in
+      `head-neck-cancer`'s 1991 and 2011 entries.** `terms` reads
+      `toll.severity`, the severe cases still exist, and the register has no way
+      to say a toll became rarer without becoming milder (gaps.md #183). **This
+      is now the third such entry in two records written on consecutive days**,
+      which is a stronger argument for building that field than any of them is
+      alone.
+    src:
+      id: PMID:17971582 doi:10.1200/JCO.2007.11.5501
+      retrieved: 2026-08-27
+      quote: >
+        IMRT is superior to 2DRT in preserving parotid function and results in less
+        severe delayed xerostomia in the treatment of early-stage NPC. Incomplete
+        improvement in patient's subjective xerostomia with parotid-sparing IMRT
+        reflects the need to enhance protection of other salivary glands.
+
+  - date: 2017
+    axis: measurement
+    from: no screening test
+    to: plasma EBV DNA, two-step, validated in >20,000 men
+    why: >
+      **THE ONLY WORKING BLOOD-BASED CANCER SCREENING TEST IN THIS REGISTER, AND
+      THE SECOND `moved` ENTRY EVER WRITTEN ON THE `measurement` AXIS.**
+      Circulating cell-free Epstein-Barr virus DNA, measured in more than 20,000
+      Hong Kong men, shifted the stage distribution from a historical 5-7% stage
+      I to **47% stage I**, with three-year progression-free survival of 97%
+      against 70%. The two-step protocol — repeat the test at four weeks —
+      converted an unusably false-positive-prone assay into a usable one.
+      **State the limitation with the result, because this record will be quoted.**
+      The comparator was a historical cohort rather than a randomised unscreened
+      arm, so a mortality benefit is not demonstrated. Stage shift is exactly what
+      lead time and overdiagnosis also produce, and this register holds
+      `prostate-cancer` and `thyroid-cancer` because that is not a theoretical
+      concern.
+      **Why it is on `measurement` and not `access`.** Nothing about the treatment
+      changed. What changed is when the disease is found, and gaps.md #184 says
+      `moved` has no convention for measurement while measurement is what changes
+      most. `cerebral-palsy` wrote the first such entry; this is the second, and
+      `check.py` still does not validate the axis.
+    src:
+      id: PMID:28792880 doi:10.1056/NEJMoa1701717
+      retrieved: 2026-08-27
+      quote: >
+        Analysis of EBV DNA in plasma samples was useful in screening for early
+        asymptomatic nasopharyngeal carcinoma. Nasopharyngeal carcinoma was
+        detected significantly earlier and outcomes were better in participants who
+        were identified by screening than in those in a historical cohort.
+
+  - date: 2019
+    axis: efficacy
+    from: 0.58
+    to: 0.66
+    why: >
+      **INDUCTION CHEMOTHERAPY BEFORE CHEMORADIATION, AND THE EVIDENCE CAME
+      ALMOST ENTIRELY FROM THE COUNTRIES WHERE THE DISEASE IS.**
+      Adding gemcitabine and cisplatin as induction before concurrent
+      chemoradiation improved recurrence-free and overall survival in locally
+      advanced disease. Alternative induction regimens reported similar gains
+      across the same period.
+      **The authorship is the part worth recording.** These were Chinese trials,
+      run in Chinese centres, on a disease concentrated in southern China, and
+      they set the global standard of care. **It is the clearest counterexample in
+      this corpus to the pattern where evidence is generated in high-income
+      countries and exported** — here the endemic region generated it, and the
+      rest of the world adopted it.
+    src:
+      id: PMID:31150573 doi:10.1056/NEJMoa1905287
+      retrieved: 2026-08-27
+      quote: >
+        Induction chemotherapy added to chemoradiotherapy significantly improved
+        recurrence-free survival and overall survival, as compared with
+        chemoradiotherapy alone, among patients with locoregionally advanced
+        nasopharyngeal carcinoma.
+
+  - date: 2023
+    axis: efficacy
+    from: 0.66
+    to: 0.70
+    why: >
+      **PD-1 BLOCKADE IN RECURRENT AND METASTATIC DISEASE, AND THE FIRST US
+      APPROVAL THIS CANCER HAS EVER HAD.**
+      Toripalimab with gemcitabine and cisplatin improved progression-free and
+      overall survival in recurrent or metastatic nasopharyngeal carcinoma;
+      camrelizumab and tislelizumab produced comparable results. The FDA approved
+      toripalimab in 2023 — **the first drug it has ever approved specifically for
+      nasopharyngeal carcinoma**, roughly seven decades into the modern treatment
+      of this disease.
+      **That date is the finding.** A cancer with 130,000 cases a year had no
+      dedicated approval in the largest pharmaceutical market on earth until 2023,
+      because it is rare *there*. The drugs that finally arrived were developed
+      where the patients are. **gaps.md #52 — solved here, not there — is usually
+      about delivery; this is the research pipeline showing the same geography.**
+    src:
+      id: PMID:38015220 doi:10.1001/jama.2023.20181
+      retrieved: 2026-08-27
+      quote: >
+        The addition of toripalimab to chemotherapy as first-line treatment for
+        RM-NPC provided statistically significant and clinically meaningful
+        progression-free survival and overall survival benefits compared with
+        chemotherapy alone, with a manageable safety profile.
+
+witness:
+  mechanism: >
+    `established`, with one honest qualification that runs through the whole
+    record: **Epstein-Barr virus is necessary and nowhere near sufficient.**
+    More than nine in ten adults worldwide carry EBV for life and essentially
+    none of them develop this cancer. What distinguishes the people who do is a
+    combination of three things, and the model that fits the epidemiology
+    requires all of them:
+    **The virus.** The tumours are clonal for EBV — a single infected cell
+    expanded — so infection precedes and enables the malignancy rather than
+    following it. The cells run a **latency II** programme expressing LMP1, LMP2
+    and EBNA1, of which **LMP1 is the transforming one**, driving NF-κB and
+    behaving as a constitutively active receptor.
+    **The genome.** Susceptibility maps consistently to **HLA class I alleles at
+    chromosome 6p21**, which is a plausible mechanism rather than a bare
+    association: the alleles that raise risk are ones that present EBV antigens
+    less effectively.
+    **The exposure.** Nitrosamine-containing preserved foods — **salted fish
+    consumed during weaning and early childhood** — carry a consistent and
+    dose-related association across endemic populations, alongside tobacco. The
+    childhood timing is what makes the falling incidence in Hong Kong and
+    Singapore interpretable as a dietary effect with a forty-year lag.
+    **The histology tracks the aetiology.** The undifferentiated non-keratinising
+    type is the EBV-associated one and dominates in endemic areas; the
+    keratinising squamous type behaves more like the rest of `head-neck-cancer`,
+    is tobacco-related, and is what turns up in low-incidence regions.
+    **What is not explained is the geography of the geography** — why the
+    Maghreb and Inuit populations, on the far side of the world from southern
+    China, share an elevated incidence that neither ancestry nor diet accounts
+    for on its own.
+  contested: >
+    **WHETHER TO SCREEN, AND IT IS A REAL ARGUMENT RATHER THAN INERTIA.**
+    The case for is the strongest early-detection evidence in this corpus: a
+    cheap blood test, a stage shift from 5-7% to 47% stage I, and a disease where
+    stage decides whether somebody keeps a cranial nerve.
+    **The case against is methodological and this register is unusually
+    well-placed to state it.** The comparison was against a historical cohort.
+    **Stage shift, lead time and overdiagnosis are indistinguishable without a
+    randomised mortality endpoint**, and `prostate-cancer` and `thyroid-cancer`
+    are in this corpus specifically because a screening programme that produced a
+    beautiful stage shift went on to harm people. The counter-argument to *that*
+    is that nasopharyngeal carcinoma has no indolent reservoir — there is no
+    latent pool of harmless tumours to overdiagnose the way there is in prostate
+    and thyroid — so the analogy may simply not hold.
+    **A second, narrower dispute: which test.** Plasma EBV DNA against the newer
+    anti-BNLF2b antibody assay, with performance claims that have not been
+    compared head to head at scale.
+    **And a third that is really about money and geography.** Screening is
+    plausibly cost-effective at Guangdong incidence and clearly is not at
+    European incidence, so the question *should we screen* has different correct
+    answers in different countries — which is gaps.md #52 turning up as a
+    contested boundary rather than as a delivery gap.
+    **The register takes no position and records that the dispute is between
+    people who have read the same paper.**
+  intervention: >
+    `curative`, and this is the most curable disease in the head and neck by a
+    wide margin.
+    **Radiotherapy is the treatment and surgery is not.** The nasopharynx is at
+    the skull base, behind the nose, adjacent to the carotid and the cranial
+    nerves; it is not a site an operation reaches without unacceptable cost. It
+    happens that the tumour is **exceptionally radiosensitive**, so the anatomy
+    and the biology point the same way. **Intensity-modulated radiotherapy is
+    standard** and matters more here than anywhere else because of what
+    surrounds the target.
+    **Chemotherapy is added by stage.** Concurrent cisplatin with radiotherapy for
+    locally advanced disease since 1998; **induction gemcitabine and cisplatin**
+    before it since around 2019. Adjuvant chemotherapy is increasingly selected by
+    post-treatment plasma EBV DNA rather than given to everybody.
+    **Recurrence has real options**, unusually: re-irradiation, and **salvage
+    endoscopic nasopharyngectomy**, which reaches through the nose and is the one
+    place surgery does contribute. Both carry heavier tolls than first treatment.
+    **Metastatic disease** gets platinum-gemcitabine with a PD-1 inhibitor.
+    **What does not exist is a treatment aimed at the virus.** EBV is present in
+    every tumour cell, is clonal, and expresses viral proteins — which sounds like
+    an ideal target and has produced no approved therapy. EBV-specific T cells and
+    lytic-induction strategies remain experimental after two decades.
+  prevention: >
+    `risk-reduction`, and the honest summary is that **the incidence fell without
+    anybody intervening.**
+    Hong Kong and Singapore have recorded substantial declines over recent
+    decades, attributed principally to **less salted fish in early childhood** as
+    diets changed with prosperity, alongside falling tobacco use. Nobody ran a
+    programme. There is no attributable actor, no budget line, and no evaluation —
+    it is the largest prevention effect in this record and it is invisible to
+    every field in the schema (gaps.md #87).
+    **AND THE VACCINE THAT SHOULD EXIST DOES NOT.** This register holds three
+    virally-caused cancers. HPV causes `cervical-cancer` and part of
+    `head-neck-cancer`, and there is a vaccine that prevents them. Hepatitis B
+    causes much of `liver-cancer`, and there is a vaccine that prevents it —
+    `liver-cancer`'s 1984 entry records the first demonstration anywhere that a
+    vaccine could prevent a human cancer. **EBV causes this, and there is no
+    licensed vaccine against EBV at all.**
+    That is not for want of a target so much as for want of a market and a
+    tractable immunogen: EBV is a large herpesvirus that establishes lifelong
+    latency in essentially everybody, so a prophylactic vaccine has to prevent or
+    control an infection that is close to universal — a much harder ask than HPV
+    or HBV. Candidates against the gp350 envelope protein have existed for years
+    without a licensed product. **An EBV vaccine would also touch infectious
+    mononucleosis, several lymphomas, and — per `multiple-sclerosis`'s 2022
+    mechanism entry — possibly multiple sclerosis**, which makes it one of the
+    highest-leverage missing interventions anywhere in this corpus.
+  ongoing: >
+    `moderate`, and it is the ongoing burden of what treatment took rather than
+    of the disease.
+    Surveillance, including **serial plasma EBV DNA**, which is one of the few
+    follow-up tests in oncology that genuinely changes management. Lifelong
+    thyroid function monitoring and replacement in many; pituitary hormone
+    replacement in a minority. Dental care against radiation caries, saliva
+    substitutes, hearing aids — **which is `hearing-loss`'s record arriving as a
+    consequence of this one's treatment.** Swallowing therapy and management of
+    neck fibrosis and trismus.
+    The population is younger than most cancer populations — median age around
+    the fifth decade in endemic areas — so **survivors live with all of this for
+    thirty or forty years**, which is the same argument that drives the
+    de-escalation dispute in `head-neck-cancer` and has produced less movement
+    here.
+
+holes:
+  - >
+    **The screening result is a stage shift against a historical cohort, not a
+    randomised mortality benefit**, and this record is the one most likely to be
+    quoted in support of multi-cancer early detection. Every field states the
+    limitation; no field can *carry* it, because `measurement` has no place to
+    record the strength of the evidence behind a rating.
+  - >
+    **A third `moved` entry that reduces a toll without moving any derived
+    figure** (2009, IMRT), after `head-neck-cancer`'s 1991 and 2011. Three
+    entries in two records, all invisible to `terms` and `reach` (gaps.md #183).
+  - >
+    **`access: 0.40` averages Hong Kong and rural Algeria**, which is gaps.md #52
+    in its purest form — the gap that now has five citing records and no field.
+  - >
+    **The largest prevention effect in this record had no programme behind it.**
+    Incidence fell because diets changed. No actor, no budget, no evaluation, and
+    nothing in the schema that can hold it (gaps.md #87).
+  - >
+    **The missing EBV vaccine is scored nowhere.** `prevention: risk-reduction`
+    describes what exists; the register cannot say that a prophylactic vaccine
+    would move this record, `multiple-sclerosis`, several lymphomas and infectious
+    mononucleosis at once — which is exactly the calculation Engpass exists to
+    make and there is no obstacle record for it.
+  - >
+    Burden and both efficacy figures are `recall` or `reasoning`. The endemic
+    cancer registries — Hong Kong, Guangdong, Singapore — are long-running and
+    good, and none is cited.
+
+blockers:
+  - kind: logistics
+    blocks: a linear accelerator with planning good enough for this anatomy
+    obstacles: []
+    what: >
+      **THE TREATMENT IS A MACHINE AND A PHYSICIST, AND THE DISEASE IS
+      CONCENTRATED IN PLACES THAT HAVE VARIABLE NUMBERS OF BOTH.**
+      Curative treatment requires conformal, image-guided radiotherapy planned
+      around the cochleae, the pituitary, the optic apparatus, the brainstem and
+      the temporal lobes. **That is not simply a linear accelerator; it is a
+      planning system, a medical physicist, and immobilisation and imaging at
+      every fraction.** Delivered without those, the same dose that cures produces
+      the deafness, the hypopituitarism and the temporal lobe necrosis in `toll`.
+      **Hong Kong, Singapore and urban southern China have this. The Maghreb
+      cluster largely does not**, and neither do the rural endemic areas of
+      South-East Asia. Radiotherapy capacity across Africa is a small fraction of
+      need and is allocated, reasonably, by commoner cancers.
+      **In non-endemic countries the constraint is different and is about
+      volume.** A centre that treats two of these a year plans them less well than
+      one that treats two hundred, and outcomes in this disease are strongly
+      centre-volume dependent — which argues for referral networks that mostly do
+      not exist for a cancer nobody expects to see.
+    who_could: [health-system, government, payer, academic, nonprofit]
+    scale: 5.0e9
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    blocks: a test that works, deployed in one city
+    obstacles: []
+    what: >
+      **THE SCREENING TEST EXISTS, IS CHEAP, AND IS A ROUTINE PROGRAMME ALMOST
+      NOWHERE.**
+      Plasma EBV DNA is a PCR assay on a blood sample. The two-step protocol is
+      published. The endemic populations are geographically defined and readily
+      identified. And nine years after the Hong Kong result there is no
+      population screening programme at scale in mainland China, Vietnam,
+      Indonesia or the Maghreb.
+      **What is genuinely missing is the randomised mortality evidence**, and that
+      is a real obstacle rather than an excuse — the trial would be large, long
+      and expensive, and no single ministry has an obvious incentive to fund it
+      for a disease that is regionally concentrated. **Nobody owns the question.**
+      **And the ordinary diagnostic delay continues underneath it.** Outside
+      endemic areas the presenting neck lump is worked up as a reactive node and
+      the blocked ear as glue ear, for months. A nasendoscope in an ENT clinic
+      settles it in minutes, and the referral is the step that does not happen.
+    who_could: [academic, government, health-system, sponsor, nonprofit]
+    scale: 2.0e8
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: a vaccine against the virus, and a therapy aimed at it
+    obstacles: [protective-immunity]
+    what: >
+      **EVERY TUMOUR CELL CONTAINS THE VIRUS AND NOTHING IN THE CLINIC TARGETS
+      IT.**
+      EBV is clonal in the tumour, expresses LMP1, LMP2 and EBNA1, and has been
+      known to be there since 1966. **Two decades of EBV-specific T-cell therapy
+      and lytic-induction strategies have produced no approved product.**
+      **The larger hole is prophylactic.** There is no licensed EBV vaccine.
+      Unlike HPV and hepatitis B — where a vaccine against the virus prevented the
+      cancer, and this register records both — EBV establishes lifelong latency in
+      essentially the entire adult population, so a vaccine must prevent or
+      control a near-universal infection. gp350-directed candidates have existed
+      for years without reaching licensure.
+      **The payoff would not be confined to this record**, and that is the
+      argument. An effective EBV vaccine would plausibly touch infectious
+      mononucleosis, Burkitt and Hodgkin lymphoma, post-transplant
+      lymphoproliferative disease, gastric cancer's EBV-associated subset, and —
+      following the 2022 result recorded in `multiple-sclerosis` — possibly
+      multiple sclerosis itself. **That is a cross-record calculation this
+      register cannot currently perform.**
+      Third: **why this virus causes this cancer in these populations**, when
+      almost everyone carries it.
+      `scale: null`.
+    who_could: [academic, sponsor, philanthropy, manufacturer]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: no-sponsor
+    blocks: attention proportional to a disease that is somebody else's
+    obstacles: []
+    what: >
+      **THE FDA APPROVED ITS FIRST DRUG SPECIFICALLY FOR THIS CANCER IN 2023.**
+      One hundred and thirty thousand cases a year, eighty thousand deaths, a
+      well-characterised viral aetiology since 1966 — and no dedicated approval in
+      the largest pharmaceutical market on earth until three years ago, because
+      the disease is rare *there*. The PD-1 inhibitors that finally arrived were
+      developed and trialled in China.
+      **This is gaps.md #52 showing up in the research pipeline rather than in
+      delivery**, which is the version that gap has not yet recorded. A disease
+      concentrated in middle-income countries generates its own evidence or does
+      without: the induction chemotherapy standard of care came from Chinese
+      trials, and the rest of the world adopted it.
+      **The honest counterweight**, and it belongs in the record: this is a
+      **success** story about research capacity, not only a complaint about
+      neglect. The endemic region built the trials infrastructure and set the
+      global standard. What it does not fix is the Maghreb cluster and the
+      sporadic cases elsewhere, which benefit from evidence generated by neither
+      their own systems nor anybody else's.
+    who_could: [sponsor, academic, philanthropy, government, regulator]
+    scale: 5.0e8
+    standing: documented
+    src: recall
+
+  - kind: cost
+    blocks: the checkpoint inhibitor, and the planning system
+    obstacles: []
+    what: >
+      **THE CURATIVE TREATMENT IS CAPITAL AND THE PALLIATIVE ONE IS A MODERN
+      ONCOLOGY DRUG, WHICH IS THE SAME INVERSION `head-neck-cancer` RECORDS.**
+      Cisplatin and radiotherapy do the curing and cost comparatively little per
+      patient once the machine exists; the machine, the bunker, the planning
+      system and the physicist are a capital project that does not go off patent.
+      **PD-1 inhibitors are priced like modern oncology and are given in the
+      incurable setting** — although here, unusually, there are several
+      domestically developed competitors in the largest affected market, and
+      prices there are a fraction of Western equivalents. **That is worth noting
+      as the one place in this corpus where competition in a middle-income market
+      produced the cheaper drug first.**
+      Then the costs nobody counts and everybody pays: hearing aids, thyroid and
+      pituitary replacement, dental work after radiation caries, and decades of
+      surveillance in a population diagnosed in its forties.
+    who_could: [payer, manufacturer, government, health-system, nonprofit]
+    scale: 3.0e9
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0104
+  rated: 2026-08-27
+  by: [claude, jeremy]

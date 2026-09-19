@@ -1,0 +1,589 @@
+slug: alzheimers
+id: FND-D-0078
+name: Alzheimer's disease
+also: [Alzheimer disease, AD, Alzheimer's, senile dementia of the Alzheimer type]
+mondo: MONDO:0004975
+kind: disease
+residual: false
+contested: true
+
+# SCOPE: Alzheimer's disease, roughly 60-70% of dementia. `MONDO:0001627 dementia`
+# is the umbrella and vascular dementia, Lewy body dementia and frontotemporal
+# dementia are its other children, none held here. Another containment the
+# register cannot express (gaps.md #160).
+#
+# AND THE SCOPE IS ITSELF A PROBLEM, NOT A CONVENTION. In people over eighty,
+# MIXED PATHOLOGY IS THE RULE — community autopsy cohorts find most demented
+# elderly carry Alzheimer's changes alongside vascular disease, Lewy bodies and
+# TDP-43. Pure Alzheimer's pathology is uncommon in the age group carrying most
+# of the burden. So this record describes a clinicopathological construct that
+# does not cleanly exist in the population it is mostly about.
+
+burden:
+  prevalence:
+    value: 3.5e7
+    units: >
+      people with Alzheimer's disease worldwide — the AD share of roughly 55
+      million living with dementia, a figure projected to reach about 139 million
+      by 2050 purely from population ageing
+    src: recall
+  deaths:
+    value: 1.2e6
+    units: >
+      deaths/year attributed to Alzheimer's — **and this is one of the most
+      under-certified causes in the register.** People with dementia die of
+      pneumonia, of falls, of not eating, and the certificate says so
+    src: recall
+  note: >
+    **THE MONEY FIGURE SAYS MORE THAN THE DEATH FIGURE, AND HALF OF IT IS NOT
+    MONEY.** The global cost of dementia is estimated at something over a
+    trillion dollars a year, of which roughly half is **unpaid care by family
+    members** — valued by imputation, paid by nobody, and recorded in no health
+    budget.
+    That is the largest single quantity attached to any record in this register
+    and it belongs to people who do not have the disease (gaps.md #169).
+    The burden is also the register's clearest case of a number that will rise
+    without anything getting worse. Age is the dominant risk factor; the world is
+    ageing; **incidence per age band has actually been falling in several
+    high-income countries** — plausibly from better cardiovascular control and
+    more education — while total cases rise. Two true statements pointing in
+    opposite directions, and the register stores one level.
+
+survival:
+  horizon: 5 years from diagnosis
+  untreated:
+    value: 0.45
+    units: >
+      fraction alive — median survival after a diagnosis of Alzheimer's dementia
+      runs roughly four to eight years, varying enormously with age at diagnosis
+      and comorbidity
+    src: recall
+  treated:
+    value: 0.45
+    units: >
+      fraction alive on best available therapy. **THE SAME NUMBER, DELIBERATELY.**
+      Cholinesterase inhibitors and memantine do not alter survival. Anti-amyloid
+      antibodies slow cognitive decline by roughly a quarter to a third over
+      eighteen months and **have not been shown to extend life**. Nothing in this
+      record's treatment column moves this figure, and writing an optimistic
+      number here would be the exact failure the axis exists to prevent
+    src: reasoning
+  witness: >
+    **THE ZERO-GAP ROW, AND THE REGISTER NEEDS ONE.** Every other rated record
+    shows some distance between untreated and treated. This one shows none: on
+    the most comparable axis the register has, a century of work on the commonest
+    cause of dementia has bought no additional life at all.
+    That is not the whole truth and the record says so — slowing decline is worth
+    something real to a person and to a family, and this axis cannot see it, just
+    as it cannot see stroke disability. **But it is a true statement that the
+    `efficacy` axis was structurally unable to make**, because 0.25 there reads
+    as partial success rather than as no effect on survival whatsoever.
+
+axes:
+  mechanism: partial
+  intervention: disease-modifying
+  prevention: risk-reduction
+  ongoing: high
+  efficacy:
+    value: 0.25
+    units: >
+      **THIS NUMBER IS THE WRONG SHAPE AND THE RECORD SAYS SO.** Anti-amyloid
+      antibodies slow decline by roughly 27-35% over eighteen months in early
+      disease — **in everybody, by a little**, not in a fraction of patients
+      completely. There is no responder subgroup to count (gaps.md #168)
+    src: reasoning
+  access:
+    value: 0.08
+    units: >
+      fraction-of-patients (reaching amyloid confirmation, APOE genotyping,
+      infusion capacity, MRI monitoring and roughly $26,000 a year) — near zero
+      outside a handful of wealthy health systems
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: partial
+  witness: >
+    **DIAGNOSTIC IS `objective`, AND IT BECAME SO WITHIN ABOUT A DECADE — WHICH IS
+    THE FASTEST MEASUREMENT TRANSFORMATION IN THIS REGISTER.**
+    Alzheimer's was diagnosed clinically, by exclusion, and confirmed only at
+    autopsy. Now: amyloid PET, cerebrospinal fluid Aβ42/40 and phosphorylated tau,
+    and — since 2025 — **a cleared blood test based on p-tau217**, which approaches
+    the accuracy of the spinal tap and the scanner at a fraction of the cost and
+    none of the infrastructure. That is the single most consequential thing
+    happening to this record, because it collapses the gate described in the
+    `cost` blocker (gaps.md #162).
+    **AND THE SAME BIOMARKERS HAVE REDEFINED WHO HAS THE DISEASE.** The 2024
+    Alzheimer's Association criteria define Alzheimer's **biologically** — amyloid
+    and tau positivity constitutes the disease, whether or not the person has any
+    symptom. The International Working Group published an explicit dissent,
+    arguing the label should be reserved for people with clinical impairment.
+    A cognitively normal seventy-five-year-old with a positive scan is, under one
+    definition, a patient with Alzheimer's disease and under the other is at risk
+    of it. **Perhaps a third of cognitively normal over-75s are amyloid-positive**,
+    and a meaningful share of them will die of something else without ever
+    becoming impaired.
+    That is `contested: true`, it is gaps.md #90 (who counts as a patient is a
+    threshold somebody chose) and #133 (a definition is an instrument), and it is
+    the largest single stroke-of-the-pen expansion of a patient population in the
+    corpus.
+    PROGNOSTIC is `partial`. Biomarkers plus clinical stage predict group-level
+    progression respectably and individual timing badly — families ask how long
+    and the honest answer is a range spanning a decade.
+    **PREDICTIVE IS `partial`, AND IT PREDICTS THE HARM BETTER THAN THE BENEFIT.**
+    **APOE genotyping** identifies the roughly one patient in seven who carries two
+    ε4 alleles, in whom the rate of treatment-related brain oedema is several
+    times higher, and it is now part of the pre-treatment workup. Amyloid
+    positivity is required to qualify. **Nothing predicts who benefits**, and
+    given the effect size in `efficacy` there may be no such thing to predict.
+    Same asymmetry as G6PD testing in `malaria`: a predictive test whose job is to
+    stop you being harmed.
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    **ARIA — AMYLOID-RELATED IMAGING ABNORMALITIES — AND IT IS THE REASON THIS
+    RECORD IS gaps.md #148's SHARPEST CASE.**
+    Removing amyloid from cerebral vessels destabilises them. **Lecanemab produced
+    brain oedema in about 12.6% of treated patients and microhaemorrhage or
+    siderosis in about 17%. Donanemab's figures are roughly 24% and 31%.** Most
+    episodes are asymptomatic and detected only because everyone is scanned
+    repeatedly; a minority cause headache, confusion, visual disturbance or
+    seizure; and **a small number of deaths in the trial programmes were
+    attributed to it**, concentrated in APOE ε4 homozygotes and in patients on
+    anticoagulants.
+    The monitoring is part of the toll: an infusion every two or four weeks
+    indefinitely, and repeated MRI scans on a protocol schedule, for a person with
+    early dementia who must be brought to a hospital each time by somebody.
+    **NOW APPLY #148.** A one-in-four rate of brain oedema is accepted because the
+    alternative is a disease that dismantles a person over eight years and nothing
+    else touches it. **If a genuinely effective treatment arrived tomorrow, these
+    agents would be withdrawn within a year and nothing about the molecules would
+    have changed.** Their toll is not being weighed against zero; it is being
+    weighed against despair, and the register records it as an absolute property.
+  incidence:
+    value: 0.02
+    units: >
+      fraction-of-treated (permanent harm — symptomatic haemorrhage with residual
+      deficit, or death) — most ARIA is asymptomatic and resolves; this is the
+      tail that does not
+    src: reasoning
+
+window:
+  what: >
+    **THE PATHOLOGY BEGINS ABOUT TWENTY YEARS BEFORE THE FIRST SYMPTOM, AND THE
+    TREATMENT WORKS ONLY IN A TWO-TO-FOUR-YEAR SLIVER NEAR THE START OF THE
+    SYMPTOMS.**
+    Amyloid accumulates for two decades in silence. By the time somebody is
+    brought to a clinic because they are repeating themselves, tau pathology has
+    spread and neurons are gone. The anti-amyloid antibodies were trialled in
+    **mild cognitive impairment and mild dementia** and are licensed only there.
+    In moderate dementia they have never been shown to do anything, and the
+    plausible reason is that removing the upstream trigger cannot help once the
+    downstream process is self-sustaining — which is `chagas`'s shape (gaps.md
+    #46), arriving in a very different disease.
+    **Most people are diagnosed after the window has closed.** Dementia is
+    routinely attributed to ageing by families and by clinicians, referral is
+    slow, and specialist waits run to many months in systems that have specialists
+    at all.
+    **The real prize is upstream of everything above**, and trials are now there:
+    treating amyloid-positive people who have no symptoms at all. If that works it
+    converts this record into a screening-and-prevention problem and creates a
+    treatable population of tens of millions overnight. If it does not, the
+    amyloid hypothesis has had its last test.
+  closes_on: >
+    progression from mild cognitive impairment through mild dementia to moderate
+    dementia, beyond which no disease-modifying therapy has shown benefit — a few
+    years
+  caught_in_time:
+    value: 0.15
+    units: >
+      fraction-of-cases (diagnosed while still within the treatable stage) — a
+      reasoned estimate, and lower still where specialist assessment is
+      unavailable
+    src: reasoning
+
+strata:
+  - name: mild cognitive impairment due to Alzheimer's
+    fraction:
+      value: 0.25
+      units: fraction-of-diagnosed-cases
+      src: reasoning
+    intervention: disease-modifying
+    efficacy:
+      value: 0.30
+      units: fraction-of-stratum (proportional slowing of decline, not a responder rate)
+      src: reasoning
+    toll: major
+    what: >
+      **The stratum the drugs were built for and where their effect is largest.**
+      Independent living, measurable memory impairment, amyloid confirmed. This is
+      also the stratum where the benefit is hardest for a family to perceive,
+      because the decline being slowed has barely started.
+
+  - name: mild Alzheimer's dementia
+    fraction:
+      value: 0.30
+      units: fraction-of-diagnosed-cases
+      src: reasoning
+    intervention: disease-modifying
+    efficacy:
+      value: 0.20
+      units: fraction-of-stratum (proportional slowing of decline)
+      src: reasoning
+    toll: major
+    what: >
+      Licensed indication, smaller effect, same ARIA risk. Cholinesterase
+      inhibitors are given alongside and produce a modest symptomatic improvement
+      that families sometimes *can* perceive — which is the comparison gaps.md
+      #123 is about.
+
+  - name: moderate to severe Alzheimer's dementia
+    fraction:
+      value: 0.45
+      units: fraction-of-diagnosed-cases
+      src: reasoning
+    intervention: symptomatic
+    efficacy:
+      value: 0.0
+      units: fraction-of-stratum (no disease-modifying therapy has shown benefit)
+      src: reasoning
+    toll: minor
+    what: >
+      **Nearly half of diagnosed patients, and nothing modifies the disease.**
+      Memantine and cholinesterase inhibitors for symptoms; management of
+      agitation, sleep and incontinence; and eventually feeding difficulty,
+      immobility and the pneumonia that will be on the certificate.
+      **This is where the trillion dollars and the unpaid care are**, and it is
+      why the record flags ⧉ — the treatable strata and the expensive stratum are
+      not the same people.
+
+moved:
+  - date: 1996
+    axis: intervention
+    from: none
+    to: symptomatic
+    why: >
+      **CHOLINESTERASE INHIBITORS, AND THEY ARE BETTER THAN THEIR REPUTATION.**
+      Tacrine (1993) was too hepatotoxic to survive; donepezil (1996) and then
+      rivastigmine and galantamine established the class, on the reasoning that
+      cholinergic neurons in the basal forebrain degenerate early and inhibiting
+      acetylcholine breakdown compensates. Memantine followed in 2003 on a
+      different mechanism.
+      The effect is genuinely modest and it is real: a small improvement in
+      cognition and function, lasting months to a couple of years, changing
+      nothing underneath. They are cheap, oral, generic and available almost
+      everywhere — **which is more than can be said for what came next.**
+    src: recall
+
+  - date: 2023
+    axis: intervention
+    from: symptomatic
+    to: disease-modifying
+    why: >
+      **THE FIRST RUNG CLIMB IN THE HISTORY OF THIS DISEASE, AND THE ARGUMENT IS
+      ABOUT WHETHER IT MATTERS.**
+      **Lecanemab** (CLARITY-AD, 2023): about 1,800 patients with early Alzheimer's,
+      eighteen months, an anti-amyloid antibody clearing plaque from the brain.
+      Decline on the primary clinical scale was slowed by roughly **27%** — an
+      absolute difference of **0.45 points on an 18-point scale**, against
+      estimates of the minimal clinically important difference of one to two
+      points. **Donanemab** (2024) reported a similar or slightly larger effect
+      with a higher ARIA rate.
+      **Three things are true at once and the register can hold only the first.**
+      *The rating is correct*: these drugs alter the underlying pathology, which
+      nothing before them did, and the amyloid hypothesis was therefore right
+      about causation. *The effect is statistically robust*: large trials, prespecified
+      endpoints, consistent across two molecules. *The benefit is below what a
+      patient or family would notice*, purchased with a one-in-four risk of brain
+      oedema and a fortnightly infusion.
+      **And the precedent this class was granted first is worth recording as a
+      caution.** Aducanumab received accelerated approval in 2021 on the strength
+      of amyloid reduction as a surrogate, after two identical trials gave
+      discordant clinical results and **the FDA's own advisory committee voted
+      against it, with three members resigning.** Medicare restricted coverage to
+      trials; the manufacturer discontinued it in 2024. Lecanemab and donanemab
+      earned their approvals on clinical endpoints and inherited the argument.
+    src: recall
+
+witness:
+  mechanism: >
+    `partial`, and the rating carries an unusual story: **the central hypothesis
+    was confirmed and the confirmation barely helped.**
+    The amyloid cascade hypothesis says Aβ accumulation initiates a sequence —
+    plaques, then tau tangles, then synaptic loss and neurodegeneration, then
+    dementia. **The genetics are close to unarguable.** Mutations in *APP*,
+    *PSEN1* and *PSEN2* cause early-onset autosomal dominant Alzheimer's. **People
+    with Down syndrome carry a third copy of *APP* and develop Alzheimer
+    neuropathology almost universally by their forties.** *APOE* ε4 is the major
+    sporadic risk factor and acts partly through amyloid clearance. And an
+    Icelandic *APP* variant that reduces Aβ production **protects against the
+    disease** — a natural experiment pointing directly at causation.
+    **Then twenty years of amyloid-lowering drugs failed**, several
+    catastrophically: gamma-secretase and BACE inhibitors made cognition *worse*
+    in trials. And the correlational evidence never fitted — amyloid burden tracks
+    cognitive status poorly, tau tracks it well, and a substantial fraction of
+    cognitively normal elderly people are amyloid-positive.
+    **The antibodies resolved the causation question and sharpened the clinical
+    one.** Removing plaque does slow decline, measurably and reproducibly. It slows
+    it by a quarter to a third. So amyloid is *a* cause and is not the whole
+    disease, and by the time anybody has symptoms it is not the operative one.
+    **THE NAMED HOLES.** What actually produces the clinical syndrome — tau
+    spread, neuroinflammation, synaptic failure, and how they relate. Why
+    resilience varies so enormously, with some people carrying full pathology and
+    no impairment. And **mixed pathology**, which is the norm in the very old and
+    means most patients in this record have at least one other disease doing part
+    of the damage.
+  intervention: >
+    `disease-modifying`, for the first time, and the register should be careful
+    about what that rung is claiming.
+    **Anti-amyloid monoclonal antibodies** — lecanemab and donanemab — clear plaque
+    and slow clinical decline by roughly 27-35% over eighteen months in early
+    disease. **Cholinesterase inhibitors and memantine** treat symptoms modestly
+    and change nothing underneath. Everything else is management: agitation, sleep,
+    safety, feeding, and eventually palliative care.
+    **THE LADDER SAYS `disease-modifying` OUTRANKS `symptomatic` AND THIS RECORD
+    IS THE BEST ARGUMENT THAT THE ORDERING IS ABOUT MECHANISM RATHER THAN VALUE**
+    (gaps.md #123, forced by `cml` and now with a second and opposite case).
+    Donepezil is a cheap generic tablet producing a small improvement a family can
+    sometimes see. Lecanemab is a fortnightly infusion costing tens of thousands
+    of dollars, producing a slowing of decline below the threshold anybody
+    perceives, with a one-in-four risk of brain oedema, requiring PET or CSF
+    confirmation, APOE genotyping and serial MRI.
+    **Which one is worth more to the patient in front of you is genuinely
+    arguable. The ladder is not arguable — it puts the second above the first**,
+    because the second addresses the pathology, and the register's derived
+    `capability` follows the ladder.
+  prevention: >
+    `risk-reduction`, and it is unusually well quantified for that rung.
+    The Lancet Commission's 2024 update names **fourteen modifiable risk factors
+    accounting for something like 45% of dementia cases**: less education in early
+    life; **hearing loss**, which is the single largest contributor; high LDL
+    cholesterol; depression; traumatic brain injury; physical inactivity; diabetes;
+    smoking; hypertension; obesity; excess alcohol; social isolation; air
+    pollution; and untreated vision loss.
+    **`hearing-loss` is a queued record in this register**, and the ACHIEVE trial
+    found hearing aids slowed cognitive decline in a higher-risk subgroup. So one
+    queued record is a prevention for this one, and #160's missing graph would
+    make that a fact rather than a paragraph.
+    **The 45% figure deserves scepticism of a specific kind.** It is a
+    population-attributable-fraction calculation over observational associations,
+    it assumes causality throughout, and several factors plausibly run backwards —
+    hearing loss, depression and inactivity can all be early manifestations of the
+    disease rather than causes of it. Multidomain intervention trials have
+    produced modest and inconsistent effects.
+    **What is not in doubt is that age-specific dementia incidence has fallen in
+    several high-income countries over recent decades** while total cases rise with
+    ageing. Something already worked, at population scale, without anybody
+    prescribing it — and the leading candidates are blood pressure control and
+    education (gaps.md #129, prevention that was unintentional).
+  contested: >
+    **TWO SEPARATE DISPUTES UNDER ONE BOOLEAN, AND BOTH HAVE NAMED PARTIES**
+    (gaps.md #6).
+    *Where the entity's edge is.* The **Alzheimer's Association**'s 2024 revised
+    criteria define Alzheimer's **biologically**: amyloid and tau positivity
+    constitutes the disease, symptomatic or not. The **International Working
+    Group** published an explicit dissent the same year, arguing the diagnosis
+    should be reserved for people with clinical impairment and that a positive
+    biomarker in a cognitively normal person denotes risk rather than disease.
+    The stakes are concrete: perhaps a third of cognitively normal over-75s are
+    amyloid-positive, and a large share will die of something else without ever
+    becoming impaired. One definition makes tens of millions of well people
+    patients; the other does not.
+    *Whether the treatment benefit is worth having.* Regulators licensed lecanemab
+    and donanemab on their clinical endpoints. Several **health technology
+    assessment bodies** have declined to fund them, and the **European Medicines
+    Agency** initially refused lecanemab before a narrowed re-approval. The
+    argument is not about whether the effect is real — it is whether 0.45 points
+    on an 18-point scale is a benefit, against a one-in-four rate of brain oedema.
+    *And a third, now closed, worth recording.* Aducanumab's 2021 accelerated
+    approval was opposed by the **FDA's own advisory committee**, which voted
+    against it; three members resigned. Medicare restricted coverage to trials and
+    the manufacturer withdrew the drug in 2024.
+
+  ongoing: >
+    `high`, and it is the register's most under-stated `high`.
+    For the patient: years of progressive dependency ending in total care. For
+    somebody on an antibody: a fortnightly infusion and a protocol of MRI scans
+    indefinitely.
+    **And for the family member who is not a patient**: a decade of care that in
+    aggregate accounts for roughly half of a trillion-dollar annual cost, is
+    associated with measurably worse physical and mental health in the carer, and
+    has no field anywhere in this schema (gaps.md #169).
+
+holes:
+  - >
+    **`efficacy: 0.25` is a fabricated fraction.** These drugs slow decline in
+    everybody by a little; there is no responder subgroup and therefore no
+    fraction of patients for whom it "works". The number is a placeholder for a
+    quantity the schema cannot express (gaps.md #168).
+  - >
+    **`contested: true` names a live and specific dispute**: the 2024 Alzheimer's
+    Association criteria define the disease biologically, so an asymptomatic
+    amyloid-positive person has it; the International Working Group published a
+    dissent arguing the label requires clinical impairment. The parties are named
+    and the disagreement is about **where the entity's edge is**, which is exactly
+    what the flag means. Whether the anti-amyloid benefit is clinically meaningful
+    is a second and separate dispute the same boolean is also carrying.
+  - >
+    **Mixed pathology means this record's boundary is wrong in the age group that
+    matters.** Most demented people over eighty have Alzheimer's changes plus
+    vascular disease plus something else, and the register holds none of the
+    others.
+  - >
+    The strata fractions describe *diagnosed* patients in systems that diagnose,
+    and a large majority of the world's dementia is never diagnosed at all — so
+    the denominator excludes most of the disease.
+  - >
+    `access: 0.08` describes anti-amyloid therapy. Cholinesterase inhibitors are
+    cheap generics available almost everywhere, and because they are `symptomatic`
+    they do not set the rung — so the record derives `undelivered` while most
+    patients do receive *a* treatment. That is the axes working as designed and it
+    reads wrongly at a glance.
+  - >
+    Everything is `recall` or `reasoning`, in a field with two large recent
+    randomised trials whose numbers are public and are not cited here.
+
+blockers:
+  - kind: knowledge
+    blocks: knowing what causes the dementia, having established what causes the plaques
+    obstacles: []
+    what: >
+      **THE AMYLOID HYPOTHESIS WAS RIGHT AND IT WAS NOT ENOUGH, WHICH IS A HARDER
+      POSITION THAN BEING WRONG.**
+      Genetics establishes that Aβ initiates the disease — dominant mutations,
+      trisomy 21, and a protective variant that lowers Aβ production. Clearing
+      plaque slows decline, which confirms it prospectively. And clearing plaque
+      slows decline by roughly a quarter, in the earliest patients, and does
+      nothing at all once dementia is moderate.
+      So the operative questions are downstream and open: **how tau propagates
+      between neurons and why it tracks cognition when amyloid does not; what role
+      neuroinflammation and microglia play; why some people carry a full plaque
+      and tangle burden with no impairment** — the resilience question, which is
+      the most useful one nobody can answer; and how the several co-occurring
+      pathologies of the very old interact.
+      A meaningful part of the field now argues the amyloid era consumed two
+      decades and enormous resources on a target that is necessary, insufficient,
+      and largely spent by the time anybody presents. **The prevention trials in
+      asymptomatic amyloid-positive people are the decisive test**, and their
+      readouts will either make this record a screening problem or close the
+      chapter.
+      `scale: null`.
+    who_could: [academic, sponsor, philanthropy, manufacturer]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: cost
+    blocks: a treatment priced and staged beyond almost every health system
+    obstacles: []
+    what: >
+      **THE DRUG IS ABOUT $26,000 A YEAR AND IS THE CHEAPEST PART OF THE
+      PATHWAY.**
+      Qualifying requires **amyloid confirmation** by PET or lumbar puncture, and
+      **APOE genotyping** to establish the oedema risk. Treatment requires an
+      infusion suite every two or four weeks and **serial MRI on a monitoring
+      protocol**. Delivering it requires a dementia specialist, and there are
+      nowhere near enough.
+      This is gaps.md #162's gate, and unlike hepatitis B — where a thirty-dollar
+      generic sat behind an expensive assessment — **here the gate and the thing
+      behind it are both expensive**, so simplifying the gate does not rescue it.
+      **Which is what makes the blood test the most important development in this
+      record.** A cleared p-tau217 assay approaching PET accuracy removes the
+      scanner from the pathway and could take the assessment cost down by an order
+      of magnitude. It does not touch the drug price, the infusion capacity or the
+      MRI monitoring.
+      Health technology assessment bodies in several countries have concluded the
+      benefit does not justify the cost at current prices — a judgement that is
+      about the effect size in `efficacy`, and therefore about a number this
+      register cannot represent properly.
+    who_could: [manufacturer, payer, government, health-system, regulator]
+    scale: 2.0e10
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: there being enough specialists, scanners and infusion chairs
+    obstacles: []
+    what: >
+      Even where the drug is funded, the pathway is capacity-limited at every
+      step: memory clinics with waits measured in many months, a shortage of
+      behavioural neurologists and geriatricians, PET scanners booked for oncology,
+      MRI slots for the monitoring protocol, and infusion chairs competing with
+      chemotherapy.
+      **Modelling in several wealthy health systems has found that treating even a
+      modest fraction of eligible patients would exceed existing capacity by a
+      wide margin**, and that the binding constraint is people rather than
+      equipment.
+      This is gaps.md #154 in a high-income setting, which is worth noting because
+      that gap was forced by oxygen in district hospitals: **an intervention that
+      is infrastructure rather than a product does not become a product by being
+      expensive.** A specialist workforce is made slowly and cannot be procured.
+      Every year of delay here is not a deferral. It is a cohort of patients who
+      pass out of the treatable window while waiting.
+    who_could: [health-system, government, payer, academic]
+    scale: 8.0e9
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    blocks: most dementia never being diagnosed, and the rest being diagnosed late
+    obstacles: []
+    what: >
+      A large majority of the world's dementia is never formally diagnosed, and in
+      low- and middle-income countries the figure approaches all of it. Where
+      diagnosis happens it happens late — symptoms are attributed to ageing by
+      families and by clinicians, referral is slow, and the specialist assessment
+      that follows takes months.
+      **That interacts with the `window` to produce the record's central delivery
+      failure**: the drugs work only in mild cognitive impairment and mild
+      dementia, and most people arrive past it.
+      **The technical part of this blocker is closing fast and the rest is not.**
+      Blood-based p-tau217 assays now approach the accuracy of PET and CSF, and the
+      first was cleared in 2025. That removes the hardest technical barrier to
+      early confirmation and does nothing about a family not raising it, a primary
+      care system not screening for it, or a specialist queue.
+      **And it introduces a risk this register should name in advance.** A cheap
+      accurate blood test for a disease defined biologically, in a population where
+      perhaps a third of cognitively normal over-75s are amyloid-positive, is an
+      overdiagnosis engine of exactly the kind `prostate-cancer` and
+      `thyroid-cancer` document. **The test arriving before the treatment is worth
+      taking is the worst possible ordering.**
+    who_could: [health-system, manufacturer, government, academic, payer]
+    scale: 3.0e9
+    standing: documented
+    src: recall
+
+  - kind: evidence-incomplete
+    blocks: knowing whether the benefit is worth having
+    obstacles: []
+    what: >
+      **THE TRIALS ARE LARGE, WELL-CONDUCTED AND PREREGISTERED, AND THEY DO NOT
+      ANSWER THE QUESTION ANYBODY IS ASKING.**
+      Lecanemab slowed decline by 0.45 points on an 18-point clinician-rated scale
+      over eighteen months. Estimates of the minimal clinically important
+      difference on that scale sit around one to two points. So the honest summary
+      is *a real effect, smaller than the smallest difference thought to matter*,
+      and the field is split on whether accumulating benefit over years would
+      eventually become perceptible — which the eighteen-month trials cannot say.
+      What is missing is specific and answerable: **longer follow-up**, whether
+      the divergence continues or plateaus; **patient- and carer-reported
+      outcomes** rather than clinician-rated scales, which are almost absent from
+      the programmes; and whether any subgroup benefits substantially, since the
+      whole-cohort effect could be a small change in everybody or a large change in
+      a few.
+      Filed as `evidence-incomplete` rather than `knowledge` because the studies
+      that would settle it are ordinary, expensive and nobody's obligation once a
+      drug is licensed. **The register's own `efficacy` axis cannot hold the
+      answer either way** (gaps.md #168).
+    who_could: [academic, sponsor, regulator, payer, manufacturer]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0079
+  rated: 2026-08-24
+  by: [claude, jeremy]

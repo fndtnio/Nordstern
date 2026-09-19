@@ -1,0 +1,304 @@
+slug: growth-control
+id: FND-O-0015
+name: What sets the size of a tissue, and what stops it there?
+kind: mechanism
+resolution: partly-answered
+
+question: >
+  An organ grows to a size and stops. Nobody can say what it measured.
+  **THIS OBSTACLE HAS TWO FACES AND THEY ARE THE SAME BRAKE**, which is the only
+  reason it is one record. **It will not stop**: cancer, and the benign
+  overgrowths medicine treats by cutting them out. **It will not start**: the
+  tissue that does not come back after it is destroyed. The register already
+  holds the second as `tissue-repair` (FND-O-0002), a *capability* question —
+  can destroyed tissue be repaired. This is the mechanism underneath it, and
+  `tissue-repair` names it in its own `why_hard` without giving it a slug: *"the
+  leading accounts connect the loss of regeneration to the suppression of
+  proliferation that keeps large long-lived animals from getting cancer.
+  Anything that unblocked regeneration in an adult would be operating on the
+  same machinery that is holding tumours in check."*
+  `partly-answered`, and being honest about that matters, because the molecular
+  half is genuinely good. **The brake is identified.** The Hippo pathway came out
+  of fly screens as mutants whose tissue overgrew grossly; switch YAP on in a
+  mouse liver and the organ grows several-fold, switch it off and it comes back
+  down. **Myostatin** is the one confirmed chalone — a muscle-secreted inhibitor
+  of muscle growth, validated by Belgian Blue cattle, bully whippets and a human
+  case report. These are real, manipulable size dials.
+  **THE GAP IS ONE LEVEL UP, AND IT IS THE SAME SHAPE AS
+  `anaesthesia-mechanism`.** Hippo is the actuator. Nobody knows the *input* —
+  what quantity a growing tissue measures in order to decide it is finished. The
+  candidates are all live and none is established in a vertebrate organ: total
+  cell number (a counter), absolute physical dimension (a ruler), mechanical
+  stress (a growing tissue compresses its own centre, and compression suppresses
+  proliferation), the slope of a morphogen gradient, or functional output — the
+  organ grows until the demand on it is met.
+  **AND THERE MAY BE NO SINGLE ANSWER, WHICH IS ITSELF THE FINDING.** The classic
+  graft experiments point in opposite directions. **Liver size is set
+  extrinsically**: remove two-thirds and it regrows to the original mass and
+  halts, but transplant a small-breed dog's liver into a large dog and it
+  *grows*, and the reverse *shrinks*. The liver has no memory of its own size;
+  something about the body's demand sets the target, with bile acid flux the
+  leading candidate signal. **Thymus size is set intrinsically**: graft several
+  into one animal and each reaches full size, while the same experiment with
+  spleen yields roughly one normal spleen's worth in total. Different organs are
+  running different rules. Recalled, uncited, and the argument leans on them.
+  **NOT THE EDGE.** How a tissue acquires a *boundary* — differential adhesion,
+  ephrin/Eph repulsion, actomyosin cables acting as a fence, capsule formation —
+  is the comparatively well-understood half of "why does an organ have a size and
+  a shape", and this record deliberately excludes it. An obstacle register that
+  files the parts that are understood stops being able to say anything.
+
+what_it_unblocks: >
+  **ONE DERIVED CITATION AND THREE CLAIMS, AND THE DIFFERENCE BETWEEN THOSE TWO
+  WORDS IS THE WHOLE DESIGN OF THIS REGISTER.** `hearing-loss` cites this record
+  because somebody rating that disease said so; the rest is assertion, held as
+  `claims`, and `rna-folding` is the standing warning — asserted with confidence,
+  cited by nobody, still.
+  **THE ONE EARNED LINK IS THE STRONGEST ARGUMENT IN THE RECORD, BECAUSE THE
+  BLOCKER TEXT PREDATES THE OBSTACLE BY FIVE DAYS.** `hearing-loss` was rated on
+  2026-08-25 and reads: birds and fish regenerate cochlear hair cells, mammals do
+  not, avian supporting cells transdifferentiate and *"the equivalent mammalian
+  cells are held in a non-regenerative state, and **why** is not resolved."*
+  **That sentence is this obstacle, written before it had a slug**, and it is
+  what the second tag on that blocker records. `tissue-repair` asks whether the
+  hair cell can be replaced; this asks what is holding the tissue in the state
+  where it will not replace itself. Atoh1 overexpression and Notch inhibition are
+  four decades of pressing the accelerator without anybody locating the brake,
+  and that record calls hair cell regeneration *"the largest single intervention
+  available anywhere in this register"* — several hundred million people.
+  **THE COMPETING EXPLANATION IS STRUCTURAL AND IS NOT DISPOSED OF**: that the
+  mammalian organ of Corti cannot mechanically accommodate new hair cells however
+  they are induced, in which case the brake is a red herring and the ceiling is
+  architecture. Answering this question tells you which.
+  **AND THE BROADER ARGUMENT IS UNUSUALLY STRONG FOR A NEW RECORD, BECAUSE THE
+  CORPUS ALREADY MADE IT.** `tissue-repair` has eleven citing records and states
+  this obstacle as the reason its own question is hard. So this is not a new
+  assertion about medicine; it is the register's existing explanation given an
+  address. If it is wrong, it was already wrong eleven records ago.
+  **THE PAYOFF IS BIDIRECTIONAL, AND THAT IS THE POINT OF FILING IT AS ONE
+  QUESTION.** You cannot safely switch repair on until you can switch growth off:
+  every regenerative therapy is dose-limited by oncogenesis, and that is not a
+  safety footnote, it is the same molecular event as the intended effect.
+  Symmetrically, every anti-proliferative cancer drug is toxicity-limited by the
+  tissues that are *supposed* to proliferate — marrow, gut epithelium, hair
+  follicle. **That toxicity profile is a growth-control failure, not a targeting
+  failure**, and distinguishing the two is what separates this record from
+  `cell-targeting` (FND-O-0008). A perfectly addressed drug that told a cell
+  "stop dividing" would still be wrong in every tissue that needs to divide.
+  Beyond the cochlea, the **will not start** consequences are already written in
+  the corpus and filed under `tissue-repair` alone: myocardium replaced by scar
+  after infarction; retinal ganglion cells in `glaucoma` and retina in
+  `retinopathy-of-prematurity`, both of which state that permanence is *an
+  assumption of the field rather than a finding*; cartilage in `osteoarthritis`;
+  brain in `stroke` and `cerebral-palsy`. **None of those cites this record and
+  none should be made to** — whether the mammalian block in each of them is one
+  brake or six different walls is the open question, not a bookkeeping choice,
+  and the honest position is that only the cochlea has said so in its own words.
+  On the **will not stop** side the payoff is narrower than it looks, and the
+  honest statement is that cancer would not be solved by it — cancer is many
+  failures and this is one. The sharper claim is about the **benign** overgrowths,
+  where growth control is the *whole* disease and the treatment is a knife.
+  `pleomorphic-adenoma` is the register's cleanest instance: a benign tumour
+  cured by dissecting it off the facial nerve, whose entire permanent toll is the
+  price of that dissection. **Uterine cancer supplies the one case where medicine
+  already restores a growth setpoint pharmacologically** — progestin reverses
+  atypical endometrial hyperplasia — which is a proof that the knob exists and
+  can be turned, in exactly one tissue, by accident of it having a hormone.
+
+why_hard: >
+  **BECAUSE THE MEASURED QUANTITY IS NOT OBSERVABLE, AND THE EXPERIMENTS THAT
+  WORK ONLY FIND THE ACTUATOR.** Knock out a brake and the tissue overgrows; that
+  demonstrates a brake exists and says nothing about what presses it. Every
+  screen of this shape returns more actuator. The input is a comparison between a
+  current state and a target, and neither term has been identified in any
+  vertebrate organ.
+  **BECAUSE THERE MAY BE NO GENERAL RULE.** Liver extrinsic, thymus intrinsic —
+  and if organs genuinely run different rules then "how does an organ know to
+  stop" is a family of questions with a shared sentence, which is the same doubt
+  `tissue-repair` and `pathogen-persistence` both log against themselves. A field
+  can spend decades looking for one answer to a question that has six.
+  **BECAUSE SUCCESS AND THE WORST FAILURE MODE ARE THE SAME EVENT.** The brake is
+  a tumour suppressor. Anything that releases it is oncogenic by construction,
+  which means every therapeutic route out of this obstacle has to be transient,
+  local, and reversible — three requirements that land straight back on
+  `cell-targeting`. This is the trade-off `tissue-repair` describes, and it is
+  why the two records should be read together.
+  **BECAUSE THE DECISIVE EXPERIMENT IS A CROSS-SIZE GRAFT, AND THAT IS AN ANIMAL
+  EXPERIMENT.** The liver and thymus results come from grafting between animals
+  of different sizes, which cannot be done in people; and body-size allometry is
+  precisely where mouse-to-human inference is least trustworthy, which is
+  `animal-translation` (FND-O-0010) sitting directly under the only method that
+  addresses this question.
+  **AND BECAUSE THE FIELD IS FUNDED FROM ONE SIDE ONLY.** Growth control is
+  studied at enormous scale — as cancer biology, aimed at the *failure*. It is
+  studied at modest scale as developmental biology, aimed at the *rule*. Almost
+  nobody is paid to ask what the setpoint is, because the setpoint is not a
+  disease. Unlike `anaesthesia-mechanism`, this obstacle is not neglected; it is
+  attacked hard from a direction that does not require answering it.
+
+claims:
+  # `hearing-loss` WAS THE FIRST CLAIM HERE AND WAS DELETED ON 2026-09-02, WHICH
+  # IS THE POINT OF THE MECHANISM RATHER THAN A CORRECTION TO IT.
+  #
+  # The record was filed top-down carrying four claims. The blocker in
+  # `hearing-loss` was then tagged `growth-control` alongside `tissue-repair`,
+  # which made that link DERIVED — and `check.py` errors on a claim naming a
+  # disease that already cites the record, because the link would then be stored
+  # twice and the two copies could drift.
+  #
+  # So the claim did not become `documented`. It stopped being a claim. That
+  # transition has no name in the schema and this is the first time it has
+  # happened: a claim is graded when the QUESTION is answered, but it is
+  # DISSOLVED when somebody rating the disease agrees with it, which is a
+  # different and much cheaper event. Its content moved into `what_it_unblocks`,
+  # where the derived link belongs.
+  #
+  # RESTORED AS `standing: derived` ON 2026-09-02, when that value was added.
+  # This was the FIRST instance of the transition and the one that showed the
+  # deletion was destroying something worth keeping.
+  - unblocks: hearing-loss
+    standing: derived
+    why: >
+      **THE CLAIM THAT WAS RIGHT BEFORE THE REGISTER AGREED WITH IT.** Asserted
+      when this obstacle was filed, on the strength of the record's own words:
+      birds and fish regenerate cochlear hair cells, mammals do not, and *"the
+      equivalent mammalian cells are held in a non-regenerative state, and
+      **why** is not resolved."* That sentence was rated on 2026-08-25, five days
+      before this obstacle had a slug.
+      The blocker was then tagged `growth-control` alongside `tissue-repair`, and
+      the link became derived. **The competing explanation is not disposed of**:
+      that the mammalian organ of Corti cannot mechanically accommodate new hair
+      cells however they are induced, in which case the brake is a red herring
+      and the ceiling is architecture.
+
+  # THE THREE BELOW ARE THE ONES NOBODY HAS AGREED WITH YET, and the balance is
+  # now 1 "will not start" against 2 "will not stop" rather than the 2-and-2 this
+  # record was filed with.
+  - unblocks: heart-failure
+    standing: alleged
+    why: >
+      Cardiomyocytes lost to infarction are replaced by scar, and the adult
+      mammalian heart sits at essentially zero renewal — while neonatal mice and
+      adult zebrafish regenerate myocardium, so the capacity exists in the
+      lineage and is switched off. **The claim is that the switch, not the cell,
+      is the target.** The counter-argument is strong and the record states it:
+      two decades of cell therapy for cardiac repair have produced results *"that
+      have not survived scrutiny"*, and `heart-failure`'s own largest unknown is
+      the preserved-ejection-fraction half, which this obstacle does not touch at
+      all. **A correct answer here would address the residue and not the
+      disease.**
+  - unblocks: uterine-cancer
+    standing: alleged
+    why: >
+      The record describes a staircase — *"oestrogen unopposed by progesterone
+      drives proliferation, then hyperplasia, then atypical hyperplasia, then
+      carcinoma"* — which is a growth setpoint driven upward by a hormone with
+      nothing capping it. **This is the one place in the register where medicine
+      already restores growth control with a drug**: progestin therapy reverses
+      atypical hyperplasia and is used as fertility-sparing treatment. The claim
+      is therefore modest and checkable rather than sweeping: **the mechanism is
+      the proof that a growth setpoint is a druggable object**, in the single
+      tissue where the input signal happened to be known because it is an
+      endocrine one. Every other tissue's input is the thing this record says
+      nobody has identified.
+  - unblocks: pleomorphic-adenoma
+    standing: alleged
+    why: >
+      A benign salivary tumour, cured by excision, whose entire permanent toll is
+      the price of dissecting it off the facial nerve — an eye that will not
+      close, a mouth that will not seal. **Nothing here is malignant and the
+      damage is real**, which is what makes it the cleanest test of the *will not
+      stop* face: if the growth could be halted, there would be no operation and
+      therefore no toll. The claim overlaps `who-progresses` (FND-O-0001) and
+      says so — that record's question is which adenoma recurs or transforms, and
+      this one's is why any of them grows without a ceiling. They are different
+      questions about the same tumour and either could be the binding one.
+
+holes:
+  - >
+    **IT MAY BE TWO OBSTACLES WEARING ONE NAME, AND THE UNIFYING CLAIM IS THE
+    THING MOST LIKELY TO BE WRONG.** *Why will it not stop* and *why will it not
+    start* are held together here on the argument that they are the same brake —
+    an argument borrowed from `tissue-repair`'s `why_hard` and not demonstrated
+    anywhere in this corpus. If the mammalian block on cardiac and cochlear
+    regeneration turns out to be architectural, or epigenetic-developmental, and
+    unrelated to the mechanism that limits organ size, this record should split.
+    Same doubt `animal-translation` and `pathogen-persistence` log against
+    themselves. The claims were filed balanced two-and-two across the faces so
+    that answering the question grades the unification rather than hiding it;
+    that balance is now 1-and-2 because the cochlear claim became a derived link,
+    and **the surviving imbalance is worth watching** — if the *will not stop*
+    claims keep outnumbering the earned links, the record is drifting toward
+    being a cancer-biology commentary.
+  - >
+    **ONE DERIVED CITATION, WHICH IS BELOW THE REGISTER'S OWN THRESHOLD OF TWO,
+    AND `rna-folding` IS STILL THE PRECEDENT THAT SHOULD WORRY THIS RECORD.**
+    `hearing-loss` earned its link; every other disease named above reaches this
+    obstacle through `tissue-repair` and not directly. **A single citation is a
+    record that has been agreed with once, not a record that has been
+    established** — `anaesthesia-mechanism` sits in the same position with
+    `disorders-of-consciousness` and carries the same warning from `check.py`.
+    The clean test is whether a second rating pass tags a blocker here without
+    being prompted; if none ever does, this is a commentary on another record
+    rather than an obstacle, and the correct action is to deprecate it with
+    `see: tissue-repair` rather than defend it.
+    **The one thing that must not happen is the author tagging blockers to clear
+    the threshold.** The link is evidence precisely because whoever rated the
+    disease put it there.
+  - >
+    **THAT IS EXACTLY WHAT HAPPENED NEXT, ON THE SAME DAY, AND THE RECORD IS
+    OBLIGED TO SAY SO.** The hole below observed that Nordstern had no benign
+    overgrowths and named BPH, fibroids and keloid as the records that would test
+    this obstacle honestly. All three were then written on 2026-09-02, by the
+    same author, and all three cite this record — taking it from one citation to
+    four and past the threshold of two in a single afternoon.
+    **THE LINKS ARE REAL AND THEY ARE NOT INDEPENDENT.** Each of the three
+    blockers is a defensible reading of its disease — androgen is permissive and
+    does not explain why the prostate grows; every fibroid drug withdraws a
+    hormone and none acts on the growth; wound healing has a termination step and
+    keloid is that step failing — and each is also precisely what somebody
+    looking for confirmation would write. All three records declare this in their
+    own holes. **The count in the artifact cannot see the difference, so it is
+    written here in prose**, and the honest reading of `4 records` is *one earned
+    citation and three commissioned ones.*
+    Engpass has no field for how a link was obtained, and after this it probably
+    needs one — the register already distinguishes `derived` from `claimed`, and
+    this is a third category: derived, but from records written to supply it.
+    **`keloid` is the one to watch.** It is the only record in the corpus sitting
+    on both faces of this obstacle at once — repair that will not stop, neither
+    absent regeneration nor cancer — and it is the strongest substantive support
+    the unification claim has. It was still written to order.
+  - >
+    **THE CLAIMS ARE SKEWED TOWARD CANCER BECAUSE NORDSTERN HAS NO BENIGN
+    OVERGROWTHS**, and that is a gap in the register rather than a fact about
+    medicine. Benign prostatic hyperplasia, uterine fibroids and keloid are
+    absent from all 137 records, and all three are conditions where growth
+    control is the entire disease, the burden is large, the mortality is near
+    zero and the treatment is surgery. **Those are the records that would test
+    this obstacle honestly**, because in cancer growth control is one of several
+    things wrong and its contribution cannot be isolated.
+  - >
+    **THE LIVER AND THYMUS GRAFT RESULTS ARE RECALLED AND UNCITED**, and the
+    argument that there may be no general rule rests on them. If the extrinsic
+    liver setpoint is overstated, or the thymus result does not replicate as
+    described, the record's central complication weakens and the question becomes
+    more tractable rather than less — so the error would run in the direction of
+    making this obstacle look harder than it is.
+  - >
+    **UNLIKE EVERY OTHER MECHANISM RECORD HERE, THIS ONE IS NOT NEGLECTED**, and
+    the register has no way to say that. Cancer biology has been funding the
+    study of failed growth control at scale for fifty years. The complaint is not
+    that nobody is working on it but that the money is aimed at the failure and
+    the question is about the rule — which is an argument about research
+    *direction*, and Engpass has no field for it. `check.py` cannot express
+    "well funded and still stuck", so the record has to say it in prose.
+  - >
+    **`scale: null` is not asserted, because Engpass does not price obstacles** —
+    Nordstern's blockers do, and none cites this. Were one to, the pricing would
+    be genuinely contested in the same way `cell-targeting` logs against itself:
+    screening for regeneration-inducing compounds is buyable parallel work, and
+    identifying what a tissue measures is not.
+
+asserted:
+  date: 2026-09-02
+  by: [claude, jeremy]

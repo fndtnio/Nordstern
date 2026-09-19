@@ -1,0 +1,428 @@
+slug: copd
+id: FND-D-0044
+name: chronic obstructive pulmonary disease
+also: [COPD, emphysema, chronic bronchitis, chronic obstructive airways disease, chronic obstructive lung disease]
+# Mondo also lists `COLD` and `cold` as exact synonyms. NOT ADOPTED: `also` holds
+# terms people actually search for, and `cold` would match the common cold on every
+# free-text query in the register. Same rule that rejected `duodenal ulcer` for the
+# H. pylori record — an ontology's synonym list is not a search-alias list.
+common: emphysema
+mondo: MONDO:0005002
+kind: disease
+residual: false
+contested: false
+
+# THE CONTROL CASE FOR gaps.md #89, AND THAT IS WHY IT WAS ADDED NOW.
+#
+# Ischaemic heart disease and stroke both landed in `engineering problem` —
+# "understood, and nothing can be done" — and both times it was wrong, because
+# `disease-modifying` is binned with `none` by the quadrant derivation.
+#
+# COPD lands in the same cell and **here it is very nearly right.** Nothing
+# alters the decline in lung function except stopping the exposure. Bronchodilators
+# open the airways that can still be opened; the parenchymal destruction proceeds
+# at the same rate. That is `symptomatic` by the schema's own words — masks the
+# phenotype, course unchanged.
+#
+# So COPD ADJUDICATES between #89's three candidate fixes. Moving
+# `disease-modifying` up a rung would drag COPD up with nothing to justify it.
+# Deleting the quadrant loses a true statement about this disease. **Adding a
+# middle column is the fix that separates the three records correctly**, and it
+# took a record where the harsh verdict is deserved to show which repair is right.
+#
+# TWO OTHER THINGS THIS RECORD BREAKS:
+#
+# 1. Roughly half of COPD is decided before adulthood — by impaired lung growth
+#    from prematurity, childhood infection, malnutrition and early smoke
+#    exposure, in people who never reach a normal peak rather than declining
+#    fast from one. The window closed at twenty-five, in someone who had no
+#    disease. gaps.md #96.
+#
+# 2. The permanent damage of a disease that never ends has nowhere to live.
+#    `toll` is what treatment took; `residue` is what the disease left in
+#    someone who was cured. Lost lung function is neither. gaps.md #97.
+
+burden:
+  prevalence:
+    value: 3.9e8
+    units: >
+      people with airflow obstruction meeting the diagnostic criterion — and
+      note that the criterion is doing enormous work here; see the measurement
+      witness and gaps.md #90
+    src: recall
+  deaths:
+    value: 3.5e6
+    units: >
+      deaths/year — third or fourth largest cause of death worldwide, and the
+      largest that is neither cardiovascular nor infectious
+    src: recall
+  note: >
+    ROUGHLY A QUARTER TO A HALF OF COPD WORLDWIDE IS IN PEOPLE WHO NEVER SMOKED,
+    and the register's instinct to file this as the tobacco disease is a
+    high-income instinct.
+    The other exposures are household air pollution from cooking and heating with
+    biomass and coal — which falls on women and young children in low-income
+    settings — occupational dust and fume, ambient air pollution, repeated
+    childhood respiratory infection, and impaired lung growth from any cause.
+    With ischaemic heart disease and stroke this makes 19.1 million deaths a
+    year across three records, and all three share tobacco and air pollution as
+    dominant modifiable causes. **The register has now spent three records
+    describing the same two exposures from three organs.**
+
+survival:
+  horizon: 5 years from diagnosis of severe airflow limitation
+  untreated:
+    value: 0.50
+    units: >
+      fraction alive — the natural history of severe chronic obstructive
+      pulmonary disease, in which exacerbations and respiratory failure determine
+      the course
+    src: recall
+  treated:
+    value: 0.55
+    units: >
+      fraction alive on optimal inhaled therapy. **Almost none of that small gain
+      is the inhalers.** Long-term oxygen therapy in hypoxaemic patients improves
+      survival, pulmonary rehabilitation improves function, and stopping smoking
+      changes the slope of decline — bronchodilators relieve breathlessness and
+      reduce exacerbations without clearly extending life
+    src: reasoning
+  witness: >
+    **The second-smallest gap in the rated set, behind Alzheimer's zero**, and
+    for the same structural reason: the rung is `symptomatic`, so the treatment
+    column is not aimed at survival and should not be expected to move it. The
+    thing that moves this record is `prevention` — tobacco control and household
+    air pollution — which is why a survival-ranked dashboard would rate COPD as
+    stagnant while the age-standardised death rate falls.
+
+axes:
+  mechanism: established
+  intervention: symptomatic
+  prevention: risk-reduction
+  ongoing: high
+  efficacy:
+    value: 0.55
+    units: >
+      fraction-of-patients (meaningful relief of breathlessness and reduction in
+      exacerbations on optimal inhaled therapy) — SYMPTOM CONTROL, not disease
+      control. No figure here describes altering the course, because nothing on
+      the treatment side does
+    src: reasoning
+  access:
+    value: 0.30
+    units: >
+      fraction-of-patients (receiving appropriate inhaled therapy, and
+      pulmonary rehabilitation or oxygen where indicated) — dragged down hardest
+      by rehabilitation, which is among the most effective interventions here
+      and reaches under a tenth of eligible patients even in wealthy systems
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: partial
+  witness: >
+    DIAGNOSTIC is `objective` — spirometry, which is cheap, quick, and
+    non-invasive — and this is the least satisfying `objective` in the register
+    for two separate reasons.
+    FIRST, IT IS NOT DONE. Somewhere between half and three-quarters of COPD
+    worldwide is undiagnosed, and much of what is diagnosed was diagnosed
+    without spirometry, on symptoms and a smoking history. The confusion runs
+    both ways with asthma, and it matters: inhaled corticosteroids are central in
+    asthma and raise pneumonia risk in COPD.
+    SECOND, THE TEST DEFINES THE DISEASE, AND THE CUT-POINT IS KNOWN TO BE
+    BIASED. Diagnosis is a fixed ratio — FEV1/FVC below 0.70 after a
+    bronchodilator. That ratio falls naturally with age, so the fixed threshold
+    **overdiagnoses the old and underdiagnoses the young**, and using an
+    age-adjusted lower limit of normal instead moves millions of people across
+    the boundary in both directions.
+    This is gaps.md #90 past its own logical end. For ischaemic heart disease a
+    threshold decided whom to *treat*, and the disease existed either way. Here
+    **the threshold decides who HAS the disease** — a person with visible
+    emphysema on CT and a ratio of 0.72 does not have COPD, and the register's
+    prevalence figure is a count of people on one side of a line whose position
+    is contested and whose error is documented.
+    PROGNOSTIC is `partial`. FEV1, exacerbation history and composite indices
+    predict mortality reasonably at group level; the individual trajectory varies
+    enormously and is not predictable at diagnosis.
+    PREDICTIVE is `partial`, and it contains a genuine and recent win worth
+    naming: **the blood eosinophil count predicts who benefits from an inhaled
+    corticosteroid** — a cheap, routine test that selects a therapy with a real
+    harm attached. Alpha-1 antitrypsin testing identifies the small subset for
+    augmentation. And lung volume reduction has a defined benefiting subgroup
+    and a subgroup it kills, which is the sharpest predictive question here.
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    The inhalers themselves are mostly benign — dysphonia, oral candidiasis,
+    tremor. The permanent price is elsewhere and it accumulates.
+    ORAL CORTICOSTEROIDS, GIVEN AGAIN AND AGAIN. Every moderate or severe
+    exacerbation is treated with a short course, and a person with frequent
+    exacerbations may take dozens over a decade. The cumulative consequences are
+    permanent and unglamorous: osteoporosis and fragility fracture, diabetes,
+    cataracts, skin thinning, adrenal suppression, weight gain. Each course is
+    individually justified and the total is nobody's decision.
+    INHALED CORTICOSTEROIDS raise the risk of pneumonia in this population,
+    which is why the eosinophil count above matters.
+    LONG-TERM OXYGEN extends life in chronic severe hypoxaemia and tethers the
+    person to a concentrator fifteen or more hours a day. In a patient who still
+    smokes it is also a fire risk, and the burns are catastrophic.
+    LUNG VOLUME REDUCTION SURGERY helps a defined subgroup and **increased
+    mortality in another** — one of the clearest demonstrations in medicine that
+    a procedure's average effect can conceal opposite effects in identifiable
+    people.
+    TRANSPLANT is the only intervention that replaces what was lost, and it
+    exchanges the disease for lifelong immunosuppression, chronic rejection and
+    a median survival measured in a handful of years.
+  incidence:
+    value: 0.10
+    units: >
+      fraction-of-patients (permanent harm attributable to treatment — chiefly
+      cumulative systemic corticosteroid effects across repeated exacerbation
+      courses) — a reasoned estimate
+    src: reasoning
+
+# NO `residue` BLOCK, AND THE OMISSION IS THE FINDING.
+#
+# `residue` is what the disease left in somebody the treatment worked on, and the
+# rule corrected at dracunculiasis is that the EPISODE MUST END — by cure or by
+# resolving on its own. COPD never ends. The destroyed alveoli are not what the
+# disease left behind; they are the disease, and the axes already say so. This is
+# the Huntington's case the corrected rule was written to name, and COPD is its
+# cleanest instance.
+#
+# But two things then have nowhere to go, and both are real:
+#
+#   - The permanent, irreversible damage this disease has ALREADY done to a
+#     living patient. `toll` holds what treatment took. `residue` holds what a
+#     survived disease left. Lost lung function is neither.
+#   - Exacerbations. Each one ENDS, and each one leaves a permanent step-down in
+#     function that never fully recovers. The episode satisfies the corrected
+#     rule perfectly; the field is scoped to the disease, not the episode.
+#
+# Consequence, visible in the generated tables: `window_toll_link` fires on this
+# record and cites the corticosteroid toll. The price of missing this window is
+# lung, not steroids. The flag is right and its reason is wrong. See gaps.md #97.
+
+window:
+  what: >
+    **THE LONGEST WINDOW IN THIS REGISTER — decades — and the least acted on.**
+    Stroke's is minutes and health systems are built around it. This one is
+    twenty years long and almost nobody is caught inside it.
+    Lung function is lost silently. Breathlessness on exertion is attributed to
+    age, weight or being unfit, and it is not reported until a large share of
+    function is already gone. By the time a patient presents with symptoms that
+    prompt spirometry, the destruction that produced them is permanent.
+    What is available inside the window is not a treatment. **It is stopping the
+    exposure**, which is the only thing shown to slow the decline — and stopping
+    it at forty preserves far more remaining lung than stopping at sixty. The
+    intervention is the same at any age; what changes is how much lung is left
+    to protect.
+    So the cheapest lever here is finding people who feel well: case-finding
+    spirometry in exposed adults. It is a cheap test, on a known-exposed
+    population, for a disease with a twenty-year runway — and roughly half to
+    three-quarters of cases worldwide are still undiagnosed.
+    AND FOR PERHAPS HALF OF ALL COPD THERE IS AN EARLIER WINDOW STILL, which
+    closed before any of this: see gaps.md #96.
+  closes_on: >
+    cumulative irreversible destruction of alveolar wall and small airway —
+    continuous rather than sudden, which is why nobody arrives in time
+  caught_in_time:
+    value: 0.10
+    units: >
+      fraction-of-cases (identified while enough lung function remains for
+      exposure cessation to change the outcome materially) — a reasoned
+      estimate, anchored on the undiagnosed fraction
+    src: reasoning
+
+witness:
+  mechanism: >
+    `established`, and there is a natural experiment proving it.
+    Inhaled particulates provoke chronic inflammation in the small airways and
+    alveoli. Recruited neutrophils and macrophages release proteases; the
+    antiprotease defence is overwhelmed or deficient; elastin in alveolar walls
+    is digested. The lung loses gas-exchange surface and, more consequentially,
+    loses elastic recoil — so the small airways collapse on expiration, air is
+    trapped, the chest hyperinflates, and the diaphragm is pushed into a
+    mechanically hopeless position. That last part is why breathlessness tracks
+    hyperinflation better than it tracks oxygen.
+    **ALPHA-1 ANTITRYPSIN DEFICIENCY IS THE PROOF.** People born without the
+    principal antiprotease develop emphysema young, and severely if they smoke.
+    A missing inhibitor produces the same disease as an excess of the enzyme it
+    inhibits, which is as close to a mechanistic demonstration as this register
+    contains outside of glycolysis.
+    THE NAMED HOLE IS SUSCEPTIBILITY, and it is large. Only a minority of heavy
+    smokers develop COPD. Beyond alpha-1, which is a very small fraction, nobody
+    can say why. The same exposure, the same dose, and one person's lungs are
+    destroyed and another's are not — and since exposure cessation is the only
+    disease-altering act available, knowing whom to press hardest is worth a
+    great deal.
+    And chronic mucus hypersecretion, airway wall remodelling and small-airway
+    fibrosis run alongside the parenchymal destruction. The disease is at least
+    two processes; individual patients sit at different points between them, and
+    treatment does not currently distinguish.
+  intervention: >
+    `symptomatic`, and this is a deliberate and close call which the record
+    should own rather than round up.
+    Long-acting bronchodilators reduce breathlessness and exacerbations and
+    genuinely improve life. **They do not change the rate at which lung function
+    is lost.** Inhaled corticosteroids reduce exacerbations in patients selected
+    by eosinophil count, and do not change the decline either. That is the
+    schema's definition of `symptomatic`: masks the phenotype, course unchanged.
+    Three things push against the rating and none quite carry it. Long-term
+    oxygen in chronic severe hypoxaemia improves survival — but it treats the
+    consequence, not the disease. Pulmonary rehabilitation improves exercise
+    capacity, symptoms and admissions as much as any drug here — and it does not
+    touch the lungs. Lung transplantation replaces the organ rather than treating
+    the illness.
+    The one act that alters the course is **stopping the exposure**, and it lives
+    on the prevention axis where `capability()` cannot see it (gaps.md #66).
+    **SO COPD LANDS IN `engineering problem` AND VERY NEARLY DESERVES IT** —
+    which is exactly why it was added here. It is the control case that shows
+    #89's diagnosis is about the *binning*, not about being harsh: ischaemic
+    heart disease and stroke are misfiled, this one is not, and the repair has to
+    tell them apart.
+  prevention: >
+    `risk-reduction`, and the same axis is carrying two completely different
+    programmes.
+    TOBACCO, which is the dominant cause where COPD is best studied and where
+    the register's instincts were formed. Taxation, advertising bans, smoke-free
+    legislation, cessation support — legislative and fiscal, slow, opposed, and
+    the most effective health intervention of the twentieth century by most
+    reckonings. Shared entirely with ischaemic heart disease, stroke, and lung
+    cancer.
+    HOUSEHOLD AIR POLLUTION, which is a housing and energy problem wearing a
+    disease's clothes. Billions cook and heat with biomass and coal indoors, and
+    the exposure falls on women and small children. The intervention is clean
+    cooking fuel and ventilation, and it belongs to energy ministries and
+    development finance.
+    **AND THE TRIAL RESULTS THERE CARRY A LESSON THE REGISTER SHOULD KEEP.**
+    Cleaner-cookstove trials have repeatedly underdelivered, and the most
+    credible explanation is that the exposure reduction achieved was not large
+    enough — households kept using the old stove alongside the new one. This is
+    a prevention with a **threshold**: partial adoption yields little or nothing.
+    The register's `access` scalar is linear and cannot say that halfway is worth
+    nothing.
+  ongoing: >
+    `high`, and among the most justified uses of that rating in the register.
+    Multiple inhalers daily with technique that is frequently wrong; oxygen for
+    fifteen or more hours a day for those who need it, tethered to a
+    concentrator; pulmonary rehabilitation programmes measured in weeks; repeated
+    courses of oral steroids and antibiotics; and exacerbations that bring
+    hospital admissions, each one a step down that does not fully recover.
+    Underneath it is the symptom itself. Breathlessness is not pain and is worse
+    than most pain to live with, it is present with the smallest exertion in
+    advanced disease, and it constricts a life to a few rooms. Anxiety and
+    depression are common and are usually read as reactions when they are partly
+    the disease.
+
+holes:
+  - Every scalar is `src: recall` or `src: reasoning`. The prevalence figure is
+    especially soft because it counts people on one side of a contested
+    threshold — a different but defensible criterion gives a materially
+    different number, which is the point of the measurement witness.
+  - The never-smoker fraction is given as a range because it varies enormously by
+    region and by how household air pollution exposure is ascertained.
+  - `efficacy: 0.55` measures symptom control only. There is no course-altering
+    treatment for this to be a fraction of, and comparing this number to
+    hepatitis C's or stroke's is meaningless.
+  - Whether COPD, asthma, and the overlap between them are one entity, two or
+    three is genuinely unsettled, and the register records only one of them.
+    Asthma is absent and should not be — it is common, has real capability, and
+    is the natural contrast case.
+  - Lung cancer is absent and shares the dominant exposure. Three of the top four
+    causes of death now in this register are driven by tobacco and air pollution,
+    and the fourth is missing.
+
+blockers:
+  - kind: diagnosis
+    blocks: finding people while they still have lung to save
+    what: >
+      THE BINDING CONSTRAINT, and it is cheap to fix by the standards of
+      anything else in this register.
+      Between half and three-quarters of COPD worldwide is undiagnosed.
+      Spirometry costs very little, takes minutes, needs no laboratory, and is
+      simply not performed — including in primary care systems that have the
+      equipment, where COPD is frequently diagnosed on history alone and
+      confused with asthma in both directions.
+      The window is twenty years long. The population is known in advance:
+      adults with substantial smoking or biomass exposure. There is no
+      scientific obstacle whatever to case-finding in that group, and the payoff
+      is the one intervention that alters the disease, delivered while it still
+      has something to protect.
+      **This is the register's clearest instance of a cheap test, a long window,
+      a defined population, and near-total failure to act.**
+    who_could: [health-system, government, nonprofit, payer]
+    scale: 2.0e9
+    standing: documented
+    src: recall
+
+  - kind: policy
+    blocks: the two exposures, neither of which is a medical problem
+    what: >
+      Tobacco control and household air pollution, and they need different
+      ministries.
+      Tobacco is fiscal and legislative — taxation, plain packaging, advertising
+      bans, smoke-free public space — well evidenced, actively opposed, and
+      shared with ischaemic heart disease, stroke and lung cancer, so
+      unchargeable to any of them (gaps.md #87).
+      Household air pollution is energy and housing policy: clean cooking fuel,
+      electrification, ventilation. It sits with development finance and climate
+      programmes, and the health benefit is rarely counted when those are
+      costed — the mirror of trachoma's MORDOR problem.
+      Note the threshold effect recorded in the prevention witness: partial
+      substitution of a cleaner stove appears to buy little. **A programme that
+      reaches everybody halfway may be worth less than one that reaches half of
+      them completely**, and no scalar in this schema can express that.
+    who_could: [government, legislator, health-system, nonprofit, payer]
+    scale: 1.0e10
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: pulmonary rehabilitation, which works and barely exists
+    what: >
+      Pulmonary rehabilitation — supervised exercise training with education —
+      improves exercise capacity, breathlessness and quality of life, and
+      reduces hospital admission after an exacerbation. The effect sizes are
+      comparable to or better than the drugs, and it involves no drug, no
+      device, and no patent.
+      It reaches well under a tenth of eligible patients in wealthy health
+      systems and is essentially unavailable elsewhere. The reasons are
+      referral, staffing, transport, and that nobody sells it.
+      **The register has a recurring shape here and this is its purest case: the
+      intervention nobody profits from is the one nobody delivers.** Leprosy
+      self-care, stroke units and hydrocelectomy are the others.
+    who_could: [health-system, payer, government, nonprofit]
+    scale: 5.0e9
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    obstacles: [who-progresses, tissue-repair]
+    blocks: anything that alters the course, and knowing who is susceptible
+    what: >
+      Two absences, and the first is the whole reason this record rates
+      `symptomatic`.
+      **NOTHING SLOWS THE LOSS OF LUNG FUNCTION EXCEPT REMOVING THE EXPOSURE.**
+      Every drug in COPD treats symptoms or exacerbations. There is no
+      anti-inflammatory, antiprotease or regenerative therapy that changes the
+      trajectory, and the destroyed alveoli do not come back — the only
+      intervention that restores lost tissue is a transplant.
+      AND SUSCEPTIBILITY IS UNEXPLAINED. Most heavy smokers do not develop COPD;
+      nobody can say why, beyond the small alpha-1 antitrypsin fraction. Since
+      exposure cessation is the only disease-altering act available, identifying
+      the susceptible would tell clinicians where to spend their effort — and it
+      is a prognostic question whose answer is currently a coin toss.
+      `scale: null`.
+    who_could: [academic, sponsor, manufacturer, philanthropy, government]
+    scale: null
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0044
+  rated: 2026-08-23
+  by: [claude, jeremy]

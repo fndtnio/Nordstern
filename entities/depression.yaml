@@ -1,0 +1,145 @@
+slug: depression
+id: FND-D-0007
+name: major depressive disorder
+also: [MDD, clinical depression, unipolar depression]
+mondo: MONDO:0002009
+kind: disease
+residual: false
+contested: false
+
+# The empirical-luck quadrant, at enormous scale. Treatments that work, modestly,
+# for reasons no one can state. Contrast with huntington.yaml, which is the exact
+# inverse, and note which of the two carries more burden by three orders of
+# magnitude.
+
+burden:
+  prevalence:
+    value: 2.8e8
+    units: people (depressive disorders)
+    src: recall
+  dalys:
+    value: 4.6e7
+    units: DALY/year
+    src: recall
+
+axes:
+  mechanism: correlates
+  intervention: symptomatic
+  prevention: risk-reduction
+  ongoing: moderate
+  efficacy:
+    value: 0.5
+    units: fraction-of-patients (response to first-line treatment; placebo ~0.35)
+    src: recall
+  access:
+    value: 0.3
+    units: fraction-of-patients (receiving any minimally adequate treatment)
+    src: recall
+
+measurement:
+  diagnostic: clinical
+  prognostic: none
+  predictive: none
+  witness: >
+    The worst measurement record in the register, on all three questions at
+    once. No objective diagnostic test. No way to predict course, chronicity
+    or recurrence in an individual. And no biomarker to choose among
+    treatments, so a patient may spend months cycling through agents — the
+    STAR*D design was not a study artefact but a description of practice.
+    Every effective treatment was found rather than designed, and none of them
+    can be aimed.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    Mostly reversible: sexual dysfunction, weight change and emotional
+    blunting on SSRIs, with discontinuation syndromes that can be prolonged,
+    and a contested question over whether sexual dysfunction persists after
+    stopping in a small minority. ECT causes retrograde amnesia that is
+    usually but not always transient. Nothing here is amputation, and nothing
+    is nothing.
+  incidence:
+    value: 0.05
+    units: fraction-of-treated (persistent harm)
+    src: recall
+
+witness:
+  mechanism: >
+    Rated `correlates`, and this is the rating most likely to be objected to, so
+    the grounds should be explicit. There is no established causal chain from
+    any initiating cause to the syndrome. The monoamine/serotonin-deficiency
+    account was inferred backwards from drug action and does not survive as an
+    explanation — the 2022 umbrella review of serotonin measures found no
+    consistent deficiency, and the timing problem (receptor occupancy in hours,
+    clinical effect in weeks) was never resolved. What exists is a large set of
+    reproducible associations: HPA-axis findings, inflammatory markers,
+    hippocampal volume, heritability around 30-40%, and hundreds of GWAS loci
+    of tiny individual effect. Associations without a chain is exactly what
+    `correlates` denotes.
+  intervention: >
+    Rated `symptomatic` deliberately. SSRIs, SNRIs, and psychotherapy produce
+    real but modest benefit over placebo; STAR*D found roughly a third
+    remitting at the first step and about two-thirds cumulatively across four
+    steps, with substantial relapse. ECT is genuinely highly effective in
+    severe and treatment-resistant cases and its mechanism is even less
+    understood than the drugs'. Ketamine and esketamine act within hours,
+    which falsifies the slow-monoamine story and does not replace it.
+    Nothing here is known to alter an underlying process, because no
+    underlying process is specified — so `disease-modifying` cannot be
+    claimed even where outcomes improve.
+  prevention: >
+    `risk-reduction`. Psychological prevention programmes and treatment of
+    adversity show modest effects; there is no prophylaxis.
+  ongoing: >
+    `moderate` — long-term medication with side effects that drive
+    discontinuation, high recurrence, and a chronic or recurrent course in a
+    large minority.
+
+holes:
+  - Whether MDD is one entity is unresolved, and if it is not, every number in
+    this file is an average over unlike things. This is the register's most
+    consequential open question about a high-burden entry.
+  - No objective diagnostic marker, so treatment allocation is trial and error.
+  - The mechanism of every effective treatment, including the fast-acting ones
+    and ECT, is unknown. `intervention` improving without `mechanism` moving is
+    the definition of this quadrant and should be watched as a pattern.
+
+blockers:
+  - kind: knowledge
+    obstacles: [unexplained-illness]
+    blocks: any mechanism-based treatment
+    what: >
+      No specified disease process, therefore no target. Every effective
+      treatment was found rather than designed, including the fast-acting ones.
+    who_could: [academic]
+    scale: null
+    standing: documented
+    src: recall
+  - kind: evidence-incomplete
+    blocks: treatment selection
+    what: >
+      Which of several partly-effective treatments suits which patient is
+      unknown, so allocation is sequential trial and error over months. Not a
+      new-drug problem: a stratification problem, and the largest available gain
+      from existing treatments.
+    who_could: [academic, nonprofit, software]
+    scale: 1e8
+    standing: documented
+    src: recall
+  - kind: logistics
+    blocks: psychotherapy
+    what: >
+      Psychological therapy has evidence comparable to medication and is limited
+      by trained workforce almost everywhere. A capacity problem with a known
+      solution shape (task-shifting, lay counsellors, stepped care) that is
+      demonstrated and under-deployed.
+    who_could: [health-system, government, nonprofit]
+    scale: 1e9
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0007
+  rated: 2026-08-11
+  by: [claude, jeremy]

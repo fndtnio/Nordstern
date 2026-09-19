@@ -1,0 +1,447 @@
+slug: cryptococcal-meningitis
+id: FND-D-0109
+name: cryptococcal meningitis
+also: [cryptococcosis, Cryptococcus neoformans infection, crypto, CM]
+mondo: MONDO:0005723
+kind: disease
+residual: false
+contested: false
+
+# THE FIRST INVASIVE FUNGAL RECORD IN THE REGISTER, AND IT ARRIVES CARRYING
+# THREE THINGS THE SCHEMA HAS NOT MET.
+#
+# 1. AN ORGANISM WITH NO INTEREST IN US. Cryptococcus is a soil and tree
+#    saprophyte. It does not transmit between people, has no vector, no
+#    reservoir host to treat, and nothing to interrupt. gaps.md #70 states the
+#    register's implicit model outright — "every other infectious record in this
+#    register is controlled by attacking its transmission route" — and lists the
+#    tsetse, the snail, the blackfly, the sandfly, the dog, the Aedes. **There is
+#    no such route here and there never will be.** Its virulence factors — a
+#    polysaccharide capsule, melanin, growth at 37 °C — are most plausibly
+#    adaptations to amoebal predation in soil. We are collateral, not the
+#    target. `prevention` is therefore rated on the HOST rather than on the
+#    organism, which nothing else in the corpus does.
+#
+# 2. ITS DEATHS BELONG TO ANOTHER RECORD. Roughly nine in ten cases are in
+#    people with advanced HIV, and a death is ordinarily certified to HIV. This
+#    is the SEVENTH kind of zero (gaps.md #182, #211) and a new one: not an
+#    attribution habit, not a modelling decision, but a disease that is
+#    definitionally a complication of another disease the register already
+#    holds. Its burden is therefore stated as a subset and flagged, not summed.
+#
+# 3. THE DRUG IS EIGHTY YEARS OLD, THE TEST COSTS TWO DOLLARS, AND IT KILLS MORE
+#    PEOPLE THAN MALARIA DOES IN SOME COUNTRIES. There is no knowledge blocker
+#    of any consequence in this record. That is unusual and it is the point.
+
+burden:
+  incidence:
+    value: 1.5e5
+    units: >
+      estimated new cases/year worldwide — down from around a million a year in
+      the 2009 estimate, and **most of that fall is a better denominator rather
+      than fewer patients**: the 2009 figure was revised sharply downward in
+      2017 and again in 2022 as antiretroviral coverage rose and as the
+      underlying CD4 distributions were re-modelled. Sub-Saharan Africa carries
+      the large majority
+    src: recall
+  deaths:
+    value: 1.1e5
+    units: >
+      deaths/year — **and this figure double-counts `hiv` almost entirely,
+      which is stated rather than corrected.** Around 90% of cases occur in
+      advanced HIV disease, where the death certificate says HIV; cryptococcal
+      meningitis is estimated to cause on the order of 15-19% of all
+      AIDS-related deaths. It is not additive to this register's mortality
+      column and must not be summed into it (gaps.md #182)
+    src: recall
+  note: >
+    **A case fatality that is worse than most cancers in this register and is
+    not thought of that way.** Ten-week mortality is roughly 25-30% in trial
+    conditions with the best regimen, and 50-70% in routine African care.
+    Untreated it is 100% within weeks. For comparison, `pancreatic-cancer` —
+    the register's byword for a bad prognosis — has 13% alive at five years,
+    and this disease kills a comparable share of people inside ten weeks.
+
+survival:
+  horizon: 10 weeks from diagnosis
+  untreated:
+    value: 0.0
+    units: >
+      fraction alive — **untreated cryptococcal meningitis is uniformly fatal**,
+      within days to weeks. There is no chronic carriage, no spontaneous
+      recovery in the immunosuppressed, and no ambiguity about the counterfactual
+    src: recall
+  treated:
+    value: 0.55
+    units: >
+      fraction alive — **and the spread behind this number is the record.**
+      The AMBITION-cm regimen (single high-dose liposomal amphotericin B plus
+      flucytosine and fluconazole) achieved roughly 75% ten-week survival in
+      trial conditions across five African countries. Routine care in the same
+      countries, with fluconazole monotherapy where flucytosine is unavailable,
+      runs nearer 30-50%. **This figure is a blend weighted toward what actually
+      happens rather than toward what is possible**
+    src: reasoning
+  witness: >
+    **THE UNTREATED COLUMN IS 0.0 AND THE TREATED COLUMN IS SET BY DRUG SUPPLY,
+    NOT BY BIOLOGY.** Every other uniformly-fatal-to-survivable transition in
+    this register — `hat`, `visceral-leishmaniasis`, `type-1-diabetes`,
+    `childhood-all` — reached its treated figure by discovering something. This
+    one reached 0.75 in a trial in 2022 using **amphotericin B (1955) and
+    flucytosine (1957)**, given in a better combination and a shorter schedule.
+    The gap between 0.75 and what most patients get is flucytosine registration
+    and price.
+    The outcome derives as `cured`, which is right: the rung is `curative`,
+    survivors clear the organism and the disease is over. **What they do not
+    always get back is their sight or their cognition** — see `residue`, and read
+    this row with it. `course` is deliberately not declared: it is only consulted
+    below `suppressive`, and a declaration nothing reads would rot.
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: prophylaxis
+  ongoing: moderate
+  efficacy:
+    value: 0.75
+    units: >
+      fraction-of-patients (alive at ten weeks and fungal culture negative, on
+      the best demonstrated regimen) — the AMBITION-cm result. **This is one of
+      the few efficacy figures in the register that is a hard trial endpoint
+      rather than a construct**, and the distance between it and the `access`
+      figure beside it is the entire story of this record
+    src: recall
+  access:
+    value: 0.30
+    units: >
+      fraction-of-patients (receiving screening where indicated, and receiving
+      the recommended induction regimen when diagnosed) — **flucytosine is
+      unregistered in most African countries**, liposomal amphotericin B is
+      expensive and needs a cold chain, and cryptococcal antigen screening is
+      inconsistently implemented in the programmes that recommend it. The
+      shortfall is not that patients cannot be identified; it is that the drug
+      is not in the building
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: good
+  predictive: partial
+  witness: >
+    **DIAGNOSTIC is `objective` and is one of the strongest quiet successes in
+    this register.** The cryptococcal antigen lateral flow assay is a dipstick,
+    costs on the order of two dollars, needs no laboratory, no cold chain and no
+    electricity, reads in ten minutes, and performs above 95% sensitivity on
+    serum and on cerebrospinal fluid. It also works on blood **before symptoms
+    begin**: antigenaemia precedes meningitis by weeks to months, which is what
+    makes screening possible at all. India ink and culture, the older methods,
+    are respectively insensitive and slow.
+    **So the measurement problem here is not the test. It is that a test this
+    good is not used.** That is a different and rarer failure than the ones this
+    register usually records, and it puts the entire weight of this record on
+    `access` and on the `diagnosis` blocker rather than on any question about
+    the disease.
+    PROGNOSTIC is `good`. Untreated outcome is not in doubt. Baseline fungal
+    burden, altered mental status at presentation and CSF opening pressure
+    predict death well, and early fungicidal activity — the rate at which
+    cultures clear — is an accepted surrogate that made the modern trials
+    possible. **Compare `tuberculosis`, which has no correlate of protection and
+    therefore no way to screen vaccine candidates**: here the surrogate exists,
+    and the field moved fast because of it.
+    PREDICTIVE is `partial`, **and it was first written as `n/a` and the
+    validator refused it.** The claim had been that a good-enough treatment
+    abolishes the question, the way pan-genotypic antivirals did for
+    `hepatitis-c`. The rule caught it: `hepatitis-c` cures 95%, and this regimen
+    leaves **a quarter of optimally treated patients dead at ten weeks.** A
+    treatment that fails one patient in four has a selection question by
+    definition, and calling it `n/a` was dodging a real gap (gaps.md #223).
+    What is `partial` about it: baseline fungal burden, altered mental status
+    and CSF opening pressure genuinely stratify risk, and early fungicidal
+    activity is an accepted surrogate. What is absent is anything that says
+    *this patient needs a different regimen* — there is no meaningful acquired
+    resistance to test for and no second-line alternative to switch to. So the
+    information exists and there is nothing to do with it, which is a different
+    failure from having no information at all.
+
+toll:
+  severity: major
+  permanent: false
+  what: >
+    **Amphotericin B is a drug from 1955 and it is tolerated the way a drug from
+    1955 is tolerated.** Conventional deoxycholate amphotericin causes
+    nephrotoxicity, profound hypokalaemia and anaemia severe enough to require
+    transfusion, and its administration requires pre-hydration, electrolyte
+    replacement and laboratory monitoring that many of the facilities treating
+    this disease do not have. Flucytosine causes marrow suppression and needs
+    counts checked. **The toxicity management is a larger operational burden
+    than the drugs themselves**, which is why regimen simplification has done
+    more for survival here than any new molecule.
+    Rated `permanent: false` because the renal and haematological effects
+    largely reverse, and rated `major` for the direction the modal patient
+    still experiences. **Single-dose liposomal amphotericin B substantially
+    reduces all of this** and is the reason `moved` carries a toll entry — the
+    same shape as `visceral-leishmaniasis`, and for the same drug.
+  incidence:
+    value: 0.35
+    units: >
+      fraction-of-treated experiencing grade 3+ toxicity on the conventional
+      regimen — a reasoned figure, and it falls steeply where liposomal
+      amphotericin is available
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    **VISION AND COGNITION, AND THE MECHANISM IS PRESSURE RATHER THAN
+    INFECTION.** Cryptococcus obstructs cerebrospinal fluid outflow, and raised
+    intracranial pressure — often strikingly high — causes irreversible optic
+    nerve damage and hearing loss. Blindness in survivors is well described and
+    is largely preventable **by repeated therapeutic lumbar puncture**, a
+    procedure requiring a needle, a manometer and someone willing to do it daily.
+    Cognitive impairment and focal deficits persist in a substantial minority.
+    **This is a residue produced by a mechanical complication of a curable
+    infection, prevented by a bedside procedure that costs nothing and is
+    frequently not done.** The register has recorded cheap unused diagnostics
+    before; a cheap unused *procedure* whose omission blinds people is new.
+  incidence:
+    value: 0.15
+    units: >
+      fraction-of-survivors with permanent visual, hearing or cognitive
+      impairment — reasoned, and wide. Reporting is poor because survivors in
+      the highest-burden settings are not systematically followed
+    src: reasoning
+
+witness:
+  mechanism: >
+    `established`, and unusually the whole of it. *Cryptococcus neoformans* is
+    an encapsulated environmental yeast found in soil, decaying wood and avian
+    guano; *C. gattii* occupies a partly different ecological and geographic
+    niche and infects immunocompetent people more often. Inhaled, it is
+    contained by cell-mediated immunity in almost everyone. **CD4+ T-cell
+    depletion removes that containment**, the organism disseminates from lung to
+    central nervous system, and the polysaccharide capsule — antiphagocytic,
+    immunomodulatory — is why it survives there. Most disease is reactivation of
+    an infection acquired long before, sometimes in childhood.
+    **The virulence factors are not adaptations to us.** Capsule, melanin and
+    thermotolerance are most plausibly defences against amoebal predation in
+    soil, and their effectiveness against human macrophages is a coincidence of
+    convergent selection. **This is the first record in the register whose
+    pathogen has no evolutionary interest in human beings**, and it is why
+    prevention cannot be aimed at the organism.
+  intervention: >
+    `curative`, and finite: induction with amphotericin B plus flucytosine,
+    consolidation and maintenance with fluconazole until immune reconstitution.
+    Survivors clear the organism and the disease ends. **The important recent
+    change is not a new drug but a shorter, simpler, better-tolerated
+    arrangement of two very old ones** — AMBITION-cm's single high dose of
+    liposomal amphotericin B was non-inferior to a week of daily infusions, and
+    it converts a regimen requiring an inpatient week into something a district
+    hospital can deliver.
+  prevention: >
+    `prophylaxis`, **and it is aimed at the host rather than at the pathogen,
+    which nothing else in this register does.** You cannot avoid an organism
+    that is in soil and dust worldwide, and there is no vaccine. What works is
+    **cryptococcal antigen screening of people with CD4 below 100 followed by
+    pre-emptive fluconazole**, which intercepts the disease between antigenaemia
+    and meningitis. WHO recommends it; implementation is uneven.
+    **The deeper prevention is antiretroviral therapy**, which is another
+    record's intervention. Where HIV programmes work, this disease largely
+    disappears — which is exactly why the burden is concentrated where they do
+    not.
+  ongoing: >
+    `moderate`. Fluconazole maintenance continues until CD4 recovery, typically
+    a year or more, and it is oral, cheap and well tolerated. **The ongoing
+    burden that matters is not this drug but the HIV care the patient must now
+    stay in**, and immune reconstitution inflammatory syndrome — the immune
+    system returning and inflaming the site of a controlled infection — is a
+    real hazard of doing the right thing, which is why antiretroviral initiation
+    is deliberately delayed by several weeks.
+  efficacy: >
+    See the axis. The gap between 0.75 in a trial and what routine care achieves
+    is the record.
+  access: >
+    **FLUCYTOSINE IS THE SHARPEST SINGLE ACCESS FACT IN THIS REGISTER.** It was
+    approved in 1968, it is off-patent, it is cheap to make, it is essential to
+    the only regimens that achieve good survival — and it has been unregistered
+    in most of sub-Saharan Africa, where almost all the disease is. There is no
+    scientific dispute, no safety question, and no patent. **The drug simply was
+    not registered in the countries that needed it**, because the market was
+    poor and no manufacturer applied. That has begun to change, and it took
+    coordinated advocacy rather than any discovery.
+
+moved:
+  - date: 2022
+    axis: efficacy
+    from: 0.55
+    to: 0.75
+    why: >
+      The AMBITION-cm trial reported that a **single high dose of liposomal
+      amphotericin B** plus flucytosine and fluconazole was non-inferior to a
+      week of daily amphotericin infusions, with substantially less toxicity —
+      about 75% ten-week survival across five African countries. WHO guidance
+      followed in 2022. **A large gain from rearranging two drugs older than
+      most of the patients**, which is the kind of progress the register keeps
+      finding and pharmacology-shaped histories keep missing.
+    src: recall
+  - date: 2022
+    axis: toll
+    from: harsh
+    to: major
+    why: >
+      The same result. Single-dose liposomal amphotericin removes most of a week
+      of nephrotoxicity, hypokalaemia and transfusion-requiring anaemia. **Toll
+      reduction is progress no other axis records** — the same cure, at a lower
+      price — and this is the second record after `visceral-leishmaniasis` where
+      the drug responsible is liposomal amphotericin B.
+    src: recall
+  - date: 2018
+    axis: access
+    from: 0.15
+    to: 0.30
+    why: >
+      Flucytosine registration and supply began to expand in sub-Saharan Africa
+      following sustained advocacy and pooled procurement, and cryptococcal
+      antigen screening entered national HIV guidelines in several
+      high-burden countries. **Dated loosely and deliberately** — this is a
+      process rather than an event, and the register should say so.
+    src: reasoning
+
+holes:
+  - The burden figures are the weakest numbers here and they are **estimates
+    built on estimates** — antigenaemia prevalence times a CD4 distribution
+    times an assumed progression rate. The 2009, 2017 and 2022 global estimates
+    differ by nearly an order of magnitude, mostly because the modelling
+    changed rather than because the disease did.
+  - >
+    `deaths` double-counts `hiv` almost completely and the record says so rather
+    than adjusting it. **The register has no way to express "this mortality is a
+    subset of that record's"**, which is the same defect that makes the
+    corpus-wide deaths column exceed all human mortality (gaps.md #182).
+  - The `access` figure is a construct spanning two different things —
+    screening coverage and induction-regimen availability — which do not move
+    together and probably should not share a number.
+  - >
+    `residue` incidence is poorly evidenced. Survivor follow-up in the
+    highest-burden settings is close to absent, so the blindness and cognitive
+    impairment figures come from cohorts that are unlikely to be representative.
+  - >
+    *C. gattii* is folded into this record and is arguably a different disease:
+    it infects immunocompetent people, occurs in outbreaks — the Pacific
+    Northwest cluster from 1999 — responds more slowly, and its epidemiology is
+    environmental rather than immunological. **A candidate for `strata`, or for
+    its own record.**
+  - >
+    The claim that cryptococcal virulence is an adaptation to amoebal predation
+    is a well-supported hypothesis and is **stated more confidently in the
+    witness than the evidence strictly warrants.**
+  - Written from model recall. AMBITION-cm, the flucytosine registration
+    failure, and the antigen screening strategy are the parts most likely right;
+    every number is the part most likely wrong.
+
+blockers:
+  - kind: logistics
+    obstacles: [cold-chain]
+    blocks: a registered, affordable supply of a drug approved in 1968
+    what: >
+      **FLUCYTOSINE IS OFF-PATENT, CHEAP TO MANUFACTURE, ESSENTIAL TO EVERY
+      GOOD REGIMEN, AND WAS UNREGISTERED ACROSS MOST OF THE CONTINENT WHERE THE
+      DISEASE IS.** No safety question, no efficacy dispute, no intellectual
+      property, no scientific obstacle of any kind. A manufacturer must choose
+      to seek registration in a market that is poor and small, and for decades
+      none did. Liposomal amphotericin B adds a price and a cold chain on top.
+      **This is the register's cleanest instance of a treatment that exists,
+      works, and is absent** — and unlike `sickle-cell`'s gene therapy it is not
+      even expensive. It is the shape gaps.md #145 identified for antibiotics,
+      arriving in a disease where the alternative to the missing drug is a
+      regimen with roughly half the survival.
+    who_could: [manufacturer, regulator, government, nonprofit, philanthropy]
+    scale: 5.0e7
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    blocks: using a two-dollar test that already works
+    what: >
+      The cryptococcal antigen lateral flow assay detects the disease **weeks to
+      months before symptoms**, costs a couple of dollars, needs no laboratory,
+      and is recommended by WHO for anyone with advanced HIV disease. Screening
+      plus pre-emptive fluconazole prevents meningitis outright. **Coverage is
+      inconsistent and in many programmes close to absent.**
+      The blocker is that screening requires a CD4 count to trigger it, and CD4
+      testing was substantially de-emphasised when HIV programmes moved to
+      treat-all and viral-load monitoring. **A rational change in one programme
+      removed the trigger for a different programme's intervention** — and the
+      people it stopped reaching are the ones presenting late, who are exactly
+      the ones who die of this.
+    who_could: [health-system, government, nonprofit, philanthropy]
+    scale: 1.0e8
+    standing: documented
+    src: reasoning
+
+  - kind: logistics
+    blocks: the daily lumbar puncture that stops people going blind
+    what: >
+      Raised intracranial pressure is the mechanism of most preventable
+      disability in survivors, and the treatment is **repeated therapeutic
+      lumbar puncture** — a needle, a manometer, and a clinician willing to
+      perform it daily during induction. It costs essentially nothing and it is
+      frequently not done: it is unpleasant, it is time-consuming, staff are
+      scarce, manometers are missing, and patients and families refuse it
+      because repeated spinal taps are widely feared.
+      **The register has recorded cheap unused diagnostics before. A cheap
+      unused procedure whose omission blinds people is a different object**, and
+      no existing blocker kind describes "the thing to do is known, free, and
+      culturally resisted."
+    who_could: [health-system, government, nonprofit]
+    scale: 2.0e7
+    standing: documented
+    src: reasoning
+
+  - kind: knowledge
+    blocks: any prevention aimed at the organism rather than at the host
+    what: >
+      **THERE IS NO VACCINE AND NO CREDIBLE ROUTE TO ONE**, and the reason is
+      the register's newest shape. *Cryptococcus* is an environmental
+      saprophyte: no human reservoir, no transmission chain, no vector, nothing
+      to interrupt. Most disease is **reactivation of an infection acquired
+      years earlier**, so a vaccine would have to prevent reactivation in a
+      person whose CD4 count is the actual problem — and the population needing
+      it is defined by being unable to mount the response a vaccine elicits.
+      **That is the sharpest possible instance of `protective-immunity`**: it is
+      not merely that nobody can specify what protects, it is that the host in
+      whom protection is needed cannot produce it.
+      There is also **no new antifungal class** aimed here. Only four classes
+      exist against an entire kingdom, because fungi are eukaryotes and the
+      targets are shared with us — which is `cell-targeting`'s specificity face
+      in a different tissue. Fosmanogepix and olorofim are the first genuinely
+      new mechanisms in decades and neither is licensed. `scale: null`.
+    who_could: [academic, sponsor, manufacturer, philanthropy]
+    scale: null
+    standing: documented
+    src: reasoning
+    obstacles: [protective-immunity, cell-targeting]
+
+  - kind: knowledge
+    blocks: knowing how many there are, within an order of magnitude
+    what: >
+      The global estimate has moved from roughly a million cases a year (2009)
+      to about 220,000 (2017) to about 150,000 (2022), **and most of that
+      movement is remodelling rather than epidemiology.** The figures are built
+      by multiplying antigenaemia prevalence by a modelled CD4 distribution by
+      an assumed progression rate, each of which carries wide uncertainty, and
+      the deaths figure inherits all of it.
+      This matters more than it usually would, because **the case for
+      registering flucytosine and funding screening is an arithmetic one**, and
+      a burden figure that moves by a factor of six in thirteen years is a poor
+      instrument for making it.
+    who_could: [academic, government, nonprofit]
+    scale: 1.0e7
+    standing: documented
+    src: reasoning
+    obstacles: [burden-unknown]
+
+assertion:
+  id: FND-A-0110
+  rated: 2026-08-28
+  by: [claude, jeremy]

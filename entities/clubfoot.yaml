@@ -1,0 +1,428 @@
+slug: clubfoot
+id: FND-D-0135
+name: Clubfoot
+also: [congenital talipes equinovarus, CTEV, talipes]
+mondo: unresolved
+kind: disease
+residual: false
+contested: false
+
+# THE BEST EFFORT-TO-RETURN RATIO IN THE REGISTER, AND THE METHOD WAS PUBLISHED
+# IN 1963 AND IGNORED FOR FORTY YEARS.
+#
+# A baby is born with a foot turned inward and down. The diagnosis is looking at
+# it. The treatment is six weekly plaster casts, a needle-sized cut to the
+# Achilles tendon under local anaesthetic, and a brace — total cost in the low
+# hundreds of dollars, no operating theatre, **and it can be delivered by a
+# physiotherapist or a clinical officer rather than a surgeon.** It corrects the
+# large majority of feet.
+#
+# Untreated, the child walks on the outer edge or the top of the foot, develops
+# callosities and ulcers that become infected, cannot wear a shoe, and is
+# excluded from school and from work for the rest of their life.
+#
+# Roughly a fifth of the children born with it are treated.
+#
+# NO `burden.ylds` FIELD, DELIBERATELY. GBD publishes years-lived-with-
+# disability figures and this record does not carry one, because a YLD is a
+# prevalence multiplied by a published disability weight and **a recalled YLD is
+# two guesses multiplied.** The field is `sourceable`; it is left absent until
+# somebody sources it, on the same rule as `unrated` is never `unsolved`.
+
+burden:
+  incidence:
+    value: 1.75e5
+    units: >
+      babies born with clubfoot each year worldwide — roughly one in every 800
+      to 1,000 live births, about four fifths of them in low- and middle-income
+      countries. Bilateral in about half, and roughly twice as common in boys
+    src: recall
+  prevalence:
+    value: 8.0e6
+    units: >
+      people living with treated or untreated clubfoot — a reasoned estimate
+      from incidence and life expectancy. **The untreated share of this figure
+      is the record**, and nobody counts it, because an adult walking on the
+      side of their foot in a rural district is not in any register
+    src: reasoning
+  note: >
+    **THE COVERAGE FIGURE IS THE WHOLE STORY AND IT IS THE WORST IN THIS PASS.**
+    Estimates from the global clubfoot programmes put the share of affected
+    children receiving Ponseti treatment in low- and middle-income countries at
+    something like a fifth, rising slowly. Four in five are not treated, for a
+    condition that is visible at birth and correctable for the price of a pair
+    of shoes.
+    No deaths are attributed. `deaths` is absent rather than zero — the fifth
+    record in a row where mortality is the wrong question, and by now that
+    sequence is the argument for `ylds` having been wired up before this record
+    was written.
+
+axes:
+  mechanism: partial
+  intervention: curative
+  prevention: none
+  ongoing: low
+  efficacy:
+    value: 0.95
+    units: >
+      fraction-of-patients (functional, plantigrade, pain-free foot after
+      Ponseti treatment) — **among the highest in the register, and achieved
+      with plaster, a scalpel blade and a brace.** Idiopathic clubfoot corrects
+      in nearly all children; syndromic and neurogenic cases, associated with
+      spina bifida or arthrogryposis, do substantially worse and are the main
+      component of the residual
+    src: reasoning
+  access:
+    value: 0.25
+    units: >
+      fraction-of-affected-children (starting and completing Ponseti treatment,
+      including the bracing phase) — and the two halves of that fail
+      differently: perhaps a fifth ever start, and of those who start a
+      substantial share do not complete four years of bracing
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: partial
+  witness: >
+    **DIAGNOSTIC IS `objective` AND IS PROBABLY THE MOST OBJECTIVE IN THE
+    REGISTER.** You look at the baby's feet. No test, no imaging, no laboratory,
+    no ambiguity, no differential worth the name — the deformity is visible,
+    unmistakable and present from the moment of birth. It is also detectable on
+    routine antenatal ultrasound from the second trimester.
+    **THAT IS WHY THIS RECORD IS UNUSUAL: THE DIAGNOSTIC FAILURE IS NOT A
+    DIAGNOSTIC FAILURE.** Everywhere else in this corpus, children go untreated
+    because nobody could tell what was wrong. Here everybody can tell. What is
+    missing is a newborn examination, a referral pathway and somewhere to refer
+    to — which is why the blockers below are `logistics` rather than
+    `diagnosis`.
+    PROGNOSTIC is `partial`. Syndromic and neurogenic clubfoot is identifiable
+    at presentation and predicts a harder course, which is real prognostic
+    information. **What nothing predicts is relapse**, and relapse is what
+    determines the outcome — see the adherence blocker.
+    PREDICTIVE is `partial` and arguably generous. Nothing says in advance which
+    foot will need more casts or will relapse. What compensates is that **the
+    feedback is weekly and visible**: the parent and the clinician can see the
+    foot correcting under the plaster, which is a kind of certainty most records
+    here would trade a great deal for.
+
+# NO `survival:` BLOCK. Fifth in this pass. Clubfoot does not shorten life; it
+# removes the ability to walk normally, wear a shoe, attend school and hold work
+# — none of which the register can currently weight. See `records-queue.md`.
+
+moved:
+  - date: 1963
+    axis: intervention
+    from: curative
+    to: curative
+    why: >
+      **A NULL AXIS MOVE RECORDING A METHOD THAT EXISTED AND WAS IGNORED.**
+      Ignacio Ponseti published the manipulation-and-casting technique he had
+      developed at Iowa from the 1940s, derived from studying the pathological
+      anatomy of the deformity rather than from surgical tradition. The rung does
+      not move because clubfoot was already correctable — by extensive
+      posteromedial soft-tissue release surgery, which is what almost everybody
+      went on doing **for the next four decades.**
+      Recorded because the register's time series should be able to hold *the
+      answer arrived and nobody used it*, which is a different failure from *the
+      answer had not arrived*, and this corpus has very few dated instances of
+      it.
+    src: recall
+  - date: 2000
+    axis: toll
+    from: major
+    to: minor
+    why: >
+      **THE TOLL FELL BY A WHOLE BAND WITHOUT ANY NEW DISCOVERY.** Long-term
+      follow-up studies through the 1990s showed that surgically released feet
+      became stiff, weak and arthritic in adulthood, while Ponseti-treated feet
+      thirty years on were supple and pain-free. That evidence, together with
+      parent advocacy organising over the early internet, displaced surgery as
+      the standard of care around the turn of the century.
+      **The dating is approximate and the mechanism of change is the point**: no
+      trial, no new molecule, no technology — a forty-year-old method won on
+      long-term outcome data and pressure from families. It is the clearest
+      instance in the register of `moved:` recording an *adoption* rather than
+      an invention.
+    src: recall
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    Six or so above-knee plaster casts changed weekly, and in the large majority
+    of children a **percutaneous Achilles tenotomy** — a needle-sized division
+    of the tendon done under local anaesthetic in a clinic room, which heals in
+    three weeks and leaves a mark most people cannot find later. Then the brace.
+    Cast complications are minor and uncommon: pressure sores, slippage.
+    **THE HISTORICAL TOLL WAS `major` AND THAT IS THE INTERESTING PART.** The
+    posteromedial soft-tissue release that preceded Ponseti corrected the foot
+    and left a stiff, weak, often painful one that arthritised in adulthood. Two
+    generations of children received an operation that was worse than a
+    technique already published. The register records that as a `moved:` entry
+    above rather than in this field, because `toll` describes what the treatment
+    takes **now**.
+  incidence:
+    value: 0.02
+    units: >
+      fraction-of-treated with a permanent consequence of treatment — a reasoned
+      estimate; the tenotomy heals completely and the casts leave nothing
+    src: reasoning
+
+residue:
+  severity: minor
+  permanent: true
+  what: >
+    **A SUCCESSFULLY TREATED CLUBFOOT IS NOT QUITE A NORMAL FOOT, AND SAYING SO
+    IS THE HONEST VERSION OF A GOOD-NEWS RECORD.** The affected foot stays about
+    a shoe size smaller, the calf stays slightly thinner, and there is often a
+    little residual stiffness. People walk, run, play sport and are not in pain.
+    Rated `minor` on the schema's test, and it is genuinely minor.
+    **THE CATASTROPHIC OUTCOME IS NOT RESIDUE, IT IS THE UNTREATED DISEASE**, and
+    the schema puts it nowhere. A child who never receives casting walks on the
+    lateral border or dorsum of the foot; the skin there is not built for it, so
+    callosities form, then fissures, then ulcers, then infection. Shoes do not
+    fit. Distances become impossible. School attendance falls away and paid work
+    that requires standing or walking is closed off, in settings where most work
+    is one or the other.
+    **That is the outcome for roughly four in five affected children worldwide,
+    and it appears in this record only as `access: 0.25`.**
+  incidence:
+    value: 0.9
+    units: >
+      fraction-of-treated left with the minor permanent differences described —
+      smaller foot, thinner calf — a reasoned estimate, high because these are
+      near-universal and near-inconsequential
+    src: reasoning
+
+window:
+  what: >
+    **A SOFT WINDOW, WHICH MAKES IT UNUSUAL HERE AND EASIER TO MISS FOR EXACTLY
+    THAT REASON.** Casting is easiest begun in the first weeks of life, while
+    the ligaments and joint capsules are still highly compliant — the whole
+    method rests on that compliance. It still works in older infants, works with
+    more casts in walking-age children, and modified Ponseti technique corrects
+    feet in children of school age.
+    What closes progressively rather than absolutely is the tissue itself:
+    **an untreated clubfoot becomes rigid, the bones remodel to the deformed
+    position, and by adolescence correction means bone surgery** — osteotomy or
+    fusion, in a theatre, with a much worse result than a cast would have
+    achieved at three weeks old.
+    **THE ABSENCE OF A HARD DEADLINE IS WHY THIS RECORD IS NOT URGENT TO ANY
+    HEALTH SYSTEM**, and it is why four in five children are missed. Compare
+    `retinopathy-of-prematurity`, where the window is 48 hours and the response
+    is a screening programme. Nothing forces a decision here on any particular
+    Tuesday, so it is never made.
+  closes_on: >
+    progressive rigidity and bony remodelling of the untreated foot — a gradual
+    closure over childhood rather than a date, after which correction requires
+    bone surgery
+  caught_in_time:
+    value: 0.25
+    units: >
+      fraction-of-affected-children starting treatment while casting alone can
+      correct the foot — a reasoned estimate tracking the treatment coverage
+      figure, and low for reasons that have nothing to do with the difficulty of
+      the diagnosis
+    src: reasoning
+
+witness:
+  mechanism: >
+    `partial`, and the two halves are unusually lopsided.
+    ESTABLISHED, AND IT IS WHY THE TREATMENT WORKS: the pathological anatomy.
+    Ponseti's contribution was not a device but a correct account of what is
+    deformed and in what order it must be corrected — the deformity is a
+    coordinated malposition of the talus, calcaneus, navicular and cuboid, and
+    the components must be reduced in a specific sequence with the foot
+    abducted about a fixed talar head. **The method is applied anatomy**, and
+    when it is done wrong it is usually because the sequence was wrong.
+    THE HOLE: nobody knows why it happens. Clubfoot is idiopathic in most
+    children. There is a clear genetic component — a first-degree relative
+    raises risk substantially, and PITX1 and TBX4 have been implicated in some
+    familial cases — and associations with maternal smoking and with reduced
+    intrauterine space. None of that adds up to a cause.
+    **THE UNUSUAL THING IS HOW LITTLE THAT COSTS.** The register's standing
+    assumption is that mechanism gaps block progress; here the aetiology is
+    unknown, the treatment is 95% effective, and the two facts are unrelated.
+    Set beside `anaesthesia-mechanism` and `retinopathy-of-prematurity`, this is
+    the third record in short order arguing that **understanding and capability
+    come apart in both directions.**
+  intervention: >
+    `curative` without reservation, which is rare in this register. A finite
+    course of treatment ends the condition: serial casts, a percutaneous
+    tenotomy in most children, and bracing until about age four or five. After
+    that, nothing — no medication, no monitoring, no recurrence.
+    **AND IT IS DELIVERABLE WITHOUT A DOCTOR, WHICH IS THE FACT THAT MATTERS
+    MOST.** Ponseti casting is taught to physiotherapists, nurses and orthopaedic
+    clinical officers, and the international programmes are built on exactly
+    that. Compare `congenital-heart-disease`, where the intervention needs a
+    surgeon, a paediatric cardiac anaesthetist, a perfusionist and an intensive
+    care unit. **The two conditions are both congenital, both correctable, and
+    the delivery problems are not remotely the same size.**
+    What remains genuinely hard is relapse, and relapse is bracing, and bracing
+    is the family's problem for four years — see below.
+  prevention: >
+    `none`, and it is a clean `none`. Nothing is given to a pregnant woman to
+    prevent clubfoot and no exposure to avoid would reliably prevent it. Maternal
+    smoking raises risk and stopping is worth doing for a dozen other reasons in
+    this register; it would not make a measurable difference to this one.
+    **Antenatal ultrasound detection is not prevention and the register should
+    not let it be mistaken for it.** Detecting clubfoot at twenty weeks changes
+    nothing about whether the child is born with it. What it can do — where
+    services exist — is arrange for treatment to start in the first weeks
+    instead of the first years, which is an `access` gain filed under the window
+    above.
+  ongoing: >
+    `low`, and the rating is arguable in one direction only.
+    After treatment finishes there is genuinely nothing: no drug, no clinic, no
+    surveillance, a foot that works. Against essentially every other record
+    here, that is `low`.
+    **DURING TREATMENT IT IS NOT LOW AT ALL, AND THE AXIS CANNOT SAY SO.** Six
+    weekly journeys to a casting clinic, then a boots-and-bar brace worn 23
+    hours a day for three months and every night and nap for the next four
+    years, fitted to a toddler who does not want it. The axis measures the
+    steady state of being treated and this treatment has a shape — intense,
+    finite, then over — that it has no way to express. The burden lands on a
+    parent, for years, and it is the direct cause of the relapses that undo the
+    correction.
+
+holes:
+  - >
+    **THE COVERAGE FIGURE CARRIES THIS RECORD AND IT IS QUOTED FROM RECALL.**
+    "Roughly a fifth of affected children in low- and middle-income countries
+    receive Ponseti treatment" is the number that makes this entry damning
+    rather than encouraging, and it comes from programme estimates rather than
+    from any registry. If the true figure is 40%, the record still says the same
+    thing more quietly; if it is 5%, it says it much louder.
+  - >
+    **THE 1963-TO-2000 ADOPTION LAG IS THE MOST CHECKABLE CLAIM HERE AND IT IS
+    NOT CHECKED.** Ponseti's publication date and the approximate turn-of-the-
+    century displacement of soft-tissue release are both stated from recall.
+    They are the register's clearest dated instance of *the answer existed and
+    was ignored*, which makes them worth sourcing properly — the natural next
+    target for `source_moved.py` after `retinopathy-of-prematurity`'s 1973
+    figure.
+  - >
+    **`ongoing: low` IS RIGHT FOR THE LIFETIME AND WRONG FOR THE FOUR YEARS**,
+    and the axis has no way to describe an intense-then-finished treatment. This
+    is the same compression `gaps.md` records elsewhere, and it matters more
+    here than usual because **the burden the axis cannot see is precisely the
+    mechanism by which the treatment fails.**
+  - >
+    **THE UNTREATED OUTCOME HAS NOWHERE TO LIVE.** `residue` is defined as what
+    the disease leaves in someone it was cured in, so a treated clubfoot's
+    slightly smaller foot goes there and **a lifetime of walking on the dorsum
+    of the foot does not.** It appears only as `access: 0.25`. Every record in
+    this register with a large untreated population has the same hole; clubfoot
+    makes it obvious because the treated and untreated outcomes are so far
+    apart.
+  - >
+    **THE BUCKET DERIVATION READS `changes-you` AND THAT MAY OVERSTATE IT.** The
+    rule assigns `changes-you` to any record carrying a `residue` block, and this
+    record's residue is a shoe size and a thinner calf in someone who runs
+    normally. Either the residue should not be recorded — which would be
+    dishonest — or the bucket rule should weigh residue *severity* rather than
+    its presence. Logged here rather than fixed, because changing it is a
+    versioned `buckets.yaml` decision.
+  - >
+    Written from model recall. The method, the anatomy, the tenotomy, the
+    bracing schedule and the direction of the long-term surgical follow-up
+    findings are the parts most likely right; every number is the part most
+    likely wrong.
+
+blockers:
+  - kind: logistics
+    blocks: a trained pair of hands within reach of a newborn
+    what: >
+      **THE BINDING CONSTRAINT, AND IT IS SMALLER THAN ALMOST ANY OTHER IN THIS
+      REGISTER.** Ponseti treatment needs a person trained for a matter of days
+      to weeks, plaster of Paris, a clinic room and a brace. It does not need a
+      surgeon, a theatre, an anaesthetist, electricity, a cold chain or a
+      laboratory. **It is the cheapest curative capability in the corpus and it
+      reaches about a fifth of the children who need it.**
+      Three things fail in sequence. The baby is born at home or in a facility
+      with no newborn foot examination, so nobody records it. If somebody
+      records it, there is no referral pathway to anywhere. If there is a
+      pathway, the nearest trained provider is far enough away that six weekly
+      journeys with a newborn are not possible for the family.
+      The international programmes have shown the model works — train non-
+      physicians, place clinics in district hospitals, follow up — and the
+      constraint is straightforwardly how many have been trained and where.
+      **This is `refractive-error`'s problem exactly: the scarce thing is a
+      skill, not a product.**
+    who_could: [health-system, government, nonprofit, philanthropy]
+    scale: 3.0e8
+    standing: documented
+    src: recall
+
+  - kind: adherence
+    blocks: four years of bracing a child whose foot already looks fixed
+    what: >
+      **THE MOST UNUSUAL ADHERENCE BLOCKER IN THE REGISTER, BECAUSE THE
+      TREATMENT HAS ALREADY VISIBLY WORKED.** Correction takes about six weeks.
+      Holding it takes a foot abduction brace worn nearly full time for three
+      months, then every night and nap until around age four. Relapse rates are
+      low with good bracing and rise steeply without it — most of the failures
+      of this method are bracing failures rather than casting failures.
+      Everywhere else in this corpus, adherence fails because the treatment
+      produces no felt benefit (`glaucoma`) or unpleasant effects
+      (`tuberculosis`). Here it fails because **the benefit is complete and
+      obvious and the parent can see it.** The foot is straight. The child walks.
+      A brace that wakes a toddler nightly for four years, in a family that has
+      already travelled six times for casting, is asking for adherence against
+      the evidence of everyone's eyes.
+      What works is counselling that says relapse is likely without it,
+      well-fitted braces replaced as the foot grows, and follow-up that notices
+      early relapse while re-casting still fixes it. All three are programme
+      design and all three cost money nobody has allocated.
+    who_could: [health-system, patient-org, nonprofit, government]
+    scale: 1.0e8
+    standing: documented
+    src: recall
+
+  - kind: cost
+    blocks: the journeys and the braces, not the treatment
+    what: >
+      The materials are trivially cheap and the total cost of a completed
+      Ponseti course is in the low hundreds of dollars. **What a family actually
+      pays is transport six times with a newborn, days of lost work, and a
+      succession of braces as the foot grows** — replaced every few months in a
+      growing child, over four years.
+      Recorded because programmes that supply free casting and then charge for
+      braces reproduce the relapse problem exactly, and because this record
+      would otherwise read as though nothing costs anything. The absolute sums
+      are small and they are not small relative to a subsistence household
+      budget, which is the same distinction `refractive-error` draws about a
+      two-dollar pair of glasses.
+    who_could: [government, payer, nonprofit, philanthropy]
+    scale: 5.0e7
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    obstacles: [who-progresses]
+    blocks: knowing which foot will relapse
+    what: >
+      The only genuinely open scientific question in the record, and it is not
+      the aetiology. **Nothing predicts which corrected foot will relapse**, so
+      every child is braced for four years and a substantial share of them did
+      not need to be. A marker that identified the high-risk feet would let
+      bracing be intensified where it matters and relaxed where it does not —
+      which would relieve the adherence blocker above without training a single
+      extra provider.
+      A direct instance of `who-progresses` (FND-O-0001), and an unusually
+      tractable one: the outcome is visible, the follow-up interval is short,
+      and the cohort is large.
+      The aetiology is also unknown and is deliberately **not** claimed as a
+      blocker. It blocks nothing: the treatment works without it.
+      `scale: null`.
+    who_could: [academic, nonprofit, health-system]
+    scale: null
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0136
+  rated: 2026-09-01
+  by: [claude, jeremy]

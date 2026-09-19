@@ -1,0 +1,305 @@
+slug: penile-cancer
+id: FND-D-0124
+name: penile cancer
+also: [penile carcinoma, squamous cell carcinoma of the penis]
+kind: disease
+mondo: MONDO:0001325
+residual: false
+contested: false
+
+# CURABLE, MUTILATING, AND PEOPLE WAIT A YEAR TO PRESENT.
+#
+# 1. THE TOLL IS THE RECORD. Standard treatment for anything beyond a superficial
+#    lesion was partial or total penectomy — amputation of the organ, with
+#    perineal urethrostomy for total resection. **The cure rate is good and the
+#    price has been among the highest in medicine**, and the register has no
+#    other cancer where the treated survivor's loss is this specific.
+#
+# 2. AND THE DELAY IS ENORMOUS AND DOCUMENTED. Median time from noticing a lesion
+#    to presenting runs many months and frequently exceeds a year, driven by
+#    shame, fear of exactly the operation above, and lesions attributed to
+#    infection. **The delay converts an organ-preserving problem into an
+#    amputating one**, and it is the clearest instance in the corpus of stigma
+#    acting as a stage-shifting mechanism rather than as distress.
+#
+# 3. IT IS A DISEASE OF POVERTY IN A WAY THE OTHER THREE ARE NOT. Incidence in
+#    parts of Brazil, Uganda and India runs several times that of Western Europe
+#    or North America, tracking phimosis, poor genital hygiene, absent
+#    circumcision and late presentation together.
+
+burden:
+  incidence:
+    value: 3.6e4
+    units: >
+      new cases/year worldwide — **rare in high-income countries and several
+      times commoner in parts of South America, sub-Saharan Africa and South
+      Asia**, where it can account for a meaningful share of male cancers
+    src: recall
+  deaths:
+    value: 1.3e4
+    units: deaths/year worldwide
+    src: recall
+  note: >
+    **Roughly half is HPV-attributable and the other half is not**, arising
+    instead on a background of chronic inflammation — phimosis, lichen sclerosus,
+    poor hygiene. So vaccination addresses half of this record and circumcision
+    and hygiene address a different, overlapping part of it, which is unusual
+    among the HPV cancers.
+
+survival:
+  horizon: 5 years from diagnosis
+  untreated:
+    value: 0.05
+    units: fraction alive — untreated penile carcinoma invades locally and metastasises to inguinal nodes
+    src: reasoning
+  treated:
+    value: 0.60
+    units: >
+      fraction alive — **and it splits almost entirely on nodal status.**
+      Node-negative disease approaches 0.85; palpable inguinal metastasis falls
+      below 0.40, and bilateral or pelvic nodal disease worse again. **The
+      inguinal nodes are the whole prognosis**
+    src: reasoning
+  witness: >
+    **The survival figure is good and it is not what this record is about.**
+    Six in ten are alive at five years and a large share of those have lost part
+    or all of the penis. `restored` reads `both` — the disease takes something
+    and so does the cure — and that pairing is the honest summary of this entry.
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: risk-reduction
+  ongoing: low
+  efficacy:
+    value: 0.70
+    units: >
+      fraction-of-patients (cured by stage-appropriate surgery, with or without
+      nodal dissection and chemotherapy) — good, and achieved at a price the
+      `toll` field carries
+    src: reasoning
+  access:
+    value: 0.40
+    units: >
+      fraction-of-patients (presenting in time and reaching a centre able to
+      offer organ-preserving surgery) — **and both halves fail.** Presentation is
+      late for reasons of shame; and organ-preserving techniques require
+      specialist volume that most health systems do not concentrate
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: good
+  predictive: none
+  witness: >
+    **DIAGNOSTIC is `objective` and the problem is entirely that people do not
+    come.** The lesion is visible and biopsy is definitive. Median delay from
+    noticing to presenting runs many months and frequently over a year, and
+    lesions are commonly treated as infection or balanitis before anyone
+    biopsies them. **A cancer on the surface of the body, diagnosed late.**
+    PROGNOSTIC is `good` and unusually actionable: **inguinal nodal status
+    determines outcome**, and sentinel node biopsy and dynamic imaging identify
+    it reliably enough to spare many men a morbid full inguinal dissection while
+    still finding the disease that matters.
+    PREDICTIVE is `none`. Chemotherapy for advanced disease is poorly evidenced,
+    drawn from small series, and nothing selects patients for it. **HPV status
+    does not currently change treatment**, despite HPV-positive tumours appearing
+    to carry a better prognosis — the same association that reshaped
+    `head-neck-cancer` and has not been acted on here.
+
+toll:
+  severity: catastrophic
+  permanent: true
+  what: >
+    **Partial or total penectomy, and the register should say plainly what that
+    means.** Loss of sexual function, loss of standing micturition, perineal
+    urethrostomy after total resection, and profound documented psychological and
+    relationship consequences. Inguinal lymphadenectomy adds chronic lymphoedema,
+    wound breakdown and infection at a rate high enough that sparing it is a
+    major aim of care.
+    **Organ-preserving surgery is the register's least-known toll reduction.**
+    Glansectomy, wide local excision, laser and topical therapy achieve
+    comparable cure in early disease with the organ largely intact — and depend
+    on presenting early and on reaching a centre that offers them.
+  incidence:
+    value: 0.55
+    units: >
+      fraction-of-treated with permanent anatomical, urinary or sexual loss —
+      reasoned, and lower where disease is caught early and specialist services
+      exist
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    Distinct from the toll and easily conflated with it. Advanced untreated or
+    neglected disease destroys tissue directly — fungating lesions, urethral
+    obstruction, fistula — and inguinal nodal disease causes lymphoedema of the
+    legs and genitalia that persists whether or not the cancer is cured.
+    **In practice most of the permanent loss in this record is the treatment's**,
+    which is why `toll` is rated `catastrophic` and this field is not.
+  incidence:
+    value: 0.10
+    units: fraction-of-patients with permanent damage from the disease itself — reasoned
+    src: reasoning
+
+witness:
+  mechanism: >
+    `established` and dual. Roughly half of penile squamous carcinoma is driven
+    by persistent high-risk HPV through the same E6/E7 route as the other three
+    records here; the other half arises on chronic inflammation — **phimosis,
+    lichen sclerosus, chronic balanitis** — and carries TP53 mutation rather than
+    viral oncoproteins. HPV-positive tumours appear to have a better prognosis,
+    as in the oropharynx.
+    **Childhood circumcision is strongly protective**, largely by preventing
+    phimosis and the chronic inflammation that follows it, and the geographic
+    distribution of this cancer tracks that closely.
+  intervention: >
+    `curative`, and increasingly organ-preserving. Early lesions are treated by
+    topical therapy, laser, wide local excision or glansectomy with cure rates
+    comparable to amputation; **advanced primaries still require partial or total
+    penectomy.** Inguinal node management determines survival, and sentinel node
+    biopsy has replaced routine full dissection for clinically node-negative
+    disease. Chemotherapy for metastatic disease is poorly evidenced and rarely
+    curative.
+  prevention: >
+    `risk-reduction`, and it is a mix. **HPV vaccination addresses roughly half
+    the disease** and men were excluded from vaccination programmes for about a
+    decade. Circumcision reduces risk substantially; treating phimosis and
+    lichen sclerosus removes a recognised precursor; hygiene and smoking cessation
+    contribute.
+    **Not rated `prophylaxis` because the vaccine covers only the viral half**,
+    and the non-viral half is prevented by things that are not medical products.
+  ongoing: >
+    `low` medically and substantial otherwise: survivors manage urinary and
+    sexual consequences, lymphoedema, and the psychological aftermath
+    indefinitely.
+  efficacy: >
+    See the axis. It is a good cure rate and the toll field is where this record
+    is actually argued.
+  access: >
+    **Two failures compounding.** Men present late, for reasons this record's
+    `policy` blocker treats as the central problem. And organ-preserving surgery
+    and sentinel node biopsy require case volume — the United Kingdom's
+    supranetwork model concentrated penile cancer into a small number of centres
+    and improved both preservation and survival, and most countries have not done
+    it.
+
+moved:
+  - date: 2002
+    axis: toll
+    from: catastrophic
+    to: catastrophic
+    why: >
+      **A NON-MOVE ON THE AXIS AND A LARGE ONE IN PRACTICE.** Organ-preserving
+      approaches — glansectomy, laser, topical therapy — and sentinel node biopsy
+      in place of routine inguinal dissection became established through the
+      2000s, and centralisation into specialist networks spread them. **For a man
+      treated early at a specialist centre the toll is now moderate rather than
+      catastrophic.** The record-level rating does not move because it describes
+      the modal patient globally, who presents late and is not treated at such a
+      centre. Dated loosely.
+    src: reasoning
+
+holes:
+  - >
+    **The strata are missing and the record needs them.** HPV-positive and
+    HPV-negative penile cancer differ in prognosis; early organ-preserved disease
+    and advanced amputated disease differ in everything. The record rates a
+    global modal patient and describes neither well.
+  - >
+    The `toll` incidence of 0.55 is the least defensible number here and swings
+    enormously with stage at presentation and with whether a specialist centre is
+    reachable. It is reasoned for a global population, not measured.
+  - >
+    **The delay figure is real and poorly quantified.** Studies report median
+    presentation delays from several months to over a year, in small series from
+    varied settings, and the mechanism — shame, and fear of the operation — is
+    documented qualitatively rather than measured.
+  - HPV status does not currently change management despite an apparent
+    prognostic difference, and no de-escalation work of the kind
+    `head-neck-cancer` is doing has been attempted.
+  - Written from model recall. The dual aetiology, organ preservation, sentinel
+    node biopsy and the centralisation effect are the parts most likely right;
+    every number is the part most likely wrong.
+
+blockers:
+  - kind: policy
+    blocks: a year of delay caused by shame and by fear of the treatment
+    what: >
+      **MEN WITH A VISIBLE LESION ON THE SURFACE OF THEIR BODY WAIT MANY MONTHS
+      AND OFTEN OVER A YEAR TO PRESENT.** The reasons are documented and
+      consistent: embarrassment, fear of amputation — which is a rational fear,
+      since it is the historical treatment — and lesions being attributed to
+      infection by patients and by first-contact clinicians.
+      **The delay is the mechanism by which this cancer becomes mutilating.**
+      Early disease is treated with organ preservation and good survival; the same
+      disease a year later requires penectomy and carries nodal spread. **Stigma
+      is not causing distress here, it is causing stage migration**, which is a
+      different and more actionable claim than the one `genital-herpes` records.
+      The interventions are unglamorous: public awareness that this exists and is
+      curable, primary-care education to biopsy rather than treat empirically,
+      and — most persuasively — **being able to tell men that the organ is
+      usually preserved if they come early**, which is now true and is not
+      widely known.
+    who_could: [health-system, government, nonprofit, patient-org]
+    scale: 1.0e8
+    standing: documented
+    src: reasoning
+
+  - kind: logistics
+    blocks: organ-preserving surgery that only high-volume centres can offer
+    what: >
+      **GLANSECTOMY, LASER THERAPY AND SENTINEL NODE BIOPSY REQUIRE CASE VOLUME**,
+      and penile cancer is rare enough that most hospitals see a handful a
+      decade. A surgeon operating occasionally will reasonably choose the
+      operation they are confident in, which is amputation.
+      The United Kingdom's supranetwork model concentrated the disease into a
+      small number of centres and improved both organ preservation and survival.
+      **It is a purely organisational intervention with a measured benefit**, it
+      requires no new technique, and most health systems have not done it —
+      including systems that centralise far commoner cancers.
+    who_could: [health-system, government, payer]
+    scale: 1.5e8
+    standing: documented
+    src: reasoning
+
+  - kind: knowledge
+    blocks: any effective treatment for advanced disease
+    what: >
+      **Node-positive and metastatic penile cancer has essentially no good
+      systemic therapy.** Chemotherapy regimens are drawn from small
+      single-arm series, response is short-lived, and randomised evidence barely
+      exists because the disease is rare and dispersed. Immunotherapy has been
+      tried on the logic that HPV-positive tumours are immunogenic, with modest
+      results.
+      **The rarity is the mechanism**: no single centre accrues enough patients,
+      and international collaboration in a stigmatised cancer of poor countries
+      has been slow. This is `no-sponsor` in substance and is filed as
+      `knowledge` because there is also genuinely nothing identified to develop.
+    who_could: [academic, sponsor, philanthropy, manufacturer]
+    scale: null
+    standing: documented
+    src: reasoning
+
+  - kind: policy
+    blocks: vaccinating the sex that gets this cancer
+    what: >
+      HPV vaccination was scoped to girls for roughly a decade in most countries
+      that introduced it. **Roughly half of penile cancer is HPV-attributable,
+      and men derive no herd protection from vaccinating girls against a cancer
+      of their own tissue.** `head-neck-cancer` and `anal-cancer` record the same
+      decision from their own sites; this is the third.
+      Gender-neutral programmes correct it prospectively. The men presenting with
+      this cancer for the next thirty years were adolescents during the
+      girls-only decade.
+    who_could: [government, health-system, payer]
+    scale: 3.0e8
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0125
+  rated: 2026-08-28
+  by: [claude, jeremy]

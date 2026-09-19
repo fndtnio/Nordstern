@@ -1,0 +1,425 @@
+slug: leprosy
+id: FND-D-0035
+name: leprosy
+also: [Hansen's disease, Mycobacterium leprae infection, Hansen disease]
+mondo: MONDO:0005124
+kind: disease
+residual: false
+contested: false
+
+# THE DISEASE THAT WAS DECLARED ELIMINATED BY MOVING ITS OWN DENOMINATOR.
+#
+# WHO's target was "elimination as a public health problem", defined as fewer
+# than 1 REGISTERED CASE per 10,000 population. A registered case is somebody
+# currently on treatment. Multidrug therapy shortened treatment from years of
+# dapsone to six or twelve months — so the number of people registered at any
+# instant fell sharply BECAUSE THE TREATMENT GOT SHORTER, without transmission
+# falling by anything like the same amount.
+#
+# The target was declared met globally in 2000. New case detection has sat at
+# roughly 200,000 a year ever since, essentially flat for two decades. Vertical
+# leprosy programmes were wound into general health services, and the clinical
+# expertise needed to diagnose a disease with no laboratory test went with them.
+#
+# This register is about to build a headline burden metric (gaps.md #48). This
+# record is the warning: a health metric was satisfied by a change in treatment
+# protocol, and the disease is still here. See gaps.md #76.
+#
+# AND STIGMA IS A MEDICAL FACT HERE, NOT A FOOTNOTE. It causes the late
+# presentation that causes the nerve damage that causes the visible deformity
+# that causes the stigma. The register has fields for interventions, blockers and
+# tolls, and no way to represent a loop. See gaps.md #77.
+
+burden:
+  incidence:
+    value: 2.0e5
+    units: >
+      new cases detected/year — roughly flat for two decades. India accounts for
+      more than half, with Brazil and Indonesia next
+    src: recall
+  prevalence:
+    value: 3.5e6
+    units: >
+      people living with leprosy-related DISABILITY — an order of magnitude more
+      than are treated in a year, and the population the register keeps failing
+      to see. See gaps.md #61
+    src: recall
+  deaths:
+    value: 0.0
+    units: >
+      deaths/year directly attributable — a tenth morbidity-dominant record;
+      leprosy disables and disfigures and does not kill
+    src: reasoning
+  note: >
+    Note which of the two numbers above is bigger, and by how much. Two hundred
+    thousand people a year are diagnosed and cured. Three to four million live
+    with the nerve damage a previous diagnosis arrived too late to prevent, and
+    nothing in the treatment programme is for them.
+    THE REGISTERED-PREVALENCE FIGURE — the one the elimination target was set
+    against — is neither of these. It counts people currently taking tablets,
+    which is a property of the treatment schedule as much as of the disease.
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: prophylaxis
+  ongoing: moderate
+  efficacy:
+    value: 0.95
+    units: fraction-of-patients (cure with multidrug therapy)
+    src: recall
+  access:
+    value: 0.60
+    units: >
+      fraction-of-patients (diagnosed and treated) — the drugs are free and have
+      been since 1995; the constraint is finding people, in a disease with no
+      laboratory test, diagnosed by clinicians who were trained when there were
+      dedicated programmes
+    src: reasoning
+
+measurement:
+  diagnostic: clinical
+  prognostic: none
+  predictive: partial
+  witness: >
+    DIAGNOSTIC is `clinical`, AND THAT IS REMARKABLE FOR A BACTERIAL DISEASE
+    WITH A NAMED ORGANISM. The cardinal signs are a skin lesion with definite
+    sensory loss, a thickened peripheral nerve, and acid-fast bacilli on a
+    slit-skin smear — and the smear is negative in paucibacillary disease, which
+    is most of it. There is no serological test that works across the spectrum,
+    no antigen test, and **the organism has never been grown in culture.** Drug
+    susceptibility historically required inoculating mouse footpads and waiting a
+    year; molecular methods have improved that and are not field tools.
+    So the diagnosis rests on a trained pair of eyes and a wisp of cotton wool
+    testing sensation — which is exactly the capability that dispersed when
+    vertical programmes were integrated after 2000. This is the first record in
+    this batch where the diagnostic problem is not a missing device but a missing
+    *person*, and it cannot be fixed by procurement.
+    PROGNOSTIC is `none`, and the gap is where all the disability comes from.
+    Leprosy reactions — type 1 reversal reactions and erythema nodosum leprosum —
+    are immune-mediated episodes that occur during or, crucially, AFTER
+    successful treatment, and they are the principal cause of nerve damage.
+    Nothing predicts who will have one. A patient can be bacteriologically cured
+    and lose a hand afterwards.
+    PREDICTIVE is `partial`: the paucibacillary/multibacillary split determines
+    whether treatment runs six months or twelve, and it is made on lesion count
+    and smear rather than on anything precise.
+
+strata:
+  - name: paucibacillary
+    fraction:
+      value: 0.40
+      units: fraction-of-new-cases
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.97
+      units: fraction-of-stratum (cure with six months of multidrug therapy)
+      src: reasoning
+    toll: minor
+    what: >
+      Few skin lesions, few or no detectable bacilli, a vigorous cell-mediated
+      immune response holding the organism in check. Six months of multidrug
+      therapy and it is over. Nerve involvement tends to be localised to one or
+      two trunks — which is not the same as absent, and a single damaged ulnar
+      nerve is still a clawed hand.
+
+  - name: multibacillary
+    fraction:
+      value: 0.60
+      units: fraction-of-new-cases
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.94
+      units: fraction-of-stratum (cure with twelve months of multidrug therapy)
+      src: reasoning
+    toll: major
+    what: >
+      Many lesions, heavy bacillary load, weak cell-mediated response — the
+      lepromatous end of the spectrum. Twelve months of therapy, and a
+      substantially higher rate of leprosy reactions both during and after it.
+      Those reactions are treated with prolonged corticosteroids, and in
+      recurrent erythema nodosum leprosum with thalidomide, whose own history is
+      inseparable from this disease.
+      THE SPECTRUM IS A PROPERTY OF THE PATIENT, NOT THE ORGANISM. The same
+      bacterium produces tuberculoid disease in a person with strong
+      cell-mediated immunity and lepromatous disease in a person without. That is
+      unusual enough to be worth stating: this record's strata partition by HOST
+      RESPONSE rather than by pathogen, stage or geography, which is a fourth
+      kind of partition and the schema is indifferent to which.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    The regimen itself is well tolerated for most: rifampicin, dapsone and
+    clofazimine, free worldwide since 1995 and donated throughout. Dapsone can
+    cause haemolysis and rarely a severe hypersensitivity syndrome.
+    CLOFAZIMINE DARKENS THE SKIN, and in this disease that is not a cosmetic
+    footnote. The discolouration is reversible over months to years and it is
+    visible in the meantime — so the drug that cures leprosy marks the patient as
+    someone being treated for leprosy, in communities where that has
+    consequences for marriage, employment and housing. A toll that interacts with
+    stigma is a shape this schema has no way to express, and it is a real reason
+    people default from treatment.
+    The heavier price sits in the multibacillary stratum: prolonged
+    corticosteroids for recurrent reactions carry osteoporosis, avascular
+    necrosis, cataract and steroid diabetes, and thalidomide for erythema
+    nodosum leprosum carries the teratogenicity that made its name.
+  incidence:
+    value: 0.05
+    units: >
+      fraction-of-treated (permanent harm from therapy, chiefly from prolonged
+      corticosteroids for reactions) — a reasoned estimate, concentrated in the
+      multibacillary stratum
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    THE DEFORMITY IS NOT THE BACTERIUM EATING FLESH. That misconception is
+    ancient and it matters, because the truth points at an intervention.
+    *M. leprae* infects Schwann cells and damages peripheral nerves. The result
+    is anaesthesia — hands and feet that cannot feel. What follows is unnoticed
+    injury: a burn not felt, a stone in a shoe not felt, an ulcer that is walked
+    on until it reaches bone. Repeated trauma to an insensate limb produces the
+    resorption, contracture and mutilation the disease is known for. Add
+    lagophthalmos and corneal damage from facial nerve involvement, and blindness.
+    Nerve damage does not reverse when the bacilli are killed, and reactions can
+    damage nerves months or years AFTER a bacteriological cure. Three to four
+    million people are living with this, against two hundred thousand new
+    diagnoses a year.
+    AND MOST OF THE PROGRESSION IS PREVENTABLE WITHOUT ANY DRUG. Daily
+    inspection of insensate hands and feet, protective footwear, wound care and
+    simple splinting stop the ulcer-injury-resorption cycle. That is the
+    lymphatic filariasis finding again: **the residue is the treatable part**,
+    and it is treated by self-care training rather than by pharmacology (gaps.md
+    #60). Reconstructive surgery restores function in some. Neither is what the
+    MDT programme is built to deliver.
+  incidence:
+    value: 0.20
+    units: >
+      fraction-of-patients (permanent nerve damage or visible disability) — a
+      reasoned estimate; the WHO grade-2 disability rate at diagnosis alone runs
+      around five to ten percent, and damage accrues during and after treatment
+    src: reasoning
+
+window:
+  what: >
+    The window is nerve damage, and it is the whole of what matters here.
+    Treated before the nerves are injured, leprosy leaves nothing at all: skin
+    lesions resolve, the patient is cured, there is no deformity and no
+    disability. Treated after, the bacilli die and the anaesthesia is permanent,
+    and everything the disease is feared for follows from that anaesthesia
+    rather than from the infection.
+    It is a slow window and an unusually cruel one, for two reasons. Incubation
+    runs two to twenty years, so nobody presents early on suspicion. And the
+    first sign is a patch of skin that does not feel — which is painless,
+    unalarming, and easy to ignore in a disease people have every social reason
+    not to name.
+    Reactions extend the window past cure: a patient discharged as
+    bacteriologically cured can lose nerve function months later, so "caught in
+    time" is not settled at the end of treatment.
+  closes_on: >
+    established peripheral nerve damage — sensory loss, motor weakness,
+    lagophthalmos — which does not recover when the organism is killed
+  caught_in_time:
+    value: 0.60
+    units: >
+      fraction-of-patients (treated before significant nerve damage) — a
+      reasoned estimate; the grade-2 disability rate at diagnosis is the
+      published proxy and understates it, since grade 1 sensory loss is already
+      irreversible
+    src: reasoning
+
+witness:
+  mechanism: >
+    `established`, with two holes that matter and one fact that is strange
+    enough to state on its own.
+    *Mycobacterium leprae* — and, since 2008, *M. lepromatosis* — infects Schwann
+    cells of peripheral nerves and macrophages of skin. It has undergone extreme
+    reductive evolution: something like half its genome is pseudogenes, and it is
+    so dependent on its host that IT HAS NEVER BEEN GROWN IN CULTURE. Research
+    requires armadillos or mouse footpads. That single limitation shapes
+    everything downstream — no rapid susceptibility testing, slow drug
+    development, and a diagnostic pipeline that never had a laboratory anchor to
+    build on.
+    THE CLINICAL SPECTRUM IS A PROPERTY OF THE HOST. Strong cell-mediated
+    immunity produces tuberculoid disease: few lesions, few bacilli, sharply
+    localised. Weak cell-mediated immunity produces lepromatous disease: many
+    lesions, enormous bacillary loads, widespread involvement. Same organism,
+    opposite diseases, and the Ridley-Jopling spectrum between them is a
+    classification of immune response rather than of pathogen.
+    The holes: transmission is not settled — prolonged close contact and
+    respiratory droplet are strongly favoured — and only a small minority of
+    those exposed ever develop disease, with host genetics implicated and
+    unresolved. Neither is a mystery on the Buruli ulcer scale, and both limit
+    what prevention can be aimed at.
+  intervention: >
+    `curative`, and it has been since 1982. Multidrug therapy — rifampicin,
+    dapsone and clofazimine — cures, in six months for paucibacillary and twelve
+    for multibacillary disease, with relapse uncommon. It has been provided FREE
+    WORLDWIDE SINCE 1995 through a manufacturer donation, and over sixteen
+    million people have completed it.
+    See `moved` for what it replaced. Dapsone monotherapy took years, produced
+    widespread resistance, and left many patients on treatment indefinitely — so
+    the introduction of MDT moved this record from `suppressive` to `curative`,
+    which is a genuine capability change and the first one this register has
+    recorded on the intervention axis outside hepatitis C.
+    What MDT does not do is repair a damaged nerve, and it does not prevent the
+    reactions that damage them.
+  prevention: >
+    `prophylaxis`, and recently earned. A SINGLE DOSE OF RIFAMPICIN given to
+    contacts of a new case reduces their subsequent incidence by roughly half —
+    post-exposure prophylaxis, deployable, cheap, and now recommended. BCG gives
+    partial protection as a side effect of being given for tuberculosis.
+    This is one of the few records in the register where prevention is a genuine
+    prophylaxis given to a person rather than an environmental measure, and it is
+    worth noting what it needs: knowing who the contacts are, which requires
+    finding the index case, which requires the clinical expertise that was
+    dispersed after 2000.
+  ongoing: >
+    `moderate` for treatment — six or twelve months of daily and monthly doses,
+    with monitoring for reactions that may need months of steroids.
+    The rating misses the larger burden entirely, and deliberately, because the
+    axis is defined as the burden of being TREATED. Three to four million people
+    perform daily self-care on insensate limbs for the rest of their lives —
+    inspecting, protecting, dressing — and none of them is under treatment. That
+    is `high` by any reading and it belongs to the residue, not to the therapy.
+
+moved:
+  - date: 1982
+    axis: intervention
+    from: suppressive
+    to: curative
+    why: >
+      WHO recommended multidrug therapy, replacing dapsone monotherapy. Dapsone
+      alone took years, generated widespread resistance and left many patients on
+      indefinite treatment; MDT cures in six to twelve months with rare relapse.
+      A genuine capability change rather than a toll reduction, and the second
+      the register has recorded on the intervention axis after hepatitis C's
+      direct-acting antivirals.
+    src:
+      id: PMID:6806990
+      retrieved: 2026-08-26
+      quote: >
+        Chemotherapy of leprosy for control programmes.
+
+holes:
+  - Why new case detection has been flat at around 200,000 a year for two
+    decades. Whether that is a stable transmission equilibrium or a stable
+    detection capacity is the question, and the two imply opposite responses.
+  - What triggers leprosy reactions, and who will have one. This is where the
+    disability comes from and nothing predicts it.
+  - How transmission actually works, and why so few of the exposed develop
+    disease.
+  - How many people are living with leprosy-related disability. Three to four
+    million is the figure in circulation and it rests on old surveys; the
+    population is by definition no longer in any treatment register.
+  - Whether the 2000 elimination declaration caused the plateau, or coincided
+    with it. The programme integration that followed is documented; the causal
+    claim is widely argued and remains an inference.
+  - Written from model recall. The Ridley-Jopling spectrum, the inability to
+    culture the organism, the MDT regimen and the registered-prevalence
+    definition are the parts most likely right; every number is the part most
+    likely wrong.
+
+blockers:
+  - kind: diagnosis
+    obstacles: [no-model-system]
+    blocks: finding cases, in a disease with no laboratory test
+    what: >
+      THE BINDING CONSTRAINT, AND IT IS A MISSING PERSON RATHER THAN A MISSING
+      DEVICE. Leprosy is diagnosed clinically — a skin patch with definite
+      sensory loss, a thickened nerve, bacilli on a smear that is negative in
+      most cases. The organism cannot be cultured, serology fails across the
+      paucibacillary half of the spectrum, and there is no point-of-care test
+      that works.
+      So diagnosis depends on a clinician who has seen leprosy before and knows
+      to test sensation with a wisp of cotton. That capability was concentrated
+      in vertical programmes, and after the 2000 elimination declaration those
+      programmes were integrated into general health services and the expertise
+      dispersed. A general practitioner in a low-incidence district may never see
+      a case.
+      No procurement fixes this. What would is training, referral pathways and a
+      reason for a health system to maintain competence in something it has been
+      told is eliminated — which is a policy problem wearing a diagnosis
+      problem's clothes.
+    who_could: [health-system, government, academic, nonprofit]
+    scale: 1.0e8
+    standing: documented
+    src: recall
+
+  - kind: policy
+    blocks: sustaining a programme against a target that has been declared met
+    what: >
+      Documented, dated, and the reason this record exists. "Elimination as a
+      public health problem" was defined as fewer than one REGISTERED case per
+      10,000 — registered meaning currently on treatment. Shortening treatment
+      from years of dapsone to six or twelve months of multidrug therapy cut that
+      number mechanically. The target was declared met globally in 2000 and by
+      most endemic countries soon after.
+      What followed is the yaws pattern with better documentation: vertical
+      programmes wound down, integration into general services, loss of
+      specialist capacity, and new case detection flat at around 200,000 a year
+      for two decades. Nothing about the organism changed.
+      The second half of this blocker is legal. Discriminatory provisions
+      persisted in national law long after the disease was curable — grounds for
+      divorce, bars on public office, segregation powers — and some were repealed
+      only in the last decade. A disease whose treatment is free and whose cure
+      is certain is still one people conceal.
+    who_could: [government, legislator, health-system, nonprofit, patient-org]
+    scale: 2.0e8
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: self-care and rehabilitation for three to four million disabled people
+    what: >
+      The single largest deliverable in this record, and it is not a drug
+      programme. Most leprosy disability is progressive rather than fixed:
+      insensate hands and feet are injured because they cannot be felt, and the
+      ulcer-injury-resorption cycle is stopped by daily inspection, protective
+      footwear, wound care and splinting. Reconstructive surgery restores
+      function in some.
+      None of that is what MDT delivery is built for, and the people who need it
+      have by definition finished treatment and left the register. This is
+      exactly the lymphatic filariasis shape — tablets are donated and organised
+      and the intervention for the disabled population is soap, shoes and
+      training — and it is the second record to show that the residue is the
+      treatable part (gaps.md #60).
+    who_could: [health-system, government, nonprofit, philanthropy, patient-org]
+    scale: 3.0e8
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    obstacles: [who-progresses]
+    blocks: predicting reactions, and everything an unculturable organism blocks
+    what: >
+      Two research problems and one structural handicap.
+      The handicap: *M. leprae* has never been grown in culture. Drug
+      susceptibility testing historically meant inoculating mouse footpads and
+      waiting a year; molecular methods have improved that and there is still no
+      routine phenotypic testing, and no easy platform for developing anything
+      new.
+      The first problem is reactions. Type 1 and type 2 reactions cause most of
+      the nerve damage, they occur during and after successful treatment, and
+      nothing predicts them. A marker that identified who was about to have one
+      would prevent more disability than any new antibiotic.
+      The second is who develops disease at all. Only a small minority of those
+      exposed do; host genetic susceptibility is implicated and unresolved, and
+      an answer would let post-exposure prophylaxis be aimed rather than given to
+      every contact.
+      `scale: null` — no priced path.
+    who_could: [academic, sponsor, philanthropy, nonprofit]
+    scale: null
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0035
+  rated: 2026-08-23
+  by: [claude, jeremy]

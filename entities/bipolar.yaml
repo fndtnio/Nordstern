@@ -1,0 +1,164 @@
+slug: bipolar
+id: FND-D-0011
+name: bipolar disorder
+also: [bipolar affective disorder, manic depression]
+mondo: MONDO:0004985
+kind: disease
+residual: false
+contested: false
+
+# The empirical-luck quadrant, occupied properly. Added as an eleventh record
+# because rating depression honestly put it in the frontier instead, leaving the
+# quadrant empty.
+#
+# Read this file against sickle-cell.yaml. There, mechanism was solved in 1957
+# and a cure arrived in 2023: sixty-six years of knowing and not being able to
+# act. Here, an effective treatment arrived in 1949 and the mechanism is still
+# unknown in 2026: seventy-seven years of acting and not knowing. The two gaps
+# run in opposite directions, which is the whole argument for two axes.
+
+burden:
+  prevalence:
+    value: 4.0e7
+    units: people
+    src: recall
+  dalys:
+    value: 1.0e7
+    units: DALY/year
+    src: recall
+
+axes:
+  mechanism: correlates
+  intervention: suppressive
+  prevention: none
+  ongoing: high
+  efficacy:
+    value: 0.55
+    units: fraction-of-patients (meaningful reduction in episode recurrence)
+    src: recall
+  access:
+    value: 0.3
+    units: fraction-of-patients (receiving adequate treatment)
+    src: recall
+
+measurement:
+  diagnostic: clinical
+  prognostic: none
+  predictive: none
+  witness: >
+    Lithium works very well in a subset and nobody can identify that subset in
+    advance — seventy-seven years of the most effective drug in the field
+    being prescribed by trial. Diagnosis itself takes years because a past
+    hypomanic episode is easily missed and there is no test for it. Course is
+    unpredictable. A responder-prediction test would be worth more here than
+    most new drugs, and would cost a fraction as much.
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    Lithium over decades causes hypothyroidism commonly and chronic kidney
+    disease in a meaningful minority, occasionally progressing to end-stage
+    renal failure — a permanent harm inflicted by the field's most effective
+    drug. Antipsychotics used as mood stabilisers carry metabolic syndrome and
+    tardive dyskinesia, which can be irreversible. The `ongoing` monitoring
+    burden exists precisely to catch this toll early.
+  incidence:
+    value: 0.1
+    units: fraction-of-treated (chronic kidney disease or hypothyroidism on long-term lithium)
+    src: recall
+
+witness:
+  mechanism: >
+    `correlates`. Heritability is among the highest in psychiatry — twin
+    estimates around 60-80% — and GWAS has delivered many loci of small
+    effect, with partial genetic overlap with schizophrenia. None of it
+    assembles into a chain from cause to episode. There is no account of why
+    mood cycles, why episodes have the periodicity they do, or what state the
+    brain is switching between.
+  intervention: >
+    `suppressive`, and the strength of it is the point of this record. Lithium
+    was introduced by Cade in 1949 and remains the most effective prophylactic
+    agent: it reduces episode recurrence and is the only psychiatric drug with
+    reasonably consistent evidence of reducing suicide. Valproate,
+    lamotrigine, quetiapine and other agents add options. Treatment restores
+    substantial function for many patients and must continue indefinitely —
+    discontinuation, particularly of lithium, carries a high and sometimes
+    rapid relapse risk. Textbook `suppressive`: the life is restored, the
+    disease is not ended, and it never finishes.
+    And after seventy-seven years, **how lithium works is unknown.** GSK-3beta
+    inhibition and inositol-phosphate signalling are the leading proposals and
+    neither is established. A monovalent cation, discovered by an accident of
+    guinea-pig experiments, remains the best treatment in the field and nobody
+    can say why.
+  prevention: >
+    `none`. No way to prevent onset; early intervention services aim to shorten
+    time to treatment, not to avert the disease.
+  ongoing: >
+    `high`. Lithium requires serum-level monitoring with a narrow therapeutic
+    index, and carries renal and thyroid risks over decades. Adherence is a
+    persistent problem, in part because hypomania is not experienced as illness.
+
+holes:
+  - The mechanism of the field's most effective drug. Solving this is the
+    clearest example anywhere in the register of a question whose answer would
+    move a rating from `correlates` to `established` without changing what a
+    patient receives tomorrow.
+  - No biomarker, hence years of diagnostic delay during which the wrong
+    treatment (antidepressant monotherapy) can precipitate mania.
+  - Why lithium responders are a subset, and who they are in advance, is
+    unanswered and caps `efficacy` directly.
+
+blockers:
+  - kind: no-sponsor
+    blocks: lithium (suppressive)
+    what: >
+      A striking case of the register's target refrain, pointing at neither
+      villain: lithium is an unpatentable element, so no commercial sponsor has
+      ever had reason to fund trials of it, optimise its dosing, or market it.
+      Prescribing has declined in several countries in favour of patented
+      alternatives with weaker prophylactic evidence. The comparative trials
+      that would settle its place against newer agents are exactly the trials
+      nobody is paid to run — a textbook target for public or philanthropic
+      funding, and cheap by trial standards.
+    who_could: [nonprofit, philanthropy, government, academic]
+    scale: 1e8
+    standing: documented
+    src: recall
+  - kind: knowledge
+    obstacles: [unexplained-illness]
+    blocks: mechanism-based treatment
+    what: >
+      Seventy-seven years without an account of how the field's most effective
+      drug works, and no specified disease process to design against.
+    who_could: [academic]
+    scale: null
+    standing: documented
+    src: recall
+  - kind: diagnosis
+    blocks: timely treatment
+    what: >
+      Years of diagnostic delay, because depression brings people in and past
+      hypomania is easily missed — during which antidepressant monotherapy can
+      precipitate mania. A detection problem with no biomarker, where structured
+      screening and better records would help measurably.
+    who_could: [health-system, software, academic]
+    scale: 1e7
+    standing: documented
+    src: recall
+  - kind: logistics
+    blocks: lithium (suppressive)
+    what: >
+      Lithium needs serum-level monitoring against a narrow therapeutic index,
+      plus renal and thyroid surveillance over decades — infrastructure that is
+      routine in wealthy systems and largely absent elsewhere, which is part of
+      why the drug is under-used globally.
+    who_could: [health-system, nonprofit]
+    scale: 1e8
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0011
+  rated: 2026-08-11
+  by: [claude, jeremy]

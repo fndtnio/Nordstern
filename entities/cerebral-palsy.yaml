@@ -1,0 +1,677 @@
+slug: cerebral-palsy
+id: FND-D-0099
+name: cerebral palsy
+also: [CP, spastic diplegia, spastic quadriplegia, hemiplegic cerebral palsy, dyskinetic cerebral palsy, little's disease]
+mondo: MONDO:0006497
+kind: syndrome
+residual: false
+contested: false
+
+# THE RECORD THE QUEUE SAVED FOR LAST BECAUSE IT BREAKS THE SCHEMA ON PURPOSE,
+# AND IT BREAKS IT IN A WAY NEITHER OF THE TWO EXISTING GAPS PREDICTED.
+#
+# Cerebral palsy is defined as **non-progressive**. A lesion occurred once, in a
+# developing brain, before or around birth, and it is finished. Everything the
+# person lives with afterwards is consequence.
+#
+# gaps.md #97 (`copd`) says the register cannot hold permanent damage that IS the
+# disease still doing it. gaps.md #60 (`lymphatic-filariasis`) says a residue can
+# be the treatable part and `residue` has no capability of its own — and it asked
+# for a second forcing record. **This is that record and it is the extreme
+# form: the entity IS the residue** (gaps.md #208). The disease is over. The
+# patient is not, for another seventy years.
+#
+# So the axes describe an event in the past. `mechanism: established` is a
+# statement about something that happened in 1998 and cannot be reached.
+# `intervention: symptomatic` is true of the entity and says nothing about the
+# person, for whom a great deal can be done. **The derived verdict will read
+# "engineering problem — understood, and nothing can be done", and it is
+# simultaneously correct and one of the most misleading sentences this register
+# can produce.**
+#
+# AND THE SECOND GAP IS WORSE. A large share of people with cerebral palsy cannot
+# speak reliably or point reliably, and are therefore assessed with instruments
+# that require speaking and pointing. **The measurement that is wrong here is the
+# measurement of the person, not of the disease**, and every field in the
+# `measurement` block is about the disease (gaps.md #209).
+
+burden:
+  prevalence:
+    value: 1.7e7
+    units: >
+      people living with cerebral palsy worldwide — **the commonest physical
+      disability of childhood**, at roughly 2 per 1,000 live births in
+      high-income countries and higher elsewhere. **Most of them are adults**,
+      which is the fact the field is organised as though it did not know
+    src: recall
+  deaths:
+    value: 0.0
+    units: >
+      deaths/year attributed — **the fourth kind of zero in five records, and it
+      is `osteoarthritis`'s kind rather than `anaemia`'s.** Life expectancy is
+      near-normal in the mildly affected and substantially reduced at the severe
+      end, where death is usually from aspiration pneumonia, and **is filed as
+      pneumonia**. The deaths are real, they are concentrated, and they belong to
+      another record's tally
+    src: reasoning
+  note: >
+    **A RECORD WHOSE INCIDENCE HAS BARELY MOVED IN FIFTY YEARS, FOR AN
+    UNCOMFORTABLE REASON.** Neonatal intensive care saves extremely preterm
+    infants who would previously have died, and a fraction of the survivors have
+    cerebral palsy — so improving obstetric and neonatal care has pushed the rate
+    down through some routes and up through others, roughly cancelling.
+    **gaps.md #147 in its gentlest form**: part of this record exists because
+    medicine got good enough, and nothing says so.
+
+axes:
+  mechanism: established
+  intervention: symptomatic
+  prevention: risk-reduction
+  ongoing: high
+  efficacy:
+    value: 0.55
+    units: >
+      fraction-of-patients (meaningful, sustained improvement in function,
+      participation or comfort from best-available management) — **and it is the
+      most strained efficacy figure in the register**, because the outcome is not
+      a disease endpoint. Nothing here alters the lesion; the number describes
+      whether the person's life went better
+    src: reasoning
+  access:
+    value: 0.20
+    units: >
+      fraction-of-patients (receiving adequate therapy, equipment,
+      communication support, orthopaedic and hip surveillance, and education) —
+      low nearly everywhere, near zero across most of the world, **and it falls
+      off a cliff at eighteen even in the richest systems**
+    src: reasoning
+
+measurement:
+  diagnostic: clinical
+  prognostic: good
+  predictive: none
+  witness: >
+    **DIAGNOSTIC IS `clinical` AND THE INTERESTING THING IS THAT IT RECENTLY
+    STOPPED HAVING TO BE LATE.**
+    There is no test for cerebral palsy. It is a clinical description — a
+    persistent disorder of movement and posture attributed to a non-progressive
+    disturbance in the developing brain — supported by MRI, which shows a
+    consistent lesion in the large majority and is corroboration rather than
+    criterion. **For decades the average age at diagnosis was around nineteen
+    months**, because clinicians waited for motor milestones to fail.
+    **That changed, and the change has not been implemented.** The General
+    Movements Assessment and the Hammersmith Infant Neurological Examination,
+    combined with MRI, identify infants at high risk **by three to six months** —
+    which matters enormously, because the intervention window is the period of
+    peak neuroplasticity that the old timeline spent waiting. A diagnostic
+    capability that moves an intervention inside its window is the cheapest kind
+    of progress there is, and this one is sitting mostly unused.
+    PROGNOSTIC is `good`, and unusually so for this register. The Gross Motor
+    Function Classification System, applied by about age two, predicts motor
+    trajectory over decades with genuine reliability — **a five-level ordinal
+    scale, free, requiring no equipment, and one of the best prognostic
+    instruments in medicine.** A family can be told, honestly and early, roughly
+    what to expect. That is worth more than most of the tests in this corpus.
+    PREDICTIVE is `none`, and it is expensive. Nothing predicts which child will
+    respond to which therapy, which will benefit from selective dorsal rhizotomy
+    versus intrathecal baclofen versus orthopaedic surgery, or which will be worse
+    off after a permanent neurosurgical procedure. **Decisions that permanently
+    alter a child's body are made on clinical judgement over a heterogeneous
+    population.**
+    **AND THERE IS A FOURTH MEASUREMENT PROBLEM THAT THIS BLOCK HAS NO ROOM FOR**
+    (gaps.md #209). Roughly a quarter of people with cerebral palsy have severe
+    speech impairment, and many more have unreliable hand control. Standard
+    cognitive assessment requires speech or pointing. **So intelligence is
+    systematically underestimated in exactly the people who cannot demonstrate
+    it**, with consequences — educational placement, expectations, autonomy — that
+    last a lifetime. The same applies to pain, which is assessed by self-report and
+    is therefore under-recorded in the people most likely to have it. These are
+    failures to measure the **person**, and `diagnostic`, `prognostic` and
+    `predictive` are all about the disease.
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    **THE SURGERY IS IRREVERSIBLE AND THE EVIDENCE UNDER IT IS THINNER THAN THE
+    CONSENT CONVERSATION IMPLIES.**
+    **Selective dorsal rhizotomy** permanently divides sensory nerve rootlets to
+    reduce spasticity. It works, it cannot be undone, and it is performed on
+    children whose adult function nobody can predict — some adults report late
+    weakness and pain. **Single-event multilevel orthopaedic surgery** —
+    osteotomies, tendon transfers and lengthenings in one operation — is major
+    surgery followed by months of rehabilitation, and a minority end with worse
+    function than they started. **Intrathecal baclofen pumps** carry infection,
+    catheter failure and a withdrawal syndrome that can be life-threatening.
+    Repeated **botulinum toxin** raises questions about long-term muscle atrophy
+    that are not settled.
+    **AND THERE IS A TOLL THIS SCHEMA HAS NO FIELD FOR AT ALL: THE CHILDHOOD.**
+    Children with cerebral palsy have historically spent thousands of hours in
+    therapy, much of it in approaches that were never tested and some of which
+    were later shown to do nothing — passive stretching, neurodevelopmental
+    handling, patterning regimes that required families to recruit volunteers for
+    daily sessions. **That is a decade of a child's life spent on treatment, and
+    the register's `toll` counts only what the treatment did to the body.** The
+    hours are gone either way.
+    Add the marketing of unproven stem cell therapies to families who travel and
+    pay for them, which is a documented harm with no benefit and no regulator
+    reaching it.
+  incidence:
+    value: 0.05
+    units: >
+      fraction-of-treated (permanent harm — chiefly worse function or late pain
+      after irreversible neurosurgical or orthopaedic intervention, and pump
+      complications) — a reasoned estimate
+    src: reasoning
+
+window:
+  what: >
+    **TWO WINDOWS AND THEY ARE ON OPPOSITE SIDES OF THE EVENT.**
+    **Before and during birth, the window is hours, and everything in it is
+    prevention.** Antenatal magnesium sulphate given to a woman in preterm labour
+    reduces cerebral palsy in the surviving infant; antenatal corticosteroids
+    mature the lung and reduce the intraventricular haemorrhage that leads to it;
+    **therapeutic hypothermia must start within six hours** of a hypoxic-ischaemic
+    insult at term; and phototherapy for severe neonatal jaundice prevents
+    kernicterus outright. Each of these is cheap, each is on a clock, and **each
+    is delivered to someone who is not yet the patient and may never be one.**
+    **After birth the window is neuroplasticity, and it is the one being missed.**
+    The developing brain reorganises most in the first two years, so
+    goal-directed, activity-based intervention started early is worth more than
+    the same intervention started at three. **The historical average age at
+    diagnosis was around nineteen months** — most of the window, spent waiting for
+    milestones to fail. Tools now available identify high-risk infants by three
+    to six months, and are used in a minority of services.
+    **What does not close is the entity.** The lesion is finished and the window
+    for repairing it never existed. What the second window governs is how much
+    function is built around it, which is a different kind of deadline than
+    anything else in this register (gaps.md #208).
+    **And a third clock nobody names: hip displacement.** In the more severely
+    affected, the hip migrates progressively out of the socket over childhood; a
+    dislocated hip is painful and irreversible; and **radiographic surveillance
+    on a schedule catches it in time.** Sweden's national programme reduced
+    dislocation from roughly one in twelve to near zero. That is a window with a
+    documented, cheap, boring solution.
+  closes_on: >
+    the six hours after a hypoxic-ischaemic insult, and the hours of preterm
+    labour, for prevention; and the first two years of peak neuroplasticity for
+    building function afterwards — the lesion itself is finished before either
+  caught_in_time:
+    value: 0.25
+    units: >
+      fraction-of-cases (perinatal neuroprotection delivered where indicated, or
+      diagnosis and goal-directed early intervention starting inside the first two
+      years) — a reasoned estimate, and generous outside high-income settings
+    src: reasoning
+
+strata:
+  - name: independent walkers (GMFCS I-II)
+    fraction:
+      value: 0.55
+      units: fraction-of-people-with-cerebral-palsy
+      src: reasoning
+    intervention: symptomatic
+    efficacy:
+      value: 0.75
+      units: fraction-of-stratum (good function and participation with available support)
+      src: reasoning
+    toll: minor
+    what: >
+      **The majority, and the group whose needs are consistently
+      underestimated.** They walk, work, live independently, and have normal life
+      expectancy — and they have pain, fatigue, and **early musculoskeletal
+      decline that arrives in the thirties rather than the seventies.** A
+      substantial fraction of adults in this group lose walking ability they had
+      as children, which is the opposite of what "non-progressive" leads everyone
+      to expect, and nobody is following them.
+
+  - name: walks with mobility aids (GMFCS III)
+    fraction:
+      value: 0.10
+      units: fraction-of-people-with-cerebral-palsy
+      src: reasoning
+    intervention: symptomatic
+    efficacy:
+      value: 0.55
+      units: fraction-of-stratum (function maintained, deformity prevented)
+      src: reasoning
+    toll: major
+    what: >
+      The group where the orthopaedic and neurosurgical decisions are hardest and
+      the evidence thinnest — selective dorsal rhizotomy, multilevel surgery,
+      intrathecal baclofen — with `predictive: none` sitting underneath every one
+      of them.
+
+  - name: dependent for mobility (GMFCS IV-V)
+    fraction:
+      value: 0.35
+      units: fraction-of-people-with-cerebral-palsy
+      src: reasoning
+    intervention: symptomatic
+    efficacy:
+      value: 0.35
+      units: fraction-of-stratum (comfort, communication and participation achieved)
+      src: reasoning
+    toll: major
+    what: >
+      **Where the whole record's disability, cost and mortality concentrate**, and
+      where the interventions that matter most are the least medical: seating,
+      hip surveillance, feeding and reflux management, respiratory care,
+      communication devices, and carers. **This is the stratum in which
+      intelligence is most often mis-measured and pain most often missed**
+      (gaps.md #209), and the one for which almost no adult service exists
+      anywhere.
+
+moved:
+  - date: 1958
+    axis: prevention
+    from: none
+    to: risk-reduction
+    why: >
+      **PHOTOTHERAPY ABOLISHED AN ENTIRE CAUSE OF CEREBRAL PALSY, AND IT WAS
+      FOUND BY A NURSE NOTICING SOMETHING.**
+      Severe neonatal jaundice deposits bilirubin in the basal ganglia and
+      produces **kernicterus** — a distinctive dyskinetic cerebral palsy, usually
+      with hearing loss, in a child whose brain was otherwise normal. A ward
+      sister at an English hospital observed that jaundiced babies placed near a
+      window were less yellow; the observation was followed up and published in
+      1958. Phototherapy, with exchange transfusion for the severe, followed.
+      **In high-income countries kernicterus effectively disappeared**, and it is
+      as complete a prevention as anything in this register. **It persists across
+      much of the world**, where it remains a leading preventable cause of both
+      cerebral palsy and `hearing-loss`, for want of a lamp and a bilirubin
+      measurement.
+      Record two things about it. **First, that this is a route into this record
+      that is fully preventable**, which the register's `preventable` capability
+      value (gaps.md #66) cannot express because it applies to whole records
+      rather than to routes. **Second, that it links three records** — jaundice
+      belongs to `neonatal-conditions`, the deafness belongs to `hearing-loss`,
+      and the movement disorder is here, one child, three files (gaps.md #160).
+    src: recall
+
+  - date: 2009
+    axis: access
+    from: 0.14
+    to: 0.17
+    why: >
+      **MAGNESIUM SULPHATE, GIVEN TO THE MOTHER, TO PROTECT A BRAIN THAT HAS NOT
+      BEEN INJURED YET.**
+      Antenatal magnesium sulphate administered to women in imminent preterm
+      labour reduces cerebral palsy in the surviving children. The drug is
+      generic, costs almost nothing, is already stocked everywhere for
+      eclampsia, and requires no new technology — **the intervention was a
+      protocol, not a product.**
+      It is one of the clearest examples in this register of an intervention that
+      belongs to no record. It is given to a pregnant woman, for the benefit of a
+      child who does not yet exist, to prevent a disease neither of them has, and
+      the benefit shows up decades later in a different specialty. **gaps.md #87
+      and #207 together**: non-specific, decades early, and delivered to someone
+      who is not a patient of this record.
+      Uptake in preterm labour remains incomplete even in well-resourced units,
+      which is the whole of the move being small.
+    src: recall
+
+  - date: 2010
+    axis: access
+    from: 0.17
+    to: 0.19
+    why: >
+      **THERAPEUTIC HYPOTHERMIA — AND THEN IT DID NOT TRANSFER, WHICH IS THE MORE
+      IMPORTANT HALF.**
+      Cooling a term infant with hypoxic-ischaemic encephalopathy to about 33.5°C
+      for seventy-two hours, started within six hours of birth, reduces death and
+      major disability. Trials through the 2000s established it and it became
+      standard care in high-income neonatal units — a genuine, mechanism-derived
+      neuroprotective intervention, and one of very few in any brain injury.
+      **A large randomised trial in South Asia found no reduction in death or
+      disability and an INCREASE in mortality.** The explanation offered is that
+      the population and the setting differ — the timing and nature of the insult,
+      the absence of intensive care support around the cooling — and the
+      conclusion drawn was that hypothermia should not be used in low-resource
+      settings.
+      **This is gaps.md #157 for the second time in two records**, after
+      `anaemia`'s iron-in-malaria result, and it is the more disturbing of the
+      two because the intervention is not a tablet but a standard of care. **An
+      intervention's effect has a sign, the sign can flip with the setting, and
+      the register records one number.** A reader of `efficacy: 0.55` learns
+      nothing about where.
+    src:
+      id: PMID:16221780 doi:10.1056/NEJMcps050929
+      retrieved: 2026-08-26
+      quote: >
+        Whole-body hypothermia reduces the risk of death or disability in infants
+        with moderate or severe hypoxic-ischemic encephalopathy.
+
+  - date: 2017
+    axis: measurement
+    from: diagnosis at about nineteen months
+    to: diagnosis at three to six months
+    why: >
+      **THE DIAGNOSIS MOVED FORWARD BY MORE THAN A YEAR, WHICH IS MOST OF THE
+      INTERVENTION WINDOW, AND IT REQUIRED NO NEW TECHNOLOGY.**
+      An international clinical guideline consolidated evidence that the General
+      Movements Assessment — watching an infant's spontaneous movements on video —
+      combined with the Hammersmith Infant Neurological Examination and MRI,
+      identifies infants at high risk of cerebral palsy by three to six months of
+      age, against a historical average around nineteen months. **The GMA needs a
+      camera and a trained observer.**
+      It matters because of `window`: the first two years are the period of peak
+      neuroplasticity, goal-directed early intervention works best inside it, and
+      the old timeline spent most of it waiting for milestones to fail. **A
+      diagnostic change that moves a treatment inside its window is worth as much
+      as a treatment**, and this register has no way to express that.
+      **This entry is recorded on the `measurement` axis deliberately, and
+      `check.py` does not validate it** — gaps.md #184 says `moved` has no
+      convention for measurement, and measurement is what changes most. This is
+      the case for building one: the single most consequential change in this
+      record this century was a change in when we look, not in what we do.
+    src: recall
+
+witness:
+  mechanism: >
+    `established`, and the word means something narrower here than usual: **we
+    know what the lesion is, we can usually see it, and it is finished.**
+    Cerebral palsy is not one pathology. It is the motor consequence of any of
+    several injuries to a developing brain, and MRI shows a consistent lesion in
+    the large majority:
+    **Preterm white matter injury** is the largest single route — periventricular
+    leukomalacia and intraventricular haemorrhage in infants born very early,
+    damaging the descending motor tracts as they pass the ventricles, which is why
+    the classic picture is spastic diplegia with the legs worse than the arms.
+    **Term hypoxic-ischaemic encephalopathy** is a minority of cases —
+    considerably smaller than the litigation record and the public understanding
+    imply, which is a fact worth stating plainly. **Perinatal arterial ischaemic
+    stroke** produces hemiplegia. **Kernicterus** from untreated severe jaundice
+    produces dyskinetic cerebral palsy. **Congenital brain malformations** and
+    **intrauterine or neonatal infection** account for much of the rest.
+    **AND THE PICTURE IS BEING REVISED RIGHT NOW BY SEQUENCING.** Exome and genome
+    studies of cerebral palsy cohorts are finding a monogenic cause in a
+    substantial minority — figures around a fifth to a third are reported —
+    including in children with a clinical history that had been attributed to
+    birth events. **That is a mechanism-level revision to a diagnosis defined by
+    its cause**, it changes recurrence counselling and occasionally treatment,
+    and it unsettles the long-standing assumption that this record is mostly a
+    record of things that went wrong during delivery.
+    **What no mechanism supplies is a way in.** The neurons died before or shortly
+    after birth. No therapy regenerates them; the axons that would carry the
+    signal are gone. Every intervention in this record works on what remains —
+    which is the whole of gaps.md #208.
+  intervention: >
+    `symptomatic`, and the rating is honest about the entity and close to slander
+    about the person.
+    **Nothing touches the lesion.** There is no neuroprotective or regenerative
+    therapy after the fact, and the stem cell treatments marketed to families are
+    not supported by evidence.
+    **What works, and the evidence has swung hard.** Systematic reviews over the
+    last decade found that much of what was traditionally delivered — passive
+    stretching, neurodevelopmental handling, sensory integration — has little or
+    no effect, while **goal-directed, task-specific, high-repetition practice**
+    does, along with **constraint-induced movement therapy** for one-sided
+    involvement, **strength training** (long avoided on a theory about spasticity
+    that turned out to be wrong), and **fitness**. That reversal is one of the
+    more honest self-corrections in rehabilitation medicine and it is still
+    diffusing.
+    **Spasticity management**: botulinum toxin focally, oral and intrathecal
+    baclofen, and selective dorsal rhizotomy. **Orthopaedic surgery** for
+    contracture and deformity. **Hip surveillance** — radiographs on a schedule —
+    which is boring, cheap, and prevents a painful irreversible dislocation;
+    Sweden's national programme took dislocation from roughly one in twelve to
+    near zero, and it is a registry improving outcomes exactly as the joint
+    registries did in `osteoarthritis`.
+    **And the interventions that change lives most are not medical.**
+    Communication devices for the quarter with severe speech impairment; powered
+    mobility, which changes what a child can do and be; seating; education that
+    assumes competence; accessible buildings and transport; personal assistance.
+    **gaps.md #200's shape, in the record where it decides the outcome** — and
+    none of it is in `intervention`, `efficacy` or `access`.
+  prevention: >
+    `risk-reduction`, and the rating hides that one whole route is fully
+    preventable.
+    **Kernicterus is prevented outright** by measuring bilirubin and using a
+    lamp — see the 1958 `moved` entry — and it has effectively disappeared from
+    high-income countries while remaining a leading preventable cause elsewhere.
+    **The register cannot say "this route is preventable and that one is not"**,
+    because the `preventable` capability value added at gaps.md #66 applies to
+    whole records.
+    **The rest is genuine risk reduction.** Antenatal magnesium sulphate in
+    preterm labour, antenatal corticosteroids, caffeine for apnoea of
+    prematurity, delayed cord clamping, skilled intrapartum care and fetal
+    monitoring, therapeutic hypothermia within six hours for term hypoxic-
+    ischaemic encephalopathy — **with the caveat that hypothermia did not
+    reproduce its benefit in a low-resource trial and increased mortality there**,
+    which is in the 2010 `moved` entry and is the most important qualification in
+    this block. Preventing preterm birth itself would do more than any of them and
+    belongs to `neonatal-conditions`.
+    **And prevention here has an uncomfortable arithmetic.** Neonatal intensive
+    care saves extremely preterm infants who would otherwise have died, and a
+    fraction of those survivors have cerebral palsy. Improving survival and
+    reducing prevalence pull against each other, and no field in this register can
+    express a prevention that is also a cause.
+  ongoing: >
+    `high`, and the composition is unlike any other `high` in the corpus, because
+    most of it is not treatment.
+    Therapy through childhood; orthoses that are outgrown; wheelchairs and seating
+    reassessed as a child grows; hip radiographs on a schedule; management of
+    epilepsy in about a third, of dysphagia and reflux, of constipation, of
+    drooling, of respiratory infection; orthopaedic review; and for many families,
+    **care that is provided by a parent who left paid work.**
+    **The burden that dominates in adulthood is pain and fatigue, and both are
+    badly under-recorded.** Surveys find chronic pain in a majority of adults with
+    cerebral palsy, most of it musculoskeletal, most of it inadequately treated,
+    and it is systematically missed in those who cannot report it (gaps.md #209).
+    **And then the services stop.** Paediatric cerebral palsy care is
+    well-organised in wealthy systems and **adult cerebral palsy care in most of
+    them does not exist** — no clinic, no specialty, no research base, and a
+    population of adults who were told their condition was non-progressive and are
+    losing function in their thirties. **This record is studied as a childhood
+    condition and lived as an adult one**, and that is the single most actionable
+    sentence in it.
+
+holes:
+  - >
+    **The entity is the residue** (gaps.md #208). The lesion is non-progressive
+    and finished; everything recorded here is consequence. No `residue` block is
+    written, because a residue field inside a record that is entirely residue is a
+    category error — the same reasoning as the dracunculiasis correction, arriving
+    from the opposite direction to `copd`'s gaps.md #97.
+  - >
+    **The measurement that fails is of the person, not the disease**
+    (gaps.md #209). Cognition is underestimated in those who cannot speak or
+    point, and pain is under-recorded in those who cannot report it, and the
+    `measurement` block has no slot for either.
+  - >
+    **`capability: unsolved` and the quadrant "engineering problem" are derived
+    correctly and read as a verdict on the person.** Nothing repairs the lesion,
+    which is true; a great deal can be done, which the derivation cannot see. This
+    is gaps.md #89's argument in a record where the middle column does not help.
+  - >
+    **One route into this record is fully preventable and the schema cannot say
+    so** — kernicterus, prevented by a lamp, still a leading cause across much of
+    the world. `preventable` (gaps.md #66) applies to whole records.
+  - >
+    **The most consequential change this century was diagnostic timing, recorded
+    here on a `measurement` axis that `check.py` does not validate** (gaps.md
+    #184).
+  - >
+    **Therapeutic hypothermia works in high-income units and increased mortality
+    in a low-resource trial** (gaps.md #157, second instance in two records), and
+    `efficacy: 0.55` is a single number covering both.
+  - >
+    Every scalar is `recall` or `reasoning`. Cerebral palsy registers —
+    Australian, Swedish, European — are exactly the kind of long-running
+    population dataset this record needs and none is cited.
+
+blockers:
+  - kind: logistics
+    blocks: a lifelong service, and then no service at all after eighteen
+    obstacles: []
+    what: >
+      **THE CLIFF AT EIGHTEEN IS THE CLEAREST FAILURE IN THIS RECORD AND IT
+      HAPPENS IN THE RICHEST HEALTH SYSTEMS IN THE WORLD.**
+      Paediatric cerebral palsy care in a well-resourced country is genuinely
+      good: a multidisciplinary team, physiotherapy and occupational therapy,
+      orthotics, hip surveillance, orthopaedics, communication support, and a
+      school system with a legal duty. **At eighteen almost all of it stops.**
+      There is no adult cerebral palsy specialty in most systems, no clinic, no
+      transition protocol worth the name, and adults are referred to services
+      designed for acquired brain injury or for the elderly.
+      **The consequence is measurable and it contradicts the definition.** Adults
+      with cerebral palsy lose function — a substantial fraction of those who
+      walked as children stop walking in their thirties and forties, from pain,
+      fatigue, contracture and deconditioning. The condition is non-progressive;
+      **the person's life is not**, and nobody is watching.
+      **Elsewhere the problem is upstream of all of that.** Therapy, seating,
+      orthotics, communication devices and hip surveillance are largely absent
+      across low- and middle-income settings, where most of the world's 17 million
+      live. Hip surveillance in particular is the cheapest thing being missed: a
+      radiograph on a schedule, a documented programme that took dislocation from
+      one in twelve to near zero, and it needs a register and a rule rather than
+      a technology.
+    who_could: [health-system, government, payer, academic, nonprofit]
+    scale: 2.0e10
+    standing: documented
+    src: recall
+
+  - kind: cost
+    blocks: equipment, which is not a medicine and is nobody's budget
+    obstacles: []
+    what: >
+      **THE INTERVENTIONS THAT CHANGE THIS RECORD MOST ARE OBJECTS, AND OBJECTS
+      ARE FUNDED WORSE THAN DRUGS.**
+      A powered wheelchair, a custom seating system, a communication device, a
+      hoist, a wet room, a modified vehicle. Each transforms what a person can do;
+      each costs thousands; each is reassessed as a child grows; and **none of them
+      is a medicine, so none of them sits in the budget line that funds
+      medicines.** They fall between health, social care, education and the family,
+      and in most systems the family absorbs a share.
+      **Communication devices are the sharpest case.** Roughly a quarter of people
+      with cerebral palsy have severe speech impairment; augmentative and
+      alternative communication gives them expressive language; and provision is
+      rationed, slow, and frequently contingent on demonstrating cognitive ability
+      **using the speech the device would provide** — which is gaps.md #209 turned
+      into a procurement rule.
+      **And the largest cost is not billed at all.** Care is delivered
+      overwhelmingly by families, commonly by a parent who left paid employment,
+      and neither `ongoing` nor `scale` has any way to hold unpaid labour over
+      decades.
+    who_could: [payer, government, health-system, manufacturer, nonprofit]
+    scale: 1.0e10
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: any way back to the lesion
+    obstacles: []
+    what: >
+      **THE NEURONS DIED BEFORE THE PATIENT COULD SPEAK, AND NOTHING BRINGS THEM
+      BACK.**
+      There is no neuroregenerative therapy for an established perinatal brain
+      injury, and no serious near-term candidate. Everything in this record works
+      around the lesion. **Neuroprotection — the window before and during the
+      injury — is the tractable half**, and it has produced magnesium sulphate and
+      therapeutic hypothermia and then largely stalled; erythropoietin,
+      melatonin, allopurinol and stem cell approaches have been trialled with
+      little to show.
+      **And the cause is unknown in a substantial fraction of cases**, which is
+      being actively revised right now: sequencing studies find monogenic causes in
+      perhaps a fifth to a third of cohorts, including in children whose condition
+      had been attributed to birth events. **That is a mechanism-level revision to
+      an entity defined by its mechanism**, it changes recurrence risk for
+      families, and occasionally it identifies a treatable disorder that had been
+      filed as cerebral palsy.
+      Two further unknowns with immediate consequences: **why some adults lose
+      function and others do not**, which nobody is studying because the research
+      base is paediatric; and **what predicts response to any of the irreversible
+      surgical interventions**, which is `predictive: none` with a scalpel
+      attached.
+      `scale: null`.
+    who_could: [academic, sponsor, philanthropy, manufacturer]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: evidence-incomplete
+    blocks: knowing which of the therapies does anything
+    obstacles: []
+    what: >
+      **FOR MOST OF THIS RECORD'S HISTORY, CHILDREN RECEIVED THERAPIES THAT HAD
+      NEVER BEEN TESTED, AND WHEN THEY WERE TESTED SEVERAL OF THEM DID NOTHING.**
+      Systematic reviews over the past decade sorted the field into what works and
+      what does not, and the result was a substantial reversal: passive
+      stretching, neurodevelopmental handling and sensory integration have little
+      or no effect on function, while goal-directed task-specific practice,
+      constraint-induced movement therapy, strength training and fitness do.
+      **Strength training had been actively avoided for years on a theory about
+      spasticity that was wrong.**
+      **The reversal is still diffusing**, and services, training curricula and
+      funding formulas built around the old approaches change slowly. This is
+      `low-back-pain`'s inverted blocker in a paediatric setting: **the problem is
+      partly getting an ineffective treatment away from people**, and the cost of
+      that treatment is measured in a child's hours.
+      **Adult cerebral palsy has almost no evidence base at all.** Trials recruit
+      children; guidelines describe children; the majority of people with cerebral
+      palsy are adults. A field that studies a lifelong condition only in its first
+      eighteen years will keep being surprised by what happens in the next fifty.
+    who_could: [academic, sponsor, health-system, nonprofit, patient-org]
+    scale: 5.0e8
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    blocks: an early diagnosis nobody uses, and a cognitive assessment that is wrong
+    obstacles: []
+    what: >
+      **TWO DIAGNOSTIC FAILURES, AND NEITHER NEEDS AN INVENTION.**
+      **The first is timing.** The General Movements Assessment plus the
+      Hammersmith examination and MRI identify high-risk infants by three to six
+      months against a historical average near nineteen months, and the difference
+      is most of the neuroplasticity window. **The GMA requires a camera and a
+      trained observer.** It is used in a minority of services, and the obstacle is
+      training, referral pathways and a willingness to give a probabilistic
+      diagnosis early — not a technology.
+      **The second is that the wrong thing is being measured.** Standard cognitive
+      assessment requires speech or reliable pointing. A large share of people with
+      cerebral palsy have neither, and are assessed anyway, and are recorded as
+      intellectually disabled. **The consequences compound over a lifetime** —
+      school placement, expectations, whether anyone offers a communication device,
+      whether decisions are made with them or about them. Assessments designed for
+      people without reliable motor output exist and are not routine. **Pain is the
+      same failure in a second domain**: it is measured by self-report, so it is
+      under-recorded in exactly the people most likely to be in it.
+      This is gaps.md #209, and it is the reason that gap is worth building rather
+      than noting.
+    who_could: [health-system, academic, software, patient-org, government]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+  - kind: policy
+    blocks: the part of the outcome that is decided outside medicine
+    obstacles: []
+    what: >
+      **WHETHER A PERSON WITH CEREBRAL PALSY HAS A GOOD LIFE IS DECIDED MOSTLY BY
+      THINGS NO CLINICIAN CONTROLS.**
+      Inclusive education and the presumption of competence in a classroom.
+      Accessible transport and buildings. Personal assistance funded well enough
+      to permit work and independent living. Employment law and the willingness of
+      employers. Income support that does not disappear on taking a job. **The same
+      impairment produces a very different life in two countries**, and this
+      register's `efficacy` and `access` are both scoped to clinical treatment.
+      **gaps.md #200 said the remedy can be in the environment.** `hearing-loss`
+      forced it and captioning was the example. **This is the record where it
+      decides the outcome outright**, because motor impairment is the impairment
+      that built environments most directly convert into disability. A powered
+      wheelchair is medicine's contribution; a kerb cut is not, and without the
+      second the first buys much less.
+      Also here: **the marketing of unproven stem cell therapies** to families who
+      travel and pay for them, which is a documented harm sitting outside every
+      regulator's reach.
+    who_could: [legislator, government, regulator, nonprofit, patient-org]
+    scale: 5.0e9
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0100
+  rated: 2026-08-26
+  by: [claude, jeremy]

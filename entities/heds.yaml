@@ -1,0 +1,316 @@
+slug: heds
+id: FND-D-0019
+name: hypermobile Ehlers-Danlos syndrome
+also: [hEDS, EDS hypermobility type, EDS type III, joint hypermobility syndrome]
+common: hypermobility syndrome
+mondo: MONDO:0007523
+kind: syndrome
+residual: false
+contested: true
+
+# The one sibling in a solved family. Twelve of the thirteen Ehlers-Danlos
+# subtypes have a molecular diagnosis — COL5A1 for classical, COL3A1 for
+# vascular, ADAMTS2, PLOD1, TNXB. This one does not, after two decades of
+# looking. That makes it the only record where the SHAPE of the missing answer
+# is known precisely, because the neighbours all have theirs.
+#
+# It also carries something the register has not seen: an entity boundary that
+# was redrawn in 2017 as a RESEARCH INSTRUMENT — tightened to assemble a
+# homogeneous cohort for gene-finding — which moved a large number of patients
+# into a new residual category without anything about them changing. See
+# gaps.md #37.
+
+burden:
+  prevalence:
+    value: 2.0e-4
+    units: >
+      fraction-of-population — CONTESTED BY AN ORDER OF MAGNITUDE, not merely
+      unverified; see note
+    src: recall
+  deaths:
+    value: 0.0
+    units: >
+      deaths/year directly attributable — hEDS is not the life-shortening EDS
+      subtype; that is vascular EDS (COL3A1), a different entity
+    src: reasoning
+  note: >
+    A third failure mode for this field, distinct from the other two the
+    register has hit. Breast cancer's numbers are UNVERIFIED and checkable.
+    MSMDS's are UNKNOWN and unpublished. These are CONTESTED: figures in
+    circulation range from roughly 1 in 5,000 to something closer to 1 in 500,
+    and the spread is not measurement error — it is a function of which
+    diagnostic criteria were applied and whether hypermobility spectrum disorder
+    was counted in. The 2017 criteria made the entity smaller by design, so any
+    prevalence figure is implicitly dated to a criteria version the schema has
+    no field for. The value above is a midpoint of a range that should never be
+    collapsed to a midpoint; carry the range or carry nothing.
+    Note the deaths figure, and what it does to priority. This is a condition of
+    high, lifelong disability and essentially no mortality — the second such
+    record after low back pain. Any triage that weights deaths will not see
+    either of them.
+
+axes:
+  mechanism: correlates
+  intervention: symptomatic
+  prevention: none
+  ongoing: high
+  efficacy:
+    value: 0.0
+    units: fraction-of-patients (disease course altered by any proven therapy)
+    src: reasoning
+  access:
+    value: 0.0
+    units: fraction-of-patients (no course-altering treatment to access)
+    src: reasoning
+
+measurement:
+  diagnostic: clinical
+  prognostic: none
+  predictive: none
+  witness: >
+    The most instructive `clinical` rating in the register, because it is not the
+    usual reason. In ME/CFS nothing is objectively measurable at all. Here the
+    core sign IS objective and cheap — the Beighton score is nine physical
+    manoeuvres performed in a few minutes, and joint hypermobility is not in
+    dispute. What is not measurable is the BOUNDARY: where hypermobility with
+    symptoms stops being a normal variant and becomes a syndrome, and which of
+    the systemic features belong to the same entity. So the 2017 criteria are a
+    committee's list — generalised hypermobility, plus two of three feature
+    groups, plus exclusion of everything else — and criterion three is an
+    exclusion, which means the diagnosis is partly defined by what it is not.
+    PROGNOSTIC is `none` and it is the expensive gap. Nothing distinguishes the
+    hypermobile person who will be fine from the one who will be using a
+    wheelchair at thirty. Since the intervention that plausibly helps
+    (progressive strengthening, activity pacing) has to start before deconditioning
+    and joint damage accumulate, a prognostic marker would be worth more here
+    than a new drug.
+    PREDICTIVE is `none`, and the choice of `none` over `n/a` is deliberate and
+    departs from how Huntington's and ME/CFS are rated. Those use `n/a` on the
+    grounds that there is no course-altering therapy whose response could be
+    predicted. hEDS has none either — but unlike them it has interventions that
+    are actively offered, vary enormously in outcome, and are IRREVERSIBLE when
+    they fail: joint stabilisation surgery, spinal and craniocervical fusion,
+    long-term opioids. "Will this patient be helped or permanently harmed by this
+    operation" is a real selection question with real stakes, and rating it `n/a`
+    would say there is no question to ask. This matches low back pain, which is
+    also rated `none` with no capability, for the same reason. See gaps.md #38 —
+    neither risk flag can see any of it, because both gate on capability.
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    Almost entirely iatrogenic, which is what makes this record uncomfortable
+    rather than merely sad. There is no cure to pay for; the permanent harm comes
+    from interventions offered in place of one.
+    Joint stabilisation surgery in hypermobile connective tissue has high
+    reported failure and recurrence — repairs that do not hold, operations
+    repeated, joints left worse than before. Spinal fusion, and in particular
+    craniocervical fusion offered for cervical instability, permanently removes
+    motion on indications that are genuinely disputed, sometimes in settings with
+    little external review. Long-term opioid prescribing for chronic pain in a
+    young population carries dependence and hyperalgesia. Beneath all of it sits
+    prolonged diagnostic delay, frequently a decade or more, during which the
+    common outcome is deconditioning and the common experience is being
+    disbelieved — a harm the schema has no field for, because it is not the price
+    of a cure.
+    This lands the record in `harm without benefit` alongside low back pain and
+    ME/CFS, and here the flag fires cleanly and correctly. Contrast MSMDS, where
+    it fires and is half wrong (gaps.md #35).
+  incidence:
+    value: 0.15
+    units: >
+      fraction-of-patients (permanent harm from surgical or pharmacological
+      management) — a reasoned estimate, not a measured figure; no denominator
+      exists for how many are operated on
+    src: reasoning
+
+window:
+  what: >
+    A window of an unfamiliar kind, and the difference is worth stating. Every
+    other window in the register closes because the DISEASE does irreversible
+    damage while you are late — fibrosis in Crohn's, valve scarring in rheumatic
+    heart disease, neurodevelopmental damage in PKU. This one closes largely
+    because the SYSTEM does. During the years before diagnosis a patient
+    accumulates deconditioning, joint damage from unmodified activity, failed
+    operations performed without knowledge of the underlying tissue, opioid
+    exposure, and a settled belief among clinicians that the problem is not
+    physical. Each of those is hard to reverse and none of them is the syndrome
+    progressing.
+    THE EVIDENCE FOR THE THERAPEUTIC HALF IS THIN and should not be dressed up:
+    that early progressive strengthening changes the long-run trajectory is
+    widely believed and poorly trialled. What is well documented is the delay
+    itself and the harm accumulated inside it.
+  closes_on: >
+    deconditioning, failed surgery performed without the diagnosis, opioid
+    exposure, central sensitisation
+  caught_in_time:
+    value: 0.2
+    units: >
+      fraction-of-patients (diagnosed before substantial iatrogenic or
+      deconditioning harm) — a guess; the reported diagnostic delay of a decade
+      or more is the firmer number behind it
+    src: reasoning
+
+witness:
+  mechanism: >
+    Rated `correlates`, and the rating hides a split the schema cannot show. For
+    the MUSCULOSKELETAL core there is a real mechanical chain and it is not
+    mysterious: lax connective tissue gives joints that exceed their normal
+    range, which subluxate and dislocate, which produces pain, soft-tissue
+    injury and secondary degenerative change. That much would survive a
+    refutation attempt. For the SYSTEMIC features — orthostatic intolerance and
+    POTS, gastrointestinal dysmotility, fatigue, the disputed mast cell
+    involvement — there are associations and no chain at all. One entity, two
+    very different epistemic states, and a single `mechanism` field that must
+    pick one. It picks the lower.
+    Underneath both sits the fact that defines the record: there is no gene.
+    Twelve of thirteen EDS subtypes have a molecular diagnosis and this one, by
+    far the most common, does not. Whether that is because it is one condition
+    whose gene has been missed, several conditions pooled, a polygenic trait, or
+    the tail of a normal distribution treated as an entity, is completely open —
+    and each of those four possibilities implies a different research programme.
+  intervention: >
+    `symptomatic`, and nothing is close to more. Progressive strengthening and
+    proprioceptive physiotherapy, activity pacing, bracing and orthotics, pain
+    management, and for the orthostatic features salt, fluids, compression and
+    off-label heart-rate control. Surgery is available for specific unstable
+    joints and is the part of management most likely to do permanent damage. No
+    treatment addresses connective tissue, because there is no target — the
+    intervention axis here is downstream of the mechanism axis in a way that is
+    unusually direct.
+  prevention: >
+    `none`. It is heritable and runs in families, but with no gene there is no
+    test, therefore no reproductive option, no screening and nothing to avoid.
+    Note the asymmetry with Huntington's: both are genetic and neither is
+    preventable, but Huntington's has a definitive test and prevention is
+    nonetheless `none` because the disease cannot be stopped, while here
+    prevention is `none` because the entity cannot be identified in advance at
+    all.
+  ongoing: >
+    `high`. Daily self-management indefinitely, in a population that is mostly
+    young and mostly female, with substantial effects on education, employment
+    and independence. Care is spread across rheumatology, genetics, cardiology,
+    gastroenterology, physiotherapy and pain services with no specialty that
+    owns it, so a large share of the ongoing burden is coordination the patient
+    performs themselves.
+  contested: >
+    Contested along THREE lines, where ME/CFS forced the observation that a bare
+    boolean conflates two (gaps.md #6). This record adds the third.
+    (1) EXISTENCE AND MEDICALISATION — whether hEDS names a discrete disorder or
+    medicalises the symptomatic tail of a continuous trait. Genuinely open, and
+    entangled with a real rise in diagnosis, much of it patient-initiated.
+    (2) BOUNDARY — the 2017 criteria deliberately narrowed the entity and
+    created hypermobility spectrum disorder for those who no longer met it. The
+    stated purpose was research: a tighter cohort in which to find the gene.
+    Clinically HSD patients are not less unwell, and the reclassification is
+    disputed by patient organisations and by some clinicians on the grounds that
+    a research instrument was allowed to determine access to care.
+    (3) SCOPE — how much belongs to it. The frequently asserted triad of hEDS
+    with POTS and mast cell activation syndrome is contested at both ends: the
+    strength of the associations, and in the case of MCAS the validity of the
+    diagnostic criteria themselves. A record that says only `contested: true`
+    cannot distinguish "we disagree about whether this exists" from "we disagree
+    about where its edge is" from "we disagree about what else comes with it",
+    and those have entirely different resolutions.
+
+holes:
+  - No gene, no biomarker, no animal model, and therefore no way to assemble a
+    cohort that anyone else can reproduce. This sits upstream of every other
+    hole, exactly as it does in ME/CFS.
+  - Whether hEDS is one condition, several pooled, polygenic, or the tail of a
+    normal distribution. Four possibilities implying four different research
+    programmes, and no way to choose between them yet.
+  - Prevalence is contested by an order of magnitude and is a function of
+    criteria version. See gaps.md #33 — this is the third distinct failure of the
+    burden field.
+  - Whether early physiotherapy alters the long-run trajectory. Believed, acted
+    on, and poorly trialled. The window in this record leans on it.
+  - Surgical outcomes have no denominator: how many hEDS patients are operated
+    on, and how many are made permanently worse, is not published anywhere the
+    author is aware of. The toll incidence figure is reasoning, not measurement.
+  - The strength of the POTS and MCAS associations, and whether they are causal,
+    shared-cause, or ascertainment artefacts of the same specialist clinics.
+  - Written from model recall. The 2017 criteria structure and the twelve-of-
+    thirteen molecular picture are the parts most likely right; every number here
+    is the part most likely wrong.
+
+blockers:
+  - kind: knowledge
+    obstacles: [unexplained-illness, no-model-system]
+    blocks: any mechanism, any biomarker, any targeted treatment
+    what: >
+      The binding constraint and the cause of every other one. Two decades of
+      candidate-gene and sequencing work across the collagen and connective
+      tissue genes has not produced a molecular diagnosis, in a family of
+      disorders where twelve of thirteen siblings have one. That failure is
+      itself informative: it argues against the simple hypothesis of one missed
+      Mendelian gene and towards heterogeneity, polygenicity, or an entity
+      boundary drawn in the wrong place. `scale: null` — there is no priced path
+      to buy, and the 2017 criteria revision was itself an attempt to make the
+      problem tractable by changing the cohort rather than the method.
+    who_could: [academic, sponsor]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    blocks: timely identification, and everything downstream of it
+    what: >
+      Recorded because the delay is real and consequential — commonly a decade
+      or more, during which the harms in `toll` accumulate — but flagged as
+      DIFFERENT IN KIND from every other `diagnosis` blocker in the register,
+      and the difference matters for triage.
+      Elsewhere `diagnosis` is the cheap lever: a throat swab, a transcranial
+      Doppler, looking at a newborn's pupils. The test exists and is not being
+      applied, so money and process move it. Here there is no test to apply. The
+      2017 criteria are free to use and the Beighton score takes minutes, so what
+      is missing is not a device or a budget but clinician recognition and a
+      referral route — and beneath that, the biomarker that does not exist.
+      This blocker is therefore only PARTLY convertible: education and clinical
+      pathways move some of it, and the rest is downstream of the knowledge
+      blocker above. The register's claim that `diagnosis` is the cheapest lever
+      it has should be read as holding everywhere except here.
+    who_could: [health-system, academic, patient-org, government]
+    scale: 1.0e7
+    standing: documented
+    src: recall
+
+  - kind: evidence-incomplete
+    blocks: knowing which management actually helps
+    what: >
+      Almost everything offered is offered on plausibility. Progressive
+      strengthening, pacing, bracing, and the orthostatic measures are supported
+      by small studies, extrapolation and clinical experience rather than by
+      trials that would settle them; surgical indications are disputed and
+      outcomes largely unpublished. Uniquely among the register's
+      evidence-incomplete blockers, this one is not waiting on a sponsor to fund
+      a trial — it is waiting on a way to define the population the trial would
+      enrol, which is the knowledge blocker again. A trial in a cohort assembled
+      by contested criteria produces a result that the next criteria revision
+      invalidates.
+    who_could: [academic, sponsor, health-system]
+    scale: 5.0e7
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: coordinated care for a multi-system condition with no owning specialty
+    what: >
+      Genetics diagnoses it and does not manage it; rheumatology, cardiology,
+      gastroenterology, pain services and physiotherapy each hold a piece.
+      No specialty owns the whole, so coordination falls to the patient at
+      exactly the point in life when they have least capacity for it, and the
+      multi-system presentation is read at each door as somebody else's problem.
+      This is an ordinary health-system failure rather than a scientific one, and
+      it is the part of this record that money and organisation could move
+      tomorrow without any new knowledge at all.
+    who_could: [health-system, government, payer, patient-org]
+    scale: 5.0e7
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0019
+  rated: 2026-08-20
+  by: [claude, jeremy]

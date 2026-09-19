@@ -1,0 +1,165 @@
+slug: epilepsy
+id: FND-D-0008
+name: epilepsy
+also: [seizure disorder]
+mondo: MONDO:0005027
+kind: syndrome
+residual: false
+contested: false
+
+# The record that forced efficacy and access apart. Roughly a third of patients
+# are drug-resistant in the best-resourced health systems on earth — that is a
+# fact about the biology, not about money, and no single "reach" number can say
+# both things at once.
+
+burden:
+  prevalence:
+    value: 5.0e7
+    units: people
+    src: recall
+  dalys:
+    value: 1.3e7
+    units: DALY/year
+    src: recall
+
+axes:
+  mechanism: partial
+  intervention: suppressive
+  prevention: risk-reduction
+  ongoing: moderate
+  efficacy:
+    value: 0.68
+    units: fraction-of-patients (seizure freedom on anti-seizure medication)
+    src: recall
+  access:
+    value: 0.4
+    units: fraction-of-patients (treated; far lower in low-income settings)
+    src: recall
+
+measurement:
+  diagnostic: clinical
+  prognostic: partial
+  predictive: none
+  witness: >
+    Prognosis is `partial`: some syndromes carry known trajectories, genetic
+    and structural causes inform outlook, and resistance becomes reasonably
+    predictable once two appropriate drugs have failed — which is to say,
+    after the fact. Prediction is `none`: with more than two dozen
+    anti-seizure medications there is no way to choose among them for a given
+    patient, and no way to identify the drug-resistant third before subjecting
+    them to years of sequential failure. Newer drugs improved tolerability,
+    not aim.
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    Two distinct tolls. Anti-seizure medications carry cognitive effects and,
+    in the case of valproate, one of the most consequential iatrogenic harms
+    in modern medicine: fetal exposure causes major congenital malformations
+    and neurodevelopmental disorder in a large fraction of exposed
+    pregnancies, and it went on for decades after the risk was known.
+    Resective surgery, the curative option, risks permanent visual field
+    defects, memory impairment and occasionally speech deficits, which is part
+    of why it is underused.
+  incidence:
+    value: 0.02
+    units: fraction-of-treated (permanent harm; far higher for fetal valproate exposure)
+    src: recall
+
+witness:
+  mechanism: >
+    `partial`, and heterogeneously so — this is a `kind: syndrome` entry rather
+    than a disease for that reason. For some epilepsies the chain is complete:
+    named ion-channel mutations (SCN1A in Dravet), tuberous sclerosis,
+    structural lesions, autoimmune encephalitis. For roughly half of all cases
+    no cause is identified at all, and the general question of how a network
+    transitions into synchronous discharge is described rather than explained.
+    Averaging those into one rating is a compromise the register should
+    eventually refuse; see holes.
+  intervention: >
+    `suppressive`, unambiguously: more than two dozen anti-seizure medications
+    render around two-thirds of patients seizure-free, and stopping treatment
+    frequently means recurrence. The drugs suppress seizures, not epilepsy —
+    they are not known to alter the underlying epileptogenic process.
+    Resective surgery is genuinely CURATIVE in carefully selected
+    drug-resistant focal cases, with good long-term seizure freedom after
+    temporal lobectomy; it applies to a small fraction of patients and is
+    badly underused even where available. So the file's honest shape is a
+    suppressive rung for most and a curative rung for a few, which the schema
+    cannot currently express.
+  prevention: >
+    `risk-reduction`, and larger than it looks in low-income settings: much
+    epilepsy there is secondary to neurocysticercosis, birth injury, head
+    trauma and CNS infection, all preventable. A substantial share of the
+    global burden is a consequence of other unsolved problems.
+  efficacy: >
+    The number that mattered for the schema. Around a third of patients remain
+    drug-resistant, and that fraction has barely moved despite many new drugs
+    since the 1990s — new agents improved tolerability, not the ceiling. This
+    is a biological limit, and it must not be recorded in the same field as a
+    supply-chain failure.
+  ongoing: >
+    `moderate` — indefinite daily medication with cognitive and teratogenic
+    side effects, driving restrictions, and for the drug-resistant third a
+    continued risk of injury and sudden unexpected death.
+
+holes:
+  - The entity is a bag of conditions. Splitting it (Dravet, mesial temporal
+    lobe epilepsy with sclerosis, idiopathic generalised) would give several
+    honest records instead of one averaged one, and would likely place them in
+    different quadrants.
+  - Why a third are drug-resistant, and whether they are predictable in
+    advance, is the central unanswered question and the one that caps efficacy.
+  - Antiepileptogenesis — preventing epilepsy after a known insult such as head
+    trauma — has no proven therapy, and would be a move to
+    `prevention: prophylaxis` if it did.
+
+blockers:
+  - kind: logistics
+    blocks: anti-seizure medication (suppressive)
+    what: >
+      The largest treatment gap in the register relative to how cheap the fix
+      is: a majority of people with epilepsy in low-income countries receive no
+      treatment, while phenobarbital costs a few dollars a year and controls a
+      substantial fraction. Off-patent since before most patients were born.
+    who_could: [health-system, government, nonprofit, philanthropy]
+    scale: 1e8
+    standing: documented
+    src: recall
+  - kind: policy
+    blocks: phenobarbital supply
+    what: >
+      Phenobarbital is an internationally controlled substance, and the
+      import-licensing and record-keeping requirements that follow impede supply
+      in exactly the countries with the largest treatment gap. A regulatory
+      regime designed for one purpose obstructing another.
+    who_could: [government, legislator, nonprofit]
+    scale: null
+    standing: alleged
+    src: recall
+  - kind: logistics
+    blocks: resective surgery (curative)
+    what: >
+      Surgery is curative for selected drug-resistant focal epilepsy and is
+      badly underused even where it exists, because referral pathways and
+      pre-surgical evaluation capacity are missing rather than the operation.
+    who_could: [health-system, academic]
+    scale: 1e8
+    standing: documented
+    src: recall
+  - kind: knowledge
+    obstacles: [who-progresses]
+    blocks: treatment for the drug-resistant third
+    what: >
+      Why roughly a third do not respond, and how to predict them, is unknown;
+      the fraction has barely moved across a generation of new drugs.
+    who_could: [academic, sponsor]
+    scale: null
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0008
+  rated: 2026-08-11
+  by: [claude, jeremy]

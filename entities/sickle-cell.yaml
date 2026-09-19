@@ -1,0 +1,234 @@
+slug: sickle-cell
+id: FND-D-0006
+name: sickle cell disease
+also: [sickle cell anaemia, HbSS]
+mondo: MONDO:0011382
+kind: disease
+residual: false
+contested: false
+
+# The record that breaks the quadrant map in a productive way. De jure: known
+# and curable, top-left. De facto: the cure reaches almost none of the people
+# who have the disease, which puts it back in the engineering quadrant. Only
+# the `access` field distinguishes the two readings.
+
+burden:
+  prevalence:
+    value: 7.7e6
+    units: people
+    src: recall
+  births:
+    value: 3.0e5
+    units: affected births/year
+    src: recall
+  note: >
+    The large majority of affected births are in sub-Saharan Africa, with
+    Nigeria and DR Congo dominating; India carries the next largest share.
+    Geography of the disease and geography of the cure are almost disjoint.
+
+survival:
+  horizon: 18 years from birth
+  untreated:
+    value: 0.50
+    units: >
+      fraction alive — **and most of the deaths are before the fifth birthday**,
+      from pneumococcal sepsis and splenic sequestration. This remains the
+      outcome across much of sub-Saharan Africa, where the majority of affected
+      children are born
+    src: recall
+  treated:
+    value: 0.99
+    units: >
+      fraction alive with newborn screening, prophylactic penicillin,
+      pneumococcal vaccination and hydroxyurea. **None of that is new, expensive
+      or technically difficult**; the four interventions that produce this figure
+      were established between 1975 and 1995
+    src: recall
+  witness: >
+    **THE STARKEST ACCESS RECORD IN THE REGISTER ON THIS AXIS.** The gap between
+    0.50 and 0.99 is not a drug that needs inventing — it is a heel-prick test
+    and generic penicillin, and the difference between the two numbers is
+    essentially the difference between where a child is born.
+    The gene therapies are a separate story and a separate record of failure:
+    they cure, they cost roughly two to three million dollars, and they reach
+    almost nobody who has this disease. **The curative rung is real and the
+    survival gain here comes from none of it.**
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: risk-reduction
+  ongoing: high
+  efficacy:
+    value: 0.9
+    units: fraction-of-patients (gene therapy, freedom from crises)
+    src: recall
+  access:
+    value: 0.001
+    units: fraction-of-patients (able to receive a curative therapy)
+    src: recall
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: partial
+  witness: >
+    A rare case of prognostic measurement that exists, works and is deployed:
+    transcranial Doppler screening identifies children at high stroke risk,
+    and transfusion prevents the stroke. Against that, why patients with
+    identical genotypes have wildly different severity is unexplained, so
+    nobody can say in advance who needs aggressive treatment. Hydroxyurea
+    response is measurable (fetal haemoglobin) but only after starting.
+
+toll:
+  severity: catastrophic
+  permanent: true
+  what: >
+    The curative route carries the register's steepest price. Both approved
+    gene therapies require myeloablative busulfan conditioning: near-universal
+    infertility, plus a long-term risk of secondary malignancy from the
+    conditioning itself, and transplant-level acute morbidity. Allogeneic HSCT
+    adds graft-versus-host disease. Hydroxyurea, the route almost everyone
+    actually takes, is by contrast cheap and its toll `minor`. That a record's
+    toll depends on which tier a patient can reach is a limit of this field —
+    see gaps.
+  incidence:
+    value: 0.99
+    units: fraction-of-treated (gene therapy recipients undergoing myeloablation)
+    src: recall
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    Gene therapy and transplantation stop the sickling. They do not give back
+    the brain, the hips, the kidneys or the lungs that decades of sickling
+    already took. A patient cured at thirty carries the strokes they had at
+    eight.
+    This is the register's first record to derive `both` — the cure takes
+    something catastrophic (infertility from myeloablative conditioning) AND
+    the disease has already left something permanent. It also sharpens the
+    seventy-five-year lag that this record exists to document: the delay
+    between a solved mechanism and an approved cure is not merely a delay, it
+    is the interval during which the damage that no cure can reach was being
+    done.
+  incidence:
+    value: 0.35
+    units: >
+      fraction-of-cured (organ damage accumulated before the cure — silent and
+      overt cerebral infarction, avascular necrosis, renal and pulmonary
+      disease)
+    src: reasoning
+
+window:
+  what: >
+    Narrower than it looks. Transcranial Doppler screening in children identifies
+    those at high stroke risk, and transfusion prevents the stroke; without it,
+    overt stroke in childhood causes permanent neurological damage that no later
+    therapy — including a cure — reverses. Cumulative organ damage works the same
+    way: a gene therapy delivered after decades of vaso-occlusion arrives at an
+    already-damaged kidney, lung and brain. Curing the genotype does not undo the
+    phenotype it has already written.
+  closes_on: stroke and cumulative organ damage
+  caught_in_time:
+    value: 0.2
+    units: fraction-of-patients (screened and protected in childhood)
+    src: recall
+
+witness:
+  mechanism: >
+    The first disease ever understood at the molecular level. Pauling called it
+    "a molecular disease" in 1949; Ingram identified the single amino acid
+    substitution in 1956-57 — glutamate to valine at position 6 of beta-globin.
+    Deoxygenated HbS polymerises, erythrocytes deform, and the consequences
+    (vaso-occlusion, haemolysis, chronic organ damage, stroke) follow from
+    that one substitution. Seventy-five years of complete mechanistic knowledge.
+  intervention: >
+    Rated `curative` on demonstrated grounds, with the caveat that dominates
+    this record. Allogeneic haematopoietic stem cell transplant from a matched
+    sibling has been curative for decades, limited by donor availability. In
+    December 2023 two gene therapies were approved in the US — exagamglogene
+    autotemcel (CRISPR editing of BCL11A to reinduce fetal haemoglobin) and
+    lovotibeglogene autotemcel — with list prices around two to three million
+    dollars, requiring myeloablative conditioning and a transplant-capable
+    centre. The fallback tier is where nearly all patients actually live:
+    hydroxyurea (FDA 1998) reduces crises and mortality and is
+    `disease-modifying`, not curative, and even hydroxyurea is not reliably
+    available in the highest-burden countries.
+  prevention: >
+    `risk-reduction`. Carrier screening and counselling exist; the sickle trait
+    is maintained by malaria selection, so the carrier frequency is not going
+    anywhere. Penicillin prophylaxis and pneumococcal vaccination in children
+    prevent a major cause of early death — preventing a complication, not the
+    disease.
+  ongoing: >
+    `high` for the treated-conventionally majority: recurrent severe pain
+    crises, transfusion dependence in some, cumulative organ damage, and a
+    life expectancy still decades short of the population even in wealthy
+    health systems.
+  access: >
+    The single most important number in this file. Gene therapy recipients
+    number in the low hundreds worldwide against 7.7 million patients. The
+    rating is not a comment on the science, which is excellent; it is a
+    comment on where the science was aimed and what it costs.
+
+holes:
+  - Durability of gene-therapy benefit beyond the current follow-up is unknown,
+    as is the long-term malignancy risk from myeloablative conditioning.
+  - Whether any curative approach can be delivered without transplant
+    infrastructure — an in vivo editing route — is the question that decides
+    whether `access` ever moves.
+  - Why clinical severity varies so widely among patients with identical
+    genotypes is still not fully explained.
+
+blockers:
+  - kind: cost
+    blocks: exa-cel / lovo-cel (curative)
+    what: >
+      List prices of roughly two to three million dollars, plus myeloablative
+      conditioning delivered at a transplant-capable centre. Both requirements
+      are absent across the region carrying most of the disease.
+    who_could: [payer, manufacturer, philanthropy, government]
+    scale: 1e9
+    standing: documented
+    src: recall
+  - kind: logistics
+    blocks: hydroxyurea (disease-modifying)
+    what: >
+      The blocker that matters for the most patients, and the strongest
+      no-champion case in this file. Hydroxyurea is off-patent, oral, cheap and
+      has reduced mortality since the 1990s; newborn screening and penicillin
+      prophylaxis are cheaper still and prevent early childhood deaths. None is
+      reliably available in the highest-burden countries. Nothing here needs to
+      be invented.
+    who_could: [nonprofit, government, health-system, philanthropy]
+    scale: 1e8
+    standing: documented
+    src: recall
+  - kind: knowledge
+    obstacles: [cell-targeting]
+    blocks: in vivo gene editing (curative, without transplant)
+    what: >
+      A curative therapy that did not require conditioning and a transplant
+      centre would collapse the cost and logistics blockers together. Whether
+      in vivo editing of haematopoietic stem cells is achievable is a genuine
+      research question.
+    who_could: [academic, sponsor]
+    scale: null
+    standing: documented
+    src: recall
+
+moved:
+  - date: 2023
+    axis: intervention
+    from: disease-modifying
+    to: curative
+    why: >
+      FDA approval of exa-cel and lovo-cel. Note the interval: mechanism
+      established 1957, cure approved 2023. Sixty-six years, and the register
+      should be able to state that gap as a number.
+
+assertion:
+  id: FND-A-0006
+  rated: 2026-08-11
+  by: [claude, jeremy]

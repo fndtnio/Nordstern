@@ -1,0 +1,520 @@
+slug: thyroid-cancer
+id: FND-D-0061
+name: thyroid cancer
+also: [papillary thyroid carcinoma, follicular thyroid carcinoma, medullary thyroid carcinoma, anaplastic thyroid carcinoma]
+mondo: MONDO:0002108
+kind: disease
+residual: false
+contested: false
+
+# THE NEGATIVE CONTROL FOR SCREENING, AND THE CLEANEST DEMONSTRATION OF
+# OVERDIAGNOSIS IN THE HISTORY OF MEDICINE.
+#
+# **SOUTH KOREA.** Thyroid ultrasound was offered from 1999 as a cheap add-on to
+# a national screening programme. Between the early 1990s and 2011, recorded
+# thyroid cancer incidence rose roughly **fifteen-fold** and it became the most
+# commonly diagnosed cancer in the country.
+#
+# **Mortality did not move at all.**
+#
+# Most of what was found was papillary microcarcinoma. Around two thirds of those
+# patients had their entire thyroid removed, which means levothyroxine for life,
+# and for a few percent permanent hypoparathyroidism or a permanently altered
+# voice. In 2014 a group of Korean physicians publicly called for the screening
+# to stop; uptake fell and so did incidence.
+#
+# **Fifteen-fold incidence, flat mortality, and a reversal when the looking
+# stopped.** No other record in this register can produce that experiment.
+#
+# TWO THINGS IT BREAKS:
+#
+# 1. **IN 2016 A CANCER WAS DELIBERATELY UN-NAMED.** The encapsulated follicular
+#    variant of papillary thyroid carcinoma was reclassified as NIFTP —
+#    "noninvasive follicular thyroid neoplasm with papillary-like nuclear
+#    features" — explicitly removing the word carcinoma in order to stop people
+#    being treated for it. **The definition of the entity was used as a
+#    therapeutic instrument**, and this register borrows its definitions from an
+#    ontology and treats them as data. gaps.md #133.
+#
+# 2. **BEING TOLD YOU HAVE CANCER IS ITSELF THE HARM.** For the microcarcinomas
+#    correctly left alone under active surveillance, no treatment is given and
+#    the person is still a cancer patient — for insurance, for employment, for
+#    identity, for the rest of their life. `toll` records what treatment costs.
+#    There is no field for what the diagnosis costs. gaps.md #134.
+
+burden:
+  prevalence:
+    value: 8.2e5
+    units: >
+      new cases/year worldwide — **AND THIS NUMBER IS SUBSTANTIALLY A MEASUREMENT
+      OF HOW HARD PEOPLE ARE LOOKING.** It rose steeply for two decades across
+      many high-income countries and has fallen where screening was curtailed
+    src: recall
+  deaths:
+    value: 4.5e4
+    units: >
+      deaths/year — roughly five percent of the incidence, and **the deaths are
+      largely not in the cancers that drove the incidence up**
+    src: recall
+  note: >
+    **THIS RECORD IS THE OPPOSITE POLE OF THE REGISTER FROM THE LAST TWO.**
+    Pancreatic cancer runs 510,000 cases against 470,000 deaths. Liver cancer
+    runs 870,000 against 760,000. **Thyroid cancer runs 820,000 against 45,000.**
+    Those three records bound the corpus and nothing about them generalises to
+    each other.
+    Autopsy series find occult papillary thyroid carcinoma in a large share of
+    people who died of other causes — with careful sectioning, reported in
+    substantial fractions of adults. Like prostate cancer, it is close to a
+    normal feature of ageing that occasionally matters.
+    **AND THE DEATHS AND THE DIAGNOSES ARE ALMOST DIFFERENT DISEASES.** The
+    incidence is papillary microcarcinoma. The mortality is anaplastic
+    carcinoma — one of the most lethal human cancers, median survival around half
+    a year — plus radioiodine-refractory differentiated disease and medullary
+    carcinoma. Two percent of the record supplies a large share of the deaths.
+    One genuine incidence increase is not overdiagnosis at all: **childhood
+    thyroid cancer after Chernobyl**, caused by iodine-131 exposure, real and
+    documented and preventable by potassium iodide blockade that was not given in
+    time.
+
+survival:
+  horizon: 5 years from diagnosis
+  untreated:
+    value: 0.6
+    units: >
+      fraction alive — **high, and mostly not because of anything medicine did.**
+      Papillary thyroid carcinoma is frequently indolent; autopsy series find it
+      in a large fraction of people who died of something else
+    src: reasoning
+  treated:
+    value: 0.98
+    units: >
+      fraction alive — among the highest in the register, and **the number is
+      substantially an artefact of detection.** South Korea's screening
+      programme raised incidence fifteen-fold without moving mortality at all
+    src: reasoning
+  witness: >
+    **THE PUREST OVERDIAGNOSIS CASE THE REGISTER HOLDS, AND ON THIS AXIS IT LOOKS
+    LIKE A TRIUMPH.** A 98% five-year survival is what you get when you find
+    and treat a large number of cancers that would never have surfaced. The
+    survival axis is *structurally unable* to detect this: finding harmless
+    disease raises the numerator and the denominator together and always looks
+    like success. Read this row with `overtreatment_risk`, which is what the
+    register has instead.
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: risk-reduction
+  ongoing: moderate
+  efficacy:
+    value: 0.95
+    units: >
+      fraction-of-patients (cured) — **the highest in the register, and it is
+      partly an artefact.** Most of what is counted was never going to kill
+      anybody, so curing it is not an achievement; the figure inflates with every
+      indolent tumour added to the denominator
+    src: reasoning
+  access:
+    value: 0.60
+    units: >
+      fraction-of-patients (reaching ultrasound, fine-needle aspiration, surgery,
+      radioiodine and levothyroxine) — high, because the operation is common and
+      the replacement hormone is one of the cheapest drugs there is
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: partial
+  witness: >
+    DIAGNOSTIC is `objective` — ultrasound, fine-needle aspiration cytology
+    reported on the Bethesda system, molecular testing — **and it produces "I do
+    not know" in roughly a quarter of samples, and the way that uncertainty gets
+    resolved is an operation.**
+    Bethesda categories III and IV — atypia of undetermined significance and
+    follicular neoplasm — carry a cancer risk somewhere between a tenth and two
+    fifths, and the historical answer was diagnostic lobectomy: remove half the
+    thyroid to find out whether there was a cancer in it. **Molecular classifiers
+    were developed specifically to stop those operations**, which is a
+    measurement fix aimed at an overtreatment problem, and the same move prostate
+    cancer's MRI made.
+    PROGNOSTIC is `partial` and better than prostate's. Tumour size,
+    extrathyroidal extension and nodal status stratify well: a papillary
+    carcinoma under a centimetre, confined to the gland and without nodes, is
+    essentially never lethal. **TERT promoter mutation together with BRAF
+    V600E** marks genuinely aggressive behaviour.
+    **AND `overtreatment_risk` DOES NOT FIRE ON THIS RECORD**, which is the most
+    overtreated cancer in the world, for the same reason it did not fire on
+    prostate: the flag requires `prognostic: none` and the prognostic measurement
+    here is not none. Second instance of gaps.md #91's snapshot problem.
+    PREDICTIVE is `partial` and it is concentrated entirely in the lethal
+    minority. **RET** alterations select selpercatinib or pralsetinib and have
+    transformed medullary and RET-fusion disease; **BRAF V600E** selects
+    dabrafenib with trametinib in anaplastic carcinoma, which is the first thing
+    ever to work in it; NTRK fusions have their own inhibitors.
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    **A LOW-PROBABILITY PERMANENT HARM, INFLICTED ON AN ENORMOUS NUMBER OF PEOPLE
+    WHO DID NOT NEED THE OPERATION.** That combination is what makes this record
+    what it is: the toll per patient is modest and the number of patients is the
+    problem.
+    **PERMANENT HYPOPARATHYROIDISM** in a few percent after total thyroidectomy —
+    the parathyroid glands are on the back of the thyroid and are removed or
+    devascularised with it. It means lifelong calcium and activated vitamin D,
+    unstable serum calcium, paraesthesia and tetany when it drifts, and it is
+    genuinely miserable and hard to manage well.
+    **RECURRENT LARYNGEAL NERVE INJURY** in one to two percent — a permanently
+    altered voice, which for a teacher, a singer or anybody who speaks for a
+    living is career-ending.
+    **RADIOIODINE** damages salivary glands, causing dry mouth and altered taste
+    that can be permanent, and carries a small excess risk of second malignancy.
+    Its use has been substantially de-escalated for low-risk disease.
+    **LEVOTHYROXINE FOR LIFE** after total thyroidectomy is recorded under
+    `ongoing` rather than here, because it is a dependency rather than damage —
+    the same call CML's record makes about a daily tyrosine kinase inhibitor. It
+    is one cheap tablet a day and it is not nothing: getting the dose wrong is
+    common and being persistently over- or under-replaced is unpleasant.
+    **AND THE LARGEST HARM IN THIS RECORD IS NOT IN THIS FIELD AT ALL.** See
+    gaps.md #134.
+  incidence:
+    value: 0.05
+    units: >
+      fraction-of-treated (permanent harm — hypoparathyroidism, recurrent
+      laryngeal nerve injury, salivary damage) — low per patient, and **the
+      denominator is inflated by hundreds of thousands of operations that should
+      not have happened**
+    src: reasoning
+
+# NO `residue` BLOCK. The disease leaves the patient almost nothing; what is
+# permanent is what the surgery took. `restored` derives `cure-costs`.
+
+# NO `window` BLOCK, AND IT IS THE FIRST RECORD IN THE REGISTER WHERE THE WINDOW
+# IS ABSENT BECAUSE CATCHING IT EARLIER DOES NOT HELP.
+#
+# Childhood ALL and non-Hodgkin lymphoma have no window because the disease is
+# disseminated the moment it exists. **Thyroid cancer has none because the
+# overwhelming majority of it never goes anywhere.** Japanese active-surveillance
+# cohorts have followed low-risk papillary microcarcinoma for years and most of it
+# does not grow; the patients who eventually have surgery do no worse for having
+# waited.
+#
+# The Korean experiment settles the population version: fifteen-fold incidence,
+# flat mortality. **Finding these cancers earlier saved nobody.**
+#
+# So the corpus now holds five different answers to one question, and would
+# record `has_window: true` for four of them:
+#
+#   colorectal   catching it earlier is unambiguously good — the target is a precursor
+#   lung         net gain, with a real overdiagnosis tax
+#   prostate     a bad trade — real but small gain, majority harmed
+#   pancreatic   nobody knows, and the uncertainty is why nothing is rolled out
+#   thyroid      NO GAIN AT ALL, measured, at national scale, twice
+#
+# Prostate cancer is a bad trade. **This is a pure loss**, and the difference
+# matters. See gaps.md #112.
+
+strata:
+  - name: low-risk differentiated (papillary microcarcinoma and equivalent)
+    fraction:
+      value: 0.60
+      units: fraction-of-diagnoses
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.99
+      units: fraction-of-stratum (alive at ten years)
+      src: recall
+    toll: minor
+    what: >
+      **THE STRATUM THAT SHOULD LARGELY NOT BE DIAGNOSED, LET ALONE TREATED.**
+      Under a centimetre, confined, node-negative. Essentially never lethal.
+      Active surveillance is established practice and most of these tumours do
+      not grow; where surgery is chosen, lobectomy rather than total
+      thyroidectomy is now preferred.
+      Its `toll: minor` describes what happens when it is managed correctly. What
+      actually happened to several hundred thousand Korean patients was a total
+      thyroidectomy.
+
+  - name: higher-risk differentiated
+    fraction:
+      value: 0.30
+      units: fraction-of-diagnoses
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.90
+      units: fraction-of-stratum (alive at ten years after surgery and radioiodine)
+      src: reasoning
+    toll: major
+    what: >
+      Larger tumours, extrathyroidal extension, nodal involvement. Total
+      thyroidectomy, neck dissection where indicated, radioiodine, TSH
+      suppression, thyroglobulin surveillance. **Cure is still the expectation** —
+      this is a cancer that is genuinely well treated, and the register should say
+      so alongside everything else in this file.
+
+  - name: radioiodine-refractory and poorly differentiated
+    fraction:
+      value: 0.05
+      units: fraction-of-diagnoses
+      src: reasoning
+    intervention: disease-modifying
+    efficacy:
+      value: 0.30
+      units: fraction-of-stratum (durable benefit from multikinase or targeted therapy)
+      src: reasoning
+    toll: major
+    what: >
+      Differentiated cancer that has stopped taking up iodine, which removes the
+      treatment that made the good strata good. Lenvatinib and sorafenib extend
+      progression-free survival at a substantial toxicity cost; NTRK and RET
+      fusions have specific inhibitors where present.
+
+  - name: medullary
+    fraction:
+      value: 0.03
+      units: fraction-of-diagnoses
+      src: recall
+    intervention: curative
+    efficacy:
+      value: 0.60
+      units: fraction-of-stratum (cured by complete surgical resection)
+      src: reasoning
+    toll: major
+    what: >
+      A different cell entirely — parafollicular C cells, secreting calcitonin,
+      not taking up iodine, so radioiodine is useless. Driven by **RET**, germline
+      in multiple endocrine neoplasia type 2, and **the RET inhibitors work
+      remarkably well.**
+      Germline RET carriers are offered prophylactic thyroidectomy in childhood,
+      which is gastric cancer's *CDH1* story in a second organ — a certain
+      permanent intervention in a well child to prevent a probable cancer.
+
+  - name: anaplastic
+    fraction:
+      value: 0.02
+      units: fraction-of-diagnoses
+      src: recall
+    intervention: disease-modifying
+    efficacy:
+      value: 0.10
+      units: fraction-of-stratum (durable meaningful benefit)
+      src: reasoning
+    toll: major
+    what: >
+      **ONE OF THE MOST LETHAL HUMAN CANCERS, INSIDE THE MOST OVERDIAGNOSED ONE.**
+      Median survival around five to six months. It presents as a rapidly
+      enlarging neck mass that obstructs the airway, and it frequently arises by
+      dedifferentiation from a pre-existing differentiated cancer.
+      Two percent of diagnoses and a large share of the deaths. **BRAF V600E
+      mutation, present in a substantial minority, is targetable with dabrafenib
+      and trametinib** — the first therapy that has ever meaningfully worked in
+      this disease, and a real advance that the record-level numbers cannot see.
+
+moved:
+  - date: 2014
+    axis: toll
+    from: 0.7
+    to: 0.4
+    why: >
+      **THE FIELD TURNED ROUND, AND IT TOOK THREE THINGS AT ONCE.**
+      *Active surveillance* for low-risk papillary microcarcinoma, pioneered in
+      Japan from the 1990s and now in guidelines — watch it, most of them do not
+      grow, operate if it changes.
+      *De-escalation of surgery and radioiodine* — lobectomy instead of total
+      thyroidectomy for low-risk disease, and much less radioiodine, which
+      removes the hypoparathyroidism, the nerve risk and the salivary damage from
+      patients who were never going to die of this.
+      *And in 2016, the renaming.* The encapsulated follicular variant of
+      papillary thyroid carcinoma became **NIFTP**, with the word carcinoma
+      deliberately removed, explicitly so that people would stop being treated
+      for it. A stroke of nomenclature reclassified tens of thousands of cases a
+      year out of the disease.
+      **NOTE WHAT DOES NOT APPEAR IN THIS BLOCK.** The fifteen-fold incidence
+      rise in Korea between 1993 and 2011, and its subsequent fall, moved **no
+      axis in this schema whatsoever** — not capability, not efficacy, not
+      access, not toll severity. The largest single event in this disease's
+      recorded history is invisible to the register, because what changed was how
+      many people were called patients.
+
+witness:
+  mechanism: >
+    `established`, and the genetics map onto the clinical divide almost cleanly.
+    Papillary carcinoma is driven predominantly by **BRAF V600E** or by **RET/PTC**
+    and other kinase fusions; follicular carcinoma by **RAS** mutations and
+    *PAX8-PPARG*. Medullary carcinoma arises from parafollicular C cells and is
+    driven by **RET**, germline in multiple endocrine neoplasia type 2. Anaplastic
+    carcinoma usually arises from a pre-existing differentiated cancer that has
+    accumulated **TP53** and **TERT promoter** lesions and dedifferentiated.
+    **TERT promoter mutation combined with BRAF V600E is the best available
+    molecular signature of a thyroid cancer that will actually behave like one.**
+    That is more than prostate cancer has, and it is still not enough to sort the
+    indolent majority reliably at the individual level.
+    **IONISING RADIATION IN CHILDHOOD IS AN ESTABLISHED CAUSE**, and Chernobyl
+    demonstrated it at scale: a documented epidemic of childhood thyroid cancer
+    from iodine-131, in children whose thyroids concentrated it, much of which
+    potassium iodide blockade would have prevented had it been given in time.
+    Iodine deficiency shifts the histological mix toward follicular disease.
+    **THE NAMED HOLE IS THE SAME ONE PROSTATE CANCER HAS.** Occult papillary
+    carcinoma is present in a large share of adults at autopsy; a tiny fraction
+    of it ever declares itself; and nothing reliably identifies which.
+  intervention: >
+    `curative`, and unusually the rating is true of almost everybody — the
+    difficulty is that it is true of people who did not need curing.
+    Surgery is the treatment: lobectomy for low-risk disease, total
+    thyroidectomy with or without neck dissection for higher risk, radioiodine
+    for selected patients, and TSH suppression with levothyroxine afterwards.
+    Ten-year survival for differentiated disease is very high.
+    **The last decade's work has been about doing less of it** — active
+    surveillance, lobectomy over total thyroidectomy, less radioiodine — which is
+    the same trajectory prostate cancer took and for the same reason.
+    And for the lethal minority the last decade has been the opposite: **RET
+    inhibitors for medullary and RET-fusion disease, and BRAF-directed therapy
+    for anaplastic carcinoma**, which is the first thing ever to work in a cancer
+    that kills within months. Both are real advances confined to two percent and
+    three percent of the record.
+  prevention: >
+    `risk-reduction`, and there is very little of it.
+    **Avoiding ionising radiation to the thyroid in childhood** is the one
+    established measure, and after a nuclear release **potassium iodide blockade**
+    is genuine prophylaxis — it saturates the gland so that inhaled or ingested
+    iodine-131 is not taken up. It has to be given within hours and Chernobyl is
+    the demonstration of what happens when it is not.
+    Iodine sufficiency in the diet shifts the histological mix and does not
+    reduce total incidence.
+    For sporadic papillary carcinoma — which is nearly all of it — **there is
+    nothing to prevent and nothing worth preventing.**
+    Prophylactic thyroidectomy in childhood for germline **RET** carriers is real
+    prophylaxis with a certain permanent cost, and it is the second instance in
+    this register after *CDH1* and gastric cancer.
+  ongoing: >
+    `moderate`, and it is a dependency rather than a burden.
+    After total thyroidectomy: **levothyroxine every day for life**, with periodic
+    thyroid function testing and dose adjustment, plus thyroglobulin surveillance
+    and neck ultrasound for some years. The drug is among the cheapest and most
+    widely available in the world.
+    For the few percent with permanent hypoparathyroidism it is not moderate at
+    all: calcium and activated vitamin D several times daily, unstable serum
+    calcium, and a real risk of symptomatic tetany if it drifts.
+    **And for people on active surveillance, the ongoing cost is the
+    surveillance itself and the knowledge of what is being watched** — which is
+    not a hormone, not a hospital visit, and not recorded anywhere in this
+    schema.
+
+holes:
+  - Every scalar is `src: recall` or `src: reasoning`. The incidence figure in
+    particular is a moving measurement of screening intensity rather than of
+    disease, and the strata fractions shift with it — the low-risk fraction is
+    far larger in heavily screened populations.
+  - `efficacy: 0.95` is the highest in the register and is inflated by
+    overdiagnosis to an unknown degree. It cannot be compared with any other
+    record's efficacy figure.
+  - The Korean incidence and mortality figures are the record's evidential
+    backbone and are stated from recall; they are among the most-cited numbers in
+    the overdiagnosis literature and should be sourced first in any verification
+    pass.
+  - Anaplastic and medullary carcinoma are arguably separate diseases sharing an
+    organ, in the same way small cell and non-small cell lung cancer are. Keeping
+    them here preserves the contrast and loses precision.
+  - The NIFTP reclassification's effect on incidence is real and its size is
+    disputed, and the register cannot represent a definitional change at all.
+
+blockers:
+  - kind: policy
+    blocks: stopping a screening programme that should not exist
+    obstacles: []
+    what: >
+      **THE BLOCKER HERE IS SOMETHING BEING DONE, NOT SOMETHING MISSING**, and
+      this register's vocabulary assumes obstacles are absences.
+      Thyroid ultrasound screening of asymptomatic people is recommended against
+      by essentially every body that has examined it. It continues — as an
+      add-on in health check-ups, opportunistically when a neck is imaged for
+      another reason, and in some systems as a paid service people request.
+      Korea demonstrated the consequence and demonstrated the reversal: **when
+      screening fell, incidence fell.** No treatment changed and no biology
+      changed.
+      The incentives run the wrong way. An ultrasound is quick and remunerated; a
+      nodule found is a nodule that must be explained; a fine-needle aspirate
+      that comes back indeterminate is resolved by an operation; and everyone
+      involved is being careful rather than careless.
+      **De-implementation is a policy problem with no advocate**, because there is
+      no constituency for a test not done and every individual step is
+      defensible.
+    who_could: [health-system, government, payer, regulator, academic]
+    scale: 5.0e8
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    blocks: telling the ones that matter from the ones that do not
+    obstacles: [who-progresses]
+    what: >
+      **THE SAME BLOCKER PROSTATE CANCER HAS, AND HERE THE RATIO IS WORSE.**
+      Occult papillary carcinoma is present in a large fraction of adults;
+      roughly five percent of diagnosed thyroid cancers kill anybody; and nothing
+      reliably identifies which at the individual level. Size, extension, nodal
+      status and TERT-plus-BRAF status stratify populations without deciding
+      cases.
+      There is a second, more tractable problem underneath it. **Fine-needle
+      aspiration returns an indeterminate result in roughly a quarter of samples,
+      and the historical resolution is diagnostic surgery** — removing half a
+      thyroid to discover whether there was a cancer in it. Molecular classifiers
+      were built specifically to avoid those operations and they work partially.
+      Improving that one number would remove a large volume of surgery from
+      people who never had cancer at all — **which is a different and cheaper
+      target than solving the indolence question.**
+    who_could: [academic, sponsor, manufacturer, health-system]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: anaplastic carcinoma, and why differentiated disease dedifferentiates
+    obstacles: [who-progresses]
+    what: >
+      **TWO PERCENT OF THIS RECORD KILLS FASTER THAN ALMOST ANYTHING IN THE
+      REGISTER.** Anaplastic thyroid carcinoma has a median survival around five
+      to six months, presents by obstructing the airway, and usually arises by
+      dedifferentiation from a differentiated cancer that had been behaving
+      itself.
+      BRAF-directed therapy is the first thing that has ever worked in it and
+      reaches the subset that carries the mutation. **Why a well-behaved papillary
+      carcinoma becomes anaplastic, and whether that transition can be predicted
+      or prevented, is unanswered** — and it is the one question in this record
+      whose answer would save lives rather than avoid harm.
+      The rest of the knowledge gap is the indolence question above, which is
+      about not doing things.
+      `scale: null`.
+    who_could: [academic, sponsor, manufacturer, philanthropy]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: cost
+    blocks: the targeted agents for the lethal minority
+    obstacles: []
+    what: >
+      **THE CHEAP PART OF THIS RECORD TREATS ALMOST EVERYBODY AND THE EXPENSIVE
+      PART TREATS THE PEOPLE WHO DIE.**
+      Surgery is widely available and levothyroxine is among the cheapest drugs
+      in the world, which is why `access` here is the highest of any cancer in
+      the register.
+      The RET inhibitors for medullary and RET-fusion disease, BRAF-directed
+      therapy for anaplastic carcinoma, and the multikinase inhibitors for
+      radioiodine-refractory disease are none of those things — on patent,
+      expensive, and requiring the molecular testing that selects them.
+      They reach perhaps a tenth of the record and a much larger share of its
+      mortality, which is the inverse of the usual pattern here: **the expensive
+      drugs are the ones aimed at the people who actually need treating.**
+    who_could: [manufacturer, payer, government, health-system]
+    scale: 2.0e9
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0061
+  rated: 2026-08-24
+  by: [claude, jeremy]

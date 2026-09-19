@@ -1,0 +1,629 @@
+slug: rheumatoid-arthritis
+id: FND-D-0093
+name: rheumatoid arthritis
+also: [RA, seropositive arthritis, rheumatoid disease]
+mondo: MONDO:0008383
+kind: disease
+residual: false
+contested: false
+
+# QUEUED AS "ANOTHER #89 EXEMPLAR" — disease-modifying therapy that unambiguously
+# changed a life course. That is the second record queued on that basis, after
+# `multiple-sclerosis`, and **it is the second to climb past the rung.**
+#
+# Modern rheumatoid arthritis on a biologic is remission or low disease activity,
+# indefinitely, on treatment — which is the register's definition of
+# `suppressive`. Both records queued to vindicate `disease-modifying` turned out
+# to have outgrown it, and the rung's actual occupants span efficacy from 0.25
+# (`alzheimers`) to 0.98 (`cholera`), so it is not a waiting room either. It is
+# simply a wide rung, and `efficacy` is what distinguishes its inhabitants.
+#
+# THE UNDER-TOLD FACT: the hand deformities in the textbooks — ulnar deviation,
+# swan neck, boutonnière — are becoming rare where treatment reaches people.
+# Medical students are taught to recognise signs they will increasingly not see.
+
+burden:
+  prevalence:
+    value: 1.8e7
+    units: >
+      people living with rheumatoid arthritis worldwide — roughly half to one
+      percent of adults in high-income countries, **two to three times more often
+      women**, with onset typically between thirty and sixty
+    src: recall
+  deaths:
+    value: 3.5e4
+    units: >
+      deaths/year directly attributed — **and the mortality that matters is
+      cardiovascular.** Chronic systemic inflammation is atherogenic, and
+      rheumatoid arthritis historically carried a life expectancy reduction of
+      several years, driven by heart disease recorded in another file
+    src: reasoning
+  note: >
+    **THIS IS A DISABILITY RECORD AND ITS DISABILITY IS DISAPPEARING WHERE
+    TREATMENT REACHES.**
+    Rheumatoid arthritis was a crippling disease. Untreated, it destroys the
+    synovial joints of the hands, wrists and feet within years — erosions,
+    subluxation, the classic deformities — and put people into wheelchairs and
+    joint replacements in their forties. **Rates of joint surgery for rheumatoid
+    arthritis have fallen substantially in countries with access to modern
+    therapy**, and the deformities that define the disease in textbooks are
+    becoming uncommon.
+    None of that appears in a death count of thirty-five thousand, which is
+    gaps.md #182 in a second record — and the change itself is invisible, because
+    the register stores an undated snapshot of a clinical picture that has moved
+    (#91).
+
+survival:
+  horizon: 20 years from diagnosis
+  untreated:
+    value: 0.65
+    units: >
+      fraction alive — untreated rheumatoid arthritis shortened life by roughly a
+      decade, mostly through accelerated cardiovascular disease driven by
+      chronic inflammation, plus infection and amyloidosis
+    src: reasoning
+  treated:
+    value: 0.8
+    units: >
+      fraction alive on methotrexate and biologics under treat-to-target
+      management. **Suppressing the inflammation removes much of the excess
+      cardiovascular mortality**, so a joint disease's survival gain is mostly a
+      cardiac one
+    src: reasoning
+  witness: >
+    **A survival figure that is not about the organ the disease is named for.**
+    Nobody dies of a swollen joint; they die of the systemic inflammation behind
+    it. This is the register's clearest case of a treatment moving mortality
+    through a mechanism the disease's own description does not mention.
+
+axes:
+  mechanism: partial
+  intervention: suppressive
+  prevention: risk-reduction
+  ongoing: moderate
+  efficacy:
+    value: 0.65
+    units: >
+      fraction-of-patients (remission or low disease activity on treat-to-target
+      management) — achievable with methotrexate alone in a substantial share and
+      with biologics in most of the rest, **and a persistent difficult-to-treat
+      minority responds to nothing available**
+    src: reasoning
+  access:
+    value: 0.35
+    units: >
+      fraction-of-patients (reaching a rheumatologist, methotrexate, and a biologic
+      when needed) — **methotrexate costs pennies and the constraint is the
+      specialist**, with biologic access varying by more than an order of magnitude
+      between health systems
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: none
+  witness: >
+    **DIAGNOSTIC IS `objective`, AND THE ANTIBODY ARRIVES YEARS BEFORE THE
+    DISEASE.** Anti-citrullinated protein antibodies are around 95% specific for
+    rheumatoid arthritis, and — the striking part — **they are detectable in
+    stored blood samples years to a decade before the first swollen joint.**
+    Rheumatoid factor is older and much less specific. Ultrasound and MRI show
+    synovitis and erosions before plain radiographs do.
+    PROGNOSTIC is `partial`. Seropositivity, baseline erosions and high
+    inflammatory markers predict a more destructive course at group level and do
+    not decide an individual's.
+    **PREDICTIVE IS `none`, AND IT IS THE SHARPEST FAILURE IN THIS RECORD BECAUSE
+    OF WHAT SURROUNDS IT.** Five distinct mechanisms are licensed — tumour
+    necrosis factor, interleukin-6, B cells, T-cell costimulation, and JAK
+    signalling. Each produces a good response in roughly half the patients who
+    receive it. **Nothing whatever predicts which one will work in which
+    patient.**
+    So treatment is sequential trial and error: three to six months per attempt,
+    during which joints erode. **A field that understood the mechanism well enough
+    to design five rational drug classes cannot say which of those mechanisms is
+    operating in the person in front of it** — which is a strong argument that
+    "rheumatoid arthritis" is several diseases sharing a presentation (gaps.md
+    #39).
+    **And there is direct evidence for that reading.** A randomised trial
+    stratifying patients by **synovial biopsy B-cell status** found differential
+    response between an anti-B-cell and an anti-IL-6 agent. #39 predicted that
+    stratified trials would succeed where unstratified ones do not; that is the
+    second confirmation, after `sepsis`'s endotypes.
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    **THE TREATMENTS SUPPRESS IMMUNITY AND THE COSTS ARE THE ONES YOU WOULD
+    PREDICT, PLUS ONE NOBODY DID.**
+    **Methotrexate**, the anchor drug, causes nausea and fatigue in many,
+    hepatotoxicity and cytopenias requiring blood monitoring for life, rare
+    pneumonitis, and **it is a potent teratogen** — which matters in a disease
+    that predominantly affects women of reproductive age and requires planning
+    around conception.
+    **Biologics** suppress the immune system by design. Serious infection risk is
+    modestly elevated; **latent tuberculosis reactivation is a specific and
+    well-characterised hazard of TNF inhibition**, which is why screening for
+    latent TB is mandatory before starting one — a requirement that links this
+    record directly to `tuberculosis` and is invisible in both.
+    **The unpredicted one is the JAK inhibitors.** A large post-authorisation
+    safety trial mandated by regulators compared tofacitinib against TNF
+    inhibitors in older patients with a cardiovascular risk factor and found
+    **higher rates of major adverse cardiovascular events and of malignancy.** It
+    produced boxed warnings across the whole class. **Regulators required the
+    trial, the trial found harm, and the label changed** — which is #194's
+    counter-example: a confirmatory study that ran and mattered.
+    **Corticosteroids** remain widely used as a bridge and carry the toll
+    `duchenne` documents at length.
+  incidence:
+    value: 0.05
+    units: >
+      fraction-of-treated (permanent harm — serious infection with sequelae,
+      tuberculosis reactivation, cardiovascular or malignant events attributable to
+      therapy) — a reasoned estimate
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    **ERODED BONE DOES NOT GROW BACK, AND THE EROSIONS BEGIN WITHIN MONTHS.**
+    Rheumatoid synovitis forms a pannus that invades cartilage and subchondral
+    bone. Radiographic erosions appear early — within the first year in a
+    substantial share of untreated patients — and they are permanent. Tendon
+    rupture, ligamentous laxity and the resulting subluxations produce the
+    deformities the disease is known for, and none of it reverses when the
+    inflammation is finally controlled.
+    **So this record's `residue` and its `window` are the same fact**, as in
+    `multiple-sclerosis` and `cystic-fibrosis`: modern therapy stops further damage
+    and restores almost none. A patient treated within twelve weeks of symptom
+    onset may have normal hands at seventy; a patient treated after three years has
+    whatever the first three years left.
+    Also permanent: joint replacements and their revisions, the cervical spine
+    instability of long-standing disease, and the accelerated atherosclerosis that
+    chronic inflammation produces — which is where this record's excess mortality
+    goes, and it is filed under `ischaemic-heart-disease`.
+  incidence:
+    value: 0.25
+    units: >
+      fraction-of-patients (permanent joint damage or deformity) — a reasoned
+      estimate, **and falling steeply in cohorts treated early with modern
+      therapy**, which is the clearest measure of what changed
+    src: reasoning
+
+window:
+  what: >
+    **RHEUMATOLOGY HAS A NAMED WINDOW AND IT IS ABOUT TWELVE WEEKS.**
+    "The window of opportunity" is a term of art in this field: treatment started
+    within roughly three months of symptom onset produces better long-term
+    outcomes, less radiographic damage, and a materially higher chance of
+    **drug-free remission** than the same treatment started later. The biology is
+    plausible — early synovitis appears more tractable before the inflammatory
+    process becomes self-sustaining and before erosions establish.
+    **And the health system's response time is measured in months.** Median delay
+    from first symptom to a rheumatologist runs to several months in most
+    surveyed settings, accumulated across the patient deciding to attend, a
+    primary care assessment, and a referral queue. **The window closes during the
+    referral.**
+    What works is unglamorous and demonstrated: early arthritis clinics with rapid
+    referral pathways, and clear primary care triggers — persistent swelling of
+    small joints, prolonged morning stiffness — that do not require a positive
+    antibody to act on.
+    **Upstream of that there is a second window that is not yet usable.**
+    Anti-citrullinated protein antibodies precede clinical arthritis by years,
+    defining an at-risk state — and trials of treating those people have delayed
+    onset rather than prevented it (see `prevention`). It is #170's shape with an
+    unresolved answer.
+  closes_on: >
+    establishment of radiographic erosion and self-sustaining synovitis — roughly
+    the first twelve weeks to a year from symptom onset
+  caught_in_time:
+    value: 0.35
+    units: >
+      fraction-of-cases (assessed and treated within the window) — a reasoned
+      estimate; referral delay is the binding constraint and is measured in months
+      almost everywhere
+    src: reasoning
+
+strata:
+  - name: controlled on conventional first-line therapy
+    fraction:
+      value: 0.35
+      units: fraction-of-patients
+      src: reasoning
+    intervention: suppressive
+    efficacy:
+      value: 0.90
+      units: fraction-of-stratum (remission or low disease activity)
+      src: reasoning
+    toll: minor
+    what: >
+      **Methotrexate, sometimes with hydroxychloroquine or sulfasalazine, and a
+      short course of steroid — costing pennies a week.** Around a third of
+      patients do well on this indefinitely, and it is the reason `access` in this
+      record is not simply a biologics question: **the cheapest option works for a
+      large minority and requires only a specialist to prescribe and monitor it.**
+
+  - name: requiring targeted therapy, and responding
+    fraction:
+      value: 0.45
+      units: fraction-of-patients
+      src: reasoning
+    intervention: suppressive
+    efficacy:
+      value: 0.75
+      units: fraction-of-stratum (remission or low disease activity)
+      src: reasoning
+    toll: major
+    what: >
+      A biologic or JAK inhibitor added or substituted, often after one or more
+      failures. **Most reach low disease activity, and getting there takes
+      months to years of sequential trials because nothing predicts which
+      mechanism will work.** This stratum is where the cost blocker lives and where
+      biosimilar competition has changed the arithmetic in some countries and not
+      others.
+
+  - name: difficult-to-treat
+    fraction:
+      value: 0.20
+      units: fraction-of-patients
+      src: reasoning
+    intervention: suppressive
+    efficacy:
+      value: 0.30
+      units: fraction-of-stratum (meaningful disease control)
+      src: reasoning
+    toll: major
+    what: >
+      **A recognised category since 2021**: active disease after failing two or
+      more targeted therapies with different mechanisms. Some have genuinely
+      refractory inflammation; some have accumulated damage and pain without active
+      synovitis, which is a different problem treated with the same drugs; and some
+      have comorbidity or intolerance closing off the options.
+      **They are the residue of a mostly-solved disease** and their position has
+      the shape gaps.md #190 describes: the trial population is what is left after
+      the responders left.
+
+moved:
+  - date: 1988
+    axis: intervention
+    from: symptomatic
+    to: disease-modifying
+    why: >
+      **METHOTREXATE, AT A FRACTION OF THE ONCOLOGY DOSE, ONCE A WEEK, FOR
+      PENNIES — AND IT IS STILL THE ANCHOR OF TREATMENT.**
+      Before it, the "pyramid" approach started with anti-inflammatories and
+      escalated slowly through gold salts, penicillamine and antimalarials, on the
+      reasoning that the disease-modifying agents were too toxic to use early. The
+      joints eroded during the escalation.
+      Low-dose weekly methotrexate proved substantially more effective and better
+      tolerated over the long run than anything it replaced, and became the drug
+      every subsequent therapy is added to or compared against.
+      **It remains, nearly forty years later, the correct first treatment for most
+      patients**, and around a third do well on it indefinitely — which is worth
+      remembering in a record whose attention is dominated by drugs costing ten
+      thousand times as much.
+    src: recall
+
+  - date: 1998
+    axis: intervention
+    from: disease-modifying
+    to: suppressive
+    why: >
+      **TNF INHIBITORS, AND THEY ARE ONE OF THE CLEANEST MECHANISM-TO-DRUG STORIES
+      IN MEDICINE.**
+      Tumour necrosis factor was shown to sit at the top of the cytokine cascade in
+      rheumatoid synovium, blocking it was proposed on that reasoning, and the
+      trials worked — a rationally designed therapy from a worked-out mechanism,
+      which is rarer than the textbooks imply.
+      Etanercept and infliximab were licensed in 1998, adalimumab in 2002, and four
+      further mechanisms followed: interleukin-6 blockade, B-cell depletion,
+      T-cell costimulation blockade, and oral JAK inhibitors from 2012.
+      **What changed was not only symptom control but the natural history.**
+      Remission became a realistic target, radiographic progression could be halted,
+      and rates of joint surgery for rheumatoid arthritis fell substantially in
+      countries with access. **The classic deformities began to disappear.**
+      This is where the record's rung moved past `disease-modifying`: near-normal
+      function, indefinitely, on treatment, with relapse if it stops.
+    src:
+      id: PMID:9380131
+      retrieved: 2026-08-26
+      quote: >
+        Treatment of rheumatoid arthritis with a tumor necrosis factor receptor-Fc
+        fusion protein.
+
+  - date: 2010
+    axis: efficacy
+    from: 0.50
+    to: 0.65
+    why: >
+      **TREAT-TO-TARGET, AND IT IS A STRATEGY RATHER THAN A DRUG.**
+      Measure disease activity with a composite score at every visit, set remission
+      or low disease activity as the explicit target, and **escalate therapy every
+      few months until the target is reached** — rather than continuing whatever is
+      tolerable. Trials of the strategy against usual care found substantially
+      better outcomes **using the same medicines.**
+      International recommendations formalised it in 2010, alongside the push to
+      treat within the window described above.
+      **The register should notice what kind of change this is.** No molecule was
+      discovered. What changed was a decision rule, applied consistently, and it
+      moved outcomes as much as most of the drugs did. It is #188's
+      demonstrated-and-copyable shape — and unusually, this one *was* copied,
+      because it cost nothing and the professional societies pushed it.
+    src: recall
+
+  - date: 2018
+    axis: access
+    from: 0.28
+    to: 0.35
+    why: >
+      **BIOSIMILAR COMPETITION WORKED, IN ONE JURISDICTION, FIVE YEARS BEFORE IT
+      WAS ALLOWED TO WORK IN ANOTHER.**
+      Adalimumab was for years the best-selling medicine in the world, at roughly
+      twenty billion dollars a year. **European biosimilars entered in late 2018
+      and prices collapsed** — national tenders reporting reductions of the order
+      of seventy to ninety percent, and health systems treating far more patients
+      for the same money.
+      **In the United States the same molecule kept its price until 2023**, because
+      the originator had built a patent estate numbering in the hundreds around
+      formulation, manufacturing and device — a "patent thicket" — and biosimilar
+      entrants settled for delayed launch dates. When they did enter, rebate
+      structures slowed uptake further.
+      **Same molecule, same evidence, same year, an order of magnitude apart in
+      price, and the variable is patent law and procurement design** (gaps.md
+      #197).
+      This entry is dated to the European entry because that is when the register
+      can point at a demonstrated change. It is also the counter-example to
+      `multiple-sclerosis`, where competitors entering **raised** prices.
+    src: recall
+
+witness:
+  mechanism: >
+    `partial`, and the split is unusually clean: **the effector mechanism is
+    understood well enough to have produced five rationally designed drug classes,
+    and nobody knows what starts the disease.**
+    What is established. Autoimmunity against **citrullinated proteins** — arginine
+    residues post-translationally converted by peptidylarginine deiminase enzymes —
+    with antibodies that are highly specific and appear years before symptoms.
+    Synovial inflammation forms a **pannus** that invades cartilage and bone;
+    tumour necrosis factor sits near the top of the cytokine cascade driving it,
+    with interleukin-6 alongside; B cells, T cells and JAK-STAT signalling all
+    contribute. **Blocking each of those in turn works**, which is about as strong
+    a validation of a mechanism as pharmacology offers.
+    Susceptibility is dominated by the **shared epitope** in HLA-DRB1, and its
+    interaction with **smoking** is among the strongest gene-environment
+    interactions described in any autoimmune disease — smoking induces
+    citrullination in the lung, and the shared epitope presents citrullinated
+    peptides.
+    **THE NAMED HOLE IS WHERE IT BEGINS.** The leading account is that autoimmunity
+    is initiated at a **mucosal surface** — lung, gut or periodontium — years
+    before it reaches a joint, and then transitions. The periodontal hypothesis is
+    specific and testable: *Porphyromonas gingivalis* is the only bacterium known to
+    express a peptidylarginine deiminase, and periodontitis is associated with
+    rheumatoid arthritis. **None of it is established**, and the question is not
+    academic: it is the difference between preventing the disease and treating it.
+    Nor is it known **why the joints**, when the initiating event is mucosal and
+    the antigens are ubiquitous.
+  intervention: >
+    `suppressive`, and the record was queued expecting `disease-modifying` — the
+    second time that has happened, after `multiple-sclerosis`.
+    Modern management is **methotrexate first**, escalated by a **treat-to-target**
+    rule until remission or low disease activity is reached, adding a biologic or
+    JAK inhibitor if it is not. Around a third do well on conventional therapy
+    alone; most of the rest reach control on a targeted agent. **Near-normal
+    function, indefinitely, on treatment, with relapse if it stops** is the
+    register's definition of `suppressive` and it is met.
+    **Drug-free remission exists and is a minority outcome**, more likely the
+    earlier treatment began — which is one of the better arguments for the window.
+    **What the drugs do not do is repair.** Erosions, subluxations and replaced
+    joints are permanent, so the value of the whole apparatus is a function of when
+    it started.
+    **And treatment selection is unsolved in a way that costs joints.** Five
+    licensed mechanisms, each working in roughly half of recipients, and no test
+    that says which. Three to six months per trial, sequentially, while the
+    disease is active.
+  prevention: >
+    `risk-reduction`, and there is one intervention with real evidence and one
+    live and unresolved research programme.
+    **Smoking** is the dominant modifiable risk factor, interacts strongly with
+    genetic susceptibility, and stopping reduces risk over years. Obesity and
+    periodontal disease are associated; the direction of the periodontal
+    relationship is not settled.
+    **The unresolved programme is treating people before they have arthritis.**
+    Anti-citrullinated protein antibodies precede clinical disease by years, and a
+    combination of antibody positivity with joint symptoms defines an at-risk state
+    with a substantial conversion rate. **Randomised trials have given at-risk
+    people rituximab, abatacept and methotrexate.** The consistent result is
+    **delayed onset rather than prevention** — the curves separate during treatment
+    and converge afterwards.
+    That is gaps.md #170's shape with a middling answer: the definition has been
+    pulled upstream, the treatment works there, and what it buys is time rather
+    than avoidance — the same finding as teplizumab in `type-1-diabetes`, in a
+    completely different organ, which makes it worth noticing twice.
+  ongoing: >
+    `moderate`. A weekly methotrexate tablet or injection with blood monitoring
+    every few months; for those on biologics, a self-administered injection every
+    one to four weeks or an infusion; and for JAK inhibitors, a daily tablet with
+    the cardiovascular and malignancy vigilance the class now carries.
+    Around it: latent tuberculosis screening before starting a TNF inhibitor,
+    vaccination review, infection vigilance, and — for women of reproductive age,
+    who are most of this record — planning conception around teratogenic drugs.
+    **It is much lighter than it was**, and the honest comparison is not with
+    nothing but with the alternative: the disease itself, untreated, is a far
+    heavier daily burden than any of this.
+
+holes:
+  - >
+    **`mechanism: partial` could be argued either way and the choice moves the
+    record's quadrant.** The effector mechanism is validated by five drug classes
+    that work; the initiating event is unknown. Rating on the first would give
+    `established`; the file rates on the second, which is what `mechanism` is
+    supposed to describe (gaps.md #135).
+  - >
+    **The mortality that matters is cardiovascular and is filed elsewhere.** Chronic
+    inflammation accelerates atherosclerosis, and this record's excess deaths are
+    in `ischaemic-heart-disease` and `stroke` (gaps.md #160).
+  - >
+    **The clinical picture has changed within one professional lifetime and the
+    record stores one snapshot.** Joint surgery rates for rheumatoid arthritis have
+    fallen substantially and the classic deformities are becoming uncommon where
+    treatment reaches. `residue: 0.25` is a falling number recorded as a level
+    (gaps.md #91).
+  - >
+    The strata are response tiers rather than a biological partition, and the
+    difficult-to-treat category mixes genuinely refractory inflammation with
+    accumulated damage and with comorbidity — three different problems under one
+    label.
+  - >
+    **`access: 0.35` averages a methotrexate question and a biologics question that
+    differ by four orders of magnitude in cost.** A third of patients need only the
+    cheap drug and a specialist to prescribe it.
+  - >
+    Every scalar is `recall` or `reasoning`, in a field with large randomised
+    trials and good national registries.
+
+blockers:
+  - kind: knowledge
+    blocks: which of five working mechanisms is the one in this patient
+    obstacles: []
+    what: >
+      **FIVE LICENSED MECHANISMS, EACH WORKING IN ABOUT HALF OF RECIPIENTS, AND NO
+      WAY TO CHOOSE.**
+      Tumour necrosis factor, interleukin-6, B cells, T-cell costimulation, JAK
+      signalling. Every one was rationally designed against a validated target and
+      every one works — in some patients. **Selection is by sequence, cost and
+      formulary, and finding out takes three to six months per attempt** while
+      synovitis erodes bone that will not grow back.
+      **This is strong evidence that rheumatoid arthritis is several diseases
+      sharing a presentation** (gaps.md #39), and there is direct support: a
+      randomised trial stratifying patients by **synovial biopsy B-cell status**
+      found differential response between anti-B-cell and anti-IL-6 therapy — the
+      second confirmation of #39's prediction that stratified trials succeed where
+      unstratified ones do not.
+      Synovial biopsy is invasive and not routine, and translating that finding
+      into a usable test — ideally a blood test — is the highest-value unsolved
+      question in the record.
+      **The older hole is where the disease begins.** Autoimmunity appears to start
+      at a mucosal surface years before the joints are involved, and nothing
+      establishes which surface, what triggers it, or why the joints. **That is the
+      difference between preventing this disease and treating it forever.**
+      `scale: null`.
+    who_could: [academic, sponsor, manufacturer, philanthropy]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: cost
+    blocks: a price that fell by ninety percent in one jurisdiction and not in another
+    obstacles: []
+    what: >
+      **THE SAME MOLECULE, THE SAME YEAR, AN ORDER OF MAGNITUDE APART IN PRICE.**
+      Adalimumab was the best-selling medicine in the world at roughly twenty
+      billion dollars a year. **European biosimilars entered in late 2018 and
+      prices collapsed**, with national tenders reporting reductions of seventy to
+      ninety percent and health systems able to treat far more patients for the
+      same budget.
+      **The United States kept the price until 2023.** The originator had assembled
+      a patent estate numbering in the hundreds around formulation, manufacturing
+      process and injection device — the "patent thicket" — and biosimilar
+      applicants settled for delayed entry rather than litigate it. When they
+      arrived, rebate-driven formulary economics slowed adoption further.
+      **So this record's `cost` blocker is not a fact about a drug. It is the
+      current state of a patent strategy and a procurement design**, both of which
+      are movable and have been moved differently in different places (gaps.md
+      #197).
+      Globally the picture is worse and simpler: biologics are largely unavailable
+      across low- and middle-income countries at any price, and **the drug that
+      works for a third of patients costs pennies** — so the binding constraint
+      there is the blocker below, not this one.
+    who_could: [manufacturer, regulator, payer, government, legislator]
+    scale: 8.0e9
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: a rheumatologist, inside a twelve-week window
+    obstacles: []
+    what: >
+      **THE WINDOW IS TWELVE WEEKS AND THE REFERRAL TAKES MONTHS.**
+      Median delay from first symptom to specialist assessment runs to several
+      months in most surveyed health systems, accumulated across the patient
+      waiting, a primary care assessment that reasonably considers commoner causes
+      of joint pain, and a queue. **The damage that determines somebody's hands at
+      seventy happens during that interval.**
+      Rheumatologist density is the underlying constraint and it is extreme:
+      several per hundred thousand population in well-served countries, and a
+      handful for an entire country elsewhere. **Most of the world's patients will
+      never see one**, which means they will not receive methotrexate — a drug
+      costing pennies that controls a third of cases outright.
+      What works is demonstrated and cheap: **early arthritis clinics with rapid
+      access pathways**, and simple primary care triggers — persistent swelling of
+      small joints, prolonged morning stiffness — that do not require waiting for an
+      antibody result.
+      This is gaps.md #154's shape and #189's: **the effective treatment threshold
+      is set by how many rheumatologists there are**, not by the patient.
+    who_could: [health-system, government, payer, academic, nonprofit]
+    scale: 4.0e9
+    standing: documented
+    src: recall
+
+  - kind: evidence-incomplete
+    blocks: what order to give them in, and whether anyone can stop
+    obstacles: []
+    what: >
+      **THREE ORDINARY QUESTIONS, ALL ANSWERABLE, NONE ANSWERED AFTER TWENTY-FIVE
+      YEARS OF BIOLOGICS.**
+      *Which mechanism first, after methotrexate fails?* Head-to-head trials
+      between biologic classes are few, and sequencing is decided by cost and
+      formulary rather than by evidence.
+      *Can treatment be tapered or stopped?* Patients in sustained remission ask
+      this constantly. Tapering trials exist, show that a minority sustain
+      drug-free remission, and are not powered to say who. **In a lifelong
+      immunosuppressive therapy with cardiovascular and malignancy signals, "can I
+      stop" is not a minor question.**
+      *And what to do for the difficult-to-treat fifth?* A category defined only in
+      2021, mixing refractory inflammation with accumulated damage and with
+      comorbidity — three problems that need separating before any of them can be
+      studied.
+      **None requires a discovery.** All require comparative and de-escalation
+      trials that no manufacturer has a reason to fund, in a field where every
+      product is proprietary and comparison is commercially unattractive — the same
+      publicly-funded-trial gap `multiple-sclerosis`, `schizophrenia` and
+      `covid-19` each identified (gaps.md #164).
+    who_could: [academic, sponsor, government, payer, regulator]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    blocks: an at-risk state that can be identified and not yet acted on
+    obstacles: []
+    what: >
+      **ANTI-CITRULLINATED PROTEIN ANTIBODIES APPEAR YEARS BEFORE THE FIRST SWOLLEN
+      JOINT, AND NOBODY KNOWS WHAT TO DO ABOUT IT.**
+      Combined with joint symptoms, antibody positivity defines an at-risk state
+      with a substantial conversion rate over a few years — an identifiable
+      pre-clinical population, of the kind `type-1-diabetes` and `alzheimers` also
+      acquired.
+      **Randomised prevention trials have been run** with rituximab, abatacept and
+      methotrexate. The consistent finding is **delayed onset rather than
+      prevention**: the curves separate during treatment and converge after it
+      stops.
+      So this is gaps.md #170 with a genuinely middling answer, and gaps.md #185's
+      window that is identifiable and nearly empty. **Treating an asymptomatic
+      person with an immunosuppressant to postpone a disease they may still get is
+      a different proposition from treating one who has it**, and neither the
+      evidence nor the ethics is settled.
+      Meanwhile the diagnostic failure that is settled goes unaddressed: **people
+      who already have swollen joints wait months for the specialist who would
+      treat them**, which is worth more than the at-risk question and attracts less
+      attention.
+    who_could: [academic, health-system, sponsor, government]
+    scale: 6.0e8
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0094
+  rated: 2026-08-25
+  by: [claude, jeremy]

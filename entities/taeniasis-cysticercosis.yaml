@@ -1,0 +1,363 @@
+slug: taeniasis-cysticercosis
+id: FND-D-0039
+name: taeniasis and cysticercosis
+also: [Taenia solium infection, neurocysticercosis, pork tapeworm, cysticercosis]
+common: pork tapeworm
+mondo: unresolved
+kind: disease
+residual: false
+contested: false
+
+# ONE PARASITE, TWO DISEASES, AND THE PERSON WITH ONE GIVES THE OTHER TO
+# SOMEBODY ELSE.
+#
+#   TAENIASIS       you eat undercooked pork, an adult tapeworm grows in your
+#                   gut, and you are almost entirely well. You shed eggs.
+#   CYSTICERCOSIS   you swallow those eggs — from a carrier's hands, or your
+#                   own — the larvae encyst in your tissues, and if they lodge in
+#                   your brain you get NEUROCYSTICERCOSIS, the leading
+#                   preventable cause of epilepsy in the world.
+#
+# So the reservoir is asymptomatic and the victim is a third party. A tapeworm
+# carrier can give epilepsy to a family member who has never eaten pork — which
+# is why cysticercosis appears in communities that do not eat pork at all, next
+# to neighbours who do.
+#
+# THESE ARE NOT STRATA. Strata partition patients; these are two diseases in
+# different people, caused by different life stages of one organism, and a
+# carrier can have both by autoinfection. The register has one row per entity and
+# no way to say that half of it causes the other half. See gaps.md #83.
+#
+# AND NEUROCYSTICERCOSIS CAUSES EPILEPSY, WHICH IS ALREADY A RECORD HERE. Second
+# consecutive record whose most consequential fact is an edge to another row —
+# and unlike scabies-to-rheumatic-heart-disease, this one is well established.
+# The epilepsy record does not mention it.
+
+burden:
+  prevalence:
+    value: 5.0e7
+    units: >
+      people with taeniasis or cysticercosis worldwide — a rough figure; the two
+      conditions are counted differently and neither is counted well
+    src: recall
+  deaths:
+    value: 2.8e4
+    units: >
+      deaths/year, chiefly from neurocysticercosis — seizures, status
+      epilepticus, hydrocephalus and the drowning and burns that follow
+      uncontrolled epilepsy
+    src: recall
+  note: >
+    THE NUMBER THAT MATTERS IS NOT IN THIS BLOCK. Neurocysticercosis is
+    responsible for something on the order of a third of epilepsy cases in
+    endemic areas of Latin America, sub-Saharan Africa and Asia, and is described
+    as the leading preventable cause of epilepsy worldwide.
+    That burden is counted under **epilepsy**, which is a separate record in this
+    register rating `mechanism: partial` and listing logistics and policy
+    blockers. A substantial share of the world's epilepsy is a preventable
+    parasitic infection with a one-dollar cure for its reservoir, and neither
+    record can say so.
+    Transmission requires pigs with access to human faeces and humans eating
+    undercooked pork. It is therefore a disease of smallholder pig-keeping
+    without sanitation, and it disappeared from Europe when those two things
+    stopped coinciding.
+
+survival:
+  horizon: 5 years from diagnosis of neurocysticercosis
+  untreated:
+    value: 0.8
+    units: >
+      fraction alive — neurocysticercosis kills through status epilepticus,
+      hydrocephalus and raised intracranial pressure in a minority
+    src: reasoning
+  treated:
+    value: 0.95
+    units: >
+      fraction alive with albendazole, corticosteroids, antiepileptics and shunting
+      where needed. **The residual disability is epilepsy** — this is a leading
+      preventable cause of adult-onset seizures worldwide, and survival is not
+      the axis that shows it
+    src: reasoning
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: risk-reduction
+  ongoing: moderate
+  efficacy:
+    value: 0.70
+    units: >
+      fraction-of-patients (taeniasis cured, or cysts resolved in
+      neurocysticercosis) — the blend hides everything: a single dose clears the
+      tapeworm in nearly everyone, while cyst resolution is partial and seizure
+      freedom is a different and lower number
+    src: reasoning
+  access:
+    value: 0.30
+    units: >
+      fraction-of-patients (diagnosed and treated) — diagnosing
+      neurocysticercosis needs a CT or MRI scanner, and the disease is where
+      those are not
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: none
+  predictive: none
+  witness: >
+    DIAGNOSTIC is `objective` and the object is a scanner. Neurocysticercosis is
+    diagnosed on CT or MRI — the lesions are characteristic and stageable, from
+    viable cyst through degenerating to calcified — with serology (EITB
+    immunoblot) supporting. That is a genuine, decisive test, and it lives in
+    referral hospitals while the disease lives in villages with pigs.
+    Taeniasis is the harder half and the more important one epidemiologically:
+    stool microscopy for eggs is insensitive and cannot distinguish *T. solium*
+    from *T. saginata*, which matters enormously because only the pork tapeworm
+    causes cysticercosis. Coproantigen and molecular methods do better and are
+    not routine. **The carrier is asymptomatic, so nobody is looking anyway.**
+    PROGNOSTIC is `none`. Nothing predicts which infected person develops
+    seizures, which cysts calcify, or which calcified lesions go on generating
+    epilepsy through perilesional oedema years after the parasite is dead.
+    PREDICTIVE is `none`, AND THE QUESTION IT CANNOT ANSWER IS WHETHER TREATMENT
+    WILL HARM THIS PATIENT. Anticysticidal drugs kill cysts, dying cysts provoke
+    inflammation, and inflammation inside a skull causes seizures, raised
+    pressure and occasionally death. Heavy infections and the racemose form are
+    contraindications; steroids are given alongside; some patients should not
+    receive the drugs at all. Nothing identifies them in advance. This is the
+    fourth record whose live predictive question is about harm rather than
+    benefit (gaps.md #59), and the second where the right answer for some
+    patients is to deliberately do nothing (gaps.md #68).
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    THE TOLL HERE IS THE TREATMENT WORKING, WHICH IS A DISTINCTION THIS FIELD
+    CANNOT MAKE.
+    Albendazole and praziquantel kill the cysts. The dying cysts release antigen,
+    the immune system responds, and the response takes place inside a rigid
+    skull: seizures, cerebral oedema, raised intracranial pressure, and in heavy
+    or racemose infections, death. Corticosteroids are given alongside to blunt
+    it, and in some patients anticysticidal therapy is withheld entirely because
+    the risk exceeds the benefit.
+    That is not drug toxicity. Albendazole is a safe drug; what hurts is the
+    parasite dying. The same shape appears in three other records — the Mazzotti
+    reaction after ivermectin in onchocerciasis, leprosy reactions during and
+    after multidrug therapy, and the Jarisch-Herxheimer reaction in yaws — and in
+    all four **the harm is proportional to how well the treatment works.** It is
+    reduced by steroids, staging and patient selection, not by a better drug, and
+    `toll` describes only what the cure takes without saying which kind of taking
+    it is. See gaps.md #84.
+    Surgery adds its own: ventriculoperitoneal shunts for hydrocephalus block,
+    infect and need revising, sometimes repeatedly, in people who cannot easily
+    reach a neurosurgeon.
+  incidence:
+    value: 0.05
+    units: >
+      fraction-of-treated (permanent harm from treatment-associated inflammation
+      or shunt complications) — a reasoned estimate, concentrated in heavy
+      intracranial infection
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    Killing the parasite does not switch the epilepsy off. Cysts that die —
+    whether treated or spontaneously — calcify, and calcified lesions go on
+    generating seizures for years afterwards through episodic perilesional
+    oedema. A patient can be parasitologically cured and remain epileptic for
+    life, on antiepileptic drugs they may never be able to stop.
+    Hydrocephalus from cysts in the ventricles or subarachnoid space is
+    structural and needs shunting. Ocular cysticercosis can take the eye.
+    **So the residue of this disease is another disease in this register**, and it
+    is the fourth record where the largest permanent burden is not the infection
+    but what the infection left. Unlike lymphatic filariasis, leprosy and
+    trachoma, the residue here is not surgically correctable — it is managed with
+    the same antiepileptic drugs, and the same drug-resistant third, as any other
+    epilepsy.
+  incidence:
+    value: 0.15
+    units: >
+      fraction-of-infected (persistent epilepsy, hydrocephalus or visual loss
+      after the parasite is dead) — a reasoned estimate; far higher among those
+      with intracranial cysts
+    src: reasoning
+
+# NO `window` BLOCK, and the reason is structural rather than a judgement call.
+# The schema's test is whether capability changes with timing, and by the time
+# anybody presents, the cysts are already in the brain — that is what produced
+# the symptom. Treating sooner does not prevent the lesions, because the lesions
+# are the presentation. The intervention that would have helped is entirely
+# upstream: not swallowing the eggs. That belongs to prevention and to the
+# tapeworm carrier, not to a window on this patient.
+
+witness:
+  mechanism: >
+    `established`, and the life cycle is the whole record.
+    *Taenia solium* alternates between humans and pigs. A pig eats human faeces
+    containing eggs; the larvae encyst in pig muscle. A human eats undercooked
+    pork; an adult tapeworm — two to seven metres of it — establishes in the
+    intestine and sheds eggs in the stool. **That human is the definitive host and
+    is almost entirely asymptomatic.**
+    The second disease happens when a human swallows the eggs rather than the
+    cysts. Then the human takes the pig's role: larvae migrate and encyst in
+    muscle, subcutaneous tissue, the eye and the brain. In the brain they cause
+    seizures, hydrocephalus and raised intracranial pressure, either while alive
+    or — more often — as they die and provoke inflammation.
+    TWO CONSEQUENCES WORTH STATING PLAINLY. Eggs come from human faeces, so
+    **cysticercosis is not a food-borne disease**: it is faecal-oral, and it
+    reaches people who never eat pork. And a carrier can infect themselves by
+    autoinfection, so one person can hold both diseases at once, which is why the
+    two cannot be modelled as strata.
+    Named holes: why some cysts lodge intracranially and others do not; what
+    governs the inflammatory response that does the damage; and how much of the
+    world's epilepsy is attributable to this, which is the number that would
+    decide how the register should rank it.
+  intervention: >
+    `curative`, in two entirely different senses.
+    TAENIASIS is cured by a single dose of praziquantel or niclosamide, costing
+    almost nothing, in almost everybody. Treating carriers removes the egg source
+    and is the highest-leverage act available — and nobody is treated, because
+    nobody knows they have it.
+    NEUROCYSTICERCOSIS is treated with albendazole, often with praziquantel,
+    always with corticosteroids, sometimes with antiepileptic drugs indefinitely,
+    and sometimes with surgery. Cyst resolution is partial. Seizure control
+    rather than cure is the realistic goal, and for some patients — heavy
+    infection, racemose disease, calcified-only disease — the anticysticidal
+    drugs should not be given at all.
+    That last point is the second appearance in this register of **correctly
+    doing nothing** as a clinical achievement (gaps.md #68). Echinococcosis's
+    reason was that the cyst was inactive; here the reason is that killing it
+    could kill the patient.
+  prevention: >
+    `risk-reduction`, and it is a four-part package in which no single component
+    is sufficient — the same portfolio shape trachoma's SAFE made explicit
+    (gaps.md #58).
+    TREAT HUMAN CARRIERS, which removes the eggs. IMPROVE SANITATION, so pigs
+    cannot reach human faeces. CONFINE AND TREAT PIGS — oxfendazole clears
+    porcine cysticercosis, and **there is a working pig vaccine, TSOL18.**
+    INSPECT MEAT and cook it properly.
+    Drop any one and the cycle re-establishes. And the third component is the
+    third instance in this register of an intervention administered to a
+    different species: sheep for echinococcosis, dogs for rabies, pigs here —
+    with `who_could` still unable to name a veterinary service (gaps.md #69).
+    *T. solium* appears on lists of potentially eradicable diseases, and the
+    reason is on the eradicability checklist from gaps.md #72: humans are the
+    only definitive host, there is no wildlife reservoir that matters, and every
+    link in the cycle is interruptible. What it lacks is a way to find the
+    asymptomatic carriers.
+  ongoing: >
+    `moderate`, and it is really two ratings. A tapeworm carrier takes one dose
+    and is finished. A person with neurocysticercosis may take antiepileptic
+    drugs for life, attend for imaging, and live with a shunt — which is `high`,
+    and is the burden of the residue rather than of the treatment.
+
+holes:
+  - How much of the world's epilepsy is caused by neurocysticercosis. The figure
+    quoted for endemic areas is around a third, and it determines whether this
+    record is a moderate problem or one of the largest preventable neurological
+    burdens there is.
+  - Who will have a dangerous inflammatory response to anticysticidal therapy.
+    Nothing predicts it, and the answer decides who should be treated at all.
+  - What makes calcified lesions episodically epileptogenic years after the
+    parasite is dead. This is the residue, and it is not understood.
+  - How many asymptomatic tapeworm carriers there are. They are the entire
+    reservoir and by definition nobody presents.
+  - Whether the pig vaccine plus oxfendazole, deployed at scale, would interrupt
+    transmission on its own. Demonstrated in trials, not at national scale.
+  - Written from model recall. The two-disease life cycle, the faecal-oral route
+    for cysticercosis, the treatment-induced inflammation and the existence of a
+    pig vaccine are the parts most likely right; every number is the part most
+    likely wrong.
+
+blockers:
+  - kind: diagnosis
+    blocks: finding the carriers, and imaging the patients
+    what: >
+      Two failures at opposite ends of the same life cycle.
+      THE CARRIERS ARE INVISIBLE. An adult tapeworm produces almost no symptoms,
+      so nobody presents; stool microscopy is insensitive and cannot distinguish
+      the pork tapeworm from the beef tapeworm, which matters because only one
+      causes cysticercosis. Coproantigen and molecular tests do better and are
+      not routine anywhere the disease is. So the entire egg source of the
+      disease goes undetected, and a single dose of praziquantel would clear it.
+      THE PATIENTS NEED A SCANNER. Neurocysticercosis is diagnosed on CT or MRI,
+      which is decisive and is in referral hospitals, and the disease is in
+      villages that keep pigs. Serology helps and does not substitute.
+      The register's cheapest-lever claim holds at the first end and not the
+      second: finding carriers is a test-and-treat problem, and imaging is
+      capital equipment.
+    who_could: [health-system, academic, government, nonprofit, manufacturer]
+    scale: 1.0e8
+    standing: documented
+    src: recall
+
+  - kind: policy
+    blocks: a four-part package that no single ministry owns
+    what: >
+      Interrupting this cycle requires treating human carriers, keeping pigs away
+      from human faeces, treating and vaccinating pigs, and inspecting meat. Drop
+      one and it re-establishes.
+      Those four sit in health, in water and sanitation, in agriculture and
+      veterinary services, and in food safety regulation respectively. The
+      disease appears in the health budget. **There is a working pig vaccine and
+      an effective porcine anthelmintic**, and buying them is an agriculture
+      decision justified by a health outcome, which is the same structural
+      problem echinococcosis and rabies have and this record makes three.
+      Note the incentive: a smallholder gains little from vaccinating a pig
+      against a parasite that does not make the pig ill and only costs money if
+      the carcass is condemned. Meat inspection is what makes it worth their
+      while, and meat inspection is exactly what does not exist in informal
+      slaughter.
+    who_could: [government, legislator, health-system, nonprofit, philanthropy]
+    scale: 5.0e8
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    obstacles: [who-progresses, burden-unknown]
+    blocks: knowing whom to treat, and how much epilepsy this causes
+    what: >
+      Two questions, and the second would change how the whole register ranks
+      this record.
+      Whom to treat: anticysticidal drugs help many patients and endanger some,
+      the danger is the inflammatory response to the parasite dying, and nothing
+      predicts who will have a severe one. Guidance rests on lesion count, stage
+      and location, which is a rule rather than a prediction. A marker would
+      convert a judgement call into a decision.
+      How much epilepsy: the commonly quoted figure is around a third of cases in
+      endemic areas. If that is right, neurocysticercosis is among the largest
+      preventable neurological burdens in the world, and a one-dollar dose given
+      to asymptomatic carriers is one of the cheapest interventions against it.
+      `scale: null` — the attributable-fraction work is fundable epidemiology and
+      the predictive marker is not something that can be bought.
+    who_could: [academic, sponsor, nonprofit, philanthropy]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: antiepileptic drugs for the residue population
+    what: >
+      The people this disease has already damaged do not need albendazole. They
+      need antiepileptic drugs, reliably, for years — and they are in the same
+      rural districts that have no scanner, in the same treatment gap that the
+      epilepsy record in this register rates at reach 0.2 with logistics and
+      policy blockers.
+      That is the same population, described twice, in two records that cannot
+      see each other. Phenobarbital costs a few dollars a year and its supply in
+      low-income settings is unreliable, partly because it is a controlled
+      substance.
+      Recorded here rather than left to the epilepsy record because the causal
+      chain runs this way, and a reader of this record should not have to know
+      that the other one exists.
+    who_could: [health-system, government, payer, nonprofit, regulator]
+    scale: 2.0e8
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0039
+  rated: 2026-08-23
+  by: [claude, jeremy]

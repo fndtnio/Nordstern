@@ -1,0 +1,398 @@
+slug: hat
+id: FND-D-0026
+name: human African trypanosomiasis
+also: [sleeping sickness, HAT, African sleeping sickness, Trypanosoma brucei infection]
+common: sleeping sickness
+mondo: MONDO:0005459
+kind: disease
+residual: false
+contested: false
+
+# THE FIRST RECORD OF SOMETHING NEARLY WON, AND THE REGISTER CANNOT HOLD IT.
+#
+# Roughly three hundred thousand cases a year in the late 1990s. Fewer than a
+# thousand now. Several countries validated as having eliminated it as a public
+# health problem, and a WHO target to interrupt transmission entirely by 2030.
+# Meanwhile the treatment went from an arsenical that killed three to five
+# percent of the people who received it to ten days of tablets.
+#
+# Two things follow that this schema has no field for.
+#
+# 1. THE ENDGAME INVERTS EVERYTHING. At very low prevalence a good screening
+#    test produces mostly false positives, the cost per case found rises
+#    steeply, the last cases sit in the hardest places, and the programme has to
+#    keep spending long after the problem looks finished. `reach` and `access`
+#    model delivery as a linear fraction. The last mile is not priced like the
+#    first. See gaps.md #56.
+#
+# 2. THE ACHIEVEMENT IS REVERSIBLE, AND THIS IS NOT HYPOTHETICAL. HAT was down
+#    to a few thousand cases around 1960. Control programmes were dismantled
+#    through independence and conflict and it came back to hundreds of
+#    thousands by the 1990s. The register measures gaps; a closed gap becomes
+#    invisible; keeping it closed costs money forever. See gaps.md #57.
+
+burden:
+  incidence:
+    value: 8.0e2
+    units: >
+      reported cases/year — down from over 300,000 estimated annually in the
+      late 1990s. Roughly 97% is the chronic gambiense form of West and Central
+      Africa; the rest is acute rhodesiense disease in the east and south
+    src: recall
+  deaths:
+    value: 2.0e2
+    units: >
+      deaths/year — untreated infection is essentially uniformly fatal, so
+      mortality now tracks whoever is not found rather than whoever is not
+      curable
+    src: unknown
+  note: >
+    THE SMALLEST BURDEN IN THE REGISTER, AND IT IS THE POINT. Read the numbers
+    against the 1990s and this is one of the great public health achievements
+    of the century; read them on their own and it is a rounding error that no
+    burden-weighted priority metric would ever surface.
+    Both readings are correct, which is the difficulty. Gap #48 asks the
+    register to rank by preventable burden. Applied here it would rank HAT at
+    approximately zero — accurately, for the burden that exists, and
+    catastrophically, for the value of not losing it again. Maintaining an
+    elimination shows up in this schema as nothing at all.
+
+survival:
+  horizon: 12 months from onset of second-stage disease
+  untreated:
+    value: 0.0
+    units: >
+      fraction alive — **untreated second-stage human African trypanosomiasis is
+      uniformly fatal.** There is no chronic carriage and no recovery; the
+      parasite crosses into the central nervous system and the disease ends one
+      way
+    src: recall
+  treated:
+    value: 0.95
+    units: >
+      fraction alive on fexinidazole — **ten days of oral tablets, given in a
+      village, for a disease whose previous treatment was melarsoprol**, an
+      arsenical that killed roughly 5% of the people it was given to
+    src: recall
+  witness: >
+    **THE LARGEST SINGLE IMPROVEMENT IN BOTH SURVIVAL AND TOLL IN THE REGISTER.**
+    A uniformly fatal disease, and the treatment that cured it used to kill one
+    patient in twenty. Fexinidazole replaced an arsenic compound with an oral
+    course — that is a `survival` gain and a `toll` reduction at once, and no
+    other record here has both.
+    It carries `deaths: 0` because the annual count is now in the hundreds and
+    rounds away — **the third record after `heart-failure` and `ebola` where the
+    burden column loses a disease the survival column sees clearly.**
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: risk-reduction
+  ongoing: low
+  efficacy:
+    value: 0.95
+    units: fraction-of-patients (cure with fexinidazole or NECT)
+    src: recall
+  access:
+    value: 0.70
+    units: >
+      fraction-of-patients (found and treated) — high among detected cases,
+      because active screening finds people and treatment follows; the shortfall
+      is undetected infection in areas active screening cannot reach
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: good
+  predictive: good
+  witness: >
+    THE STRONGEST MEASUREMENT PROFILE IN THE REGISTER, alongside HIV and PKU,
+    and it was built because the alternative was unbearable. Serological
+    screening by card agglutination or rapid test, parasitological confirmation
+    by microscopy, and staging by lumbar puncture — a complete pathway,
+    deployed by mobile teams to villages that have no clinic.
+    PROGNOSTIC is `good` in a bleak way: untreated infection kills essentially
+    everyone, so what it will do is not in question. PREDICTIVE is `good`
+    because STAGE DETERMINES TREATMENT, and the stage is measurable — which is
+    what the lumbar puncture was for.
+    AND HERE IS THE PART WORTH KEEPING. That lumbar puncture existed because
+    stage 2 disease required melarsoprol, an arsenical that killed three to five
+    percent of the people given it, so nobody would administer it without proof
+    it was needed. Fexinidazole treats both stages orally, and with it much of
+    the staging requirement falls away. **A better drug abolished a diagnostic
+    procedure**, which is the hepatitis C pattern — a measurement burden closed
+    by better treatment rather than by a better test — applied to an invasive
+    procedure rather than to an assay.
+    THE ENDGAME PROBLEM IS NOT IN THESE RATINGS. A screening test with excellent
+    specificity still produces mostly false positives when prevalence falls to a
+    handful per hundred thousand, which is the situation success creates. The
+    test did not get worse; the population did. Nothing in this block can say so
+    — see gaps.md #56, and note that schistosomiasis hit the same wall from the
+    other direction.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    Now: fexinidazole, ten days of oral tablets, with nausea, vomiting and
+    headache that resolve. Nothing permanent. NECT, still used for severe stage
+    2 gambiense disease, is a fortnight of infusions plus oral nifurtimox —
+    heavier, and survivable.
+    READ THE `moved` BLOCK, BECAUSE THIS RATING IS FIVE YEARS OLD. For sixty
+    years the treatment for stage 2 disease was melarsoprol, an organoarsenical
+    from 1949 administered in propylene glycol and described by patients as fire
+    in the veins. It caused a reactive encephalopathy in five to ten percent of
+    recipients, of whom roughly half died — so the treatment killed something
+    like three to five percent of the people it was given to, and was used
+    anyway for six decades, because the alternative was a disease that killed
+    all of them.
+    That is the largest toll reduction recorded anywhere in this register:
+    `catastrophic` to `minor`, without any change in capability. It was curable
+    before and it is curable now.
+  incidence:
+    value: 0.0
+    units: >
+      fraction-of-treated (permanent harm from current first-line therapy) —
+      historically this figure was of the order of 0.03 to 0.05 MORTALITY under
+      melarsoprol, which is what the `moved` entry records
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    Stage 2 disease is an encephalitis. The parasite crosses the blood-brain
+    barrier and produces the sleep-cycle inversion that names the disease, along
+    with movement disorder, and neuropsychiatric and cognitive change. Cure
+    stops the infection; it does not reliably undo what the inflammation did.
+    Persistent neurological and psychiatric deficits after successful treatment
+    of late-stage disease are reported — cognitive impairment, sleep
+    disturbance, personality change — and are the reason staging mattered for
+    more than drug choice.
+    RATED WITH LOW CONFIDENCE AND STATED AS SUCH. The literature here is small
+    case series rather than cohorts, and a disease with eight hundred cases a
+    year does not generate the follow-up studies that would settle it. `major`
+    describes the harm when it happens, per the schema's own rule, and the low
+    incidence carries how often. Treated in stage 1, before the parasite reaches
+    the brain, there is no residue at all — which is the whole content of the
+    `window` below.
+  incidence:
+    value: 0.10
+    units: >
+      fraction-of-cured (persistent neurological or neuropsychiatric deficit,
+      essentially all of it following late-stage disease) — a reasoned estimate
+      from thin evidence; see holes
+    src: reasoning
+
+window:
+  what: >
+    The cleanest two-stage window in the register, because the boundary is
+    anatomical rather than gradual: the parasite is in the blood and lymph, and
+    then it is across the blood-brain barrier, and those are different diseases
+    to treat and to survive.
+    Caught in stage 1, treatment is simple and leaves nothing. Caught in stage
+    2, it is an encephalitis — historically requiring the arsenical, and still
+    the stage that leaves neurological sequelae. Active screening exists
+    precisely to move people across that line before the parasite does, in a
+    disease whose early phase is a non-specific fever that nobody would present
+    with.
+    Note that fexinidazole narrowed the window's consequences without closing
+    it: the drug now works at both stages, so missing stage 1 no longer means
+    arsenic, but it still means an inflamed brain.
+  closes_on: >
+    the parasite crossing the blood-brain barrier — the transition to stage 2
+    meningoencephalitic disease
+  caught_in_time:
+    value: 0.50
+    units: >
+      fraction-of-cases (found in stage 1) — active screening has raised this
+      substantially from the historical pattern, where most cases presented only
+      once neurological
+    src: reasoning
+
+witness:
+  mechanism: >
+    `established`, and one of the more complete accounts in the register: a
+    protozoan parasite transmitted by the tsetse fly, multiplying
+    extracellularly in blood and lymph, then crossing into the central nervous
+    system to produce the meningoencephalitis that kills. Two subspecies with
+    genuinely different natural histories — chronic gambiense disease over
+    months to years in West and Central Africa, acute rhodesiense disease over
+    weeks in the east and south.
+    Two holes, and both bear directly on whether the elimination target is
+    reachable. The first is ANTIGENIC VARIATION: the trypanosome continuously
+    switches its variant surface glycoprotein coat, which is why the immune
+    system cannot clear it and why a vaccine is not merely absent but close to
+    precluded by the biology. The second is the RESERVOIR question — recent work
+    on asymptomatic human carriers and on trypanosomes residing in skin rather
+    than blood raises the possibility that a pool of infection exists which
+    blood-based screening does not see. For an elimination programme that is the
+    question, because the whole strategy assumes humans who carry the parasite
+    can be found by testing their blood.
+  intervention: >
+    `curative`, and the sixty-year path to it is the most vivid drug story in
+    this register.
+    Melarsoprol, 1949, an arsenic derivative, killed three to five percent of
+    the patients who received it and remained the only stage 2 option for six
+    decades. Eflornithine worked and required fifty-six intravenous infusions
+    over fourteen days — a regimen impossible in the villages where the disease
+    is — and was nearly discontinued for commercial reasons before being
+    sustained partly because the same molecule had a cosmetic application in the
+    wealthy world. Nifurtimox-eflornithine combination therapy in 2009 made it
+    tractable. FEXINIDAZOLE IN 2018 MADE IT ORAL: ten days of tablets, both
+    stages, no infusion and no arsenic. A single-dose oral candidate is in
+    development, which would turn screen-and-treat into one village visit.
+    Capability did not change across any of that. The disease was curable in
+    1949 and it is curable now. What collapsed was the price the patient paid,
+    and `moved` is where the register records it.
+  prevention: >
+    `risk-reduction`, and the rating hides the most consequential split in this
+    record.
+    GAMBIENSE DISEASE IS ANTHROPONOTIC — humans are the reservoir that matters.
+    So finding and treating people IS transmission control, and elimination of
+    transmission is genuinely achievable, which is why the 2030 target exists
+    and why several countries have already been validated.
+    RHODESIENSE DISEASE IS ZOONOTIC. Cattle and wildlife carry it, and no amount
+    of treating humans will remove it. It can be controlled and it cannot be
+    eliminated by the strategy that is eliminating the other form.
+    So one name covers a disease that is on course for `prevention: eradicated`
+    and a disease that structurally cannot get there — and the record has one
+    field. That is gap #52 again, arriving by subspecies rather than by
+    geography, and it is the harder version: Bangladesh and South Sudan differ
+    in circumstance, gambiense and rhodesiense differ in what is possible.
+    Vector control — tsetse traps, targets, insecticide, sterile insect
+    technique — works on both and is the durable component.
+  ongoing: >
+    `low`. Ten days of tablets and it is finished. Among curable records only
+    visceral leishmaniasis's single infusion is lighter, and the contrast with
+    what the same patient would have received in 2010 is the whole story.
+
+moved:
+  - date: 2019
+    axis: toll
+    from: catastrophic
+    to: minor
+    why: >
+      Fexinidazole — all-oral, both stages, from 2018 — displaced melarsoprol,
+      an arsenical that caused fatal reactive encephalopathy in roughly three to
+      five percent of the patients it was given to and had been first-line for
+      stage 2 disease since 1949. The largest toll reduction in the register,
+      with no change in capability: curable before, curable after, and the
+      difference is that the treatment stopped killing people. Recorded because
+      the register had previously concluded that toll reduction was progress no
+      axis captures. It moves `toll`, and `moved` carries it.
+
+holes:
+  - Whether asymptomatic human carriers and skin-dwelling trypanosomes
+    constitute a reservoir that blood screening cannot find. The elimination
+    target rests on the answer.
+  - Whether transmission can actually be interrupted for gambiense disease, or
+    only driven very low and held there indefinitely. Those imply completely
+    different funding commitments.
+  - How much permanent neurological deficit follows cured stage 2 disease. The
+    evidence is small case series, and a disease with eight hundred cases a year
+    will not generate better. The `residue` figure here is the least supported
+    number in this record.
+  - Who manufactures drugs for eight hundred patients a year once the disease is
+    no longer newsworthy, and who pays for surveillance in countries that have
+    been validated as free of it.
+  - `deaths` is marked `src: unknown` because mortality now tracks undetected
+    infection, and undetected infection is by definition uncounted.
+  - Written from model recall. The melarsoprol mortality figure, the fexinidazole
+    date and the gambiense/rhodesiense reservoir distinction are the parts most
+    likely right; every number is the part most likely wrong.
+
+blockers:
+  - kind: policy
+    blocks: sustaining surveillance after the disease stops being visible
+    what: >
+      THE ENDGAME BLOCKER, AND IT IS THE ONE THIS RECORD EXISTS TO SHOW. HAT was
+      down to a few thousand cases around 1960. Colonial-era screening
+      programmes were wound down through independence, war and structural
+      adjustment, and the disease returned to hundreds of thousands of cases by
+      the 1990s. The current achievement is a repeat of a position that was
+      previously held and then lost.
+      What is required now is money and institutional attention for a disease
+      that produces eight hundred cases a year, in countries with a great many
+      more pressing problems, for at least a decade after it appears finished.
+      Every incentive — political, financial, and the register's own
+      burden-weighted arithmetic — argues for spending the money elsewhere.
+      This is not a knowledge problem or a delivery problem in the ordinary
+      sense. It is the problem of paying to keep a zero at zero, and it is
+      invisible to a schema that measures gaps. See gaps.md #57.
+    who_could: [government, health-system, philanthropy, nonprofit, payer]
+    scale: 5.0e7
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: finding the last cases, where the last cases are
+    what: >
+      The remaining burden sits in the Democratic Republic of the Congo and in
+      pockets of the Central African Republic, South Sudan, Angola and Guinea —
+      which is to say in the places least reachable by a mobile screening team.
+      This is the last-mile problem in its literal form: active case-finding
+      requires travelling to villages with no roads, in areas with active
+      conflict, to test people who feel well.
+      And the arithmetic worsens as the programme succeeds. Screening ten
+      thousand people to find one case costs the same as screening ten thousand
+      to find fifty, so cost per case found rises steeply exactly when the
+      political case for spending is weakest. A single-dose oral treatment would
+      change this more than any logistics investment, because it would collapse
+      screen-confirm-stage-treat into one visit.
+    who_could: [health-system, government, nonprofit, philanthropy]
+    scale: 1.0e8
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    obstacles: [burden-unknown]
+    blocks: knowing whether elimination of transmission is achievable at all
+    what: >
+      Two specific unknowns, both bearing on the 2030 target rather than on
+      treating any individual.
+      First, the reservoir. If asymptomatic carriers or skin-dwelling
+      trypanosomes sustain transmission invisibly, then a strategy built on
+      screening blood will drive incidence very low and never to zero — and the
+      programme will not be able to tell the difference between success and a
+      hidden pool until cases return.
+      Second, there is no vaccine and antigenic variation makes one close to
+      precluded: the parasite switches its surface coat continuously, which is
+      exactly the thing a vaccine cannot chase. This is one of the few records
+      where the absence of a vaccine is a statement about the biology rather
+      than about investment.
+      `scale: null` — no priced path.
+    who_could: [academic, sponsor, nonprofit]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: no-sponsor
+    obstacles: [donation-dependency]
+    blocks: a supply of drugs for a disease with eight hundred patients
+    what: >
+      Documented, historically vivid, and currently latent in a way worth
+      distinguishing.
+      The historical case is the sharpest market-failure story in this register.
+      Eflornithine, which worked against stage 2 gambiense disease, was
+      commercially unattractive and production was in doubt — and its
+      availability was sustained in part because the same molecule turned out to
+      have a cosmetic use in wealthy markets. A treatment for a fatal African
+      disease was kept alive by a facial hair cream. Nobody designed that, and
+      no register should let it pass without recording it.
+      The current case is prospective. Fexinidazole exists because a nonprofit
+      product development partnership built it with a manufacturer. Once
+      incidence approaches zero, the question is who continues to make and
+      stockpile drugs for a few hundred patients a year, indefinitely, in case
+      the disease returns — which is the same improvised-institution dependency
+      as Chagas, tuberculosis and visceral leishmaniasis, at an even smaller
+      scale.
+    who_could: [manufacturer, nonprofit, philanthropy, government, sponsor]
+    scale: 5.0e7
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0026
+  rated: 2026-08-21
+  by: [claude, jeremy]

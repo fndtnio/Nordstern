@@ -1,0 +1,554 @@
+slug: diarrhoeal-disease
+id: FND-D-0074
+name: diarrhoeal disease
+also: [diarrheal disease, acute gastroenteritis, infectious diarrhoea, dysentery, persistent diarrhoea]
+mondo: MONDO:0001673
+kind: syndrome
+residual: false
+contested: false
+
+# THE THIRD UMBRELLA RECORD, AND THE ONE THAT FORCES THE ISSUE.
+#
+#   amr-infection (FND-D-0014)  ⊃  mrsa (FND-D-0067), cre (FND-D-0068)
+#   diarrhoeal-disease (THIS)   ⊃  cholera (FND-D-00xx)
+#
+# `mrsa` and `cre` each recorded in their `holes` that they are instances of a
+# held umbrella "with no way to state the relation". This record contains cholera
+# outright — 95,000 of the deaths below are already counted in that file — and the
+# containment is a fact about the world, not a modelling choice.
+#
+# The register is a FLAT LIST of entities and medicine is a GRAPH. See gaps.md
+# #160, which this record finally forced after two records flagged it in prose.
+
+burden:
+  cases:
+    value: 1.7e9
+    units: >
+      episodes/year in children under five — roughly three episodes per child per
+      year in the highest-burden settings, which is the number that matters for
+      the `residue` below rather than for the deaths
+    src: recall
+  deaths:
+    value: 1.5e6
+    units: >
+      deaths/year, all ages — of which roughly 440,000-500,000 are children under
+      five, making it among the leading infectious killers of children
+    src: recall
+  note: >
+    **95,000 OF THESE DEATHS ARE ALREADY IN THE `cholera` RECORD**, which is a
+    specific instance of this one. The register cannot express containment, so
+    the two files each report a true number and the totals cannot be added
+    (gaps.md #160, #147).
+    **THE DECLINE IS ONE OF THE LARGEST IN THE HISTORY OF MEDICINE AND ALMOST
+    NOBODY CAN NAME THE INTERVENTION.** Diarrhoeal deaths ran at something like
+    4.6 million a year around 1980 and are around 1.5 million now, against a
+    substantially larger world population. The dominant cause of that fall is a
+    sachet of salt and sugar.
+    Composition has moved with it. Rotavirus was the leading cause of severe
+    childhood diarrhoea and is now much reduced wherever its vaccine is used.
+    **Shigella** is now among the leading bacterial causes of moderate-to-severe
+    diarrhoea and of diarrhoeal death in children past infancy, and
+    **Cryptosporidium** — which surprised the field when the GEMS study reported —
+    has no useful drug in the malnourished children it kills.
+
+survival:
+  horizon: 30 days from onset of severe dehydrating diarrhoea
+  untreated:
+    value: 0.50
+    units: >
+      fraction alive — untreated cholera kills up to half of those with severe
+      dehydration, and severe rotavirus diarrhoea in a small child kills by the
+      same mechanism
+    src: recall
+  treated:
+    value: 0.99
+    units: >
+      fraction alive with oral rehydration solution and zinc. **Case fatality
+      falls below one percent with a sachet of salt and sugar in clean water** —
+      the intervention costs cents, requires no clinician, and was described in
+      *The Lancet* as potentially the most important medical advance of the
+      twentieth century
+    src: recall
+  witness: >
+    **THE CHEAPEST LARGE SURVIVAL GAIN IN THE REGISTER, AND IT STILL KILLS ONE
+    AND A HALF MILLION PEOPLE A YEAR.** Nothing about this record is a knowledge
+    problem: the mechanism is understood, the treatment is trivial and
+    unpatented, and the shortfall is entirely water, sanitation and reach. It is
+    the strongest single argument for the register's finding that most of what
+    blocks medicine is delivery rather than discovery.
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: prophylaxis
+  ongoing: low
+  efficacy:
+    value: 0.92
+    units: >
+      fraction-of-patients (survival, with oral rehydration and zinc) — **oral
+      rehydration prevents essentially all deaths from dehydration**, and the
+      shortfall is dysentery, persistent diarrhoea and cryptosporidiosis, which it
+      does not address
+    src: reasoning
+  access:
+    value: 0.45
+    units: >
+      fraction-of-patients (receiving oral rehydration solution) — **and this
+      number has been roughly flat for two decades**; zinc coverage is around half
+      of it again
+    src: recall
+
+measurement:
+  diagnostic: clinical
+  prognostic: partial
+  predictive: partial
+  witness: >
+    DIAGNOSTIC is `clinical`, and unusually this is close to sufficient. **What
+    needs to be assessed is not the pathogen but the dehydration** — sunken eyes,
+    skin turgor, capillary refill, lethargy, thirst, urine output — and the WHO
+    classification into no/some/severe dehydration is a genuinely good clinical
+    instrument that drives the entire treatment decision. Identifying the organism
+    would change management in a minority of cases and is almost never done.
+    PROGNOSTIC is `partial`, and the useful half is the same assessment: degree of
+    dehydration predicts death well. What it does not predict is which child will
+    progress to **persistent diarrhoea**, which is where the mortality
+    concentrates disproportionately, or which will be stunted by the cumulative
+    burden of episodes.
+    **PREDICTIVE IS `partial`, AND THE RULE IS A LOOK RATHER THAN A TEST.** Visible
+    blood in the stool means dysentery, means probable *Shigella*, means an
+    antibiotic will help — and its absence means an antibiotic will not. That rule
+    works at population level, is free, and is wrong often enough at the individual
+    level to matter. What does not exist is a point-of-care test to separate
+    *Shigella* from viral diarrhoea, or to identify *Cryptosporidium*, in the
+    settings where those distinctions decide outcomes.
+    Three records in five have rated `clin·part·none`; this one earns `partial` on
+    the strength of a rule that requires no instrument at all, which is worth
+    noticing in a register that mostly equates measurement with technology.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    **THE TREATMENT IS SALT, SUGAR, CLEAN WATER AND A ZINC TABLET, AND IT IS AS
+    CLOSE TO HARMLESS AS ANYTHING IN THIS REGISTER.** Oral rehydration solution
+    costs a few cents, needs no cold chain, no prescriber and no sterile
+    equipment, and its main risk is being made up wrongly — too much salt is
+    dangerous in a small child, which is why pre-measured sachets matter.
+    Intravenous rehydration, for severe dehydration, carries the usual small risks
+    of a cannula and of over-rapid correction.
+    **The toll that is real lands in other records.** Antibiotics given for
+    non-dysenteric diarrhoea — extremely common, and wrong — are a substantial
+    contributor to the resistance in `cre`, `mrsa` and `typhoid`. Antimotility
+    agents given to children with dysentery are actively harmful and still sold.
+    Neither is a cost to the patient in this file, which is what `toll` measures
+    (gaps.md #130).
+  incidence:
+    value: 0.002
+    units: >
+      fraction-of-treated (significant adverse effect) — a reasoned estimate;
+      the intervention is close to inherently safe
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    **THE DEATHS ARE NOT THE LARGEST THING THIS DISEASE DOES.**
+    A child in a high-burden setting has several episodes of diarrhoea a year
+    through the first two years of life. Each one costs nutrients, appetite and
+    growth, and the cumulative effect is **stunting** — a permanent deficit in
+    linear growth that is established by about two years of age and is not made up
+    afterwards. Stunting is associated with reduced cognitive development, lower
+    school attainment and lower adult earnings. **Roughly one child in five under
+    five is stunted worldwide**, and repeated enteric infection is one of the
+    principal drivers.
+    The mechanism has a name — **environmental enteric dysfunction** — a chronic
+    subclinical inflammation and blunting of the small intestine caused by
+    continuous faecal-oral exposure. It impairs nutrient absorption, and it is
+    the leading explanation for the fact in `prevention` below: **oral vaccines
+    work worst in exactly the children who need them most.**
+    So the disease damages growth, damages cognition, and **damages the response
+    to the vaccine meant to prevent it**, in a loop that no single intervention
+    breaks.
+    Also here: haemolytic uraemic syndrome from Shiga toxin-producing *E. coli*,
+    which leaves chronic kidney disease in a minority, and post-infectious
+    irritable bowel syndrome in adults.
+  incidence:
+    value: 0.05
+    units: >
+      fraction-of-affected-children (permanent growth and developmental deficit
+      attributable to enteric infection) — a reasoned estimate over a causal share
+      that is real, large and genuinely hard to apportion between diarrhoea,
+      diet and everything else that travels with poverty
+    src: reasoning
+
+window:
+  what: >
+    **A SMALL CHILD CAN DIE OF DEHYDRATION IN UNDER A DAY, AND THE INTERVENTION
+    THAT PREVENTS IT IS AVAILABLE IN THE HOUSE.**
+    Fluid loss in severe secretory diarrhoea can exceed a litre an hour in an
+    adult with cholera and, scaled to body mass, is faster in an infant. Death is
+    from hypovolaemic shock and electrolyte derangement, and it arrives in hours.
+    What makes this window unlike every other in the register is that **closing it
+    requires no journey and no professional.** Oral rehydration works at home,
+    administered by a caregiver, starting at the first loose stool. The window is
+    short and the response is in the room.
+    **Which is why the coverage figure is the scandal of this record.** For
+    `maternal-haemorrhage` the window closes because blood is two hours away. Here
+    it closes because a sachet costing a few cents was not given, by somebody who
+    was present, for reasons that are about belief and incentive rather than
+    supply (gaps.md #161).
+  closes_on: >
+    hypovolaemic shock from fluid loss — hours in an infant
+  caught_in_time:
+    value: 0.50
+    units: >
+      fraction-of-cases (receiving adequate rehydration before severe
+      dehydration) — a reasoned estimate anchored on the roughly 45% who receive
+      oral rehydration solution at all
+    src: reasoning
+
+strata:
+  - name: acute watery diarrhoea
+    fraction:
+      value: 0.75
+      units: fraction-of-episodes
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.97
+      units: fraction-of-stratum (survival)
+      src: reasoning
+    toll: minor
+    what: >
+      Rotavirus, norovirus, enterotoxigenic *E. coli*, *Vibrio cholerae*. The
+      classic secretory picture, and **the stratum oral rehydration was invented
+      for** — the loss is water and electrolytes, the gut's glucose-coupled sodium
+      transport is intact, and replacing what is lost is the whole treatment.
+      Antibiotics are unnecessary here and are given constantly.
+
+  - name: dysentery
+    fraction:
+      value: 0.15
+      units: fraction-of-episodes
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.92
+      units: fraction-of-stratum (survival)
+      src: reasoning
+    toll: minor
+    what: >
+      Bloody diarrhoea, mostly *Shigella*, invasive rather than secretory. **This
+      is the stratum where antibiotics are genuinely indicated and increasingly do
+      not work** — *Shigella* has acquired fluoroquinolone and third-generation
+      cephalosporin resistance widely, and extensively drug-resistant strains are
+      spreading. There is no licensed *Shigella* vaccine. Rehydration alone is not
+      sufficient treatment here, which is the main limit on this record's
+      `efficacy`.
+
+  - name: persistent diarrhoea (14 days or more)
+    fraction:
+      value: 0.10
+      units: fraction-of-episodes
+      src: reasoning
+    intervention: disease-modifying
+    efficacy:
+      value: 0.75
+      units: fraction-of-stratum (survival)
+      src: reasoning
+    toll: minor
+    what: >
+      **A tenth of the episodes and a wildly disproportionate share of the deaths,
+      and the only stratum where the register cannot claim a cure.** It occurs in
+      malnourished children, it makes them more malnourished, and
+      **Cryptosporidium** is a leading cause with **no useful drug** —
+      nitazoxanide, the only licensed agent, performs poorly in exactly the
+      malnourished and immunocompromised children who get it.
+      Rehydration keeps the child alive through an episode and does not end it.
+      This stratum is the diarrhoea-malnutrition cycle made visible, and it is why
+      the record flags ⧉.
+
+moved:
+  - date: 1980
+    axis: access
+    from: 0.10
+    to: 0.45
+    why: >
+      **ORAL REHYDRATION IS ARGUABLY THE LARGEST LIFE-SAVING INTERVENTION OF THE
+      TWENTIETH CENTURY AND IT IS SALT AND SUGAR IN WATER.**
+      The insight is physiological and specific: in secretory diarrhoea the gut's
+      **glucose-coupled sodium cotransport remains intact** even while chloride
+      secretion is pouring fluid out. So adding glucose to a salt solution drags
+      sodium — and water with it — across an intestine that is otherwise leaking,
+      and a patient who would need a drip can drink instead.
+      It was proven in the field during the **1971 Bangladesh war, in refugee
+      camps where intravenous fluid had run out**, and cholera case fatality fell
+      from roughly thirty percent to around three. *The Lancet* later called it
+      potentially the most important medical advance of the century.
+      Global diarrhoeal deaths fell from something like 4.6 million a year to
+      around 1.5 million. **No patent, no cold chain, no prescriber, no company.**
+      **The entry is dated 1980 and the number stops at 0.45, which is the point
+      of it.** Coverage rose fast for a decade and then stopped, and it has sat
+      near this level for twenty years (see the `adherence` blocker). The largest
+      unclaimed win in this register is the second half of a job finished in 1990.
+    src: recall
+
+  - date: 2004
+    axis: efficacy
+    from: 0.88
+    to: 0.92
+    why: >
+      **TWO REFINEMENTS THAT COST NOTHING AND WERE BOTH SLOW TO ARRIVE.**
+      **Reduced-osmolarity ORS**, adopted by WHO in 2002-2004, lowered the sodium
+      and glucose concentrations of the original formula. It reduces stool output,
+      vomiting and the need for unscheduled intravenous fluid, and it is strictly
+      better than what it replaced — a reformulation of a fifty-cent sachet, thirty
+      years after the original.
+      **Zinc**, recommended from 2004: ten to fourteen days of supplementation
+      shortens the episode, reduces its severity, and reduces diarrhoea in the
+      following two to three months. It costs pennies.
+      **Zinc coverage is around half of the already-poor ORS coverage**, and the
+      reason is in the dosing: a fortnight of tablets for an illness that lasts
+      three days. The child is better long before the course is finished, and
+      nothing about being better signals that the remaining tablets matter.
+    src: recall
+
+witness:
+  mechanism: >
+    `established`, and the mechanism is the reason the treatment exists.
+    Three physiologies. **Secretory** — cholera toxin and heat-labile *E. coli*
+    toxin raise intracellular cAMP, opening the CFTR chloride channel; chloride
+    and sodium pour into the lumen and water follows osmotically. Rotavirus adds
+    its own enterotoxin, NSP4, and damages absorptive enterocytes. **Osmotic** —
+    unabsorbed solute, as in lactase deficiency after mucosal injury, holds water
+    in the lumen. **Inflammatory** — *Shigella* and other invasive organisms
+    destroy the mucosa, producing blood and pus, and rehydration alone does not
+    address it.
+    **THE LOAD-BEARING FACT IS WHICH TRANSPORTER SURVIVES.** Secretory diarrhoea
+    disables absorption at the crypt and leaves the villous **SGLT1
+    sodium-glucose cotransporter working.** Present glucose and sodium together in
+    the right ratio and the gut absorbs both, and water follows. That single
+    piece of physiology is the entire basis of oral rehydration, and it is why the
+    solution must contain sugar — not for calories, but as a vehicle for sodium.
+    **THE NAMED HOLES ARE THE CHRONIC ONES.** **Environmental enteric
+    dysfunction** — the blunted, inflamed small intestine of a child under
+    continuous faecal-oral exposure — is described histologically and is not
+    understood well enough to treat, and it plausibly explains both the stunting
+    and the oral-vaccine failure below. **Cryptosporidium**'s biology has resisted
+    drug development for decades. And the diarrhoea-malnutrition cycle is
+    bidirectional in a way that makes the causal arrows genuinely hard to
+    disentangle.
+  intervention: >
+    `curative` for most of it, at a cost that is difficult to believe.
+    **Oral rehydration solution**: a pre-measured sachet of sodium chloride,
+    potassium chloride, trisodium citrate and glucose, dissolved in a litre of
+    clean water, costing a few cents. It does not shorten the diarrhoea. **It
+    makes the diarrhoea survivable**, which is not the same thing and is the whole
+    of gaps.md #161.
+    **Zinc** for ten to fourteen days, which does shorten it. **Continued
+    feeding**, including breastfeeding, which was actively discouraged for decades
+    and is now known to be correct. **Intravenous fluid** for severe dehydration
+    or a child who cannot drink. **Antibiotics only for dysentery**, where they
+    work and are increasingly failing.
+    **What this ladder cannot do**: treat cryptosporidiosis, treat persistent
+    diarrhoea in a malnourished child, or reverse the growth already lost.
+  prevention: >
+    `prophylaxis`, and this record contains one of the sharpest facts in the
+    register about what that word conceals.
+    **Rotavirus vaccine**, licensed from 2006, has substantially reduced severe
+    childhood diarrhoea wherever it has been introduced. **And its efficacy is
+    roughly 85-98% in high-income countries and roughly 40-60% in low-income
+    ones.** The same is true of oral polio and oral cholera vaccine. The leading
+    explanation is environmental enteric dysfunction, interference from maternal
+    antibody and concurrent enteric infection — **the vaccine is degraded by the
+    conditions that make the disease lethal.**
+    That is not `access`, which the register would record as a smaller fraction
+    reached. It is not a sign flip (gaps.md #157), because the vaccine still
+    helps. **It is `efficacy` — "what medicine can do at its best" — being a
+    property of the setting rather than of the intervention**, through a
+    biological mechanism, and the register has one number for it.
+    The rest: **water, sanitation and hygiene**, which is the durable answer and
+    lives in a different ministry (gaps.md #53); handwashing with soap;
+    breastfeeding; measles vaccination, which prevents a large amount of
+    diarrhoeal death indirectly; and oral cholera and typhoid conjugate vaccines,
+    which belong to records this one contains or abuts. **There is no *Shigella*
+    vaccine**, which is the most consequential absence in this file.
+  ongoing: >
+    `low`. An episode lasts days.
+    **And `low` is wrong for the child**, who will have another one in a few
+    months and several a year for the first two years of life. The register rates
+    the episode because that is what the field measures, and the thing that
+    damages the child is the *sequence*, which has no field. `residue` catches the
+    outcome and not the mechanism that produced it.
+
+holes:
+  - >
+    **This record contains `cholera` and the register cannot say so.** 95,000
+    deaths are counted in both files, the blockers overlap, and nothing in the
+    schema marks the containment (gaps.md #160).
+  - >
+    **`access: 0.45` is the ORS coverage figure and it is doing duty as an access
+    number when it is largely an adherence and belief number.** Supply is
+    genuinely not the constraint in most of the shortfall, which makes this the
+    record where `access` most clearly conflates *could not get it* with *did not
+    use it*.
+  - >
+    The residue figure attributes a share of global stunting to enteric infection.
+    The association is strong and the causal fraction is genuinely contested
+    between diarrhoea, diet, EED and everything else correlated with poverty. It
+    is the largest and least defensible number in the file.
+  - >
+    Strata fractions are reasoned from the pathogen studies and shift by age,
+    season and setting; the persistent-diarrhoea share in particular is a small
+    fraction of episodes and a large fraction of deaths, and the record's
+    record-level scalars average that away (gaps.md #151).
+  - >
+    All-ages deaths and under-five deaths are both quoted and the file rates
+    against a mixture, with the strata and interventions written mostly for
+    children. Adult and elderly diarrhoeal death — a real and rising share in
+    ageing populations — is barely represented.
+  - >
+    Every scalar is `recall` or `reasoning` against a field with unusually good
+    coverage data. The ORS coverage figure in particular is published annually and
+    is not cited here.
+
+blockers:
+  - kind: adherence
+    blocks: the cheapest life-saving treatment in medicine being used
+    obstacles: []
+    what: >
+      **ORAL REHYDRATION SOLUTION REACHES UNDER HALF OF THE CHILDREN WHO NEED IT,
+      FIFTY YEARS AFTER IT WAS PROVEN, AND COVERAGE HAS BEEN FLAT FOR TWO
+      DECADES.** Zinc reaches around half again. Nothing about that is a supply
+      problem: the sachet costs a few cents, needs no cold chain and no
+      prescriber, and is on every essential medicines list.
+      **The reason is that the treatment does not do what the caregiver wants.**
+      A parent with a child who has diarrhoea wants the diarrhoea to stop. **Oral
+      rehydration does not stop diarrhoea. It replaces what the diarrhoea is
+      taking, so that the child survives it.** So the correct treatment appears to
+      fail — the stools keep coming — while an antibiotic or an antimotility agent
+      appears to work, because the episode ends when it was going to end anyway.
+      Provider behaviour compounds it. In much of the world the first contact is a
+      private drug seller whose margin is on the antibiotic and not on the sachet,
+      and prescribing something that visibly addresses the complaint is what a
+      satisfied customer looks like. Studies of provider practice find antibiotic
+      prescription for non-dysenteric childhood diarrhoea to be routine.
+      **This is the register's clearest case of a gap that no price reduction
+      closes**, and it is filed as `adherence` — a kind used by only a handful of
+      records — because the failure is in what people believe the treatment is for
+      (gaps.md #161).
+    who_could: [health-system, government, nonprofit, philanthropy, payer]
+    scale: 2.0e9
+    standing: documented
+    src: recall
+
+  - kind: no-sponsor
+    blocks: anybody having a reason to promote a sachet of salt and sugar
+    obstacles: []
+    what: >
+      **THERE IS NO COMMERCIAL INTEREST ANYWHERE IN THE WORLD ALIGNED WITH ORAL
+      REHYDRATION.**
+      It is unpatentable, costs a few cents, has no brand worth defending, and its
+      correct use displaces the antibiotics and antidiarrhoeals that carry the
+      margin in exactly the same retail encounter. No sales force promotes it, no
+      medical representative visits a clinic about it, and no company runs the
+      demand-generation campaigns that would move the coverage figure above.
+      Compare `mrsa`'s antibiotic-market blocker, which this register recorded as
+      the only case where the value of a medicine to society and to its maker point
+      in opposite directions (gaps.md #145). **This is a second and simpler shape:
+      not inverted, just absent.** A generic with no owner has no advocate, and the
+      register's `no-sponsor` kind was written for undeveloped drugs rather than
+      for undefended ones.
+      The counterfactual is instructive. Where ORS coverage has risen sharply it
+      has been through sustained public campaigns — mass media, community health
+      worker programmes, social marketing — funded by governments and
+      philanthropies doing the job a manufacturer would do for a profitable
+      product.
+    who_could: [government, nonprofit, philanthropy, manufacturer, payer]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+  - kind: policy
+    blocks: water and sanitation, which is the durable answer and is not health
+    obstacles: []
+    what: >
+      **THE DISEASE IS FAECES IN THE WATER AND THE FIX IS PLUMBING.**
+      Oral rehydration is the treatment; safe water, sanitation and hygiene are the
+      cure, and they are the reason this disease has essentially disappeared from
+      high-income countries without anyone there thinking about ORS. Roughly two
+      billion people lack safely managed drinking water and a comparable number
+      lack safely managed sanitation.
+      It sits in water, housing and municipal ministries rather than in health,
+      it is capital-intensive and slow, and its benefits are spread across this
+      record, `cholera`, `typhoid`, `soil-transmitted-helminths`,
+      `schistosomiasis`, `trachoma` and the stunting burden — **so no single
+      record can justify it and the register cannot sum it** (gaps.md #53, #87).
+      Worth stating plainly because the trial literature is discouraging in a
+      specific way: **household-level WASH interventions have repeatedly failed to
+      show the effects that the historical record of sewered cities would predict.**
+      The leading explanation is that partial coverage does not work — a clean
+      latrine in a contaminated environment does not break transmission — which is
+      a threshold effect the register has no way to express.
+    who_could: [government, legislator, payer, nonprofit, philanthropy]
+    scale: 1.5e11
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: three things at once, and they are the same thing
+    obstacles: [protective-immunity, no-model-system]
+    what: >
+      **A VACCINE FOR *SHIGELLA*, A DRUG FOR *CRYPTOSPORIDIUM*, AND WHY ORAL
+      VACCINES FAIL IN POOR CHILDREN.**
+      *Shigella* is among the leading causes of moderate-to-severe childhood
+      diarrhoea and of diarrhoeal death past infancy, it is acquiring
+      fluoroquinolone and cephalosporin resistance rapidly, and **there is no
+      licensed vaccine** after decades of candidates.
+      *Cryptosporidium* was a genuine surprise of the GEMS study and has **no
+      useful drug**. Nitazoxanide, the only licensed agent, works poorly in
+      malnourished and immunocompromised children, who are the ones who get it and
+      die of it. The parasite has been hard to culture and hard to screen against.
+      **And the third is the one that connects them.** Rotavirus, oral polio and
+      oral cholera vaccines all perform substantially worse in low-income settings
+      — rotavirus efficacy on the order of 85-98% in high-income countries against
+      40-60% in low-income ones. **Environmental enteric dysfunction is the leading
+      explanation, and it is a described histological state with no accepted
+      biomarker, no animal model that satisfies everyone, and no treatment.**
+      Solving it would raise the efficacy of every oral vaccine in the childhood
+      schedule at once, and would plausibly move the stunting burden as well. It
+      is one of the highest-leverage unsolved mechanisms in this register and has
+      no Engpass obstacle.
+      `scale: null`.
+    who_could: [academic, sponsor, philanthropy, manufacturer]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    blocks: telling the child who needs an antibiotic from the child who does not
+    obstacles: []
+    what: >
+      The rule in use is visible blood in the stool, and it is free, immediate and
+      approximately right. What it cannot do is identify the *Shigella* case
+      without frank dysentery, distinguish it from *Campylobacter* or invasive
+      *Salmonella*, or find *Cryptosporidium* at all.
+      **The cost is paid in both directions and the register holds both bills.**
+      Antibiotics given for watery diarrhoea — which is most of it, and where they
+      do nothing — are a substantial contributor to the resistance in `cre`,
+      `mrsa` and `typhoid`. Antibiotics *withheld* from dysentery, or given when
+      the organism is already resistant, kill children in the stratum with the
+      worst outcomes.
+      Multiplex molecular stool panels exist and cost far more than the entire
+      episode of care. Nothing between "look at the stool" and "run a PCR panel"
+      is deployed anywhere at the scale this disease occurs.
+    who_could: [manufacturer, academic, health-system, government, philanthropy]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0075
+  rated: 2026-08-24
+  by: [claude, jeremy]

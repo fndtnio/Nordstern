@@ -1,0 +1,543 @@
+slug: influenza
+id: FND-D-0077
+name: seasonal influenza
+also: [influenza, flu, seasonal flu, grippe]
+mondo: MONDO:0005812
+kind: disease
+residual: false
+contested: false
+
+# SCOPE: seasonal influenza. Pandemic influenza is a different object with a
+# different risk profile and is held by `h5n1` (FND-D-00xx), which rates the
+# threat rather than a burden. The two records share a virus family, a vaccine
+# platform, an antiviral class and a surveillance system, and the register cannot
+# say so (gaps.md #160).
+#
+# NOTE A DELIBERATE INCONSISTENCY WITH THAT RECORD, ARGUED IN `witness`:
+# `h5n1` rates `intervention: disease-modifying` on neuraminidase inhibitors and
+# this record rates `symptomatic` on the same drug class. That is not an
+# oversight. The evidence differs — observational survival data in a disease that
+# kills half its cases, versus randomised trial data in healthy adults where the
+# measured benefit is about seventeen hours of symptoms.
+
+burden:
+  cases:
+    value: 1.0e9
+    units: >
+      symptomatic cases/year worldwide, order of magnitude — of which three to
+      five million are severe
+    src: recall
+  deaths:
+    value: 4.0e5
+    units: >
+      respiratory deaths/year — the central estimate of a published range of
+      roughly 290,000 to 650,000, concentrated in adults over 65 and in
+      sub-Saharan Africa and Southeast Asia
+    src: recall
+  note: >
+    **THE DEATH COUNT IS A MODELLED EXCESS FIGURE, NOT A COUNT**, because
+    influenza mostly kills by making something else fatal — a decompensated heart,
+    a secondary bacterial pneumonia, a frail person who does not recover. Almost
+    none of these deaths has influenza on the certificate.
+    **AND ONE ROUTE IS SYSTEMATICALLY MISSED.** The risk of myocardial infarction
+    is elevated roughly sixfold in the week following laboratory-confirmed
+    influenza infection. Those deaths are counted in `ischaemic-heart-disease`,
+    which is held here, and the connection is invisible to both records (gaps.md
+    #160).
+    The respiratory figure above is the conservative one. Estimates including
+    cardiovascular and other non-respiratory deaths run substantially higher.
+
+survival:
+  course: acute
+  horizon: 30 days from onset, in an adult hospitalised with influenza
+  untreated:
+    value: 0.88
+    units: >
+      fraction alive — hospitalised influenza carries substantial mortality in the
+      elderly and the comorbid, which is where nearly all of it sits. **Across
+      all infections survival is above 0.999**, and the horizon names the
+      hospitalised population because that is the only one where treatment is
+      the question
+    src: reasoning
+  treated:
+    value: 0.9
+    units: >
+      fraction alive on antiviral treatment — **and the honest reading of the best
+      evidence is that the effect on mortality is unproven rather than
+      established.** Oseltamivir shortens symptoms by about seventeen hours in
+      outpatients; the hospitalised evidence is observational. See this record's
+      `evidence-incomplete` blocker
+    src: reasoning
+  witness: >
+    **One of the register's least certain rows, and it is marked as such.** The
+    gap of +0.02 is closer to a guess than any other figure in this column, and
+    it is recorded because leaving it blank would imply the question had not
+    been asked. **Vaccination, not treatment, is what moves influenza
+    mortality**, and this axis measures the wrong intervention for this disease.
+
+axes:
+  mechanism: established
+  intervention: symptomatic
+  prevention: prophylaxis
+  ongoing: low
+  efficacy:
+    value: 0.35
+    units: >
+      fraction-of-patients (meaningful benefit from antiviral treatment) —
+      **and the honest reading of the best evidence is about seventeen hours of
+      symptoms in adults**, with the effect on hospitalisation and complications
+      unproven rather than disproven (see the `evidence-incomplete` blocker)
+    src: reasoning
+  access:
+    value: 0.30
+    units: >
+      fraction-of-patients (receiving an antiviral inside the 48-hour window) —
+      low almost everywhere, because the diagnosis usually arrives after the
+      window has closed
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: partial
+  witness: >
+    DIAGNOSTIC is `objective` — PCR is definitive and rapid molecular and antigen
+    tests are widely available. **And it is nearly useless in practice for the
+    decision it should inform**, because by the time most people seek testing the
+    48-hour antiviral window has closed, and outside that window a positive result
+    changes almost nothing. This is the register's clearest case of an excellent
+    test whose value is destroyed by arriving on the wrong side of a deadline.
+    PROGNOSTIC is `partial`, and its useful half is crude: **age, pregnancy,
+    obesity and chronic cardiopulmonary disease.** What decides an individual's
+    outcome is largely unpredictable, and there is a genuinely strange variable in
+    it — see `witness.mechanism` on **imprinting**, where the strain that
+    circulated in somebody's early childhood shapes their lifelong response, and
+    birth year predicts susceptibility to particular subtypes better than most
+    clinical variables.
+    PREDICTIVE is `partial`. Susceptibility testing exists — oseltamivir
+    resistance markers, and baloxavir's I38T substitution — and it is a
+    surveillance tool rather than a bedside one, reported weeks later at
+    population level. Nobody chooses this patient's antiviral on the strength of a
+    test.
+    **AND THE MEASUREMENT THAT MATTERS MOST IN THIS RECORD IS NOT ABOUT A
+    PATIENT.** It is the global surveillance network that decides what goes in
+    next year's vaccine. That is `covid-19`'s #165 problem in a record that
+    depends on it continuously rather than episodically, and no field in this
+    schema describes measurement done to a virus population rather than to a
+    person.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    Oseltamivir causes nausea and vomiting in a meaningful minority — a real
+    number, established from the full trial reports, and larger than the marketing
+    had suggested. Neuropsychiatric events have been reported, chiefly in
+    adolescents in Japan, and remain unresolved as to causation. Baloxavir is a
+    single dose and well tolerated.
+    **THE VACCINE'S HISTORICAL COST IS WORTH RECORDING BECAUSE IT SHAPED FIFTY
+    YEARS OF POLICY.** The 1976 swine influenza immunisation programme in the
+    United States was associated with **Guillain-Barré syndrome at roughly one
+    excess case per hundred thousand doses**, the programme was halted, and the
+    pandemic it was meant to pre-empt never arrived. Subsequent seasonal vaccines
+    have shown at most a very small excess risk, and influenza infection itself
+    carries a higher one — but the episode is the reference point every
+    vaccination programme has been arguing with since.
+    That harm belongs to prevention and has no field (gaps.md #105).
+  incidence:
+    value: 0.02
+    units: >
+      fraction-of-treated (significant adverse effect of antiviral treatment,
+      chiefly gastrointestinal) — from the full clinical study reports
+    src: reasoning
+
+window:
+  what: >
+    **FORTY-EIGHT HOURS, AND ALMOST NOBODY MAKES IT.**
+    Neuraminidase inhibitors and baloxavir both act on viral replication, which is
+    largely finished within two or three days of symptom onset. Started later they
+    do essentially nothing. So the treatment requires a person with an ordinary
+    respiratory illness to decide it is worth seeing somebody, get seen, get
+    tested, and get a prescription, inside two days — for an illness that most
+    people correctly expect to recover from without doing any of that.
+    **The result is that the window is missed by design rather than by accident.**
+    The people who reliably make it are those already under surveillance for other
+    reasons: hospital inpatients, care home residents during an outbreak, and the
+    immunosuppressed.
+    **And late in severe influenza the correct action inverts, which is the third
+    variant of gaps.md #157 in this register.** Corticosteroids reduce mortality in
+    severe COVID-19 and are associated with **increased** mortality in severe
+    influenza. Same drug, same clinical picture — viral pneumonia progressing to
+    acute respiratory distress — opposite sign, and the variable is which virus.
+    #157's first cases flipped with the *setting*; `covid-19` added flipping with
+    the *stage*; this flips with the **pathogen**, in a patient whose chest
+    radiograph looks identical either way.
+  closes_on: >
+    completion of viral replication — about 48 hours from symptom onset, after
+    which antivirals have no useful effect
+  caught_in_time:
+    value: 0.25
+    units: >
+      fraction-of-cases (receiving an antiviral inside 48 hours) — a reasoned
+      estimate, and much higher among hospital inpatients and care-home residents
+      than in the community
+    src: reasoning
+
+strata:
+  - name: uncomplicated influenza
+    fraction:
+      value: 0.95
+      units: fraction-of-cases
+      src: reasoning
+    intervention: symptomatic
+    efficacy:
+      value: 0.99
+      units: fraction-of-stratum (recovery)
+      src: reasoning
+    toll: minor
+    what: >
+      A week of fever, myalgia and cough, and then it is over. Rest, fluids,
+      antipyretics — and antivirals shorten it by about a day if they are started
+      in time, which they usually are not. **Almost nobody in this stratum dies and
+      almost all of the world's antiviral prescriptions are written for it.**
+
+  - name: severe or complicated influenza
+    fraction:
+      value: 0.05
+      units: fraction-of-cases
+      src: reasoning
+    intervention: symptomatic
+    efficacy:
+      value: 0.92
+      units: fraction-of-stratum (survival)
+      src: reasoning
+    toll: minor
+    what: >
+      Primary viral pneumonia, **secondary bacterial pneumonia** — classically
+      *Staphylococcus aureus* or pneumococcus, and the mechanism by which the 1918
+      pandemic did most of its killing — decompensated heart failure,
+      exacerbated COPD, and myocardial infarction in the week after infection.
+      **Treatment here is oxygen, ventilation and antibiotics for the bacterial
+      superinfection**, which is to say it is treatment of the consequences.
+      Corticosteroids, which help in this exact clinical picture when the virus is
+      SARS-CoV-2, are associated with worse outcomes here.
+
+moved:
+  - date: 1945
+    axis: prevention
+    from: none
+    to: prophylaxis
+    why: >
+      **THE FIRST INFLUENZA VACCINE, AND EIGHTY YEARS LATER IT IS STILL THE ANSWER
+      TO THIS RECORD.**
+      Licensed for military use in the United States in 1945, after the 1918
+      pandemic had made the case and virus isolation in the 1930s made it
+      possible. The platform has improved — trivalent to quadrivalent and back to
+      trivalent, high-dose and adjuvanted formulations that measurably outperform
+      standard dose in the over-65s, and cell-based and recombinant manufacturing
+      that avoid the egg problem below.
+      **What has not changed is the shape of the thing: a vaccine that must be
+      remade every year against a guess about the future.** Roughly half a billion
+      doses are produced annually and the great majority go to high-income
+      countries; many low- and middle-income countries have no seasonal programme
+      at all, which is why a disease killing several hundred thousand people a year
+      has an access figure most of the register's neglected diseases would
+      recognise.
+    src: recall
+
+  - date: 1999
+    axis: intervention
+    from: none
+    to: symptomatic
+    why: >
+      **THE NEURAMINIDASE INHIBITORS ARRIVED, GOVERNMENTS STOCKPILED THEM BY THE
+      BILLION-DOLLAR, AND THEN THE FULL TRIAL DATA WERE PUBLISHED.**
+      Oseltamivir and zanamivir were licensed from 1999 on trials whose complete
+      clinical study reports were not available to anybody outside the sponsor. On
+      the strength of the published summaries, and of the 2009 pandemic,
+      governments bought enormous national stockpiles — the United Kingdom alone
+      spent several hundred million pounds.
+      **A campaign by the BMJ and Cochrane reviewers ran from 2009 to 2013 to
+      obtain the withheld reports.** When the full data were finally analysed in
+      2014, the effect in adults was about **seventeen hours** of reduced symptom
+      duration, the claimed reduction in hospitalisation was not supported, and
+      the evidence on complications was insufficient rather than positive. Nausea
+      and vomiting were commoner than the summaries had shown.
+      **The rating on this record is `symptomatic` because of that analysis**, and
+      it would have been `disease-modifying` on the evidence available in 2009.
+      This is the register's clearest instance of a rating that was wrong for
+      fifteen years because the data existed and were not released (gaps.md #167).
+      **Baloxavir** (2018) is genuinely novel — a cap-dependent endonuclease
+      inhibitor, single dose — and **selects resistance rapidly**, in roughly a
+      tenth of treated adults and more in children, which is #146's degradation
+      arriving within a single season of use.
+    src:
+      id: PMID:10697061 doi:10.1001/jama.283.8.1016
+      retrieved: 2026-08-26
+      quote: >
+        Our data suggest that oral oseltamivir treatment reduces the duration and
+        severity of acute influenza in healthy adults and may decrease the
+        incidence of secondary complications.
+
+witness:
+  mechanism: >
+    `established`, and the mechanism is the reason this record cannot be solved
+    the way the rest of the vaccine-preventable block was.
+    Influenza A has a **segmented genome** — eight pieces — and two surface
+    proteins that antibodies see: haemagglutinin, which binds sialic acid
+    receptors on respiratory epithelium, and neuraminidase, which releases
+    progeny. That architecture produces two distinct kinds of change.
+    **Antigenic drift**: point mutations accumulating in the antibody-binding sites
+    of HA and NA under immune selection, continuously, so that a population's
+    accumulated immunity is always slightly out of date. **Antigenic shift**:
+    whole segments reassorting between human, avian and swine viruses co-infecting
+    one host, producing a surface the human population has never seen — which is
+    how pandemics start and is `h5n1`'s subject.
+    **A CORRECTION TO THIS REGISTER'S OWN EXPECTATION IS WORTH RECORDING.** The
+    working queue anticipated influenza as a sibling of gaps.md #149 — the
+    pathogen evolving against the intervention, as malaria's parasite is evolving
+    against its diagnostic test. **The biology does not support that reading.**
+    Antigenic drift is driven by immune selection in the human population as a
+    whole, and that immunity is overwhelmingly from natural infection: global
+    seasonal vaccine coverage is low, and even in the best-covered countries it
+    reaches a minority. Vaccine-driven escape is theoretically real and is not the
+    dominant force. **Influenza drifts because people have had influenza**, and it
+    would drift almost as fast if no vaccine existed. The prediction was reasonable
+    and it is wrong.
+    **THE STRANGE VARIABLE IS IMPRINTING.** The first influenza subtype a person
+    meets in early childhood shapes their antibody repertoire for life — "original
+    antigenic sin" — and the effect is strong enough that **birth-year cohorts
+    show different susceptibility to different subtypes.** It is the leading
+    explanation for the W-shaped mortality curve of 1918, in which healthy young
+    adults died at rates the old did not, and for the age patterns of H5N1 and
+    H7N9. So a person's risk depends on an exposure decades earlier that nobody
+    recorded and nobody can recover.
+    **THE NAMED HOLE IS THE UNIVERSAL VACCINE** — what protective immunity to the
+    conserved parts of this virus would look like, and how to elicit it.
+  intervention: >
+    `symptomatic`, and this is the record's most consequential and most arguable
+    rating.
+    Antivirals shorten uncomplicated influenza by about a day when started within
+    48 hours. **On the full clinical study reports, that is close to all they are
+    established to do** — the reduction in hospitalisation claimed for a decade was
+    not supported when the complete data were analysed, and the effect on
+    complications was found to be unproven rather than disproven. Baloxavir clears
+    virus faster and breeds resistance within the season.
+    Severe influenza is treated with oxygen, ventilation, and antibiotics for the
+    bacterial superinfection that is doing much of the damage. **That is treatment
+    of consequences, and corticosteroids — which help in the same clinical picture
+    caused by SARS-CoV-2 — are associated with worse outcomes here.**
+    **WHY THIS DISAGREES WITH `h5n1`, WHICH RATES THE SAME DRUG CLASS
+    `disease-modifying`.** In H5N1, with a case fatality around half, observational
+    data associate early oseltamivir with survival. In seasonal influenza in
+    otherwise healthy adults, the randomised evidence measures seventeen hours.
+    The two ratings reflect two evidence bases about two diseases, and stating that
+    plainly is better than making them agree.
+    **The consequence of `symptomatic` is that this record derives `capability:
+    preventable`**, alongside measles, rabies and dengue — *do not get it, because
+    if you do there is not much we can do.* For a disease killing several hundred
+    thousand people a year that reads as harsh and is accurate.
+  prevention: >
+    `prophylaxis`, and **it is the only real answer to this record** — which is
+    what `capability: preventable` is saying.
+    **And it is unlike every other vaccine in this register, because it expires.**
+    WHO convenes twice a year — February for the northern hemisphere, September for
+    the southern — and selects the strains for a vaccine that will be used six
+    months later. Manufacturing takes that long. **So the composition is a
+    prediction about which variants will be circulating half a year hence**, made
+    from surveillance data about what is circulating now.
+    Effectiveness follows accordingly: roughly 40-60% in a well-matched season, and
+    as low as about 20% in a badly-mismatched one, with the worst years driven by
+    H3N2 drifting after the strains were locked. **A single `efficacy` number is a
+    mean over a distribution that is redrawn annually** (gaps.md #166).
+    **There is a second, less-known way for it to fail.** Most vaccine is still
+    grown in embryonated chicken eggs, and **the virus adapts to the egg while
+    being manufactured** — acquiring HA changes that improve growth and worsen the
+    match to the circulating strain. So the vaccine can miss for two independent
+    reasons: the virus moved after selection, or the virus changed during
+    production. Cell-based and recombinant platforms avoid the second and are a
+    minority of supply.
+    High-dose and adjuvanted formulations measurably outperform standard dose in
+    the over-65s, who are where the deaths are, and are not universal.
+  ongoing: >
+    `low`. A week, and then it is over for almost everybody.
+    **The `ongoing` burden that exists is not the patient's — it is the system's.**
+    A global surveillance network, two strain-selection meetings, half a billion
+    doses manufactured, and an entire vaccination campaign, every year, forever,
+    to hold a position that cannot be consolidated. That is gaps.md #57's
+    maintenance problem as a permanent operating condition rather than as a risk.
+
+holes:
+  - >
+    **`intervention: symptomatic` is a judgement call and the record says so.** It
+    follows the 2014 analysis of the full clinical study reports. A reading that
+    weighted observational data in hospitalised patients more heavily would rate
+    `disease-modifying`, and would then disagree with the evidence hierarchy this
+    register otherwise applies.
+  - >
+    **It also disagrees with `h5n1`, deliberately**, and the register has no way to
+    flag that two records rate the same intervention differently on purpose.
+  - >
+    **`efficacy: 0.35` is a mean over an annually redrawn distribution** and is the
+    wrong shape of number for this record. The vaccine effectiveness figure, which
+    is the one that matters, is not on any axis at all because `efficacy` describes
+    treatment (gaps.md #166, #109).
+  - >
+    The deaths figure is respiratory-only and modelled. Including cardiovascular
+    and other non-respiratory deaths raises it substantially, and those deaths are
+    counted in other records here.
+  - >
+    Seasonal and pandemic influenza are split between this record and `h5n1`, which
+    is defensible and means neither holds the thing that actually matters most —
+    that the same surveillance, manufacturing base and antiviral class serve both,
+    so the seasonal programme is the pandemic programme's standing capability.
+  - >
+    Every scalar is `recall` or `reasoning`. Influenza has better public
+    surveillance data than almost anything else in this register and none of it is
+    cited here.
+
+blockers:
+  - kind: knowledge
+    blocks: a vaccine that does not have to be guessed at every year
+    obstacles: [protective-immunity]
+    what: >
+      **A UNIVERSAL INFLUENZA VACCINE WOULD END THIS RECORD AND THIRTY YEARS OF
+      WORK HAVE NOT PRODUCED ONE.**
+      The idea is to target what does not drift: the **haemagglutinin stem** rather
+      than its variable head, the **M2 ectodomain**, or **neuraminidase**, which is
+      immunogenic and has been persistently under-exploited. Candidates have
+      reached mid-stage trials, chimeric-HA and stem-nanoparticle approaches have
+      shown the immune response can be steered toward conserved epitopes, and
+      nothing is licensed.
+      Two things make it hard, and one of them is this record's own strangeness.
+      The immune system's default is to focus on the immunodominant variable head,
+      which is exactly the wrong target. And **imprinting** means every person's
+      response is conditioned by an exposure in early childhood, so the same
+      vaccine does different things in different birth cohorts — a source of
+      variance that a trial must either stratify on or average away.
+      **This is architecturally the same problem as `covid-19`'s pan-sarbecovirus
+      vaccine**: elicit immunity to the conserved parts of a drifting surface. Two
+      records, one immunological question, and Engpass has no obstacle for it
+      (gaps.md #164).
+      `scale: null`.
+    who_could: [academic, sponsor, manufacturer, philanthropy, government]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: manufacturing
+    blocks: the six-month lead time that makes the vaccine a prediction
+    obstacles: []
+    what: >
+      **THE VACCINE IS A GUESS BECAUSE THE FACTORY IS SLOW.**
+      Strains are selected in February for a northern-hemisphere season beginning
+      in October, because egg-based manufacture of half a billion doses takes that
+      long. Shorten the lead time and the guess gets better; eliminate it and the
+      guess disappears.
+      **And the eggs introduce a second failure mode that has nothing to do with
+      prediction.** Influenza adapts to growth in embryonated chicken eggs,
+      acquiring haemagglutinin substitutions that improve yield and degrade the
+      match to the circulating virus. **The vaccine can therefore miss because the
+      manufacturing process changed the antigen**, which is a strange sentence to
+      write about a mature product.
+      Cell-based and recombinant platforms avoid egg adaptation and shorten
+      timelines, and are a minority of global supply because the egg infrastructure
+      is enormous, amortised and cheap. **mRNA would collapse the lead time
+      further** — `covid-19` demonstrated design-to-dose in months — and influenza
+      mRNA candidates are in trials.
+      Egg dependence has a second cost the register should note: a severe avian
+      influenza panzootic threatens the egg supply on which influenza vaccine
+      manufacture depends, which is `#54`'s single point of failure with a
+      particularly unpleasant feedback loop.
+    who_could: [manufacturer, government, payer, philanthropy, regulator]
+    scale: 4.0e9
+    standing: documented
+    src: recall
+
+  - kind: evidence-incomplete
+    blocks: knowing what the antiviral does, fifteen years after buying it
+    obstacles: []
+    what: >
+      **THE EVIDENCE EXISTED AND WAS NOT RELEASED, AND POLICY WAS MADE ANYWAY.**
+      Oseltamivir was licensed from 1999 and stockpiled by governments at a cost of
+      billions of dollars, on the strength of published summaries of trials whose
+      **full clinical study reports the sponsor did not make available.** A
+      sustained campaign by the BMJ and Cochrane reviewers from 2009 obtained them.
+      The 2014 analysis of the complete data found about seventeen hours of symptom
+      reduction in adults, no support for the claimed reduction in hospitalisation,
+      insufficient evidence on complications, and more nausea and vomiting than the
+      summaries had shown.
+      **This is not a missing-evidence blocker and the register's vocabulary cannot
+      tell the difference** (gaps.md #167). `evidence-incomplete` was written for
+      questions nobody has answered. Here the trials were done, competently, and
+      the answers were held. **A missing answer wants a trial; a withheld answer
+      wants disclosure**, and those are different asks of different people.
+      The structural response — trial registration, results-reporting mandates,
+      access to clinical study reports — is the same kind of cross-cutting
+      capability as `covid-19`'s trial infrastructure: it belongs to no disease, so
+      no record argues for it (gaps.md #164). It is also incompletely implemented,
+      with substantial proportions of registered trials still not reporting results
+      within required timeframes.
+    who_could: [regulator, government, sponsor, academic, legislator]
+    scale: 5.0e8
+    standing: documented
+    src: recall
+
+  - kind: cost
+    blocks: the vaccine reaching anywhere the deaths are not counted
+    obstacles: []
+    what: >
+      Roughly half a billion doses of seasonal influenza vaccine are produced each
+      year and **the great majority go to high-income countries.** Many low- and
+      middle-income countries have no seasonal influenza programme at all, despite
+      carrying a large share of the deaths — the mortality burden is concentrated
+      in sub-Saharan Africa and Southeast Asia as well as in wealthy ageing
+      populations.
+      The reasons are ordinary and compounding: an annual recurring cost rather
+      than a one-off, a vaccine that must be re-procured and re-administered every
+      year forever, competing against childhood immunisation for the same delivery
+      capacity, and a burden that is invisible because **the deaths are certified
+      as pneumonia, heart failure or old age.**
+      **A disease that is not counted does not get a programme, and a disease
+      without a programme is not counted.** That loop is why influenza's access
+      figure resembles a neglected tropical disease's despite the product being
+      manufactured at half-billion scale every year.
+      The high-dose and adjuvanted formulations that work better in the over-65s —
+      where the deaths are — cost more and are concentrated further still.
+    who_could: [government, payer, manufacturer, nonprofit, philanthropy]
+    scale: 6.0e9
+    standing: documented
+    src: recall
+
+  - kind: policy
+    blocks: uptake where the vaccine is free and available
+    obstacles: []
+    what: >
+      In countries with funded universal programmes for the elderly, coverage
+      commonly sits well below target, and healthcare-worker uptake — which
+      protects patients as much as staff — is frequently lower still.
+      **The honest reason is that the product is genuinely mediocre and everybody
+      knows it.** A vaccine that is 40-60% effective in a good year and 20% in a
+      bad one, that must be repeated annually, against an illness most people
+      correctly expect to survive, is a hard offer. The commonest objection — *I
+      had the flu jab and got flu anyway* — describes something that really does
+      happen to a large minority of recipients.
+      **So this is not the same blocker as measles hesitancy** and treating it as
+      one is a mistake this register should avoid. There the vaccine is
+      outstanding and the objection is not about performance. Here the objection is
+      approximately correct about the product and wrong about the arithmetic: a
+      partially effective vaccine given to hundreds of millions of people still
+      prevents a very large number of deaths.
+      Rated `documented` on the coverage figures and on the effectiveness range,
+      which are published annually. **The fix is mostly a better vaccine**, which
+      is the `knowledge` blocker above, and this record is a good argument that
+      communication cannot substitute for one.
+    who_could: [government, health-system, payer, nonprofit]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0078
+  rated: 2026-08-24
+  by: [claude, jeremy]

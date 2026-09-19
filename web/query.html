@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nordstern — query the register</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper:#f7f2e6; --paper-deep:#efe7d3; --card:#fbf8ef;
+    --ink:#22304a; --ink-soft:rgba(34,48,74,.55); --ink-faint:rgba(34,48,74,.16);
+    --vermilion:#c8451f; --teal:#1f7a6d; --water:#3d7fa6; --gold:#b98a1d;
+  }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html,body { height:100%; }
+  body {
+    background:var(--paper);
+    background-image:
+      repeating-linear-gradient(0deg,transparent 0 23px,rgba(34,48,74,.045) 23px 24px),
+      repeating-linear-gradient(90deg,transparent 0 23px,rgba(34,48,74,.045) 23px 24px);
+    color:var(--ink); font-family:'IBM Plex Mono',monospace; font-size:13px;
+    padding:14px 16px 12px; display:flex; flex-direction:column; gap:9px; overflow:hidden;
+  }
+  header { display:flex; align-items:baseline; justify-content:space-between; gap:14px;
+           border-bottom:2px solid var(--ink); padding-bottom:7px; flex:none; flex-wrap:wrap; }
+  h1 { font-family:Fraunces,serif; font-weight:600; font-style:italic; font-size:21px; }
+  h1 .fig { font-family:'IBM Plex Mono',monospace; font-style:normal; font-weight:500;
+            font-size:10px; letter-spacing:.18em; color:var(--vermilion);
+            text-transform:uppercase; margin-right:9px; vertical-align:2px; }
+  header .sub { font-size:11.5px; color:var(--ink-soft); }
+  /* back to the landing page. The two pages are one idea split by audience:
+     the map is where a figure sends you here from, and this is where you go
+     when you want to ask something the map did not answer. */
+  header a.home { font-size:11px; border:2px solid var(--ink); background:var(--paper);
+                  box-shadow:2px 2px 0 var(--ink); padding:5px 10px; color:var(--ink);
+                  text-decoration:none; letter-spacing:.06em; white-space:nowrap;
+                  align-self:center; }
+  header a.home:hover { background:var(--paper-deep); }
+
+  .warn { flex:none; border:2px solid var(--vermilion); background:#fdf1ec;
+          padding:6px 10px; font-size:11px; line-height:1.45; color:var(--vermilion); }
+  .warn b { font-weight:500; }
+  /* the banner is rendered by banner.js and carries links and inline code, so
+     it needs the same treatment the map gives it — inheriting the warning
+     colour rather than turning half the paragraph blue */
+  .warn a { color:inherit; }
+  .warn code { background:rgba(200,69,31,.11); padding:0 3px; }
+  .warn .big { display:none; }   /* the lead sentence belongs to the map */
+  /* One sentence at the top, the ledger one click below it. Closed by default:
+     a warning long enough to skip is a warning that does not warn. */
+  .warn .provmore { margin-top:4px; }
+  .warn .provmore > summary { cursor:pointer; opacity:.8; }
+  .warn .provmore > summary:hover { opacity:1; }
+  .warn .provmore > div { margin-top:5px; padding-top:5px;
+    border-top:1px solid rgba(200,69,31,.3); }
+
+  .controls { flex:none; display:flex; flex-direction:column; gap:7px; }
+  .row { display:flex; gap:7px; align-items:center; flex-wrap:wrap; }
+  .row .lbl { font-size:9px; letter-spacing:.18em; text-transform:uppercase;
+              color:var(--ink-soft); margin-right:2px; }
+
+  button, select, input {
+    font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--ink);
+    border:2px solid var(--ink); background:var(--paper); padding:5px 9px; cursor:pointer;
+  }
+  button { letter-spacing:.06em; box-shadow:2px 2px 0 var(--ink); transition:transform 60ms,box-shadow 60ms; }
+  button:hover { background:var(--paper-deep); }
+  button:active { transform:translate(2px,2px); box-shadow:none; }
+  button.ask { background:var(--card); border-color:var(--water); color:var(--water);
+               box-shadow:2px 2px 0 var(--water); font-style:italic; font-family:Fraunces,serif; font-size:12px; }
+  button.ask:hover { background:#eef4f8; }
+  .chip { box-shadow:1px 1px 0 var(--ink); padding:4px 8px; font-size:10.5px; }
+  .chip.on { background:var(--ink); color:var(--paper); }
+  select { box-shadow:1px 1px 0 var(--ink); }
+  input[type=search] { box-shadow:1px 1px 0 var(--ink); min-width:190px; cursor:text; }
+  input:focus, select:focus { outline:none; border-color:var(--water); }
+  .count { font-size:11px; color:var(--ink-soft); margin-left:auto; font-family:Fraunces,serif; font-style:italic; }
+
+  /* the query box — the register's API, so it gets the width */
+  #q { flex:1; min-width:280px; font-size:12px; padding:7px 10px; letter-spacing:.01em; }
+  #q::placeholder { color:var(--ink-soft); font-style:italic; }
+  .qerr { display:none; border-left:3px solid var(--vermilion); background:#fdf1ec;
+          padding:5px 9px; font-size:11px; line-height:1.5; color:var(--vermilion); }
+  .qerr.on { display:block; }
+  .qerr .qe + .qe { margin-top:3px; }
+  .qerr code { background:rgba(200,69,31,.11); padding:0 3px; }
+  .qerr .hint { color:rgba(34,48,74,.7); }
+  /* the query a canned question stands for — shown, not hidden, because the
+     point is that you could have typed it */
+  .qnote { font-size:11px; color:var(--ink-soft); font-style:italic; font-family:Fraunces,serif; }
+  #qfields { display:grid; grid-template-columns:auto auto 1fr; gap:2px 10px; font-size:11px; line-height:1.45; }
+  #qfields .f { color:var(--water); font-weight:500; white-space:nowrap; }
+  #qfields .t { color:var(--ink-soft); white-space:nowrap; }
+  #qfields .d { color:var(--ink); }
+  #qfields .v { color:var(--ink-soft); font-size:10.5px; }
+
+  .workspace { flex:1; display:grid; grid-template-columns:minmax(420px,5fr) minmax(320px,4fr);
+               gap:12px; min-height:0; }
+  .pane { border:2px solid var(--ink); box-shadow:3px 3px 0 rgba(34,48,74,.16);
+          background:var(--card); overflow:auto; min-height:0; }
+
+  table { width:100%; border-collapse:collapse; }
+  th { position:sticky; top:0; background:var(--paper-deep); text-align:left; font-weight:400;
+       font-size:9px; letter-spacing:.13em; text-transform:uppercase; color:var(--ink-soft);
+       padding:7px 8px; border-bottom:2px solid var(--ink); cursor:pointer; white-space:nowrap; }
+  th:hover { color:var(--ink); }
+  td { padding:5px 8px; border-bottom:1px solid var(--ink-faint); font-size:11.5px; white-space:nowrap; }
+  tbody tr { cursor:pointer; }
+  tbody tr:hover { background:var(--paper-deep); }
+  tbody tr.sel { background:#eef4f8; box-shadow:inset 3px 0 0 var(--water); }
+  td.nm { font-weight:500; }
+  .flags { color:var(--water); letter-spacing:1px; }
+  .cap-curable { color:var(--teal); } .cap-managed { color:var(--water); }
+  .cap-partial { color:var(--gold); } .cap-unsolved { color:var(--vermilion); }
+  .t-clean { color:var(--ink-soft); } .t-costly { color:var(--gold); } .t-harsh { color:var(--vermilion); font-weight:500; }
+
+  .detail { padding:13px 15px; line-height:1.55; }
+  .detail h2 { font-family:Fraunces,serif; font-style:italic; font-size:18px; font-weight:600; }
+  .detail .slug { font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:var(--vermilion); }
+  .detail h3 { font-size:9px; letter-spacing:.18em; text-transform:uppercase; color:var(--ink-soft);
+               margin:13px 0 4px; border-bottom:1px solid var(--ink-faint); padding-bottom:2px; }
+  .detail p { font-size:11.5px; margin-bottom:6px; }
+  .detail .kv { display:flex; gap:8px; font-size:11.5px; }
+  .detail .kv .k { color:var(--ink-soft); min-width:96px; flex:none; }
+  .detail ul { margin:2px 0 0 15px; font-size:11.5px; }
+  .detail li { margin-bottom:3px; }
+  .detail .blk { border-left:3px solid var(--ink-faint); padding-left:9px; margin-bottom:8px; }
+  .detail .blk .hd { font-size:10px; letter-spacing:.1em; text-transform:uppercase; }
+  .detail .blk.documented .hd { color:var(--teal); }
+  .detail .blk.alleged .hd, .detail .blk.disputed .hd { color:var(--gold); }
+  .detail .empty { color:var(--ink-soft); font-family:Fraunces,serif; font-style:italic;
+                   text-align:center; padding:36px 12px; font-size:13px; }
+  .pill { display:inline-block; border:1px solid var(--ink-faint); padding:1px 6px;
+          font-size:10px; margin:0 3px 3px 0; background:var(--paper); }
+
+  /* The verdict, said in a sentence. A bare word like "curable" next to a
+     record with 670,000 annual deaths reads as a claim nobody made. */
+  .verdict { border:2px solid var(--ink); background:var(--paper); padding:9px 11px;
+             margin-top:9px; font-size:12.5px; line-height:1.5; }
+  .verdict .lead { font-family:Fraunces,serif; font-style:italic; font-size:13.5px; }
+  .verdict .qual { color:var(--ink-soft); font-size:11.5px; display:block; margin-top:4px; }
+  .verdict .back { display:block; margin-top:5px; font-size:11.5px; }
+  .verdict .back.yes { color:var(--teal); }
+  .verdict .back.no  { color:var(--vermilion); }
+  .spans { border:2px solid var(--gold); background:#fbf5e4; padding:8px 11px; margin-top:9px;
+           font-size:11.5px; line-height:1.5; }
+  .spans b { color:var(--gold); }
+
+  dialog { border:2px solid var(--ink); box-shadow:5px 5px 0 rgba(34,48,74,.25);
+           background:var(--card); color:var(--ink); padding:0; max-width:760px;
+           width:calc(100% - 40px); max-height:84vh; font-family:'IBM Plex Mono',monospace; }
+  dialog::backdrop { background:rgba(34,48,74,.35); }
+  .gloss-hd { position:sticky; top:0; background:var(--paper-deep); border-bottom:2px solid var(--ink);
+              padding:10px 16px; display:flex; justify-content:space-between; align-items:baseline; }
+  .gloss-hd h2 { font-family:Fraunces,serif; font-style:italic; font-size:17px; font-weight:600; }
+  .gloss-bd { padding:12px 16px 18px; overflow:auto; max-height:calc(84vh - 52px); }
+  .gloss-bd h3 { font-size:9px; letter-spacing:.18em; text-transform:uppercase; color:var(--vermilion);
+                 margin:15px 0 5px; border-bottom:1px solid var(--ink-faint); padding-bottom:3px; }
+  .gloss-bd h3:first-child { margin-top:0; }
+  .gloss-bd dl { display:grid; grid-template-columns:auto 1fr; gap:3px 12px; font-size:11.5px; line-height:1.5; }
+  .gloss-bd dt { font-weight:500; white-space:nowrap; color:var(--water); }
+  .gloss-bd dd { color:var(--ink); }
+  .gloss-bd .ex { display:grid; grid-template-columns:minmax(210px,auto) 1fr; gap:4px 12px;
+                  align-items:start; margin-bottom:7px; }
+  .gloss-bd .exq { font-size:11px; text-align:left; white-space:normal;
+                   border-color:var(--water); color:var(--water);
+                   box-shadow:2px 2px 0 var(--water); background:var(--card); }
+  .gloss-bd .exq:hover { background:#eef4f8; }
+  .gloss-bd .exw { font-size:11.5px; line-height:1.5; color:var(--ink); }
+  @media (max-width:620px) { .gloss-bd .ex { grid-template-columns:1fr; } }
+  .gloss-bd .caveat { border-left:3px solid var(--vermilion); padding-left:9px; color:var(--vermilion);
+                      font-size:11.5px; line-height:1.5; margin-top:6px; }
+
+  @media (max-width:900px) { body{overflow:auto;} .workspace{grid-template-columns:1fr;} .pane{max-height:60vh;} }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1><span class="fig">Nordstern</span>a register of what is solved</h1>
+    <div class="sub">do we understand it · can we do anything about it · why isn't it delivered</div>
+  </div>
+  <a class="home" href="index.html">← the map</a>
+</header>
+
+<!-- Filled by banner.js from the snapshot check.py built. Both pages render the
+     same facts from the same numbers; only the opening sentence differs. -->
+<div class="warn" id="prov"></div>
+
+<!-- THE TOOL IS THE BAR.
+     This page used to carry six canned questions, seven dropdowns and seven flag
+     chips above the results. All of them wrote query text — that was already the
+     fix for an earlier version whose filter state could not express its own
+     canned questions — and every one of them was still an answer supplied before
+     the question. **Somebody who arrives here arrived on purpose.** The map at
+     index.html is where a figure hands you a query; this is where you write one.
+     The presets did not disappear: they are worked examples in the spec, which
+     is generated from the parser's own field registry. -->
+<div class="controls">
+  <div class="row">
+    <input type="search" id="q" spellcheck="false" autocomplete="off"
+           placeholder="capability:curable reach:&lt;0.5   ·   -blocker.kind:knowledge   ·   deaths:&gt;100k   ·   or just type a word">
+    <button id="specBtn" class="spec-open">spec</button>
+    <button id="reset">clear</button>
+    <button id="dlJson">⇩ json</button>
+    <button id="dlCsv">⇩ csv</button>
+    <span class="count" id="count"></span>
+  </div>
+  <div class="qerr" id="qerr"></div>
+</div>
+
+<div class="workspace">
+  <div class="pane"><table id="tbl">
+    <thead><tr>
+      <th data-k="slug">entity</th>
+      <th data-k="_flags">·</th>
+      <th data-k="mechanism">mech</th>
+      <th data-k="_meas">dx·pg·pd</th>
+      <th data-k="capability">capability</th>
+      <th data-k="terms">terms</th>
+      <th data-k="reach">reach</th>
+      <th data-k="_cost">from</th>
+    </tr></thead>
+    <tbody></tbody>
+  </table></div>
+  <div class="pane"><div class="detail" id="detail"></div></div>
+</div>
+
+<dialog id="spec">
+  <div class="gloss-hd">
+    <h2>The query spec</h2>
+    <button id="specClose">close</button>
+  </div>
+  <div class="gloss-bd">
+
+    <h3>The grammar, entire</h3>
+    <dl>
+      <dt>field:value</dt><dd>Match a field. <code>capability:curable</code></dd>
+      <dt>a&nbsp;b</dt><dd>A space means <b>AND</b>. <code>capability:curable reach:&lt;0.5</code> — curable, and reaching under half of patients.</dd>
+      <dt>-term</dt><dd>A leading minus <b>negates</b>. <code>-blocker.kind:knowledge</code> — nothing here is waiting on science.</dd>
+      <dt>field:(a OR b)</dt><dd>Alternation <em>within one field</em>. <code>blocker.standing:(alleged OR disputed)</code></dd>
+      <dt>field:&gt;n</dt><dd><code>&gt; &gt;= &lt; &lt;= =</code> on numeric fields. Numbers take <b>k</b>, <b>M</b>, <b>B</b>: <code>deaths:&gt;100k</code></dd>
+      <dt>"two words"</dt><dd>Quotes carry spaces, nothing more. <code>quadrant:"known &amp; treatable"</code></dd>
+      <dt>word</dt><dd>No field means free text over the whole record, prose included. <code>lithium</code></dd>
+    </dl>
+
+    <h3>Two rules that save you remembering things</h3>
+    <dl>
+      <dt>the field decides</dt><dd>How a value matches is a property of the <em>field</em>, not of how you quoted it. An <b>enum</b> field is always exact; a <b>text</b> field is always substring. So <code>name:hepat</code> finds hepatitis C and <code>capability:cur</code> is an error that names the four legal values — which is what you want in each case.</dd>
+      <dt>lists mean <em>some</em></dt><dd>A record has many blockers, so <code>blocker.kind:cost</code> asks whether <b>some</b> blocker is a cost blocker, and <code>-blocker.kind:cost</code> therefore means <b>none</b> is. For <em>every</em> — "all blockers are knowledge" — use the derived flag <code>only_knowledge_blockers:true</code>; the register names that concept, so it is computed once in <code>check.py</code> rather than spelled out here.</dd>
+    </dl>
+
+    <h3>A wrong value is answered, not ignored</h3>
+    <div class="caveat" style="border-left-color:var(--water);color:var(--ink)">
+      <code>capability:cured</code> does not return nothing. It says
+      <em>“capability has no value <b>cured</b> — did you mean <b>curable</b>? valid: curable · managed ·
+      partial · unsolved”</em>, and the valid list is read off the data, so it cannot drift from what is
+      actually loadable. Terms that fail are reported and skipped; the rest of the query still runs, and
+      the count of what was dropped comes back with it.
+    </div>
+
+    <h3>Not here yet</h3>
+    <dl>
+      <dt>OR across terms</dt><dd>Deliberately absent, with parentheses. Alternation inside one field covers most of it and has no precedence to get wrong; boolean algebra across terms is the half of this syntax people reliably misread. Type it and the register says so and tells you what does work. It gets built when a question worth asking forces it — and it will be obvious which question that was.</dd>
+    </dl>
+
+    <h3>Worked examples</h3>
+    <p style="margin:0 0 8px;font-size:11.5px;color:var(--ink-soft)">Click one to
+      run it. Each is a plain string you could have typed — which was already
+      true when these were buttons on the tool, and is the reason they could be
+      moved here without losing anything.</p>
+    <div id="qexamples"></div>
+
+    <h3>Every field</h3>
+    <div id="qfields"></div>
+    <div class="caveat" style="margin-top:9px">
+      Fields marked <b>derived</b> are calculated by <code>check.py</code> from the YAML, never stored.
+      That is what makes them arguable: a stored verdict is an opinion, a derived one is a calculation
+      you can check. <code>src:recall</code> matches every record in the register today.
+    </div>
+
+    <h3 style="border-top:2px solid var(--ink);padding-top:12px">What the words mean</h3>
+    <p style="margin:0 0 10px;font-size:11.5px;color:var(--ink-soft)">Every derived word in the results table is a term of art, and a public register that does not define its own vocabulary invites exactly the misreading it was built to prevent.</p>
+
+
+    <h3>Reading a record</h3>
+    <dl>
+      <dt>capability</dt><dd>What medicine can do <em>at its best, for anyone</em>. Derived from the intervention rung. It says nothing about how many people get it.</dd>
+      <dt>terms</dt><dd>What the treatment costs you if it works. <b>clean</b> · <b>costly</b> (takes something permanent) · <b>harsh</b> (permanently disabling in its own right).</dd>
+      <dt>residue</dt><dd>What the <em>disease</em> leaves behind in someone the treatment <b>cured</b> — damage already done that no cure reaches. Tuberculosis is the case that forced the field: the drugs take almost nothing, and a large share of cured patients keep permanently scarred lungs.</dd>
+      <dt>restored</dt><dd><b>Are they back to the state they were in before any of it?</b> Derived from <em>terms</em> and <em>residue</em> together, because those are the two ways the answer is no. <b>restored</b> · <b>cure-costs</b> (the treatment took something) · <b>disease-residue</b> (the treatment worked and the damage was already done) · <b>both</b> · <b>n/a</b> — nothing to be restored from, because there is no capability at all. <b>n/a is not restored.</b></dd>
+      <dt>reach</dt><dd>efficacy × access — the fraction of patients for whom the capability is actually real.</dd>
+      <dt>delivery</dt><dd>reach, in words: delivered ≥0.8 · mostly ≥0.6 · partly ≥0.3 · barely ≥0.05 · undelivered below that.</dd>
+      <dt>quadrant</dt><dd>Which cell of <em>is the mechanism known?</em> × <em>what does treatment achieve?</em> a record falls in — six cells, not four. <b>Not a verdict on the disease.</b> The field kept the name <code>quadrant</code> after it grew a third column, because queries use it. See below.</dd>
+    </dl>
+
+    <h3>The map, and what it does not say</h3>
+    <p style="margin:0 0 .6em">The second axis is the <b>intervention ladder in three bands</b>: the course is <em>held or ended</em> (suppressive, curative) · <em>slowed</em> (disease-modifying) · <em>unchanged</em> (symptomatic, none). It used to be a yes/no, which filed ischaemic heart disease and stroke — the first and third largest causes of death on Earth — as <em>nothing can be done</em>.</p>
+    <dl>
+      <dt>known&nbsp;&amp;&nbsp;treatable</dt><dd>The mechanism is understood <em>and</em> something demonstrably works — a treatment <b>or</b> a prophylaxis. Measles and rabies sit here on the strength of a vaccine, with no treatment at all. <b>This is not "solved."</b> It says nothing about whether anyone is cured, what the treatment costs them, or whether it reaches a single patient. Breast cancer and Crohn's disease both sit here.</dd>
+      <dt>known&nbsp;&amp;&nbsp;modifiable</dt><dd>Understood, and treatment <em>slows</em> the course without holding or ending it. Ischaemic heart disease and stroke: the coronary death rate in wealthy countries has more than halved since about 1980, and the atherosclerosis still progresses. <b>This cell exists because filing those two as untreatable was wrong.</b></dd>
+      <dt>engineering problem</dt><dd>Understood, and treatment does not change the course at all. Huntington's: the exact cause has been known since 1993 and nothing alters it. COPD is here too, and note what that <b>does not</b> mean — bronchodilators genuinely relieve breathlessness; this register measures benefit only as course alteration.</dd>
+      <dt>empirical luck</dt><dd>Something works and nobody can say why. Lithium in bipolar disorder, effective since 1949, mechanism still unknown.</dd>
+      <dt>empirical&nbsp;foothold</dt><dd>Something slows a disease nobody understands. <b>No record is in this cell.</b> It is named because the derivation has to be total, and an empty cell is worth reporting rather than hiding.</dd>
+      <dt>frontier</dt><dd>Neither understood, nor altered by any treatment. Note how much of the world's burden sits here.</dd>
+    </dl>
+
+    <h3>The intervention ladder</h3>
+    <dl>
+      <dt>none</dt><dd>Nothing alters the course.</dd>
+      <dt>symptomatic</dt><dd>Masks the phenotype; the course is unchanged.</dd>
+      <dt>disease-modifying</dt><dd>Slows it. Does not arrest it.</dd>
+      <dt>suppressive</dt><dd>Near-normal life and lifespan — <b>treated indefinitely</b>. HIV. Not a death sentence, and not over.</dd>
+      <dt>curative</dt><dd>A <b>finite</b> intervention ends the disease. Hepatitis C.</dd>
+    </dl>
+
+    <h3>The other axes</h3>
+    <dl>
+      <dt>mechanism</dt><dd><b>established</b> (a causal chain that would survive a refutation attempt) · <b>partial</b> (the chain has a named hole) · <b>correlates</b> (associations, no chain) · <b>none</b>.</dd>
+      <dt>prevention</dt><dd>Independent of treatment, not a continuation of it: <b>eradicated</b> · <b>prophylaxis</b> · <b>risk-reduction</b> · <b>none</b>. PKU's phenotype is prevented outright and the disease is never cured.</dd>
+      <dt>ongoing</dt><dd>The burden of <em>being treated</em> — the gulf between one tablet a day and dialysis three times a week.</dd>
+      <dt>efficacy vs access</dt><dd>Deliberately two numbers. Epilepsy is ~30% drug-resistant in the richest health systems (biology); sickle-cell gene therapy works nearly always and reaches nearly nobody (money). One number could not say both.</dd>
+    </dl>
+
+    <h3>Measurement — three questions, not one</h3>
+    <dl>
+      <dt>diagnostic</dt><dd>Is the disease there? <b>objective</b> (a test) · <b>clinical</b> (human judgement against criteria) · <b>complaint</b> (the patient's report <em>is</em> the diagnosis).</dd>
+      <dt>prognostic</dt><dd>What will it do if left alone? Its absence causes <b>overtreatment</b> — treating people who were never going to be harmed.</dd>
+      <dt>predictive</dt><dd>Will <em>this</em> treatment work in <em>this</em> patient? Its absence causes <b>futile treatment</b>: the full cost, no benefit, discovered only afterwards.</dd>
+      <dt>n/a</dt><dd>There is no selection question left to answer — either nothing course-altering to predict a response to, or a treatment that works in essentially everyone. Pan-genotypic antivirals <em>abolished</em> the question for hepatitis C.</dd>
+    </dl>
+
+    <h3>Toll, window, strata</h3>
+    <dl>
+      <dt>toll</dt><dd>What the cure takes, permanently — the facial nerve, the bowel, fertility, a second cancer. Not the same as <em>ongoing</em> (the burden of continuing treatment) and not the same as <em>efficacy</em> (whether it works). This is the price of it <b>working</b>.</dd>
+      <dt>residue vs toll</dt><dd>Two different permanent costs, and the register keeps them apart because the levers differ. <b>toll</b> is inflicted by the treatment — a better treatment reduces it. <b>residue</b> was inflicted by the disease before the treatment arrived — only <em>earlier</em> treatment reduces it, which is why residue and <em>window</em> usually travel together. "Cured" is not one outcome.</dd>
+      <dt>severity</dt><dd><b>none</b> · <b>minor</b> (permanent, not life-altering) · <b>major</b> (permanently alters function or appearance) · <b>catastrophic</b> (disabling or life-shortening in its own right). Severity describes the harm <em>when it happens</em>; incidence carries how often.</dd>
+      <dt>window ⧗</dt><dd>Capability itself depends on catching it in time. Crohn's inflammation is treatable; the fibrosis it leaves is not, because scar is mechanical.</dd>
+      <dt>strata ⧉</dt><dd>One entity with more than one answer. Breast cancer stage I is cured and stage IV is not — so "is it solved" is a <b>malformed question, not a hard one</b>, and the register refuses to pick a side.</dd>
+    </dl>
+
+    <h3>Blockers — why it isn't delivered</h3>
+    <dl>
+      <dt>kind</dt><dd>What is stuck: knowledge · candidate-untested · evidence-incomplete · no-sponsor · regulatory · manufacturing · cost · logistics · diagnosis · adherence · tooling · policy. Different blockers need different people to fix them.</dd>
+      <dt>scale</dt><dd>Rough order-of-magnitude cost to clear it. <b>Blank for a knowledge blocker</b>, and the asymmetry is the point: knowledge blockers cannot be triaged with money, delivery blockers can.</dd>
+      <dt>standing</dt><dd><b>documented</b> (a named trial, price, or dated discontinuation) · <b>alleged</b> (widely asserted, unverified) · <b>disputed</b> · <b>refuted</b>. The register's job is to turn <em>alleged</em> into <em>documented</em> or <em>refuted</em> — a project that only ever finds <em>documented</em> is campaigning, not investigating.</dd>
+    </dl>
+
+    <h3>The flags</h3>
+    <dl>
+      <dt>⚑ no champion</dt><dd>Capability is real, reach is under 0.6, and at least one blocker is documented and <em>not</em> knowledge. The science is done and nobody is carrying it.</dd>
+      <dt>⧗ window</dt><dd>Catching it late changes what is possible — and usually what it costs.</dd>
+      <dt>⧉ spans the ladder</dt><dd>The strata disagree about capability.</dd>
+      <dt>overtreatment risk</dt><dd>Real capability, a permanent price, and no way to say who needed it.</dd>
+      <dt>futile treatment risk</dt><dd>Real capability, a permanent price, and no way to say who will respond.</dd>
+      <dt>harm without benefit</dt><dd>A major permanent toll on an entity whose <em>course</em> nothing alters. Nobody designed this category; it fell out of toll × capability. <b>It does not mean the treatment does nothing.</b> COPD is the case that proves the point — no drug slows the loss of lung function, and bronchodilators substantially relieve breathlessness, which is the whole of what the disease costs a person. This register measures benefit only as <em>course alteration</em> and has no axis for symptom relief; the flag name is older than that realisation and is kept because queries use it.</dd>
+    </dl>
+
+    <h3>Where the numbers come from</h3>
+    <!-- rendered by banner.js from the same snapshot the page banner uses. The
+         hand-written version of this paragraph is what went stale. -->
+    <div class="caveat" id="specProv"></div>
+  </div>
+</dialog>
+
+<!-- GENERATED by `python3 check.py --build` from entities/*.yaml.
+     A script tag rather than fetch() so the page works over file:// too.
+     Every derived field is computed at build time — never recompute a
+     derivation here, or the rules live in two places and drift. -->
+<script src="banner.js"></script>
+<script src="snapshots.js"></script>
+<script src="query.js"></script>
+<script src="data.js"></script>
+<script>
+"use strict";
+(() => {
+const R = (window.NORDSTERN && window.NORDSTERN.records) || [];
+const Q = window.NordsternQuery;
+const $ = id => document.getElementById(id);
+const esc = s => String(s == null ? "" : s).replace(/&/g,"&amp;").replace(/</g,"&lt;");
+// diagnostics arrive with `backticks` around the offending token
+const ticks = s => esc(s).replace(/`([^`]+)`/g, "<code>$1</code>");
+
+/* ---- state ------------------------------------------------------------
+ * ONE filter, and it is a string. This used to be four parallel things —
+ * facets, flags, an `or` list and a raw JS predicate — because the canned
+ * questions could not be said in the vocabulary the UI offered. Everything
+ * a control does now is edit this text, so what is being asked is legible
+ * and shareable rather than hidden in a closure.
+ * --------------------------------------------------------------------- */
+const DOM = Q.domains(R);            // enum domains, read off the data
+const state = { q:"", sort:"reach", dir:-1, sel:null };
+let last = { records:R, terms:[], errors:[] };
+
+/* the URL is the share link: ?q=… round-trips the whole view, and ?spec opens
+   the reference — a spec worth publishing is one somebody can send a link to */
+function syncUrl() {
+  if (typeof history === "undefined" || !history.replaceState) return;
+  const u = state.q ? "?q=" + encodeURIComponent(state.q) : "?";
+  history.replaceState(null, "", u);
+}
+function setQ(text) {
+  state.q = text;
+  $("q").value = text;
+  syncUrl();
+  render();
+}
+
+// editing by hand drops the canned question's note — it described a query that
+// is no longer the one on screen
+$("q").oninput = e => { state.q = e.target.value; syncUrl(); render(); };
+
+document.querySelectorAll("#tbl th").forEach(th => th.onclick = () => {
+  const k = th.dataset.k;
+  state.dir = state.sort === k ? -state.dir : (k === "reach" ? -1 : 1);
+  state.sort = k;
+  render();
+});
+
+/* ---- worked examples, rendered into the spec -------------------------
+ * These were six buttons above the results. Each is still exactly a string a
+ * reader could type — that was already true, and was the fix for an earlier
+ * version whose canned questions needed machinery (`or`, a raw predicate) the
+ * query language could not express. **What changed is that an answer supplied
+ * before the question is clutter on a tool somebody came to on purpose.**
+ * They live in the spec now, where an example belongs, and they are clickable
+ * because a worked example you cannot run is a screenshot.
+ *
+ * tool.test.js runs every one of these and fails if it returns
+ * nothing — so an example cannot rot into a query that no longer works. ---- */
+const EXAMPLES = [
+  ["orphaned:true",
+   "Science is done and nobody is carrying it — capability is real, reach is under 0.6, and at least one blocker is documented and is not knowledge. Sort by <code>from</code> for the cheapest entry price."],
+  ["measurement_gap:true",
+   "Real capability, a permanent price, and no way to say who needed it or who will respond. The register's sharpest argument for funding measurement over therapeutics."],
+  ["only_knowledge_blockers:true",
+   "<b>Every</b> blocker is knowledge — no delivery lever at any price. Money cannot move these, which is the asymmetry the whole register exists to show."],
+  ["harm_without_benefit:true",
+   "A major permanent toll while the course is unchanged. Not the same as the treatment doing nothing: symptom relief is real and this register has no axis that records it."],
+  ["quadrant:frontier",
+   "Neither understood nor altered by any treatment — and note how much of the world's burden sits here."],
+  ["capability:curable delivery:(barely OR undelivered)",
+   "Curable, and reaching almost nobody. Two fields, an AND, and an alternation inside one of them."],
+  ["blocker.kind:knowledge -blocker.scale:>0",
+   "Held up by science, with nothing that carries a price. The minus means <b>no</b> blocker matches, because lists mean <em>some</em>."],
+  ["deaths:>100k reach:<0.3",
+   "Over a hundred thousand deaths a year, reaching under a third of patients. Numbers take <code>k</code>, <code>M</code> and <code>B</code>."],
+];
+$("qexamples").innerHTML = EXAMPLES.map(([q, why]) => `
+  <div class="ex">
+    <button class="exq" data-q="${esc(q)}">${esc(q)}</button>
+    <div class="exw">${why}</div>
+  </div>`).join("");
+document.querySelectorAll(".exq").forEach(b => b.onclick = () => {
+  const d = $("spec"); d.close ? d.close() : (d.open = false);
+  setQ(b.dataset.q);
+});
+
+function reset() { setQ(""); }
+$("reset").onclick = reset;
+
+/* ---- the query reference. The field list is RENDERED from the query
+        core's own registry, so a field that exists is documented and a
+        field that is documented exists — the list cannot drift. ---- */
+$("qfields").innerHTML = Q.describe(DOM).map(f => `
+  <span class="f">${esc(f.name)}</span>
+  <span class="t">${esc(f.type)}${f.derived ? " · derived" : ""}</span>
+  <span class="d">${esc(f.help)}${f.values && f.values.length
+      ? `<span class="v">${f.help ? " — " : ""}${esc(f.values.join(" · "))}</span>` : ""}</span>`).join("");
+$("specBtn").onclick = () => { const d = $("spec"); d.showModal ? d.showModal() : (d.open = true); };
+$("specClose").onclick = () => { const d = $("spec"); d.close ? d.close() : (d.open = false); };
+
+/* ---- downloads built from the in-memory payload, so they work offline and
+        over file:// as well as when hosted ---- */
+function download(name, text, type) {
+  const url = URL.createObjectURL(new Blob([text], {type}));
+  const a = Object.assign(document.createElement("a"), {href:url, download:name});
+  a.click(); URL.revokeObjectURL(url);
+}
+$("dlJson").onclick = () => download("nordstern.json", JSON.stringify(window.NORDSTERN, null, 1), "application/json");
+$("dlCsv").onclick = () => {
+  const rows = visible();
+  const cols = ["slug","name","kind","mechanism","intervention","prognostic","predictive",
+                "capability","terms","reach","delivery","quadrant","orphaned","toll_severity"];
+  const cell = (r,c) => ({
+    mechanism:r.axes.mechanism, intervention:r.axes.intervention,
+    prognostic:r.measurement.prognostic, predictive:r.measurement.predictive,
+    toll_severity:r.toll.severity,
+  }[c] ?? r.derived[c] ?? r[c]);
+  const csv = [cols.join(",")].concat(rows.map(r =>
+    cols.map(c => `"${String(cell(r,c)).replace(/"/g,'""')}"`).join(","))).join("\n");
+  download("nordstern-filtered.csv", csv, "text/csv");
+};
+
+/* ---- filter + sort ----
+ * Filtering lives entirely in query.js. This function only sorts. ---- */
+function visible() {
+  last = Q.run(R, state.q, DOM);
+  const out = last.records.slice();
+  const key = r => ({
+    _flags: (r.derived.orphaned?1:0) + (r.derived.has_window?1:0),
+    _meas:  r.measurement.prognostic + r.measurement.predictive,
+    _cost:  r.derived.cheapest_priced_blocker ?? Infinity,
+    mechanism: r.axes.mechanism,
+  }[state.sort] ?? r.derived[state.sort] ?? r[state.sort]);
+  return out.sort((a,b) => {
+    const x = key(a), y = key(b);
+    return (x < y ? -1 : x > y ? 1 : 0) * state.dir;
+  });
+}
+
+const money = v => v == null ? "—" : "$" + (v >= 1e9 ? (v/1e9)+"B" : v >= 1e6 ? (v/1e6)+"M" : v);
+const short = s => s.slice(0,4);
+
+function render() {
+  const rows = visible();
+
+  /* A term that failed to parse is REPORTED and skipped, never silently
+     dropped — a filter you typed that quietly did nothing is the one bug
+     that would make this untrustworthy. */
+  const err = $("qerr");
+  err.innerHTML = last.errors.map(e =>
+    `<div class="qe">${ticks(e.message)}${e.hint ? ` <span class="hint">— ${ticks(e.hint)}</span>` : ""}</div>`).join("");
+  err.classList.toggle("on", last.errors.length > 0);
+
+  const dropped = last.errors.length
+    ? ` · ${last.errors.length} term${last.errors.length > 1 ? "s" : ""} ignored` : "";
+  $("count").textContent = `${rows.length} of ${R.length}${dropped}`;
+  $("tbl").tBodies[0].innerHTML = rows.map(r => {
+    const d = r.derived, m = r.measurement;
+    const flags = (d.orphaned?"⚑":"") + (d.has_window?"⧗":"") + (d.spans_ladder?"⧉":"");
+    return `<tr data-slug="${r.slug}" class="${state.sel===r.slug?"sel":""}">
+      <td class="nm">${esc(r.slug)}</td>
+      <td class="flags">${flags}</td>
+      <td>${esc(r.axes.mechanism)}</td>
+      <td>${short(m.diagnostic)}·${short(m.prognostic)}·${short(m.predictive)}</td>
+      <td class="cap-${d.capability}">${d.capability}</td>
+      <td class="t-${d.terms}">${d.terms}</td>
+      <td>${d.reach.toFixed(3)}</td>
+      <td>${money(d.cheapest_priced_blocker)}</td>
+    </tr>`;
+  }).join("") || `<tr><td colspan="8" style="padding:24px;text-align:center;color:var(--ink-soft)">nothing matches</td></tr>`;
+
+  $("tbl").querySelectorAll("tbody tr[data-slug]").forEach(tr =>
+    tr.onclick = () => { state.sel = tr.dataset.slug; render(); });
+
+  const sel = R.find(r => r.slug === state.sel);
+  $("detail").innerHTML = sel ? detail(sel)
+    : `<div class="empty">Pick an entity, or ask the register a question.<br><br>
+       <span style="font-family:'IBM Plex Mono',monospace;font-style:normal;font-size:11px">
+       try <code>capability:curable reach:&lt;0.5</code><br>
+       or <code>-blocker.kind:knowledge deaths:&gt;100k</code></span><br><br>
+       ${R.length} records · every rating derived, never stored · <code>python3 check.py</code></div>`;
+  const inline = $("gl2");
+  if (inline) inline.onclick = e => { e.preventDefault(); openGloss(); };
+}
+
+/* ---- the verdict, in a sentence ------------------------------------------
+ * A bare `capability: curable` on a card next to 670,000 annual deaths reads as
+ * a claim nobody made. The derived words are accurate and they are not
+ * self-explanatory, so the card says what they mean in plain English and puts
+ * the qualifiers in the same breath rather than three fields away.
+ * ------------------------------------------------------------------------- */
+const LEAD = {
+  curable: "A finite treatment ends this.",
+  managed: "Treatable indefinitely — controlled, not cured.",
+  partial: "Treatment slows it. Nothing arrests it.",
+  /* No treatment alters the course, and it can be prevented — which for measles
+     and rabies is the whole story. See gaps.md #66. */
+  preventable: "No treatment alters the course. It can be prevented.",
+  unsolved: "Nothing available alters the course.",
+};
+const PRICE = {
+  clean: "",
+  costly: " The treatment takes something permanent.",
+  harsh: " The treatment is itself permanently damaging.",
+};
+/* The other half of "are they back to the state they were in before".
+   PRICE is what the cure takes; this is what the disease already took and the
+   cure arrives too late to give back. Without it the card read "A finite
+   treatment ends this." for tuberculosis, full stop — for a disease that
+   permanently scars the lungs of a large share of the people it cures. */
+const RESIDUE = {
+  clean: "",
+  costly: " Curing it does not undo the damage already done.",
+  harsh: " Curing it does not undo the damage already done, which is severe.",
+};
+
+// Every cell that could be read as a verdict on the DISEASE carries its
+// qualifier in the sentence itself. `engineering problem` and `known &
+// modifiable` are the two that most need it, for opposite reasons.
+const QUAD_NOTE = {
+  "known & treatable":
+    "Map cell <b>known &amp; treatable</b> means the mechanism is understood and a treatment exists — <b>not</b> that the disease is solved.",
+  "known & modifiable":
+    "Map cell <b>known &amp; modifiable</b> means treatment <b>slows</b> the course without holding or ending it.",
+  "engineering problem":
+    "Map cell <b>engineering problem</b> means the mechanism is understood and treatment does not change the course. It does <b>not</b> mean treatment does nothing — symptom relief is real and this register has no axis for it.",
+  "empirical luck":
+    "Map cell <b>empirical luck</b> means something works and nobody can say why.",
+  "empirical foothold":
+    "Map cell <b>empirical foothold</b> means something slows a disease nobody understands.",
+  "frontier":
+    "Map cell <b>frontier</b> means neither understood nor altered by treatment.",
+};
+
+function verdict(r) {
+  const d = r.derived;
+  const pct = Math.round(d.reach * 100);
+  const reachTxt = d.capability === "unsolved" ? ""
+    : pct >= 1 ? `Reaches about ${pct}% of patients.`
+    : "Reaches almost nobody.";
+  const spans = d.spans_ladder ? `
+    <div class="spans"><b>One entity, more than one answer.</b> The strata below
+    disagree about what is possible, so “is this solved” is a <b>malformed
+    question, not a hard one</b> — the register will not pick a side. Read the
+    strata, not the single row above.</div>` : "";
+  const back = d.restored === "n/a" ? ""
+    : d.restored === "restored"
+      ? `<span class="back yes">Back to how they were before: <b>yes</b>, for the modal patient.</span>`
+      : `<span class="back no">Back to how they were before: <b>no</b> — ${{
+          "cure-costs": "the treatment took something",
+          "disease-residue": "the disease had already done permanent damage",
+          "both": "the treatment took something <i>and</i> the disease had already done permanent damage",
+        }[d.restored]}.</span>`;
+  return `<div class="verdict">
+      <span class="lead">${LEAD[d.capability]}${PRICE[d.terms]}${RESIDUE[d.residue_terms]}</span>
+      ${back}
+      <span class="qual">${reachTxt}
+        ${QUAD_NOTE[d.quadrant] || `Map cell: ${d.quadrant}.`}
+        <a href="#" id="gl2" style="color:var(--water)">what do these mean?</a></span>
+    </div>${spans}`;
+}
+
+function detail(r) {
+  const d = r.derived, ax = r.axes, m = r.measurement;
+  const kv = (k,v) => `<div class="kv"><span class="k">${k}</span><span>${esc(v)}</span></div>`;
+  const sec = (t,b) => b ? `<h3>${t}</h3>${b}` : "";
+  const num = s => s ? `${s.value} <span style="color:var(--ink-soft)">${esc(s.units||"")}</span>` : "—";
+
+  return `
+    <div class="slug">${esc(r.slug)} · ${esc(r.assertion.id)} · rated ${esc(r.assertion.rated)}</div>
+    <h2>${esc(r.name)}</h2>
+    <div style="margin-top:6px">
+      ${["orphaned","has_window","spans_ladder","cured_at_a_price","harm_without_benefit",
+         "overtreatment_risk","futile_treatment_risk"].filter(f=>d[f])
+        .map(f=>`<span class="pill">${f.replace(/_/g," ")}</span>`).join("")}
+    </div>
+
+    ${verdict(r)}
+
+    ${sec("Verdict (derived)",
+      kv("capability", d.capability) + kv("delivery", `${d.delivery} — reach ${d.reach}`) +
+      kv("terms", d.terms) + kv("residue", d.residue_terms) +
+      kv("restored", d.restored) + kv("quadrant", d.quadrant))}
+
+    ${sec("Axes",
+      kv("mechanism", ax.mechanism) + kv("intervention", ax.intervention) +
+      kv("prevention", ax.prevention) + kv("ongoing", ax.ongoing) +
+      kv("efficacy", num(ax.efficacy)) + kv("access", num(ax.access)))}
+
+    ${sec("Measurement",
+      kv("diagnostic", m.diagnostic) + kv("prognostic", m.prognostic) +
+      kv("predictive", m.predictive) + `<p style="margin-top:5px">${esc(m.witness)}</p>`)}
+
+    ${sec("Toll — what the cure costs",
+      kv("severity", `${r.toll.severity}${r.toll.permanent ? ", permanent" : ""}`) +
+      kv("incidence", num(r.toll.incidence)) + `<p style="margin-top:5px">${esc(r.toll.what)}</p>`)}
+
+    ${r.residue ? sec("Residue — what the disease leaves in someone it was cured in",
+      kv("severity", `${r.residue.severity}${r.residue.permanent ? ", permanent" : ""}`) +
+      kv("incidence", num(r.residue.incidence)) + `<p style="margin-top:5px">${esc(r.residue.what)}</p>`) : ""}
+
+    ${r.window ? sec("Window",
+      kv("closes on", r.window.closes_on) + kv("caught in time", num(r.window.caught_in_time)) +
+      `<p style="margin-top:5px">${esc(r.window.what)}</p>`) : ""}
+
+    ${r.strata ? sec("Strata — one entity, more than one answer",
+      r.strata.map(s => `<div class="blk"><div class="hd">${esc(s.name)} · ${(s.fraction.value*100).toFixed(0)}%
+        · ${esc(s.intervention)} · toll ${esc(s.toll)}</div><p>${esc(s.what)}</p></div>`).join("")) : ""}
+
+    ${sec("Blockers — why it isn't delivered", r.blockers.map(b => `
+      <div class="blk ${esc(b.standing)}">
+        <div class="hd">${esc(b.kind)} · ${esc(b.standing)} · ${money(b.scale)}</div>
+        <div style="font-size:10.5px;color:var(--ink-soft)">blocks: ${esc(b.blocks)}
+          · ${(b.who_could||[]).join(", ")}</div>
+        <p>${esc(b.what)}</p>
+      </div>`).join(""))}
+
+    ${sec("Witness", Object.entries(r.witness || {})
+      .map(([k,v]) => `<p><b>${esc(k)}.</b> ${esc(v)}</p>`).join(""))}
+
+    ${sec("Burden", Object.entries(r.burden || {})
+      .map(([k,v]) => typeof v === "object" && v ? kv(k, `${v.value} ${v.units||""} (${v.src||"?"})`)
+        : `<p style="color:var(--ink-soft)">${esc(v)}</p>`).join(""))}
+
+    ${sec("Holes", `<ul>${(r.holes||[]).map(h=>`<li>${esc(h)}</li>`).join("")}</ul>`)}
+  `;
+}
+
+/* ---- the provenance banner, from the same renderer the map uses ---- */
+(function provenance() {
+  const snaps = window.NORDSTERN_SNAPSHOTS || [];
+  const html = snaps.length && window.NordsternBanner
+    ? window.NordsternBanner.render(snaps[snaps.length - 1], { tone: "warn", queryHref: "?q=" })
+    : "<b>Not a data source.</b> No snapshot found — run <code>python3 check.py --build</code>.";
+  // Two places on this page say where the numbers come from — the banner above
+  // the table and the spec's own section. Both were hand-written, both went
+  // stale, and now both are the same string.
+  for (const id of ["prov", "specProv"]) { const el = $(id); if (el) el.innerHTML = html; }
+})();
+
+/* ---- boot. The query is in the URL, so a view is a link — and so is the
+        spec, because a reference somebody cannot send to a colleague is a
+        reference they will paste screenshots of instead. ---- */
+(function start() {
+  let q = "", spec = false;
+  try {
+    if (typeof location !== "undefined" && location.search) {
+      const p = new URLSearchParams(location.search);
+      q = p.get("q") || "";
+      spec = p.has("spec");
+    }
+  } catch (e) { q = ""; }
+  $("q").value = q;
+  state.q = q;
+  render();
+  if (spec) { const d = $("spec"); d.showModal ? d.showModal() : (d.open = true); }
+})();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+slug: anaesthesia-mechanism
+id: FND-O-0011
+name: How does general anaesthesia switch consciousness off?
+kind: mechanism
+resolution: partly-answered
+
+question: >
+  Since 1846 medicine has been able to abolish consciousness reversibly, on
+  demand, to a schedule, in almost anybody. **It still cannot say what it is
+  doing.**
+  `partly-answered` rather than `open`, because the molecular half has moved a
+  long way and saying otherwise would be false. The Meyer-Overton correlation —
+  potency tracking lipid solubility across five orders of magnitude, known since
+  about 1900 — is no longer read as a lipid mechanism; the modern account is
+  binding to hydrophobic pockets on membrane proteins, and the proteins are
+  named: **GABA-A receptors** for propofol, etomidate and the volatiles,
+  **NMDA receptors** for ketamine and xenon, **two-pore-domain potassium
+  channels**, glycine receptors, HCN channels. Photolabelling has located actual
+  binding sites. This is real mechanism and it is not nothing.
+  **THE GAP IS ONE LEVEL UP.** Nobody can say how potentiating an inhibitory
+  receptor in a dish becomes *the absence of a person* — which circuits fail, in
+  what order, why the transition is comparatively abrupt, why it reverses so
+  cleanly, and why agents with **different molecular targets and different EEG
+  signatures** arrive at states we call by the same word. Ketamine and propofol
+  do not look alike on the way down and both are anaesthesia. There is no
+  agreed account that spans them.
+  So the question is not *does it work* — it works superbly. It is: **what is
+  the state, and is "unconscious" one thing or several?**
+
+what_it_unblocks: >
+  **THE HONEST HEADLINE IS THAT IT MAY UNBLOCK VERY LITTLE, AND THAT IS WHY THIS
+  RECORD IS WORTH KEEPING.**
+  This is the register's second instance of Nordstern gaps.md #101 — the rule
+  forced by `marburg`, whose reservoir *is* established and what followed was
+  advice to miners. **A knowledge question can be answered and change nothing**,
+  and "nothing much" is a legal answer here. Anaesthesia was invented with no
+  mechanistic understanding whatever and refined empirically for 180 years into
+  one of the safest interventions medicine has: attributable mortality in
+  healthy adults in well-resourced systems is on the order of one in a hundred
+  thousand or better. **Whatever the ignorance costs, it is not lives at any
+  scale this register would notice.**
+  What it plausibly does cost, stated as specifically as it can be:
+  **AWARENESS.** A patient paralysed and aware, unable to signal. The rate is
+  itself contested in a way that is part of this obstacle: spontaneous-report
+  audit puts it near 1 in 19,000, structured post-operative interview puts it
+  one to two orders of magnitude higher, and **the two disagree because nobody
+  can define the endpoint.** No test identifies who is at risk beforehand.
+  **DEPTH MONITORS ARE SURROGATES.** Processed-EEG indices are empirical
+  correlations fitted to observed behaviour, not measurements of unconsciousness,
+  and the large trials of them disagree — partly because a trial needs an
+  endpoint and the endpoint is the thing that is not understood.
+  **POSTOPERATIVE DELIRIUM AND COGNITIVE DECLINE, ESPECIALLY IN THE OLD.** Whether
+  the anaesthetic contributes, or the surgery, the inflammation and the illness
+  account for all of it, is genuinely unresolved — and it stays unresolved
+  because there is no mechanistic account to test the attribution against.
+  **PAEDIATRIC NEUROTOXICITY.** A regulatory warning about repeated or lengthy
+  general anaesthesia in the very young, resting on animal data that alarm and
+  human data that do not settle it. This is the shape a mechanism gap takes when
+  it meets a regulator: nobody can say whether to worry.
+  **NO REVERSAL, AND NO INDIVIDUAL DOSE.** Neuromuscular blockade has an antidote
+  and benzodiazepines have one; **hypnosis has none — you wait.** And the dose is
+  a population statistic (the concentration at which half of patients do not move)
+  plus watching the patient, because there is no per-person model to compute one.
+  **AND THE THING THAT IS NOT MEDICINE AT ALL.** Anaesthesia is the only
+  reversible, dose-controlled, reliable off-switch for consciousness that exists.
+  It is the best experimental instrument the science of consciousness has, and
+  the reason to answer this may be that rather than any of the above.
+
+why_hard: >
+  **BECAUSE THE ENDPOINT IS UNMEASURABLE WHILE IT IS HAPPENING.** You cannot ask
+  an unconscious person anything; you ask them afterwards, about an interval they
+  may not be able to report on even if they experienced it, and absence of
+  recall is not absence of experience. Every measurement is a proxy — movement,
+  haemodynamics, an EEG-derived index — and each proxy was validated against
+  another proxy.
+  **BECAUSE THE TARGET CONCEPT IS CONTESTED OUTSIDE MEDICINE.** Consciousness has
+  no agreed definition or measure, so "how does this abolish it" inherits an
+  unsettled question from philosophy and neuroscience. The competing frameworks —
+  thalamocortical disruption, loss of long-range integration, cognitive
+  unbinding — are not really rival mechanisms so much as rival descriptions.
+  **BECAUSE THE AGENTS DISAGREE.** Any account has to cover a GABA-A potentiator,
+  an NMDA antagonist and an inert gas, which have different molecular targets and
+  produce visibly different EEG and different subjective reports. Either there
+  are several distinct states being given one name, or there is a convergence
+  nobody has found.
+  **AND BECAUSE NOTHING FORCES IT.** This is the most important line here. The
+  clinical problem is solved well enough that no patient, hospital or regulator
+  is waiting on the answer. Empirical refinement has delivered safety without
+  understanding for nearly two centuries and continues to. **A question that
+  nothing forces gets answered slowly**, and that is a statement about incentives
+  rather than about difficulty.
+
+claims: []
+# DELIBERATELY EMPTY, AND THIS IS THE RECORD'S MAIN FINDING.
+#
+# A top-down obstacle normally asserts a disease list it has not earned, held as
+# `claims` so that answering the question later grades the field's intuition.
+# `rna-folding` does exactly that and is cited by zero Nordstern records.
+#
+# Here the honest assertion is that THERE IS NO SUCH LIST. Eleven records mention
+# anaesthesia and every one treats it as INFRASTRUCTURE, never as a mystery:
+# `congenital-heart-disease` needs a paediatric cardiac anaesthetist,
+# `maternal-haemorrhage` records a woman reaching a facility with no anaesthetist,
+# `osteoarthritis` needs "an anaesthetic service safe for a comorbid
+# seventy-five-year-old", `cataract` credits topical anaesthesia with making the
+# highest-volume operation in the world a day case, and `bladder-cancer` and
+# `noma` count repeated general anaesthetics as a TOLL. (`leprosy` and
+# `buruli-ulcer` use the word in its other sense — nerve damage and a bacterial
+# toxin that numbs the wound it makes — which is not this record.)
+#
+# NOT ONE OF THEM IS WAITING ON THE MECHANISM. Inventing claims to give this
+# record a disease list would be exactly the failure `check.py` guards against
+# elsewhere, and would destroy the only interesting thing about it.
+
+holes:
+  - >
+    **THIS RECORD IS A NEGATIVE CONTROL AND SHOULD BE READ AS ONE.** Every other
+    obstacle here is filed because something is stuck behind it. This one is
+    filed because **something famously is not** — the mechanism is unknown and
+    the practice is excellent — which makes it the corpus's sharpest test of the
+    assumption that understanding is what unblocks medicine. If the register
+    ever starts implying that mechanism gaps are the binding constraint, this
+    entry is the counter-example, and it is more useful in that role than it
+    would be as a work item. Related in shape to what `animal-translation` logs
+    against itself: **the gate is not empty, it is uncalibrated** — here, the
+    tool is not understood and it is not thereby unsafe.
+  - >
+    **`partly-answered` may be too generous, or not generous enough, and the
+    disagreement is real rather than a rating error.** A molecular
+    pharmacologist would say the targets are identified and the remaining work
+    is systems neuroscience. A clinician would say the question that matters —
+    can you tell me this patient is unconscious right now — is entirely open. A
+    consciousness researcher would say the question is not even well posed.
+    Three defensible readings of the same field, and the single value stored
+    here hides that. The register has no way to record a contested resolution.
+  - >
+    **THE AWARENESS NUMBERS ARE NOT SETTLED AND THIS RECORD LEANS ON THEM.** The
+    spread between spontaneous-report audit and structured interview is more
+    than an order of magnitude. Quoted here from recall, uncited, and the
+    direction of the discrepancy matters to the argument — if the low figure is
+    right, this obstacle costs even less than stated.
+  - >
+    **IT MAY BE TWO OBSTACLES, THE SAME DOUBT `animal-translation` AND
+    `pathogen-persistence` BOTH LOG.** *How do these molecules produce this
+    state* is pharmacology and is progressing. *What is consciousness such that
+    it can be switched off* is not a medical question at all and may never be
+    answered in a form medicine could use. They share a sentence and possibly
+    nothing else.
+  - >
+    **`scale: null` is not asserted here because Engpass does not price
+    obstacles** — Nordstern's blockers do, and no blocker cites this. Were one
+    to, the pricing would be genuinely unclear: better depth monitoring is
+    buyable engineering, and a theory of consciousness is not. Same objection
+    `cell-targeting` and `animal-translation` both log against themselves.
+  - >
+    **The register has no record for disorders of consciousness** — vegetative
+    and minimally conscious states, where the question *is this person in there*
+    is the whole clinical problem and has no reliable answer. If this obstacle
+    has a bottom-up citation waiting anywhere, it is there, and its absence is
+    why this record currently claims nothing.
+
+asserted:
+  date: 2026-08-31
+  by: [claude, jeremy]

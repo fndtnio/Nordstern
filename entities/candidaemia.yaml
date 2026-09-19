@@ -1,0 +1,515 @@
+slug: candidaemia
+id: FND-D-0112
+name: candidaemia
+also: [candidemia, invasive candidiasis, Candida bloodstream infection, Candida auris infection]
+kind: disease
+mondo: MONDO:0044070
+residual: false
+contested: false
+
+# THE FOURTH FUNGAL RECORD, AND IT INVERTS THE OTHER THREE.
+#
+# 1. THE RESERVOIR IS THE PATIENT. Cryptococcus, Aspergillus and Coccidioides
+#    are environmental saprophytes with no evolutionary interest in us; the
+#    register's argument about them is that we are collateral. **Candida is a
+#    commensal.** It lives in the gut, mouth and vagina of most healthy people
+#    and is exquisitely adapted to that life. Nobody catches candidaemia — the
+#    organism was already there, and something let it into the blood.
+#
+# 2. WHICH MAKES IT THE MOST IATROGENIC RECORD IN THE REGISTER. The central
+#    venous catheter is the road in. Broad-spectrum antibiotics clear the
+#    bacterial competition that kept it in check. Abdominal surgery breaches the
+#    barrier. Parenteral nutrition feeds it. Chemotherapy and corticosteroids
+#    remove the immune answer. **Medicine does not merely fail to prevent this
+#    disease; medicine constructs the niche it occupies**, and the decisive
+#    treatment is often to pull out the line we put in.
+#
+# 3. AND THE RESISTANCE HAS A DIFFERENT ORIGIN FROM THE RECORD NEXT DOOR.
+#    `invasive-aspergillosis` resistance is manufactured in agricultural soil
+#    and arrives in azole-naive patients. **Candida resistance is manufactured in
+#    hospitals, by treating patients** — the ordinary antimicrobial-resistance
+#    loop. Two fungal records, two mechanisms with nothing in common, and
+#    `amr-infection` is scoped to bacteria and covers neither.
+#
+# SCOPE. Candidaemia — Candida in the bloodstream — is the measurable core of
+# invasive candidiasis. Deep-seated candidiasis without a positive blood culture
+# is real, common and largely uncounted; see `holes`. `Candida auris` is held as
+# a stratum here and is arguably its own record: it has no MONDO term at all,
+# checked on the day this was written.
+
+burden:
+  incidence:
+    value: 1.5e6
+    units: >
+      estimated cases/year worldwide of invasive candidiasis, of which
+      candidaemia is the diagnosable fraction — **and the ratio between the two
+      is one of the least settled numbers in this record.** Blood culture detects
+      perhaps half of invasive disease, so the counted cases and the true cases
+      differ by a factor nobody has pinned down
+    src: recall
+  deaths:
+    value: 1.0e6
+    units: >
+      deaths/year — crude 30-day mortality runs 30-40% in well-resourced
+      settings and higher elsewhere. **Attributable mortality is much lower and
+      genuinely contested**: the modal patient is in intensive care with an
+      abdominal catastrophe or a haematological malignancy, and separating the
+      contribution of the yeast from the contribution of being that patient has
+      resisted several decades of attempts
+    src: recall
+  note: >
+    **The most common invasive fungal infection in hospitals, and among the most
+    common bloodstream infections of any kind in intensive care.** Unlike the
+    register's other three fungal records this one is not exotic, not tropical
+    and not confined to a soil map: it happens wherever there are central lines,
+    which is everywhere that medicine is at its most advanced.
+
+survival:
+  horizon: 30 days from the first positive blood culture
+  untreated:
+    value: 0.05
+    units: >
+      fraction alive — untreated candidaemia in a critically ill patient
+      disseminates to eye, heart valve, brain and bone and is very close to
+      uniformly fatal. **The counterfactual is largely historical**, since nobody
+      knowingly withholds treatment, and it rests on the pre-antifungal era and
+      on series where diagnosis came too late to act on
+    src: recall
+  treated:
+    value: 0.62
+    units: >
+      fraction alive on an echinocandin with source control. **Time to
+      appropriate therapy is the strongest modifiable predictor in the
+      literature** — each day of delay costs measurably — and the median patient
+      waits two to three days for a blood culture to turn positive
+    src: reasoning
+  witness: >
+    **A THIRD OF PATIENTS DIE WITH A DRUG THAT WORKS, AND THE ARITHMETIC IS
+    MOSTLY NOT ABOUT THE DRUG.** Echinocandins are fungicidal, well tolerated and
+    reliably active against most isolates. What kills people is the two to three
+    days before anyone knows, and the underlying illness that put the line in.
+    **Compare `invasive-aspergillosis` at 0.55 and `cryptococcal-meningitis` at
+    0.55.** All three fungal survival figures land within seven points of each
+    other for entirely different reasons: aspergillosis because the diagnosis is
+    unobtainable, cryptococcus because the drug is unregistered, and this one
+    because the test is slow. **Three bottlenecks, one number, and the axis
+    cannot tell them apart** — which is the case for reading `survival` beside
+    the blockers rather than on its own.
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: risk-reduction
+  ongoing: low
+  efficacy:
+    value: 0.70
+    units: >
+      fraction-of-patients (infection cleared on appropriate therapy with source
+      control) — **higher than the survival figure because the two measure
+      different things.** Echinocandins clear the bloodstream reliably; a
+      substantial share of those patients then die of what they were already
+      dying of. This is one of the clearest places in the register where curing
+      the named disease and saving the patient come apart
+    src: reasoning
+  access:
+    value: 0.50
+    units: >
+      fraction-of-patients (diagnosed in time and given an appropriate agent) —
+      **and the shortfall splits by geography in a way the single number
+      hides.** In wealthy systems the drug is present and the delay is the blood
+      culture. In much of the world echinocandins are unaffordable or absent
+      entirely, and fluconazole is used against organisms that are intrinsically
+      resistant to it
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: partial
+  witness: >
+    **DIAGNOSTIC is `objective` and the problem is the clock, not the
+    category.** A positive blood culture is definitive — it is the definition of
+    this record — and it takes two to three days to turn positive, in a disease
+    where mortality rises measurably with each day of delay. It is also roughly
+    fifty percent sensitive for invasive candidiasis as a whole: deep-seated
+    disease in the abdomen or a deep organ frequently never seeds the blood at
+    a detectable level, so **the test that defines the record also decides which
+    patients are allowed into it.**
+    Beta-D-glucan is faster and non-specific across fungi. T2 magnetic resonance
+    detects *Candida* directly from blood within hours and is not widely
+    deployed. **This is the register's cleanest case of a diagnostic gap that is
+    purely about speed** — not availability, not cost, not interpretation.
+    PROGNOSTIC is `partial`. Severity scores, source, species and persistent
+    candidaemia carry real information about who dies. What none of it separates
+    is the mortality of the infection from the mortality of the underlying
+    illness, which is the same ambiguity that makes the `deaths` figure
+    contested.
+    PREDICTIVE is `partial` **and it is improving for an unusual reason.**
+    Species identification predicts susceptibility well — *C. glabrata* and
+    *C. krusei* are intrinsically or frequently azole-resistant, *C. parapsilosis*
+    has reduced echinocandin susceptibility — and MALDI-TOF made species
+    identification fast and cheap. So the predictive question is answered by
+    naming the organism, hours before formal susceptibility testing returns.
+    What remains unanswered is who among the colonised will become infected,
+    which is what would let prophylaxis be aimed.
+
+strata:
+  - name: fluconazole-susceptible, chiefly C. albicans
+    fraction:
+      value: 0.55
+      units: fraction-of-cases
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.80
+      units: fraction-of-stratum (infection cleared on appropriate therapy)
+      src: reasoning
+    toll: minor
+    what: >
+      **The classical organism and the easy half.** *C. albicans* and
+      *C. parapsilosis* remain largely fluconazole-susceptible; step-down to oral
+      fluconazole after initial echinocandin therapy is routine, cheap and
+      effective. The proportion has been falling for thirty years as azole use
+      selected against it.
+
+  - name: azole-resistant non-albicans
+    fraction:
+      value: 0.40
+      units: fraction-of-cases
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.65
+      units: fraction-of-stratum (infection cleared)
+      src: reasoning
+    toll: minor
+    what: >
+      *C. glabrata*, intrinsically less azole-susceptible and acquiring
+      resistance readily, plus *C. krusei*, which is intrinsically
+      fluconazole-resistant. **Echinocandins work, which is why this stratum is
+      still `curative`** — and echinocandins are intravenous, expensive, and
+      unavailable in much of the world, so this stratum is curable in one place
+      and not in another.
+
+  - name: multidrug-resistant, including C. auris
+    fraction:
+      value: 0.05
+      units: fraction-of-cases
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.40
+      units: fraction-of-stratum (infection cleared)
+      src: reasoning
+    toll: major
+    what: >
+      **THE ONLY FUNGUS IN THIS REGISTER THAT SPREADS FROM PATIENT TO PATIENT.**
+      *Candida auris* emerged around 2009 on three continents simultaneously from
+      genetically distinct clades — an event nobody has explained — and behaves
+      unlike any other yeast: it colonises skin rather than gut, **survives on
+      bed rails, blood-pressure cuffs and ward surfaces for weeks**, resists
+      routine disinfectants, and causes hospital outbreaks that require the
+      infection-control response of a resistant bacterium.
+      Most isolates are fluconazole-resistant, many are amphotericin-resistant,
+      and echinocandin resistance is rising. **Genuinely pan-resistant isolates
+      exist**, for which the honest rating is `none` — the stratum stays
+      `curative` because they remain a minority, and that judgement should be
+      revisited rather than trusted.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    **The gentlest toll of any fungal record here, and it is worth saying why.**
+    Echinocandins are among the best-tolerated systemic antifungals ever made:
+    they target the fungal cell wall, which human cells do not have, so the usual
+    problem of a eukaryotic pathogen sharing our machinery is for once avoided.
+    Few interactions, little organ toxicity, no drug-level monitoring.
+    The real price is not pharmacological. It is **intravenous access for two
+    weeks after the last positive culture**, in a patient whose central line has
+    just been removed because it was the source — and a dilated ophthalmological
+    examination, because endophthalmitis is a recognised complication and
+    salvaging vision depends on finding it.
+    Amphotericin B remains the fallback where echinocandins are unavailable, and
+    brings its nephrotoxicity with it.
+  incidence:
+    value: 0.05
+    units: >
+      fraction-of-treated with significant drug toxicity — low, and it would be
+      substantially higher in settings dependent on amphotericin B
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    **Sight, and a heart valve.** Candidaemia seeds the eye in a meaningful
+    minority; chorioretinitis and endophthalmitis cause permanent visual loss and
+    are the reason a dilated fundoscopy is recommended in every case — a cheap
+    examination that is frequently omitted, which is the third time this register
+    has recorded a **free procedure whose omission blinds people**, after the
+    therapeutic lumbar puncture in `cryptococcal-meningitis`.
+    Endocarditis on a native or prosthetic valve requires surgery and lifelong
+    consequences. Osteomyelitis and central nervous system seeding leave
+    permanent deficits. **These are complications of delay**: the longer the
+    yeast circulates, the more places it settles, which ties the residue directly
+    to the diagnostic blocker rather than to anything about the organism.
+  incidence:
+    value: 0.10
+    units: >
+      fraction-of-survivors with permanent damage from a metastatic focus —
+      reasoned, and poorly measured because survivors are followed for their
+      underlying illness
+    src: reasoning
+
+witness:
+  mechanism: >
+    `established`, and the interesting part is that most of it is about us rather
+    than the organism. *Candida albicans* is a **commensal yeast** of the human
+    gastrointestinal tract, mouth and vagina, carried by most people without
+    harm and held there by intact epithelium, competing bacterial flora and
+    neutrophils. Invasive disease follows the removal of those three: a central
+    venous catheter or a surgical breach provides the route, broad-spectrum
+    antibiotics remove the competition, and neutropenia or corticosteroids remove
+    the response. The yeast then disseminates and seeds eye, valve, bone and
+    brain.
+    **Biofilm on the catheter is central and is why the plastic has to come
+    out.** *Candida* in a biofilm is dramatically less susceptible to antifungals
+    than the same organism free-floating, so a drug that works in the laboratory
+    fails in the patient until the surface is removed.
+    *C. auris* is a genuine exception to all of this — skin-colonising,
+    environmentally persistent, transmissible — and its origin is unexplained.
+    **The hypothesis that a warming climate selected a thermotolerant environmental
+    yeast able to breach the mammalian thermal barrier is serious, published and
+    unproven**, and it is the second record after `coccidioidomycosis` where
+    climate is proposed as the driver and the register has no field for it
+    (gaps.md #225).
+  intervention: >
+    `curative`, and unusually the drug is the easy part. An echinocandin, started
+    early, clears the bloodstream in most patients. **The decisive act is
+    frequently mechanical**: remove the central venous catheter, drain the
+    abscess, take out the infected prosthesis. Therapy continues fourteen days
+    beyond the last negative culture, with a dilated eye examination and, where
+    indicated, echocardiography to look for the places it has already gone.
+  prevention: >
+    `risk-reduction`, and **the levers are the ones that already exist for
+    bacterial line infections**: catheter insertion bundles, chlorhexidine skin
+    preparation, prompt removal of lines nobody still needs, and antibiotic
+    stewardship — since the antibiotics that clear bacterial competitors are a
+    direct cause of candidal overgrowth.
+    Antifungal prophylaxis in the highest-risk groups works and selects for
+    resistance, the same double-edged position `invasive-aspergillosis` records.
+    For *C. auris* the prevention is contact precautions, screening of contacts,
+    single rooms and sporicidal disinfection — **an infection-control programme
+    of a kind no other fungus in this register requires.**
+    There is no vaccine; a candidate targeting *C. albicans* adhesin reached
+    trials for recurrent vulvovaginal candidiasis and not for this.
+  ongoing: >
+    `low`, and it is the only fungal record here that can say so. Treatment is
+    two weeks or so beyond clearance and then it is finished; survivors who
+    escape a metastatic focus have no continuing burden from this disease at
+    all. **Contrast `cryptococcal-meningitis`, where fluconazole continues until
+    immune reconstitution, and coccidioidal meningitis, which is lifelong.**
+  efficacy: >
+    See the axis. The gap between clearing the organism and the patient surviving
+    is the widest in this record's family.
+  access: >
+    **Two different shortages wearing one number.** In high-income intensive care
+    the drug is on the shelf and the delay is microbiological — two to three days
+    for a bottle to flag, in a disease where that delay is measured in lives.
+    Elsewhere echinocandins are simply absent: they are off-patent in principle
+    and expensive in practice, intravenous only, and much of the world treats
+    candidaemia with fluconazole against species that were never going to
+    respond. **A rapid test would move the first; a procurement decision would
+    move the second; and the axis averages them into 0.50.**
+
+moved:
+  - date: 2009
+    axis: efficacy
+    from: 0.55
+    to: 0.70
+    why: >
+      Echinocandins displaced fluconazole as first-line therapy in guidelines,
+      on trials showing better outcomes and reliable activity against the
+      non-albicans species that azole use had been selecting for. **The
+      register's cleanest example of a new drug class arriving before the
+      resistance it was needed for became dominant** — which is the opposite of
+      the antibiotic story it otherwise resembles.
+    src: recall
+  - date: 2016
+    axis: prevention
+    from: none
+    to: risk-reduction
+    why: >
+      *Candida auris* was designated an emerging global threat and drew a
+      hospital infection-control response — screening, isolation, sporicidal
+      cleaning — that had never previously been mounted against a yeast.
+      **Recorded as prevention moving because it is the first time transmission
+      control became a meaningful intervention for a fungal disease**, which is
+      exactly the lever the register's other three fungal records do not have.
+    src: reasoning
+
+holes:
+  - >
+    **Attributable mortality is contested and the record uses crude mortality
+    anyway.** The modal patient is critically ill with something else, and thirty
+    years of case-control and matched-cohort work has not settled how much of the
+    30-40% belongs to the yeast. Every survival and efficacy figure here inherits
+    that, and the record states it rather than picking a side.
+  - >
+    Deep-seated invasive candidiasis without candidaemia is real, common, and
+    outside this record by construction — blood culture is roughly fifty percent
+    sensitive for invasive disease overall. **The record is defined by its own
+    imperfect test**, which is a shape worth noticing: change the test and the
+    entity changes.
+  - >
+    *Candida auris* is held as a stratum and is arguably a separate record. It
+    transmits between people, persists in the environment, and needs an
+    infection-control programme — none of which is true of the rest of this
+    entity. **It has no MONDO term at all**, checked on the day this was written,
+    joining chronic pulmonary aspergillosis and coccidioidal meningitis.
+  - The strata fractions are reasoned from the shape of published surveillance
+    and vary substantially by country, unit type and decade. The
+    multidrug-resistant fraction in particular is a global average over a
+    distribution with very heavy local tails.
+  - >
+    The *C. auris* climate hypothesis is repeated here because it is serious and
+    published, and it is **unproven**. It should not be read as this register
+    endorsing it.
+  - >
+    `intervention: curative` for the multidrug-resistant stratum is a judgement
+    that will age. Pan-resistant isolates exist and for those patients the honest
+    rating is `none`; the stratum holds because they remain a minority, and the
+    fraction is exactly what nobody is measuring well.
+  - Written from model recall. The commensal biology, the catheter-biofilm
+    mechanism, the echinocandin transition and the *C. auris* emergence are the
+    parts most likely right; every number is the part most likely wrong.
+
+blockers:
+  - kind: diagnosis
+    blocks: two to three days, in a disease where each day is measured in lives
+    what: >
+      **THE TEST IS DEFINITIVE AND IT IS TOO SLOW, AND THAT IS THE ENTIRE
+      BLOCKER.** A blood culture takes two to three days to flag; time to
+      appropriate antifungal therapy is the strongest modifiable predictor of
+      death in this disease; and so the standard of care is to guess. Empirical
+      antifungals are given to large numbers of ICU patients who do not have
+      candidaemia — with the cost, and the resistance selection, that entails —
+      while the ones who do have it wait.
+      Rapid direct-from-blood detection exists. T2 magnetic resonance identifies
+      *Candida* species within hours; it is expensive, it is deployed in a
+      minority of centres, and it has not displaced culture. **This is the
+      register's cleanest diagnostic gap that is purely about speed** — the test
+      is not missing, not unaffordable in principle, and not hard to interpret.
+      It is late.
+    who_could: [manufacturer, health-system, sponsor, payer]
+    scale: 4.0e8
+    standing: documented
+    src: reasoning
+
+  - kind: logistics
+    blocks: an intravenous drug that much of the world cannot buy
+    what: >
+      **ECHINOCANDINS ARE FIRST-LINE EVERYWHERE AND AVAILABLE IN A MINORITY OF
+      THE WORLD.** They are intravenous only, priced well above fluconazole, and
+      absent from many national formularies — so a large share of global
+      candidaemia is treated with fluconazole against *C. glabrata* and
+      *C. krusei*, which are respectively frequently and intrinsically resistant
+      to it. The prescriber is not making a mistake; the alternative is not in
+      the building.
+      **This is `cryptococcal-meningitis`'s flucytosine blocker in a different
+      drug class**, and the second time in four fungal records that the binding
+      constraint is a registered, affordable supply of a medicine that already
+      exists. Rezafungin, a once-weekly echinocandin, changes the administration
+      problem and not the price one.
+    who_could: [manufacturer, government, payer, nonprofit, regulator]
+    scale: 3.0e8
+    standing: documented
+    src: reasoning
+
+  - kind: knowledge
+    blocks: knowing which colonised patient will become an infected one
+    what: >
+      Most intensive-care patients are colonised with *Candida* and a small
+      minority develop invasive disease. **Nothing identifies which**, which is
+      why prophylaxis and empirical therapy are given broadly — treating many
+      people who were never going to be infected, at the cost of toxicity, money
+      and the selection pressure that produced the resistant species in the first
+      place.
+      Colonisation indices, risk-prediction rules and biomarker panels have been
+      built and none performs well enough to withhold treatment on. **This is
+      `who-progresses` in a hospital rather than in a population**, and unlike
+      most instances of that question it has an immediately actionable answer
+      attached: aiming prophylaxis would reduce both the harm and the resistance.
+    who_could: [academic, sponsor, health-system]
+    scale: null
+    standing: documented
+    src: reasoning
+    obstacles: [who-progresses]
+
+  - kind: knowledge
+    blocks: a fifth antifungal class, for the isolates that have run out of options
+    what: >
+      Echinocandin resistance is rising in *C. glabrata* and *C. auris*, and
+      **genuinely pan-resistant isolates exist for which nothing works.** The
+      structural reason is the one `invasive-aspergillosis` states: four
+      antifungal classes against an entire kingdom, because fungi are eukaryotes
+      and almost every target is shared with the host. **The echinocandins are
+      the exception that proves it** — they hit the fungal cell wall, which we do
+      not have, and are correspondingly the best-tolerated antifungals in
+      existence. There is no third such target in hand.
+      Fosmanogepix, olorofim and ibrexafungerp are the first new mechanisms in
+      decades; none is licensed for this indication. `scale: null` for finding a
+      target; developing one that has been found is a different and priceable
+      problem.
+    who_could: [academic, sponsor, manufacturer, philanthropy]
+    scale: null
+    standing: documented
+    src: reasoning
+    obstacles: [cell-targeting]
+
+  - kind: policy
+    blocks: the lines, the antibiotics and the surfaces that produce this disease
+    what: >
+      **THIS IS THE MOST IATROGENIC RECORD IN THE REGISTER AND ITS PREVENTION IS
+      ENTIRELY AN INSTITUTIONAL QUESTION.** Every proximate cause is something a
+      hospital does: the central venous catheter, the broad-spectrum antibiotic
+      that clears the competing flora, the parenteral nutrition, the line left in
+      after it stopped being needed. Insertion bundles, chlorhexidine, prompt
+      removal and antibiotic stewardship all work and all depend on ward-level
+      compliance rather than on any product.
+      For *C. auris* it goes further: screening contacts, single rooms,
+      sporicidal disinfection and inter-hospital notification — **an
+      infection-control programme of a kind no other fungus requires**, competing
+      for the same scarce staff and side rooms as every resistant bacterium.
+      **The blocker is that none of it is anybody's line item.** It is the same
+      shape as `mrsa` and `cre`, and it is the first fungal record where that
+      shape applies.
+    who_could: [health-system, government, regulator, payer]
+    scale: 5.0e8
+    standing: documented
+    src: reasoning
+
+  - kind: knowledge
+    blocks: counting a disease its own test detects half of
+    what: >
+      Blood culture is roughly fifty percent sensitive for invasive candidiasis,
+      so the counted cases and the real ones differ by a factor that has never
+      been pinned down — and the record is defined by the test, so the
+      undetected half is outside the entity rather than inside the error bar.
+      Attributable mortality is separately contested after decades of work.
+      **Two independent uncertainties multiply into the burden figure**, which is
+      why it is stated as an order of magnitude.
+      *C. auris* surveillance is better in the countries that went looking and
+      absent in most others, so its global fraction — the number that decides how
+      alarmed to be — is close to unknown.
+    who_could: [academic, government, health-system, nonprofit]
+    scale: 4.0e7
+    standing: documented
+    src: reasoning
+    obstacles: [burden-unknown]
+
+assertion:
+  id: FND-A-0113
+  rated: 2026-08-28
+  by: [claude, jeremy]

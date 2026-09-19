@@ -1,0 +1,453 @@
+slug: obstetric-fistula
+id: FND-D-0136
+name: Obstetric fistula
+also: [vesicovaginal fistula, rectovaginal fistula, VVF, obstructed labour injury complex]
+common: childbirth injury
+mondo: unresolved
+kind: disease
+residual: false
+contested: false
+
+# THE REGISTER'S CLEAREST CASE OF SOCIAL DEATH, AND ITS CLEANEST TWO-SIDED
+# FAILURE.
+#
+# A woman labours for two to five days against a pelvis the baby cannot pass.
+# The fetal head presses the soft tissue between it and the pelvic bone until
+# that tissue dies, leaving a hole between the bladder and the vagina, or the
+# rectum and the vagina, or both. The baby is almost always dead by then. The
+# woman survives and leaks urine or faeces continuously for the rest of her
+# life unless somebody repairs it.
+#
+# **BOTH ENDS OF THIS ARE SOLVED AND NEITHER IS DELIVERED.** A timely caesarean
+# prevents it completely — which is why the condition has effectively vanished
+# from every country with emergency obstetric services. Surgical repair closes
+# the great majority of them for a few hundred dollars. Somewhere between half a
+# million and two million women are living with it untreated.
+#
+# It is also the record where the schema's inability to weigh SOCIAL harm is
+# most costly. What happens to these women is divorce, expulsion from the family
+# home, exclusion from religious and communal life, and destitution — and the
+# register has no field that can hold any of it.
+#
+# NO `burden.ylds` FIELD. Same rule as `clubfoot`: GBD publishes these and a
+# recalled YLD is two guesses multiplied. Left absent until sourced.
+
+burden:
+  prevalence:
+    value: 1.0e6
+    units: >
+      women living with untreated obstetric fistula — published estimates span
+      roughly 500,000 to 2 million and the range is not measurement noise. **An
+      untreated woman has usually been expelled from her household and is not
+      in any register, clinic list or survey frame**, which is the definition of
+      the population being uncountable
+    src: unknown
+  incidence:
+    value: 7.5e4
+    units: >
+      new cases/year — commonly quoted as 50,000 to 100,000, concentrated in
+      sub-Saharan Africa and South Asia
+    src: recall
+  note: >
+    **THIS DISEASE NO LONGER EXISTS IN ANY COUNTRY WITH EMERGENCY OBSTETRIC
+    CARE.** It was common in nineteenth-century Europe and North America and
+    disappeared from them over the first half of the twentieth century, without
+    any advance in fistula surgery, as safe caesarean section became generally
+    available. **The prevention was never distributed to the rest of the world,
+    and the disease stayed where the prevention did not go.**
+    The women affected are young, often labouring with a first birth before the
+    pelvis has finished growing, short, undernourished, poor, and far from a
+    facility that can operate. Those are the risk factors and they are also a
+    description of the population that emergency obstetric services reach last.
+    **THE BABY DIES IN THE GREAT MAJORITY OF THESE LABOURS**, and those deaths
+    are counted elsewhere in this register, under maternal and neonatal
+    headings. `deaths` is absent here rather than zero because the fistula
+    itself does not kill — the sixth record in this pass where mortality is the
+    wrong question, and the one where that is least comfortable to say.
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: prophylaxis
+  ongoing: low
+  efficacy:
+    value: 0.8
+    units: >
+      fraction-of-patients (fistula closed AND continent after repair by an
+      experienced surgeon) — **and the two halves of that come apart, which is
+      this record's most under-appreciated fact.** Closure rates for simple
+      first-time fistulae exceed 90%; a substantial minority of women whose
+      fistula is successfully closed remain incontinent from damage to the
+      urethra and sphincter, and for them the operation succeeded and the
+      problem did not go away
+    src: reasoning
+  access:
+    value: 0.15
+    units: >
+      fraction-of-affected-women receiving repair — the number of repairs
+      performed each year is of the same order as the number of new cases, so
+      **the backlog is not being reduced**; it is being held roughly level while
+      hundreds of thousands wait
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: partial
+  witness: >
+    DIAGNOSTIC is `objective` and trivially so. Continuous leakage of urine or
+    faeces after an obstructed labour is the diagnosis; examination shows the
+    defect and a dye test confirms it where there is doubt. **No test is missing
+    and no equipment is required.**
+    **AND YET THE DIAGNOSIS IS ROUTINELY NOT MADE, FOR REASONS OUTSIDE
+    MEDICINE.** A woman who has been expelled from her home and believes her
+    condition is a punishment or a curse does not present to anybody. Many live
+    a decade or more before learning that an operation exists. The register
+    normally files that as a `diagnosis` blocker; here it is filed under
+    `logistics` and `policy`, because nothing about the clinical act of
+    diagnosing is failing.
+    PROGNOSTIC and PREDICTIVE are both `partial`, and unusually they rest on the
+    same instrument: fistula classification by size, location, urethral
+    involvement and scarring predicts both the chance of closure and the chance
+    of residual incontinence reasonably well. **What no classification predicts
+    is which closed fistula leaves a continent woman**, which is the outcome
+    that decides whether she can go home.
+
+# NO `survival:` BLOCK. Obstetric fistula does not kill. It takes continence,
+# fertility, marriage, household, income and community, and the register has no
+# axis for a single one of those. This record is the strongest case in the
+# corpus for the disability-weighted sibling `bucket-design.md` still lacks.
+
+moved:
+  - date: 1852
+    axis: intervention
+    from: none
+    to: curative
+    why: >
+      J. Marion Sims published a reliable technique for closing vesicovaginal
+      fistula, and the condition became curable for the first time.
+      **THE RECORD MUST STATE HOW THAT CAPABILITY WAS OBTAINED.** Sims developed
+      the operation between 1845 and 1849 by operating repeatedly on enslaved
+      Black women in Alabama — Anarcha, Betsey and Lucy are the three whose
+      names survive — who could not consent, and without anaesthesia, in a
+      period when ether was newly available and its use in surgery contested.
+      One woman is recorded as having undergone about thirty operations.
+      This is not a footnote to the entry. **It is the register's clearest
+      instance of a capability that exists because of non-consensual
+      experimentation**, and it sits inside a record whose modern population is
+      also poor, also without alternatives, and also largely unable to refuse
+      what is offered. Recorded because a register of what medicine can do that
+      omits how it came to be able to do it is telling half the story.
+    src: recall
+  - date: 1935
+    axis: prevention
+    from: none
+    to: prophylaxis
+    why: >
+      **AN APPROXIMATE DATE FOR A CHANGE THAT ONLY HAPPENED IN SOME COUNTRIES,
+      AND THE REGISTER SHOULD SAY SO.** Over the first half of the twentieth
+      century, as caesarean section became survivable and generally available,
+      obstetric fistula disappeared from Europe and North America. No advance in
+      fistula surgery was involved; the disease stopped being produced.
+      **This is a `moved:` entry that is false for most of the world.** The axis
+      records a global rating and the change was geographic, so the register is
+      here asserting a capability that a woman in northern Nigeria does not
+      have. It is left in because the capability genuinely exists and
+      `prevention: prophylaxis` genuinely describes it; the failure is `access`,
+      which is where the record's argument lives. **But it is the clearest case
+      in the corpus of a global axis concealing a distributional fact.**
+    src: recall
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    The repair itself is a straightforward operation for an experienced surgeon:
+    an anaesthetic, a vaginal or abdominal approach, and roughly two weeks of
+    continuous bladder drainage afterwards to let the closure heal. Complications
+    of the operation are uncommon.
+    **THE REAL COST OF TREATMENT IS THE FAILED ATTEMPT.** Each unsuccessful
+    repair scars the tissue and makes the next one harder, and complex or
+    previously operated fistulae have markedly lower closure rates. A woman
+    operated on by an inexperienced surgeon has not merely failed to be cured —
+    **her chance of ever being cured has been reduced.** That is a treatment
+    harm with no field in this schema, since `toll` measures what a successful
+    treatment costs.
+    Vaginal stenosis after repair is common enough to affect sexual function and
+    subsequent delivery, and is not always mentioned to the patient.
+  incidence:
+    value: 0.05
+    units: >
+      fraction-of-treated with permanent harm attributable to the operation
+      rather than to the injury — a reasoned estimate, chiefly stenosis
+    src: reasoning
+
+residue:
+  severity: catastrophic
+  permanent: true
+  what: >
+    **THIS RECORD'S RESIDUE IS PARTLY PHYSICAL AND MOSTLY SOCIAL, AND THE SCHEMA
+    CAN ONLY HOLD THE FIRST HALF.**
+    THE PHYSICAL PART. The same crush injury that made the hole damages much
+    else: **residual stress incontinence in a substantial minority even after
+    the fistula is closed**, from destruction of the urethra and sphincter;
+    secondary infertility and amenorrhoea from intrauterine adhesions; vaginal
+    stenosis; and **foot drop** in a proportion of women, from pressure on the
+    lumbosacral nerve roots during the obstructed labour — so a woman may be
+    incontinent and unable to walk properly. This cluster is described as the
+    obstructed labour injury complex, and fistula is the part of it that gets
+    named.
+    THE SOCIAL PART, WHICH IS THE DISEASE AS THE WOMAN EXPERIENCES IT. Continuous
+    leakage carries a smell that cannot be hidden. What follows is documented
+    consistently across settings: **divorce or abandonment by the husband,
+    expulsion from the marital and often the natal household, exclusion from
+    communal eating, from religious observance and from markets, loss of any
+    livelihood requiring proximity to others, and high rates of depression and
+    suicidal ideation.** Women live in outbuildings, at the edge of villages,
+    for years.
+    **AND REPAIR DOES NOT RELIABLY REVERSE IT.** A woman divorced ten years ago,
+    whose land went to somebody else and whose community explained her condition
+    as a moral judgement, is not restored by a continent bladder. Reintegration
+    programmes exist because closure alone was found not to be enough. **The
+    register rates `efficacy` on the hole and has no way to rate the life.**
+    Rated `catastrophic` on both halves independently.
+  incidence:
+    value: 0.6
+    units: >
+      fraction-of-affected-women left with permanent physical or social
+      consequences after treatment — a reasoned estimate combining residual
+      incontinence, the wider injury complex, and social consequences that
+      outlast the repair. **The least defensible number in this file and the
+      most important one**
+    src: reasoning
+
+window:
+  what: >
+    **TWO WINDOWS. THE FIRST IS MEASURED IN HOURS AND IS THE ENTIRE DISEASE.**
+    Obstructed labour becomes a fistula through sustained pressure necrosis. A
+    caesarean performed within hours of obstruction ends the labour, delivers
+    the baby — often alive — and the fistula never forms. A caesarean two days
+    later delivers a dead baby to a woman who will leak for the rest of her life
+    unless she finds a surgeon.
+    **The whole of this record is the distance between a woman in obstructed
+    labour and a functioning operating theatre**, measured in hours. Everything
+    else — the repair surgery, the surgeons, the backlog, the reintegration
+    programmes — exists because that distance was too great.
+    THE SECOND WINDOW IS SOFT AND RUNS FOR YEARS. Repair is possible decades
+    later and many women are repaired long after the injury. But scarring
+    progresses, the social damage compounds, and each failed attempt lowers the
+    odds of the next. Delay does not close the door; it narrows it.
+    **COMPARE `retinopathy-of-prematurity` DELIBERATELY.** Both are injuries
+    inflicted by a few hours of a physiological process nobody chose, both are
+    preventable by a service rather than a drug, and in both the window is short
+    enough that only a system — not a decision — can meet it.
+  closes_on: >
+    ischaemic necrosis of the vesicovaginal or rectovaginal septum after
+    sustained obstruction — hours to a few days, and the tissue does not recover
+  caught_in_time:
+    value: 0.2
+    units: >
+      fraction-of-obstructed-labours reaching operative delivery before the
+      injury occurs — a reasoned estimate for the settings where fistula still
+      occurs; effectively 1.0 wherever emergency obstetric care functions, which
+      is why the disease is absent there
+    src: reasoning
+
+witness:
+  mechanism: >
+    `established`, and among the most completely understood entries in the
+    register. Prolonged obstruction presses the fetal head against the maternal
+    pelvis; the soft tissue caught between them loses its blood supply and
+    necroses; the dead tissue sloughs, leaving a communication between bladder
+    and vagina, rectum and vagina, or both. The anatomy is unambiguous, the
+    causal chain has no missing steps, and it has been understood for well over
+    a century.
+    **THERE IS NO SCIENTIFIC QUESTION IN THIS RECORD WORTH THE NAME**, which is
+    what makes it useful to the corpus. It sits alongside `refractive-error` and
+    `clubfoot` as a case where mechanism, diagnosis and treatment are all
+    settled and the outcome is nonetheless catastrophic for most of the people
+    affected. Three records now make that argument; this is the one where the
+    consequence is worst.
+    The one genuine gap is downstream: **nobody can reliably restore continence
+    when the urethral sphincter mechanism has been destroyed**, which is why a
+    closed fistula is not always a continent woman. That is a `tissue-repair`
+    problem and is cited below.
+  intervention: >
+    `curative`, and it is a real cure — a single operation, performed once,
+    ending the condition permanently in the majority.
+    The qualifications matter. Closure rates above ninety per cent apply to
+    simple, previously unoperated fistulae in the hands of a surgeon who does
+    this frequently. Complex fistulae — large, circumferential, involving the
+    urethra, or already operated on unsuccessfully — do much worse, and a
+    minority of women are never made dry. **The register's `curative` rung
+    describes what the treatment achieves for the patient it works in, and the
+    women it does not work in are in `residue`.**
+    What does not exist is anything non-surgical. There is no device, no
+    conservative management beyond catheterisation immediately after injury
+    (which can allow small fresh fistulae to close spontaneously), and no
+    prospect of one.
+  prevention: >
+    `prophylaxis`, and the evidence for that rating is unusually stark: **the
+    disease does not occur in any country where women in obstructed labour reach
+    an operating theatre.** It is not that incidence is low in high-income
+    countries; it is that obstetric fistula is a historical condition there, and
+    it became one without any advance in treating it.
+    What prevents it is emergency obstetric care — a facility, a surgeon, an
+    anaesthetist, blood, and a road. Behind that sit the slower preventions:
+    skilled attendance at birth, delaying first pregnancy past adolescence,
+    nutrition, and girls' education, all of which reduce both the risk of
+    obstruction and the delay in responding to it.
+    **`prophylaxis` for a surgical service rather than a drug is a slight
+    stretch of the schema's word**, and it is used because the axis asks whether
+    something can be given to a person to stop the disease occurring, and here
+    something can, and it works essentially completely.
+  ongoing: >
+    `low`, and the rating is about treatment rather than about the condition.
+    After a successful repair there is nothing — no medication, no monitoring,
+    no recurrence. Two weeks of catheter drainage and then done.
+    **THE UNTREATED STATE IS NOT `low` AND IS NOT IN THIS AXIS.** A woman with an
+    unrepaired fistula washes continuously, uses rags or leaves, restricts
+    drinking to reduce output at the cost of dehydration and kidney damage, and
+    manages recurrent urinary infection and severe perineal excoriation from
+    constant wetness. That is a daily burden sustained for years and the schema
+    records it nowhere, because `ongoing` measures the cost of being treated and
+    these women are not being treated.
+
+holes:
+  - >
+    **`residue.incidence: 0.6` IS THE LEAST DEFENSIBLE FIGURE IN THIS FILE AND
+    THE ARGUMENT LEANS ON IT.** It bundles residual incontinence after
+    successful closure, the wider obstructed labour injury complex, and social
+    consequences that outlast repair — three things measured differently, by
+    different people, in different studies, and the social component is barely
+    quantified anywhere. **Recorded as one number because the schema has one
+    field, which is itself the finding.**
+  - >
+    **THE PREVALENCE IS MARKED `src: unknown` AND THAT IS THE HONEST RATING.**
+    Estimates span 500,000 to 2 million. The reason is structural rather than
+    methodological: an untreated woman has usually been expelled from her
+    household and is absent from every sampling frame that surveys use. `burden-
+    unknown` is cited below and this is close to its purest instance — **the
+    social consequence of the disease is what makes the disease uncountable.**
+  - >
+    **THE 1935 `moved:` ENTRY IS FALSE FOR MOST OF THE WORLD AND IS RECORDED
+    ANYWAY.** The register's axes describe a global capability, and this one
+    changed only where obstetric services existed. Leaving it out would claim
+    the disease is unpreventable, which is worse. **But it is the clearest case
+    in the corpus of a global axis concealing a distributional fact**, and it is
+    an argument for the register eventually carrying a per-setting rating rather
+    than a single one.
+  - >
+    **`prevention: prophylaxis` FOR A SURGICAL SERVICE IS A STRETCH.** Every
+    other `prophylaxis` rating in the register is a vaccine or a drug. Rating an
+    operating theatre as prophylaxis is defensible on the axis's own wording and
+    it does make this record incomparable with the others on that axis in a way
+    a reader will not notice.
+  - >
+    **THE SIMS HISTORY IS RECORDED FROM RECALL AND IS THE MOST CONSEQUENTIAL
+    UNSOURCED CLAIM IN THIS REGISTER.** The names, the absence of anaesthesia,
+    the number of operations and the enslaved status of the women are all
+    consistently reported and none is cited here. A claim of this weight should
+    carry a citation before it appears on any public page, and it currently does
+    not.
+  - >
+    **A FAILED REPAIR REDUCES THE CHANCE OF A LATER ONE, AND `toll` CANNOT SAY
+    SO.** The field measures what a successful treatment costs. Here an
+    unsuccessful treatment imposes a permanent cost — scarring — on the
+    patient's future prospects. Third instance this month of a harm the schema
+    cannot hold, after `retinopathy-of-prematurity` and `migraine`.
+  - >
+    Written from model recall. The mechanism, the prevention, the social
+    consequences and the closure-versus-continence distinction are the parts
+    most likely right; every number is the part most likely wrong.
+
+blockers:
+  - kind: logistics
+    blocks: a caesarean within hours, which prevents the disease entirely
+    what: >
+      **THE PREVENTION BLOCKER, AND IT IS THE WHOLE RECORD.** Obstetric fistula
+      is what happens when a woman in obstructed labour cannot reach an
+      operating theatre. Preventing it requires the same thing that prevents
+      maternal death from obstructed labour and haemorrhage: a functioning
+      emergency obstetric service within a few hours of where women give birth —
+      a theatre, a surgeon, an anaesthetist, blood, electricity and a road.
+      **This is `maternal-haemorrhage`'s constraint exactly**, and the two
+      records are two outcomes of one failure. The woman who bleeds to death and
+      the woman who leaks for thirty years were both waiting for the same
+      caesarean.
+      Priced as obstetric infrastructure, which is what it is, and the figure is
+      large because it is a health system rather than a product.
+    who_could: [health-system, government, payer, nonprofit, philanthropy]
+    scale: 5.0e9
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: a surgeon who can repair it
+    what: >
+      **THE TREATMENT BLOCKER, AND IT IS A PERSON AGAIN.** Fistula repair is a
+      specialised skill that takes years to acquire and is held by a very small
+      number of surgeons, concentrated in a handful of centres. Repairs
+      performed each year are of the same order as new cases, so **the backlog
+      of half a million to two million women is not shrinking.**
+      The scarcity is self-reinforcing. Complex repairs need the most
+      experienced surgeons; inexperienced attempts scar the tissue and convert
+      simple fistulae into complex ones, which then need the experienced
+      surgeons who were already the constraint. **Task-shifting, which worked
+      for `clubfoot`, is much harder here** — this is not casting, and a failed
+      first attempt has a permanent cost.
+      Recorded separately from the prevention blocker above because the two have
+      different actors, different timescales and different prices, and a
+      programme that funds one does not touch the other.
+    who_could: [health-system, nonprofit, philanthropy, academic]
+    scale: 5.0e8
+    standing: documented
+    src: recall
+
+  - kind: policy
+    obstacles: [burden-unknown]
+    blocks: finding women who have been put outside the health system
+    what: >
+      **THE WOMEN ARE NOT LOST TO FOLLOW-UP; THEY WERE PUT OUTSIDE.** A woman
+      who has been divorced, expelled from her household and told her condition
+      is a judgement does not attend a clinic, appears in no survey frame, and
+      frequently does not know that an operation exists. Many are found only by
+      active outreach — radio campaigns, community screening, transport
+      subsidies — because passive availability of a service reaches nobody who
+      has been excluded from public life.
+      This is why the prevalence figure in this record carries `src: unknown`
+      and why `burden-unknown` (FND-O-0005) is cited. **The social consequence
+      of the disease is the mechanism by which the disease becomes uncountable**,
+      and an uncounted population cannot be budgeted for.
+      It is also why closure alone was found insufficient: reintegration
+      support, and in many programmes a period of rehabilitation, is part of
+      the treatment rather than an extra.
+    who_could: [government, nonprofit, health-system, patient-org]
+    scale: 3.0e8
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    obstacles: [tissue-repair]
+    blocks: making a closed fistula into a continent woman
+    what: >
+      The one real scientific gap here, and it is narrow and important.
+      **Closing the hole is not the same as restoring continence.** Where the
+      obstructed labour destroyed the urethra and its sphincter mechanism, a
+      technically perfect repair leaves a woman dry of fistula and still wet —
+      and for her social situation the distinction is academic.
+      Reconstructive techniques, slings and neourethral procedures exist and
+      results are modest. What is missing is any way to regenerate a sphincter
+      that has been necrosed, which is `tissue-repair` (FND-O-0002) in a
+      specific and unusually well-defined form: the tissue is identified, the
+      loss is focal, and the functional endpoint is measurable.
+      `scale: null` — no priced path to a regenerated sphincter.
+    who_could: [academic, sponsor, nonprofit]
+    scale: null
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0137
+  rated: 2026-09-01
+  by: [claude, jeremy]

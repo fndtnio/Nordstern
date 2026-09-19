@@ -1,0 +1,314 @@
+slug: mcas
+id: FND-D-0021
+name: mast cell activation syndrome
+also: [MCAS, idiopathic mast cell activation syndrome, MCAD]
+common: MCAS
+mondo: MONDO:0100004
+kind: syndrome
+residual: true
+contested: true
+
+# READ THIS BEFORE READING ANY RATING BELOW.
+#
+# There are TWO criteria sets for MCAS in simultaneous active use, neither of
+# which has superseded the other, and they disagree about how many people have
+# this by roughly three orders of magnitude:
+#
+#   CONSENSUS-1 (Valent, Akin and colleagues; broad specialty-society support)
+#     Requires all three: episodic symptoms in two or more organ systems; an
+#     event-associated rise in serum tryptase of at least 20% above the
+#     patient's own baseline plus 2 ng/mL, drawn within about four hours; and
+#     response to mast-cell-targeting therapy. By these criteria MCAS is RARE.
+#
+#   CONSENSUS-2 (Afrin, Molderings and colleagues)
+#     Accepts a long list of alternative mediators in place of the tryptase
+#     rise, does not require the episodic pattern, and permits chronic
+#     multisystem symptoms. Prevalence claims associated with this framework
+#     have run as high as the high-single-digit-to-seventeen percent of the
+#     population. By these criteria MCAS is COMMON.
+#
+# EVERY RATING IN THIS FILE IS UNDER CONSENSUS-1. That is a choice, it is not
+# neutral, and the register should not pretend otherwise: it is the criteria set
+# with an objective anchor and the wider society endorsement, and rating under
+# consensus-2 would require asserting a prevalence figure the majority of the
+# relevant specialty disputes. The cost of the choice is severe and is the point
+# of the record — the strictly-defined entity is small, real and reasonably well
+# managed, while the disputed entity, the one people mean when they say "the
+# triad" alongside hEDS and POTS, goes unrated. See gaps.md #42.
+#
+# `residual: true` because this record covers the IDIOPATHIC form — what is left
+# after clonal disease (systemic mastocytosis, KIT D816V) and identifiable
+# secondary causes are excluded. Those are separate and, in the clonal case,
+# genuinely solved: KIT inhibitors transformed advanced systemic mastocytosis.
+
+burden:
+  prevalence:
+    value: 1.0e-4
+    units: >
+      fraction-of-population UNDER CONSENSUS-1 — order of magnitude at best; no
+      denominator is published, and the figure is meaningless without naming the
+      criteria set
+    src: unknown
+  deaths:
+    value: 0.0
+    units: >
+      deaths/year directly attributable — anaphylaxis can be fatal and is the
+      route by which this kills, but it is not counted under this name
+    src: reasoning
+  note: >
+    The most extreme burden failure in the register, and a different kind from
+    the two already logged. Breast cancer's numbers are UNVERIFIED and
+    checkable. MSMDS's are UNKNOWN and unpublished. hEDS's are CONTESTED by an
+    order of magnitude. These are contested by roughly THREE orders of
+    magnitude, and past that point the problem stops being that a midpoint would
+    be wrong and becomes that a single number is the wrong shape of answer.
+    Under consensus-1 this is an uncommon condition of the order of systemic
+    mastocytosis. Under consensus-2 it has been proposed as one of the most
+    common chronic conditions in existence. Those cannot both be the prevalence
+    of one thing, and the register currently has one field for it.
+    A fourth morbidity-only record. Anaphylaxis is the fatal route and is not
+    recorded under this heading.
+
+axes:
+  mechanism: partial
+  intervention: suppressive
+  prevention: none
+  ongoing: moderate
+  efficacy:
+    value: 0.9
+    units: >
+      fraction-of-patients (symptom control on mediator blockade) — CIRCULAR AND
+      NOT EVIDENCE: consensus-1 criterion three is response to therapy, so a
+      non-responder does not receive the diagnosis. See gaps.md #41
+    src: reasoning
+  access:
+    value: 0.3
+    units: >
+      fraction-of-patients (correctly identified and competently managed) — held
+      down by the difficulty of capturing the tryptase rise and by the scarcity
+      of clinicians who do this well in either direction
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: partial
+  witness: >
+    Rated `objective` on the strength of the tryptase criterion, which is the
+    discriminating element of consensus-1 and is a laboratory value — but the
+    rating flatters the reality and the reason is worth stating. The full
+    criteria set is composite: one measured biochemical criterion, one clinical
+    pattern judgement, and one treatment-response criterion which is circular.
+    Under consensus-2, with the mediator requirement relaxed, the same entity
+    would rate closer to `complaint`. THE DIAGNOSTIC AXIS IS A PROPERTY OF THE
+    CRITERIA SET, NOT OF THE DISEASE, and this is the first record where those
+    two come apart far enough to notice.
+    The practical failure is not that the test is bad but that it is nearly
+    impossible to obtain. It requires a baseline tryptase drawn when the patient
+    is well, a second sample drawn within about four hours of a spontaneous
+    episode, and a patient who reaches a phlebotomist inside that window while
+    acutely unwell. The test works. The biology makes it hard to catch. That is
+    a third distinct flavour of diagnosis blocker across three consecutive
+    records — hEDS has no test, POTS has a test nobody performs, and here the
+    test exists, is agreed on, and the window for taking it keeps closing.
+    PROGNOSTIC is `partial`: baseline tryptase, hereditary alpha-tryptasemia
+    status and evidence of clonality carry real prognostic weight, and beyond
+    that little is known about who remits. PREDICTIVE is `partial` rather than
+    `n/a`, and only just — response to mediator blockade as a class is
+    guaranteed by criterion three, so the class-level selection question has
+    been abolished by definition rather than by a good treatment. What remains
+    genuinely unpredictable is which agents and whether escalation to anti-IgE
+    therapy will be needed.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    Under consensus-1 the treatment takes almost nothing. H1 and H2
+    antihistamines, cromolyn sodium, leukotriene receptor antagonists, and
+    omalizumab in refractory cases: cheap, long-established, and reversible on
+    withdrawal. Montelukast carries neuropsychiatric effects that resolve on
+    stopping, and omalizumab carries a small anaphylaxis risk at administration.
+    Nothing here is permanent, so the record rates `minor` and the terms read
+    `clean`.
+    THE TOLL THE REGISTER CANNOT SEE BELONGS TO THE OTHER DEFINITION. Under
+    consensus-2 practice the reported harms are real and are of a different
+    character: extensive and repeated mediator testing, restrictive elimination
+    diets carried far enough to cause nutritional deficiency, long courses of
+    unproven compounded treatments, and substantial out-of-pocket expenditure —
+    inflicted on people who, under consensus-1, do not have this condition and
+    whose actual problem therefore goes unaddressed. That is a
+    `harm without benefit` shape, and it attaches to an entity this file is not
+    rating. The register records a clean toll for MCAS while the thing most
+    people arguing about MCAS are arguing about is precisely that harm.
+  incidence:
+    value: 0.0
+    units: >
+      fraction-of-treated (permanent harm) — zero under consensus-1 management,
+      which is all this figure covers; the consensus-2 harms described above have
+      no denominator and are not counted here
+    src: reasoning
+
+# NO `window` BLOCK. Anaphylaxis is the fatal route and having a diagnosis and
+# an adrenaline autoinjector prevents deaths, but that is treatment access
+# rather than a window in this schema's sense — capability does not change with
+# how late the diagnosis is made, and the condition is not characteristically
+# progressive. Not stretched to fit.
+
+witness:
+  mechanism: >
+    Rated `partial`, and the split is unusually clean. The EFFECTOR chain is
+    established and directly demonstrable: a trigger causes mast cell
+    degranulation, degranulation releases histamine, tryptase, prostaglandins
+    and leukotrienes, and those mediators produce flushing, hypotension,
+    abdominal symptoms, bronchospasm and urticaria. It is confirmed by measuring
+    the mediator during an event and by the symptoms resolving when the
+    receptors are blocked — mechanism, measurement and treatment all pointing at
+    the same molecules, which is rare in this part of the register.
+    The named hole is upstream: WHY the mast cells are hyperreactive in the
+    idiopathic form. Two neighbouring answers exist and neither covers this
+    group. In clonal disease it is KIT D816V driving a neoplastic mast cell
+    population — established, and the basis of a genuinely effective targeted
+    therapy. In hereditary alpha-tryptasemia it is extra copies of the alpha
+    tryptase gene, a common germline variant carried by several percent of
+    people and associated with more severe mediator symptoms and with severe
+    anaphylaxis. Both are real mechanisms, both were found this century, and
+    both carve away part of what used to be called idiopathic. What remains
+    after they are excluded is this record, and it has no mechanism at all.
+  intervention: >
+    `suppressive`. Mediator blockade controls the manifestations while it is
+    taken, indefinitely, with near-normal function in those who respond — the
+    HIV shape, at a far smaller scale and with far less certainty. It is not
+    curative: stopping generally means recurrence. It is not disease-modifying,
+    because there is no established course to modify.
+    The rating carries a defect the schema cannot express. Consensus-1's third
+    criterion is RESPONSE TO MAST-CELL-TARGETING THERAPY, which means the
+    diagnosed population is by construction the responding population. So
+    `intervention: suppressive` and `efficacy: 0.9` are not findings about how
+    well this is treated — they are restatements of the criteria. The patients
+    who would have made those numbers lower were never given the diagnosis.
+    See gaps.md #41; this is the register's first circular efficacy.
+  prevention: >
+    `none`. Trigger avoidance prevents episodes, not the condition, and the
+    schema is deliberate about that distinction. There is nothing to screen for
+    and nothing to immunise against. Hereditary alpha-tryptasemia is detectable
+    and heritable but it is a susceptibility carried by a substantial fraction
+    of the healthy population, not a disease to prevent.
+  ongoing: >
+    `moderate`. Daily antihistamines and mast cell stabilisers, sustained
+    trigger avoidance, an adrenaline autoinjector carried at all times, and for
+    a minority monthly injections. The medication burden is light; the vigilance
+    burden is not, and it is the part patients describe as costly.
+  contested: >
+    The most contested record in the register, and contested in a way none of
+    the previous four were, which is why it is worth having.
+    ME/CFS is disputed as to whether it is real. hEDS had its boundary MOVED, by
+    one committee, in a dated revision that superseded the previous one. POTS is
+    disputed as to which way a causal arrow points. MCAS has TWO LIVE
+    DEFINITIONS AT ONCE. Consensus-1 and consensus-2 are not successive versions
+    of a criteria set; they are rival criteria sets, both currently in use, each
+    with its own literature, its own clinicians and its own patient population,
+    disagreeing by orders of magnitude about who has the condition.
+    The dispute is substantive rather than semantic. The consensus-1 position is
+    that the alternative mediator panels lack specificity and that applying them
+    produces large-scale overdiagnosis, leaving real problems unaddressed while
+    people are treated for this one. The consensus-2 position is that requiring
+    an event-associated tryptase rise is so restrictive that it excludes most
+    genuinely affected patients, since the sample is nearly impossible to obtain
+    at the right moment. Both of those can be partly true simultaneously, which
+    is the worst case for anyone trying to rate the entity.
+    Note also the SCOPE dispute, shared with the other two records in this
+    batch: MCAS is the third leg of the asserted hEDS/POTS/MCAS triad, and it is
+    the leg whose own diagnostic validity is most questioned — so the triad is
+    being partly held up by the piece least able to bear weight.
+
+holes:
+  - Which criteria set is right, which is upstream of every other question here
+    and of every number in this file.
+  - Why mast cells are hyperreactive in the idiopathic form, after clonal
+    disease and hereditary alpha-tryptasemia are excluded.
+  - What fraction of what is currently diagnosed as MCAS is hereditary
+    alpha-tryptasemia, which is common, genetically defined, and was only
+    described in the last decade. This is the most likely route by which the
+    idiopathic group shrinks.
+  - `efficacy: 0.9` is circular and should not be read as evidence. The true
+    denominator — everyone with mast-cell-mediated symptoms, responsive or not —
+    is not the denominator the criteria produce.
+  - The prevalence claims at the high end of the consensus-2 range have not, so
+    far as the author is aware, been reproduced by independent groups applying
+    the same criteria. Recorded as a thing to check rather than as a refutation.
+  - Written from model recall. The structure of the dispute and the "20% plus 2"
+    tryptase rule are the parts most likely right; every number is the part most
+    likely wrong.
+
+blockers:
+  - kind: knowledge
+    obstacles: [unexplained-illness]
+    blocks: any mechanism for the idiopathic form, and any way to settle the criteria
+    what: >
+      The binding constraint, and it has an unusual shape: the missing knowledge
+      is what would ADJUDICATE the definitional dispute, not merely what would
+      treat the disease. A mechanism for idiopathic MCAS — a marker that
+      identifies affected mast cells or affected patients independently of their
+      symptoms — would decide which criteria set is selecting the right people,
+      and would do so in a way that neither camp could argue with. Without it
+      the dispute is between two symptom-plus-inference constructs and cannot be
+      resolved by more of the same evidence.
+      The precedent is encouraging and is recent. Hereditary alpha-tryptasemia
+      was unknown before roughly 2016 and now explains part of what was
+      idiopathic; KIT D816V did the same for the clonal group. Both were found
+      by looking for a marker rather than by refining criteria.
+      `scale: null` — no priced path exists.
+    who_could: [academic, sponsor]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: evidence-incomplete
+    blocks: an interpretable literature, and therefore any trial that settles anything
+    what: >
+      The same incommensurability that afflicts ME/CFS, arrived at by the
+      opposite route, and the contrast is the useful part. In ME/CFS there is no
+      biomarker, so no two groups can be sure they enrolled the same patients.
+      HERE THERE IS A BIOMARKER AND THE PROBLEM PERSISTS, because one camp
+      requires it and the other does not. A trial conducted under consensus-2
+      criteria is not interpretable to a consensus-1 clinician, and a trial under
+      consensus-1 enrols a population the consensus-2 camp regards as a small
+      unrepresentative subset. Two literatures, one name, and no way to pool
+      them.
+      This is what makes the definitional dispute a delivery problem rather than
+      an academic one: it is not that the evidence is thin, it is that the
+      evidence cannot be added up.
+    who_could: [academic, sponsor, nonprofit]
+    scale: 5.0e7
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    blocks: obtaining the one measurement that decides the diagnosis
+    what: >
+      Third variant of `diagnosis` in three consecutive records, and the one
+      that shows the taxonomy entry is doing too much work. hEDS: no test
+      exists, so the blocker is downstream of knowledge and money moves only
+      part of it. POTS: the test exists, costs nothing, takes ten minutes, and
+      is simply not performed — pure recognition, the most purchasable blocker
+      in the register. HERE: the test exists, both camps agree it means
+      something, and CAPTURING IT IS THE PROBLEM. It needs a baseline drawn when
+      the patient is well and a second sample within about four hours of a
+      spontaneous, unpredictable episode.
+      That is a logistics problem with a biological deadline, and unusually it
+      has a plausible engineering answer rather than a scientific one:
+      patient-held sampling, point-of-care assay, or standing orders that let a
+      patient present to any laboratory during an episode without a fresh
+      referral. Priced modestly for that reason. It is the most tractable thing
+      in this record and it would also, incidentally, supply the evidence to
+      settle part of the dispute above.
+    who_could: [health-system, academic, patient-org, manufacturer]
+    scale: 2.0e7
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0021
+  rated: 2026-08-20
+  by: [claude, jeremy]

@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nordstern — the state of what is solved</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper:#f7f2e6; --paper-deep:#efe7d3; --card:#fbf8ef;
+    --ink:#22304a; --ink-soft:rgba(34,48,74,.55); --ink-faint:rgba(34,48,74,.16);
+    --vermilion:#c8451f; --teal:#1f7a6d; --water:#3d7fa6; --gold:#b98a1d;
+  }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body {
+    background:var(--paper);
+    background-image:
+      repeating-linear-gradient(0deg,transparent 0 23px,rgba(34,48,74,.045) 23px 24px),
+      repeating-linear-gradient(90deg,transparent 0 23px,rgba(34,48,74,.045) 23px 24px);
+    color:var(--ink); font-family:'IBM Plex Mono',monospace; font-size:13px;
+    padding:16px clamp(14px,4vw,44px) 40px; line-height:1.5;
+  }
+  .wrap { max-width:1180px; margin:0 auto; }
+
+  header { border-bottom:2px solid var(--ink); padding-bottom:9px; margin-bottom:14px;
+           display:flex; align-items:baseline; justify-content:space-between;
+           gap:14px; flex-wrap:wrap; }
+  h1 { font-family:Fraunces,serif; font-weight:600; font-style:italic; font-size:24px; }
+  h1 .fig { font-family:'IBM Plex Mono',monospace; font-style:normal; font-weight:500;
+            font-size:10px; letter-spacing:.18em; color:var(--vermilion);
+            text-transform:uppercase; margin-right:9px; vertical-align:3px; }
+  header .sub { font-size:11.5px; color:var(--ink-soft); max-width:52ch; }
+  header a.tool { font-size:11px; border:2px solid var(--ink); background:var(--paper);
+                  box-shadow:2px 2px 0 var(--ink); padding:5px 10px; color:var(--ink);
+                  text-decoration:none; letter-spacing:.06em; white-space:nowrap; }
+  header a.tool:hover { background:var(--paper-deep); }
+
+  /* THE PROVENANCE BANNER. Placed above everything, in the warning colour the
+     query page already uses, because a state-of-the-world built from unverified
+     numbers must say so before it says anything else. */
+  .prov { border:2px solid var(--vermilion); background:#fdf1ec; color:var(--vermilion);
+          padding:9px 12px; margin-bottom:16px; font-size:11.5px; line-height:1.55; }
+  .prov b { font-weight:500; }
+  .prov .big { font-family:Fraunces,serif; font-style:italic; font-size:19px;
+               display:block; margin-bottom:3px; }
+  .prov a { color:inherit; }
+  /* The warning is one sentence; the ledger behind it is one click. Closed by
+     default — a warning long enough to skip is a warning that does not warn. */
+  .prov .provmore { margin-top:5px; }
+  .prov .provmore > summary { cursor:pointer; opacity:.8; font-size:11px; }
+  .prov .provmore > summary:hover { opacity:1; }
+  .prov .provmore > div { margin-top:6px; padding-top:6px;
+    border-top:1px solid rgba(200,69,31,.3); }
+
+  h2 { font-family:Fraunces,serif; font-style:italic; font-weight:600; font-size:16px;
+       margin:26px 0 3px; }
+  h2 .n { font-family:'IBM Plex Mono',monospace; font-style:normal; font-size:9.5px;
+          letter-spacing:.18em; text-transform:uppercase; color:var(--vermilion);
+          margin-right:8px; vertical-align:2px; }
+  .lede { font-size:11.5px; color:var(--ink-soft); max-width:76ch; margin-bottom:10px; }
+  .lede b { color:var(--ink); font-weight:500; }
+  /* The one paragraph that frames the whole page: says there is no single
+     score. Set slightly larger and ruled off so it reads as the page speaking
+     rather than as the first section's caption. */
+  .standfirst { font-size:12.5px; line-height:1.62; max-width:80ch;
+    border-left:2px solid var(--vermilion); padding:2px 0 2px 13px; margin-bottom:14px; }
+
+  .segn { font-size:10px; font-weight:500; }
+  .subh { font-family:Fraunces,serif; font-style:italic; font-weight:600;
+          font-size:13.5px; margin:22px 0 3px; }
+
+  .card { border:2px solid var(--ink); background:var(--card); padding:12px 14px;
+          box-shadow:3px 3px 0 var(--ink-faint); }
+  .grid { display:grid; gap:12px; }
+  .g2 { grid-template-columns:repeat(auto-fit,minmax(330px,1fr)); }
+  .g3 { grid-template-columns:repeat(auto-fit,minmax(215px,1fr)); }
+
+  /* every figure is a link to the query that produces it */
+  a.q { color:inherit; text-decoration:none; display:block; }
+  a.q:hover .card, .card.hot:hover { background:#fff; box-shadow:3px 3px 0 var(--water);
+                                     border-color:var(--water); }
+  a.q:hover .qhint { opacity:1; }
+  .qhint { font-size:9.5px; color:var(--water); opacity:.42; margin-top:7px;
+           letter-spacing:.02em; word-break:break-word; transition:opacity 90ms; }
+  .qhint::before { content:"→ "; }
+  .qhint.noq { color:var(--ink-soft); opacity:.55; }
+  .qhint.noq::before { content:"— "; }
+
+  .stat { font-family:Fraunces,serif; font-style:italic; font-size:31px; line-height:1.05; }
+  .stat.sm { font-size:23px; }
+  .statlbl { font-size:10px; letter-spacing:.15em; text-transform:uppercase;
+             color:var(--ink-soft); margin-top:4px; }
+  .note { font-size:11px; color:var(--ink-soft); margin-top:7px; line-height:1.5; }
+  .note b { color:var(--ink); font-weight:500; }
+
+  table { border-collapse:collapse; width:100%; font-size:11.5px; }
+  td, th { text-align:left; padding:3px 6px 3px 0; vertical-align:middle; }
+  th { font-size:9.5px; letter-spacing:.14em; text-transform:uppercase;
+       color:var(--ink-soft); font-weight:400; border-bottom:1px solid var(--ink-faint); }
+  td.num { text-align:right; font-variant-numeric:tabular-nums; width:3.4em; }
+  .bar { height:9px; background:var(--water); display:block; }
+  .bar.v { background:var(--vermilion); } .bar.t { background:var(--teal); }
+  .bar.g { background:var(--gold); } .bar.f { background:var(--ink-faint); }
+  td.barcell { width:56%; }
+
+  svg { display:block; width:100%; height:auto; overflow:visible; }
+  svg text { font-family:'IBM Plex Mono',monospace; fill:var(--ink); }
+  .axlbl { font-size:9px; letter-spacing:.14em; text-transform:uppercase; fill:var(--ink-soft); }
+  .tick { font-size:8.5px; fill:var(--ink-soft); }
+  .dot { cursor:pointer; }
+  .dot:hover { stroke:var(--ink); stroke-width:1.4; }
+  .srow rect { transition:fill 80ms; }
+  .srow:hover rect { fill:rgba(61,127,166,.13); }
+  .srow:hover text { fill:var(--water); }
+
+  /* the map keeps the terminology the register argued itself into: never a bare
+     one-word verdict, and ⧉ means malformed question rather than hard one */
+  .map { display:grid; grid-template-columns:auto 1fr 1fr 1fr; gap:6px; }
+  .map .rl { font-size:9.5px; letter-spacing:.14em; text-transform:uppercase;
+             color:var(--ink-soft); align-self:center; writing-mode:vertical-rl;
+             transform:rotate(180deg); text-align:center; }
+  .cell { border:2px solid var(--ink); background:var(--card); padding:9px 10px;
+          box-shadow:2px 2px 0 var(--ink-faint); display:block; color:inherit;
+          text-decoration:none; }
+  .cell:hover { background:#fff; border-color:var(--water); box-shadow:2px 2px 0 var(--water); }
+  .cell .cn { font-family:Fraunces,serif; font-style:italic; font-size:26px; }
+  .cell .ct { font-size:10px; letter-spacing:.1em; text-transform:uppercase;
+              color:var(--ink-soft); margin-top:1px; }
+  .cell .cd { font-size:10.5px; color:var(--ink-soft); margin-top:6px; line-height:1.45; }
+
+  footer { margin-top:34px; border-top:2px solid var(--ink); padding-top:10px;
+           font-size:11px; color:var(--ink-soft); line-height:1.6; }
+  footer b { color:var(--ink); font-weight:500; }
+  footer a { color:var(--water); }
+  .tag { display:inline-block; border:1px solid var(--ink-faint); padding:0 5px;
+         font-size:10px; margin-right:4px; }
+
+  /* ---- BUCKET SECTIONS: the page's spine ------------------------------
+     Each of the seven states of axis A gets a section listing the diseases in
+     it. Section sizes run 63 to 1, so the treatment has to work at both ends:
+     the rule and the change line are fixed furniture, and the membership is a
+     dense chip field that stays readable whether it holds one name or sixty. */
+  .bk { border:2px solid var(--ink); background:var(--card); padding:0;
+        box-shadow:3px 3px 0 var(--ink-faint); margin-bottom:6px; }
+  .bk > .bkhead { display:flex; align-items:baseline; gap:12px; flex-wrap:wrap;
+        padding:10px 14px; border-bottom:1px solid var(--ink-faint); }
+  .bk .bkn { font-family:Fraunces,serif; font-style:italic; font-size:27px;
+        line-height:1; }
+  .bk .bkshare { font-size:10px; letter-spacing:.14em; text-transform:uppercase;
+        color:var(--ink-soft); }
+  .bk .bkrule { padding:10px 14px 0; font-size:11.5px; color:var(--ink-soft);
+        max-width:82ch; line-height:1.55; }
+  .bk .bkrule b { color:var(--ink); font-weight:500; }
+  .bk .bknot { padding:7px 14px 0; font-size:10.5px; color:var(--ink-soft);
+        max-width:82ch; line-height:1.5; border-left:2px solid var(--ink-faint);
+        margin:8px 14px 0; padding:0 0 0 10px; }
+  .bk .bkmem { padding:11px 14px 13px; }
+  /* the accent stripe carries the same colour the strip segment uses, so a
+     reader can find a section from the bar without reading a legend */
+  .bk.v { border-left:7px solid var(--vermilion); }
+  .bk.w { border-left:7px solid var(--water); }
+  .bk.g { border-left:7px solid var(--gold); }
+  .bk.t { border-left:7px solid var(--teal); }
+
+  .exemplars { margin:10px 14px 0; padding:8px 10px; background:var(--paper-deep); }
+  .exemplars .exlbl { display:block; font-size:9.5px; letter-spacing:.14em;
+        text-transform:uppercase; color:var(--ink-soft); margin-bottom:5px; }
+  /* Marked `.ex` so the membership tests can tell an illustration from a
+     member — an exemplar is a repeat of a record listed below it, and counting
+     both would make every section look like it held more than it does. */
+  .exemplars .chip.ex { background:var(--card); border-color:var(--ink-soft); }
+
+  .chips { display:flex; flex-wrap:wrap; gap:4px; }
+  .chip { display:inline-block; border:1px solid var(--ink-faint); background:var(--paper);
+        padding:1px 6px; font-size:10.5px; color:var(--ink); text-decoration:none;
+        white-space:nowrap; }
+  .chip:hover { border-color:var(--water); color:var(--water); background:#fff; }
+  /* a filled marker means the register has attributed deaths to it. It is a
+     density cue, not a ranking: 54 records carry no `deaths` figure at all and
+     an unfilled chip means "not counted", never "nobody dies". */
+  .chip .d { color:var(--vermilion); opacity:.65; margin-left:4px; font-size:9px; }
+  /* The ordinary word for it, shown next to the clinical name. Visible — that
+     is the entire point. A clipped span was tried and removed: browser find
+     reached it and a reader could not see what had been found. */
+  .chip .common { color:var(--ink-soft); font-style:italic; margin-left:5px; }
+  .chip .common::before { content:"· "; font-style:normal; }
+
+  /* the year-over-year line. Deliberately loud when it has nothing to say —
+     the first year has no comparison and a page that hid that would imply one. */
+  .chg { font-size:10.5px; margin-top:9px; padding:5px 9px;
+         border:1px dashed var(--ink-faint); color:var(--ink-soft); }
+  .chg b { color:var(--ink); font-weight:500; }
+  .chg.first { border-color:var(--water); color:var(--water); }
+  .chg.moved { border:1px solid var(--vermilion); color:var(--vermilion); }
+  /* Axis B sections are drawn DASHED so they cannot be mistaken for the seven
+     states above them. A record carries several of these or none; the counts
+     total more than the register and divide nothing. */
+  .bk.tagsec { border-style:dashed; border-left-style:solid; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div>
+    <h1><span class="fig">Nordstern</span>the state of what is solved</h1>
+    <div class="sub"><b>What medicine cannot do</b>, one disease at a time: <i>do we
+      understand it</i>, and <i>can we do anything about it</i>. Nothing here stores
+      whether a disease is solved — every figure is <b>derived</b>, and every one
+      links to the query that produces it.</div>
+  </div>
+  <div style="display:flex;gap:8px;flex-wrap:wrap">
+    <a class="tool" href="engpass.html">what is in the way →</a>
+    <a class="tool" href="query.html">the query tool →</a>
+  </div>
+</header>
+
+<div class="prov" id="prov"></div>
+
+<div id="body"></div>
+
+<footer>
+  <b>Read this before quoting anything.</b> Every number on this page is derived
+  from <span class="tag">entities/*.yaml</span> by <span class="tag">check.py</span>
+  at build time — the page owns no calculation of its own, so the charts cannot
+  drift from the register. What it <i>can</i> do is show you a well-formed number
+  computed from an unverified one; see the banner above.
+  <br>
+  <b>Some figures here carry no link, and that is deliberate.</b> The query
+  language counts <i>records</i>. Blockers, <span class="tag">moved</span>
+  entries and actor mentions are not records, so no query returns those numbers —
+  the first version of this page linked them to a plausible-looking query anyway
+  and printed <i>127</i> beside a query returning <i>54</i>. A test now compares
+  every linked figure against its own query on every build.
+  <br>
+  Snapshots are frozen on every build into <span class="tag">web/snapshots/</span>,
+  so a later pass is a comparison rather than a fresh opinion.
+  <span id="series"></span>
+  <br>
+  Disease identifiers are borrowed from <b>Mondo</b>, never minted. The only
+  identifiers this project creates are for its own <b>assertions</b> — the rating
+  is the new thing, so the rating gets the address.
+</footer>
+
+</div>
+
+<script src="banner.js"></script>
+<script src="slim.js"></script>
+<script src="snapshots.js"></script>
+<script src="engpass-snapshots.js"></script>
+<script>
+/* ============================================================================
+   Nordstern dashboard.
+
+   THE ONE RULE THIS FILE HAS: it never computes a derivation. Capability,
+   quadrant, delivery, reach, terms and every flag arrive already calculated in
+   slim.js and snapshots.js, because check.py owns them and a second
+   implementation is how the two drift. What this file does is arrange them.
+
+   THE SECOND RULE: every figure carries the query that produces it. A statistic
+   you cannot express as a query is one nobody can check, and the link is what
+   turns a casual reader into someone holding the actual tool.
+
+   Zero dependencies. SVG by hand — a chart library would be a CDN that can fail,
+   and these are bar charts and a scatter plot.
+   ============================================================================ */
+
+const SLIM  = window.NORDSTERN_SLIM || [];
+const SNAPS = window.NORDSTERN_SNAPSHOTS || [];
+const ESNAPS = window.ENGPASS_SNAPSHOTS || [];
+const S  = SNAPS[SNAPS.length - 1] || null;
+const ES = ESNAPS[ESNAPS.length - 1] || null;
+
+const qurl = q => "query.html?q=" + encodeURIComponent(q);
+const esc  = s => String(s).replace(/[&<>"]/g, c =>
+  ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;" }[c]));
+const pct  = (n, d) => d ? Math.round(100 * n / d) : 0;
+const num  = n => n.toLocaleString("en-US");
+
+/* A figure card. `query` is optional and its absence is meaningful.
+ *
+ * THE QUERY LANGUAGE COUNTS RECORDS. Several true and interesting figures on
+ * this page count something else — blockers, `moved` entries, actor mentions —
+ * and there is no query that returns them. The first version of this page
+ * linked those cards to a plausible-looking query anyway, and
+ * dashboard.test.js caught it: "capability:curable" printed beside 127 and
+ * returned 54. **A figure whose link disagrees with it is worse than a figure
+ * with no link**, because the visitor believes the big number.
+ *
+ * So a card with no query says so, and the page states what cannot be asked. */
+function stat(n, label, note, query, cls = "") {
+  const inner = `<div class="card">
+    <div class="stat ${cls}" ${query ? 'data-count="records"' : ""}>${n}</div>
+    <div class="statlbl">${label}</div>
+    ${note ? `<div class="note">${note}</div>` : ""}
+    ${query ? `<div class="qhint">${esc(query)}</div>`
+            : `<div class="qhint noq">not expressible as a query — this counts
+                 entries, and the query language counts records</div>`}
+  </div>`;
+  return query ? `<a class="q" href="${qurl(query)}">${inner}</a>` : inner;
+}
+
+/* A horizontal bar table. rows: [label, value, query, barClass]
+ *
+ * `counts` is "records" or "items", and it is not decoration. A bar labelled
+ * `knowledge 95` is counting BLOCKERS; the query `blocker.kind:knowledge`
+ * returns the 94 RECORDS that have at least one. Both numbers are right and
+ * they are not the same number, so the row declares which it is showing and
+ * dashboard.test.js only checks the record ones. */
+function bars(rows, max, counts = "records") {
+  const m = max || Math.max(...rows.map(r => r[1]), 1);
+  return `<table>${rows.map(([lbl, v, q, cls]) => `<tr>
+      <td>${q ? `<a class="q" style="display:inline" href="${qurl(q)}">${esc(lbl)}</a>`
+              : esc(lbl)}</td>
+      <td class="num" data-count="${counts}">${num(v)}</td>
+      <td class="barcell"><span class="bar ${cls || ""}"
+          style="width:${Math.max(1.5, 100 * v / m)}%"></span></td>
+    </tr>`).join("")}</table>`;
+}
+
+const tallyRows = (obj, qf, cls) =>
+  Object.entries(obj).map(([k, v]) => [k, v, qf ? qf(k) : null, cls]);
+
+/* ---------------------------------------------------------------- banner --
+   Rendered by banner.js, which the query tool also loads. Both pages used to
+   carry their own wording and the tool's had gone stale — it claimed `mondo:`
+   was unresolved on every record long after 93 of 101 were resolved. A
+   hand-written sentence about the data is a stored opinion with a stored
+   verdict's failure mode. */
+function banner() {
+  document.getElementById("prov").innerHTML =
+    window.NordsternBanner.render(S, { tone: "lead", queryHref: "query.html?q=" });
+}
+
+/* ------------------------------------------------------------------ map --
+   The 2×3 the register argued itself into. NEVER a bare one-word verdict:
+   `known & treatable` rather than `solved`, because the old label read as a
+   verdict on the disease next to breast cancer's 670k annual deaths. */
+const MAP = [
+  /* NOT "a treatment that works" — that was the wording until 2026-08-28 and it
+     was false for five records. `capability: preventable` maps into this tier
+     (measles, rabies, influenza, dengue, hpv-infection), and for every one of
+     them the TREATMENT does nothing: rabies is `intervention: none` and kills
+     essentially everyone who reaches symptoms. What works is the vaccine. The
+     cell is right and the sentence under it was not. gaps.md #235. */
+  ["known", "known & treatable",   "a mechanism, and something that works — a treatment, or a vaccine"],
+  ["known", "known & modifiable",  "understood, and the treatment alters the course without ending it"],
+  ["known", "engineering problem", "understood, and nothing yet alters it"],
+  ["empirical", "empirical foothold", "a treatment that works, and no mechanism to explain it"],
+  ["empirical", "empirical luck",     "something helps, and nobody knows why"],
+  ["empirical", "frontier",           "neither"],
+];
+
+function mapBlock() {
+  const q = S.quadrant;
+  // A CELL WITH NOTHING IN IT DOES NOT LINK, and the reason is a nice property
+  // of the query engine: enum domains are read off the data, so `quadrant` has
+  // no value `empirical foothold` while no record is in it. The engine
+  // correctly rejects the query. Linking to it would send a visitor to an error
+  // page to be told that zero is zero.
+  const cell = ([, name, desc]) => {
+    const n = q[name] || 0;
+    const body = `<div class="cn">${n}</div>
+      <div class="ct">${esc(name)}</div>
+      <div class="cd">${esc(desc)}</div>
+      ${n ? "" : `<div class="cd" style="color:var(--vermilion)">empty —
+        no record in the corpus has this shape</div>`}`;
+    return n ? `<a class="cell" href="${qurl(`quadrant:"${name}"`)}">${body}</a>`
+             : `<div class="cell" style="opacity:.62">${body}</div>`;
+  };
+  return `<div class="map">
+    <div class="rl">mechanism known</div>
+    ${MAP.slice(0, 3).map(cell).join("")}
+    <div class="rl">empirical</div>
+    ${MAP.slice(3).map(cell).join("")}
+  </div>`;
+}
+
+/* -------------------------------------------------------------- scatter --
+   Efficacy against access, one dot per record. This is the delivery gap drawn
+   rather than asserted: the treatments work, and the cloud sits low. */
+function scatter() {
+  const W = 720, H = 400, P = 46;
+  const x = v => P + v * (W - P - 18);
+  const y = v => H - P - v * (H - P - 20);
+  const colour = { curable:"var(--teal)", managed:"var(--water)",
+                   partial:"var(--gold)", preventable:"var(--water)",
+                   unsolved:"var(--vermilion)" };
+  const grid = [0, .25, .5, .75, 1].map(v => `
+      <line x1="${x(v)}" y1="${y(0)}" x2="${x(v)}" y2="${y(1)}" stroke="var(--ink-faint)"/>
+      <line x1="${x(0)}" y1="${y(v)}" x2="${x(1)}" y2="${y(v)}" stroke="var(--ink-faint)"/>
+      <text class="tick" x="${x(v)}" y="${y(0) + 14}" text-anchor="middle">${v}</text>
+      <text class="tick" x="${x(0) - 7}" y="${y(v) + 3}" text-anchor="end">${v}</text>`).join("");
+  // the diagonal below which reach is under a quarter — a visual read of the
+  // register's own `delivery: barely`
+  const dots = SLIM.map(r => `<circle class="dot" cx="${x(r.efficacy)}" cy="${y(r.access)}"
+      r="4.2" fill="${colour[r.capability] || "var(--ink)"}" fill-opacity=".62"
+      onclick="location.href='${qurl("slug:" + r.slug)}'"
+      ><title>${esc(r.name)} — efficacy ${r.efficacy}, access ${r.access}, reach ${r.reach}
+${esc(r.capability)}</title></circle>`).join("");
+  return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="efficacy against access">
+    ${grid}
+    <line x1="${x(0)}" y1="${y(0)}" x2="${x(1)}" y2="${y(1)}"
+          stroke="var(--ink-faint)" stroke-dasharray="4 4"/>
+    ${dots}
+    <text class="axlbl" x="${x(.5)}" y="${H - 8}" text-anchor="middle">efficacy — does it work</text>
+    <text class="axlbl" transform="translate(13,${y(.5)}) rotate(-90)"
+          text-anchor="middle">access — does it reach anyone</text>
+  </svg>`;
+}
+
+/* --------------------------------------------------------- bucketBar --
+   AXIS A AS ONE BAR, because it is a partition and a partition is the only
+   thing a stacked bar is honest about. Every record is in exactly one segment
+   and the segments sum to the register, so a width IS a share.
+
+   Axis B is drawn as separate bars further down and explicitly not stacked —
+   a record carries several tags or none, and stacking them would present a
+   total larger than the register as though it were a share of it. */
+const BUCKET_NAME = S.buckets.names, TAG_NAME = S.buckets.names;
+const BUCKET_COLOUR = {
+  "ends-it":               ["var(--vermilion)", 1],
+  "ends-it-unless-caught": ["var(--vermilion)", .74],
+  "ends-it-later":         ["var(--vermilion)", .48],
+  "held-off":              ["var(--water)",    .85],
+  "defines-your-life":     ["var(--gold)",      .95],
+  "changes-you":           ["var(--gold)",      .5],
+  "back-to-normal":        ["var(--teal)",      .8],
+};
+
+function bucketBar(order) {
+  const A = S.buckets.a, total = order.reduce((s, k) => s + (A[k] || 0), 0);
+  const W = 720, H = 52;
+  let x = 0;
+  const segs = order.map(k => {
+    const n = A[k] || 0, w = n / total * W;
+    const [fill, op] = BUCKET_COLOUR[k] || ["var(--ink)", .6];
+    const seg = `<a href="${qurl("bucket:" + k)}"><rect x="${x}" y="0" width="${w}"
+        height="${H}" fill="${fill}" fill-opacity="${op}" stroke="var(--card)"
+        stroke-width="1.5"><title>${esc(BUCKET_NAME[k])} — ${n} of ${total}</title></rect>${
+        w > 26 ? `<text x="${x + w / 2}" y="${H / 2 + 4}" text-anchor="middle"
+          class="segn" fill="var(--card)">${n}</text>` : ""}</a>`;
+    x += w;
+    return seg;
+  }).join("");
+  return `<svg viewBox="0 0 ${W} ${H}" role="img"
+      aria-label="every record, by what the disease does to your life">${segs}</svg>`;
+}
+
+/* ======================================================= bucket sections ==
+   THE SPINE OF THE PAGE. One section per state of axis A, each listing the
+   diseases in it, because a count of 63 is an assertion and sixty-three names
+   is a thing you can argue with.
+
+   THE DIFF IS NOT COMPUTED HERE. `window.NORDSTERN_BUCKET_DIFFS` is written by
+   check.py at build time, decomposed into arrivals, departures and movements,
+   with its own refusals already applied. Re-implementing that comparison in
+   JavaScript is how this page would eventually tell somebody that eight
+   diseases improved when eight records were written. Same rule as every other
+   derivation on this page: build time, or it drifts. */
+const DIFFS = window.NORDSTERN_BUCKET_DIFFS || [];
+const LAST_DIFF = DIFFS.length ? DIFFS[DIFFS.length - 1] : null;
+
+/* slug -> permanent id, from the snapshot's membership map. Chips link by `id:`
+   rather than by `slug:` because `id:` matches exactly and `slug:` is a
+   substring match — and because a permanent identifier is what the register
+   tells outside references to use. */
+const ID_OF = {};
+Object.entries(S.buckets.members || {}).forEach(([slug, v]) => { ID_OF[slug] = v.id; });
+
+/* NOT SORTED BY DEATHS, AND THE FIRST VERSION WAS.
+ *
+ * `refractive-error` — uncorrected sight, the largest unmet need in this
+ * register — sat 90% of the way down the 68 names in *"it works and it does not
+ * arrive"*, because it has no attributed deaths and the chips were ordered by
+ * mortality. **In the section about access failure, the world's largest access
+ * failure was at the bottom for not killing anybody.** That is precisely the
+ * bias the non-mortality records were added to correct, reintroduced in the
+ * presentation layer where no test was looking.
+ *
+ * Alphabetical instead. The register's whole argument is that there is no single
+ * ranking; a neutral order says so and makes any name findable by eye. */
+const byName = (a, b) => (a.name || a.slug).localeCompare(b.name || b.slug);
+const inBucket = k => SLIM.filter(r => r.bucket === k).sort(byName);
+
+/* THE CHIP SHOWS THE CLINICAL NAME AND, WHERE THEY DIFFER, THE ORDINARY ONE.
+ *
+ * VISIBLY. The first attempt put the whole `also` list in a clipped span so
+ * browser find would reach it, and that was worse than leaving it out: ctrl-F
+ * found a match, scrolled to it, and highlighted nothing a reader could see,
+ * which is indistinguishable from a broken page. **Text that search can find
+ * and a person cannot read is not findability.**
+ * So one chosen plain-English name per record, in the markup, in view — and the
+ * full alias list stays in `title` for hover, promising nothing more than that. */
+function chips(rows, cls = "") {
+  return `<div class="chips">${rows.map(r => {
+    const q = ID_OF[r.slug] ? "id:" + ID_OF[r.slug] : "slug:" + r.slug;
+    const alias = (r.also || []).join(", ");
+    const common = r.common && r.common.toLowerCase() !== (r.name || "").toLowerCase()
+      ? r.common : null;
+    return `<a class="chip${cls}" data-slug="${esc(r.slug)}" href="${qurl(q)}"
+      title="${esc(r.slug)}${alias ? " — " + esc(alias) : ""}">${esc(r.name || r.slug)}${
+      common ? `<span class="common">${esc(common)}</span>` : ""}${
+      r.deaths > 0 ? '<span class="d">●</span>' : ""}</a>`;
+  }).join("")}</div>`;
+}
+
+/* The year-over-year line, per bucket.
+ *
+ * IT IS AT ITS MOST USEFUL WHEN IT SAYS NOTHING. The register's `moved:` entries
+ * span the 1790s to the 2020s: medicine moves on decades, so the expected annual
+ * reading is that no disease changed state. A dashboard that rendered that as an
+ * empty space would look broken and get abandoned; one that says it in words is
+ * reporting the finding. */
+function changeRow(k) {
+  if (!LAST_DIFF) {
+    return `<div class="chg first"><b>First measurement.</b> Nothing to compare
+      against yet — this is the baseline the next pass is read against.</div>`;
+  }
+  if (LAST_DIFF.skipped) {
+    // SAID IN FULL ONCE AND IN THREE WORDS SEVEN TIMES. The first draft printed
+    // the whole refusal under every bucket, which is how a caveat becomes
+    // wallpaper — the same reasoning that moved the provenance ledger into a
+    // <details>. The explanation belongs where a reader meets it first.
+    if (k !== null) return `<div class="chg first">baseline — no earlier
+      membership to compare against</div>`;
+    return `<div class="chg first" style="margin-top:12px"><b>No comparison
+      yet.</b> ${esc(LAST_DIFF.skipped)}. <b>This snapshot is the first that can
+      be compared against</b>, so the change line under each of the seven
+      sections below starts carrying a number at the next pass.</div>`;
+  }
+  if (k === null) {                       // the register-wide line, under the strip
+    const mv = LAST_DIFF.movements.length;
+    return `<div class="chg ${mv ? "moved" : ""}" style="margin-top:12px">
+      <b>${mv} disease${mv === 1 ? "" : "s"} changed state</b> between
+      ${esc(LAST_DIFF.from)} and ${esc(LAST_DIFF.to)}, alongside
+      ${LAST_DIFF.arrivals.length} newly written and
+      ${LAST_DIFF.departures.length} withdrawn.
+      ${LAST_DIFF.rules_changed ? `<b>The bucket rules also changed in this
+        interval (v${LAST_DIFF.from_version} → v${LAST_DIFF.to_version}), so a
+        record can appear to move because the definition moved past it.</b>` : ""}
+      </div>`;
+  }
+  const s = (LAST_DIFF.by_bucket || {})[k];
+  if (!s) return "";
+  const moved = s.moved_in + s.moved_out;
+  const cls = moved ? "chg moved" : "chg";
+  const head = moved
+    ? `<b>${moved} record${moved === 1 ? "" : "s"} re-rated</b>`
+    : `<b>No disease changed state.</b>`;
+  return `<div class="${cls}">${head} since ${esc(LAST_DIFF.from)} —
+    ${s.was} → ${s.now}, of which <b>+${s.arrived}</b> newly written and
+    <b>−${s.left}</b> withdrawn. ${moved
+      ? `<b>+${s.moved_in} in, −${s.moved_out} out</b> is the only part of that
+         about medicine.`
+      : `The rest is the register growing, which is not progress.`}</div>`;
+}
+
+function bucketSection(k, n) {
+  const A = S.buckets.a, total = S.records.active;
+  const def = (S.buckets.defs || {})[k] || {};
+  const rows = inBucket(k);
+  const stripe = { "var(--vermilion)": "v", "var(--water)": "w",
+                   "var(--gold)": "g", "var(--teal)": "t"
+                 }[(BUCKET_COLOUR[k] || [])[0]] || "";
+  return `<h2><span class="n">${String(n).padStart(2, "0")}</span>${
+      esc(BUCKET_NAME[k])}</h2>
+    <div class="bk ${stripe}">
+      <div class="bkhead">
+        <span class="bkn">${A[k] || 0}</span>
+        <span class="bkshare">${pct(A[k] || 0, total)}% of the register</span>
+        <span class="qhint" style="margin:0 0 0 auto">bucket:${k}</span>
+      </div>
+      <div class="bkrule">${md(def.rule || "")}</div>
+      ${def.not ? `<div class="bknot">${md(def.not)}</div>` : ""}
+      ${exemplars(def)}
+      <div class="bkmem">
+        ${chips(rows)}
+        ${changeRow(k)}
+      </div>
+    </div>`;
+}
+
+/* ============================================================ tag sections ==
+   AXIS B GETS THE SAME TREATMENT AS AXIS A, WITH ONE DIFFERENCE THAT MUST NOT
+   BE LOST: **these are not a partition.** A record carries several or none, the
+   counts total more than the register, and 35 records carry nothing at all.
+
+   The sections exist because the counts alone were unfindable. `nobody-makes-it`
+   — *the treatment exists and no-one produces it* — and `cannot-reach-people` —
+   *glasses, and 68 other records* — are two of the register's sharpest findings
+   and they were a bar chart at the bottom of the page. A count is an assertion;
+   the names are what you can argue with, and that is as true here as it was for
+   the seven states.
+
+   So: same shape, different furniture. Dashed border and no share-of-register
+   figure, because a percentage implies a whole that these do not divide. */
+const TAG_COLOUR = {
+  "nobody-makes-it":     "var(--vermilion)",
+  "cannot-reach-people": "var(--water)",
+  "found-too-late":      "var(--gold)",
+  "cannot-aim-it":       "var(--gold)",
+  "no-starting-point":   "var(--ink)",
+  "needs-more-evidence": "var(--teal)",
+};
+
+const withTag = t => SLIM.filter(r => (r.bucket_tags || []).includes(t)).sort(byName);
+
+/* Per-tag change line. `bucket_diff` reports tags gained and lost per record, so
+   this reads them rather than recomputing anything. */
+function tagChangeRow(t) {
+  if (!LAST_DIFF || LAST_DIFF.skipped)
+    return `<div class="chg first">baseline — no earlier tagging to compare against</div>`;
+  const g = LAST_DIFF.tags_gained.filter(x => x.tag === t);
+  const l = LAST_DIFF.tags_lost.filter(x => x.tag === t);
+  if (!g.length && !l.length)
+    return `<div class="chg">no record gained or lost this tag since ${esc(LAST_DIFF.from)}</div>`;
+  return `<div class="chg moved"><b>+${g.length} gained, −${l.length} lost</b>
+    since ${esc(LAST_DIFF.from)}${g.length ? " — " + g.map(x => esc(x.slug)).join(", ") : ""}${
+    l.length ? " · lost: " + l.map(x => esc(x.slug)).join(", ") : ""}</div>`;
+}
+
+function tagSection(t, n) {
+  const TAGS = S.buckets.b, def = (S.buckets.defs || {})[t] || {};
+  const rows = withTag(t);
+  return `<h2><span class="n">${String(n).padStart(2, "0")}</span>${
+      esc(TAG_NAME[t])}</h2>
+    <div class="bk tagsec" style="border-left-color:${TAG_COLOUR[t] || "var(--ink)"}">
+      <div class="bkhead">
+        <span class="bkn">${TAGS[t] || 0}</span>
+        <span class="bkshare">records &mdash; <b>not a share of anything</b>,
+          these overlap</span>
+        <span class="qhint" style="margin:0 0 0 auto">tag:${t}</span>
+      </div>
+      <div class="bkrule">${md(def.rule || "")}</div>
+      ${def.not ? `<div class="bknot">${md(def.not)}</div>` : ""}
+      ${exemplars(def)}
+      <div class="bkmem">
+        ${chips(rows)}
+        ${tagChangeRow(t)}
+      </div>
+    </div>`;
+}
+
+/* The bucket's own exemplars, named up front. Alphabetical membership is the
+   honest order and it hides things; `buckets.yaml` has always recorded which
+   records make the case and the page had never shown them. Stated as a choice —
+   "the cases this bucket was written around" — rather than as a ranking. */
+function exemplars(def) {
+  const ex = (def.examples || []).map(s => SLIM.find(r => r.slug === s))
+    .filter(Boolean);
+  if (!ex.length) return "";
+  return `<div class="exemplars"><span class="exlbl">the cases it was written
+    around</span>${chips(ex, " ex")}</div>`;
+}
+
+/* buckets.yaml writes its prose with **bold** and `code`, because it is read in
+   a terminal as often as here. Rendering those two is the whole markdown
+   support this page needs — and it is done on text the build step produced, not
+   on anything a visitor supplied. */
+const md = s => esc(s)
+  .replace(/\*\*(.+?)\*\*/g, "<b>$1</b>")
+  .replace(/`([^`]+?)`/g, "<code>$1</code>")
+  .replace(/\*(.+?)\*/g, "<i>$1</i>");
+
+/* ------------------------------------------------------------ gapChart --
+   CAPABILITY WEIGHTED BY HOW MANY PEOPLE GET IT — the question the register
+   could not answer until `knowledge_gap` existed: *should we work on the rare
+   horrific diseases or the common ones?*
+
+   Log x, because the burden spans five orders of magnitude and a linear axis
+   collapses everything under a million into the y-axis. Records with a null
+   gap are absent by construction — see the note under the figure, which says
+   so rather than letting a reader assume the chart is the whole register. */
+function gapChart() {
+  const W = 720, H = 400, P = 52;
+  const rows = SLIM.filter(r => r.knowledge_gap != null && r.deaths > 0);
+  const lo = 3, hi = Math.log10(Math.max(...rows.map(r => r.deaths)) * 1.4);
+  const x = v => P + (Math.log10(Math.max(v, 10 ** lo)) - lo) / (hi - lo) * (W - P - 20);
+  const y = v => H - P - v * (H - P - 22);
+  const colour = { curable:"var(--teal)", managed:"var(--water)",
+                   partial:"var(--gold)", unsolved:"var(--vermilion)" };
+  const ticks = [3, 4, 5, 6, 7].filter(t => t <= hi).map(t => `
+      <line x1="${x(10 ** t)}" y1="${y(0)}" x2="${x(10 ** t)}" y2="${y(1)}" stroke="var(--ink-faint)"/>
+      <text class="tick" x="${x(10 ** t)}" y="${y(0) + 14}" text-anchor="middle">${
+        ["1k","10k","100k","1M","10M"][t - 3]}</text>`).join("");
+  const hlines = [0, .25, .5, .75, 1].map(v => `
+      <line x1="${x(10 ** lo)}" y1="${y(v)}" x2="${W - 20}" y2="${y(v)}" stroke="var(--ink-faint)"/>
+      <text class="tick" x="${P - 7}" y="${y(v) + 3}" text-anchor="end">${v}</text>`).join("");
+  // Area ∝ the knowledge gap, so the eye reads deaths-beyond-current-medicine
+  // directly rather than inferring it from position.
+  const dots = rows.slice().sort((a, b) => b.knowledge_gap - a.knowledge_gap).map(r => `
+    <circle class="dot" cx="${x(r.deaths)}" cy="${y(1 - r.efficacy)}"
+      r="${Math.max(3, Math.sqrt(r.knowledge_gap) / 62)}"
+      fill="${colour[r.capability] || "var(--ink)"}" fill-opacity=".5"
+      stroke="${colour[r.capability] || "var(--ink)"}" stroke-opacity=".8"
+      onclick="location.href='${qurl("slug:" + r.slug)}'"
+      ><title>${esc(r.name)} — ${num(r.deaths)} deaths/year, efficacy ${r.efficacy}
+knowledge gap ${num(Math.round(r.knowledge_gap))}/year</title></circle>`).join("");
+  const label = s => {
+    const r = rows.find(v => v.slug === s);
+    return r ? `<text class="tick" x="${x(r.deaths)}" y="${y(1 - r.efficacy) - 11}"
+      text-anchor="middle" fill="var(--ink)">${esc(r.name)}</text>` : "";
+  };
+  return `<svg viewBox="0 0 ${W} ${H}" role="img"
+      aria-label="deaths per year against the fraction current treatment does not reach">
+    ${hlines}${ticks}${dots}
+    ${["stroke", "ischaemic-heart-disease", "sepsis", "alzheimers"].map(label).join("")}
+    <text class="axlbl" x="${x(10 ** ((lo + hi) / 2))}" y="${H - 8}"
+      text-anchor="middle">deaths per year (log)</text>
+    <text class="axlbl" transform="translate(13,${y(.5)}) rotate(-90)"
+      text-anchor="middle">1 − efficacy — the fraction treatment does not help</text>
+  </svg>`;
+}
+
+/* ---------------------------------------------------------------- moved --
+   A century of dated axis changes, aggregated by decade. The register has held
+   this since its first record and has never drawn it. */
+function movedChart() {
+  const by = S.moved.by_decade, keys = Object.keys(by);
+  const W = 720, H = 210, P = 34;
+  const max = Math.max(...Object.values(by));
+  const bw = (W - P - 10) / keys.length;
+  const bars = keys.map((k, i) => {
+    const h = (H - P - 16) * by[k] / max;
+    return `<rect x="${P + i * bw + 3}" y="${H - P - h}" width="${bw - 6}" height="${h}"
+              fill="var(--water)" fill-opacity=".72"><title>${k}: ${by[k]} changes</title></rect>
+            <text class="tick" x="${P + i * bw + bw / 2}" y="${H - P + 13}"
+              text-anchor="middle">${k.replace("0s", "0")}</text>
+            <text class="tick" x="${P + i * bw + bw / 2}" y="${H - P - h - 4}"
+              text-anchor="middle">${by[k]}</text>`;
+  }).join("");
+  return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="axis changes by decade">
+    <line x1="${P}" y1="${H - P}" x2="${W - 8}" y2="${H - P}" stroke="var(--ink)"/>
+    ${bars}
+  </svg>`;
+}
+
+/* ------------------------------------------------------------- survival --
+   "You get it, and then what?" — drawn as the distance between two numbers.
+
+   One row per rated record: a dot for untreated survival, a dot for treated,
+   and the line between them is what medicine bought. Sorted by treated
+   survival, coloured by OUTCOME rather than by band.
+
+   THE COLOUR IS THE POINT AND IT IS NOT DECORATION. Two records can end at the
+   same place on this chart and mean opposite things — `head-neck-cancer` and
+   `heart-failure` both land on 0.55, and one of them is cured while the other
+   is a progressive disease that has been made slower. The band cannot tell
+   them apart; the intervention ladder can, and it was already in the register
+   (gaps.md #216). A chart of survival alone would be actively misleading, which
+   is why this one was not drawn until the qualifier existed. */
+const OUTCOME_COLOUR = { cured:"var(--teal)", recovered:"var(--gold)",
+                         held:"var(--water)", delayed:"var(--vermilion)" };
+const OUTCOME_LABEL = { cured:"cured", recovered:"recovered",
+                        held:"alive and held", delayed:"alive and still dying" };
+
+function survivalChart() {
+  const rows = SLIM.filter(r => r.survival_band !== "n/a")
+                   .sort((a, b) => b.survival_treated - a.survival_treated);
+  const RH = 12, P = 168, W = 720, H = rows.length * RH + 56;
+  const x = v => P + v * (W - P - 26);
+  const body = rows.map((r, i) => {
+    const yy = 28 + i * RH + RH / 2;
+    const c = OUTCOME_COLOUR[r.survival_outcome] || "var(--ink)";
+    const u = x(r.survival_untreated), t = x(r.survival_treated);
+    return `<a class="srow" href="query.html?q=${encodeURIComponent("slug:" + r.slug)}">
+      <title>${esc(r.name)} — ${esc(r.survival_sentence)}
+untreated ${Math.round(r.survival_untreated * 100)}% · treated ${Math.round(r.survival_treated * 100)}% · horizon ${esc(r.survival_horizon || "")}</title>
+      <rect x="0" y="${yy - RH / 2}" width="${W}" height="${RH}" fill="transparent"/>
+      <text class="tick" x="${P - 8}" y="${yy + 3}" text-anchor="end">${esc(r.slug)}</text>
+      <line x1="${u}" y1="${yy}" x2="${t}" y2="${yy}" stroke="${c}"
+            stroke-width="2.2" stroke-opacity=".5"/>
+      <circle cx="${u}" cy="${yy}" r="2.4" fill="none" stroke="${c}" stroke-opacity=".85"/>
+      <circle cx="${t}" cy="${yy}" r="3.4" fill="${c}"/></a>`;
+  }).join("");
+  const ticks = [0, .25, .5, .75, 1].map(v =>
+    `<line x1="${x(v)}" y1="22" x2="${x(v)}" y2="${H - 26}" stroke="var(--ink)"
+           stroke-opacity=".12"/>
+     <text class="tick" x="${x(v)}" y="${H - 11}" text-anchor="middle">${v * 100}%</text>`
+  ).join("");
+  const key = Object.entries(OUTCOME_COLOUR).map(([k, c], i) =>
+    `<circle cx="${P + i * 108}" cy="9" r="3.4" fill="${c}"/>
+     <text class="tick" x="${P + i * 108 + 9}" y="12">${OUTCOME_LABEL[k]}</text>`).join("");
+  return `<svg viewBox="0 0 ${W} ${H}" role="img"
+      aria-label="untreated and treated survival, one row per rated disease">
+    ${key}${ticks}${body}
+    <text class="axlbl" x="${x(.5)}" y="${H - 1}" text-anchor="middle">fraction alive at each record's own horizon — hollow = untreated, solid = treated</text>
+  </svg>`;
+}
+
+/* ============================================================== assemble == */
+function render() {
+  if (!S) { document.getElementById("body").innerHTML =
+    "<p>No snapshot found — run <code>python3 check.py --build</code>.</p>"; return; }
+
+  banner();
+
+  const active = S.records.active;
+  const bl = S.blockers;
+  const kn = bl.by_kind_priced.knowledge || { total:0, priced:0 };
+  const capAxes = (S.moved.by_axis.efficacy || 0) + (S.moved.by_axis.access || 0) +
+                  (S.moved.by_axis.intervention || 0) + (S.moved.by_axis.prevention || 0);
+  const understanding = (S.moved.by_axis.mechanism || 0) + (S.moved.by_axis.measurement || 0);
+
+  const out = [];
+
+  /* ---- buckets: the register as a handful of named states ---- */
+  {
+    const B = S.buckets, A = B.a;
+    const ORDER = ["ends-it", "ends-it-unless-caught", "ends-it-later", "held-off",
+                   "defines-your-life", "changes-you", "back-to-normal"];
+    const rows = ORDER.map(k => [BUCKET_NAME[k], A[k] || 0, `bucket:${k}`,
+                                 BUCKET_COLOUR[k][0] === "var(--vermilion)" ? "v"
+                                 : BUCKET_COLOUR[k][0] === "var(--teal)" ? "t"
+                                 : BUCKET_COLOUR[k][0] === "var(--gold)" ? "g" : ""]);
+    const ends = (A["ends-it"] || 0) + (A["ends-it-unless-caught"] || 0) + (A["ends-it-later"] || 0);
+    out.push(`<h2><span class="n">01</span>Seven states, and every disease is in one</h2>
+    <div class="lede standfirst"><b>There is no single score here, and there will
+      not be one.</b> Progress in medicine looks different depending on where you
+      are standing. If you have a rare disease, it looks like whether anyone is
+      working on it at all. If you have one that is curable and you cannot reach
+      the cure, it looks like money. And there are whole areas where nobody knows
+      what to do. <b>Those are all true at once</b>, and any number that averaged
+      them would be a number about nothing.
+      So this page is {{sections}} readings of the same ${active} records rather
+      than one verdict. They disagree with each other on purpose — the register's
+      job is to make a disagreement precise enough to be worth having, not to
+      settle it. <b>Every figure links to the query that produces it</b>, so you
+      can check the reading against the data and take a different one.</div>
+    <div class="lede">Taken together this is the register's whole answer to
+      <i>what does medicine do</i>. Each disease is in <b>exactly one</b> of these
+      seven, so the widths are shares and they sum to ${active}. Read left to
+      right as severity: the disease ends your life, holds you on treatment, or
+      lets you go — and what it takes on the way out.</div>
+    <div class="card hot">${bucketBar(ORDER)}</div>
+    <div class="grid g2" style="margin-top:12px">
+      <div class="card">${bars(rows, active)}</div>
+      <div class="grid" style="gap:12px">
+        ${stat(A["changes-you"] || 0, "survive, and are permanently changed",
+          `<b>The largest state in the register, by a distance.</b> Against
+           ${A["back-to-normal"] || 0} who simply get back to normal. Medicine's
+           characteristic output is neither death nor cure — it is
+           <b>survival in an altered body</b>, and no other chart here says so.`,
+          "bucket:changes-you", "sm")}
+        ${stat(ends, "diseases that still end your life",
+          `Of which <b>${A["ends-it"] || 0}</b> ${(A["ends-it"] || 0) === 1
+             ? "is" : "are"} beyond help whenever you find
+           ${(A["ends-it"] || 0) === 1 ? "it" : "them"} and
+           <b>${A["ends-it-unless-caught"] || 0}</b> only if caught in time.
+           <b>Those two are the smallest states in the register</b> — and the
+           first of them held a single record until it was checked and found to
+           be a gap in the corpus rather than a fact about medicine.`,
+          "bucket:(ends-it OR ends-it-unless-caught OR ends-it-later)", "sm")}
+      </div>
+    </div>
+    ${changeRow(null)}
+    <div class="note" style="margin-top:10px"><b>The seven sections that follow
+      are those seven states, each listing what is in it.</b> A count is an
+      assertion; the names are the thing you can argue with.
+      <b>Ordered alphabetically, not by deaths</b> — a register whose argument is
+      that mortality is the wrong lens should not quietly rank by it. A filled
+      dot marks the ${SLIM.filter(r => r.deaths > 0).length} records with
+      attributed deaths, as a density cue and not as an order.</div>`);
+  }
+
+  /* ---- one section per bucket: the page's spine ---- */
+  {
+    const ORDER = ["ends-it", "ends-it-unless-caught", "ends-it-later", "held-off",
+                   "defines-your-life", "changes-you", "back-to-normal"];
+    ORDER.forEach((k, i) => out.push(bucketSection(k, i + 2)));
+  }
+
+  /* ---- axis B: tags, and they must not look like a partition ---- */
+  {
+    const B = S.buckets, A = B.a, TAGS = B.b;
+    const tagRows = Object.entries(TAGS).sort((a, b) => b[1] - a[1])
+      .map(([k, v]) => [TAG_NAME[k] || k, v, `tag:${k}`, "f"]);
+    out.push(`<h2><span class="n">09</span>Why it is not better than that</h2>
+    <div class="lede standfirst"><b>These are tags, not a partition — do not add
+      them up.</b> A disease can carry several or none, so the column totals
+      ${Object.values(TAGS).reduce((a, b) => a + b, 0)} across ${active} records
+      and <b>${B.b_untagged} carry no tag at all</b>. Axis A says what state a
+      disease is in; this says what is holding it there — and unlike the seven
+      states, <b>these are the things somebody could decide to change</b>.</div>
+    <div class="card">${bars(tagRows, active)}</div>
+    <div class="note" style="margin-top:10px">The ${tagRows.length} sections that
+      follow are these tags, each listing what is in it. <b>${B.b_untagged} records
+      carry none of them</b>, which is not the same as nothing being wrong with
+      them — it means nothing in this list of ${tagRows.length} explanations
+      applied, which is a statement about the list.</div>`);
+
+    tagRows.map(r => Object.keys(TAG_NAME).find(k => TAG_NAME[k] === r[0]))
+      .filter(Boolean)
+      .forEach((t, i) => out.push(tagSection(t, i + 10)));
+  }
+
+  /* ---- how this is tracked, and what would make it a fake trend ---- */
+  {
+    const B = S.buckets;
+    const series = SNAPS.length;
+    const withMembers = SNAPS.filter(s => s.buckets && s.buckets.members).length;
+    out.push(`<h2><span class="n">16</span>How this is meant to change</h2>
+    <div class="lede"><b>The point of the seven states is that they can be counted
+      again.</b> Take a bearing, work on something, take it again — the register's
+      own loop, and the reason it stores a dated snapshot rather than only a
+      current view. <b>Retrofitting history is impossible</b>, which is why the
+      snapshots were being written before there was anything to compare them to.</div>
+    <div class="grid g3">
+      ${stat(series, "dated snapshots", `Frozen aggregates, oldest
+        ${esc(SNAPS[0].date)}. Written only when the register actually changed.`,
+        null, "sm")}
+      ${stat(withMembers, "that record who was in each bucket",
+        `<b>A count is not a time series.</b> Until membership was stored,
+         <code>changes-you</code> going from 63 to 71 could not distinguish eight
+         diseases getting worse from eight records being written — opposite
+         findings. Earlier snapshots hold counts only and are not backfilled,
+         because inventing them would fabricate the history this exists to keep.`,
+        null, "sm")}
+      ${stat("v" + B.version, "bucket definitions",
+        `Every snapshot stores this version beside a <b>digest of the rules
+         themselves</b>. <b>A record moving between buckets is progress; a
+         bucket's definition moving is a fake trend</b> — and a test fails if the
+         rules change without the version changing with them. v3 moved eight
+         records on its own, so v1 and v2 counts are not comparable with these
+         for two of the seven.`,
+        null, "sm")}
+    </div>
+    <div class="note" style="margin-top:10px">Definitions live in
+      <code>buckets.yaml at version ${B.version}</code>, and the rules themselves
+      live in <code>check.py</code> — the file carries the definition, the order
+      and the version, and the digest above fingerprints the code. Both travel in
+      every snapshot, so a section renders the rule that was in force on the day
+      rather than today's copy of it.</div>
+    <div class="note" style="margin-top:10px"><b>The expected annual reading is
+      that nothing moved.</b> The register holds ${S.moved.total} dated
+      <code>moved:</code> entries spanning the 1790s to the 2020s — medicine
+      changes state on the scale of decades, not years. A year in which no
+      disease changed bucket is this page working, not this page broken.</div>`);
+  }
+
+  /* ---- the map ---- */
+  out.push(`<h2><span class="n">17</span>The map</h2>
+    <div class="lede">Two questions, six answers. <b>“Known &amp; treatable” is
+      never “solved”</b> — it means a mechanism exists and a treatment works, not
+      that the disease is over or that anyone can get it. What the treatment
+      <i>costs</i> and who <i>receives</i> it are the next two sections, and they
+      are where the register stops being encouraging.</div>
+    ${mapBlock()}`);
+
+  /* ---- survival: you get it, and then what? ---- */
+  const sv = S.survival, so = sv.outcomes || {};
+  out.push(`<h2><span class="n">18</span>You get it, and then what?</h2>
+    <div class="lede">The most concrete question the register can ask, and the
+      only axis here that <b>means the same thing in every record</b>: the
+      fraction of people alive at a stated horizon, untreated and treated. The
+      distance between the two dots is what medicine bought.
+      <b>Read the colour, not the position.</b> Two diseases can finish in the
+      same place and mean opposite things — <code>head-neck-cancer</code> and
+      <code>heart-failure</code> both land on 55%, and one of those is cured
+      while the other is a progressive disease that has been made slower.</div>
+    <div class="card hot">${survivalChart()}</div>
+    <div class="grid g3" style="margin-top:12px">
+      ${stat(so.cured || 0, "some are cured — the disease is gone",
+        `A finite treatment ends it. <b>Mostly infections and the resectable
+         cancers.</b>`, "outcome:cured", "t")}
+      ${stat(so.recovered || 0, "recovered — the disease passed",
+        `Acute, self-limiting, and no treatment cures it — the immune system ends
+         it. Measles, dengue, influenza. <b>The rung reads
+         <code>symptomatic</code> because there is no antiviral, not because
+         anyone stays ill.</b>`, "outcome:recovered", "g")}
+      ${stat(so.held || 0, "alive and held — treated indefinitely",
+        `Near-normal life, and it stops the day the treatment does. HIV, type 1
+         diabetes, dialysis.`, "outcome:held", "")}
+      ${stat(so.delayed || 0, "alive and still dying of it",
+        `The treatment changes the tempo, not the ending. <b>This is where the
+         biggest killers are.</b>`, "outcome:delayed", "v")}
+    </div>
+    <div class="grid g3" style="margin-top:12px">
+      ${stat(sv.no_longer_terminal, "used to kill everybody, and no longer do",
+        `Untreated survival under 10%, treated survival above it —
+         ${sv.was_uniformly_fatal} records were uniformly fatal.
+         <b>Read it with the colours above</b>: pancreatic cancer crosses this
+         line at 13% and type 1 diabetes at 95%, and the flag cannot tell them
+         apart (gaps.md #216).`, "no_longer_terminal:true", "t")}
+      ${stat((sv.zero_gain || []).length, "where treatment bought no extra life at all",
+        `<b>${(sv.zero_gain || []).map(s => `<code>${esc(s)}</code>`).join(", ")}.</b>
+         Identical untreated and treated survival. For Alzheimer's that is a
+         century of work on the commonest cause of dementia — anti-amyloid
+         antibodies slow decline and have not been shown to extend life. The
+         <code>efficacy</code> axis reads 0.25 there, which sounds like partial
+         success.
+         <b>The <code>untreated:&lt;0.95</code> half is load-bearing</b> — without
+         it the query also returns diseases nobody dies of, where a gain of zero
+         means there was nothing to buy.`, "gain:0 untreated:<0.95", "v")}
+      ${stat(`${sv.rated} / ${active}`, "records rated on this axis",
+        `The rest are unrated or genuinely <code>n/a</code> — a mortality ladder
+         is silent about hearing loss, cataract and low back pain, which are
+         among the largest disability burdens here. <b>Unrated is never
+         terminal.</b>`, "-survival:n/a", "sm")}
+    </div>`);
+
+  /* ---- delivery ---- */
+  /* ---- capability weighted by burden ---- */
+  {
+    const G = S.gaps, M = n => (n / 1e6).toFixed(1) + "M";
+    const big = SLIM.filter(r => r.knowledge_gap > 1e6).length;
+    const none = SLIM.filter(r => r.efficacy === 0).length;
+    out.push(`<h2><span class="n">19</span>Weighted by how many people get it</h2>
+    <div class="lede">The chart above asks what happens to <i>you</i>. This one
+      asks how many. Right means the disease is common; up means current
+      treatment does not help. <b>The area of each dot is the number of deaths a
+      year that remain even if delivery were perfect</b> —
+      <code>deaths × (1 − efficacy)</code>. It answers a question the register
+      could not previously ask: <i>work on the rare terrible diseases, or the
+      common ones?</i></div>
+    <div class="grid g2">
+      <div class="card hot">${gapChart()}</div>
+      <div class="grid" style="gap:12px">
+        ${stat(big, "diseases with a knowledge gap over a million deaths a year",
+          `Every one is a <b>common</b> disease. The largest is stroke, at about
+           ${M(Math.max(...SLIM.map(r => r.knowledge_gap || 0)))} deaths a year
+           beyond what treatment reaches — after perfect delivery.`,
+          "know-gap:>1000000", "sm")}
+        ${stat(none, "diseases where nothing alters the course at all",
+          `<b>And they are not where the deaths are.</b> Together they are
+           credited with under a hundred thousand deaths a year — a fraction of
+           stroke's knowledge gap alone. Four of them have no attributed deaths
+           whatsoever, so this figure cannot see them at all.`,
+          "efficacy:0", "sm")}
+        <div class="note"><b>${M(G.knowledge)} knowledge against
+          ${M(G.delivery)} delivery</b>, summed over the ${G.rated} records that
+          can carry the figure. The register's founding asymmetry restated in
+          lives rather than in blocker counts.</div>
+      </div>
+    </div>
+    <div class="note" style="margin-top:10px"><b>Read this as a shape, not as
+      figures.</b> <code>efficacy</code> is the fraction of patients whose course
+      is altered, not a mortality reduction, so multiplying it by deaths is a
+      proxy — stroke's own efficacy field calls itself <i>“a construct, not a
+      measurement”</i>. Every input sits in the ${S.provenance.by_tier.judged.total}
+      <code>judged</code> scalars, of which
+      ${S.provenance.by_tier.judged.cited} are sourced.
+      ${active - G.rated} records are missing from the chart entirely: they have
+      no death figure, or their capability is <code>preventable</code>, whose
+      efficacy and access describe a treatment while the prevention does the
+      work. <b>Rabies is the case that forces that exclusion</b> — it would read
+      as a 59,000-death knowledge gap when the vaccine works and the deaths are
+      access.</div>
+    <div class="note" style="margin-top:10px"><b>And this chart measures deaths,
+      which is the wrong question for a great deal of medicine.</b> The register
+      carries a second burden metric — <code>ylds</code>, years lived with
+      disability — on ${G.yld_rated} records so far, and on that reading the
+      knowledge gap totals ${M(G.knowledge_yld)} years against
+      ${M(G.delivery_yld)}. <b>The two are never added</b>: one counts people who
+      died, the other counts years of life spent unwell.
+      It matters most where they disagree. <code>low-back-pain</code> is the
+      largest cause of disability on earth and has no death figure at all, so it
+      is absent above. <code>anaemia</code> and <code>osteoarthritis</code>
+      declare zero deaths, so they are not absent above — <b>they are ranked
+      last</b>, carrying fifty and twenty-two million years of disability
+      between them. <b>A ranking that puts them at the bottom is worse than one
+      that omits them, because it looks complete.</b></div>
+    <div style="margin-top:10px">${stat(SLIM.filter(r => r.ylds).length,
+      "records carrying a disability figure",
+      `Out of ${active}. <b>The field has existed since early in the register and
+       was read by nothing until now.</b> GBD publishes these, which puts them in
+       the one provenance tier where a citation settles the question — making
+       this the best first target for a sourcing pass.`, "ylds:>0", "sm")}</div>`);
+  }
+
+  out.push(`<h2><span class="n">20</span>The delivery gap</h2>
+    <div class="lede">Each dot is a disease. Right means the treatment works;
+      up means people get it. <b>The cloud sits along the bottom.</b> Medicine's
+      problem in this register is not mostly that treatments fail — it is that
+      they do not arrive. Click any dot for the record.</div>
+    <div class="grid g2">
+      <div class="card hot">${scatter()}</div>
+      <div class="grid" style="gap:12px">
+        ${stat(S.reach.median, "median reach — efficacy × access",
+          `Half of all records deliver less than this. The best-treated disease
+           in the corpus and the worst are both on the chart to the left.`,
+          "reach:<" + S.reach.median, "sm")}
+        ${bars(tallyRows(S.delivery, k => `delivery:${k}`, "v")
+                 .filter(r => r[0] !== "—"), active)}
+        <div class="note">Withheld (<code>—</code>) for
+          ${S.delivery["—"] || 0} records where capability is <code>preventable</code>
+          or <code>unsolved</code> — a delivery figure for a treatment that does
+          not exist would be a number about nothing.</div>
+      </div>
+    </div>`);
+
+  /* ---- blockers: the founding claim ---- */
+  out.push(`<h2><span class="n">21</span>What stands in the way, and what money can move</h2>
+    <div class="lede">Every blocker records <i>who could</i> clear it and roughly
+      <i>what it would cost</i>. <b>The split is not a tendency, it is total.</b>
+      This is the register's founding claim, and it is arithmetic rather than
+      argument.</div>
+    <div class="grid g3">
+      ${stat(`${kn.priced} / ${kn.total}`, "knowledge blockers with a price",
+        `A knowledge blocker carries <code>scale: null</code> because there is no
+         sum of money that answers it. <b>These are the ones triage cannot
+         reach.</b>`, "blocker.kind:knowledge")}
+      ${stat(`${bl.by_kind_priced.logistics ? bl.by_kind_priced.logistics.priced : 0} /
+              ${bl.by_kind_priced.logistics ? bl.by_kind_priced.logistics.total : 0}`,
+        "logistics blockers with a price",
+        `Delivery blockers price out completely. <b>The asymmetry is the whole
+         reason the two are separate kinds.</b>`, "blocker.kind:logistics")}
+      ${stat(pct(bl.priced, bl.total) + "%", "of all blockers carry a price",
+        `${num(bl.priced)} of ${num(bl.total)} across ${active} records.`,
+        "blocker.scale:>0")}
+    </div>
+    <div class="grid g2" style="margin-top:12px">
+      <div class="card"><div class="statlbl" style="margin:0 0 7px">by kind</div>
+        ${bars(tallyRows(bl.by_kind, k => `blocker.kind:${k}`), null, "items")}
+        <div class="note">These bars count <b>blockers</b>. The link beside each
+          takes you to the <b>records</b> that have at least one, which is a
+          slightly smaller number — a disease can be held up twice by the same
+          kind of thing.</div></div>
+      <div class="card"><div class="statlbl" style="margin:0 0 7px">who could move it</div>
+        ${bars(tallyRows(bl.actors, k => `blocker.who_could:${k}`, "t"), null, "items")}
+        <div class="note">A blocker names an actor from a fixed list, so “somebody
+          should” becomes a testable claim about <i>whom</i>. Counts mentions, not
+          records.</div></div>
+    </div>`);
+
+  /* ---- engpass ---- */
+  if (ES) {
+    // No query links here: these count Nordstern records per Engpass obstacle,
+    // and `blockers[].obstacles` is not a queryable field — Nordstern records
+    // the slug and does not know what it refers to, which is the whole point of
+    // the two registers being separate. A gap worth closing on the query side.
+    const rows = Object.entries(ES.blocks).map(([k, v]) => [k, v, null, "g"]);
+    out.push(`<h2><span class="n">22</span>The same question, asked in different tissues</h2>
+      <div class="lede">Read one record at a time, knowledge blockers are
+        ${kn.total} separate frustrations. Read together they collapse.
+        <b>${ES.records_blocked_at_least_once} of ${active} diseases are held up by
+        just ${ES.obstacles.active} obstacles</b> — and the useful direction is
+        backwards: not <i>what blocks this disease</i>, but <i>what would clearing
+        this release</i>. That is a second register,
+        <a href="#" onclick="return false" style="color:var(--water)">Engpass</a>,
+        and the link is derived from Nordstern rather than stored.</div>
+      <div class="grid g2">
+        <div class="card"><div class="statlbl" style="margin:0 0 7px">diseases each obstacle blocks</div>
+          ${bars(rows)}
+          <div class="note"><b>rna-folding</b> sits at zero on purpose: it is a
+            <i>top-down</i> record, asserting a payoff no disease record has
+            claimed. Those assertions carry a standing, and when the question is
+            answered they become documented or refuted — a record of whether the
+            field's intuitions about payoff were any good.</div></div>
+        ${stat(ES.untagged_knowledge_blockers, "knowledge blockers with no obstacle assigned",
+          `<b>A finding, not a backlog.</b> Several are not questions at all —
+           “nobody has made the drug” is a different object from “nobody knows how
+           this works”, and is <code>no-sponsor</code> wearing a lab coat.
+           Splitting the <code>knowledge</code> kind is the schema change this
+           surfaced and it is not yet made.`)}
+      </div>`);
+  }
+
+  /* ---- moved ---- */
+  out.push(`<h2><span class="n">23</span>A century of change, and what changed</h2>
+    <div class="lede">Every record logs dated, attributed movements on a named
+      axis — ${S.moved.total} of them, the earliest from the 1790s. It is the
+      series that makes a second pass a comparison rather than a fresh opinion.
+      <b>And it computes the register's least comfortable finding rather than
+      asserting it.</b> None of these three figures is a link, because the query
+      language counts <i>records</i> and these count <i>entries</i> — see the
+      footer.</div>
+    <div class="card hot">${movedChart()}</div>
+    <div class="grid g3" style="margin-top:12px">
+      ${stat(capAxes, "changes in what we can DO",
+        `efficacy, access, intervention and prevention, out of ${S.moved.total}
+         dated entries.`)}
+      ${stat(understanding, "changes in what we UNDERSTAND",
+        `<b>${S.moved.by_axis.mechanism || 0} on mechanism,
+         ${S.moved.by_axis.measurement || 0} on measurement.</b> The register was
+         built to record capability, and it shows — which is a fact about this
+         register at least as much as about medicine.`)}
+      ${stat(S.moved.by_axis.toll || 0, "changes in what the cure TAKES",
+        `Toll reduction is progress no other axis records — the same cure, at a
+         lower permanent price.`)}
+    </div>`);
+
+  /* ---- measurement ---- */
+  out.push(`<h2><span class="n">24</span>Measurement — where treatment is aimed badly</h2>
+    <div class="lede">Three questions where medicine usually records one: is it
+      there, what will it do untreated, and <b>will this treatment work in this
+      patient</b>. The third is where the register is emptiest, and it is the one
+      that decides whether an existing treatment reaches the right person.</div>
+    <div class="grid g3">
+      ${["diagnostic", "prognostic", "predictive"].map(m => `<div class="card">
+          <div class="statlbl" style="margin:0 0 7px">${m}</div>
+          ${bars(tallyRows(S.measurement[m], k => `${m}:${k}`,
+                 m === "predictive" ? "v" : ""))}</div>`).join("")}
+    </div>
+    <div class="grid g3" style="margin-top:12px">
+      ${stat(S.flags.measurement_gap, "records where treatment cannot be aimed",
+        `Either measurement failure: nobody can say who needed it, or nobody can
+         say who will respond.`, "measurement_gap:true")}
+      ${stat(S.flags.overtreatment_risk, "overtreatment risk",
+        `Real capability, a permanent price, and no way to say who needed it.`,
+        "overtreatment_risk:true")}
+      ${stat(S.flags.futile_treatment_risk, "futile treatment risk",
+        `<i>“We prescribe it because that's all we've got.”</i>`,
+        "futile_treatment_risk:true")}
+    </div>`);
+
+  /* ---- price of the cure ---- */
+  out.push(`<h2><span class="n">25</span>The price of the cure</h2>
+    <div class="lede">Capability alone put a fortnight of antibiotics and the loss
+      of a facial nerve in the same column. <b>“Cured” is not a description of what
+      happened to the patient.</b></div>
+    <div class="grid g3">
+      ${stat(S.flags.cured_at_a_price, "records where the cure takes something permanent",
+        `The facial nerve, the bowel, fertility, a joint. Not side effects — the
+         price of the treatment working.`, "cured_at_a_price:true")}
+      ${stat(S.flags.has_residue, "records where the DISEASE leaves something permanent",
+        `In someone the treatment worked on. A different field from the one
+         above, and the register needed both.`, "has_residue:true")}
+      ${stat(S.flags.spans_ladder, "⧉ malformed question, not a hard one",
+        `One entity, more than one answer — breast cancer stage I against stage
+         IV. The register refuses to average them.`, "spans_ladder:true")}
+    </div>`);
+
+  /* ---- capability, last, and hedged ---- */
+  out.push(`<h2><span class="n">26</span>What medicine can do at its best</h2>
+    <div class="lede">Read this one last and read it carefully. It describes
+      <b>capability, not delivery</b> — the section above shows what actually
+      reaches people — and the corpus was chosen for <b>structural diversity, not
+      importance</b>, so the shape of this chart is partly a fact about how the
+      records were picked.</div>
+    <div class="grid g2">
+      <div class="card">${bars(tallyRows(S.capability, k => `capability:${k}`, "t"), active)}
+        <div class="note"><b>curable</b> means a finite intervention ends it ·
+          <b>managed</b> means a near-normal life on indefinite treatment ·
+          <b>preventable</b> means nobody is cured and nobody is managed, and it
+          need not happen at all.</div></div>
+      <div class="card">${bars(tallyRows(S.axes.intervention,
+          k => `intervention:${k}`), active)}
+        <div class="note">The ladder, as declared. <b>The
+          <code>suppressive</code> rung is what stops HIV being filed next to
+          hepatitis C</b>: one is no longer a death sentence, the other is over.</div></div>
+    </div>`);
+
+  /* The standfirst says how many readings the page offers, and counting them
+     here is the only way it stays true. A hand-typed number would be wrong the
+     first time a section was added, on the one paragraph whose whole point is
+     that the page is several readings rather than one verdict. */
+  const page = out.join("");
+  document.getElementById("body").innerHTML =
+    page.replace("{{sections}}", String((page.match(/<span class="n">/g) || []).length));
+
+  const sr = document.getElementById("series");
+  sr.innerHTML = SNAPS.length === 1
+    ? ` <b>One bearing has been taken</b> (${S.date}). The register cannot say
+        anything about progress until there are two.`
+    : ` ${SNAPS.length} bearings, ${SNAPS[0].date} → ${S.date}.`;
+}
+
+render();
+</script>
+</body>
+</html>

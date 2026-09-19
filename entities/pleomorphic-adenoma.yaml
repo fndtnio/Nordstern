@@ -1,0 +1,165 @@
+slug: pleomorphic-adenoma
+id: FND-D-0015
+name: pleomorphic adenoma of the salivary gland
+also: [pleomorphic adenoma, benign mixed tumour, parotid pleomorphic adenoma]
+mondo: MONDO:0008401
+kind: disease
+residual: false
+contested: false
+
+# The record that forced `toll` and `window` into the schema, and the cleanest
+# demonstration that they interact. A benign, curable tumour whose cure is
+# performed millimetres from the facial nerve — so the question is never only
+# "can it be cured" but "at what price, and does that price depend on when you
+# caught it". It does.
+
+burden:
+  incidence:
+    value: 3.0e-5
+    units: cases/person/year
+    src: recall
+  note: >
+    Roughly 2-3.5 per 100,000 per year; the most common salivary gland tumour,
+    around 80% of them in the parotid and most of those in the superficial lobe.
+    Small burden, high diagnostic value for the schema.
+
+axes:
+  mechanism: partial
+  intervention: curative
+  prevention: none
+  ongoing: none
+  efficacy:
+    value: 0.97
+    units: fraction-of-patients (no recurrence after adequate primary excision)
+    src: recall
+  access:
+    value: 0.7
+    units: fraction-of-patients (reaching surgery, by an experienced operator)
+    src: recall
+
+measurement:
+  diagnostic: objective
+  prognostic: none
+  predictive: n/a
+  witness: >
+    `predictive` is `n/a` because excision works in essentially everyone —
+    there is no selection question to answer. `prognostic` is `none`, and it
+    is the whole problem: nothing identifies which tumour will recur after
+    excision or which will undergo malignant transformation, and the risk of
+    the latter rises the longer it sits. So the decision to operate, and how
+    aggressively, is made without the one piece of information that would
+    settle it.
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    The facial nerve runs through the parotid gland, dividing it into superficial
+    and deep lobes. Cure means dissecting the tumour off the nerve and sometimes
+    tracing it between the branches. Temporary facial weakness after superficial
+    parotidectomy is common; permanent palsy is uncommon in primary surgery but
+    not rare, and when it happens it is disfiguring and functional — an eye that
+    will not close and needs lifelong protection, a mouth that will not seal,
+    speech and eating affected. Frey syndrome (sweating over the cheek when
+    eating, from misdirected reinnervation) is a frequent lesser toll. In
+    REVISION surgery for a recurrence the field is scarred and the disease is
+    often multifocal, and the risk of permanent nerve injury rises sharply.
+  incidence:
+    value: 0.025
+    units: fraction-of-treated (permanent facial weakness, primary surgery)
+    src: recall
+
+window:
+  what: >
+    Caught small and confined to the superficial lobe, the tumour comes out with
+    the nerve intact and the patient is cured with a scar. Left alone, three
+    things get worse and none of them get better: it grows and involves the deep
+    lobe, making dissection harder; inadequate excision (historically
+    enucleation) seeds recurrence, and revision surgery is where facial nerves
+    are actually lost; and it can undergo malignant transformation to carcinoma
+    ex pleomorphic adenoma, whose risk climbs with how long it has been sitting
+    there — on the order of a per cent or two in the first five years and closer
+    to a tenth of patients after fifteen. A painless lump that is not hurting
+    anybody is exactly the kind of thing people leave, and leaving it is what
+    converts a clean cure into a mutilating one.
+  closes_on: growth into the deep lobe, recurrence after inadequate excision, malignant transformation
+  caught_in_time:
+    value: 0.7
+    units: fraction-of-patients
+    src: recall
+
+witness:
+  mechanism: >
+    `partial`. The recurrent driver rearrangements are known — PLAG1 at 8q12 in
+    the majority and HMGA2 at 12q14-15 in a subset — and both act by
+    dysregulating a transcription factor. What is not assembled is why they
+    arise (prior head and neck irradiation is an established risk factor and
+    accounts for a minority), nor what governs the epithelial-myoepithelial
+    "mixed" morphology the tumour is named for, nor what drives malignant
+    transformation in the ones that transform.
+  intervention: >
+    `curative`, unambiguously: complete excision — superficial parotidectomy or
+    extracapsular dissection in selected cases — removes the disease and it does
+    not come back, with long-term recurrence in the low single digits. The
+    historical alternative, enucleation, left tumour behind and produced the
+    recurrent disease that accounts for much of the permanent nerve injury in
+    this record. Note what does not exist: there is no medical therapy at all.
+    Surgery is the only lever, which is why the toll cannot be traded away.
+  prevention: >
+    `none`. Avoiding unnecessary head and neck irradiation is real but marginal
+    and mostly not actionable at the individual level.
+  ongoing: >
+    `none`. Once excised, the disease is over and requires no maintenance —
+    though the toll, if incurred, is forever. This is precisely the pair the
+    schema previously could not express.
+
+blockers:
+  - kind: diagnosis
+    blocks: early nerve-sparing excision (curative)
+    what: >
+      The highest-leverage blocker in the record, and it is entirely about
+      timing rather than technology. A painless, slow-growing lump gets
+      tolerated for months or years, and every month of tolerance moves the
+      patient toward deep lobe involvement, a harder dissection and a rising
+      chance of malignant transformation. Earlier presentation and prompt
+      imaging convert a mutilating cure into a clean one with no new therapy
+      whatsoever.
+    who_could: [health-system, academic]
+    scale: 1e7
+    standing: documented
+    src: recall
+  - kind: logistics
+    blocks: nerve-sparing excision (curative)
+    what: >
+      Facial nerve outcomes are strongly dependent on operator experience and
+      case volume, and parotid surgery is performed across a wide range of both.
+      Intraoperative nerve monitoring and referral to higher-volume centres are
+      the known levers; neither requires anything to be invented.
+    who_could: [health-system, nonprofit]
+    scale: 1e7
+    standing: documented
+    src: recall
+  - kind: knowledge
+    blocks: any non-surgical treatment
+    what: >
+      There is no drug, and no line of work that plausibly yields one soon. The
+      toll is unavoidable because the only intervention is mechanical — a
+      medical therapy would remove the facial nerve risk entirely.
+    who_could: [academic]
+    scale: null
+    standing: documented
+    src: recall
+
+holes:
+  - Permanent facial palsy rates vary widely across series and depend on
+    definition, follow-up length and how revision cases are counted; the figure
+    here is a rough central estimate and needs a real source.
+  - Whether extracapsular dissection genuinely lowers nerve morbidity without
+    raising recurrence, versus selecting easier tumours, is contested.
+  - What drives malignant transformation, and whether the risk-by-duration
+    figures reflect biology or ascertainment, is unresolved.
+
+assertion:
+  id: FND-A-0015
+  rated: 2026-08-11
+  by: [claude, jeremy]

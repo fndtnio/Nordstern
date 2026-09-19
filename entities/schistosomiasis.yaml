@@ -1,0 +1,369 @@
+slug: schistosomiasis
+id: FND-D-0025
+name: schistosomiasis
+also: [bilharzia, snail fever, Schistosoma infection]
+mondo: MONDO:0015254
+kind: disease
+residual: false
+contested: false
+
+# THE RECORD THAT INVERTS THE REGISTER'S FAVOURITE CLAIM.
+#
+# Every diagnosis blocker so far has said the same thing: the test exists, it
+# is cheap, it is not being done, and doing it is the cheapest lever available.
+# Schistosomiasis does not diagnose people ON PURPOSE. The control strategy is
+# mass drug administration — praziquantel handed to entire populations of
+# school-age children without testing any of them — because THE DRUG IS
+# CHEAPER THAN THE TEST. That is a rational decision and it is not a failure.
+#
+# It has a consequence the register has no way to record. A programme that
+# never tests cannot measure cure, cannot measure who was infected, and cannot
+# detect emerging drug resistance until it is large enough to see in the
+# aggregate. And there is only one drug — praziquantel, since the 1970s, with
+# no second line for two hundred and forty million people. See gaps.md #53 and
+# #54.
+
+burden:
+  prevalence:
+    value: 2.4e8
+    units: >
+      people infected, over ninety percent of them in sub-Saharan Africa;
+      roughly 800 million more live where transmission occurs
+    src: recall
+  deaths:
+    value: 1.2e4
+    units: >
+      deaths/year — CONTESTED BY MORE THAN A FACTOR OF TEN. Systematic burden
+      estimation puts it near this figure; other published estimates run to
+      two hundred thousand. The disagreement is about ATTRIBUTION, not
+      measurement — whether renal failure, portal hypertensive bleeding and
+      bladder cancer decades later are counted as schistosomiasis deaths
+    src: recall
+  note: >
+    A sixth way the burden field fails, and a distinct one. Breast cancer's
+    numbers are unverified; MSMDS's are unpublished; hEDS's are contested by
+    diagnostic criteria; TB's are ambiguous between two well-measured
+    denominators. These are contested by CAUSAL ATTRIBUTION: everyone agrees
+    how many people die of bladder cancer and of variceal haemorrhage, and
+    disagrees about how many of those deaths belong to the fluke that caused
+    the fibrosis twenty years earlier.
+    The disagreement is not academic. At twelve thousand deaths this is a minor
+    problem; at two hundred thousand it is a major one, and the difference is a
+    methodological choice rather than new evidence. Mortality also badly
+    understates it either way — the dominant burden is chronic anaemia,
+    stunting, impaired schooling and organ damage in children.
+
+survival:
+  horizon: 20 years from established infection
+  untreated:
+    value: 0.95
+    units: >
+      fraction alive — schistosomiasis kills through portal hypertension,
+      haematemesis and bladder cancer over decades, in a minority of the heavily
+      infected
+    src: reasoning
+  treated:
+    value: 0.99
+    units: >
+      fraction alive with praziquantel — **a single oral dose, cents per treatment,
+      given by mass administration without individual diagnosis**
+    src: reasoning
+  witness: >
+    **A record where the deaths are the wrong measure of the disease.** 12,000
+    attributed deaths against over 200 million infected: the burden is anaemia,
+    growth failure and school absence, which sits in this record's `ylds` and
+    is invisible here. **The survival axis says schistosomiasis is nearly
+    solved; the disability axis says it is one of the largest untreated burdens
+    in the world.**
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: risk-reduction
+  ongoing: low
+  efficacy:
+    value: 0.87
+    units: fraction-of-patients (cure with a single course of praziquantel)
+    src: recall
+  access:
+    value: 0.50
+    units: >
+      fraction-of-patients (reached by preventive chemotherapy) — coverage of
+      school-age children has run around half against a seventy-five percent
+      target, and adults have historically been left out of programmes
+      altogether
+    src: recall
+
+measurement:
+  diagnostic: objective
+  prognostic: none
+  predictive: n/a
+  witness: >
+    DIAGNOSTIC is `objective` and the rating is close to beside the point,
+    which is what makes this record worth having. Eggs are counted in stool by
+    Kato-Katz or filtered from urine; antigen tests detect active infection
+    without eggs. The tests work. THEY ARE DELIBERATELY NOT USED. Control is by
+    mass drug administration — praziquantel given to whole populations of
+    school-age children, untested — because a tablet costs a few cents and
+    testing every child costs more than treating them all. That is arithmetic,
+    not neglect.
+    The register has been asserting for several records that `diagnosis` is its
+    cheapest lever. Here the lever is deliberately not pulled, for a good
+    reason, and the cost of not pulling it is invisible to every field in this
+    schema: a programme that never tests cannot confirm cure, cannot know who
+    was infected, and cannot see reduced praziquantel susceptibility until it
+    is large enough to show up in aggregate egg counts. See gaps.md #53.
+    There is a second, sharper problem waiting. Kato-Katz is insensitive at low
+    infection intensity — which is precisely the state a successful programme
+    creates. THE TEST THAT WORKS FOR CONTROL FAILS FOR ELIMINATION, so the
+    better a programme does, the less it can see.
+    PROGNOSTIC is `none`. Nothing identifies which infected child will develop
+    Symmers' periportal fibrosis, obstructive uropathy or bladder cancer
+    decades later. Infection intensity correlates at population level and
+    predicts nothing about an individual.
+    PREDICTIVE is `n/a` FOR A REASON THE REGISTER HAS NOT SEEN BEFORE. Not
+    "there is no course-altering therapy" (Huntington's), and not "the treatment
+    works in essentially everyone" (hepatitis C after pan-genotypic antivirals).
+    Here there is exactly ONE DRUG, so there is nothing to choose between. The
+    selection question is abolished by monopoly rather than by success — which
+    looks identical in this field and is the opposite situation.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    Praziquantel is one of the safest drugs in this register: one or two oral
+    doses, a few cents, transient abdominal discomfort, nausea and dizziness
+    that resolve within a day and are partly the immune response to dying
+    worms rather than the drug. Nothing permanent.
+    That safety is what makes mass administration defensible. Roughly a hundred
+    million children a year receive praziquantel without being tested, and most
+    of them in any given round are not infected — which is overtreatment by any
+    literal reading, and is not a harm. The register's `overtreatment_risk`
+    flag correctly stays silent, because it requires a permanent price. Noted
+    because three records in a row have exposed that flag as too narrow, and
+    this one shows the same rule getting a case right.
+  incidence:
+    value: 0.0
+    units: >
+      fraction-of-treated (permanent harm from praziquantel) — the adverse
+      effects are transient and partly the immune response to dying worms
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    THE DISEASE IS THE SCAR, NOT THE WORM, and that is the whole shape of this
+    record. Adult flukes cause little direct damage. The pathology comes from
+    eggs that fail to exit and lodge in tissue, where each one provokes a
+    granuloma, and the granulomas heal as fibrosis.
+    In urogenital disease the bladder wall thickens, calcifies and contracts;
+    ureters obstruct; hydronephrosis and renal failure follow. Schistosoma
+    haematobium is classified as a Group 1 human carcinogen and causes squamous
+    cell carcinoma of the bladder decades after infection. In intestinal
+    disease the portal tracts scar — Symmers' pipestem fibrosis — producing
+    portal hypertension, oesophageal varices and fatal haemorrhage in a liver
+    whose function is otherwise preserved.
+    Praziquantel kills the worms and stops new eggs. It does not dissolve
+    fibrosis. Treated early enough, in children, some periportal thickening
+    regresses and the damage never establishes; treated after the scar is set,
+    the infection is cured and the bladder, the ureter and the portal tract
+    stay as they are. So the residue here is almost entirely a function of WHEN
+    — see `window`, and note that this is the register's first record where the
+    window's price is paid in `residue` rather than in `toll`.
+    Female genital schistosomiasis deserves naming separately: eggs in the
+    genital tract cause lesions, bleeding, pain and infertility in tens of
+    millions of women, is routinely mistaken for a sexually transmitted
+    infection, and is associated with a substantially raised risk of acquiring
+    HIV. It is invisible to a control programme that measures eggs in the urine
+    of schoolchildren.
+  incidence:
+    value: 0.10
+    units: >
+      fraction-of-infected (developing established organ fibrosis, obstructive
+      uropathy, portal hypertension or bladder cancer) — a reasoned estimate
+      across species and intensities, and the number most sensitive to how
+      early treatment arrived
+    src: reasoning
+
+window:
+  what: >
+    Added where the last three records declined one, because here capability
+    genuinely does change with timing and the mechanism is not in doubt.
+    Praziquantel kills worms at any age. What it cannot do is unpick a
+    granuloma that has already healed into fibrous tissue. Treat a child before
+    the scar sets and the disease leaves nothing; treat an adult with
+    established pipestem fibrosis or a calcified bladder and the infection is
+    cured around damage that is now permanent and will go on causing portal
+    hypertension, obstruction and, decades later, cancer.
+    This is why control programmes target school-age children rather than the
+    most heavily infected adults — not because children matter more, but
+    because they are the group in whom treatment still prevents rather than
+    merely stops. It is also why the register's `window` and `residue` fields
+    describe one fact here from two directions.
+  closes_on: >
+    established fibrosis — Symmers' periportal scarring, bladder wall
+    calcification and contracture, ureteric obstruction
+  caught_in_time:
+    value: 0.5
+    units: >
+      fraction-of-infected (treated before irreversible fibrosis) — tracks mass
+      drug administration coverage of children, and is therefore the same
+      number as `access` by a different route
+    src: reasoning
+
+witness:
+  mechanism: >
+    `established`, and unusually satisfying: a complete two-host life cycle in
+    which every step is known and several are interruptible. Eggs leave in
+    urine or faeces, hatch in fresh water, infect a specific FRESHWATER SNAIL,
+    multiply asexually, emerge as cercariae, penetrate intact human skin during
+    water contact, mature in the venous plexuses of the bladder or the mesentery,
+    pair, and lay eggs — about half of which exit and half of which lodge.
+    The pathology is entirely the trapped half. Granuloma, then fibrosis. That
+    one fact explains the whole clinical picture and it also explains why the
+    cure is incomplete: killing the worm stops the eggs and does nothing about
+    the scar.
+    Holes: why some heavily infected people develop severe hepatosplenic
+    disease and others do not, which appears substantially immunogenetic; the
+    pathogenesis of female genital disease; and whether reduced praziquantel
+    susceptibility reported in some settings represents emerging resistance or
+    reinfection and immature worms.
+  intervention: >
+    `curative`, with two qualifications that matter more than the rating.
+    Praziquantel cures roughly eighty-seven percent with one or two oral doses
+    for a few cents, works against every human schistosome species, and has
+    done so since the late 1970s. It does not kill immature worms, so a single
+    dose during ongoing water contact leaves a cohort to mature — which looks
+    like treatment failure and is not. And in an endemic village, cure is
+    followed by reinfection at the next water contact, so the same child is
+    treated every year for a childhood. Curative for the infection; nothing
+    like curative for the situation, which is what `prevention` is for and why
+    it is the weak axis here.
+    THE THING THIS RECORD SHOULD BE READ FOR: there is ONE DRUG. No second
+    line, no alternative class, forty-odd years, two hundred and forty million
+    infected people, and a control strategy that depends entirely on it and on
+    a manufacturer donation of hundreds of millions of tablets a year. The
+    register records that praziquantel works. It has no way to record that
+    everything rests on it. See gaps.md #54.
+  prevention: >
+    `risk-reduction`, and the honest reading is that this axis is where the
+    disease is actually solved or not. Snail control, safe water supply,
+    sanitation and reduced contact with infested fresh water are what
+    permanently interrupt transmission, and they are what eliminated the
+    disease in Japan and drove it down in China — a public works answer rather
+    than a pharmaceutical one. There is no licensed vaccine; candidates have
+    been in trials for years.
+    The awkwardness the schema cannot express: the durable fix belongs to water
+    and sanitation ministries, and the disease belongs to health ministries.
+    Mass drug administration is what a health ministry can do alone, which is
+    part of why it is what gets done.
+  ongoing: >
+    `low` per episode, and misleading at that. One or two tablets, once or twice
+    a year. But in an endemic setting that repeats for the whole of childhood,
+    and the burden of the DISEASE — anaemia, fatigue, stunting, poor school
+    performance, and in adults the consequences of fibrosis — falls almost
+    entirely outside anything this axis measures, because it is not the burden
+    of being treated.
+
+holes:
+  - Whether reduced praziquantel susceptibility in some settings is emerging
+    resistance. Nobody can tell, because a strategy that does not diagnose
+    cannot measure cure, which is the surveillance the question requires.
+  - Which infected child develops severe disease decades later. Nothing predicts
+    it, and it is the question that would let treatment be aimed.
+  - The true mortality, which is disputed by more than tenfold and turns on
+    attributing late renal, hepatic and oncological deaths to an old infection.
+  - How much female genital schistosomiasis there is, and how much HIV
+    acquisition it accounts for. Both are large, both are estimates, and neither
+    record in this register can hold the interaction (gaps.md #55).
+  - Whether the vaccine candidates in trials will produce anything. Forty years
+    of one drug makes this the most consequential open question in the record.
+  - Written from model recall. The life cycle, the egg-driven pathology and the
+    single-drug dependency are the parts most likely right; every number is the
+    part most likely wrong.
+
+blockers:
+  - kind: knowledge
+    blocks: a second drug, and a vaccine
+    obstacles: [protective-immunity]
+    what: >
+      The binding constraint, and its shape is unusual: the problem is not that
+      nothing works but that only one thing does. Praziquantel has been the
+      entire chemotherapeutic answer since the 1970s. There is no alternative
+      class in clinical use, no second line if susceptibility falls, and no
+      licensed vaccine despite candidates in trials for years.
+      That is a research problem with an unusual risk profile attached. Most
+      knowledge blockers in this register describe an absence of capability;
+      this one describes a capability with no redundancy behind it, serving two
+      hundred and forty million people. `scale: null` — there is no priced path
+      to a new drug class.
+    who_could: [academic, sponsor, philanthropy, nonprofit]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    blocks: measuring anything — cure, prevalence, or emerging resistance
+    what: >
+      The register's first INVERTED diagnosis blocker, and the reason this
+      record was worth adding. Everywhere else the complaint is that a cheap
+      test is not being performed. Here the test is deliberately skipped
+      because praziquantel costs less than a Kato-Katz slide, and mass
+      administration without diagnosis is the correct call on those numbers.
+      What it buys is invisibility. No test of cure, so no way to distinguish
+      treatment failure from reinfection from immature worms — and therefore no
+      way to detect falling praziquantel susceptibility until it is large. No
+      individual denominator, so coverage figures are the only measure of a
+      programme's effect. And Kato-Katz loses sensitivity exactly at the low
+      infection intensities that a successful programme produces, so the closer
+      a country gets to elimination the blinder it becomes.
+      Priced as surveillance rather than as clinical testing: the requirement is
+      sentinel sampling and a field-usable low-intensity assay, not a test for
+      every child.
+    who_could: [academic, health-system, government, nonprofit, manufacturer]
+    scale: 1.0e8
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: reaching the people the programme was not designed for
+    what: >
+      Mass drug administration is school-based, so it reaches children who are
+      in school and misses those who are not, misses pre-school children, and
+      has historically excluded ADULTS altogether — including the women in whom
+      genital disease develops and the fishermen and farmers with the heaviest
+      exposure. Coverage of the target group has itself run well below the
+      seventy-five percent goal.
+      This is ordinary delivery, which is to say it is purchasable. It is also
+      the difference between suppressing morbidity in children and interrupting
+      transmission, because the people left out keep the cycle running.
+    who_could: [health-system, government, nonprofit, philanthropy]
+    scale: 2.0e8
+    standing: documented
+    src: recall
+
+  - kind: policy
+    blocks: the durable fix, which is water and sanitation
+    what: >
+      The permanent answer to schistosomiasis is clean water, sanitation and
+      snail control — the answer that worked in Japan and largely in China, and
+      an answer that does not require a single tablet. It sits in a different
+      ministry, a different budget line and a different profession from the one
+      that owns the disease.
+      So the health system does the thing the health system can do alone, which
+      is chemotherapy, indefinitely, while the intervention that would end the
+      problem is somebody else's capital programme. Recorded as `policy` rather
+      than `cost` deliberately: the money exists in national water budgets, and
+      what is missing is the mechanism by which a disease burden becomes an
+      argument in a water ministry's planning.
+    who_could: [government, legislator, health-system, philanthropy]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0025
+  rated: 2026-08-21
+  by: [claude, jeremy]

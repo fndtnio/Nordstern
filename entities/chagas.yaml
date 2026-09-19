@@ -1,0 +1,473 @@
+slug: chagas
+id: FND-D-0022
+name: Chagas disease
+also: [American trypanosomiasis, Trypanosoma cruzi infection]
+mondo: MONDO:0001444
+kind: disease
+residual: false
+contested: false
+
+# THE RECORD THAT BREAKS AN ASSUMPTION IN THE INTERVENTION LADDER.
+#
+# Every rung of that ladder quietly assumes that removing the cause removes the
+# disease. Chagas is curable and may not be. Benznidazole clears Trypanosoma
+# cruzi from most people who take it — and the BENEFIT trial (2015) gave it to
+# patients who already had Chagas cardiomyopathy, reduced parasite detection as
+# expected, and found NO reduction in cardiac deterioration. The parasite goes;
+# the heart still fails. See gaps.md #46.
+#
+# And it is the register's first case of a treatment whose success CANNOT BE
+# OBSERVED. There is no test of cure: antibodies take years to decades to
+# disappear after successful treatment, which is beyond the horizon of any
+# episode of care. So a patient takes sixty days of a drug that makes a large
+# minority ill, and never finds out whether it worked. That is a measurement
+# failure the schema's three questions cannot express, because all three are
+# asked BEFORE treatment. See gaps.md #45.
+
+burden:
+  prevalence:
+    value: 6.5e6
+    units: >
+      people chronically infected worldwide — endemic across Latin America, and
+      no longer only there: migration has established substantial infected
+      populations in the United States, Spain and elsewhere
+    src: recall
+  incidence:
+    value: 3.0e4
+    units: >
+      new vector-borne infections/year in the Americas, plus roughly 9,000
+      congenital cases
+    src: recall
+  deaths:
+    value: 1.0e4
+    units: deaths/year, chiefly sudden cardiac death and heart failure
+    src: recall
+  note: >
+    A neglected tropical disease in the strict sense: the burden is concentrated
+    in poor rural housing, because the vector lives in cracked adobe walls and
+    thatch, and transmission is by the bug's faeces rubbed into the bite rather
+    than by its bite. That single detail is why HOUSING QUALITY is an
+    anti-parasitic measure here, and why vector control worked.
+    Roughly a third of those infected will develop cardiomyopathy, which makes
+    this the leading cause of non-ischaemic cardiomyopathy in Latin America and
+    a leading indication for heart transplantation in Brazil. The other two
+    thirds will carry the parasite for life and never become ill — a ratio that
+    is the whole difficulty of this record.
+
+survival:
+  horizon: 20 years from infection
+  untreated:
+    value: 0.7
+    units: >
+      fraction alive — roughly a third of chronically infected people develop
+      cardiomyopathy or megaviscera, over decades, and the rest never do
+    src: reasoning
+  treated:
+    value: 0.8
+    units: >
+      fraction alive — **and the treatment barely touches this figure, which is
+      the record's whole problem.** Benznidazole clears the parasite reliably in
+      acute and early chronic infection; **once cardiomyopathy is established it
+      does not reverse it**, and that is when most people are diagnosed
+    src: reasoning
+  witness: >
+    **A curative drug that arrives after the damage.** The rung is `curative` and
+    the survival gain is +0.10, because the cure and the diagnosis are decades
+    apart. The register holds this as a `window`, and it is the widest one here
+    — twenty years between the treatable moment and the presenting one.
+
+axes:
+  mechanism: partial
+  intervention: curative
+  prevention: risk-reduction
+  ongoing: low
+  efficacy:
+    value: 0.6
+    units: >
+      fraction-of-patients (parasitological cure in treated chronic adults) —
+      AND NOTE WHAT THIS DOES NOT SAY: that clearing the parasite prevents
+      cardiomyopathy is unproven in adults and was refuted in those who already
+      had it. It is also not directly measurable — see the measurement witness
+    src: reasoning
+  access:
+    value: 0.05
+    units: >
+      fraction-of-patients (diagnosed AND treated) — the worst access figure in
+      the register. Well under a tenth of those infected have been diagnosed,
+      and only a fraction of those receive antiparasitic treatment
+    src: recall
+
+measurement:
+  diagnostic: objective
+  prognostic: none
+  predictive: none
+  witness: >
+    Three failures, and the third is one the schema cannot currently name.
+    DIAGNOSTIC is `objective` but oddly expensive for what it is. Chronic
+    infection is confirmed by serology, and because no single assay is accurate
+    enough, the standard requires TWO tests using different antigens or methods
+    to agree, with a third or PCR when they do not. Cheap tests, awkward
+    algorithm — and the binding problem is not the algorithm but that the tests
+    are not being run at all (see the diagnosis blocker).
+    PROGNOSTIC is `none` for the decision that actually matters. Roughly a third
+    of infected people develop cardiomyopathy or megaviscera and the rest never
+    become ill, and NOTHING IDENTIFIES WHICH. There is a validated prognostic
+    score for patients who already have Chagas cardiomyopathy, which is a
+    different question asked of a different patient; for the indeterminate
+    patient in front of you — the modal patient in this record — there is
+    nothing. That absence is what makes treating everyone the only available
+    policy, and treating everyone means two thirds of the treated were never
+    going to be harmed.
+    THE THIRD FAILURE HAS NO FIELD. Nobody can tell whether the treatment
+    worked. Cure is defined serologically and antibodies take years to decades
+    to disappear, so the endpoint lies beyond any episode of care. The schema's
+    three questions — is it there, what will it do, will this treatment work —
+    are all asked BEFORE treatment. This one is asked after, and Chagas has no
+    answer to it. Contrast hepatitis C, where a PCR at twelve weeks says cured
+    or not cured, and note how much of that record's optimism rests on it. See
+    gaps.md #45.
+
+strata:
+  - name: acute and congenital infection
+    fraction:
+      value: 0.05
+      units: fraction-of-infections (as detected; acute infection is usually missed)
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.9
+      units: fraction-of-stratum (parasitological cure)
+      src: recall
+    toll: minor
+    what: >
+      Where the disease is genuinely solved, and where almost nobody is caught.
+      Treated in the acute phase, in infancy, or in childhood, benznidazole
+      cures at rates approaching those of any antimicrobial — and in congenital
+      infection, treating the newborn works so well that screening pregnant
+      women and treating their babies is one of the highest-yield programmes in
+      the register. The acute phase is mostly asymptomatic or a brief fever, so
+      it is almost never recognised outside an outbreak.
+
+  - name: chronic indeterminate (infected, no organ involvement)
+    fraction:
+      value: 0.62
+      units: fraction-of-infections
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.6
+      units: fraction-of-stratum (parasitological cure, unconfirmable in the individual)
+      src: reasoning
+    toll: minor
+    what: >
+      The modal patient and the hardest problem. Seropositive, symptom-free,
+      normal ECG, and facing a sixty-day course of a drug that makes a large
+      minority ill — offered on the grounds that it may prevent a cardiomyopathy
+      they have a roughly one-in-three chance of ever developing, with no way to
+      predict whether they are in that third, and no way afterwards to learn
+      whether the drug worked. Most of this stratum is treated for a disease
+      they were never going to get. That is not a criticism of the policy; with
+      no prognostic marker it is the only defensible one.
+
+  - name: chronic cardiac (Chagas cardiomyopathy)
+    fraction:
+      value: 0.28
+      units: fraction-of-infections
+      src: reasoning
+    intervention: symptomatic
+    efficacy:
+      value: 0.0
+      units: fraction-of-stratum (cardiac course altered by antiparasitic treatment)
+      src: recall
+    toll: major
+    what: >
+      Where the record turns. Conduction block, ventricular arrhythmia, apical
+      aneurysm, thromboembolism, dilated cardiomyopathy, sudden death — with a
+      worse prognosis than other cardiomyopathies at matched ejection fraction.
+      Management is heart failure management: drugs, pacemakers, implantable
+      defibrillators, and transplantation, which carries its own permanent
+      terms. Antiparasitic treatment does not alter this, and that is not an
+      assumption but a trial result: BENEFIT (2015) randomised patients with
+      established cardiomyopathy to benznidazole, reduced parasite detection,
+      and changed no clinical cardiac outcome.
+
+  - name: chronic digestive (megaoesophagus, megacolon)
+    fraction:
+      value: 0.05
+      units: fraction-of-infections (concentrated in the southern cone; overlaps the cardiac form)
+      src: reasoning
+    intervention: symptomatic
+    efficacy:
+      value: 0.0
+      units: fraction-of-stratum (course altered by antiparasitic treatment)
+      src: recall
+    toll: major
+    what: >
+      Destruction of the enteric nervous system leaves an oesophagus or colon
+      that cannot propel. Management is dilatation, myotomy and resection —
+      mechanical answers to a mechanical problem, as with the fibrosis in
+      Crohn's. The nerves do not come back, and killing the parasite does not
+      bring them back either.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    Rated for the modal patient, who is chronically infected and well, and for
+    whom the treatment is benznidazole or nifurtimox for about sixty days.
+    Adverse effects are common — rash and dermatitis, anorexia and weight loss,
+    peripheral neuropathy — and a substantial minority stop the course because
+    of them. Almost all of it reverses on stopping; persistent neuropathy is
+    uncommon. So: `minor`, `permanent: false`, and the terms read `clean`.
+    AND THAT RATING HIDES THE THING THIS RECORD IS ABOUT. Two thirds of the
+    people who take this drug were never going to become ill, none of them can
+    be told in advance whether they are in that group, and none of them can be
+    told afterwards whether it worked. The cost is not permanent damage; it is
+    two months of feeling poisoned, spent on nothing, with no way to find out.
+    Neither `overtreatment_risk` nor `futile_treatment_risk` fires here, because
+    both require a permanent price — so the register's clearest overtreatment
+    story is invisible to the flags built to find overtreatment. See gaps.md
+    #47; permanence is the wrong variable.
+  incidence:
+    value: 0.03
+    units: >
+      fraction-of-treated (permanent sequelae, chiefly persistent peripheral
+      neuropathy) — a reasoned estimate; discontinuation for adverse effects is
+      far commoner and is not permanent harm
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    **ADDED 2026-08-30, AND THE OMISSION WAS THE RECORD'S OWN.** This file
+    described irreversible organ damage in three separate places — two of its
+    four strata, `window.closes_on`, and the mechanism witness — and never filed
+    it as residue. The bucket derivation placed Chagas under *"you survive and
+    you get back to normal"*, which is false for roughly a third of the people
+    who get it.
+    WHAT IT LEAVES. About 28% develop Chagas cardiomyopathy: conduction block,
+    ventricular arrhythmia, apical aneurysm, thromboembolism, dilated
+    cardiomyopathy and sudden death — with a worse prognosis than other
+    cardiomyopathies at matched ejection fraction, and a leading indication for
+    heart transplantation in Brazil. About 5% develop megaoesophagus or
+    megacolon from destruction of the enteric nervous system, managed by
+    dilatation, myotomy and resection. The conduction tissue and the enteric
+    neurons do not come back, **and killing the parasite does not bring them
+    back either** — which is the BENEFIT trial's result, not an inference.
+    RATED `major`, NOT `catastrophic`. The damage is permanent and organ-level,
+    and heart failure therapy, pacemakers and defibrillators substantially
+    modify how it is lived with. It is not the whole-life obliteration the
+    schema's top rung is reserved for.
+    **AND IT IS THE DISEASE'S RESIDUE, NOT THE TREATMENT'S.** `toll` stays
+    `minor` — sixty days of a drug that makes a large minority feel poisoned,
+    almost all of it reversible. Two different costs, which is why the schema
+    holds them in two fields: this record now reads `restored: disease-residue`,
+    and that is exactly right. What the disease does is permanent; what the
+    treatment does is not.
+  incidence:
+    value: 0.33
+    units: >
+      fraction-of-infections developing permanent organ damage — the sum of the
+      cardiac (0.28) and digestive (0.05) strata declared below, and the same
+      "roughly a third progress" that the burden note and every hole in this
+      file already rest on. Reasoned from those strata, not separately measured;
+      the two forms overlap in some patients, so this is a slight overcount
+    src: reasoning
+
+window:
+  what: >
+    One of the widest and most clearly documented windows in the register, and
+    the one where the lever is most obviously already in hand. Treated in the
+    acute phase, in infancy, or in childhood, this is cured. Treated once the
+    cardiomyopathy is established, the parasite is cleared and the heart is not
+    helped — which is a trial result rather than an inference. Between those
+    lies the indeterminate phase, where treatment probably helps, has never been
+    proven to, and is where nearly everyone actually sits.
+    What closes the window is fibrosis and the destruction of conduction tissue
+    and enteric nerves: structural damage, mechanical in the same way as Crohn's
+    strictures and rheumatic valve scarring, and no more reversible. The window
+    is measured in decades, which ought to make it the easiest in medicine to
+    catch — and it is missed at a rate of well over ninety percent, for the
+    unglamorous reason that a cheap serological test is not being performed on
+    the people who need it.
+  closes_on: >
+    established cardiomyopathy or megaviscera — conduction tissue and enteric
+    nerve loss, structural and irreversible
+  caught_in_time:
+    value: 0.1
+    units: >
+      fraction-of-infections (identified while treatment can still plausibly
+      change the outcome) — a reasoned estimate built on the under-10%
+      diagnosis figure
+    src: reasoning
+
+witness:
+  mechanism: >
+    Rated `partial`, with an unusually well-defined hole. The chain from
+    infection to disease is established at both ends and disputed in the middle.
+    ESTABLISHED: Trypanosoma cruzi is the cause; the triatomine vector transmits
+    it in its faeces, deposited near the bite and rubbed into the wound or a
+    mucous membrane, which is why housing quality is an anti-parasitic measure;
+    congenital, transfusional, transplant and oral routes are all documented,
+    the last producing sharper, more severe outbreaks from contaminated juice.
+    Chronic infection destroys cardiac conduction tissue and enteric neurons,
+    and the resulting pathology is thoroughly characterised.
+    THE HOLE: why only about a third progress, and by what mechanism. The
+    long-running argument is between persistent low-level parasitism driving
+    chronic inflammation and an autoimmune process triggered by the infection
+    and thereafter self-sustaining. It is not an academic distinction —
+    everything about treatment depends on it. If persistence drives the damage,
+    clearing the parasite should help at any stage. If the process becomes
+    self-sustaining, clearing it late is beside the point, which is what
+    BENEFIT observed.
+  intervention: >
+    Rated `curative`, and the rating needs its qualification stated in the same
+    breath, because this is the record where curing the cause and curing the
+    disease come apart.
+    Benznidazole and nifurtimox both date from the late 1960s and early 1970s
+    and both eliminate the parasite in most people who complete a course. In the
+    acute phase, in congenital infection and in children, that is a cure by any
+    reading. In chronic adults it produces a parasitological cure that cannot be
+    confirmed in the individual, whose clinical benefit is unproven, and which
+    the BENEFIT trial showed does not help once cardiomyopathy is established.
+    So `curative` is true of the INFECTION and possibly not of the DISEASE, and
+    the ladder has no way to say that (gaps.md #46).
+    What is not here is anything newer. The azoles that looked most promising —
+    posaconazole and fosravuconazole — cleared parasites and then relapsed in
+    trials, which is a documented failure rather than an untested idea. The
+    genuinely encouraging recent work is on shortening and de-escalating
+    benznidazole, where two-week regimens appear to match sixty-day ones with
+    much less toxicity. That is toll reduction rather than new capability, and
+    the register has already noted that toll reduction moves no axis.
+  prevention: >
+    `risk-reduction`, and it is the most successful part of this record by a
+    wide margin. Coordinated vector control — insecticide spraying and housing
+    improvement, through the Southern Cone Initiative and its successors — has
+    interrupted domestic vector transmission across large areas, and universal
+    blood bank screening has all but closed the transfusion route. Screening
+    pregnant women and treating infected newborns closes the congenital route
+    and does so with a cure.
+    Not `prophylaxis`, because nothing is given to a person to prevent
+    infection: there is no vaccine and no chemoprophylaxis. The measures are
+    environmental and screening-based, which is why they succeeded where a drug
+    programme did not — they did not require finding the infected.
+  ongoing: >
+    `low` for the modal patient, and this is one of the few places the record is
+    genuinely cheap: sixty days of treatment, then nothing, or an ECG at
+    intervals. The cardiac stratum is a different life — heart failure therapy,
+    devices, and for some transplantation — but that is a minority and the axis
+    rates the mode.
+
+holes:
+  - Whether antiparasitic treatment in the chronic indeterminate phase prevents
+    cardiomyopathy. This is the single most valuable unanswered question here:
+    it decides whether treating millions of well people is worthwhile, and the
+    trial that would answer it needs decades of follow-up because the endpoint
+    is decades away.
+  - Persistence versus autoimmunity as the driver of chronic damage. Everything
+    about when to treat depends on which is right.
+  - What predicts progression. Nothing does, and a marker that did would spare
+    two thirds of the treated population a course they do not need.
+  - A test of cure. Without one, no trial can use cure as an endpoint and no
+    patient can be told the outcome, which is why the field leans on parasite
+    detection as a surrogate and why BENEFIT's result was so hard to interpret.
+  - The strata fractions here are reasoned proportions from the commonly quoted
+    "about a third progress", not a measured partition. The cardiac and
+    digestive forms also overlap in some patients, so treating them as disjoint
+    strata is an approximation the schema forces.
+  - `access: 0.05` is the most consequential number in this file and the least
+    firm. It combines an under-10% diagnosis rate with a far smaller treated
+    fraction; both figures are recalled, not verified.
+  - Written from model recall. The BENEFIT result, the two-serology diagnostic
+    rule and the vector-faeces transmission route are the parts most likely
+    right; every number is the part most likely wrong.
+
+blockers:
+  - kind: diagnosis
+    blocks: identifying the infected while treatment can still help
+    what: >
+      The largest and cheapest lever in the register, and it is embarrassing in
+      the way the best entries here are embarrassing. Well over ninety percent
+      of people with Chagas have never been diagnosed. The test is serology. It
+      is cheap, it is not new, it requires no equipment that a district
+      laboratory lacks, and the window it opens is measured in decades. Nothing
+      scientific is in the way.
+      What is in the way is that the infected are poor, rural, often migrant,
+      and frequently asymptomatic for twenty years — so nobody presents, and no
+      system looks. Where systems have looked, it has worked: blood bank
+      screening effectively closed the transfusion route, and antenatal
+      screening finds congenital cases in time to cure them. Extending the same
+      logic to at-risk adults is a programme, not a discovery.
+      Structurally this is the POTS blocker — a test that exists, costs almost
+      nothing, and is not performed — at the scale of six and a half million
+      people. Priced for programme delivery rather than for research.
+    who_could: [health-system, government, nonprofit, philanthropy]
+    scale: 1.0e8
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    obstacles: [who-progresses, pathogen-persistence]
+    blocks: knowing whether to treat the two thirds who will never be ill
+    what: >
+      Two questions and they are entangled. Nothing predicts which infected
+      person progresses, and nothing confirms whether treatment worked — so the
+      trial that would settle whether to treat the indeterminate phase must
+      follow well people for decades to a hard clinical endpoint, because the
+      surrogate is unreliable and the real endpoint is far away.
+      That is not a funding problem dressed up as a science problem. It is a
+      science problem with a funding consequence: no sponsor will run a
+      thirty-year trial in an indigent population for a generic drug, and no
+      shorter trial can answer it while the test of cure is missing. A biomarker
+      of cure would collapse the cost of every other question in this record.
+      `scale: null` — there is no priced path, only a prerequisite.
+    who_could: [academic, sponsor, nonprofit]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: no-sponsor
+    blocks: development of anything better than a 1970s drug
+    what: >
+      Documented, and the dates carry the argument. Benznidazole and nifurtimox
+      both date from around 1970 and remained the entire pharmacopoeia for half
+      a century. Benznidazole received United States approval only in 2017 and
+      nifurtimox in 2020 — for a disease with several hundred thousand infected
+      people in that country. For decades production rested on a single
+      manufacturer with documented supply interruptions.
+      What development has happened has been driven substantially by a nonprofit
+      product development partnership rather than by industry, which is the
+      clearest instance in the register of the neglected-disease market failure:
+      the patients are poor, the drugs are generic, and the trials are long. As
+      with lithium and with the POTS generics, nothing is being suppressed and
+      no regulator has refused anything — the incentive is simply absent, and
+      the response has been to build an institution that does not need one.
+    who_could: [nonprofit, philanthropy, sponsor, government]
+    scale: 2.0e8
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: reaching a rural, migrant and largely asymptomatic population
+    what: >
+      Distinct from the diagnosis blocker and downstream of it. Even where
+      testing happens, the treatment is a sixty-day course with side effects
+      that a large minority cannot complete, given to someone who feels
+      perfectly well and lives far from the clinic that dispensed it. That
+      combination defeats adherence on its own merits, without anyone doing
+      anything wrong. The migrant populations outside Latin America add a
+      further layer: care systems with no reason to think of a tropical
+      parasite, and patients with reasons not to present to them.
+      The shortened regimens now under study matter more here than their
+      pharmacology suggests — a two-week course is a different logistical
+      object from a two-month one.
+    who_could: [health-system, government, nonprofit, patient-org]
+    scale: 5.0e7
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0022
+  rated: 2026-08-21
+  by: [claude, jeremy]

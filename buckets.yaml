@@ -1,0 +1,334 @@
+# Buckets — a stable reading of the register.
+#
+# Nine charts do not add up to a statement. These do: a small set of named
+# states that a person can hold in their head, that every record lands in, and
+# that can be counted again next year and compared.
+#
+# TWO AXES, AND THEY ARE NOT THE SAME KIND OF THING.
+#   A — what it does to your life.  A PARTITION: every record lands in exactly
+#       one, so the counts sum to the register and a percentage means something.
+#   B — why it is not better than that.  TAGS: a record can carry several or
+#       none, so these must NEVER be summed as though they were a partition.
+#
+# Collapsing the two is the mistake the first sketch made, and it showed up as
+# buckets that looked like duplicates of each other: "short window" against
+# "game over if not detected", "not sure of the right path" against "% chance".
+# They were not duplicates. They were answers to different questions.
+#
+# THE RULES LIVE IN check.py, NOT HERE. This file holds the definition, the
+# order, and the version — the things a reader and a future comparison need.
+# `test_check.TestBuckets` asserts the two agree, so a rule cannot change
+# without this file changing with it.
+#
+# VERSIONING IS THE POINT. A record moving between buckets is progress and is
+# what `moved:` records. A bucket's DEFINITION moving is a silent corruption of
+# the time series — next year's count would answer a different question while
+# looking like the same one. So: change a rule, bump `version`. check.py stores
+# the version and a digest of the rules in every snapshot, and a test fails if
+# the digest moved and the version did not.
+
+# v4 (2026-09-02) made axis A READ TREATED SURVIVAL BEFORE THE INTERVENTION RUNG.
+# `survival_outcome()` returns `cured` for anything on the `curative` rung
+# however few survive, so four cancers where most patients die were filed as
+# survivors — **`pancreatic-cancer` sat in `changes-you`, "you survive, and it
+# changes you", on 13% five-year survival.** A record now enters the fatal group
+# when more than half die, whatever the rung says.
+# **MOVED: pancreatic-cancer, lung-cancer, gastric-cancer (from `changes-you`)
+# and liver-cancer (from `defines-your-life`), all to `ends-it-later`.**
+# `changes-you` 63 → 60, `defines-your-life` 18 → 17, `ends-it-later` 13 → 17.
+# Those three buckets are NOT comparable with v1-v3 snapshots. The other four
+# are unchanged, `ends-it` included — this fixed a misfiling and did not make
+# the fatal end of the axis any bigger.
+#
+# v3 (2026-09-01) changed the axis-A rule for `changes-you` / `back-to-normal`
+# to key on residue SEVERITY rather than on the presence of a residue block.
+# **AXIS-A COUNTS FROM v1 AND v2 SNAPSHOTS ARE NOT COMPARABLE WITH v3 ONES** for
+# those two buckets — eight records moved, and `back-to-normal` roughly doubled.
+# That is exactly what the version field exists to record.
+#
+# v2 (2026-08-30) added `found-too-late` to axis B. Axis A is unchanged, so the
+# axis-A counts in earlier snapshots remain comparable; the axis-B tallies do
+# not, because a record can now carry a tag it could not carry before.
+version: 4
+
+axes:
+
+  - id: A
+    name: What it does to your life
+    kind: partition
+    question: >
+      You get it. What then? Not *does it kill you* — that question is silent
+      about hearing loss, cataract, osteoarthritis and low back pain, which are
+      among the largest burdens here. **The spine is what happens to your life**,
+      and death is the most severe answer rather than the only axis.
+    order_matters: >
+      Buckets are tested in order and the first match wins. Ending your life
+      outranks changing it; being held off indefinitely outranks the residue that
+      the holding costs. Without a stated order, `type-1-diabetes` is both
+      "held off for life" and "defines your life" and the partition is not one.
+    holes:
+      - >
+        **ACUTE HIGH-LETHALITY INFECTION HAS NO BUCKET THAT FITS, AND THERE ARE
+        TWO RECORDS.** `marburg` (25% survive) and `h5n1` (50%) kill quickly or
+        not at all: the survivors *recover*, and nothing about "it ends your
+        life, but later" is true of either group. v4 excludes acute illness from
+        the mostly-fatal rule for exactly this reason, which leaves them in
+        `changes-you` — better than the alternative and still not right.
+        The register already has the vocabulary for this shape: ⧉ `spans_ladder`,
+        **a malformed question rather than a hard one.** An eighth bucket, or an
+        explicit refusal to bucket, is the open decision. Do not resolve it by
+        averaging.
+      - >
+        **THE FATAL BUCKETS DEPEND ON A `survival` BLOCK AND 48 RECORDS HAVE
+        NONE.** A record with no rated survival cannot reach `ends-it`,
+        `ends-it-unless-caught` or `ends-it-later` however bad it is. That is
+        correct for the disability records the axis exists to include, and it is
+        a silent gate on anything fatal that simply has not been rated yet.
+      - >
+        **`ends-it` HOLDS ONE RECORD AND THAT IS A STATEMENT ABOUT THE CORPUS,
+        NOT ABOUT MEDICINE.** Fatal, untreatable, and no window is a real and
+        populated category — rapidly fatal paediatric neurodegenerative and
+        metabolic disease is an entire quadrant with nothing in it here, because
+        every selection pass so far has chosen for schema diversity or for
+        burden and this shape falls through both. Checked on 2026-09-02: the rule
+        is not under-firing; there is nothing for it to catch.
+    buckets:
+
+      - slug: ends-it
+        name: It ends your life, whenever you find it
+        rule: >
+          The course is fatal, essentially nobody survives the stated horizon,
+          and there is no window — finding it earlier changes nothing.
+        not: >
+          NOT "we have no cure". Most fatal diseases here are `ends-it-later`.
+          This is the much smaller set where the timing of diagnosis is
+          irrelevant because nothing follows from it.
+        examples: [huntington]
+
+      - slug: ends-it-unless-caught
+        name: It ends your life unless it is caught in time
+        rule: >
+          Fatal as above, but a `window` exists — there is a period in which
+          action changes the outcome, and outside it there is nothing.
+        not: >
+          NOT every disease with a window; 86 records have one. This is the set
+          where the window is the *whole* of the difference between living and
+          dying.
+        examples: [rabies, prion-disease]
+
+      - slug: ends-it-later
+        name: It ends your life, but later
+        rule: >
+          The disease is still what kills you. Either treatment alters the course
+          without ending it — the register's `delayed` outcome — or **more than
+          half of treated patients die of it**, whatever rung the ladder puts the
+          treatment on.
+        not: >
+          NOT "untreatable". These are mostly diseases medicine has changed a
+          great deal — and the change bought time rather than an ending.
+          **NOT decided by the intervention rung alone, and v4 fixed exactly
+          that.** `survival_outcome()` reads `axes.intervention`, so every record
+          on the `curative` rung returned `cured` however few survived — and
+          `cured` never reached this branch. Pancreatic cancer, where 87% of
+          treated patients die, was filed under *you survive, and it changes
+          you*, beside cataract. The rung was right about what the operation does
+          **when it works**; the bucket was asking a different question and
+          taking the rung's word for the answer.
+          ALSO NOT acute illness, and that exclusion is deliberate rather than
+          protective. `marburg` kills about three quarters of those it infects
+          within two weeks and the quarter who live **recover** — so "it ends
+          your life, but later" is false for everybody in the record. That is the
+          ⧉ `spans_ladder` shape the register already names as a **malformed
+          question rather than a hard one**, and declining to average it is more
+          honest than filing it confidently in the wrong place. See `holes`.
+        examples: [pancreatic-cancer, als, alzheimers, stroke, glioblastoma]
+
+      - slug: held-off
+        name: It is held off, for life
+        rule: >
+          A treatment suppresses it indefinitely and stopping brings it back.
+          Near-normal life, on condition of continuous treatment.
+        not: >
+          NOT cured. **This rung is what stops HIV being filed next to hepatitis
+          C** — one is no longer a death sentence, the other is over.
+        examples: [hiv, type-1-diabetes, schizophrenia]
+
+      - slug: defines-your-life
+        name: You survive, and it defines your life
+        rule: >
+          Survivable, but the cost of living with it or of being treated for it
+          is continuous and large — a high ongoing burden, or a residue or a
+          treatment toll rated `harsh`.
+        not: >
+          NOT necessarily severe in the clinical sense, and NOT about mortality
+          at all. `me-cfs`, `heds` and `msmds` are here with **no attributed
+          deaths whatsoever** — which is the whole reason this axis is not built
+          on survival.
+        examples: [sickle-cell, me-cfs, heds, cerebral-palsy, noma]
+
+      - slug: changes-you
+        name: You survive, and it changes you
+        rule: >
+          Survivable, and something **rated `major`** is left behind — by the
+          disease, by the treatment, or both — or the ongoing burden of being
+          treated is moderate. Without dominating the rest of your life, which
+          is the bucket above.
+        not: >
+          NOT a minor category. **It is still the largest bucket in the
+          register** after v4 took four cancers out of it, and
+          that is this axis's main finding: medicine's characteristic output is
+          neither death nor cure but survival in an altered body.
+          NOT triggered by *any* permanent difference. **v3 fixed exactly that.**
+          Until 2026-09-01 the rule tested whether a `residue` block existed at
+          all, so a record whose residue was a shoe size landed here — and
+          derived `restored: restored` at the same time, because that derivation
+          has always read severity. Eight records held both verdicts at once.
+          `clubfoot` made it undeniable and the rule now reads severity too.
+        # Corrected 2026-09-02. `head-neck-cancer` and `crohns` were listed here
+        # and had been moved out by the v3 and v4 rule changes — head and neck to
+        # `defines-your-life` on a harsh toll, Crohn's to `held-off`. Caught by
+        # `dashboard.test.js` the moment the page started rendering examples
+        # instead of only the file recording them. **Nothing had checked them
+        # before, because nothing read them.**
+        examples: [tuberculosis, benign-prostatic-hyperplasia, breast-cancer, malaria]
+
+      - slug: back-to-normal
+        name: You survive, and you get back to normal
+        rule: >
+          Survivable, with nothing worse than a `minor` residue and a `minor`
+          treatment toll, and a low ongoing burden. **A minor permanent
+          difference does not disqualify a record from this bucket** — a
+          treated clubfoot leaves a slightly smaller foot in somebody who runs
+          normally, and calling that a changed life is false.
+        not: >
+          NOT the goal state for most of medicine, and still **uncommon** — 14 of
+          140, unchanged by v4. Read that as a claim about how little the
+          register finds. It remains the bucket resting on the least-tested
+          inputs: `residue` is absent on many records that have simply never been
+          examined for one, and an unexamined record looks identical to a clean
+          one. See `bucket-design.md`.
+        examples: [cholera, typhoid, influenza]
+
+  - id: B
+    name: Why it is not better than that
+    kind: tags
+    question: >
+      A record can carry several of these, or none. **They do not sum to the
+      register and must never be drawn as though they did.** Axis A says what
+      state a disease is in; axis B says what is holding it there.
+    buckets:
+
+      - slug: nobody-makes-it
+        name: The solution exists and nobody makes it
+        rule: >
+          A `manufacturing` blocker, or a `no-sponsor` blocker on a record whose
+          capability is real. The requirement that capability be real is what
+          separates *nobody produces the cure* from *nobody funds the research*.
+        two_faces: >
+          **DELIBERATELY ONE BUCKET WITH TWO FACES**, the same construction
+          `cell-targeting` uses. **Capacity**: the product exists and cannot be
+          made in quantity — BCG for bladder cancer, benzathine penicillin,
+          antivenom, oxytocin that needs a cold chain in the hottest places.
+          **Market**: the product exists and nobody will sell it — *"the
+          companies that solved this problem went bankrupt for solving it"*
+          (`mrsa`, Achaogen); *"there is no commercial interest anywhere in the
+          world aligned with oral rehydration"*.
+          One needs a factory, the other needs a buyer. They are held together
+          because from a patient's position they are the same sentence, and split
+          in the record because the fix is not.
+        not: >
+          NOT diseases with no answer. If nothing works, the problem is not
+          manufacturing. `me-cfs` carries `no-sponsor` and is excluded here for
+          exactly that reason — nobody is failing to manufacture its cure.
+        examples: [snakebite, bladder-cancer, syphilis, mrsa, diarrhoeal-disease]
+
+      - slug: found-too-late
+        name: Caught early it is curable, caught late it is not
+        rule: >
+          A `window` exists, the record's strata run from a late form where
+          essentially nothing works (efficacy at or below 0.2) to an early form
+          that is mostly cured (0.7 or above), and **fewer than half are caught
+          in time**.
+        why_not_axis_a: >
+          **THE FOREST FIRE IS NOT A STATE, SO IT CANNOT GO ON A PARTITION.** A
+          record whose early stratum is curable and whose late stratum is
+          hopeless does not have one answer to *what does it do to your life* —
+          it has two, and the date of diagnosis picks between them. Averaging
+          them describes nobody: `melanoma` sits in `back-to-normal` on strata
+          running 0.20 to 0.95, which is true of the person caught early and
+          grotesque for the person caught late. The register already names this
+          shape ⧉ `spans_ladder` — **malformed question, not a hard one** — and
+          51 records carry it. So it is filed here, as a *cause*: the reason the
+          disease is not better than it is, is that it is found too late.
+        not: >
+          NOT every disease with a window; **86 records have one**, which is far
+          too many to be interesting. `caught_in_time` is what turns *a window
+          exists* into *and we are missing it*, and it is the number that makes
+          this bucket actionable rather than descriptive — **it is the size of
+          the prize for a screening programme, per disease.** Chagas is 0.10,
+          obesity 0.15, lung cancer 0.20, liver cancer 0.25.
+          ALSO NOT `pancreatic-cancer`, and that exclusion is the rule working.
+          Its strata spread is 0.15 — it is bad at **every** stage, so earlier
+          detection is not the lever. A disease being terrible and having a
+          window are different claims, and only the second is this bucket.
+          `obesity` is in, on strata running 0.00 to 0.80, and is the entry most
+          worth arguing with: its "window" is the period before the
+          complications establish, which is real but is a slower and vaguer
+          thing than a resectable tumour.
+        examples: [lung-cancer, liver-cancer, cervical-cancer, chagas, gastric-cancer]
+
+      - slug: cannot-aim-it
+        name: It works for some people and nobody can say which
+        rule: >
+          The register's `futile_treatment_risk` — a treatment exists, it fails
+          often, and there is no test that says in advance who it will fail.
+        not: >
+          NOT the same as a treatment that works badly for everyone. The sketch's
+          *"% chance"* is this: **a measurement failure wearing the costume of a
+          treatment failure.**
+        # Same correction, same cause: both were moved to `ends-it-later` by v4
+        # reading treated survival, and neither carries this tag any more.
+        examples: [rheumatoid-arthritis, schizophrenia, epilepsy, osteoarthritis]
+
+      - slug: no-starting-point
+        name: Nobody knows where to start
+        rule: >
+          `mechanism` is `none` or `correlates` — the causal account is absent or
+          is a set of associations.
+        # THE LAST CLAUSE USED TO READ "and Engpass files them under
+        # `unexplained-illness`", AND IT WAS REMOVED ON 2026-09-02 BY A TEST.
+        # These definitions are now exported into the snapshot so a page renders
+        # the rule that was in force rather than a second copy of it — and
+        # `test_check.test_snapshot_carries_no_engpass_data` immediately failed,
+        # because Nordstern's artifact must not know that register exists. The
+        # blunt string check is the point: a cross-reference in prose is exactly
+        # how a one-way dependency starts becoming two-way. Nordstern describes
+        # its own partition; the sibling register can point this way, not back.
+        not: >
+          NOT the famous killers. **Stroke and heart disease are `established`**:
+          hand somebody $100M for stroke and they know exactly where to start,
+          they simply cannot fix it. **The diseases with no starting point are
+          the ones nobody dies of** — which is why a register built on mortality
+          would never find them.
+        examples: [me-cfs, heds, depression, bipolar, low-back-pain]
+
+      - slug: cannot-reach-people
+        name: It works and it does not arrive
+        rule: >
+          `delivery` is `barely` or `undelivered` — efficacy multiplied by access
+          leaves most patients untouched.
+        not: >
+          NOT a knowledge problem, and it is the single most common state in the
+          register. This is the tag the whole `efficacy`/`access` split exists
+          to make sayable.
+        examples: [refractive-error, hearing-loss, sickle-cell, hepatitis-b, obesity]
+
+      - slug: needs-more-evidence
+        name: There is a candidate and the evidence is not in
+        rule: >
+          An `evidence-incomplete` or `candidate-untested` blocker — something
+          plausible exists and nobody has established whether it works.
+        not: >
+          NOT "no path forward". This is the opposite: a path exists and has not
+          been walked.
+        examples: [idiopathic-pulmonary-fibrosis]

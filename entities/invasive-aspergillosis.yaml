@@ -1,0 +1,516 @@
+slug: invasive-aspergillosis
+id: FND-D-0110
+name: invasive aspergillosis
+also: [IA, invasive pulmonary aspergillosis, Aspergillus fumigatus infection, IPA]
+mondo: MONDO:0000240
+kind: disease
+residual: false
+contested: false
+
+# THE SECOND FUNGAL RECORD, AND IT CARRIES TWO THINGS NO OTHER RECORD HOLDS.
+#
+# 1. THE RESISTANCE IS MANUFACTURED BY AGRICULTURE, BEFORE THE PATIENT MEETS A
+#    DRUG. Azole fungicides sprayed on crops, and used in flower bulbs, timber
+#    and compost, are chemically close enough to medical azoles that they select
+#    cross-resistant *Aspergillus fumigatus* in soil. A patient who has never
+#    taken an antifungal in their life can inhale a resistant strain and present
+#    with untreatable disease. **`amr-infection` is scoped in its own name to
+#    bacteria, and its whole model is wrong for this**: bacterial resistance is
+#    driven by clinical and livestock use, in a loop that runs through patients
+#    and prescribers. This loop does not contain a patient at any point. The
+#    actor who could move it is an agriculture ministry.
+#
+# 2. IT IS LARGELY A COMPLICATION OF MEDICINE WORKING. Neutropenia from
+#    chemotherapy, transplant immunosuppression, high-dose corticosteroids,
+#    ibrutinib, ICU care, and severe influenza or COVID-19. **The register has
+#    found this shape twice already** — `ischaemic-heart-disease` manufacturing
+#    `heart-failure`, congenital cardiac surgery manufacturing an adult
+#    congenital population — and this is the infectious version. Its incidence
+#    rises when oncology and transplantation succeed.
+#
+# SCOPE. *Aspergillus* causes at least three different diseases and this record
+# is one of them: acute invasive disease in the immunocompromised. **Chronic
+# pulmonary aspergillosis — which follows tuberculosis into a healed cavity and
+# is probably the larger burden — is deliberately not here** and needs its own
+# record. See `holes`; it does not even have a MONDO term.
+
+burden:
+  incidence:
+    value: 2.1e6
+    units: >
+      estimated cases/year worldwide of invasive aspergillosis — a figure built
+      from at-risk-population estimates times attack rates, not from case
+      reporting, and **the COVID-19 pandemic added a large and poorly measured
+      tranche** (COVID-associated pulmonary aspergillosis) that the pre-2020
+      models did not contain
+    src: recall
+  deaths:
+    value: 1.0e6
+    units: >
+      deaths/year — **and like `cryptococcal-meningitis` this is largely a
+      subset of other records rather than an addition to them.** The modal
+      patient is dying of leukaemia, of a transplant complication, of severe
+      influenza or of COVID-19, and the certificate usually says so. Attributable
+      mortality is genuinely hard to separate from the mortality of being the
+      kind of patient who gets this
+    src: recall
+  note: >
+    **These are among the least certain burden figures in the register and the
+    uncertainty is structural.** Antemortem diagnosis is insensitive, so a large
+    share of invasive aspergillosis is found at autopsy or never — and autopsy
+    rates have fallen steeply over the period the estimates cover. The
+    denominator is a modelled at-risk population, not a count. Read the figure as
+    an order of magnitude.
+
+survival:
+  horizon: 12 weeks from diagnosis
+  untreated:
+    value: 0.05
+    units: >
+      fraction alive — **untreated invasive aspergillosis in a neutropenic host
+      is very close to uniformly fatal.** The organism is angioinvasive: it grows
+      into blood vessels, causing infarction and haemorrhage, and disseminates to
+      brain and elsewhere
+    src: recall
+  treated:
+    value: 0.55
+    units: >
+      fraction alive on voriconazole or isavuconazole with source control and,
+      where possible, reversal of the immunosuppression. **The number is
+      dominated by the host rather than by the drug**: neutrophil recovery is the
+      strongest predictor of survival in most series, so the treatment that
+      matters most is often the one aimed at the underlying disease
+    src: reasoning
+  witness: >
+    **THE TREATED FIGURE IS A HOST FIGURE WEARING AN ANTIFUNGAL'S CLOTHES.**
+    Voriconazole displaced amphotericin B in 2002 on a trial showing a roughly
+    twenty-point survival advantage, which is a large result and remains the
+    field's last one of that size. Everything since has been tolerability and
+    convenience. What moves this number most is whether the marrow recovers.
+    **The strata diverge violently and the record is flagged ⧉ for it.** Cerebral
+    aspergillosis approaches uniform mortality. Invasive disease in a chronic
+    granulomatous disease patient with an intact marrow does well. Averaging them
+    produces a number describing nobody, which the register normally refuses to
+    do and does here because the schema requires a figure.
+    **And an azole-resistant infection halves it again** — mortality in
+    resistant invasive aspergillosis runs well above 80% in reported series,
+    because the alternatives are intravenous, toxic and less effective.
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: risk-reduction
+  ongoing: moderate
+  efficacy:
+    value: 0.55
+    units: >
+      fraction-of-patients (alive at twelve weeks with the infection controlled,
+      on first-line azole therapy) — **and it is not a clean drug figure**, since
+      the dominant variable is immune reconstitution. Where the marrow recovers
+      it is far better; where it does not, an antifungal alone rarely rescues
+      the patient
+    src: reasoning
+  access:
+    value: 0.45
+    units: >
+      fraction-of-patients (diagnosed in time and receiving an effective agent) —
+      **the shortfall here is diagnostic rather than pharmaceutical**, which
+      inverts `cryptococcal-meningitis`. Voriconazole is off-patent and widely
+      available; galactomannan testing, CT scanning and bronchoscopy are not, and
+      without them the disease is not found. Therapeutic drug monitoring, which
+      voriconazole genuinely needs, is available in a minority of settings
+    src: reasoning
+
+measurement:
+  diagnostic: clinical
+  prognostic: partial
+  predictive: partial
+  witness: >
+    **DIAGNOSTIC is `clinical`.** It was first written as `partial` and the
+    validator refused it: `diagnostic` keeps its own vocabulary because **the
+    kind of evidence is more informative than a quality grade**, and being made
+    to name the kind produced the sharper answer. A definitive objective test
+    exists — tissue — and is usually unobtainable in the living patient, so the
+    working diagnosis rests on host factors, radiology and an imperfect
+    biomarker. That is `clinical`, and calling it `objective` would assert that
+    a test settles the question when this record's whole point is that none
+    does.
+    **It is the mirror of `cryptococcal-meningitis`**, where a two-dollar
+    dipstick performs above 95% and simply is not used. Here the tests
+    themselves are the problem. Culture is insensitive and
+    slow, and a positive culture from sputum may mean colonisation rather than
+    disease. Galactomannan antigen performs reasonably in neutropenic
+    haematology patients and materially worse in the ICU, in solid-organ
+    transplant and in anyone on mould-active prophylaxis — **which is most of the
+    population at highest risk**. Beta-D-glucan is non-specific across fungi. CT
+    shows suggestive signs, the halo and the air-crescent, that are neither
+    sensitive nor specific and appear at different times. Definitive diagnosis
+    needs tissue, and **the patients who need biopsy most are thrombocytopenic
+    and hypoxic, which is exactly when you cannot biopsy them.**
+    The consequence is a diagnostic vocabulary the register has seen nowhere
+    else: "proven", "probable" and "possible" invasive aspergillosis are formal
+    consensus categories, and **most patients are treated on "probable".** The
+    field has institutionalised diagnosing by likelihood because certainty is
+    unobtainable in the living patient.
+    PROGNOSTIC is `partial`. Neutrophil recovery, site of disease and galactomannan
+    kinetics all carry real information. What is not predictable is who among the
+    at-risk will develop it at all, which is why prophylaxis is given broadly.
+    PREDICTIVE is `partial` **and it is the one that is fixable.** Azole
+    susceptibility testing exists, is not routine in most laboratories, and is
+    the single test that would determine whether the first-line oral drug will
+    work. Molecular detection of the common resistance alleles directly from
+    respiratory samples exists and is not widely deployed. **This is a solvable
+    predictive gap in a register where most are not.**
+
+strata:
+  - name: haematological malignancy and stem-cell transplant
+    fraction:
+      value: 0.45
+      units: fraction-of-cases
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.60
+      units: fraction-of-stratum (alive at twelve weeks with infection controlled)
+      src: reasoning
+    toll: major
+    what: >
+      The classical host: prolonged profound neutropenia after induction
+      chemotherapy or conditioning. **The best-studied group, the one the trials
+      recruited, and the one where galactomannan actually works.** Outcome
+      tracks marrow recovery more than anything else.
+
+  - name: ICU, solid-organ transplant, and virus-associated disease
+    fraction:
+      value: 0.40
+      units: fraction-of-cases
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.45
+      units: fraction-of-stratum (alive at twelve weeks)
+      src: reasoning
+    toll: major
+    what: >
+      **The stratum that grew, and the one the diagnostics fit worst.** Severe
+      influenza and COVID-19 both predispose to invasive pulmonary aspergillosis
+      in patients who are not classically immunosuppressed; corticosteroid
+      treatment for those illnesses compounds it. Galactomannan on serum performs
+      poorly here, so diagnosis leans on bronchoalveolar lavage in patients too
+      unstable for bronchoscopy. **COVID-associated pulmonary aspergillosis was
+      being argued about while it was killing people**, which is what a
+      diagnostic category with no reference standard produces.
+
+  - name: cerebral and disseminated disease
+    fraction:
+      value: 0.15
+      units: fraction-of-cases
+      src: reasoning
+    intervention: symptomatic
+    efficacy:
+      value: 0.15
+      units: fraction-of-stratum (survival)
+      src: reasoning
+    toll: catastrophic
+    what: >
+      **Approaching uniform mortality, and it is why this record spans the
+      ladder.** Aspergillus reaching the brain is fatal in the large majority
+      despite voriconazole, which is the one azole with meaningful central
+      nervous system penetration. Surgery is occasionally decisive and usually
+      impossible. Rated `symptomatic` because cure is not a realistic aim in
+      most of this stratum, and the register should say so rather than let the
+      record-level `curative` speak for it.
+
+toll:
+  severity: major
+  permanent: false
+  what: >
+    **Voriconazole is an unusually awkward drug and the register should record
+    why.** Its metabolism is non-linear and CYP2C19-dependent, so blood levels
+    vary several-fold between people on the same dose — which is why therapeutic
+    drug monitoring is recommended and frequently unavailable. Too little fails;
+    too much causes visual disturbance, hallucinations and encephalopathy.
+    Long courses cause photosensitivity, periostitis and a well-documented excess
+    of cutaneous squamous cell carcinoma in transplant recipients. It interacts
+    with almost everything, including the calcineurin inhibitors and the
+    chemotherapy the patient is already receiving.
+    Amphotericin B, the alternative, brings nephrotoxicity to patients frequently
+    already in renal failure. Rated `permanent: false` because the common
+    toxicities reverse on stopping — **with the deliberate exception of the skin
+    cancers, which do not**, and which are carried in `residue` rather than here
+    because they follow the cure rather than the disease.
+  incidence:
+    value: 0.30
+    units: >
+      fraction-of-treated experiencing significant drug toxicity or a
+      management-altering interaction — a reasoned figure, and high because the
+      population is comorbid and polypharmacy is universal
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    **Destroyed lung, and a skin-cancer risk that outlives the infection.**
+    Angioinvasion infarcts tissue, and survivors are left with cavities, fibrosis
+    and permanently reduced pulmonary function; some require resection.
+    Haemoptysis from a residual cavity can be fatal years later. And prolonged
+    voriconazole carries a documented excess of cutaneous squamous cell
+    carcinoma, particularly in lung-transplant recipients — **a curative
+    antifungal that leaves a durable oncological risk behind it**, which the
+    register has recorded for cytotoxic chemotherapy and not previously for an
+    anti-infective.
+  incidence:
+    value: 0.25
+    units: >
+      fraction-of-survivors with permanent structural lung damage or a
+      treatment-attributable malignancy — reasoned, and poorly evidenced because
+      survivors are followed for their underlying disease rather than for this
+    src: reasoning
+
+witness:
+  mechanism: >
+    `established`. *Aspergillus fumigatus* is a thermotolerant saprophytic mould
+    of soil, compost and decaying vegetation. Its spores are two to three microns
+    across, which is small enough to reach the alveolus, and **everyone inhales
+    hundreds to thousands of them every day.** In an intact host, alveolar
+    macrophages and neutrophils clear them and nothing happens. Neutropenia,
+    corticosteroids, or epithelial damage from a preceding viral pneumonia remove
+    that clearance, the spore germinates, and the resulting hyphae invade blood
+    vessels — causing the infarction, haemorrhage and dissemination that kill.
+    **As with `cryptococcal-meningitis`, none of the organism's biology is about
+    us.** Thermotolerance up to 50 °C, efficient sporulation and metabolic
+    versatility are adaptations to competing in hot decomposing vegetation. That
+    it grows equally well at 37 °C in a lung is incidental — and it is exactly
+    the property that makes this genus, and not the thousands of other soil
+    moulds, a human pathogen.
+  intervention: >
+    `curative` in intent and conditionally in practice: voriconazole or
+    isavuconazole, for weeks to months, with surgical resection where a lesion is
+    accessible and threatening. **Reversing the immunosuppression is often the
+    decisive act**, and it is frequently impossible without abandoning the
+    treatment of the underlying disease — a genuine and recurring clinical
+    dilemma that the register's axes have no way to express.
+    The `strata` disagree about this rating, which is why the record carries ⧉.
+  prevention: >
+    `risk-reduction`, and there is no vaccine. What exists is **antifungal
+    prophylaxis** in the highest-risk groups — posaconazole during induction
+    chemotherapy for acute myeloid leukaemia is the best-evidenced — plus HEPA
+    filtration on transplant units and avoidance of construction dust, which
+    causes outbreaks reliably enough that hospital building works are a
+    recognised risk factor.
+    **Prophylaxis is also part of the resistance problem it protects against**,
+    and selects for breakthrough infection that is harder to diagnose because
+    galactomannan is suppressed. It is the only intervention here that is
+    simultaneously the main defence and a driver of the main threat.
+  ongoing: >
+    `moderate`. Treatment runs weeks to months, orally after an initial period,
+    with drug-level monitoring and interaction management throughout. Secondary
+    prophylaxis continues through any subsequent immunosuppression. **For the
+    survivor with destroyed lung, the ongoing burden becomes respiratory and
+    permanent**, which is `residue` rather than treatment.
+  efficacy: >
+    See the axis and the strata. The single number is an average across hosts
+    with radically different prognoses.
+  access: >
+    **The inverse of `cryptococcal-meningitis`, and the pair is instructive.**
+    There, an excellent cheap test exists and the drug is missing. Here the drug
+    is off-patent and widely stocked, and what is missing is the ability to know
+    the patient has the disease: galactomannan assays, CT scanners,
+    bronchoscopy, mould-capable mycology laboratories, azole susceptibility
+    testing, and drug-level monitoring. **Two fungal records, opposite
+    bottlenecks, and neither is a discovery problem.**
+
+moved:
+  - date: 2002
+    axis: efficacy
+    from: 0.30
+    to: 0.50
+    why: >
+      Voriconazole displaced amphotericin B as first-line therapy on a randomised
+      trial showing a survival advantage of roughly twenty percentage points,
+      with substantially less nephrotoxicity. **It remains the largest single
+      therapeutic step in this record and nothing since has matched it** — the
+      subsequent additions, isavuconazole and liposomal formulations, are
+      tolerability and interaction improvements rather than efficacy ones.
+    src: recall
+  - date: 2009
+    axis: efficacy
+    from: 0.50
+    to: 0.55
+    why: >
+      Not a drug. **Galactomannan-driven pre-emptive strategies and routine CT
+      surveillance in high-risk haematology moved diagnosis earlier**, and
+      earlier treatment is worth more here than any agent introduced since.
+      Dated loosely; this was a change in practice across the 2000s rather than
+      an event, and the register should say so.
+    src: reasoning
+
+holes:
+  - >
+    **CHRONIC PULMONARY ASPERGILLOSIS IS MISSING AND IS PROBABLY THE LARGER
+    BURDEN.** It colonises healed cavities — most often left by tuberculosis —
+    affects on the order of one to two million people, progresses over years, is
+    treated suppressively rather than curatively, and carries five-year mortality
+    comparable to many cancers here. **It is the residue of another record's
+    disease, and it is itself a disease**, which is a relationship the register
+    has no way to hold. It also has no MONDO term, checked on the day this
+    record was written. It needs its own record.
+  - >
+    Allergic bronchopulmonary aspergillosis is likewise absent — several million
+    people, mostly with asthma or cystic fibrosis, and a different disease again.
+    **One genus, three records, and this is one of them.**
+  - The burden figures are order-of-magnitude estimates from modelled at-risk
+    populations, not counts, and antemortem diagnosis is insensitive enough that
+    the true incidence is unknown. Falling autopsy rates mean the historical
+    comparison is unreliable in a direction that is not correctable.
+  - >
+    Attributable mortality cannot be cleanly separated from the mortality of the
+    underlying condition. **A patient with relapsed leukaemia and invasive
+    aspergillosis is not straightforwardly killed by either**, and every figure
+    in this record inherits that ambiguity.
+  - The strata fractions are reasoned from the shape of published case series,
+    not measured, and the ICU/virus-associated stratum in particular is a moving
+    target that grew during COVID-19 and may be shrinking again.
+  - >
+    Global azole resistance prevalence is patchy and contested — a few percent in
+    some surveillance, well above ten in others, with real geographic variation
+    and real differences in how isolates were selected. **The trend direction is
+    better established than the level.**
+  - Written from model recall. The voriconazole trial, the agricultural
+    resistance mechanism and the diagnostic difficulty are the parts most likely
+    right; every number is the part most likely wrong.
+
+blockers:
+  - kind: policy
+    blocks: an antifungal class whose resistance is not being generated by crop protection
+    what: >
+      **AZOLE-RESISTANT *ASPERGILLUS FUMIGATUS* IS SELECTED IN THE ENVIRONMENT BY
+      AGRICULTURAL FUNGICIDES, AND ARRIVES IN AZOLE-NAIVE PATIENTS.** The
+      resistance alleles most commonly found in patients — tandem repeats in the
+      promoter of the *cyp51A* gene, with associated point mutations — are the
+      same ones found in soil, compost, flower-bulb waste and plant debris, and
+      they confer cross-resistance to the medical azoles. A person who has never
+      taken an antifungal can inhale a resistant strain and present with a
+      disease for which the only oral treatment does not work.
+      **NO OTHER RECORD IN THIS REGISTER HAS THIS SHAPE.** `amr-infection` names
+      bacteria and its levers are stewardship, infection control and new agents —
+      all of which act inside the health system, in a loop that runs through
+      prescribers and patients. **This loop contains neither.** The intervention
+      is restricting or redesigning agricultural fungicides, and the actor is an
+      agriculture ministry weighing crop yield against a clinical harm that
+      lands on somebody else entirely. That is a policy problem with no clinical
+      counterparty, and the register has no other instance of it.
+    who_could: [government, legislator, regulator, academic]
+    scale: 2.0e8
+    standing: documented
+    src: reasoning
+
+  - kind: diagnosis
+    blocks: knowing the patient has it while they are still alive
+    what: >
+      **THE FIELD FORMALLY DIAGNOSES BY LIKELIHOOD BECAUSE CERTAINTY IS
+      UNOBTAINABLE.** "Proven", "probable" and "possible" are consensus
+      categories, proven requires tissue, and the patients who most need biopsy
+      are thrombocytopenic and hypoxic. Culture is insensitive; galactomannan
+      works in neutropenic haematology and materially worse in the ICU, in
+      solid-organ transplant and in anyone already on mould-active prophylaxis —
+      which is much of the highest-risk population; CT signs are suggestive and
+      neither sensitive nor specific.
+      The consequences run in both directions and both are expensive. Patients
+      who have it are treated late, and a much larger number who do not are
+      treated empirically with a toxic, interacting, expensive drug **that also
+      selects for the resistance in the blocker above.** A reliable non-invasive
+      test would be worth more here than any new antifungal.
+    who_could: [academic, sponsor, manufacturer, health-system]
+    scale: 3.0e8
+    standing: documented
+    src: reasoning
+
+  - kind: knowledge
+    blocks: a fifth antifungal class, and any way to target a cell like ours
+    what: >
+      **THERE ARE FOUR ANTIFUNGAL CLASSES AGAINST AN ENTIRE KINGDOM**, against
+      dozens of antibacterial classes, and the reason is that fungi are
+      eukaryotes. The exploitable differences are few — ergosterol instead of
+      cholesterol, a cell wall we do not have — and both are already taken by
+      the azoles/polyenes and the echinocandins. Amphotericin B is nephrotoxic
+      precisely because its target is a sterol very like ours. **This is
+      `cell-targeting`'s specificity face in a different kingdom**: the drug
+      cannot tell the pathogen's machinery from the host's, which is the same
+      arithmetic that limits cytotoxic chemotherapy.
+      Olorofim and fosmanogepix are the first genuinely new mechanisms in
+      decades and neither is licensed. **The pipeline is thin for the ordinary
+      reason** — the market is small, the trials are hard to recruit because the
+      patients are dying of something else, and there is no accepted surrogate
+      endpoint. `scale: null` for the target-identification half; the development
+      half is priceable and is a different blocker.
+    who_could: [academic, sponsor, manufacturer, philanthropy]
+    scale: null
+    standing: documented
+    src: reasoning
+    obstacles: [cell-targeting]
+
+  - kind: no-sponsor
+    blocks: developing the classes that have been identified
+    what: >
+      The market shape that gaps.md #145 identified for antibiotics, arriving
+      intact for antifungals and slightly worse. The eligible population is
+      small, severely ill and hard to enrol; **the trials are difficult because
+      the endpoint is confounded by the underlying disease**; and a successful
+      new class would be reserved for resistant infection, which is the smallest
+      and least profitable use. Several antifungal developers have struggled
+      commercially in exactly the pattern that followed the last generation of
+      antibiotic companies.
+      **This is the blocker that should be separated from the one above and
+      currently is not, across the register** — *nobody knows what to target* and
+      *nobody will pay to develop what has been targeted* are different objects,
+      and Engpass has flagged the schema split they need.
+    who_could: [sponsor, manufacturer, government, philanthropy, payer]
+    scale: 1.0e9
+    standing: documented
+    src: reasoning
+
+  - kind: knowledge
+    blocks: any prophylaxis aimed at the organism rather than the host
+    what: >
+      **There is no *Aspergillus* vaccine and the obstacle is the same one
+      `cryptococcal-meningitis` names.** Everybody inhales this mould daily and
+      is protected by innate cellular immunity; the people who need protection
+      are defined by not having it. A vaccine would have to elicit protective
+      immunity in a neutropenic or corticosteroid-suppressed host — **the
+      population least able to mount any response to a vaccine at all.**
+      There is also no correlate of protection to design against, and no
+      protected-but-exposed population to read one from other than the entire
+      healthy species, which is uninformative precisely because it never gets
+      ill. `scale: null`.
+    who_could: [academic, sponsor, philanthropy]
+    scale: null
+    standing: documented
+    src: reasoning
+    obstacles: [protective-immunity]
+
+  - kind: knowledge
+    blocks: knowing how many there are, and how much resistance there is
+    what: >
+      Incidence is modelled from at-risk populations rather than counted, because
+      antemortem diagnosis is insensitive and much invasive aspergillosis is
+      found at autopsy or not at all — **and autopsy rates have fallen steeply
+      over exactly the period the estimates span**, so the historical series is
+      unreliable in a direction nobody can correct.
+      Resistance surveillance is worse: reported azole resistance ranges from a
+      few percent to well above ten, varying with geography and with how isolates
+      were selected, and most laboratories outside reference centres do not test
+      susceptibility at all. **The argument for acting on agricultural fungicide
+      use is an arithmetic one, and the arithmetic rests on numbers this
+      uncertain.**
+    who_could: [academic, government, health-system, nonprofit]
+    scale: 5.0e7
+    standing: documented
+    src: reasoning
+    obstacles: [burden-unknown]
+
+assertion:
+  id: FND-A-0111
+  rated: 2026-08-28
+  by: [claude, jeremy]

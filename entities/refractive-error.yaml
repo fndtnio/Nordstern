@@ -1,0 +1,413 @@
+slug: refractive-error
+id: FND-D-0133
+name: Uncorrected refractive error
+# `glasses` and `spectacles` are the treatment, not the condition, and they
+# belong here anyway: `also` holds **the words people actually search for**, not
+# equivalences — which is exactly why `mondo_sync.py` is forbidden from
+# auto-accepting anything out of this field. Added 2026-09-02 after the
+# dashboard was searched for "glasses" and the word appeared nowhere on a page
+# that lists this record as the largest unmet need in the register.
+also: [myopia, short-sightedness, hyperopia, long-sightedness, astigmatism, presbyopia, uncorrected refractive error, glasses, spectacles, reading glasses, eyeglasses]
+common: glasses
+mondo: unresolved
+kind: disease
+residual: false
+contested: false
+
+# THE LARGEST TREATABLE CAUSE OF VISION IMPAIRMENT IN THE WORLD, AND THE
+# TREATMENT WAS INVENTED IN ITALY AROUND 1286.
+#
+# Every other record in this register has something genuinely hard in it — a
+# mechanism nobody understands, a molecule nobody can deliver, a tissue that
+# will not regenerate. This one has none. The physics is optics, the diagnosis
+# is a refraction, the treatment is a shaped piece of plastic costing a few
+# dollars, and it works in essentially everybody, immediately, and you can
+# verify it works before the patient leaves the room.
+#
+# Roughly a billion people cannot see properly for want of it.
+#
+# **THIS RECORD IS THE REGISTER'S CONTROL FOR THE ENTIRE DELIVERY ARGUMENT.**
+# If the corpus's headline finding is that most of what blocks medicine is
+# delivery rather than knowledge, then this is that finding with every other
+# variable held at zero: nothing to discover, nothing to invent, nothing to
+# manufacture at scale that is not already manufactured at scale.
+
+burden:
+  prevalence:
+    value: 9.5e8
+    units: >
+      people with vision impairment from uncorrected refractive error —
+      roughly 120 million with distance vision impairment (myopia, hyperopia,
+      astigmatism) and something over 800 million with uncorrected presbyopia,
+      the near-vision loss that arrives for everyone in their forties. **The
+      near-vision figure is the larger and the more ignored**
+    src: recall
+  incidence:
+    value: 1.0e8
+    units: >
+      people/year newly needing correction and not receiving it — a reasoned
+      estimate dominated by cohorts reaching presbyopic age, plus the rising
+      childhood myopia incidence described below
+    src: reasoning
+  note: >
+    **MYOPIA IS EXPLODING AND IT IS NOT A COSMETIC PROBLEM AT THE TAIL.** In
+    urban East Asia — China, Korea, Singapore, Taiwan — something like 80 to 90
+    per cent of young adults finishing school are myopic, against perhaps a
+    quarter of their grandparents' generation. Projections put roughly half the
+    world's population myopic by 2050 with about a tenth highly myopic.
+    That tail matters because **high myopia is a blinding disease**: myopic
+    macular degeneration, retinal detachment, and raised risks of glaucoma and
+    early cataract. So this record has two faces — an enormous, trivially fixable
+    impairment, and a growing minority for whom the eye itself is being damaged
+    and glasses will not be enough.
+    No deaths are attributed. `deaths` is absent rather than zero, as in
+    `glaucoma` and `retinopathy-of-prematurity`. **Mortality is the wrong
+    question three records running, which is the argument for this whole pass.**
+
+axes:
+  mechanism: established
+  intervention: suppressive
+  prevention: risk-reduction
+  ongoing: low
+  efficacy:
+    value: 0.98
+    units: >
+      fraction-of-patients (vision restored to functional by correction) —
+      **equal-highest in the register, tied with `cholera`'s rehydration at
+      0.98**, and the pairing is worth noticing: both are near-perfect
+      interventions that reach a fraction of the people who need them. Optics
+      is deterministic: measure the refraction, put that lens
+      in front of the eye, and the person sees. The residual 2% is amblyopia
+      already established, and eyes with coexisting pathology
+    src: reasoning
+  access:
+    value: 0.3
+    units: >
+      fraction-of-need met — the WHO's effective refractive error coverage runs
+      around a third globally for distance vision and very much lower for near
+      vision, with the gap widest in exactly the populations whose livelihoods
+      depend most on seeing
+    src: recall
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: good
+  witness: >
+    **THIS IS THE BEST-MEASURED CONDITION IN THE REGISTER AND IT IS NOT CLOSE.**
+    DIAGNOSTIC is `objective` in the strongest sense the schema allows.
+    Refraction is a physical measurement of a physical property of the eye,
+    reproducible to a quarter of a dioptre, obtainable with an autorefractor in
+    seconds or with a trial frame and a retinoscope by a trained person with no
+    electricity.
+    PREDICTIVE is **`good`, which twelve of 133 records achieve.** The test
+    that diagnoses the condition also specifies the treatment exactly, and you
+    can confirm the treatment works *before dispensing it* by putting the lens
+    up and asking. Twenty records in this corpus carry `futile_treatment_risk`
+    because nobody can say in advance who a treatment will help. Here you know,
+    for certain, in about ninety seconds.
+    PROGNOSTIC is `partial` and applies only to the myopia half: age of onset,
+    parental myopia and early progression rate predict who is heading for high
+    myopia, imperfectly. **That is the one measurement question in this record
+    that is genuinely open**, and it is the one that decides which children need
+    myopia control rather than simple correction.
+
+# NO `survival:` BLOCK — the third record in this pass without one, and by now
+# the pattern is the finding rather than an omission. Uncorrected refractive
+# error does not shorten life. It costs schooling, literacy, employment,
+# earnings, road safety and independence, and the register has no axis for any
+# of those. See `bucket-design.md` on the disability-weighted sibling that
+# axis A still lacks.
+
+toll:
+  severity: none
+  permanent: false
+  what: >
+    **NOTHING. THE TREATMENT COSTS THE PATIENT NOTHING AT ALL**, and this record
+    is included partly to demonstrate that the register can say so.
+    Spectacles take nothing permanent from anybody. They are removable,
+    adjustable, replaceable, carry no physiological risk, require no
+    monitoring, interact with no other drug, and are the only intervention in
+    this corpus that can be handed to a person by someone with no medical
+    training whatsoever.
+    The exception is elective refractive surgery — LASIK, PRK, lens implants —
+    which is a real operation with a real if small permanent risk of dry eye,
+    night-vision disturbance and, rarely, corneal ectasia. It is a minority
+    route taken overwhelmingly by people who could already see perfectly well
+    with glasses and preferred not to wear them, and it is not what the billion
+    people in this record are waiting for.
+    **`terms` therefore reads `clean`, and it is the truest `clean` in the
+    file.**
+  incidence:
+    value: 0.0
+    units: >
+      fraction-of-treated left with permanent harm by the treatment — zero, and
+      stated explicitly rather than omitted. Elective refractive surgery carries
+      a small permanent risk and is a different population from the one this
+      record is about
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    **THE PART OF THIS RECORD THAT IS NOT REVERSIBLE, AND IT HAPPENS TO
+    CHILDREN.**
+    AMBLYOPIA. A child whose refractive error goes uncorrected through the
+    critical period of visual development — broadly the first seven or eight
+    years — does not simply see blurred; the visual cortex fails to develop the
+    pathway at all. Correct it at twenty and the optics are fixed and **the
+    sight does not come back.** The lens works. The brain no longer does. This
+    is the same shape as `hearing-loss`'s untreated congenital deafness and it
+    is why both records live or die on childhood screening.
+    HIGH MYOPIA. The other permanent face, arriving decades later. A highly
+    myopic eye is a stretched eye: myopic macular degeneration, lacquer cracks,
+    choroidal neovascularisation, retinal detachment, and elevated glaucoma
+    risk. **Correction restores the focus and does nothing about the stretching**,
+    so the fastest-growing part of this record is the part spectacles cannot
+    answer.
+    Rated `major` rather than `catastrophic` because it is usually unilateral
+    amblyopia or a degree of myopic maculopathy rather than total blindness —
+    but for the affected child it is a permanent, preventable loss caused by
+    nobody looking.
+  incidence:
+    value: 0.03
+    units: >
+      fraction-of-affected left with permanent loss — chiefly childhood
+      amblyopia, plus myopic maculopathy in the high-myopia tail — a reasoned
+      estimate over the whole affected population, most of whom simply cannot
+      see well until somebody hands them glasses
+    src: reasoning
+
+window:
+  what: >
+    **TWO WINDOWS, AND ONLY ONE OF THEM IS USUALLY NOTICED.**
+    THE AMBLYOPIA WINDOW closes at around seven or eight years of age and it
+    closes absolutely. Before it, correcting the refraction lets the visual
+    pathway develop normally and the child ends up with normal sight. After it,
+    the same pair of glasses arrives too late — the eye is corrected and the
+    vision is not. **A screening test that would have taken two minutes, missed
+    once in childhood, costs a person half their visual system for eighty
+    years.**
+    THE MYOPIA-CONTROL WINDOW is childhood and adolescence, while the eye is
+    still elongating. Low-dose atropine, specialised spectacle lens designs,
+    orthokeratology and daily time outdoors all slow progression by meaningful
+    fractions. **Every dioptre not accumulated is a permanent reduction in
+    lifetime risk of myopic maculopathy and detachment**, so this window's
+    payoff arrives fifty years later and is therefore never funded.
+    **AND THE PRESBYOPIA "WINDOW" IS NOT A WINDOW AT ALL, WHICH IS WHY IT IS THE
+    LARGEST AND MOST IGNORED PART OF THE RECORD.** Reading glasses work equally
+    well at forty-five and at seventy-five. Nothing is lost by delay except the
+    thirty years in between — during which people leave skilled work they can no
+    longer see to do. Trials handing reading glasses to workers in South Asia
+    have measured increases in productivity and earnings large enough that the
+    intervention pays for itself many times over. **There is no clock forcing
+    anyone to act, so nobody does.**
+  closes_on: >
+    for amblyopia, maturation of the visual cortex at around seven to eight
+    years — after which correction restores focus but not sight; for myopia
+    control, the end of axial elongation in late adolescence
+  caught_in_time:
+    value: 0.3
+    units: >
+      fraction-of-children whose refractive error is identified and corrected
+      before the amblyopia window closes — a reasoned estimate; high where
+      school vision screening exists and near zero where it does not
+    src: reasoning
+
+witness:
+  mechanism: >
+    `established`, and this is the only record in the register where the
+    mechanism is **physics rather than biology**. The eye is an optical system.
+    If its axial length and the combined power of cornea and lens do not match,
+    the image forms in front of or behind the retina and is blurred. Myopia is a
+    long eye, hyperopia a short one, astigmatism an unequal meridian,
+    presbyopia the age-related loss of the crystalline lens's ability to change
+    shape. All four are measurable, all four are correctable by a lens computed
+    directly from the measurement.
+    ONE GENUINE HOLE, AND IT IS GETTING LARGER. **Nobody fully understands why
+    myopia is exploding.** The strongest evidence points at time outdoors —
+    bright light appears to slow axial elongation, plausibly through retinal
+    dopamine — with near-work and education as correlated but weaker
+    contributors. School-based interventions adding outdoor time have reduced
+    incidence in trials. That is enough to act on and not enough to explain a
+    generational shift of this size, and it means the register cannot say
+    whether the myopia epidemic is preventable in principle.
+  intervention: >
+    `suppressive`, rated for consistency with `hearing-loss` and against some
+    resistance.
+    A device that corrects while worn and stops correcting when removed is the
+    same object as a hearing aid: near-normal function, indefinitely, on
+    condition of continuous use. The register rates that `suppressive` and
+    should do so here. Refractive surgery genuinely is `curative` for a subset,
+    and it is elective, expensive and irrelevant to the population this record
+    is about.
+    **THE UNCOMFORTABLE PART OF THE RATING IS THAT `suppressive` SOUNDS LIKE
+    HIV OR TYPE 1 DIABETES, AND THIS IS A PAIR OF GLASSES.** The rung describes
+    the *shape* of the intervention and not its burden; `ongoing: low` is what
+    carries the difference. If a reader takes `suppressive` here to mean
+    something onerous, the schema has misled them, and that is worth knowing —
+    it is the same compression `gaps.md` records about `efficacy`.
+    What does not exist, and is the real gap: **anything that reverses axial
+    elongation.** Myopia control slows it. Nothing shortens an eye.
+  prevention: >
+    `risk-reduction`, resting almost entirely on one finding: **children who
+    spend more time outdoors become myopic less often.** School-based trials
+    adding roughly forty minutes to two hours of daily outdoor time have
+    reduced incidence, and Taiwan's national school outdoor policy is the
+    clearest population-level instance. The effect is on *onset* more than on
+    progression once started.
+    Beyond that, low-dose atropine, defocus-incorporated spectacle lenses,
+    orthokeratology and specialised soft contact lenses all slow progression by
+    meaningful fractions in trials. They are prevention of the *high-myopia
+    complications* rather than of the refractive error, which is a distinction
+    the axis cannot express.
+    Nothing whatever prevents hyperopia, astigmatism or presbyopia. Presbyopia
+    is not a disease in any useful sense — **it is what happens to every human
+    lens**, and the register is recording a universal ageing process as a
+    condition because a billion people are impaired by it and the fix costs two
+    dollars.
+  ongoing: >
+    `low`, and genuinely so. A pair of spectacles lasts years; children need
+    updating as they grow; adults need a new prescription every few years and a
+    second pair when presbyopia arrives. There is no monitoring, no toxicity, no
+    adherence problem in any medical sense — people wear glasses because
+    the alternative is not seeing.
+    The one real ongoing cost is **replacement in settings where a broken pair
+    cannot be replaced**, which converts a solved problem back into an unsolved
+    one and is a distribution question rather than a clinical one.
+
+holes:
+  - >
+    **THE ANGER IN THIS FILE IS DOING WORK AND SHOULD BE WATCHED.** The facts —
+    largest treatable cause of vision impairment, seven-hundred-year-old fix,
+    highest efficacy in the register, coverage around a third — are individually
+    defensible and collectively rhetorical. **A record that reads as an
+    indictment is a record that has stopped investigating**, and the register's
+    own rule about not drifting into advocacy applies here more than anywhere
+    else in the corpus. The counter-case is stated in the blockers: refraction
+    is a *skill*, not a product, and skills are the hardest thing in this
+    register to distribute.
+  - >
+    **THE PREVALENCE FIGURE COMBINES TWO VERY DIFFERENT THINGS AND MAY NOT
+    SURVIVE SCRUTINY.** Roughly 120 million with distance impairment and 800-plus
+    million with uncorrected presbyopia are added into one number here. A
+    50-year-old who cannot read a menu and a child who cannot see the board are
+    both counted, and their impairments are not comparable. **A future pass
+    should probably split this record into distance and near**, which would also
+    let the two get different `access` figures, since near-vision coverage is far
+    worse.
+  - >
+    **`efficacy: 0.98` IS THE HIGHEST VALUE IN THE REGISTER AND IT IS ARGUABLY
+    A CATEGORY ERROR.** Every other efficacy figure describes altering the
+    course of a disease process. This one describes the instantaneous optical
+    correction of a refractive state. They are not the same kind of number and
+    the axis silently treats them as comparable — the same objection `gaps.md`
+    logs about `efficacy` throughout, appearing here in its sharpest form.
+  - >
+    **THE MYOPIA EPIDEMIC MAY DESERVE ITS OWN RECORD.** Uncorrected refractive
+    error is a delivery failure with nothing unknown in it. Rising myopia
+    incidence is an unexplained generational change in a biological parameter,
+    with a growing blinding tail that spectacles do not address. Rating them
+    together produces a `mechanism: established` that is true of the optics and
+    false of the epidemic.
+  - >
+    **THE ECONOMIC EVIDENCE IS QUOTED FROM RECALL AND IS THE MOST PERSUASIVE
+    THING HERE.** Trials distributing reading glasses to presbyopic workers in
+    South Asia reported measurable increases in productivity and earnings. If
+    that result holds, this is among the highest-return interventions in global
+    health and the case for it is economic rather than medical. It is stated
+    here without citation and it should not be repeated outside this file until
+    it is sourced.
+  - >
+    Written from model recall. The mechanism, the amblyopia critical period, the
+    outdoor-time finding and the direction of the myopia trend are the parts
+    most likely right; every number is the part most likely wrong.
+
+blockers:
+  - kind: logistics
+    blocks: somebody able to perform a refraction, within reach
+    what: >
+      **THE BINDING CONSTRAINT IS A SKILL, NOT A PRODUCT, AND THAT IS THE WHOLE
+      DIFFICULTY.** Spectacles are manufactured in enormous quantity and cost
+      almost nothing; what is scarce is a person who can measure an eye and
+      dispense the right lens. Optometrist density across much of sub-Saharan
+      Africa runs at one or two per million people, against something like one
+      per ten thousand in high-income countries — a difference of two orders of
+      magnitude.
+      **THIS IS WHY THE PROBLEM HAS OUTLIVED ITS SOLUTION FOR SEVEN CENTURIES.**
+      A vaccine can be shipped; a refraction cannot. The answers that work are
+      task-shifting to trained non-specialists, autorefractors that reduce the
+      skill required, school-based programmes, and adjustable-focus spectacles
+      the wearer tunes themselves. All are demonstrated and none is deployed at
+      the scale of the need.
+      Priced as a workforce and distribution programme, which is what it is.
+    who_could: [health-system, government, nonprofit, philanthropy, manufacturer]
+    scale: 5.0e9
+    standing: documented
+    src: recall
+
+  - kind: policy
+    blocks: finding the children before the window shuts
+    what: >
+      **SCHOOL VISION SCREENING IS THE CHEAPEST INTERVENTION IN THIS REGISTER
+      AND MOST OF THE WORLD'S CHILDREN DO NOT RECEIVE IT.** A vision chart on a
+      wall and a teacher trained for an afternoon identifies most children who
+      need referral. Where it runs, amblyopia is caught inside the critical
+      period and myopic children get corrected before they fall behind at
+      school. Where it does not, the first anybody knows is a child who cannot
+      read the board and is recorded as struggling.
+      The failure is not cost or evidence. It is that vision screening belongs
+      to education ministries and eye care belongs to health ministries, and the
+      referral has to cross between them and then reach a refractionist who does
+      not exist. **The same cross-ministry failure `schistosomiasis` records for
+      water and sanitation**, at a fraction of the price.
+    who_could: [government, health-system, legislator, nonprofit]
+    scale: 5.0e8
+    standing: documented
+    src: recall
+
+  - kind: cost
+    blocks: two dollars, which is the point
+    what: >
+      Spectacles are cheap in absolute terms and are not free, and for a
+      household at subsistence a pair of glasses competes with food. Add
+      transport to a clinic that may be a day away, a lost day of work, and
+      replacement when a pair breaks or is lost — the recurring cost is a larger
+      barrier than the initial one, and a broken pair returns the person to
+      exactly where they started.
+      **RECORDED AS `documented` AND DELIBERATELY NOT PRICED AS THE BINDING
+      CONSTRAINT.** Programmes distributing free spectacles reach people and
+      then run out of refractionists; the money is not the scarce thing, which
+      is the blocker above. This entry exists so the register does not record a
+      distribution problem as a pure workforce problem and forget the household
+      that cannot pay.
+    who_could: [government, payer, nonprofit, philanthropy]
+    scale: 2.0e9
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    obstacles: [who-progresses]
+    blocks: knowing which child is heading for a blinding eye
+    what: >
+      The only genuinely open question in this record, and it belongs to the
+      myopia half. Two things are unknown: **why incidence is rising this fast**
+      — outdoor light and near work are implicated and neither fully accounts
+      for a shift of this size — and **which myopic child will progress to the
+      high myopia that damages the eye itself.**
+      The second is a direct instance of `who-progresses` (FND-O-0001). Myopia
+      control interventions exist and carry cost, inconvenience and in
+      atropine's case a drug given to a child for years; **they are worth it for
+      the children heading for maculopathy and not obviously worth it for the
+      rest, and nothing separates them.** `scale: null` — this is a mechanism
+      question, not a purchasable one.
+    who_could: [academic, nonprofit, sponsor]
+    scale: null
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0134
+  rated: 2026-09-01
+  by: [claude, jeremy]

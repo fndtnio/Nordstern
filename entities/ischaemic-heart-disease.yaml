@@ -1,0 +1,447 @@
+slug: ischaemic-heart-disease
+id: FND-D-0042
+name: ischaemic heart disease
+also: [coronary artery disease, coronary heart disease, ischemic heart disease, atherosclerotic cardiovascular disease, CAD, coronary artery disorder]
+
+# MONDO:0005010 IS `coronary artery disorder`, NOT "ischaemic heart disease" —
+# accepted by hand, never by auto-match, because the labels do not agree.
+# Its exact synonyms include `coronary artery disease`, `coronary heart disease`
+# and `CAD`, and its definition is atherosclerotic narrowing of the coronary
+# arteries with diagnostic criteria that include prior infarction. That is this
+# entity.
+# The near-miss `MONDO:0024644 myocardial ischemia` was rejected: that is the
+# physiological state the disease causes, not the disease.
+# WORTH NOTING FOR THE BURDEN BRIDGE — GBD calls this cause "ischaemic heart
+# disease" and Mondo calls the entity "coronary artery disorder". The mortality
+# data and the ontology do not share a name, which is exactly the join the
+# register needs and exactly where it is fragile.
+common: coronary heart disease
+mondo: MONDO:0005010
+kind: disease
+residual: false
+contested: false
+
+# THE LARGEST CAUSE OF DEATH ON EARTH, AND THE REGISTER FILES IT UNDER
+# "ENGINEERING PROBLEM" — understood, and nothing can be done.
+#
+# Roughly nine million deaths a year. And the age-standardised death rate in
+# high-income countries has fallen by more than half since about 1980 — statins,
+# blood-pressure control, smoking cessation, coronary care units, and opening the
+# artery in time. That is, by a wide margin, the largest public-health victory in
+# anything this register contains.
+#
+# It is invisible here, twice over:
+#
+# 1. `intervention: disease-modifying` is binned with `symptomatic` and `none` by
+#    the `quadrant` derivation, which treats only `suppressive` and `curative` as
+#    "fixable". So a therapy that halved mortality reads as no capability at all.
+#    See gaps.md #89. This is NOT gap #66 — that one is about prevention being
+#    ignored; this is about the treatment axis itself.
+#
+# 2. The register has no memory before its own first pass. It records a position,
+#    not a trajectory, and the whole point of a north star is the second reading.
+#    IHD arrives with fifty years of trajectory that cannot be written down.
+#    See gaps.md #91.
+#
+# And a third thing this record breaks: WHO COUNTS AS A PATIENT IS A THRESHOLD
+# SOMEBODY CHOSE. Atherosclerosis is a continuum starting in adolescence, and
+# where "risk factor" becomes "disease" is a number in a guideline. `efficacy`
+# and `access` are both fractions-of-patients, so both denominators move when a
+# committee votes. See gaps.md #90.
+
+burden:
+  prevalence:
+    value: 2.0e8
+    units: >
+      people living with diagnosed ischaemic heart disease — and the figure is
+      soft at the bottom end for the reason in gaps.md #90: subclinical coronary
+      atherosclerosis is close to universal with age, so the count depends
+      entirely on where the line is drawn
+    src: recall
+  deaths:
+    value: 9.0e6
+    units: >
+      deaths/year — the single largest cause of death worldwide, and roughly
+      two and a half times the total of every other record in this register
+      combined
+    src: recall
+  note: >
+    BY ADDING THIS ONE RECORD THE REGISTER ROUGHLY TRIPLES THE MORTALITY IT
+    ACCOUNTS FOR. Forty-one previous records summed to about 3.5 million deaths a
+    year; this is nine million on its own.
+    That ratio is the finding, and it is about the corpus rather than the
+    disease. The register worked through the twenty-one WHO neglected tropical
+    diseases because somebody else had already drawn a boundary around each one.
+    Nothing hands you the diseases that kill the most people as a list of
+    entities in the same way, so they were not added. **Enumerability, not
+    burden, has been selecting the corpus.**
+    Most of these deaths are now in low- and middle-income countries, which is
+    where the interventions that produced the high-income decline are least
+    available. The disease has not moved; the treatment has not travelled.
+
+survival:
+  horizon: 5 years from a first myocardial infarction
+  untreated:
+    value: 0.50
+    units: >
+      fraction alive — the pre-thrombolytic natural history, in which roughly a
+      third of infarcts were fatal within a month and survivors carried a heavily
+      damaged ventricle with no secondary prevention
+    src: recall
+  treated:
+    value: 0.85
+    units: >
+      fraction alive with reperfusion and full secondary prevention — statin,
+      antiplatelet, beta-blocker, ACE inhibitor, and revascularisation where
+      indicated. **A compound of six or seven separate interventions, none of
+      which is dramatic alone**, which is why no single trial in this record looks
+      like penicillin and the cumulative effect is among the largest in medicine
+    src: reasoning
+  witness: >
+    **The register's biggest killer is also one of its biggest successes, and the
+    two facts are the same fact.** Age-standardised mortality from ischaemic
+    heart disease has fallen by more than half in high-income countries since the
+    1970s while the absolute death count rose, because populations aged and grew.
+    A dashboard reporting deaths ranks this first; one reporting survival ranks
+    it near the top of what medicine has actually achieved.
+    **And the survivors are the input to `heart-failure`.** Converting fatal
+    infarcts into damaged ventricles is a genuine victory that manufactures a
+    second disease, which is why that record's prevalence is rising.
+
+axes:
+  mechanism: established
+  intervention: disease-modifying
+  prevention: risk-reduction
+  ongoing: moderate
+  efficacy:
+    value: 0.75
+    units: >
+      fraction-of-patients (LDL and blood-pressure targets achieved on tolerated
+      therapy, with the proportional risk reduction that follows) — NOT a cure
+      rate. The drugs work pharmacologically in nearly everyone; the disease
+      still progresses, which is why the rung is `disease-modifying`
+    src: reasoning
+  access:
+    value: 0.40
+    units: >
+      fraction-of-patients (receiving and continuing proven secondary
+      prevention) — a global figure, and it is dragged down from both ends: use
+      of proven drugs is low across much of the world, and in the richest
+      systems roughly half of patients have stopped taking them within a year or
+      two
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: partial
+  witness: >
+    DIAGNOSTIC is `objective` and unusually strong. High-sensitivity troponin
+    identifies myocardial injury within hours; ECG separates STEMI from
+    everything else in minutes; coronary CT angiography and invasive angiography
+    show the anatomy directly; coronary calcium scoring quantifies subclinical
+    disease before any symptom.
+    The hole is not sensitivity, it is **what the test is a test of**. See below.
+    PROGNOSTIC is `partial`, and the split is the sharpest in this register.
+    At the POPULATION level, risk prediction genuinely works: pooled-cohort and
+    SCORE-type equations estimate ten-year risk well enough to decide whom to
+    treat, and that decision has saved an enormous number of lives.
+    At the INDIVIDUAL level it barely exists. Nobody can say which coronary
+    plaque in a given person will rupture, or when. A large share of myocardial
+    infarctions occur in people who would have been classified low or
+    intermediate risk the week before, and the first symptom of coronary disease
+    is sudden death in a substantial minority.
+    PREDICTIVE is `partial`. Lipid-lowering works proportionally to the LDL
+    reduction achieved in essentially everyone, so for the drugs there is little
+    selection question. For REVASCULARISATION there is a large one and it is
+    imperfectly answered: in stable disease, opening a stenosis relieves angina
+    and does not clearly reduce death or infarction, yet the procedure is done in
+    very large numbers. Selecting who benefits is exactly the unsolved half.
+    **AND THE DEEPEST MEASUREMENT PROBLEM IN THIS RECORD IS NOT ON ANY OF THE
+    THREE AXES.** The lesion you can see is not usually the lesion that kills
+    you. A tight stenosis causes angina and can be stented; most infarctions
+    arise from rupture of a plaque that was *not* flow-limiting and would not
+    have been treated. The diagnostic target and the causal target are different
+    objects — which is why an era of stenting stable disease produced enormous
+    procedural volume and little mortality benefit, and why a cheap generic
+    tablet outperformed it. See gaps.md #92.
+
+toll:
+  severity: minor
+  permanent: true
+  what: >
+    THE BIGGEST KILLER ON EARTH HAS ONE OF THE GENTLEST TREATMENT TOLLS IN THIS
+    REGISTER, and that is worth stating plainly because it is not what anyone
+    expects. The modal treated patient takes a handful of generic tablets —
+    a statin, an antiplatelet, an ACE inhibitor or ARB, a beta blocker — which
+    cost very little and whose common side effects are reversible on stopping.
+    Muscle aching with statins is common and largely reversible; serious muscle
+    injury is rare.
+    The permanent tail is real but small relative to the treated population.
+    Antiplatelet and anticoagulant therapy causes bleeding, and intracranial
+    haemorrhage is permanent when it happens. Percutaneous intervention carries a
+    small risk of stroke, of contrast injury to the kidneys, and of the very
+    complications it is meant to prevent. Bypass surgery is a much larger event —
+    sternotomy, a vein harvested from the leg, a measurable stroke risk, and
+    chronic wound pain in some — but it is a minority of treatment episodes.
+    Rated `minor` because the record-level toll should describe the modal treated
+    patient, and that patient's price is a daily pill.
+    **So `terms` reads `clean`, and it should.** What is brutal about this
+    disease is the disease. See `residue`.
+  incidence:
+    value: 0.03
+    units: >
+      fraction-of-treated (permanent harm attributable to treatment — major
+      bleeding, procedural stroke, contrast nephropathy, surgical sequelae)
+      — a reasoned estimate across the whole treated population
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    **MYOCARDIUM DOES NOT REGENERATE.** An infarct kills heart muscle in
+    proportion to how long the artery stayed shut, and what heals is scar.
+    A person can be treated perfectly, survive, take every tablet, and carry the
+    infarct for the rest of their life. What follows in a substantial minority is
+    ischaemic cardiomyopathy: a reduced ejection fraction, breathlessness on
+    exertion, fluid overload, exercise limitation, repeated admissions, and a
+    life expectancy shortened by the heart failure rather than by the coronary
+    disease that caused it. Scar is also arrhythmogenic — ventricular
+    tachycardia, and for some an implanted defibrillator.
+    This is the tuberculosis shape and the register derives it the same way:
+    `restored: disease-residue`. The treatment cost almost nothing and the
+    disease had already taken something permanent before the treatment arrived.
+    **And it is the direct price of the window below.** Every minute the artery
+    is occluded converts salvageable muscle into scar, which is why the residue
+    and the window are the same fact seen from two ends.
+  incidence:
+    value: 0.25
+    units: >
+      fraction-of-infarct-survivors (clinically significant left ventricular
+      dysfunction or heart failure) — a reasoned estimate, and strongly
+      dependent on how quickly the artery was opened
+    src: reasoning
+
+window:
+  what: >
+    **TIME IS MUSCLE**, and it is the most literal window in this register.
+    When a coronary artery occludes, myocardial necrosis begins within
+    twenty to thirty minutes and advances as a wavefront from the inner wall
+    outward. Opening the artery within the first hour or two salvages most of
+    the territory. By six to twelve hours of complete occlusion there is
+    substantially less left to save, and reperfusion is largely about preventing
+    the next event rather than rescuing this one.
+    Health systems are built around this and the metrics are unusually explicit —
+    door-to-balloon and first-medical-contact-to-device times measured in
+    minutes, STEMI networks that bypass the nearest hospital to reach a
+    catheterisation laboratory, pre-hospital ECG transmission from the ambulance.
+    **Nothing else in this register has been engineered against its window this
+    hard**, which is itself the finding: where a window is taken seriously, this
+    is what taking it seriously looks like.
+    And the cost of missing it is paid entirely in `residue` — scar, not
+    treatment harm. Second instance of the shape schistosomiasis forced the
+    derivation to read (gaps.md, #59-adjacent), and this one at nine million
+    deaths a year.
+  closes_on: >
+    irreversible myocardial necrosis, advancing from the first half hour of
+    occlusion and largely complete by six to twelve hours
+  caught_in_time:
+    value: 0.35
+    units: >
+      fraction-of-infarcts (reperfused within a window that salvages meaningful
+      myocardium) — a global reasoned estimate. In systems with mature STEMI
+      networks it is far higher; across most of the world there is no
+      catheterisation laboratory within reach at any hour
+    src: reasoning
+
+# NO `strata` BLOCK, DELIBERATELY, AND THE REASON IS A FINDING.
+#
+# The obvious sub-populations are stable coronary disease, acute coronary
+# syndrome, and post-infarct ischaemic cardiomyopathy — and they are PHASES OF
+# ONE PERSON'S COURSE, not a partition of a population. A patient is stable,
+# then infarcts, then has a damaged ventricle. `strata` requires `fraction:`
+# values summing to 1, which assumes disjoint buckets that do not refill from
+# each other; breast cancer's stages are diagnosed as one or the other.
+#
+# The other tempting split — STEMI reaching a catheterisation laboratory within
+# ninety minutes versus STEMI reaching nothing at all — is explicitly ruled out
+# by SCHEMA.md: strata are not access tiers. That is the right rule and it
+# means the most consequential division in this disease has nowhere to go
+# except the `access` scalar, which flattens it to one number.
+
+witness:
+  mechanism: >
+    `established`, and this may be the best-supported causal chain in the
+    register.
+    ApoB-containing lipoproteins enter and are retained in the arterial intima;
+    retained lipid is modified and provokes a chronic inflammatory response;
+    plaque accumulates over decades; a plaque's fibrous cap becomes thin and
+    inflamed; the cap ruptures or erodes; thrombus forms on the exposed core; the
+    artery occludes; myocardium distal to the occlusion dies.
+    What makes it `established` rather than merely well-supported is that the
+    causal step has been tested from several independent directions that agree.
+    Randomised trials of drugs lowering LDL by entirely different mechanisms —
+    statins, ezetimibe, PCSK9 inhibitors — reduce events roughly in proportion to
+    the LDL reduction achieved and not to the mechanism used. Human genetic
+    variants that lower LDL lifelong lower coronary risk correspondingly, and
+    variants that raise it raise risk. Dose-response, temporality, and
+    reversibility all point the same way.
+    **THE NAMED HOLE IS RESIDUAL RISK.** Drive LDL very low and a large fraction
+    of events still occur. Inflammation is part of the remainder — targeting
+    interleukin-1β reduced events independently of lipids, which was the proof of
+    principle. Lipoprotein(a) is largely genetically determined, is not lowered
+    by existing therapy, and outcome trials of agents that do lower it are
+    ongoing. And nothing explains why a particular plaque, in a particular
+    person, ruptures on a particular morning.
+  intervention: >
+    `disease-modifying`, and the rating turns on one distinction that the ladder
+    exists to make.
+    `suppressive` means the pathological process is HELD — antiretroviral
+    therapy suppresses HIV replication, and the person lives a near-normal
+    lifespan while treated. Nothing in coronary disease does that. Statins slow
+    the accumulation of plaque; they do not stop it and they do not clear it.
+    Antiplatelet therapy makes thrombosis on a ruptured cap less likely; it does
+    not prevent the rupture. Revascularisation restores flow past one lesion and
+    leaves the disease untouched everywhere else.
+    **The process is slowed, not stopped. That is the definition of the rung.**
+    But read the rung against what it has achieved, because the ladder makes it
+    look like less than it is. Combined secondary prevention reduces recurrent
+    events substantially; primary percutaneous intervention took in-hospital
+    mortality for a large infarct from roughly a third to a few percent over
+    several decades; and the age-standardised coronary death rate in high-income
+    countries has more than halved since about 1980.
+    `disease-modifying` is the honest rung and `engineering problem` is the wrong
+    quadrant, and the gap between those two statements is gaps.md #89.
+  prevention: >
+    `risk-reduction`, and this is where most of the victory actually lives —
+    which is why `capability()` ignoring the prevention axis (gaps.md #66) costs
+    more on this record than on any other.
+    Smoking cessation, blood-pressure control, lipid lowering in people who have
+    never had an event, diabetes control, physical activity, and diet. None of it
+    is exotic and all of it is cheap. Most of the high-income mortality decline
+    is attributable to these plus acute care, and the largest single contributor
+    is probably the collapse in smoking.
+    **AND ALMOST NONE OF IT IS SPECIFIC TO THIS DISEASE.** Stopping smoking
+    prevents ischaemic heart disease and lung cancer and chronic obstructive
+    pulmonary disease and stroke and bladder cancer. Blood-pressure control
+    prevents coronary events and strokes and kidney failure and dementia. This is
+    gaps.md #87, forced by noma three records ago at the other end of the wealth
+    distribution — a child's nutrition and an adult's cigarettes are the same
+    schema problem, and between them they may be the two highest-value
+    interventions in the history of public health.
+  ongoing: >
+    `moderate`. A few generic tablets daily for life, periodic lipid and
+    blood-pressure monitoring, and the sustained behavioural work — not smoking,
+    exercising, eating differently — which is the part people actually find hard
+    and the part no prescription delivers.
+    The adherence figure inside `access` belongs here as much as there: roughly
+    half of patients have stopped their statin within a year or two of starting
+    it, in health systems where the drug is free at the point of use. That is not
+    an access problem and not an efficacy problem, and the register has only the
+    `adherence` blocker kind to hold it — used by two records before this one.
+
+holes:
+  - Every scalar here is `src: recall` or `src: reasoning`. The deaths figure is
+    the most load-bearing number in the register and it must be sourced before
+    anything is published, because this single record dominates any
+    burden-weighted view.
+  - `efficacy: 0.75` is a construct rather than a measurement. There is no
+    natural "fraction of patients in whom treatment works" for a therapy that
+    shifts a risk distribution rather than curing individuals, and the number
+    chosen here reflects target attainment, not lives saved. A different
+    defensible reading would give a very different figure.
+  - The residue incidence depends heavily on reperfusion timing and on the
+    definition of clinically significant ventricular dysfunction, and the
+    estimate here is not tied to either.
+  - Whether ischaemic heart disease and stroke should be one record or two is
+    unresolved. They share most of their mechanism, most of their risk factors
+    and most of their prevention, and they differ completely in residue. Stroke
+    is roughly 6.6 million further deaths a year and is not in this register.
+  - Ischaemia and infarction with non-obstructive coronary arteries —
+    disproportionately affecting women, historically dismissed, and with much
+    less to offer therapeutically — is a genuine parallel population that this
+    record flattens into its averages.
+
+blockers:
+  - kind: logistics
+    blocks: getting proven, cheap secondary prevention to the people who have the disease
+    what: >
+      THE BINDING CONSTRAINT, AND IT IS NOT A SCIENTIFIC ONE. Statins, aspirin,
+      ACE inhibitors, beta blockers and antihypertensives are all generic, all
+      cheap, and all have been off patent for years. Use of them among people
+      with established cardiovascular disease is low across much of the world,
+      and it is lowest where the deaths now are.
+      This is the largest gap in this register between what is known to work and
+      what is being delivered, measured in lives. Fixed-dose combination therapy
+      — several proven drugs in one tablet, taken once — exists, simplifies both
+      supply and adherence, and is not the default anywhere.
+      Recorded at a very large scale because the population is hundreds of
+      millions; the per-patient cost is a few tens of dollars a year, which is
+      what makes the arithmetic so unfavourable to the current situation.
+    who_could: [health-system, government, manufacturer, nonprofit, philanthropy]
+    scale: 1.0e10
+    standing: documented
+    src: recall
+
+  - kind: adherence
+    blocks: patients continuing therapy that is working and that they cannot feel working
+    what: >
+      Roughly half of people prescribed a statin have stopped within a year or
+      two, including where the drug is free. The therapy prevents an event that
+      would not have happened on any particular day, so there is no felt benefit
+      to reinforce taking it, and any side effect is felt immediately and
+      attributed correctly or otherwise.
+      **This is a therapy failing at the last centimetre**, and it is neither an
+      efficacy problem nor an access problem — the register's two scalars cannot
+      express it, and it is folded into `access` above for want of anywhere else.
+      Third record in the corpus to use the `adherence` kind, and much the
+      largest by population.
+    who_could: [health-system, academic, manufacturer, government]
+    scale: 5.0e8
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    obstacles: [who-progresses, tissue-repair]
+    blocks: predicting which plaque will rupture, and closing residual risk
+    what: >
+      Two absences and they are the two halves of what is left after lipids.
+      NOBODY CAN SAY WHICH PLAQUE WILL RUPTURE OR WHEN. Population risk equations
+      work and individual event prediction does not, and a large share of
+      infarctions occur in people who were not classified high risk. An
+      individual-level predictor would convert a disease that is currently
+      managed by treating whole risk strata into one that can be aimed, which is
+      also the only clean way out of the threshold problem in gaps.md #90.
+      AND RESIDUAL RISK IS LARGE. With LDL driven very low, substantial event
+      rates remain. Inflammation is demonstrably part of it and the first proof
+      of principle came at a cost and toxicity that made it impractical.
+      Lipoprotein(a) affects a large minority, is genetically set, and has no
+      approved therapy yet.
+      `scale: null` — this is the part money cannot simply be applied to.
+    who_could: [academic, sponsor, manufacturer, philanthropy, government]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: policy
+    blocks: the interventions that did most of the work, none of which are medical
+    what: >
+      Tobacco control, dietary policy, air quality, and the built environment did
+      more for coronary mortality than any drug, and none of them are prescribed.
+      They are legislation, taxation, and planning — slow, contested, opposed by
+      well-resourced interests, and impossible to charge to this record because
+      each of them prevents half a dozen diseases at once (gaps.md #87).
+      Air pollution deserves naming separately: it is a substantial contributor
+      to cardiovascular mortality, it is regulated by environment ministries
+      rather than health ministries, and the health benefit is rarely counted
+      when the regulation is costed.
+    who_could: [government, legislator, health-system, nonprofit]
+    scale: 1.0e10
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0042
+  rated: 2026-08-23
+  by: [claude, jeremy]

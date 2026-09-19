@@ -1,0 +1,355 @@
+slug: rabies
+id: FND-D-0037
+name: rabies
+also: [hydrophobia, lyssavirus infection, dog-mediated rabies]
+mondo: MONDO:0019173
+kind: disease
+residual: false
+contested: false
+
+# ~100% PREVENTABLE. ~100% FATAL. THE REGISTER SAYS `unsolved`.
+#
+# Rabies has no treatment. Once symptoms appear the case fatality is essentially
+# total, and the therapeutic coma protocol that briefly promised otherwise is not
+# recommended. So `intervention: none`, so `capability: unsolved`, so the
+# quadrant reads `engineering problem` — the same cell as Huntington's disease
+# and dengue.
+#
+# It is also one of the most preventable diseases in existence. Post-exposure
+# prophylaxis given during the incubation period is close to perfectly effective;
+# vaccinating 70% of a dog population interrupts transmission entirely; western
+# Europe and most of the Americas have eliminated dog-mediated human rabies
+# outright. All of that lives on `prevention`, which is one enum word that does
+# not feed capability. This is gaps.md #66 at maximum severity: nowhere else is
+# the distance between what is possible and what the register records so large.
+#
+# TWO THINGS IT ADDS.
+#
+# 1. THE DECISIVE QUESTION HAS NO TEST, AND IS NOT ABOUT THE PATIENT. What saves
+#    a life here is answering "was I exposed?" — a question about an animal, in
+#    the past, that has usually run away. The measurement axes rate the diagnosis
+#    of symptomatic rabies, which is confirmable and changes nothing. gaps.md #80.
+#
+# 2. THE EXPENSIVE STOPGAP CONSUMES THE CHEAP CURE'S BUDGET. Human prophylaxis
+#    costs tens of dollars a course and must be given to millions who were never
+#    at risk; dog vaccination costs a dollar or two and ends the problem. You
+#    cannot stop paying for the first in order to fund the second, because the
+#    first is what keeps people alive meanwhile. gaps.md #81.
+
+burden:
+  deaths:
+    value: 5.9e4
+    units: >
+      deaths/year — around 99% from dog bites, roughly 40% in children under 15,
+      concentrated in Asia and Africa
+    src: recall
+  incidence:
+    value: 2.9e7
+    units: >
+      people receiving post-exposure prophylaxis/year — note the ratio to the
+      line above: the intervention is delivered to a population five hundred
+      times larger than the one that would have died
+    src: recall
+  note: >
+    THE FIRST DEATHS-DOMINANT RECORD IN THIS RUN OF NEGLECTED DISEASES, after
+    eleven where the burden was disability and mortality was near zero. Rabies
+    kills and disables nobody: there is no chronic phase, no residue and no
+    survivor.
+    It is also the record where the two populations in gaps.md #61 are furthest
+    apart. Twenty-nine million people receive prophylaxis a year; fifty-nine
+    thousand die. **Almost everyone treated was never going to develop the
+    disease**, and there is no way to know which of them would have.
+
+survival:
+  horizon: 30 days from the onset of symptoms
+  untreated:
+    value: 0.0
+    units: >
+      fraction alive — **the cleanest zero in the register.** Once encephalitic
+      rabies begins, essentially every recorded case has died
+    src: recall
+  treated:
+    value: 0.0
+    units: >
+      fraction alive on best available treatment. **There is no treatment.** A
+      handful of survivors exist in the literature and the protocol credited for
+      one of them has not been reproduced
+    src: recall
+  witness: >
+    **THE ONLY RECORD WHERE BOTH NUMBERS ARE ZERO, AND IT IS NOT A FAILURE OF
+    EFFORT.** Rabies is the register's purest `terminal`: essentially 100% lethal
+    once symptomatic, with the virus known since 1885. **And it is simultaneously
+    one of the most preventable diseases here** — post-exposure prophylaxis is
+    close to perfectly effective and vaccinating dogs ends transmission.
+    That combination is the argument for keeping `survival` separate from
+    `capability`. On this axis rabies is terminal; on the capability axis it is
+    `preventable`. **Both are true and they answer different questions** — *what
+    happens to me now* and *what could have stopped this*.
+
+axes:
+  mechanism: established
+  intervention: none
+  prevention: prophylaxis
+  ongoing: low
+  efficacy:
+    value: 0.0
+    units: >
+      fraction-of-patients (disease course altered once symptomatic) — NOTHING
+      DOES. This is one of very few diseases in medicine where that is literally
+      true, and it is the number that drives this record to `unsolved`
+    src: reasoning
+  access:
+    value: 0.0
+    units: fraction-of-patients (no course-altering treatment to access)
+    src: reasoning
+
+measurement:
+  diagnostic: clinical
+  prognostic: good
+  predictive: n/a
+  witness: >
+    READ THIS BLOCK AS A DEMONSTRATION THAT THE AXES ARE POINTED AT THE WRONG
+    PATIENT.
+    DIAGNOSTIC is `clinical`. In a living patient, rabies is diagnosed on an
+    exposure history and a pathognomonic syndrome — hydrophobia, aerophobia,
+    agitation progressing to paralysis and death. Antemortem tests exist (saliva
+    PCR, nuchal skin biopsy, corneal impression) and are insensitive enough that
+    a negative result excludes nothing. Definitive confirmation is
+    immunofluorescence on brain tissue, which is to say after the patient has
+    died.
+    PROGNOSTIC is `good`, and it is the purest example in this register of
+    excellent measurement buying nothing. Untreated symptomatic rabies is fatal
+    within days, in essentially every case, and knowing that changes no decision
+    that anyone can act on. Huntington's made this point with a genetic test
+    decades in advance; rabies makes it in a week.
+    PREDICTIVE is `n/a` on the Huntington's grounds — there is no course-altering
+    therapy whose response could be predicted.
+    AND THE DECISION THAT SAVES A LIFE IS NOT IN ANY OF THESE FIELDS. It is made
+    weeks earlier, by someone who has just been bitten, and it is: **was that dog
+    rabid?** No test answers it for the person who needs the answer. The animal
+    can be quarantined for ten days if it is owned and findable, or killed and
+    its brain examined — and in the settings where rabies kills, the dog has
+    usually gone. So prophylaxis is given on the possibility, to twenty-nine
+    million people a year, and the axis that would rate that question does not
+    exist. See gaps.md #80.
+
+toll:
+  severity: none
+  permanent: false
+  what: >
+    THE FIRST `none` IN THIS FIELD, and it is not good news. There is no
+    treatment for rabies, so there is no price for treatment. What is given to a
+    symptomatic patient is palliative sedation — comfort for someone who will die
+    within days, not management of a disease — which is why the intervention axis
+    reads `none` rather than `symptomatic`.
+    The toll that matters in this record belongs to the PREVENTION, and there is
+    no field for it. Modern cell-culture rabies vaccines are very safe. The
+    nerve-tissue vaccines they replaced — Semple, suckling mouse brain — caused
+    neuroparalytic complications at rates on the order of one in several hundred
+    to one in a couple of thousand, and were still in use in parts of Asia and
+    Africa into this century.
+    That is a large, real, historical collapse in the price of the intervention
+    that actually works, and it cannot be recorded. `moved` needs an axis, `toll`
+    is defined as what the CURE takes, and prevention has neither a toll nor an
+    efficacy field. See gaps.md #66 and #49.
+  incidence:
+    value: 0.0
+    units: fraction-of-treated (permanent harm) — there is no treatment
+    src: reasoning
+
+window:
+  what: >
+    THE MOST ABSOLUTE WINDOW IN THE REGISTER. Capability goes from approximately
+    one to approximately zero at a single moment, and the moment is the onset of
+    symptoms.
+    The virus travels from the wound along peripheral nerves to the central
+    nervous system, and while it is inside axons it is largely hidden from the
+    immune system. That journey is the incubation period — typically one to three
+    months, occasionally days, occasionally years, and shorter the closer the
+    bite is to the brain. Throughout it, a vaccine course started promptly, with
+    immunoglobulin infiltrated into the wound for severe exposures and the wound
+    washed properly, is close to perfectly protective.
+    From the first symptom, nothing works at all.
+    So this is a disease you can outrun with a vaccine AFTER being infected,
+    which is not true of anything else in this register, and the race is decided
+    by whether someone reaches a clinic that has the vaccine and the
+    immunoglobulin. Every one of the fifty-nine thousand annual deaths is a race
+    that was lost for logistical reasons.
+  closes_on: >
+    onset of symptoms — after which case fatality is essentially 100% and no
+    intervention alters it
+  caught_in_time:
+    value: 0.70
+    units: >
+      fraction-of-exposed (receiving adequate and timely post-exposure
+      prophylaxis) — a reasoned estimate; the twenty-nine million treated are
+      the numerator and the fifty-nine thousand dead are what the denominator
+      hides
+    src: reasoning
+
+witness:
+  mechanism: >
+    `established`, and one feature of it explains both why the disease is
+    untreatable and why prophylaxis works.
+    A lyssavirus enters through a bite, replicates locally, and travels **inside
+    peripheral axons** to the central nervous system. While it is in transit it is
+    largely shielded from the immune system, which is why infection produces no
+    symptoms and no immune response for weeks — and why a vaccine given during
+    that period can raise antibodies in time to meet the virus before it arrives.
+    Once the virus reaches the brain, encephalitis follows and is uniformly
+    fatal. Why nothing works at that point is understood in outline — the virus
+    is inside neurons, in an immunologically privileged compartment, and the
+    damage is functional rather than destructive enough to explain the syndrome —
+    and it has resisted every therapeutic approach tried.
+    Named holes: why incubation varies from days to years; whether any
+    post-symptomatic intervention could work; and the pathophysiology of the
+    syndrome itself, which is oddly out of proportion to the visible neuronal
+    damage.
+  intervention: >
+    `none`, and this register contains very few diseases where that word is
+    literally accurate. There is no antiviral, no immunotherapy and no supportive
+    strategy that alters the outcome. The therapeutic coma protocol reported from
+    Milwaukee in 2004 produced a handful of claimed survivors, failed to
+    replicate, and is not recommended.
+    Palliative sedation is offered and is comfort care for a dying person rather
+    than treatment of a disease, which is why this rates `none` and not
+    `symptomatic`. Rating it `symptomatic` would imply something is being
+    managed.
+    THAT SINGLE RATING PRODUCES `capability: unsolved` AND PUTS RABIES IN THE
+    SAME QUADRANT CELL AS HUNTINGTON'S DISEASE, for a disease that western Europe
+    and most of Latin America have eliminated from their human populations. The
+    derivation reads the intervention ladder and ignores prevention unless
+    prevention is `eradicated`. See gaps.md #66 — dengue raised it and rabies is
+    the reason to fix it.
+  prevention: >
+    `prophylaxis`, and everything of consequence in this record is on this line.
+    POST-EXPOSURE PROPHYLAXIS: wound washing, a course of cell-culture vaccine,
+    and rabies immunoglobulin infiltrated into the wound for category III
+    exposures. Given properly and promptly it is close to perfectly effective —
+    the most reliable prevention of a fatal disease anywhere in this register.
+    PRE-EXPOSURE VACCINATION for veterinarians, laboratory workers, travellers and
+    children in high-incidence settings.
+    DOG VACCINATION, which is the actual answer. Around 99% of human rabies is
+    dog-mediated, and sustained vaccination of about 70% of a dog population
+    interrupts transmission. Latin America's coordinated programme cut human
+    rabies deaths by more than 95% from the 1980s; western Europe eliminated
+    dog-mediated rabies entirely. The global target, **Zero by 30**, is zero human
+    deaths from dog-mediated rabies by 2030, and it is a veterinary programme
+    wearing a public health target.
+    So this axis is carrying: a near-perfect post-exposure intervention, a
+    pre-exposure vaccine, and a species-level intervention that ends the disease —
+    with no efficacy field, no coverage field, no toll field, and no bearing on
+    capability. Echinococcosis raised this (gaps.md #69) and predicted rabies as
+    the second record. It is.
+  ongoing: >
+    `low`. There is no chronic phase: either prophylaxis is given and there is
+    nothing further, or symptoms appear and the patient dies within days. The
+    only burden is the prophylaxis course itself — several vaccine doses over two
+    to four weeks, which for a rural patient means repeated journeys and is a
+    real reason courses go uncompleted.
+
+holes:
+  - Whether any intervention could work after symptom onset. Every attempt has
+    failed and the reason is understood only in outline.
+  - Why incubation varies from days to years. It determines how much time
+    prophylaxis has and nothing predicts it for an individual.
+  - How many of the twenty-nine million people given prophylaxis each year were
+    genuinely exposed. Nobody knows, because the question is about an animal that
+    is usually gone, and the number bounds how much of that spending is
+    avoidable.
+  - How the true death toll compares to the commonly cited figure. Rabies deaths
+    in rural Asia and Africa frequently occur at home and are not recorded; the
+    59,000 figure is modelled.
+  - Written from model recall. The axonal transport mechanism, the ~100%
+    prophylaxis efficacy, the 70% dog vaccination threshold and the Zero by 30
+    target are the parts most likely right; every number is the part most likely
+    wrong.
+
+blockers:
+  - kind: cost
+    blocks: prophylaxis reaching the people who were actually bitten
+    what: >
+      This is where the fifty-nine thousand deaths are, and the shape of it is
+      unusual enough to state carefully.
+      A full post-exposure course costs on the order of tens of dollars where the
+      patients earn a few dollars a day, and rabies immunoglobulin — needed for
+      severe exposures and the component that does the most for the worst bites —
+      is scarce, expensive and frequently simply unavailable. Out-of-pocket
+      payment for a bite is a documented cause of catastrophic household expense,
+      and of people abandoning the course after one or two doses.
+      AND THE MONEY IS BEING SPENT ON THE WRONG THING, unavoidably. Prophylaxis is
+      reactive, expensive, and must be given to everyone plausibly exposed —
+      twenty-nine million a year — while dog vaccination is a dollar or two per
+      animal and removes the exposures. **You cannot stop funding the first to
+      pay for the second, because the first is what keeps people alive in the
+      meantime.** The register treats blockers as independent and these two are
+      substitutes; see gaps.md #81.
+    who_could: [government, health-system, philanthropy, payer, manufacturer]
+    scale: 5.0e8
+    standing: documented
+    src: recall
+
+  - kind: policy
+    blocks: dog vaccination, which is the intervention that ends this
+    what: >
+      Around 99% of human rabies comes from dogs, sustained vaccination of about
+      70% of the dog population interrupts transmission, and it has been done:
+      western Europe eliminated dog-mediated rabies, and Latin America's
+      coordinated programme cut human deaths by over 95%.
+      What it needs is a veterinary service reaching free-roaming dog populations
+      across a country, repeatedly, for years, coordinated between health and
+      agriculture ministries and funded by a budget that does not benefit from
+      it — because the deaths prevented appear in the health accounts and the
+      vaccine is bought by agriculture.
+      This is the second record where **the intervention is administered to a
+      different species**, after echinococcosis, and the `who_could` vocabulary
+      still has no term for a veterinary service. Two records is what gaps.md #69
+      said to wait for.
+    who_could: [government, legislator, health-system, nonprofit, philanthropy]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: getting a course completed by someone in a rural district
+    what: >
+      Distinct from cost and often decisive on its own. Prophylaxis is not one
+      injection: it is several doses over two to four weeks, plus immunoglobulin
+      infiltrated into the wound on day zero for severe exposures, plus proper
+      wound washing that must happen immediately.
+      For a patient hours from a clinic that may not stock immunoglobulin, that
+      is several journeys with no symptoms to motivate them, after an event that
+      may already feel resolved. Courses started and not finished are common and
+      are not protective.
+      Intradermal dosing regimens, which use a fraction of the vaccine per
+      patient, materially change the arithmetic and are not universally adopted.
+      This is the most purchasable part of the record.
+    who_could: [health-system, government, nonprofit, philanthropy]
+    scale: 2.0e8
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: any treatment at all, once symptoms begin
+    what: >
+      There is nothing, and the failure is not for want of trying. The virus sits
+      inside neurons in an immunologically privileged compartment by the time
+      anyone knows it is there, and every therapeutic approach — antivirals,
+      immunotherapy, induced coma — has failed. The Milwaukee protocol is the
+      cautionary tale: a handful of claimed survivors, no replication, and years
+      of clinical effort spent on it.
+      This blocker matters less than it looks, and saying so is the honest
+      reading. A treatment for symptomatic rabies would save a fraction of the
+      lives that adequately funded dog vaccination would, because almost nobody
+      reaches the symptomatic stage in countries that vaccinate their dogs.
+      `scale: null` — no priced path, and a lower priority than either of the two
+      blockers above.
+    who_could: [academic, sponsor, philanthropy]
+    scale: null
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0037
+  rated: 2026-08-23
+  by: [claude, jeremy]

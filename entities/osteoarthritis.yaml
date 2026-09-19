@@ -1,0 +1,720 @@
+slug: osteoarthritis
+id: FND-D-0096
+name: osteoarthritis
+also: [OA, degenerative joint disease, knee osteoarthritis, hip osteoarthritis, gonarthrosis, coxarthrosis]
+mondo: MONDO:0005178
+kind: disease
+residual: false
+contested: true
+
+# THE CONTRAST CASE `low-back-pain` HAS BEEN WAITING FOR SINCE RECORD 10, and it
+# separates on exactly one variable. Both are enormous, degenerative,
+# musculoskeletal, painful, and old. Low back pain rates `mechanism: none`
+# because there is nothing to point at. **Here there is a joint, you can see it,
+# you can grade it on a plain radiograph — and the pain still does not follow
+# it.** The discordance survives having a mechanism, which is the finding.
+#
+# AND IT IS THE REGISTER'S SHARPEST CASE OF A CURE THAT IS NOT A TREATMENT.
+# There is no drug in history that alters the course of osteoarthritis — forty
+# years, dozens of phase 3 programmes, zero approvals. What exists instead is an
+# operation that removes the joint and installs a machine, and it is one of the
+# most successful things medicine does. **The disease is not cured. The organ is
+# replaced** (gaps.md #202).
+#
+# The prosthesis has a service life of roughly twenty to twenty-five years, and
+# that single engineering fact propagates into the clinic in a way no axis here
+# can hold: it decides whether the operation is curative (it depends on the
+# patient's age), and it sets a **lower bound** on treatment — you are made to
+# wait until the joint is destroyed (gaps.md #203).
+
+burden:
+  prevalence:
+    value: 5.95e8
+    units: >
+      people, roughly 7.6% of the world — **and this figure rose by something like
+      seventy percent in a single GBD revision because the case definition was
+      broadened to include hand and other joints, not because more knees wore
+      out.** The earlier headline was around 344 million. Knee is the largest
+      single site, then hand, then hip
+    src: recall
+  ylds:
+    value: 2.2e7
+    units: >
+      YLD/year — consistently among the top handful of causes of years lived with
+      disability worldwide, and rising faster than almost anything else in the
+      table because it is driven by two things that are both increasing, age and
+      body weight
+    src: recall
+  deaths:
+    value: 0.0
+    units: >
+      deaths/year attributed — **and unlike `hearing-loss`, where the zero is close
+      to literal, this one is an accounting choice.** NSAID gastrointestinal
+      bleeding kills, opioids prescribed for joint pain kill, and the
+      cardiovascular consequences of years of enforced inactivity kill. Every one
+      of those deaths is attributed to another cause
+    src: reasoning
+  note: >
+    **THE SECOND-LARGEST DISABILITY RECORD IN THIS REGISTER, BEHIND ITS OWN
+    CONTRAST CASE.** `low-back-pain` carries roughly 60 million YLD and this
+    carries roughly 22 million; between them they are the two largest causes of
+    disability on earth, they are both musculoskeletal, and **one of them has a
+    definitive cure and the other has nothing.** The variable is not effort or
+    money. It is whether there is a part you can point at and remove.
+
+axes:
+  mechanism: partial
+  intervention: curative
+  prevention: risk-reduction
+  ongoing: moderate
+  efficacy:
+    value: 0.55
+    units: >
+      fraction-of-patients (durable, clinically meaningful relief from the best
+      available treatment for their joint) — **a blend of two very different
+      numbers**: around 0.85-0.90 for end-stage hip and knee reaching
+      arthroplasty, and around 0.30 for everyone whose joint is not replaceable or
+      not yet bad enough, which is most people most of the time
+    src: reasoning
+  access:
+    value: 0.25
+    units: >
+      fraction-of-patients (able to obtain the definitive operation when
+      indicated) — high in a handful of wealthy systems with long waiting lists,
+      and near zero across most of the world, where joint replacement is not a
+      service that exists
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: none
+  witness: >
+    **DIAGNOSTIC IS `objective` AND THAT RATING IS ACCURATE AND ALMOST ENTIRELY
+    BESIDE THE POINT.** A plain radiograph shows joint space narrowing,
+    osteophytes, subchondral sclerosis and cysts, and the Kellgren-Lawrence grade
+    has been a reproducible five-point scale since 1957. It is cheap, it is
+    available nearly everywhere, and it grades the joint precisely.
+    **It does not grade the patient.** A large fraction of people with severe
+    radiographic changes have no pain, and a large fraction of people disabled by
+    joint pain have unremarkable films. This is `low-back-pain`'s central problem
+    appearing in a record where the mechanism is *not* missing — so the
+    discordance cannot be explained away as "we have not found the lesion yet".
+    **The lesion is right there and it does not predict the illness.**
+    The practical consequence is that clinical guidelines now say imaging is not
+    required to diagnose osteoarthritis, which is a field quietly conceding that
+    its objective test measures the wrong variable.
+    PROGNOSTIC is `partial`. Some knees are radiographically stable for twenty
+    years and some destroy themselves in three, and malalignment, obesity, bone
+    marrow lesions and baseline severity all shift the odds at population level.
+    **None of them tells the person in front of you which kind of knee they
+    have**, which is the question they are asking.
+    **PREDICTIVE IS `none`, AND THE MISSING TEST IS AN EXPENSIVE ONE.** Nothing
+    predicts who responds to which analgesic, who benefits from physiotherapy, or
+    which of the many phenotypes a given patient has. And most consequentially:
+    **roughly one in five people is dissatisfied after a technically successful
+    knee replacement** — a well-fitted implant, a clean radiograph, and persistent
+    pain — and there is no way to identify them beforehand. That is a permanent,
+    irreversible, expensive intervention delivered to people who cannot be told
+    their odds.
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    **THE DRUGS AND THE OPERATION CHARGE SEPARATELY, AND THE DRUGS CHARGE MORE IN
+    TOTAL BECAUSE THE DENOMINATOR IS HUNDREDS OF MILLIONS.**
+    **NSAIDs** are the mainstay and they are not benign at the doses and durations
+    osteoarthritis requires: gastrointestinal bleeding, renal impairment,
+    hypertension, and an increased cardiovascular event rate for most of the
+    class. Taken daily for a decade by an elderly population with comorbidities,
+    they produce a steady, diffuse, entirely predictable stream of harm that is
+    nobody's decision — the same accumulating structure `copd` records for
+    corticosteroid courses (gaps.md #98's neighbourhood).
+    **Opioids** were prescribed heavily for joint pain, are recommended against on
+    both efficacy and harm grounds, and were a principal channel of the opioid
+    crisis second only to back pain. `low-back-pain` carries that toll explicitly
+    and this record carries the rest of it.
+    **Intra-articular corticosteroid injections** relieve pain for weeks and there
+    is evidence that repeated injections accelerate cartilage loss — a treatment
+    that trades the symptom against the disease.
+    **Arthroplasty's toll is smaller in incidence and far worse in kind.**
+    Periprosthetic joint infection occurs in roughly one percent and is a
+    catastrophe: staged revision, months of antibiotics, sometimes a fused joint
+    or an amputation. Venous thromboembolism, periprosthetic fracture, nerve
+    injury, and **persistent post-surgical pain in a joint that looks perfect**.
+    **And the revision itself is a toll the schema files nowhere.** A second
+    operation on the same joint gives worse function, higher infection risk and a
+    shorter-lived implant than the first, and a third is worse again — so the
+    price of having the operation young is charged twenty years later
+    (gaps.md #202).
+  incidence:
+    value: 0.06
+    units: >
+      fraction-of-treated (persistent harm — chiefly NSAID gastrointestinal,
+      renal and cardiovascular events over years of use, plus prosthetic
+      infection and chronic post-surgical pain) — a reasoned estimate
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    **THE JOINT CAN BE REPLACED. THE DECADE SPENT NOT WALKING CANNOT.**
+    People typically live with disabling hip or knee osteoarthritis for years
+    before they are considered bad enough to operate on — see `window`, because
+    that delay is deliberate — and that period is not neutral. Quadriceps and
+    gluteal muscle is lost and does not fully return; gait compensations load the
+    other knee, the back and the opposite hip, which is a documented route by
+    which one joint's disease becomes another's; body weight rises because
+    exercise has become painful, which feeds the strongest modifiable cause of the
+    disease back into itself; and cardiovascular fitness declines in a population
+    that is already elderly.
+    **The inactivity is the part with a body count.** Osteoarthritis is a
+    documented contributor to cardiovascular mortality through enforced physical
+    inactivity, and every one of those deaths is attributed to the heart. A
+    successful joint replacement at seventy-two restores the joint to someone who
+    has already spent eight years becoming deconditioned, and the function they
+    recover is bounded by that.
+    Note what this is *not*. The destroyed cartilage is not residue — it is the
+    disease, still doing it, which is `copd`'s exact shape and gaps.md #97. What
+    is recorded here is the damage the disease did **elsewhere in the body** while
+    everyone waited, and which persists after the treatment worked.
+  incidence:
+    value: 0.20
+    units: >
+      fraction-of-affected (permanent deconditioning, muscle loss, weight gain or
+      secondary joint loading persisting after definitive treatment) — a reasoned
+      estimate
+    src: reasoning
+
+window:
+  what: >
+    **THIS RECORD'S TREATMENT WINDOW HAS A LOWER BOUND RATHER THAN AN UPPER ONE,
+    AND EVERY OTHER WINDOW IN THIS REGISTER IS ABOUT BEING LATE** (gaps.md #203).
+    You are not offered a joint replacement when your knee starts to hurt. You are
+    offered it when the joint is destroyed, the pain is constant, and everything
+    else has failed — and **that is not rationing, it is clinically correct**,
+    because the implant has a service life of roughly twenty to twenty-five years
+    and a revision is a worse operation than the original. Replacing a knee at
+    fifty commits the patient to at least one revision, and possibly two. So the
+    surgeon's advice is to wait, and waiting is the `residue` above.
+    **The threshold is set by the hardware, not by the patient's suffering**, and
+    it moves as implants improve. It is the mirror image of `congenital-heart-
+    disease`'s Eisenmenger inversion (gaps.md #199): there the intervention becomes
+    harmful after a point; here it is harmful before one.
+    **The prevention window is a different thing entirely and it closes decades
+    before the disease exists.** Roughly half of people who rupture an anterior
+    cruciate ligament or tear a meniscus have radiographic osteoarthritis of that
+    knee within ten to twenty years, and **reconstructing the ligament does not
+    appear to prevent it** — the injury is diagnosed, treated, treated well by the
+    endpoints the operation was designed around, and the outcome that matters
+    arrives fifteen years after anyone stopped following the patient. The other
+    half of the prevention window is the years of weight gain, which belongs to
+    `obesity` and is charged to nobody.
+  closes_on: >
+    nothing, in the usual sense — the treatment window **opens** late and stays
+    open, and what closes is the prevention window at the moment of a joint
+    injury or during the years of weight gain, decades before any joint hurts
+  caught_in_time:
+    value: 0.35
+    units: >
+      fraction-of-cases (reaching definitive treatment while still able to
+      recover function, or having the causative injury or weight trajectory
+      addressed) — a reasoned estimate, and it is generous
+    src: reasoning
+
+strata:
+  - name: knee
+    fraction:
+      value: 0.45
+      units: fraction-of-people-with-osteoarthritis
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.80
+      units: fraction-of-stratum (durable relief, in those reaching arthroplasty)
+      src: reasoning
+    toll: major
+    what: >
+      **The largest site and the one with the worst satisfaction figures.** Total
+      knee arthroplasty relieves pain in the great majority and roughly one in
+      five recipients remains dissatisfied, which is markedly worse than the hip
+      and has never been adequately explained. Obesity's contribution is
+      strongest here — the knee carries the load — and it is where weight loss
+      does most.
+
+  - name: hip
+    fraction:
+      value: 0.15
+      units: fraction-of-people-with-osteoarthritis
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.90
+      units: fraction-of-stratum (durable relief, in those reaching arthroplasty)
+      src: reasoning
+    toll: minor
+    what: >
+      **Total hip replacement has been called the operation of the century and the
+      claim is not obviously wrong.** Pain relief is near-universal, function is
+      restored, implants survive twenty-five years in the large majority, and the
+      procedure is cheap by the standards of anything else that transforms a life
+      this completely. **This stratum is the single best result in the register
+      that nobody talks about**, and it is why the record rates `curative`.
+
+  - name: hand
+    fraction:
+      value: 0.20
+      units: fraction-of-people-with-osteoarthritis
+      src: reasoning
+    intervention: symptomatic
+    efficacy:
+      value: 0.30
+      units: fraction-of-stratum (meaningful relief)
+      src: reasoning
+    toll: minor
+    what: >
+      **The stratum that the definitive treatment does not reach, and it is a
+      fifth of the record.** Fingers cannot be replaced usefully; thumb base
+      osteoarthritis has surgery with mixed results. What is on offer is
+      analgesia, splints, hand therapy and adaptation — and the disability is
+      real, because it takes buttons, jars, keys and handwriting. Most of the
+      prevalence increase in the recent GBD revision is here.
+
+  - name: everything else — spine, shoulder, foot, ankle
+    fraction:
+      value: 0.20
+      units: fraction-of-people-with-osteoarthritis
+      src: reasoning
+    intervention: symptomatic
+    efficacy:
+      value: 0.30
+      units: fraction-of-stratum (meaningful relief)
+      src: reasoning
+    toll: major
+    what: >
+      Shoulder arthroplasty works reasonably and is far less available; ankle and
+      foot options are poor; **facet joint osteoarthritis of the spine has no
+      replacement at all and is one of the things inside `low-back-pain`'s
+      non-specific bucket**, which is a boundary the two records share and neither
+      can locate.
+
+moved:
+  - date: 1962
+    axis: intervention
+    from: symptomatic
+    to: curative
+    why: >
+      **THE LOW-FRICTION ARTHROPLASTY, AND IT IS THE LARGEST SINGLE MOVE IN THIS
+      RECORD'S HISTORY BY A VERY WIDE MARGIN.**
+      Hip replacement had been attempted for decades and failed on wear and
+      loosening. John Charnley's insight was a tribological one rather than a
+      surgical one — a small femoral head against a high-density polyethylene
+      cup, fixed with bone cement, in a clean-air theatre — and it made the
+      construct last. **A disease with no treatment acquired a definitive one, and
+      the mechanism of the disease had nothing to do with it.**
+      That is the fact this record exists to record. Nobody understood
+      osteoarthritis better in 1962 than in 1952. An engineer worked out how to
+      make a bearing that survives inside a person.
+      It generalises uncomfortably: `cystic-fibrosis`, `spinal-muscular-atrophy`
+      and `duchenne` document that the order of gene discovery is inverse to
+      therapeutic success (gaps.md #193, #198), and this is the same argument from
+      the far end — **a disease whose mechanism is still `partial` has one of the
+      best interventions in medicine.**
+    src: recall
+
+  - date: 1979
+    axis: efficacy
+    from: 0.45
+    to: 0.53
+    why: >
+      **THE NATIONAL JOINT REGISTRIES, AND THEY ARE THE CLEAREST EXAMPLE IN THIS
+      REGISTER OF MEASUREMENT ALONE IMPROVING OUTCOMES.**
+      Sweden began recording every knee and hip replacement performed in the
+      country, with the implant, the surgeon, the indication and the outcome;
+      other countries followed over the next thirty years. No new science, no new
+      device, no trial — **just the observation that when you can see which
+      implants and which techniques fail, the bad ones stop being used.**
+      Revision rates fell substantially across the countries that did it.
+      **And the registries caught a disaster that trials had missed.** Metal-on-
+      metal hip resurfacing was introduced on the reasonable theory that a harder
+      bearing would last longer in younger patients. Registry data showed
+      unacceptable early revision rates and metal debris causing local soft-tissue
+      destruction; the devices were withdrawn, after a large number of people had
+      received them. A registry is a post-market surveillance system that actually
+      works, and this record is the argument for building them.
+      This is gaps.md #164 in its positive form: **the capability that improved
+      the intervention was the capability to evaluate it**, and the register has
+      no field for that either.
+    src: recall
+
+  - date: 2024
+    axis: efficacy
+    from: 0.53
+    to: 0.55
+    why: >
+      **THE MOST PROMISING THING TO HAPPEN TO OSTEOARTHRITIS SYMPTOMS IN DECADES
+      IS A DRUG FOR A DIFFERENT DISEASE.**
+      A randomised trial of semaglutide in people with obesity and knee
+      osteoarthritis reported a substantial reduction in pain against placebo,
+      well beyond what analgesics achieve — driven by weight loss, and possibly
+      by more than weight loss.
+      **Record the move as small and record why it is interesting rather than
+      why it is large.** It is symptom relief, not disease modification; it
+      applies to the obese subset; it requires an expensive drug taken
+      indefinitely, which `obesity` documents is excluded from major public
+      insurance by statute; and stopping it reverses the weight loss.
+      **What it demonstrates is the arrow.** The strongest modifiable cause of
+      this record is another record in this register, the causal direction is not
+      in dispute, and after forty years of failing to find a drug that acts on the
+      joint, the thing that moved the needle acted on the patient's weight.
+      Nothing in the schema connects the two records (gaps.md #160), and a funder
+      reading this record alone would not learn that the best available lever sits
+      in a different file.
+    src:
+      id: PMID:39476339 doi:10.1056/NEJMoa2403664
+      retrieved: 2026-08-26
+      quote: >
+        Among participants with obesity and knee osteoarthritis with
+        moderate-to-severe pain, treatment with once-weekly injectable semaglutide
+        resulted in significantly greater reductions in body weight and pain
+        related to knee osteoarthritis than placebo. (Funded by Novo Nordisk; STEP
+        9 ClinicalTrials.gov number, NCT05064735.).
+
+witness:
+  mechanism: >
+    `partial`, and the rating is a deliberate demotion from what the textbooks
+    imply.
+    **What is established.** Osteoarthritis is a disease of the whole joint, not
+    "wear and tear" of cartilage — that framing was abandoned decades ago and
+    survives everywhere in public explanation. Articular cartilage is avascular,
+    aneural and alymphatic, and its chondrocytes are effectively post-mitotic in
+    adults, so **it has essentially no capacity for repair**; that single fact
+    underwrites the whole record. In disease the chondrocytes shift to a catabolic
+    phenotype, matrix-degrading enzymes — the collagenase MMP-13 and the
+    aggrecanase ADAMTS-5 above all — break down the collagen and proteoglycan
+    scaffold, the subchondral bone remodels and stiffens, osteophytes form at the
+    margins, the synovium becomes inflamed, and the joint fails as an organ.
+    Risk factors are well characterised: **age, joint injury, obesity, female sex
+    after the menopause, joint shape, occupational loading, and a substantial
+    polygenic component.**
+    **What is not established, and it is the part that matters.** *What initiates
+    the shift* is not known — why one seventy-year-old's knee is fine and the
+    next one's is gone. *Whether the initiating event is mechanical, metabolic,
+    inflammatory or all three in different people* is the phenotype question in
+    `witness.contested`. And **what produces the pain is genuinely unresolved**:
+    cartilage has no nerves, so the nociception must come from bone, synovium,
+    capsule or ligament, and central sensitisation is present in a substantial
+    minority — which is `low-back-pain`'s problem, arriving in a record that has a
+    visible lesion.
+    **The strongest evidence that the mechanism is not actionable is forty years
+    of trying.** Disease-modifying osteoarthritis drugs have been pursued since
+    the 1980s — anti-catabolic agents against MMP-13 and ADAMTS-5, anabolic
+    growth factors, Wnt pathway modulators, bisphosphonates, anti-cytokines —
+    and **not one has been approved anywhere.** Some produced structural
+    preservation with no symptom benefit; some the reverse; most neither.
+  contested: >
+    Two disputes, both real, both consequential, neither a fringe position.
+    **IS OSTEOARTHRITIS ONE DISEASE OR SEVERAL?** The leading explanation for the
+    forty-year drug failure is that trials enrolled a mixture — post-traumatic,
+    metabolic or obesity-driven, inflammatory, ageing-related, and
+    genetically-driven joint shape — into a single entity defined by its
+    radiographic endpoint, and averaged away any effect that existed in one of
+    them. The position is held by much of the field and it is not settled;
+    **the counter-position is that the phenotype literature has produced many
+    proposed schemes and no validated one**, and that a classification which
+    cannot be applied prospectively to a patient is not yet a fact. Either way
+    it is a live boundary dispute that the record's own `predictive: none` is a
+    direct consequence of.
+    **WHERE DOES AGEING END AND DISEASE BEGIN?** Radiographic osteoarthritis is
+    close to universal in the very old, and the register calls it a disease in all
+    of them. The threshold is a choice somebody made (gaps.md #90), and the recent
+    GBD revision that raised prevalence by roughly seventy percent moved it
+    without any biology changing.
+    **The register takes no position and states both.** They are boundary
+    disputes among researchers, which is what `contested` was built for — not
+    `hearing-loss`'s case, where a population disputes the category itself
+    (gaps.md #201).
+  intervention: >
+    `curative`, and the word is doing something the ladder was not designed for
+    (gaps.md #202).
+    **NO DRUG MODIFIES THIS DISEASE. NOT ONE, ANYWHERE, EVER.** Everything
+    pharmacological on offer is analgesia: NSAIDs topical and oral, with real but
+    modest average effects and a real toll; paracetamol, which barely beats
+    placebo; duloxetine for the centrally-sensitised; intra-articular steroid for
+    weeks of relief. Glucosamine, chondroitin and hyaluronic acid injections are
+    widely sold and the good trials are negative. **Exercise and weight loss have
+    the best evidence of anything non-surgical**, are recommended first in every
+    guideline, and are delivered to almost nobody at adequate dose.
+    **And then there is the operation, which works.** Total hip and total knee
+    arthroplasty relieve pain in most recipients, restore function, require no
+    ongoing treatment, and last twenty to twenty-five years in the majority. By
+    the ladder's own definition — *a finite intervention ends it* — that is
+    `curative`, and the rating is not a stretch.
+    **What the ladder cannot say is that nothing was cured.** The joint was not
+    healed; it was excised and replaced with cobalt-chrome and polyethylene. There
+    is a family of these in the corpus — the intraocular lens in `cataract`, the
+    cochlear implant in `hearing-loss`, dialysis and transplant in
+    `chronic-kidney-disease`, insulin in `type-1-diabetes`, valves and conduits in
+    `congenital-heart-disease` — and the register has been sorting them by an
+    unwritten rule: **if it needs continuous input it is `suppressive`, and if it
+    is fitted once it is `curative`.** That rule is defensible and it makes
+    durability invisible, which is the whole of gaps.md #202.
+    **Arthroscopic surgery deserves a line because it is the register's cleanest
+    de-implementation story.** Arthroscopic partial meniscectomy and joint lavage
+    for degenerative knee disease were performed at enormous volume for decades;
+    sham-controlled trials from 2002 onward showed no benefit over placebo
+    surgery; guidelines now recommend against it; **and it is still done.** That
+    is `low-back-pain`'s inverted blocker — getting a treatment *away* from
+    people — appearing in a record that also has a treatment worth delivering.
+  prevention: >
+    `risk-reduction`, and it is stronger than that rating usually implies because
+    the two big causes are both known and both actionable.
+    **Weight.** Obesity is the largest modifiable risk factor for knee
+    osteoarthritis and the relationship is steep; weight loss reduces both
+    incidence and symptoms. It belongs to `obesity` and this record pays for it.
+    **Joint injury.** Anterior cruciate ligament and meniscal injury are followed
+    by radiographic osteoarthritis of that knee in roughly half of people within
+    ten to twenty years, and **surgical reconstruction has not been shown to
+    prevent it** — the joint surface was damaged at the moment of the injury and
+    the ligament repair does not undo that. What does work is not operating on
+    knees at all: **neuromuscular training programmes reduce ACL injury rates by
+    something like half in young athletes**, are cheap, take fifteen minutes
+    before training, and are implemented sporadically. That is a prevention
+    intervention for a disease that appears twenty years later, delivered by
+    sports coaches, and no health system owns it.
+    **Occupational loading** — heavy lifting, kneeling, squatting — raises risk and
+    is addressable by regulation. Nothing prevents the ageing and genetic
+    components, which are most of the record.
+  ongoing: >
+    `moderate`, and the shape is unusual: **the burden is heavy for years and then
+    stops.**
+    Before the operation: daily analgesia with a real toll, physiotherapy,
+    walking aids, adapted housing, and a slowly contracting life. Most of the
+    disability in this record is here, in the years spent waiting to be bad
+    enough. After a successful hip or knee replacement: essentially nothing —
+    no drugs, no monitoring beyond occasional review, no restrictions worth the
+    name. **That is a genuinely rare shape in this register** and it is what
+    separates arthroplasty from every device in the `suppressive` band.
+    Then, for the patients who live long enough or were operated young enough:
+    the revision, and a second course of everything above.
+  access: >
+    `0.25`, and it splits about as cleanly as any figure in the register.
+    In wealthy systems the operation is routine, publicly funded in most, and
+    rationed by **waiting list** — which is gaps.md #189's exact case, a treatment
+    threshold set by theatre capacity rather than by the patient, and it interacts
+    badly with `residue`, because every month waited is muscle that does not come
+    back.
+    **Elsewhere it largely does not exist.** Joint replacement needs an operating
+    theatre with laminar flow, an implant supply chain with the right sizes on the
+    shelf, a trained arthroplasty surgeon, infection control good enough that a 1%
+    infection rate does not become 10%, and a rehabilitation service afterwards.
+    That is a hospital-grade capability, not a drug that can be donated, and it is
+    absent across most of Africa and South Asia. **A donated implant with no
+    theatre behind it is worse than nothing**, which is the same arithmetic
+    `hearing-loss` records for donated hearing aids.
+
+holes:
+  - >
+    **The `curative` rating is earned by two joints and the record has four
+    strata.** Hip and knee can be replaced; hands, feet, ankles and the spine
+    cannot, and that is roughly forty percent of the prevalence rating
+    `symptomatic`. This is gaps.md #34's third instance — **capability varies by
+    joint inside a single patient**, exactly as it varies by organ in `msmds`.
+  - >
+    **The prosthesis has a service life and no field holds it** (gaps.md #202).
+    Whether the operation is `curative` depends on the patient's age at surgery,
+    and no axis in this register is a function of age.
+  - >
+    **The treatment window has a lower bound rather than an upper one**
+    (gaps.md #203), and `window` is built entirely to express lateness.
+  - >
+    `deaths: 0` is an accounting choice here rather than a fact — NSAID bleeds,
+    opioid deaths and inactivity-mediated cardiovascular mortality are real and
+    are all attributed elsewhere. gaps.md #182 and #160 together.
+  - >
+    **The record's largest modifiable cause is another record** (`obesity`), the
+    most promising recent intervention is that record's drug, and nothing in the
+    schema connects them (gaps.md #160).
+  - >
+    Every scalar is `recall` or `reasoning`. The joint registries are among the
+    best outcome datasets in medicine, they are public, and none of them is cited
+    here — which is the most embarrassing instance of gaps.md #48 in the corpus,
+    because the data exist and are good.
+
+blockers:
+  - kind: knowledge
+    blocks: any drug that acts on the disease
+    obstacles: []
+    what: >
+      **FORTY YEARS, DOZENS OF PHASE 3 PROGRAMMES, ZERO APPROVED
+      DISEASE-MODIFYING DRUGS — THE LONGEST SUSTAINED DRUG-DEVELOPMENT FAILURE IN
+      THIS REGISTER OUTSIDE ALZHEIMER'S.**
+      Two distinct unknowns sit underneath it and they are usually conflated.
+      **What initiates the failure**: the catabolic cascade is well described and
+      what flips the chondrocyte into it is not, so every candidate has aimed at
+      the middle of a process whose start is unknown. **And what causes the
+      pain**: cartilage is aneural, so nociception arises somewhere else in the
+      joint or centrally, and a drug that preserves cartilage in an asymptomatic
+      person has not helped anybody.
+      **Those two unknowns are why trials fail in both directions.** Agents have
+      shown structural preservation with no symptom benefit, and symptom benefit
+      with no structural effect, and a field that cannot connect its lesion to its
+      symptom cannot tell which of those is the real result.
+      **Cartilage regeneration is the thing that does not exist.** Autologous
+      chondrocyte implantation and related techniques repair small focal defects
+      in young joints and do not treat osteoarthritis; there is no therapy that
+      restores a worn joint surface, and the mammalian chondrocyte's inability to
+      do it itself is the reason. It is `hearing-loss`'s hair cell in another
+      tissue.
+      `scale: null`.
+    who_could: [academic, sponsor, manufacturer, philanthropy]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: tooling
+    blocks: knowing within a trial's lifetime whether a drug worked
+    obstacles: []
+    what: >
+      **THE FIELD'S STRUCTURAL ENDPOINT IS THE WIDTH OF A GAP ON AN X-RAY, AND IT
+      IS BARELY FIT FOR PURPOSE.**
+      Joint space width is an indirect proxy for cartilage thickness, measured on
+      a two-dimensional projection whose value depends on how the patient was
+      positioned and how much load was on the knee. It changes by a fraction of a
+      millimetre per year against a measurement error of comparable size, so a
+      trial needs hundreds of patients over two to three years to detect anything
+      — and it is confounded by meniscal extrusion, which changes the gap without
+      any cartilage being lost.
+      **This is the register's clearest case of a slow disease being invisible to
+      its own instruments.** Quantitative MRI measures cartilage volume directly
+      and composition indirectly; biochemical markers of collagen turnover exist;
+      neither is a qualified endpoint that a regulator will accept as the basis of
+      an approval, and qualifying one requires the very trials that cannot be
+      powered without it.
+      **A sensitive, validated, short-horizon progression measure is the single
+      cheapest thing that would change this record**, and it is a measurement
+      problem rather than a biological one.
+    who_could: [academic, regulator, sponsor, software, nonprofit]
+    scale: 5.0e8
+    standing: documented
+    src: recall
+
+  - kind: regulatory
+    blocks: what a disease-modifying approval would have to show
+    obstacles: []
+    what: >
+      **THE ACCEPTED PATH TO A DISEASE-MODIFYING APPROVAL REQUIRES SHOWING BOTH
+      STRUCTURAL PRESERVATION AND SYMPTOM BENEFIT, AND ALMOST NOTHING CAN DO
+      BOTH.**
+      The requirement is not arbitrary and the register should say so plainly:
+      **a drug that preserves cartilage in someone whose knee still hurts has not
+      benefited that person**, which is the inverse of gaps.md #98's complaint and
+      is the correct instinct. A structural change is a surrogate, and surrogates
+      have burned regulators before.
+      **But it interacts with the two blockers above to produce a closed loop.**
+      The structural endpoint is a poor instrument; the link between structure and
+      symptom is unknown and weak; so a co-primary requirement demands agreement
+      between two measures that the disease itself does not keep in step. Several
+      programmes have been abandoned after meeting one and missing the other.
+      This is gaps.md #102's family — *some diseases cannot generate the evidence
+      their own approval requires* — with a different cause. Marburg's obstacle is
+      that there are not enough patients. **Here there are six hundred million
+      patients and the obstacle is that nobody can agree what counts as getting
+      better.**
+      What would move it is a qualified surrogate, which returns to `tooling`, or
+      an accepted structural-only pathway with post-approval symptom follow-up.
+      **Neither is a decision anyone is currently asking a regulator to make**,
+      which is why this is `documented` rather than `disputed` — it is a standard,
+      openly published, and it is being complied with rather than fought.
+    who_could: [regulator, sponsor, academic, government]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: the operation, for most of the world
+    obstacles: []
+    what: >
+      **JOINT REPLACEMENT IS A HOSPITAL-GRADE CAPABILITY, NOT A PRODUCT, AND THAT
+      IS WHY IT HAS NOT TRAVELLED.**
+      It needs a clean theatre, an implant inventory with the right sizes present
+      on the day, a surgeon trained specifically in arthroplasty, an
+      anaesthetic service safe for a comorbid seventy-five-year-old, infection
+      control good enough to keep prosthetic infection near one percent rather
+      than ten, and physiotherapy afterwards. Remove any one and the operation
+      becomes worse than not operating, because a deep prosthetic infection in a
+      setting without revision capability ends in a fused joint.
+      **In the systems that do have it, the binding constraint is theatre time.**
+      Waiting lists of a year or more are routine in publicly funded systems, and
+      the threshold for being listed moves with capacity rather than with the
+      patient — gaps.md #189 exactly. The cost is in `residue`: the muscle lost
+      while waiting does not come back.
+      **And volume is the other half.** Outcomes are strongly related to surgeon
+      and centre volume, so a scattered low-volume service delivers worse results
+      than a concentrated one, which is an argument for centralisation that
+      collides directly with access for rural populations.
+    who_could: [health-system, government, payer, manufacturer, nonprofit]
+    scale: 2.0e10
+    standing: documented
+    src: recall
+
+  - kind: cost
+    blocks: an implant and a theatre, at a price most systems will not pay
+    obstacles: []
+    what: >
+      **THE IMPLANT IS A MANUFACTURED GOOD SOLD INTO A CONCENTRATED MARKET, AND
+      ITS PRICE HAS VERY LITTLE TO DO WITH WHAT IT COSTS TO MAKE.**
+      A hip or knee replacement costs on the order of fifteen to thirty thousand
+      dollars in a high-income system, of which the implant itself is commonly a
+      quarter to a third. A small number of manufacturers dominate globally,
+      hospital-by-hospital pricing is confidential, and the same component can
+      cost several times more in one hospital than another — which is a market
+      failure rather than a technology cost, and it is documented rather than
+      alleged.
+      **Newer is routinely more expensive and not routinely better**, which is
+      precisely what the joint registries were built to detect: the
+      metal-on-metal generation was sold at a premium and failed early.
+      **Globally the number that matters is different.** At any price, the
+      procedure is absent from most health systems, and the relevant comparison is
+      not implant cost against implant cost but arthroplasty against everything
+      else a ministry could buy with the same money for a disease that kills
+      nobody. **That is `deaths: 0` deciding a budget again** (gaps.md #182), and
+      here it is arguably the correct decision, which is worth saying.
+    who_could: [payer, manufacturer, government, health-system, nonprofit]
+    scale: 3.0e10
+    standing: documented
+    src: recall
+
+  - kind: policy
+    blocks: preventing the disease, in two places that belong to other records
+    obstacles: []
+    what: >
+      **THE TWO INTERVENTIONS WITH THE BEST EVIDENCE OF PREVENTING THIS DISEASE
+      ARE NOT DELIVERED BY ANYONE IN MUSCULOSKELETAL MEDICINE.**
+      **Weight**, which is the largest modifiable risk factor for the largest
+      stratum, belongs to `obesity` — to food policy, to the drugs that record
+      documents as excluded from public insurance by statute, and to everything
+      upstream of both. A knee surgeon has no lever on it.
+      **Joint injury**, which produces radiographic osteoarthritis in roughly half
+      of ACL and meniscal injuries within twenty years, is prevented by
+      neuromuscular training programmes in young athletes that cut injury rates by
+      around half. They are cheap, they take fifteen minutes before training, the
+      evidence has been solid for two decades, and **they are delivered by sports
+      coaches and school PE departments, which no health ministry commissions.**
+      A prevention programme whose benefit arrives twenty years later, in a
+      different clinical specialty, for a disease that kills nobody, has no
+      natural sponsor anywhere.
+      **This is gaps.md #87 and #48 fused**: the intervention is non-specific, it
+      is decades early, and its payoff cannot be charged to this record — so it is
+      charged to nothing and nobody funds it.
+    who_could: [government, health-system, nonprofit, legislator, patient-org]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0097
+  rated: 2026-08-25
+  by: [claude, jeremy]

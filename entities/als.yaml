@@ -1,0 +1,647 @@
+slug: als
+id: FND-D-0104
+name: amyotrophic lateral sclerosis
+also: [ALS, motor neurone disease, MND, Lou Gehrig's disease, Charcot's disease]
+common: motor neurone disease
+mondo: MONDO:0004976
+kind: disease
+residual: false
+contested: false
+
+# THE RECORD THE SURVIVAL AXIS WAS BUILT TO HOLD, AND THE FIRST ONE RATED ON IT
+# BROKE THE AXIS IMMEDIATELY.
+#
+# Amyotrophic lateral sclerosis kills everybody. Nobody recovers, no treatment
+# arrests it, and median survival from symptom onset is two to three years.
+# **And its five-year survival is around 0.20, which the new `survival` field
+# bands as `a chance` — the same band as pancreatic cancer, where a real
+# minority are cured.** They are not the same thing at all. Twenty percent of
+# people with ALS are *still alive*; thirteen percent of people with pancreatic
+# cancer are *cured*.
+#
+# **`survival` at a horizon cannot distinguish cure from delay** (gaps.md #216),
+# and this is the record that shows it, on the day the field was added.
+#
+# THE OTHER REASON IT BELONGS HERE. Charcot described it in 1869. SOD1 was found
+# in 1993, C9orf72 in 2011, and TDP-43 pathology is present in roughly 97% of
+# cases. **The mechanism has been advancing for thirty years and the survival
+# curve has moved by months** — which is gaps.md #193 and #198 in their harshest
+# form, and unlike `duchenne` or `cystic-fibrosis` there is not even a delivery
+# problem to blame. Tofersen proved the route works. **There is nothing to aim
+# at in 98% of patients.**
+
+burden:
+  prevalence:
+    value: 2.3e5
+    units: >
+      people living with ALS worldwide at any time, approximately — **and
+      prevalence badly understates this disease, because the illness is short.**
+      A condition that kills in thirty months has a small prevalent population
+      and a large lifetime risk: roughly **one in three hundred to four hundred**
+      people will die of it
+    src: recall
+  deaths:
+    value: 3.4e4
+    units: >
+      deaths/year, approximately. **The ratio of deaths to prevalence — around
+      one in seven — is among the highest in this register**, and it is the
+      arithmetic signature of a disease nobody survives
+    src: recall
+  note: >
+    **A DISEASE WHOSE BURDEN FIGURES MAKE IT LOOK SMALL AND WHOSE LIFETIME RISK
+    DOES NOT.** Under a quarter of a million prevalent cases against `anaemia`'s
+    1.9 billion. But prevalence counts the living, and this illness does not let
+    people stay in that column. **Incidence and lifetime risk are the honest
+    measures here, and the register's burden block is built around prevalence and
+    deaths** — which is gaps.md #182's shape from a third direction: not
+    disability instead of death, but *duration* deciding the size of a number
+    that is meant to convey importance.
+
+survival:
+  horizon: 5 years from symptom onset
+  untreated:
+    value: 0.15
+    units: >
+      fraction alive — natural history before riluzole, and it is not zero
+      because tempo varies enormously. Median survival is 2-3 years; a minority
+      live much longer
+    src: recall
+  treated:
+    value: 0.20
+    units: >
+      fraction alive on best available care. **At ten years it is roughly 0.10
+      and at twenty it approaches zero** — the band this record falls into is a
+      function of the horizon in a way it is not for a disease some people
+      survive outright
+    src: recall
+  witness: >
+    **THIS IS THE RECORD THAT SHOWS WHAT `survival` CANNOT SEE.**
+    The band reads `a chance`, which puts ALS beside `pancreatic-cancer`. But
+    pancreatic cancer's 13% are *cured* — they are alive at five years and the
+    disease is gone. **ALS's 20% are alive at five years and still dying of it.**
+    Nobody in this record is cured, ever, and the difference between those two
+    columns is the difference between the axis being useful and being misleading
+    (gaps.md #216).
+    **And the gain from 0.15 to 0.20 is mostly not a drug.** Riluzole adds two to
+    three months of median survival. Non-invasive ventilation adds considerably
+    more, and attendance at a multidisciplinary clinic is associated with longer
+    survival than any medication in this record. **The survival curve moved
+    because of a machine and a clinic**, which is a sentence this register keeps
+    writing and which the pharmacology-shaped view of progress keeps missing.
+
+axes:
+  mechanism: partial
+  intervention: disease-modifying
+  prevention: none
+  ongoing: high
+  efficacy:
+    value: 0.20
+    units: >
+      fraction-of-patients (meaningful extension of survival or preserved
+      function from best available care — riluzole, non-invasive ventilation,
+      nutritional support and multidisciplinary management) — **and the units are
+      doing a lot of work, because "meaningful" here means months**
+    src: reasoning
+  access:
+    value: 0.35
+    units: >
+      fraction-of-patients (reaching a multidisciplinary ALS clinic with
+      respiratory support, gastrostomy, communication technology and palliative
+      care) — high in a handful of wealthy systems, near zero across most of the
+      world, where the diagnosis is often not made at all
+    src: reasoning
+
+measurement:
+  diagnostic: clinical
+  prognostic: partial
+  predictive: partial
+  witness: >
+    **DIAGNOSTIC IS `clinical` AND THE DELAY IS A THIRD OF THE ILLNESS.**
+    There is no test. Diagnosis is a clinician finding upper and lower motor
+    neuron signs across body regions, supported by electromyography, with MRI and
+    bloods used to **exclude the things it might otherwise be**. The criteria have
+    been revised repeatedly — El Escorial, Awaji, and the 2020 Gold Coast
+    criteria — each attempting to shorten a diagnostic process that is
+    fundamentally one of exclusion.
+    **Median time from first symptom to diagnosis is around ten to sixteen
+    months.** Against a median survival of thirty, that is a third to a half of
+    the illness spent undiagnosed, and it is the reason `window` below matters
+    more than it does in most records.
+    PROGNOSTIC is `partial` and better than it used to be. Site of onset
+    (bulbar is worse), age, rate of decline over the first months, respiratory
+    function and the ALSFRS-R slope predict survival at group level with real
+    reliability. **What is not predicted is the long tail** — a minority live a
+    decade or more and nobody can identify them at diagnosis, which is exactly
+    the person the question is being asked about.
+    PREDICTIVE is `partial`, and it rests almost entirely on **genotype**.
+    Knowing a patient carries a *SOD1* mutation selects tofersen; nothing else
+    here selects anything. **Neurofilament light chain** is the interesting
+    development — a blood and CSF marker of axonal damage that tracks disease
+    activity, that fell substantially on tofersen, and **on which that drug was
+    granted accelerated approval.** It is the register's clearest instance of a
+    biomarker being accepted as a surrogate endpoint in neurodegeneration, and
+    whether it is a good one is not settled.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    **ALMOST NOTHING IN THIS RECORD IS DONE TO THE PATIENT BY MEDICINE, AND THAT
+    IS ITSELF THE FINDING.**
+    Riluzole requires liver monitoring and is otherwise well tolerated.
+    Edaravone is an infusion or an oral suspension. Tofersen is an intrathecal
+    injection every four weeks. Gastrostomy and non-invasive ventilation are
+    interventions with ordinary procedural risks. **None of it disfigures,
+    disables or permanently costs the patient anything**, and the register's
+    `toll` machinery — built for facial nerves, laryngectomies and myeloablation
+    — has very little to record.
+    **The one genuinely heavy decision is tracheostomy ventilation**, which can
+    extend life by years in a body that continues to fail around it, and which is
+    chosen by a small minority in most countries and a much larger one in Japan.
+    That is not a toll in this schema's sense; **it is a choice about how to die,
+    offered by technology and answered differently by different cultures**, and
+    no field here holds it.
+    **Everything that is taken from a person with ALS is taken by the disease.**
+    The register records what treatment costs and has no column for that.
+  incidence:
+    value: 0.02
+    units: >
+      fraction-of-treated (permanent harm attributable to treatment — chiefly
+      procedural complications of gastrostomy or tracheostomy) — a reasoned
+      estimate, and it is low because there is so little treatment
+    src: reasoning
+
+window:
+  what: >
+    **A THIRD OF THE ILLNESS IS SPENT GETTING THE DIAGNOSIS.**
+    Ten to sixteen months from first symptom to diagnosis, against a median
+    survival of thirty. The delay is structural rather than negligent: early ALS
+    looks like a trapped nerve, a stroke, a cervical radiculopathy or a voice
+    problem, the tests are all normal, and the diagnosis is one of exclusion made
+    by a specialist most patients reach through two or three others.
+    **What the window costs.** Riluzole and tofersen both act on a
+    neurodegeneration that has already destroyed motor neurons, and **motor
+    neurons do not come back** — every month of delay is permanent loss.
+    Non-invasive ventilation started before respiratory failure is established
+    extends survival more than any drug here; started late it is palliative.
+    Enrolment in trials, which for many patients is the only access to anything
+    experimental, requires being diagnosed while still well enough to qualify —
+    **so the diagnostic delay also shapes who the evidence gets generated on.**
+    **And there is a second window that opens before symptoms and nobody can use
+    yet.** Neurofilament light rises in presymptomatic mutation carriers before
+    clinical onset, and a trial in that population is running. If pre-symptomatic
+    treatment works, this record acquires a `window` of the kind
+    `spinal-muscular-atrophy` already has — where newborn screening turned a
+    fatal disease into a manageable one by treating before damage.
+  closes_on: >
+    the loss of motor neurons, which is continuous and irreversible from before
+    the first symptom — there is no threshold, only accumulating permanent
+    deficit, and respiratory function is the practical deadline
+  caught_in_time:
+    value: 0.25
+    units: >
+      fraction-of-cases (diagnosed early enough for respiratory support and
+      disease-modifying treatment to be started before substantial functional
+      loss) — a reasoned estimate
+    src: reasoning
+
+strata:
+  - name: SOD1-related
+    fraction:
+      value: 0.02
+      units: fraction-of-people-with-ALS
+      src: reasoning
+    intervention: disease-modifying
+    efficacy:
+      value: 0.40
+      units: fraction-of-stratum (meaningful slowing on tofersen)
+      src: reasoning
+    toll: minor
+    what: >
+      **THE ONLY STRATUM WITH A DRUG AIMED AT ITS CAUSE, AND IT IS TWO PERCENT OF
+      THE RECORD.** SOD1 was the first ALS gene, found in 1993; tofersen, an
+      antisense oligonucleotide given intrathecally, arrived thirty years later
+      and lowers neurofilament light substantially with a clinical effect that is
+      real and modest. **It is proof that the route works** — an oligonucleotide
+      can reach motor neurons and silence a gene in a living person — which is why
+      this record does not cite `cell-targeting`. The obstacle is not getting
+      there. It is having something to say when you arrive.
+
+  - name: other identified genetic cause
+    fraction:
+      value: 0.13
+      units: fraction-of-people-with-ALS
+      src: reasoning
+    intervention: symptomatic
+    efficacy:
+      value: 0.10
+      units: fraction-of-stratum (meaningful benefit)
+      src: reasoning
+    toll: minor
+    what: >
+      **C9orf72** hexanucleotide repeat expansion is the commonest single genetic
+      cause and links ALS to frontotemporal dementia — the same expansion causes
+      both, and a substantial minority of patients have features of each.
+      *TARDBP*, *FUS* and forty-odd others make up the rest. **Antisense
+      approaches against C9orf72 have been trialled and have not worked**, which
+      is the most consequential negative result in the field since it was the
+      obvious next application of the tofersen strategy.
+
+  - name: sporadic, no identified cause
+    fraction:
+      value: 0.85
+      units: fraction-of-people-with-ALS
+      src: reasoning
+    intervention: symptomatic
+    efficacy:
+      value: 0.15
+      units: fraction-of-stratum (survival extension from riluzole, ventilation and clinic care)
+      src: reasoning
+    toll: minor
+    what: >
+      **THE RECORD, ESSENTIALLY.** No identified cause, no target, and a treatment
+      list consisting of one drug that adds months, one machine that adds more,
+      and a clinic. **Environmental associations — smoking, military service,
+      certain sports, heavy metals — are weak, inconsistent and have never
+      produced an intervention.** This is the stratum every failed phase 3 trial
+      was enrolled from, and gaps.md #39 is the likeliest explanation: a clinical
+      syndrome that is several diseases converging on motor neuron death, tested
+      as though it were one.
+
+moved:
+  - date: 1993
+    axis: mechanism
+    from: none
+    to: correlates
+    why: >
+      **SOD1, AND IT WAS THE FIRST TIME ANYBODY COULD POINT AT A CAUSE OF ANY
+      ALS.** Mutations in superoxide dismutase 1 were identified in familial
+      cases, which converted a purely descriptive disease into one with a
+      molecular entry point and produced the mouse model on which most of the
+      next thirty years of research was done.
+      **Record what followed, because it is the uncomfortable half.** The SOD1
+      mouse became the standard preclinical model for *all* ALS, including the
+      98% of patients who do not have a SOD1 mutation. Dozens of compounds
+      extended survival in that mouse and then failed in humans. **A model of two
+      percent of a disease became the gate through which candidates for the other
+      ninety-eight percent had to pass**, and the field has since said so
+      explicitly.
+    src:
+      id: PMID:8446170 doi:10.1038/362059a0
+      retrieved: 2026-08-28
+      quote: >
+        Amyotrophic lateral sclerosis (ALS) is a degenerative disorder of motor
+        neurons in the cortex, brainstem and spinal cord. Its cause is unknown and
+        it is uniformly fatal, typically within five years. About 10% of cases are
+        inherited as an autosomal dominant trait, with high penetrance after the
+        sixth decade.
+
+  - date: 1995
+    axis: intervention
+    from: symptomatic
+    to: disease-modifying
+    why: >
+      **RILUZOLE, AND THE HONEST DESCRIPTION IS TWO TO THREE MONTHS.**
+      The first and for twenty-two years the only drug shown to extend survival
+      in ALS. It is a glutamate modulator, its mechanism in this disease is not
+      well established, and the effect size is a median survival gain measured in
+      months on an illness measured in years.
+      **It moves the rung because the ladder's definition is met — the course is
+      slowed and not arrested — and this register has an explicit rule against
+      binning `disease-modifying` with `none`** (gaps.md #89). But it is the
+      weakest instance of that rung in the corpus, and the record says so rather
+      than letting the enum flatter it.
+      **The comparison that matters is not with placebo.** Non-invasive
+      ventilation, introduced into routine care over the same period, extends
+      survival by more than riluzole does; multidisciplinary clinic attendance is
+      associated with more still. **The drug is the thing that got the licence and
+      the machine is the thing that did the work.**
+    src:
+      id: PMID:8302340 doi:10.1056/NEJM199403033300901
+      retrieved: 2026-08-28
+      quote: >
+        The antiglutamate agent riluzole appears to slow the progression of
+        amyotrophic lateral sclerosis, and it may improve survival in patients with
+        disease of bulbar onset.
+
+  - date: 2011
+    axis: mechanism
+    from: correlates
+    to: partial
+    why: >
+      **C9orf72, AND IT JOINED TWO DISEASES TOGETHER.**
+      A hexanucleotide repeat expansion in C9orf72 was identified as the commonest
+      genetic cause of both ALS and frontotemporal dementia — the same mutation,
+      two clinical syndromes, frequently in the same family and sometimes in the
+      same person. It reframed ALS as one end of a spectrum rather than a disease
+      of the motor system alone.
+      **The unifying pathology arrived alongside it.** Cytoplasmic mislocalisation
+      and aggregation of **TDP-43**, a nuclear RNA-binding protein, is present in
+      roughly 97% of ALS cases regardless of cause — including sporadic disease —
+      and its loss from the nucleus produces mis-splicing of specific transcripts.
+      **That is a genuine mechanistic advance and it has not yet produced a
+      drug**, which is why this entry moves `mechanism` to `partial` and no
+      further.
+    src:
+      id: PMID:21944778 doi:10.1016/j.neuron.2011.09.011
+      retrieved: 2026-08-28
+      quote: >
+        Several families have been reported with autosomal-dominant frontotemporal
+        dementia (FTD) and amyotrophic lateral sclerosis (ALS), genetically linked
+        to chromosome 9p21.
+
+  - date: 2023
+    axis: efficacy
+    from: 0.18
+    to: 0.20
+    why: >
+      **TOFERSEN, AND IT IS A SMALL MOVE FOR A LARGE REASON.**
+      An antisense oligonucleotide that silences *SOD1*, given intrathecally,
+      approved on the strength of a substantial reduction in **neurofilament light
+      chain** — a biomarker of axonal damage — rather than on the clinical
+      endpoint, which its pivotal trial missed. Longer follow-up showed clinical
+      benefit emerging with time.
+      **Three things worth separating.** It is the first treatment in this record
+      aimed at a cause. It applies to **two percent of patients**. And it is the
+      register's clearest case of an accelerated approval in neurodegeneration
+      granted on a surrogate — which is either the regulatory system finally
+      adapting to slow diseases with good biomarkers, or the beginning of the
+      problem `alzheimers` documents, and it is too early to say which.
+      **It also settles a question this register was about to ask.** Tofersen
+      proves an oligonucleotide can reach motor neurons and silence a gene in a
+      living person. **ALS therefore does not cite `cell-targeting`** — the
+      physical route is open. What is missing is a target.
+    src:
+      id: PMID:36129998 doi:10.1056/NEJMoa2204705
+      retrieved: 2026-08-28
+      quote: >
+        In persons with SOD1 ALS, tofersen reduced concentrations of SOD1 in CSF
+        and of neurofilament light chains in plasma over 28 weeks but did not
+        improve clinical end points and was associated with adverse events.
+
+  - date: 2024
+    axis: efficacy
+    from: 0.22
+    to: 0.20
+    why: >
+      **A BACKWARDS ENTRY, AND IT IS THE SYSTEM WORKING RATHER THAN FAILING.**
+      AMX0035 (sodium phenylbutyrate–taurursodiol) was approved in 2022 on a
+      small phase 2 trial with a supportive survival analysis, under considerable
+      and public patient advocacy. **Its confirmatory phase 3 trial missed on
+      every endpoint, and the manufacturer withdrew the drug from the market in
+      2024.**
+      **Record it as a success of the mechanism it is usually cited against.**
+      Accelerated approval carries a confirmatory requirement; the requirement was
+      honoured, the trial was run, it was negative, and the product was
+      withdrawn. Compare `alzheimers`, where the analogous story has been much
+      messier.
+      **And record the cost honestly too**, because it is not zero: patients took
+      a drug that did not work, at expense, in place of trial participation, and
+      the community that fought for the approval then had to absorb the
+      withdrawal. **This register's `access` figure fell because a treatment was
+      removed, and that was the right thing to do** — which is a shape the
+      register has recorded only for `osteoporosis` and `low-back-pain`, and in
+      both of those cases the withdrawal was the *wrong* decision or an
+      overcorrection. This one was correct.
+    src: recall
+
+witness:
+  mechanism: >
+    `partial`, and the honest summary is that the pathology is characterised, the
+    genetics are partly known, and **the cause of 85% of cases is not**.
+    **What is established.** Progressive degeneration of upper motor neurons in
+    the motor cortex and lower motor neurons in the brainstem and spinal cord,
+    producing the combination of spasticity and wasting that defines the clinical
+    picture. **TDP-43 pathology — cytoplasmic aggregation of a nuclear
+    RNA-binding protein — is present in roughly 97% of cases**, sporadic and
+    familial alike, and is the nearest thing the field has to a unifying lesion.
+    Its loss from the nucleus produces mis-splicing of specific transcripts,
+    including **cryptic exon inclusion in *STMN2* and *UNC13A***, which is the
+    most concrete mechanistic advance of the last decade and is being drugged now.
+    **The genetics.** Roughly 10% familial, and a substantial minority of
+    "sporadic" cases carry a known variant. *SOD1* (1993), the *C9orf72* repeat
+    expansion (2011, commonest), *TARDBP*, *FUS*, and dozens more. **The
+    C9orf72 discovery placed ALS on a continuum with frontotemporal dementia**,
+    which is the single most important reframing the disease has had.
+    **What is not known, and it is most of it.** Why motor neurons and not other
+    neurons. Why the disease begins focally and spreads to contiguous body
+    regions — a prion-like propagation of misfolded protein is the leading
+    hypothesis and remains a hypothesis. What causes the sporadic majority: the
+    environmental literature is a long list of weak, inconsistent associations
+    that has produced no intervention and no confirmed mechanism.
+    **And whether ALS is one disease at all.** Multiple genes, one pathology, one
+    clinical syndrome, and a phase 3 record of near-uniform failure — which is
+    gaps.md #39's mechanical prediction, and this is its tenth citing record.
+  intervention: >
+    `disease-modifying`, at the weakest end of that rung in the whole corpus.
+    **Riluzole** adds two to three months of median survival and has done since
+    1995. **Edaravone** was approved in the United States and Japan on a trial in
+    a narrowly selected early population and was rejected in Europe; its benefit
+    is contested. **Tofersen** genuinely alters the disease in the two percent of
+    patients with *SOD1* mutations.
+    **The interventions that do the most are not drugs.** Non-invasive
+    ventilation extends survival by more than any medication here. Gastrostomy
+    maintains nutrition once swallowing fails. **Attendance at a multidisciplinary
+    clinic is associated with longer survival than anything in the pharmacy**, and
+    that is a finding about organisation rather than biology — the same shape
+    `sepsis` and `rheumatoid-arthritis` record.
+    **And then there is everything that makes the illness liveable**, none of
+    which alters the course and all of which decides what the years are like:
+    eye-gaze and brain-computer communication technology, powered wheelchairs,
+    environmental controls, secretion management, and specialist palliative care
+    from early in the disease rather than at the end.
+    **The trial record is the context for all of it.** Dozens of phase 3 trials
+    have failed. Some failed because the compound did not work; some, on the
+    field's own account, because a heterogeneous syndrome was enrolled as one
+    disease and because the SOD1 mouse was a poor gate.
+  prevention: >
+    `none`, and it is one of very few records in this register that rates it.
+    **Nothing is known to prevent ALS.** There is no vaccine, no screening, no
+    modifiable exposure with a demonstrated causal role, and no behaviour that
+    reliably alters risk. The associations that recur — smoking, military
+    service, professional sport, heavy metals, agricultural chemicals — are weak,
+    inconsistently replicated, confounded, and have never converted into an
+    intervention.
+    **Genetic counselling and pre-implantation testing exist for the familial
+    minority**, which prevents transmission rather than disease, and applies to
+    around a tenth of cases.
+    **The nearest thing to a prevention story is presymptomatic treatment**, which
+    is not prevention but is the shape `spinal-muscular-atrophy` used to change
+    its record. Neurofilament light rises in mutation carriers before symptoms,
+    and a trial of tofersen in presymptomatic *SOD1* carriers is the test of
+    whether treating before the neurons die changes anything. **If it works, this
+    axis moves for two percent of patients and stays at `none` for the rest.**
+  ongoing: >
+    `high`, and the composition changes completely as the disease progresses,
+    which no single rating can convey.
+    Early: riluzole, liver monitoring, physiotherapy, speech and language
+    therapy, dietetics, and a clinic visit every two or three months at which
+    function is measured and found to have declined. Later: non-invasive
+    ventilation, initially at night and eventually continuously; a gastrostomy;
+    communication technology as speech fails; secretion management; a powered
+    wheelchair; and adaptations to a home that need redoing as the disease moves.
+    **The burden is overwhelmingly carried by families.** ALS produces total
+    dependence in a cognitively intact person over a period of months, and the
+    care is largely unpaid, at home, and delivered by a partner or a child. **No
+    field in this register holds that**, and in this record it is the largest
+    single cost by any measure.
+    **And the register's `ongoing` axis is about the burden of being treated.**
+    Most of what is heavy here is the burden of *having the disease* — which the
+    schema has no place for outside `residue`, and this record has no residue
+    because nobody survives to have one.
+
+holes:
+  - >
+    **`survival: a chance` puts this record beside `pancreatic-cancer` and they
+    are not comparable** — 13% of pancreatic patients are *cured* and 20% of ALS
+    patients are *still alive*. The axis cannot distinguish cure from delay
+    (gaps.md #216), and this record is what showed it.
+  - >
+    **No `residue` block, because nobody survives to have one.** The permanent
+    damage in ALS is the disease still doing it, which is `copd`'s shape
+    (gaps.md #97) — but here it terminates rather than accumulating, and the
+    schema has no way to express that either.
+  - >
+    **`toll: minor` is accurate and reads as good news.** Almost nothing is done
+    to these patients by medicine; everything is done by the disease. The
+    register's permanent-price machinery is built for treatment and is nearly
+    silent on the record where the price is highest.
+  - >
+    **`ongoing: high` is carried overwhelmingly by unpaid family care**, and no
+    field holds that. It is the largest cost in this record by any measure and it
+    appears in no derived figure.
+  - >
+    **The tracheostomy decision has no home.** It extends life by years in a
+    failing body, is chosen by a small minority in most countries and a much
+    larger one in Japan, and is a choice about how to die rather than a treatment
+    or a toll. gaps.md #140's shape, one step further.
+  - >
+    Every scalar is `recall` or `reasoning`. Population-based ALS registers exist
+    in several countries and none is cited; the survival figures in particular are
+    `sourceable` and belong in the sourcing pass.
+
+blockers:
+  - kind: knowledge
+    blocks: anything to aim at in ninety-eight percent of patients
+    obstacles: [tissue-repair]
+    what: >
+      **THIS IS THE PUREST KNOWLEDGE BLOCKER IN THE REGISTER AND IT IS NOT ABOUT
+      DELIVERY.**
+      Tofersen settled that. An antisense oligonucleotide reaches motor neurons
+      intrathecally and silences a gene in a living person — **the route works.**
+      What is missing is a target for the other ninety-eight percent, and it is
+      missing at three separate levels.
+      **What causes sporadic ALS.** Eighty-five percent of patients have no
+      identified genetic cause and the environmental literature has produced
+      nothing actionable in a century of looking.
+      **Why motor neurons.** TDP-43 is a ubiquitous nuclear protein and its
+      pathology is near-universal in this disease; why its mislocalisation kills
+      this cell population and largely spares others is unexplained, and any
+      therapy aimed at TDP-43 has to answer it.
+      **And whether ALS is one disease.** Multiple genes, one pathology, one
+      syndrome, and a phase 3 record of near-uniform failure. If it is several
+      diseases enrolled as one, every unstratified trial has been diluting
+      toward the null — gaps.md #39, tenth citing record — and the field has said
+      so in print.
+      **The nearest thing to a live route is cryptic exon biology**: TDP-43
+      leaving the nucleus causes mis-splicing of *STMN2* and *UNC13A*, and
+      correcting that is being attempted now. It is the first mechanistic idea in
+      this record that applies to sporadic disease.
+      **It cites `tissue-repair` because the second half of the problem is that
+      motor neurons do not come back.** Even a perfect disease-halting drug would
+      leave the deficit already accrued, and by diagnosis that is substantial.
+      `scale: null`.
+    who_could: [academic, sponsor, philanthropy, manufacturer]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    blocks: a third of the illness, spent finding out
+    obstacles: []
+    what: >
+      **TEN TO SIXTEEN MONTHS FROM FIRST SYMPTOM TO DIAGNOSIS, AGAINST A MEDIAN
+      SURVIVAL OF THIRTY.**
+      There is no test. Diagnosis is a specialist recognising upper and lower
+      motor neuron signs across regions and excluding everything else, and the
+      route there typically runs through an orthopaedic surgeon, a
+      physiotherapist or an ENT clinic first, because early ALS presents as a
+      dropped foot, a weak hand or a hoarse voice.
+      **What the delay costs is irreversible.** Motor neurons lost before
+      diagnosis are gone; non-invasive ventilation started before respiratory
+      failure is established extends survival more than any drug here; and trial
+      eligibility usually requires being diagnosed while still well enough to
+      qualify — **so the delay also determines who the evidence is generated on**,
+      and systematically excludes the fastest-progressing patients from the trials
+      meant to help them.
+      **A blood test would change this record more than any drug currently in
+      development.** Neurofilament light is elevated in ALS and is not specific
+      to it; it is used for monitoring rather than diagnosis. A specific
+      diagnostic marker is a tractable, unglamorous target that would buy months
+      of treatable illness in every patient.
+    who_could: [academic, health-system, manufacturer, software, nonprofit]
+    scale: 3.0e8
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: the clinic and the machine, which outperform the pharmacy
+    obstacles: []
+    what: >
+      **THE INTERVENTIONS THAT EXTEND SURVIVAL MOST IN THIS DISEASE ARE A
+      MULTIDISCIPLINARY CLINIC AND A VENTILATOR, AND NEITHER SCALES.**
+      A functioning ALS service is a neurologist, a respiratory physician, a
+      specialist nurse, physiotherapy, occupational therapy, speech and language
+      therapy, dietetics, palliative care and access to communication technology
+      — coordinated, and reaching a patient who is losing the ability to travel
+      to it. Attendance at such a clinic is associated with longer survival than
+      any medication in this record. **They exist in a minority of high-income
+      centres and essentially nowhere else.**
+      **Non-invasive ventilation is the single most effective intervention and it
+      requires equipment, titration and support at home.** Gastrostomy requires a
+      procedure timed before respiratory function makes it unsafe — a window that
+      is routinely missed.
+      **And communication technology is the one that decides what the illness is
+      like.** Eye-gaze systems let a person who cannot move or speak continue to
+      be present in their own life; they are expensive, funded inconsistently,
+      and provided late.
+      **Across most of the world the diagnosis is not made and none of this
+      applies**, which is why `access` reads 0.35 rather than something worse:
+      the figure is dominated by the countries that have services at all.
+    who_could: [health-system, government, payer, nonprofit, patient-org]
+    scale: 2.0e9
+    standing: documented
+    src: recall
+
+  - kind: evidence-incomplete
+    blocks: knowing which of fifty failed trials failed for the wrong reason
+    obstacles: [animal-translation]
+    what: >
+      **DOZENS OF PHASE 3 TRIALS HAVE FAILED AND THE FIELD DOES NOT AGREE ON
+      WHY.**
+      Three explanations compete and they have different consequences. **The
+      compounds did not work** — the simplest and probably true for most.
+      **The model was wrong**: the SOD1 mouse became the standard preclinical gate
+      for all ALS, including the 98% of patients without SOD1 mutations, and it
+      predicted a long series of human failures. **Or the trials enrolled a
+      mixture**: if ALS is several diseases converging on one syndrome, an
+      unstratified trial dilutes any real effect toward the null.
+      **The methodological consequences are being acted on** — platform trials
+      with shared placebo arms, enrichment by progression rate, biomarker-based
+      endpoints — and it is too early to say whether they help.
+      **And there is a specific tension this record should state.** Patient
+      advocacy in ALS is unusually effective and has secured approvals on thin
+      evidence, of which AMX0035 is the clearest case: approved in 2022, phase 3
+      negative, withdrawn in 2024. **That sequence is the system working**, and it
+      is also two years of patients taking something that did not work instead of
+      joining a trial. The register records both halves and adjudicates neither.
+      **Tagged `animal-translation` (2026-08-30).** This blocker is the sharpest statement of that obstacle in the corpus and the reason it was written: a faithful model of 2% of the disease became the entry requirement for all of it, and a decade of candidates passed through it into negative trials.
+    who_could: [academic, sponsor, regulator, patient-org, philanthropy]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0105
+  rated: 2026-08-28
+  by: [claude, jeremy]

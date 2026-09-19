@@ -1,0 +1,245 @@
+{
+ "date": "2026-08-27",
+ "register": "nordstern",
+ "records": {
+  "active": 103,
+  "deprecated": 0
+ },
+ "capability": {
+  "curable": 56,
+  "managed": 24,
+  "unsolved": 11,
+  "partial": 8,
+  "preventable": 4
+ },
+ "quadrant": {
+  "known & treatable": 83,
+  "known & modifiable": 8,
+  "engineering problem": 7,
+  "frontier": 4,
+  "empirical luck": 1
+ },
+ "delivery": {
+  "barely": 46,
+  "partly": 31,
+  "—": 15,
+  "mostly": 7,
+  "undelivered": 4
+ },
+ "terms": {
+  "costly": 51,
+  "clean": 48,
+  "harsh": 4
+ },
+ "axes": {
+  "mechanism": {
+   "established": 74,
+   "partial": 24,
+   "correlates": 4,
+   "none": 1
+  },
+  "intervention": {
+   "curative": 55,
+   "suppressive": 24,
+   "symptomatic": 14,
+   "disease-modifying": 8,
+   "none": 2
+  },
+  "prevention": {
+   "risk-reduction": 60,
+   "prophylaxis": 30,
+   "none": 12,
+   "eradicated": 1
+  },
+  "ongoing": {
+   "moderate": 40,
+   "low": 32,
+   "high": 23,
+   "none": 8
+  }
+ },
+ "measurement": {
+  "diagnostic": {
+   "objective": 81,
+   "clinical": 21,
+   "complaint": 1
+  },
+  "prognostic": {
+   "partial": 61,
+   "good": 22,
+   "none": 20
+  },
+  "predictive": {
+   "partial": 55,
+   "none": 22,
+   "n/a": 16,
+   "good": 10
+  }
+ },
+ "flags": {
+  "measurement_gap": 15,
+  "overtreatment_risk": 7,
+  "futile_treatment_risk": 12,
+  "cured_at_a_price": 48,
+  "harm_without_benefit": 7,
+  "orphaned": 84,
+  "spans_ladder": 42,
+  "has_window": 81,
+  "has_residue": 55,
+  "only_knowledge_blockers": 1
+ },
+ "contested": 17,
+ "reach": {
+  "mean": 0.2729,
+  "median": 0.24
+ },
+ "blockers": {
+  "total": 437,
+  "by_kind": {
+   "knowledge": 97,
+   "logistics": 82,
+   "diagnosis": 74,
+   "policy": 59,
+   "cost": 47,
+   "evidence-incomplete": 24,
+   "no-sponsor": 19,
+   "adherence": 11,
+   "tooling": 10,
+   "manufacturing": 8,
+   "regulatory": 5,
+   "candidate-untested": 1
+  },
+  "by_standing": {
+   "documented": 431,
+   "alleged": 4,
+   "disputed": 1,
+   "refuted": 1
+  },
+  "priced": 333,
+  "by_kind_priced": {
+   "adherence": {
+    "total": 11,
+    "priced": 11
+   },
+   "candidate-untested": {
+    "total": 1,
+    "priced": 1
+   },
+   "cost": {
+    "total": 47,
+    "priced": 47
+   },
+   "diagnosis": {
+    "total": 74,
+    "priced": 74
+   },
+   "evidence-incomplete": {
+    "total": 24,
+    "priced": 24
+   },
+   "knowledge": {
+    "total": 97,
+    "priced": 0
+   },
+   "logistics": {
+    "total": 82,
+    "priced": 82
+   },
+   "manufacturing": {
+    "total": 8,
+    "priced": 8
+   },
+   "no-sponsor": {
+    "total": 19,
+    "priced": 18
+   },
+   "policy": {
+    "total": 59,
+    "priced": 55
+   },
+   "regulatory": {
+    "total": 5,
+    "priced": 4
+   },
+   "tooling": {
+    "total": 10,
+    "priced": 9
+   }
+  },
+  "actors": {
+   "government": 301,
+   "health-system": 245,
+   "nonprofit": 239,
+   "academic": 230,
+   "philanthropy": 201,
+   "manufacturer": 171,
+   "payer": 151,
+   "sponsor": 138,
+   "regulator": 65,
+   "legislator": 58,
+   "patient-org": 49,
+   "software": 18
+  }
+ },
+ "moved": {
+  "total": 158,
+  "by_axis": {
+   "efficacy": 55,
+   "intervention": 38,
+   "access": 27,
+   "toll": 15,
+   "prevention": 14,
+   "mechanism": 5,
+   "measurement": 2,
+   "ongoing": 2
+  },
+  "by_decade": {
+   "1790s": 1,
+   "1920s": 2,
+   "1940s": 7,
+   "1950s": 4,
+   "1960s": 8,
+   "1970s": 6,
+   "1980s": 14,
+   "1990s": 20,
+   "2000s": 21,
+   "2010s": 44,
+   "2020s": 31
+  }
+ },
+ "provenance": {
+  "scalars": 1645,
+  "by_src": {
+   "recall": 800,
+   "reasoning": 783,
+   "cited": 54,
+   "unknown": 8
+  },
+  "cited": 54,
+  "by_tier": {
+   "sourceable": {
+    "total": 209,
+    "cited": 0
+   },
+   "supportable": {
+    "total": 498,
+    "cited": 54
+   },
+   "judged": {
+    "total": 938,
+    "cited": 0
+   }
+  },
+  "verified": 54,
+  "unknown": 8,
+  "mondo_resolved": 95,
+  "mondo_unresolved": 8,
+  "note": "Every empirical scalar carries a src. `recall` is the model's memory, `reasoning` is its arithmetic, and `unknown` means nobody has the number — none of the three is a citation. `by_tier` is the honest denominator: a citation SETTLES a sourceable scalar, SUPPORTS a supportable one, and cannot touch a judged one, because no dataset holds a quantity this register defines. Blockers are judged and carry their evidential status in `standing` instead."
+ },
+ "burden": {
+  "records_with_deaths": 68,
+  "records_without_deaths": 35,
+  "attributed_deaths_sum": 72627539.0,
+  "note": "An UPPER BOUND, not a total. Records overlap — TB deaths in people with HIV are in both, sepsis is the mode of death for several others — and the sum exceeds annual global mortality. Do not chart this as a total."
+ }
+}

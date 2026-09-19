@@ -1,0 +1,719 @@
+slug: heart-failure
+id: FND-D-0100
+name: heart failure
+also: [congestive heart failure, CHF, HFrEF, HFpEF, cardiac failure, congestive cardiac failure]
+mondo: MONDO:0005252
+kind: syndrome
+residual: false
+contested: true
+
+# THE RECORD THE REGISTER ASKED FOR BY NAME. gaps.md #39 called heart failure
+# "the textbook case [of a final common pathway] and it is not yet in the
+# register" — and then five of its causes were rated without it:
+# `ischaemic-heart-disease`, `hypertension`, `atrial-fibrillation`,
+# `chronic-kidney-disease`, `type-2-diabetes`, with `rheumatic-heart-disease` and
+# `congenital-heart-disease` behind them. **The corpus had every road and not the
+# destination.**
+#
+# IT ARRIVES CARRYING TWO THINGS NOTHING ELSE IN THE CORPUS HAS.
+#
+# **The first is that its own therapy is not given.** Four drug classes each
+# independently reduce mortality in reduced-ejection-fraction heart failure, most
+# are off patent, all are stocked, and registry after registry finds that a very
+# small percentage of eligible patients receive all of them at target dose.
+# **Not cost, not supply, not knowledge — the prescription is simply not written**
+# (gaps.md #210), and no blocker kind in this register is the prescriber.
+#
+# **The second is that the world's burden dataset does not think it is a cause of
+# death.** Mondo issues it a disease identifier; GBD models it as an *impairment*
+# — a sequela of other causes — so it has no attributable mortality anywhere
+# (gaps.md #211). The register borrows identity from one source and magnitude from
+# another, and for this record they disagree about what kind of thing it is.
+#
+# And it is the sixth record for gaps.md #170, which is no longer a pattern to
+# watch for: heart failure's own guidelines formally define **Stage A and Stage B**
+# — at risk, and structurally abnormal but asymptomatic — so the field pulled the
+# definition backwards in time on purpose and wrote it down.
+
+burden:
+  prevalence:
+    value: 6.4e7
+    units: >
+      people worldwide — around 1-2% of adults in high-income countries and above
+      10% over the age of seventy, rising steeply as populations age and as the
+      treatments in `ischaemic-heart-disease` convert deaths into survivors with
+      damaged hearts
+    src: recall
+  deaths:
+    value: 0.0
+    units: >
+      deaths/year attributed — **and this zero is the fifth distinct kind and the
+      only one that is a dataset design decision rather than an attribution
+      habit.** GBD models heart failure as an **impairment**, a sequela of
+      underlying causes, and does not report it as a cause of death; the deaths
+      are counted under `ischaemic-heart-disease`, `hypertension`,
+      `rheumatic-heart-disease`, `congenital-heart-disease` and the
+      cardiomyopathies. **`anaemia` is modelled the same way and reads the same
+      zero** (gaps.md #211). The lived reality is the opposite of a zero: five-year
+      mortality after diagnosis has historically been comparable to a number of
+      the cancers in this register
+    src: reasoning
+  note: >
+    **AROUND HALF OF PEOPLE DIAGNOSED WITH HEART FAILURE HAVE HISTORICALLY BEEN
+    DEAD WITHIN FIVE YEARS, AND THE REGISTER'S DEATHS FIELD READS ZERO.** That
+    sentence is the record. A hospitalisation for heart failure is one of the
+    strongest prognostic events in medicine, the syndrome consumes an enormous
+    share of hospital bed-days in every wealthy country, and **it is not a cause
+    of death in the dataset the rest of this register's burden figures come
+    from.**
+
+survival:
+  horizon: 5 years from diagnosis
+  untreated:
+    value: 0.25
+    units: >
+      fraction alive — the Framingham natural history, before ACE inhibitors.
+      Roughly a quarter of men and a little over a third of women were alive five
+      years after a heart-failure diagnosis, **which is worse than most of the
+      cancers in this register and was regarded as unremarkable**
+    src: recall
+  treated:
+    value: 0.55
+    units: >
+      fraction alive on guideline-directed therapy — four drug classes for
+      reduced ejection fraction, each independently reducing mortality. **The
+      figure is a blend and the halves diverge**: better for HFrEF on full
+      therapy, worse for preserved ejection fraction, which had nothing until
+      2021. And it is survival *achieved where the therapy is actually given* —
+      `access` here is 0.30, so the population figure is nearer the untreated one
+    src: reasoning
+  witness: >
+    **THIS RECORD IS THE ARGUMENT FOR THE AXIS EXISTING.** Heart failure carries
+    `deaths: 0` — GBD models it as an impairment and assigns the deaths to the
+    underlying causes (gaps.md #211), so on the register's mortality column this
+    disease does not kill anybody. Its five-year survival is 0.55, worse than
+    breast cancer, worse than prostate cancer, worse than childhood leukaemia.
+    **The burden column loses the disease entirely and the survival column finds
+    it**, which is precisely what a second, differently-derived axis is for.
+    And the outcome qualifier does the rest of the work: 0.55 reads `good chance`,
+    which beside `head-neck-cancer`'s 0.55 looks identical. Head and neck cancer
+    is `curative` and those people are cured. **Heart failure is
+    `disease-modifying` and those people are alive and still dying of it** — a
+    progressive disease that the last forty years have made slower rather than
+    survivable.
+
+axes:
+  mechanism: partial
+  intervention: disease-modifying
+  prevention: risk-reduction
+  ongoing: high
+  efficacy:
+    value: 0.55
+    units: >
+      fraction-of-patients (meaningful reduction in mortality and hospitalisation,
+      and improvement in symptoms, on optimal available therapy) — **a blend of
+      two halves that do not belong in one number**: around 0.70 for reduced
+      ejection fraction, where four drug classes each reduce mortality, and
+      around 0.35 for preserved ejection fraction, which had nothing at all until
+      2021
+    src: reasoning
+  access:
+    value: 0.30
+    units: >
+      fraction-of-patients (diagnosed, and receiving guideline-directed therapy
+      at effective dose) — **and the number is low for a reason that is unique in
+      this register: it is not mainly a supply figure.** Most of the shortfall is
+      in wealthy systems where the drugs are stocked, reimbursed and generic, and
+      the prescription is not written (gaps.md #210)
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: good
+  predictive: partial
+  witness: >
+    **DIAGNOSTIC IS `objective` AND THE OBJECT IS AN ARBITRARY CUT THROUGH A
+    CONTINUOUS VARIABLE.**
+    Natriuretic peptides — BNP and NT-proBNP — are a cheap blood test with an
+    excellent negative predictive value, so a normal result largely excludes the
+    diagnosis. **Echocardiography is the test that matters**, because it supplies
+    the ejection fraction, and the ejection fraction decides which disease the
+    patient is considered to have and therefore which treatments they are offered.
+    **And the thresholds are conventions.** Reduced ejection fraction is defined
+    as 40% or below and preserved as 50% or above; the category in between was
+    created in 2016 as "mid-range" and renamed "mildly reduced" in 2021, on
+    evidence that those patients respond more like the reduced group. **Ejection
+    fraction is continuous, measurement of it is operator-dependent with
+    meaningful inter-reader variation, and drug effects vary smoothly across the
+    range** — so a patient measured at 39% and a patient measured at 41% are
+    assigned to different diseases by a difference smaller than the test's own
+    error. This is gaps.md #90 and #180 in the same number.
+    **Preserved ejection fraction is genuinely hard to diagnose**, requiring
+    scoring algorithms combining natriuretic peptides, echocardiographic
+    parameters and sometimes invasive haemodynamics, and it is both missed and
+    over-called in primary care where most of it presents as breathlessness in an
+    older person with several other reasons to be breathless.
+    PROGNOSTIC is `good`, and it is one of the better ratings in this register.
+    Ejection fraction, NYHA functional class, natriuretic peptide level, renal
+    function and — above all — **a previous hospitalisation for heart failure**
+    predict survival with real accuracy, and validated multivariable risk scores
+    are in routine use. **A hospitalisation is the hinge**: it marks a step down
+    that is rarely fully recovered and it predicts the next one.
+    PREDICTIVE is `partial` and contains one clean win. Ejection fraction selects
+    therapy, crudely. **Iron studies select who benefits from intravenous iron** —
+    ferric carboxymaltose reduces hospitalisation in heart failure with iron
+    deficiency, whether or not the patient is anaemic, which is `anaemia`'s
+    stratum arriving in a cardiology record with its own trial evidence. Cardiac
+    resynchronisation has a defined responder group by QRS morphology and
+    duration. **What is not predicted is which individual will respond to which
+    of the four pillars**, which matters less than usual because the answer is to
+    give all four.
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    **THE DRUGS ARE TOLERABLE AND THE DEVICES ARE NOT ALWAYS.**
+    The four pillars each extract something. Renin-angiotensin inhibitors and
+    sacubitril/valsartan cause hypotension, renal function decline and
+    hyperkalaemia; mineralocorticoid receptor antagonists cause hyperkalaemia,
+    which is the commonest reason they are stopped and a genuine hazard in a
+    population with chronic kidney disease; beta-blockers cause fatigue and
+    bradycardia; SGLT2 inhibitors cause genital mycotic infection and, rarely,
+    euglycaemic ketoacidosis. **Loop diuretics, which are what everybody actually
+    takes, cause renal impairment, electrolyte disturbance and gout**, and are the
+    least studied drug in the record.
+    **Implantable defibrillators are the sharpest toll here.** They prevent
+    sudden death and they deliver shocks — appropriate ones that are painful and
+    frightening, and **inappropriate ones for arrhythmias that were not
+    dangerous**, which occur in a meaningful minority and cause documented
+    psychological harm. Lead failure, infection requiring extraction, and the
+    decision to deactivate a defibrillator at the end of life are all permanent,
+    difficult, and poorly handled.
+    **Advanced therapies charge the most.** A left ventricular assist device
+    carries stroke, driveline infection and bleeding at rates that are accepted
+    only because the alternative is death. **Transplantation trades heart failure
+    for lifelong immunosuppression**, with its infections, renal failure and
+    malignancy — `chronic-kidney-disease`'s bargain in another organ.
+  incidence:
+    value: 0.10
+    units: >
+      fraction-of-treated (permanent harm — chiefly renal function loss and
+      hyperkalaemia from neurohormonal blockade and diuretics, device
+      complications and inappropriate shocks, and the consequences of advanced
+      therapies) — a reasoned estimate
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    **THE MYOCARDIUM DOES NOT REGENERATE, AND THE MOST INTERESTING EXCEPTION IN
+    THIS RECORD IS AN INDUCED REMISSION THAT WAS PROVEN NOT TO BE A CURE.**
+    Cardiomyocytes lost to infarction, sustained pressure overload or toxicity are
+    replaced by fibrous scar. The lost contractile tissue does not come back,
+    which is why every intervention here works around a deficit rather than
+    repairing it, and why each hospitalisation leaves a step down that is not
+    fully recovered.
+    **But a real fraction of dilated cardiomyopathy recovers its ejection
+    fraction on therapy** — peripartum, tachycardia-induced, alcohol-related and
+    some idiopathic cases normalise, and the field named the state **heart failure
+    with recovered ejection fraction**. It looks like a cure and the question of
+    whether it is one was answered directly: **a randomised withdrawal trial
+    stopped therapy in patients whose function had normalised, and a large
+    fraction relapsed within six months.**
+    **That is the cleanest datum anywhere in this corpus for gaps.md #205.**
+    Recovery here is an *induced remission maintained by continuing treatment*,
+    not a finished disease — and the register has no word for it. `curative` means
+    a finite intervention ends it, `suppressive` means near-normal life on
+    indefinite treatment, and this is the second with the appearance of the first,
+    demonstrated by taking the treatment away and watching.
+  incidence:
+    value: 0.60
+    units: >
+      fraction-of-affected (permanent loss of myocardial function persisting
+      despite optimal therapy) — a reasoned estimate, and deliberately high
+      because for most of this record the damage is the point
+    src: reasoning
+
+window:
+  what: >
+    **THIS RECORD'S FIELD ALREADY BUILT THE THING gaps.md #170 IS ASKING FOR, AND
+    PUT IT IN A GUIDELINE.**
+    Heart failure is formally staged **A, B, C, D**: at risk with no structural
+    change; **structural or functional cardiac abnormality with no symptoms**;
+    symptomatic; and advanced. Stages A and B are explicitly pre-clinical, and
+    treatment in them — controlling blood pressure, treating diabetes with an
+    SGLT2 inhibitor, treating coronary disease, and giving a
+    renin-angiotensin inhibitor for asymptomatic left ventricular systolic
+    dysfunction — is *prevention of heart failure* delivered to people who have
+    the abnormality and not the syndrome. **The definition was pulled backwards in
+    time deliberately and the field wrote it into its own staging system.** Sixth
+    record for #170.
+    **The second window is the hospitalisation, and it is short and repeatedly
+    missed.** The weeks after discharge are the highest-risk period and are also
+    when the four pillars can be started and titrated in a patient who is
+    demonstrably willing to be treated. Trials of rapid in-hospital initiation and
+    early up-titration improved outcomes. **What happens instead is discharge on
+    a diuretic and a follow-up appointment that arrives after the window closes**,
+    which is gaps.md #210 in its most concrete form.
+    **The third clock is the one nobody can see.** Left ventricular remodelling
+    proceeds silently after an infarct or under sustained hypertension for years
+    before symptoms, and there is no routine surveillance for it — natriuretic
+    peptide screening of high-risk populations reduces subsequent heart failure in
+    trial conditions and is not standard practice anywhere.
+  closes_on: >
+    the progression from asymptomatic structural abnormality (Stage B) to
+    symptomatic syndrome, over years and invisibly; and the weeks after a heart
+    failure hospitalisation, during which therapy can be started in a patient who
+    is present and willing
+  caught_in_time:
+    value: 0.30
+    units: >
+      fraction-of-cases (structural disease treated before symptoms, or therapy
+      initiated and titrated during the post-discharge vulnerable phase) — a
+      reasoned estimate
+    src: reasoning
+
+strata:
+  - name: reduced ejection fraction (HFrEF, EF ≤40%)
+    fraction:
+      value: 0.45
+      units: fraction-of-people-with-heart-failure
+      src: reasoning
+    intervention: disease-modifying
+    efficacy:
+      value: 0.70
+      units: fraction-of-stratum (substantial mortality and hospitalisation reduction on all four drug classes at target dose)
+      src: reasoning
+    toll: major
+    what: >
+      **ONE OF THE GREAT THERAPEUTIC ACHIEVEMENTS IN MEDICINE, AND ALMOST NOBODY
+      RECEIVES IT.** Four drug classes — a renin-angiotensin blocker or
+      sacubitril/valsartan, a beta-blocker, a mineralocorticoid receptor
+      antagonist, and an SGLT2 inhibitor — each independently reduce mortality,
+      and taken together they roughly halve it and add years of life. Devices add
+      more: defibrillators prevent sudden death, resynchronisation improves
+      function in a defined group. **Most of it is off patent.** Registry data
+      consistently find only a small percentage of eligible patients on all
+      classes at target dose (gaps.md #210).
+
+  - name: mildly reduced ejection fraction (HFmrEF, EF 41-49%)
+    fraction:
+      value: 0.10
+      units: fraction-of-people-with-heart-failure
+      src: reasoning
+    intervention: disease-modifying
+    efficacy:
+      value: 0.50
+      units: fraction-of-stratum (benefit from therapies proven in the reduced group)
+      src: reasoning
+    toll: major
+    what: >
+      **A category invented in 2016 because a binary did not work, and renamed in
+      2021 because the first name implied the wrong thing.** These patients
+      respond more like the reduced group than the preserved one, which is
+      exactly what a continuous variable cut into bins produces. **The stratum is
+      evidence that the taxonomy is a measurement convention rather than a
+      biological boundary**, and it exists because the field noticed.
+
+  - name: preserved ejection fraction (HFpEF, EF ≥50%)
+    fraction:
+      value: 0.45
+      units: fraction-of-people-with-heart-failure
+      src: reasoning
+    intervention: symptomatic
+    efficacy:
+      value: 0.35
+      units: fraction-of-stratum (reduced hospitalisation and improved symptoms)
+      src: reasoning
+    toll: minor
+    what: >
+      **HALF THE DISEASE, AND UNTIL 2021 NOTHING REDUCED ANY OUTCOME IN IT.** Trial
+      after trial of the drugs that transformed the reduced group was neutral
+      here. **SGLT2 inhibitors were the first therapy to work** — mainly on
+      hospitalisation — and semaglutide substantially improved symptoms in the
+      obesity-related phenotype. It is the fastest-growing stratum, driven by
+      ageing, `obesity`, `hypertension`, `type-2-diabetes` and
+      `atrial-fibrillation`, and **its mechanism is the reason this record rates
+      `mechanism: partial`.**
+
+moved:
+  - date: 1987
+    axis: intervention
+    from: symptomatic
+    to: disease-modifying
+    why: >
+      **THE FIRST DRUG EVER SHOWN TO MAKE PEOPLE WITH HEART FAILURE LIVE LONGER,
+      AND BEFORE IT THE TREATMENT WAS DIURETICS AND DIGOXIN.**
+      The CONSENSUS trial gave enalapril to patients with severe heart failure and
+      was stopped early for a large mortality reduction. Until then heart failure
+      was managed as a plumbing problem — remove the fluid, strengthen the
+      contraction — and the trial established that **blocking the body's
+      compensatory neurohormonal response, which looks like removing a crutch,
+      prolongs life.**
+      That inversion is the intellectual core of this record and the next entry
+      repeats it. The syndrome's own adaptations are what kill the patient, and
+      the therapy is to blunt them.
+    src:
+      id: PMID:2883575 doi:10.1056/NEJM198706043162301
+      retrieved: 2026-08-26
+      quote: >
+        To evaluate the influence of the angiotensin-converting-enzyme inhibitor
+        enalapril (2.5 to 40 mg per day) on the prognosis of severe congestive
+        heart failure (New York Heart Association [NYHA] functional class IV), we
+        randomly assigned 253 patients in a double-blind study to receive either
+        placebo (n = 126) or enalapril (n = 127).
+
+  - date: 1999
+    axis: efficacy
+    from: 0.40
+    to: 0.55
+    why: >
+      **BETA-BLOCKERS WERE CONTRAINDICATED IN HEART FAILURE, AND THEN THEY BECAME
+      A PILLAR OF ITS TREATMENT.**
+      The physiology of the day was unambiguous: a failing heart depends on
+      sympathetic drive, so blocking it should be dangerous. Textbooks listed
+      heart failure as a contraindication. Two large trials reported in 1999 —
+      CIBIS-II and MERIT-HF — and both were stopped early for mortality benefit.
+      **A drug class that the mechanism said would kill these patients reduced
+      their deaths by around a third.**
+      **This is the strongest counterexample in the register to its own recurring
+      finding** (gaps.md #193, #198) that mechanism is not on the path to
+      treatment. Here mechanism was on the path and **pointing the wrong way**,
+      and what corrected it was a trial. The register has repeatedly recorded
+      capability arriving without understanding; this is understanding arriving
+      confidently and being wrong, and only an experiment could tell.
+    src:
+      id: PMID:10376614
+      retrieved: 2026-08-26
+      quote: >
+        Metoprolol CR/XL once daily in addition to optimum standard therapy
+        improved survival. The drug was well tolerated.
+
+  - date: 2021
+    axis: efficacy
+    from: 0.50
+    to: 0.55
+    why: >
+      **HALF OF HEART FAILURE HAD NOTHING FOR THIRTY YEARS, AND WHAT FINALLY
+      WORKED WAS A DIABETES DRUG.**
+      Every therapy that transformed reduced ejection fraction was tried in
+      preserved ejection fraction and was neutral. **EMPEROR-Preserved reported in
+      2021 and DELIVER in 2022**, both showing that SGLT2 inhibitors reduce heart
+      failure hospitalisation in the preserved group — the first therapy of any
+      kind to improve an outcome there. Semaglutide followed with substantial
+      symptom improvement in the obesity-related phenotype.
+      **SGLT2 inhibitors were developed to lower blood glucose by making people
+      excrete it in urine.** Their cardiovascular benefit was found in a
+      safety trial mandated by a regulator, they became the fourth pillar in
+      reduced ejection fraction, and then the first and only therapy in preserved
+      ejection fraction. **The mechanism of the benefit is still not settled.**
+      **This is gaps.md #160's third quantified arrow in five records** — after
+      semaglutide into `osteoarthritis`, and the same molecule into this record's
+      preserved stratum. The pattern is now hard to ignore: **the most important
+      new therapies in three consecutive records were developed for a different
+      disease**, and nothing in this register can draw the edge.
+    src: recall
+
+witness:
+  mechanism: >
+    `partial`, and the two halves of the record deserve different words.
+    **What is established is the syndrome's physiology and its vicious circle.**
+    The heart cannot deliver enough output at normal filling pressures. The body
+    responds as though to haemorrhage — sympathetic activation, renin-angiotensin-
+    aldosterone activation, vasoconstriction, sodium and water retention — and
+    each response increases the load on the failing ventricle. **The compensations
+    are the disease's engine**, which is why every drug that prolongs life here
+    blocks one of them, and why blocking them looked so dangerous in prospect.
+    Structurally, the ventricle remodels: dilates, thins, becomes fibrotic, and
+    the mitral valve leaks as the annulus stretches, which worsens everything.
+    **Reduced ejection fraction is a systolic contraction failure** with
+    identifiable causes: infarction and coronary disease, sustained hypertension,
+    valve disease, arrhythmia, alcohol and other toxins, myocarditis,
+    chemotherapy, peripartum cardiomyopathy, and a substantial monogenic component
+    — dilated cardiomyopathy has well-characterised causal genes, *TTN* truncating
+    variants above all.
+    **PRESERVED EJECTION FRACTION IS THE HOLE, AND IT IS HALF THE RECORD.** The
+    heart contracts normally and fails anyway. The prevailing account is a
+    systemic one — that comorbid `obesity`, `type-2-diabetes`, `hypertension` and
+    chronic kidney disease drive a low-grade inflammatory state, microvascular
+    dysfunction and myocardial stiffening — and it is a plausible synthesis rather
+    than a demonstrated chain. **Thirty years of neutral trials is the strongest
+    evidence that the target was not understood**, and the one drug class that
+    finally worked did so for reasons nobody can yet state.
+    **And underneath both: heart failure is a final common pathway** (gaps.md
+    #39), which this register named as the textbook case before rating it. Five
+    records in this corpus converge here, the causes coexist within single
+    patients, and an unstratified trial enrols a mixture — the mechanical
+    explanation for three decades of null results in the preserved group.
+  contested: >
+    **THE TAXONOMY IS DISPUTED AND IT IS A DISPUTE ABOUT A MEASUREMENT, NOT ABOUT
+    BIOLOGY.**
+    Heart failure is divided by ejection fraction into three categories with
+    boundaries at 40% and 50%. **Ejection fraction is continuous, its measurement
+    is operator-dependent with inter-reader variation of several percentage
+    points, and it varies within a patient over time** — many patients cross the
+    boundaries in both directions. One position is that the categories are
+    indispensable because they are how trial evidence is organised and therefore
+    how treatment is chosen. The other is that they are an artefact that has
+    misdirected thirty years of research: that "preserved ejection fraction" names
+    a set of quite different diseases pooled by a normal echocardiogram, and that
+    the neutral trials were neutral partly for that reason.
+    **The 2016 invention of a middle category and its 2021 renaming are the field
+    conceding the point in instalments.**
+    A second, smaller dispute: **whether heart failure is one entity at all**, or
+    whether — like `sepsis` and `anaemia` in this register — it is a clinical
+    syndrome useful at the bedside and actively harmful as a research object. The
+    register takes no position and notes that its own #39 has now collected eight
+    citing records.
+  intervention: >
+    `disease-modifying`, and the rating is exact rather than modest: **the therapy
+    substantially alters the course and nobody is cured.**
+    **In reduced ejection fraction there are four pillars** — a
+    renin-angiotensin blocker, preferably sacubitril/valsartan; a beta-blocker; a
+    mineralocorticoid receptor antagonist; an SGLT2 inhibitor. Each reduces
+    mortality independently, the effects are broadly additive, and together they
+    roughly halve mortality and add several years of life. **Most are generic.**
+    Add ivabradine, hydralazine-nitrate in defined groups, intravenous iron for
+    iron deficiency, and devices: implantable defibrillators, cardiac
+    resynchronisation, and increasingly transcatheter mitral repair for secondary
+    regurgitation.
+    **In preserved ejection fraction there is an SGLT2 inhibitor, a diuretic for
+    congestion, treatment of the comorbidities, and — newly — a GLP-1 agonist in
+    the obesity phenotype.** That is the whole list for half the disease.
+    **At the end there are advanced therapies that work extremely well for
+    extremely few.** Transplantation gives excellent survival and is limited by
+    donor hearts to a few thousand people a year worldwide. Left ventricular
+    assist devices are a mechanical substitute with a serious complication burden.
+    **Neither scales, and both are `chronic-kidney-disease`'s arithmetic in
+    another organ.**
+    **What does not exist is repair.** No therapy regenerates myocardium. Cell
+    therapy has been trialled extensively for two decades with no established
+    benefit, and parts of that literature have been retracted.
+  prevention: >
+    `risk-reduction`, and it is unusually strong because heart failure's causes
+    are almost all records in this register that already have treatments.
+    **Treating hypertension is the single largest lever** — intensive blood
+    pressure lowering reduced incident heart failure substantially in trial, and
+    `hypertension` is the most prevalent modifiable cause. **SGLT2 inhibitors in
+    type 2 diabetes reduce heart failure hospitalisation**, which is prevention of
+    this record delivered inside another one. **Treating coronary disease**
+    prevents the infarcts that cause it; **rate and rhythm control in atrial
+    fibrillation** prevents tachycardia-induced cardiomyopathy; **rheumatic fever
+    prophylaxis** prevents the valve disease that causes it across much of the
+    world. Cardiotoxicity surveillance during anthracycline and trastuzumab
+    chemotherapy prevents an iatrogenic slice that belongs to the cancer records.
+    **And there is a preventive intervention that is not standard anywhere**:
+    screening high-risk populations with natriuretic peptides and treating those
+    who screen positive reduced subsequent heart failure in trial conditions. It
+    is Stage A and B management with a test attached, and no health system does it.
+    **Note the uncomfortable direction, because it is gaps.md #147.** Better
+    treatment of acute myocardial infarction converts deaths into survivors with
+    damaged ventricles, and part of this record's growth is the success of
+    `ischaemic-heart-disease`.
+  ongoing: >
+    `high`, and it is high in a way that compounds.
+    Four to six medications taken daily, each needing dose titration against blood
+    pressure, heart rate, renal function and potassium; blood tests at every dose
+    change; daily weights and fluid or salt restriction; a diuretic whose dose the
+    patient may be asked to adjust themselves. **Repeated hospitalisations**, which
+    are the defining experience of advanced disease and each of which leaves the
+    patient worse. Device checks, and for some a defibrillator that may fire.
+    **The symptom burden is severe and under-treated.** Breathlessness and fatigue
+    at the end of this record are comparable to advanced cancer, and **palliative
+    care reaches heart failure patients far later and far less often**, because the
+    trajectory is a sawtooth rather than a decline and nobody knows when to have
+    the conversation. `prognostic: good` is rated on populations and does not
+    resolve that question for a person.
+    Add the caregiver burden, and the frailty and multimorbidity of the modal
+    patient — who is over seventy-five and has several of this register's other
+    records at once.
+
+holes:
+  - >
+    **Four mortality-reducing drug classes, mostly generic, and a small percentage
+    of eligible patients get all of them at target dose** (gaps.md #210). No
+    blocker kind in this register is the prescriber: `adherence` is the patient,
+    `cost` is not binding where most of the shortfall is, and `logistics` and
+    `policy` are both approximations.
+  - >
+    **Mondo issues a disease identifier and GBD models it as an impairment**
+    (gaps.md #211), so the register's two external dependencies disagree about
+    whether this is a cause of death. `anaemia` has the same problem and the same
+    zero.
+  - >
+    **Half the record has an unresolved mechanism and thirty years of neutral
+    trials**, and the register rates one `mechanism` for both halves.
+  - >
+    **The ejection fraction thresholds are conventions narrower than the test's own
+    measurement error**, and they decide which treatments a patient is offered
+    (gaps.md #90, #180).
+  - >
+    **Recovered ejection fraction is an induced remission proven by a withdrawal
+    trial not to be a cure** — the cleanest case in the corpus for gaps.md #205,
+    and there is no field for it.
+  - >
+    Every scalar is `recall` or `reasoning`, and this record has unusually good
+    public data behind it — national heart failure audits and large registries
+    report exactly the prescribing figures the `policy` blocker rests on, and none
+    is cited.
+
+blockers:
+  - kind: policy
+    blocks: writing the prescription
+    obstacles: []
+    what: >
+      **THIS IS THE REGISTER'S CLEAREST CASE OF A PROVEN, AVAILABLE, AFFORDABLE
+      TREATMENT SIMPLY NOT BEING GIVEN, AND IT IS FILED UNDER `policy` BECAUSE NO
+      KIND FITS** (gaps.md #210).
+      Four drug classes each reduce mortality in reduced ejection fraction. Most
+      are off patent. They are stocked and reimbursed across every high-income
+      health system. **Registry after registry finds that only a small percentage
+      of eligible patients are on all of them at target dose**, and that a large
+      share of those prescribed are on a fraction of the trial dose and never
+      up-titrated.
+      **The reasons are known and none of them is a shortage.** Titration takes
+      repeated visits with blood tests, which nobody is resourced or paid to do.
+      A transient rise in creatinine or potassium — expected, and not a reason to
+      stop — causes the drug to be stopped. Responsibility is diffuse between
+      hospital and primary care, so each assumes the other will escalate. The
+      patient feels well and the clinician sees no reason to change anything.
+      **And the therapeutic window after a hospitalisation, when initiation works
+      best and the patient is present, is spent arranging follow-up.**
+      **What fixes it is service design rather than discovery**: in-hospital
+      initiation before discharge, nurse- or pharmacist-led titration clinics,
+      rapid up-titration protocols, and audit with feedback. All are tested and
+      all work.
+      **The register cannot name this.** `adherence` is the patient not taking it;
+      here the prescription was never written. `cost` is not binding. `logistics`
+      is the closest and describes a missing service rather than a decision not
+      made. **A `practice` or `implementation` blocker kind is what this needs**,
+      and heart failure is the flagship because the gap between what works and
+      what is done is the widest in the corpus.
+    who_could: [health-system, payer, government, academic, patient-org]
+    scale: 5.0e9
+    standing: documented
+    src: recall
+
+  - kind: diagnosis
+    blocks: an echocardiogram, and telling apart two diseases with one name
+    obstacles: []
+    what: >
+      **THE DIAGNOSIS REQUIRES AN ECHOCARDIOGRAM, AND THE ECHOCARDIOGRAM DECIDES
+      WHICH DISEASE THE PATIENT IS CONSIDERED TO HAVE.**
+      Without an ejection fraction there is no way to know whether a breathless
+      older person should receive four mortality-reducing drugs or one. Access to
+      echocardiography is the rate-limiting step in most health systems — waiting
+      lists in wealthy ones, near-absence across much of the world — and
+      **natriuretic peptide testing, which is a cheap blood test with an excellent
+      negative predictive value and would triage the queue, is inconsistently
+      available in primary care.**
+      **Preserved ejection fraction is genuinely difficult** and is both missed and
+      over-diagnosed. It presents as breathlessness in an older person with
+      obesity, atrial fibrillation, kidney disease and deconditioning, each of
+      which is a sufficient explanation, and confirming it needs scoring
+      algorithms or invasive haemodynamics.
+      **And the threshold problem is a diagnostic problem, not a cosmetic one.**
+      Inter-reader variation in ejection fraction is of the same order as the gap
+      between the categories, so **which treatments a patient is offered can turn
+      on which sonographer scanned them.** Automated and AI-assisted quantification
+      reduces that variance and is not standard.
+    who_could: [health-system, government, manufacturer, software, academic]
+    scale: 3.0e9
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: half the disease, and any way to replace lost muscle
+    obstacles: [tissue-repair]
+    what: >
+      **THIRTY YEARS OF NEUTRAL TRIALS IN PRESERVED EJECTION FRACTION IS THE
+      REGISTER'S LONGEST RUN OF NULL RESULTS AFTER ALZHEIMER'S AND
+      OSTEOARTHRITIS.**
+      Every therapy that transformed the reduced group was tested here and did
+      nothing. The prevailing explanation — comorbidity-driven systemic
+      inflammation producing microvascular dysfunction and myocardial stiffening —
+      is a synthesis rather than a demonstrated chain, and the one drug class that
+      finally reduced hospitalisations works for reasons that are not settled.
+      **The competing explanation is that the entity is wrong**: that a normal
+      ejection fraction pools several diseases and the trials enrolled mixtures,
+      which is gaps.md #39's mechanical prediction and would mean the answer is
+      stratification rather than a better drug.
+      **And nothing regenerates myocardium.** Cardiomyocytes lost to infarction or
+      toxicity are replaced by scar. Two decades of cell therapy trials produced no
+      established benefit and a retracted literature; engineered heart tissue and
+      direct reprogramming remain preclinical. **A therapy that restored
+      contractile tissue would change this record more than anything since 1987**,
+      and it is `hearing-loss`'s hair cell and `osteoarthritis`'s chondrocyte in a
+      third tissue — a mammalian cell type that does not come back.
+      Third: **nobody knows why some recovered hearts relapse when treatment stops
+      and others do not**, which is a question with a ready-made trial design and
+      no answer.
+      `scale: null`.
+      **Tagged `tissue-repair` (2026-08-28)** for the second half of this blocker. That obstacle names myocardium in its own question — *"myocardium infarcted in an hour is scar for life"* — and this is the record where that sentence lands as a disease. The preserved-ejection-fraction half is a mechanism question and has no obstacle to cite.
+    who_could: [academic, sponsor, manufacturer, philanthropy]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: a service that follows the patient after discharge
+    obstacles: []
+    what: >
+      **THE MODEL PATIENT IS OVER SEVENTY-FIVE, HAS FOUR OTHER RECORDS IN THIS
+      REGISTER, AND IS DISCHARGED INTO NOTHING.**
+      Heart failure care that works is a multidisciplinary service — specialist
+      nurses, titration clinics, rapid access for decompensation, cardiac
+      rehabilitation, and palliative input — and it consistently reduces
+      readmission and death where it exists. **It exists patchily in wealthy
+      countries and essentially not at all elsewhere.** What most patients get is
+      an admission, a diuretic, and a letter.
+      **Cardiac rehabilitation is the clearest under-delivery**: it improves
+      symptoms and quality of life, it is recommended, and it reaches a small
+      minority of eligible patients even where it is funded — the same figure
+      `copd` records for pulmonary rehabilitation, in a second organ.
+      **Across most of the world the constraint is upstream of all of this**:
+      no echocardiography, no natriuretic peptide testing, intermittent supply of
+      generic drugs, and heart failure presenting late in people whose
+      `rheumatic-heart-disease` or `hypertension` was never treated. **Devices and
+      advanced therapies are absent entirely**, which is the correct allocation
+      decision and worth saying.
+    who_could: [health-system, government, payer, nonprofit, academic]
+    scale: 1.5e10
+    standing: documented
+    src: recall
+
+  - kind: cost
+    blocks: the two pillars that are still on patent, and everything with a battery
+    obstacles: []
+    what: >
+      **THE CHEAP HALF OF THE THERAPY IS THE OLD HALF.**
+      Renin-angiotensin inhibitors, beta-blockers and mineralocorticoid receptor
+      antagonists are generic and cost very little. **Sacubitril/valsartan and the
+      SGLT2 inhibitors — the newest pillar and the only therapy that works in
+      preserved ejection fraction — remain expensive in many markets**, and the
+      cost is a documented reason both are prescribed less than the older classes
+      even in systems where they are reimbursed.
+      **Devices are a different order.** An implantable defibrillator with
+      implantation runs to tens of thousands of dollars, resynchronisation
+      devices more, and both need replacement generators every several years —
+      **which is `osteoarthritis`'s service-life problem (gaps.md #202) with a
+      battery instead of a bearing.** Left ventricular assist devices and
+      transplantation are among the most expensive interventions in medicine and
+      reach a few thousand people a year worldwide.
+      **The comparison that matters is with the alternative and it favours
+      treatment.** Heart failure consumes an enormous share of hospital bed-days in
+      every wealthy country, most of it in readmissions that optimal therapy
+      prevents. **Under-treating this record is more expensive than treating it**,
+      which is the same arithmetic `low-back-pain` records for its inverted
+      blocker and is why the `policy` blocker above is the important one.
+    who_could: [payer, manufacturer, government, health-system, regulator]
+    scale: 2.0e10
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0101
+  rated: 2026-08-26
+  by: [claude, jeremy]

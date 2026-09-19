@@ -1,0 +1,148 @@
+slug: deliverable-form
+id: FND-O-0017
+name: What would it take to deliver this without the scarce thing?
+kind: capability
+resolution: partly-answered
+
+question: >
+  The treatment works. Getting it into a person requires something there is not
+  enough of — **a trained specialist, an operating theatre, a refrigerated chain,
+  a laboratory, a course of therapy somebody has to complete, or a supply route.**
+  The obstacle is not the molecule and not the money. It is that **the thing was
+  designed for a setting that most patients are not in.**
+  **AND THE FIX IS ALMOST NEVER "SUPPLY MORE OF THE SCARCE THING".** It is to
+  change what the treatment requires. `clubfoot` states it in capitals — *"AND IT
+  IS DELIVERABLE WITHOUT A DOCTOR, WHICH IS THE FACT THAT MATTERS MOST"* — a
+  method of plaster casts and a brace that a physiotherapist or clinical officer
+  delivers, against the posteromedial release it replaced. `cataract` records
+  non-physician cataract surgeons and a high-volume model that multiplies
+  operations per surgeon without worsening outcomes. `trachoma` runs on **a single
+  dose of azithromycin**. `soil-transmitted-helminths` and
+  `taeniasis-cysticercosis` on a single dose costing cents. `hypertension` records
+  that halving the tablet count measurably improves control.
+  **THIS IS THE FIRST NON-KNOWLEDGE CLUSTER IN THE REGISTER, AND ITS ABSENCE WAS
+  A KNOWN GAP RATHER THAN AN OVERSIGHT.** `check.py` reports only `knowledge`
+  blockers as untagged, on the stated grounds that *"the first tagging pass
+  covered them, and the others are the work in front of us."* Nordstern holds 105
+  `logistics`, 84 `policy` and 55 `cost` blockers and none of them has ever been
+  clustered. This record is the first attempt.
+  `partly-answered`, and generously: **this may be the most repeatedly-solved
+  obstacle in the register.** Oral rehydration replaced intravenous fluid and a
+  clinician with a sachet and a parent. Recombinant expression replaced cadaver
+  extraction with a fermenter. Heat-stable formulations, fixed-dose combinations,
+  long-acting injectables, task-shifted surgery and rapid diagnostic tests are all
+  the same move. **What is unsolved is that nobody treats it as a discipline** —
+  each instance was invented separately, by people who did not think of themselves
+  as working on the same problem.
+
+what_it_unblocks: >
+  **THE REGISTER'S LARGEST SINGLE FINDING, WHICH ITS OBSTACLE TAXONOMY COULD NOT
+  HOLD UNTIL NOW.** 68 of 143 records carry `cannot-reach-people` — efficacy
+  multiplied by access leaves most patients untouched — and it is the most common
+  state in the corpus by a wide margin. Not one of them cited an obstacle,
+  because there was none to cite.
+  **AND IT WAS FOUND THREE TIMES INDEPENDENTLY IN ONE DAY, WHICH IS WHY THIS
+  RECORD EXISTS.** A proposal register's two highest-value entries —
+  `refraction-workforce` and `food-fortification` — attacked nothing and derived
+  their entire reach from diseases named by hand. And a backtest of eight
+  capabilities that changed medicine scored two of them at **zero**: oral
+  rehydration salts and recombinant protein expression, both of which the
+  register's own dated history proves moved three and five records. **Both are
+  delivery and manufacturing inventions, and the scorer could not see them
+  because this obstacle did not exist.**
+  Concretely, the diseases waiting on it are the ones where nothing needs
+  discovering. `refractive-error`: efficacy 0.98, access 0.3, and **the scarce
+  thing is a person who can measure an eye**, not a lens. `cataract`: the
+  highest-volume operation in the world, effective coverage around a third.
+  `clubfoot`: roughly a fifth of affected children treated, for a condition
+  correctable with plaster. `hearing-loss`: 17% of those who would benefit from a
+  hearing aid have one. **Four records, on the order of a billion people, and
+  every one of them is a delivery problem with a solved biology.**
+  `obstetric-fistula` supplies the counter-case and it is why this is a real
+  question rather than a slogan: *"Task-shifting, which worked for `clubfoot`, is
+  much harder here — this is not casting, and a failed first attempt has a
+  permanent cost."* **Some things cannot be simplified**, and knowing which is the
+  question.
+
+why_hard: >
+  **BECAUSE IT IS INVISIBLE TO EVERY INSTITUTION THAT COULD DO IT.** A
+  reformulation that lets a nurse give what a surgeon gave is not a discovery, so
+  it does not publish well; it is not a new molecule, so it does not patent well;
+  and it makes an existing product cheaper to deliver, so its own manufacturer has
+  no reason to fund it. **The economic gradient points away from the work in every
+  direction at once**, which is unusual — most obstacles here have at least one
+  actor who benefits.
+  **BECAUSE SIMPLIFICATION IS OFTEN A REAL CLINICAL TRADE-OFF AND NOT A FREE
+  LUNCH.** `cholera` records the coordinating group suspending the two-dose oral
+  vaccine regimen for a single dose **to stretch supply**, which is a delivery
+  gain paid for in duration of protection. A single-dose treatment that clears an
+  organism less reliably breeds resistance — `mycoplasma-genitalium` records
+  exactly that. The question is not *can it be made simpler* but *what does simpler
+  cost*, and that is a trial, which routes back into `validation-throughput`.
+  **BECAUSE THE EVIDENCE THAT IT WORKS DOES NOT TRANSFER BY ITSELF.** Ponseti
+  published in 1963 and was ignored for forty years while surgeons continued to
+  operate. High-volume cataract surgery is published, replicated in several
+  countries and unpatented, and coverage is still around a third. `depression`
+  states the general form: *"a capacity problem with a known solution shape —
+  task-shifting, lay counsellors, stepped care — that is demonstrated and
+  under-deployed."* **Demonstrating the simplification is apparently the easy
+  half.**
+  **AND BECAUSE `cold-chain` SHOWS WHAT HAPPENS WHEN ONE FACE OF IT IS NAMED.**
+  That obstacle — FND-O-0014, eight records — is one instance of this class with a
+  specific fix, and it earned citations quickly once it had a slug. It is NOT
+  deprecated into this record, because a temperature requirement has an
+  engineering answer that a skill requirement does not, and merging them would
+  hide the difference. **It is evidence that naming a face of this problem makes
+  it visible, and that the other faces have been sitting untagged.**
+
+claims: []
+# DELIBERATELY EMPTY AND THE REASON IS THE OPPOSITE OF `anaesthesia-mechanism`'s.
+#
+# That record claims nothing because nothing is waiting on it. This one claims
+# nothing because **the candidate list is 68 records long and asserting it would
+# be worthless.** Every record carrying `cannot-reach-people` is a plausible
+# citation; picking five would be arbitrary, and picking all of them would be the
+# author writing the register's largest obstacle into existence by hand — which
+# `growth-control` and `validation-throughput` both did today, and both had to
+# log as a hole.
+#
+# **The honest position is that this record has to be earned by a rating pass
+# over the 244 logistics, cost and policy blockers that have never been tagged**,
+# and that pass has not happened. Until it does, this obstacle is a proposal for
+# a taxonomy rather than a finding about medicine.
+
+holes:
+  - >
+    **CITED BY NOTHING, WITH THE LARGEST CANDIDATE SET IN THE REGISTER, AND THOSE
+    TWO FACTS TOGETHER ARE THE RECORD'S MAIN WEAKNESS.** 68 records carry
+    `cannot-reach-people` and 244 blockers are `logistics`, `cost` or `policy`.
+    None of them has been tagged, because the first tagging pass covered
+    `knowledge` only. **So this record is a hypothesis about how those 244 would
+    cluster, written before anybody clustered them** — which is precisely
+    backwards from how `who-progresses` and `tissue-repair` were derived.
+  - >
+    **IT MAY BE TOO BIG TO BE AN OBSTACLE.** *The thing does not reach people* is
+    close to a restatement of the `cannot-reach-people` bucket, and a register
+    whose largest entry is a synonym for its largest bucket has not added
+    information. The defence is that the bucket names a STATE and this names a
+    QUESTION with a specific and unusual answer — change what the treatment
+    requires, rather than supply more of what is scarce — and that the question
+    has a track record. **If a tagging pass finds the 244 blockers split into
+    four or five distinct clusters, this record should be deprecated into them.**
+  - >
+    **THE BOUNDARY WITH `cost` IS NOT CLEAN AND MAY NOT BE CLEANABLE.** A
+    treatment that needs a specialist is expensive *because* it needs a
+    specialist. Whether `refractive-error` is blocked by a missing workforce or by
+    nobody paying for one is a question this record answers by assertion.
+  - >
+    **`cold-chain` OVERLAPS AND IS DELIBERATELY NOT ABSORBED.** Its eight
+    citations would be this record's first, which is a tempting and bad reason to
+    merge them. Kept separate because a temperature requirement has an
+    engineering fix and a skill requirement has a training-and-institutions fix,
+    and the register should not imply those are the same problem.
+  - >
+    Written from model recall, over a corpus none of whose numbers are sourced.
+
+asserted:
+  date: 2026-09-02
+  by: [claude, jeremy]

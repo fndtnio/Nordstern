@@ -1,0 +1,487 @@
+slug: renal-cell-carcinoma
+id: FND-D-0063
+name: renal cell carcinoma
+also: [kidney cancer, RCC, clear cell renal cell carcinoma, renal adenocarcinoma]
+mondo: MONDO:0005086
+kind: disease
+residual: false
+contested: false
+
+# **OVERDIAGNOSIS WITHOUT A SCREENING PROGRAMME.**
+#
+# More than half of renal cancers are now found by accident — on an abdominal CT
+# ordered for pain, an ultrasound for gallstones, a scan for something else
+# entirely. The classic triad of flank pain, haematuria and a palpable mass is
+# rare now and means the disease is advanced.
+#
+# Nobody decided to look for kidney cancer. **CT scanners became ubiquitous and
+# the disease was found as a byproduct**, incidence rose substantially, and
+# mortality rose much less. That is the overdiagnosis signature — arrived at with
+# no programme, no policy, no test and no decision.
+#
+# The four screening records before this one all involved somebody choosing to
+# look. This one is what happens when the looking is free. gaps.md #137.
+#
+# AND IT IS NOT PURE OVERDIAGNOSIS, WHICH IS WHY IT IS INTERESTING. Some of those
+# incidental small masses are curable cancers found in time; roughly a fifth are
+# benign; and many of the rest would never have declared themselves. RCC sits
+# between thyroid cancer's pure loss and colorectal cancer's pure gain, **and
+# nobody chose where it sits.**
+#
+# THE OTHER THING: this record's history is largely a history of STOPPING.
+# Radical nephrectomy gave way to partial. Cytoreductive nephrectomy was
+# de-adopted when a trial said so. High-dose interleukin-2 was abandoned. Small
+# masses are watched. **Eight records in this register have now improved by
+# subtraction and the schema can only record addition.** gaps.md #138.
+
+burden:
+  prevalence:
+    value: 4.3e5
+    units: >
+      new cases/year worldwide — **and rising substantially faster than mortality
+      for three decades**, driven by cross-sectional imaging rather than by any
+      change in the disease
+    src: recall
+  deaths:
+    value: 1.8e5
+    units: >
+      deaths/year — roughly two men for every woman, and concentrated in the
+      third of patients who present with disease that has already spread
+    src: recall
+  note: >
+    **INCIDENCE UP, MORTALITY UP MUCH LESS, AND NO SCREENING PROGRAMME ANYWHERE.**
+    The gap is imaging. Abdominal CT and ultrasound became routine for a hundred
+    other indications, and kidneys are large, superficial to the scanner and
+    impossible to miss.
+    Unlike thyroid cancer, the extra detection has bought something. Small renal
+    masses found incidentally and treated are cured, and stage-at-diagnosis has
+    shifted markedly toward localised disease. Unlike colorectal cancer, a
+    substantial share of what is found did not need finding: **roughly a fifth of
+    small renal masses are benign** — oncocytoma, angiomyolipoma — and many of
+    the malignant ones grow at a few millimetres a year in patients in their
+    seventies.
+    Risk factors are smoking, obesity and hypertension, which makes this the
+    **sixth record in the tobacco family** and puts two more queued entities
+    upstream of it. Chronic kidney disease and dialysis raise risk substantially,
+    and acquired cystic disease in dialysis patients is its own story — **another
+    queued record, upstream and downstream at once**, because the treatment for
+    this cancer damages the kidney too.
+
+survival:
+  horizon: 5 years from diagnosis
+  untreated:
+    value: 0.1
+    units: >
+      fraction alive — untreated renal cell carcinoma metastasises to lung and
+      bone, and was among the more refractory cancers before 2005
+    src: recall
+  treated:
+    value: 0.78
+    units: >
+      fraction alive — high because a large share is now found incidentally on
+      imaging done for something else, at a stage where nephrectomy cures.
+      **Metastatic disease was transformed twice in fifteen years**, by tyrosine
+      kinase inhibitors and then by checkpoint blockade
+    src: recall
+  witness: >
+    **A survival gain substantially manufactured by CT scanners.** Incidental
+    detection shifted the stage distribution before any drug did, which is
+    stage migration rather than treatment — the same effect that inflates
+    prostate and thyroid cancer here.
+
+axes:
+  mechanism: established
+  intervention: curative
+  prevention: risk-reduction
+  ongoing: moderate
+  efficacy:
+    value: 0.65
+    units: >
+      fraction-of-patients (cured, or given durable meaningful benefit) — high,
+      because most disease is now localised at diagnosis, and that is largely an
+      artefact of imaging rather than an achievement of care
+    src: reasoning
+  access:
+    value: 0.45
+    units: >
+      fraction-of-patients (reaching partial nephrectomy or ablation where
+      appropriate, and modern combination systemic therapy if metastatic) — the
+      surgery is widely available and the combinations are not
+    src: reasoning
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: partial
+  witness: >
+    DIAGNOSTIC is `objective` and, like hepatocellular carcinoma, **often made
+    on a picture.** A solid enhancing renal mass on cross-sectional imaging was
+    for a long time taken as cancer and taken out, without a biopsy.
+    **That was wrong about a fifth of the time.** Oncocytoma and fat-poor
+    angiomyolipoma look the same and are benign, and renal mass biopsy — long
+    avoided on grounds of seeding risk that turned out to be negligible — is used
+    much more now precisely to stop people losing kidneys for benign tumours.
+    **A diagnostic step added in order to do less surgery**, which is the same
+    move thyroid cancer's molecular classifiers and prostate cancer's MRI made.
+    PROGNOSTIC is `partial`. Stage, nuclear grade and sarcomatoid features for
+    localised disease; the IMDC criteria — performance status, time to systemic
+    therapy, and four laboratory values — for metastatic disease, which is a
+    clinical risk score rather than a biological one and which nonetheless drives
+    treatment choice.
+    PREDICTIVE is `partial` and weaker than the last several cancer records.
+    **Sarcomatoid differentiation predicts unusually good responses to checkpoint
+    blockade**, which is counterintuitive since it is the worst-behaving
+    histology. Non-clear-cell histology predicts worse response to almost
+    everything. PD-L1 shifts odds without deciding. **Treatment is chosen by risk
+    group rather than by biomarker**, which is where most of oncology was fifteen
+    years ago.
+
+toll:
+  severity: major
+  permanent: true
+  what: >
+    **THE OPERATION THAT CURES KIDNEY CANCER CAUSES KIDNEY DISEASE, AND CHRONIC
+    KIDNEY DISEASE IS A QUEUED RECORD IN THIS REGISTER.**
+    Radical nephrectomy removes a whole kidney and roughly halves nephron mass in
+    a patient who frequently has hypertension and diabetes already. The resulting
+    reduction in filtration is permanent, raises cardiovascular risk, and in some
+    patients progresses. **Partial nephrectomy exists precisely to avoid this**
+    and is technically harder, and its adoption has been slower and more uneven
+    than the evidence warrants.
+    **TYROSINE KINASE INHIBITORS ARE TAKEN INDEFINITELY AND FELT DAILY.**
+    Hypertension, hand-foot skin reaction, fatigue, diarrhoea, mucositis,
+    hypothyroidism. Individually manageable and collectively the reason many
+    patients reduce or stop, in a disease where the drug works while you take it.
+    **CHECKPOINT BLOCKADE** adds immune-related adverse events, and the endocrine
+    ones — thyroiditis, hypophysitis, occasionally type 1 diabetes — are
+    permanent hormone replacement in exchange for a response.
+    **AND HIGH-DOSE INTERLEUKIN-2 DESERVES RECORDING BECAUSE IT WAS ABANDONED.**
+    For two decades it was the only therapy that produced durable complete
+    remissions in metastatic RCC, in perhaps one patient in fifteen, at the cost
+    of capillary leak, vasopressors and intensive care for everyone who received
+    it. Checkpoint inhibitors replaced it, and **an enormous toll disappeared
+    from this record without capability changing** (gaps.md #26, #138).
+  incidence:
+    value: 0.30
+    units: >
+      fraction-of-treated (permanent harm — reduced renal function after
+      nephrectomy, chronic TKI toxicity, immune-related endocrine failure) — a
+      reasoned estimate across the treated population
+    src: reasoning
+
+# NO `residue` BLOCK. `restored` derives `cure-costs`, as for every cancer here
+# except melanoma. What a cured patient carries is a missing kidney.
+
+window:
+  what: >
+    **THE WINDOW IS BEING CAUGHT MORE OFTEN AND NOBODY ARRANGED IT.**
+    Localised renal cell carcinoma is cured by surgery in the large majority.
+    Metastatic disease is not curable, though it is now controllable for years.
+    So there is a real and consequential window — and roughly a third of patients
+    still present outside it, because kidney cancer produces no symptoms until it
+    is large or has spread.
+    What has changed the distribution is not medicine. **It is that people get
+    scanned**, for gallstones, for back pain, for trauma, for anything abdominal,
+    and the kidney is unmissable on those scans. Stage at diagnosis has shifted
+    markedly toward localised disease over three decades with no screening
+    programme, no guideline and no decision.
+    **That makes this the register's first accidental window catch**, and it
+    comes with the accompanying cost: about a fifth of the small masses found are
+    benign, and many of the malignant ones would never have surfaced. Active
+    surveillance of small renal masses is now an accepted option for exactly that
+    reason.
+    Screening for kidney cancer has been examined and is not recommended. **The
+    imaging that finds it is being done anyway.**
+  closes_on: >
+    spread beyond the kidney — venous invasion, nodal or distant metastasis —
+    after which the disease is controllable and not curable
+  caught_in_time:
+    value: 0.65
+    units: >
+      fraction-of-cases (diagnosed while localised and surgically curable) —
+      high, and it rose without anybody intending it
+    src: reasoning
+
+strata:
+  - name: small renal mass (T1a, under 4 cm)
+    fraction:
+      value: 0.30
+      units: fraction-of-diagnoses
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.95
+      units: fraction-of-stratum (cancer-specific survival at five years)
+      src: reasoning
+    toll: minor
+    what: >
+      Partial nephrectomy, thermal ablation, or **active surveillance** — most of
+      these grow at a few millimetres a year and many not at all, and a fifth of
+      them are benign.
+      **This is the stratum incidental imaging created**, and it is the one where
+      doing less is now standard practice. `toll: minor` describes what happens
+      when it is managed that way; a radical nephrectomy in a seventy-five-year-old
+      with hypertension is not minor.
+
+  - name: localised, larger or higher grade
+    fraction:
+      value: 0.35
+      units: fraction-of-diagnoses
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.75
+      units: fraction-of-stratum (cured by nephrectomy, with adjuvant therapy in selected patients)
+      src: reasoning
+    toll: major
+    what: >
+      Partial nephrectomy where technically possible, radical where not.
+      Adjuvant pembrolizumab improves outcomes in high-risk resected disease,
+      which is recent and brings immune-related toxicity to patients who are
+      already cured — the same adjuvant dilemma melanoma's record describes.
+
+  - name: metastatic, favourable and intermediate risk
+    fraction:
+      value: 0.20
+      units: fraction-of-diagnoses
+      src: reasoning
+    intervention: disease-modifying
+    efficacy:
+      value: 0.45
+      units: fraction-of-stratum (durable benefit on checkpoint-based combination therapy)
+      src: reasoning
+    toll: major
+    what: >
+      **THE STRATUM THAT CHANGED TWICE IN TWENTY YEARS.** Interferon and
+      interleukin-2 gave way to VEGF-targeted tyrosine kinase inhibitors in 2006,
+      and those gave way to checkpoint combinations from 2018. Median survival went
+      from about a year to several.
+      A minority achieve durable complete responses and can stop treatment,
+      which raises the same question melanoma's record raises and CML's field is
+      testing deliberately (gaps.md #118).
+
+  - name: metastatic, poor risk or non-clear-cell
+    fraction:
+      value: 0.15
+      units: fraction-of-diagnoses
+      src: reasoning
+    intervention: disease-modifying
+    efficacy:
+      value: 0.15
+      units: fraction-of-stratum (durable meaningful benefit)
+      src: reasoning
+    toll: major
+    what: >
+      Papillary, chromophobe, collecting duct and the rarer translocation and
+      medullary carcinomas, plus clear cell disease presenting with poor
+      performance status.
+      **Non-clear-cell RCC is treated with regimens designed for clear cell
+      disease**, because the trials were done there and each subtype is
+      individually too rare to power its own. Same shape as T-cell lymphoma and
+      small cell lung cancer: a stratum the era passed over.
+
+moved:
+  - date: 2006
+    axis: efficacy
+    from: 0.5
+    to: 0.6
+    why: >
+      **ANTI-ANGIOGENIC THERAPY, AND RENAL CELL CARCINOMA IS WHERE IT ACTUALLY
+      DELIVERED.** Sunitinib and sorafenib replaced interferon and high-dose
+      interleukin-2 as standard treatment for metastatic disease, roughly
+      doubling median survival.
+      It followed directly from the mechanism: clear cell RCC loses *VHL*,
+      stabilises HIF, and overproduces VEGF, so it is among the most vascular
+      tumours there is. **A pathway worked out from a hereditary syndrome
+      produced a drug class for the sporadic disease** — and anti-angiogenesis,
+      which underdelivered in most cancers, worked here for exactly that reason.
+
+  - date: 2018
+    axis: efficacy
+    from: 0.6
+    to: 0.65
+    why: >
+      **CHECKPOINT COMBINATIONS.** Ipilimumab with nivolumab, and
+      pembrolizumab or nivolumab with a VEGF inhibitor, became first-line for
+      metastatic disease, adding durable responses on top of the disease control
+      the TKIs already provided.
+      RCC and melanoma were the two cancers where high-dose interleukin-2 had
+      produced occasional durable remissions decades earlier — **which is why
+      immunotherapy was tried here first**, and why the modern agents landed so
+      well. Spontaneous regression of metastatic RCC is rare and genuinely
+      documented, and it is part of the same story.
+
+witness:
+  mechanism: >
+    `established` for clear cell disease, and it is one of the cleanest
+    oncogene-to-drug chains in this register.
+    Loss of the **von Hippel-Lindau** tumour suppressor — germline in VHL
+    disease, somatic in the great majority of sporadic clear cell RCC — prevents
+    degradation of hypoxia-inducible factor. **HIF-2α accumulates as though the
+    cell were permanently short of oxygen**, and switches on VEGF, PDGF, GLUT1
+    and the rest of the hypoxia programme. The tumour is intensely vascular
+    because it believes it is suffocating.
+    That accounts for everything downstream: why anti-VEGF therapy works here
+    when it disappointed elsewhere, and why **belzutifan**, a HIF-2α inhibitor
+    approved in 2021, works at all. **A hereditary syndrome gave the gene, the
+    gene gave the pathway, and the pathway gave a drug for people who never had
+    the syndrome.**
+    Papillary RCC runs on *MET*; chromophobe and the rarer entities are different
+    diseases again.
+    **THE NAMED HOLES ARE TWO AND BOTH ARE ODD.** *Why RCC is essentially immune
+    to cytotoxic chemotherapy* — no conventional agent works, which is why the
+    field went to immunotherapy and anti-angiogenics in the first place. And *why
+    metastatic RCC occasionally regresses on its own*, which is rare, repeatedly
+    documented, and unexplained.
+  intervention: >
+    `curative` for localised disease, which is now most of it. Partial
+    nephrectomy where the tumour allows, radical where it does not, thermal
+    ablation for small masses, and **active surveillance for the smallest**,
+    which is a genuine treatment option rather than a concession.
+    For metastatic disease the last twenty years produced two step changes:
+    VEGF-targeted inhibitors from 2006 and checkpoint combinations from 2018.
+    Median survival went from about a year to several, and a minority achieve
+    durable responses that look like cure.
+    **AND THE HISTORY OF THIS DISEASE IS MOSTLY A HISTORY OF STOPPING.** Radical
+    nephrectomy gave way to partial. **Cytoreductive nephrectomy — removing the
+    primary tumour in metastatic disease, standard for two decades — was
+    de-adopted for most patients when a randomised trial found it unnecessary in
+    the targeted-therapy era.** High-dose interleukin-2, with its intensive care
+    and its capillary leak, was abandoned. Small masses that would have been cut
+    out are watched.
+    Every one of those improved care and none of them changed `capability`. See
+    gaps.md #138.
+  prevention: >
+    `risk-reduction`, and the risk factors are three other things this register
+    holds or will hold.
+    **Smoking** accounts for roughly a fifth to a quarter — the sixth record in
+    the tobacco family after ischaemic heart disease, stroke, COPD, lung cancer
+    and bladder cancer. **Obesity** and **hypertension** are both independent risk
+    factors and both are queued records. **Chronic kidney disease and long-term
+    dialysis** raise risk substantially through acquired cystic disease, and that
+    is queued too.
+    So the prevention of kidney cancer is: stop smoking, and address obesity,
+    blood pressure and kidney failure — four programmes belonging to four other
+    entities, none chargeable here (gaps.md #87, nine records deep).
+    There is no screening and none is recommended. **The imaging that finds this
+    disease is being done for other reasons and is not going to stop.**
+  ongoing: >
+    `moderate`. Surveillance imaging after resection, for years. **Renal function
+    monitoring for life** in anybody who lost a kidney, which is most of the
+    treated population and which links this record to a disease it helped cause.
+    For patients on systemic therapy it is a daily tablet or a periodic infusion
+    with side effects that are felt continuously, indefinitely, in a disease that
+    returns when the drug stops.
+    For patients on active surveillance it is a scan every six to twelve months
+    and living with a tumour somebody has decided not to remove — which the
+    schema records as `toll: minor` and which is not the same thing as nothing.
+
+holes:
+  - Every scalar is `src: recall` or `src: reasoning`. The strata fractions
+    describe a population with good imaging access and shift substantially where
+    incidental detection is rarer — the metastatic-at-diagnosis fraction is far
+    higher.
+  - The share of small renal masses that are benign, and the share of malignant
+    ones that would never progress, are both genuinely uncertain and are the
+    numbers on which the whole overdiagnosis argument turns.
+  - Non-clear-cell RCC is at least four diseases treated here as one stratum,
+    each individually too rare to have its own evidence.
+  - Chronic kidney disease, obesity and hypertension are all queued and all
+    entangled with this record — as causes, and in CKD's case as a consequence of
+    the cure.
+  - Wilms tumour is a different childhood disease sharing the organ and is
+    excluded.
+
+blockers:
+  - kind: diagnosis
+    blocks: telling a small cancer from a benign lump, and from one that will never matter
+    obstacles: [who-progresses]
+    what: >
+      **THE PROBLEM IS NOT FINDING RENAL MASSES. IT IS THAT SCANNERS FIND THEM
+      WHETHER ANYBODY WANTED THEM TO OR NOT.**
+      Roughly a fifth of small renal masses are benign, and imaging cannot
+      reliably separate oncocytoma and fat-poor angiomyolipoma from renal cell
+      carcinoma. **People have lost kidneys for benign tumours** — the reason
+      renal mass biopsy went from discouraged to routine.
+      And among the malignant ones, many grow at a few millimetres a year in
+      patients in their seventies who will die of something else. Active
+      surveillance protocols exist and the selection criteria are size and growth
+      rate, which are proxies rather than biology.
+      **A test that separated the indolent from the dangerous would let the
+      accidental detection be a pure benefit instead of a mixed one** — the same
+      request prostate and thyroid cancer make, arriving here through imaging
+      rather than through a screening programme.
+    who_could: [academic, health-system, manufacturer, sponsor]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: chemoresistance, non-clear-cell disease, and who responds
+    obstacles: [who-progresses]
+    what: >
+      Three absences, and the first shaped the entire field.
+      **NO CYTOTOXIC CHEMOTHERAPY WORKS IN RENAL CELL CARCINOMA.** Essentially
+      nothing from the conventional armamentarium has meaningful activity, and
+      the reason is not understood. It is why the field went to interferon,
+      interleukin-2, anti-angiogenics and checkpoint blockade — **an accident of
+      failure that turned out well**, and one that nobody could have planned.
+      **NON-CLEAR-CELL DISEASE IS TREATED WITH SOMEBODY ELSE'S REGIMENS**,
+      because papillary, chromophobe, collecting duct and translocation
+      carcinomas are individually too rare to power their own trials and
+      collectively are fifteen to twenty percent of the disease.
+      **AND NOTHING PREDICTS RESPONSE.** Sarcomatoid features predict unusually
+      good checkpoint responses, which is counterintuitive and is the strongest
+      signal available. Treatment is chosen by a clinical risk score.
+      A footnote worth keeping: **metastatic RCC sometimes regresses
+      spontaneously.** It is rare, repeatedly documented, unexplained, and it is
+      the reason anybody tried immunotherapy here in the first place.
+      `scale: null`.
+    who_could: [academic, sponsor, manufacturer, philanthropy]
+    scale: null
+    standing: documented
+    src: recall
+
+  - kind: cost
+    blocks: the combinations that changed metastatic disease
+    obstacles: []
+    what: >
+      Surgery is widely available and the older tyrosine kinase inhibitors are
+      going generic. **The checkpoint combinations that produced the 2018 step
+      change are not**, and neither is belzutifan.
+      The pattern holds as it has in every cancer record here: the cheap part
+      cures the localised majority, and the expensive part is what changed the
+      outlook for the people who were going to die. A health system that can
+      offer partial nephrectomy and a generic TKI captures most of the available
+      benefit and misses the part that is still improving.
+    who_could: [manufacturer, payer, government, health-system]
+    scale: 3.0e9
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: the operation that preserves the kidney, and stopping the one that does not
+    obstacles: []
+    what: >
+      **PARTIAL NEPHRECTOMY IS BETTER AND HARDER, AND ITS ADOPTION HAS LAGGED THE
+      EVIDENCE.** Preserving nephron mass reduces subsequent chronic kidney
+      disease in a population that frequently has hypertension and diabetes
+      already, and it is technically more demanding, takes longer, and requires
+      volume to do well. Rates vary substantially between centres and countries
+      for reasons that are about surgical capability rather than about patients.
+      That is gaps.md #122 again — the patient reached surgery, and which
+      operation they got depended on who was holding the instrument.
+      **The mirror problem is de-adoption.** Cytoreductive nephrectomy remained
+      standard practice for years after the evidence for it weakened, and
+      unlearning a standard operation has no product, no sponsor and no advocate
+      (gaps.md #138). The same is true of active surveillance for small masses,
+      which requires a urologist to do nothing and to keep doing nothing.
+    who_could: [health-system, academic, payer, government]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0063
+  rated: 2026-08-24
+  by: [claude, jeremy]

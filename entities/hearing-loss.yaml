@@ -1,0 +1,644 @@
+slug: hearing-loss
+id: FND-D-0095
+name: hearing loss
+also: [deafness, hard of hearing, presbycusis, sensorineural hearing loss, hearing impairment]
+common: deafness
+mondo: MONDO:0005365
+kind: disease
+residual: false
+contested: true
+
+# THE LARGEST ZERO-DEATH RECORD IN THE REGISTER BY A WIDE MARGIN — roughly 430
+# million people with disabling hearing loss against `cataract`'s 94 million, and
+# no attributed deaths in either.
+#
+# AND `contested: true` MEANS SOMETHING HERE IT HAS NEVER MEANT BEFORE. Every
+# other contested record in this corpus disputes a boundary or a definition —
+# where sepsis begins, whether obesity is a disease, whether schizophrenia is one
+# thing. **Here a population disputes that the entity is a pathology at all**, on
+# the grounds that it names a language and a culture rather than a deficit
+# (gaps.md #201).
+#
+# The register's axes all presume the patient wants the intervention. This record
+# is the first where that presumption is contested by the people it describes,
+# and the second where a large share of the remedy is not applied to the patient
+# at all (gaps.md #200).
+
+burden:
+  prevalence:
+    value: 4.3e8
+    units: >
+      people with disabling hearing loss — moderate or worse in the better ear,
+      the threshold at which rehabilitation is recommended — **out of more than
+      1.5 billion with some degree of loss**, and projected to reach around 700
+      million by 2050
+    src: recall
+  deaths:
+    value: 0.0
+    units: >
+      deaths/year attributed — **and unlike `cataract`, where the zero conceals a
+      real mortality effect through falls, this one is close to literal.** Hearing
+      loss does not kill; it is the register's purest disability record
+    src: reasoning
+  note: >
+    **FOUR HUNDRED AND THIRTY MILLION PEOPLE, ZERO DEATHS, AND ROUGHLY SEVENTEEN
+    PERCENT OF THOSE WHO WOULD BENEFIT FROM A HEARING AID HAVE ONE.**
+    About eighty percent live in low- and middle-income countries, coverage in
+    some of them is below three percent, and the World Health Organization puts
+    the annual global cost of unaddressed hearing loss near a trillion dollars —
+    almost all of it lost productivity, education and social participation rather
+    than health spending.
+    **This record is gaps.md #182's strongest case and it is not close.** #48
+    proposes fixing the register's ranking with a mortality weight; that fix would
+    rank the largest disability burden in this corpus at exactly zero. The same
+    arithmetic operates on real budgets, which is why **the United States'
+    Medicare programme has excluded hearing aids by statute since 1965** — a
+    categorical legislative carve-out of the same kind `obesity` documents.
+
+axes:
+  mechanism: established
+  intervention: suppressive
+  prevention: prophylaxis
+  ongoing: moderate
+  efficacy:
+    value: 0.75
+    units: >
+      fraction-of-patients (meaningful restoration of functional hearing with a
+      hearing aid or cochlear implant) — **and the devices assist rather than
+      repair**: no available treatment restores a cochlear hair cell
+    src: reasoning
+  access:
+    value: 0.20
+    units: >
+      fraction-of-patients (fitted with a device they use) — around 17% hearing
+      aid coverage globally, below 3% in parts of Africa and South Asia, and
+      **cochlear implantation reaching under a tenth of eligible adults even in
+      wealthy countries**
+    src: recall
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: partial
+  witness: >
+    **DIAGNOSTIC IS `objective` AND HAS BEEN FOR A CENTURY.** Pure-tone audiometry
+    quantifies the loss by frequency and by ear; tympanometry separates conductive
+    from sensorineural; and there is no diagnostic ambiguity worth arguing about.
+    **NEWBORN HEARING SCREENING IS THE PART THAT MATTERS AND IT IS A TWO-MINUTE
+    TEST ON A SLEEPING BABY.** Otoacoustic emissions or automated auditory
+    brainstem response, done before discharge, detects congenital hearing loss in
+    the first days of life. The international benchmark is **"1-3-6"** — screened
+    by one month, diagnosed by three, intervention by six — and where it is met the
+    outcomes for deaf children are transformed. It is universal in most
+    high-income countries and largely absent elsewhere.
+    PROGNOSTIC is `partial`. Audiometric configuration predicts device benefit
+    reasonably; what it predicts poorly is **who will use the device**, which is
+    the outcome that actually determines whether anything happened.
+    PREDICTIVE is `partial`. Duration of deafness before cochlear implantation
+    predicts speech outcome — longer auditory deprivation, worse result — and in
+    children, age at implantation predicts spoken language strongly. **Nothing
+    predicts an individual's satisfaction with a hearing aid**, which is why
+    around a third to a half of dispensed devices end up unworn.
+    **And the measurement this record most needs is not audiometric.** A pure-tone
+    average says nothing about understanding speech in a noisy room, which is what
+    people actually complain of and what devices handle worst.
+
+toll:
+  severity: minor
+  permanent: true
+  what: >
+    **THE DEVICES ARE BENIGN AND THE HISTORY IS NOT.**
+    A hearing aid carries essentially no medical risk. **Cochlear implantation** is
+    a surgical procedure with the usual small risks — facial nerve injury, wound
+    problems, device failure requiring reimplantation — plus two specific to it: an
+    elevated risk of **bacterial meningitis**, which is why pneumococcal
+    vaccination is required before implantation, and **loss of any residual
+    natural hearing in the implanted ear**, which is permanent and is the reason
+    the `permanent` flag is set on an otherwise mild toll.
+    **THE TOLL THIS RECORD CARRIES THAT NO FIELD HOLDS IS HISTORICAL AND
+    EDUCATIONAL.** From the late nineteenth century, deaf education in much of the
+    world adopted **oralism** — the suppression of sign language in favour of
+    forced speech and lip-reading — following an international congress in 1880
+    that voted to exclude signing from schools. Generations of deaf children were
+    punished for using their language, and the documented result was worse
+    education, worse literacy and worse outcomes, not better speech.
+    That is a medical and educational intervention that harmed a population for a
+    century, it is the direct historical basis of the contestation in
+    `witness.contested`, and **`toll` has no field for it** — it was not a
+    treatment side effect, it was the treatment.
+  incidence:
+    value: 0.03
+    units: >
+      fraction-of-treated (permanent harm — chiefly loss of residual hearing after
+      cochlear implantation, and device complications) — a reasoned estimate
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    **THE PERMANENT DAMAGE IN THIS RECORD IS NOT TO HEARING. IT IS TO LANGUAGE,
+    AND IT HAPPENS IN THE FIRST FEW YEARS.**
+    Human language acquisition has a critical period. A child who receives no
+    accessible language input in the first years — no amplified speech they can
+    resolve, **and no sign language either** — shows lasting deficits in language,
+    literacy, academic attainment and aspects of cognition, and later intervention
+    does not fully recover them. The phenomenon has a name, **language
+    deprivation**, and it is the single most consequential fact in paediatric
+    audiology.
+    **The crucial and frequently elided point is that hearing is one of two ways to
+    prevent it.** A deaf child raised with fluent sign language from infancy has
+    full language and no deprivation. A deaf child given a cochlear implant early
+    and good rehabilitation may have full spoken language. **A deaf child given
+    neither — which is the global default — has neither**, and that is the outcome
+    the residue figure below is about.
+    In adults the permanence is different and softer: prolonged auditory
+    deprivation degrades central auditory processing, which is why late cochlear
+    implantation gives worse speech understanding than early, and why the eight-to-
+    ten-year delay described in the `adherence` blocker has a cost beyond the years
+    lost.
+  incidence:
+    value: 0.15
+    units: >
+      fraction-of-affected (permanent language, literacy or cognitive consequence
+      of deprivation, or irreversible auditory deprivation effects) — a reasoned
+      estimate concentrated in children who received neither early amplification
+      nor early sign language
+    src: reasoning
+
+window:
+  what: >
+    **THE WINDOW CLOSES ON LANGUAGE, NOT ON HEARING — AND THERE ARE TWO WAYS TO
+    KEEP IT OPEN.**
+    That distinction is the whole of this record's clinical ethics and it is
+    routinely collapsed. The developmental deadline is the critical period for
+    language acquisition: a child needs **accessible linguistic input** in the
+    first years or the capacity is permanently degraded. **Accessible** can mean
+    amplified or implanted speech, and it can mean a fluent sign language. Both
+    work. Neither is the default in most of the world.
+    The clinical timings follow from it. Newborn screening by one month, diagnosis
+    by three, intervention by six. Cochlear implantation before about twelve months
+    produces markedly better spoken language than implantation at three years.
+    Every month of delay in the first years costs more than a year of delay at
+    thirty.
+    **In adults there is a second, softer window.** People wait eight to ten years
+    from noticing hearing loss to obtaining a hearing aid, and duration of
+    deafness before intervention predicts how much benefit a device delivers —
+    the auditory system deteriorates centrally when it is not used. **The delay is
+    not neutral, and almost everybody treats it as if it were.**
+    And a third, disputed one: if hearing loss contributes causally to dementia,
+    then intervening earlier matters for a reason nobody has established. See
+    `witness.prevention`.
+  closes_on: >
+    the critical period for language acquisition in early childhood — a few years,
+    and it closes on language rather than on hearing; and in adults, progressive
+    central auditory deprivation
+  caught_in_time:
+    value: 0.30
+    units: >
+      fraction-of-cases (children reaching accessible language, spoken or signed,
+      within the critical period; adults intervening before substantial
+      deprivation) — a reasoned estimate, high where newborn screening exists and
+      near zero elsewhere
+    src: reasoning
+
+strata:
+  - name: adult-onset sensorineural loss
+    fraction:
+      value: 0.75
+      units: fraction-of-people-with-disabling-hearing-loss
+      src: reasoning
+    intervention: suppressive
+    efficacy:
+      value: 0.80
+      units: fraction-of-stratum (meaningful benefit from amplification, if used)
+      src: reasoning
+    toll: minor
+    what: >
+      Age-related, noise-induced and ototoxic loss — the great majority. **Hair
+      cells are gone and do not come back; a hearing aid amplifies what remains.**
+      It works well for most people who wear one, and the binding constraints are
+      cost, stigma and an eight-to-ten-year delay rather than any question about the
+      technology.
+
+  - name: conductive loss
+    fraction:
+      value: 0.15
+      units: fraction-of-people-with-disabling-hearing-loss
+      src: reasoning
+    intervention: curative
+    efficacy:
+      value: 0.85
+      units: fraction-of-stratum (hearing restored by surgery or treatment)
+      src: reasoning
+    toll: minor
+    what: >
+      **The stratum that is genuinely curable, and it is concentrated where the
+      surgery is not available.** Chronic suppurative otitis media — a draining ear,
+      affecting a very large number of children in low-income settings —
+      tympanoplasty, ossiculoplasty, and stapes surgery for otosclerosis. **A
+      discharging ear in a child is a treatable cause of permanent educational
+      disadvantage**, and it is treated as trivial.
+
+  - name: congenital and early childhood loss
+    fraction:
+      value: 0.10
+      units: fraction-of-people-with-disabling-hearing-loss
+      src: reasoning
+    intervention: suppressive
+    efficacy:
+      value: 0.60
+      units: fraction-of-stratum (full language acquisition achieved, by either route)
+      src: reasoning
+    toll: minor
+    what: >
+      **Technically the smallest stratum and by far the most consequential**,
+      because this is where the `window` and the `residue` live. Roughly half of
+      congenital cases are genetic — *GJB2* is the commonest single cause — and much
+      of the rest is preventable: rubella, meningitis, prematurity, ototoxic drugs.
+      **The efficacy figure counts full language acquisition by either route**,
+      spoken or signed, which is the outcome that matters and is not what the
+      clinical literature usually measures.
+
+moved:
+  - date: 1984
+    axis: intervention
+    from: symptomatic
+    to: suppressive
+    why: >
+      **THE COCHLEAR IMPLANT IS THE FIRST DEVICE TO RESTORE A HUMAN SENSE, AND THE
+      FIELD SAID IT WAS IMPOSSIBLE.**
+      Single-channel stimulation was attempted from 1961 and dismissed by much of
+      the auditory science community, which held that speech could not be
+      conveyed by electrical stimulation of a damaged cochlea. Multichannel devices
+      developed independently in Australia and Austria through the late 1970s
+      proved otherwise, and regulatory approval followed in the mid-1980s.
+      **Most recipients today achieve open-set speech understanding** — the ability
+      to follow conversation without lip-reading — which is a category of outcome
+      nobody expected. Children implanted early frequently develop age-appropriate
+      spoken language.
+      **And roughly a million devices have been implanted worldwide across the
+      whole history of the technology**, against tens of millions of eligible
+      people. Even in wealthy countries with universal coverage, under a tenth of
+      eligible adults receive one.
+      This entry is also where the contestation in `witness.contested` becomes
+      concrete, because the same technology that restores hearing to an adult who
+      chose it is implanted in deaf infants who cannot.
+    src: recall
+
+  - date: 1999
+    axis: access
+    from: 0.14
+    to: 0.18
+    why: >
+      **UNIVERSAL NEWBORN HEARING SCREENING, AND IT MOVED THE AGE OF DIAGNOSIS FROM
+      TWO AND A HALF YEARS TO THREE MONTHS.**
+      Before it, congenital hearing loss was usually identified when a child failed
+      to develop speech — well after the critical period had begun to close.
+      Physiological screening with otoacoustic emissions or automated auditory
+      brainstem response made testing every newborn practical, and national
+      programmes rolled out through the late 1990s and 2000s, organised around the
+      **"1-3-6"** benchmark.
+      **The outcome data are among the clearest in developmental medicine**:
+      children identified and given language access by six months have language
+      outcomes far closer to hearing peers than those identified later.
+      **It is universal in most high-income countries and largely absent
+      elsewhere**, and where it exists without services to follow it — no
+      audiologist, no devices, no sign language provision — it identifies deaf
+      children and does nothing for them, which is the same arithmetic
+      `congenital-heart-disease` records for pulse oximetry.
+    src: recall
+
+  - date: 2022
+    axis: access
+    from: 0.18
+    to: 0.20
+    why: >
+      **HEARING AIDS WERE MADE AVAILABLE OVER THE COUNTER, AND THE INTERESTING PART
+      IS WHAT THAT SAYS ABOUT THE PREVIOUS ARRANGEMENT.**
+      Until 2022, buying a hearing aid in the United States required going through
+      a professional channel, and the average device cost thousands of dollars a
+      pair, unreimbursed by the main public insurer. A regulatory change created a
+      direct-to-consumer category for adults with perceived mild to moderate loss.
+      **Prices for entry-level devices fell substantially and the market widened.**
+      Whether outcomes improved is genuinely unresolved — self-fitting without
+      audiological support produces mixed results, and a device fitted badly is a
+      device in a drawer.
+      **Record it as a small move for an honest reason.** It addressed cost and
+      gatekeeping, which are two of the four barriers; it did nothing about stigma
+      or about the eight-to-ten-year delay, which are probably larger. And it
+      applies to one country.
+    src: recall
+
+witness:
+  mechanism: >
+    `established`, and the central fact is a negative one.
+    Sound is transduced by **hair cells** in the cochlea — a few thousand of them,
+    tonotopically arranged, converting mechanical displacement into neural firing.
+    Noise, ageing, ototoxic drugs and some infections destroy them, preferentially
+    at the high-frequency basal end, which is why hearing loss takes speech
+    consonants before it takes vowels and why people say they can hear but not
+    understand.
+    **Mammals do not regenerate cochlear hair cells. Birds and fish do.** That
+    single asymmetry is the most important open question in the field and the
+    reason every intervention in this record assists rather than repairs. A hearing
+    aid amplifies what the remaining cells can transduce; a cochlear implant
+    bypasses them and stimulates the auditory nerve directly. **Neither restores
+    the cochlea.**
+    Conductive loss is mechanical — fluid, perforation, ossicular disease,
+    otosclerosis — and is genuinely repairable, which is why that stratum rates
+    `curative`.
+    Congenital causes are roughly half genetic, with ***GJB2*** encoding connexin
+    26 the commonest single gene, and the remainder infectious, perinatal or
+    ototoxic.
+    **AND A SUBSTANTIAL SHARE OF THIS RECORD IS IATROGENIC, CAUSED BY DRUGS THIS
+    REGISTER RECOMMENDS ELSEWHERE.** Aminoglycosides — streptomycin, kanamycin,
+    amikacin — cause permanent sensorineural deafness, and `tuberculosis` records
+    that injectable aminoglycosides were standard MDR-TB treatment for decades
+    until all-oral regimens displaced them in 2019. `cre` and `sepsis` record
+    aminoglycoside use too. **Cisplatin** deafens a large share of children treated
+    for cancer. **The people deafened by those decisions are in this record and
+    nothing connects them** (gaps.md #160).
+  contested: >
+    **THIS IS THE FIRST RECORD IN THE REGISTER WHERE A POPULATION DISPUTES THAT THE
+    ENTITY IS A DISEASE, AND THE DISPUTE IS NOT SCIENTIFIC** (gaps.md #201).
+    **The position, stated fairly**: many culturally Deaf people hold that deafness
+    is not a pathology but a linguistic and cultural identity. Sign languages are
+    full natural languages with their own grammar and literature — established
+    linguistically since the 1960s — and Deaf communities have their own schools,
+    institutions and history. On this view a deaf child is not a broken hearing
+    child; they are a child who will use a different language, and the medical
+    framing is what produces the disadvantage.
+    **The history is why this is held so strongly.** An international congress in
+    1880 voted to exclude sign language from deaf education in favour of
+    **oralism** — forced speech and lip-reading — and for roughly a century deaf
+    children across much of the world were punished for signing. The documented
+    result was worse literacy and worse outcomes. **A medical and educational
+    consensus harmed a population for a hundred years**, and the community's
+    scepticism about the next confident intervention is earned rather than
+    irrational.
+    **The live dispute is paediatric cochlear implantation.** Implanting an infant
+    who cannot consent, in a way that may direct them toward a hearing world and
+    away from a signing community, is opposed by parts of the Deaf community and
+    defended by clinicians on the evidence about the language window.
+    **The register takes no position and records three things**: the dispute
+    exists, it is held by the people the record is about, and the developmental
+    fact underneath it — that language deprivation is real and that **both spoken
+    and signed language prevent it** — is not actually in dispute between the
+    parties. What is disputed is which one a child should be given, and by whom
+    that is decided.
+  intervention: >
+    `suppressive` for most of the record, and the word is doing something precise:
+    **the devices work while worn and restore nothing.**
+    **Hearing aids** amplify. They work well for mild to moderate sensorineural
+    loss, they do not solve speech-in-noise, and roughly a third to a half of
+    dispensed devices go unused. **Cochlear implants** bypass the hair cells and
+    stimulate the auditory nerve directly, and most recipients achieve open-set
+    speech understanding — one of the most impressive engineering results in
+    medicine. **Surgery** genuinely cures conductive loss.
+    **And a large part of the remedy is not applied to the patient at all**
+    (gaps.md #200). Captioning, hearing loops in public buildings, sign language
+    interpretation, acoustic design that does not defeat a hearing aid, and
+    text-based alternatives to telephone systems each remove a disability without
+    touching an ear. **Automatic captioning has probably done more for more people
+    with hearing loss in the last decade than any device**, and it appears nowhere
+    in this schema — not in `intervention`, not in `access`, not in `efficacy`.
+    **What does not exist is restoration.** No therapy regenerates a hair cell.
+    Gene therapy for specific congenital forms — *OTOF*-related deafness — has
+    produced hearing in profoundly deaf children in early trials, which is the
+    first genuine restoration in this record's history and applies to a very small
+    number of people.
+  prevention: >
+    `prophylaxis`, and it is unusually strong: **the World Health Organization
+    estimates that around sixty percent of childhood hearing loss is
+    preventable.**
+    **Vaccination** does most of it — rubella, measles, mumps, meningococcal,
+    pneumococcal and *Haemophilus influenzae* type b all prevent deafness, and
+    congenital rubella syndrome has been eliminated across much of the world by a
+    vaccine belonging to another record. **Treating otitis media** prevents the
+    conductive stratum.
+      **AND THE LARGEST REMAINING INFECTIOUS CAUSE HAS NO VACCINE.** Every
+      infection listed above is prevented by one; **congenital cytomegalovirus is
+      not, and it is the leading non-genetic cause of childhood sensorineural
+      hearing loss in high-income countries** — roughly 0.5-0.7% of live births
+      infected, with hearing loss in a substantial minority, some of it
+      late-onset in children who passed the newborn screen. Vaccination removed
+      congenital rubella and **CMV is what was left underneath it**.
+      It is diagnosable by PCR in the first three weeks of life and almost
+      nowhere screened for, so the commonest preventable infectious cause of
+      childhood deafness is usually identified, if at all, by the deafness. See
+      `cmv-infection`, added 2026-08-30 — **this record's prevention section
+      omitted it until that record existed**, which is gaps.md #242. **Avoiding ototoxicity** where alternatives exist, and
+    **sodium thiosulfate**, licensed in 2022, reduces cisplatin-induced hearing
+    loss in children. **Noise regulation** — occupational limits, and the
+    unregulated recreational exposure that puts a very large number of young people
+    at risk.
+    **THE DEMENTIA CLAIM NEEDS STATING CAREFULLY, BECAUSE THIS RECORD IS BEING
+    PROMOTED ON IT.** The Lancet Commission identifies hearing loss as the
+    **largest single modifiable risk factor for dementia**, with a population
+    attributable fraction around seven percent, and `alzheimers` records that.
+    **The trial evidence is one step weaker than the claim.** A randomised trial of
+    hearing intervention in older adults was **null on its primary cognitive
+    outcome overall**, and found a substantial reduction in cognitive decline in a
+    pre-specified higher-risk subgroup. And reverse causation is a live objection:
+    central auditory processing decline is itself an early feature of Alzheimer's
+    disease, so hearing loss may be a marker as well as a cause.
+    **The register should record the association, the null primary outcome, and the
+    subgroup finding, and not convert an attributable fraction into a causal
+    promise.**
+  ongoing: >
+    `moderate`, and it is the ordinary burden of a device rather than of an
+    illness. Batteries or charging, cleaning, ear moulds, repairs, and periodic
+    audiology review; for cochlear implant users, mapping sessions and processor
+    upgrades over decades, and a device that will need replacing.
+    **The burden that dominates and is not medical is effort.** Listening with
+    impaired hearing in a noisy environment is cognitively demanding in a way that
+    is measurable, and "listening fatigue" is consistently what people describe as
+    the worst part — more than the missed words. It has no treatment, no field
+    here, and it is the reason people withdraw from social settings long before
+    they admit to a hearing problem.
+
+holes:
+  - >
+    **`deaths: 0` and 430 million affected makes this gaps.md #182's strongest
+    case, and every ranking view in the register puts it at zero.** The same
+    arithmetic operates on real budgets — a major public insurer has excluded
+    hearing aids by statute for sixty years.
+  - >
+    **A large share of the remedy is environmental and appears in no field**
+    (gaps.md #200). Captioning, hearing loops, interpretation and acoustic design
+    remove disability without touching the patient, and `efficacy` and `access` are
+    both patient-scoped.
+  - >
+    **`contested: true` here means something the flag was not built for.** It
+    records a population disputing that the entity is a pathology, not a dispute
+    about a boundary — and the schema cannot tell those apart (gaps.md #201, #6).
+  - >
+    **A substantial and unquantified share of this record is iatrogenic**, caused
+    by aminoglycosides and cisplatin that other records in this register describe
+    as necessary. Nothing links them (gaps.md #160).
+  - >
+    `efficacy: 0.75` describes device benefit in people who use a device, and a
+    third to a half of dispensed hearing aids are not used. **Fitting is not the
+    outcome and the field measures fitting.**
+  - >
+    Every scalar is `recall` or `reasoning`, against a WHO world report with
+    unusually good global estimates that is not cited here.
+
+blockers:
+  - kind: cost
+    blocks: a device most people pay for themselves
+    obstacles: []
+    what: >
+      **HEARING AIDS ARE EXCLUDED FROM MAJOR PUBLIC INSURANCE BY STATUTE, AND HAVE
+      BEEN SINCE 1965.**
+      The United States' Medicare programme has carried a categorical legislative
+      exclusion of hearing aids since its creation — not a coverage decision made
+      on evidence but a carve-out written into law, of exactly the kind `obesity`
+      documents for weight-loss drugs. A pair of prescription devices has commonly
+      cost several thousand dollars, out of pocket, to a population largely over
+      sixty-five and often on fixed incomes.
+      **Over-the-counter availability from 2022 cut entry-level prices
+      substantially** and addressed the gatekeeping, and it applies to one country
+      and to self-perceived mild-to-moderate loss.
+      **Globally the picture is simpler and worse.** Coverage below three percent in
+      parts of Africa and South Asia, batteries that cost more than a day's wage,
+      and no repair infrastructure — so a donated device fails and is not replaced,
+      which is a well-documented failure mode of hearing aid donation programmes.
+      **Cochlear implants are a different order**: tens of thousands of dollars for
+      the device and surgery, plus lifetime processor upgrades, which is why
+      cumulative implants worldwide number around a million against tens of
+      millions of eligible people.
+    who_could: [payer, government, legislator, manufacturer, nonprofit]
+    scale: 1.0e10
+    standing: documented
+    src: recall
+
+  - kind: policy
+    blocks: the half of the remedy that is not a device
+    obstacles: []
+    what: >
+      **CAPTIONING PROBABLY DID MORE FOR MORE PEOPLE WITH HEARING LOSS IN THE LAST
+      DECADE THAN ANY DEVICE, AND IT IS NOT A HEALTH INTERVENTION.**
+      Automatic speech recognition made captions ubiquitous on video, in meetings
+      and on phones. Hearing loops in public buildings, sign language
+      interpretation, acoustic design that does not defeat a hearing aid, and
+      text-based alternatives to voice-only systems each remove a disability
+      without touching an ear. **Legislation is what delivers them** —
+      accessibility law, broadcasting requirements, building standards,
+      procurement rules — and it belongs to regulators, legislators and standards
+      bodies rather than to anybody in health.
+      **This is the strongest case in the register for gaps.md #200**: the remedy is
+      applied to the environment, the register's axes are applied to the patient,
+      and a record that reports `access: 0.20` is describing device fitting while
+      being silent about the intervention that reached billions of people.
+      Noise regulation belongs here too and is the prevention half: occupational
+      limits are established and enforced unevenly, and recreational sound exposure
+      — personal audio devices and venues — is largely unregulated, with a very
+      large number of young people exposed at levels known to cause permanent
+      damage.
+    who_could: [legislator, government, regulator, nonprofit, health-system]
+    scale: 5.0e9
+    standing: documented
+    src: recall
+
+  - kind: adherence
+    blocks: an eight-to-ten-year delay, and a third of devices in drawers
+    obstacles: []
+    what: >
+      **PEOPLE WAIT EIGHT TO TEN YEARS FROM NOTICING HEARING LOSS TO GETTING A
+      HEARING AID, AND A THIRD TO A HALF OF DISPENSED DEVICES ARE NOT WORN.**
+      The reasons are consistent across surveys and mostly not clinical. Hearing
+      loss is gradual, so people adapt without noticing; the deficit is
+      attributed to others mumbling; and **the device is a visible marker of age in
+      a way spectacles stopped being decades ago**. Stigma is the single most
+      cited reason and it is specific to this record — nobody is embarrassed by
+      glasses.
+      **And a share of non-use is the device's fault.** Hearing aids amplify
+      everything, including background noise, and speech-in-noise is exactly what
+      people with sensorineural loss find hardest. A poorly fitted or unrealistically
+      sold device disappoints, and a disappointed user does not come back.
+      **The delay is not free**, which is the part almost nobody knows: duration of
+      deafness before intervention predicts how much benefit a device delivers,
+      because the central auditory system deteriorates when it is not used.
+      This is gaps.md #161's shape — an intervention whose benefit the patient
+      undervalues — with an unusual twist: **here the patient can perceive the
+      problem and declines to name it.**
+    who_could: [health-system, nonprofit, manufacturer, government, patient-org]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+  - kind: logistics
+    blocks: an audiologist, and a service to follow a screen
+    obstacles: []
+    what: >
+      **NEWBORN SCREENING WITHOUT A SERVICE BEHIND IT IDENTIFIES DEAF CHILDREN AND
+      DOES NOTHING FOR THEM.**
+      The screen is two minutes on a sleeping baby. What has to follow within
+      months is diagnostic audiology, device fitting for an infant, aural
+      rehabilitation, **or fluent sign language provision for the family** — and
+      the last of those requires teaching hearing parents a language they do not
+      know, which almost no health system organises.
+      Ear and hearing care workforce density is extremely low across most of the
+      world: many countries have a handful of audiologists or ENT surgeons for
+      tens of millions of people, and cochlear implant programmes require surgery,
+      device supply, and **a mapping and rehabilitation service that continues for
+      the recipient's life.**
+      **The conductive stratum is the cheapest thing being missed.** Chronic
+      suppurative otitis media — a child with a discharging ear — is common,
+      treatable, and a preventable cause of permanent educational disadvantage, and
+      it is managed by primary care staff who have not been trained to look in
+      ears.
+      This is gaps.md #154 again, and #200's other half: **the service, not the
+      device, is what is missing.**
+    who_could: [health-system, government, payer, academic, nonprofit]
+    scale: 6.0e9
+    standing: documented
+    src: recall
+
+  - kind: knowledge
+    blocks: hair cells, which birds regrow and we do not
+    obstacles: [tissue-repair, growth-control]
+    what: >
+      **BIRDS AND FISH REGENERATE COCHLEAR HAIR CELLS AFTER DAMAGE. MAMMALS DO
+      NOT.**
+      That asymmetry is the reason every intervention in this record assists rather
+      than repairs, and it has been known since the 1980s. The supporting cells in
+      an avian cochlea can transdifferentiate into new hair cells; the equivalent
+      mammalian cells are held in a non-regenerative state, and **why** is not
+      resolved. Atoh1 overexpression, Notch pathway inhibition and small-molecule
+      approaches have all shown effects in animals and none has produced a therapy.
+      **A hair cell regeneration therapy would be the largest single intervention
+      available anywhere in this register**, applicable to several hundred million
+      people, and it attracts a small fraction of the attention that conditions of
+      comparable burden and higher mortality receive — which is `deaths: 0` shaping
+      research priorities as much as budgets.
+      **There is one genuine restoration and it is very narrow.** Gene therapy for
+      *OTOF*-related congenital deafness — a defect in synaptic transmission rather
+      than in the hair cell itself — has produced hearing in profoundly deaf
+      children in early trials. It applies to a small number of people and it is the
+      first time anything in this record restored rather than substituted.
+      `scale: null`.
+      **Tagged `tissue-repair` (2026-08-28).** That obstacle asks whether anything lost can be *grown, replaced, or induced to regenerate in a living adult*, and this is the purest instance in the corpus: the capability exists in birds and fish and not in us, and why is unresolved.
+      **Also tagged `growth-control` (2026-09-02), and the two tags divide this
+      blocker rather than duplicating it.** `tissue-repair` is the capability —
+      *can the cell be replaced*. `growth-control` is the sentence above it:
+      the avian supporting cell divides and ours does not, so the mammalian
+      cochlea is **held**, and the unresolved **why** is what is holding it.
+      That distinction is not cosmetic here. Atoh1 overexpression and Notch
+      inhibition are both attempts to push the actuator — they instruct a
+      supporting cell to become a hair cell — and neither asks what state the
+      tissue is being kept in or what would release it. **A field that has spent
+      forty years pressing the accelerator without locating the brake is the
+      argument for the second tag**, and it is the corpus's only bottom-up
+      citation of that obstacle.
+    who_could: [academic, sponsor, manufacturer, philanthropy]
+    scale: null
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0096
+  rated: 2026-08-25
+  by: [claude, jeremy]
