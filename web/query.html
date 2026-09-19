@@ -119,6 +119,10 @@
   .detail { padding:13px 15px; line-height:1.55; }
   .detail h2 { font-family:Fraunces,serif; font-style:italic; font-size:18px; font-weight:600; }
   .detail .slug { font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:var(--vermilion); }
+  .detail a.challenge { display:inline-block; margin-top:6px; font-family:'IBM Plex Mono',monospace;
+    font-size:10.5px; color:var(--water); border:1px solid var(--water); padding:2px 8px;
+    text-decoration:none; }
+  .detail a.challenge:hover { background:var(--water); color:var(--paper); }
   .detail h3 { font-size:9px; letter-spacing:.18em; text-transform:uppercase; color:var(--ink-soft);
                margin:13px 0 4px; border-bottom:1px solid var(--ink-faint); padding-bottom:2px; }
   .detail p { font-size:11.5px; margin-bottom:6px; }
@@ -635,6 +639,37 @@ function verdict(r) {
     </div>${spans}`;
 }
 
+/* ---- challenge this rating ----------------------------------------------
+ * The register's unit of disagreement is an ASSERTION, not a wiki edit: every
+ * rating has an id, so you contest that id, and the outcome is a dated `moved:`
+ * entry or a recorded rejection. The minimum viable mechanism for that is a
+ * GitHub issue with the ids and the rules already filled in — so that the
+ * reader's first act is to name the field and bring the evidence, and the
+ * maintainer's first act is not to ask which record they mean.
+ * ------------------------------------------------------------------------- */
+const REPO = "https://github.com/fndtnio/Nordstern";
+function challengeHref(r) {
+  const a = r.assertion || {};
+  const title = `Challenge ${a.id || r.id}: ${r.name}`;
+  const body = [
+    `**Record** \`${r.id}\` · \`entities/${r.slug}.yaml\` · ${REPO}/blob/main/entities/${r.slug}.yaml`,
+    `**Assertion** \`${a.id || "?"}\` · rated ${a.rated || "?"} · by ${(a.by || []).join(", ") || "?"}`,
+    ``,
+    `### Which field, and what it says now`,
+    `<!-- e.g. axes.intervention: suppressive · or blockers[1].standing: alleged · or survival.treated: 0.75 -->`,
+    ``,
+    `### What it should say, and why`,
+    ``,
+    `### Evidence`,
+    `<!-- A citation needs the quote it rests on: id (DOI/PMID/URL), date retrieved, and the verbatim sentence. -->`,
+    `<!-- A plausible DOI without a quote is exactly what the register refuses to accept. -->`,
+    ``,
+    `---`,
+    `*Ratings on the axes are judgments and are meant to be argued with. The outcome of a challenge is a dated \`moved:\` entry on the record, or a recorded rejection with its reason — never a silent edit.*`,
+  ].join("\n");
+  return `${REPO}/issues/new?labels=challenge&title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
+}
+
 function detail(r) {
   const d = r.derived, ax = r.axes, m = r.measurement;
   const kv = (k,v) => `<div class="kv"><span class="k">${k}</span><span>${esc(v)}</span></div>`;
@@ -644,6 +679,8 @@ function detail(r) {
   return `
     <div class="slug">${esc(r.slug)} · ${esc(r.assertion.id)} · rated ${esc(r.assertion.rated)}</div>
     <h2>${esc(r.name)}</h2>
+    <a class="challenge" href="${challengeHref(r)}" target="_blank" rel="noopener"
+       title="Open a pre-filled GitHub issue against this rating">challenge ${esc(r.assertion.id)} ↗</a>
     <div style="margin-top:6px">
       ${["orphaned","has_window","spans_ladder","cured_at_a_price","harm_without_benefit",
          "overtreatment_risk","futile_treatment_risk"].filter(f=>d[f])

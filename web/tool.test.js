@@ -687,10 +687,47 @@ test("both pages render the same provenance facts from the same numbers", () => 
 
 test("no external dependency other than fonts", () => {
   // The register should stay readable if a CDN dies.
+  // A dependency is something the page LOADS — a script or stylesheet. A link
+  // the reader may click (the challenge issue on GitHub) is not one; if GitHub
+  // dies the register still renders.
   const html = fs.readFileSync(path.join(DIR, "query.html"), "utf8");
-  const urls = [...html.matchAll(/https?:\/\/[^"' ]+/g)].map(m => m[0]);
-  for (const u of urls)
-    assert.match(u, /fonts\.(googleapis|gstatic)\.com/, `unexpected external URL: ${u}`);
+  const loads = [...html.matchAll(/<(?:script|link)\b[^>]*?(?:src|href)="(https?:\/\/[^"]+)"/g)].map(m => m[1]);
+  assert.ok(loads.length > 0, "expected at least the font stylesheet");
+  for (const u of loads)
+    assert.match(u, /fonts\.(googleapis|gstatic)\.com/, `unexpected external dependency: ${u}`);
+  const others = [...html.matchAll(/https?:\/\/[^"' `]+/g)].map(m => m[0])
+    .filter(u => !/fonts\.(googleapis|gstatic)\.com/.test(u));
+  for (const u of others)
+    assert.match(u, /^https:\/\/github\.com\/fndtnio\/Nordstern/, `unexpected external URL: ${u}`);
+});
+
+/* ---- challenge a rating ---------------------------------------------
+ * The unit of disagreement is an assertion, so every card carries a link that
+ * opens a GitHub issue already naming the record id, the assertion id and the
+ * evidence rule. If the ids were missing, the maintainer's first reply would
+ * be "which record?", and the challenge would be a comment, not a challenge.
+ * ------------------------------------------------------------------- */
+test("every card carries a pre-filled challenge link naming its assertion", () => {
+  const { els, records } = boot();
+  for (const r of records) {
+    const rows = [];
+    els.tbl.querySelectorAll = () => rows;
+    const tr = { dataset: { slug: r.slug }, onclick: null };
+    rows.push(tr);
+    els.q.oninput({ target: { value: "" } });
+    tr.onclick();
+    const html = els.detail.innerHTML;
+    const m = html.match(/<a class="challenge" href="([^"]+)"/);
+    assert.ok(m, `${r.slug}: no challenge link`);
+    const url = new URL(m[1]);
+    assert.equal(url.origin + url.pathname, "https://github.com/fndtnio/Nordstern/issues/new");
+    const title = url.searchParams.get("title"), body = url.searchParams.get("body");
+    assert.ok(title.includes(r.assertion.id), `${r.slug}: title lacks assertion id`);
+    assert.ok(body.includes(r.id) && body.includes(r.assertion.id), `${r.slug}: body lacks an id`);
+    assert.ok(body.includes(`entities/${r.slug}.yaml`), `${r.slug}: body lacks the file path`);
+    assert.match(body, /quote/i, `${r.slug}: body does not state the evidence rule`);
+    assert.ok(!/undefined|NaN/.test(title + body), `${r.slug}: undefined leaked into the issue`);
+  }
 });
 
 /* ---- the tool stays a tool ------------------------------------------
