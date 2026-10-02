@@ -5,9 +5,9 @@ nowhere to record where it came from, so provenance lives here: which of the
 record's names matched, what Mondo calls it, and against which release. Re-run
 after a Mondo release to find terms that have been merged or obsoleted.
 
-- Mondo release: **offline** · resolved 2026-09-06
-- 122 of 144 records carry an identifier
-- this pass: 89 unambiguous · 50 need a person · 5 not in Mondo
+- Mondo release: **2026-09-01** · resolved 2026-10-02
+- 123 of 145 records carry an identifier
+- this pass: 89 unambiguous · 51 need a person · 5 not in Mondo
 
 ## Resolved
 
@@ -105,6 +105,7 @@ after a Mondo release to find terms that have been merged or obsoleted.
 | penile-cancer | `MONDO:0001325` | penile cancer | penile cancer |
 | pku | `MONDO:0009861` | phenylketonuria | phenylketonuria |
 | pleomorphic-adenoma | `MONDO:0008401` | pleomorphic adenoma | confirmed by hand |
+| polycythaemia-vera | `MONDO:0009891` | acquired polycythemia vera | confirmed by hand |
 | prion-disease | `MONDO:0005429` | prion disease | prion disease |
 | prostate-cancer | `MONDO:0008315` | prostate cancer | prostate cancer |
 | rabies | `MONDO:0019173` | rabies | rabies |

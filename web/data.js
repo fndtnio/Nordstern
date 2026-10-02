@@ -23987,6 +23987,259 @@ window.NORDSTERN = {
    }
   },
   {
+   "slug": "polycythaemia-vera",
+   "id": "FND-D-0145",
+   "name": "polycythaemia vera",
+   "also": [
+    "PV",
+    "polycythemia vera",
+    "polycythaemia rubra vera",
+    "primary polycythaemia",
+    "Vaquez disease"
+   ],
+   "common": "a blood cancer",
+   "mondo": "MONDO:0009891",
+   "kind": "disease",
+   "residual": false,
+   "contested": false,
+   "burden": {
+    "incidence": {
+     "value": 80000.0,
+     "units": "new cases/year worldwide — registry rates in Europe and North America run roughly 0.5 to 2.5 per 100,000 a year; this takes about 1 per 100,000 and applies it to eight billion people, which assumes the rate and the ascertainment are the same everywhere, and neither is known",
+     "src": "reasoning"
+    },
+    "prevalence": {
+     "value": 1000000.0,
+     "units": "people — an order of magnitude only: the incidence above multiplied by a survival on treatment of ten to twenty years. United States estimates are about 45 to 55 per 100,000, which is a higher rate than this implies",
+     "src": "reasoning"
+    },
+    "note": "**THE COUNTED DISEASE IS THE DIAGNOSED DISEASE.** A diagnosis needs a full blood count, somebody to act on a raised haematocrit, and a JAK2 mutation test. Where those are not routine the disease is not rare, it is unrecorded, and its strokes and heart attacks are filed under stroke and heart attack. Median age at diagnosis is around sixty. It occurs at every adult age, and the younger patients are the ones who live with it for forty years. **THE MUTATION IS FAR COMMONER THAN THE DISEASE.** JAK2 V617F is detectable at low level in the blood of a measurable fraction of the general adult population — reported from about 0.1% to a few percent depending on how sensitive the assay is — most of whom never develop PV. Lineage-tracing work published in 2022 dated the mutation's acquisition to childhood or before birth in the patients studied, decades ahead of diagnosis."
+   },
+   "survival": {
+    "horizon": "10 years from diagnosis",
+    "untreated": {
+     "value": 0.05,
+     "units": "fraction alive — the historical series from before systematic treatment give a median survival of about eighteen months from diagnosis, most deaths thrombotic. Those patients were diagnosed late and symptomatic; a patient found on a routine blood count today would do better untreated than this, by an amount nobody will measure",
+     "src": "reasoning"
+    },
+    "treated": {
+     "value": 0.7,
+     "units": "fraction alive — modern cohorts report a median survival of roughly fourteen to nineteen years overall and beyond twenty in patients under sixty at diagnosis; the ten-year figure is read off those medians, not quoted from a table",
+     "src": "reasoning"
+    },
+    "witness": "**THE GAIN IS LARGE AND IT IS NOT A RETURN TO NORMAL.** Median age at diagnosis is about sixty, so a share of the deaths inside ten years belong to age, not to PV — but cohort studies consistently find survival below that of the age- and sex-matched population. The excess is thrombosis that happens despite treatment, transformation to myelofibrosis and acute leukaemia, and second cancers. Both numbers are `reasoning`. The untreated one in particular compares a 1950s late-presenting population with a modern incidentally-found one, and overstates the gain by an unknown amount."
+   },
+   "axes": {
+    "mechanism": "established",
+    "intervention": "suppressive",
+    "prevention": "none",
+    "ongoing": "moderate",
+    "efficacy": {
+     "value": 0.75,
+     "units": "fraction-of-patients (haematocrit held below 45% and no major thrombosis or transformation over roughly the first decade of treatment) — the remainder is thrombosis despite control, failure or intolerance of cytoreduction, and progression to myelofibrosis or acute leukaemia. NOTE THAT THIS MEASURES THE SUPPRESSED CONSEQUENCE, NOT THE CLONE",
+     "src": "reasoning"
+    },
+    "access": {
+     "value": 0.4,
+     "units": "fraction-of-patients (diagnosed, and kept at a haematocrit under 45% on aspirin) — venesection and aspirin are available almost anywhere and hydroxyurea is a cheap generic; what is missing is the diagnosis, and then the discipline of the target. Audits in well-resourced systems find a substantial share of diagnosed patients sitting above 45%",
+     "src": "reasoning"
+    }
+   },
+   "measurement": {
+    "diagnostic": "objective",
+    "prognostic": "partial",
+    "predictive": "none",
+    "witness": "DIAGNOSTIC is `objective`. A raised haemoglobin or haematocrit, a JAK2 mutation — V617F in about 95% of patients, an exon 12 mutation in most of the rest — and, where needed, bone marrow histology and a low serum erythropoietin. The mutation test is what separates PV from the much commoner secondary causes of a high haematocrit: smoking, hypoxic lung disease, sleep apnoea, altitude, testosterone. **TWO PLACES IT IS LESS CLEAN THAN THAT.** The same mutation is found in essential thrombocythaemia and primary myelofibrosis, so the genotype establishes a myeloproliferative neoplasm and the blood count and marrow decide which. And the haematocrit can be normal when the disease is present — iron deficiency, an enlarged spleen or an expanded plasma volume hide the red cell mass. That is \"masked\" PV, and it is how a patient can present with a hepatic vein thrombosis and an unremarkable blood count. PROGNOSTIC is `partial`. Thrombosis risk is stratified by two variables — age over sixty and a previous thrombosis — which is serviceable and crude. Leukocytosis, JAK2 allele burden and additional mutations (*SRSF2*, *ASXL1* and others) carry information about survival and fibrotic progression, and mutation-enhanced scores exist. **None of it says which patient's clone will transform, or when**, and none of it currently changes what is done to prevent that, because nothing is known to. PREDICTIVE is `none`, and this is the rating I am least sure of. Venesection lowers the haematocrit in everyone, so for the core intervention there is no selection question. For cytoreduction there is one, and no test answers it: hydroxyurea resistance or intolerance is defined by criteria applied after months of treatment, and the choice between hydroxyurea, interferon and ruxolitinib is made on age, risk class and pregnancy plans, not on predicted response. A case for `partial` is that risk class does select who gets cytoreduction at all — but that is prognosis doing the selecting."
+   },
+   "toll": {
+    "severity": "minor",
+    "permanent": false,
+    "what": "**THE MODAL PATIENT GIVES UP BLOOD AND IRON, AND NEITHER IS PERMANENT.** Venesection works by making the patient iron deficient on purpose — that is what stops the marrow rebuilding the red cell mass. Iron deficiency without anaemia has its own symptoms: fatigue, restless legs, poor concentration. They are reversible in principle and are not reversed in practice, because replacing the iron undoes the treatment. Aspirin carries its bleeding risk. Hydroxyurea causes mouth and leg ulcers and skin changes, and long use is associated with non-melanoma skin cancer — the permanent item on this list. Interferon brings flu-like symptoms, mood disturbance and autoimmune thyroid disease. Ruxolitinib brings weight gain, shingles and, again, skin cancers. **THE TOLL USED TO BE CATASTROPHIC, AND A TRIAL IS HOW ANYONE FOUND OUT.** Radioactive phosphorus and the alkylating agent chlorambucil controlled the blood count well and caused acute leukaemia. The Polycythemia Vera Study Group's first randomised trial showed it and those agents were abandoned. See `moved`. Whether hydroxyurea itself adds any leukaemia risk has been argued for decades without a clear signal; this record treats it as not shown.",
+    "incidence": {
+     "value": 0.05,
+     "units": "fraction-of-treated (permanent harm attributable to treatment — chiefly skin cancers on long-term hydroxyurea or ruxolitinib, and major bleeding on aspirin) — a reasoned estimate, not a measured rate",
+     "src": "reasoning"
+    }
+   },
+   "residue": {
+    "severity": "major",
+    "permanent": true,
+    "what": "**FOR ABOUT A QUARTER OF PATIENTS THE FIRST SIGN OF THE DISEASE IS A CLOT.** A stroke, a myocardial infarction, a deep vein thrombosis, or a thrombosis of the hepatic or portal veins — at or before the diagnosis. Treatment started afterwards lowers the risk of the next event and gives nothing back: the hemiparesis, the infarcted myocardium and the portal hypertension stay. Hepatic vein thrombosis (Budd-Chiari syndrome) is the sharp case. A large share of it is caused by an underlying myeloproliferative neoplasm, it falls disproportionately on younger women, and it is often the masked form with a normal-looking blood count. The outcome can be a transjugular shunt or a liver transplant in someone who had no diagnosis the month before. This is residue in the schema's sense for a suppressive record: back to baseline while treated is not available to someone whose baseline was removed before treatment began.",
+    "incidence": {
+     "value": 0.15,
+     "units": "fraction-of-treated (lasting damage from a thrombosis that preceded diagnosis) — about 23% have a major thrombosis at or before diagnosis in the large modern cohort I am recalling (arterial ~16%, venous ~7%); not every such event leaves a permanent deficit, and the step from 0.23 to 0.15 is my estimate",
+     "src": "reasoning"
+    }
+   },
+   "window": {
+    "what": "**LIKE `cml`, PV IS MOSTLY FOUND BY OTHER PEOPLE'S BLOOD TESTS** — a raised haematocrit on a count ordered for another reason. Found that way, before any clot, the patient starts venesection and aspirin with nothing lost. Found by its first thrombosis, the same treatment begins with the damage already done. The window is long. The clone is present for years to decades before diagnosis and the blood count is abnormal for a good part of that. What closes it is not the clock but an event, and the event is unannounced. **AND A RAISED HAEMATOCRIT IS EASY TO EXPLAIN AWAY.** Smoking, dehydration, lung disease and testosterone all raise it, far more often than PV does. The result is seen, attributed, and not repeated. The test that would settle it — JAK2 — is a single blood sample, and is not ordered because the question was not asked.",
+    "closes_on": "the first major thrombosis; much later and in a minority, progression to myelofibrosis or acute leukaemia, which earlier diagnosis is not known to prevent",
+    "caught_in_time": {
+     "value": 0.75,
+     "units": "fraction-of-cases (diagnosed before a first major thrombosis) — the complement of the ~23% above; lower wherever a full blood count is not part of ordinary care",
+     "src": "recall"
+    }
+   },
+   "moved": [
+    {
+     "date": 1981,
+     "axis": "toll",
+     "from": "catastrophic",
+     "to": "minor",
+     "why": "**THE TREATMENT WAS CAUSING LEUKAEMIA, AND A RANDOMISED TRIAL SHOWED IT.** The Polycythemia Vera Study Group's first trial randomised patients to venesection alone, chlorambucil, or radioactive phosphorus. The chlorambucil arm produced a clear excess of acute leukaemia and was stopped; radiophosphorus showed a later excess of leukaemia and other cancers. Venesection alone had the best overall survival and an early excess of thrombosis. Both myelosuppressive agents dropped out of routine use and hydroxyurea took their place for patients who need more than venesection. The date is the chlorambucil report; the shift in practice ran through the 1980s.",
+     "src": "recall"
+    },
+    {
+     "date": 2005,
+     "axis": "mechanism",
+     "from": "partial",
+     "to": "established",
+     "why": "**JAK2 V617F.** Four groups reported the same acquired point mutation in the same few months of 2005. Before it, PV was known to be clonal (from X-inactivation studies in the 1970s) and its erythroid progenitors were known to grow without erythropoietin (1974) — a clonal disorder with a signalling defect and no molecular cause. After it, the cause had a name, a diagnostic test and a drug target. JAK2 exon 12 mutations, covering most V617F-negative patients, followed in 2007.",
+     "src": "recall"
+    }
+   ],
+   "witness": {
+    "mechanism": "`established`, with the chain as follows. A haematopoietic stem cell acquires a point mutation in *JAK2* — V617F, in the pseudokinase domain that normally restrains the kinase. JAK2 is the signalling partner of the erythropoietin, thrombopoietin and G-CSF receptors, so the mutant cell signals through JAK-STAT as though the growth factor were bound when it is not. Red cell production becomes independent of erythropoietin; serum erythropoietin falls and the red cell mass rises anyway. Blood viscosity rises with the haematocrit, and with activated platelets, leukocytes and endothelium the result is thrombosis. Mouse models carrying the mutation reproduce the erythrocytosis. **THE NAMED HOLES.** *One mutation, three diseases.* The same V617F is found in essential thrombocythaemia and primary myelofibrosis. Allele burden, homozygosity, the order in which co-mutations such as *TET2* arrive, and host factors all contribute to which phenotype appears; none of that amounts to a rule that predicts it. *Carriage without disease.* Most people with a detectable low-level V617F clone do not have PV. Why some clones expand and others sit for decades is open. *Transformation.* What drives a PV clone to fibrosis or to acute leukaemia is partly catalogued — additional mutations, *TP53* among them — and not predictable in a patient. *Thrombosis is not only viscosity.* Lowering the haematocrit lowers the risk and does not abolish it. A case for `partial` exists on the first hole alone. I rated `established` because the chain from this mutation to this phenotype holds, as it does for `cml`, and the holes are about which phenotype and what next.",
+    "intervention": "`suppressive`. Venesection to a haematocrit below 45% plus low-dose aspirin, for everyone; cytoreduction with hydroxyurea or interferon alfa for patients over sixty or with a previous thrombosis; ruxolitinib when hydroxyurea fails or is not tolerated. The evidence is randomised. ECLAP (2004) showed low-dose aspirin reduced thrombotic events. CYTO-PV (2013) randomised patients to a haematocrit target below 45% or of 45 to 50% and found about a quarter as many cardiovascular deaths and major thromboses in the lower arm — so the number being treated is a cause of the harm, not just a marker of it (compare gaps.md #172, where the defining number turned out not to be). RESPONSE (2015) supported ruxolitinib after hydroxyurea failure. Stop treatment and the haematocrit climbs back, which is the definition of the rung. **WHAT THE RUNG DOES NOT SAY.** Suppression here is of red cell mass and thrombosis. The clone is untouched by venesection and aspirin. Interferon alfa — ropeginterferon alfa-2b was approved in Europe in 2019 and the United States in 2021 — lowers the JAK2 allele burden over years and produces molecular remissions in some patients; ruxolitinib lowers it more modestly. Whether a lower allele burden means fewer transformations or a longer life has not been shown in a randomised trial. So this record reads `suppressive` on the thrombotic disease and would read `disease-modifying` at best on the clonal one, and the schema has one slot. Newer agents work on the same side of that line: rusfertide, a hepcidin mimetic, restricts iron to erythropoiesis and reduces the need for venesection. Inhibitors selective for the mutant kinase are in early trials.",
+    "prevention": "`none`. No modifiable cause is established. A common inherited *JAK2* haplotype raises the risk of acquiring the mutation and familial clustering occurs, neither of which is actionable. The mutation is somatic and, on the 2022 lineage data, often decades old by diagnosis. Preventing the thrombosis is the treatment, not prevention in this axis's sense.",
+    "ongoing": "`moderate`. Venesection every few weeks at first and every few months once stable, each one a clinic visit and half a litre of blood; a full blood count before each; a daily aspirin; for higher-risk patients a daily capsule or a fortnightly injection, with monitoring for its effects. All of it for life. The deliberate iron deficiency is part of the ongoing cost too — see `toll`. Itching after contact with water, which is characteristic of the disease, often persists on treatment that controls the blood count."
+   },
+   "holes": [
+    "Every scalar here is `reasoning` or `recall`. Incidence and prevalence are registry rates from Europe and North America extrapolated to the world. There is no `deaths` figure; I do not know of a global one, and did not check whether GBD reports PV separately.",
+    "The trial results (ECLAP, CYTO-PV, RESPONSE, the Polycythemia Vera Study Group) and the cohort figures (thrombosis at diagnosis, median survival) are from memory and have not been read against the papers for this record.",
+    "ECLAP in 2004 and CYTO-PV in 2013 are narrated in the `intervention` witness and have no `moved` entry. Each plausibly moved `efficacy`; I had no defensible \"from\" value and did not invent one.",
+    "Rusfertide's regulatory status is not checked. A phase 3 trial was reported positive in 2025; whether it has since been approved anywhere is not something this record knows.",
+    "`predictive: none` and `mechanism: established` are the two ratings with a stated case for the neighbouring value; both arguments are in the witnesses.",
+    "`efficacy` rates the suppressed consequence. If the register's question is whether the disease is held, progression to myelofibrosis (of the order of one in ten over fifteen years) and acute leukaemia (a few percent) is the part the number is kindest to.",
+    "Post-PV myelofibrosis and blast-phase disease are not strata here. They are where a minority of patients go, not groups distinguishable at diagnosis, and the register has no myelofibrosis record for them to point at.",
+    "Essential thrombocythaemia and primary myelofibrosis share the mutation and are not in the register."
+   ],
+   "blockers": [
+    {
+     "kind": "knowledge",
+     "blocks": "treating the clone, and knowing whose clone will transform",
+     "obstacles": [
+      "who-progresses"
+     ],
+     "what": "**NOTHING IS SHOWN TO PREVENT PROGRESSION, AND NOBODY CAN SAY WHO WILL PROGRESS.** Standard treatment controls the blood count and leaves the mutant stem cell population where it was. A minority of patients go on to myelofibrosis or acute leukaemia, which is what kills the patients whose thrombosis risk has been controlled, and post-PV acute leukaemia responds badly to everything. The available JAK2 inhibitor is not selective for the mutant kinase and does not eliminate the clone — the gap between this record and `cml`. Why the same mutation gives three different diseases, and why most low-level carriers never get any of them, are the same question from the other end. `scale: null`.",
+     "who_could": [
+      "academic",
+      "sponsor",
+      "manufacturer",
+      "philanthropy"
+     ],
+     "scale": null,
+     "standing": "documented",
+     "src": "recall"
+    },
+    {
+     "kind": "evidence-incomplete",
+     "blocks": "interferon as a treatment that changes the course, and cytoreduction for low-risk patients",
+     "obstacles": [],
+     "what": "Interferon alfa reduces the JAK2 allele burden and some patients reach molecular remission. The randomised trials that led to approval measured haematological and molecular response. **Whether that translates into fewer transformations or longer survival rests on retrospective comparisons**, and the trial that would settle it needs many years of follow-up against endpoints that are uncommon. The same uncertainty runs the other way for younger, low-risk patients, who by guideline receive venesection and aspirin alone: a randomised trial of adding ropeginterferon (Low-PV, 2021) improved haematocrit control, and whether that should change what low-risk patients are offered for the next forty years is not settled.",
+     "who_could": [
+      "academic",
+      "sponsor",
+      "manufacturer",
+      "nonprofit"
+     ],
+     "scale": 100000000.0,
+     "standing": "documented",
+     "src": "recall"
+    },
+    {
+     "kind": "diagnosis",
+     "blocks": "venesection and aspirin before the first clot",
+     "obstacles": [],
+     "what": "**THE TREATMENT IS A NEEDLE, A BAG AND AN ASPIRIN, AND IT STARTS AFTER THE STROKE IN ABOUT A QUARTER OF PATIENTS.** Three separate failures. A raised haematocrit on a routine count is attributed to smoking or dehydration and not followed up. The masked form presents with a normal count and is not suspected until a hepatic or portal vein thrombosis prompts the JAK2 test. And across much of the world neither the routine count nor the mutation test is part of ordinary care, so the disease is not diagnosed at all. The first of these is addressable in software: a persistently raised haematocrit with no recorded explanation is a query a laboratory system can run. I am asserting that such results commonly go uninvestigated from memory of primary-care audit studies, not from a named one.",
+     "who_could": [
+      "health-system",
+      "software",
+      "government",
+      "nonprofit"
+     ],
+     "scale": 500000000.0,
+     "standing": "alleged",
+     "src": "recall"
+    },
+    {
+     "kind": "cost",
+     "blocks": "ropeginterferon alfa-2b and ruxolitinib",
+     "obstacles": [],
+     "what": "First-line PV treatment is close to free. The second line is not. Ruxolitinib, for patients who fail or cannot tolerate hydroxyurea, and ropeginterferon alfa-2b, the one agent with a claim on the clone, are both on patent and both priced — in the United States — in the region of $150,000 to $200,000 a year at list, for a treatment taken indefinitely. **THE PRICES ARE RECALLED, NOT READ**, and I have not checked reimbursement or availability outside the United States and Europe. Hence `alleged`: that these drugs are priced out of reach for most patients who would benefit is likely and unverified.",
+     "who_could": [
+      "manufacturer",
+      "payer",
+      "government"
+     ],
+     "scale": 1000000000.0,
+     "standing": "alleged",
+     "src": "recall"
+    }
+   ],
+   "assertion": {
+    "id": "FND-A-0146",
+    "rated": "2026-10-02",
+    "by": [
+     "claude"
+    ]
+   },
+   "derived": {
+    "status": "active",
+    "superseded_by": null,
+    "capability": "managed",
+    "terms": "clean",
+    "residue_terms": "costly",
+    "restored": "disease-residue",
+    "has_residue": true,
+    "reach": 0.3,
+    "delivery": "partly",
+    "knowledge_gap": null,
+    "delivery_gap": null,
+    "bucket": "held-off",
+    "bucket_tags": [
+     "needs-more-evidence"
+    ],
+    "knowledge_yld": null,
+    "delivery_yld": null,
+    "quadrant": "known & treatable",
+    "orphaned": true,
+    "survival_band": "good chance",
+    "survival_outcome": "held",
+    "survival_sentence": "70% at 10 years from diagnosis — treated indefinitely",
+    "survival_gain": 0.65,
+    "was_uniformly_fatal": true,
+    "no_longer_terminal": true,
+    "spans_ladder": false,
+    "has_window": true,
+    "overtreatment_risk": false,
+    "futile_treatment_risk": false,
+    "cured_at_a_price": false,
+    "harm_without_benefit": false,
+    "cheapest_priced_blocker": 100000000.0,
+    "only_knowledge_blockers": false,
+    "measurement_gap": false,
+    "blocker_kinds": [
+     "cost",
+     "diagnosis",
+     "evidence-incomplete",
+     "knowledge"
+    ],
+    "actors": [
+     "academic",
+     "government",
+     "health-system",
+     "manufacturer",
+     "nonprofit",
+     "payer",
+     "philanthropy",
+     "software",
+     "sponsor"
+    ],
+    "unsourced_scalars": 0
+   }
+  },
+  {
    "slug": "type-1-diabetes",
    "id": "FND-D-0079",
    "name": "type 1 diabetes",

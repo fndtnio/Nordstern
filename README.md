@@ -1,6 +1,6 @@
 # Nordstern
 
-> **Experimental.** This is a schema under test, not a data source. 144
+> **Experimental.** This is a schema under test, not a data source. 145
 > diseases rated by hand, mostly from memory; 71 of roughly 2,400 empirical
 > numbers carry a citation. The ratings are meant to be argued with. Nothing
 > here should be cited as a fact about medicine without reading the record and

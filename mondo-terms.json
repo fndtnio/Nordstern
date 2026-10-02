@@ -1,5 +1,5 @@
 {
- "checked": "2026-09-06",
+ "checked": "2026-10-02",
  "release": "2026-09-01",
  "terms": {
   "MONDO:0000240": {
@@ -4481,6 +4481,75 @@
     ],
     "icd11.foundation": [
      "444122923"
+    ]
+   }
+  },
+  "MONDO:0009891": {
+   "definition": "Polycythemia vera (PV) is an acquired myeloproliferative disorder characterized by an elevated absolute red blood cell mass caused by uncontrolled red blood cell production, frequently associated with uncontrolled white blood cell and platelet production.",
+   "id": "MONDO:0009891",
+   "label": "acquired polycythemia vera",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "Osler-Vaquez disease": "hasExactSynonym",
+    "PRV": "hasRelatedSynonym",
+    "PV": "hasExactSynonym",
+    "Vaquez disease": "hasExactSynonym",
+    "acquired primary erythrocytosis": "hasExactSynonym",
+    "polycythaemia rubra vera": "hasExactSynonym",
+    "polycythemia rubra vera": "hasExactSynonym",
+    "polycythemia vera": "hasExactSynonym",
+    "primary polycythemia": "hasRelatedSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "8997"
+    ],
+    "EFO": [
+     "0002429"
+    ],
+    "GARD": [
+     "0007422"
+    ],
+    "ICD10CM": [
+     "D45"
+    ],
+    "ICD9": [
+     "238.4"
+    ],
+    "ICDO": [
+     "9950/3"
+    ],
+    "MEDGEN": [
+     "45996"
+    ],
+    "MESH": [
+     "D011087"
+    ],
+    "MedDRA": [
+     "10036057"
+    ],
+    "NANDO": [
+     "2100186",
+     "2200643"
+    ],
+    "NCIT": [
+     "C3336"
+    ],
+    "OMIM": [
+     "263300"
+    ],
+    "ONCOTREE": [
+     "PV"
+    ],
+    "Orphanet": [
+     "729"
+    ],
+    "UMLS": [
+     "C0032463"
+    ],
+    "icd11.foundation": [
+     "818364947"
     ]
    }
   },

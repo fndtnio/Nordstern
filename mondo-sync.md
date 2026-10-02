@@ -4,9 +4,9 @@
 identifier once; this checks that it is still true and reports what Mondo
 knows that the register does not. Re-run after a Mondo release.
 
-- Mondo release: **2026-09-01** · checked 2026-09-06
-- 122 identifiers checked
-- 0 dead · 2 scope warnings · 97 import proposals
+- Mondo release: **2026-09-01** · checked 2026-10-02
+- 123 identifiers checked
+- 0 dead · 2 scope warnings · 98 import proposals
 
 ## Dead join keys
 
@@ -101,6 +101,7 @@ reproducible in the first place.
 - **penile-cancer** — Mondo exact synonyms not in `also`: `cancer of penis`, `malignant neoplasm of penis`, `malignant neoplasm of the penis`, `malignant penile neoplasm`, `malignant penile tumor`, `malignant penile tumour`, `malignant penis neoplasm`, `malignant tumor of penis`, `malignant tumor of the penis`, `malignant tumour of penis`, `malignant tumour of the penis`, `penis cancer`
 - **pku** — Mondo exact synonyms not in `also`: `phenylalanine hydroxylase deficiency`
 - **pleomorphic-adenoma** — Mondo exact synonyms not in `also`: `tumor, mixed, benign`
+- **polycythaemia-vera** — Mondo exact synonyms not in `also`: `Osler-Vaquez disease`, `acquired primary erythrocytosis`, `polycythemia rubra vera`
 - **prion-disease** — Mondo exact synonyms not in `also`: `spongiform encephalopathy`
 - **prostate-cancer** — Mondo exact synonyms not in `also`: `cancer of prostate gland`, `malignant neoplasm of prostate`, `malignant neoplasm of prostate gland`, `malignant neoplasm of the prostate`, `malignant prostate gland neoplasm`, `malignant prostate neoplasm`, `malignant prostate tumor`, `malignant prostate tumour`, `malignant tumor of prostate`, `malignant tumor of the prostate`, `malignant tumour of prostate`, `malignant tumour of the prostate`, `prostate gland cancer`
 - **rabies** — Mondo exact synonyms not in `also`: `lyssa`
@@ -150,6 +151,7 @@ several diseases after their sequela rather than their cause.
 - **mrsa** — we call it **MRSA infection**; Mondo's label is **methicillin-resistant staphylococcus aureus infectious disease**
 - **mycoplasma-genitalium** — we call it **Mycoplasma genitalium infection**; Mondo's label is **Mycoplasmoides infection**
 - **neonatal-conditions** — we call it **neonatal conditions**; Mondo's label is **perinatal disease**
+- **polycythaemia-vera** — we call it **polycythaemia vera**; Mondo's label is **acquired polycythemia vera**
 - **snakebite** — we call it **snakebite envenoming**; Mondo's label is **snakebite envenomation**
 - **stroke** — we call it **stroke**; Mondo's label is **stroke disorder**
 
@@ -160,30 +162,30 @@ is a join key into a dataset the register cannot currently reach.
 
 | source | records | what it unlocks |
 |---|---|---|
-| `MEDGEN` | 117/122 | NCBI concept hub — links OMIM, Orphanet, GTR and literature |
-| `UMLS` | 117/122 | concept mapping across vocabularies |
-| `DOID` | 106/122 | disease ontology |
-| `NCIT` | 106/122 | cancer and biomedical terminology |
-| `SCTID` | 105/122 | clinical coding (SNOMED CT) |
-| `MESH` | 97/122 | literature search |
-| `ICD9` | 92/122 | burden — historical coding, still the key for older series |
-| `icd11.foundation` | 74/122 | burden — current WHO classification |
-| `EFO` | 64/122 | experimental factor ontology — the key into GWAS and biobank data |
-| `ICD10CM` | 64/122 | burden — the route into GBD cause mappings |
-| `GARD` | 54/122 | rare disease information |
-| `Orphanet` | 53/122 | RARE DISEASE PREVALENCE — publishes prevalence classes, not point estimates |
-| `MedDRA` | 34/122 | adverse event and regulatory coding |
-| `ICD10WHO` | 30/122 | burden — the route into GBD cause mappings |
-| `NANDO` | 23/122 | Japanese intractable disease designations |
-| `OMIM` | 23/122 | genetic — gene and variant level |
-| `HP` | 17/122 | — |
-| `NORD` | 17/122 | rare disease information |
-| `ONCOTREE` | 8/122 | — |
-| `birnlex` | 7/122 | neuroscience terminology |
-| `ICDO` | 5/122 | oncology morphology coding |
-| `OMIMPS` | 3/122 | OMIM phenotypic series |
-| `CSP` | 2/122 | — |
-| `MFOMD` | 1/122 | mental functioning ontology |
+| `MEDGEN` | 118/123 | NCBI concept hub — links OMIM, Orphanet, GTR and literature |
+| `UMLS` | 118/123 | concept mapping across vocabularies |
+| `DOID` | 107/123 | disease ontology |
+| `NCIT` | 107/123 | cancer and biomedical terminology |
+| `SCTID` | 105/123 | clinical coding (SNOMED CT) |
+| `MESH` | 98/123 | literature search |
+| `ICD9` | 93/123 | burden — historical coding, still the key for older series |
+| `icd11.foundation` | 75/123 | burden — current WHO classification |
+| `EFO` | 65/123 | experimental factor ontology — the key into GWAS and biobank data |
+| `ICD10CM` | 65/123 | burden — the route into GBD cause mappings |
+| `GARD` | 55/123 | rare disease information |
+| `Orphanet` | 54/123 | RARE DISEASE PREVALENCE — publishes prevalence classes, not point estimates |
+| `MedDRA` | 35/123 | adverse event and regulatory coding |
+| `ICD10WHO` | 30/123 | burden — the route into GBD cause mappings |
+| `NANDO` | 24/123 | Japanese intractable disease designations |
+| `OMIM` | 24/123 | genetic — gene and variant level |
+| `HP` | 17/123 | — |
+| `NORD` | 17/123 | rare disease information |
+| `ONCOTREE` | 9/123 | — |
+| `birnlex` | 7/123 | neuroscience terminology |
+| `ICDO` | 6/123 | oncology morphology coding |
+| `OMIMPS` | 3/123 | OMIM phenotypic series |
+| `CSP` | 2/123 | — |
+| `MFOMD` | 1/123 | mental functioning ontology |
 
 Per record:
 
@@ -279,6 +281,7 @@ Per record:
 - **penile-cancer** — `DOID:11615` · `GARD:0009366` · `ICD10CM:C60` · `ICD9:187.3,187.4` · `MEDGEN:102277` · `NCIT:C7547` · `Orphanet:398043` · `SCTID:363516004` · `UMLS:C0153601` · `icd11.foundation:969101922`
 - **pku** — `DOID:9281` · `GARD:0007383` · `ICD9:270.1` · `MEDGEN:19244` · `MESH:D010661` · `MedDRA:10034872` · `NANDO:1200784,1200785,2200467,2201075` · `NCIT:C81315` · `NORD:1574` · `OMIM:261600` · `Orphanet:716` · `SCTID:7573000` · `UMLS:C0031485` · `icd11.foundation:444122923`
 - **pleomorphic-adenoma** — `DOID:452` · `GARD:0017789` · `ICDO:8940/0` · `MEDGEN:275400` · `MESH:D008949` · `NCIT:C8602` · `OMIM:181030` · `Orphanet:454821` · `SCTID:447888006` · `UMLS:C1519176`
+- **polycythaemia-vera** — `DOID:8997` · `EFO:0002429` · `GARD:0007422` · `ICD10CM:D45` · `ICD9:238.4` · `ICDO:9950/3` · `MEDGEN:45996` · `MESH:D011087` · `MedDRA:10036057` · `NANDO:2100186,2200643` · `NCIT:C3336` · `OMIM:263300` · `ONCOTREE:PV` · `Orphanet:729` · `UMLS:C0032463` · `icd11.foundation:818364947`
 - **prion-disease** — `DOID:649` · `EFO:0004720` · `GARD:0024183` · `ICD9:046.19` · `MEDGEN:56445` · `MESH:D017096` · `NANDO:1200186` · `NCIT:C128346` · `SCTID:230284004` · `UMLS:C0162534`
 - **prostate-cancer** — `DOID:10283` · `ICD10CM:C61` · `ICD9:185` · `MEDGEN:138169` · `MESH:D011471` · `NCIT:C7378` · `SCTID:399068003` · `UMLS:C0376358`
 - **rabies** — `DOID:11260` · `GARD:0007516` · `ICD10CM:A82` · `ICD10WHO:A82` · `ICD9:071` · `MEDGEN:48308` · `MESH:D011818` · `MedDRA:10037742` · `NCIT:C28182` · `NORD:1644` · `Orphanet:770` · `SCTID:14168008` · `UMLS:C0034494` · `icd11.foundation:854762584`
@@ -464,4 +467,4 @@ which are one word and genuine — so it is left visible and named here.
 
 ## Changes since the last snapshot
 
-*(no change, or this is the first run)*
+- `MONDO:0009891` **new** — first time this identifier has been snapshotted

@@ -16,8 +16,8 @@ without it the framing calls a two-dollar pair of glasses solved.
 |---|---|---:|---:|
 | **1** | do we know what it is doing? | 6 | 4% |
 | **2** | can we do anything about it? | 33 | 23% |
-| **3** | can we prove it works? | 37 | 26% |
-| **4** | does it reach the person? | 113 | 78% |
+| **3** | can we prove it works? | 38 | 26% |
+| **4** | does it reach the person? | 114 | 79% |
 
 **Each gate is tighter than the one before it, and the tightest is not a science
 gate at all.** That ordering is the framing's main result and it is the opposite
@@ -87,7 +87,7 @@ third of the people who need it.
 |---:|---:|
 | 0 | 12 |
 | 1 | 84 |
-| 2 | 39 |
+| 2 | 40 |
 | 3 | 9 |
 
 **12 records pass all four**: `dengue` · `hat` · `hiv` · `hpv-infection` · `lymphatic-filariasis` · `measles` · `onchocerciasis` · `pku` · `pleomorphic-adenoma` · `rabies` · `tuberculosis` · `varicella-zoster`.
@@ -103,7 +103,7 @@ diseases where all four gates happen to be open **at once, somewhere**.
 |---|---:|
 | know — do we know what it is doing | 6 |
 | do — can we do anything about it | 28 |
-| prove — can we prove it works | 23 |
+| prove — can we prove it works | 24 |
 | reach — does it reach the person | 75 |
 | none | 12 |
 
@@ -117,7 +117,7 @@ sequential reading is the natural one and this is what it produces.
 **Two thresholds are choices and both are reported.**
 
 - **Gate 1** counts `partial` as open, which is generous. Requiring `established`
-  would shut it on **44 records (31%)** instead of
+  would shut it on **44 records (30%)** instead of
   6. The funnel's ordering survives either reading: gate 1 stays
   the loosest of the four.
 - **Gate 4** uses Nordstern's `delivery` bands, so open means `delivered` or
