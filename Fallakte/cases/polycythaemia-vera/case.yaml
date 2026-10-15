@@ -1,0 +1,96 @@
+# THE SPINE. Ids, links, paths and statuses — everything a checker can verify
+# and nothing a person would rather read as prose. The case file itself is
+# README.md, and `check.py` asserts that every question id and every model path
+# below is actually discussed there, and that no prose has crept back in here.
+# `one_line` is the single exception and is capped at a sentence, because a
+# register listing needs something to show.
+#
+# BLOCK MAPPINGS ONLY. Nordstern's bounded loader does not read inline flow
+# mappings (`{tool: x, ref: y}`) and hands them back as strings, which is how
+# the first draft of this file silently became ten strings.
+
+slug: polycythaemia-vera
+id: FND-C-0001
+disease: polycythaemia-vera
+disease_id: FND-D-0145
+opened: 2026-10-10
+updated: 2026-10-11
+status: active
+
+one_line: >
+  A blood cancer with one known driver mutation, a treatment that lowers a
+  number without touching the cause, and a natural history nobody can predict.
+
+working_with:
+  - kind: nonprofit
+    named: false
+
+obstacles: [who-progresses]
+
+models:
+  - tool: Strangschrift
+    ref: ../../../../Strangschrift/examples/jak2-sites.strang
+    access: repo
+  - tool: Strangschrift
+    ref: ../../../../Strangschrift/examples/stat5-target.strang
+    access: repo
+  - tool: Schaltwerk
+    ref: ../../../../Schaltwerk/examples/jak2-brake.schalt
+    access: private
+  - tool: Schaltwerk
+    ref: ../../../../Schaltwerk/examples/jak2-v617f.schalt
+    access: private
+  - tool: Schaltwerk
+    ref: ../../../../Schaltwerk/examples/jak2-stat5.schalt
+    access: private
+  - tool: Schaltwerk
+    ref: ../../../../Schaltwerk/examples/jak2-off.schalt
+    access: private
+  - tool: Schaltwerk
+    ref: ../../../../Schaltwerk/examples/pfcp.schalt
+    access: private
+  - tool: Strombild
+    ref: ../../../../strombild/examples/erythropoiesis.strombild
+    access: repo
+  - tool: Strombild
+    ref: ../../../../strombild/examples/erythropoiesis-pv.strombild
+    access: repo
+  - tool: Strombild
+    ref: ../../../../strombild/examples/clonal-escape.strombild
+    access: repo
+  - tool: Strombild
+    ref: ../../../../strombild/examples/iron.strombild
+    access: repo
+
+questions:
+  - id: Q1
+    status: open
+    obstacles: [who-progresses]
+  - id: Q2
+    status: partial
+    obstacles: [who-progresses]
+  - id: Q3
+    status: open
+    obstacles: [who-progresses]
+  - id: Q4
+    status: open
+    obstacles: []
+  - id: Q5
+    status: open
+    obstacles: [who-progresses]
+  - id: Q6
+    status: open
+    obstacles: []
+  - id: Q7
+    status: open
+    obstacles: [who-progresses]
+  - id: Q8
+    status: open
+    obstacles: []
+  - id: Q9
+    status: open
+    obstacles: []
+
+# Routes and asks carry falsifiers and prose, so they live in README sections 8
+# and 9. A count of them here could drift out of step with the prose, and a
+# number that can disagree with the text it describes is worse than no number.

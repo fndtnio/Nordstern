@@ -150,6 +150,22 @@ alone. It is left out because it would duplicate `low-back-pain`'s schema
 problems exactly without teaching anything new — which is the corpus-before-
 schema rule working, but it is a judgement and it is arguable.
 
+### `familial-hypercholesterolaemia` — noted 2026-10-10, out of the PV discussion
+
+Absent from the 145, and it should not be. It is the register's cleanest
+**germline control.** A clearance pathway broken from conception, and the
+disease arrives on schedule in childhood — xanthomas and coronary disease in
+the teens in the homozygous form. That is the test that separates an inherited
+defect from an acquired one, and it is the reasoning that correctly places
+`polycythaemia-vera` as somatic: if V617F were germline, PV would be a
+paediatric disease, and it is not.
+
+It would also exercise the one-slot problem `polycythaemia-vera` hit, from the
+other side: statins and apheresis suppress, while PCSK9 inhibition, evinacumab
+and the gene-editing trials argue for a higher rung on the same record.
+
+Axes unrated here on purpose.
+
 ---
 
 ## Two schema decisions this pass has forced, still open

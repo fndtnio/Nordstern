@@ -1,6 +1,6 @@
 {
- "checked": "2026-10-02",
- "release": "2026-09-01",
+ "checked": "2026-10-10",
+ "release": "2026-10-06",
  "terms": {
   "MONDO:0000240": {
    "definition": "An aspergillosis that is a serious fungal infection of the lung with pneumonia caused by Aspergillus, which spreads to other parts of the body through bloodstream in patients with acute leukemia and recipients of tissue transplants. Clinical symptoms include pulmonary nodules and hemorrhage.",
@@ -2831,6 +2831,46 @@
     ],
     "UMLS": [
      "C0162534"
+    ]
+   }
+  },
+  "MONDO:0005439": {
+   "definition": "Editor note: TODO check xrefs",
+   "id": "MONDO:0005439",
+   "label": "familial hypercholesterolemia",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {},
+   "xrefs": {
+    "DOID": [
+     "13810"
+    ],
+    "EFO": [
+     "0004911"
+    ],
+    "ICD10CM": [
+     "E78.01"
+    ],
+    "ICD9": [
+     "V19.8"
+    ],
+    "MEDGEN": [
+     "5688"
+    ],
+    "NANDO": [
+     "2200602"
+    ],
+    "NCIT": [
+     "C34704"
+    ],
+    "OMIMPS": [
+     "143890"
+    ],
+    "SCTID": [
+     "190773008"
+    ],
+    "UMLS": [
+     "C0020445"
     ]
    }
   },

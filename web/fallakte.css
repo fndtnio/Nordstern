@@ -1,0 +1,141 @@
+/* ============================================================================
+ * Fallakte — shared styling for the landing page and the case viewer.
+ *
+ * WHY A STYLESHEET WHEN THE OTHER THREE PAGES EACH HAVE THEIR OWN <style>.
+ * index.html, query.html and engpass.html are three different KINDS of page —
+ * a map, a tool, a dashboard — and each one's styling is most of what makes it
+ * that kind. These two are one kind seen twice: a list of case files and a case
+ * file. They have to look identical, and two copies of identical styling drift.
+ *
+ * Tokens are the family's engineering-paper palette, unchanged.
+ * ========================================================================== */
+:root {
+  --paper:#f7f2e6; --paper-deep:#efe7d3; --card:#fbf8ef;
+  --ink:#22304a; --ink-soft:rgba(34,48,74,.55); --ink-faint:rgba(34,48,74,.16);
+  --vermilion:#c8451f; --teal:#1f7a6d; --water:#3d7fa6; --gold:#b98a1d;
+}
+* { box-sizing:border-box; margin:0; padding:0; }
+body {
+  background:var(--paper);
+  background-image:
+    repeating-linear-gradient(0deg,transparent 0 23px,rgba(34,48,74,.045) 23px 24px),
+    repeating-linear-gradient(90deg,transparent 0 23px,rgba(34,48,74,.045) 23px 24px);
+  color:var(--ink); font-family:'IBM Plex Mono',monospace; font-size:13px;
+  padding:16px clamp(14px,4vw,44px) 40px; line-height:1.5;
+}
+.wrap { max-width:1180px; margin:0 auto; }
+
+header { border-bottom:2px solid var(--ink); padding-bottom:9px; margin-bottom:14px;
+         display:flex; align-items:baseline; justify-content:space-between;
+         gap:14px; flex-wrap:wrap; }
+h1 { font-family:Fraunces,serif; font-weight:600; font-style:italic; font-size:24px; }
+h1 .fig { font-family:'IBM Plex Mono',monospace; font-style:normal; font-weight:500;
+          font-size:10px; letter-spacing:.18em; color:var(--vermilion);
+          text-transform:uppercase; margin-right:9px; vertical-align:3px; }
+header .sub { font-size:11.5px; color:var(--ink-soft); max-width:58ch; }
+header .sub b { color:var(--ink); font-weight:500; }
+header .links { display:flex; gap:8px; flex-wrap:wrap; }
+a.tool { font-size:11px; border:2px solid var(--ink); background:var(--paper);
+         box-shadow:2px 2px 0 var(--ink); padding:5px 10px; color:var(--ink);
+         text-decoration:none; letter-spacing:.06em; white-space:nowrap; }
+a.tool:hover { background:var(--paper-deep); }
+
+.standfirst { font-size:12.5px; line-height:1.62; max-width:84ch;
+  border-left:2px solid var(--vermilion); padding:2px 0 2px 13px; margin-bottom:16px; }
+.standfirst b { font-weight:500; }
+
+.card { border:2px solid var(--ink); background:var(--card); padding:12px 14px;
+        box-shadow:3px 3px 0 var(--ink-faint); }
+.grid { display:grid; gap:12px; }
+.g2 { grid-template-columns:repeat(auto-fit,minmax(330px,1fr)); }
+
+h2 { font-family:Fraunces,serif; font-style:italic; font-weight:600; font-size:16px;
+     margin:26px 0 3px; }
+h2 .n { font-family:'IBM Plex Mono',monospace; font-style:normal; font-size:9.5px;
+        letter-spacing:.18em; text-transform:uppercase; color:var(--vermilion);
+        margin-right:8px; vertical-align:2px; }
+.lede { font-size:11.5px; color:var(--ink-soft); max-width:84ch; margin-bottom:10px; }
+.lede b { color:var(--ink); font-weight:500; }
+
+.pill { display:inline-block; border:1px solid var(--ink-faint); padding:0 6px;
+        font-size:9.5px; letter-spacing:.1em; text-transform:uppercase;
+        color:var(--ink-soft); white-space:nowrap; }
+.pill.open, .pill.active { border-color:var(--vermilion); color:var(--vermilion); }
+.pill.partial, .pill.dormant, .pill.repo { border-color:var(--gold); color:var(--gold); }
+.pill.answered, .pill.live { border-color:var(--teal); color:var(--teal); }
+.pill.private, .pill.abandoned, .pill.closed { border-style:dashed; }
+
+/* ---- the case list ---- */
+a.caselink { color:inherit; text-decoration:none; display:block; margin-bottom:12px; }
+a.caselink:hover .card { background:#fff; border-color:var(--water);
+                         box-shadow:3px 3px 0 var(--water); }
+.casehead { display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;
+            margin-bottom:5px; }
+.casename { font-family:Fraunces,serif; font-style:italic; font-weight:600; font-size:19px; }
+.caseid { font-size:10px; letter-spacing:.14em; color:var(--ink-soft); }
+.oneline { font-size:12px; line-height:1.55; max-width:78ch; margin-bottom:8px; }
+.facts { display:flex; gap:16px; flex-wrap:wrap; font-size:10.5px; color:var(--ink-soft); }
+.facts b { color:var(--ink); font-weight:500; font-size:12px; }
+.facts .f { display:flex; flex-direction:column; gap:1px; }
+.facts .lbl { font-size:9px; letter-spacing:.13em; text-transform:uppercase; }
+
+/* ---- the viewer ---- */
+.cols { display:grid; gap:18px; grid-template-columns:minmax(0,1fr); }
+@media (min-width:1000px) { .cols { grid-template-columns:252px minmax(0,1fr); } }
+aside { font-size:11px; }
+@media (min-width:1000px) { aside { position:sticky; top:16px; align-self:start;
+  max-height:calc(100vh - 32px); overflow:auto; } }
+aside h3 { font-size:9.5px; letter-spacing:.16em; text-transform:uppercase;
+           color:var(--vermilion); margin:14px 0 5px; font-weight:400; }
+aside .box { border:1px solid var(--ink-faint); background:var(--card); padding:8px 10px; }
+aside ul { list-style:none; }
+aside .toc a { display:block; color:var(--ink); text-decoration:none; padding:2px 0;
+               border-bottom:1px solid var(--ink-faint); line-height:1.35; }
+aside .toc a:hover { color:var(--water); }
+aside .toc a.l3 { padding-left:11px; color:var(--ink-soft); font-size:10.5px; }
+aside .kv { display:flex; justify-content:space-between; gap:8px; padding:2px 0;
+            border-bottom:1px solid var(--ink-faint); }
+aside .kv span:first-child { color:var(--ink-soft); }
+aside .mdl { padding:4px 0; border-bottom:1px solid var(--ink-faint); }
+aside .mdl .t { color:var(--ink-soft); font-size:9.5px; letter-spacing:.1em;
+                text-transform:uppercase; }
+aside .qs { display:flex; flex-wrap:wrap; gap:4px; }
+aside .qs a { text-decoration:none; }
+
+/* ---- the rendered case file ---- */
+article { max-width:86ch; }
+article h1 { font-size:26px; margin:0 0 4px; }
+article h2 { font-size:18px; margin:30px 0 7px; padding-top:7px;
+             border-top:2px solid var(--ink); }
+article h3 { font-family:Fraunces,serif; font-style:italic; font-weight:600;
+             font-size:14.5px; margin:20px 0 5px; }
+article p { margin:0 0 10px; line-height:1.65; }
+article b { font-weight:500; }
+article code { background:var(--paper-deep); padding:0 3px; font-size:11.5px; }
+article a { color:var(--water); }
+article hr { border:0; border-top:1px solid var(--ink-faint); margin:20px 0; }
+article ul, article ol { margin:0 0 12px 18px; }
+article li { margin-bottom:5px; line-height:1.6; }
+article blockquote { border-left:2px solid var(--vermilion); padding:2px 0 2px 12px;
+                     margin:0 0 12px; font-style:italic; }
+article pre { background:var(--card); border:1px solid var(--ink-faint);
+              padding:9px 11px; margin:0 0 12px; overflow-x:auto; font-size:11.5px;
+              line-height:1.5; }
+article table { border-collapse:collapse; width:100%; font-size:11.5px;
+                margin:0 0 14px; background:var(--card); }
+article th, article td { padding:5px 8px; vertical-align:top;
+                         border-bottom:1px solid var(--ink-faint); }
+article th { font-size:9.5px; letter-spacing:.13em; text-transform:uppercase;
+             color:var(--ink-soft); font-weight:400; background:var(--paper-deep); }
+article tr:last-child td { border-bottom:0; }
+
+footer { margin-top:30px; padding-top:10px; border-top:2px solid var(--ink);
+         font-size:10.5px; color:var(--ink-soft); line-height:1.6; max-width:92ch; }
+footer b { color:var(--ink); font-weight:500; }
+footer code { background:var(--paper-deep); padding:0 3px; }
+.warn { border:2px solid var(--vermilion); background:#fdf1ec; color:var(--vermilion);
+        padding:9px 12px; margin-bottom:16px; font-size:11.5px; line-height:1.55; }
+.warn b { font-weight:500; }
+details > summary { cursor:pointer; font-family:Fraunces,serif; font-style:italic;
+  font-weight:600; font-size:16px; margin:26px 0 6px; }
+details > summary:hover { color:var(--water); }

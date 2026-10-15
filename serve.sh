@@ -5,11 +5,15 @@
 # of the family, and for when the payload outgrows a single file and the pages
 # start fetching per-record JSON.
 #
-#   web/index.html   the map   — charts, all derived, every figure a query link
-#   web/query.html   the tool  — the query language over the whole register
+#   web/index.html     the map       — charts, all derived, every figure a query link
+#   web/query.html     the tool      — the query language over the whole register
+#   web/engpass.html   the obstacles — what is in the way, and how much it holds up
+#   web/fallakte.html  the case files — the per-disease workspaces
 
 cd "$(dirname "$0")" || exit 1
 PORT="${1:-8000}"
 echo "Nordstern:  http://localhost:$PORT/web/          (the map)"
-echo "            http://localhost:$PORT/web/query.html (the tool)"
+echo "            http://localhost:$PORT/web/query.html    (the tool)"
+echo "            http://localhost:$PORT/web/engpass.html  (what is in the way)"
+echo "            http://localhost:$PORT/web/fallakte.html (the case files)"
 exec python3 -m http.server "$PORT"

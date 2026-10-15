@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Case file — Fallakte</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fallakte.css">
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div>
+    <h1><span class="fig" id="caseid">Fallakte</span><span id="casename">case file</span></h1>
+    <div class="sub" id="sub"></div>
+  </div>
+  <div class="links">
+    <a class="tool" href="fallakte.html">← all case files</a>
+    <a class="tool" href="fallakte.html#terms">terms</a>
+    <a class="tool" id="recordlink" href="query.html">the record →</a>
+  </div>
+</header>
+
+<div id="missing"></div>
+
+<div class="cols">
+  <aside id="spine"></aside>
+  <article id="doc"></article>
+</div>
+
+<footer>
+  <b>This is a workspace, not a verdict.</b> The ratings in the panel are read from
+  Nordstern's built artifact and are never re-rated here; where this file disagrees
+  with the record, that disagreement is a finding and belongs in the log, and then in
+  a re-rating with a new assertion id.
+  <br><br><b>Corrections are the most valuable thing anyone can send</b>, and the
+  section called <i>what we got wrong</i> is where they go, dated. A case file that is
+  wrong in a markable place is doing its job; one whose confident prose hides which
+  half is guessed is not.
+  <span id="gen"></span>
+</footer>
+
+</div>
+
+<script src="fallakte-data.js"></script>
+<script>
+/* =============================================================================
+   THE CASE VIEWER. The document arrives as finished HTML, rendered by
+   Fallakte/render.py at build time. This file only chooses which case and draws
+   the SPINE beside it — the machine-checked facts that the prose deliberately
+   does not repeat: which ratings the record carries, how close a reader is to
+   running each model, and the state of every numbered question.
+   ========================================================================== */
+(function () {
+  "use strict";
+  const D = window.FALLAKTE;
+  const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g,
+    c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const el = id => document.getElementById(id);
+  const qurl = q => "query.html?q=" + encodeURIComponent(q);
+
+  if (!D || !D.cases || !D.cases.length) {
+    el("missing").innerHTML = '<div class="warn"><b>fallakte-data.js is missing or ' +
+      'empty.</b> Run <code>python3 Fallakte/check.py --build</code>.</div>';
+    return;
+  }
+
+  const want = new URLSearchParams(location.search).get("case");
+  const c = (want && D.cases.find(x => x.slug === want)) || D.cases[0];
+  if (want && c.slug !== want) {
+    el("missing").innerHTML = '<div class="warn"><b>No case file for ' + esc(want) +
+      '.</b> Showing ' + esc(c.name) + ' instead. ' +
+      '<a href="fallakte.html">All case files →</a></div>';
+  }
+
+  document.title = c.name + " — case file";
+  el("caseid").textContent = c.id;
+  el("casename").textContent = c.name;
+  el("sub").innerHTML = esc(c.one_line);
+  el("recordlink").href = qurl("slug:" + c.slug);
+
+  /* ---- the spine ------------------------------------------------------- */
+  const kv = (k, v) => `<div class="kv"><span>${esc(k)}</span><span>${v}</span></div>`;
+  const rec = c.record || {};
+  const ACCESS_NOTE = {
+    live: "openable now",
+    repo: "source is public; the site's playground is behind it",
+    private: "in-tree only — a reader cannot reach it",
+  };
+
+  const models = c.models.map(m => {
+    const name = m.access === "live" && m.live
+      ? `<a href="${esc(m.live)}">${esc(m.name)}</a>` : esc(m.name);
+    return `<div class="mdl"><span class="t">${esc(m.tool)}</span><br>${name}
+      <span class="pill ${esc(m.access)}">${esc(m.access)}</span></div>`;
+  }).join("");
+
+  const counts = c.models.reduce((a, m) => (a[m.access] = (a[m.access] || 0) + 1, a), {});
+  const notLive = c.models.length - (counts.live || 0);
+
+  const qs = c.questions.map(q =>
+    `<a class="pill ${esc(q.status)}" href="#open-questions"
+        title="${esc(q.status)}">${esc(q.id)}</a>`).join(" ");
+
+  const toc = (c.doc.headings || [])
+    .filter(h => h.level === 2 || h.level === 3)
+    .map(h => `<a class="l${h.level}" href="#${esc(h.anchor)}">${esc(h.text)}</a>`)
+    .join("");
+
+  el("spine").innerHTML = `
+    <h3>the record says</h3>
+    <div class="box">
+      ${kv("capability", esc(rec.capability || "unrated"))}
+      ${kv("delivery", esc(rec.delivery || "—"))}
+      ${kv("mechanism", esc(rec.mechanism || "—"))}
+      ${kv("intervention", esc(rec.intervention || "—"))}
+      ${kv("blockers", esc((rec.blockers || []).join(", ") || "—"))}
+      ${kv("record", `<a href="${qurl("id:" + c.disease_id)}">${esc(c.disease_id)}</a>`)}
+    </div>
+
+    <h3>this case file</h3>
+    <div class="box">
+      ${kv("status", `<span class="pill ${esc(c.status)}">${esc(c.status)}</span>`)}
+      ${kv("opened", esc(c.opened))}
+      ${kv("last worked on", esc(c.updated))}
+      ${kv("obstacles", esc(c.obstacles.join(", ") || "—"))}
+      ${kv("working with", esc(c.working_with.map(w =>
+          w.named ? w.kind : "a " + w.kind + " (unnamed)").join(", ") || "—"))}
+    </div>
+
+    <h3>open questions</h3>
+    <div class="box"><div class="qs">${qs || "—"}</div></div>
+
+    <h3>models · ${c.models.length}</h3>
+    <div class="box">${models || "—"}${notLive
+      ? `<div class="t" style="padding-top:6px">${notLive} of ${c.models.length}
+         cannot be opened from here yet</div>` : ""}</div>
+
+    <h3>contents</h3>
+    <div class="box toc">${toc}</div>`;
+
+  el("doc").innerHTML = c.doc.html;
+  el("gen").textContent = " Built " + D.generated + " by Fallakte/check.py --build.";
+})();
+</script>
+</body>
+</html>

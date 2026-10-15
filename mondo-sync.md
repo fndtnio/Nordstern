@@ -4,8 +4,8 @@
 identifier once; this checks that it is still true and reports what Mondo
 knows that the register does not. Re-run after a Mondo release.
 
-- Mondo release: **2026-09-01** · checked 2026-10-02
-- 123 identifiers checked
+- Mondo release: **2026-10-06** · checked 2026-10-10
+- 124 identifiers checked
 - 0 dead · 2 scope warnings · 98 import proposals
 
 ## Dead join keys
@@ -162,30 +162,30 @@ is a join key into a dataset the register cannot currently reach.
 
 | source | records | what it unlocks |
 |---|---|---|
-| `MEDGEN` | 118/123 | NCBI concept hub — links OMIM, Orphanet, GTR and literature |
-| `UMLS` | 118/123 | concept mapping across vocabularies |
-| `DOID` | 107/123 | disease ontology |
-| `NCIT` | 107/123 | cancer and biomedical terminology |
-| `SCTID` | 105/123 | clinical coding (SNOMED CT) |
-| `MESH` | 98/123 | literature search |
-| `ICD9` | 93/123 | burden — historical coding, still the key for older series |
-| `icd11.foundation` | 75/123 | burden — current WHO classification |
-| `EFO` | 65/123 | experimental factor ontology — the key into GWAS and biobank data |
-| `ICD10CM` | 65/123 | burden — the route into GBD cause mappings |
-| `GARD` | 55/123 | rare disease information |
-| `Orphanet` | 54/123 | RARE DISEASE PREVALENCE — publishes prevalence classes, not point estimates |
-| `MedDRA` | 35/123 | adverse event and regulatory coding |
-| `ICD10WHO` | 30/123 | burden — the route into GBD cause mappings |
-| `NANDO` | 24/123 | Japanese intractable disease designations |
-| `OMIM` | 24/123 | genetic — gene and variant level |
-| `HP` | 17/123 | — |
-| `NORD` | 17/123 | rare disease information |
-| `ONCOTREE` | 9/123 | — |
-| `birnlex` | 7/123 | neuroscience terminology |
-| `ICDO` | 6/123 | oncology morphology coding |
-| `OMIMPS` | 3/123 | OMIM phenotypic series |
-| `CSP` | 2/123 | — |
-| `MFOMD` | 1/123 | mental functioning ontology |
+| `MEDGEN` | 119/124 | NCBI concept hub — links OMIM, Orphanet, GTR and literature |
+| `UMLS` | 119/124 | concept mapping across vocabularies |
+| `DOID` | 108/124 | disease ontology |
+| `NCIT` | 108/124 | cancer and biomedical terminology |
+| `SCTID` | 106/124 | clinical coding (SNOMED CT) |
+| `MESH` | 98/124 | literature search |
+| `ICD9` | 94/124 | burden — historical coding, still the key for older series |
+| `icd11.foundation` | 75/124 | burden — current WHO classification |
+| `EFO` | 66/124 | experimental factor ontology — the key into GWAS and biobank data |
+| `ICD10CM` | 66/124 | burden — the route into GBD cause mappings |
+| `GARD` | 55/124 | rare disease information |
+| `Orphanet` | 54/124 | RARE DISEASE PREVALENCE — publishes prevalence classes, not point estimates |
+| `MedDRA` | 35/124 | adverse event and regulatory coding |
+| `ICD10WHO` | 30/124 | burden — the route into GBD cause mappings |
+| `NANDO` | 25/124 | Japanese intractable disease designations |
+| `OMIM` | 24/124 | genetic — gene and variant level |
+| `HP` | 17/124 | — |
+| `NORD` | 17/124 | rare disease information |
+| `ONCOTREE` | 9/124 | — |
+| `birnlex` | 7/124 | neuroscience terminology |
+| `ICDO` | 6/124 | oncology morphology coding |
+| `OMIMPS` | 4/124 | OMIM phenotypic series |
+| `CSP` | 2/124 | — |
+| `MFOMD` | 1/124 | mental functioning ontology |
 
 Per record:
 
@@ -230,6 +230,7 @@ Per record:
 - **ebola** — `DOID:4325` · `EFO:0007243` · `GARD:0002035` · `ICD10CM:A98.4` · `MEDGEN:129219` · `MESH:D019142` · `MedDRA:10014071` · `NCIT:C36171` · `Orphanet:319218` · `SCTID:37109004` · `UMLS:C0282687` · `icd11.foundation:792755706`
 - **echinococcosis** — `DOID:1496` · `EFO:0007245` · `ICD10CM:B67` · `ICD10WHO:B67` · `ICD9:122,122.9` · `MEDGEN:4438` · `MESH:D004443` · `NCIT:C84682` · `SCTID:74942003` · `UMLS:C0013502` · `icd11.foundation:1456802165`
 - **epilepsy** — `DOID:1826` · `EFO:0000474` · `ICD10CM:G40` · `ICD10WHO:G40` · `ICD9:345,345.8,345.80,345.9,345.90,345.91` · `MEDGEN:4506` · `MESH:D004827` · `NCIT:C3020` · `SCTID:84757009` · `UMLS:C0014544` · `birnlex:12718`
+- **familial-hypercholesterolaemia** — `DOID:13810` · `EFO:0004911` · `ICD10CM:E78.01` · `ICD9:V19.8` · `MEDGEN:5688` · `NANDO:2200602` · `NCIT:C34704` · `OMIMPS:143890` · `SCTID:190773008` · `UMLS:C0020445`
 - **gastric-cancer** — `DOID:10534` · `GARD:0007704` · `ICD10CM:C16` · `ICD9:151,151.4,151.5,151.6,151.9` · `MEDGEN:44264` · `NCIT:C9331` · `OMIM:613659` · `UMLS:C0024623` · `icd11.foundation:1397617262`
 - **genital-chlamydia** — `DOID:11263` · `EFO:0007205` · `ICD9:078.88,079.88,079.98` · `NCIT:C34463` · `SCTID:105629000`
 - **genital-herpes** — `DOID:8704` · `EFO:0007282` · `ICD9:054.1,054.10,054.19` · `MEDGEN:42436` · `MESH:D006558` · `NCIT:C14364` · `SCTID:33839006` · `UMLS:C0019342`
@@ -467,4 +468,4 @@ which are one word and genuine — so it is left visible and named here.
 
 ## Changes since the last snapshot
 
-- `MONDO:0009891` **new** — first time this identifier has been snapshotted
+- `MONDO:0005439` **new** — first time this identifier has been snapshotted

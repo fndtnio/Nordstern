@@ -130,6 +130,7 @@
 | cerebral-palsy ⧗ | established | clin·good·none | symptomatic | **unsolved** | **costly** | 0.11 | — |
 | idiopathic-pulmonary-fibrosis ⚑ ⧗ ⧉ | partial | obje·part·none | disease-modifying | **partial** | clean | 0.105 | barely |
 | influenza ⚑ ⧗ | established | obje·part·part | symptomatic | **preventable** | clean | 0.105 | — |
+| familial-hypercholesterolaemia ⚑ ⧗ | established | obje·part·part | suppressive | **managed** | clean | 0.085 | barely |
 | hepatitis-b ⚑ ⧗ ⧉ | established | obje·part·part | suppressive | **managed** | clean | 0.076 | barely |
 | osteoporosis ⚑ ⧗ | established | obje·good·none | suppressive | **managed** | **costly** | 0.075 | barely |
 | als ⚑ ⧗ ⧉ | partial | clin·part·part | disease-modifying | **partial** | clean | 0.07 | barely |
@@ -189,7 +190,7 @@
   - mesothelioma (toll major, predictive none)
   - dipg (toll major, predictive none)
 
-134/145 records carry a prognostic or predictive gap.
+135/146 records carry a prognostic or predictive gap.
 predictive question with no answer needed: pleomorphic-adenoma, genital-chlamydia, syphilis, schistosomiasis, buruli-ulcer, yaws, hepatitis-c, noma, cholera
   three different reasons, indistinguishable in the schema: abolished by a
   good-enough treatment, nothing course-altering to predict, or only one
@@ -307,6 +308,7 @@ predictive question with no answer needed: pleomorphic-adenoma, genital-chlamydi
 | **echinococcosis** | `cure-costs` | costly | — | — |
 | **endometriosis** | `both` | costly | major | 0.3 |
 | **epilepsy** | `cure-costs` | costly | — | — |
+| **familial-hypercholesterolaemia** | `disease-residue` | clean | major | 0.4 |
 | **gastric-cancer** | `cure-costs` | costly | — | — |
 | **genital-chlamydia** | `disease-residue` | clean | major | 0.05 |
 | **genital-herpes** | `disease-residue` | clean | major | 0.3 |
@@ -737,6 +739,7 @@ describes no patient. Read the strata, not the row.
 - **cerebral-palsy** — closes on the six hours after a hypoxic-ischaemic insult, and the hours of preterm labour, for prevention; and the first two years of peak neuroplasticity for building function afterwards — the lesion itself is finished before either; 0.25 caught in time · **the toll is the price of missing it → `diagnosis` is the cheap lever**
 - **idiopathic-pulmonary-fibrosis** — closes on lung function already lost, which does not come back — there is no threshold, only continuous irreversible subtraction, and the practical deadline is transplant eligibility, which age and comorbidity close permanently; 0.3 caught in time
 - **influenza** — closes on completion of viral replication — about 48 hours from symptom onset, after which antivirals have no useful effect; 0.25 caught in time
+- **familial-hypercholesterolaemia** — closes on cumulative LDL exposure; operationally, the first coronary event, after which the same treatment continues with the damage already done; 0.1 caught in time · **the residue is the price of missing it → `diagnosis` is the cheap lever**
 - **hepatitis-b** — closes on establishment of chronic infection in a perinatally exposed infant — about twenty-four hours; 0.45 caught in time · **the residue is the price of missing it → `diagnosis` is the cheap lever**
 - **osteoporosis** — closes on the second fracture — the one-to-two-year period of imminent risk after a first fragility fracture, during which the patient is already in the health system and is discharged untreated; and, decades earlier, the attainment of peak bone mass in early adulthood; 0.2 caught in time · **the toll is the price of missing it → `diagnosis` is the cheap lever**
 - **als** — closes on the loss of motor neurons, which is continuous and irreversible from before the first symptom — there is no threshold, only accumulating permanent deficit, and respiratory function is the practical deadline; 0.25 caught in time
@@ -861,6 +864,7 @@ describes no patient. Read the strata, not the row.
 - **stroke** — partial, barely (reach 0.125) · blockers: diagnosis,knowledge,logistics,policy · from ~$5e+09 · academic, government, health-system, legislator, manufacturer, nonprofit, payer, philanthropy, sponsor
 - **idiopathic-pulmonary-fibrosis** — partial, barely (reach 0.105) · blockers: cost,diagnosis,evidence-incomplete,knowledge · from ~$5e+08 · academic, government, health-system, manufacturer, nonprofit, patient-org, payer, philanthropy, regulator, sponsor
 - **influenza** — preventable, — (reach 0.105) · blockers: cost,evidence-incomplete,knowledge,manufacturing,policy · from ~$5e+08 · academic, government, health-system, legislator, manufacturer, nonprofit, payer, philanthropy, regulator, sponsor
+- **familial-hypercholesterolaemia** — managed, barely (reach 0.085) · blockers: cost,diagnosis,evidence-incomplete,policy · from ~$1e+07 · academic, government, health-system, legislator, manufacturer, nonprofit, patient-org, payer, philanthropy, software
 - **hepatitis-b** — managed, barely (reach 0.076) · blockers: diagnosis,knowledge,logistics,policy · from ~$2e+09 · academic, government, health-system, legislator, manufacturer, nonprofit, payer, philanthropy, sponsor
 - **osteoporosis** — managed, barely (reach 0.075) · blockers: adherence,cost,diagnosis,knowledge,logistics · from ~$1e+09 · academic, government, health-system, manufacturer, nonprofit, patient-org, payer, philanthropy, regulator, sponsor
 - **als** — partial, barely (reach 0.07) · blockers: diagnosis,evidence-incomplete,knowledge,logistics · from ~$3e+08 · academic, government, health-system, manufacturer, nonprofit, patient-org, payer, philanthropy, regulator, software, sponsor
@@ -876,7 +880,7 @@ describes no patient. Read the strata, not the row.
 
 | mechanism | a treatment that works | alters the course | nothing yet |
 |---|---|---|---|
-| **known** | **known & treatable**<br>amr-infection · anaemia · anal-cancer · asthma · atrial-fibrillation · bacterial-meningitis · benign-prostatic-hyperplasia · bladder-cancer · breast-cancer · buruli-ulcer · candidaemia · cataract · cervical-cancer · chagas · childhood-all · childhood-pneumonia · chronic-kidney-disease · cirrhosis · clubfoot · cml · coccidioidomycosis · colorectal-cancer · congenital-heart-disease · covid-19 · cre · crohns · cryptococcal-meningitis · cystic-fibrosis · dengue · diarrhoeal-disease · ebola · echinococcosis · endometriosis · epilepsy · gastric-cancer · genital-chlamydia · genital-herpes · glaucoma · gonorrhoea · h-pylori-ulcer · hat · head-neck-cancer · hearing-loss · hepatitis-b · hepatitis-c · hiv · hpv-infection · hypertension · influenza · invasive-aspergillosis · leprosy · liver-cancer · lung-cancer · lymphatic-filariasis · malaria · maternal-haemorrhage · mcas · measles · melanoma · migraine · mrsa · multiple-sclerosis · mycetoma · mycoplasma-genitalium · nasopharyngeal-carcinoma · neonatal-conditions · noma · non-hodgkin-lymphoma · obesity · obstetric-fistula · onchocerciasis · osteoarthritis · osteoporosis · pancreatic-cancer · penile-cancer · pku · pleomorphic-adenoma · polycythaemia-vera · pots · prostate-cancer · rabies · refractive-error · renal-cell-carcinoma · retinopathy-of-prematurity · rheumatoid-arthritis · scabies · schistosomiasis · schizophrenia · sepsis · sickle-cell · smallpox · snakebite · soil-transmitted-helminths · spinal-muscular-atrophy · syphilis · taeniasis-cysticercosis · thyroid-cancer · trachoma · trichomoniasis · tuberculosis · type-1-diabetes · type-2-diabetes · typhoid · uterine-cancer · uterine-fibroids · uveal-melanoma · vaginal-cancer · varicella-zoster · visceral-leishmaniasis · vulvar-cancer · yaws | **known & modifiable**<br>als · alzheimers · cholera · cmv-infection · dipg · duchenne · glioblastoma · h5n1 · heart-failure · idiopathic-pulmonary-fibrosis · ischaemic-heart-disease · mesothelioma · rheumatic-heart-disease · stroke · toxoplasmosis | **engineering problem**<br>acute-bronchitis · cerebral-palsy · copd · cryptosporidiosis · disorders-of-consciousness · dracunculiasis · huntington · marburg · msmds · multiple-system-atrophy · parkinsons · prion-disease · tay-sachs |
+| **known** | **known & treatable**<br>amr-infection · anaemia · anal-cancer · asthma · atrial-fibrillation · bacterial-meningitis · benign-prostatic-hyperplasia · bladder-cancer · breast-cancer · buruli-ulcer · candidaemia · cataract · cervical-cancer · chagas · childhood-all · childhood-pneumonia · chronic-kidney-disease · cirrhosis · clubfoot · cml · coccidioidomycosis · colorectal-cancer · congenital-heart-disease · covid-19 · cre · crohns · cryptococcal-meningitis · cystic-fibrosis · dengue · diarrhoeal-disease · ebola · echinococcosis · endometriosis · epilepsy · familial-hypercholesterolaemia · gastric-cancer · genital-chlamydia · genital-herpes · glaucoma · gonorrhoea · h-pylori-ulcer · hat · head-neck-cancer · hearing-loss · hepatitis-b · hepatitis-c · hiv · hpv-infection · hypertension · influenza · invasive-aspergillosis · leprosy · liver-cancer · lung-cancer · lymphatic-filariasis · malaria · maternal-haemorrhage · mcas · measles · melanoma · migraine · mrsa · multiple-sclerosis · mycetoma · mycoplasma-genitalium · nasopharyngeal-carcinoma · neonatal-conditions · noma · non-hodgkin-lymphoma · obesity · obstetric-fistula · onchocerciasis · osteoarthritis · osteoporosis · pancreatic-cancer · penile-cancer · pku · pleomorphic-adenoma · polycythaemia-vera · pots · prostate-cancer · rabies · refractive-error · renal-cell-carcinoma · retinopathy-of-prematurity · rheumatoid-arthritis · scabies · schistosomiasis · schizophrenia · sepsis · sickle-cell · smallpox · snakebite · soil-transmitted-helminths · spinal-muscular-atrophy · syphilis · taeniasis-cysticercosis · thyroid-cancer · trachoma · trichomoniasis · tuberculosis · type-1-diabetes · type-2-diabetes · typhoid · uterine-cancer · uterine-fibroids · uveal-melanoma · vaginal-cancer · varicella-zoster · visceral-leishmaniasis · vulvar-cancer · yaws | **known & modifiable**<br>als · alzheimers · cholera · cmv-infection · dipg · duchenne · glioblastoma · h5n1 · heart-failure · idiopathic-pulmonary-fibrosis · ischaemic-heart-disease · mesothelioma · rheumatic-heart-disease · stroke · toxoplasmosis | **engineering problem**<br>acute-bronchitis · cerebral-palsy · copd · cryptosporidiosis · disorders-of-consciousness · dracunculiasis · huntington · marburg · msmds · multiple-system-atrophy · parkinsons · prion-disease · tay-sachs |
 | **not known** | **empirical foothold**<br>— | **empirical luck**<br>bipolar | **frontier**<br>depression · heds · keloid · low-back-pain · me-cfs |
 
 ## Blocker census
@@ -885,10 +889,10 @@ describes no patient. Read the strata, not the row.
 |---|---|
 | knowledge | 168 |
 | logistics | 106 |
-| diagnosis | 99 |
-| policy | 84 |
-| cost | 57 |
-| evidence-incomplete | 37 |
+| diagnosis | 100 |
+| policy | 85 |
+| cost | 58 |
+| evidence-incomplete | 38 |
 | no-sponsor | 29 |
 | tooling | 14 |
 | adherence | 13 |
@@ -896,8 +900,8 @@ describes no patient. Read the strata, not the row.
 | regulatory | 5 |
 | candidate-untested | 2 |
 
-**623 across 145 records.**
+**627 across 146 records.**
 
-standing: alleged=9 · disputed=6 · documented=607 · refuted=1
+standing: alleged=10 · disputed=6 · documented=610 · refuted=1
 
 knowledge-blocked only (no delivery lever): huntington

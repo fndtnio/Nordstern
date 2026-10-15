@@ -5,9 +5,9 @@ nowhere to record where it came from, so provenance lives here: which of the
 record's names matched, what Mondo calls it, and against which release. Re-run
 after a Mondo release to find terms that have been merged or obsoleted.
 
-- Mondo release: **2026-09-01** · resolved 2026-10-02
-- 123 of 145 records carry an identifier
-- this pass: 89 unambiguous · 51 need a person · 5 not in Mondo
+- Mondo release: **2026-10-06** · resolved 2026-10-10
+- 132 of 146 records carry an identifier
+- this pass: 89 unambiguous · 52 need a person · 5 not in Mondo
 
 ## Resolved
 
@@ -21,6 +21,7 @@ after a Mondo release to find terms that have been merged or obsoleted.
 | asthma | `MONDO:0004979` | asthma | asthma |
 | atrial-fibrillation | `MONDO:0004981` | atrial fibrillation | atrial fibrillation |
 | bacterial-meningitis | `MONDO:0006670` | bacterial meningitis | bacterial meningitis |
+| benign-prostatic-hyperplasia | `MONDO:0010811` | benign prostatic hyperplasia | Benign prostatic hyperplasia |
 | bipolar | `MONDO:0004985` | bipolar disorder | bipolar disorder |
 | bladder-cancer | `MONDO:0001187` | urinary bladder cancer | confirmed by hand |
 | breast-cancer | `MONDO:0007254` | breast cancer | breast cancer |
@@ -35,6 +36,7 @@ after a Mondo release to find terms that have been merged or obsoleted.
 | cholera | `MONDO:0015766` | cholera | cholera |
 | chronic-kidney-disease | `MONDO:0005300` | chronic kidney disease | chronic kidney disease |
 | cirrhosis | `MONDO:0005155` | cirrhosis of liver | confirmed by hand |
+| clubfoot | `MONDO:0007342` | clubfoot | Clubfoot |
 | cml | `MONDO:0011996` | chronic myeloid leukemia | confirmed by hand |
 | cmv-infection | `MONDO:0005132` | cytomegalovirus infection | cytomegalovirus infection |
 | coccidioidomycosis | `MONDO:0005706` | coccidioidomycosis | coccidioidomycosis |
@@ -49,14 +51,18 @@ after a Mondo release to find terms that have been merged or obsoleted.
 | dengue | `MONDO:0005502` | dengue disease | confirmed by hand |
 | depression | `MONDO:0002009` | major depressive disorder | major depressive disorder |
 | diarrhoeal-disease | `MONDO:0001673` | diarrheal disease | confirmed by hand |
+| dipg | `MONDO:0006033` | diffuse intrinsic pontine glioma | Diffuse intrinsic pontine glioma |
 | dracunculiasis | `MONDO:0016472` | dracunculiasis | dracunculiasis |
 | duchenne | `MONDO:0010679` | Duchenne muscular dystrophy | Duchenne muscular dystrophy |
 | ebola | `MONDO:0005737` | Ebola hemorrhagic fever | confirmed by hand |
 | echinococcosis | `MONDO:0005738` | echinococcosis | echinococcosis |
+| endometriosis | `MONDO:0005133` | endometriosis | Endometriosis |
 | epilepsy | `MONDO:0005027` | epilepsy | epilepsy |
+| familial-hypercholesterolaemia | `MONDO:0005439` | familial hypercholesterolemia | confirmed by hand |
 | gastric-cancer | `MONDO:0001056` | gastric cancer | gastric cancer |
 | genital-chlamydia | `MONDO:0005701` | chlamydia trachomatis infectious disease | confirmed by hand |
 | genital-herpes | `MONDO:0005770` | genital herpes | genital herpes |
+| glaucoma | `MONDO:0005041` | glaucoma | Glaucoma |
 | glioblastoma | `MONDO:0018177` | glioblastoma | glioblastoma |
 | gonorrhoea | `MONDO:0004277` | gonorrhea | confirmed by hand |
 | h-pylori-ulcer | `MONDO:0004247` | peptic ulcer disease | confirmed by hand |
@@ -90,6 +96,7 @@ after a Mondo release to find terms that have been merged or obsoleted.
 | mrsa | `MONDO:0100073` | methicillin-resistant staphylococcus aureus infectious disease | confirmed by hand |
 | msmds | `MONDO:0013452` | multisystemic smooth muscle dysfunction syndrome | multisystemic smooth muscle dysfunction syndrome |
 | multiple-sclerosis | `MONDO:0005301` | multiple sclerosis | multiple sclerosis |
+| multiple-system-atrophy | `MONDO:0007803` | multiple system atrophy | Multiple system atrophy |
 | mycetoma | `MONDO:0016823` | mycetoma | mycetoma |
 | mycoplasma-genitalium | `MONDO:1030003` | — | confirmed by hand |
 | nasopharyngeal-carcinoma | `MONDO:0015459` | nasopharyngeal carcinoma | nasopharyngeal carcinoma |
@@ -110,6 +117,7 @@ after a Mondo release to find terms that have been merged or obsoleted.
 | prostate-cancer | `MONDO:0008315` | prostate cancer | prostate cancer |
 | rabies | `MONDO:0019173` | rabies | rabies |
 | renal-cell-carcinoma | `MONDO:0005086` | renal cell carcinoma | renal cell carcinoma |
+| retinopathy-of-prematurity | `MONDO:0006952` | retinopathy of prematurity | Retinopathy of prematurity |
 | rheumatic-heart-disease | `MONDO:0006955` | rheumatic heart disease | rheumatic heart disease |
 | rheumatoid-arthritis | `MONDO:0008383` | rheumatoid arthritis | rheumatoid arthritis |
 | scabies | `MONDO:0004525` | scabies | scabies |
@@ -121,6 +129,7 @@ after a Mondo release to find terms that have been merged or obsoleted.
 | spinal-muscular-atrophy | `MONDO:0019079` | spinal muscular atrophy | spinal muscular atrophy |
 | stroke | `MONDO:0005098` | stroke disorder | confirmed by hand |
 | syphilis | `MONDO:0005976` | syphilis | syphilis |
+| tay-sachs | `MONDO:0010100` | Tay-Sachs disease | Tay-Sachs disease |
 | thyroid-cancer | `MONDO:0002108` | thyroid cancer | thyroid cancer |
 | toxoplasmosis | `MONDO:0005989` | toxoplasmosis | toxoplasmosis |
 | trachoma | `MONDO:0001249` | trachoma | trachoma |

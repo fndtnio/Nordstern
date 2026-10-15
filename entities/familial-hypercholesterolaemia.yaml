@@ -1,0 +1,519 @@
+slug: familial-hypercholesterolaemia
+id: FND-D-0146
+name: familial hypercholesterolaemia
+also: [FH, familial hypercholesterolemia, HeFH, HoFH, hereditary high cholesterol]
+common: inherited high cholesterol
+mondo: MONDO:0005439
+kind: disease
+residual: false
+contested: false
+
+# THE REGISTER'S GERMLINE CONTROL, AND THAT IS WHY IT IS HERE.
+#
+# It was queued on 2026-10-10 out of an argument about `polycythaemia-vera`, where
+# the working assumption — "it's genetic, so you get bad code and a faulty protein"
+# — failed the obvious test: if the mutation were inherited, the disease would
+# arrive in childhood, and PV arrives at sixty. THIS record is what makes that a
+# test rather than an assertion. **A clearance pathway broken from conception does
+# produce disease in childhood**, and in the homozygous form of this disease it
+# produces cholesterol deposits in the skin before school age and coronary disease
+# in the teens. PV's mutation is somatic. This one is in every cell from the start,
+# and the natural history says so.
+#
+# AND IT IS THE RECORD WHERE THE MECHANISM IS AS GOOD AS IT GETS. Brown and
+# Goldstein's LDL receptor — the pathway, the receptor, the variants, the
+# feedback — is one of the most completely worked out causal chains in medicine
+# and it yielded the most prescribed drug class in the world. There is no
+# knowledge blocker of any size on this record.
+#
+# SO WHAT IS LEFT IS ENTIRELY DELIVERY, AND IT IS A CHASM. The most common serious
+# single-gene disorder in humans, about one person in three hundred, with a
+# fifty-year-old generic that works. **Under one in ten of them has been told.**
+# This is the register's clearest case of a solved disease that has not been
+# delivered, and the blocker is `diagnosis` — not cost, not science.
+#
+# NO `deaths:` FIELD, AND THE REASON IS DIFFERENT FROM EVERY OTHER RECORD THAT
+# LACKS ONE. The deaths are counted. They are counted inside
+# `ischaemic-heart-disease`, because a fatal myocardial infarction at forty-five
+# is filed as a myocardial infarction. The cause is not missing from the
+# statistics, it is invisible in them — which is a measurement problem the
+# register has no field for. See `holes`.
+
+burden:
+  prevalence:
+    value: 2.7e7
+    units: >
+      people with the heterozygous form — contemporary population screening puts
+      it near 1 in 300 (older textbook figures said 1 in 500), and this applies
+      1 in 300 to eight billion people. The homozygous form is of the order of
+      1 in 300,000, so roughly 25,000 to 30,000 people worldwide
+    src: reasoning
+  note: >
+    **THE PREVALENCE ROSE WITHOUT ANYTHING CHANGING.** The 1 in 500 figure came
+    from clinically ascertained families; unbiased sequencing of large cohorts
+    found closer to 1 in 300. The disease did not become commoner, the
+    denominator stopped being self-selected — the same correction that is still
+    waiting to happen to most of this register's incidence figures.
+    **AND THE DIAGNOSED FRACTION IS THE NUMBER THAT MATTERS.** Reviews
+    consistently put worldwide diagnosis below 10% and below 1% in many
+    countries. The Netherlands, which ran a national cascade-screening
+    programme, is the outlier that proves it is achievable.
+
+survival:
+  horizon: 60 years from birth, heterozygous form
+  untreated:
+    value: 0.80
+    units: >
+      fraction alive — pre-statin family registers found enormous relative excess
+      coronary mortality in early adult life (standardised ratios of the order of
+      a hundredfold between twenty and forty, against a small absolute base), with
+      roughly half of untreated men having a coronary event by fifty and women
+      about a decade later. The step from event rates to a survival fraction at
+      sixty is mine
+    src: reasoning
+  treated:
+    value: 0.95
+    units: >
+      fraction alive on lipid-lowering treatment begun in early adult life —
+      cohorts report coronary risk approaching that of the general population,
+      and not reaching it where treatment started after decades of exposure
+    src: reasoning
+  witness: >
+    **THE HORIZON IS FROM BIRTH, NOT FROM DIAGNOSIS, AND THAT IS THE POINT OF
+    THE RECORD.** The exposure starts at conception. A horizon from diagnosis
+    would measure how late the diagnosis was, which is the one thing about this
+    disease that is not a property of the disease.
+    Both numbers are `reasoning` and the untreated one is the weaker: it is
+    assembled from event rates in clinically ascertained families, who were
+    ascertained *because* somebody in them died young. The true untreated figure
+    for the 1-in-300 population — most of whom were never in a lipid clinic — is
+    almost certainly better than this, by an unknown amount. **That bias runs the
+    same way as `polycythaemia-vera`'s untreated figure and for the same
+    reason.**
+    For the homozygous form the horizon is wrong by decades. Untreated, it kills
+    in childhood or adolescence. See `strata`.
+
+axes:
+  mechanism: established
+  intervention: suppressive
+  prevention: none
+  ongoing: low
+  efficacy:
+    value: 0.85
+    units: >
+      fraction-of-patients (LDL cholesterol lowered by half or more and no
+      premature coronary event, on treatment begun in early adult life) — high-
+      intensity statin, ezetimibe and a PCSK9 inhibitor stack to reductions well
+      past 70%, so the remainder is chiefly intolerance, non-adherence, and
+      residual risk in people who started late or carry a high lipoprotein(a)
+    src: reasoning
+  access:
+    value: 0.10
+    units: >
+      fraction-of-patients (diagnosed AND on lipid-lowering treatment) — the
+      drug has been a cheap generic for two decades and the barrier is almost
+      entirely that the patient has never been identified. Below 1% in much of
+      the world; the Netherlands' cascade programme reached the majority of its
+      estimated cases and is the existence proof
+    src: recall
+
+measurement:
+  diagnostic: objective
+  prognostic: partial
+  predictive: partial
+  witness: >
+    DIAGNOSTIC is `objective`, twice over. An LDL cholesterol above a threshold
+    is a number from a cheap and universally available test, and a
+    loss-of-function variant in *LDLR*, *APOB* or a gain-of-function variant in
+    *PCSK9* is definitive. Clinical criteria (Dutch Lipid Clinic Network, Simon
+    Broome) combine the number with tendon xanthomas and family history, and
+    are what is used in practice because the genetic test is not ordered.
+    **THE RATING IS ALMOST AN INDICTMENT.** Objective diagnosis, and nine in ten
+    undiagnosed. Nothing is missing from the toolbox. The test is on the panel
+    that was already run.
+    PROGNOSTIC is `partial`. LDL level, the kind of variant (null versus
+    defective receptor), lipoprotein(a), smoking, hypertension and coronary
+    calcium all carry information, and risk engines built for the general
+    population systematically understate risk here because they were not built
+    for lifelong exposure. What is well established is the *shape*: risk tracks
+    CUMULATIVE LDL exposure, so it is an area under a curve rather than a level,
+    and every year untreated is permanently spent. What is not available is the
+    age at which a given person's first event will come.
+    PREDICTIVE is `partial`, and the case for `good` is real in one place.
+    Response to a statin is near-universal, so for the modal patient there is
+    little to select. But in the homozygous form **genotype genuinely predicts
+    drug response**: therapies that work through the LDL receptor do little in
+    receptor-negative patients, and evinacumab, which acts on ANGPTL3
+    independently of the receptor, works regardless. That is a real predictive
+    question with a real answer, which is why this is not `n/a`. It is `partial`
+    rather than `good` because it is not used to select treatment in the
+    heterozygous form, where almost all the patients are.
+
+toll:
+  severity: minor
+  permanent: false
+  what: >
+    **THE MODAL PATIENT TAKES A TABLET AND IT COSTS THEM ALMOST NOTHING.** That
+    sentence is unusual in this register and it should be said plainly. Statin
+    muscle symptoms are common as a complaint and largely absent in blinded
+    rechallenge, which is a finding about the nocebo effect rather than about the
+    drug; rhabdomyolysis is rare and usually reversible; there is a small
+    excess of new diabetes diagnoses, which is real and modest against the
+    cardiovascular benefit.
+    Ezetimibe adds essentially nothing. PCSK9 monoclonals are injections with
+    local reactions. **The permanent items sit in the homozygous form**, where
+    lomitapide causes hepatic steatosis, apheresis means lifelong vascular
+    access, and some patients reach liver transplantation.
+  incidence:
+    value: 0.01
+    units: >
+      fraction-of-treated (permanent harm attributable to treatment) — a reasoned
+      estimate dominated by the rarity of rhabdomyolysis; the number is near the
+      floor of what this field can usefully record
+    src: reasoning
+
+residue:
+  severity: major
+  permanent: true
+  what: >
+    **TREATMENT STOPS THE ARTERY NARROWING FURTHER AND DOES NOT REOPEN IT.** The
+    exposure began at conception and the first statin is typically prescribed in
+    the fifth decade, after forty years of it. The atheroma laid down in that time
+    is there for good; so is the infarcted myocardium in the patient whose
+    diagnosis was made in a coronary care unit, which is how a large share of
+    them are made. Aortic valve and aortic root calcification in the homozygous
+    form is the same thing in a place surgery is worse at reaching.
+    This is the `residue`/`window` pair the schema expects to travel together,
+    and it is the record's strongest argument: **for this disease the only
+    intervention that reduces the residue is an earlier diagnosis.** No new drug
+    does it, because the drugs already work.
+  incidence:
+    value: 0.40
+    units: >
+      fraction-of-treated (established atherosclerotic disease at the time
+      treatment begins) — reasoned from the diagnosed population being
+      middle-aged and a substantial share being identified by a coronary event;
+      far lower in the minority found by cascade screening in childhood
+    src: reasoning
+
+window:
+  what: >
+    **THE PUREST WINDOW IN THE REGISTER AFTER PKU, AND IT IS FIFTY YEARS WIDE.**
+    Risk is cumulative LDL exposure, so the benefit of treatment is an integral
+    and starting earlier is not a marginal improvement but a different disease.
+    Children treated from around age ten in the Dutch follow-up cohort had
+    carotid wall thickness and cardiovascular event rates far closer to their
+    unaffected siblings than to their affected parents — the same genotype, the
+    same drug, the window being the only variable.
+    **AND THE WINDOW DOES NOT SLAM, IT LEAKS**, which is why it is missed. There
+    is no acute event that marks its closing until the event *is* the closing.
+    Every year of a quiet, symptomless childhood and early adulthood spends part
+    of the benefit, and nothing about the patient looks wrong.
+    What would open it is not a discovery. It is a lipid panel in childhood and
+    the willingness to test the relatives of anyone found — **cascade screening,
+    which is the highest-yield genetic testing in medicine** because each index
+    case leads to about one further case per relative tested at a first-degree
+    remove.
+  closes_on: >
+    cumulative LDL exposure; operationally, the first coronary event, after which
+    the same treatment continues with the damage already done
+  caught_in_time:
+    value: 0.1
+    units: >
+      fraction-of-cases (identified and treated before established
+      atherosclerotic disease) — this is the diagnosed fraction, since almost
+      everybody found by screening rather than by an event is found early. It
+      is the lowest `caught_in_time` the register holds and the easiest to raise
+    src: reasoning
+
+strata:
+  - name: heterozygous (one defective copy)
+    fraction:
+      value: 0.999
+      units: fraction-of-cases
+      src: reasoning
+    intervention: suppressive
+    efficacy:
+      value: 0.85
+      units: fraction-of-stratum (LDL halved, no premature coronary event on early treatment)
+      src: reasoning
+    toll: minor
+    what: >
+      LDL roughly two to four times normal from birth. A generic statin, possibly
+      with ezetimibe, reaches the target in most patients; a PCSK9 inhibitor
+      covers most of the rest. The clinical problem is finding them.
+
+  - name: homozygous (both copies, or compound heterozygous)
+    fraction:
+      value: 0.001
+      units: fraction-of-cases
+      src: reasoning
+    intervention: suppressive
+    efficacy:
+      value: 0.5
+      units: >
+        fraction-of-stratum (LDL brought to a level that defers coronary and
+        aortic disease into adult life) — lower in receptor-negative patients,
+        for whom receptor-dependent drugs do little
+      src: reasoning
+    toll: major
+    what: >
+      **THIS IS THE STRATUM THAT MAKES THE RECORD A GERMLINE CONTROL.** LDL five
+      to ten times normal from birth, cutaneous and tendon xanthomas in early
+      childhood, aortic stenosis and coronary disease in the first two decades,
+      and death in childhood or adolescence untreated. The treatment is statins
+      plus ezetimibe plus lipoprotein apheresis every one or two weeks, with
+      lomitapide and evinacumab added, and liver transplantation at the end of
+      the line. `ongoing` for this stratum is `high`, not `low`.
+
+moved:
+  - date: 1985
+    axis: mechanism
+    from: partial
+    to: established
+    why: >
+      **THE LDL RECEPTOR.** Brown and Goldstein worked out, over roughly a
+      decade from 1973, that cells carry a receptor that clears LDL from plasma,
+      that this disease is caused by inherited loss of that receptor, that the
+      gene dose explains the heterozygous and homozygous forms, and that the
+      pathway is under feedback control by cellular cholesterol. The Nobel Prize
+      in 1985 is the date used here. The same pathway is why statins exist and
+      why PCSK9 was a drug target forty years later: it is the register's best
+      example of a mechanism paying out repeatedly.
+    src: recall
+
+  - date: 1994
+    axis: intervention
+    from: disease-modifying
+    to: suppressive
+    why: >
+      **STATINS, AND THEN THE TRIAL THAT SHOWED THEY SAVED LIVES.** Bile acid
+      sequestrants and diet lowered LDL by something like 15 to 20% and slowed
+      the disease without arresting it. Lovastatin was approved in 1987 and
+      simvastatin followed; the Scandinavian Simvastatin Survival Study in 1994
+      is the date here, because it showed a mortality reduction rather than a
+      lipid reduction. Stop the drug and the LDL returns within weeks, which is
+      the definition of the rung.
+    src: recall
+
+  - date: 2015
+    axis: efficacy
+    from: 0.6
+    to: 0.85
+    why: >
+      **PCSK9 MONOCLONALS.** Alirocumab and evolocumab were approved in 2015 and
+      lower LDL by roughly a further 60% on top of a statin, which brought the
+      patients who could not reach target on statin and ezetimibe — including
+      many with severe heterozygous disease — into range. The `from` value is a
+      reconstruction, not a recorded rating.
+    src: recall
+
+  - date: 2021
+    axis: efficacy
+    from: 0.8
+    to: 0.85
+    why: >
+      **EVINACUMAB, AND IT MATTERS FOR A REASON BEYOND ITS SIZE.** Approved for
+      the homozygous form, it acts on ANGPTL3 and lowers LDL **independently of
+      the LDL receptor**, so it works in receptor-negative patients in whom
+      every earlier drug class was close to useless. The record-level move is
+      small because the stratum is a thousandth of the cases; the move inside
+      that stratum is the difference between a treatable and an untreatable
+      disease. `from` is a reconstruction.
+    src: recall
+
+witness:
+  mechanism: >
+    `established`, and it is the cleanest chain in the register.
+    A loss-of-function variant is inherited in *LDLR* (most cases), in *APOB*
+    (the ligand the receptor grips), or as a gain-of-function variant in *PCSK9*
+    (which destroys the receptor); a recessive form affects *LDLRAP1*, the
+    adaptor. The hepatocyte's LDL receptor is how LDL particles leave the
+    plasma, so with half the receptors or none, LDL accumulates — from birth,
+    continuously, with no latent period of any kind.
+    Cholesterol deposits in arterial walls in proportion to cumulative exposure.
+    The result is atherosclerosis decades early: in the skin and tendons it is
+    visible as xanthomas, and in the coronary arteries it is a myocardial
+    infarction in the fifth decade, or in the second decade if both copies are
+    affected.
+    **THE GENE DOSE IS THE PROOF.** One bad copy gives LDL two to four times
+    normal and disease in middle life; two give five to ten times normal and
+    disease in childhood. The same pathway, titrated. Nothing in this chain is a
+    correlate and there is no named hole in it.
+    **WHAT THE CHAIN DOES NOT SAY** is when a given person's artery will close.
+    Two people with the same variant and the same LDL do not have their
+    infarctions in the same decade, and lipoprotein(a), the conventional risk
+    factors and plaque biology account for part of that spread and do not
+    predict it. That is `who-progresses` wearing a different coat, and it is a
+    prognostic gap rather than a mechanistic one.
+  intervention: >
+    `suppressive`, and the rung is unusually easy to call. A high-intensity
+    statin lowers LDL by about half; ezetimibe adds 15 to 20%; a PCSK9
+    monoclonal adds around 60%; inclisiran does the same with two injections a
+    year; bempedoic acid is an option in statin intolerance. Stop any of them
+    and the LDL is back within weeks. Lifelong treatment, near-normal life
+    expectancy when started early — the textbook definition of this rung.
+    The evidence is randomised and enormous, though mostly not in this
+    population: 4S (1994) and the statin trials that followed measured mortality
+    in general and secondary-prevention populations, and FOURIER and ODYSSEY
+    OUTCOMES did the same for PCSK9 inhibition. **The inference to FH is from
+    the LDL-lowering, which is the one place this register is comfortable
+    making it**, because the mechanism is a dose-response relation between a
+    measurable exposure and the outcome, demonstrated across drug classes with
+    different mechanisms, Mendelian randomisation included.
+    **WHAT THE RUNG DOES NOT SAY.** Nothing here touches the genotype, and the
+    suppression is of the exposure rather than of the disease. For the
+    homozygous form it is far harder: apheresis every one or two weeks,
+    lomitapide, evinacumab, and sometimes a liver transplant, which is the only
+    thing on the list that is arguably curative and trades the disease for
+    immunosuppression.
+    **AND THERE IS A CANDIDATE FOR THE RUNG ABOVE.** Base editing of *PCSK9* in
+    the liver is in early-phase trials as a single infusion intended to lower
+    LDL permanently. If that holds, it is a finite intervention for a lifelong
+    exposure, which would be `curative` in this schema's sense for a disease
+    whose genotype is untouched — an edge case the ladder has not had to handle
+    yet. It is in trials and this record claims nothing for it. See `holes`.
+  prevention: >
+    `none`, deliberately, and the reasoning is the same as
+    `polycythaemia-vera`'s. The disease is inherited and nothing prevents it.
+    Treating from childhood prevents the coronary disease, and that is the
+    treatment working early rather than prevention in this axis's sense —
+    promoting it to `prophylaxis` would hide a fifty-year-old generic behind a
+    screening programme. Cascade screening is a `diagnosis` intervention and is
+    filed in `blockers`, which is where it can be acted on.
+    **The one genuine prevention question** is reproductive, and the register has
+    no field for it and should not pretend otherwise.
+  ongoing: >
+    `low` for the modal patient, and this is the rating the record exists to
+    contrast with everything around it. One generic tablet a day, a lipid panel
+    once or twice a year, no monitoring of any consequence, no dietary
+    restriction that is more than ordinary advice. Against dialysis, against
+    venesection every few weeks, against a fortnightly injection, this is the
+    cheap end of the register.
+    `high` for the homozygous stratum: apheresis every one or two weeks is a
+    vascular access, a half-day, and a lifetime.
+
+holes:
+  - Every scalar in this record is `recall` or `reasoning`. None of it has been
+    read against a paper for this record.
+  - No `deaths` figure, and the reason is unlike the register's other absences.
+    The deaths exist and are counted inside `ischaemic-heart-disease`; a fatal
+    infarction at forty-five is filed as an infarction. So `know-gap` and
+    `deliv-gap` are silent here, and the schema has no way to express "the
+    burden of this record is inside that one". That shape probably recurs for
+    every monogenic contributor to a common disease.
+  - "Under 10% diagnosed" is the number the whole record turns on and it is from
+    memory. It is widely and consistently cited, which is not the same as having
+    been checked, and it is the first thing a sourcing pass should settle.
+  - The prevalence shift from 1 in 500 to 1 in 300 is recounted from memory
+    without the cohort studies that produced it, and the 1-in-300,000 figure for
+    the homozygous form is the older order-of-magnitude estimate.
+  - The untreated survival figure is assembled from clinically ascertained
+    families, who were ascertained because somebody died young. It overstates
+    the untreated risk of the population-prevalence disease by an unknown
+    amount, and the bias is in the same direction as `polycythaemia-vera`'s.
+  - Base editing of *PCSK9* is narrated in the `intervention` witness with no
+    `moved` entry and no rating, because nothing has been approved. If a single
+    infusion durably lowers LDL, this record's `intervention` becomes the first
+    in the register to test whether `curative` can mean "the exposure is ended
+    once" rather than "the disease is gone".
+  - `predictive: partial` is the rating with the clearest case for a neighbouring
+    value, and the argument is in the witness.
+  - The `diagnosis` blocker carries no Engpass obstacle because none fits. **The
+    shape — the test is cheap, available, already on the panel, and the question
+    is not asked — appeared independently on `polycythaemia-vera` eight weeks
+    earlier.** Two instances is the bar this corpus normally uses for minting
+    something, and minting an obstacle is not this record's call.
+  - Lipoprotein(a) is named as a modifier and has no record of its own.
+
+blockers:
+  - kind: diagnosis
+    blocks: a generic statin, started before the artery narrows
+    obstacles: []
+    what: >
+      **THE WHOLE RECORD IS THIS BLOCKER.** The most common serious single-gene
+      disorder in humans, an objective diagnosis from a test that costs almost
+      nothing, a treatment that has been off patent for twenty years, and
+      something like nine in ten of the affected have not been told.
+      The reason is that nothing about an affected child or young adult looks
+      wrong, and a raised cholesterol in an adult is read as diet and lifestyle
+      rather than as a reason to sequence a gene and then telephone the
+      relatives. **The intervention that would fix it is administrative**:
+      universal lipid screening in childhood, and cascade testing of the
+      relatives of every index case. The Netherlands did it nationally and
+      reached the majority of its estimated cases, so this is an existence proof
+      rather than a proposal.
+      Nothing has to be discovered. This is a register of what medicine cannot
+      do, and here it can.
+    who_could: [health-system, software, nonprofit, government]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+  - kind: policy
+    blocks: cascade screening of relatives
+    obstacles: []
+    what: >
+      Cascade testing requires approaching people who are not the patient, on
+      the basis of someone else's result. Data protection law, consent
+      frameworks and the clinician's duty of confidentiality differ by country,
+      and in several the index patient must make contact themselves, which is
+      where the cascade stops.
+      Insurance and employment discrimination on genetic grounds is the other
+      half, and the fear of it is a documented reason for declining testing even
+      where law forbids the discrimination.
+      **`standing: alleged` deliberately.** This is asserted constantly and this
+      record has not established which jurisdictions actually prohibit what, as
+      against clinicians believing they do. Converting that to `documented` or
+      `refuted` is exactly the kind of thing the field this register built
+      `standing` for is meant to settle, and it is cheap to check.
+    who_could: [government, legislator, health-system, patient-org]
+    scale: 1.0e7
+    standing: alleged
+    src: recall
+
+  - kind: cost
+    blocks: PCSK9 inhibition, and the drugs for the homozygous form
+    obstacles: []
+    what: >
+      The generic statin is not the cost problem. The patients who cannot reach
+      target on it need a PCSK9 monoclonal or inclisiran, which are priced as
+      biologics and are routinely restricted by payers to those who have already
+      failed cheaper therapy — a sequence that spends years of a cumulative
+      exposure to satisfy a formulary.
+      The homozygous form is the sharp end: lomitapide and evinacumab are
+      orphan-priced in the hundreds of thousands a year, and lipoprotein
+      apheresis needs a centre that offers it, which most countries do not.
+      Twenty-five to thirty thousand people worldwide is too few to create a
+      market and enough to matter.
+    who_could: [payer, manufacturer, government, philanthropy]
+    scale: 1.0e9
+    standing: documented
+    src: recall
+
+  - kind: evidence-incomplete
+    blocks: knowing whose artery closes when, and therefore how hard to treat whom
+    obstacles: [who-progresses]
+    what: >
+      Treatment intensity is chosen on LDL level and conventional risk factors,
+      and risk engines built for the general population understate risk in
+      lifelong exposure. Two people with the same variant and the same LDL do
+      not have their infarctions in the same decade.
+      **This is a prognostic gap on a solved mechanism**, which is the
+      configuration the register keeps finding to be underfunded. It does not
+      block treatment — everyone gets the statin — it blocks knowing who needs
+      the expensive second and third agent, which is exactly where the `cost`
+      blocker above bites.
+      The long-term question is adjacent and genuinely unsettled: the childhood
+      treatment cohorts are observational and twenty years long, and a
+      randomised trial of treating from age ten against from age thirty will
+      never be run.
+    who_could: [academic, nonprofit, health-system]
+    scale: 1.0e8
+    standing: documented
+    src: recall
+
+assertion:
+  id: FND-A-0147
+  rated: 2026-10-10
+  by: [claude]

@@ -16,8 +16,8 @@ without it the framing calls a two-dollar pair of glasses solved.
 |---|---|---:|---:|
 | **1** | do we know what it is doing? | 6 | 4% |
 | **2** | can we do anything about it? | 33 | 23% |
-| **3** | can we prove it works? | 38 | 26% |
-| **4** | does it reach the person? | 114 | 79% |
+| **3** | can we prove it works? | 39 | 27% |
+| **4** | does it reach the person? | 115 | 79% |
 
 **Each gate is tighter than the one before it, and the tightest is not a science
 gate at all.** That ordering is the framing's main result and it is the opposite
@@ -71,7 +71,7 @@ the gates fail roughly independently, so the union is nearly everything.
 
 ## The finding the framing was missing
 
-**75 records — 52% — have all three science gates open and still do
+**75 records — 51% — have all three science gates open and still do
 not arrive.**
 
 > `amr-infection` · `anaemia` · `anal-cancer` · `asthma` · `bacterial-meningitis` · `benign-prostatic-hyperplasia` · `bladder-cancer` · `breast-cancer` · `candidaemia` · `cataract` · `cervical-cancer` · `chagas` · `childhood-all` · `childhood-pneumonia` · `chronic-kidney-disease` · `cirrhosis` · `clubfoot` · `cml` · `colorectal-cancer` · `congenital-heart-disease` · `cre` · `cryptococcal-meningitis` · `diarrhoeal-disease` · `ebola` · `endometriosis` · `epilepsy` · `gastric-cancer` · `genital-herpes` · `glaucoma` · `gonorrhoea` · `h-pylori-ulcer` · `head-neck-cancer` · `hearing-loss` · `hepatitis-b` · `hepatitis-c` · `hypertension` · `invasive-aspergillosis` · `leprosy` · `liver-cancer` · `lung-cancer` · …
@@ -87,7 +87,7 @@ third of the people who need it.
 |---:|---:|
 | 0 | 12 |
 | 1 | 84 |
-| 2 | 40 |
+| 2 | 41 |
 | 3 | 9 |
 
 **12 records pass all four**: `dengue` · `hat` · `hiv` · `hpv-infection` · `lymphatic-filariasis` · `measles` · `onchocerciasis` · `pku` · `pleomorphic-adenoma` · `rabies` · `tuberculosis` · `varicella-zoster`.
@@ -103,7 +103,7 @@ diseases where all four gates happen to be open **at once, somewhere**.
 |---|---:|
 | know — do we know what it is doing | 6 |
 | do — can we do anything about it | 28 |
-| prove — can we prove it works | 24 |
+| prove — can we prove it works | 25 |
 | reach — does it reach the person | 75 |
 | none | 12 |
 
@@ -122,7 +122,7 @@ sequential reading is the natural one and this is what it produces.
   the loosest of the four.
 - **Gate 4** uses Nordstern's `delivery` bands, so open means `delivered` or
   `mostly`. On the loosest possible reading — only `barely` and `undelivered`
-  count as shut — it is still **68 records (47%)**,
+  count as shut — it is still **69 records (47%)**,
   which is more than gates 1, 2 and 3 combined.
 
 **Gate 3 is a lower bound and probably a large one.** It counts records where
