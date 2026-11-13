@@ -401,6 +401,44 @@ holes:
   - Oesophageal cancer shares the cardia boundary and is absent from this
     register. So is `hepatitis-b`, `cirrhosis` and now a fourth upstream entity —
     the queue keeps producing records whose causes are not yet written.
+  - >
+    **AND THE SAME ABSENT RECORD IS THE FAR END OF AN EDGE RUNNING THE OTHER
+    WAY.** *H. pylori* is this record's principal cause and is **inversely**
+    associated with oesophageal adenocarcinoma and Barrett's oesophagus, by a
+    route that appears to run through the very corpus atrophy that drives the
+    cancer here — see `h-pylori-ulcer`'s holes for the figures and gaps.md #249
+    for why no field can hold a protective exposure. It sharpens the
+    cardia-boundary problem above: **the agent's effect may change sign across a
+    few centimetres of mucosa**, and the register has one record on one side of
+    that line and none on the other.
+  - >
+    **THE AGENT COUNTED AT WORLD SCALE, AND ONE THING THIS RECORD FILES AS A
+    SUBTYPE RATHER THAN A CAUSE.** The IARC infection-attributable tally for 2024
+    (Rumgay et al., *Lancet Oncol*, 28 September 2026,
+    doi:10.1016/S1470-2045(26)00307-4) attributes **about four percent of all
+    cancer worldwide to *Helicobacter pylori* — on the order of 760,000 cases a
+    year, the great majority of them this record.** That is the largest or joint
+    largest of the twelve carcinogenic agents it counts; HPV is given the same
+    four percent and some ten thousand fewer cases, which is a one percent gap
+    between two modelled estimates, **so the superlative is not written here**
+    (gaps.md #244). Nothing above is re-rated on it: the figure is consistent
+    with this record's `prevalence` and with `witness.mechanism`, and it counts
+    the *edge*, which is a quantity the schema has nowhere to put (gaps.md #247).
+  - >
+    **AND THE PART THAT IS A GAP IS EBV.** The same tally attributes a share of
+    gastric cancer to **Epstein-Barr virus**, on recent evidence, and makes EBV
+    the fourth-largest carcinogenic infection in the world. This record holds
+    EBV-associated disease as one of four molecular classes, and as a third of a
+    `strata` row that selects checkpoint blockade — **a subtype and a biomarker,
+    never a cause.** Whether it belongs in `witness.mechanism` beside *H. pylori*
+    is a real question and is not answered here. EBV is also not a record in this
+    register at all, though five records name it; **it was written as
+    `ebv-infection` (FND-D-0149) on 2026-11-05**, and *H. pylori* itself acquired
+    an agent record, `h-pylori-infection` (FND-D-0150), on 2026-11-07 — so both
+    ends of this record's two largest causal edges are now nodes, and neither
+    edge can still be written.
+    Both of these were read on 2026-11-05 from the IARC news release and press
+    coverage of the paper, **not from the paper itself.**
 
 blockers:
   - kind: logistics

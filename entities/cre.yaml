@@ -439,7 +439,7 @@ blockers:
 
   - kind: knowledge
     blocks: any way to make a carrier stop being a carrier
-    obstacles: [protective-immunity]
+    obstacles: [protective-immunity, microbiome-control]
     what: >
       **NOTHING RELIABLY CLEARS CRE FROM A COLONISED GUT**, and the gut is the
       reservoir — for the patient's own later infection and for transmission to

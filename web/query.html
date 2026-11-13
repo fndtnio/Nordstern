@@ -96,7 +96,7 @@
   #qfields .d { color:var(--ink); }
   #qfields .v { color:var(--ink-soft); font-size:10.5px; }
 
-  .workspace { flex:1; display:grid; grid-template-columns:minmax(420px,5fr) minmax(320px,4fr);
+  .workspace { flex:1; display:grid; grid-template-columns:minmax(560px,3fr) minmax(300px,2fr);
                gap:12px; min-height:0; }
   .pane { border:2px solid var(--ink); box-shadow:3px 3px 0 rgba(34,48,74,.16);
           background:var(--card); overflow:auto; min-height:0; }
@@ -110,7 +110,19 @@
   tbody tr { cursor:pointer; }
   tbody tr:hover { background:var(--paper-deep); }
   tbody tr.sel { background:#eef4f8; box-shadow:inset 3px 0 0 var(--water); }
-  td.nm { font-weight:500; }
+  td.nm { font-weight:500; white-space:normal; min-width:11em; }
+  td.nm .common { display:block; font-weight:400; font-style:italic; color:var(--ink-soft); font-size:10.5px; }
+  td.num { text-align:right; font-variant-numeric:tabular-nums; }
+  /* the word columns may wrap; the coded ones stay on one line */
+  td:nth-child(2), td:nth-child(3), td:nth-child(4) { white-space:normal; }
+  td:nth-child(2) { max-width:15em; } td:nth-child(3), td:nth-child(4) { max-width:12em; }
+  /* the coded columns hide until asked for; nothing is removed */
+  #tbl .more { display:none; }
+  #tbl.all .more { display:table-cell; }
+  td.bk-ends-it, td.bk-ends-it-unless-caught, td.bk-ends-it-later { color:var(--vermilion); }
+  td.bk-held-off { color:var(--water); } td.bk-never-safe { color:#7a5ea6; } td.bk-defines-your-life, td.bk-changes-you { color:var(--gold); }
+  td.bk-back-to-normal { color:var(--teal); }
+  td.pv-none { color:var(--ink-soft); }
   .flags { color:var(--water); letter-spacing:1px; }
   .cap-curable { color:var(--teal); } .cap-managed { color:var(--water); }
   .cap-partial { color:var(--gold); } .cap-unsolved { color:var(--vermilion); }
@@ -151,6 +163,23 @@
   .spans { border:2px solid var(--gold); background:#fbf5e4; padding:8px 11px; margin-top:9px;
            font-size:11.5px; line-height:1.5; }
   .spans b { color:var(--gold); }
+  /* the card's plain sections */
+  .detail .also { font-size:11px; color:var(--ink-soft); margin-top:2px; }
+  .detail p.def { font-family:Fraunces,serif; font-size:13.5px; line-height:1.5; }
+  .detail p.gap, .detail .gap { color:var(--ink-soft); font-style:italic; }
+  .detail .src { font-size:10px; color:var(--ink-soft); margin-top:-2px; }
+  .detail details.inline { display:inline; }
+  .detail details.inline summary { display:inline; cursor:pointer; color:var(--water); font-family:'IBM Plex Mono',monospace; font-size:10.5px; }
+  .detail details.inline[open] summary { display:none; }
+  .detail ul.way { margin:4px 0 0 0; padding-left:0; list-style:none; }
+  .detail ul.way li { padding-left:12px; position:relative; margin-bottom:5px; font-size:11.5px; }
+  .detail ul.way li::before { content:"—"; position:absolute; left:0; color:var(--ink-soft); }
+  .detail .st { font-size:9.5px; letter-spacing:.08em; text-transform:uppercase; padding:0 4px; border:1px solid var(--ink-faint); margin-left:4px; }
+  .detail .st.documented { color:var(--teal); } .detail .st.alleged, .detail .st.disputed { color:var(--gold); } .detail .st.refuted { color:var(--vermilion); }
+  .detail .spanshint { display:block; color:var(--gold); font-size:11px; margin-top:4px; }
+  .detail details.full { margin-top:16px; border-top:2px solid var(--ink); padding-top:8px; }
+  .detail details.full > summary { cursor:pointer; font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-soft); }
+  .detail details.full > summary:hover { color:var(--ink); }
 
   dialog { border:2px solid var(--ink); box-shadow:5px 5px 0 rgba(34,48,74,.25);
            background:var(--card); color:var(--ink); padding:0; max-width:760px;
@@ -187,7 +216,7 @@
     <h1><span class="fig">Nordstern</span>a register of what is solved</h1>
     <div class="sub">do we understand it · can we do anything about it · why isn't it delivered</div>
   </div>
-  <a class="home" href="index.html">← the map</a>
+  <a class="home" href="index.html">← the number</a>
 </header>
 
 <!-- Filled by banner.js from the snapshot check.py built. Both pages render the
@@ -211,6 +240,7 @@
     <button id="reset">clear</button>
     <button id="dlJson">⇩ json</button>
     <button id="dlCsv">⇩ csv</button>
+    <button id="cols" title="the coded columns: flags, mechanism, measurement, terms, price">all columns</button>
     <span class="count" id="count"></span>
   </div>
   <div class="qerr" id="qerr"></div>
@@ -218,15 +248,22 @@
 
 <div class="workspace">
   <div class="pane"><table id="tbl">
+    <!-- FIVE COLUMNS BY DEFAULT, IN WORDS. The first audience is people outside
+         medicine; a row that read `obje·part·part · curable · costly · 0.300` was
+         legible only to whoever wrote the schema. The coded columns are still here,
+         behind "all columns" — nothing was removed, only hidden. -->
     <thead><tr>
-      <th data-k="slug">entity</th>
-      <th data-k="_flags">·</th>
-      <th data-k="mechanism">mech</th>
-      <th data-k="_meas">dx·pg·pd</th>
-      <th data-k="capability">capability</th>
-      <th data-k="terms">terms</th>
-      <th data-k="reach">reach</th>
-      <th data-k="_cost">from</th>
+      <th data-k="name">disease</th>
+      <th data-k="bucket">what it does to you</th>
+      <th data-k="capability">treatment</th>
+      <th data-k="prevention">prevention</th>
+      <th data-k="reach">reaches</th>
+      <th data-k="slug" class="more">entity</th>
+      <th data-k="_flags" class="more">·</th>
+      <th data-k="mechanism" class="more">mech</th>
+      <th data-k="_meas" class="more">dx·pg·pd</th>
+      <th data-k="terms" class="more">terms</th>
+      <th data-k="_cost" class="more">from</th>
     </tr></thead>
     <tbody></tbody>
   </table></div>
@@ -396,7 +433,8 @@ const ticks = s => esc(s).replace(/`([^`]+)`/g, "<code>$1</code>");
  * and shareable rather than hidden in a closure.
  * --------------------------------------------------------------------- */
 const DOM = Q.domains(R);            // enum domains, read off the data
-const state = { q:"", sort:"reach", dir:-1, sel:null };
+const state = { q:"", sort:"name", dir:1, sel:null, all:false };   // alphabetical by default: no ranking implied
+const SNAP = (window.NORDSTERN_SNAPSHOTS || []).at(-1) || null;   // the seven states' names live in buckets.yaml, via the snapshot
 let last = { records:R, terms:[], errors:[] };
 
 /* the URL is the share link: ?q=… round-trips the whole view, and ?spec opens
@@ -509,6 +547,10 @@ function visible() {
     _meas:  r.measurement.prognostic + r.measurement.predictive,
     _cost:  r.derived.cheapest_priced_blocker ?? Infinity,
     mechanism: r.axes.mechanism,
+    prevention: PREVENTION_RANK[r.axes.prevention] ?? 9,
+    capability: CAPABILITY_RANK[r.derived.capability] ?? 9,
+    bucket: BUCKET_RANK[r.derived.bucket] ?? 9,
+    name: (r.name || r.slug).toLowerCase(),
   }[state.sort] ?? r.derived[state.sort] ?? r[state.sort]);
   return out.sort((a,b) => {
     const x = key(a), y = key(b);
@@ -518,6 +560,37 @@ function visible() {
 
 const money = v => v == null ? "—" : "$" + (v >= 1e9 ? (v/1e9)+"B" : v >= 1e6 ? (v/1e6)+"M" : v);
 const short = s => s.slice(0,4);
+
+/* THE PLAIN WORDS. These are labels for values check.py derived, never a
+   derivation: every key here is a value the register already holds, and the
+   test asserts the maps cover every value in the data, so a new rung cannot
+   arrive as a blank cell. The order of each map is its sort order. */
+const CAPABILITY_WORDS = {
+  curable:     "can be cured",
+  preventable: "preventable, not treatable",
+  managed:     "held off, for life",
+  partial:     "slowed, not stopped",
+  unsolved:    "nothing changes the course",
+};
+const PREVENTION_WORDS = {
+  eradicated:       "eradicated",
+  prophylaxis:      "a vaccine, or a treatment that prevents it",
+  "risk-reduction": "you can lower your risk",
+  none:             "none",
+};
+const rank = m => Object.fromEntries(Object.keys(m).map((k, i) => [k, i]));
+const CAPABILITY_RANK = rank(CAPABILITY_WORDS), PREVENTION_RANK = rank(PREVENTION_WORDS);
+const BUCKET_ORDER = ["ends-it", "ends-it-unless-caught", "ends-it-later", "held-off",
+                      "never-safe", "defines-your-life", "changes-you", "back-to-normal"];
+const BUCKET_RANK = Object.fromEntries(BUCKET_ORDER.map((k, i) => [k, i]));
+// the seven states' names come from buckets.yaml via the snapshot, never from this page
+const BUCKET_WORDS = (SNAP && SNAP.buckets && SNAP.buckets.names) || {};
+// what the treatment reaches, as a share of patients; withheld where the
+// register withholds it (prevention has no reach number — gaps.md #109)
+const reaches = d => d.delivery === "—" ? "—" : Math.round(d.reach * 100) + "%";
+
+$("cols").onclick = () => { state.all = !state.all; $("tbl").classList.toggle("all", state.all);
+                            $("cols").textContent = state.all ? "fewer columns" : "all columns"; };
 
 function render() {
   const rows = visible();
@@ -533,20 +606,28 @@ function render() {
   const dropped = last.errors.length
     ? ` · ${last.errors.length} term${last.errors.length > 1 ? "s" : ""} ignored` : "";
   $("count").textContent = `${rows.length} of ${R.length}${dropped}`;
+  // A SHARED LINK OPENS THE CARD. `?q=id:FND-D-0023` used to show a one-row table
+  // and an empty pane saying "pick an entity" — the person it was sent to had
+  // nothing to look at. One result is a selection.
+  if (rows.length === 1) state.sel = rows[0].slug;
   $("tbl").tBodies[0].innerHTML = rows.map(r => {
     const d = r.derived, m = r.measurement;
     const flags = (d.orphaned?"⚑":"") + (d.has_window?"⧗":"") + (d.spans_ladder?"⧉":"");
+    const common = r.common && r.common.toLowerCase() !== (r.name || "").toLowerCase() ? `<i class="common">${esc(r.common)}</i>` : "";
     return `<tr data-slug="${r.slug}" class="${state.sel===r.slug?"sel":""}">
-      <td class="nm">${esc(r.slug)}</td>
-      <td class="flags">${flags}</td>
-      <td>${esc(r.axes.mechanism)}</td>
-      <td>${short(m.diagnostic)}·${short(m.prognostic)}·${short(m.predictive)}</td>
-      <td class="cap-${d.capability}">${d.capability}</td>
-      <td class="t-${d.terms}">${d.terms}</td>
-      <td>${d.reach.toFixed(3)}</td>
-      <td>${money(d.cheapest_priced_blocker)}</td>
+      <td class="nm">${esc(r.name || r.slug)}${common}</td>
+      <td class="bk-${d.bucket}">${esc(BUCKET_WORDS[d.bucket] || d.bucket)}</td>
+      <td class="cap-${d.capability}">${esc(CAPABILITY_WORDS[d.capability] || d.capability)}</td>
+      <td class="pv-${r.axes.prevention}">${esc(PREVENTION_WORDS[r.axes.prevention] || r.axes.prevention)}</td>
+      <td class="num">${reaches(d)}</td>
+      <td class="more">${esc(r.slug)}</td>
+      <td class="more flags">${flags}</td>
+      <td class="more">${esc(r.axes.mechanism)}</td>
+      <td class="more">${short(m.diagnostic)}·${short(m.prognostic)}·${short(m.predictive)}</td>
+      <td class="more t-${d.terms}">${d.terms}</td>
+      <td class="more">${money(d.cheapest_priced_blocker)}</td>
     </tr>`;
-  }).join("") || `<tr><td colspan="8" style="padding:24px;text-align:center;color:var(--ink-soft)">nothing matches</td></tr>`;
+  }).join("") || `<tr><td colspan="11" style="padding:24px;text-align:center;color:var(--ink-soft)">nothing matches</td></tr>`;
 
   $("tbl").querySelectorAll("tbody tr[data-slug]").forEach(tr =>
     tr.onclick = () => { state.sel = tr.dataset.slug; render(); });
@@ -670,15 +751,70 @@ function challengeHref(r) {
   return `${REPO}/issues/new?labels=challenge&title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
 }
 
+/* THE CARD, FOR SOMEONE WHO WAS SENT THE LINK (2026-10-27).
+ *
+ * The first version opened with the slug, seven flag pills, the verdict box
+ * and three tables of codes. All of it is still here, folded under "the full
+ * record". What opens now is what a person outside medicine asked for, in the
+ * order they ask: what is it, what does it do to you, can it be treated, can it
+ * be prevented, what is in the way. Every sentence is a label on a value
+ * check.py derived — the page still owns no derivation — and the definition is
+ * BORROWED from Mondo, attributed, the same way the id is. */
+const KIND_WORDS = {
+  knowledge: "something nobody knows yet", "candidate-untested": "a candidate nobody has tested",
+  "evidence-incomplete": "evidence that is not finished", "no-sponsor": "nobody paying to develop it",
+  regulatory: "approval", manufacturing: "making enough of it", cost: "the price",
+  logistics: "getting it to people", diagnosis: "finding the people who have it",
+  adherence: "staying on the treatment", tooling: "a missing tool", policy: "policy",
+};
+const STANDING_WORDS = { documented: "documented", alleged: "claimed, not shown", disputed: "disputed", refuted: "refuted" };
+const BACK = {
+  restored: "Those it cures go back to how they were.",
+  "cure-costs": "They do not go back to how they were: the treatment took something.",
+  "disease-residue": "They do not go back to how they were: the disease had already done permanent damage.",
+  both: "They do not go back to how they were: the treatment took something, and the disease had already done permanent damage.",
+};
+const TOLL_WORDS = { clean: "The cure itself takes nothing permanent.", costly: "The cure takes something permanent.", harsh: "The cure is itself permanently damaging." };
+const cap1 = t => t ? t[0].toUpperCase() + t.slice(1) : t;
+
 function detail(r) {
   const d = r.derived, ax = r.axes, m = r.measurement;
   const kv = (k,v) => `<div class="kv"><span class="k">${k}</span><span>${esc(v)}</span></div>`;
   const sec = (t,b) => b ? `<h3>${t}</h3>${b}` : "";
   const num = s => s ? `${s.value} <span style="color:var(--ink-soft)">${esc(s.units||"")}</span>` : "—";
 
+  const names = (r.also || []).filter(a => a.toLowerCase() !== r.name.toLowerCase());
+  const def = r.mondo_term && r.mondo_term.definition;
+  const sentences = def ? (def.match(/[^.!?]+[.!?]+(\s+|$)/g) || [def]) : [];
+  const lead2 = sentences.slice(0, 2).join("").trim(), rest = sentences.slice(2).join("").trim();
+  const pct = Math.round(d.reach * 100);
+  const reachTxt = d.delivery === "—" ? "" : pct >= 1 ? ` Reaches about ${pct}% of the people who have it.` : " Reaches almost nobody.";
+  const spans = d.spans_ladder ? ` <span class="spanshint">One disease, more than one answer — the strata in the full record disagree, so this row is the modal case, not a verdict.</span>` : "";
+
   return `
-    <div class="slug">${esc(r.slug)} · ${esc(r.assertion.id)} · rated ${esc(r.assertion.rated)}</div>
+    <div class="slug">${esc(r.id)} · ${esc(r.assertion.id)} · rated ${esc(r.assertion.rated)}</div>
     <h2>${esc(r.name)}</h2>
+    ${names.length ? `<div class="also">also called ${names.map(esc).join(" · ")}</div>` : ""}
+
+    <h3>What it is</h3>
+    ${def ? `<p class="def">${esc(lead2)}${rest ? ` <details class="inline"><summary>more</summary> ${esc(rest)}</details>` : ""}</p>
+             <div class="src">the Mondo Disease Ontology's definition for ${esc(r.mondo)}${r.mondo_term.release ? `, release ${esc(r.mondo_term.release)}` : ""} — borrowed, not written here</div>`
+           : `<p class="def gap">No borrowed definition: this register writes none, and Mondo has none for ${esc(r.mondo || "this record")}.</p>`}
+
+    <h3>What it does to you</h3>
+    <p><b>${esc(BUCKET_WORDS[d.bucket] || d.bucket)}.</b>${d.survival_sentence ? ` ${esc(cap1(d.survival_sentence))}.` : ""}${BACK[d.restored] ? ` ${BACK[d.restored]}` : ""}</p>
+
+    <h3>Treatment</h3>
+    <p><b>${esc(cap1(CAPABILITY_WORDS[d.capability] || d.capability))}.</b>${reachTxt} ${d.capability === "unsolved" && d.terms === "clean" ? "" : (TOLL_WORDS[d.terms] || "")}${spans}</p>
+
+    <h3>Prevention</h3>
+    <p>${esc(cap1(PREVENTION_WORDS[ax.prevention] || ax.prevention))}.</p>
+
+    ${sec("What stands in the way", r.blockers.length ? `<ul class="way">${r.blockers.map(b =>
+      `<li><b>${esc(KIND_WORDS[b.kind] || b.kind)}</b> — ${esc(b.blocks)} <span class="st ${esc(b.standing)}">${esc(STANDING_WORDS[b.standing] || b.standing)}</span></li>`).join("")}</ul>`
+      : `<p class="gap">No blocker is recorded.</p>`)}
+
+    <details class="full"><summary>the full record — every rating, the witnesses, and how to challenge it</summary>
     <a class="challenge" href="${challengeHref(r)}" target="_blank" rel="noopener"
        title="Open a pre-filled GitHub issue against this rating">challenge ${esc(r.assertion.id)} ↗</a>
     <div style="margin-top:6px">
@@ -735,6 +871,7 @@ function detail(r) {
         : `<p style="color:var(--ink-soft)">${esc(v)}</p>`).join(""))}
 
     ${sec("Holes", `<ul>${(r.holes||[]).map(h=>`<li>${esc(h)}</li>`).join("")}</ul>`)}
+    </details>
   `;
 }
 

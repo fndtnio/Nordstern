@@ -31,7 +31,7 @@ const Query = require("./query.js");
 
 /* ---- render the real page in a fake DOM ----------------------------- */
 function boot() {
-  const html = fs.readFileSync(path.join(DIR, "index.html"), "utf8");
+  const html = fs.readFileSync(path.join(DIR, "readings.html"), "utf8");
   const inline = [...html.matchAll(/<script>([\s\S]*?)<\/script>/g)];
   assert.equal(inline.length, 1, "expected exactly one inline <script>");
 
@@ -220,35 +220,44 @@ test("the snapshot series status is honest about how many bearings exist", () =>
  * dangling reference behind and nobody notices until a link 404s in public.
  * ------------------------------------------------------------------- */
 
-test("the landing page is the dashboard and the tool is query.html", () => {
+test("the landing page and the readings read the snapshot series; the tool is query.html", () => {
+  // 2026-10-27: the landing page became THE NUMBER (index.html) and the 26
+  // readings moved to readings.html. Both are casual pages: snapshots + slim.
   const idx = fs.readFileSync(path.join(DIR, "index.html"), "utf8");
+  const rd  = fs.readFileSync(path.join(DIR, "readings.html"), "utf8");
   const qry = fs.readFileSync(path.join(DIR, "query.html"), "utf8");
 
-  assert.ok(/window\.NORDSTERN_SNAPSHOTS/.test(idx),
-            "index.html should be the dashboard — it reads the snapshot series");
+  for (const [name, src] of [["index.html", idx], ["readings.html", rd]]) {
+    assert.ok(/window\.NORDSTERN_SNAPSHOTS/.test(src),
+              `${name} should read the snapshot series`);
+    assert.ok(!/src="data\.js"/.test(src),
+              `${name} pulls the 2 MB payload — the casual pages read slim.js`);
+  }
   assert.ok(/NordsternQuery|window\.NORDSTERN\b/.test(qry),
             "query.html should be the query tool");
-  // The dashboard must not have become the heavy page by accident.
-  assert.ok(!/src="data\.js"/.test(idx),
-            "index.html pulls the 2 MB payload — the landing page reads slim.js");
+  assert.match(idx, /href="readings\.html"/, "the number must offer the readings");
+  assert.match(rd, /href="index\.html"/, "the readings must offer a way back to the number");
 });
 
-test("the two pages link to each other, and to nothing that has moved", () => {
+test("the pages link to each other, and to nothing that has moved", () => {
   const idx = fs.readFileSync(path.join(DIR, "index.html"), "utf8");
+  const rd  = fs.readFileSync(path.join(DIR, "readings.html"), "utf8");
   const qry = fs.readFileSync(path.join(DIR, "query.html"), "utf8");
 
-  assert.match(idx, /href="query\.html"/, "the map must offer the tool");
-  assert.match(qry, /href="index\.html"/, "the tool must offer a way back to the map");
+  assert.match(idx, /href="query\.html"/, "the number must offer the tool");
+  assert.match(rd, /href="query\.html"/, "the readings must offer the tool");
+  assert.match(qry, /href="index\.html"/, "the tool must offer a way back to the front page");
 
   // `dashboard.html` was the dashboard's address for exactly one day. Any
   // surviving reference to it is a dead link.
-  for (const [name, src] of [["index.html", idx], ["query.html", qry]])
+  for (const [name, src] of [["index.html", idx], ["readings.html", rd], ["query.html", qry]])
     assert.ok(!/dashboard\.html/.test(src),
               `${name} still references dashboard.html, which no longer exists`);
 
-  // And the dashboard must send figures to the tool, not to itself.
-  assert.ok(!/"index\.html\?q=/.test(idx),
-            "a dashboard figure links to index.html?q= — the query tool is query.html");
+  // And figures must go to the tool, not to the page they are on.
+  for (const [name, src] of [["index.html", idx], ["readings.html", rd]])
+    assert.ok(!/"(index|readings)\.html\?q=/.test(src),
+              `a figure on ${name} links to itself — the query tool is query.html`);
 });
 
 /* ---- the burden-weighted figure ------------------------------------- */
@@ -307,12 +316,14 @@ test("the two gaps partition the burden, in the snapshot as in the records", () 
  * rather than folded in, and the burden gaps being mortality-shaped. Every one
  * of those refusals is documented per field; NONE of them was stated about the
  * page as a whole until this paragraph. It is load-bearing framing, not decoration. */
-test("the map states that there is no single score, and counts its own readings", () => {
+test("the readings say what the front page's number leaves out, and count themselves", () => {
   const { rendered } = boot();
   const text = rendered.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
 
-  assert.match(text, /There is no single score here, and there will not be one/,
+  assert.match(text, /The front page gives one number, and this page is everything it leaves out/,
                "the standfirst is the page's own framing — it must not be dropped");
+  assert.match(text, /counts instead of averaging/,
+               "the readings must say why a count is allowed where an average is not");
   assert.match(text, /Those are all true at once/,
                "the three standpoints must be given as simultaneously valid");
 
@@ -388,10 +399,15 @@ test("the headline bucket claim is true of the data", () => {
      added to `ends-it` precisely because that bucket held one entry and nobody
      believed it. The page's claim is that the category everyone pictures is the
      SMALLEST, so assert that and let the counts do what they do. */
-  const order = Object.entries(A).sort((a, b) => a[1] - b[1]).map(x => x[0]);
+  /* buckets.yaml v6 added `never-safe`, which holds one record and is smaller
+     still; the prose now says the terminal pair are the smallest of the states
+     anyone pictures, and names never-safe as the exception. Assert exactly that. */
+  const order = Object.entries(A).sort((a, b) => a[1] - b[1]).map(x => x[0]).filter(k => k !== "never-safe");
   assert.deepEqual(order.slice(0, 2).sort(), ["ends-it", "ends-it-unless-caught"],
-    "the section calls the terminal categories the smallest in the register; " +
+    "the section calls the terminal categories the smallest of the pictured states; " +
     `ascending order is ${order.join(" < ")}`);
+  assert.ok((A["never-safe"] || 0) <= (A["ends-it-unless-caught"] || 0),
+    "the prose says never-safe is smaller still — if it has grown, rewrite the sentence");
 });
 
 /* =====================================================================
@@ -426,7 +442,7 @@ function sectionBody(rendered, heading) {
 }
 
 const BUCKET_ORDER = ["ends-it", "ends-it-unless-caught", "ends-it-later",
-                      "held-off", "defines-your-life", "changes-you",
+                      "held-off", "never-safe", "defines-your-life", "changes-you",
                       "back-to-normal"];
 
 test("every bucket has its own section, in the order the strip is drawn in", () => {

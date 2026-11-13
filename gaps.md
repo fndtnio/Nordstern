@@ -4212,7 +4212,7 @@ rabies, epilepsy, bipolar, depression — and every histological grade in the
 cancer records. Prostate cancer's Gleason grading has been formally revised, at
 least, which is #90's kind of change. Melanoma's has not.
 
-## 120. The register records that a rating changed, never how · **open, and it is the project's own question**
+## 120. The register records that a rating changed, never how · **open, and it is the project's own question** — AMENDED by #248
 *Forced by:* `childhood-all`.
 
 Childhood acute lymphoblastic leukaemia was uniformly fatal in 1948 and is cured
@@ -4885,7 +4885,7 @@ it inside `established`:
 That last row is the point. **Understanding the disease and understanding the
 drug are independent, and only one of them has a field.**
 
-## 136. The pathway performs differently depending on who presents · **open**
+## 136. The pathway performs differently depending on who presents · **open** — AMENDED by `lupus` (2026-11-09): the strongest instance is one where the difference is UPSTREAM of the encounter
 *Forced by:* `bladder-cancer`.
 
 Painless visible haematuria is bladder cancer's presenting symptom, a recognised
@@ -4928,6 +4928,22 @@ Cheap and worth doing: a `disparity:` note on `measurement`, recording who the
 pathway underserves and by what mechanism — referral, attribution, examination,
 or enrolment. Most of these are documented in the literature already and none of
 them is in this register.
+
+**AMENDED 2026-11-09, writing `lupus`, and the amendment widens the entry.**
+Every instance above is about the *encounter*: who gets referred, examined,
+believed, enrolled. Lupus is the case where the difference arrives before any
+encounter happens. Roughly **1 in 3,500 women in the UK, 1 in 1,000 women in
+China, and 1 in 250 African-American women in the United States** — a fourteen-
+fold spread in who gets the disease at all, with nephritis, end-stage kidney
+disease and mortality all concentrating the same way, and an excess that
+survives adjustment for access in most studies that look for it.
+
+So the proposed `disparity:` note on `measurement` is **in the wrong place for
+this record.** A note about the pathway cannot hold a fact about incidence. Two
+options, both unresolved: widen the note and move it off `measurement`, or accept
+that differential incidence belongs in `burden` beside the totals it contradicts.
+The second is probably right and is more work, because `burden` is where every
+derived quantity reads from and a second denominator there would propagate.
 
 ## 137. Overdiagnosis without a screening programme · **open**
 *Forced by:* `renal-cell-carcinoma`.
@@ -6432,6 +6448,23 @@ Do not build a field for this yet. Watch `road-injury`, `opioid-use-disorder` an
 whichever maternal record comes next; three records with a `kind` the enum cannot
 express is the threshold this register has used before.
 
+**AMENDED 2026-11-07, TWICE — and the threshold was passed by a record not on the
+watch list.** `burns` (FND-D-0151) is an injury the `kind` enum cannot express,
+and it was written before any of the three records this gap said it was watching.
+See #250.
+
+**AMENDED 2026-11-07.** This rule could not have fired. `road-injury` and
+`opioid-use-disorder` were called *(queued)* here and in `cirrhosis` and **were
+not in `records-queue.md` at all** — a threshold waiting on records nobody had
+queued. Both are now queued, `road-injury` second in the injury path that file
+opened the same day and `opioid-use-disorder` behind it, so the rule has
+something to watch. `maternal-haemorrhage` supplied the third row long ago.
+**The general lesson is cheap and recurring: a cross-reference to a record is a
+claim, and nothing in this repository checks one** — the third instance in a
+week, after #184's stale counts and `h-pylori-ulcer`'s scope hole, and the
+counterexample is `how_moved.py --check`, which does verify its references and
+caught two drifts in two days.
+
 ---
 
 **Strengthened by `maternal-haemorrhage`, not new:**
@@ -6488,7 +6521,7 @@ express is the threshold this register has used before.
 
 ---
 
-## 160. The register is a flat list and medicine is a graph · **open — flagged in three records' holes before anyone wrote it down**
+## 160. The register is a flat list and medicine is a graph · **open — flagged in three records' holes before anyone wrote it down — AMENDED by #247: the edge carries a quantity, and it has been measured** — AMENDED by #249: and the edge carries a sign
 *Forced by:* `diarrhoeal-disease`, after `mrsa` and `cre` each filed it as prose.
 
 `diarrhoeal-disease` **contains** `cholera`. Not overlaps, not resembles —
@@ -6803,7 +6836,7 @@ whichever tobacco-attributable record is examined after prevalence peaks.
 
 ---
 
-## 164. The register holds interventions, not the capabilities that produce and evaluate them · **open**
+## 164. The register holds interventions, not the capabilities that produce and evaluate them · **open** — AMENDED by #251: its cheapest fix was taken, and `microbiome-control` is the first obstacle written because Nordstern could not hold the entity
 *Forced by:* `covid-19`.
 
 Two of the largest returns of the pandemic were not treatments.
@@ -8512,7 +8545,7 @@ Three things to do, in order of cost:
 
 ---
 
-## 184. `moved` has no convention for measurement, and measurement is what changes most · **open — companion to #183**
+## 184. `moved` has no convention for measurement, and measurement is what changes most · **open — companion to #183** — AMENDED by #248
 *Forced by:* `parkinsons`.
 
 In 2023 an **alpha-synuclein seed amplification assay** was shown to detect
@@ -14672,7 +14705,7 @@ time.**
 
 ---
 
-## 243. The cross-record check is built, and it found two more of the same shape · **open**
+## 243. The cross-record check is built, and it found two more of the same shape · **open — AMENDED by #247: it finds missing edges and cannot see a missing node**
 *Forced by:* #242 — `hearing-loss` omitting congenital CMV, and nothing in the
 register noticing.
 
@@ -14928,3 +14961,1301 @@ are inside the common diseases, and no previous view could show it.
 
 *Left open:* whether the totals should be shown at all before any `judged` scalar
 is sourced. 0 of 1,158 are.
+
+---
+
+## 247. The world has twelve carcinogenic infections, the register holds six, and the edge between an agent and its cancer carries a number nothing here can hold · **open** — AMENDED by #249: the missing-node finding recurred, which makes it a property of the query
+*Forced by:* reading the IARC 2024 infection-attributable tally against the
+corpus (Rumgay H, Georges D, Huang Y, Hirabayashi M, Shah R, de Martel C, et al.
+*Global burden of cancer attributable to infections in 2024: a worldwide
+incidence analysis.* Lancet Oncol, published online 28 September 2026;
+doi:10.1016/S1470-2045(26)00307-4).
+
+**The paper is an external enumeration of exactly the `causes` edges #160 asked
+for, with a magnitude on each.** 2.3 million new cancers in 2024 — about 12% of
+all cases — attributed to twelve infectious agents, roughly 75% of them in low-
+and middle-income countries. Per-agent shares of all cancer: *Helicobacter
+pylori* 4%, HPV 4%, hepatitis B 2%, Epstein-Barr virus 1%, hepatitis C under 1%.
+
+### 1. Six of the twelve are records and six are not
+
+| agent | record here |
+|---|---|
+| *Helicobacter pylori* | `h-pylori-ulcer`, and `h-pylori-infection` from 2026-11-07 |
+| HPV | `hpv-infection` |
+| hepatitis B | `hepatitis-b` |
+| hepatitis C | `hepatitis-c` |
+| HIV | `hiv` |
+| *Schistosoma haematobium* | `schistosomiasis` |
+| **Epstein-Barr virus** | **none** |
+| **KSHV / HHV-8** | **none** |
+| **HTLV-1** | **none** |
+| **Merkel cell polyomavirus** | **none** |
+| ***Opisthorchis viverrini*** | **none** |
+| ***Clonorchis sinensis*** | **none** |
+
+Four of the six absences are rare cancers the register has reasonably not
+reached. **The fifth is not.**
+
+### 2. EBV is the fourth largest of them and is named as a cause in five records without being one
+
+`nasopharyngeal-carcinoma` is built on it — mechanism, screening test, and the
+register's second-ever `moved:` entry on the `measurement` axis are all EBV DNA.
+`multiple-sclerosis` rates it **near-necessary**: thirty-two-fold risk, one
+EBV-negative case in 801. `non-hodgkin-lymphoma` names it twice and writes, in
+its own `holes`, *"is not a record here and probably should be."* `gastric-cancer`
+holds it as a molecular class and as part of a `strata` row. `head-neck-cancer`
+names it to justify a split.
+
+**Five records, one of them calling it near-necessary for its own disease, and
+the agent had no node.** Written the same day as `ebv-infection`, FND-D-0149.
+
+### 3. And the check built in #243 cannot see this, by construction
+
+That pass matches record `name` and `also` against record prose. What it finds is
+**an edge whose two ends are both records and which runs in one direction only.**
+A cause that is not a record has no name to match, so it is not merely missed —
+it is outside the query.
+
+#160 said the failure mode was each record filing the relation as a local
+awkwardness. `non-hodgkin-lymphoma` did precisely that, in prose, in two places;
+**the automated check was written afterwards and still does not look.** The
+missing pass is the complement of the one that exists: *entities named causally
+in prose that are not records* — a list of missing **nodes** rather than missing
+**edges**. It is the rare cross-record check with an external ground truth to run
+against, because IARC Group 1 is a published list and so is the GBD cause
+hierarchy.
+
+### What this says about #160 and #48
+
+**#160 asked for typed edges. It did not say the edge carries a quantity. This
+paper is the demonstration that it does, and what the unit is: cases per year
+attributable.** Roughly 760,000 on `h-pylori-ulcer` → `gastric-cancer`; roughly
+750,000 from `hpv-infection` spread over six records; 300,000-plus on
+`hepatitis-b` → `liver-cancer`; 100,000-plus on `hepatitis-c` → `liver-cancer`.
+
+That number is **the multiplier #48 is missing, in the direction #160's third
+consequence named.** #48 wants burden × (1 − reach) per record, which ranks
+records in isolation. A weighted upstream edge gives the other half: *how much of
+a downstream record's burden is removed by acting on a different record.* Without
+it, "work upstream" is a conviction; with it, it is an ordering, and the
+twelve-agent tally is the one place where the weights already exist.
+
+### Two things not to take from this paper
+
+- **The trend.** The attributable share was put at 18% in 2002 and is 12% now,
+  and the authors say the figures cannot be confidently compared because the
+  sources and quality of the data changed over time. **The register should not
+  record a six-point fall in anything.**
+- **The ordering of the top two.** *H. pylori* at ~760,000 against HPV at
+  ~750,000 is a one percent difference between two modelled estimates.
+  **"The largest infectious cause of cancer" is not a claim this supports**, and
+  #244 is the reason that sentence is not in `gastric-cancer`.
+
+### What writing `ebv-infection` then found
+
+**Five things, and the first is the one to act on.**
+
+**1. `me-cfs` does not mention EBV, infectious mononucleosis or glandular fever
+anywhere.** Infectious mononucleosis is the best-documented infectious trigger of
+a chronic fatigue syndrome there is, and the record that holds chronic fatigue
+names no trigger at all. **This is #242's exact shape, and it was invisible until
+the node existed** — which is the clearest possible demonstration of the finding
+above: the #243 check searches for *edges*, so writing the missing *node* is what
+makes the edge findable. It is recorded in `ebv-infection`'s `residue` and left
+for `me-cfs` to answer, because what that record says about trigger is a rating
+decision.
+
+**2. The record carries ⧉ and should.** Record-level capability derives
+`unsolved` — `intervention: symptomatic`, `prevention: none` — while two of its
+three strata are `curable`: post-transplant lymphoproliferation at 60%, and the
+EBV-associated cancers of immunocompetent people at 70%. Both are true. Nothing
+prevents or clears the infection in anybody, and several of the cancers it causes
+are among the most curable in medicine, **treated by chemotherapy and
+radiotherapy that take no account of the virus at all.** `cmv-infection`'s holes
+noted that it escaped ⧉ only because its tiers happened not to split; this one
+does not escape it.
+
+**3. #87 has a named product at the end of it for the first time.** The record's
+`no-sponsor` blocker is that EBV's burden is distributed across six other
+diseases — nasopharyngeal carcinoma, Hodgkin lymphoma, Burkitt lymphoma, gastric
+cancer, post-transplant lymphoproliferative disease, multiple sclerosis — and a
+vaccine's benefit would be distributed the same way, **so no disease constituency
+advocates for it.** #87 was forced by `noma` and was about non-specific
+preventives like child nutrition, where no record can justify a share of the
+cost. Here the thing nobody will fund is a single specific vaccine. **The agent
+needs a node or the sum is never computed by anybody**, which is also the
+argument for this record existing.
+
+**4. #130 again, and the harm lands on an organ.** The first move against
+post-transplant lymphoproliferation is to withdraw the immunosuppression keeping
+a transplanted organ alive. **The price of treating this record's one treatable
+stratum is charged to another record's kidney, liver or heart**, and `toll` has
+nowhere to say so.
+
+**5. A `window` can belong to the cause and the schema hangs it on the disease.**
+Plasma EBV DNA has a decades-long pre-clinical interval and two separate
+pre-emptive uses: screening for nasopharyngeal carcinoma, which is a `window` in
+`nasopharyngeal-carcinoma`, and viral-load surveillance before post-transplant
+lymphoproliferation, which is a `window` in `ebv-infection`. **One virus, one
+assay, two records, and nothing relates them** — the same missing edge as the
+rest of this entry, in the one field where it would change what gets screened.
+
+### What was changed, and what was not
+
+**Nothing existing is re-rated.** No prior record's axes, scalars or blockers
+move. Four edits plus one new record:
+
+1. `hpv-infection` — a hole corrected. It still said *"four HPV-attributable
+   cancers have no record at all"* after all four were written (#240), which is
+   a stale hole rather than a missing one, and the complement of #242.
+2. `gastric-cancer` — two holes added: the agent's world-scale share, and that
+   this record holds EBV as a subtype and a biomarker and never as a cause.
+3. `records-queue.md` — `ebv-infection` argued for, then marked written.
+4. `web/tool.test.js` — `ebv-infection` added to the reviewed-exception list for
+   a residue on a no-capability record, with the note the test asks for. It is
+   the `dracunculiasis` case: mononucleosis resolves on its own, so the episode
+   ends and nothing cured it.
+5. **`entities/ebv-infection.yaml` — FND-D-0149, the register's 149th record.**
+
+*Provenance.* Read 2026-11-05 from the IARC news release, its press release, and
+press coverage (Gizmodo, Medical Xpress, Scientific American) — **not from the
+paper.** The percentage shares are as quoted from the study by Medical Xpress;
+the absolute per-agent counts come from press coverage and **differ between
+outlets** (hepatitis B is given as both "more than 300,000" and "about
+360,000"), which is why they are written here with "roughly". The IARC Q&A and
+press-release PDFs would settle the per-agent table and could not be read in
+this environment. The citation and DOI are IARC's own and have not been checked
+against the article.
+
+---
+
+## 248. All 246 `moved` entries have now been asked *how*, and the answer is that new tools are not what moves medicine — plus three places #120's vocabulary does not fit · **open; ledger written, field not added**
+*Forced by:* a hand-cranked, mains-free point-of-care device reporting ABO group
+and haematocrit from a drop of blood in under a minute (National Taiwan
+University, *Biosensors and Bioelectronics*, 2026; n = 21 against automated
+analysers), and the argument that comes with every such device — **that science
+advances on instruments, the microscope being the template.** The register has
+246 dated rating changes and could not answer it, so this is the attempt.
+
+### What #120 and #184 said, and what is now true
+
+**#120** observed that `moved` records *that* a rating changed, never how, and
+proposed `how:` with six values: `discovery`, `iteration`, `measurement`,
+`delivery`, `policy`, `abandonment`. **It was never implemented — zero `how:`
+fields exist.** **#184** observed that measurement is the fastest-moving thing in
+the corpus and that the `measurement` axis had never been used.
+
+Both entries' counts are now stale, and in #184's case its central claim has
+quietly become false:
+
+| #184 said | now |
+|---|---|
+| 103 `moved` entries in 49 records | **246 in 105** |
+| `measurement` has never appeared as an axis | **6 entries use it** |
+| `mechanism` appeared exactly once | **17 entries** |
+
+So #183 and #184 were half-closed by practice and nobody amended them. **A gaps
+file that is not re-run against the corpus becomes a record of what was once
+wrong** — which is the same failure mode #245 recorded for an unrun test suite,
+in prose instead of code.
+
+### The classification
+
+All 246 hand-labelled from each entry's own `why` text, one pass, in
+`moved-how.json`, rendered by `how_moved.py` into `moved-how.md`. **Proposals, not
+decisions**, on `source_moved.py`'s rule: the ledger is a review queue, nothing
+is written into a record, and `--check` fails on drift rather than reporting a
+stale number. Nine entries sit between two values and are flagged in the report
+rather than averaged into the total.
+
+| how | n | share |
+|---|---:|---:|
+| `molecule` — a drug, biologic or vaccine that did not exist before | 91 | 37.0% |
+| `iteration` — the same tools used better: combined, re-dosed, re-trialled | 52 | 21.1% |
+| `measurement` — a test, assay, score, classification or registry did it | 22 | 8.9% |
+| `delivery` — existing tools reached more people | 22 | 8.9% |
+| `hardware` — a device, an operation, a piece of engineering | 16 | 6.5% |
+| `knowledge` — a cause established, with nothing to give yet | 16 | 6.5% |
+| `de-implementation` — progress by stopping | 10 | 4.1% |
+| `policy` — a law, a ban, a price, a statute | 8 | 3.3% |
+| `capability-lost` | 4 | 1.6% |
+| `delivery-lost` | 3 | 1.2% |
+| `resistance` — the disease moved, not the medicine | 2 | 0.8% |
+
+### The answer to the question that forced this
+
+**New instruments are 8.9% of the register's recorded progress, and 15.4% if
+every device and operation is counted as a tool. A new molecule is 37%. The
+largest single bloc — 40.2% — is `iteration` plus `delivery` plus `policy` plus
+`de-implementation`: better use of what already existed.**
+
+Three qualifications, and the first is the one that matters:
+
+1. **8.9% is a floor, not an estimate, and the register is biased against
+   exactly this category.** `moved` entries are written against axes, the axes
+   are capability axes, and #184 established that `measurement` had no
+   convention — so a measurement change had nowhere obvious to go and often went
+   unwritten. **The number counts what got recorded, in a schema that made
+   recording it awkward.**
+2. **The corpus keeps noticing the pattern without a field to hold it.** Six
+   records independently say in prose that the move was measurement:
+   *"MEASUREMENT, NOT MEDICINE"* (`childhood-all`, MRD), *"THE CLEAREST EXAMPLE
+   IN THIS REGISTER OF MEASUREMENT ALONE IMPROVING OUTCOMES"* (`osteoarthritis`,
+   the joint registries), *"Not a drug"* (`invasive-aspergillosis`,
+   galactomannan), *"A diagnostic, not a discovery"* (`mycoplasma-genitalium`),
+   *"a measurement result rather than a biological one"* (`cryptosporidiosis`),
+   *"IT REQUIRED NO NEW TECHNOLOGY"* (`cerebral-palsy`, the General Movements
+   Assessment). **Six authors reached for the same sentence because there was no
+   field.**
+3. **And the instrument thesis wins on leverage even where it loses on count.**
+   The 16 `hardware` entries include the register's largest single move in its
+   record (`osteoarthritis` 1962 — an engineer worked out a bearing that survives
+   inside a person, in a disease whose mechanism is still `partial`), the first
+   device to restore a human sense (`hearing-loss` 1984), and one of two entries
+   where the thing that moved the rating was a piece of calibrated plastic
+   (`maternal-haemorrhage` 2023). Counting entries is not the same as weighing
+   them, and this register has no weight on a `moved` entry.
+
+### Three places the proposed vocabulary does not fit, found only by applying it
+
+1. **`discovery` is three different things and together they are half the
+   corpus.** A new molecule (91), a new machine (16), and a new fact with nothing
+   attached (16) are different kinds of work by different people with different
+   funders — which is the whole reason `blockers` has `who_could`. Collapsing
+   them loses the distinction #193 was built on (*some knowledge blockers are
+   engineering blockers*) and the one #183 was built on (*the register records
+   what medicine can do, never what it knows*).
+2. **`abandonment` fuses two things with opposite signs.** Ten entries are
+   **progress by stopping** — arthroscopy, radical mesothelioma surgery,
+   prednisone in pulmonary fibrosis, colistin, antibiotics for bronchitis,
+   chemotherapy removed from a curative leukaemia regimen. Four are **capability
+   lost** — a withdrawn drug, two safety collapses, a campaign wound down. Three
+   more are **delivery lost** and were only findable by reading, because they sit
+   on `access` looking like ordinary entries. One value cannot carry a sign.
+3. **Nothing in the six can say the disease moved.** `malaria` 2023 (artemisinin
+   partial resistance reaching Africa) and `typhoid` 2016 (the first backwards
+   entry caused by the treatment itself) are not discovery, iteration,
+   measurement, delivery, policy or abandonment. **They are the pathogen
+   answering back**, and in a register holding `amr-infection`, `cre`, `mrsa`,
+   `gonorrhoea` and `tuberculosis` that is not an edge case.
+
+### The finding that makes the field worth adding rather than merely tidy
+
+**The 22 measurement-driven moves are filed under seven different axes** —
+`measurement` (6), `efficacy` (5), `toll` (4), `access` (3), `prevention` (2),
+`mechanism` (2). **Sixteen of the twenty-two are invisible to any query on the
+axis.** That is why #184 could count the axis and conclude measurement had never
+moved anything, while the corpus held twenty-two cases of it.
+
+**`axis` says which rating changed. `how` says what changed it. They are
+orthogonal and the register has been using one to guess at the other.**
+
+### What was changed, and what was not
+
+- **Added:** `moved-how.json` (the ledger), `how_moved.py` (validator and
+  renderer, with `--check`), `moved-how.md` (generated).
+- **Not added:** the `how:` field itself. Writing it into 246 entries is 246
+  rating decisions and nine declared coin-flips, and those are not a script's to
+  make. `check.py`, `SCHEMA.md` and the web tool are untouched.
+- **#120 and #184 marked `AMENDED by #248`.** #120's minimal fix survives with
+  its vocabulary widened from six values to eleven; #184's fix — adopt
+  `axis: measurement` and backfill — turns out to have been half-done already by
+  six records that invented the convention without the gap being updated.
+
+### Recount, 2026-11-07, the same day — and the guard worked
+
+`h-pylori-infection` (FND-D-0150) was written hours after the above, and
+`how_moved.py --check` **failed on its four new `moved` entries** rather than
+reporting a stale total. That is the one thing this entry was built to prevent
+happening again, and it is the first time any tool in this repository has caught
+its own obsolescence. **The corpus is now 250 entries in 106 records**; the four
+new ones are `knowledge`, `policy`, `molecule` and — the first use of the value
+invented above — **`resistance`**, for an `efficacy` rating that fell because
+clarithromycin resistance rose. Every share in the table moves by less than half
+a point and none of the arguments changes.
+
+### A fourth defect, and this one needs no field at all
+
+Classifying the new record's vaccine entry exposed the gap in the vocabulary that
+eleven values still do not cover: **a phase 3 trial reported 71.8% efficacy and
+the rating did not move.** There is no value for *something happened and nothing
+changed*.
+
+There does not need to be one. **`from == to` already says it, and nothing reads
+it.** Counted: **17 of 250 entries** are null moves — and the prose flags only
+**nine**. The eight silent ones include some of the most consequential entries in
+the corpus: `head-neck-cancer`'s larynx-preservation trial and its IMRT entry,
+`nasopharyngeal-carcinoma`'s IMRT, `mesothelioma`'s abandonment of radical
+surgery, `sepsis`'s withdrawn Xigris, `retinopathy-of-prematurity`'s bevacizumab.
+
+**So null-move-ness is a third orthogonal property, not a twelfth `how`.** The
+three compose: `axis` says which rating was in question, `how` says what happened
+in the world, `from == to` says the rating did not move. The vaccine entry is
+`how: molecule` **and** a null move, and that pair reads correctly — *a molecule
+arrived and nothing changed* — where a single value could not have said it.
+`how_moved.py` now reports the seventeen as a derived table, because it is
+computed rather than asserted and does not belong in the ledger.
+
+---
+
+## 249. Every causal edge in this register is harmful, and one of the best-established ones has a protective end · **open**
+*Forced by:* `h-pylori-ulcer` — the register's **first** record, FND-D-0001, and
+the observation that the organism it is built on cuts both ways.
+
+### The finding
+
+*Helicobacter pylori* causes peptic ulcer disease and non-cardia gastric cancer,
+is an IARC Group 1 carcinogen, and is credited with roughly four percent of all
+cancer worldwide (#247). **It is also inversely associated with oesophageal
+adenocarcinoma** — pooled OR **0.52** (95% CI 0.37-0.73) — and with Barrett's
+oesophagus, **0.64** (0.43-0.94), with no association for oesophageal squamous
+cell carcinoma, 0.85 (0.55-1.33), which is the internal control that makes the
+first two credible (Rokkas et al., *Clin Gastroenterol Hepatol* 2007, PMID
+17997357). The inverse effect **concentrates in the cagA-positive strains**, so
+the more virulent organism is the more strongly protective one.
+
+**Three things make this the right kind of case for a gaps entry rather than a
+re-rating, and the register got all three right by accident.**
+
+1. **It is not protection of the target organ.** The pooled BEACON analysis
+   reports OR **0.44** against population controls and **0.96** against *reflux*
+   controls (*Am J Gastroenterol* 2018, PMID 29880962) — the effect disappears
+   once reflux is held constant. The route is corpus-predominant atrophic
+   gastritis, less acid, less reflux. **The protection is a side effect of the
+   damage**, which is a distinction no field in this schema can draw.
+2. **The actionable question is settled the other way.** NordHePEP followed
+   **661,987** eradicated adults across five Nordic countries for 5,495,552
+   person-years and found no increase in oesophageal adenocarcinoma — SIR
+   **0.89** (0.82-0.97), *falling* to **0.73** (0.61-0.86) at 11-24 years
+   (*Gastroenterology* 2024, PMID 38513743). So the trade-off the association
+   implies does not show up where it would have to. `h-pylori-ulcer` keeps
+   `curative` and `toll: none`.
+3. **And the far end of the edge is not a record.** Oesophageal cancer is absent
+   from the register and now queued. **#247 exactly, with a different agent** —
+   the #243 cross-record check searches for edges whose both ends are records, so
+   a missing node is outside the query rather than missed. Twice in three days,
+   which makes it a property of the query and not bad luck.
+
+### What has no field, and it is checkable
+
+**`grep` for a protective exposure across 149 records returns three hits and
+none of them is one**: a vaccine that protects (`ebola`), prophylaxis that
+protects (`invasive-aspergillosis`), and an *APP* variant that protects
+(`alzheimers`) — cited there as evidence **for** causation, which is the
+amyloid hypothesis's natural experiment rather than a protective edge.
+
+**So every causal statement in the corpus runs in the harmful direction, and
+nothing forbids the other sign — there is simply no case written.** The schema's
+nearest field is `prevention: risk-reduction`, and it means *an intervention
+lowers risk*, not *an exposure lowers risk*. Those are different claims with
+different actors: one names something to do, the other names something you would
+be removing if you acted.
+
+Three consequences:
+
+1. **A harm of an intervention can land on a disease the register does not
+   hold.** Eradication's putative cost falls on oesophageal adenocarcinoma.
+   `toll` records what the treatment does **to the patient in this record**, and
+   has no slot for a risk transferred to a different entity. This is #160's
+   missing graph needing not only edges and weights (#247) but **a sign**.
+2. **The register cannot represent a sign flip across an anatomical boundary.**
+   The same organism plausibly raises risk below the gastro-oesophageal junction
+   and lowers it above, over a few centimetres of mucosa, and `gastric-cancer`
+   already carries a hole saying its own cardia and non-cardia strata diverge
+   with different causes.
+3. **And it cannot record that a question of this kind got answered.** The
+   inverse association was a live argument against eradication policy for two
+   decades; a 662,000-person cohort closed it in 2024. Nothing moved, correctly —
+   but `moved` has no way to say *a threat to this rating was tested and did not
+   materialise*, which is the same absence #248 found from the other side: the
+   register records the arrow and never the reason.
+
+**Minimal fix, and it is #160's to carry rather than a new field here**: when the
+graph is built, an edge needs `sign` alongside its weight, and `sign: protective`
+needs to be distinguishable from `kind: intervention`. Until then this is prose
+in two records' `holes` and a queue entry, which is where it has been put.
+
+### What was changed, and what was not
+
+- **`h-pylori-ulcer`**: two holes — the inverse edge with its figures and the
+  NordHePEP resolution, and a second recording that **this file is scoped to a
+  disease while the world treats the agent as the entity** (`hpv-infection` and
+  `ebv-infection` are infection records; *H. pylori* has only an ulcer record,
+  and its edges to `gastric-cancer`, gastric MALT lymphoma in
+  `non-hodgkin-lymphoma`, `anaemia` and the absent oesophageal record cannot live
+  there).
+- **`gastric-cancer`**: one hole, attached to the existing cardia-boundary hole,
+  noting that the agent's effect may change sign across the junction.
+- **`records-queue.md`**: `oesophageal-cancer` queued, with the protective edge
+  as the second of two reasons it is needed.
+- **Not changed:** no axis, no scalar, no `witness` field, and nothing in
+  `SCHEMA.md` or `check.py`. All four figures above were read on 2026-11-07 from
+  PubMed abstracts, **not from the full texts**, and that is stated in the record.
+
+---
+
+## 250. The first injury record broke six fields, and one of its blockers means the treatment arrives and kills people · **open**
+*Forced by:* `burns` (FND-D-0151), written 2026-11-07 as the register's first
+real injury after `records-queue.md` opened the injury path with one rule —
+**write one record and read what it breaks.** This is what it broke.
+
+**Every other record in this register describes a course.** Something begins,
+proceeds and is intervened upon. **An injury is an event.** It lasts seconds, and
+what remains is a person in a permanently altered state that closes off the means
+of leaving it. Six fields bend under that, one Engpass obstacle has its own
+counterexample inside it, and one blocker turns out to have a sign the schema does
+not know about.
+
+### 1. `kind` has no value for an injury — and this is #159's third forcing case
+
+The enum is `disease | syndrome | complaint`. A burn is none of them. It is filed
+as `disease`, which is the least wrong option available and is wrong. **#159 said
+it was watching for three records whose `kind` the enum cannot express, and named
+`road-injury`, `opioid-use-disorder` and a maternal record** — then the first
+injury actually written arrived before any of the three. Combined with the fact
+that those two were phantom queue entries until the same day, **#159's threshold
+has been reachable for some time and nobody could see it.**
+
+### 2. `prevalence` is the wrong field, and the right one does not exist
+
+An injury has an **incidence**; what persists is the residue. `burns` carries an
+annual incidence with the units saying so, because **there is nowhere to record
+the number the record is actually about: people alive now living with burn
+contractures and disfigurement.** GBD's own answer shows why it matters — 13.0
+million severe and **235 million mild** prevalent burns, a twenty-fold range
+produced entirely by a case definition.
+
+This is not specific to injury. `stroke`, `cerebral-palsy`, `obstetric-fistula`
+and `disorders-of-consciousness` all describe populations defined by a past event,
+and all of them carry a `prevalence` that means something different from
+`hypertension`'s.
+
+### 3. `window` holds one thing and this record has three
+
+Hours (fluid resuscitation against hypovolaemic shock), days (excision before the
+wound becomes the sepsis that kills), months (splinting and pressure before scar
+matures into fixed contracture). **Different interventions, different actors,
+different failure modes, and the third is the one that decides whether the patient
+works again.** `closes_on` is prose naming all three, and `caught_in_time: 0.25`
+is a single number over three independent gates — neither their product nor any
+one of them. `alzheimers` and `osteoarthritis` each needed a second window and got
+a paragraph; this needs a list.
+
+### 4. `toll` and `residue` are not separable, and the split is a convention
+
+Scar where the burn was is residue. Scar where the surgeon harvested the graft is
+toll. **Both are permanent scar, in the same patient, from the same episode**, and
+a reader summing the two incidence figures double-counts a person. The convention
+is stated in the record because it had to be invented to write it.
+
+### 5. `mechanism: established` is true and buys nothing
+
+This is the prediction the queue got wrong in an interesting direction. It
+expected `mechanism` to be unavailable. It is available and accurate — burn
+pathophysiology is genuinely well described — **and the injury mechanism is
+thermodynamics, so the rating buys none of what it buys elsewhere.** Everywhere
+else an established mechanism is the thing a drug could act on. Here the
+actionable science is a thermostat setting, a stove design and a building code.
+
+**The axis that is missing asks whether the EXPOSURE is controllable**, and for
+this record it emphatically is, by a legislator. #159 is circling the same hole
+from the patient's side (*an entity that exists only because somebody underwent
+something*); this is the control side of it.
+
+### 6. The sex gradient is social, and every other one here is anatomical
+
+About **84,600 of 163,000** burn deaths are female, and in the WHO South-East Asia
+Region females are about **seventy percent** — produced by who cooks over what,
+and by intentional burning. `obstetric-fistula`, `endometriosis` and
+`uterine-fibroids` are female by anatomy. **`burns` is the register's first record
+whose sex gradient is built by social arrangement**, and `strata` can carry the
+intentional-burn row without being able to say that it and the cooking row have
+the same cause upstream.
+
+### And the finding that is not about a field: a blocker with the opposite sign
+
+**`burns`' `logistics` blocker does not mean the treatment fails to arrive. It
+means the technique arrives and kills people.**
+
+At Kamuzu Central Hospital in Lilongwe, 905 burn patients were admitted over three
+years and 275 operated on. Excision within five days: **mortality 25.3%**.
+Excision after five days: **9.2%** (p = 0.001); adjusted for body surface and age,
+0.256 against 0.107 (Gallaher et al., *Burns* 2015;41(6):1353-9, PMID 26088149).
+Early excision is a major operation with large blood loss in a shocked patient,
+and it works when there is blood, an anaesthetist, intensive care and nutrition
+behind it. **Remove the building and the same operation that defines modern burn
+care becomes worse than waiting.**
+
+Every `logistics`, `cost` and `access` reading in this register assumes the same
+shape: **the thing works, and it does not reach people.** This is a third shape —
+*the thing reaches people and harms them because what it needs did not come with
+it.* `maternal-haemorrhage` says a donated implant with no theatre behind it is
+worse than nothing, and `hearing-loss` says it of donated hearing aids; **both are
+about products. This is about a technique, which cannot be withheld at a border.**
+It is gaps.md #108's threshold problem with the sign reversed, and the register has
+no way to mark a blocker whose partial clearance is dangerous.
+
+### One correction to Engpass, and the obstacle contains it already
+
+`burns`' `knowledge` blocker tags `tissue-repair` (FND-O-0002) — *can destroyed
+tissue be repaired?* — because nobody can make a deep burn heal as skin. No sweat
+glands, no hair follicles, no normal dermal architecture, contracting as it
+matures. **Every item in that record's `residue` follows from that one fact.**
+
+But the obstacle's `why_hard` lists *"liver, gut epithelium, skin"* among the
+tissues that **retain** regenerative capacity. **That is true of epidermis and
+false of dermis**, and the distinction is the whole of this record's permanent
+harm. The counterexample is inside the obstacle's own argument, and skin is absent
+from its `question`, which names myocardium, brain, alveolus, bowel and striatum.
+**FND-O-0002 should name dermis, and #249's observation applies again: a
+cross-reference is a claim and nothing checks one.**
+
+### What was changed, and what was not
+
+- **Added:** `entities/burns.yaml` (FND-D-0151 / FND-A-0152) — `established` ·
+  `curative` · `risk-reduction` · `moderate`, efficacy 0.70, access 0.20, deriving
+  `curable`, `costly`, reach 0.14, and carrying ⚑ ⧗ **⧉** because it spans
+  `curative` in a burn centre and `symptomatic` without one.
+- **Three `moved` entries**: 1968 fluid resuscitation, 1970 early tangential
+  excision, and the 2015 Malawi cohort as a **null move on `access`** — because
+  the register would otherwise record a 1970 advance as though it were available
+  to everybody at a price.
+- **A twelfth hole in #248's vocabulary, recorded and not filled.** The Malawi
+  entry is labelled `how: measurement` with the judgement noted: the real category
+  is *a study tested a transfer assumption and falsified it*, which none of the
+  eleven values names. `cerebral-palsy`'s hypothermia entry is the same shape. Two
+  instances; the threshold here has been three.
+- **Not changed:** no field was added, no enum widened, nothing in `SCHEMA.md`,
+  `check.py` or `buckets.yaml`. **151 records · 0 errors · 112 warnings** — the
+  first injury record added no warning, which is itself a mild surprise.
+- **`road-injury` is explicitly blocked on this entry** in `records-queue.md`:
+  writing it before these decisions are made means rewriting it afterwards.
+
+---
+
+## 251. Named in a dozen records and the subject of none — the third instance in a week, and the two halves have different fixes · **open; the rule is stated, the check is not built**
+*Forced by:* the microbiome. Twelve Nordstern records name it, three Engpass
+obstacles name it, and **nothing in either register had it as a subject** — found
+while checking whether skin bacteria that decide who mosquitoes bite were usable
+against malaria.
+
+### The pattern, now with three instances
+
+| what | where it was named | what it was | the fix |
+|---|---|---|---|
+| **Epstein-Barr virus** (#247) | 5 records | an **agent** with no node at all | wrote `ebv-infection`, FND-D-0149 |
+| ***Helicobacter pylori*** (#249) | 8 records | an **agent** whose only record was pointed at its ulcer | wrote `h-pylori-infection`, FND-D-0150 |
+| **the microbiome** (this entry) | 12 records + 3 obstacles | a **capability** | wrote `microbiome-control`, **FND-O-0018, in Engpass** |
+
+**The third one is different and the difference is the finding.** An agent can
+become a Nordstern record, because an agent infects people, so it has a
+prevalence, a toll, a window and an intervention ladder. **A capability cannot.
+It has no patients.** There is no burden of *not being able to change a microbial
+community*, so there is nothing for Nordstern's axes to rate, and the entity would
+have had to be mis-filed as a disease to exist here at all.
+
+**That is precisely what Engpass is for** (#164: *the register holds
+interventions, not the capabilities that produce and evaluate them*), and this is
+the first time the three-instance pattern has resolved to the other register. So
+the rule is now statable:
+
+> **A thing named across many records is an agent, a capability, or a mechanism.
+> An agent becomes a Nordstern record. A capability becomes an Engpass obstacle.
+> A mechanism becomes neither and stays inside the records that name it.**
+
+`records-queue.md` now carries that rule and uses it to rule
+`skin-microbiome-mosquito-attraction` **out** in writing — a mechanism, not an
+entity — because a striking finding with a disease attached is exactly what gets
+queued by mistake.
+
+### What the microbiome case adds that the other two did not
+
+**Most of the twelve mentions are not blockers, and the obstacle says so in its
+own `holes`.** In `colorectal-cancer`, `obesity`, `type-1-diabetes` and
+`food-allergy` the microbiome appears on a list of candidate risk factors that
+nothing has resolved — *"diet, obesity, the microbiome, antibiotic exposure"* —
+and **an item on a list of unexplained risk factors is not a demonstrated
+blocker.** Two records earn the link bottom-up: `cre`, whose own blocker says
+*"the underlying ignorance is about the ecology rather than the organism"*, and
+`malaria`, which now cites it from a new `candidate-untested` blocker. One more,
+`crohns`, is carried as `alleged`.
+
+**So the obstacle is `partly-answered` rather than `open`, and its two successes
+argue against it.** Faecal transplant cures recurrent *C. difficile* and nothing
+else after fifteen years — and it works by replacing a community that antibiotics
+had already emptied. Nasal decolonisation works and removes one organism from a
+surface reachable with a cream. **Neither is composition control in an intact
+community**, which is what every other record needs, and reading them as proof of
+principle is the optimistic error the record refuses to make.
+
+### And the meta-finding, which is now four entries old
+
+#247 found that the cross-record check built in #243 searches for **edges** and
+cannot see a missing **node**. #249 found the same thing recurring and concluded
+it was a property of the query. #250 found cross-references inside records
+asserting things — *"(queued)"* — that nothing verified. This entry found twelve
+records naming a capability that did not exist.
+
+**They are one failure: a cross-reference is a claim, and nothing in this
+repository checks one.** The counterexample is `how_moved.py --check`, which does
+verify its references and has caught drift twice in two days, both times before a
+stale number reached a report.
+
+**The check this argues for is cheap and is not built.** Take the terms that
+appear in N or more records' prose, subtract the slugs that are records,
+obstacles or queue entries, and print the remainder. It would have found EBV, *H.
+pylori*'s scope problem and the microbiome, and it would find whatever the fourth
+one is. **Not built here, because a term-frequency list is easy to write and hard
+to make say something true** — the stop-list is the whole problem, and guessing
+it would produce a tool nobody trusts. Written down so the next instance has
+somewhere to arrive.
+
+### What was changed, and what was not
+
+- **Added:** `Engpass/obstacles/microbiome-control.yaml` (FND-O-0018),
+  `kind: capability`, `resolution: partly-answered`, with two `derived` claims and
+  one `alleged`.
+- **`malaria`:** a fourth item in `witness.mechanism` — attractiveness to
+  *Anopheles* is produced by skin bacteria, not by the human (Verhulst et al.,
+  *PLoS One* 2011, PMID 22216154), **and the parasite manipulates it**, emitting
+  aldehydes that mosquito antennae detect and that make a synthetic human blend
+  more attractive (PNAS 2018, PMID 29666273). Plus a `candidate-untested` blocker
+  carrying SolarMal's two results against each other: **prevalence 29.8% lower
+  (95% CI 20.9-38.0) and clinical effectiveness 40.8% with a 95% CI of -172.8 to
+  87.1 on fifty-six episodes** (Homan et al., *Lancet* 2016, PMID 27520594). The
+  prevalence result is strong, the clinical result is uninformative, and the
+  record says both.
+- **`cre`:** `microbiome-control` added to the obstacles on the blocker that
+  already described it in prose and had nowhere to point.
+- **Not changed:** no axis, no scalar, no field, nothing in `SCHEMA.md`,
+  `check.py` or `buckets.yaml`. **151 records · 0 errors · 112 warnings; 18
+  obstacles · 0 errors.** Engpass's warning count fell by one, because an
+  obstacle nothing cited now has two citers.
+- **Not written:** `skin-microbiome-mosquito-attraction`, deliberately, and the
+  refusal is recorded in `records-queue.md` rather than left implicit.
+
+---
+
+## 252. A target validated by human genetics, hit hard, with no benefit — twice in ten weeks · **open; nothing changed, two proposals and one rating question**
+*Forced by:* `Lp(a)HORIZON` and `CARDIO-TTRansform`, two phase 3 trials reported
+August and November 2026, read after Harry Ostrer's *When genetics gets the
+target right and the drug still fails* (harryo.substack.com, Nov 2026). Neither
+disease is a record here yet, which is part of the finding.
+
+### The two results, with the numbers checked against the primary reports
+
+| | **Lp(a)HORIZON** (pelacarsen) | **CARDIO-TTRansform** (eplontersen) |
+|---|---|---|
+| target | Lp(a), an antisense oligonucleotide | transthyretin, an antisense oligonucleotide |
+| validated by | human genetics + epidemiology, causal | human genetics, causal; *TTR* variants cause the disease |
+| did the surrogate move | **Lp(a) −78.4% at one year** vs −3.2% placebo | TTR suppressed (~80%, blog figure, unverified) |
+| primary endpoint | **HR 1.02 (95% CI 0.90–1.15)**; 12.3% vs 12.1%, 511 vs 503 events, median 4.7 y, >8,300 patients | **RR 0.89 (95% CI 0.73–1.09, p=0.277)**; 381 vs 392 events |
+| the sharpest line | **Lp(a) ≥90 mg/dL subgroup: 12.3% in both arms, HR 1.00** | not on a stabiliser at baseline: nominally significant **0.71**; already on one: **no additional benefit** |
+
+**The Lp(a) subgroup is the fact to keep.** If the causal theory were right and
+the timing adequate, the people with the most of the causal agent should have
+gained the most. They gained exactly nothing: 1.00, to two decimal places. That
+is a cleaner refutation of *lower the validated thing, later in life* than the
+headline, and the blog does not mention it.
+
+### What the register already gets right, and it is worth saying so
+
+The complaint this was read against was *the obsession that everything is
+genetic*. **The schema already refuses that move**, in one sentence of
+`SCHEMA.md`: `mechanism: established` means *a causal chain from cause to
+phenotype that would survive a refutation attempt* — not *the gene is known*.
+
+The proof is `huntington`. A fully penetrant repeat expansion in one gene,
+dose-dependent, the most completely genetically-explained entity in the
+register — and it is rated **`partial`**, because the chain from the repeat to
+neuronal death has a named hole. A register that equated genetics with mechanism
+would have rated it `established` and been wrong in exactly the way these two
+trials were wrong. `alzheimers` is `partial` for the same reason.
+
+The shape is also already named twice. **#172** says an entity can be defined by
+a surrogate its best treatments bypass. **FND-O-0010**'s `alzheimers` claim says
+*"the model reproduced the biomarker and not the disease."* What is new is the
+instance, and the instance breaks the frame both of those are written in.
+
+### What is genuinely new — two things
+
+**1. `efficacy` has no *on top of what*, and that is now the whole question.**
+Eplontersen is two different drugs depending on what the patient is already
+taking: a working one in the untreated, and nothing at all on top of a
+stabiliser. The axis records *best-demonstrated* efficacy, which silently means
+*against the comparator in the trial that demonstrated it* — and that denominator
+is never written down. A register written from CARDIO-TTRansform would record
+0.71-shaped efficacy for eplontersen and would be describing a population that
+most ATTR-CM patients are no longer in.
+
+This is not #63 (does `efficacy` measure the pathogen or the patient) and not
+#172 (is the defining criterion the harm). It is a third thing: **efficacy
+against *nothing* and efficacy against *current care* are different numbers, and
+the register prints one of them without saying which.** The gap grows with the
+field — every disease that acquires a first effective drug makes the next drug's
+efficacy an incremental question.
+
+*Minimal move, not taken:* `efficacy.units` is already required to be a sentence.
+One more clause in it — *added to what* — costs no schema change, and the records
+where it bites are the ones with a `suppressive` or `disease-modifying` rung
+already filled.
+
+**2. FND-O-0010 is narrower than its own best claim.** It is called *What does a
+result in a mouse tell you about a human?*, `kind: tooling`. But its strongest
+claim, on `alzheimers`, has **no mouse in it** — a biomarker moved and the
+disease did not. And these two trials have no mouse in them *at all*: human
+genetics was the thing that was supposed to replace the mouse, and the surrogate
+moved 78% without the patient.
+
+The obstacle underneath is one level up: **what does any pre-trial evidence tell
+you about an outcome in a person?** The mouse is one instance. A genetically
+validated target is another, and a more expensive one, because it is trusted
+more. Rescoping FND-O-0010 would give it its own amyloid claim honestly for the
+first time.
+
+*A judgement call for the register's owner, not taken here:* rescope and rename
+FND-O-0010, or mint a second obstacle beside it. Against minting: Engpass's own
+threshold is two citing records and there is no `attr-cardiomyopathy` record and
+no `lipoprotein-a` record to cite it. Against rescoping: `animal-translation`'s
+scaling argument (body mass, power laws) is genuinely about animals and would sit
+oddly under a broader name.
+
+### The part of the complaint this article does not support
+
+The reading also carried *there are limits to how much a drug can target one
+thing without hurting others*. **Neither of these failures is that.** Both drugs
+hit their target cleanly; eplontersen's safety was unremarkable, and pelacarsen's
+only real signal was tolerability — **discontinuation for adverse events 20.6% vs
+7.5%**, which is a nuisance-burden fact, not a selectivity one. These are
+failures of *benefit*, not of *collateral harm*.
+
+The register's home for collateral harm is `toll` ("what the cure costs"),
+which exists and is used. It is a separate argument with separate cases, and
+filing these two trials under it would be the kind of borrowed-evidence move the
+register is supposed to catch.
+
+### What the register looks like when asked the question directly
+
+`mechanism: established` **AND** `efficacy ≤ 0.60`: **36 of the 105
+established-mechanism records**, a third of them. The list is not one story —
+`rabies` and `dracunculiasis` are there because prevention is the answer and the
+axis cannot see it, `measles` because it is `symptomatic` by design. But
+`type-2-diabetes` (0.35), `stroke` (0.5), `copd` (0.55) and `osteoporosis` (0.5)
+are the article's category exactly: the chain is written down, something is aimed
+at it, and most patients are not helped.
+
+**Knowing the cause buys less than `knowledge_gap` implies.** That figure is
+`deaths × (1 − efficacy)` and is read as *what we do not yet understand*. A third
+of the established rows say the understanding is already there and is not the
+binding constraint — which is #164's argument arriving from a new direction.
+
+### A rating question, flagged and not decided
+
+Should `ischaemic-heart-disease` carry a **null `moved`** for Lp(a)HORIZON — a
+dated entry where `from == to`, `how: evidence-incomplete`, recording that a
+validated causal factor was lowered 78% in 8,300 people for 4.7 years and no axis
+moved? `moved-how.json` has the vocabulary and `how_moved.py` already derives a
+Null moves table. **The case for it:** a negative trial of that size is the most
+informative thing that happened to that record this year, and the register
+currently has no way to show it happened. **The case against:** Lp(a) is a risk
+factor and the record is a disease, so the entry would attach a result about an
+exposure to an entity it is only one contributor to.
+
+### Not changed
+
+No axis, no scalar, no field, no record, no obstacle. Nothing in `SCHEMA.md`,
+`check.py`, `buckets.yaml` or `moved-how.json`. **151 records · 0 errors;
+18 obstacles · 0 errors.** Two records queued and not written:
+`attr-cardiomyopathy` and `lipoprotein-a-elevation`, the second of which is a
+risk factor and would land on #219's "rateable only by naming the population".
+
+---
+
+## 253. The thing that actually prevents a foodborne disease is excluded from the verdict by rule, and three records hit it in one pass · **open; FOUR instances now, the schema decision is not taken** — AMENDED 2026-11-10 by `abdominal-aortic-aneurysm`: the fourth instance is a randomised screening programme, so the excluded prevention is neither behavioural nor environmental but clinical
+*Forced by:* `listeriosis`, `non-typhoidal-salmonellosis` and `botulism`, written
+together 2026-11-09 out of a foodborne audit prompted by a question about
+"fried rice syndrome".
+
+### The rule, and why it was right
+
+`SCHEMA.md` says it plainly: **`risk-reduction` does not count** toward
+capability. *"Smoking cessation is real and is not a vaccine."* The rule exists
+so that a disease nobody can prevent cannot be promoted by gesturing at lifestyle
+advice, and it has been correct every time it has fired until now.
+
+### What three records in a row just did to it
+
+All three rate `prevention: risk-reduction`, correctly. And in all three **the
+single most effective thing anyone does about the disease is the thing that
+rating excludes:**
+
+| record | what actually reduces it | what medicine contributes |
+|---|---|---|
+| `listeriosis` | refrigeration limits, shelf-life rules, environmental sampling in ready-to-eat plants, recalls | ampicillin, after the fact |
+| `non-typhoidal-salmonellosis` | **farm-level control**: the Nordic poultry programmes, the UK's vaccination of laying hens, followed by large falls in human cases | an antibiotic that leaves a fifth of invasive patients dead |
+| `botulism` | canning process control; no honey under one year | a ventilator, and an antitoxin that reverses nothing |
+
+**This is not lifestyle advice and it is not smoking cessation.** It is a
+demonstrated, national-scale, auditable intervention with a measurable effect on
+human incidence — it simply is not performed on a patient, by a clinician, and
+has no product. Vaccinating a hen is as real as vaccinating a child and the
+schema can only see one of them.
+
+### Why it is not fixed by promoting the rating
+
+The obvious move — let a demonstrated population-scale programme count as
+`prophylaxis` — is wrong, and the register already knows why. `prophylaxis` means
+the *individual* is protected, and the `preventable` capability (forced by
+measles, gaps #66) means *"don't get it, because if you do we cannot help you
+much"*. Neither is true here: a person eating supermarket chicken is not
+protected the way a vaccinated person is, they are **exposed to a lower
+prevalence**, which is a different quantity with a different failure mode. One
+bad plant and the protection is gone for everyone at once, which is not how
+`prophylaxis` behaves.
+
+So the gap is not a missing rung. **It is a missing axis**: the register can say
+what is done to a patient and cannot say what is done to the environment the
+patient eats from.
+
+### The second half: it is nobody's in the register's sense
+
+Each of the three records files a `policy` blocker with `who_could:
+[government, regulator, legislator]`, and that is honest but it is also the
+register saying *not us*. The blocker taxonomy's whole purpose is that different
+blockers need different actors — and for these three the actor is a food
+regulator, who will never read a disease register and whose instrument is an
+inspection regime.
+
+**That is #230 completing its own argument.** #230 found that coverage tracks
+control programmes rather than burden, and read it as a selection bias in who
+writes records. This pass shows the deeper version: *the programmes that work
+here are not clinical, so the diseases never acquired clinical identities, so
+nobody wrote the records, so the register inherited the bias.* `typhoid` has a
+record and a vaccine and a Gavi programme; non-typhoidal *Salmonella* kills more
+people and had nothing until today.
+
+### The minimal move, not taken
+
+Not a new rung on `prevention`. A **separate optional field** — call it
+`population_control` — carrying what is done upstream of the patient, who does
+it, and whether it is demonstrated, exactly as `blockers` carries `standing`.
+It would be read by nothing at first, which is the correct starting state, and it
+would stop the register from printing *prevention: risk-reduction* as though
+refrigeration law and dietary advice were the same kind of claim.
+
+**Three instances is above this corpus's usual bar of two.** The decision is the
+register owner's and the field is not built.
+
+### Related, and deliberately separate
+
+The `moved` entry `non-typhoidal-salmonellosis|2015|prevention` records iNTS
+incidence falling because **antiretroviral rollout, malaria control and child
+nutrition improved** — three other diseases' programmes, with nothing aimed at
+*Salmonella*. It is classified `delivery` in `moved-how.json` and the
+classification is wrong in the way that matters: the tools were not this
+disease's tools. **That is a candidate twelfth value — `upstream` — and it is
+#248's problem, not this one's.**
+
+### Not changed
+
+No axis, no enum, no field. `SCHEMA.md`, `check.py` and `buckets.yaml` untouched.
+**154 records · 0 errors; 18 obstacles · 0 errors.**
+
+### AMENDMENT 2026-11-10 — the fourth instance, and it breaks the second half of this entry
+
+*Forced by:* `abdominal-aortic-aneurysm`.
+
+The **Multicentre Aneurysm Screening Study** randomised 67,770 men aged 65–74 to
+an invitation to one ultrasound or to nothing. Over 13 years: **224 AAA-related
+deaths in the invited group against 381 in the control group, a 42% reduction
+(95% CI 31–51)**, all-cause mortality down 3%, and 216 men needing to be invited
+to save one death. The UK announced a national programme in 2008; Sweden runs
+one; the USPSTF recommends a one-time screen.
+
+**The record reads `prevention: risk-reduction` and the derived capability is
+unaffected.** A country with a national screening programme and a country
+without produce the identical record.
+
+### Why this instance is different from the three foodborne ones
+
+This entry's second half said the excluded programme *"is nobody's in the
+register's sense"* — the actor is a food regulator who will never read a disease
+register and whose instrument is an inspection regime. **That argument does not
+apply here at all.** The actor is a health system, the instrument is an
+ultrasound probe and a list of men turning 65, and the evidence is a randomised
+controlled trial with a number needed to invite. It is as clinical as anything
+in the register.
+
+So the exclusion is **purely the schema's**, with no mitigating story about the
+actor being out of scope. That makes the four instances span the full range of
+what upstream action looks like:
+
+| instance | what is done upstream | who does it |
+|---|---|---|
+| `listeriosis`, `non-typhoidal-salmonellosis`, `botulism` | the food supply is regulated | a food regulator |
+| **`abdominal-aortic-aneurysm`** | **a population is screened** | **a health system** |
+
+### What it does to the proposed field
+
+#253 proposed `population_control` — what is done upstream of the patient, who
+does it, and whether it is demonstrated. **A screening programme fits that shape
+and sits badly in that name.** Screening does not control a population's
+exposure; it finds disease that is already there, earlier, in people who have it.
+The thing those four instances share is not *control* — it is that **the act is
+performed on a population rather than on a patient, and the register can only
+describe acts performed on patients.**
+
+Note what the register *can* already say: `window.caught_in_time` carries the
+fraction found in time, and the `diagnosis` blocker carries why they are not. So
+screening is representable in the record's prose and invisible in its verdict,
+which is the precise shape of the complaint. Two more instances would be worth
+looking for before naming the field, and the obvious candidates are already in
+the corpus — `cervical-cancer` and `colorectal-cancer` both rest on screening
+programmes with randomised evidence, and neither record's capability reflects it.
+**That would take it to six, and it is a sourcing-free pass over records that
+already exist.**
+
+---
+
+## 254. The overtreatment flag asks whether the marker is good, and overtreatment is caused by the base rate · **open; two records rated honestly, the flag fires on neither**
+*Forced by:* `abdominal-aortic-aneurysm` and `thoracic-aortic-aneurysm`, written
+as a pair 2026-11-10.
+
+`SCHEMA.md` derives **overtreatment risk** from three things: real capability, a
+`costly`/`harsh` toll, and **`prognostic: none`** — *"people permanently harmed
+because nobody could say who needed it."*
+
+Both aneurysm records have real capability and a `costly` toll. Both perform
+**prophylactic surgery on people with no symptoms**, on a sternotomy or a
+laparotomy, triggered by a diameter. Both overtreat, and in one of them the
+overtreatment is established by a randomised trial rather than asserted. **The
+flag fires on neither, because both rate `prognostic: partial`, and `partial` is
+the honest rating.**
+
+### The two demonstrations, because they are different in kind
+
+**Abdominal — a randomised trial showing the operation is net-neutral.** The UK
+Small Aneurysm Trial randomised 1090 patients with symptomless 4.0–5.5 cm
+aneurysms to immediate open repair or surveillance: all-cause mortality **HR 0.94
+(95% CI 0.75–1.17, p=0.56)**, against a **30-day operative mortality of 5.8%**.
+The ruptures prevented and the deaths caused cancel. A trial that finds nothing
+is, here, a trial that found that a share of those 563 operations were performed
+on people who were never going to rupture — and nobody could say which.
+
+**Thoracic — a registry showing the threshold is in the wrong place.** IRAD
+examined 591 type A dissections: **349 (59%) below 5.5 cm, 229 (40%) below
+5.0 cm**, mortality unrelated to size, and the registry's own conclusion that the
+majority *"do not fall within current guidelines for elective aneurysm
+surgery."*
+
+### Why the rating is nonetheless `partial`, and why that is the finding
+
+Diameter is a *genuinely informative* marker. Rupture and dissection hazard rise
+steeply with it; the relationship is monotone, reproducible and the basis of
+every guideline on earth. `prognostic: none` would be false.
+
+**What makes the overtreatment is the base rate, not the marker.** Aortas below
+the threshold vastly outnumber aortas above it, so even a good marker evaluated
+at a high-specificity operating point sits below most of the events. The
+quantity that decides whether a prophylactic operation is being wasted is not
+*how informative is the marker* but *what fraction of the people over the line
+would have had the event* — a positive predictive value, which depends on
+prevalence and is nowhere in this schema.
+
+So the derivation asks a question about **instrument quality** and the thing it
+is trying to detect is a property of **the population the instrument is pointed
+at**. Those come apart, and these two records are where they come apart
+visibly.
+
+### Why the ratings were not bent
+
+Both could have been rated `prognostic: none` and the flag would have fired on
+exactly the two records where the register most wants to say *overtreatment*.
+That would have been a worse register: the rating would then mean *"the thing we
+want flagged"* instead of *"what is known about the course if left alone"*, and
+the next reader could not tell which. **The standing rule is that a judgement
+call is flagged rather than settled by moving a rating**, and both records carry
+the flag in `holes`.
+
+### Minimal moves, none taken
+
+1. **Add positive predictive value at the operating point** as an optional field
+   under `measurement`. Honest, and it is a number almost nobody publishes.
+2. **Let `prognostic` carry a second grade** — informative/uninformative *and*
+   well-sited/badly-sited. Two axes where there is one.
+3. **Loosen the flag to `prognostic` in (`none`, `partial`)** where the
+   intervention is prophylactic on an asymptomatic person. Cheapest, and it
+   would misfire on records where `partial` is good enough.
+4. **Declare prophylactic-on-asymptomatic as its own property** and derive the
+   flag from that plus any `prognostic` short of `good`. This is the one to
+   prefer, because the register has other instances already: `osteoporosis`
+   treats a T-score, `hypertension` treats a number, and in both the harmed
+   patient is someone who felt well.
+
+**Nothing changed.** Both records rate `prognostic: partial`, both name this
+entry in `holes`, and `check.py` is untouched.
+
+---
+
+## 255. Carving an entity finer than its burden source makes a `sourceable` field unsourceable, and the sourcing model cannot see it · **open; the tier is computed from the field path and the field path is not where the problem is**
+*Forced by:* splitting `aortic aneurysm` into `abdominal-aortic-aneurysm` and
+`thoracic-aortic-aneurysm` on 2026-11-10, at the register owner's instruction and
+for good clinical reasons.
+
+### The three tiers assume the entity is given
+
+`SCHEMA.md`'s sourcing model assigns a tier **from the field path**: everything
+under `burden.*` is **`sourceable`** — 205 scalars where *"a citation settles
+it"*, because *"GBD and WHO publish these against an identifier this register now
+carries."*
+
+That is true. GBD publishes **aortic aneurysm** — and the GBD 2017 analysis names
+its own subject as *"aortic aneurysm (thoracic and abdominal)"*. ICD-10 does the
+same: **I71 is *aortic aneurysm and dissection***, with abdominal and thoracic
+subdivisions beneath it and mortality published at the parent. The 2019 figure is
+citable to the digit: *"The number of aortic aneurysm-related deaths have
+increased from 94,968 in 1990 to 172,427 in 2019"* (J Vasc Surg 2024, DOI
+10.1016/j.jvs.2024.02.025).
+
+**And it is citable for an entity this register has chosen not to hold.** The two
+records that exist carry `1.15e5` and `5.7e4`, `src: reasoning`, on a two-thirds
+split the literature's shape suggests and nobody publishes. **They sum to the
+GBD total by construction rather than by evidence.**
+
+### The defect, stated precisely
+
+The tier is a property of **how the entity is carved**, not of the field name.
+`burden.deaths` is `sourceable` when the register's entity matches a published
+cause and `judged` when it does not — and the register decides the carving. So
+the one tier where *a citation settles the question* contains an unknown number
+of scalars where no citation can, and the count of 205 reads as a backlog of
+lookups in the same way the *"0 of 1,582 sourced"* banner did, which is the
+failure this three-tier split was built to fix.
+
+### It is not the same as #160 or #230
+
+**#160** is double counting — the same burden appearing in two records.
+**#230** is selection bias in which diseases get records at all. This is neither:
+both records are correct, the entities are real and distinct, nothing is counted
+twice, and the figure that cannot be sourced is the one that *could* be sourced
+before the split.
+
+The mechanical half is also now checkable. Neither record's Mondo term carries an
+**`ICD10WHO`** xref — `MONDO:0005350` and `MONDO:0005396` map to DOID, EFO, MeSH,
+SCTID, UMLS and an ICD-11 foundation entity and not to the one flavour
+`icd-coverage.md` identifies as joining to the WHO Mortality Database. So these
+two sit in that report's 19-record no-join-key group, which is the same finding
+arriving from the identifier side.
+
+### What it predicts, which is the reason to write it down
+
+**Every future split does this, and splits are how this register improves.**
+`stroke` is the one to look at: it carries three mechanisms with opposite
+treatments in one record and `gaps.md` already says *"a record where one
+stratum's mechanism was `established` and another's `correlates` could not be
+written at all."* Splitting it is the right move clinically and would take ~3.3M
+attributed deaths — the largest single `knowledge_gap` in the register — from
+sourceable to apportioned.
+
+### Minimal moves, none taken
+
+1. **Compute the tier from the entity as well as the field.** A record declares
+   whether its `burden` entity matches a published cause; `sourceable` requires
+   both. Honest, and it is a new required field on 158 records.
+2. **Let a scalar carry `src: apportioned`**, with the parent figure's citation
+   and the split's basis — which is what these two records do in prose now. A
+   fourth `src` word, and the first one that is neither a citation nor a
+   confession of not having one.
+3. **Report the sourceable count with an exclusion line**, the way the
+   knowledge/delivery totals already do.
+
+**Nothing changed.** `SCHEMA.md`, `check.py` and the tier function are untouched;
+both records state the problem in `holes` and carry the parent citation in
+`burden.note`.
+
+### Not changed, and worth stating
+
+**158 records · 0 errors · 124 warnings. 19 obstacles · 0 errors · 4 warnings ·
+50 untagged knowledge blockers. 281 `moved` entries, all classified, no drift.**
+
+---
+
+## 256. The mental-health bucket was opened on a rule that selects the diseases which stopped being called mental illness · **open; three records written, the selection effect is the finding**
+*Forced by:* `anti-nmda-receptor-encephalitis`, `narcolepsy-type-1` and
+`wilsons-disease`, written as a set on 2026-11-11, at the register owner's
+instruction and on his stated rule: *start where a confirmed mechanical thing is
+proven.*
+
+### The rule is good and it is not neutral
+
+The register already held six psychiatric or psychiatry-adjacent records —
+`schizophrenia`, `bipolar`, `depression`, `me-cfs`, `pots`, `mcas` — and **not
+one of them rates above `partial` on mechanism.** The best of them says so about
+itself, in `schizophrenia`'s own witness:
+
+> A large part of what looks like established mechanism here is knowledge of
+> **how the drug works**, not of how the disease works. [...] Rating `partial`
+> places this record in `known & treatable`; a stricter reading would rate
+> `correlates` and move it beside `bipolar`.
+
+So "start where mechanism is proven" could not start with any of them. What it
+selects instead is visible the moment the three new records are lined up beside
+the three old ones:
+
+| | mechanism | diagnostic | intervention | still called psychiatric? |
+|---|---|---|---|---|
+| depression | correlates | **clinical** | symptomatic | yes |
+| bipolar | correlates | **clinical** | suppressive | yes |
+| schizophrenia | partial | **clinical** | suppressive | yes |
+| **anti-NMDA receptor encephalitis** | **established** | **objective** | **curative** | **no — neurology, since 2007** |
+| **narcolepsy type 1** | **established** | **objective** | suppressive | **no — sleep medicine, since 2000** |
+| **Wilson's disease** | **established** | **objective** | suppressive | **no — hepatology, since 1956** |
+
+**The rule does not select mental illnesses with mechanisms. It selects former
+mental illnesses.** Every one of the three left psychiatry on the day its
+mechanism was found, and the date it left is the date in its own `moved` block.
+
+### Why that is a finding rather than a complaint
+
+Because it is the same event, four times, and the register can date all four.
+
+- **General paresis of the insane** filled a large share of asylum beds; it was
+  tertiary syphilis, and penicillin emptied those wards. The register already
+  carries it, inside `syphilis`, as a residue of an infection rather than as a
+  psychiatric entity — which is itself the reclassification.
+- **Wilson's disease**, 1912 and 1948 and 1956: a movement disorder and a liver
+  disease in the same families, then a metal, then an oral chelator.
+- **Narcolepsy type 1**, 2000: cataplexy was read as hysteria and sleepiness as
+  laziness until somebody counted the hypocretin neurons and found 85–95% of
+  them missing.
+- **Anti-NMDA receptor encephalitis**, 2007: acute psychosis in a young woman,
+  an antibody, a teratoma, and recovery.
+
+**"Mental illness" is partly a statement about what has not been found yet**,
+and this register — which rates mechanism explicitly, separately from treatment,
+on a closed scale — is an unusually good instrument for saying so, because it
+can show the category shrinking.
+
+### The cost of the rule, stated plainly
+
+**Burden and mechanism point in opposite directions here, and sharply.**
+Anti-NMDA receptor encephalitis has a few thousand recognised cases a year.
+Depression has hundreds of millions of people and is rated `unsolved`. A bucket
+built by selecting on mechanism will be rigorous and will describe almost none
+of the suffering the bucket is named after.
+
+That is **#230's shape** — coverage tracking programmes rather than burden — with
+a different driver. #230 found a selection bias in *who writes records*. This is
+a selection bias in *what counts as rateable*: the axes reward a chain, and
+psychiatry's largest entities do not have one, so an honest register will always
+have its best psychiatric records be its least important ones.
+
+### What is NOT claimed
+
+Not that depression or schizophrenia will turn out to be autoimmune, or
+metabolic, or anything else. Four reclassifications in a century is four, and
+the base rate for *"this syndrome will dissolve into mechanisms"* is unknown.
+The register's job is to hold the dates, not to extrapolate from them.
+
+Nor that the clinical records are lesser. `schizophrenia` is `suppressive` and
+`managed`: antipsychotics work, in roughly seven in ten, which is a better
+treatment result than two of the three new records can claim.
+
+### Minimal moves, none taken
+
+1. **A `reclassified` or `formerly` field** — what this entity used to be filed
+   as, and the dated event that moved it. Four instances exist; it would make
+   the shrinkage countable instead of narrated. It is also one more field on a
+   schema that resists them.
+2. **Report the bucket's burden-weighted coverage** beside its count, so
+   "six mental-health records" never reads as six-sixths of anything.
+3. **Write the burden end anyway.** `anxiety-disorders`, `PTSD`,
+   `alcohol-use-disorder` and `opioid-use-disorder` are all in or near the queue
+   and all would rate badly. A bucket that contains only its own best cases is
+   the bias this entry describes, committed deliberately.
+
+**Nothing changed.** No field, no axis. Three records written, each naming this
+entry in `holes`.
+
+---
+
+## 257. `mechanism` rates a chain and never says where the chain is allowed to start · **open; three records in one pass, one rating is a coin-flip**
+*Forced by:* `narcolepsy-type-1`, with `wilsons-disease` and
+`anti-nmda-receptor-encephalitis` as the supporting instances, 2026-11-11.
+
+`SCHEMA.md` defines the axis in one sentence: **`established` means a causal
+chain from cause to phenotype that would survive a refutation attempt**;
+`partial` means the chain has a named hole.
+
+It does not say where *cause* begins. For most records that is invisible,
+because the entity and its cause are the same object — a pathogen, a mutation.
+For these three it decides the rating.
+
+### Narcolepsy type 1, where the two readings give two different values
+
+**Reading A — the entity is hypocretin deficiency.** That is literally the
+diagnostic criterion: CSF hypocretin-1 ≤110 pg/mL. From there the chain is
+complete, and complete in the strongest form this register recognises, because
+it was tested by *replacement*: 1999 found the receptor and the ligand in two
+species from two directions, 2000 found 85–95% of the neurons gone in human
+brains with the intermixed MCH neurons spared, and 2026 put the signal back with
+an orexin-2 agonist and the phenotype went. **`established`.**
+
+**Reading B — the entity is the autoimmune disease that destroys hypocretin
+neurons.** Then the chain has a named and sizeable hole: no autoantibody has
+been identified, the T-cell target is not confirmed, and the best evidence is
+circumstantial — the HLA-DQB1*06:02 association, post-infectious onset, and a
+vaccine episode. **`partial`.**
+
+The record takes Reading A and flags it. **Both are defensible from the same
+sentence in the schema.**
+
+### The other two, same shape, lower stakes
+
+- **Wilson's disease.** `ATP7B` → copper accumulation → deposit sites →
+  phenotype is complete and reversible by removing the copper. What is
+  unexplained is *which* phenotype: siblings with identical genotypes diverge by
+  organ and by decades. Rated `established`, on the reasoning that the chain to
+  *a* phenotype is intact. The counter-case is in the register already —
+  `msmds` is `established` partly because it explains *every* organ by one step,
+  and `huntington` is `partial` because it does not explain the cell
+  selectivity. **Three records, three different treatments of the same question.**
+- **Anti-NMDA receptor encephalitis.** Antibody → receptor internalisation →
+  syndrome is established to the point of being reversible and titre-dependent.
+  What provokes the antibody is unknown in 60% of patients. Rated `established`,
+  because the entity is defined by the antibody.
+
+### What the register cannot say
+
+**"Complete from here down, open above here."** One enum value covers a chain
+that is finished within the entity and one that is finished all the way to first
+causes, and a reader cannot tell which they are looking at without reading the
+witness. `huntington` sits at `partial` with a hole *inside* the entity; these
+three sit at `established` with holes *above* it. Those are different epistemic
+situations rated with the same word.
+
+It also interacts with #135, which observed that the axis cannot tell knowledge
+of how the drug works from knowledge of how the disease works. This is the
+neighbouring defect: the axis cannot tell *how far back* the knowledge goes.
+
+### Minimal moves, none taken
+
+1. **A second, optional value — `mechanism_upstream`** — rating whether what
+   causes the cause is known. Cheap, honest, and one more field.
+2. **Require the witness to name where the chain starts**, as a convention
+   rather than a field. Costs nothing and is unenforceable, which is the
+   objection #251 already raised about anything asserted only in prose.
+3. **Rate the chain to the entity, always, and say so in `SCHEMA.md`.** This is
+   what all three records did, and writing the convention down would at least
+   make it a rule rather than three independent judgements that happened to
+   agree.
+
+**Nothing changed.** `SCHEMA.md` and `check.py` untouched; the three records
+carry the question in `holes` and `narcolepsy-type-1` flags its own rating as
+arguable.
+
+### Not changed
+
+**161 records · 0 errors · 133 warnings. 19 obstacles · 0 errors. 293 `moved`
+entries, all classified, no drift.**

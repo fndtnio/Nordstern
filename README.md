@@ -1,6 +1,6 @@
 # Nordstern
 
-> **Experimental.** This is a schema under test, not a data source. 145
+> **Experimental.** This is a schema under test, not a data source. 148
 > diseases rated by hand, mostly from memory; 71 of roughly 2,400 empirical
 > numbers carry a citation. The ratings are meant to be argued with. Nothing
 > here should be cited as a fact about medicine without reading the record and
@@ -73,6 +73,28 @@ Disease Ontology. The only IDs Nordstern creates are for its own records
 (`FND-D-NNNN`) and ratings (`FND-A-NNNN`), and the register is append-only, so
 a citation keeps resolving.
 
+## The one number
+
+> A disease is **solved** when medicine can end it, the treatment reaches most
+> of the people who have it, and it costs them nothing permanent.
+
+The front page opens with the share of rated diseases that meet all three.
+It is a **count with its definition printed**, not a score: each clause is a
+fact the register already derives for every record (`capability` is curable
+or preventable; `reach` is at least 0.6, the floor of the `mostly` band; `terms`
+is clean), and `check.py` computes the three counts (`solved_staircase`) and
+freezes them into every snapshot, so a later pass can say what the number was
+and whether it moved. The staircase under the number — how many medicine
+can end, how many of those it delivers, how many of those leave no mark — is
+the register's thesis in three lines.
+
+What the number does not say, and the page says instead: it counts diseases,
+not people; it counts the records rated so far, not medicine; the 0.6 floor is
+a line; and prevention has no reach number in the schema (gaps.md #109), so a
+`preventable` record passes the reach step by assumption. An earlier version of
+the front page said there would never be a single score. That was right about
+averages and wrong about counts.
+
 `SCHEMA.md` is the full specification. `gaps.md` is the design log: every
 schema decision, named for the record that forced it.
 
@@ -100,10 +122,16 @@ python3 check.py --json | jq -r '.records[] | select(.derived.orphaned and
 
 **The web pages** are static files built from the YAML and committed:
 
-- `web/index.html` — **the map.** The derived state of the register as charts;
-  every figure links to the query that produces it.
-- `web/query.html` — **the tool.** A query bar over the whole register, with
-  the spec at `?spec`. The query lives in the URL, so a view is a link.
+- `web/index.html` — **the number.** One figure first: the share of rated
+  diseases that are *solved*, with its definition printed under it and the
+  three counts it falls through. See *The one number* below.
+- `web/query.html` — **the diseases.** One row each, five columns in plain
+  words (what it does to you · treatment · prevention · how many it reaches);
+  the coded columns are behind *all columns*. A query bar over the whole
+  register, with the spec at `?spec`. The query lives in the URL, so a view is
+  a link.
+- `web/readings.html` — **the readings.** The same records read 26 ways, as
+  charts; every figure links to the query that produces it.
 
 ```
 capability:curable reach:<0.5            space means AND
@@ -140,8 +168,8 @@ python3 mondo_sync.py               # checks every id against the live ontology
   against which release.
 - `source_moved.py`, `moved-sources.md` — the first sourcing pass, against
   PubMed. The tool copies a quote out of a paper; it cannot compose one.
-- `web/` — the map, the tool, the query language (`query.js`), the built
-  artifacts, and their tests.
+- `web/` — the number, the diseases, the readings, the query language
+  (`query.js`), the built artifacts, and their tests.
 - `Engpass/` — a sibling register of *obstacles*, so that a blocker can say what
   open question it is waiting on, and the obstacle can say how many diseases
   answering it would unblock. It reads Nordstern's built artifact and nothing

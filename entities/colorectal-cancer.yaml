@@ -404,6 +404,41 @@ holes:
     the strata carry the honest numbers.
   - The young-onset rise is stated as unexplained because it is. Any number in
     this record about people under fifty is moving.
+  - >
+    **THE FIRST LARGE DESCRIPTION OF YOUNG-ONSET TUMOURS, AND IT DOES NOT SAY
+    WHY.** Porter et al., *Nature Medicine*, 29 October 2026
+    (doi:10.1038/s41591-026-04721-y), built a single-nucleus RNA-seq atlas of
+    189 frozen primary resections — 54 diagnosed before fifty, 135 at fifty or
+    after — reading about 858,000 nuclei, treating age as a continuum rather
+    than a split, and adjusting for tumour location, stage, sex and prior
+    treatment. Validation in a further 564 tumours by gene activity and 712 by
+    image analysis. In the commonest subtype the younger patients' tumours
+    carried a higher proportion of connective and supporting cells relative to
+    cancer cells; long non-coding RNA activity was higher, much of it in RNAs
+    whose function is unknown; and signalling patterns were consistent with
+    invasion.
+    **It describes how these tumours differ. It does not touch what caused
+    them**, and the sentence in the `knowledge` blocker above — that the rise
+    under fifty is unexplained — stands exactly as written.
+    Why it bears on this record anyway: everything here about young-onset
+    disease records a response that is a threshold. The screening age moved from
+    fifty to forty-five, which addresses when the disease is looked for and
+    nothing else. If young-onset colorectal cancer is a biologically distinct
+    tumour ecosystem rather than the same disease arriving earlier, a threshold
+    is the wrong instrument. **That is a larger claim than the paper makes and
+    is not asserted here.**
+    Limits, and they are real. Retrospective archived surgical specimens from
+    one hospital system, so only resected tumours are in it and the stage and
+    operability mix is selected. No effect sizes were available to this note.
+    The authors state that the differences are not shown to make the disease
+    more aggressive. And immune cells were sparse in the data, so this says
+    nothing about the second half of the `knowledge` blocker — why
+    microsatellite-stable metastatic disease is immunologically cold.
+    **Nothing in this record is re-rated on it.** No scalar moves, `mechanism`
+    stays `established`, and the knowledge blocker stays as it is.
+    Read 2026-11-05 from the Dana-Farber news release announcing the paper, not
+    from the paper itself; the DOI above was recovered by search and has not
+    been checked against the article.
   - Screening ages — fifty, then forty-five — are thresholds somebody chose, and
     the register records the consequence and not the choice (gaps.md #90).
 

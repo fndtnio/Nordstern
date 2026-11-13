@@ -117,6 +117,54 @@ holes:
   - Rising antibiotic resistance is eroding `efficacy` over time; the register
     needs to distinguish a rating that fell because the world changed from one
     that fell because we learned something.
+  - >
+    **THE SAME ORGANISM IS INVERSELY ASSOCIATED WITH A CANCER, AND THE REGISTER
+    HAS NO WAY TO SAY THAT AN EXPOSURE PROTECTS** (gaps.md #249).
+    *H. pylori* colonisation is **inversely** associated with oesophageal
+    adenocarcinoma — pooled OR **0.52** (95% CI 0.37-0.73) — and with Barrett's
+    oesophagus, OR **0.64** (0.43-0.94); with **no** association for oesophageal
+    squamous cell carcinoma, OR 0.85 (0.55-1.33), which is a useful internal
+    control (Rokkas et al., *Clin Gastroenterol Hepatol* 2007;5:1413-7,
+    PMID 17997357). **And the effect is concentrated in the cagA-positive
+    strains** — Barrett's OR 0.39 (0.21-0.76) there — so on this evidence the
+    more virulent organism is the more strongly inverse one.
+    **It is almost certainly not protection of the oesophagus.** The pooled
+    BEACON analysis found an adjusted OR of **0.44** (0.36-0.55) against
+    population controls and **0.96** (0.67-1.37) against *reflux* controls
+    (Hoffman/El-Serag et al., *Am J Gastroenterol* 2018;113:1148-55,
+    PMID 29880962) — the association disappears once reflux is held constant, so
+    the route runs through corpus atrophy and reduced acid output. **The
+    protection is a side effect of the damage this record is about**, which is
+    why it sits in `holes` and not in `witness.prevention`.
+    **The actionable question is settled, and it is settled the other way.**
+    NordHePEP followed **661,987 adults** given eradication therapy across five
+    Nordic countries over 5,495,552 person-years, median 7.8 years, and found
+    **no increase** in oesophageal adenocarcinoma: SIR **0.89** (0.82-0.97),
+    falling to **0.73** (0.61-0.86) at 11-24 years, against SIR 0.99 for squamous
+    carcinoma (Wiklund et al., *Gastroenterology* 2024;167:485-92,
+    PMID 38513743). So nothing above re-rates this record: eradication stays
+    `curative` with `toll: none`, and the trade-off the inverse association
+    implies **does not appear in the only cohort large enough to see it.**
+    Read 2026-11-07 from the PubMed abstracts, **not from the full texts.**
+  - >
+    **THIS RECORD IS SCOPED TO A DISEASE AND THE WORLD TREATS THE AGENT AS THE
+    ENTITY — ANSWERED 2026-11-07 BY `h-pylori-infection` (FND-D-0150).**
+    `hpv-infection` and `ebv-infection` are infection records; until that one was
+    written, *H. pylori* had only this file, and gaps.md #247's coverage table
+    listed FND-D-0001 as the register's entire holding for the agent IARC credits
+    with about four percent of all cancer worldwide. Its edges run to
+    `gastric-cancer`, to gastric MALT lymphoma in `non-hodgkin-lymphoma`, to
+    `anaemia`, and — inversely — to an oesophageal cancer record that still does
+    not exist. **None of them could live here, because the subject of this file
+    is the ulcer.** The `burden.note` above already refused to conflate infection
+    with disease; this hole recorded that the refusal had a cost, and the cost has
+    now been paid by splitting the records.
+    **What remains open is the boundary.** The agent, its prevalence, the
+    screen-and-treat argument, the vaccine and the oesophageal edge are all in
+    FND-D-0150. **Peptic ulcer disease stays here**, because this is the
+    register's reference `curative` and nine other records are calibrated against
+    it. A reader querying for *H. pylori* now gets two records and no field
+    tells them which is which.
 
 blockers:
   - kind: diagnosis

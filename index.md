@@ -6,11 +6,13 @@
 | pleomorphic-adenoma ⧗ | partial | obje·none·n/a | curative | **curable** | **costly** | 0.679 | mostly |
 | hat ⧗ | established | obje·good·good | curative | **curable** | clean | 0.665 | mostly |
 | tuberculosis | established | obje·part·good | curative | **curable** | clean | 0.612 | mostly |
+| listeriosis ⧗ | established | obje·none·none | curative | **curable** | clean | 0.6 | mostly |
 | covid-19 ⚑ ⧗ ⧉ | established | obje·part·part | curative | **curable** | clean | 0.582 | partly |
 | leprosy ⚑ ⧗ | established | clin·none·part | curative | **curable** | clean | 0.57 | partly |
 | thyroid-cancer ⚑ ⧉ | established | obje·part·part | curative | **curable** | **costly** | 0.57 | partly |
 | typhoid ⚑ ⧗ | established | clin·part·part | curative | **curable** | clean | 0.57 | partly |
 | trachoma ⚑ ⧗ ⧉ | established | clin·none·none | curative | **curable** | clean | 0.5525 | partly |
+| botulism ⚑ ⧗ | established | clin·part·n/a | curative | **curable** | clean | 0.5225 | partly |
 | gonorrhoea ⚑ | established | obje·part·part | curative | **curable** | clean | 0.5225 | partly |
 | malaria ⚑ ⧗ | established | obje·part·part | curative | **curable** | clean | 0.5115 | partly |
 | h-pylori-ulcer ⚑ | established | obje·part·part | curative | **curable** | clean | 0.51 | partly |
@@ -33,6 +35,7 @@
 | anal-cancer ⚑ | established | obje·part·none | curative | **curable** | **costly** | 0.385 | partly |
 | amr-infection ⚑ | established | obje·part·part | curative | **curable** | clean | 0.375 | partly |
 | uterine-cancer ⚑ ⧗ ⧉ | established | obje·part·part | curative | **curable** | **costly** | 0.375 | partly |
+| abdominal-aortic-aneurysm ⚑ ⧗ ⧉ | partial | obje·part·part | curative | **curable** | **costly** | 0.36 | partly |
 | anaemia ⚑ ⧗ ⧉ | partial | obje·part·part | curative | **curable** | clean | 0.36 | partly |
 | breast-cancer ⚑ ⧗ ⧉ | partial | obje·part·part | curative | **curable** | **costly** | 0.36 | partly |
 | melanoma ⚑ ⧗ ⧉ | established | obje·part·part | curative | **curable** | clean | 0.36 | partly |
@@ -48,6 +51,7 @@
 | renal-cell-carcinoma ⚑ ⧗ ⧉ | established | obje·part·part | curative | **curable** | **costly** | 0.2925 | barely |
 | echinococcosis ⚑ ⧗ ⧉ | established | obje·good·part | curative | **curable** | **costly** | 0.28 | barely |
 | nasopharyngeal-carcinoma ⚑ ⧗ ⧉ | established | obje·good·part | curative | **curable** | **costly** | 0.28 | barely |
+| non-typhoidal-salmonellosis ⚑ ⧉ | established | obje·none·part | curative | **curable** | clean | 0.28 | barely |
 | penile-cancer ⚑ | established | obje·good·none | curative | **curable** | **harsh** | 0.28 | barely |
 | vaginal-cancer ⚑ | established | obje·part·none | curative | **curable** | **costly** | 0.275 | barely |
 | smallpox ⧗ | established | obje·good·n/a | symptomatic | **curable** | clean | 0.255 | barely |
@@ -63,15 +67,19 @@
 | non-hodgkin-lymphoma ⚑ ⧉ | established | obje·part·part | curative | **curable** | **costly** | 0.22 | barely |
 | mycoplasma-genitalium ⚑ | partial | obje·none·good | curative | **curable** | clean | 0.21 | barely |
 | taeniasis-cysticercosis ⚑ | established | obje·none·none | curative | **curable** | **costly** | 0.21 | barely |
+| thoracic-aortic-aneurysm ⧗ ⧉ | partial | obje·part·part | curative | **curable** | **costly** | 0.2 | barely |
 | head-neck-cancer ⚑ ⧗ ⧉ | established | obje·good·part | curative | **curable** | **harsh** | 0.1925 | barely |
 | hepatitis-c ⚑ | established | obje·part·n/a | curative | **curable** | clean | 0.19 | barely |
 | cervical-cancer ⚑ ⧗ ⧉ | established | obje·part·part | curative | **curable** | **costly** | 0.18 | barely |
+| anti-nmda-receptor-encephalitis ⚑ ⧗ | established | obje·part·part | curative | **curable** | **costly** | 0.158 | barely |
 | cre ⚑ ⧗ | established | obje·part·good | curative | **curable** | **costly** | 0.15 | barely |
+| burns ⚑ ⧗ ⧉ | established | obje·good·none | curative | **curable** | **costly** | 0.14 | barely |
 | gastric-cancer ⚑ ⧗ ⧉ | established | obje·part·part | curative | **curable** | **costly** | 0.14 | barely |
 | osteoarthritis ⚑ ⧗ ⧉ | partial | obje·part·none | curative | **curable** | **costly** | 0.1375 | barely |
 | congenital-heart-disease ⚑ ⧗ ⧉ | partial | obje·part·part | curative | **curable** | **costly** | 0.135 | barely |
 | obstetric-fistula ⚑ ⧗ | established | obje·part·part | curative | **curable** | clean | 0.12 | barely |
 | mycetoma ⚑ ⧗ | established | obje·none·none | curative | **curable** | **harsh** | 0.1 | barely |
+| h-pylori-infection ⚑ ⧗ | established | obje·part·part | curative | **curable** | clean | 0.09 | barely |
 | noma ⚑ ⧗ | partial | clin·none·n/a | curative | **curable** | **costly** | 0.09 | barely |
 | liver-cancer ⚑ ⧗ ⧉ | established | obje·part·none | curative | **curable** | **costly** | 0.09 | barely |
 | lung-cancer ⚑ ⧗ ⧉ | established | obje·part·good | curative | **curable** | **costly** | 0.0875 | barely |
@@ -92,6 +100,7 @@
 | ischaemic-heart-disease ⚑ ⧗ | established | obje·part·part | disease-modifying | **partial** | clean | 0.3 | partly |
 | polycythaemia-vera ⚑ ⧗ | established | obje·part·none | suppressive | **managed** | clean | 0.3 | partly |
 | type-1-diabetes ⚑ ⧗ | established | obje·part·part | suppressive | **managed** | **costly** | 0.3 | partly |
+| food-allergy ⧗ ⧉ | partial | obje·part·none | symptomatic | **unsolved** | clean | 0.3 | — |
 | toxoplasmosis ⚑ ⧉ | established | obje·part·none | disease-modifying | **partial** | **costly** | 0.3 | partly |
 | asthma ⚑ ⧗ ⧉ | partial | obje·part·part | suppressive | **managed** | **costly** | 0.2975 | barely |
 | refractive-error ⚑ ⧗ | established | obje·part·good | suppressive | **managed** | clean | 0.294 | barely |
@@ -103,11 +112,14 @@
 | keloid ⧗ | correlates | clin·none·none | symptomatic | **unsolved** | **costly** | 0.245 | — |
 | multiple-sclerosis ⚑ ⧗ ⧉ | established | obje·part·part | suppressive | **managed** | **costly** | 0.245 | barely |
 | low-back-pain | none | comp·none·none | symptomatic | **unsolved** | **costly** | 0.24 | — |
+| lupus ⚑ | partial | clin·part·none | suppressive | **managed** | **costly** | 0.24 | barely |
+| wilsons-disease ⧗ ⧉ | established | obje·part·part | suppressive | **managed** | **costly** | 0.24 | barely |
 | rheumatoid-arthritis ⚑ ⧗ | partial | obje·part·none | suppressive | **managed** | **costly** | 0.2275 | barely |
 | crohns ⚑ ⧗ | partial | obje·none·none | suppressive | **managed** | **harsh** | 0.22 | barely |
 | h5n1 ⚑ ⧗ | established | obje·part·part | disease-modifying | **partial** | clean | 0.22 | barely |
 | schizophrenia ⚑ ⧗ | partial | clin·part·none | suppressive | **managed** | **costly** | 0.22 | barely |
 | hypertension ⚑ ⧗ ⧉ | partial | obje·good·part | suppressive | **managed** | clean | 0.2125 | barely |
+| neonatal-diabetes ⚑ ⧗ | established | obje·good·good | suppressive | **managed** | **costly** | 0.21 | barely |
 | pots ⚑ | partial | obje·part·none | suppressive | **managed** | clean | 0.2 | barely |
 | rheumatic-heart-disease ⚑ ⧗ | partial | obje·none·part | disease-modifying | **partial** | **costly** | 0.2 | barely |
 | glaucoma ⚑ ⧗ | partial | obje·part·none | suppressive | **managed** | clean | 0.1875 | barely |
@@ -123,6 +135,7 @@
 | marburg ⧗ | established | obje·part·n/a | symptomatic | **unsolved** | clean | 0.15 | — |
 | duchenne ⚑ ⧗ | established | obje·part·part | disease-modifying | **partial** | **costly** | 0.14 | barely |
 | spinal-muscular-atrophy ⚑ ⧗ | established | obje·good·part | suppressive | **managed** | **costly** | 0.14 | barely |
+| narcolepsy-type-1 ⚑ ⧗ | established | obje·part·part | suppressive | **managed** | clean | 0.1275 | barely |
 | migraine ⚑ ⧗ | partial | clin·part·none | suppressive | **managed** | **costly** | 0.125 | barely |
 | multiple-system-atrophy | partial | clin·part·none | symptomatic | **unsolved** | clean | 0.125 | — |
 | stroke ⚑ ⧗ ⧉ | established | obje·part·part | disease-modifying | **partial** | **costly** | 0.125 | barely |
@@ -130,6 +143,8 @@
 | cerebral-palsy ⧗ | established | clin·good·none | symptomatic | **unsolved** | **costly** | 0.11 | — |
 | idiopathic-pulmonary-fibrosis ⚑ ⧗ ⧉ | partial | obje·part·none | disease-modifying | **partial** | clean | 0.105 | barely |
 | influenza ⚑ ⧗ | established | obje·part·part | symptomatic | **preventable** | clean | 0.105 | — |
+| sarcopenia ⚑ ⧗ | partial | obje·part·none | disease-modifying | **partial** | clean | 0.105 | barely |
+| acute-myeloid-leukaemia ⚑ ⧗ ⧉ | partial | obje·good·part | disease-modifying | **partial** | **costly** | 0.09 | barely |
 | familial-hypercholesterolaemia ⚑ ⧗ | established | obje·part·part | suppressive | **managed** | clean | 0.085 | barely |
 | hepatitis-b ⚑ ⧗ ⧉ | established | obje·part·part | suppressive | **managed** | clean | 0.076 | barely |
 | osteoporosis ⚑ ⧗ | established | obje·good·none | suppressive | **managed** | **costly** | 0.075 | barely |
@@ -140,6 +155,7 @@
 | tay-sachs | established | obje·good·none | symptomatic | **unsolved** | clean | 0.03 | — |
 | disorders-of-consciousness ⧗ | partial | clin·part·none | symptomatic | **unsolved** | clean | 0.0225 | — |
 | alzheimers ⚑ ⧗ ⧉ | partial | obje·part·part | disease-modifying | **partial** | **costly** | 0.02 | undelivered |
+| ebv-infection ⧗ ⧉ | established | obje·none·part | symptomatic | **unsolved** | **costly** | 0.0175 | — |
 | dipg ⚑ | partial | obje·good·none | disease-modifying | **partial** | **costly** | 0.011 | undelivered |
 | dengue ⚑ ⧗ | established | obje·part·n/a | symptomatic | **preventable** | clean | 0 | — |
 | dracunculiasis | established | clin·good·n/a | symptomatic | **unsolved** | clean | 0 | — |
@@ -174,11 +190,13 @@
   - vaginal-cancer (toll major, predictive none)
   - sepsis (toll major, predictive none)
   - taeniasis-cysticercosis (toll major, predictive none)
+  - burns (toll major, predictive none)
   - osteoarthritis (toll major, predictive none)
   - mycetoma (toll catastrophic, predictive none)
   - liver-cancer (toll major, predictive none)
   - toxoplasmosis (toll major, predictive none)
   - epilepsy (toll major, predictive none)
+  - lupus (toll major, predictive none)
   - rheumatoid-arthritis (toll major, predictive none)
   - crohns (toll catastrophic, predictive none)
   - schizophrenia (toll major, predictive none)
@@ -190,8 +208,8 @@
   - mesothelioma (toll major, predictive none)
   - dipg (toll major, predictive none)
 
-135/146 records carry a prognostic or predictive gap.
-predictive question with no answer needed: pleomorphic-adenoma, genital-chlamydia, syphilis, schistosomiasis, buruli-ulcer, yaws, hepatitis-c, noma, cholera
+150/162 records carry a prognostic or predictive gap.
+predictive question with no answer needed: pleomorphic-adenoma, botulism, genital-chlamydia, syphilis, schistosomiasis, buruli-ulcer, yaws, hepatitis-c, noma, cholera
   three different reasons, indistinguishable in the schema: abolished by a
   good-enough treatment, nothing course-altering to predict, or only one
   drug in existence. schistosomiasis is the third and reads like the first.
@@ -212,6 +230,7 @@ predictive question with no answer needed: pleomorphic-adenoma, genital-chlamydi
 - **vulvar-cancer** — curable, **costly** · major, 0.35 of treated · fraction-of-treated with permanent lymphoedema, sexual or urinary consequence — reasoned, and far lower where sentinel node biopsy is available
 - **anal-cancer** — curable, **costly** · major, 0.4 of treated · fraction-of-treated with permanent bowel, sexual or pelvic dysfunction — reasoned, and high because the radiation field contains the sphincter
 - **uterine-cancer** — curable, **costly** · major, 0.35 of treated · fraction-of-treated (permanent harm — infertility, surgical menopause, lymphoedema, radiation sequelae, surgical complications of obesity) — a reasoned estimate
+- **abdominal-aortic-aneurysm** — curable, **costly** · major, 0.12 of treated · fraction-of-treated left with something permanent — renal impairment, sexual dysfunction, hernia, stoma, or a graft complication requiring reintervention. Soft, and it understates the surveillance obligation because that is not an injury
 - **breast-cancer** — curable, **costly** · major, 0.35 of treated · fraction-of-treated (any permanent sequela of treatment)
 - **prostate-cancer** — curable, **costly** · major, 0.45 of treated · fraction-of-treated (permanent harm — erectile dysfunction, incontinence, bowel toxicity, or the metabolic and skeletal consequences of androgen deprivation) — a reasoned estimate over men receiving definitive treatment, and it EXCLUDES those on surveillance, which is the point of surveillance
 - **neonatal-conditions** — curable, **costly** · major, 0.05 of treated · fraction-of-intensively-treated (permanent harm — chiefly retinopathy of prematurity and bronchopulmonary dysplasia) — a reasoned estimate, higher in units with monitoring gaps than in either the best-equipped or the least-equipped settings
@@ -230,8 +249,11 @@ predictive question with no answer needed: pleomorphic-adenoma, genital-chlamydi
 - **cryptococcal-meningitis** — curable, **costly** · major, 0.35 of treated · fraction-of-treated experiencing grade 3+ toxicity on the conventional regimen — a reasoned figure, and it falls steeply where liposomal amphotericin is available
 - **non-hodgkin-lymphoma** — curable, **costly** · major, 0.35 of treated · fraction-of-treated (permanent harm — cardiomyopathy, neuropathy, infertility, second malignancy, prolonged hypogammaglobulinaemia) — a reasoned estimate across a very heterogeneous treated population
 - **taeniasis-cysticercosis** — curable, **costly** · major, 0.05 of treated · fraction-of-treated (permanent harm from treatment-associated inflammation or shunt complications) — a reasoned estimate, concentrated in heavy intracranial infection
+- **thoracic-aortic-aneurysm** — curable, **costly** · major, 0.2 of treated · fraction-of-treated left with something permanent — a prosthetic valve and anticoagulation, stroke, paraplegia, renal impairment, nerve injury, or a planned reoperation
 - **cervical-cancer** — curable, **costly** · major, 0.5 of treated · fraction-of-treated (permanent harm — loss of fertility, surgical menopause, vaginal stenosis, bladder or bowel injury, lymphoedema) — a reasoned estimate over women receiving definitive treatment for invasive disease
+- **anti-nmda-receptor-encephalitis** — curable, **costly** · major, 0.35 of treated · fraction-of-treated left with something permanent from the course or the therapy — deconditioning and neuropathy, an ovary, or an immunosuppressive complication
 - **cre** — curable, **costly** · major, 0.2 of treated · fraction-of-treated (permanent harm — chiefly residual renal impairment after colistin and aminoglycoside hearing loss) — a reasoned estimate weighted toward the colistin-era regimens that remain the global default
+- **burns** — curable, **costly** · major, 0.4 of treated · fraction-of-treated (permanent harm from the treatment itself — chiefly donor-site scarring in anyone grafted) — a reasoned estimate
 - **gastric-cancer** — curable, **costly** · major, 0.5 of treated · fraction-of-treated (permanent harm — gastrectomy and its nutritional consequences, chemotherapy neuropathy) — a reasoned estimate, and it EXCLUDES the early-stage patients cured endoscopically, which is the point of finding them early
 - **osteoarthritis** — curable, **costly** · major, 0.06 of treated · fraction-of-treated (persistent harm — chiefly NSAID gastrointestinal, renal and cardiovascular events over years of use, plus prosthetic infection and chronic post-surgical pain) — a reasoned estimate
 - **congenital-heart-disease** — curable, **costly** · major, 0.2 of treated · fraction-of-treated (permanent harm — chiefly neurodevelopmental impairment after neonatal surgery, and surgical arrhythmia requiring a device) — a reasoned estimate, concentrated in the complex lesions
@@ -246,8 +268,11 @@ predictive question with no answer needed: pleomorphic-adenoma, genital-chlamydi
 - **asthma** — managed, **costly** · major, 0.05 of treated · fraction-of-treated (permanent harm — chiefly systemic corticosteroid sequelae in the frequently-exacerbating and severe groups, plus adrenal suppression and the growth effect in children) — a reasoned estimate
 - **epilepsy** — managed, **costly** · major, 0.02 of treated · fraction-of-treated (permanent harm; far higher for fetal valproate exposure)
 - **multiple-sclerosis** — managed, **costly** · major, 0.03 of treated · fraction-of-treated (permanent harm — chiefly PML, secondary autoimmunity and transplant-related complications) — a reasoned estimate across a class whose members differ by an order of magnitude in risk
+- **lupus** — managed, **costly** · major, 0.35 of treated · fraction-of-treated (permanent organ damage attributable to therapy rather than to disease)
+- **wilsons-disease** — managed, **costly** · major, 0.12 of treated · fraction-of-treated left with permanent harm from therapy — irreversible neurological worsening on chelation initiation, a penicillamine immune complication, or the consequences of immunosuppression
 - **rheumatoid-arthritis** — managed, **costly** · major, 0.05 of treated · fraction-of-treated (permanent harm — serious infection with sequelae, tuberculosis reactivation, cardiovascular or malignant events attributable to therapy) — a reasoned estimate
 - **schizophrenia** — managed, **costly** · major, 0.2 of treated · fraction-of-treated (permanent harm — chiefly metabolic disease and tardive dyskinesia) — a reasoned estimate, and high because the metabolic burden is close to expected rather than exceptional
+- **neonatal-diabetes** — managed, **costly** · major, 0.15 of treated · fraction-of-patients left with permanent harm — neurological features of the severe KATP mutations, or injury from the presenting illness
 - **rheumatic-heart-disease** — partial, **costly** · major, 0.2 of treated · fraction-of-treated (lifelong anticoagulation after mechanical valve replacement)
 - **bipolar** — managed, **costly** · major, 0.1 of treated · fraction-of-treated (chronic kidney disease or hypothyroidism on long-term lithium)
 - **endometriosis** — managed, **costly** · major, 0.25 of treated · fraction-of-treated with permanent consequences of treatment — reduced ovarian reserve after endometrioma excision, surgical menopause, adhesions — a reasoned estimate over women receiving surgical rather than purely medical management
@@ -258,6 +283,7 @@ predictive question with no answer needed: pleomorphic-adenoma, genital-chlamydi
 - **spinal-muscular-atrophy** — managed, **costly** · major, 0.02 of treated · fraction-of-treated (permanent harm — chiefly severe hepatotoxicity after gene therapy) — a reasoned estimate, and it excludes the irreversibility itself, which the schema has no field for
 - **migraine** — managed, **costly** · major, 0.1 of treated · fraction-of-treated experiencing medication overuse headache or a treatment-limiting adverse effect — a reasoned estimate; medication overuse alone affects on the order of one to two per cent of the general population, which is a large share of everyone being treated
 - **stroke** — partial, **costly** · major, 0.05 of treated · fraction-of-actively-treated (permanent harm attributable to treatment — symptomatic haemorrhage after thrombolysis, procedural complications of thrombectomy, anticoagulant-related bleeding) — a reasoned estimate
+- **acute-myeloid-leukaemia** — partial, **costly** · major, 0.85 of treated · fraction-of-treated (severe treatment toxicity — prolonged aplasia, documented infection, or transfusion dependence during therapy) — close to universal among those given any active regimen, intensive or low intensity
 - **osteoporosis** — managed, **costly** · major, 0.002 of treated · fraction-of-treated (atypical femoral fracture, osteonecrosis of the jaw, or rebound vertebral fracture after denosumab withdrawal) — a reasoned estimate, weighted toward long-duration use. **The number is small and the point of this record is that it did not behave like a small number**
 - **glioblastoma** — partial, **costly** · major, 0.5 of treated · fraction-of-treated (permanent harm — post-operative neurological deficit, radiation necrosis, cognitive decline attributable to treatment, and corticosteroid sequelae) — a reasoned estimate, and difficult to separate from the disease
 - **mesothelioma** — partial, **costly** · major, 0.25 of treated · fraction-of-treated (permanent harm — reduced pulmonary reserve after radical surgery, permanent immune-related toxicity, pleurodesis sequelae) — a reasoned estimate, and higher historically when radical surgery was routine
@@ -269,10 +295,13 @@ predictive question with no answer needed: pleomorphic-adenoma, genital-chlamydi
 
 | entity | restored? | toll | residue | incidence |
 |---|---|---|---|---|
+| **abdominal-aortic-aneurysm** | `both` | costly | major | 0.05 |
+| **acute-myeloid-leukaemia** | `both` | costly | major | 0.05 |
 | **alzheimers** | `cure-costs` | costly | — | — |
 | **amr-infection** | `disease-residue` | clean | major | 0.25 |
 | **anaemia** | `disease-residue` | clean | major | 0.1 |
 | **anal-cancer** | `cure-costs` | costly | — | — |
+| **anti-nmda-receptor-encephalitis** | `both` | costly | major | 0.45 |
 | **asthma** | `both` | costly | major | 0.12 |
 | **atrial-fibrillation** | `cure-costs` | costly | — | — |
 | **bacterial-meningitis** | `disease-residue` | clean | catastrophic | 0.2 |
@@ -280,6 +309,7 @@ predictive question with no answer needed: pleomorphic-adenoma, genital-chlamydi
 | **bipolar** | `cure-costs` | costly | — | — |
 | **bladder-cancer** | `cure-costs` | costly | — | — |
 | **breast-cancer** | `cure-costs` | costly | — | — |
+| **burns** | `both` | costly | catastrophic | 0.55 |
 | **buruli-ulcer** | `disease-residue` | clean | major | 0.25 |
 | **candidaemia** | `disease-residue` | clean | major | 0.1 |
 | **cataract** | `disease-residue` | clean | major | 0.02 |
@@ -305,6 +335,7 @@ predictive question with no answer needed: pleomorphic-adenoma, genital-chlamydi
 | **dracunculiasis** | `n/a` | clean | major | 0.05 |
 | **duchenne** | `cure-costs` | costly | — | — |
 | **ebola** | `disease-residue` | clean | major | 0.5 |
+| **ebv-infection** | `n/a` | costly | major | 0.1 |
 | **echinococcosis** | `cure-costs` | costly | — | — |
 | **endometriosis** | `both` | costly | major | 0.3 |
 | **epilepsy** | `cure-costs` | costly | — | — |
@@ -325,8 +356,10 @@ predictive question with no answer needed: pleomorphic-adenoma, genital-chlamydi
 | **invasive-aspergillosis** | `both` | costly | major | 0.25 |
 | **ischaemic-heart-disease** | `disease-residue` | clean | major | 0.25 |
 | **leprosy** | `disease-residue` | clean | major | 0.2 |
+| **listeriosis** | `disease-residue` | clean | major | 0.25 |
 | **liver-cancer** | `cure-costs` | costly | — | — |
 | **lung-cancer** | `cure-costs` | costly | — | — |
+| **lupus** | `both` | costly | major | 0.3 |
 | **lymphatic-filariasis** | `disease-residue` | clean | major | 0.25 |
 | **malaria** | `disease-residue` | clean | major | 0.25 |
 | **marburg** | `n/a` | clean | major | 0.4 |
@@ -337,8 +370,10 @@ predictive question with no answer needed: pleomorphic-adenoma, genital-chlamydi
 | **mrsa** | `disease-residue` | clean | major | 0.1 |
 | **multiple-sclerosis** | `both` | costly | major | 0.35 |
 | **mycetoma** | `both` | harsh | major | 0.3 |
+| **narcolepsy-type-1** | `disease-residue` | clean | major | 0.6 |
 | **nasopharyngeal-carcinoma** | `both` | costly | major | 0.15 |
 | **neonatal-conditions** | `both` | costly | major | 0.1 |
+| **neonatal-diabetes** | `both` | costly | major | 0.45 |
 | **noma** | `both` | costly | catastrophic | 0.95 |
 | **non-hodgkin-lymphoma** | `cure-costs` | costly | — | — |
 | **obesity** | `both` | costly | major | 0.1 |
@@ -356,6 +391,7 @@ predictive question with no answer needed: pleomorphic-adenoma, genital-chlamydi
 | **retinopathy-of-prematurity** | `both` | costly | catastrophic | 0.05 |
 | **rheumatic-heart-disease** | `cure-costs` | costly | — | — |
 | **rheumatoid-arthritis** | `both` | costly | major | 0.25 |
+| **sarcopenia** | `disease-residue` | clean | major | 0.2 |
 | **schistosomiasis** | `disease-residue` | clean | major | 0.1 |
 | **schizophrenia** | `cure-costs` | costly | — | — |
 | **sepsis** | `both` | costly | major | 0.35 |
@@ -366,6 +402,7 @@ predictive question with no answer needed: pleomorphic-adenoma, genital-chlamydi
 | **stroke** | `both` | costly | catastrophic | 0.4 |
 | **syphilis** | `disease-residue` | clean | catastrophic | 0.1 |
 | **taeniasis-cysticercosis** | `both` | costly | major | 0.15 |
+| **thoracic-aortic-aneurysm** | `both` | costly | major | 0.35 |
 | **thyroid-cancer** | `cure-costs` | costly | — | — |
 | **toxoplasmosis** | `both` | costly | catastrophic | 0.03 |
 | **trachoma** | `disease-residue` | clean | major | 0.02 |
@@ -378,12 +415,16 @@ predictive question with no answer needed: pleomorphic-adenoma, genital-chlamydi
 | **vaginal-cancer** | `cure-costs` | costly | — | — |
 | **varicella-zoster** | `disease-residue` | clean | major | 0.06 |
 | **vulvar-cancer** | `cure-costs` | costly | — | — |
+| **wilsons-disease** | `both` | costly | major | 0.4 |
 | **yaws** | `disease-residue` | clean | major | 0.02 |
+| **botulism** | `restored` | clean | minor | 0.4 |
 | **clubfoot** | `restored` | clean | minor | 0.9 |
+| **h-pylori-infection** | `restored` | clean | minor | 0.3 |
 | **h-pylori-ulcer** | `restored` | clean | minor | 0.3 |
 | **hiv** | `restored` | clean | minor | 0.2 |
 | **hpv-infection** | `restored` | clean | minor | 0.02 |
 | **mycoplasma-genitalium** | `restored` | clean | minor | 0.02 |
+| **non-typhoidal-salmonellosis** | `restored` | clean | minor | 0.05 |
 | **pku** | `restored` | clean | minor | 0.5 |
 | **scabies** | `restored` | clean | minor | 0.1 |
 | **soil-transmitted-helminths** | `restored` | clean | minor | 0.05 |
@@ -402,6 +443,7 @@ register has no axis that records it (gaps.md #98).
 - **low-back-pain** — major toll, course **unchanged** · fraction-of-treated (persistent iatrogenic harm)
 - **copd** — major toll, course **unchanged** · fraction-of-patients (permanent harm attributable to treatment — chiefly cumulative systemic corticosteroid effects across repeated exacerbation courses) — a reasoned estimate
 - **cerebral-palsy** — major toll, course **unchanged** · fraction-of-treated (permanent harm — chiefly worse function or late pain after irreversible neurosurgical or orthopaedic intervention, and pump complications) — a reasoned estimate
+- **ebv-infection** — major toll, course **unchanged** · fraction-of-treated (permanent harm — graft loss, sustained hypogammaglobulinaemia) — reasoned, and low because almost nobody in this record is treated for anything
 - **heds** — major toll, course **unchanged** · fraction-of-patients (permanent harm from surgical or pharmacological management) — a reasoned estimate, not a measured figure; no denominator exists for how many are operated on
 - **me-cfs** — major toll, course **unchanged** · fraction-of-treated (no treatment currently offered)
 - **msmds** — major toll, course **unchanged** · fraction-of-treated (any permanent surgical or supportive sequela) — a reasoned estimate from the reported phenotype, not a measured figure
@@ -456,6 +498,10 @@ describes no patient. Read the strata, not the row.
     - 15% serous, carcinosarcoma and p53-abnormal → **partial**, toll major, efficacy 0.3
     - 5% advanced or recurrent, mismatch-repair deficient → **partial**, toll major, efficacy 0.5
     - 5% advanced or recurrent, mismatch-repair proficient → **partial**, toll major, efficacy 0.15
+- **abdominal-aortic-aneurysm** — "is it solved" is malformed, not hard:
+    - 62% small, under surveillance — never reaches the threshold → **unsolved**, toll none, efficacy 0
+    - 22% reaches the threshold — elective repair → **curable**, toll major, efficacy 0.95
+    - 16% ruptures → **curable**, toll major, efficacy 0.2
 - **anaemia** — "is it solved" is malformed, not hard:
     - 55% iron and other nutritional deficiency → **curable**, toll minor, efficacy 0.9
     - 20% anaemia of inflammation and chronic disease → **unsolved**, toll minor, efficacy 0.4
@@ -494,6 +540,9 @@ describes no patient. Read the strata, not the row.
     - 20% early stage (I-II) → **curable**, toll minor, efficacy 0.9
     - 60% locally advanced (III-IVA) → **curable**, toll major, efficacy 0.75
     - 20% recurrent or metastatic → **partial**, toll major, efficacy 0.25
+- **non-typhoidal-salmonellosis** — "is it solved" is malformed, not hard:
+    - 99% gastroenteritis in an immunocompetent host → **unsolved**, toll none, efficacy 1
+    - 1% invasive disease → **curable**, toll minor, efficacy 0.8
 - **invasive-aspergillosis** — "is it solved" is malformed, not hard:
     - 45% haematological malignancy and stem-cell transplant → **curable**, toll major, efficacy 0.6
     - 40% ICU, solid-organ transplant, and virus-associated disease → **curable**, toll major, efficacy 0.45
@@ -519,6 +568,10 @@ describes no patient. Read the strata, not the row.
     - 6% mantle cell → **managed**, toll major, efficacy 0.5
     - 12% T-cell and NK-cell lymphomas → **partial**, toll major, efficacy 0.3
     - 14% Burkitt and other → **curable**, toll major, efficacy 0.75
+- **thoracic-aortic-aneurysm** — "is it solved" is malformed, not hard:
+    - 72% degenerative / non-syndromic → **curable**, toll major, efficacy 0.9
+    - 20% heritable — syndromic and familial → **managed**, toll major, efficacy 0.7
+    - 8% inflammatory and infective → **partial**, toll major, efficacy 0.5
 - **head-neck-cancer** — "is it solved" is malformed, not hard:
     - 20% HPV-positive oropharyngeal → **curable**, toll major, efficacy 0.8
     - 25% HPV-negative, early stage → **curable**, toll major, efficacy 0.7
@@ -528,6 +581,11 @@ describes no patient. Read the strata, not the row.
     - 45% early-stage invasive (I-IIA) → **curable**, toll major, efficacy 0.85
     - 35% locally advanced (IIB-IVA) → **curable**, toll major, efficacy 0.5
     - 20% metastatic or recurrent → **partial**, toll major, efficacy 0.15
+- **burns** — "is it solved" is malformed, not hard:
+    - 80% minor burn, managed without admission → **curable**, toll none, efficacy 0.95
+    - 7% major burn reaching a burn centre → **curable**, toll major, efficacy 0.7
+    - 11% major burn where no burn centre exists → **unsolved**, toll major, efficacy 0.15
+    - 2% intentional burn — self-harm, assault, and burning as violence → **unsolved**, toll catastrophic, efficacy 0.2
 - **gastric-cancer** — "is it solved" is malformed, not hard:
     - 20% early gastric cancer (mucosal, endoscopically resectable) → **curable**, toll minor, efficacy 0.95
     - 35% locally advanced, resectable → **curable**, toll major, efficacy 0.4
@@ -574,6 +632,10 @@ describes no patient. Read the strata, not the row.
     - 90% chronic phase → **managed**, toll minor, efficacy 0.92
     - 5% accelerated phase → **managed**, toll major, efficacy 0.5
     - 5% blast crisis → **partial**, toll major, efficacy 0.2
+- **food-allergy** — "is it solved" is malformed, not hard:
+    - 45% cow's milk and hen's egg allergy, mostly in young children → **partial**, toll minor, efficacy 0.75
+    - 35% peanut and tree nut allergy → **managed**, toll minor, efficacy 0.65
+    - 20% other and adult-onset food allergy (shellfish, fish, wheat, sesame, fruit) → **unsolved**, toll none, efficacy 0.55
 - **toxoplasmosis** — "is it solved" is malformed, not hard:
     - 93% latent infection → **unsolved**, toll none, efficacy 0
     - 4% acute toxoplasmosis → **unsolved**, toll none, efficacy 0.9
@@ -593,6 +655,10 @@ describes no patient. Read the strata, not the row.
     - 60% relapsing-remitting MS → **managed**, toll major, efficacy 0.75
     - 25% secondary progressive MS → **partial**, toll major, efficacy 0.35
     - 15% primary progressive MS → **partial**, toll major, efficacy 0.3
+- **wilsons-disease** — "is it solved" is malformed, not hard:
+    - 40% hepatic presentation → **managed**, toll minor, efficacy 0.88
+    - 45% neurological and psychiatric presentation → **managed**, toll major, efficacy 0.7
+    - 15% fulminant hepatic failure — transplanted → **curable**, toll major, efficacy 0.85
 - **hypertension** — "is it solved" is malformed, not hard:
     - 75% essential hypertension, controllable on standard therapy → **managed**, toll minor, efficacy 0.95
     - 15% resistant hypertension → **managed**, toll minor, efficacy 0.6
@@ -625,6 +691,11 @@ describes no patient. Read the strata, not the row.
     - 65% typical slowly progressive IPF → **partial**, toll minor, efficacy 0.45
     - 30% rapidly progressive → **unsolved**, toll minor, efficacy 0.1
     - 5% transplanted → **managed**, toll catastrophic, efficacy 0.7
+- **acute-myeloid-leukaemia** — "is it solved" is malformed, not hard:
+    - 7% acute promyelocytic leukaemia (t(15;17), PML-RARA) → **curable**, toll minor, efficacy 0.9
+    - 28% fit, under about 60, non-APL → **curable**, toll major, efficacy 0.5
+    - 30% aged about 60 to 75, or unfit for intensive therapy → **partial**, toll major, efficacy 0.2
+    - 35% over about 75, or frail at any age → **unsolved**, toll major, efficacy 0.05
 - **hepatitis-b** — "is it solved" is malformed, not hard:
     - 35% treatment-eligible chronic infection → **managed**, toll minor, efficacy 0.95
     - 50% chronic infection not currently meeting treatment criteria → **unsolved**, toll minor, efficacy 0
@@ -649,15 +720,21 @@ describes no patient. Read the strata, not the row.
     - 25% mild cognitive impairment due to Alzheimer's → **partial**, toll major, efficacy 0.3
     - 30% mild Alzheimer's dementia → **partial**, toll major, efficacy 0.2
     - 45% moderate to severe Alzheimer's dementia → **unsolved**, toll minor, efficacy 0
+- **ebv-infection** — "is it solved" is malformed, not hard:
+    - 90% infectious mononucleosis → **unsolved**, toll none, efficacy 0.97
+    - 8% EBV-associated malignancy in the immunocompetent → **curable**, toll major, efficacy 0.7
+    - 2% EBV-driven lymphoproliferation in the immunosuppressed → **curable**, toll major, efficacy 0.6
 
 ## Window ⧗ — capability depends on catching it in time
 
 - **pleomorphic-adenoma** — closes on growth into the deep lobe, recurrence after inadequate excision, malignant transformation; 0.7 caught in time · **the toll is the price of missing it → `diagnosis` is the cheap lever**
 - **hat** — closes on the parasite crossing the blood-brain barrier — the transition to stage 2 meningoencephalitic disease; 0.5 caught in time · **the residue is the price of missing it → `diagnosis` is the cheap lever**
+- **listeriosis** — closes on transplacental seeding of the placenta; advancing bacteraemia into the brainstem; 0.35 caught in time · **the residue is the price of missing it → `diagnosis` is the cheap lever**
 - **covid-19** — closes on the transition from viral replication to immune-mediated lung injury — about five to seven days from symptom onset, after which antivirals stop working and steroids start; 0.4 caught in time · **the residue is the price of missing it → `diagnosis` is the cheap lever**
 - **leprosy** — closes on established peripheral nerve damage — sensory loss, motor weakness, lagophthalmos — which does not recover when the organism is killed; 0.6 caught in time · **the residue is the price of missing it → `diagnosis` is the cheap lever**
 - **typhoid** — closes on ulceration of Peyer's patches and intestinal perforation, typically in the third week of untreated illness; 0.6 caught in time
 - **trachoma** — closes on conjunctival scarring, then lash inversion, then corneal opacification — each irreversible, over decades; 0.7 caught in time · **the residue is the price of missing it → `diagnosis` is the cheap lever**
+- **botulism** — closes on internalisation of toxin into the presynaptic terminal and cleavage of its SNARE target; 0.5 caught in time
 - **malaria** — closes on progression of uncomplicated falciparum infection to cerebral malaria, severe anaemia or metabolic acidosis — twenty-four to forty-eight hours in a young child; 0.55 caught in time · **the residue is the price of missing it → `diagnosis` is the cheap lever**
 - **uterine-fibroids** — closes on the end of a woman's intention or ability to conceive — after which the definitive treatment costs nothing she is still using, and before which it costs everything; a social and reproductive deadline rather than a pathological one; 0.5 caught in time · **the toll is the price of missing it → `diagnosis` is the cheap lever**
 - **benign-prostatic-hyperplasia** — closes on detrusor decompensation — irreversible loss of bladder contractility after prolonged high-pressure obstruction, and above it renal impairment from chronic retention; a gradual closure over years rather than a date; 0.65 caught in time · **the toll is the price of missing it → `diagnosis` is the cheap lever**
@@ -669,6 +746,7 @@ describes no patient. Read the strata, not the row.
 - **diarrhoeal-disease** — closes on hypovolaemic shock from fluid loss — hours in an infant; 0.5 caught in time · **the residue is the price of missing it → `diagnosis` is the cheap lever**
 - **buruli-ulcer** — closes on lesion enlargement, extension across a joint, and osteomyelitis; 0.35 caught in time · **the residue is the price of missing it → `diagnosis` is the cheap lever**
 - **uterine-cancer** — closes on invasion through the myometrium and spread beyond the uterus — after which surgery alone is no longer sufficient; 0.7 caught in time · **the toll is the price of missing it → `diagnosis` is the cheap lever**
+- **abdominal-aortic-aneurysm** — closes on rupture; 0.3 caught in time · **the toll is the price of missing it → `diagnosis` is the cheap lever**
 - **anaemia** — closes on the completion of early brain development — roughly the first two years, and gestation before it — after which a deficit is not recovered by correcting the haemoglobin; and separately, hours, in severe anaemia with acute blood loss or malaria; 0.4 caught in time · **the residue is the price of missing it → `diagnosis` is the cheap lever**
 - **breast-cancer** — closes on nodal and then distant spread; 0.62 caught in time · **the toll is the price of missing it → `diagnosis` is the cheap lever**
 - **melanoma** — closes on vertical growth through the dermis — Breslow thickness — and subsequent lymphatic and haematogenous spread; 0.6 caught in time
@@ -688,14 +766,18 @@ describes no patient. Read the strata, not the row.
 - **sepsis** — closes on progression of infection with organ dysfunction to refractory shock and multi-organ failure — hours; 0.5 caught in time · **the toll is the price of missing it → `diagnosis` is the cheap lever**
 - **clubfoot** — closes on progressive rigidity and bony remodelling of the untreated foot — a gradual closure over childhood rather than a date, after which correction requires bone surgery; 0.25 caught in time
 - **colorectal-cancer** — closes on progression of an adenoma to invasive carcinoma over roughly a decade, and then invasion through the bowel wall to nodes and to liver; 0.4 caught in time · **the toll is the price of missing it → `diagnosis` is the cheap lever**
+- **thoracic-aortic-aneurysm** — closes on dissection or rupture; 0.35 caught in time · **the toll is the price of missing it → `diagnosis` is the cheap lever**
 - **head-neck-cancer** — closes on progression from early-stage disease curable by one modality to locally advanced disease requiring surgery and chemoradiation together — months, in a cancer that is frequently visible throughout; and separately, HPV exposure in adolescence, after which the vaccine cannot help; 0.4 caught in time · **the toll is the price of missing it → `diagnosis` is the cheap lever**
 - **cervical-cancer** — closes on progression of a high-grade intraepithelial lesion to invasive carcinoma, typically fifteen to twenty years after the initiating infection; 0.35 caught in time · **the toll is the price of missing it → `diagnosis` is the cheap lever**
+- **anti-nmda-receptor-encephalitis** — closes on weeks to months of untreated antibody exposure; the move to a psychiatric rather than a neurological pathway; 0.35 caught in time · **the toll is the price of missing it → `diagnosis` is the cheap lever**
 - **cre** — closes on progression of inadequately treated Gram-negative bacteraemia to septic shock and multi-organ failure — hours to days; 0.35 caught in time · **the toll is the price of missing it → `diagnosis` is the cheap lever**
+- **burns** — closes on three separate things — hypovolaemic shock within the first day, burn-wound sepsis within the first weeks, and the maturation of scar into fixed contracture over the following months; the schema has one field and this record needs three; 0.25 caught in time · **the toll is the price of missing it → `diagnosis` is the cheap lever**
 - **gastric-cancer** — closes on invasion beyond the mucosa — at which point the cure becomes a gastrectomy — and then beyond the stomach wall and to nodes; 0.3 caught in time · **the toll is the price of missing it → `diagnosis` is the cheap lever**
 - **osteoarthritis** — closes on nothing, in the usual sense — the treatment window **opens** late and stays open, and what closes is the prevention window at the moment of a joint injury or during the years of weight gain, decades before any joint hurts; 0.35 caught in time · **the toll is the price of missing it → `diagnosis` is the cheap lever**
 - **congenital-heart-disease** — closes on ductal closure in the first days of life; and, for unrepaired shunts, irreversible pulmonary vascular remodelling, after which the corrective operation becomes fatal; 0.2 caught in time · **the toll is the price of missing it → `diagnosis` is the cheap lever**
 - **obstetric-fistula** — closes on ischaemic necrosis of the vesicovaginal or rectovaginal septum after sustained obstruction — hours to a few days, and the tissue does not recover; 0.2 caught in time · **the residue is the price of missing it → `diagnosis` is the cheap lever**
 - **mycetoma** — closes on invasion of fascia and bone, at which point medical cure becomes unlikely and surgery becomes mutilating rather than local; 0.2 caught in time · **the toll is the price of missing it → `diagnosis` is the cheap lever**
+- **h-pylori-infection** — closes on the establishment of atrophic gastritis and intestinal metaplasia — not an event, a histological stage reached silently over decades, after which eradication still works and buys less; 0.08 caught in time
 - **noma** — closes on the transition from reversible oedema and gingival necrosis to gangrene of facial soft tissue and bone; 0.05 caught in time · **the toll is the price of missing it → `diagnosis` is the cheap lever**
 - **liver-cancer** — closes on growth beyond transplantable or resectable limits, vascular invasion, or decompensation of the underlying liver — whichever comes first, and the last of those is not about the tumour; 0.25 caught in time · **the toll is the price of missing it → `diagnosis` is the cheap lever**
 - **lung-cancer** — closes on local invasion and metastatic spread, which occur before any symptom in roughly half of cases; 0.2 caught in time · **the toll is the price of missing it → `diagnosis` is the cheap lever**
@@ -713,17 +795,20 @@ describes no patient. Read the strata, not the row.
 - **ischaemic-heart-disease** — closes on irreversible myocardial necrosis, advancing from the first half hour of occlusion and largely complete by six to twelve hours; 0.35 caught in time · **the residue is the price of missing it → `diagnosis` is the cheap lever**
 - **polycythaemia-vera** — closes on the first major thrombosis; much later and in a minority, progression to myelofibrosis or acute leukaemia, which earlier diagnosis is not known to prevent; 0.75 caught in time · **the residue is the price of missing it → `diagnosis` is the cheap lever**
 - **type-1-diabetes** — closes on progression to ketoacidosis at presentation — days to hours; and separately, progression from Stage 2 to clinical disease, which teplizumab delays; 0.55 caught in time · **the toll is the price of missing it → `diagnosis` is the cheap lever**
+- **food-allergy** — closes on airway obstruction or cardiovascular collapse in anaphylaxis — within an hour, often faster; and, separately, the first year of life for primary prevention of peanut (and probably egg) allergy by early introduction; 0.7 caught in time
 - **asthma** — closes on respiratory arrest during a severe exacerbation — hours, and the deterioration that precedes it is visible for weeks and watched by nobody; and separately the attainment of peak lung function in early adulthood, after which a childhood deficit is permanent; 0.5 caught in time · **the toll is the price of missing it → `diagnosis` is the cheap lever**
 - **refractive-error** — closes on for amblyopia, maturation of the visual cortex at around seven to eight years — after which correction restores focus but not sight; for myopia control, the end of axial elongation in late adolescence; 0.3 caught in time · **the residue is the price of missing it → `diagnosis` is the cheap lever**
 - **cystic-fibrosis** — closes on accumulating bronchiectasis and irreversible airway damage — years, beginning in infancy; 0.5 caught in time · **the residue is the price of missing it → `diagnosis` is the cheap lever**
 - **measles** — closes on about 72 hours after exposure for vaccine, six days for immunoglobulin — after which the incubating infection outruns any response; 0.1 caught in time · **the residue is the price of missing it → `diagnosis` is the cheap lever**
 - **keloid** — closes on maturation of the lesion into dense avascular collagen over roughly three to twelve months, after which prophylactic measures no longer work and treatment means steroid, radiotherapy or an excision that may make it worse; 0.15 caught in time · **the toll is the price of missing it → `diagnosis` is the cheap lever**
 - **multiple-sclerosis** — closes on transition from an inflammatory to a predominantly neurodegenerative phase, and the accumulation of irreversible axonal loss — years; 0.45 caught in time · **the toll is the price of missing it → `diagnosis` is the cheap lever**
+- **wilsons-disease** — closes on established cirrhosis; neuronal loss in the basal ganglia; 0.3 caught in time · **the toll is the price of missing it → `diagnosis` is the cheap lever**
 - **rheumatoid-arthritis** — closes on establishment of radiographic erosion and self-sustaining synovitis — roughly the first twelve weeks to a year from symptom onset; 0.35 caught in time · **the toll is the price of missing it → `diagnosis` is the cheap lever**
 - **crohns** — closes on transmural fibrosis, stricture, penetrating complication; 0.4 caught in time · **the toll is the price of missing it → `diagnosis` is the cheap lever**
 - **h5n1** — closes on established viral pneumonia and acute respiratory distress — days, for the individual patient; 0.3 caught in time · **the residue is the price of missing it → `diagnosis` is the cheap lever**
 - **schizophrenia** — closes on accumulating functional and social loss during untreated psychosis, and the end of the specialised early-intervention period after which gains attenuate; 0.3 caught in time · **the toll is the price of missing it → `diagnosis` is the cheap lever**
 - **hypertension** — closes on cumulative arterial and end-organ damage — decades, continuous, and with no symptom to mark any point on it; 0.3 caught in time
+- **neonatal-diabetes** — closes on duration of insulin treatment before genetic diagnosis; neurodevelopment in the severe KATP mutations; 0.35 caught in time · **the toll is the price of missing it → `diagnosis` is the cheap lever**
 - **rheumatic-heart-disease** — closes on valvular scarring, which is irreversible; 0.25 caught in time · **the toll is the price of missing it → `diagnosis` is the cheap lever**
 - **glaucoma** — closes on retinal ganglion cell and optic nerve axon loss — irreversible, cumulative, and asymptomatic until the field defect reaches the centre; 0.3 caught in time · **the residue is the price of missing it → `diagnosis` is the cheap lever**
 - **copd** — closes on cumulative irreversible destruction of alveolar wall and small airway — continuous rather than sudden, which is why nobody arrives in time; 0.1 caught in time · **the toll is the price of missing it → `diagnosis` is the cheap lever**
@@ -734,11 +819,14 @@ describes no patient. Read the strata, not the row.
 - **marburg** — closes on progression to hypovolaemic shock, electrolyte derangement and multi-organ failure — days, and continuously worse rather than at a threshold; 0.25 caught in time · **the residue is the price of missing it → `diagnosis` is the cheap lever**
 - **duchenne** — closes on progressive irreversible replacement of muscle by fat and fibrous tissue — continuous from birth, and well advanced by the usual age of diagnosis; 0.3 caught in time · **the toll is the price of missing it → `diagnosis` is the cheap lever**
 - **spinal-muscular-atrophy** — closes on irreversible loss of anterior horn cells, which is largely complete around the time symptoms appear — weeks to a few months in type 1; 0.25 caught in time · **the toll is the price of missing it → `diagnosis` is the cheap lever**
+- **narcolepsy-type-1** — closes on completion of hypocretin neuron loss, weeks to months after onset; 0.02 caught in time · **the residue is the price of missing it → `diagnosis` is the cheap lever**
 - **migraine** — closes on established chronic migraine with medication overuse — reversible in a minority, and progressively less so the longer it has run; 0.2 caught in time · **the toll is the price of missing it → `diagnosis` is the cheap lever**
 - **stroke** — closes on completion of infarction through the ischaemic penumbra — patient-specific, determined by collateral circulation, and directly measurable on perfusion imaging rather than inferrable from the clock; 0.12 caught in time · **the toll is the price of missing it → `diagnosis` is the cheap lever**
 - **cerebral-palsy** — closes on the six hours after a hypoxic-ischaemic insult, and the hours of preterm labour, for prevention; and the first two years of peak neuroplasticity for building function afterwards — the lesion itself is finished before either; 0.25 caught in time · **the toll is the price of missing it → `diagnosis` is the cheap lever**
 - **idiopathic-pulmonary-fibrosis** — closes on lung function already lost, which does not come back — there is no threshold, only continuous irreversible subtraction, and the practical deadline is transplant eligibility, which age and comorbidity close permanently; 0.3 caught in time
 - **influenza** — closes on completion of viral replication — about 48 hours from symptom onset, after which antivirals have no useful effect; 0.25 caught in time
+- **sarcopenia** — closes on cumulative motor unit loss; the fall and admission that usually prompt the diagnosis; 0.15 caught in time · **the residue is the price of missing it → `diagnosis` is the cheap lever**
+- **acute-myeloid-leukaemia** — closes on presentation with established leukostasis, intracranial haemorrhage, or sepsis; in APL, the hours before ATRA is started; 0.8 caught in time · **the toll is the price of missing it → `diagnosis` is the cheap lever**
 - **familial-hypercholesterolaemia** — closes on cumulative LDL exposure; operationally, the first coronary event, after which the same treatment continues with the damage already done; 0.1 caught in time · **the residue is the price of missing it → `diagnosis` is the cheap lever**
 - **hepatitis-b** — closes on establishment of chronic infection in a perinatally exposed infant — about twenty-four hours; 0.45 caught in time · **the residue is the price of missing it → `diagnosis` is the cheap lever**
 - **osteoporosis** — closes on the second fracture — the one-to-two-year period of imminent risk after a first fragility fracture, during which the patient is already in the health system and is discharged untreated; and, decades earlier, the attainment of peak bone mass in early adulthood; 0.2 caught in time · **the toll is the price of missing it → `diagnosis` is the cheap lever**
@@ -747,6 +835,7 @@ describes no patient. Read the strata, not the row.
 - **obesity** — closes on establishment of adipocyte number and of a defended higher set point in adolescence; and separately, the transition from preserved organ function to established damage; 0.15 caught in time · **the toll is the price of missing it → `diagnosis` is the cheap lever**
 - **disorders-of-consciousness** — closes on withdrawal of life-sustaining treatment, or discharge to long-term care without further specialist reassessment — after which the diagnosis, right or wrong, is rarely revisited; 0.2 caught in time · **the residue is the price of missing it → `diagnosis` is the cheap lever**
 - **alzheimers** — closes on progression from mild cognitive impairment through mild dementia to moderate dementia, beyond which no disease-modifying therapy has shown benefit — a few years; 0.15 caught in time · **the toll is the price of missing it → `diagnosis` is the cheap lever**
+- **ebv-infection** — closes on established monomorphic lymphoproliferation, which behaves as an aggressive lymphoma rather than as a reversible overgrowth; 0.45 caught in time · **the toll is the price of missing it → `diagnosis` is the cheap lever**
 - **dengue** — closes on progression to plasma leakage and shock, over hours around defervescence; 0.7 caught in time
 - **heds** — closes on deconditioning, failed surgery performed without the diagnosis, opioid exposure, central sensitisation; 0.2 caught in time · **the toll is the price of missing it → `diagnosis` is the cheap lever**
 - **msmds** — closes on first aortic dissection or cerebrovascular event; 0.6 caught in time · **the toll is the price of missing it → `diagnosis` is the cheap lever**
@@ -760,8 +849,9 @@ describes no patient. Read the strata, not the row.
 - **thyroid-cancer** — curable, partly (reach 0.57) · blockers: cost,diagnosis,knowledge,policy · from ~$5e+08 · academic, government, health-system, manufacturer, payer, philanthropy, regulator, sponsor
 - **typhoid** — curable, partly (reach 0.57) · blockers: diagnosis,knowledge,logistics,policy · from ~$5e+08 · academic, government, health-system, legislator, manufacturer, nonprofit, payer, philanthropy, regulator, sponsor
 - **trachoma** — curable, partly (reach 0.552) · blockers: evidence-incomplete,knowledge,logistics,policy · from ~$5e+07 · academic, government, health-system, legislator, nonprofit, philanthropy, sponsor
+- **botulism** — curable, partly (reach 0.522) · blockers: knowledge,logistics,policy · from ~$1e+07 · academic, government, health-system, nonprofit, regulator
 - **gonorrhoea** — curable, partly (reach 0.522) · blockers: diagnosis,knowledge,no-sponsor,policy · from ~$3e+08 · academic, government, health-system, manufacturer, nonprofit, payer, philanthropy, sponsor
-- **malaria** — curable, partly (reach 0.512) · blockers: cost,diagnosis,knowledge,logistics,tooling · from ~$2e+09 · academic, government, health-system, legislator, manufacturer, nonprofit, payer, philanthropy, sponsor
+- **malaria** — curable, partly (reach 0.512) · blockers: candidate-untested,cost,diagnosis,knowledge,logistics,tooling · from ~$5e+08 · academic, government, health-system, legislator, manufacturer, nonprofit, payer, philanthropy, sponsor
 - **h-pylori-ulcer** — curable, partly (reach 0.51) · blockers: diagnosis,tooling · from ~$1e+07 · academic, health-system, software
 - **uterine-fibroids** — curable, partly (reach 0.495) · blockers: cost,diagnosis,knowledge · from ~$3e+08 · academic, government, health-system, manufacturer, patient-org, payer, sponsor
 - **benign-prostatic-hyperplasia** — curable, partly (reach 0.492) · blockers: diagnosis,knowledge,logistics,policy · from ~$1e+07 · academic, government, health-system, patient-org, payer, philanthropy, regulator, sponsor
@@ -782,6 +872,7 @@ describes no patient. Read the strata, not the row.
 - **anal-cancer** — curable, partly (reach 0.385) · blockers: knowledge,logistics,policy · from ~$2e+08 · academic, government, health-system, payer, sponsor
 - **amr-infection** — curable, partly (reach 0.375) · blockers: no-sponsor,policy,regulatory,tooling · from ~$1e+08 · academic, government, legislator, nonprofit, philanthropy, regulator, software
 - **uterine-cancer** — curable, partly (reach 0.375) · blockers: cost,diagnosis,knowledge,policy · from ~$1e+09 · academic, government, health-system, legislator, manufacturer, nonprofit, patient-org, payer, philanthropy, sponsor
+- **abdominal-aortic-aneurysm** — curable, partly (reach 0.36) · blockers: diagnosis,knowledge,logistics,policy · from ~$1e+08 · academic, government, health-system, manufacturer, nonprofit, payer, software, sponsor
 - **anaemia** — curable, partly (reach 0.36) · blockers: adherence,diagnosis,knowledge,logistics,policy · from ~$2e+08 · academic, government, health-system, legislator, manufacturer, nonprofit, patient-org, payer, philanthropy, regulator, software, sponsor
 - **breast-cancer** — curable, partly (reach 0.36) · blockers: cost,diagnosis,knowledge,logistics,tooling · from ~$1e+08 · academic, government, health-system, manufacturer, nonprofit, payer, philanthropy, software, sponsor
 - **melanoma** — curable, partly (reach 0.36) · blockers: cost,diagnosis,knowledge,policy · from ~$5e+08 · academic, government, health-system, legislator, manufacturer, nonprofit, payer, philanthropy, sponsor
@@ -797,6 +888,7 @@ describes no patient. Read the strata, not the row.
 - **renal-cell-carcinoma** — curable, barely (reach 0.293) · blockers: cost,diagnosis,knowledge,logistics · from ~$1e+09 · academic, government, health-system, manufacturer, payer, philanthropy, sponsor
 - **echinococcosis** — curable, barely (reach 0.28) · blockers: diagnosis,evidence-incomplete,knowledge,logistics · from ~$5e+07 · academic, government, health-system, legislator, nonprofit, philanthropy, sponsor
 - **nasopharyngeal-carcinoma** — curable, barely (reach 0.28) · blockers: cost,diagnosis,knowledge,logistics,no-sponsor · from ~$2e+08 · academic, government, health-system, manufacturer, nonprofit, payer, philanthropy, regulator, sponsor
+- **non-typhoidal-salmonellosis** — curable, barely (reach 0.28) · blockers: candidate-untested,diagnosis,knowledge,policy · from ~$5e+08 · academic, government, health-system, legislator, manufacturer, nonprofit, philanthropy, regulator, sponsor
 - **penile-cancer** — curable, barely (reach 0.28) · blockers: knowledge,logistics,policy · from ~$1e+08 · academic, government, health-system, manufacturer, nonprofit, patient-org, payer, philanthropy, sponsor
 - **vaginal-cancer** — curable, barely (reach 0.275) · blockers: diagnosis,knowledge,logistics · from ~$3e+07 · academic, government, health-system, nonprofit, patient-org, payer
 - **invasive-aspergillosis** — curable, barely (reach 0.248) · blockers: diagnosis,knowledge,no-sponsor,policy · from ~$5e+07 · academic, government, health-system, legislator, manufacturer, nonprofit, payer, philanthropy, regulator, sponsor
@@ -814,12 +906,15 @@ describes no patient. Read the strata, not the row.
 - **head-neck-cancer** — curable, barely (reach 0.193) · blockers: cost,diagnosis,knowledge,logistics,policy · from ~$1e+09 · academic, government, health-system, legislator, manufacturer, nonprofit, patient-org, payer, philanthropy, regulator, sponsor
 - **hepatitis-c** — curable, barely (reach 0.19) · blockers: cost,diagnosis,logistics · from ~$1e+09 · government, health-system, manufacturer, nonprofit, payer
 - **cervical-cancer** — curable, barely (reach 0.18) · blockers: cost,knowledge,logistics,policy · from ~$1e+09 · academic, government, health-system, legislator, manufacturer, nonprofit, patient-org, payer, philanthropy, sponsor
+- **anti-nmda-receptor-encephalitis** — curable, barely (reach 0.158) · blockers: diagnosis,knowledge,logistics,tooling · from ~$1e+07 · academic, government, health-system, manufacturer, nonprofit, patient-org, sponsor
 - **cre** — curable, barely (reach 0.15) · blockers: cost,diagnosis,knowledge,logistics · from ~$3e+09 · academic, government, health-system, manufacturer, nonprofit, payer, philanthropy, sponsor
+- **burns** — curable, barely (reach 0.14) · blockers: knowledge,logistics,policy,tooling · from ~$3e+08 · academic, government, health-system, legislator, manufacturer, nonprofit, patient-org, payer, philanthropy, software, sponsor
 - **gastric-cancer** — curable, barely (reach 0.14) · blockers: cost,knowledge,logistics,policy · from ~$2e+09 · academic, government, health-system, manufacturer, payer, philanthropy, regulator, sponsor
 - **osteoarthritis** — curable, barely (reach 0.138) · blockers: cost,knowledge,logistics,policy,regulatory,tooling · from ~$5e+08 · academic, government, health-system, legislator, manufacturer, nonprofit, patient-org, payer, philanthropy, regulator, software, sponsor
 - **congenital-heart-disease** — curable, barely (reach 0.135) · blockers: cost,diagnosis,knowledge,logistics · from ~$1e+09 · academic, government, health-system, nonprofit, patient-org, payer, philanthropy, sponsor
 - **obstetric-fistula** — curable, barely (reach 0.12) · blockers: knowledge,logistics,policy · from ~$3e+08 · academic, government, health-system, nonprofit, patient-org, payer, philanthropy, sponsor
 - **mycetoma** — curable, barely (reach 0.1) · blockers: diagnosis,evidence-incomplete,knowledge,logistics · from ~$5e+07 · academic, government, health-system, manufacturer, nonprofit, philanthropy, sponsor
+- **h-pylori-infection** — curable, barely (reach 0.09) · blockers: diagnosis,evidence-incomplete,knowledge,no-sponsor,tooling · from ~$5e+08 · academic, government, health-system, manufacturer, nonprofit, payer, philanthropy, regulator, software, sponsor
 - **noma** — curable, barely (reach 0.09) · blockers: diagnosis,knowledge,logistics,policy · from ~$5e+07 · academic, government, health-system, legislator, nonprofit, philanthropy
 - **liver-cancer** — curable, barely (reach 0.09) · blockers: diagnosis,knowledge,logistics,policy · from ~$2e+09 · academic, government, health-system, legislator, manufacturer, nonprofit, payer, philanthropy, regulator, software, sponsor
 - **lung-cancer** — curable, barely (reach 0.0875) · blockers: cost,diagnosis,knowledge,policy · from ~$4e+09 · academic, government, health-system, legislator, manufacturer, nonprofit, payer, philanthropy, sponsor
@@ -843,15 +938,17 @@ describes no patient. Read the strata, not the row.
 - **epilepsy** — managed, barely (reach 0.272) · blockers: knowledge,logistics,policy · from ~$1e+08 · academic, government, health-system, legislator, nonprofit, philanthropy, sponsor
 - **mcas** — managed, barely (reach 0.27) · blockers: diagnosis,evidence-incomplete,knowledge · from ~$2e+07 · academic, health-system, manufacturer, nonprofit, patient-org, sponsor
 - **multiple-sclerosis** — managed, barely (reach 0.245) · blockers: cost,diagnosis,evidence-incomplete,knowledge,logistics · from ~$8e+08 · academic, government, health-system, legislator, manufacturer, nonprofit, payer, philanthropy, regulator, sponsor
+- **lupus** — managed, barely (reach 0.24) · blockers: cost,diagnosis,evidence-incomplete,knowledge,logistics · from ~$1e+08 · academic, government, health-system, manufacturer, nonprofit, patient-org, payer, philanthropy, regulator, software, sponsor
 - **rheumatoid-arthritis** — managed, barely (reach 0.227) · blockers: cost,diagnosis,evidence-incomplete,knowledge,logistics · from ~$6e+08 · academic, government, health-system, legislator, manufacturer, nonprofit, payer, philanthropy, regulator, sponsor
 - **crohns** — managed, barely (reach 0.22) · blockers: cost,diagnosis,evidence-incomplete,knowledge · from ~$1e+08 · academic, government, health-system, manufacturer, nonprofit, payer, software, sponsor
 - **h5n1** — partial, barely (reach 0.22) · blockers: knowledge,logistics,manufacturing,policy · from ~$1e+09 · academic, government, health-system, legislator, manufacturer, nonprofit, payer, philanthropy, regulator, sponsor
 - **schizophrenia** — managed, barely (reach 0.22) · blockers: evidence-incomplete,knowledge,logistics,policy · from ~$5e+08 · academic, government, health-system, legislator, manufacturer, nonprofit, patient-org, payer, philanthropy, regulator, sponsor
 - **hypertension** — managed, barely (reach 0.212) · blockers: adherence,diagnosis,knowledge,logistics,policy · from ~$3e+09 · academic, government, health-system, legislator, manufacturer, nonprofit, payer, philanthropy, regulator, sponsor
+- **neonatal-diabetes** — managed, barely (reach 0.21) · blockers: cost,diagnosis,knowledge,logistics,regulatory · from ~$1e+07 · academic, government, health-system, manufacturer, nonprofit, patient-org, payer, philanthropy, regulator, sponsor
 - **pots** — managed, barely (reach 0.2) · blockers: diagnosis,evidence-incomplete,knowledge,no-sponsor · from ~$1e+07 · academic, government, health-system, nonprofit, patient-org, philanthropy, sponsor
 - **rheumatic-heart-disease** — partial, barely (reach 0.2) · blockers: candidate-untested,diagnosis,logistics,manufacturing · from ~$1e+07 · academic, government, health-system, manufacturer, nonprofit, philanthropy, software, sponsor
 - **glaucoma** — managed, barely (reach 0.188) · blockers: adherence,diagnosis,knowledge,logistics · from ~$2e+08 · academic, government, health-system, nonprofit, patient-org, payer, philanthropy, software, sponsor
-- **varicella-zoster** — preventable, — (reach 0.18) · blockers: cost,knowledge · from ~$1e+09 · academic, government, health-system, manufacturer, payer, philanthropy, sponsor
+- **varicella-zoster** — preventable, — (reach 0.18) · blockers: cost,knowledge · from ~$1e+09 · academic, government, health-system, manufacturer, nonprofit, payer, philanthropy, sponsor
 - **bipolar** — managed, barely (reach 0.165) · blockers: diagnosis,knowledge,logistics,no-sponsor · from ~$1e+07 · academic, government, health-system, nonprofit, philanthropy, software
 - **endometriosis** — managed, barely (reach 0.165) · blockers: diagnosis,knowledge,logistics,no-sponsor · from ~$5e+08 · academic, government, health-system, nonprofit, patient-org, payer, philanthropy, sponsor
 - **heart-failure** — partial, barely (reach 0.165) · blockers: cost,diagnosis,knowledge,logistics,policy · from ~$3e+09 · academic, government, health-system, manufacturer, nonprofit, patient-org, payer, philanthropy, regulator, software, sponsor
@@ -860,10 +957,13 @@ describes no patient. Read the strata, not the row.
 - **hearing-loss** — managed, barely (reach 0.15) · blockers: adherence,cost,knowledge,logistics,policy · from ~$1e+09 · academic, government, health-system, legislator, manufacturer, nonprofit, patient-org, payer, philanthropy, regulator, sponsor
 - **duchenne** — partial, barely (reach 0.14) · blockers: cost,diagnosis,knowledge,logistics,regulatory · from ~$5e+08 · academic, government, health-system, legislator, manufacturer, nonprofit, patient-org, payer, philanthropy, regulator, sponsor
 - **spinal-muscular-atrophy** — managed, barely (reach 0.14) · blockers: cost,diagnosis,evidence-incomplete,knowledge,logistics · from ~$5e+08 · academic, government, health-system, manufacturer, nonprofit, patient-org, payer, philanthropy, regulator, sponsor
+- **narcolepsy-type-1** — managed, barely (reach 0.128) · blockers: candidate-untested,diagnosis,knowledge,logistics,regulatory · from ~$1e+08 · academic, government, health-system, nonprofit, patient-org, payer, regulator, sponsor
 - **migraine** — managed, barely (reach 0.125) · blockers: cost,diagnosis,knowledge,policy · from ~$5e+08 · academic, government, health-system, manufacturer, nonprofit, patient-org, payer, philanthropy, sponsor
 - **stroke** — partial, barely (reach 0.125) · blockers: diagnosis,knowledge,logistics,policy · from ~$5e+09 · academic, government, health-system, legislator, manufacturer, nonprofit, payer, philanthropy, sponsor
 - **idiopathic-pulmonary-fibrosis** — partial, barely (reach 0.105) · blockers: cost,diagnosis,evidence-incomplete,knowledge · from ~$5e+08 · academic, government, health-system, manufacturer, nonprofit, patient-org, payer, philanthropy, regulator, sponsor
 - **influenza** — preventable, — (reach 0.105) · blockers: cost,evidence-incomplete,knowledge,manufacturing,policy · from ~$5e+08 · academic, government, health-system, legislator, manufacturer, nonprofit, payer, philanthropy, regulator, sponsor
+- **sarcopenia** — partial, barely (reach 0.105) · blockers: diagnosis,knowledge,logistics,regulatory · from ~$1e+08 · academic, government, health-system, nonprofit, payer, regulator, software, sponsor
+- **acute-myeloid-leukaemia** — partial, barely (reach 0.09) · blockers: cost,diagnosis,evidence-incomplete,knowledge,logistics · from ~$5e+08 · academic, government, health-system, manufacturer, nonprofit, payer, philanthropy, regulator, sponsor
 - **familial-hypercholesterolaemia** — managed, barely (reach 0.085) · blockers: cost,diagnosis,evidence-incomplete,policy · from ~$1e+07 · academic, government, health-system, legislator, manufacturer, nonprofit, patient-org, payer, philanthropy, software
 - **hepatitis-b** — managed, barely (reach 0.076) · blockers: diagnosis,knowledge,logistics,policy · from ~$2e+09 · academic, government, health-system, legislator, manufacturer, nonprofit, payer, philanthropy, sponsor
 - **osteoporosis** — managed, barely (reach 0.075) · blockers: adherence,cost,diagnosis,knowledge,logistics · from ~$1e+09 · academic, government, health-system, manufacturer, nonprofit, patient-org, payer, philanthropy, regulator, sponsor
@@ -880,28 +980,28 @@ describes no patient. Read the strata, not the row.
 
 | mechanism | a treatment that works | alters the course | nothing yet |
 |---|---|---|---|
-| **known** | **known & treatable**<br>amr-infection · anaemia · anal-cancer · asthma · atrial-fibrillation · bacterial-meningitis · benign-prostatic-hyperplasia · bladder-cancer · breast-cancer · buruli-ulcer · candidaemia · cataract · cervical-cancer · chagas · childhood-all · childhood-pneumonia · chronic-kidney-disease · cirrhosis · clubfoot · cml · coccidioidomycosis · colorectal-cancer · congenital-heart-disease · covid-19 · cre · crohns · cryptococcal-meningitis · cystic-fibrosis · dengue · diarrhoeal-disease · ebola · echinococcosis · endometriosis · epilepsy · familial-hypercholesterolaemia · gastric-cancer · genital-chlamydia · genital-herpes · glaucoma · gonorrhoea · h-pylori-ulcer · hat · head-neck-cancer · hearing-loss · hepatitis-b · hepatitis-c · hiv · hpv-infection · hypertension · influenza · invasive-aspergillosis · leprosy · liver-cancer · lung-cancer · lymphatic-filariasis · malaria · maternal-haemorrhage · mcas · measles · melanoma · migraine · mrsa · multiple-sclerosis · mycetoma · mycoplasma-genitalium · nasopharyngeal-carcinoma · neonatal-conditions · noma · non-hodgkin-lymphoma · obesity · obstetric-fistula · onchocerciasis · osteoarthritis · osteoporosis · pancreatic-cancer · penile-cancer · pku · pleomorphic-adenoma · polycythaemia-vera · pots · prostate-cancer · rabies · refractive-error · renal-cell-carcinoma · retinopathy-of-prematurity · rheumatoid-arthritis · scabies · schistosomiasis · schizophrenia · sepsis · sickle-cell · smallpox · snakebite · soil-transmitted-helminths · spinal-muscular-atrophy · syphilis · taeniasis-cysticercosis · thyroid-cancer · trachoma · trichomoniasis · tuberculosis · type-1-diabetes · type-2-diabetes · typhoid · uterine-cancer · uterine-fibroids · uveal-melanoma · vaginal-cancer · varicella-zoster · visceral-leishmaniasis · vulvar-cancer · yaws | **known & modifiable**<br>als · alzheimers · cholera · cmv-infection · dipg · duchenne · glioblastoma · h5n1 · heart-failure · idiopathic-pulmonary-fibrosis · ischaemic-heart-disease · mesothelioma · rheumatic-heart-disease · stroke · toxoplasmosis | **engineering problem**<br>acute-bronchitis · cerebral-palsy · copd · cryptosporidiosis · disorders-of-consciousness · dracunculiasis · huntington · marburg · msmds · multiple-system-atrophy · parkinsons · prion-disease · tay-sachs |
+| **known** | **known & treatable**<br>abdominal-aortic-aneurysm · amr-infection · anaemia · anal-cancer · anti-nmda-receptor-encephalitis · asthma · atrial-fibrillation · bacterial-meningitis · benign-prostatic-hyperplasia · bladder-cancer · botulism · breast-cancer · burns · buruli-ulcer · candidaemia · cataract · cervical-cancer · chagas · childhood-all · childhood-pneumonia · chronic-kidney-disease · cirrhosis · clubfoot · cml · coccidioidomycosis · colorectal-cancer · congenital-heart-disease · covid-19 · cre · crohns · cryptococcal-meningitis · cystic-fibrosis · dengue · diarrhoeal-disease · ebola · echinococcosis · endometriosis · epilepsy · familial-hypercholesterolaemia · gastric-cancer · genital-chlamydia · genital-herpes · glaucoma · gonorrhoea · h-pylori-infection · h-pylori-ulcer · hat · head-neck-cancer · hearing-loss · hepatitis-b · hepatitis-c · hiv · hpv-infection · hypertension · influenza · invasive-aspergillosis · leprosy · listeriosis · liver-cancer · lung-cancer · lupus · lymphatic-filariasis · malaria · maternal-haemorrhage · mcas · measles · melanoma · migraine · mrsa · multiple-sclerosis · mycetoma · mycoplasma-genitalium · narcolepsy-type-1 · nasopharyngeal-carcinoma · neonatal-conditions · neonatal-diabetes · noma · non-hodgkin-lymphoma · non-typhoidal-salmonellosis · obesity · obstetric-fistula · onchocerciasis · osteoarthritis · osteoporosis · pancreatic-cancer · penile-cancer · pku · pleomorphic-adenoma · polycythaemia-vera · pots · prostate-cancer · rabies · refractive-error · renal-cell-carcinoma · retinopathy-of-prematurity · rheumatoid-arthritis · scabies · schistosomiasis · schizophrenia · sepsis · sickle-cell · smallpox · snakebite · soil-transmitted-helminths · spinal-muscular-atrophy · syphilis · taeniasis-cysticercosis · thoracic-aortic-aneurysm · thyroid-cancer · trachoma · trichomoniasis · tuberculosis · type-1-diabetes · type-2-diabetes · typhoid · uterine-cancer · uterine-fibroids · uveal-melanoma · vaginal-cancer · varicella-zoster · visceral-leishmaniasis · vulvar-cancer · wilsons-disease · yaws | **known & modifiable**<br>acute-myeloid-leukaemia · als · alzheimers · cholera · cmv-infection · dipg · duchenne · glioblastoma · h5n1 · heart-failure · idiopathic-pulmonary-fibrosis · ischaemic-heart-disease · mesothelioma · rheumatic-heart-disease · sarcopenia · stroke · toxoplasmosis | **engineering problem**<br>acute-bronchitis · cerebral-palsy · copd · cryptosporidiosis · disorders-of-consciousness · dracunculiasis · ebv-infection · food-allergy · huntington · marburg · msmds · multiple-system-atrophy · parkinsons · prion-disease · tay-sachs |
 | **not known** | **empirical foothold**<br>— | **empirical luck**<br>bipolar | **frontier**<br>depression · heds · keloid · low-back-pain · me-cfs |
 
 ## Blocker census
 
 | kind | n |
 |---|---|
-| knowledge | 168 |
-| logistics | 106 |
-| diagnosis | 100 |
-| policy | 85 |
-| cost | 58 |
-| evidence-incomplete | 38 |
-| no-sponsor | 29 |
-| tooling | 14 |
-| adherence | 13 |
-| manufacturing | 9 |
-| regulatory | 5 |
-| candidate-untested | 2 |
+| knowledge | 192 |
+| logistics | 120 |
+| diagnosis | 113 |
+| policy | 92 |
+| cost | 63 |
+| evidence-incomplete | 42 |
+| no-sponsor | 32 |
+| tooling | 17 |
+| adherence | 15 |
+| manufacturing | 10 |
+| regulatory | 8 |
+| candidate-untested | 5 |
 
-**627 across 146 records.**
+**709 across 162 records.**
 
-standing: alleged=10 · disputed=6 · documented=610 · refuted=1
+standing: alleged=33 · disputed=8 · documented=667 · refuted=1
 
 knowledge-blocked only (no delivery lever): huntington

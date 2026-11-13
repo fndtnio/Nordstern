@@ -382,6 +382,36 @@ witness:
     *S. aureus* (gaps.md #70).
     *Hypnozoite biology.* The dormant vivax liver stage cannot be cultured,
     cannot be detected in a living person, and nobody knows what wakes it.
+    **AND A FOURTH THING, WHICH IS NOT A HOLE BUT AN ESTABLISHED MECHANISM THIS
+    RECORD HAS NEVER HELD: WHO GETS BITTEN IS DECIDED BY BACTERIA, AND THE
+    PARASITE INTERFERES WITH THE DECISION.**
+    *Attractiveness is microbial, not human.* Skin bacteria metabolise sweat into
+    the volatiles *Anopheles* follows — incubating sweat with skin flora makes it
+    **more** attractive than fresh sweat, so the human supplies the substrate and
+    the bacteria make the signal. Composition decides the magnitude: people who
+    attract more mosquitoes carry a higher abundance and **lower diversity** of
+    skin bacteria, with *Staphylococcus* and *Variovorax* enriched and
+    *Pseudomonas*, *Leptotrichia*, *Delftia* and Actinobacteria depleted
+    (Verhulst et al., *PLoS One* 2011;6(12):e28991, PMID 22216154, n = 48).
+    Synthetic communities built to mimic an attractive person's skin outperform
+    communities built to mimic an unattractive one, so it is the community rather
+    than the quantity.
+    **This is the mechanism underneath the heterogeneity every transmission model
+    assumes and none of them explains** — the long-standing observation that a
+    minority of people take most of the bites. `strata` cannot express it, because
+    the stratifying variable is not a property of the disease or of the patient's
+    clinical state.
+    *And the parasite manipulates it.* Gametocyte carriers are more attractive to
+    *Anopheles* than uninfected people. Infected children emit more heptanal,
+    octanal and nonanal, those aldehydes are detected by mosquito antennae, and
+    adding them to a synthetic "healthy" human odour blend makes the blend more
+    attractive (PNAS 2018, PMID 29666273). A field study caught wild *An.
+    arabiensis* with an HMBPP-induced blend dose-dependently — **but only in the
+    presence of background human odour**, which is a hard limit on using it alone.
+    **The parasite advertises its host to its vector**, and it does so from the
+    one life stage that can infect a mosquito. That belongs beside the HRP2
+    deletions in `measurement`: the same organism editing the signals medicine
+    and the vector both read.
   intervention: >
     `curative`, cheaply and quickly, for the great majority.
     **Uncomplicated falciparum**: a three-day artemisinin combination —
@@ -596,6 +626,54 @@ blockers:
       actually lives.
     who_could: [health-system, government, nonprofit, payer, philanthropy]
     scale: 3.0e9
+    standing: documented
+    src: recall
+
+  - kind: candidate-untested
+    blocks: vector control that works on odour rather than on insecticide
+    obstacles: [microbiome-control]
+    what: >
+      **THE ONE VECTOR-CONTROL IDEA IN THIS RECORD THAT RESISTANCE CANNOT ERODE,
+      AND IT HAS ONE TRIAL.**
+      `witness.mechanism` now records that attractiveness to *Anopheles* is
+      produced by skin bacteria and amplified by the parasite. **Two
+      interventions follow from that and they are opposites.**
+      **Changing the person's skin flora is the one that cannot be done.** Nobody
+      can durably alter a human microbial community anywhere — see the
+      `microbiome-control` obstacle, where the only established successes are
+      faecal transplant into a gut antibiotics had already emptied, and removing
+      one organism from the nose with a cream. The individual-level association is
+      also correlational: nobody has shown that moving a person's flora moves
+      their bite rate. **Not tried, and not currently triable.**
+      **Using the odours as bait is the one that has been tried, and it worked on
+      the wrong endpoint.** SolarMal put solar-powered odour-baited traps into
+      4,358 households on Rusinga Island in Lake Victoria — 34,041 participants,
+      81 clusters, stepped-wedge cluster-randomised. **Malaria prevalence by rapid
+      test was 29.8% lower (95% CI 20.9-38.0)**, attributed to collapsed *An.
+      funestus* density. **And clinical malaria was 23 episodes against 33, giving
+      an adjusted effectiveness of 40.8% with a 95% CI of -172.8 to 87.1,
+      p = 0.5** (Homan et al., *Lancet* 2016;388(10050):1193-201, PMID 27520594).
+      **Fifty-six episodes in total. The prevalence result is strong and the
+      clinical result is uninformative**, because incidence collapsed during
+      rollout — so the trial did not demonstrate the outcome anybody cares about,
+      and the register should not record it as though it had.
+      **Filed `candidate-untested` rather than `evidence-incomplete` on purpose.**
+      One stepped-wedge trial on one island is not an inadequately-powered
+      programme; it is a single existence proof awaiting the trial that would
+      settle it. What is missing is ordinary: a second site, a different dominant
+      vector, and a clinical-incidence endpoint powered to mean something.
+      **Why it would matter if it held.** Every other lever in this record is
+      being eroded by something evolving — pyrethroid resistance in the `tooling`
+      blocker, artemisinin partial resistance in `moved`, HRP2 deletions in
+      `measurement`. **An odour-baited trap is a lure the mosquito cannot afford
+      to stop following**, because the signal it mimics is the one it needs to
+      feed, and nothing here records that distinction between a lever that
+      resistance degrades and one it cannot.
+      Nothing above re-rates this record. The figure in `access` is about nets,
+      tests and drugs, and this blocker names a thing that is not yet available
+      to have access to.
+    who_could: [academic, nonprofit, sponsor, government, philanthropy, manufacturer]
+    scale: 5.0e8
     standing: documented
     src: recall
 

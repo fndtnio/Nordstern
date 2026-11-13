@@ -375,8 +375,16 @@ in one word:
 
 **`n/a` is never `restored`**, the same rule as `unrated` never being `unsolved`
 and a Sperrwerk check reporting `skipped` rather than `ok`. Sickle cell is the
-register's only `both`: myeloablative conditioning takes fertility, and the cure
-at thirty does not undo the strokes at eight.
+clearest `both`: myeloablative conditioning takes fertility, and the cure at
+thirty does not undo the strokes at eight.
+
+**This sentence used to say sickle cell was the register's *only* `both`, and it
+was true when it was written.** There are now 33, which is the second-largest
+`restored` class — so `both` turned out to be the normal answer for any disease
+that damages tissue and is treated with something that costs. The correction was
+found on 2026-11-09 by counting, while writing `lupus`, which is the 33rd.
+**Nothing checks a count asserted in prose in this file**, which is the same
+finding as gaps.md #251 one directory up.
 
 ## Strata — when one entity spans the ladder
 
@@ -592,6 +600,13 @@ actionable thing in a record.** Where the toll is the price of having missed the
 window, the highest-leverage blocker is `diagnosis` — earlier detection converts a
 mutilating cure into a clean one, without any new therapy. `check.py` lists
 these, because they are the cheapest wins in the register.
+
+**`recurs: true`** — optional. The window is not a once-in-the-course moment
+but one that reopens with every exposure, for life, and is closed each time by
+the patient (food allergy: minutes, at every meal, by avoidance and a pen in the
+hand). It is the declared signal for the axis-A state *you survive, and you are
+never safe* (`buckets.yaml` v6), which a survival-built axis could not otherwise
+see. A flag, never prose, so a record cannot half-claim it.
 
 ## The witness
 

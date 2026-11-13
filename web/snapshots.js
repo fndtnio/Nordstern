@@ -9154,6 +9154,15513 @@ window.NORDSTERN_SNAPSHOTS = [
    "attributed_deaths_sum": 75641539.0,
    "note": "An UPPER BOUND, not a total. Records overlap — TB deaths in people with HIV are in both, sepsis is the mode of death for several others — and the sum exceeds annual global mortality. Do not chart this as a total."
   }
+ },
+ {
+  "date": "2026-10-19",
+  "register": "nordstern",
+  "records": {
+   "active": 147,
+   "deprecated": 0
+  },
+  "capability": {
+   "curable": 76,
+   "managed": 31,
+   "unsolved": 18,
+   "partial": 16,
+   "preventable": 6
+  },
+  "survival": {
+   "bands": {
+    "good chance": 82,
+    "n/a": 48,
+    "a chance": 9,
+    "terminal": 8
+   },
+   "rated": 99,
+   "outcomes": {
+    "cured": 57,
+    "n/a": 48,
+    "delayed": 20,
+    "held": 16,
+    "recovered": 6
+   },
+   "was_uniformly_fatal": 32,
+   "no_longer_terminal": 24,
+   "zero_gain": [
+    "alzheimers",
+    "huntington",
+    "prion-disease",
+    "rabies",
+    "tay-sachs"
+   ]
+  },
+  "buckets": {
+   "version": 5,
+   "digest": "e24c083aa92d",
+   "names": {
+    "ends-it": "It ends your life, whenever you find it",
+    "ends-it-unless-caught": "It ends your life unless it is caught in time",
+    "ends-it-later": "It ends your life, but later",
+    "held-off": "It is held off, for life",
+    "defines-your-life": "You survive, and it defines your life",
+    "changes-you": "You survive, and it changes you",
+    "back-to-normal": "You survive, and you get back to normal",
+    "nobody-makes-it": "The solution exists and nobody makes it",
+    "found-too-late": "Caught early it is curable, caught late it is not",
+    "cannot-aim-it": "It works for some people and nobody can say which",
+    "no-starting-point": "Nobody knows where to start",
+    "cannot-reach-people": "It works and it does not arrive",
+    "needs-more-evidence": "There is a candidate and the evidence is not in"
+   },
+   "defs": {
+    "ends-it": {
+     "rule": "The course is fatal, essentially nobody survives the stated horizon, and there is no window — finding it earlier changes nothing.",
+     "not": "NOT \"we have no cure\". Most fatal diseases here are `ends-it-later`. This is the much smaller set where the timing of diagnosis is irrelevant because nothing follows from it.",
+     "examples": [
+      "huntington"
+     ]
+    },
+    "ends-it-unless-caught": {
+     "rule": "Fatal as above, but a `window` exists — there is a period in which action changes the outcome, and outside it there is nothing.",
+     "not": "NOT every disease with a window; 86 records have one. This is the set where the window is the *whole* of the difference between living and dying.",
+     "examples": [
+      "rabies",
+      "prion-disease"
+     ]
+    },
+    "ends-it-later": {
+     "rule": "The disease is still what kills you. Either treatment alters the course without ending it — the register's `delayed` outcome — or **more than half of treated patients die of it**, whatever rung the ladder puts the treatment on.",
+     "not": "NOT \"untreatable\". These are mostly diseases medicine has changed a great deal — and the change bought time rather than an ending. **NOT decided by the intervention rung alone, and v4 fixed exactly that.** `survival_outcome()` reads `axes.intervention`, so every record on the `curative` rung returned `cured` however few survived — and `cured` never reached this branch. Pancreatic cancer, where 87% of treated patients die, was filed under *you survive, and it changes you*, beside cataract. The rung was right about what the operation does **when it works**; the bucket was asking a different question and taking the rung's word for the answer. ALSO NOT acute illness, and that exclusion is deliberate rather than protective. `marburg` kills about three quarters of those it infects within two weeks and the quarter who live **recover** — so \"it ends your life, but later\" is false for everybody in the record. That is the ⧉ `spans_ladder` shape the register already names as a **malformed question rather than a hard one**, and declining to average it is more honest than filing it confidently in the wrong place. See `holes`.",
+     "examples": [
+      "pancreatic-cancer",
+      "als",
+      "alzheimers",
+      "stroke",
+      "glioblastoma"
+     ]
+    },
+    "held-off": {
+     "rule": "A treatment suppresses it indefinitely and stopping brings it back. Near-normal life, on condition of continuous treatment.",
+     "not": "NOT cured. **This rung is what stops HIV being filed next to hepatitis C** — one is no longer a death sentence, the other is over.",
+     "examples": [
+      "hiv",
+      "type-1-diabetes",
+      "schizophrenia"
+     ]
+    },
+    "defines-your-life": {
+     "rule": "Survivable, but the cost of living with it or of being treated for it is continuous and large — a high ongoing burden, or a residue or a treatment toll rated `harsh`.",
+     "not": "NOT necessarily severe in the clinical sense, and NOT about mortality at all. `me-cfs`, `heds` and `msmds` are here with **no attributed deaths whatsoever** — which is the whole reason this axis is not built on survival.",
+     "examples": [
+      "sickle-cell",
+      "me-cfs",
+      "heds",
+      "cerebral-palsy",
+      "noma"
+     ]
+    },
+    "changes-you": {
+     "rule": "Survivable, and something **rated `major`** is left behind — by the disease, by the treatment, or both — or the ongoing burden of being treated is moderate. Without dominating the rest of your life, which is the bucket above.",
+     "not": "NOT a minor category. **It is still the largest bucket in the register** after v4 took four cancers out of it, and that is this axis's main finding: medicine's characteristic output is neither death nor cure but survival in an altered body. NOT triggered by *any* permanent difference. **v3 fixed exactly that.** Until 2026-09-01 the rule tested whether a `residue` block existed at all, so a record whose residue was a shoe size landed here — and derived `restored: restored` at the same time, because that derivation has always read severity. Eight records held both verdicts at once. `clubfoot` made it undeniable and the rule now reads severity too.",
+     "examples": [
+      "tuberculosis",
+      "benign-prostatic-hyperplasia",
+      "breast-cancer",
+      "malaria"
+     ]
+    },
+    "back-to-normal": {
+     "rule": "Survivable, with nothing worse than a `minor` residue and a `minor` treatment toll, and a low ongoing burden. **A minor permanent difference does not disqualify a record from this bucket** — a treated clubfoot leaves a slightly smaller foot in somebody who runs normally, and calling that a changed life is false.",
+     "not": "NOT the goal state for most of medicine, and still **uncommon** — 14 of 140, unchanged by v4. Read that as a claim about how little the register finds. It remains the bucket resting on the least-tested inputs: `residue` is absent on many records that have simply never been examined for one, and an unexamined record looks identical to a clean one. See `bucket-design.md`.",
+     "examples": [
+      "cholera",
+      "typhoid",
+      "influenza"
+     ]
+    },
+    "nobody-makes-it": {
+     "rule": "A `manufacturing` blocker, or a `no-sponsor` blocker on a record whose capability is real. The requirement that capability be real is what separates *nobody produces the cure* from *nobody funds the research*.",
+     "not": "NOT diseases with no answer. If nothing works, the problem is not manufacturing. `me-cfs` carries `no-sponsor` and is excluded here for exactly that reason — nobody is failing to manufacture its cure.",
+     "examples": [
+      "snakebite",
+      "bladder-cancer",
+      "syphilis",
+      "mrsa",
+      "diarrhoeal-disease"
+     ]
+    },
+    "found-too-late": {
+     "rule": "A `window` exists, the record's strata run from a late form where essentially nothing works (efficacy at or below 0.2) to an early form that is mostly cured (0.7 or above), and **fewer than half are caught in time**.",
+     "not": "NOT every disease with a window; **86 records have one**, which is far too many to be interesting. `caught_in_time` is what turns *a window exists* into *and we are missing it*, and it is the number that makes this bucket actionable rather than descriptive — **it is the size of the prize for a screening programme, per disease.** Chagas is 0.10, obesity 0.15, lung cancer 0.20, liver cancer 0.25. ALSO NOT `pancreatic-cancer`, and that exclusion is the rule working. Its strata spread is 0.15 — it is bad at **every** stage, so earlier detection is not the lever. A disease being terrible and having a window are different claims, and only the second is this bucket. `obesity` is in, on strata running 0.00 to 0.80, and is the entry most worth arguing with: its \"window\" is the period before the complications establish, which is real but is a slower and vaguer thing than a resectable tumour.",
+     "examples": [
+      "lung-cancer",
+      "liver-cancer",
+      "cervical-cancer",
+      "chagas",
+      "gastric-cancer"
+     ]
+    },
+    "cannot-aim-it": {
+     "rule": "The register's `futile_treatment_risk` — a treatment exists, it fails often, and there is no test that says in advance who it will fail.",
+     "not": "NOT the same as a treatment that works badly for everyone. The sketch's *\"% chance\"* is this: **a measurement failure wearing the costume of a treatment failure.**",
+     "examples": [
+      "rheumatoid-arthritis",
+      "schizophrenia",
+      "epilepsy",
+      "osteoarthritis"
+     ]
+    },
+    "no-starting-point": {
+     "rule": "`mechanism` is `none` or `correlates` — the causal account is absent or is a set of associations.",
+     "not": "NOT the famous killers. **Stroke and heart disease are `established`**: hand somebody $100M for stroke and they know exactly where to start, they simply cannot fix it. **The diseases with no starting point are the ones nobody dies of** — which is why a register built on mortality would never find them.",
+     "examples": [
+      "me-cfs",
+      "heds",
+      "depression",
+      "bipolar",
+      "low-back-pain"
+     ]
+    },
+    "cannot-reach-people": {
+     "rule": "`delivery` is `barely` or `undelivered` — efficacy multiplied by access leaves most patients untouched — **and** capability is `curable`, `managed` or `preventable`. A `disease-modifying` treatment is not something that \"works\" in the sense this bucket means: it slows the course and the disease still wins, so there is nothing to arrive.",
+     "not": "NOT a knowledge problem, and it is the single most common state in the register. This is the tag the whole `efficacy`/`access` split exists to make sayable. And NOT the `partial` records — Alzheimer's, ALS, glioblastoma — which are undelivered too, but of a treatment that does not hold the disease; version 4 filed them here on delivery alone and the name overclaimed.",
+     "examples": [
+      "refractive-error",
+      "hearing-loss",
+      "sickle-cell",
+      "hepatitis-b",
+      "obesity"
+     ]
+    },
+    "needs-more-evidence": {
+     "rule": "An `evidence-incomplete` or `candidate-untested` blocker — something plausible exists and nobody has established whether it works.",
+     "not": "NOT \"no path forward\". This is the opposite: a path exists and has not been walked.",
+     "examples": [
+      "idiopathic-pulmonary-fibrosis"
+     ]
+    }
+   },
+   "a": {
+    "changes-you": 61,
+    "held-off": 31,
+    "ends-it-later": 18,
+    "defines-your-life": 17,
+    "back-to-normal": 14,
+    "ends-it": 4,
+    "ends-it-unless-caught": 2
+   },
+   "b": {
+    "cannot-reach-people": 57,
+    "needs-more-evidence": 40,
+    "nobody-makes-it": 31,
+    "cannot-aim-it": 25,
+    "found-too-late": 11,
+    "no-starting-point": 6
+   },
+   "b_untagged": 40,
+   "members": {
+    "pleomorphic-adenoma": {
+     "id": "FND-D-0015",
+     "a": "changes-you",
+     "b": []
+    },
+    "hat": {
+     "id": "FND-D-0026",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "tuberculosis": {
+     "id": "FND-D-0023",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "covid-19": {
+     "id": "FND-D-0076",
+     "a": "changes-you",
+     "b": [
+      "found-too-late",
+      "needs-more-evidence"
+     ]
+    },
+    "leprosy": {
+     "id": "FND-D-0035",
+     "a": "changes-you",
+     "b": []
+    },
+    "thyroid-cancer": {
+     "id": "FND-D-0061",
+     "a": "changes-you",
+     "b": []
+    },
+    "typhoid": {
+     "id": "FND-D-0066",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "trachoma": {
+     "id": "FND-D-0036",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "gonorrhoea": {
+     "id": "FND-D-0117",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "malaria": {
+     "id": "FND-D-0069",
+     "a": "changes-you",
+     "b": []
+    },
+    "h-pylori-ulcer": {
+     "id": "FND-D-0001",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "uterine-fibroids": {
+     "id": "FND-D-0139",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it"
+     ]
+    },
+    "benign-prostatic-hyperplasia": {
+     "id": "FND-D-0138",
+     "a": "changes-you",
+     "b": []
+    },
+    "mrsa": {
+     "id": "FND-D-0067",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "genital-chlamydia": {
+     "id": "FND-D-0120",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "visceral-leishmaniasis": {
+     "id": "FND-D-0024",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "bacterial-meningitis": {
+     "id": "FND-D-0129",
+     "a": "defines-your-life",
+     "b": []
+    },
+    "coccidioidomycosis": {
+     "id": "FND-D-0111",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-aim-it",
+      "needs-more-evidence"
+     ]
+    },
+    "maternal-haemorrhage": {
+     "id": "FND-D-0073",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "syphilis": {
+     "id": "FND-D-0116",
+     "a": "defines-your-life",
+     "b": [
+      "nobody-makes-it",
+      "needs-more-evidence"
+     ]
+    },
+    "schistosomiasis": {
+     "id": "FND-D-0025",
+     "a": "changes-you",
+     "b": []
+    },
+    "scabies": {
+     "id": "FND-D-0038",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "childhood-pneumonia": {
+     "id": "FND-D-0071",
+     "a": "changes-you",
+     "b": []
+    },
+    "soil-transmitted-helminths": {
+     "id": "FND-D-0029",
+     "a": "back-to-normal",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "diarrhoeal-disease": {
+     "id": "FND-D-0074",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "buruli-ulcer": {
+     "id": "FND-D-0033",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "vulvar-cancer": {
+     "id": "FND-D-0125",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it"
+     ]
+    },
+    "anal-cancer": {
+     "id": "FND-D-0123",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it"
+     ]
+    },
+    "amr-infection": {
+     "id": "FND-D-0014",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "uterine-cancer": {
+     "id": "FND-D-0064",
+     "a": "changes-you",
+     "b": []
+    },
+    "anaemia": {
+     "id": "FND-D-0098",
+     "a": "changes-you",
+     "b": []
+    },
+    "breast-cancer": {
+     "id": "FND-D-0017",
+     "a": "changes-you",
+     "b": []
+    },
+    "melanoma": {
+     "id": "FND-D-0054",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "candidaemia": {
+     "id": "FND-D-0112",
+     "a": "changes-you",
+     "b": []
+    },
+    "prostate-cancer": {
+     "id": "FND-D-0051",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "neonatal-conditions": {
+     "id": "FND-D-0072",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it",
+      "needs-more-evidence"
+     ]
+    },
+    "yaws": {
+     "id": "FND-D-0034",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "cataract": {
+     "id": "FND-D-0089",
+     "a": "changes-you",
+     "b": []
+    },
+    "childhood-all": {
+     "id": "FND-D-0055",
+     "a": "changes-you",
+     "b": []
+    },
+    "trichomoniasis": {
+     "id": "FND-D-0121",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "uveal-melanoma": {
+     "id": "FND-D-0144",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "retinopathy-of-prematurity": {
+     "id": "FND-D-0132",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "renal-cell-carcinoma": {
+     "id": "FND-D-0063",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "echinococcosis": {
+     "id": "FND-D-0032",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "nasopharyngeal-carcinoma": {
+     "id": "FND-D-0103",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "penile-cancer": {
+     "id": "FND-D-0124",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "vaginal-cancer": {
+     "id": "FND-D-0126",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "smallpox": {
+     "id": "FND-D-0048",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "invasive-aspergillosis": {
+     "id": "FND-D-0110",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "cirrhosis": {
+     "id": "FND-D-0082",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "ebola": {
+     "id": "FND-D-0045",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "bladder-cancer": {
+     "id": "FND-D-0062",
+     "a": "defines-your-life",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "sepsis": {
+     "id": "FND-D-0070",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "clubfoot": {
+     "id": "FND-D-0135",
+     "a": "back-to-normal",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "colorectal-cancer": {
+     "id": "FND-D-0052",
+     "a": "changes-you",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "snakebite": {
+     "id": "FND-D-0012",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "cryptococcal-meningitis": {
+     "id": "FND-D-0109",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "non-hodgkin-lymphoma": {
+     "id": "FND-D-0057",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "mycoplasma-genitalium": {
+     "id": "FND-D-0122",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "taeniasis-cysticercosis": {
+     "id": "FND-D-0039",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "head-neck-cancer": {
+     "id": "FND-D-0102",
+     "a": "defines-your-life",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "hepatitis-c": {
+     "id": "FND-D-0002",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "cervical-cancer": {
+     "id": "FND-D-0053",
+     "a": "changes-you",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "cre": {
+     "id": "FND-D-0068",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "gastric-cancer": {
+     "id": "FND-D-0059",
+     "a": "ends-it-later",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "osteoarthritis": {
+     "id": "FND-D-0096",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "congenital-heart-disease": {
+     "id": "FND-D-0094",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "obstetric-fistula": {
+     "id": "FND-D-0136",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "mycetoma": {
+     "id": "FND-D-0030",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "noma": {
+     "id": "FND-D-0041",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "liver-cancer": {
+     "id": "FND-D-0058",
+     "a": "ends-it-later",
+     "b": [
+      "found-too-late",
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "lung-cancer": {
+     "id": "FND-D-0050",
+     "a": "ends-it-later",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "pancreatic-cancer": {
+     "id": "FND-D-0060",
+     "a": "ends-it-later",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "type-2-diabetes": {
+     "id": "FND-D-0080",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "chagas": {
+     "id": "FND-D-0022",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "sickle-cell": {
+     "id": "FND-D-0006",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "hiv": {
+     "id": "FND-D-0004",
+     "a": "held-off",
+     "b": []
+    },
+    "lymphatic-filariasis": {
+     "id": "FND-D-0028",
+     "a": "held-off",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "onchocerciasis": {
+     "id": "FND-D-0027",
+     "a": "held-off",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "pku": {
+     "id": "FND-D-0003",
+     "a": "held-off",
+     "b": []
+    },
+    "cholera": {
+     "id": "FND-D-0065",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "genital-herpes": {
+     "id": "FND-D-0118",
+     "a": "held-off",
+     "b": []
+    },
+    "cml": {
+     "id": "FND-D-0056",
+     "a": "held-off",
+     "b": []
+    },
+    "hpv-infection": {
+     "id": "FND-D-0119",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "parkinsons": {
+     "id": "FND-D-0087",
+     "a": "ends-it-later",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "atrial-fibrillation": {
+     "id": "FND-D-0083",
+     "a": "held-off",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "ischaemic-heart-disease": {
+     "id": "FND-D-0042",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "polycythaemia-vera": {
+     "id": "FND-D-0145",
+     "a": "held-off",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "type-1-diabetes": {
+     "id": "FND-D-0079",
+     "a": "held-off",
+     "b": []
+    },
+    "toxoplasmosis": {
+     "id": "FND-D-0114",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-aim-it",
+      "needs-more-evidence"
+     ]
+    },
+    "asthma": {
+     "id": "FND-D-0097",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "refractive-error": {
+     "id": "FND-D-0133",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "acute-bronchitis": {
+     "id": "FND-D-0113",
+     "a": "back-to-normal",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "cystic-fibrosis": {
+     "id": "FND-D-0090",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "measles": {
+     "id": "FND-D-0049",
+     "a": "changes-you",
+     "b": []
+    },
+    "epilepsy": {
+     "id": "FND-D-0008",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "mcas": {
+     "id": "FND-D-0021",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "keloid": {
+     "id": "FND-D-0140",
+     "a": "changes-you",
+     "b": [
+      "no-starting-point"
+     ]
+    },
+    "multiple-sclerosis": {
+     "id": "FND-D-0086",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "low-back-pain": {
+     "id": "FND-D-0010",
+     "a": "changes-you",
+     "b": [
+      "no-starting-point"
+     ]
+    },
+    "rheumatoid-arthritis": {
+     "id": "FND-D-0093",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "crohns": {
+     "id": "FND-D-0016",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "h5n1": {
+     "id": "FND-D-0047",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "schizophrenia": {
+     "id": "FND-D-0088",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "hypertension": {
+     "id": "FND-D-0084",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "pots": {
+     "id": "FND-D-0020",
+     "a": "held-off",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "rheumatic-heart-disease": {
+     "id": "FND-D-0013",
+     "a": "ends-it-later",
+     "b": [
+      "nobody-makes-it",
+      "needs-more-evidence"
+     ]
+    },
+    "glaucoma": {
+     "id": "FND-D-0131",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "varicella-zoster": {
+     "id": "FND-D-0127",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "bipolar": {
+     "id": "FND-D-0011",
+     "a": "held-off",
+     "b": [
+      "nobody-makes-it",
+      "cannot-aim-it",
+      "no-starting-point",
+      "cannot-reach-people"
+     ]
+    },
+    "copd": {
+     "id": "FND-D-0044",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "endometriosis": {
+     "id": "FND-D-0137",
+     "a": "held-off",
+     "b": [
+      "nobody-makes-it",
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "heart-failure": {
+     "id": "FND-D-0100",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "chronic-kidney-disease": {
+     "id": "FND-D-0081",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "cmv-infection": {
+     "id": "FND-D-0128",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-aim-it"
+     ]
+    },
+    "hearing-loss": {
+     "id": "FND-D-0095",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "depression": {
+     "id": "FND-D-0007",
+     "a": "changes-you",
+     "b": [
+      "no-starting-point",
+      "needs-more-evidence"
+     ]
+    },
+    "marburg": {
+     "id": "FND-D-0046",
+     "a": "changes-you",
+     "b": []
+    },
+    "duchenne": {
+     "id": "FND-D-0092",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "spinal-muscular-atrophy": {
+     "id": "FND-D-0091",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "migraine": {
+     "id": "FND-D-0134",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "multiple-system-atrophy": {
+     "id": "FND-D-0142",
+     "a": "ends-it",
+     "b": []
+    },
+    "stroke": {
+     "id": "FND-D-0043",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "cryptosporidiosis": {
+     "id": "FND-D-0115",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "cerebral-palsy": {
+     "id": "FND-D-0099",
+     "a": "defines-your-life",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "idiopathic-pulmonary-fibrosis": {
+     "id": "FND-D-0108",
+     "a": "ends-it-later",
+     "b": [
+      "found-too-late",
+      "needs-more-evidence"
+     ]
+    },
+    "influenza": {
+     "id": "FND-D-0077",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it",
+      "needs-more-evidence"
+     ]
+    },
+    "acute-myeloid-leukaemia": {
+     "id": "FND-D-0147",
+     "a": "ends-it-later",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "familial-hypercholesterolaemia": {
+     "id": "FND-D-0146",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "hepatitis-b": {
+     "id": "FND-D-0075",
+     "a": "held-off",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "osteoporosis": {
+     "id": "FND-D-0101",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "als": {
+     "id": "FND-D-0104",
+     "a": "ends-it-later",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "glioblastoma": {
+     "id": "FND-D-0105",
+     "a": "ends-it-later",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "mesothelioma": {
+     "id": "FND-D-0107",
+     "a": "ends-it-later",
+     "b": [
+      "cannot-aim-it",
+      "needs-more-evidence"
+     ]
+    },
+    "obesity": {
+     "id": "FND-D-0085",
+     "a": "held-off",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "tay-sachs": {
+     "id": "FND-D-0143",
+     "a": "ends-it",
+     "b": []
+    },
+    "disorders-of-consciousness": {
+     "id": "FND-D-0130",
+     "a": "defines-your-life",
+     "b": []
+    },
+    "alzheimers": {
+     "id": "FND-D-0078",
+     "a": "ends-it-later",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "dipg": {
+     "id": "FND-D-0141",
+     "a": "ends-it",
+     "b": [
+      "nobody-makes-it",
+      "cannot-aim-it"
+     ]
+    },
+    "dengue": {
+     "id": "FND-D-0031",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "dracunculiasis": {
+     "id": "FND-D-0040",
+     "a": "changes-you",
+     "b": []
+    },
+    "heds": {
+     "id": "FND-D-0019",
+     "a": "defines-your-life",
+     "b": [
+      "no-starting-point",
+      "needs-more-evidence"
+     ]
+    },
+    "huntington": {
+     "id": "FND-D-0005",
+     "a": "ends-it",
+     "b": []
+    },
+    "me-cfs": {
+     "id": "FND-D-0009",
+     "a": "defines-your-life",
+     "b": [
+      "no-starting-point"
+     ]
+    },
+    "msmds": {
+     "id": "FND-D-0018",
+     "a": "defines-your-life",
+     "b": []
+    },
+    "prion-disease": {
+     "id": "FND-D-0106",
+     "a": "ends-it-unless-caught",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "rabies": {
+     "id": "FND-D-0037",
+     "a": "ends-it-unless-caught",
+     "b": []
+    }
+   }
+  },
+  "quadrant": {
+   "known & treatable": 112,
+   "known & modifiable": 16,
+   "engineering problem": 13,
+   "frontier": 5,
+   "empirical luck": 1
+  },
+  "delivery": {
+   "barely": 65,
+   "partly": 46,
+   "—": 24,
+   "mostly": 7,
+   "undelivered": 5
+  },
+  "gaps": {
+   "yld_rated": 4,
+   "knowledge_yld": 63850000.0,
+   "delivery_yld": 41857500.0,
+   "top_knowledge_yld": [
+    "low-back-pain",
+    "anaemia",
+    "osteoarthritis",
+    "asthma"
+   ],
+   "rated": 114,
+   "knowledge": 22317300.6,
+   "delivery": 36283256.6,
+   "top_knowledge": [
+    "stroke",
+    "ischaemic-heart-disease",
+    "type-2-diabetes",
+    "sepsis",
+    "hypertension",
+    "copd",
+    "obesity",
+    "lung-cancer",
+    "alzheimers",
+    "liver-cancer"
+   ],
+   "top_delivery": [
+    "hypertension",
+    "sepsis",
+    "ischaemic-heart-disease",
+    "obesity",
+    "stroke",
+    "neonatal-conditions",
+    "copd",
+    "type-2-diabetes",
+    "hepatitis-b",
+    "diarrhoeal-disease"
+   ]
+  },
+  "terms": {
+   "clean": 72,
+   "costly": 70,
+   "harsh": 5
+  },
+  "axes": {
+   "mechanism": {
+    "established": 102,
+    "partial": 39,
+    "correlates": 5,
+    "none": 1
+   },
+   "intervention": {
+    "curative": 75,
+    "suppressive": 31,
+    "symptomatic": 22,
+    "disease-modifying": 16,
+    "none": 3
+   },
+   "prevention": {
+    "risk-reduction": 82,
+    "prophylaxis": 38,
+    "none": 26,
+    "eradicated": 1
+   },
+   "ongoing": {
+    "moderate": 53,
+    "low": 49,
+    "high": 30,
+    "none": 15
+   }
+  },
+  "measurement": {
+   "diagnostic": {
+    "objective": 114,
+    "clinical": 31,
+    "complaint": 2
+   },
+   "prognostic": {
+    "partial": 89,
+    "good": 34,
+    "none": 24
+   },
+   "predictive": {
+    "partial": 70,
+    "none": 45,
+    "n/a": 20,
+    "good": 12
+   }
+  },
+  "flags": {
+   "measurement_gap": 28,
+   "overtreatment_risk": 9,
+   "futile_treatment_risk": 25,
+   "cured_at_a_price": 67,
+   "harm_without_benefit": 8,
+   "orphaned": 121,
+   "spans_ladder": 53,
+   "has_window": 101,
+   "has_residue": 85,
+   "only_knowledge_blockers": 1
+  },
+  "contested": 20,
+  "reach": {
+   "mean": 0.2644,
+   "median": 0.245
+  },
+  "blockers": {
+   "total": 632,
+   "by_kind": {
+    "knowledge": 169,
+    "logistics": 107,
+    "diagnosis": 101,
+    "policy": 85,
+    "cost": 59,
+    "evidence-incomplete": 39,
+    "no-sponsor": 29,
+    "tooling": 14,
+    "adherence": 13,
+    "manufacturing": 9,
+    "regulatory": 5,
+    "candidate-untested": 2
+   },
+   "by_standing": {
+    "documented": 615,
+    "alleged": 10,
+    "disputed": 6,
+    "refuted": 1
+   },
+   "priced": 461,
+   "by_kind_priced": {
+    "adherence": {
+     "total": 13,
+     "priced": 13
+    },
+    "candidate-untested": {
+     "total": 2,
+     "priced": 2
+    },
+    "cost": {
+     "total": 59,
+     "priced": 59
+    },
+    "diagnosis": {
+     "total": 101,
+     "priced": 101
+    },
+    "evidence-incomplete": {
+     "total": 39,
+     "priced": 39
+    },
+    "knowledge": {
+     "total": 169,
+     "priced": 8
+    },
+    "logistics": {
+     "total": 107,
+     "priced": 107
+    },
+    "manufacturing": {
+     "total": 9,
+     "priced": 9
+    },
+    "no-sponsor": {
+     "total": 29,
+     "priced": 28
+    },
+    "policy": {
+     "total": 85,
+     "priced": 80
+    },
+    "regulatory": {
+     "total": 5,
+     "priced": 4
+    },
+    "tooling": {
+     "total": 14,
+     "priced": 11
+    }
+   },
+   "actors": {
+    "government": 408,
+    "health-system": 357,
+    "academic": 353,
+    "nonprofit": 308,
+    "philanthropy": 272,
+    "sponsor": 231,
+    "manufacturer": 227,
+    "payer": 199,
+    "regulator": 94,
+    "patient-org": 79,
+    "legislator": 68,
+    "software": 23
+   }
+  },
+  "moved": {
+   "total": 243,
+   "by_axis": {
+    "efficacy": 73,
+    "intervention": 59,
+    "access": 31,
+    "prevention": 30,
+    "toll": 25,
+    "mechanism": 17,
+    "measurement": 6,
+    "ongoing": 2
+   },
+   "by_decade": {
+    "1790s": 1,
+    "1850s": 1,
+    "1920s": 3,
+    "1930s": 1,
+    "1940s": 9,
+    "1950s": 5,
+    "1960s": 10,
+    "1970s": 11,
+    "1980s": 20,
+    "1990s": 32,
+    "2000s": 36,
+    "2010s": 66,
+    "2020s": 48
+   }
+  },
+  "provenance": {
+   "scalars": 2504,
+   "by_src": {
+    "reasoning": 1290,
+    "recall": 1130,
+    "cited": 74,
+    "unknown": 10
+   },
+   "cited": 74,
+   "by_tier": {
+    "sourceable": {
+     "total": 496,
+     "cited": 3
+    },
+    "supportable": {
+     "total": 712,
+     "cited": 71
+    },
+    "judged": {
+     "total": 1296,
+     "cited": 0
+    }
+   },
+   "verified": 74,
+   "unknown": 10,
+   "mondo_resolved": 125,
+   "mondo_unresolved": 22,
+   "note": "Every empirical scalar carries a src. `recall` is the model's memory, `reasoning` is its arithmetic, and `unknown` means nobody has the number — none of the three is a citation. `by_tier` is the honest denominator: a citation SETTLES a sourceable scalar, SUPPORTS a supportable one, and cannot touch a judged one, because no dataset holds a quantity this register defines. Blockers are judged and carry their evidential status in `standing` instead."
+  },
+  "burden": {
+   "records_with_deaths": 91,
+   "records_without_deaths": 56,
+   "attributed_deaths_sum": 75771539.0,
+   "note": "An UPPER BOUND, not a total. Records overlap — TB deaths in people with HIV are in both, sepsis is the mode of death for several others — and the sum exceeds annual global mortality. Do not chart this as a total."
+  }
+ },
+ {
+  "date": "2026-10-27",
+  "register": "nordstern",
+  "records": {
+   "active": 147,
+   "deprecated": 0
+  },
+  "capability": {
+   "curable": 76,
+   "managed": 31,
+   "unsolved": 18,
+   "partial": 16,
+   "preventable": 6
+  },
+  "solved": {
+   "of": 147,
+   "can_end": 82,
+   "reaches_most": 9,
+   "solved": 8,
+   "reach_floor": 0.6,
+   "definition": "a disease is solved when medicine can end it, the treatment reaches most of the people who have it, and it costs them nothing permanent",
+   "steps": [
+    "medicine can end it",
+    "and it reaches most patients",
+    "and it costs nothing permanent"
+   ]
+  },
+  "survival": {
+   "bands": {
+    "good chance": 82,
+    "n/a": 48,
+    "a chance": 9,
+    "terminal": 8
+   },
+   "rated": 99,
+   "outcomes": {
+    "cured": 57,
+    "n/a": 48,
+    "delayed": 20,
+    "held": 16,
+    "recovered": 6
+   },
+   "was_uniformly_fatal": 32,
+   "no_longer_terminal": 24,
+   "zero_gain": [
+    "alzheimers",
+    "huntington",
+    "prion-disease",
+    "rabies",
+    "tay-sachs"
+   ]
+  },
+  "buckets": {
+   "version": 5,
+   "digest": "e24c083aa92d",
+   "names": {
+    "ends-it": "It ends your life, whenever you find it",
+    "ends-it-unless-caught": "It ends your life unless it is caught in time",
+    "ends-it-later": "It ends your life, but later",
+    "held-off": "It is held off, for life",
+    "defines-your-life": "You survive, and it defines your life",
+    "changes-you": "You survive, and it changes you",
+    "back-to-normal": "You survive, and you get back to normal",
+    "nobody-makes-it": "The solution exists and nobody makes it",
+    "found-too-late": "Caught early it is curable, caught late it is not",
+    "cannot-aim-it": "It works for some people and nobody can say which",
+    "no-starting-point": "Nobody knows where to start",
+    "cannot-reach-people": "It works and it does not arrive",
+    "needs-more-evidence": "There is a candidate and the evidence is not in"
+   },
+   "defs": {
+    "ends-it": {
+     "rule": "The course is fatal, essentially nobody survives the stated horizon, and there is no window — finding it earlier changes nothing.",
+     "not": "NOT \"we have no cure\". Most fatal diseases here are `ends-it-later`. This is the much smaller set where the timing of diagnosis is irrelevant because nothing follows from it.",
+     "examples": [
+      "huntington"
+     ]
+    },
+    "ends-it-unless-caught": {
+     "rule": "Fatal as above, but a `window` exists — there is a period in which action changes the outcome, and outside it there is nothing.",
+     "not": "NOT every disease with a window; 86 records have one. This is the set where the window is the *whole* of the difference between living and dying.",
+     "examples": [
+      "rabies",
+      "prion-disease"
+     ]
+    },
+    "ends-it-later": {
+     "rule": "The disease is still what kills you. Either treatment alters the course without ending it — the register's `delayed` outcome — or **more than half of treated patients die of it**, whatever rung the ladder puts the treatment on.",
+     "not": "NOT \"untreatable\". These are mostly diseases medicine has changed a great deal — and the change bought time rather than an ending. **NOT decided by the intervention rung alone, and v4 fixed exactly that.** `survival_outcome()` reads `axes.intervention`, so every record on the `curative` rung returned `cured` however few survived — and `cured` never reached this branch. Pancreatic cancer, where 87% of treated patients die, was filed under *you survive, and it changes you*, beside cataract. The rung was right about what the operation does **when it works**; the bucket was asking a different question and taking the rung's word for the answer. ALSO NOT acute illness, and that exclusion is deliberate rather than protective. `marburg` kills about three quarters of those it infects within two weeks and the quarter who live **recover** — so \"it ends your life, but later\" is false for everybody in the record. That is the ⧉ `spans_ladder` shape the register already names as a **malformed question rather than a hard one**, and declining to average it is more honest than filing it confidently in the wrong place. See `holes`.",
+     "examples": [
+      "pancreatic-cancer",
+      "als",
+      "alzheimers",
+      "stroke",
+      "glioblastoma"
+     ]
+    },
+    "held-off": {
+     "rule": "A treatment suppresses it indefinitely and stopping brings it back. Near-normal life, on condition of continuous treatment.",
+     "not": "NOT cured. **This rung is what stops HIV being filed next to hepatitis C** — one is no longer a death sentence, the other is over.",
+     "examples": [
+      "hiv",
+      "type-1-diabetes",
+      "schizophrenia"
+     ]
+    },
+    "defines-your-life": {
+     "rule": "Survivable, but the cost of living with it or of being treated for it is continuous and large — a high ongoing burden, or a residue or a treatment toll rated `harsh`.",
+     "not": "NOT necessarily severe in the clinical sense, and NOT about mortality at all. `me-cfs`, `heds` and `msmds` are here with **no attributed deaths whatsoever** — which is the whole reason this axis is not built on survival.",
+     "examples": [
+      "sickle-cell",
+      "me-cfs",
+      "heds",
+      "cerebral-palsy",
+      "noma"
+     ]
+    },
+    "changes-you": {
+     "rule": "Survivable, and something **rated `major`** is left behind — by the disease, by the treatment, or both — or the ongoing burden of being treated is moderate. Without dominating the rest of your life, which is the bucket above.",
+     "not": "NOT a minor category. **It is still the largest bucket in the register** after v4 took four cancers out of it, and that is this axis's main finding: medicine's characteristic output is neither death nor cure but survival in an altered body. NOT triggered by *any* permanent difference. **v3 fixed exactly that.** Until 2026-09-01 the rule tested whether a `residue` block existed at all, so a record whose residue was a shoe size landed here — and derived `restored: restored` at the same time, because that derivation has always read severity. Eight records held both verdicts at once. `clubfoot` made it undeniable and the rule now reads severity too.",
+     "examples": [
+      "tuberculosis",
+      "benign-prostatic-hyperplasia",
+      "breast-cancer",
+      "malaria"
+     ]
+    },
+    "back-to-normal": {
+     "rule": "Survivable, with nothing worse than a `minor` residue and a `minor` treatment toll, and a low ongoing burden. **A minor permanent difference does not disqualify a record from this bucket** — a treated clubfoot leaves a slightly smaller foot in somebody who runs normally, and calling that a changed life is false.",
+     "not": "NOT the goal state for most of medicine, and still **uncommon** — 14 of 140, unchanged by v4. Read that as a claim about how little the register finds. It remains the bucket resting on the least-tested inputs: `residue` is absent on many records that have simply never been examined for one, and an unexamined record looks identical to a clean one. See `bucket-design.md`.",
+     "examples": [
+      "cholera",
+      "typhoid",
+      "influenza"
+     ]
+    },
+    "nobody-makes-it": {
+     "rule": "A `manufacturing` blocker, or a `no-sponsor` blocker on a record whose capability is real. The requirement that capability be real is what separates *nobody produces the cure* from *nobody funds the research*.",
+     "not": "NOT diseases with no answer. If nothing works, the problem is not manufacturing. `me-cfs` carries `no-sponsor` and is excluded here for exactly that reason — nobody is failing to manufacture its cure.",
+     "examples": [
+      "snakebite",
+      "bladder-cancer",
+      "syphilis",
+      "mrsa",
+      "diarrhoeal-disease"
+     ]
+    },
+    "found-too-late": {
+     "rule": "A `window` exists, the record's strata run from a late form where essentially nothing works (efficacy at or below 0.2) to an early form that is mostly cured (0.7 or above), and **fewer than half are caught in time**.",
+     "not": "NOT every disease with a window; **86 records have one**, which is far too many to be interesting. `caught_in_time` is what turns *a window exists* into *and we are missing it*, and it is the number that makes this bucket actionable rather than descriptive — **it is the size of the prize for a screening programme, per disease.** Chagas is 0.10, obesity 0.15, lung cancer 0.20, liver cancer 0.25. ALSO NOT `pancreatic-cancer`, and that exclusion is the rule working. Its strata spread is 0.15 — it is bad at **every** stage, so earlier detection is not the lever. A disease being terrible and having a window are different claims, and only the second is this bucket. `obesity` is in, on strata running 0.00 to 0.80, and is the entry most worth arguing with: its \"window\" is the period before the complications establish, which is real but is a slower and vaguer thing than a resectable tumour.",
+     "examples": [
+      "lung-cancer",
+      "liver-cancer",
+      "cervical-cancer",
+      "chagas",
+      "gastric-cancer"
+     ]
+    },
+    "cannot-aim-it": {
+     "rule": "The register's `futile_treatment_risk` — a treatment exists, it fails often, and there is no test that says in advance who it will fail.",
+     "not": "NOT the same as a treatment that works badly for everyone. The sketch's *\"% chance\"* is this: **a measurement failure wearing the costume of a treatment failure.**",
+     "examples": [
+      "rheumatoid-arthritis",
+      "schizophrenia",
+      "epilepsy",
+      "osteoarthritis"
+     ]
+    },
+    "no-starting-point": {
+     "rule": "`mechanism` is `none` or `correlates` — the causal account is absent or is a set of associations.",
+     "not": "NOT the famous killers. **Stroke and heart disease are `established`**: hand somebody $100M for stroke and they know exactly where to start, they simply cannot fix it. **The diseases with no starting point are the ones nobody dies of** — which is why a register built on mortality would never find them.",
+     "examples": [
+      "me-cfs",
+      "heds",
+      "depression",
+      "bipolar",
+      "low-back-pain"
+     ]
+    },
+    "cannot-reach-people": {
+     "rule": "`delivery` is `barely` or `undelivered` — efficacy multiplied by access leaves most patients untouched — **and** capability is `curable`, `managed` or `preventable`. A `disease-modifying` treatment is not something that \"works\" in the sense this bucket means: it slows the course and the disease still wins, so there is nothing to arrive.",
+     "not": "NOT a knowledge problem, and it is the single most common state in the register. This is the tag the whole `efficacy`/`access` split exists to make sayable. And NOT the `partial` records — Alzheimer's, ALS, glioblastoma — which are undelivered too, but of a treatment that does not hold the disease; version 4 filed them here on delivery alone and the name overclaimed.",
+     "examples": [
+      "refractive-error",
+      "hearing-loss",
+      "sickle-cell",
+      "hepatitis-b",
+      "obesity"
+     ]
+    },
+    "needs-more-evidence": {
+     "rule": "An `evidence-incomplete` or `candidate-untested` blocker — something plausible exists and nobody has established whether it works.",
+     "not": "NOT \"no path forward\". This is the opposite: a path exists and has not been walked.",
+     "examples": [
+      "idiopathic-pulmonary-fibrosis"
+     ]
+    }
+   },
+   "a": {
+    "changes-you": 61,
+    "held-off": 31,
+    "ends-it-later": 18,
+    "defines-your-life": 17,
+    "back-to-normal": 14,
+    "ends-it": 4,
+    "ends-it-unless-caught": 2
+   },
+   "b": {
+    "cannot-reach-people": 57,
+    "needs-more-evidence": 40,
+    "nobody-makes-it": 31,
+    "cannot-aim-it": 25,
+    "found-too-late": 11,
+    "no-starting-point": 6
+   },
+   "b_untagged": 40,
+   "members": {
+    "pleomorphic-adenoma": {
+     "id": "FND-D-0015",
+     "a": "changes-you",
+     "b": []
+    },
+    "hat": {
+     "id": "FND-D-0026",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "tuberculosis": {
+     "id": "FND-D-0023",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "covid-19": {
+     "id": "FND-D-0076",
+     "a": "changes-you",
+     "b": [
+      "found-too-late",
+      "needs-more-evidence"
+     ]
+    },
+    "leprosy": {
+     "id": "FND-D-0035",
+     "a": "changes-you",
+     "b": []
+    },
+    "thyroid-cancer": {
+     "id": "FND-D-0061",
+     "a": "changes-you",
+     "b": []
+    },
+    "typhoid": {
+     "id": "FND-D-0066",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "trachoma": {
+     "id": "FND-D-0036",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "gonorrhoea": {
+     "id": "FND-D-0117",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "malaria": {
+     "id": "FND-D-0069",
+     "a": "changes-you",
+     "b": []
+    },
+    "h-pylori-ulcer": {
+     "id": "FND-D-0001",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "uterine-fibroids": {
+     "id": "FND-D-0139",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it"
+     ]
+    },
+    "benign-prostatic-hyperplasia": {
+     "id": "FND-D-0138",
+     "a": "changes-you",
+     "b": []
+    },
+    "mrsa": {
+     "id": "FND-D-0067",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "genital-chlamydia": {
+     "id": "FND-D-0120",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "visceral-leishmaniasis": {
+     "id": "FND-D-0024",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "bacterial-meningitis": {
+     "id": "FND-D-0129",
+     "a": "defines-your-life",
+     "b": []
+    },
+    "coccidioidomycosis": {
+     "id": "FND-D-0111",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-aim-it",
+      "needs-more-evidence"
+     ]
+    },
+    "maternal-haemorrhage": {
+     "id": "FND-D-0073",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "syphilis": {
+     "id": "FND-D-0116",
+     "a": "defines-your-life",
+     "b": [
+      "nobody-makes-it",
+      "needs-more-evidence"
+     ]
+    },
+    "schistosomiasis": {
+     "id": "FND-D-0025",
+     "a": "changes-you",
+     "b": []
+    },
+    "scabies": {
+     "id": "FND-D-0038",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "childhood-pneumonia": {
+     "id": "FND-D-0071",
+     "a": "changes-you",
+     "b": []
+    },
+    "soil-transmitted-helminths": {
+     "id": "FND-D-0029",
+     "a": "back-to-normal",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "diarrhoeal-disease": {
+     "id": "FND-D-0074",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "buruli-ulcer": {
+     "id": "FND-D-0033",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "vulvar-cancer": {
+     "id": "FND-D-0125",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it"
+     ]
+    },
+    "anal-cancer": {
+     "id": "FND-D-0123",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it"
+     ]
+    },
+    "amr-infection": {
+     "id": "FND-D-0014",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "uterine-cancer": {
+     "id": "FND-D-0064",
+     "a": "changes-you",
+     "b": []
+    },
+    "anaemia": {
+     "id": "FND-D-0098",
+     "a": "changes-you",
+     "b": []
+    },
+    "breast-cancer": {
+     "id": "FND-D-0017",
+     "a": "changes-you",
+     "b": []
+    },
+    "melanoma": {
+     "id": "FND-D-0054",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "candidaemia": {
+     "id": "FND-D-0112",
+     "a": "changes-you",
+     "b": []
+    },
+    "prostate-cancer": {
+     "id": "FND-D-0051",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "neonatal-conditions": {
+     "id": "FND-D-0072",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it",
+      "needs-more-evidence"
+     ]
+    },
+    "yaws": {
+     "id": "FND-D-0034",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "cataract": {
+     "id": "FND-D-0089",
+     "a": "changes-you",
+     "b": []
+    },
+    "childhood-all": {
+     "id": "FND-D-0055",
+     "a": "changes-you",
+     "b": []
+    },
+    "trichomoniasis": {
+     "id": "FND-D-0121",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "uveal-melanoma": {
+     "id": "FND-D-0144",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "retinopathy-of-prematurity": {
+     "id": "FND-D-0132",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "renal-cell-carcinoma": {
+     "id": "FND-D-0063",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "echinococcosis": {
+     "id": "FND-D-0032",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "nasopharyngeal-carcinoma": {
+     "id": "FND-D-0103",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "penile-cancer": {
+     "id": "FND-D-0124",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "vaginal-cancer": {
+     "id": "FND-D-0126",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "smallpox": {
+     "id": "FND-D-0048",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "invasive-aspergillosis": {
+     "id": "FND-D-0110",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "cirrhosis": {
+     "id": "FND-D-0082",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "ebola": {
+     "id": "FND-D-0045",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "bladder-cancer": {
+     "id": "FND-D-0062",
+     "a": "defines-your-life",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "sepsis": {
+     "id": "FND-D-0070",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "clubfoot": {
+     "id": "FND-D-0135",
+     "a": "back-to-normal",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "colorectal-cancer": {
+     "id": "FND-D-0052",
+     "a": "changes-you",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "snakebite": {
+     "id": "FND-D-0012",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "cryptococcal-meningitis": {
+     "id": "FND-D-0109",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "non-hodgkin-lymphoma": {
+     "id": "FND-D-0057",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "mycoplasma-genitalium": {
+     "id": "FND-D-0122",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "taeniasis-cysticercosis": {
+     "id": "FND-D-0039",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "head-neck-cancer": {
+     "id": "FND-D-0102",
+     "a": "defines-your-life",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "hepatitis-c": {
+     "id": "FND-D-0002",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "cervical-cancer": {
+     "id": "FND-D-0053",
+     "a": "changes-you",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "cre": {
+     "id": "FND-D-0068",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "gastric-cancer": {
+     "id": "FND-D-0059",
+     "a": "ends-it-later",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "osteoarthritis": {
+     "id": "FND-D-0096",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "congenital-heart-disease": {
+     "id": "FND-D-0094",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "obstetric-fistula": {
+     "id": "FND-D-0136",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "mycetoma": {
+     "id": "FND-D-0030",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "noma": {
+     "id": "FND-D-0041",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "liver-cancer": {
+     "id": "FND-D-0058",
+     "a": "ends-it-later",
+     "b": [
+      "found-too-late",
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "lung-cancer": {
+     "id": "FND-D-0050",
+     "a": "ends-it-later",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "pancreatic-cancer": {
+     "id": "FND-D-0060",
+     "a": "ends-it-later",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "type-2-diabetes": {
+     "id": "FND-D-0080",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "chagas": {
+     "id": "FND-D-0022",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "sickle-cell": {
+     "id": "FND-D-0006",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "hiv": {
+     "id": "FND-D-0004",
+     "a": "held-off",
+     "b": []
+    },
+    "lymphatic-filariasis": {
+     "id": "FND-D-0028",
+     "a": "held-off",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "onchocerciasis": {
+     "id": "FND-D-0027",
+     "a": "held-off",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "pku": {
+     "id": "FND-D-0003",
+     "a": "held-off",
+     "b": []
+    },
+    "cholera": {
+     "id": "FND-D-0065",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "genital-herpes": {
+     "id": "FND-D-0118",
+     "a": "held-off",
+     "b": []
+    },
+    "cml": {
+     "id": "FND-D-0056",
+     "a": "held-off",
+     "b": []
+    },
+    "hpv-infection": {
+     "id": "FND-D-0119",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "parkinsons": {
+     "id": "FND-D-0087",
+     "a": "ends-it-later",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "atrial-fibrillation": {
+     "id": "FND-D-0083",
+     "a": "held-off",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "ischaemic-heart-disease": {
+     "id": "FND-D-0042",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "polycythaemia-vera": {
+     "id": "FND-D-0145",
+     "a": "held-off",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "type-1-diabetes": {
+     "id": "FND-D-0079",
+     "a": "held-off",
+     "b": []
+    },
+    "toxoplasmosis": {
+     "id": "FND-D-0114",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-aim-it",
+      "needs-more-evidence"
+     ]
+    },
+    "asthma": {
+     "id": "FND-D-0097",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "refractive-error": {
+     "id": "FND-D-0133",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "acute-bronchitis": {
+     "id": "FND-D-0113",
+     "a": "back-to-normal",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "cystic-fibrosis": {
+     "id": "FND-D-0090",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "measles": {
+     "id": "FND-D-0049",
+     "a": "changes-you",
+     "b": []
+    },
+    "epilepsy": {
+     "id": "FND-D-0008",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "mcas": {
+     "id": "FND-D-0021",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "keloid": {
+     "id": "FND-D-0140",
+     "a": "changes-you",
+     "b": [
+      "no-starting-point"
+     ]
+    },
+    "multiple-sclerosis": {
+     "id": "FND-D-0086",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "low-back-pain": {
+     "id": "FND-D-0010",
+     "a": "changes-you",
+     "b": [
+      "no-starting-point"
+     ]
+    },
+    "rheumatoid-arthritis": {
+     "id": "FND-D-0093",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "crohns": {
+     "id": "FND-D-0016",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "h5n1": {
+     "id": "FND-D-0047",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "schizophrenia": {
+     "id": "FND-D-0088",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "hypertension": {
+     "id": "FND-D-0084",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "pots": {
+     "id": "FND-D-0020",
+     "a": "held-off",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "rheumatic-heart-disease": {
+     "id": "FND-D-0013",
+     "a": "ends-it-later",
+     "b": [
+      "nobody-makes-it",
+      "needs-more-evidence"
+     ]
+    },
+    "glaucoma": {
+     "id": "FND-D-0131",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "varicella-zoster": {
+     "id": "FND-D-0127",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "bipolar": {
+     "id": "FND-D-0011",
+     "a": "held-off",
+     "b": [
+      "nobody-makes-it",
+      "cannot-aim-it",
+      "no-starting-point",
+      "cannot-reach-people"
+     ]
+    },
+    "copd": {
+     "id": "FND-D-0044",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "endometriosis": {
+     "id": "FND-D-0137",
+     "a": "held-off",
+     "b": [
+      "nobody-makes-it",
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "heart-failure": {
+     "id": "FND-D-0100",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "chronic-kidney-disease": {
+     "id": "FND-D-0081",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "cmv-infection": {
+     "id": "FND-D-0128",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-aim-it"
+     ]
+    },
+    "hearing-loss": {
+     "id": "FND-D-0095",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "depression": {
+     "id": "FND-D-0007",
+     "a": "changes-you",
+     "b": [
+      "no-starting-point",
+      "needs-more-evidence"
+     ]
+    },
+    "marburg": {
+     "id": "FND-D-0046",
+     "a": "changes-you",
+     "b": []
+    },
+    "duchenne": {
+     "id": "FND-D-0092",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "spinal-muscular-atrophy": {
+     "id": "FND-D-0091",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "migraine": {
+     "id": "FND-D-0134",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "multiple-system-atrophy": {
+     "id": "FND-D-0142",
+     "a": "ends-it",
+     "b": []
+    },
+    "stroke": {
+     "id": "FND-D-0043",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "cryptosporidiosis": {
+     "id": "FND-D-0115",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "cerebral-palsy": {
+     "id": "FND-D-0099",
+     "a": "defines-your-life",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "idiopathic-pulmonary-fibrosis": {
+     "id": "FND-D-0108",
+     "a": "ends-it-later",
+     "b": [
+      "found-too-late",
+      "needs-more-evidence"
+     ]
+    },
+    "influenza": {
+     "id": "FND-D-0077",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it",
+      "needs-more-evidence"
+     ]
+    },
+    "acute-myeloid-leukaemia": {
+     "id": "FND-D-0147",
+     "a": "ends-it-later",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "familial-hypercholesterolaemia": {
+     "id": "FND-D-0146",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "hepatitis-b": {
+     "id": "FND-D-0075",
+     "a": "held-off",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "osteoporosis": {
+     "id": "FND-D-0101",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "als": {
+     "id": "FND-D-0104",
+     "a": "ends-it-later",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "glioblastoma": {
+     "id": "FND-D-0105",
+     "a": "ends-it-later",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "mesothelioma": {
+     "id": "FND-D-0107",
+     "a": "ends-it-later",
+     "b": [
+      "cannot-aim-it",
+      "needs-more-evidence"
+     ]
+    },
+    "obesity": {
+     "id": "FND-D-0085",
+     "a": "held-off",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "tay-sachs": {
+     "id": "FND-D-0143",
+     "a": "ends-it",
+     "b": []
+    },
+    "disorders-of-consciousness": {
+     "id": "FND-D-0130",
+     "a": "defines-your-life",
+     "b": []
+    },
+    "alzheimers": {
+     "id": "FND-D-0078",
+     "a": "ends-it-later",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "dipg": {
+     "id": "FND-D-0141",
+     "a": "ends-it",
+     "b": [
+      "nobody-makes-it",
+      "cannot-aim-it"
+     ]
+    },
+    "dengue": {
+     "id": "FND-D-0031",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "dracunculiasis": {
+     "id": "FND-D-0040",
+     "a": "changes-you",
+     "b": []
+    },
+    "heds": {
+     "id": "FND-D-0019",
+     "a": "defines-your-life",
+     "b": [
+      "no-starting-point",
+      "needs-more-evidence"
+     ]
+    },
+    "huntington": {
+     "id": "FND-D-0005",
+     "a": "ends-it",
+     "b": []
+    },
+    "me-cfs": {
+     "id": "FND-D-0009",
+     "a": "defines-your-life",
+     "b": [
+      "no-starting-point"
+     ]
+    },
+    "msmds": {
+     "id": "FND-D-0018",
+     "a": "defines-your-life",
+     "b": []
+    },
+    "prion-disease": {
+     "id": "FND-D-0106",
+     "a": "ends-it-unless-caught",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "rabies": {
+     "id": "FND-D-0037",
+     "a": "ends-it-unless-caught",
+     "b": []
+    }
+   }
+  },
+  "quadrant": {
+   "known & treatable": 112,
+   "known & modifiable": 16,
+   "engineering problem": 13,
+   "frontier": 5,
+   "empirical luck": 1
+  },
+  "delivery": {
+   "barely": 65,
+   "partly": 46,
+   "—": 24,
+   "mostly": 7,
+   "undelivered": 5
+  },
+  "gaps": {
+   "yld_rated": 4,
+   "knowledge_yld": 63850000.0,
+   "delivery_yld": 41857500.0,
+   "top_knowledge_yld": [
+    "low-back-pain",
+    "anaemia",
+    "osteoarthritis",
+    "asthma"
+   ],
+   "rated": 114,
+   "knowledge": 22317300.6,
+   "delivery": 36283256.6,
+   "top_knowledge": [
+    "stroke",
+    "ischaemic-heart-disease",
+    "type-2-diabetes",
+    "sepsis",
+    "hypertension",
+    "copd",
+    "obesity",
+    "lung-cancer",
+    "alzheimers",
+    "liver-cancer"
+   ],
+   "top_delivery": [
+    "hypertension",
+    "sepsis",
+    "ischaemic-heart-disease",
+    "obesity",
+    "stroke",
+    "neonatal-conditions",
+    "copd",
+    "type-2-diabetes",
+    "hepatitis-b",
+    "diarrhoeal-disease"
+   ]
+  },
+  "terms": {
+   "clean": 72,
+   "costly": 70,
+   "harsh": 5
+  },
+  "axes": {
+   "mechanism": {
+    "established": 102,
+    "partial": 39,
+    "correlates": 5,
+    "none": 1
+   },
+   "intervention": {
+    "curative": 75,
+    "suppressive": 31,
+    "symptomatic": 22,
+    "disease-modifying": 16,
+    "none": 3
+   },
+   "prevention": {
+    "risk-reduction": 82,
+    "prophylaxis": 38,
+    "none": 26,
+    "eradicated": 1
+   },
+   "ongoing": {
+    "moderate": 53,
+    "low": 49,
+    "high": 30,
+    "none": 15
+   }
+  },
+  "measurement": {
+   "diagnostic": {
+    "objective": 114,
+    "clinical": 31,
+    "complaint": 2
+   },
+   "prognostic": {
+    "partial": 89,
+    "good": 34,
+    "none": 24
+   },
+   "predictive": {
+    "partial": 70,
+    "none": 45,
+    "n/a": 20,
+    "good": 12
+   }
+  },
+  "flags": {
+   "measurement_gap": 28,
+   "overtreatment_risk": 9,
+   "futile_treatment_risk": 25,
+   "cured_at_a_price": 67,
+   "harm_without_benefit": 8,
+   "orphaned": 121,
+   "spans_ladder": 53,
+   "has_window": 101,
+   "has_residue": 85,
+   "only_knowledge_blockers": 1
+  },
+  "contested": 20,
+  "reach": {
+   "mean": 0.2644,
+   "median": 0.245
+  },
+  "blockers": {
+   "total": 632,
+   "by_kind": {
+    "knowledge": 169,
+    "logistics": 107,
+    "diagnosis": 101,
+    "policy": 85,
+    "cost": 59,
+    "evidence-incomplete": 39,
+    "no-sponsor": 29,
+    "tooling": 14,
+    "adherence": 13,
+    "manufacturing": 9,
+    "regulatory": 5,
+    "candidate-untested": 2
+   },
+   "by_standing": {
+    "documented": 615,
+    "alleged": 10,
+    "disputed": 6,
+    "refuted": 1
+   },
+   "priced": 461,
+   "by_kind_priced": {
+    "adherence": {
+     "total": 13,
+     "priced": 13
+    },
+    "candidate-untested": {
+     "total": 2,
+     "priced": 2
+    },
+    "cost": {
+     "total": 59,
+     "priced": 59
+    },
+    "diagnosis": {
+     "total": 101,
+     "priced": 101
+    },
+    "evidence-incomplete": {
+     "total": 39,
+     "priced": 39
+    },
+    "knowledge": {
+     "total": 169,
+     "priced": 8
+    },
+    "logistics": {
+     "total": 107,
+     "priced": 107
+    },
+    "manufacturing": {
+     "total": 9,
+     "priced": 9
+    },
+    "no-sponsor": {
+     "total": 29,
+     "priced": 28
+    },
+    "policy": {
+     "total": 85,
+     "priced": 80
+    },
+    "regulatory": {
+     "total": 5,
+     "priced": 4
+    },
+    "tooling": {
+     "total": 14,
+     "priced": 11
+    }
+   },
+   "actors": {
+    "government": 408,
+    "health-system": 357,
+    "academic": 353,
+    "nonprofit": 308,
+    "philanthropy": 272,
+    "sponsor": 231,
+    "manufacturer": 227,
+    "payer": 199,
+    "regulator": 94,
+    "patient-org": 79,
+    "legislator": 68,
+    "software": 23
+   }
+  },
+  "moved": {
+   "total": 243,
+   "by_axis": {
+    "efficacy": 73,
+    "intervention": 59,
+    "access": 31,
+    "prevention": 30,
+    "toll": 25,
+    "mechanism": 17,
+    "measurement": 6,
+    "ongoing": 2
+   },
+   "by_decade": {
+    "1790s": 1,
+    "1850s": 1,
+    "1920s": 3,
+    "1930s": 1,
+    "1940s": 9,
+    "1950s": 5,
+    "1960s": 10,
+    "1970s": 11,
+    "1980s": 20,
+    "1990s": 32,
+    "2000s": 36,
+    "2010s": 66,
+    "2020s": 48
+   }
+  },
+  "provenance": {
+   "scalars": 2504,
+   "by_src": {
+    "reasoning": 1290,
+    "recall": 1130,
+    "cited": 74,
+    "unknown": 10
+   },
+   "cited": 74,
+   "by_tier": {
+    "sourceable": {
+     "total": 496,
+     "cited": 3
+    },
+    "supportable": {
+     "total": 712,
+     "cited": 71
+    },
+    "judged": {
+     "total": 1296,
+     "cited": 0
+    }
+   },
+   "verified": 74,
+   "unknown": 10,
+   "mondo_resolved": 125,
+   "mondo_unresolved": 22,
+   "note": "Every empirical scalar carries a src. `recall` is the model's memory, `reasoning` is its arithmetic, and `unknown` means nobody has the number — none of the three is a citation. `by_tier` is the honest denominator: a citation SETTLES a sourceable scalar, SUPPORTS a supportable one, and cannot touch a judged one, because no dataset holds a quantity this register defines. Blockers are judged and carry their evidential status in `standing` instead."
+  },
+  "burden": {
+   "records_with_deaths": 91,
+   "records_without_deaths": 56,
+   "attributed_deaths_sum": 75771539.0,
+   "note": "An UPPER BOUND, not a total. Records overlap — TB deaths in people with HIV are in both, sepsis is the mode of death for several others — and the sum exceeds annual global mortality. Do not chart this as a total."
+  }
+ },
+ {
+  "date": "2026-10-30",
+  "register": "nordstern",
+  "records": {
+   "active": 148,
+   "deprecated": 0
+  },
+  "capability": {
+   "curable": 76,
+   "managed": 31,
+   "unsolved": 19,
+   "partial": 16,
+   "preventable": 6
+  },
+  "solved": {
+   "of": 148,
+   "can_end": 82,
+   "reaches_most": 9,
+   "solved": 8,
+   "reach_floor": 0.6,
+   "definition": "a disease is solved when medicine can end it, the treatment reaches most of the people who have it, and it costs them nothing permanent",
+   "steps": [
+    "medicine can end it",
+    "and it reaches most patients",
+    "and it costs nothing permanent"
+   ]
+  },
+  "survival": {
+   "bands": {
+    "good chance": 82,
+    "n/a": 49,
+    "a chance": 9,
+    "terminal": 8
+   },
+   "rated": 99,
+   "outcomes": {
+    "cured": 57,
+    "n/a": 49,
+    "delayed": 20,
+    "held": 16,
+    "recovered": 6
+   },
+   "was_uniformly_fatal": 32,
+   "no_longer_terminal": 24,
+   "zero_gain": [
+    "alzheimers",
+    "huntington",
+    "prion-disease",
+    "rabies",
+    "tay-sachs"
+   ]
+  },
+  "buckets": {
+   "version": 6,
+   "digest": "d07dc0ec4741",
+   "names": {
+    "ends-it": "It ends your life, whenever you find it",
+    "ends-it-unless-caught": "It ends your life unless it is caught in time",
+    "ends-it-later": "It ends your life, but later",
+    "held-off": "It is held off, for life",
+    "never-safe": "You survive, and you are never safe",
+    "defines-your-life": "You survive, and it defines your life",
+    "changes-you": "You survive, and it changes you",
+    "back-to-normal": "You survive, and you get back to normal",
+    "nobody-makes-it": "The solution exists and nobody makes it",
+    "found-too-late": "Caught early it is curable, caught late it is not",
+    "cannot-aim-it": "It works for some people and nobody can say which",
+    "no-starting-point": "Nobody knows where to start",
+    "cannot-reach-people": "It works and it does not arrive",
+    "needs-more-evidence": "There is a candidate and the evidence is not in"
+   },
+   "defs": {
+    "ends-it": {
+     "rule": "The course is fatal, essentially nobody survives the stated horizon, and there is no window — finding it earlier changes nothing.",
+     "not": "NOT \"we have no cure\". Most fatal diseases here are `ends-it-later`. This is the much smaller set where the timing of diagnosis is irrelevant because nothing follows from it.",
+     "examples": [
+      "huntington"
+     ]
+    },
+    "ends-it-unless-caught": {
+     "rule": "Fatal as above, but a `window` exists — there is a period in which action changes the outcome, and outside it there is nothing.",
+     "not": "NOT every disease with a window; 86 records have one. This is the set where the window is the *whole* of the difference between living and dying.",
+     "examples": [
+      "rabies",
+      "prion-disease"
+     ]
+    },
+    "ends-it-later": {
+     "rule": "The disease is still what kills you. Either treatment alters the course without ending it — the register's `delayed` outcome — or **more than half of treated patients die of it**, whatever rung the ladder puts the treatment on.",
+     "not": "NOT \"untreatable\". These are mostly diseases medicine has changed a great deal — and the change bought time rather than an ending. **NOT decided by the intervention rung alone, and v4 fixed exactly that.** `survival_outcome()` reads `axes.intervention`, so every record on the `curative` rung returned `cured` however few survived — and `cured` never reached this branch. Pancreatic cancer, where 87% of treated patients die, was filed under *you survive, and it changes you*, beside cataract. The rung was right about what the operation does **when it works**; the bucket was asking a different question and taking the rung's word for the answer. ALSO NOT acute illness, and that exclusion is deliberate rather than protective. `marburg` kills about three quarters of those it infects within two weeks and the quarter who live **recover** — so \"it ends your life, but later\" is false for everybody in the record. That is the ⧉ `spans_ladder` shape the register already names as a **malformed question rather than a hard one**, and declining to average it is more honest than filing it confidently in the wrong place. See `holes`.",
+     "examples": [
+      "pancreatic-cancer",
+      "als",
+      "alzheimers",
+      "stroke",
+      "glioblastoma"
+     ]
+    },
+    "held-off": {
+     "rule": "A treatment suppresses it indefinitely and stopping brings it back. Near-normal life, on condition of continuous treatment.",
+     "not": "NOT cured. **This rung is what stops HIV being filed next to hepatitis C** — one is no longer a death sentence, the other is over.",
+     "examples": [
+      "hiv",
+      "type-1-diabetes",
+      "schizophrenia"
+     ]
+    },
+    "never-safe": {
+     "rule": "Nothing alters the course and nothing is treated day to day. The disease is an acute, potentially fatal event that can recur at any time — a `window` marked `recurs` — and keeping it shut is the patient's own work, every day, for life: `intervention` symptomatic or none, `ongoing` high, and survival unrated or near-complete.",
+     "not": "NOT `held-off`: nothing is being suppressed; between events the person is well and untreated. NOT `defines-your-life` on burden alone — the burden here is a lethal possibility rather than a continuous cost. This axis was built on survival and this state is invisible to it: measured by deaths it is nothing, measured by what a life is organised around it is everything.",
+     "examples": [
+      "food-allergy"
+     ]
+    },
+    "defines-your-life": {
+     "rule": "Survivable, but the cost of living with it or of being treated for it is continuous and large — a high ongoing burden, or a residue or a treatment toll rated `harsh`.",
+     "not": "NOT necessarily severe in the clinical sense, and NOT about mortality at all. `me-cfs`, `heds` and `msmds` are here with **no attributed deaths whatsoever** — which is the whole reason this axis is not built on survival.",
+     "examples": [
+      "sickle-cell",
+      "me-cfs",
+      "heds",
+      "cerebral-palsy",
+      "noma"
+     ]
+    },
+    "changes-you": {
+     "rule": "Survivable, and something **rated `major`** is left behind — by the disease, by the treatment, or both — or the ongoing burden of being treated is moderate. Without dominating the rest of your life, which is the bucket above.",
+     "not": "NOT a minor category. **It is still the largest bucket in the register** after v4 took four cancers out of it, and that is this axis's main finding: medicine's characteristic output is neither death nor cure but survival in an altered body. NOT triggered by *any* permanent difference. **v3 fixed exactly that.** Until 2026-09-01 the rule tested whether a `residue` block existed at all, so a record whose residue was a shoe size landed here — and derived `restored: restored` at the same time, because that derivation has always read severity. Eight records held both verdicts at once. `clubfoot` made it undeniable and the rule now reads severity too.",
+     "examples": [
+      "tuberculosis",
+      "benign-prostatic-hyperplasia",
+      "breast-cancer",
+      "malaria"
+     ]
+    },
+    "back-to-normal": {
+     "rule": "Survivable, with nothing worse than a `minor` residue and a `minor` treatment toll, and a low ongoing burden. **A minor permanent difference does not disqualify a record from this bucket** — a treated clubfoot leaves a slightly smaller foot in somebody who runs normally, and calling that a changed life is false.",
+     "not": "NOT the goal state for most of medicine, and still **uncommon** — 14 of 140, unchanged by v4. Read that as a claim about how little the register finds. It remains the bucket resting on the least-tested inputs: `residue` is absent on many records that have simply never been examined for one, and an unexamined record looks identical to a clean one. See `bucket-design.md`.",
+     "examples": [
+      "cholera",
+      "typhoid",
+      "influenza"
+     ]
+    },
+    "nobody-makes-it": {
+     "rule": "A `manufacturing` blocker, or a `no-sponsor` blocker on a record whose capability is real. The requirement that capability be real is what separates *nobody produces the cure* from *nobody funds the research*.",
+     "not": "NOT diseases with no answer. If nothing works, the problem is not manufacturing. `me-cfs` carries `no-sponsor` and is excluded here for exactly that reason — nobody is failing to manufacture its cure.",
+     "examples": [
+      "snakebite",
+      "bladder-cancer",
+      "syphilis",
+      "mrsa",
+      "diarrhoeal-disease"
+     ]
+    },
+    "found-too-late": {
+     "rule": "A `window` exists, the record's strata run from a late form where essentially nothing works (efficacy at or below 0.2) to an early form that is mostly cured (0.7 or above), and **fewer than half are caught in time**.",
+     "not": "NOT every disease with a window; **86 records have one**, which is far too many to be interesting. `caught_in_time` is what turns *a window exists* into *and we are missing it*, and it is the number that makes this bucket actionable rather than descriptive — **it is the size of the prize for a screening programme, per disease.** Chagas is 0.10, obesity 0.15, lung cancer 0.20, liver cancer 0.25. ALSO NOT `pancreatic-cancer`, and that exclusion is the rule working. Its strata spread is 0.15 — it is bad at **every** stage, so earlier detection is not the lever. A disease being terrible and having a window are different claims, and only the second is this bucket. `obesity` is in, on strata running 0.00 to 0.80, and is the entry most worth arguing with: its \"window\" is the period before the complications establish, which is real but is a slower and vaguer thing than a resectable tumour.",
+     "examples": [
+      "lung-cancer",
+      "liver-cancer",
+      "cervical-cancer",
+      "chagas",
+      "gastric-cancer"
+     ]
+    },
+    "cannot-aim-it": {
+     "rule": "The register's `futile_treatment_risk` — a treatment exists, it fails often, and there is no test that says in advance who it will fail.",
+     "not": "NOT the same as a treatment that works badly for everyone. The sketch's *\"% chance\"* is this: **a measurement failure wearing the costume of a treatment failure.**",
+     "examples": [
+      "rheumatoid-arthritis",
+      "schizophrenia",
+      "epilepsy",
+      "osteoarthritis"
+     ]
+    },
+    "no-starting-point": {
+     "rule": "`mechanism` is `none` or `correlates` — the causal account is absent or is a set of associations.",
+     "not": "NOT the famous killers. **Stroke and heart disease are `established`**: hand somebody $100M for stroke and they know exactly where to start, they simply cannot fix it. **The diseases with no starting point are the ones nobody dies of** — which is why a register built on mortality would never find them.",
+     "examples": [
+      "me-cfs",
+      "heds",
+      "depression",
+      "bipolar",
+      "low-back-pain"
+     ]
+    },
+    "cannot-reach-people": {
+     "rule": "`delivery` is `barely` or `undelivered` — efficacy multiplied by access leaves most patients untouched — **and** capability is `curable`, `managed` or `preventable`. A `disease-modifying` treatment is not something that \"works\" in the sense this bucket means: it slows the course and the disease still wins, so there is nothing to arrive.",
+     "not": "NOT a knowledge problem, and it is the single most common state in the register. This is the tag the whole `efficacy`/`access` split exists to make sayable. And NOT the `partial` records — Alzheimer's, ALS, glioblastoma — which are undelivered too, but of a treatment that does not hold the disease; version 4 filed them here on delivery alone and the name overclaimed.",
+     "examples": [
+      "refractive-error",
+      "hearing-loss",
+      "sickle-cell",
+      "hepatitis-b",
+      "obesity"
+     ]
+    },
+    "needs-more-evidence": {
+     "rule": "An `evidence-incomplete` or `candidate-untested` blocker — something plausible exists and nobody has established whether it works.",
+     "not": "NOT \"no path forward\". This is the opposite: a path exists and has not been walked.",
+     "examples": [
+      "idiopathic-pulmonary-fibrosis"
+     ]
+    }
+   },
+   "a": {
+    "changes-you": 61,
+    "held-off": 31,
+    "ends-it-later": 18,
+    "defines-your-life": 17,
+    "back-to-normal": 14,
+    "ends-it": 4,
+    "ends-it-unless-caught": 2,
+    "never-safe": 1
+   },
+   "b": {
+    "cannot-reach-people": 57,
+    "needs-more-evidence": 41,
+    "nobody-makes-it": 31,
+    "cannot-aim-it": 25,
+    "found-too-late": 11,
+    "no-starting-point": 6
+   },
+   "b_untagged": 40,
+   "members": {
+    "pleomorphic-adenoma": {
+     "id": "FND-D-0015",
+     "a": "changes-you",
+     "b": []
+    },
+    "hat": {
+     "id": "FND-D-0026",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "tuberculosis": {
+     "id": "FND-D-0023",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "covid-19": {
+     "id": "FND-D-0076",
+     "a": "changes-you",
+     "b": [
+      "found-too-late",
+      "needs-more-evidence"
+     ]
+    },
+    "leprosy": {
+     "id": "FND-D-0035",
+     "a": "changes-you",
+     "b": []
+    },
+    "thyroid-cancer": {
+     "id": "FND-D-0061",
+     "a": "changes-you",
+     "b": []
+    },
+    "typhoid": {
+     "id": "FND-D-0066",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "trachoma": {
+     "id": "FND-D-0036",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "gonorrhoea": {
+     "id": "FND-D-0117",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "malaria": {
+     "id": "FND-D-0069",
+     "a": "changes-you",
+     "b": []
+    },
+    "h-pylori-ulcer": {
+     "id": "FND-D-0001",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "uterine-fibroids": {
+     "id": "FND-D-0139",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it"
+     ]
+    },
+    "benign-prostatic-hyperplasia": {
+     "id": "FND-D-0138",
+     "a": "changes-you",
+     "b": []
+    },
+    "mrsa": {
+     "id": "FND-D-0067",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "genital-chlamydia": {
+     "id": "FND-D-0120",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "visceral-leishmaniasis": {
+     "id": "FND-D-0024",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "bacterial-meningitis": {
+     "id": "FND-D-0129",
+     "a": "defines-your-life",
+     "b": []
+    },
+    "coccidioidomycosis": {
+     "id": "FND-D-0111",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-aim-it",
+      "needs-more-evidence"
+     ]
+    },
+    "maternal-haemorrhage": {
+     "id": "FND-D-0073",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "syphilis": {
+     "id": "FND-D-0116",
+     "a": "defines-your-life",
+     "b": [
+      "nobody-makes-it",
+      "needs-more-evidence"
+     ]
+    },
+    "schistosomiasis": {
+     "id": "FND-D-0025",
+     "a": "changes-you",
+     "b": []
+    },
+    "scabies": {
+     "id": "FND-D-0038",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "childhood-pneumonia": {
+     "id": "FND-D-0071",
+     "a": "changes-you",
+     "b": []
+    },
+    "soil-transmitted-helminths": {
+     "id": "FND-D-0029",
+     "a": "back-to-normal",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "diarrhoeal-disease": {
+     "id": "FND-D-0074",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "buruli-ulcer": {
+     "id": "FND-D-0033",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "vulvar-cancer": {
+     "id": "FND-D-0125",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it"
+     ]
+    },
+    "anal-cancer": {
+     "id": "FND-D-0123",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it"
+     ]
+    },
+    "amr-infection": {
+     "id": "FND-D-0014",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "uterine-cancer": {
+     "id": "FND-D-0064",
+     "a": "changes-you",
+     "b": []
+    },
+    "anaemia": {
+     "id": "FND-D-0098",
+     "a": "changes-you",
+     "b": []
+    },
+    "breast-cancer": {
+     "id": "FND-D-0017",
+     "a": "changes-you",
+     "b": []
+    },
+    "melanoma": {
+     "id": "FND-D-0054",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "candidaemia": {
+     "id": "FND-D-0112",
+     "a": "changes-you",
+     "b": []
+    },
+    "prostate-cancer": {
+     "id": "FND-D-0051",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "neonatal-conditions": {
+     "id": "FND-D-0072",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it",
+      "needs-more-evidence"
+     ]
+    },
+    "yaws": {
+     "id": "FND-D-0034",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "cataract": {
+     "id": "FND-D-0089",
+     "a": "changes-you",
+     "b": []
+    },
+    "childhood-all": {
+     "id": "FND-D-0055",
+     "a": "changes-you",
+     "b": []
+    },
+    "trichomoniasis": {
+     "id": "FND-D-0121",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "uveal-melanoma": {
+     "id": "FND-D-0144",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "retinopathy-of-prematurity": {
+     "id": "FND-D-0132",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "renal-cell-carcinoma": {
+     "id": "FND-D-0063",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "echinococcosis": {
+     "id": "FND-D-0032",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "nasopharyngeal-carcinoma": {
+     "id": "FND-D-0103",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "penile-cancer": {
+     "id": "FND-D-0124",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "vaginal-cancer": {
+     "id": "FND-D-0126",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "smallpox": {
+     "id": "FND-D-0048",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "invasive-aspergillosis": {
+     "id": "FND-D-0110",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "cirrhosis": {
+     "id": "FND-D-0082",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "ebola": {
+     "id": "FND-D-0045",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "bladder-cancer": {
+     "id": "FND-D-0062",
+     "a": "defines-your-life",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "sepsis": {
+     "id": "FND-D-0070",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "clubfoot": {
+     "id": "FND-D-0135",
+     "a": "back-to-normal",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "colorectal-cancer": {
+     "id": "FND-D-0052",
+     "a": "changes-you",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "snakebite": {
+     "id": "FND-D-0012",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "cryptococcal-meningitis": {
+     "id": "FND-D-0109",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "non-hodgkin-lymphoma": {
+     "id": "FND-D-0057",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "mycoplasma-genitalium": {
+     "id": "FND-D-0122",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "taeniasis-cysticercosis": {
+     "id": "FND-D-0039",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "head-neck-cancer": {
+     "id": "FND-D-0102",
+     "a": "defines-your-life",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "hepatitis-c": {
+     "id": "FND-D-0002",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "cervical-cancer": {
+     "id": "FND-D-0053",
+     "a": "changes-you",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "cre": {
+     "id": "FND-D-0068",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "gastric-cancer": {
+     "id": "FND-D-0059",
+     "a": "ends-it-later",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "osteoarthritis": {
+     "id": "FND-D-0096",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "congenital-heart-disease": {
+     "id": "FND-D-0094",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "obstetric-fistula": {
+     "id": "FND-D-0136",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "mycetoma": {
+     "id": "FND-D-0030",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "noma": {
+     "id": "FND-D-0041",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "liver-cancer": {
+     "id": "FND-D-0058",
+     "a": "ends-it-later",
+     "b": [
+      "found-too-late",
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "lung-cancer": {
+     "id": "FND-D-0050",
+     "a": "ends-it-later",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "pancreatic-cancer": {
+     "id": "FND-D-0060",
+     "a": "ends-it-later",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "type-2-diabetes": {
+     "id": "FND-D-0080",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "chagas": {
+     "id": "FND-D-0022",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "sickle-cell": {
+     "id": "FND-D-0006",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "hiv": {
+     "id": "FND-D-0004",
+     "a": "held-off",
+     "b": []
+    },
+    "lymphatic-filariasis": {
+     "id": "FND-D-0028",
+     "a": "held-off",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "onchocerciasis": {
+     "id": "FND-D-0027",
+     "a": "held-off",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "pku": {
+     "id": "FND-D-0003",
+     "a": "held-off",
+     "b": []
+    },
+    "cholera": {
+     "id": "FND-D-0065",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "genital-herpes": {
+     "id": "FND-D-0118",
+     "a": "held-off",
+     "b": []
+    },
+    "cml": {
+     "id": "FND-D-0056",
+     "a": "held-off",
+     "b": []
+    },
+    "hpv-infection": {
+     "id": "FND-D-0119",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "parkinsons": {
+     "id": "FND-D-0087",
+     "a": "ends-it-later",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "atrial-fibrillation": {
+     "id": "FND-D-0083",
+     "a": "held-off",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "ischaemic-heart-disease": {
+     "id": "FND-D-0042",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "polycythaemia-vera": {
+     "id": "FND-D-0145",
+     "a": "held-off",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "type-1-diabetes": {
+     "id": "FND-D-0079",
+     "a": "held-off",
+     "b": []
+    },
+    "food-allergy": {
+     "id": "FND-D-0148",
+     "a": "never-safe",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "toxoplasmosis": {
+     "id": "FND-D-0114",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-aim-it",
+      "needs-more-evidence"
+     ]
+    },
+    "asthma": {
+     "id": "FND-D-0097",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "refractive-error": {
+     "id": "FND-D-0133",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "acute-bronchitis": {
+     "id": "FND-D-0113",
+     "a": "back-to-normal",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "cystic-fibrosis": {
+     "id": "FND-D-0090",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "measles": {
+     "id": "FND-D-0049",
+     "a": "changes-you",
+     "b": []
+    },
+    "epilepsy": {
+     "id": "FND-D-0008",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "mcas": {
+     "id": "FND-D-0021",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "keloid": {
+     "id": "FND-D-0140",
+     "a": "changes-you",
+     "b": [
+      "no-starting-point"
+     ]
+    },
+    "multiple-sclerosis": {
+     "id": "FND-D-0086",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "low-back-pain": {
+     "id": "FND-D-0010",
+     "a": "changes-you",
+     "b": [
+      "no-starting-point"
+     ]
+    },
+    "rheumatoid-arthritis": {
+     "id": "FND-D-0093",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "crohns": {
+     "id": "FND-D-0016",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "h5n1": {
+     "id": "FND-D-0047",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "schizophrenia": {
+     "id": "FND-D-0088",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "hypertension": {
+     "id": "FND-D-0084",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "pots": {
+     "id": "FND-D-0020",
+     "a": "held-off",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "rheumatic-heart-disease": {
+     "id": "FND-D-0013",
+     "a": "ends-it-later",
+     "b": [
+      "nobody-makes-it",
+      "needs-more-evidence"
+     ]
+    },
+    "glaucoma": {
+     "id": "FND-D-0131",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "varicella-zoster": {
+     "id": "FND-D-0127",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "bipolar": {
+     "id": "FND-D-0011",
+     "a": "held-off",
+     "b": [
+      "nobody-makes-it",
+      "cannot-aim-it",
+      "no-starting-point",
+      "cannot-reach-people"
+     ]
+    },
+    "copd": {
+     "id": "FND-D-0044",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "endometriosis": {
+     "id": "FND-D-0137",
+     "a": "held-off",
+     "b": [
+      "nobody-makes-it",
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "heart-failure": {
+     "id": "FND-D-0100",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "chronic-kidney-disease": {
+     "id": "FND-D-0081",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "cmv-infection": {
+     "id": "FND-D-0128",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-aim-it"
+     ]
+    },
+    "hearing-loss": {
+     "id": "FND-D-0095",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "depression": {
+     "id": "FND-D-0007",
+     "a": "changes-you",
+     "b": [
+      "no-starting-point",
+      "needs-more-evidence"
+     ]
+    },
+    "marburg": {
+     "id": "FND-D-0046",
+     "a": "changes-you",
+     "b": []
+    },
+    "duchenne": {
+     "id": "FND-D-0092",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "spinal-muscular-atrophy": {
+     "id": "FND-D-0091",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "migraine": {
+     "id": "FND-D-0134",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "multiple-system-atrophy": {
+     "id": "FND-D-0142",
+     "a": "ends-it",
+     "b": []
+    },
+    "stroke": {
+     "id": "FND-D-0043",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "cryptosporidiosis": {
+     "id": "FND-D-0115",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "cerebral-palsy": {
+     "id": "FND-D-0099",
+     "a": "defines-your-life",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "idiopathic-pulmonary-fibrosis": {
+     "id": "FND-D-0108",
+     "a": "ends-it-later",
+     "b": [
+      "found-too-late",
+      "needs-more-evidence"
+     ]
+    },
+    "influenza": {
+     "id": "FND-D-0077",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it",
+      "needs-more-evidence"
+     ]
+    },
+    "acute-myeloid-leukaemia": {
+     "id": "FND-D-0147",
+     "a": "ends-it-later",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "familial-hypercholesterolaemia": {
+     "id": "FND-D-0146",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "hepatitis-b": {
+     "id": "FND-D-0075",
+     "a": "held-off",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "osteoporosis": {
+     "id": "FND-D-0101",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "als": {
+     "id": "FND-D-0104",
+     "a": "ends-it-later",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "glioblastoma": {
+     "id": "FND-D-0105",
+     "a": "ends-it-later",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "mesothelioma": {
+     "id": "FND-D-0107",
+     "a": "ends-it-later",
+     "b": [
+      "cannot-aim-it",
+      "needs-more-evidence"
+     ]
+    },
+    "obesity": {
+     "id": "FND-D-0085",
+     "a": "held-off",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "tay-sachs": {
+     "id": "FND-D-0143",
+     "a": "ends-it",
+     "b": []
+    },
+    "disorders-of-consciousness": {
+     "id": "FND-D-0130",
+     "a": "defines-your-life",
+     "b": []
+    },
+    "alzheimers": {
+     "id": "FND-D-0078",
+     "a": "ends-it-later",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "dipg": {
+     "id": "FND-D-0141",
+     "a": "ends-it",
+     "b": [
+      "nobody-makes-it",
+      "cannot-aim-it"
+     ]
+    },
+    "dengue": {
+     "id": "FND-D-0031",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "dracunculiasis": {
+     "id": "FND-D-0040",
+     "a": "changes-you",
+     "b": []
+    },
+    "heds": {
+     "id": "FND-D-0019",
+     "a": "defines-your-life",
+     "b": [
+      "no-starting-point",
+      "needs-more-evidence"
+     ]
+    },
+    "huntington": {
+     "id": "FND-D-0005",
+     "a": "ends-it",
+     "b": []
+    },
+    "me-cfs": {
+     "id": "FND-D-0009",
+     "a": "defines-your-life",
+     "b": [
+      "no-starting-point"
+     ]
+    },
+    "msmds": {
+     "id": "FND-D-0018",
+     "a": "defines-your-life",
+     "b": []
+    },
+    "prion-disease": {
+     "id": "FND-D-0106",
+     "a": "ends-it-unless-caught",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "rabies": {
+     "id": "FND-D-0037",
+     "a": "ends-it-unless-caught",
+     "b": []
+    }
+   }
+  },
+  "quadrant": {
+   "known & treatable": 112,
+   "known & modifiable": 16,
+   "engineering problem": 14,
+   "frontier": 5,
+   "empirical luck": 1
+  },
+  "delivery": {
+   "barely": 65,
+   "partly": 46,
+   "—": 25,
+   "mostly": 7,
+   "undelivered": 5
+  },
+  "gaps": {
+   "yld_rated": 4,
+   "knowledge_yld": 63850000.0,
+   "delivery_yld": 41857500.0,
+   "top_knowledge_yld": [
+    "low-back-pain",
+    "anaemia",
+    "osteoarthritis",
+    "asthma"
+   ],
+   "rated": 115,
+   "knowledge": 22317700.6,
+   "delivery": 36283556.6,
+   "top_knowledge": [
+    "stroke",
+    "ischaemic-heart-disease",
+    "type-2-diabetes",
+    "sepsis",
+    "hypertension",
+    "copd",
+    "obesity",
+    "lung-cancer",
+    "alzheimers",
+    "liver-cancer"
+   ],
+   "top_delivery": [
+    "hypertension",
+    "sepsis",
+    "ischaemic-heart-disease",
+    "obesity",
+    "stroke",
+    "neonatal-conditions",
+    "copd",
+    "type-2-diabetes",
+    "hepatitis-b",
+    "diarrhoeal-disease"
+   ]
+  },
+  "terms": {
+   "clean": 73,
+   "costly": 70,
+   "harsh": 5
+  },
+  "axes": {
+   "mechanism": {
+    "established": 102,
+    "partial": 40,
+    "correlates": 5,
+    "none": 1
+   },
+   "intervention": {
+    "curative": 75,
+    "suppressive": 31,
+    "symptomatic": 23,
+    "disease-modifying": 16,
+    "none": 3
+   },
+   "prevention": {
+    "risk-reduction": 83,
+    "prophylaxis": 38,
+    "none": 26,
+    "eradicated": 1
+   },
+   "ongoing": {
+    "moderate": 53,
+    "low": 49,
+    "high": 31,
+    "none": 15
+   }
+  },
+  "measurement": {
+   "diagnostic": {
+    "objective": 115,
+    "clinical": 31,
+    "complaint": 2
+   },
+   "prognostic": {
+    "partial": 90,
+    "good": 34,
+    "none": 24
+   },
+   "predictive": {
+    "partial": 70,
+    "none": 46,
+    "n/a": 20,
+    "good": 12
+   }
+  },
+  "flags": {
+   "measurement_gap": 28,
+   "overtreatment_risk": 9,
+   "futile_treatment_risk": 25,
+   "cured_at_a_price": 67,
+   "harm_without_benefit": 8,
+   "orphaned": 121,
+   "spans_ladder": 54,
+   "has_window": 102,
+   "has_residue": 85,
+   "only_knowledge_blockers": 1
+  },
+  "contested": 20,
+  "reach": {
+   "mean": 0.2647,
+   "median": 0.245
+  },
+  "blockers": {
+   "total": 639,
+   "by_kind": {
+    "knowledge": 170,
+    "logistics": 108,
+    "diagnosis": 102,
+    "policy": 86,
+    "cost": 60,
+    "evidence-incomplete": 40,
+    "no-sponsor": 29,
+    "adherence": 14,
+    "tooling": 14,
+    "manufacturing": 9,
+    "regulatory": 5,
+    "candidate-untested": 2
+   },
+   "by_standing": {
+    "documented": 622,
+    "alleged": 10,
+    "disputed": 6,
+    "refuted": 1
+   },
+   "priced": 467,
+   "by_kind_priced": {
+    "adherence": {
+     "total": 14,
+     "priced": 14
+    },
+    "candidate-untested": {
+     "total": 2,
+     "priced": 2
+    },
+    "cost": {
+     "total": 60,
+     "priced": 60
+    },
+    "diagnosis": {
+     "total": 102,
+     "priced": 102
+    },
+    "evidence-incomplete": {
+     "total": 40,
+     "priced": 40
+    },
+    "knowledge": {
+     "total": 170,
+     "priced": 8
+    },
+    "logistics": {
+     "total": 108,
+     "priced": 108
+    },
+    "manufacturing": {
+     "total": 9,
+     "priced": 9
+    },
+    "no-sponsor": {
+     "total": 29,
+     "priced": 28
+    },
+    "policy": {
+     "total": 86,
+     "priced": 81
+    },
+    "regulatory": {
+     "total": 5,
+     "priced": 4
+    },
+    "tooling": {
+     "total": 14,
+     "priced": 11
+    }
+   },
+   "actors": {
+    "government": 410,
+    "health-system": 359,
+    "academic": 356,
+    "nonprofit": 308,
+    "philanthropy": 272,
+    "sponsor": 233,
+    "manufacturer": 231,
+    "payer": 201,
+    "regulator": 95,
+    "patient-org": 81,
+    "legislator": 69,
+    "software": 23
+   }
+  },
+  "moved": {
+   "total": 245,
+   "by_axis": {
+    "efficacy": 73,
+    "intervention": 60,
+    "access": 31,
+    "prevention": 31,
+    "toll": 25,
+    "mechanism": 17,
+    "measurement": 6,
+    "ongoing": 2
+   },
+   "by_decade": {
+    "1790s": 1,
+    "1850s": 1,
+    "1920s": 3,
+    "1930s": 1,
+    "1940s": 9,
+    "1950s": 5,
+    "1960s": 10,
+    "1970s": 11,
+    "1980s": 20,
+    "1990s": 32,
+    "2000s": 36,
+    "2010s": 67,
+    "2020s": 49
+   }
+  },
+  "provenance": {
+   "scalars": 2525,
+   "by_src": {
+    "reasoning": 1299,
+    "recall": 1142,
+    "cited": 74,
+    "unknown": 10
+   },
+   "cited": 74,
+   "by_tier": {
+    "sourceable": {
+     "total": 498,
+     "cited": 3
+    },
+    "supportable": {
+     "total": 718,
+     "cited": 71
+    },
+    "judged": {
+     "total": 1309,
+     "cited": 0
+    }
+   },
+   "verified": 74,
+   "unknown": 10,
+   "mondo_resolved": 126,
+   "mondo_unresolved": 22,
+   "note": "Every empirical scalar carries a src. `recall` is the model's memory, `reasoning` is its arithmetic, and `unknown` means nobody has the number — none of the three is a citation. `by_tier` is the honest denominator: a citation SETTLES a sourceable scalar, SUPPORTS a supportable one, and cannot touch a judged one, because no dataset holds a quantity this register defines. Blockers are judged and carry their evidential status in `standing` instead."
+  },
+  "burden": {
+   "records_with_deaths": 92,
+   "records_without_deaths": 56,
+   "attributed_deaths_sum": 75772539.0,
+   "note": "An UPPER BOUND, not a total. Records overlap — TB deaths in people with HIV are in both, sepsis is the mode of death for several others — and the sum exceeds annual global mortality. Do not chart this as a total."
+  }
+ },
+ {
+  "date": "2026-11-03",
+  "register": "nordstern",
+  "records": {
+   "active": 148,
+   "deprecated": 0
+  },
+  "capability": {
+   "curable": 76,
+   "managed": 31,
+   "unsolved": 19,
+   "partial": 16,
+   "preventable": 6
+  },
+  "solved": {
+   "of": 148,
+   "can_end": 82,
+   "reaches_most": 9,
+   "solved": 8,
+   "reach_floor": 0.6,
+   "definition": "a disease is solved when medicine can end it, the treatment reaches most of the people who have it, and it costs them nothing permanent",
+   "steps": [
+    "medicine can end it",
+    "and it reaches most patients",
+    "and it costs nothing permanent"
+   ]
+  },
+  "survival": {
+   "bands": {
+    "good chance": 82,
+    "n/a": 49,
+    "a chance": 9,
+    "terminal": 8
+   },
+   "rated": 99,
+   "outcomes": {
+    "cured": 57,
+    "n/a": 49,
+    "delayed": 20,
+    "held": 16,
+    "recovered": 6
+   },
+   "was_uniformly_fatal": 32,
+   "no_longer_terminal": 24,
+   "zero_gain": [
+    "alzheimers",
+    "huntington",
+    "prion-disease",
+    "rabies",
+    "tay-sachs"
+   ]
+  },
+  "buckets": {
+   "version": 6,
+   "digest": "d07dc0ec4741",
+   "names": {
+    "ends-it": "It ends your life, whenever you find it",
+    "ends-it-unless-caught": "It ends your life unless it is caught in time",
+    "ends-it-later": "It ends your life, but later",
+    "held-off": "It is held off, for life",
+    "never-safe": "You survive, and you are never safe",
+    "defines-your-life": "You survive, and it defines your life",
+    "changes-you": "You survive, and it changes you",
+    "back-to-normal": "You survive, and you get back to normal",
+    "nobody-makes-it": "The solution exists and nobody makes it",
+    "found-too-late": "Caught early it is curable, caught late it is not",
+    "cannot-aim-it": "It works for some people and nobody can say which",
+    "no-starting-point": "Nobody knows where to start",
+    "cannot-reach-people": "It works and it does not arrive",
+    "needs-more-evidence": "There is a candidate and the evidence is not in"
+   },
+   "defs": {
+    "ends-it": {
+     "rule": "The course is fatal, essentially nobody survives the stated horizon, and there is no window — finding it earlier changes nothing.",
+     "not": "NOT \"we have no cure\". Most fatal diseases here are `ends-it-later`. This is the much smaller set where the timing of diagnosis is irrelevant because nothing follows from it.",
+     "examples": [
+      "huntington"
+     ]
+    },
+    "ends-it-unless-caught": {
+     "rule": "Fatal as above, but a `window` exists — there is a period in which action changes the outcome, and outside it there is nothing.",
+     "not": "NOT every disease with a window; 86 records have one. This is the set where the window is the *whole* of the difference between living and dying.",
+     "examples": [
+      "rabies",
+      "prion-disease"
+     ]
+    },
+    "ends-it-later": {
+     "rule": "The disease is still what kills you. Either treatment alters the course without ending it — the register's `delayed` outcome — or **more than half of treated patients die of it**, whatever rung the ladder puts the treatment on.",
+     "not": "NOT \"untreatable\". These are mostly diseases medicine has changed a great deal — and the change bought time rather than an ending. **NOT decided by the intervention rung alone, and v4 fixed exactly that.** `survival_outcome()` reads `axes.intervention`, so every record on the `curative` rung returned `cured` however few survived — and `cured` never reached this branch. Pancreatic cancer, where 87% of treated patients die, was filed under *you survive, and it changes you*, beside cataract. The rung was right about what the operation does **when it works**; the bucket was asking a different question and taking the rung's word for the answer. ALSO NOT acute illness, and that exclusion is deliberate rather than protective. `marburg` kills about three quarters of those it infects within two weeks and the quarter who live **recover** — so \"it ends your life, but later\" is false for everybody in the record. That is the ⧉ `spans_ladder` shape the register already names as a **malformed question rather than a hard one**, and declining to average it is more honest than filing it confidently in the wrong place. See `holes`.",
+     "examples": [
+      "pancreatic-cancer",
+      "als",
+      "alzheimers",
+      "stroke",
+      "glioblastoma"
+     ]
+    },
+    "held-off": {
+     "rule": "A treatment suppresses it indefinitely and stopping brings it back. Near-normal life, on condition of continuous treatment.",
+     "not": "NOT cured. **This rung is what stops HIV being filed next to hepatitis C** — one is no longer a death sentence, the other is over.",
+     "examples": [
+      "hiv",
+      "type-1-diabetes",
+      "schizophrenia"
+     ]
+    },
+    "never-safe": {
+     "rule": "Nothing alters the course and nothing is treated day to day. The disease is an acute, potentially fatal event that can recur at any time — a `window` marked `recurs` — and keeping it shut is the patient's own work, every day, for life: `intervention` symptomatic or none, `ongoing` high, and survival unrated or near-complete.",
+     "not": "NOT `held-off`: nothing is being suppressed; between events the person is well and untreated. NOT `defines-your-life` on burden alone — the burden here is a lethal possibility rather than a continuous cost. This axis was built on survival and this state is invisible to it: measured by deaths it is nothing, measured by what a life is organised around it is everything.",
+     "examples": [
+      "food-allergy"
+     ]
+    },
+    "defines-your-life": {
+     "rule": "Survivable, but the cost of living with it or of being treated for it is continuous and large — a high ongoing burden, or a residue or a treatment toll rated `harsh`.",
+     "not": "NOT necessarily severe in the clinical sense, and NOT about mortality at all. `me-cfs`, `heds` and `msmds` are here with **no attributed deaths whatsoever** — which is the whole reason this axis is not built on survival.",
+     "examples": [
+      "sickle-cell",
+      "me-cfs",
+      "heds",
+      "cerebral-palsy",
+      "noma"
+     ]
+    },
+    "changes-you": {
+     "rule": "Survivable, and something **rated `major`** is left behind — by the disease, by the treatment, or both — or the ongoing burden of being treated is moderate. Without dominating the rest of your life, which is the bucket above.",
+     "not": "NOT a minor category. **It is still the largest bucket in the register** after v4 took four cancers out of it, and that is this axis's main finding: medicine's characteristic output is neither death nor cure but survival in an altered body. NOT triggered by *any* permanent difference. **v3 fixed exactly that.** Until 2026-09-01 the rule tested whether a `residue` block existed at all, so a record whose residue was a shoe size landed here — and derived `restored: restored` at the same time, because that derivation has always read severity. Eight records held both verdicts at once. `clubfoot` made it undeniable and the rule now reads severity too.",
+     "examples": [
+      "tuberculosis",
+      "benign-prostatic-hyperplasia",
+      "breast-cancer",
+      "malaria"
+     ]
+    },
+    "back-to-normal": {
+     "rule": "Survivable, with nothing worse than a `minor` residue and a `minor` treatment toll, and a low ongoing burden. **A minor permanent difference does not disqualify a record from this bucket** — a treated clubfoot leaves a slightly smaller foot in somebody who runs normally, and calling that a changed life is false.",
+     "not": "NOT the goal state for most of medicine, and still **uncommon** — 14 of 140, unchanged by v4. Read that as a claim about how little the register finds. It remains the bucket resting on the least-tested inputs: `residue` is absent on many records that have simply never been examined for one, and an unexamined record looks identical to a clean one. See `bucket-design.md`.",
+     "examples": [
+      "cholera",
+      "typhoid",
+      "influenza"
+     ]
+    },
+    "nobody-makes-it": {
+     "rule": "A `manufacturing` blocker, or a `no-sponsor` blocker on a record whose capability is real. The requirement that capability be real is what separates *nobody produces the cure* from *nobody funds the research*.",
+     "not": "NOT diseases with no answer. If nothing works, the problem is not manufacturing. `me-cfs` carries `no-sponsor` and is excluded here for exactly that reason — nobody is failing to manufacture its cure.",
+     "examples": [
+      "snakebite",
+      "bladder-cancer",
+      "syphilis",
+      "mrsa",
+      "diarrhoeal-disease"
+     ]
+    },
+    "found-too-late": {
+     "rule": "A `window` exists, the record's strata run from a late form where essentially nothing works (efficacy at or below 0.2) to an early form that is mostly cured (0.7 or above), and **fewer than half are caught in time**.",
+     "not": "NOT every disease with a window; **86 records have one**, which is far too many to be interesting. `caught_in_time` is what turns *a window exists* into *and we are missing it*, and it is the number that makes this bucket actionable rather than descriptive — **it is the size of the prize for a screening programme, per disease.** Chagas is 0.10, obesity 0.15, lung cancer 0.20, liver cancer 0.25. ALSO NOT `pancreatic-cancer`, and that exclusion is the rule working. Its strata spread is 0.15 — it is bad at **every** stage, so earlier detection is not the lever. A disease being terrible and having a window are different claims, and only the second is this bucket. `obesity` is in, on strata running 0.00 to 0.80, and is the entry most worth arguing with: its \"window\" is the period before the complications establish, which is real but is a slower and vaguer thing than a resectable tumour.",
+     "examples": [
+      "lung-cancer",
+      "liver-cancer",
+      "cervical-cancer",
+      "chagas",
+      "gastric-cancer"
+     ]
+    },
+    "cannot-aim-it": {
+     "rule": "The register's `futile_treatment_risk` — a treatment exists, it fails often, and there is no test that says in advance who it will fail.",
+     "not": "NOT the same as a treatment that works badly for everyone. The sketch's *\"% chance\"* is this: **a measurement failure wearing the costume of a treatment failure.**",
+     "examples": [
+      "rheumatoid-arthritis",
+      "schizophrenia",
+      "epilepsy",
+      "osteoarthritis"
+     ]
+    },
+    "no-starting-point": {
+     "rule": "`mechanism` is `none` or `correlates` — the causal account is absent or is a set of associations.",
+     "not": "NOT the famous killers. **Stroke and heart disease are `established`**: hand somebody $100M for stroke and they know exactly where to start, they simply cannot fix it. **The diseases with no starting point are the ones nobody dies of** — which is why a register built on mortality would never find them.",
+     "examples": [
+      "me-cfs",
+      "heds",
+      "depression",
+      "bipolar",
+      "low-back-pain"
+     ]
+    },
+    "cannot-reach-people": {
+     "rule": "`delivery` is `barely` or `undelivered` — efficacy multiplied by access leaves most patients untouched — **and** capability is `curable`, `managed` or `preventable`. A `disease-modifying` treatment is not something that \"works\" in the sense this bucket means: it slows the course and the disease still wins, so there is nothing to arrive.",
+     "not": "NOT a knowledge problem, and it is the single most common state in the register. This is the tag the whole `efficacy`/`access` split exists to make sayable. And NOT the `partial` records — Alzheimer's, ALS, glioblastoma — which are undelivered too, but of a treatment that does not hold the disease; version 4 filed them here on delivery alone and the name overclaimed.",
+     "examples": [
+      "refractive-error",
+      "hearing-loss",
+      "sickle-cell",
+      "hepatitis-b",
+      "obesity"
+     ]
+    },
+    "needs-more-evidence": {
+     "rule": "An `evidence-incomplete` or `candidate-untested` blocker — something plausible exists and nobody has established whether it works.",
+     "not": "NOT \"no path forward\". This is the opposite: a path exists and has not been walked.",
+     "examples": [
+      "idiopathic-pulmonary-fibrosis"
+     ]
+    }
+   },
+   "a": {
+    "changes-you": 61,
+    "held-off": 31,
+    "ends-it-later": 18,
+    "defines-your-life": 17,
+    "back-to-normal": 14,
+    "ends-it": 4,
+    "ends-it-unless-caught": 2,
+    "never-safe": 1
+   },
+   "b": {
+    "cannot-reach-people": 57,
+    "needs-more-evidence": 41,
+    "nobody-makes-it": 31,
+    "cannot-aim-it": 25,
+    "found-too-late": 11,
+    "no-starting-point": 6
+   },
+   "b_untagged": 40,
+   "members": {
+    "pleomorphic-adenoma": {
+     "id": "FND-D-0015",
+     "a": "changes-you",
+     "b": []
+    },
+    "hat": {
+     "id": "FND-D-0026",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "tuberculosis": {
+     "id": "FND-D-0023",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "covid-19": {
+     "id": "FND-D-0076",
+     "a": "changes-you",
+     "b": [
+      "found-too-late",
+      "needs-more-evidence"
+     ]
+    },
+    "leprosy": {
+     "id": "FND-D-0035",
+     "a": "changes-you",
+     "b": []
+    },
+    "thyroid-cancer": {
+     "id": "FND-D-0061",
+     "a": "changes-you",
+     "b": []
+    },
+    "typhoid": {
+     "id": "FND-D-0066",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "trachoma": {
+     "id": "FND-D-0036",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "gonorrhoea": {
+     "id": "FND-D-0117",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "malaria": {
+     "id": "FND-D-0069",
+     "a": "changes-you",
+     "b": []
+    },
+    "h-pylori-ulcer": {
+     "id": "FND-D-0001",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "uterine-fibroids": {
+     "id": "FND-D-0139",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it"
+     ]
+    },
+    "benign-prostatic-hyperplasia": {
+     "id": "FND-D-0138",
+     "a": "changes-you",
+     "b": []
+    },
+    "mrsa": {
+     "id": "FND-D-0067",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "genital-chlamydia": {
+     "id": "FND-D-0120",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "visceral-leishmaniasis": {
+     "id": "FND-D-0024",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "bacterial-meningitis": {
+     "id": "FND-D-0129",
+     "a": "defines-your-life",
+     "b": []
+    },
+    "coccidioidomycosis": {
+     "id": "FND-D-0111",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-aim-it",
+      "needs-more-evidence"
+     ]
+    },
+    "maternal-haemorrhage": {
+     "id": "FND-D-0073",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "syphilis": {
+     "id": "FND-D-0116",
+     "a": "defines-your-life",
+     "b": [
+      "nobody-makes-it",
+      "needs-more-evidence"
+     ]
+    },
+    "schistosomiasis": {
+     "id": "FND-D-0025",
+     "a": "changes-you",
+     "b": []
+    },
+    "scabies": {
+     "id": "FND-D-0038",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "childhood-pneumonia": {
+     "id": "FND-D-0071",
+     "a": "changes-you",
+     "b": []
+    },
+    "soil-transmitted-helminths": {
+     "id": "FND-D-0029",
+     "a": "back-to-normal",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "diarrhoeal-disease": {
+     "id": "FND-D-0074",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "buruli-ulcer": {
+     "id": "FND-D-0033",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "vulvar-cancer": {
+     "id": "FND-D-0125",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it"
+     ]
+    },
+    "anal-cancer": {
+     "id": "FND-D-0123",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it"
+     ]
+    },
+    "amr-infection": {
+     "id": "FND-D-0014",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "uterine-cancer": {
+     "id": "FND-D-0064",
+     "a": "changes-you",
+     "b": []
+    },
+    "anaemia": {
+     "id": "FND-D-0098",
+     "a": "changes-you",
+     "b": []
+    },
+    "breast-cancer": {
+     "id": "FND-D-0017",
+     "a": "changes-you",
+     "b": []
+    },
+    "melanoma": {
+     "id": "FND-D-0054",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "candidaemia": {
+     "id": "FND-D-0112",
+     "a": "changes-you",
+     "b": []
+    },
+    "prostate-cancer": {
+     "id": "FND-D-0051",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "neonatal-conditions": {
+     "id": "FND-D-0072",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it",
+      "needs-more-evidence"
+     ]
+    },
+    "yaws": {
+     "id": "FND-D-0034",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "cataract": {
+     "id": "FND-D-0089",
+     "a": "changes-you",
+     "b": []
+    },
+    "childhood-all": {
+     "id": "FND-D-0055",
+     "a": "changes-you",
+     "b": []
+    },
+    "trichomoniasis": {
+     "id": "FND-D-0121",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "uveal-melanoma": {
+     "id": "FND-D-0144",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "retinopathy-of-prematurity": {
+     "id": "FND-D-0132",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "renal-cell-carcinoma": {
+     "id": "FND-D-0063",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "echinococcosis": {
+     "id": "FND-D-0032",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "nasopharyngeal-carcinoma": {
+     "id": "FND-D-0103",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "penile-cancer": {
+     "id": "FND-D-0124",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "vaginal-cancer": {
+     "id": "FND-D-0126",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "smallpox": {
+     "id": "FND-D-0048",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "invasive-aspergillosis": {
+     "id": "FND-D-0110",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "cirrhosis": {
+     "id": "FND-D-0082",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "ebola": {
+     "id": "FND-D-0045",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "bladder-cancer": {
+     "id": "FND-D-0062",
+     "a": "defines-your-life",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "sepsis": {
+     "id": "FND-D-0070",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "clubfoot": {
+     "id": "FND-D-0135",
+     "a": "back-to-normal",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "colorectal-cancer": {
+     "id": "FND-D-0052",
+     "a": "changes-you",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "snakebite": {
+     "id": "FND-D-0012",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "cryptococcal-meningitis": {
+     "id": "FND-D-0109",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "non-hodgkin-lymphoma": {
+     "id": "FND-D-0057",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "mycoplasma-genitalium": {
+     "id": "FND-D-0122",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "taeniasis-cysticercosis": {
+     "id": "FND-D-0039",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "head-neck-cancer": {
+     "id": "FND-D-0102",
+     "a": "defines-your-life",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "hepatitis-c": {
+     "id": "FND-D-0002",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "cervical-cancer": {
+     "id": "FND-D-0053",
+     "a": "changes-you",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "cre": {
+     "id": "FND-D-0068",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "gastric-cancer": {
+     "id": "FND-D-0059",
+     "a": "ends-it-later",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "osteoarthritis": {
+     "id": "FND-D-0096",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "congenital-heart-disease": {
+     "id": "FND-D-0094",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "obstetric-fistula": {
+     "id": "FND-D-0136",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "mycetoma": {
+     "id": "FND-D-0030",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "noma": {
+     "id": "FND-D-0041",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "liver-cancer": {
+     "id": "FND-D-0058",
+     "a": "ends-it-later",
+     "b": [
+      "found-too-late",
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "lung-cancer": {
+     "id": "FND-D-0050",
+     "a": "ends-it-later",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "pancreatic-cancer": {
+     "id": "FND-D-0060",
+     "a": "ends-it-later",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "type-2-diabetes": {
+     "id": "FND-D-0080",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "chagas": {
+     "id": "FND-D-0022",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "sickle-cell": {
+     "id": "FND-D-0006",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "hiv": {
+     "id": "FND-D-0004",
+     "a": "held-off",
+     "b": []
+    },
+    "lymphatic-filariasis": {
+     "id": "FND-D-0028",
+     "a": "held-off",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "onchocerciasis": {
+     "id": "FND-D-0027",
+     "a": "held-off",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "pku": {
+     "id": "FND-D-0003",
+     "a": "held-off",
+     "b": []
+    },
+    "cholera": {
+     "id": "FND-D-0065",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "genital-herpes": {
+     "id": "FND-D-0118",
+     "a": "held-off",
+     "b": []
+    },
+    "cml": {
+     "id": "FND-D-0056",
+     "a": "held-off",
+     "b": []
+    },
+    "hpv-infection": {
+     "id": "FND-D-0119",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "parkinsons": {
+     "id": "FND-D-0087",
+     "a": "ends-it-later",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "atrial-fibrillation": {
+     "id": "FND-D-0083",
+     "a": "held-off",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "ischaemic-heart-disease": {
+     "id": "FND-D-0042",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "polycythaemia-vera": {
+     "id": "FND-D-0145",
+     "a": "held-off",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "type-1-diabetes": {
+     "id": "FND-D-0079",
+     "a": "held-off",
+     "b": []
+    },
+    "food-allergy": {
+     "id": "FND-D-0148",
+     "a": "never-safe",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "toxoplasmosis": {
+     "id": "FND-D-0114",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-aim-it",
+      "needs-more-evidence"
+     ]
+    },
+    "asthma": {
+     "id": "FND-D-0097",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "refractive-error": {
+     "id": "FND-D-0133",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "acute-bronchitis": {
+     "id": "FND-D-0113",
+     "a": "back-to-normal",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "cystic-fibrosis": {
+     "id": "FND-D-0090",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "measles": {
+     "id": "FND-D-0049",
+     "a": "changes-you",
+     "b": []
+    },
+    "epilepsy": {
+     "id": "FND-D-0008",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "mcas": {
+     "id": "FND-D-0021",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "keloid": {
+     "id": "FND-D-0140",
+     "a": "changes-you",
+     "b": [
+      "no-starting-point"
+     ]
+    },
+    "multiple-sclerosis": {
+     "id": "FND-D-0086",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "low-back-pain": {
+     "id": "FND-D-0010",
+     "a": "changes-you",
+     "b": [
+      "no-starting-point"
+     ]
+    },
+    "rheumatoid-arthritis": {
+     "id": "FND-D-0093",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "crohns": {
+     "id": "FND-D-0016",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "h5n1": {
+     "id": "FND-D-0047",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "schizophrenia": {
+     "id": "FND-D-0088",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "hypertension": {
+     "id": "FND-D-0084",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "pots": {
+     "id": "FND-D-0020",
+     "a": "held-off",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "rheumatic-heart-disease": {
+     "id": "FND-D-0013",
+     "a": "ends-it-later",
+     "b": [
+      "nobody-makes-it",
+      "needs-more-evidence"
+     ]
+    },
+    "glaucoma": {
+     "id": "FND-D-0131",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "varicella-zoster": {
+     "id": "FND-D-0127",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "bipolar": {
+     "id": "FND-D-0011",
+     "a": "held-off",
+     "b": [
+      "nobody-makes-it",
+      "cannot-aim-it",
+      "no-starting-point",
+      "cannot-reach-people"
+     ]
+    },
+    "copd": {
+     "id": "FND-D-0044",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "endometriosis": {
+     "id": "FND-D-0137",
+     "a": "held-off",
+     "b": [
+      "nobody-makes-it",
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "heart-failure": {
+     "id": "FND-D-0100",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "chronic-kidney-disease": {
+     "id": "FND-D-0081",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "cmv-infection": {
+     "id": "FND-D-0128",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-aim-it"
+     ]
+    },
+    "hearing-loss": {
+     "id": "FND-D-0095",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "depression": {
+     "id": "FND-D-0007",
+     "a": "changes-you",
+     "b": [
+      "no-starting-point",
+      "needs-more-evidence"
+     ]
+    },
+    "marburg": {
+     "id": "FND-D-0046",
+     "a": "changes-you",
+     "b": []
+    },
+    "duchenne": {
+     "id": "FND-D-0092",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "spinal-muscular-atrophy": {
+     "id": "FND-D-0091",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "migraine": {
+     "id": "FND-D-0134",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "multiple-system-atrophy": {
+     "id": "FND-D-0142",
+     "a": "ends-it",
+     "b": []
+    },
+    "stroke": {
+     "id": "FND-D-0043",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "cryptosporidiosis": {
+     "id": "FND-D-0115",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "cerebral-palsy": {
+     "id": "FND-D-0099",
+     "a": "defines-your-life",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "idiopathic-pulmonary-fibrosis": {
+     "id": "FND-D-0108",
+     "a": "ends-it-later",
+     "b": [
+      "found-too-late",
+      "needs-more-evidence"
+     ]
+    },
+    "influenza": {
+     "id": "FND-D-0077",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it",
+      "needs-more-evidence"
+     ]
+    },
+    "acute-myeloid-leukaemia": {
+     "id": "FND-D-0147",
+     "a": "ends-it-later",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "familial-hypercholesterolaemia": {
+     "id": "FND-D-0146",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "hepatitis-b": {
+     "id": "FND-D-0075",
+     "a": "held-off",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "osteoporosis": {
+     "id": "FND-D-0101",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "als": {
+     "id": "FND-D-0104",
+     "a": "ends-it-later",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "glioblastoma": {
+     "id": "FND-D-0105",
+     "a": "ends-it-later",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "mesothelioma": {
+     "id": "FND-D-0107",
+     "a": "ends-it-later",
+     "b": [
+      "cannot-aim-it",
+      "needs-more-evidence"
+     ]
+    },
+    "obesity": {
+     "id": "FND-D-0085",
+     "a": "held-off",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "tay-sachs": {
+     "id": "FND-D-0143",
+     "a": "ends-it",
+     "b": []
+    },
+    "disorders-of-consciousness": {
+     "id": "FND-D-0130",
+     "a": "defines-your-life",
+     "b": []
+    },
+    "alzheimers": {
+     "id": "FND-D-0078",
+     "a": "ends-it-later",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "dipg": {
+     "id": "FND-D-0141",
+     "a": "ends-it",
+     "b": [
+      "nobody-makes-it",
+      "cannot-aim-it"
+     ]
+    },
+    "dengue": {
+     "id": "FND-D-0031",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "dracunculiasis": {
+     "id": "FND-D-0040",
+     "a": "changes-you",
+     "b": []
+    },
+    "heds": {
+     "id": "FND-D-0019",
+     "a": "defines-your-life",
+     "b": [
+      "no-starting-point",
+      "needs-more-evidence"
+     ]
+    },
+    "huntington": {
+     "id": "FND-D-0005",
+     "a": "ends-it",
+     "b": []
+    },
+    "me-cfs": {
+     "id": "FND-D-0009",
+     "a": "defines-your-life",
+     "b": [
+      "no-starting-point"
+     ]
+    },
+    "msmds": {
+     "id": "FND-D-0018",
+     "a": "defines-your-life",
+     "b": []
+    },
+    "prion-disease": {
+     "id": "FND-D-0106",
+     "a": "ends-it-unless-caught",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "rabies": {
+     "id": "FND-D-0037",
+     "a": "ends-it-unless-caught",
+     "b": []
+    }
+   }
+  },
+  "quadrant": {
+   "known & treatable": 112,
+   "known & modifiable": 16,
+   "engineering problem": 14,
+   "frontier": 5,
+   "empirical luck": 1
+  },
+  "delivery": {
+   "barely": 65,
+   "partly": 46,
+   "—": 25,
+   "mostly": 7,
+   "undelivered": 5
+  },
+  "gaps": {
+   "yld_rated": 4,
+   "knowledge_yld": 63850000.0,
+   "delivery_yld": 41857500.0,
+   "top_knowledge_yld": [
+    "low-back-pain",
+    "anaemia",
+    "osteoarthritis",
+    "asthma"
+   ],
+   "rated": 115,
+   "knowledge": 22317700.6,
+   "delivery": 36283556.6,
+   "top_knowledge": [
+    "stroke",
+    "ischaemic-heart-disease",
+    "type-2-diabetes",
+    "sepsis",
+    "hypertension",
+    "copd",
+    "obesity",
+    "lung-cancer",
+    "alzheimers",
+    "liver-cancer"
+   ],
+   "top_delivery": [
+    "hypertension",
+    "sepsis",
+    "ischaemic-heart-disease",
+    "obesity",
+    "stroke",
+    "neonatal-conditions",
+    "copd",
+    "type-2-diabetes",
+    "hepatitis-b",
+    "diarrhoeal-disease"
+   ]
+  },
+  "terms": {
+   "clean": 73,
+   "costly": 70,
+   "harsh": 5
+  },
+  "axes": {
+   "mechanism": {
+    "established": 102,
+    "partial": 40,
+    "correlates": 5,
+    "none": 1
+   },
+   "intervention": {
+    "curative": 75,
+    "suppressive": 31,
+    "symptomatic": 23,
+    "disease-modifying": 16,
+    "none": 3
+   },
+   "prevention": {
+    "risk-reduction": 83,
+    "prophylaxis": 38,
+    "none": 26,
+    "eradicated": 1
+   },
+   "ongoing": {
+    "moderate": 53,
+    "low": 49,
+    "high": 31,
+    "none": 15
+   }
+  },
+  "measurement": {
+   "diagnostic": {
+    "objective": 115,
+    "clinical": 31,
+    "complaint": 2
+   },
+   "prognostic": {
+    "partial": 90,
+    "good": 34,
+    "none": 24
+   },
+   "predictive": {
+    "partial": 70,
+    "none": 46,
+    "n/a": 20,
+    "good": 12
+   }
+  },
+  "flags": {
+   "measurement_gap": 28,
+   "overtreatment_risk": 9,
+   "futile_treatment_risk": 25,
+   "cured_at_a_price": 67,
+   "harm_without_benefit": 8,
+   "orphaned": 121,
+   "spans_ladder": 54,
+   "has_window": 102,
+   "has_residue": 85,
+   "only_knowledge_blockers": 1
+  },
+  "contested": 20,
+  "reach": {
+   "mean": 0.2647,
+   "median": 0.245
+  },
+  "blockers": {
+   "total": 639,
+   "by_kind": {
+    "knowledge": 170,
+    "logistics": 108,
+    "diagnosis": 102,
+    "policy": 86,
+    "cost": 60,
+    "evidence-incomplete": 40,
+    "no-sponsor": 29,
+    "adherence": 14,
+    "tooling": 14,
+    "manufacturing": 9,
+    "regulatory": 5,
+    "candidate-untested": 2
+   },
+   "by_standing": {
+    "documented": 622,
+    "alleged": 10,
+    "disputed": 6,
+    "refuted": 1
+   },
+   "priced": 467,
+   "by_kind_priced": {
+    "adherence": {
+     "total": 14,
+     "priced": 14
+    },
+    "candidate-untested": {
+     "total": 2,
+     "priced": 2
+    },
+    "cost": {
+     "total": 60,
+     "priced": 60
+    },
+    "diagnosis": {
+     "total": 102,
+     "priced": 102
+    },
+    "evidence-incomplete": {
+     "total": 40,
+     "priced": 40
+    },
+    "knowledge": {
+     "total": 170,
+     "priced": 8
+    },
+    "logistics": {
+     "total": 108,
+     "priced": 108
+    },
+    "manufacturing": {
+     "total": 9,
+     "priced": 9
+    },
+    "no-sponsor": {
+     "total": 29,
+     "priced": 28
+    },
+    "policy": {
+     "total": 86,
+     "priced": 81
+    },
+    "regulatory": {
+     "total": 5,
+     "priced": 4
+    },
+    "tooling": {
+     "total": 14,
+     "priced": 11
+    }
+   },
+   "actors": {
+    "government": 410,
+    "health-system": 359,
+    "academic": 356,
+    "nonprofit": 308,
+    "philanthropy": 272,
+    "sponsor": 233,
+    "manufacturer": 231,
+    "payer": 201,
+    "regulator": 95,
+    "patient-org": 81,
+    "legislator": 69,
+    "software": 23
+   }
+  },
+  "moved": {
+   "total": 245,
+   "by_axis": {
+    "efficacy": 73,
+    "intervention": 60,
+    "access": 31,
+    "prevention": 31,
+    "toll": 25,
+    "mechanism": 17,
+    "measurement": 6,
+    "ongoing": 2
+   },
+   "by_decade": {
+    "1790s": 1,
+    "1850s": 1,
+    "1920s": 3,
+    "1930s": 1,
+    "1940s": 9,
+    "1950s": 5,
+    "1960s": 10,
+    "1970s": 11,
+    "1980s": 20,
+    "1990s": 32,
+    "2000s": 36,
+    "2010s": 67,
+    "2020s": 49
+   }
+  },
+  "provenance": {
+   "scalars": 2525,
+   "by_src": {
+    "reasoning": 1299,
+    "recall": 1142,
+    "cited": 74,
+    "unknown": 10
+   },
+   "cited": 74,
+   "by_tier": {
+    "sourceable": {
+     "total": 498,
+     "cited": 3
+    },
+    "supportable": {
+     "total": 718,
+     "cited": 71
+    },
+    "judged": {
+     "total": 1309,
+     "cited": 0
+    }
+   },
+   "verified": 74,
+   "unknown": 10,
+   "mondo_resolved": 126,
+   "mondo_unresolved": 22,
+   "note": "Every empirical scalar carries a src. `recall` is the model's memory, `reasoning` is its arithmetic, and `unknown` means nobody has the number — none of the three is a citation. `by_tier` is the honest denominator: a citation SETTLES a sourceable scalar, SUPPORTS a supportable one, and cannot touch a judged one, because no dataset holds a quantity this register defines. Blockers are judged and carry their evidential status in `standing` instead."
+  },
+  "burden": {
+   "records_with_deaths": 92,
+   "records_without_deaths": 56,
+   "attributed_deaths_sum": 75772539.0,
+   "note": "An UPPER BOUND, not a total. Records overlap — TB deaths in people with HIV are in both, sepsis is the mode of death for several others — and the sum exceeds annual global mortality. Do not chart this as a total."
+  }
+ },
+ {
+  "date": "2026-11-05",
+  "register": "nordstern",
+  "records": {
+   "active": 149,
+   "deprecated": 0
+  },
+  "capability": {
+   "curable": 76,
+   "managed": 31,
+   "unsolved": 20,
+   "partial": 16,
+   "preventable": 6
+  },
+  "solved": {
+   "of": 149,
+   "can_end": 82,
+   "reaches_most": 9,
+   "solved": 8,
+   "reach_floor": 0.6,
+   "definition": "a disease is solved when medicine can end it, the treatment reaches most of the people who have it, and it costs them nothing permanent",
+   "steps": [
+    "medicine can end it",
+    "and it reaches most patients",
+    "and it costs nothing permanent"
+   ]
+  },
+  "survival": {
+   "bands": {
+    "good chance": 82,
+    "n/a": 50,
+    "a chance": 9,
+    "terminal": 8
+   },
+   "rated": 99,
+   "outcomes": {
+    "cured": 57,
+    "n/a": 50,
+    "delayed": 20,
+    "held": 16,
+    "recovered": 6
+   },
+   "was_uniformly_fatal": 32,
+   "no_longer_terminal": 24,
+   "zero_gain": [
+    "alzheimers",
+    "huntington",
+    "prion-disease",
+    "rabies",
+    "tay-sachs"
+   ]
+  },
+  "buckets": {
+   "version": 6,
+   "digest": "d07dc0ec4741",
+   "names": {
+    "ends-it": "It ends your life, whenever you find it",
+    "ends-it-unless-caught": "It ends your life unless it is caught in time",
+    "ends-it-later": "It ends your life, but later",
+    "held-off": "It is held off, for life",
+    "never-safe": "You survive, and you are never safe",
+    "defines-your-life": "You survive, and it defines your life",
+    "changes-you": "You survive, and it changes you",
+    "back-to-normal": "You survive, and you get back to normal",
+    "nobody-makes-it": "The solution exists and nobody makes it",
+    "found-too-late": "Caught early it is curable, caught late it is not",
+    "cannot-aim-it": "It works for some people and nobody can say which",
+    "no-starting-point": "Nobody knows where to start",
+    "cannot-reach-people": "It works and it does not arrive",
+    "needs-more-evidence": "There is a candidate and the evidence is not in"
+   },
+   "defs": {
+    "ends-it": {
+     "rule": "The course is fatal, essentially nobody survives the stated horizon, and there is no window — finding it earlier changes nothing.",
+     "not": "NOT \"we have no cure\". Most fatal diseases here are `ends-it-later`. This is the much smaller set where the timing of diagnosis is irrelevant because nothing follows from it.",
+     "examples": [
+      "huntington"
+     ]
+    },
+    "ends-it-unless-caught": {
+     "rule": "Fatal as above, but a `window` exists — there is a period in which action changes the outcome, and outside it there is nothing.",
+     "not": "NOT every disease with a window; 86 records have one. This is the set where the window is the *whole* of the difference between living and dying.",
+     "examples": [
+      "rabies",
+      "prion-disease"
+     ]
+    },
+    "ends-it-later": {
+     "rule": "The disease is still what kills you. Either treatment alters the course without ending it — the register's `delayed` outcome — or **more than half of treated patients die of it**, whatever rung the ladder puts the treatment on.",
+     "not": "NOT \"untreatable\". These are mostly diseases medicine has changed a great deal — and the change bought time rather than an ending. **NOT decided by the intervention rung alone, and v4 fixed exactly that.** `survival_outcome()` reads `axes.intervention`, so every record on the `curative` rung returned `cured` however few survived — and `cured` never reached this branch. Pancreatic cancer, where 87% of treated patients die, was filed under *you survive, and it changes you*, beside cataract. The rung was right about what the operation does **when it works**; the bucket was asking a different question and taking the rung's word for the answer. ALSO NOT acute illness, and that exclusion is deliberate rather than protective. `marburg` kills about three quarters of those it infects within two weeks and the quarter who live **recover** — so \"it ends your life, but later\" is false for everybody in the record. That is the ⧉ `spans_ladder` shape the register already names as a **malformed question rather than a hard one**, and declining to average it is more honest than filing it confidently in the wrong place. See `holes`.",
+     "examples": [
+      "pancreatic-cancer",
+      "als",
+      "alzheimers",
+      "stroke",
+      "glioblastoma"
+     ]
+    },
+    "held-off": {
+     "rule": "A treatment suppresses it indefinitely and stopping brings it back. Near-normal life, on condition of continuous treatment.",
+     "not": "NOT cured. **This rung is what stops HIV being filed next to hepatitis C** — one is no longer a death sentence, the other is over.",
+     "examples": [
+      "hiv",
+      "type-1-diabetes",
+      "schizophrenia"
+     ]
+    },
+    "never-safe": {
+     "rule": "Nothing alters the course and nothing is treated day to day. The disease is an acute, potentially fatal event that can recur at any time — a `window` marked `recurs` — and keeping it shut is the patient's own work, every day, for life: `intervention` symptomatic or none, `ongoing` high, and survival unrated or near-complete.",
+     "not": "NOT `held-off`: nothing is being suppressed; between events the person is well and untreated. NOT `defines-your-life` on burden alone — the burden here is a lethal possibility rather than a continuous cost. This axis was built on survival and this state is invisible to it: measured by deaths it is nothing, measured by what a life is organised around it is everything.",
+     "examples": [
+      "food-allergy"
+     ]
+    },
+    "defines-your-life": {
+     "rule": "Survivable, but the cost of living with it or of being treated for it is continuous and large — a high ongoing burden, or a residue or a treatment toll rated `harsh`.",
+     "not": "NOT necessarily severe in the clinical sense, and NOT about mortality at all. `me-cfs`, `heds` and `msmds` are here with **no attributed deaths whatsoever** — which is the whole reason this axis is not built on survival.",
+     "examples": [
+      "sickle-cell",
+      "me-cfs",
+      "heds",
+      "cerebral-palsy",
+      "noma"
+     ]
+    },
+    "changes-you": {
+     "rule": "Survivable, and something **rated `major`** is left behind — by the disease, by the treatment, or both — or the ongoing burden of being treated is moderate. Without dominating the rest of your life, which is the bucket above.",
+     "not": "NOT a minor category. **It is still the largest bucket in the register** after v4 took four cancers out of it, and that is this axis's main finding: medicine's characteristic output is neither death nor cure but survival in an altered body. NOT triggered by *any* permanent difference. **v3 fixed exactly that.** Until 2026-09-01 the rule tested whether a `residue` block existed at all, so a record whose residue was a shoe size landed here — and derived `restored: restored` at the same time, because that derivation has always read severity. Eight records held both verdicts at once. `clubfoot` made it undeniable and the rule now reads severity too.",
+     "examples": [
+      "tuberculosis",
+      "benign-prostatic-hyperplasia",
+      "breast-cancer",
+      "malaria"
+     ]
+    },
+    "back-to-normal": {
+     "rule": "Survivable, with nothing worse than a `minor` residue and a `minor` treatment toll, and a low ongoing burden. **A minor permanent difference does not disqualify a record from this bucket** — a treated clubfoot leaves a slightly smaller foot in somebody who runs normally, and calling that a changed life is false.",
+     "not": "NOT the goal state for most of medicine, and still **uncommon** — 14 of 140, unchanged by v4. Read that as a claim about how little the register finds. It remains the bucket resting on the least-tested inputs: `residue` is absent on many records that have simply never been examined for one, and an unexamined record looks identical to a clean one. See `bucket-design.md`.",
+     "examples": [
+      "cholera",
+      "typhoid",
+      "influenza"
+     ]
+    },
+    "nobody-makes-it": {
+     "rule": "A `manufacturing` blocker, or a `no-sponsor` blocker on a record whose capability is real. The requirement that capability be real is what separates *nobody produces the cure* from *nobody funds the research*.",
+     "not": "NOT diseases with no answer. If nothing works, the problem is not manufacturing. `me-cfs` carries `no-sponsor` and is excluded here for exactly that reason — nobody is failing to manufacture its cure.",
+     "examples": [
+      "snakebite",
+      "bladder-cancer",
+      "syphilis",
+      "mrsa",
+      "diarrhoeal-disease"
+     ]
+    },
+    "found-too-late": {
+     "rule": "A `window` exists, the record's strata run from a late form where essentially nothing works (efficacy at or below 0.2) to an early form that is mostly cured (0.7 or above), and **fewer than half are caught in time**.",
+     "not": "NOT every disease with a window; **86 records have one**, which is far too many to be interesting. `caught_in_time` is what turns *a window exists* into *and we are missing it*, and it is the number that makes this bucket actionable rather than descriptive — **it is the size of the prize for a screening programme, per disease.** Chagas is 0.10, obesity 0.15, lung cancer 0.20, liver cancer 0.25. ALSO NOT `pancreatic-cancer`, and that exclusion is the rule working. Its strata spread is 0.15 — it is bad at **every** stage, so earlier detection is not the lever. A disease being terrible and having a window are different claims, and only the second is this bucket. `obesity` is in, on strata running 0.00 to 0.80, and is the entry most worth arguing with: its \"window\" is the period before the complications establish, which is real but is a slower and vaguer thing than a resectable tumour.",
+     "examples": [
+      "lung-cancer",
+      "liver-cancer",
+      "cervical-cancer",
+      "chagas",
+      "gastric-cancer"
+     ]
+    },
+    "cannot-aim-it": {
+     "rule": "The register's `futile_treatment_risk` — a treatment exists, it fails often, and there is no test that says in advance who it will fail.",
+     "not": "NOT the same as a treatment that works badly for everyone. The sketch's *\"% chance\"* is this: **a measurement failure wearing the costume of a treatment failure.**",
+     "examples": [
+      "rheumatoid-arthritis",
+      "schizophrenia",
+      "epilepsy",
+      "osteoarthritis"
+     ]
+    },
+    "no-starting-point": {
+     "rule": "`mechanism` is `none` or `correlates` — the causal account is absent or is a set of associations.",
+     "not": "NOT the famous killers. **Stroke and heart disease are `established`**: hand somebody $100M for stroke and they know exactly where to start, they simply cannot fix it. **The diseases with no starting point are the ones nobody dies of** — which is why a register built on mortality would never find them.",
+     "examples": [
+      "me-cfs",
+      "heds",
+      "depression",
+      "bipolar",
+      "low-back-pain"
+     ]
+    },
+    "cannot-reach-people": {
+     "rule": "`delivery` is `barely` or `undelivered` — efficacy multiplied by access leaves most patients untouched — **and** capability is `curable`, `managed` or `preventable`. A `disease-modifying` treatment is not something that \"works\" in the sense this bucket means: it slows the course and the disease still wins, so there is nothing to arrive.",
+     "not": "NOT a knowledge problem, and it is the single most common state in the register. This is the tag the whole `efficacy`/`access` split exists to make sayable. And NOT the `partial` records — Alzheimer's, ALS, glioblastoma — which are undelivered too, but of a treatment that does not hold the disease; version 4 filed them here on delivery alone and the name overclaimed.",
+     "examples": [
+      "refractive-error",
+      "hearing-loss",
+      "sickle-cell",
+      "hepatitis-b",
+      "obesity"
+     ]
+    },
+    "needs-more-evidence": {
+     "rule": "An `evidence-incomplete` or `candidate-untested` blocker — something plausible exists and nobody has established whether it works.",
+     "not": "NOT \"no path forward\". This is the opposite: a path exists and has not been walked.",
+     "examples": [
+      "idiopathic-pulmonary-fibrosis"
+     ]
+    }
+   },
+   "a": {
+    "changes-you": 62,
+    "held-off": 31,
+    "ends-it-later": 18,
+    "defines-your-life": 17,
+    "back-to-normal": 14,
+    "ends-it": 4,
+    "ends-it-unless-caught": 2,
+    "never-safe": 1
+   },
+   "b": {
+    "cannot-reach-people": 57,
+    "needs-more-evidence": 41,
+    "nobody-makes-it": 32,
+    "cannot-aim-it": 25,
+    "found-too-late": 11,
+    "no-starting-point": 6
+   },
+   "b_untagged": 40,
+   "members": {
+    "pleomorphic-adenoma": {
+     "id": "FND-D-0015",
+     "a": "changes-you",
+     "b": []
+    },
+    "hat": {
+     "id": "FND-D-0026",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "tuberculosis": {
+     "id": "FND-D-0023",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "covid-19": {
+     "id": "FND-D-0076",
+     "a": "changes-you",
+     "b": [
+      "found-too-late",
+      "needs-more-evidence"
+     ]
+    },
+    "leprosy": {
+     "id": "FND-D-0035",
+     "a": "changes-you",
+     "b": []
+    },
+    "thyroid-cancer": {
+     "id": "FND-D-0061",
+     "a": "changes-you",
+     "b": []
+    },
+    "typhoid": {
+     "id": "FND-D-0066",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "trachoma": {
+     "id": "FND-D-0036",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "gonorrhoea": {
+     "id": "FND-D-0117",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "malaria": {
+     "id": "FND-D-0069",
+     "a": "changes-you",
+     "b": []
+    },
+    "h-pylori-ulcer": {
+     "id": "FND-D-0001",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "uterine-fibroids": {
+     "id": "FND-D-0139",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it"
+     ]
+    },
+    "benign-prostatic-hyperplasia": {
+     "id": "FND-D-0138",
+     "a": "changes-you",
+     "b": []
+    },
+    "mrsa": {
+     "id": "FND-D-0067",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "genital-chlamydia": {
+     "id": "FND-D-0120",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "visceral-leishmaniasis": {
+     "id": "FND-D-0024",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "bacterial-meningitis": {
+     "id": "FND-D-0129",
+     "a": "defines-your-life",
+     "b": []
+    },
+    "coccidioidomycosis": {
+     "id": "FND-D-0111",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-aim-it",
+      "needs-more-evidence"
+     ]
+    },
+    "maternal-haemorrhage": {
+     "id": "FND-D-0073",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "syphilis": {
+     "id": "FND-D-0116",
+     "a": "defines-your-life",
+     "b": [
+      "nobody-makes-it",
+      "needs-more-evidence"
+     ]
+    },
+    "schistosomiasis": {
+     "id": "FND-D-0025",
+     "a": "changes-you",
+     "b": []
+    },
+    "scabies": {
+     "id": "FND-D-0038",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "childhood-pneumonia": {
+     "id": "FND-D-0071",
+     "a": "changes-you",
+     "b": []
+    },
+    "soil-transmitted-helminths": {
+     "id": "FND-D-0029",
+     "a": "back-to-normal",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "diarrhoeal-disease": {
+     "id": "FND-D-0074",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "buruli-ulcer": {
+     "id": "FND-D-0033",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "vulvar-cancer": {
+     "id": "FND-D-0125",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it"
+     ]
+    },
+    "anal-cancer": {
+     "id": "FND-D-0123",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it"
+     ]
+    },
+    "amr-infection": {
+     "id": "FND-D-0014",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "uterine-cancer": {
+     "id": "FND-D-0064",
+     "a": "changes-you",
+     "b": []
+    },
+    "anaemia": {
+     "id": "FND-D-0098",
+     "a": "changes-you",
+     "b": []
+    },
+    "breast-cancer": {
+     "id": "FND-D-0017",
+     "a": "changes-you",
+     "b": []
+    },
+    "melanoma": {
+     "id": "FND-D-0054",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "candidaemia": {
+     "id": "FND-D-0112",
+     "a": "changes-you",
+     "b": []
+    },
+    "prostate-cancer": {
+     "id": "FND-D-0051",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "neonatal-conditions": {
+     "id": "FND-D-0072",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it",
+      "needs-more-evidence"
+     ]
+    },
+    "yaws": {
+     "id": "FND-D-0034",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "cataract": {
+     "id": "FND-D-0089",
+     "a": "changes-you",
+     "b": []
+    },
+    "childhood-all": {
+     "id": "FND-D-0055",
+     "a": "changes-you",
+     "b": []
+    },
+    "trichomoniasis": {
+     "id": "FND-D-0121",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "uveal-melanoma": {
+     "id": "FND-D-0144",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "retinopathy-of-prematurity": {
+     "id": "FND-D-0132",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "renal-cell-carcinoma": {
+     "id": "FND-D-0063",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "echinococcosis": {
+     "id": "FND-D-0032",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "nasopharyngeal-carcinoma": {
+     "id": "FND-D-0103",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "penile-cancer": {
+     "id": "FND-D-0124",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "vaginal-cancer": {
+     "id": "FND-D-0126",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "smallpox": {
+     "id": "FND-D-0048",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "invasive-aspergillosis": {
+     "id": "FND-D-0110",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "cirrhosis": {
+     "id": "FND-D-0082",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "ebola": {
+     "id": "FND-D-0045",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "bladder-cancer": {
+     "id": "FND-D-0062",
+     "a": "defines-your-life",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "sepsis": {
+     "id": "FND-D-0070",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "clubfoot": {
+     "id": "FND-D-0135",
+     "a": "back-to-normal",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "colorectal-cancer": {
+     "id": "FND-D-0052",
+     "a": "changes-you",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "snakebite": {
+     "id": "FND-D-0012",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "cryptococcal-meningitis": {
+     "id": "FND-D-0109",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "non-hodgkin-lymphoma": {
+     "id": "FND-D-0057",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "mycoplasma-genitalium": {
+     "id": "FND-D-0122",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "taeniasis-cysticercosis": {
+     "id": "FND-D-0039",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "head-neck-cancer": {
+     "id": "FND-D-0102",
+     "a": "defines-your-life",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "hepatitis-c": {
+     "id": "FND-D-0002",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "cervical-cancer": {
+     "id": "FND-D-0053",
+     "a": "changes-you",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "cre": {
+     "id": "FND-D-0068",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "gastric-cancer": {
+     "id": "FND-D-0059",
+     "a": "ends-it-later",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "osteoarthritis": {
+     "id": "FND-D-0096",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "congenital-heart-disease": {
+     "id": "FND-D-0094",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "obstetric-fistula": {
+     "id": "FND-D-0136",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "mycetoma": {
+     "id": "FND-D-0030",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "noma": {
+     "id": "FND-D-0041",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "liver-cancer": {
+     "id": "FND-D-0058",
+     "a": "ends-it-later",
+     "b": [
+      "found-too-late",
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "lung-cancer": {
+     "id": "FND-D-0050",
+     "a": "ends-it-later",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "pancreatic-cancer": {
+     "id": "FND-D-0060",
+     "a": "ends-it-later",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "type-2-diabetes": {
+     "id": "FND-D-0080",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "chagas": {
+     "id": "FND-D-0022",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "sickle-cell": {
+     "id": "FND-D-0006",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "hiv": {
+     "id": "FND-D-0004",
+     "a": "held-off",
+     "b": []
+    },
+    "lymphatic-filariasis": {
+     "id": "FND-D-0028",
+     "a": "held-off",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "onchocerciasis": {
+     "id": "FND-D-0027",
+     "a": "held-off",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "pku": {
+     "id": "FND-D-0003",
+     "a": "held-off",
+     "b": []
+    },
+    "cholera": {
+     "id": "FND-D-0065",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "genital-herpes": {
+     "id": "FND-D-0118",
+     "a": "held-off",
+     "b": []
+    },
+    "cml": {
+     "id": "FND-D-0056",
+     "a": "held-off",
+     "b": []
+    },
+    "hpv-infection": {
+     "id": "FND-D-0119",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "parkinsons": {
+     "id": "FND-D-0087",
+     "a": "ends-it-later",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "atrial-fibrillation": {
+     "id": "FND-D-0083",
+     "a": "held-off",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "ischaemic-heart-disease": {
+     "id": "FND-D-0042",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "polycythaemia-vera": {
+     "id": "FND-D-0145",
+     "a": "held-off",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "type-1-diabetes": {
+     "id": "FND-D-0079",
+     "a": "held-off",
+     "b": []
+    },
+    "food-allergy": {
+     "id": "FND-D-0148",
+     "a": "never-safe",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "toxoplasmosis": {
+     "id": "FND-D-0114",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-aim-it",
+      "needs-more-evidence"
+     ]
+    },
+    "asthma": {
+     "id": "FND-D-0097",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "refractive-error": {
+     "id": "FND-D-0133",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "acute-bronchitis": {
+     "id": "FND-D-0113",
+     "a": "back-to-normal",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "cystic-fibrosis": {
+     "id": "FND-D-0090",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "measles": {
+     "id": "FND-D-0049",
+     "a": "changes-you",
+     "b": []
+    },
+    "epilepsy": {
+     "id": "FND-D-0008",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "mcas": {
+     "id": "FND-D-0021",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "keloid": {
+     "id": "FND-D-0140",
+     "a": "changes-you",
+     "b": [
+      "no-starting-point"
+     ]
+    },
+    "multiple-sclerosis": {
+     "id": "FND-D-0086",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "low-back-pain": {
+     "id": "FND-D-0010",
+     "a": "changes-you",
+     "b": [
+      "no-starting-point"
+     ]
+    },
+    "rheumatoid-arthritis": {
+     "id": "FND-D-0093",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "crohns": {
+     "id": "FND-D-0016",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "h5n1": {
+     "id": "FND-D-0047",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "schizophrenia": {
+     "id": "FND-D-0088",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "hypertension": {
+     "id": "FND-D-0084",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "pots": {
+     "id": "FND-D-0020",
+     "a": "held-off",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "rheumatic-heart-disease": {
+     "id": "FND-D-0013",
+     "a": "ends-it-later",
+     "b": [
+      "nobody-makes-it",
+      "needs-more-evidence"
+     ]
+    },
+    "glaucoma": {
+     "id": "FND-D-0131",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "varicella-zoster": {
+     "id": "FND-D-0127",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "bipolar": {
+     "id": "FND-D-0011",
+     "a": "held-off",
+     "b": [
+      "nobody-makes-it",
+      "cannot-aim-it",
+      "no-starting-point",
+      "cannot-reach-people"
+     ]
+    },
+    "copd": {
+     "id": "FND-D-0044",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "endometriosis": {
+     "id": "FND-D-0137",
+     "a": "held-off",
+     "b": [
+      "nobody-makes-it",
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "heart-failure": {
+     "id": "FND-D-0100",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "chronic-kidney-disease": {
+     "id": "FND-D-0081",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "cmv-infection": {
+     "id": "FND-D-0128",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-aim-it"
+     ]
+    },
+    "hearing-loss": {
+     "id": "FND-D-0095",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "depression": {
+     "id": "FND-D-0007",
+     "a": "changes-you",
+     "b": [
+      "no-starting-point",
+      "needs-more-evidence"
+     ]
+    },
+    "marburg": {
+     "id": "FND-D-0046",
+     "a": "changes-you",
+     "b": []
+    },
+    "duchenne": {
+     "id": "FND-D-0092",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "spinal-muscular-atrophy": {
+     "id": "FND-D-0091",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "migraine": {
+     "id": "FND-D-0134",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "multiple-system-atrophy": {
+     "id": "FND-D-0142",
+     "a": "ends-it",
+     "b": []
+    },
+    "stroke": {
+     "id": "FND-D-0043",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "cryptosporidiosis": {
+     "id": "FND-D-0115",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "cerebral-palsy": {
+     "id": "FND-D-0099",
+     "a": "defines-your-life",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "idiopathic-pulmonary-fibrosis": {
+     "id": "FND-D-0108",
+     "a": "ends-it-later",
+     "b": [
+      "found-too-late",
+      "needs-more-evidence"
+     ]
+    },
+    "influenza": {
+     "id": "FND-D-0077",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it",
+      "needs-more-evidence"
+     ]
+    },
+    "acute-myeloid-leukaemia": {
+     "id": "FND-D-0147",
+     "a": "ends-it-later",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "familial-hypercholesterolaemia": {
+     "id": "FND-D-0146",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "hepatitis-b": {
+     "id": "FND-D-0075",
+     "a": "held-off",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "osteoporosis": {
+     "id": "FND-D-0101",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "als": {
+     "id": "FND-D-0104",
+     "a": "ends-it-later",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "glioblastoma": {
+     "id": "FND-D-0105",
+     "a": "ends-it-later",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "mesothelioma": {
+     "id": "FND-D-0107",
+     "a": "ends-it-later",
+     "b": [
+      "cannot-aim-it",
+      "needs-more-evidence"
+     ]
+    },
+    "obesity": {
+     "id": "FND-D-0085",
+     "a": "held-off",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "tay-sachs": {
+     "id": "FND-D-0143",
+     "a": "ends-it",
+     "b": []
+    },
+    "disorders-of-consciousness": {
+     "id": "FND-D-0130",
+     "a": "defines-your-life",
+     "b": []
+    },
+    "alzheimers": {
+     "id": "FND-D-0078",
+     "a": "ends-it-later",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "ebv-infection": {
+     "id": "FND-D-0149",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "dipg": {
+     "id": "FND-D-0141",
+     "a": "ends-it",
+     "b": [
+      "nobody-makes-it",
+      "cannot-aim-it"
+     ]
+    },
+    "dengue": {
+     "id": "FND-D-0031",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "dracunculiasis": {
+     "id": "FND-D-0040",
+     "a": "changes-you",
+     "b": []
+    },
+    "heds": {
+     "id": "FND-D-0019",
+     "a": "defines-your-life",
+     "b": [
+      "no-starting-point",
+      "needs-more-evidence"
+     ]
+    },
+    "huntington": {
+     "id": "FND-D-0005",
+     "a": "ends-it",
+     "b": []
+    },
+    "me-cfs": {
+     "id": "FND-D-0009",
+     "a": "defines-your-life",
+     "b": [
+      "no-starting-point"
+     ]
+    },
+    "msmds": {
+     "id": "FND-D-0018",
+     "a": "defines-your-life",
+     "b": []
+    },
+    "prion-disease": {
+     "id": "FND-D-0106",
+     "a": "ends-it-unless-caught",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "rabies": {
+     "id": "FND-D-0037",
+     "a": "ends-it-unless-caught",
+     "b": []
+    }
+   }
+  },
+  "quadrant": {
+   "known & treatable": 112,
+   "known & modifiable": 16,
+   "engineering problem": 15,
+   "frontier": 5,
+   "empirical luck": 1
+  },
+  "delivery": {
+   "barely": 65,
+   "partly": 46,
+   "—": 26,
+   "mostly": 7,
+   "undelivered": 5
+  },
+  "gaps": {
+   "yld_rated": 4,
+   "knowledge_yld": 63850000.0,
+   "delivery_yld": 41857500.0,
+   "top_knowledge_yld": [
+    "low-back-pain",
+    "anaemia",
+    "osteoarthritis",
+    "asthma"
+   ],
+   "rated": 116,
+   "knowledge": 22317700.6,
+   "delivery": 36283556.6,
+   "top_knowledge": [
+    "stroke",
+    "ischaemic-heart-disease",
+    "type-2-diabetes",
+    "sepsis",
+    "hypertension",
+    "copd",
+    "obesity",
+    "lung-cancer",
+    "alzheimers",
+    "liver-cancer"
+   ],
+   "top_delivery": [
+    "hypertension",
+    "sepsis",
+    "ischaemic-heart-disease",
+    "obesity",
+    "stroke",
+    "neonatal-conditions",
+    "copd",
+    "type-2-diabetes",
+    "hepatitis-b",
+    "diarrhoeal-disease"
+   ]
+  },
+  "terms": {
+   "clean": 73,
+   "costly": 71,
+   "harsh": 5
+  },
+  "axes": {
+   "mechanism": {
+    "established": 103,
+    "partial": 40,
+    "correlates": 5,
+    "none": 1
+   },
+   "intervention": {
+    "curative": 75,
+    "suppressive": 31,
+    "symptomatic": 24,
+    "disease-modifying": 16,
+    "none": 3
+   },
+   "prevention": {
+    "risk-reduction": 83,
+    "prophylaxis": 38,
+    "none": 27,
+    "eradicated": 1
+   },
+   "ongoing": {
+    "moderate": 53,
+    "low": 49,
+    "high": 31,
+    "none": 16
+   }
+  },
+  "measurement": {
+   "diagnostic": {
+    "objective": 116,
+    "clinical": 31,
+    "complaint": 2
+   },
+   "prognostic": {
+    "partial": 90,
+    "good": 34,
+    "none": 25
+   },
+   "predictive": {
+    "partial": 71,
+    "none": 46,
+    "n/a": 20,
+    "good": 12
+   }
+  },
+  "flags": {
+   "measurement_gap": 28,
+   "overtreatment_risk": 9,
+   "futile_treatment_risk": 25,
+   "cured_at_a_price": 67,
+   "harm_without_benefit": 9,
+   "orphaned": 121,
+   "spans_ladder": 55,
+   "has_window": 103,
+   "has_residue": 86,
+   "only_knowledge_blockers": 1
+  },
+  "contested": 20,
+  "reach": {
+   "mean": 0.263,
+   "median": 0.245
+  },
+  "blockers": {
+   "total": 644,
+   "by_kind": {
+    "knowledge": 173,
+    "logistics": 108,
+    "diagnosis": 102,
+    "policy": 86,
+    "cost": 60,
+    "evidence-incomplete": 40,
+    "no-sponsor": 30,
+    "adherence": 14,
+    "tooling": 14,
+    "manufacturing": 10,
+    "regulatory": 5,
+    "candidate-untested": 2
+   },
+   "by_standing": {
+    "documented": 627,
+    "alleged": 10,
+    "disputed": 6,
+    "refuted": 1
+   },
+   "priced": 469,
+   "by_kind_priced": {
+    "adherence": {
+     "total": 14,
+     "priced": 14
+    },
+    "candidate-untested": {
+     "total": 2,
+     "priced": 2
+    },
+    "cost": {
+     "total": 60,
+     "priced": 60
+    },
+    "diagnosis": {
+     "total": 102,
+     "priced": 102
+    },
+    "evidence-incomplete": {
+     "total": 40,
+     "priced": 40
+    },
+    "knowledge": {
+     "total": 173,
+     "priced": 8
+    },
+    "logistics": {
+     "total": 108,
+     "priced": 108
+    },
+    "manufacturing": {
+     "total": 10,
+     "priced": 10
+    },
+    "no-sponsor": {
+     "total": 30,
+     "priced": 29
+    },
+    "policy": {
+     "total": 86,
+     "priced": 81
+    },
+    "regulatory": {
+     "total": 5,
+     "priced": 4
+    },
+    "tooling": {
+     "total": 14,
+     "priced": 11
+    }
+   },
+   "actors": {
+    "government": 412,
+    "academic": 360,
+    "health-system": 360,
+    "nonprofit": 309,
+    "philanthropy": 275,
+    "sponsor": 237,
+    "manufacturer": 234,
+    "payer": 202,
+    "regulator": 97,
+    "patient-org": 81,
+    "legislator": 69,
+    "software": 23
+   }
+  },
+  "moved": {
+   "total": 246,
+   "by_axis": {
+    "efficacy": 74,
+    "intervention": 60,
+    "access": 31,
+    "prevention": 31,
+    "toll": 25,
+    "mechanism": 17,
+    "measurement": 6,
+    "ongoing": 2
+   },
+   "by_decade": {
+    "1790s": 1,
+    "1850s": 1,
+    "1920s": 3,
+    "1930s": 1,
+    "1940s": 9,
+    "1950s": 5,
+    "1960s": 10,
+    "1970s": 11,
+    "1980s": 20,
+    "1990s": 32,
+    "2000s": 36,
+    "2010s": 67,
+    "2020s": 50
+   }
+  },
+  "provenance": {
+   "scalars": 2545,
+   "by_src": {
+    "reasoning": 1317,
+    "recall": 1144,
+    "cited": 74,
+    "unknown": 10
+   },
+   "cited": 74,
+   "by_tier": {
+    "sourceable": {
+     "total": 501,
+     "cited": 3
+    },
+    "supportable": {
+     "total": 724,
+     "cited": 71
+    },
+    "judged": {
+     "total": 1320,
+     "cited": 0
+    }
+   },
+   "verified": 74,
+   "unknown": 10,
+   "mondo_resolved": 126,
+   "mondo_unresolved": 23,
+   "note": "Every empirical scalar carries a src. `recall` is the model's memory, `reasoning` is its arithmetic, and `unknown` means nobody has the number — none of the three is a citation. `by_tier` is the honest denominator: a citation SETTLES a sourceable scalar, SUPPORTS a supportable one, and cannot touch a judged one, because no dataset holds a quantity this register defines. Blockers are judged and carry their evidential status in `standing` instead."
+  },
+  "burden": {
+   "records_with_deaths": 92,
+   "records_without_deaths": 57,
+   "attributed_deaths_sum": 75772539.0,
+   "note": "An UPPER BOUND, not a total. Records overlap — TB deaths in people with HIV are in both, sepsis is the mode of death for several others — and the sum exceeds annual global mortality. Do not chart this as a total."
+  }
+ },
+ {
+  "date": "2026-11-08",
+  "register": "nordstern",
+  "records": {
+   "active": 151,
+   "deprecated": 0
+  },
+  "capability": {
+   "curable": 78,
+   "managed": 31,
+   "unsolved": 20,
+   "partial": 16,
+   "preventable": 6
+  },
+  "solved": {
+   "of": 151,
+   "can_end": 84,
+   "reaches_most": 9,
+   "solved": 8,
+   "reach_floor": 0.6,
+   "definition": "a disease is solved when medicine can end it, the treatment reaches most of the people who have it, and it costs them nothing permanent",
+   "steps": [
+    "medicine can end it",
+    "and it reaches most patients",
+    "and it costs nothing permanent"
+   ]
+  },
+  "survival": {
+   "bands": {
+    "good chance": 83,
+    "n/a": 51,
+    "a chance": 9,
+    "terminal": 8
+   },
+   "rated": 100,
+   "outcomes": {
+    "cured": 58,
+    "n/a": 51,
+    "delayed": 20,
+    "held": 16,
+    "recovered": 6
+   },
+   "was_uniformly_fatal": 32,
+   "no_longer_terminal": 24,
+   "zero_gain": [
+    "alzheimers",
+    "huntington",
+    "prion-disease",
+    "rabies",
+    "tay-sachs"
+   ]
+  },
+  "buckets": {
+   "version": 6,
+   "digest": "d07dc0ec4741",
+   "names": {
+    "ends-it": "It ends your life, whenever you find it",
+    "ends-it-unless-caught": "It ends your life unless it is caught in time",
+    "ends-it-later": "It ends your life, but later",
+    "held-off": "It is held off, for life",
+    "never-safe": "You survive, and you are never safe",
+    "defines-your-life": "You survive, and it defines your life",
+    "changes-you": "You survive, and it changes you",
+    "back-to-normal": "You survive, and you get back to normal",
+    "nobody-makes-it": "The solution exists and nobody makes it",
+    "found-too-late": "Caught early it is curable, caught late it is not",
+    "cannot-aim-it": "It works for some people and nobody can say which",
+    "no-starting-point": "Nobody knows where to start",
+    "cannot-reach-people": "It works and it does not arrive",
+    "needs-more-evidence": "There is a candidate and the evidence is not in"
+   },
+   "defs": {
+    "ends-it": {
+     "rule": "The course is fatal, essentially nobody survives the stated horizon, and there is no window — finding it earlier changes nothing.",
+     "not": "NOT \"we have no cure\". Most fatal diseases here are `ends-it-later`. This is the much smaller set where the timing of diagnosis is irrelevant because nothing follows from it.",
+     "examples": [
+      "huntington"
+     ]
+    },
+    "ends-it-unless-caught": {
+     "rule": "Fatal as above, but a `window` exists — there is a period in which action changes the outcome, and outside it there is nothing.",
+     "not": "NOT every disease with a window; 86 records have one. This is the set where the window is the *whole* of the difference between living and dying.",
+     "examples": [
+      "rabies",
+      "prion-disease"
+     ]
+    },
+    "ends-it-later": {
+     "rule": "The disease is still what kills you. Either treatment alters the course without ending it — the register's `delayed` outcome — or **more than half of treated patients die of it**, whatever rung the ladder puts the treatment on.",
+     "not": "NOT \"untreatable\". These are mostly diseases medicine has changed a great deal — and the change bought time rather than an ending. **NOT decided by the intervention rung alone, and v4 fixed exactly that.** `survival_outcome()` reads `axes.intervention`, so every record on the `curative` rung returned `cured` however few survived — and `cured` never reached this branch. Pancreatic cancer, where 87% of treated patients die, was filed under *you survive, and it changes you*, beside cataract. The rung was right about what the operation does **when it works**; the bucket was asking a different question and taking the rung's word for the answer. ALSO NOT acute illness, and that exclusion is deliberate rather than protective. `marburg` kills about three quarters of those it infects within two weeks and the quarter who live **recover** — so \"it ends your life, but later\" is false for everybody in the record. That is the ⧉ `spans_ladder` shape the register already names as a **malformed question rather than a hard one**, and declining to average it is more honest than filing it confidently in the wrong place. See `holes`.",
+     "examples": [
+      "pancreatic-cancer",
+      "als",
+      "alzheimers",
+      "stroke",
+      "glioblastoma"
+     ]
+    },
+    "held-off": {
+     "rule": "A treatment suppresses it indefinitely and stopping brings it back. Near-normal life, on condition of continuous treatment.",
+     "not": "NOT cured. **This rung is what stops HIV being filed next to hepatitis C** — one is no longer a death sentence, the other is over.",
+     "examples": [
+      "hiv",
+      "type-1-diabetes",
+      "schizophrenia"
+     ]
+    },
+    "never-safe": {
+     "rule": "Nothing alters the course and nothing is treated day to day. The disease is an acute, potentially fatal event that can recur at any time — a `window` marked `recurs` — and keeping it shut is the patient's own work, every day, for life: `intervention` symptomatic or none, `ongoing` high, and survival unrated or near-complete.",
+     "not": "NOT `held-off`: nothing is being suppressed; between events the person is well and untreated. NOT `defines-your-life` on burden alone — the burden here is a lethal possibility rather than a continuous cost. This axis was built on survival and this state is invisible to it: measured by deaths it is nothing, measured by what a life is organised around it is everything.",
+     "examples": [
+      "food-allergy"
+     ]
+    },
+    "defines-your-life": {
+     "rule": "Survivable, but the cost of living with it or of being treated for it is continuous and large — a high ongoing burden, or a residue or a treatment toll rated `harsh`.",
+     "not": "NOT necessarily severe in the clinical sense, and NOT about mortality at all. `me-cfs`, `heds` and `msmds` are here with **no attributed deaths whatsoever** — which is the whole reason this axis is not built on survival.",
+     "examples": [
+      "sickle-cell",
+      "me-cfs",
+      "heds",
+      "cerebral-palsy",
+      "noma"
+     ]
+    },
+    "changes-you": {
+     "rule": "Survivable, and something **rated `major`** is left behind — by the disease, by the treatment, or both — or the ongoing burden of being treated is moderate. Without dominating the rest of your life, which is the bucket above.",
+     "not": "NOT a minor category. **It is still the largest bucket in the register** after v4 took four cancers out of it, and that is this axis's main finding: medicine's characteristic output is neither death nor cure but survival in an altered body. NOT triggered by *any* permanent difference. **v3 fixed exactly that.** Until 2026-09-01 the rule tested whether a `residue` block existed at all, so a record whose residue was a shoe size landed here — and derived `restored: restored` at the same time, because that derivation has always read severity. Eight records held both verdicts at once. `clubfoot` made it undeniable and the rule now reads severity too.",
+     "examples": [
+      "tuberculosis",
+      "benign-prostatic-hyperplasia",
+      "breast-cancer",
+      "malaria"
+     ]
+    },
+    "back-to-normal": {
+     "rule": "Survivable, with nothing worse than a `minor` residue and a `minor` treatment toll, and a low ongoing burden. **A minor permanent difference does not disqualify a record from this bucket** — a treated clubfoot leaves a slightly smaller foot in somebody who runs normally, and calling that a changed life is false.",
+     "not": "NOT the goal state for most of medicine, and still **uncommon** — 14 of 140, unchanged by v4. Read that as a claim about how little the register finds. It remains the bucket resting on the least-tested inputs: `residue` is absent on many records that have simply never been examined for one, and an unexamined record looks identical to a clean one. See `bucket-design.md`.",
+     "examples": [
+      "cholera",
+      "typhoid",
+      "influenza"
+     ]
+    },
+    "nobody-makes-it": {
+     "rule": "A `manufacturing` blocker, or a `no-sponsor` blocker on a record whose capability is real. The requirement that capability be real is what separates *nobody produces the cure* from *nobody funds the research*.",
+     "not": "NOT diseases with no answer. If nothing works, the problem is not manufacturing. `me-cfs` carries `no-sponsor` and is excluded here for exactly that reason — nobody is failing to manufacture its cure.",
+     "examples": [
+      "snakebite",
+      "bladder-cancer",
+      "syphilis",
+      "mrsa",
+      "diarrhoeal-disease"
+     ]
+    },
+    "found-too-late": {
+     "rule": "A `window` exists, the record's strata run from a late form where essentially nothing works (efficacy at or below 0.2) to an early form that is mostly cured (0.7 or above), and **fewer than half are caught in time**.",
+     "not": "NOT every disease with a window; **86 records have one**, which is far too many to be interesting. `caught_in_time` is what turns *a window exists* into *and we are missing it*, and it is the number that makes this bucket actionable rather than descriptive — **it is the size of the prize for a screening programme, per disease.** Chagas is 0.10, obesity 0.15, lung cancer 0.20, liver cancer 0.25. ALSO NOT `pancreatic-cancer`, and that exclusion is the rule working. Its strata spread is 0.15 — it is bad at **every** stage, so earlier detection is not the lever. A disease being terrible and having a window are different claims, and only the second is this bucket. `obesity` is in, on strata running 0.00 to 0.80, and is the entry most worth arguing with: its \"window\" is the period before the complications establish, which is real but is a slower and vaguer thing than a resectable tumour.",
+     "examples": [
+      "lung-cancer",
+      "liver-cancer",
+      "cervical-cancer",
+      "chagas",
+      "gastric-cancer"
+     ]
+    },
+    "cannot-aim-it": {
+     "rule": "The register's `futile_treatment_risk` — a treatment exists, it fails often, and there is no test that says in advance who it will fail.",
+     "not": "NOT the same as a treatment that works badly for everyone. The sketch's *\"% chance\"* is this: **a measurement failure wearing the costume of a treatment failure.**",
+     "examples": [
+      "rheumatoid-arthritis",
+      "schizophrenia",
+      "epilepsy",
+      "osteoarthritis"
+     ]
+    },
+    "no-starting-point": {
+     "rule": "`mechanism` is `none` or `correlates` — the causal account is absent or is a set of associations.",
+     "not": "NOT the famous killers. **Stroke and heart disease are `established`**: hand somebody $100M for stroke and they know exactly where to start, they simply cannot fix it. **The diseases with no starting point are the ones nobody dies of** — which is why a register built on mortality would never find them.",
+     "examples": [
+      "me-cfs",
+      "heds",
+      "depression",
+      "bipolar",
+      "low-back-pain"
+     ]
+    },
+    "cannot-reach-people": {
+     "rule": "`delivery` is `barely` or `undelivered` — efficacy multiplied by access leaves most patients untouched — **and** capability is `curable`, `managed` or `preventable`. A `disease-modifying` treatment is not something that \"works\" in the sense this bucket means: it slows the course and the disease still wins, so there is nothing to arrive.",
+     "not": "NOT a knowledge problem, and it is the single most common state in the register. This is the tag the whole `efficacy`/`access` split exists to make sayable. And NOT the `partial` records — Alzheimer's, ALS, glioblastoma — which are undelivered too, but of a treatment that does not hold the disease; version 4 filed them here on delivery alone and the name overclaimed.",
+     "examples": [
+      "refractive-error",
+      "hearing-loss",
+      "sickle-cell",
+      "hepatitis-b",
+      "obesity"
+     ]
+    },
+    "needs-more-evidence": {
+     "rule": "An `evidence-incomplete` or `candidate-untested` blocker — something plausible exists and nobody has established whether it works.",
+     "not": "NOT \"no path forward\". This is the opposite: a path exists and has not been walked.",
+     "examples": [
+      "idiopathic-pulmonary-fibrosis"
+     ]
+    }
+   },
+   "a": {
+    "changes-you": 62,
+    "held-off": 31,
+    "defines-your-life": 18,
+    "ends-it-later": 18,
+    "back-to-normal": 15,
+    "ends-it": 4,
+    "ends-it-unless-caught": 2,
+    "never-safe": 1
+   },
+   "b": {
+    "cannot-reach-people": 59,
+    "needs-more-evidence": 43,
+    "nobody-makes-it": 33,
+    "cannot-aim-it": 26,
+    "found-too-late": 13,
+    "no-starting-point": 6
+   },
+   "b_untagged": 39,
+   "members": {
+    "pleomorphic-adenoma": {
+     "id": "FND-D-0015",
+     "a": "changes-you",
+     "b": []
+    },
+    "hat": {
+     "id": "FND-D-0026",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "tuberculosis": {
+     "id": "FND-D-0023",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "covid-19": {
+     "id": "FND-D-0076",
+     "a": "changes-you",
+     "b": [
+      "found-too-late",
+      "needs-more-evidence"
+     ]
+    },
+    "leprosy": {
+     "id": "FND-D-0035",
+     "a": "changes-you",
+     "b": []
+    },
+    "thyroid-cancer": {
+     "id": "FND-D-0061",
+     "a": "changes-you",
+     "b": []
+    },
+    "typhoid": {
+     "id": "FND-D-0066",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "trachoma": {
+     "id": "FND-D-0036",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "gonorrhoea": {
+     "id": "FND-D-0117",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "malaria": {
+     "id": "FND-D-0069",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "h-pylori-ulcer": {
+     "id": "FND-D-0001",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "uterine-fibroids": {
+     "id": "FND-D-0139",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it"
+     ]
+    },
+    "benign-prostatic-hyperplasia": {
+     "id": "FND-D-0138",
+     "a": "changes-you",
+     "b": []
+    },
+    "mrsa": {
+     "id": "FND-D-0067",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "genital-chlamydia": {
+     "id": "FND-D-0120",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "visceral-leishmaniasis": {
+     "id": "FND-D-0024",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "bacterial-meningitis": {
+     "id": "FND-D-0129",
+     "a": "defines-your-life",
+     "b": []
+    },
+    "coccidioidomycosis": {
+     "id": "FND-D-0111",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-aim-it",
+      "needs-more-evidence"
+     ]
+    },
+    "maternal-haemorrhage": {
+     "id": "FND-D-0073",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "syphilis": {
+     "id": "FND-D-0116",
+     "a": "defines-your-life",
+     "b": [
+      "nobody-makes-it",
+      "needs-more-evidence"
+     ]
+    },
+    "schistosomiasis": {
+     "id": "FND-D-0025",
+     "a": "changes-you",
+     "b": []
+    },
+    "scabies": {
+     "id": "FND-D-0038",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "childhood-pneumonia": {
+     "id": "FND-D-0071",
+     "a": "changes-you",
+     "b": []
+    },
+    "soil-transmitted-helminths": {
+     "id": "FND-D-0029",
+     "a": "back-to-normal",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "diarrhoeal-disease": {
+     "id": "FND-D-0074",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "buruli-ulcer": {
+     "id": "FND-D-0033",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "vulvar-cancer": {
+     "id": "FND-D-0125",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it"
+     ]
+    },
+    "anal-cancer": {
+     "id": "FND-D-0123",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it"
+     ]
+    },
+    "amr-infection": {
+     "id": "FND-D-0014",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "uterine-cancer": {
+     "id": "FND-D-0064",
+     "a": "changes-you",
+     "b": []
+    },
+    "anaemia": {
+     "id": "FND-D-0098",
+     "a": "changes-you",
+     "b": []
+    },
+    "breast-cancer": {
+     "id": "FND-D-0017",
+     "a": "changes-you",
+     "b": []
+    },
+    "melanoma": {
+     "id": "FND-D-0054",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "candidaemia": {
+     "id": "FND-D-0112",
+     "a": "changes-you",
+     "b": []
+    },
+    "prostate-cancer": {
+     "id": "FND-D-0051",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "neonatal-conditions": {
+     "id": "FND-D-0072",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it",
+      "needs-more-evidence"
+     ]
+    },
+    "yaws": {
+     "id": "FND-D-0034",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "cataract": {
+     "id": "FND-D-0089",
+     "a": "changes-you",
+     "b": []
+    },
+    "childhood-all": {
+     "id": "FND-D-0055",
+     "a": "changes-you",
+     "b": []
+    },
+    "trichomoniasis": {
+     "id": "FND-D-0121",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "uveal-melanoma": {
+     "id": "FND-D-0144",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "retinopathy-of-prematurity": {
+     "id": "FND-D-0132",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "renal-cell-carcinoma": {
+     "id": "FND-D-0063",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "echinococcosis": {
+     "id": "FND-D-0032",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "nasopharyngeal-carcinoma": {
+     "id": "FND-D-0103",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "penile-cancer": {
+     "id": "FND-D-0124",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "vaginal-cancer": {
+     "id": "FND-D-0126",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "smallpox": {
+     "id": "FND-D-0048",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "invasive-aspergillosis": {
+     "id": "FND-D-0110",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "cirrhosis": {
+     "id": "FND-D-0082",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "ebola": {
+     "id": "FND-D-0045",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "bladder-cancer": {
+     "id": "FND-D-0062",
+     "a": "defines-your-life",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "sepsis": {
+     "id": "FND-D-0070",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "clubfoot": {
+     "id": "FND-D-0135",
+     "a": "back-to-normal",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "colorectal-cancer": {
+     "id": "FND-D-0052",
+     "a": "changes-you",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "snakebite": {
+     "id": "FND-D-0012",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "cryptococcal-meningitis": {
+     "id": "FND-D-0109",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "non-hodgkin-lymphoma": {
+     "id": "FND-D-0057",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "mycoplasma-genitalium": {
+     "id": "FND-D-0122",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "taeniasis-cysticercosis": {
+     "id": "FND-D-0039",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "head-neck-cancer": {
+     "id": "FND-D-0102",
+     "a": "defines-your-life",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "hepatitis-c": {
+     "id": "FND-D-0002",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "cervical-cancer": {
+     "id": "FND-D-0053",
+     "a": "changes-you",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "cre": {
+     "id": "FND-D-0068",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "burns": {
+     "id": "FND-D-0151",
+     "a": "defines-your-life",
+     "b": [
+      "found-too-late",
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "gastric-cancer": {
+     "id": "FND-D-0059",
+     "a": "ends-it-later",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "osteoarthritis": {
+     "id": "FND-D-0096",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "congenital-heart-disease": {
+     "id": "FND-D-0094",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "obstetric-fistula": {
+     "id": "FND-D-0136",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "mycetoma": {
+     "id": "FND-D-0030",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "h-pylori-infection": {
+     "id": "FND-D-0150",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it",
+      "found-too-late",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "noma": {
+     "id": "FND-D-0041",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "liver-cancer": {
+     "id": "FND-D-0058",
+     "a": "ends-it-later",
+     "b": [
+      "found-too-late",
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "lung-cancer": {
+     "id": "FND-D-0050",
+     "a": "ends-it-later",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "pancreatic-cancer": {
+     "id": "FND-D-0060",
+     "a": "ends-it-later",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "type-2-diabetes": {
+     "id": "FND-D-0080",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "chagas": {
+     "id": "FND-D-0022",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "sickle-cell": {
+     "id": "FND-D-0006",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "hiv": {
+     "id": "FND-D-0004",
+     "a": "held-off",
+     "b": []
+    },
+    "lymphatic-filariasis": {
+     "id": "FND-D-0028",
+     "a": "held-off",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "onchocerciasis": {
+     "id": "FND-D-0027",
+     "a": "held-off",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "pku": {
+     "id": "FND-D-0003",
+     "a": "held-off",
+     "b": []
+    },
+    "cholera": {
+     "id": "FND-D-0065",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "genital-herpes": {
+     "id": "FND-D-0118",
+     "a": "held-off",
+     "b": []
+    },
+    "cml": {
+     "id": "FND-D-0056",
+     "a": "held-off",
+     "b": []
+    },
+    "hpv-infection": {
+     "id": "FND-D-0119",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "parkinsons": {
+     "id": "FND-D-0087",
+     "a": "ends-it-later",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "atrial-fibrillation": {
+     "id": "FND-D-0083",
+     "a": "held-off",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "ischaemic-heart-disease": {
+     "id": "FND-D-0042",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "polycythaemia-vera": {
+     "id": "FND-D-0145",
+     "a": "held-off",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "type-1-diabetes": {
+     "id": "FND-D-0079",
+     "a": "held-off",
+     "b": []
+    },
+    "food-allergy": {
+     "id": "FND-D-0148",
+     "a": "never-safe",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "toxoplasmosis": {
+     "id": "FND-D-0114",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-aim-it",
+      "needs-more-evidence"
+     ]
+    },
+    "asthma": {
+     "id": "FND-D-0097",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "refractive-error": {
+     "id": "FND-D-0133",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "acute-bronchitis": {
+     "id": "FND-D-0113",
+     "a": "back-to-normal",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "cystic-fibrosis": {
+     "id": "FND-D-0090",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "measles": {
+     "id": "FND-D-0049",
+     "a": "changes-you",
+     "b": []
+    },
+    "epilepsy": {
+     "id": "FND-D-0008",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "mcas": {
+     "id": "FND-D-0021",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "keloid": {
+     "id": "FND-D-0140",
+     "a": "changes-you",
+     "b": [
+      "no-starting-point"
+     ]
+    },
+    "multiple-sclerosis": {
+     "id": "FND-D-0086",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "low-back-pain": {
+     "id": "FND-D-0010",
+     "a": "changes-you",
+     "b": [
+      "no-starting-point"
+     ]
+    },
+    "rheumatoid-arthritis": {
+     "id": "FND-D-0093",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "crohns": {
+     "id": "FND-D-0016",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "h5n1": {
+     "id": "FND-D-0047",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "schizophrenia": {
+     "id": "FND-D-0088",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "hypertension": {
+     "id": "FND-D-0084",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "pots": {
+     "id": "FND-D-0020",
+     "a": "held-off",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "rheumatic-heart-disease": {
+     "id": "FND-D-0013",
+     "a": "ends-it-later",
+     "b": [
+      "nobody-makes-it",
+      "needs-more-evidence"
+     ]
+    },
+    "glaucoma": {
+     "id": "FND-D-0131",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "varicella-zoster": {
+     "id": "FND-D-0127",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "bipolar": {
+     "id": "FND-D-0011",
+     "a": "held-off",
+     "b": [
+      "nobody-makes-it",
+      "cannot-aim-it",
+      "no-starting-point",
+      "cannot-reach-people"
+     ]
+    },
+    "copd": {
+     "id": "FND-D-0044",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "endometriosis": {
+     "id": "FND-D-0137",
+     "a": "held-off",
+     "b": [
+      "nobody-makes-it",
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "heart-failure": {
+     "id": "FND-D-0100",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "chronic-kidney-disease": {
+     "id": "FND-D-0081",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "cmv-infection": {
+     "id": "FND-D-0128",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-aim-it"
+     ]
+    },
+    "hearing-loss": {
+     "id": "FND-D-0095",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "depression": {
+     "id": "FND-D-0007",
+     "a": "changes-you",
+     "b": [
+      "no-starting-point",
+      "needs-more-evidence"
+     ]
+    },
+    "marburg": {
+     "id": "FND-D-0046",
+     "a": "changes-you",
+     "b": []
+    },
+    "duchenne": {
+     "id": "FND-D-0092",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "spinal-muscular-atrophy": {
+     "id": "FND-D-0091",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "migraine": {
+     "id": "FND-D-0134",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "multiple-system-atrophy": {
+     "id": "FND-D-0142",
+     "a": "ends-it",
+     "b": []
+    },
+    "stroke": {
+     "id": "FND-D-0043",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "cryptosporidiosis": {
+     "id": "FND-D-0115",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "cerebral-palsy": {
+     "id": "FND-D-0099",
+     "a": "defines-your-life",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "idiopathic-pulmonary-fibrosis": {
+     "id": "FND-D-0108",
+     "a": "ends-it-later",
+     "b": [
+      "found-too-late",
+      "needs-more-evidence"
+     ]
+    },
+    "influenza": {
+     "id": "FND-D-0077",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it",
+      "needs-more-evidence"
+     ]
+    },
+    "acute-myeloid-leukaemia": {
+     "id": "FND-D-0147",
+     "a": "ends-it-later",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "familial-hypercholesterolaemia": {
+     "id": "FND-D-0146",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "hepatitis-b": {
+     "id": "FND-D-0075",
+     "a": "held-off",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "osteoporosis": {
+     "id": "FND-D-0101",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "als": {
+     "id": "FND-D-0104",
+     "a": "ends-it-later",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "glioblastoma": {
+     "id": "FND-D-0105",
+     "a": "ends-it-later",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "mesothelioma": {
+     "id": "FND-D-0107",
+     "a": "ends-it-later",
+     "b": [
+      "cannot-aim-it",
+      "needs-more-evidence"
+     ]
+    },
+    "obesity": {
+     "id": "FND-D-0085",
+     "a": "held-off",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "tay-sachs": {
+     "id": "FND-D-0143",
+     "a": "ends-it",
+     "b": []
+    },
+    "disorders-of-consciousness": {
+     "id": "FND-D-0130",
+     "a": "defines-your-life",
+     "b": []
+    },
+    "alzheimers": {
+     "id": "FND-D-0078",
+     "a": "ends-it-later",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "ebv-infection": {
+     "id": "FND-D-0149",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "dipg": {
+     "id": "FND-D-0141",
+     "a": "ends-it",
+     "b": [
+      "nobody-makes-it",
+      "cannot-aim-it"
+     ]
+    },
+    "dengue": {
+     "id": "FND-D-0031",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "dracunculiasis": {
+     "id": "FND-D-0040",
+     "a": "changes-you",
+     "b": []
+    },
+    "heds": {
+     "id": "FND-D-0019",
+     "a": "defines-your-life",
+     "b": [
+      "no-starting-point",
+      "needs-more-evidence"
+     ]
+    },
+    "huntington": {
+     "id": "FND-D-0005",
+     "a": "ends-it",
+     "b": []
+    },
+    "me-cfs": {
+     "id": "FND-D-0009",
+     "a": "defines-your-life",
+     "b": [
+      "no-starting-point"
+     ]
+    },
+    "msmds": {
+     "id": "FND-D-0018",
+     "a": "defines-your-life",
+     "b": []
+    },
+    "prion-disease": {
+     "id": "FND-D-0106",
+     "a": "ends-it-unless-caught",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "rabies": {
+     "id": "FND-D-0037",
+     "a": "ends-it-unless-caught",
+     "b": []
+    }
+   }
+  },
+  "quadrant": {
+   "known & treatable": 114,
+   "known & modifiable": 16,
+   "engineering problem": 15,
+   "frontier": 5,
+   "empirical luck": 1
+  },
+  "delivery": {
+   "barely": 67,
+   "partly": 46,
+   "—": 26,
+   "mostly": 7,
+   "undelivered": 5
+  },
+  "gaps": {
+   "yld_rated": 4,
+   "knowledge_yld": 63850000.0,
+   "delivery_yld": 41857500.0,
+   "top_knowledge_yld": [
+    "low-back-pain",
+    "anaemia",
+    "osteoarthritis",
+    "asthma"
+   ],
+   "rated": 118,
+   "knowledge": 22366600.6,
+   "delivery": 36374836.6,
+   "top_knowledge": [
+    "stroke",
+    "ischaemic-heart-disease",
+    "type-2-diabetes",
+    "sepsis",
+    "hypertension",
+    "copd",
+    "obesity",
+    "lung-cancer",
+    "alzheimers",
+    "liver-cancer"
+   ],
+   "top_delivery": [
+    "hypertension",
+    "sepsis",
+    "ischaemic-heart-disease",
+    "obesity",
+    "stroke",
+    "neonatal-conditions",
+    "copd",
+    "type-2-diabetes",
+    "hepatitis-b",
+    "diarrhoeal-disease"
+   ]
+  },
+  "terms": {
+   "clean": 74,
+   "costly": 72,
+   "harsh": 5
+  },
+  "axes": {
+   "mechanism": {
+    "established": 105,
+    "partial": 40,
+    "correlates": 5,
+    "none": 1
+   },
+   "intervention": {
+    "curative": 77,
+    "suppressive": 31,
+    "symptomatic": 24,
+    "disease-modifying": 16,
+    "none": 3
+   },
+   "prevention": {
+    "risk-reduction": 85,
+    "prophylaxis": 38,
+    "none": 27,
+    "eradicated": 1
+   },
+   "ongoing": {
+    "moderate": 54,
+    "low": 49,
+    "high": 31,
+    "none": 17
+   }
+  },
+  "measurement": {
+   "diagnostic": {
+    "objective": 118,
+    "clinical": 31,
+    "complaint": 2
+   },
+   "prognostic": {
+    "partial": 91,
+    "good": 35,
+    "none": 25
+   },
+   "predictive": {
+    "partial": 72,
+    "none": 47,
+    "n/a": 20,
+    "good": 12
+   }
+  },
+  "flags": {
+   "measurement_gap": 29,
+   "overtreatment_risk": 9,
+   "futile_treatment_risk": 26,
+   "cured_at_a_price": 68,
+   "harm_without_benefit": 9,
+   "orphaned": 123,
+   "spans_ladder": 56,
+   "has_window": 105,
+   "has_residue": 88,
+   "only_knowledge_blockers": 1
+  },
+  "contested": 21,
+  "reach": {
+   "mean": 0.261,
+   "median": 0.24
+  },
+  "blockers": {
+   "total": 655,
+   "by_kind": {
+    "knowledge": 175,
+    "logistics": 110,
+    "diagnosis": 103,
+    "policy": 87,
+    "cost": 60,
+    "evidence-incomplete": 41,
+    "no-sponsor": 31,
+    "tooling": 16,
+    "adherence": 14,
+    "manufacturing": 10,
+    "regulatory": 5,
+    "candidate-untested": 3
+   },
+   "by_standing": {
+    "documented": 637,
+    "alleged": 10,
+    "disputed": 7,
+    "refuted": 1
+   },
+   "priced": 478,
+   "by_kind_priced": {
+    "adherence": {
+     "total": 14,
+     "priced": 14
+    },
+    "candidate-untested": {
+     "total": 3,
+     "priced": 3
+    },
+    "cost": {
+     "total": 60,
+     "priced": 60
+    },
+    "diagnosis": {
+     "total": 103,
+     "priced": 103
+    },
+    "evidence-incomplete": {
+     "total": 41,
+     "priced": 41
+    },
+    "knowledge": {
+     "total": 175,
+     "priced": 8
+    },
+    "logistics": {
+     "total": 110,
+     "priced": 110
+    },
+    "manufacturing": {
+     "total": 10,
+     "priced": 10
+    },
+    "no-sponsor": {
+     "total": 31,
+     "priced": 30
+    },
+    "policy": {
+     "total": 87,
+     "priced": 82
+    },
+    "regulatory": {
+     "total": 5,
+     "priced": 4
+    },
+    "tooling": {
+     "total": 16,
+     "priced": 13
+    }
+   },
+   "actors": {
+    "government": 420,
+    "academic": 368,
+    "health-system": 367,
+    "nonprofit": 318,
+    "philanthropy": 279,
+    "sponsor": 241,
+    "manufacturer": 239,
+    "payer": 206,
+    "regulator": 99,
+    "patient-org": 82,
+    "legislator": 70,
+    "software": 25
+   }
+  },
+  "moved": {
+   "total": 254,
+   "by_axis": {
+    "efficacy": 76,
+    "intervention": 61,
+    "access": 33,
+    "prevention": 32,
+    "toll": 25,
+    "mechanism": 18,
+    "measurement": 7,
+    "ongoing": 2
+   },
+   "by_decade": {
+    "1790s": 1,
+    "1850s": 1,
+    "1920s": 3,
+    "1930s": 1,
+    "1940s": 9,
+    "1950s": 5,
+    "1960s": 11,
+    "1970s": 12,
+    "1980s": 21,
+    "1990s": 32,
+    "2000s": 36,
+    "2010s": 71,
+    "2020s": 51
+   }
+  },
+  "provenance": {
+   "scalars": 2600,
+   "by_src": {
+    "reasoning": 1353,
+    "recall": 1163,
+    "cited": 74,
+    "unknown": 10
+   },
+   "cited": 74,
+   "by_tier": {
+    "sourceable": {
+     "total": 509,
+     "cited": 3
+    },
+    "supportable": {
+     "total": 745,
+     "cited": 71
+    },
+    "judged": {
+     "total": 1346,
+     "cited": 0
+    }
+   },
+   "verified": 74,
+   "unknown": 10,
+   "mondo_resolved": 128,
+   "mondo_unresolved": 23,
+   "note": "Every empirical scalar carries a src. `recall` is the model's memory, `reasoning` is its arithmetic, and `unknown` means nobody has the number — none of the three is a citation. `by_tier` is the honest denominator: a citation SETTLES a sourceable scalar, SUPPORTS a supportable one, and cannot touch a judged one, because no dataset holds a quantity this register defines. Blockers are judged and carry their evidential status in `standing` instead."
+  },
+  "burden": {
+   "records_with_deaths": 93,
+   "records_without_deaths": 58,
+   "attributed_deaths_sum": 75935539.0,
+   "note": "An UPPER BOUND, not a total. Records overlap — TB deaths in people with HIV are in both, sepsis is the mode of death for several others — and the sum exceeds annual global mortality. Do not chart this as a total."
+  }
+ },
+ {
+  "date": "2026-11-09",
+  "register": "nordstern",
+  "records": {
+   "active": 155,
+   "deprecated": 0
+  },
+  "capability": {
+   "curable": 81,
+   "managed": 32,
+   "unsolved": 20,
+   "partial": 16,
+   "preventable": 6
+  },
+  "solved": {
+   "of": 155,
+   "can_end": 87,
+   "reaches_most": 10,
+   "solved": 9,
+   "reach_floor": 0.6,
+   "definition": "a disease is solved when medicine can end it, the treatment reaches most of the people who have it, and it costs them nothing permanent",
+   "steps": [
+    "medicine can end it",
+    "and it reaches most patients",
+    "and it costs nothing permanent"
+   ]
+  },
+  "survival": {
+   "bands": {
+    "good chance": 87,
+    "n/a": 51,
+    "a chance": 9,
+    "terminal": 8
+   },
+   "rated": 104,
+   "outcomes": {
+    "cured": 61,
+    "n/a": 51,
+    "delayed": 20,
+    "held": 17,
+    "recovered": 6
+   },
+   "was_uniformly_fatal": 32,
+   "no_longer_terminal": 24,
+   "zero_gain": [
+    "alzheimers",
+    "huntington",
+    "prion-disease",
+    "rabies",
+    "tay-sachs"
+   ]
+  },
+  "buckets": {
+   "version": 6,
+   "digest": "d07dc0ec4741",
+   "names": {
+    "ends-it": "It ends your life, whenever you find it",
+    "ends-it-unless-caught": "It ends your life unless it is caught in time",
+    "ends-it-later": "It ends your life, but later",
+    "held-off": "It is held off, for life",
+    "never-safe": "You survive, and you are never safe",
+    "defines-your-life": "You survive, and it defines your life",
+    "changes-you": "You survive, and it changes you",
+    "back-to-normal": "You survive, and you get back to normal",
+    "nobody-makes-it": "The solution exists and nobody makes it",
+    "found-too-late": "Caught early it is curable, caught late it is not",
+    "cannot-aim-it": "It works for some people and nobody can say which",
+    "no-starting-point": "Nobody knows where to start",
+    "cannot-reach-people": "It works and it does not arrive",
+    "needs-more-evidence": "There is a candidate and the evidence is not in"
+   },
+   "defs": {
+    "ends-it": {
+     "rule": "The course is fatal, essentially nobody survives the stated horizon, and there is no window — finding it earlier changes nothing.",
+     "not": "NOT \"we have no cure\". Most fatal diseases here are `ends-it-later`. This is the much smaller set where the timing of diagnosis is irrelevant because nothing follows from it.",
+     "examples": [
+      "huntington"
+     ]
+    },
+    "ends-it-unless-caught": {
+     "rule": "Fatal as above, but a `window` exists — there is a period in which action changes the outcome, and outside it there is nothing.",
+     "not": "NOT every disease with a window; 86 records have one. This is the set where the window is the *whole* of the difference between living and dying.",
+     "examples": [
+      "rabies",
+      "prion-disease"
+     ]
+    },
+    "ends-it-later": {
+     "rule": "The disease is still what kills you. Either treatment alters the course without ending it — the register's `delayed` outcome — or **more than half of treated patients die of it**, whatever rung the ladder puts the treatment on.",
+     "not": "NOT \"untreatable\". These are mostly diseases medicine has changed a great deal — and the change bought time rather than an ending. **NOT decided by the intervention rung alone, and v4 fixed exactly that.** `survival_outcome()` reads `axes.intervention`, so every record on the `curative` rung returned `cured` however few survived — and `cured` never reached this branch. Pancreatic cancer, where 87% of treated patients die, was filed under *you survive, and it changes you*, beside cataract. The rung was right about what the operation does **when it works**; the bucket was asking a different question and taking the rung's word for the answer. ALSO NOT acute illness, and that exclusion is deliberate rather than protective. `marburg` kills about three quarters of those it infects within two weeks and the quarter who live **recover** — so \"it ends your life, but later\" is false for everybody in the record. That is the ⧉ `spans_ladder` shape the register already names as a **malformed question rather than a hard one**, and declining to average it is more honest than filing it confidently in the wrong place. See `holes`.",
+     "examples": [
+      "pancreatic-cancer",
+      "als",
+      "alzheimers",
+      "stroke",
+      "glioblastoma"
+     ]
+    },
+    "held-off": {
+     "rule": "A treatment suppresses it indefinitely and stopping brings it back. Near-normal life, on condition of continuous treatment.",
+     "not": "NOT cured. **This rung is what stops HIV being filed next to hepatitis C** — one is no longer a death sentence, the other is over.",
+     "examples": [
+      "hiv",
+      "type-1-diabetes",
+      "schizophrenia"
+     ]
+    },
+    "never-safe": {
+     "rule": "Nothing alters the course and nothing is treated day to day. The disease is an acute, potentially fatal event that can recur at any time — a `window` marked `recurs` — and keeping it shut is the patient's own work, every day, for life: `intervention` symptomatic or none, `ongoing` high, and survival unrated or near-complete.",
+     "not": "NOT `held-off`: nothing is being suppressed; between events the person is well and untreated. NOT `defines-your-life` on burden alone — the burden here is a lethal possibility rather than a continuous cost. This axis was built on survival and this state is invisible to it: measured by deaths it is nothing, measured by what a life is organised around it is everything.",
+     "examples": [
+      "food-allergy"
+     ]
+    },
+    "defines-your-life": {
+     "rule": "Survivable, but the cost of living with it or of being treated for it is continuous and large — a high ongoing burden, or a residue or a treatment toll rated `harsh`.",
+     "not": "NOT necessarily severe in the clinical sense, and NOT about mortality at all. `me-cfs`, `heds` and `msmds` are here with **no attributed deaths whatsoever** — which is the whole reason this axis is not built on survival.",
+     "examples": [
+      "sickle-cell",
+      "me-cfs",
+      "heds",
+      "cerebral-palsy",
+      "noma"
+     ]
+    },
+    "changes-you": {
+     "rule": "Survivable, and something **rated `major`** is left behind — by the disease, by the treatment, or both — or the ongoing burden of being treated is moderate. Without dominating the rest of your life, which is the bucket above.",
+     "not": "NOT a minor category. **It is still the largest bucket in the register** after v4 took four cancers out of it, and that is this axis's main finding: medicine's characteristic output is neither death nor cure but survival in an altered body. NOT triggered by *any* permanent difference. **v3 fixed exactly that.** Until 2026-09-01 the rule tested whether a `residue` block existed at all, so a record whose residue was a shoe size landed here — and derived `restored: restored` at the same time, because that derivation has always read severity. Eight records held both verdicts at once. `clubfoot` made it undeniable and the rule now reads severity too.",
+     "examples": [
+      "tuberculosis",
+      "benign-prostatic-hyperplasia",
+      "breast-cancer",
+      "malaria"
+     ]
+    },
+    "back-to-normal": {
+     "rule": "Survivable, with nothing worse than a `minor` residue and a `minor` treatment toll, and a low ongoing burden. **A minor permanent difference does not disqualify a record from this bucket** — a treated clubfoot leaves a slightly smaller foot in somebody who runs normally, and calling that a changed life is false.",
+     "not": "NOT the goal state for most of medicine, and still **uncommon** — 14 of 140, unchanged by v4. Read that as a claim about how little the register finds. It remains the bucket resting on the least-tested inputs: `residue` is absent on many records that have simply never been examined for one, and an unexamined record looks identical to a clean one. See `bucket-design.md`.",
+     "examples": [
+      "cholera",
+      "typhoid",
+      "influenza"
+     ]
+    },
+    "nobody-makes-it": {
+     "rule": "A `manufacturing` blocker, or a `no-sponsor` blocker on a record whose capability is real. The requirement that capability be real is what separates *nobody produces the cure* from *nobody funds the research*.",
+     "not": "NOT diseases with no answer. If nothing works, the problem is not manufacturing. `me-cfs` carries `no-sponsor` and is excluded here for exactly that reason — nobody is failing to manufacture its cure.",
+     "examples": [
+      "snakebite",
+      "bladder-cancer",
+      "syphilis",
+      "mrsa",
+      "diarrhoeal-disease"
+     ]
+    },
+    "found-too-late": {
+     "rule": "A `window` exists, the record's strata run from a late form where essentially nothing works (efficacy at or below 0.2) to an early form that is mostly cured (0.7 or above), and **fewer than half are caught in time**.",
+     "not": "NOT every disease with a window; **86 records have one**, which is far too many to be interesting. `caught_in_time` is what turns *a window exists* into *and we are missing it*, and it is the number that makes this bucket actionable rather than descriptive — **it is the size of the prize for a screening programme, per disease.** Chagas is 0.10, obesity 0.15, lung cancer 0.20, liver cancer 0.25. ALSO NOT `pancreatic-cancer`, and that exclusion is the rule working. Its strata spread is 0.15 — it is bad at **every** stage, so earlier detection is not the lever. A disease being terrible and having a window are different claims, and only the second is this bucket. `obesity` is in, on strata running 0.00 to 0.80, and is the entry most worth arguing with: its \"window\" is the period before the complications establish, which is real but is a slower and vaguer thing than a resectable tumour.",
+     "examples": [
+      "lung-cancer",
+      "liver-cancer",
+      "cervical-cancer",
+      "chagas",
+      "gastric-cancer"
+     ]
+    },
+    "cannot-aim-it": {
+     "rule": "The register's `futile_treatment_risk` — a treatment exists, it fails often, and there is no test that says in advance who it will fail.",
+     "not": "NOT the same as a treatment that works badly for everyone. The sketch's *\"% chance\"* is this: **a measurement failure wearing the costume of a treatment failure.**",
+     "examples": [
+      "rheumatoid-arthritis",
+      "schizophrenia",
+      "epilepsy",
+      "osteoarthritis"
+     ]
+    },
+    "no-starting-point": {
+     "rule": "`mechanism` is `none` or `correlates` — the causal account is absent or is a set of associations.",
+     "not": "NOT the famous killers. **Stroke and heart disease are `established`**: hand somebody $100M for stroke and they know exactly where to start, they simply cannot fix it. **The diseases with no starting point are the ones nobody dies of** — which is why a register built on mortality would never find them.",
+     "examples": [
+      "me-cfs",
+      "heds",
+      "depression",
+      "bipolar",
+      "low-back-pain"
+     ]
+    },
+    "cannot-reach-people": {
+     "rule": "`delivery` is `barely` or `undelivered` — efficacy multiplied by access leaves most patients untouched — **and** capability is `curable`, `managed` or `preventable`. A `disease-modifying` treatment is not something that \"works\" in the sense this bucket means: it slows the course and the disease still wins, so there is nothing to arrive.",
+     "not": "NOT a knowledge problem, and it is the single most common state in the register. This is the tag the whole `efficacy`/`access` split exists to make sayable. And NOT the `partial` records — Alzheimer's, ALS, glioblastoma — which are undelivered too, but of a treatment that does not hold the disease; version 4 filed them here on delivery alone and the name overclaimed.",
+     "examples": [
+      "refractive-error",
+      "hearing-loss",
+      "sickle-cell",
+      "hepatitis-b",
+      "obesity"
+     ]
+    },
+    "needs-more-evidence": {
+     "rule": "An `evidence-incomplete` or `candidate-untested` blocker — something plausible exists and nobody has established whether it works.",
+     "not": "NOT \"no path forward\". This is the opposite: a path exists and has not been walked.",
+     "examples": [
+      "idiopathic-pulmonary-fibrosis"
+     ]
+    }
+   },
+   "a": {
+    "changes-you": 63,
+    "held-off": 32,
+    "defines-your-life": 18,
+    "ends-it-later": 18,
+    "back-to-normal": 17,
+    "ends-it": 4,
+    "ends-it-unless-caught": 2,
+    "never-safe": 1
+   },
+   "b": {
+    "cannot-reach-people": 61,
+    "needs-more-evidence": 45,
+    "nobody-makes-it": 33,
+    "cannot-aim-it": 27,
+    "found-too-late": 13,
+    "no-starting-point": 6
+   },
+   "b_untagged": 41,
+   "members": {
+    "pleomorphic-adenoma": {
+     "id": "FND-D-0015",
+     "a": "changes-you",
+     "b": []
+    },
+    "hat": {
+     "id": "FND-D-0026",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "tuberculosis": {
+     "id": "FND-D-0023",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "listeriosis": {
+     "id": "FND-D-0152",
+     "a": "changes-you",
+     "b": []
+    },
+    "covid-19": {
+     "id": "FND-D-0076",
+     "a": "changes-you",
+     "b": [
+      "found-too-late",
+      "needs-more-evidence"
+     ]
+    },
+    "leprosy": {
+     "id": "FND-D-0035",
+     "a": "changes-you",
+     "b": []
+    },
+    "thyroid-cancer": {
+     "id": "FND-D-0061",
+     "a": "changes-you",
+     "b": []
+    },
+    "typhoid": {
+     "id": "FND-D-0066",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "trachoma": {
+     "id": "FND-D-0036",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "botulism": {
+     "id": "FND-D-0154",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "gonorrhoea": {
+     "id": "FND-D-0117",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "malaria": {
+     "id": "FND-D-0069",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "h-pylori-ulcer": {
+     "id": "FND-D-0001",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "uterine-fibroids": {
+     "id": "FND-D-0139",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it"
+     ]
+    },
+    "benign-prostatic-hyperplasia": {
+     "id": "FND-D-0138",
+     "a": "changes-you",
+     "b": []
+    },
+    "mrsa": {
+     "id": "FND-D-0067",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "genital-chlamydia": {
+     "id": "FND-D-0120",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "visceral-leishmaniasis": {
+     "id": "FND-D-0024",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "bacterial-meningitis": {
+     "id": "FND-D-0129",
+     "a": "defines-your-life",
+     "b": []
+    },
+    "coccidioidomycosis": {
+     "id": "FND-D-0111",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-aim-it",
+      "needs-more-evidence"
+     ]
+    },
+    "maternal-haemorrhage": {
+     "id": "FND-D-0073",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "syphilis": {
+     "id": "FND-D-0116",
+     "a": "defines-your-life",
+     "b": [
+      "nobody-makes-it",
+      "needs-more-evidence"
+     ]
+    },
+    "schistosomiasis": {
+     "id": "FND-D-0025",
+     "a": "changes-you",
+     "b": []
+    },
+    "scabies": {
+     "id": "FND-D-0038",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "childhood-pneumonia": {
+     "id": "FND-D-0071",
+     "a": "changes-you",
+     "b": []
+    },
+    "soil-transmitted-helminths": {
+     "id": "FND-D-0029",
+     "a": "back-to-normal",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "diarrhoeal-disease": {
+     "id": "FND-D-0074",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "buruli-ulcer": {
+     "id": "FND-D-0033",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "vulvar-cancer": {
+     "id": "FND-D-0125",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it"
+     ]
+    },
+    "anal-cancer": {
+     "id": "FND-D-0123",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it"
+     ]
+    },
+    "amr-infection": {
+     "id": "FND-D-0014",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "uterine-cancer": {
+     "id": "FND-D-0064",
+     "a": "changes-you",
+     "b": []
+    },
+    "anaemia": {
+     "id": "FND-D-0098",
+     "a": "changes-you",
+     "b": []
+    },
+    "breast-cancer": {
+     "id": "FND-D-0017",
+     "a": "changes-you",
+     "b": []
+    },
+    "melanoma": {
+     "id": "FND-D-0054",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "candidaemia": {
+     "id": "FND-D-0112",
+     "a": "changes-you",
+     "b": []
+    },
+    "prostate-cancer": {
+     "id": "FND-D-0051",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "neonatal-conditions": {
+     "id": "FND-D-0072",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it",
+      "needs-more-evidence"
+     ]
+    },
+    "yaws": {
+     "id": "FND-D-0034",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "cataract": {
+     "id": "FND-D-0089",
+     "a": "changes-you",
+     "b": []
+    },
+    "childhood-all": {
+     "id": "FND-D-0055",
+     "a": "changes-you",
+     "b": []
+    },
+    "trichomoniasis": {
+     "id": "FND-D-0121",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "uveal-melanoma": {
+     "id": "FND-D-0144",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "retinopathy-of-prematurity": {
+     "id": "FND-D-0132",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "renal-cell-carcinoma": {
+     "id": "FND-D-0063",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "echinococcosis": {
+     "id": "FND-D-0032",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "nasopharyngeal-carcinoma": {
+     "id": "FND-D-0103",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "non-typhoidal-salmonellosis": {
+     "id": "FND-D-0153",
+     "a": "back-to-normal",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "penile-cancer": {
+     "id": "FND-D-0124",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "vaginal-cancer": {
+     "id": "FND-D-0126",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "smallpox": {
+     "id": "FND-D-0048",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "invasive-aspergillosis": {
+     "id": "FND-D-0110",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "cirrhosis": {
+     "id": "FND-D-0082",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "ebola": {
+     "id": "FND-D-0045",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "bladder-cancer": {
+     "id": "FND-D-0062",
+     "a": "defines-your-life",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "sepsis": {
+     "id": "FND-D-0070",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "clubfoot": {
+     "id": "FND-D-0135",
+     "a": "back-to-normal",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "colorectal-cancer": {
+     "id": "FND-D-0052",
+     "a": "changes-you",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "snakebite": {
+     "id": "FND-D-0012",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "cryptococcal-meningitis": {
+     "id": "FND-D-0109",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "non-hodgkin-lymphoma": {
+     "id": "FND-D-0057",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "mycoplasma-genitalium": {
+     "id": "FND-D-0122",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "taeniasis-cysticercosis": {
+     "id": "FND-D-0039",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "head-neck-cancer": {
+     "id": "FND-D-0102",
+     "a": "defines-your-life",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "hepatitis-c": {
+     "id": "FND-D-0002",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "cervical-cancer": {
+     "id": "FND-D-0053",
+     "a": "changes-you",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "cre": {
+     "id": "FND-D-0068",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "burns": {
+     "id": "FND-D-0151",
+     "a": "defines-your-life",
+     "b": [
+      "found-too-late",
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "gastric-cancer": {
+     "id": "FND-D-0059",
+     "a": "ends-it-later",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "osteoarthritis": {
+     "id": "FND-D-0096",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "congenital-heart-disease": {
+     "id": "FND-D-0094",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "obstetric-fistula": {
+     "id": "FND-D-0136",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "mycetoma": {
+     "id": "FND-D-0030",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "h-pylori-infection": {
+     "id": "FND-D-0150",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it",
+      "found-too-late",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "noma": {
+     "id": "FND-D-0041",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "liver-cancer": {
+     "id": "FND-D-0058",
+     "a": "ends-it-later",
+     "b": [
+      "found-too-late",
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "lung-cancer": {
+     "id": "FND-D-0050",
+     "a": "ends-it-later",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "pancreatic-cancer": {
+     "id": "FND-D-0060",
+     "a": "ends-it-later",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "type-2-diabetes": {
+     "id": "FND-D-0080",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "chagas": {
+     "id": "FND-D-0022",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "sickle-cell": {
+     "id": "FND-D-0006",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "hiv": {
+     "id": "FND-D-0004",
+     "a": "held-off",
+     "b": []
+    },
+    "lymphatic-filariasis": {
+     "id": "FND-D-0028",
+     "a": "held-off",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "onchocerciasis": {
+     "id": "FND-D-0027",
+     "a": "held-off",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "pku": {
+     "id": "FND-D-0003",
+     "a": "held-off",
+     "b": []
+    },
+    "cholera": {
+     "id": "FND-D-0065",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "genital-herpes": {
+     "id": "FND-D-0118",
+     "a": "held-off",
+     "b": []
+    },
+    "cml": {
+     "id": "FND-D-0056",
+     "a": "held-off",
+     "b": []
+    },
+    "hpv-infection": {
+     "id": "FND-D-0119",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "parkinsons": {
+     "id": "FND-D-0087",
+     "a": "ends-it-later",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "atrial-fibrillation": {
+     "id": "FND-D-0083",
+     "a": "held-off",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "ischaemic-heart-disease": {
+     "id": "FND-D-0042",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "polycythaemia-vera": {
+     "id": "FND-D-0145",
+     "a": "held-off",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "type-1-diabetes": {
+     "id": "FND-D-0079",
+     "a": "held-off",
+     "b": []
+    },
+    "food-allergy": {
+     "id": "FND-D-0148",
+     "a": "never-safe",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "toxoplasmosis": {
+     "id": "FND-D-0114",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-aim-it",
+      "needs-more-evidence"
+     ]
+    },
+    "asthma": {
+     "id": "FND-D-0097",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "refractive-error": {
+     "id": "FND-D-0133",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "acute-bronchitis": {
+     "id": "FND-D-0113",
+     "a": "back-to-normal",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "cystic-fibrosis": {
+     "id": "FND-D-0090",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "measles": {
+     "id": "FND-D-0049",
+     "a": "changes-you",
+     "b": []
+    },
+    "epilepsy": {
+     "id": "FND-D-0008",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "mcas": {
+     "id": "FND-D-0021",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "keloid": {
+     "id": "FND-D-0140",
+     "a": "changes-you",
+     "b": [
+      "no-starting-point"
+     ]
+    },
+    "multiple-sclerosis": {
+     "id": "FND-D-0086",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "low-back-pain": {
+     "id": "FND-D-0010",
+     "a": "changes-you",
+     "b": [
+      "no-starting-point"
+     ]
+    },
+    "lupus": {
+     "id": "FND-D-0155",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "rheumatoid-arthritis": {
+     "id": "FND-D-0093",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "crohns": {
+     "id": "FND-D-0016",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "h5n1": {
+     "id": "FND-D-0047",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "schizophrenia": {
+     "id": "FND-D-0088",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "hypertension": {
+     "id": "FND-D-0084",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "pots": {
+     "id": "FND-D-0020",
+     "a": "held-off",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "rheumatic-heart-disease": {
+     "id": "FND-D-0013",
+     "a": "ends-it-later",
+     "b": [
+      "nobody-makes-it",
+      "needs-more-evidence"
+     ]
+    },
+    "glaucoma": {
+     "id": "FND-D-0131",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "varicella-zoster": {
+     "id": "FND-D-0127",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "bipolar": {
+     "id": "FND-D-0011",
+     "a": "held-off",
+     "b": [
+      "nobody-makes-it",
+      "cannot-aim-it",
+      "no-starting-point",
+      "cannot-reach-people"
+     ]
+    },
+    "copd": {
+     "id": "FND-D-0044",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "endometriosis": {
+     "id": "FND-D-0137",
+     "a": "held-off",
+     "b": [
+      "nobody-makes-it",
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "heart-failure": {
+     "id": "FND-D-0100",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "chronic-kidney-disease": {
+     "id": "FND-D-0081",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "cmv-infection": {
+     "id": "FND-D-0128",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-aim-it"
+     ]
+    },
+    "hearing-loss": {
+     "id": "FND-D-0095",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "depression": {
+     "id": "FND-D-0007",
+     "a": "changes-you",
+     "b": [
+      "no-starting-point",
+      "needs-more-evidence"
+     ]
+    },
+    "marburg": {
+     "id": "FND-D-0046",
+     "a": "changes-you",
+     "b": []
+    },
+    "duchenne": {
+     "id": "FND-D-0092",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "spinal-muscular-atrophy": {
+     "id": "FND-D-0091",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "migraine": {
+     "id": "FND-D-0134",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "multiple-system-atrophy": {
+     "id": "FND-D-0142",
+     "a": "ends-it",
+     "b": []
+    },
+    "stroke": {
+     "id": "FND-D-0043",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "cryptosporidiosis": {
+     "id": "FND-D-0115",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "cerebral-palsy": {
+     "id": "FND-D-0099",
+     "a": "defines-your-life",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "idiopathic-pulmonary-fibrosis": {
+     "id": "FND-D-0108",
+     "a": "ends-it-later",
+     "b": [
+      "found-too-late",
+      "needs-more-evidence"
+     ]
+    },
+    "influenza": {
+     "id": "FND-D-0077",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it",
+      "needs-more-evidence"
+     ]
+    },
+    "acute-myeloid-leukaemia": {
+     "id": "FND-D-0147",
+     "a": "ends-it-later",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "familial-hypercholesterolaemia": {
+     "id": "FND-D-0146",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "hepatitis-b": {
+     "id": "FND-D-0075",
+     "a": "held-off",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "osteoporosis": {
+     "id": "FND-D-0101",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "als": {
+     "id": "FND-D-0104",
+     "a": "ends-it-later",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "glioblastoma": {
+     "id": "FND-D-0105",
+     "a": "ends-it-later",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "mesothelioma": {
+     "id": "FND-D-0107",
+     "a": "ends-it-later",
+     "b": [
+      "cannot-aim-it",
+      "needs-more-evidence"
+     ]
+    },
+    "obesity": {
+     "id": "FND-D-0085",
+     "a": "held-off",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "tay-sachs": {
+     "id": "FND-D-0143",
+     "a": "ends-it",
+     "b": []
+    },
+    "disorders-of-consciousness": {
+     "id": "FND-D-0130",
+     "a": "defines-your-life",
+     "b": []
+    },
+    "alzheimers": {
+     "id": "FND-D-0078",
+     "a": "ends-it-later",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "ebv-infection": {
+     "id": "FND-D-0149",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "dipg": {
+     "id": "FND-D-0141",
+     "a": "ends-it",
+     "b": [
+      "nobody-makes-it",
+      "cannot-aim-it"
+     ]
+    },
+    "dengue": {
+     "id": "FND-D-0031",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "dracunculiasis": {
+     "id": "FND-D-0040",
+     "a": "changes-you",
+     "b": []
+    },
+    "heds": {
+     "id": "FND-D-0019",
+     "a": "defines-your-life",
+     "b": [
+      "no-starting-point",
+      "needs-more-evidence"
+     ]
+    },
+    "huntington": {
+     "id": "FND-D-0005",
+     "a": "ends-it",
+     "b": []
+    },
+    "me-cfs": {
+     "id": "FND-D-0009",
+     "a": "defines-your-life",
+     "b": [
+      "no-starting-point"
+     ]
+    },
+    "msmds": {
+     "id": "FND-D-0018",
+     "a": "defines-your-life",
+     "b": []
+    },
+    "prion-disease": {
+     "id": "FND-D-0106",
+     "a": "ends-it-unless-caught",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "rabies": {
+     "id": "FND-D-0037",
+     "a": "ends-it-unless-caught",
+     "b": []
+    }
+   }
+  },
+  "quadrant": {
+   "known & treatable": 118,
+   "known & modifiable": 16,
+   "engineering problem": 15,
+   "frontier": 5,
+   "empirical luck": 1
+  },
+  "delivery": {
+   "barely": 69,
+   "partly": 47,
+   "—": 26,
+   "mostly": 8,
+   "undelivered": 5
+  },
+  "gaps": {
+   "yld_rated": 4,
+   "knowledge_yld": 63850000.0,
+   "delivery_yld": 41857500.0,
+   "top_knowledge_yld": [
+    "low-back-pain",
+    "anaemia",
+    "osteoarthritis",
+    "asthma"
+   ],
+   "rated": 122,
+   "knowledge": 22395202.1,
+   "delivery": 36427049.4,
+   "top_knowledge": [
+    "stroke",
+    "ischaemic-heart-disease",
+    "type-2-diabetes",
+    "sepsis",
+    "hypertension",
+    "copd",
+    "obesity",
+    "lung-cancer",
+    "alzheimers",
+    "liver-cancer"
+   ],
+   "top_delivery": [
+    "hypertension",
+    "sepsis",
+    "ischaemic-heart-disease",
+    "obesity",
+    "stroke",
+    "neonatal-conditions",
+    "copd",
+    "type-2-diabetes",
+    "hepatitis-b",
+    "diarrhoeal-disease"
+   ]
+  },
+  "terms": {
+   "clean": 77,
+   "costly": 73,
+   "harsh": 5
+  },
+  "axes": {
+   "mechanism": {
+    "established": 108,
+    "partial": 41,
+    "correlates": 5,
+    "none": 1
+   },
+   "intervention": {
+    "curative": 80,
+    "suppressive": 32,
+    "symptomatic": 24,
+    "disease-modifying": 16,
+    "none": 3
+   },
+   "prevention": {
+    "risk-reduction": 88,
+    "prophylaxis": 38,
+    "none": 28,
+    "eradicated": 1
+   },
+   "ongoing": {
+    "moderate": 54,
+    "low": 49,
+    "high": 32,
+    "none": 20
+   }
+  },
+  "measurement": {
+   "diagnostic": {
+    "objective": 120,
+    "clinical": 33,
+    "complaint": 2
+   },
+   "prognostic": {
+    "partial": 93,
+    "good": 35,
+    "none": 27
+   },
+   "predictive": {
+    "partial": 73,
+    "none": 49,
+    "n/a": 21,
+    "good": 12
+   }
+  },
+  "flags": {
+   "measurement_gap": 30,
+   "overtreatment_risk": 9,
+   "futile_treatment_risk": 27,
+   "cured_at_a_price": 69,
+   "harm_without_benefit": 9,
+   "orphaned": 126,
+   "spans_ladder": 57,
+   "has_window": 107,
+   "has_residue": 92,
+   "only_knowledge_blockers": 1
+  },
+  "contested": 21,
+  "reach": {
+   "mean": 0.2649,
+   "median": 0.245
+  },
+  "blockers": {
+   "total": 673,
+   "by_kind": {
+    "knowledge": 180,
+    "logistics": 113,
+    "diagnosis": 106,
+    "policy": 90,
+    "cost": 61,
+    "evidence-incomplete": 42,
+    "no-sponsor": 31,
+    "tooling": 16,
+    "adherence": 15,
+    "manufacturing": 10,
+    "regulatory": 5,
+    "candidate-untested": 4
+   },
+   "by_standing": {
+    "documented": 650,
+    "alleged": 15,
+    "disputed": 7,
+    "refuted": 1
+   },
+   "priced": 491,
+   "by_kind_priced": {
+    "adherence": {
+     "total": 15,
+     "priced": 15
+    },
+    "candidate-untested": {
+     "total": 4,
+     "priced": 4
+    },
+    "cost": {
+     "total": 61,
+     "priced": 61
+    },
+    "diagnosis": {
+     "total": 106,
+     "priced": 106
+    },
+    "evidence-incomplete": {
+     "total": 42,
+     "priced": 42
+    },
+    "knowledge": {
+     "total": 180,
+     "priced": 8
+    },
+    "logistics": {
+     "total": 113,
+     "priced": 113
+    },
+    "manufacturing": {
+     "total": 10,
+     "priced": 10
+    },
+    "no-sponsor": {
+     "total": 31,
+     "priced": 30
+    },
+    "policy": {
+     "total": 90,
+     "priced": 85
+    },
+    "regulatory": {
+     "total": 5,
+     "priced": 4
+    },
+    "tooling": {
+     "total": 16,
+     "priced": 13
+    }
+   },
+   "actors": {
+    "government": 429,
+    "academic": 376,
+    "health-system": 375,
+    "nonprofit": 325,
+    "philanthropy": 282,
+    "sponsor": 244,
+    "manufacturer": 241,
+    "payer": 207,
+    "regulator": 104,
+    "patient-org": 84,
+    "legislator": 72,
+    "software": 27
+   }
+  },
+  "moved": {
+   "total": 266,
+   "by_axis": {
+    "efficacy": 81,
+    "intervention": 63,
+    "access": 33,
+    "prevention": 33,
+    "toll": 25,
+    "mechanism": 22,
+    "measurement": 7,
+    "ongoing": 2
+   },
+   "by_decade": {
+    "1790s": 1,
+    "1850s": 1,
+    "1890s": 1,
+    "1920s": 3,
+    "1930s": 1,
+    "1940s": 9,
+    "1950s": 6,
+    "1960s": 12,
+    "1970s": 12,
+    "1980s": 22,
+    "1990s": 34,
+    "2000s": 38,
+    "2010s": 73,
+    "2020s": 53
+   }
+  },
+  "provenance": {
+   "scalars": 2684,
+   "by_src": {
+    "reasoning": 1391,
+    "recall": 1206,
+    "cited": 77,
+    "unknown": 10
+   },
+   "cited": 77,
+   "by_tier": {
+    "sourceable": {
+     "total": 525,
+     "cited": 6
+    },
+    "supportable": {
+     "total": 775,
+     "cited": 71
+    },
+    "judged": {
+     "total": 1384,
+     "cited": 0
+    }
+   },
+   "verified": 77,
+   "unknown": 10,
+   "mondo_resolved": 131,
+   "mondo_unresolved": 24,
+   "note": "Every empirical scalar carries a src. `recall` is the model's memory, `reasoning` is its arithmetic, and `unknown` means nobody has the number — none of the three is a citation. `by_tier` is the honest denominator: a citation SETTLES a sourceable scalar, SUPPORTS a supportable one, and cannot touch a judged one, because no dataset holds a quantity this register defines. Blockers are judged and carry their evidential status in `standing` instead."
+  },
+  "burden": {
+   "records_with_deaths": 97,
+   "records_without_deaths": 58,
+   "attributed_deaths_sum": 76048569.0,
+   "note": "An UPPER BOUND, not a total. Records overlap — TB deaths in people with HIV are in both, sepsis is the mode of death for several others — and the sum exceeds annual global mortality. Do not chart this as a total."
+  }
+ },
+ {
+  "date": "2026-11-10",
+  "register": "nordstern",
+  "records": {
+   "active": 158,
+   "deprecated": 0
+  },
+  "capability": {
+   "curable": 83,
+   "managed": 32,
+   "unsolved": 20,
+   "partial": 17,
+   "preventable": 6
+  },
+  "solved": {
+   "of": 158,
+   "can_end": 89,
+   "reaches_most": 10,
+   "solved": 9,
+   "reach_floor": 0.6,
+   "definition": "a disease is solved when medicine can end it, the treatment reaches most of the people who have it, and it costs them nothing permanent",
+   "steps": [
+    "medicine can end it",
+    "and it reaches most patients",
+    "and it costs nothing permanent"
+   ]
+  },
+  "survival": {
+   "bands": {
+    "good chance": 88,
+    "n/a": 52,
+    "a chance": 10,
+    "terminal": 8
+   },
+   "rated": 106,
+   "outcomes": {
+    "cured": 63,
+    "n/a": 52,
+    "delayed": 20,
+    "held": 17,
+    "recovered": 6
+   },
+   "was_uniformly_fatal": 33,
+   "no_longer_terminal": 25,
+   "zero_gain": [
+    "alzheimers",
+    "huntington",
+    "prion-disease",
+    "rabies",
+    "tay-sachs"
+   ]
+  },
+  "buckets": {
+   "version": 6,
+   "digest": "d07dc0ec4741",
+   "names": {
+    "ends-it": "It ends your life, whenever you find it",
+    "ends-it-unless-caught": "It ends your life unless it is caught in time",
+    "ends-it-later": "It ends your life, but later",
+    "held-off": "It is held off, for life",
+    "never-safe": "You survive, and you are never safe",
+    "defines-your-life": "You survive, and it defines your life",
+    "changes-you": "You survive, and it changes you",
+    "back-to-normal": "You survive, and you get back to normal",
+    "nobody-makes-it": "The solution exists and nobody makes it",
+    "found-too-late": "Caught early it is curable, caught late it is not",
+    "cannot-aim-it": "It works for some people and nobody can say which",
+    "no-starting-point": "Nobody knows where to start",
+    "cannot-reach-people": "It works and it does not arrive",
+    "needs-more-evidence": "There is a candidate and the evidence is not in"
+   },
+   "defs": {
+    "ends-it": {
+     "rule": "The course is fatal, essentially nobody survives the stated horizon, and there is no window — finding it earlier changes nothing.",
+     "not": "NOT \"we have no cure\". Most fatal diseases here are `ends-it-later`. This is the much smaller set where the timing of diagnosis is irrelevant because nothing follows from it.",
+     "examples": [
+      "huntington"
+     ]
+    },
+    "ends-it-unless-caught": {
+     "rule": "Fatal as above, but a `window` exists — there is a period in which action changes the outcome, and outside it there is nothing.",
+     "not": "NOT every disease with a window; 86 records have one. This is the set where the window is the *whole* of the difference between living and dying.",
+     "examples": [
+      "rabies",
+      "prion-disease"
+     ]
+    },
+    "ends-it-later": {
+     "rule": "The disease is still what kills you. Either treatment alters the course without ending it — the register's `delayed` outcome — or **more than half of treated patients die of it**, whatever rung the ladder puts the treatment on.",
+     "not": "NOT \"untreatable\". These are mostly diseases medicine has changed a great deal — and the change bought time rather than an ending. **NOT decided by the intervention rung alone, and v4 fixed exactly that.** `survival_outcome()` reads `axes.intervention`, so every record on the `curative` rung returned `cured` however few survived — and `cured` never reached this branch. Pancreatic cancer, where 87% of treated patients die, was filed under *you survive, and it changes you*, beside cataract. The rung was right about what the operation does **when it works**; the bucket was asking a different question and taking the rung's word for the answer. ALSO NOT acute illness, and that exclusion is deliberate rather than protective. `marburg` kills about three quarters of those it infects within two weeks and the quarter who live **recover** — so \"it ends your life, but later\" is false for everybody in the record. That is the ⧉ `spans_ladder` shape the register already names as a **malformed question rather than a hard one**, and declining to average it is more honest than filing it confidently in the wrong place. See `holes`.",
+     "examples": [
+      "pancreatic-cancer",
+      "als",
+      "alzheimers",
+      "stroke",
+      "glioblastoma"
+     ]
+    },
+    "held-off": {
+     "rule": "A treatment suppresses it indefinitely and stopping brings it back. Near-normal life, on condition of continuous treatment.",
+     "not": "NOT cured. **This rung is what stops HIV being filed next to hepatitis C** — one is no longer a death sentence, the other is over.",
+     "examples": [
+      "hiv",
+      "type-1-diabetes",
+      "schizophrenia"
+     ]
+    },
+    "never-safe": {
+     "rule": "Nothing alters the course and nothing is treated day to day. The disease is an acute, potentially fatal event that can recur at any time — a `window` marked `recurs` — and keeping it shut is the patient's own work, every day, for life: `intervention` symptomatic or none, `ongoing` high, and survival unrated or near-complete.",
+     "not": "NOT `held-off`: nothing is being suppressed; between events the person is well and untreated. NOT `defines-your-life` on burden alone — the burden here is a lethal possibility rather than a continuous cost. This axis was built on survival and this state is invisible to it: measured by deaths it is nothing, measured by what a life is organised around it is everything.",
+     "examples": [
+      "food-allergy"
+     ]
+    },
+    "defines-your-life": {
+     "rule": "Survivable, but the cost of living with it or of being treated for it is continuous and large — a high ongoing burden, or a residue or a treatment toll rated `harsh`.",
+     "not": "NOT necessarily severe in the clinical sense, and NOT about mortality at all. `me-cfs`, `heds` and `msmds` are here with **no attributed deaths whatsoever** — which is the whole reason this axis is not built on survival.",
+     "examples": [
+      "sickle-cell",
+      "me-cfs",
+      "heds",
+      "cerebral-palsy",
+      "noma"
+     ]
+    },
+    "changes-you": {
+     "rule": "Survivable, and something **rated `major`** is left behind — by the disease, by the treatment, or both — or the ongoing burden of being treated is moderate. Without dominating the rest of your life, which is the bucket above.",
+     "not": "NOT a minor category. **It is still the largest bucket in the register** after v4 took four cancers out of it, and that is this axis's main finding: medicine's characteristic output is neither death nor cure but survival in an altered body. NOT triggered by *any* permanent difference. **v3 fixed exactly that.** Until 2026-09-01 the rule tested whether a `residue` block existed at all, so a record whose residue was a shoe size landed here — and derived `restored: restored` at the same time, because that derivation has always read severity. Eight records held both verdicts at once. `clubfoot` made it undeniable and the rule now reads severity too.",
+     "examples": [
+      "tuberculosis",
+      "benign-prostatic-hyperplasia",
+      "breast-cancer",
+      "malaria"
+     ]
+    },
+    "back-to-normal": {
+     "rule": "Survivable, with nothing worse than a `minor` residue and a `minor` treatment toll, and a low ongoing burden. **A minor permanent difference does not disqualify a record from this bucket** — a treated clubfoot leaves a slightly smaller foot in somebody who runs normally, and calling that a changed life is false.",
+     "not": "NOT the goal state for most of medicine, and still **uncommon** — 14 of 140, unchanged by v4. Read that as a claim about how little the register finds. It remains the bucket resting on the least-tested inputs: `residue` is absent on many records that have simply never been examined for one, and an unexamined record looks identical to a clean one. See `bucket-design.md`.",
+     "examples": [
+      "cholera",
+      "typhoid",
+      "influenza"
+     ]
+    },
+    "nobody-makes-it": {
+     "rule": "A `manufacturing` blocker, or a `no-sponsor` blocker on a record whose capability is real. The requirement that capability be real is what separates *nobody produces the cure* from *nobody funds the research*.",
+     "not": "NOT diseases with no answer. If nothing works, the problem is not manufacturing. `me-cfs` carries `no-sponsor` and is excluded here for exactly that reason — nobody is failing to manufacture its cure.",
+     "examples": [
+      "snakebite",
+      "bladder-cancer",
+      "syphilis",
+      "mrsa",
+      "diarrhoeal-disease"
+     ]
+    },
+    "found-too-late": {
+     "rule": "A `window` exists, the record's strata run from a late form where essentially nothing works (efficacy at or below 0.2) to an early form that is mostly cured (0.7 or above), and **fewer than half are caught in time**.",
+     "not": "NOT every disease with a window; **86 records have one**, which is far too many to be interesting. `caught_in_time` is what turns *a window exists* into *and we are missing it*, and it is the number that makes this bucket actionable rather than descriptive — **it is the size of the prize for a screening programme, per disease.** Chagas is 0.10, obesity 0.15, lung cancer 0.20, liver cancer 0.25. ALSO NOT `pancreatic-cancer`, and that exclusion is the rule working. Its strata spread is 0.15 — it is bad at **every** stage, so earlier detection is not the lever. A disease being terrible and having a window are different claims, and only the second is this bucket. `obesity` is in, on strata running 0.00 to 0.80, and is the entry most worth arguing with: its \"window\" is the period before the complications establish, which is real but is a slower and vaguer thing than a resectable tumour.",
+     "examples": [
+      "lung-cancer",
+      "liver-cancer",
+      "cervical-cancer",
+      "chagas",
+      "gastric-cancer"
+     ]
+    },
+    "cannot-aim-it": {
+     "rule": "The register's `futile_treatment_risk` — a treatment exists, it fails often, and there is no test that says in advance who it will fail.",
+     "not": "NOT the same as a treatment that works badly for everyone. The sketch's *\"% chance\"* is this: **a measurement failure wearing the costume of a treatment failure.**",
+     "examples": [
+      "rheumatoid-arthritis",
+      "schizophrenia",
+      "epilepsy",
+      "osteoarthritis"
+     ]
+    },
+    "no-starting-point": {
+     "rule": "`mechanism` is `none` or `correlates` — the causal account is absent or is a set of associations.",
+     "not": "NOT the famous killers. **Stroke and heart disease are `established`**: hand somebody $100M for stroke and they know exactly where to start, they simply cannot fix it. **The diseases with no starting point are the ones nobody dies of** — which is why a register built on mortality would never find them.",
+     "examples": [
+      "me-cfs",
+      "heds",
+      "depression",
+      "bipolar",
+      "low-back-pain"
+     ]
+    },
+    "cannot-reach-people": {
+     "rule": "`delivery` is `barely` or `undelivered` — efficacy multiplied by access leaves most patients untouched — **and** capability is `curable`, `managed` or `preventable`. A `disease-modifying` treatment is not something that \"works\" in the sense this bucket means: it slows the course and the disease still wins, so there is nothing to arrive.",
+     "not": "NOT a knowledge problem, and it is the single most common state in the register. This is the tag the whole `efficacy`/`access` split exists to make sayable. And NOT the `partial` records — Alzheimer's, ALS, glioblastoma — which are undelivered too, but of a treatment that does not hold the disease; version 4 filed them here on delivery alone and the name overclaimed.",
+     "examples": [
+      "refractive-error",
+      "hearing-loss",
+      "sickle-cell",
+      "hepatitis-b",
+      "obesity"
+     ]
+    },
+    "needs-more-evidence": {
+     "rule": "An `evidence-incomplete` or `candidate-untested` blocker — something plausible exists and nobody has established whether it works.",
+     "not": "NOT \"no path forward\". This is the opposite: a path exists and has not been walked.",
+     "examples": [
+      "idiopathic-pulmonary-fibrosis"
+     ]
+    }
+   },
+   "a": {
+    "changes-you": 64,
+    "held-off": 32,
+    "defines-your-life": 19,
+    "ends-it-later": 19,
+    "back-to-normal": 17,
+    "ends-it": 4,
+    "ends-it-unless-caught": 2,
+    "never-safe": 1
+   },
+   "b": {
+    "cannot-reach-people": 62,
+    "needs-more-evidence": 45,
+    "nobody-makes-it": 34,
+    "cannot-aim-it": 27,
+    "found-too-late": 14,
+    "no-starting-point": 6
+   },
+   "b_untagged": 42,
+   "members": {
+    "pleomorphic-adenoma": {
+     "id": "FND-D-0015",
+     "a": "changes-you",
+     "b": []
+    },
+    "hat": {
+     "id": "FND-D-0026",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "tuberculosis": {
+     "id": "FND-D-0023",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "listeriosis": {
+     "id": "FND-D-0152",
+     "a": "changes-you",
+     "b": []
+    },
+    "covid-19": {
+     "id": "FND-D-0076",
+     "a": "changes-you",
+     "b": [
+      "found-too-late",
+      "needs-more-evidence"
+     ]
+    },
+    "leprosy": {
+     "id": "FND-D-0035",
+     "a": "changes-you",
+     "b": []
+    },
+    "thyroid-cancer": {
+     "id": "FND-D-0061",
+     "a": "changes-you",
+     "b": []
+    },
+    "typhoid": {
+     "id": "FND-D-0066",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "trachoma": {
+     "id": "FND-D-0036",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "botulism": {
+     "id": "FND-D-0154",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "gonorrhoea": {
+     "id": "FND-D-0117",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "malaria": {
+     "id": "FND-D-0069",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "h-pylori-ulcer": {
+     "id": "FND-D-0001",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "uterine-fibroids": {
+     "id": "FND-D-0139",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it"
+     ]
+    },
+    "benign-prostatic-hyperplasia": {
+     "id": "FND-D-0138",
+     "a": "changes-you",
+     "b": []
+    },
+    "mrsa": {
+     "id": "FND-D-0067",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "genital-chlamydia": {
+     "id": "FND-D-0120",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "visceral-leishmaniasis": {
+     "id": "FND-D-0024",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "bacterial-meningitis": {
+     "id": "FND-D-0129",
+     "a": "defines-your-life",
+     "b": []
+    },
+    "coccidioidomycosis": {
+     "id": "FND-D-0111",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-aim-it",
+      "needs-more-evidence"
+     ]
+    },
+    "maternal-haemorrhage": {
+     "id": "FND-D-0073",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "syphilis": {
+     "id": "FND-D-0116",
+     "a": "defines-your-life",
+     "b": [
+      "nobody-makes-it",
+      "needs-more-evidence"
+     ]
+    },
+    "schistosomiasis": {
+     "id": "FND-D-0025",
+     "a": "changes-you",
+     "b": []
+    },
+    "scabies": {
+     "id": "FND-D-0038",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "childhood-pneumonia": {
+     "id": "FND-D-0071",
+     "a": "changes-you",
+     "b": []
+    },
+    "soil-transmitted-helminths": {
+     "id": "FND-D-0029",
+     "a": "back-to-normal",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "diarrhoeal-disease": {
+     "id": "FND-D-0074",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "buruli-ulcer": {
+     "id": "FND-D-0033",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "vulvar-cancer": {
+     "id": "FND-D-0125",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it"
+     ]
+    },
+    "anal-cancer": {
+     "id": "FND-D-0123",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it"
+     ]
+    },
+    "amr-infection": {
+     "id": "FND-D-0014",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "uterine-cancer": {
+     "id": "FND-D-0064",
+     "a": "changes-you",
+     "b": []
+    },
+    "abdominal-aortic-aneurysm": {
+     "id": "FND-D-0157",
+     "a": "ends-it-later",
+     "b": [
+      "found-too-late"
+     ]
+    },
+    "anaemia": {
+     "id": "FND-D-0098",
+     "a": "changes-you",
+     "b": []
+    },
+    "breast-cancer": {
+     "id": "FND-D-0017",
+     "a": "changes-you",
+     "b": []
+    },
+    "melanoma": {
+     "id": "FND-D-0054",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "candidaemia": {
+     "id": "FND-D-0112",
+     "a": "changes-you",
+     "b": []
+    },
+    "prostate-cancer": {
+     "id": "FND-D-0051",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "neonatal-conditions": {
+     "id": "FND-D-0072",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it",
+      "needs-more-evidence"
+     ]
+    },
+    "yaws": {
+     "id": "FND-D-0034",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "cataract": {
+     "id": "FND-D-0089",
+     "a": "changes-you",
+     "b": []
+    },
+    "childhood-all": {
+     "id": "FND-D-0055",
+     "a": "changes-you",
+     "b": []
+    },
+    "trichomoniasis": {
+     "id": "FND-D-0121",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "uveal-melanoma": {
+     "id": "FND-D-0144",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "retinopathy-of-prematurity": {
+     "id": "FND-D-0132",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "renal-cell-carcinoma": {
+     "id": "FND-D-0063",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "echinococcosis": {
+     "id": "FND-D-0032",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "nasopharyngeal-carcinoma": {
+     "id": "FND-D-0103",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "non-typhoidal-salmonellosis": {
+     "id": "FND-D-0153",
+     "a": "back-to-normal",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "penile-cancer": {
+     "id": "FND-D-0124",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "vaginal-cancer": {
+     "id": "FND-D-0126",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "smallpox": {
+     "id": "FND-D-0048",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "invasive-aspergillosis": {
+     "id": "FND-D-0110",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "cirrhosis": {
+     "id": "FND-D-0082",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "ebola": {
+     "id": "FND-D-0045",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "bladder-cancer": {
+     "id": "FND-D-0062",
+     "a": "defines-your-life",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "sepsis": {
+     "id": "FND-D-0070",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "clubfoot": {
+     "id": "FND-D-0135",
+     "a": "back-to-normal",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "colorectal-cancer": {
+     "id": "FND-D-0052",
+     "a": "changes-you",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "snakebite": {
+     "id": "FND-D-0012",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "cryptococcal-meningitis": {
+     "id": "FND-D-0109",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "non-hodgkin-lymphoma": {
+     "id": "FND-D-0057",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "mycoplasma-genitalium": {
+     "id": "FND-D-0122",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "taeniasis-cysticercosis": {
+     "id": "FND-D-0039",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "thoracic-aortic-aneurysm": {
+     "id": "FND-D-0158",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "head-neck-cancer": {
+     "id": "FND-D-0102",
+     "a": "defines-your-life",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "hepatitis-c": {
+     "id": "FND-D-0002",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "cervical-cancer": {
+     "id": "FND-D-0053",
+     "a": "changes-you",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "cre": {
+     "id": "FND-D-0068",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "burns": {
+     "id": "FND-D-0151",
+     "a": "defines-your-life",
+     "b": [
+      "found-too-late",
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "gastric-cancer": {
+     "id": "FND-D-0059",
+     "a": "ends-it-later",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "osteoarthritis": {
+     "id": "FND-D-0096",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "congenital-heart-disease": {
+     "id": "FND-D-0094",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "obstetric-fistula": {
+     "id": "FND-D-0136",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "mycetoma": {
+     "id": "FND-D-0030",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "h-pylori-infection": {
+     "id": "FND-D-0150",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it",
+      "found-too-late",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "noma": {
+     "id": "FND-D-0041",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "liver-cancer": {
+     "id": "FND-D-0058",
+     "a": "ends-it-later",
+     "b": [
+      "found-too-late",
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "lung-cancer": {
+     "id": "FND-D-0050",
+     "a": "ends-it-later",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "pancreatic-cancer": {
+     "id": "FND-D-0060",
+     "a": "ends-it-later",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "type-2-diabetes": {
+     "id": "FND-D-0080",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "chagas": {
+     "id": "FND-D-0022",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "sickle-cell": {
+     "id": "FND-D-0006",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "hiv": {
+     "id": "FND-D-0004",
+     "a": "held-off",
+     "b": []
+    },
+    "lymphatic-filariasis": {
+     "id": "FND-D-0028",
+     "a": "held-off",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "onchocerciasis": {
+     "id": "FND-D-0027",
+     "a": "held-off",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "pku": {
+     "id": "FND-D-0003",
+     "a": "held-off",
+     "b": []
+    },
+    "cholera": {
+     "id": "FND-D-0065",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "genital-herpes": {
+     "id": "FND-D-0118",
+     "a": "held-off",
+     "b": []
+    },
+    "cml": {
+     "id": "FND-D-0056",
+     "a": "held-off",
+     "b": []
+    },
+    "hpv-infection": {
+     "id": "FND-D-0119",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "parkinsons": {
+     "id": "FND-D-0087",
+     "a": "ends-it-later",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "atrial-fibrillation": {
+     "id": "FND-D-0083",
+     "a": "held-off",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "ischaemic-heart-disease": {
+     "id": "FND-D-0042",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "polycythaemia-vera": {
+     "id": "FND-D-0145",
+     "a": "held-off",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "type-1-diabetes": {
+     "id": "FND-D-0079",
+     "a": "held-off",
+     "b": []
+    },
+    "food-allergy": {
+     "id": "FND-D-0148",
+     "a": "never-safe",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "toxoplasmosis": {
+     "id": "FND-D-0114",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-aim-it",
+      "needs-more-evidence"
+     ]
+    },
+    "asthma": {
+     "id": "FND-D-0097",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "refractive-error": {
+     "id": "FND-D-0133",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "acute-bronchitis": {
+     "id": "FND-D-0113",
+     "a": "back-to-normal",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "cystic-fibrosis": {
+     "id": "FND-D-0090",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "measles": {
+     "id": "FND-D-0049",
+     "a": "changes-you",
+     "b": []
+    },
+    "epilepsy": {
+     "id": "FND-D-0008",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "mcas": {
+     "id": "FND-D-0021",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "keloid": {
+     "id": "FND-D-0140",
+     "a": "changes-you",
+     "b": [
+      "no-starting-point"
+     ]
+    },
+    "multiple-sclerosis": {
+     "id": "FND-D-0086",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "low-back-pain": {
+     "id": "FND-D-0010",
+     "a": "changes-you",
+     "b": [
+      "no-starting-point"
+     ]
+    },
+    "lupus": {
+     "id": "FND-D-0155",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "rheumatoid-arthritis": {
+     "id": "FND-D-0093",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "crohns": {
+     "id": "FND-D-0016",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "h5n1": {
+     "id": "FND-D-0047",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "schizophrenia": {
+     "id": "FND-D-0088",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "hypertension": {
+     "id": "FND-D-0084",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "pots": {
+     "id": "FND-D-0020",
+     "a": "held-off",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "rheumatic-heart-disease": {
+     "id": "FND-D-0013",
+     "a": "ends-it-later",
+     "b": [
+      "nobody-makes-it",
+      "needs-more-evidence"
+     ]
+    },
+    "glaucoma": {
+     "id": "FND-D-0131",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "varicella-zoster": {
+     "id": "FND-D-0127",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "bipolar": {
+     "id": "FND-D-0011",
+     "a": "held-off",
+     "b": [
+      "nobody-makes-it",
+      "cannot-aim-it",
+      "no-starting-point",
+      "cannot-reach-people"
+     ]
+    },
+    "copd": {
+     "id": "FND-D-0044",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "endometriosis": {
+     "id": "FND-D-0137",
+     "a": "held-off",
+     "b": [
+      "nobody-makes-it",
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "heart-failure": {
+     "id": "FND-D-0100",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "chronic-kidney-disease": {
+     "id": "FND-D-0081",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "cmv-infection": {
+     "id": "FND-D-0128",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-aim-it"
+     ]
+    },
+    "hearing-loss": {
+     "id": "FND-D-0095",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "depression": {
+     "id": "FND-D-0007",
+     "a": "changes-you",
+     "b": [
+      "no-starting-point",
+      "needs-more-evidence"
+     ]
+    },
+    "marburg": {
+     "id": "FND-D-0046",
+     "a": "changes-you",
+     "b": []
+    },
+    "duchenne": {
+     "id": "FND-D-0092",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "spinal-muscular-atrophy": {
+     "id": "FND-D-0091",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "migraine": {
+     "id": "FND-D-0134",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "multiple-system-atrophy": {
+     "id": "FND-D-0142",
+     "a": "ends-it",
+     "b": []
+    },
+    "stroke": {
+     "id": "FND-D-0043",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "cryptosporidiosis": {
+     "id": "FND-D-0115",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "cerebral-palsy": {
+     "id": "FND-D-0099",
+     "a": "defines-your-life",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "idiopathic-pulmonary-fibrosis": {
+     "id": "FND-D-0108",
+     "a": "ends-it-later",
+     "b": [
+      "found-too-late",
+      "needs-more-evidence"
+     ]
+    },
+    "influenza": {
+     "id": "FND-D-0077",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it",
+      "needs-more-evidence"
+     ]
+    },
+    "sarcopenia": {
+     "id": "FND-D-0156",
+     "a": "defines-your-life",
+     "b": []
+    },
+    "acute-myeloid-leukaemia": {
+     "id": "FND-D-0147",
+     "a": "ends-it-later",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "familial-hypercholesterolaemia": {
+     "id": "FND-D-0146",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "hepatitis-b": {
+     "id": "FND-D-0075",
+     "a": "held-off",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "osteoporosis": {
+     "id": "FND-D-0101",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "als": {
+     "id": "FND-D-0104",
+     "a": "ends-it-later",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "glioblastoma": {
+     "id": "FND-D-0105",
+     "a": "ends-it-later",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "mesothelioma": {
+     "id": "FND-D-0107",
+     "a": "ends-it-later",
+     "b": [
+      "cannot-aim-it",
+      "needs-more-evidence"
+     ]
+    },
+    "obesity": {
+     "id": "FND-D-0085",
+     "a": "held-off",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "tay-sachs": {
+     "id": "FND-D-0143",
+     "a": "ends-it",
+     "b": []
+    },
+    "disorders-of-consciousness": {
+     "id": "FND-D-0130",
+     "a": "defines-your-life",
+     "b": []
+    },
+    "alzheimers": {
+     "id": "FND-D-0078",
+     "a": "ends-it-later",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "ebv-infection": {
+     "id": "FND-D-0149",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "dipg": {
+     "id": "FND-D-0141",
+     "a": "ends-it",
+     "b": [
+      "nobody-makes-it",
+      "cannot-aim-it"
+     ]
+    },
+    "dengue": {
+     "id": "FND-D-0031",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "dracunculiasis": {
+     "id": "FND-D-0040",
+     "a": "changes-you",
+     "b": []
+    },
+    "heds": {
+     "id": "FND-D-0019",
+     "a": "defines-your-life",
+     "b": [
+      "no-starting-point",
+      "needs-more-evidence"
+     ]
+    },
+    "huntington": {
+     "id": "FND-D-0005",
+     "a": "ends-it",
+     "b": []
+    },
+    "me-cfs": {
+     "id": "FND-D-0009",
+     "a": "defines-your-life",
+     "b": [
+      "no-starting-point"
+     ]
+    },
+    "msmds": {
+     "id": "FND-D-0018",
+     "a": "defines-your-life",
+     "b": []
+    },
+    "prion-disease": {
+     "id": "FND-D-0106",
+     "a": "ends-it-unless-caught",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "rabies": {
+     "id": "FND-D-0037",
+     "a": "ends-it-unless-caught",
+     "b": []
+    }
+   }
+  },
+  "quadrant": {
+   "known & treatable": 120,
+   "known & modifiable": 17,
+   "engineering problem": 15,
+   "frontier": 5,
+   "empirical luck": 1
+  },
+  "delivery": {
+   "barely": 71,
+   "partly": 48,
+   "—": 26,
+   "mostly": 8,
+   "undelivered": 5
+  },
+  "gaps": {
+   "yld_rated": 4,
+   "knowledge_yld": 63850000.0,
+   "delivery_yld": 41857500.0,
+   "top_knowledge_yld": [
+    "low-back-pain",
+    "anaemia",
+    "osteoarthritis",
+    "asthma"
+   ],
+   "rated": 124,
+   "knowledge": 22418102.1,
+   "delivery": 36523349.4,
+   "top_knowledge": [
+    "stroke",
+    "ischaemic-heart-disease",
+    "type-2-diabetes",
+    "sepsis",
+    "hypertension",
+    "copd",
+    "obesity",
+    "lung-cancer",
+    "alzheimers",
+    "liver-cancer"
+   ],
+   "top_delivery": [
+    "hypertension",
+    "sepsis",
+    "ischaemic-heart-disease",
+    "obesity",
+    "stroke",
+    "neonatal-conditions",
+    "copd",
+    "type-2-diabetes",
+    "hepatitis-b",
+    "diarrhoeal-disease"
+   ]
+  },
+  "terms": {
+   "clean": 78,
+   "costly": 75,
+   "harsh": 5
+  },
+  "axes": {
+   "mechanism": {
+    "established": 108,
+    "partial": 44,
+    "correlates": 5,
+    "none": 1
+   },
+   "intervention": {
+    "curative": 82,
+    "suppressive": 32,
+    "symptomatic": 24,
+    "disease-modifying": 17,
+    "none": 3
+   },
+   "prevention": {
+    "risk-reduction": 91,
+    "prophylaxis": 38,
+    "none": 28,
+    "eradicated": 1
+   },
+   "ongoing": {
+    "moderate": 54,
+    "low": 51,
+    "high": 33,
+    "none": 20
+   }
+  },
+  "measurement": {
+   "diagnostic": {
+    "objective": 123,
+    "clinical": 33,
+    "complaint": 2
+   },
+   "prognostic": {
+    "partial": 96,
+    "good": 35,
+    "none": 27
+   },
+   "predictive": {
+    "partial": 75,
+    "none": 50,
+    "n/a": 21,
+    "good": 12
+   }
+  },
+  "flags": {
+   "measurement_gap": 30,
+   "overtreatment_risk": 9,
+   "futile_treatment_risk": 27,
+   "cured_at_a_price": 71,
+   "harm_without_benefit": 9,
+   "orphaned": 128,
+   "spans_ladder": 59,
+   "has_window": 110,
+   "has_residue": 95,
+   "only_knowledge_blockers": 1
+  },
+  "contested": 22,
+  "reach": {
+   "mean": 0.2641,
+   "median": 0.245
+  },
+  "blockers": {
+   "total": 688,
+   "by_kind": {
+    "knowledge": 186,
+    "logistics": 116,
+    "diagnosis": 109,
+    "policy": 91,
+    "cost": 61,
+    "evidence-incomplete": 42,
+    "no-sponsor": 32,
+    "tooling": 16,
+    "adherence": 15,
+    "manufacturing": 10,
+    "regulatory": 6,
+    "candidate-untested": 4
+   },
+   "by_standing": {
+    "documented": 658,
+    "alleged": 21,
+    "disputed": 8,
+    "refuted": 1
+   },
+   "priced": 500,
+   "by_kind_priced": {
+    "adherence": {
+     "total": 15,
+     "priced": 15
+    },
+    "candidate-untested": {
+     "total": 4,
+     "priced": 4
+    },
+    "cost": {
+     "total": 61,
+     "priced": 61
+    },
+    "diagnosis": {
+     "total": 109,
+     "priced": 109
+    },
+    "evidence-incomplete": {
+     "total": 42,
+     "priced": 42
+    },
+    "knowledge": {
+     "total": 186,
+     "priced": 8
+    },
+    "logistics": {
+     "total": 116,
+     "priced": 116
+    },
+    "manufacturing": {
+     "total": 10,
+     "priced": 10
+    },
+    "no-sponsor": {
+     "total": 32,
+     "priced": 31
+    },
+    "policy": {
+     "total": 91,
+     "priced": 86
+    },
+    "regulatory": {
+     "total": 6,
+     "priced": 5
+    },
+    "tooling": {
+     "total": 16,
+     "priced": 13
+    }
+   },
+   "actors": {
+    "government": 434,
+    "academic": 386,
+    "health-system": 382,
+    "nonprofit": 330,
+    "philanthropy": 283,
+    "sponsor": 251,
+    "manufacturer": 242,
+    "payer": 209,
+    "regulator": 106,
+    "patient-org": 85,
+    "legislator": 72,
+    "software": 31
+   }
+  },
+  "moved": {
+   "total": 281,
+   "by_axis": {
+    "efficacy": 86,
+    "intervention": 67,
+    "access": 35,
+    "prevention": 35,
+    "toll": 25,
+    "mechanism": 22,
+    "measurement": 8,
+    "ongoing": 3
+   },
+   "by_decade": {
+    "1790s": 1,
+    "1850s": 1,
+    "1890s": 1,
+    "1920s": 3,
+    "1930s": 1,
+    "1940s": 9,
+    "1950s": 7,
+    "1960s": 13,
+    "1970s": 12,
+    "1980s": 22,
+    "1990s": 39,
+    "2000s": 39,
+    "2010s": 76,
+    "2020s": 57
+   }
+  },
+  "provenance": {
+   "scalars": 2754,
+   "by_src": {
+    "reasoning": 1443,
+    "recall": 1214,
+    "cited": 87,
+    "unknown": 10
+   },
+   "cited": 87,
+   "by_tier": {
+    "sourceable": {
+     "total": 534,
+     "cited": 7
+    },
+    "supportable": {
+     "total": 804,
+     "cited": 80
+    },
+    "judged": {
+     "total": 1416,
+     "cited": 0
+    }
+   },
+   "verified": 87,
+   "unknown": 10,
+   "mondo_resolved": 133,
+   "mondo_unresolved": 25,
+   "note": "Every empirical scalar carries a src. `recall` is the model's memory, `reasoning` is its arithmetic, and `unknown` means nobody has the number — none of the three is a citation. `by_tier` is the honest denominator: a citation SETTLES a sourceable scalar, SUPPORTS a supportable one, and cannot touch a judged one, because no dataset holds a quantity this register defines. Blockers are judged and carry their evidential status in `standing` instead."
+  },
+  "burden": {
+   "records_with_deaths": 99,
+   "records_without_deaths": 59,
+   "attributed_deaths_sum": 76220569.0,
+   "note": "An UPPER BOUND, not a total. Records overlap — TB deaths in people with HIV are in both, sepsis is the mode of death for several others — and the sum exceeds annual global mortality. Do not chart this as a total."
+  }
+ },
+ {
+  "date": "2026-11-11",
+  "register": "nordstern",
+  "records": {
+   "active": 161,
+   "deprecated": 0
+  },
+  "capability": {
+   "curable": 84,
+   "managed": 34,
+   "unsolved": 20,
+   "partial": 17,
+   "preventable": 6
+  },
+  "solved": {
+   "of": 161,
+   "can_end": 90,
+   "reaches_most": 10,
+   "solved": 9,
+   "reach_floor": 0.6,
+   "definition": "a disease is solved when medicine can end it, the treatment reaches most of the people who have it, and it costs them nothing permanent",
+   "steps": [
+    "medicine can end it",
+    "and it reaches most patients",
+    "and it costs nothing permanent"
+   ]
+  },
+  "survival": {
+   "bands": {
+    "good chance": 89,
+    "n/a": 54,
+    "a chance": 10,
+    "terminal": 8
+   },
+   "rated": 107,
+   "outcomes": {
+    "cured": 63,
+    "n/a": 54,
+    "delayed": 20,
+    "held": 18,
+    "recovered": 6
+   },
+   "was_uniformly_fatal": 34,
+   "no_longer_terminal": 26,
+   "zero_gain": [
+    "alzheimers",
+    "huntington",
+    "prion-disease",
+    "rabies",
+    "tay-sachs"
+   ]
+  },
+  "buckets": {
+   "version": 6,
+   "digest": "d07dc0ec4741",
+   "names": {
+    "ends-it": "It ends your life, whenever you find it",
+    "ends-it-unless-caught": "It ends your life unless it is caught in time",
+    "ends-it-later": "It ends your life, but later",
+    "held-off": "It is held off, for life",
+    "never-safe": "You survive, and you are never safe",
+    "defines-your-life": "You survive, and it defines your life",
+    "changes-you": "You survive, and it changes you",
+    "back-to-normal": "You survive, and you get back to normal",
+    "nobody-makes-it": "The solution exists and nobody makes it",
+    "found-too-late": "Caught early it is curable, caught late it is not",
+    "cannot-aim-it": "It works for some people and nobody can say which",
+    "no-starting-point": "Nobody knows where to start",
+    "cannot-reach-people": "It works and it does not arrive",
+    "needs-more-evidence": "There is a candidate and the evidence is not in"
+   },
+   "defs": {
+    "ends-it": {
+     "rule": "The course is fatal, essentially nobody survives the stated horizon, and there is no window — finding it earlier changes nothing.",
+     "not": "NOT \"we have no cure\". Most fatal diseases here are `ends-it-later`. This is the much smaller set where the timing of diagnosis is irrelevant because nothing follows from it.",
+     "examples": [
+      "huntington"
+     ]
+    },
+    "ends-it-unless-caught": {
+     "rule": "Fatal as above, but a `window` exists — there is a period in which action changes the outcome, and outside it there is nothing.",
+     "not": "NOT every disease with a window; 86 records have one. This is the set where the window is the *whole* of the difference between living and dying.",
+     "examples": [
+      "rabies",
+      "prion-disease"
+     ]
+    },
+    "ends-it-later": {
+     "rule": "The disease is still what kills you. Either treatment alters the course without ending it — the register's `delayed` outcome — or **more than half of treated patients die of it**, whatever rung the ladder puts the treatment on.",
+     "not": "NOT \"untreatable\". These are mostly diseases medicine has changed a great deal — and the change bought time rather than an ending. **NOT decided by the intervention rung alone, and v4 fixed exactly that.** `survival_outcome()` reads `axes.intervention`, so every record on the `curative` rung returned `cured` however few survived — and `cured` never reached this branch. Pancreatic cancer, where 87% of treated patients die, was filed under *you survive, and it changes you*, beside cataract. The rung was right about what the operation does **when it works**; the bucket was asking a different question and taking the rung's word for the answer. ALSO NOT acute illness, and that exclusion is deliberate rather than protective. `marburg` kills about three quarters of those it infects within two weeks and the quarter who live **recover** — so \"it ends your life, but later\" is false for everybody in the record. That is the ⧉ `spans_ladder` shape the register already names as a **malformed question rather than a hard one**, and declining to average it is more honest than filing it confidently in the wrong place. See `holes`.",
+     "examples": [
+      "pancreatic-cancer",
+      "als",
+      "alzheimers",
+      "stroke",
+      "glioblastoma"
+     ]
+    },
+    "held-off": {
+     "rule": "A treatment suppresses it indefinitely and stopping brings it back. Near-normal life, on condition of continuous treatment.",
+     "not": "NOT cured. **This rung is what stops HIV being filed next to hepatitis C** — one is no longer a death sentence, the other is over.",
+     "examples": [
+      "hiv",
+      "type-1-diabetes",
+      "schizophrenia"
+     ]
+    },
+    "never-safe": {
+     "rule": "Nothing alters the course and nothing is treated day to day. The disease is an acute, potentially fatal event that can recur at any time — a `window` marked `recurs` — and keeping it shut is the patient's own work, every day, for life: `intervention` symptomatic or none, `ongoing` high, and survival unrated or near-complete.",
+     "not": "NOT `held-off`: nothing is being suppressed; between events the person is well and untreated. NOT `defines-your-life` on burden alone — the burden here is a lethal possibility rather than a continuous cost. This axis was built on survival and this state is invisible to it: measured by deaths it is nothing, measured by what a life is organised around it is everything.",
+     "examples": [
+      "food-allergy"
+     ]
+    },
+    "defines-your-life": {
+     "rule": "Survivable, but the cost of living with it or of being treated for it is continuous and large — a high ongoing burden, or a residue or a treatment toll rated `harsh`.",
+     "not": "NOT necessarily severe in the clinical sense, and NOT about mortality at all. `me-cfs`, `heds` and `msmds` are here with **no attributed deaths whatsoever** — which is the whole reason this axis is not built on survival.",
+     "examples": [
+      "sickle-cell",
+      "me-cfs",
+      "heds",
+      "cerebral-palsy",
+      "noma"
+     ]
+    },
+    "changes-you": {
+     "rule": "Survivable, and something **rated `major`** is left behind — by the disease, by the treatment, or both — or the ongoing burden of being treated is moderate. Without dominating the rest of your life, which is the bucket above.",
+     "not": "NOT a minor category. **It is still the largest bucket in the register** after v4 took four cancers out of it, and that is this axis's main finding: medicine's characteristic output is neither death nor cure but survival in an altered body. NOT triggered by *any* permanent difference. **v3 fixed exactly that.** Until 2026-09-01 the rule tested whether a `residue` block existed at all, so a record whose residue was a shoe size landed here — and derived `restored: restored` at the same time, because that derivation has always read severity. Eight records held both verdicts at once. `clubfoot` made it undeniable and the rule now reads severity too.",
+     "examples": [
+      "tuberculosis",
+      "benign-prostatic-hyperplasia",
+      "breast-cancer",
+      "malaria"
+     ]
+    },
+    "back-to-normal": {
+     "rule": "Survivable, with nothing worse than a `minor` residue and a `minor` treatment toll, and a low ongoing burden. **A minor permanent difference does not disqualify a record from this bucket** — a treated clubfoot leaves a slightly smaller foot in somebody who runs normally, and calling that a changed life is false.",
+     "not": "NOT the goal state for most of medicine, and still **uncommon** — 14 of 140, unchanged by v4. Read that as a claim about how little the register finds. It remains the bucket resting on the least-tested inputs: `residue` is absent on many records that have simply never been examined for one, and an unexamined record looks identical to a clean one. See `bucket-design.md`.",
+     "examples": [
+      "cholera",
+      "typhoid",
+      "influenza"
+     ]
+    },
+    "nobody-makes-it": {
+     "rule": "A `manufacturing` blocker, or a `no-sponsor` blocker on a record whose capability is real. The requirement that capability be real is what separates *nobody produces the cure* from *nobody funds the research*.",
+     "not": "NOT diseases with no answer. If nothing works, the problem is not manufacturing. `me-cfs` carries `no-sponsor` and is excluded here for exactly that reason — nobody is failing to manufacture its cure.",
+     "examples": [
+      "snakebite",
+      "bladder-cancer",
+      "syphilis",
+      "mrsa",
+      "diarrhoeal-disease"
+     ]
+    },
+    "found-too-late": {
+     "rule": "A `window` exists, the record's strata run from a late form where essentially nothing works (efficacy at or below 0.2) to an early form that is mostly cured (0.7 or above), and **fewer than half are caught in time**.",
+     "not": "NOT every disease with a window; **86 records have one**, which is far too many to be interesting. `caught_in_time` is what turns *a window exists* into *and we are missing it*, and it is the number that makes this bucket actionable rather than descriptive — **it is the size of the prize for a screening programme, per disease.** Chagas is 0.10, obesity 0.15, lung cancer 0.20, liver cancer 0.25. ALSO NOT `pancreatic-cancer`, and that exclusion is the rule working. Its strata spread is 0.15 — it is bad at **every** stage, so earlier detection is not the lever. A disease being terrible and having a window are different claims, and only the second is this bucket. `obesity` is in, on strata running 0.00 to 0.80, and is the entry most worth arguing with: its \"window\" is the period before the complications establish, which is real but is a slower and vaguer thing than a resectable tumour.",
+     "examples": [
+      "lung-cancer",
+      "liver-cancer",
+      "cervical-cancer",
+      "chagas",
+      "gastric-cancer"
+     ]
+    },
+    "cannot-aim-it": {
+     "rule": "The register's `futile_treatment_risk` — a treatment exists, it fails often, and there is no test that says in advance who it will fail.",
+     "not": "NOT the same as a treatment that works badly for everyone. The sketch's *\"% chance\"* is this: **a measurement failure wearing the costume of a treatment failure.**",
+     "examples": [
+      "rheumatoid-arthritis",
+      "schizophrenia",
+      "epilepsy",
+      "osteoarthritis"
+     ]
+    },
+    "no-starting-point": {
+     "rule": "`mechanism` is `none` or `correlates` — the causal account is absent or is a set of associations.",
+     "not": "NOT the famous killers. **Stroke and heart disease are `established`**: hand somebody $100M for stroke and they know exactly where to start, they simply cannot fix it. **The diseases with no starting point are the ones nobody dies of** — which is why a register built on mortality would never find them.",
+     "examples": [
+      "me-cfs",
+      "heds",
+      "depression",
+      "bipolar",
+      "low-back-pain"
+     ]
+    },
+    "cannot-reach-people": {
+     "rule": "`delivery` is `barely` or `undelivered` — efficacy multiplied by access leaves most patients untouched — **and** capability is `curable`, `managed` or `preventable`. A `disease-modifying` treatment is not something that \"works\" in the sense this bucket means: it slows the course and the disease still wins, so there is nothing to arrive.",
+     "not": "NOT a knowledge problem, and it is the single most common state in the register. This is the tag the whole `efficacy`/`access` split exists to make sayable. And NOT the `partial` records — Alzheimer's, ALS, glioblastoma — which are undelivered too, but of a treatment that does not hold the disease; version 4 filed them here on delivery alone and the name overclaimed.",
+     "examples": [
+      "refractive-error",
+      "hearing-loss",
+      "sickle-cell",
+      "hepatitis-b",
+      "obesity"
+     ]
+    },
+    "needs-more-evidence": {
+     "rule": "An `evidence-incomplete` or `candidate-untested` blocker — something plausible exists and nobody has established whether it works.",
+     "not": "NOT \"no path forward\". This is the opposite: a path exists and has not been walked.",
+     "examples": [
+      "idiopathic-pulmonary-fibrosis"
+     ]
+    }
+   },
+   "a": {
+    "changes-you": 65,
+    "held-off": 34,
+    "defines-your-life": 19,
+    "ends-it-later": 19,
+    "back-to-normal": 17,
+    "ends-it": 4,
+    "ends-it-unless-caught": 2,
+    "never-safe": 1
+   },
+   "b": {
+    "cannot-reach-people": 65,
+    "needs-more-evidence": 46,
+    "nobody-makes-it": 34,
+    "cannot-aim-it": 27,
+    "found-too-late": 14,
+    "no-starting-point": 6
+   },
+   "b_untagged": 42,
+   "members": {
+    "pleomorphic-adenoma": {
+     "id": "FND-D-0015",
+     "a": "changes-you",
+     "b": []
+    },
+    "hat": {
+     "id": "FND-D-0026",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "tuberculosis": {
+     "id": "FND-D-0023",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "listeriosis": {
+     "id": "FND-D-0152",
+     "a": "changes-you",
+     "b": []
+    },
+    "covid-19": {
+     "id": "FND-D-0076",
+     "a": "changes-you",
+     "b": [
+      "found-too-late",
+      "needs-more-evidence"
+     ]
+    },
+    "leprosy": {
+     "id": "FND-D-0035",
+     "a": "changes-you",
+     "b": []
+    },
+    "thyroid-cancer": {
+     "id": "FND-D-0061",
+     "a": "changes-you",
+     "b": []
+    },
+    "typhoid": {
+     "id": "FND-D-0066",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "trachoma": {
+     "id": "FND-D-0036",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "botulism": {
+     "id": "FND-D-0154",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "gonorrhoea": {
+     "id": "FND-D-0117",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "malaria": {
+     "id": "FND-D-0069",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "h-pylori-ulcer": {
+     "id": "FND-D-0001",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "uterine-fibroids": {
+     "id": "FND-D-0139",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it"
+     ]
+    },
+    "benign-prostatic-hyperplasia": {
+     "id": "FND-D-0138",
+     "a": "changes-you",
+     "b": []
+    },
+    "mrsa": {
+     "id": "FND-D-0067",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "genital-chlamydia": {
+     "id": "FND-D-0120",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "visceral-leishmaniasis": {
+     "id": "FND-D-0024",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "bacterial-meningitis": {
+     "id": "FND-D-0129",
+     "a": "defines-your-life",
+     "b": []
+    },
+    "coccidioidomycosis": {
+     "id": "FND-D-0111",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-aim-it",
+      "needs-more-evidence"
+     ]
+    },
+    "maternal-haemorrhage": {
+     "id": "FND-D-0073",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "syphilis": {
+     "id": "FND-D-0116",
+     "a": "defines-your-life",
+     "b": [
+      "nobody-makes-it",
+      "needs-more-evidence"
+     ]
+    },
+    "schistosomiasis": {
+     "id": "FND-D-0025",
+     "a": "changes-you",
+     "b": []
+    },
+    "scabies": {
+     "id": "FND-D-0038",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "childhood-pneumonia": {
+     "id": "FND-D-0071",
+     "a": "changes-you",
+     "b": []
+    },
+    "soil-transmitted-helminths": {
+     "id": "FND-D-0029",
+     "a": "back-to-normal",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "diarrhoeal-disease": {
+     "id": "FND-D-0074",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "buruli-ulcer": {
+     "id": "FND-D-0033",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "vulvar-cancer": {
+     "id": "FND-D-0125",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it"
+     ]
+    },
+    "anal-cancer": {
+     "id": "FND-D-0123",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it"
+     ]
+    },
+    "amr-infection": {
+     "id": "FND-D-0014",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "uterine-cancer": {
+     "id": "FND-D-0064",
+     "a": "changes-you",
+     "b": []
+    },
+    "abdominal-aortic-aneurysm": {
+     "id": "FND-D-0157",
+     "a": "ends-it-later",
+     "b": [
+      "found-too-late"
+     ]
+    },
+    "anaemia": {
+     "id": "FND-D-0098",
+     "a": "changes-you",
+     "b": []
+    },
+    "breast-cancer": {
+     "id": "FND-D-0017",
+     "a": "changes-you",
+     "b": []
+    },
+    "melanoma": {
+     "id": "FND-D-0054",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "candidaemia": {
+     "id": "FND-D-0112",
+     "a": "changes-you",
+     "b": []
+    },
+    "prostate-cancer": {
+     "id": "FND-D-0051",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "neonatal-conditions": {
+     "id": "FND-D-0072",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it",
+      "needs-more-evidence"
+     ]
+    },
+    "yaws": {
+     "id": "FND-D-0034",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "cataract": {
+     "id": "FND-D-0089",
+     "a": "changes-you",
+     "b": []
+    },
+    "childhood-all": {
+     "id": "FND-D-0055",
+     "a": "changes-you",
+     "b": []
+    },
+    "trichomoniasis": {
+     "id": "FND-D-0121",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "uveal-melanoma": {
+     "id": "FND-D-0144",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "retinopathy-of-prematurity": {
+     "id": "FND-D-0132",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "renal-cell-carcinoma": {
+     "id": "FND-D-0063",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "echinococcosis": {
+     "id": "FND-D-0032",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "nasopharyngeal-carcinoma": {
+     "id": "FND-D-0103",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "non-typhoidal-salmonellosis": {
+     "id": "FND-D-0153",
+     "a": "back-to-normal",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "penile-cancer": {
+     "id": "FND-D-0124",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "vaginal-cancer": {
+     "id": "FND-D-0126",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "smallpox": {
+     "id": "FND-D-0048",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "invasive-aspergillosis": {
+     "id": "FND-D-0110",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "cirrhosis": {
+     "id": "FND-D-0082",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "ebola": {
+     "id": "FND-D-0045",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "bladder-cancer": {
+     "id": "FND-D-0062",
+     "a": "defines-your-life",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "sepsis": {
+     "id": "FND-D-0070",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "clubfoot": {
+     "id": "FND-D-0135",
+     "a": "back-to-normal",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "colorectal-cancer": {
+     "id": "FND-D-0052",
+     "a": "changes-you",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "snakebite": {
+     "id": "FND-D-0012",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "cryptococcal-meningitis": {
+     "id": "FND-D-0109",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "non-hodgkin-lymphoma": {
+     "id": "FND-D-0057",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "mycoplasma-genitalium": {
+     "id": "FND-D-0122",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "taeniasis-cysticercosis": {
+     "id": "FND-D-0039",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "thoracic-aortic-aneurysm": {
+     "id": "FND-D-0158",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "head-neck-cancer": {
+     "id": "FND-D-0102",
+     "a": "defines-your-life",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "hepatitis-c": {
+     "id": "FND-D-0002",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "cervical-cancer": {
+     "id": "FND-D-0053",
+     "a": "changes-you",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "anti-nmda-receptor-encephalitis": {
+     "id": "FND-D-0159",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "cre": {
+     "id": "FND-D-0068",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "burns": {
+     "id": "FND-D-0151",
+     "a": "defines-your-life",
+     "b": [
+      "found-too-late",
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "gastric-cancer": {
+     "id": "FND-D-0059",
+     "a": "ends-it-later",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "osteoarthritis": {
+     "id": "FND-D-0096",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "congenital-heart-disease": {
+     "id": "FND-D-0094",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "obstetric-fistula": {
+     "id": "FND-D-0136",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "mycetoma": {
+     "id": "FND-D-0030",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "h-pylori-infection": {
+     "id": "FND-D-0150",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it",
+      "found-too-late",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "noma": {
+     "id": "FND-D-0041",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "liver-cancer": {
+     "id": "FND-D-0058",
+     "a": "ends-it-later",
+     "b": [
+      "found-too-late",
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "lung-cancer": {
+     "id": "FND-D-0050",
+     "a": "ends-it-later",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "pancreatic-cancer": {
+     "id": "FND-D-0060",
+     "a": "ends-it-later",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "type-2-diabetes": {
+     "id": "FND-D-0080",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "chagas": {
+     "id": "FND-D-0022",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "sickle-cell": {
+     "id": "FND-D-0006",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "hiv": {
+     "id": "FND-D-0004",
+     "a": "held-off",
+     "b": []
+    },
+    "lymphatic-filariasis": {
+     "id": "FND-D-0028",
+     "a": "held-off",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "onchocerciasis": {
+     "id": "FND-D-0027",
+     "a": "held-off",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "pku": {
+     "id": "FND-D-0003",
+     "a": "held-off",
+     "b": []
+    },
+    "cholera": {
+     "id": "FND-D-0065",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "genital-herpes": {
+     "id": "FND-D-0118",
+     "a": "held-off",
+     "b": []
+    },
+    "cml": {
+     "id": "FND-D-0056",
+     "a": "held-off",
+     "b": []
+    },
+    "hpv-infection": {
+     "id": "FND-D-0119",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "parkinsons": {
+     "id": "FND-D-0087",
+     "a": "ends-it-later",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "atrial-fibrillation": {
+     "id": "FND-D-0083",
+     "a": "held-off",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "ischaemic-heart-disease": {
+     "id": "FND-D-0042",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "polycythaemia-vera": {
+     "id": "FND-D-0145",
+     "a": "held-off",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "type-1-diabetes": {
+     "id": "FND-D-0079",
+     "a": "held-off",
+     "b": []
+    },
+    "food-allergy": {
+     "id": "FND-D-0148",
+     "a": "never-safe",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "toxoplasmosis": {
+     "id": "FND-D-0114",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-aim-it",
+      "needs-more-evidence"
+     ]
+    },
+    "asthma": {
+     "id": "FND-D-0097",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "refractive-error": {
+     "id": "FND-D-0133",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "acute-bronchitis": {
+     "id": "FND-D-0113",
+     "a": "back-to-normal",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "cystic-fibrosis": {
+     "id": "FND-D-0090",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "measles": {
+     "id": "FND-D-0049",
+     "a": "changes-you",
+     "b": []
+    },
+    "epilepsy": {
+     "id": "FND-D-0008",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "mcas": {
+     "id": "FND-D-0021",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "keloid": {
+     "id": "FND-D-0140",
+     "a": "changes-you",
+     "b": [
+      "no-starting-point"
+     ]
+    },
+    "multiple-sclerosis": {
+     "id": "FND-D-0086",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "low-back-pain": {
+     "id": "FND-D-0010",
+     "a": "changes-you",
+     "b": [
+      "no-starting-point"
+     ]
+    },
+    "lupus": {
+     "id": "FND-D-0155",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "wilsons-disease": {
+     "id": "FND-D-0161",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "rheumatoid-arthritis": {
+     "id": "FND-D-0093",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "crohns": {
+     "id": "FND-D-0016",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "h5n1": {
+     "id": "FND-D-0047",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "schizophrenia": {
+     "id": "FND-D-0088",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "hypertension": {
+     "id": "FND-D-0084",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "pots": {
+     "id": "FND-D-0020",
+     "a": "held-off",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "rheumatic-heart-disease": {
+     "id": "FND-D-0013",
+     "a": "ends-it-later",
+     "b": [
+      "nobody-makes-it",
+      "needs-more-evidence"
+     ]
+    },
+    "glaucoma": {
+     "id": "FND-D-0131",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "varicella-zoster": {
+     "id": "FND-D-0127",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "bipolar": {
+     "id": "FND-D-0011",
+     "a": "held-off",
+     "b": [
+      "nobody-makes-it",
+      "cannot-aim-it",
+      "no-starting-point",
+      "cannot-reach-people"
+     ]
+    },
+    "copd": {
+     "id": "FND-D-0044",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "endometriosis": {
+     "id": "FND-D-0137",
+     "a": "held-off",
+     "b": [
+      "nobody-makes-it",
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "heart-failure": {
+     "id": "FND-D-0100",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "chronic-kidney-disease": {
+     "id": "FND-D-0081",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "cmv-infection": {
+     "id": "FND-D-0128",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-aim-it"
+     ]
+    },
+    "hearing-loss": {
+     "id": "FND-D-0095",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "depression": {
+     "id": "FND-D-0007",
+     "a": "changes-you",
+     "b": [
+      "no-starting-point",
+      "needs-more-evidence"
+     ]
+    },
+    "marburg": {
+     "id": "FND-D-0046",
+     "a": "changes-you",
+     "b": []
+    },
+    "duchenne": {
+     "id": "FND-D-0092",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "spinal-muscular-atrophy": {
+     "id": "FND-D-0091",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "narcolepsy-type-1": {
+     "id": "FND-D-0160",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "migraine": {
+     "id": "FND-D-0134",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "multiple-system-atrophy": {
+     "id": "FND-D-0142",
+     "a": "ends-it",
+     "b": []
+    },
+    "stroke": {
+     "id": "FND-D-0043",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "cryptosporidiosis": {
+     "id": "FND-D-0115",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "cerebral-palsy": {
+     "id": "FND-D-0099",
+     "a": "defines-your-life",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "idiopathic-pulmonary-fibrosis": {
+     "id": "FND-D-0108",
+     "a": "ends-it-later",
+     "b": [
+      "found-too-late",
+      "needs-more-evidence"
+     ]
+    },
+    "influenza": {
+     "id": "FND-D-0077",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it",
+      "needs-more-evidence"
+     ]
+    },
+    "sarcopenia": {
+     "id": "FND-D-0156",
+     "a": "defines-your-life",
+     "b": []
+    },
+    "acute-myeloid-leukaemia": {
+     "id": "FND-D-0147",
+     "a": "ends-it-later",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "familial-hypercholesterolaemia": {
+     "id": "FND-D-0146",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "hepatitis-b": {
+     "id": "FND-D-0075",
+     "a": "held-off",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "osteoporosis": {
+     "id": "FND-D-0101",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "als": {
+     "id": "FND-D-0104",
+     "a": "ends-it-later",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "glioblastoma": {
+     "id": "FND-D-0105",
+     "a": "ends-it-later",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "mesothelioma": {
+     "id": "FND-D-0107",
+     "a": "ends-it-later",
+     "b": [
+      "cannot-aim-it",
+      "needs-more-evidence"
+     ]
+    },
+    "obesity": {
+     "id": "FND-D-0085",
+     "a": "held-off",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "tay-sachs": {
+     "id": "FND-D-0143",
+     "a": "ends-it",
+     "b": []
+    },
+    "disorders-of-consciousness": {
+     "id": "FND-D-0130",
+     "a": "defines-your-life",
+     "b": []
+    },
+    "alzheimers": {
+     "id": "FND-D-0078",
+     "a": "ends-it-later",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "ebv-infection": {
+     "id": "FND-D-0149",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "dipg": {
+     "id": "FND-D-0141",
+     "a": "ends-it",
+     "b": [
+      "nobody-makes-it",
+      "cannot-aim-it"
+     ]
+    },
+    "dengue": {
+     "id": "FND-D-0031",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "dracunculiasis": {
+     "id": "FND-D-0040",
+     "a": "changes-you",
+     "b": []
+    },
+    "heds": {
+     "id": "FND-D-0019",
+     "a": "defines-your-life",
+     "b": [
+      "no-starting-point",
+      "needs-more-evidence"
+     ]
+    },
+    "huntington": {
+     "id": "FND-D-0005",
+     "a": "ends-it",
+     "b": []
+    },
+    "me-cfs": {
+     "id": "FND-D-0009",
+     "a": "defines-your-life",
+     "b": [
+      "no-starting-point"
+     ]
+    },
+    "msmds": {
+     "id": "FND-D-0018",
+     "a": "defines-your-life",
+     "b": []
+    },
+    "prion-disease": {
+     "id": "FND-D-0106",
+     "a": "ends-it-unless-caught",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "rabies": {
+     "id": "FND-D-0037",
+     "a": "ends-it-unless-caught",
+     "b": []
+    }
+   }
+  },
+  "quadrant": {
+   "known & treatable": 123,
+   "known & modifiable": 17,
+   "engineering problem": 15,
+   "frontier": 5,
+   "empirical luck": 1
+  },
+  "delivery": {
+   "barely": 74,
+   "partly": 48,
+   "—": 26,
+   "mostly": 8,
+   "undelivered": 5
+  },
+  "gaps": {
+   "yld_rated": 4,
+   "knowledge_yld": 63850000.0,
+   "delivery_yld": 41857500.0,
+   "top_knowledge_yld": [
+    "low-back-pain",
+    "anaemia",
+    "osteoarthritis",
+    "asthma"
+   ],
+   "rated": 126,
+   "knowledge": 22419470.1,
+   "delivery": 36527215.0,
+   "top_knowledge": [
+    "stroke",
+    "ischaemic-heart-disease",
+    "type-2-diabetes",
+    "sepsis",
+    "hypertension",
+    "copd",
+    "obesity",
+    "lung-cancer",
+    "alzheimers",
+    "liver-cancer"
+   ],
+   "top_delivery": [
+    "hypertension",
+    "sepsis",
+    "ischaemic-heart-disease",
+    "obesity",
+    "stroke",
+    "neonatal-conditions",
+    "copd",
+    "type-2-diabetes",
+    "hepatitis-b",
+    "diarrhoeal-disease"
+   ]
+  },
+  "terms": {
+   "clean": 79,
+   "costly": 77,
+   "harsh": 5
+  },
+  "axes": {
+   "mechanism": {
+    "established": 111,
+    "partial": 44,
+    "correlates": 5,
+    "none": 1
+   },
+   "intervention": {
+    "curative": 83,
+    "suppressive": 34,
+    "symptomatic": 24,
+    "disease-modifying": 17,
+    "none": 3
+   },
+   "prevention": {
+    "risk-reduction": 91,
+    "prophylaxis": 39,
+    "none": 30,
+    "eradicated": 1
+   },
+   "ongoing": {
+    "moderate": 54,
+    "low": 52,
+    "high": 35,
+    "none": 20
+   }
+  },
+  "measurement": {
+   "diagnostic": {
+    "objective": 126,
+    "clinical": 33,
+    "complaint": 2
+   },
+   "prognostic": {
+    "partial": 99,
+    "good": 35,
+    "none": 27
+   },
+   "predictive": {
+    "partial": 78,
+    "none": 50,
+    "n/a": 21,
+    "good": 12
+   }
+  },
+  "flags": {
+   "measurement_gap": 30,
+   "overtreatment_risk": 9,
+   "futile_treatment_risk": 27,
+   "cured_at_a_price": 73,
+   "harm_without_benefit": 9,
+   "orphaned": 130,
+   "spans_ladder": 60,
+   "has_window": 113,
+   "has_residue": 98,
+   "only_knowledge_blockers": 1
+  },
+  "contested": 22,
+  "reach": {
+   "mean": 0.2624,
+   "median": 0.24
+  },
+  "blockers": {
+   "total": 704,
+   "by_kind": {
+    "knowledge": 191,
+    "logistics": 119,
+    "diagnosis": 112,
+    "policy": 92,
+    "cost": 62,
+    "evidence-incomplete": 42,
+    "no-sponsor": 32,
+    "tooling": 17,
+    "adherence": 15,
+    "manufacturing": 10,
+    "regulatory": 7,
+    "candidate-untested": 5
+   },
+   "by_standing": {
+    "documented": 665,
+    "alleged": 30,
+    "disputed": 8,
+    "refuted": 1
+   },
+   "priced": 511,
+   "by_kind_priced": {
+    "adherence": {
+     "total": 15,
+     "priced": 15
+    },
+    "candidate-untested": {
+     "total": 5,
+     "priced": 5
+    },
+    "cost": {
+     "total": 62,
+     "priced": 62
+    },
+    "diagnosis": {
+     "total": 112,
+     "priced": 112
+    },
+    "evidence-incomplete": {
+     "total": 42,
+     "priced": 42
+    },
+    "knowledge": {
+     "total": 191,
+     "priced": 8
+    },
+    "logistics": {
+     "total": 119,
+     "priced": 119
+    },
+    "manufacturing": {
+     "total": 10,
+     "priced": 10
+    },
+    "no-sponsor": {
+     "total": 32,
+     "priced": 31
+    },
+    "policy": {
+     "total": 92,
+     "priced": 87
+    },
+    "regulatory": {
+     "total": 7,
+     "priced": 6
+    },
+    "tooling": {
+     "total": 17,
+     "priced": 14
+    }
+   },
+   "actors": {
+    "government": 439,
+    "academic": 397,
+    "health-system": 389,
+    "nonprofit": 334,
+    "philanthropy": 283,
+    "sponsor": 258,
+    "manufacturer": 244,
+    "payer": 211,
+    "regulator": 109,
+    "patient-org": 89,
+    "legislator": 72,
+    "software": 31
+   }
+  },
+  "moved": {
+   "total": 293,
+   "by_axis": {
+    "efficacy": 87,
+    "intervention": 69,
+    "access": 35,
+    "prevention": 35,
+    "mechanism": 31,
+    "toll": 25,
+    "measurement": 8,
+    "ongoing": 3
+   },
+   "by_decade": {
+    "1790s": 1,
+    "1850s": 1,
+    "1890s": 1,
+    "1910s": 1,
+    "1920s": 3,
+    "1930s": 1,
+    "1940s": 10,
+    "1950s": 8,
+    "1960s": 13,
+    "1970s": 12,
+    "1980s": 22,
+    "1990s": 41,
+    "2000s": 42,
+    "2010s": 79,
+    "2020s": 58
+   }
+  },
+  "provenance": {
+   "scalars": 2814,
+   "by_src": {
+    "reasoning": 1488,
+    "recall": 1221,
+    "cited": 95,
+    "unknown": 10
+   },
+   "cited": 95,
+   "by_tier": {
+    "sourceable": {
+     "total": 541,
+     "cited": 7
+    },
+    "supportable": {
+     "total": 827,
+     "cited": 86
+    },
+    "judged": {
+     "total": 1446,
+     "cited": 2
+    }
+   },
+   "verified": 95,
+   "unknown": 10,
+   "mondo_resolved": 136,
+   "mondo_unresolved": 25,
+   "note": "Every empirical scalar carries a src. `recall` is the model's memory, `reasoning` is its arithmetic, and `unknown` means nobody has the number — none of the three is a citation. `by_tier` is the honest denominator: a citation SETTLES a sourceable scalar, SUPPORTS a supportable one, and cannot touch a judged one, because no dataset holds a quantity this register defines. Blockers are judged and carry their evidential status in `standing` instead."
+  },
+  "burden": {
+   "records_with_deaths": 101,
+   "records_without_deaths": 60,
+   "attributed_deaths_sum": 76227369.0,
+   "note": "An UPPER BOUND, not a total. Records overlap — TB deaths in people with HIV are in both, sepsis is the mode of death for several others — and the sum exceeds annual global mortality. Do not chart this as a total."
+  }
+ },
+ {
+  "date": "2026-11-12",
+  "register": "nordstern",
+  "records": {
+   "active": 162,
+   "deprecated": 0
+  },
+  "capability": {
+   "curable": 84,
+   "managed": 35,
+   "unsolved": 20,
+   "partial": 17,
+   "preventable": 6
+  },
+  "solved": {
+   "of": 162,
+   "can_end": 90,
+   "reaches_most": 10,
+   "solved": 9,
+   "reach_floor": 0.6,
+   "definition": "a disease is solved when medicine can end it, the treatment reaches most of the people who have it, and it costs them nothing permanent",
+   "steps": [
+    "medicine can end it",
+    "and it reaches most patients",
+    "and it costs nothing permanent"
+   ]
+  },
+  "survival": {
+   "bands": {
+    "good chance": 90,
+    "n/a": 54,
+    "a chance": 10,
+    "terminal": 8
+   },
+   "rated": 108,
+   "outcomes": {
+    "cured": 63,
+    "n/a": 54,
+    "delayed": 20,
+    "held": 19,
+    "recovered": 6
+   },
+   "was_uniformly_fatal": 35,
+   "no_longer_terminal": 27,
+   "zero_gain": [
+    "alzheimers",
+    "huntington",
+    "prion-disease",
+    "rabies",
+    "tay-sachs"
+   ]
+  },
+  "buckets": {
+   "version": 6,
+   "digest": "d07dc0ec4741",
+   "names": {
+    "ends-it": "It ends your life, whenever you find it",
+    "ends-it-unless-caught": "It ends your life unless it is caught in time",
+    "ends-it-later": "It ends your life, but later",
+    "held-off": "It is held off, for life",
+    "never-safe": "You survive, and you are never safe",
+    "defines-your-life": "You survive, and it defines your life",
+    "changes-you": "You survive, and it changes you",
+    "back-to-normal": "You survive, and you get back to normal",
+    "nobody-makes-it": "The solution exists and nobody makes it",
+    "found-too-late": "Caught early it is curable, caught late it is not",
+    "cannot-aim-it": "It works for some people and nobody can say which",
+    "no-starting-point": "Nobody knows where to start",
+    "cannot-reach-people": "It works and it does not arrive",
+    "needs-more-evidence": "There is a candidate and the evidence is not in"
+   },
+   "defs": {
+    "ends-it": {
+     "rule": "The course is fatal, essentially nobody survives the stated horizon, and there is no window — finding it earlier changes nothing.",
+     "not": "NOT \"we have no cure\". Most fatal diseases here are `ends-it-later`. This is the much smaller set where the timing of diagnosis is irrelevant because nothing follows from it.",
+     "examples": [
+      "huntington"
+     ]
+    },
+    "ends-it-unless-caught": {
+     "rule": "Fatal as above, but a `window` exists — there is a period in which action changes the outcome, and outside it there is nothing.",
+     "not": "NOT every disease with a window; 86 records have one. This is the set where the window is the *whole* of the difference between living and dying.",
+     "examples": [
+      "rabies",
+      "prion-disease"
+     ]
+    },
+    "ends-it-later": {
+     "rule": "The disease is still what kills you. Either treatment alters the course without ending it — the register's `delayed` outcome — or **more than half of treated patients die of it**, whatever rung the ladder puts the treatment on.",
+     "not": "NOT \"untreatable\". These are mostly diseases medicine has changed a great deal — and the change bought time rather than an ending. **NOT decided by the intervention rung alone, and v4 fixed exactly that.** `survival_outcome()` reads `axes.intervention`, so every record on the `curative` rung returned `cured` however few survived — and `cured` never reached this branch. Pancreatic cancer, where 87% of treated patients die, was filed under *you survive, and it changes you*, beside cataract. The rung was right about what the operation does **when it works**; the bucket was asking a different question and taking the rung's word for the answer. ALSO NOT acute illness, and that exclusion is deliberate rather than protective. `marburg` kills about three quarters of those it infects within two weeks and the quarter who live **recover** — so \"it ends your life, but later\" is false for everybody in the record. That is the ⧉ `spans_ladder` shape the register already names as a **malformed question rather than a hard one**, and declining to average it is more honest than filing it confidently in the wrong place. See `holes`.",
+     "examples": [
+      "pancreatic-cancer",
+      "als",
+      "alzheimers",
+      "stroke",
+      "glioblastoma"
+     ]
+    },
+    "held-off": {
+     "rule": "A treatment suppresses it indefinitely and stopping brings it back. Near-normal life, on condition of continuous treatment.",
+     "not": "NOT cured. **This rung is what stops HIV being filed next to hepatitis C** — one is no longer a death sentence, the other is over.",
+     "examples": [
+      "hiv",
+      "type-1-diabetes",
+      "schizophrenia"
+     ]
+    },
+    "never-safe": {
+     "rule": "Nothing alters the course and nothing is treated day to day. The disease is an acute, potentially fatal event that can recur at any time — a `window` marked `recurs` — and keeping it shut is the patient's own work, every day, for life: `intervention` symptomatic or none, `ongoing` high, and survival unrated or near-complete.",
+     "not": "NOT `held-off`: nothing is being suppressed; between events the person is well and untreated. NOT `defines-your-life` on burden alone — the burden here is a lethal possibility rather than a continuous cost. This axis was built on survival and this state is invisible to it: measured by deaths it is nothing, measured by what a life is organised around it is everything.",
+     "examples": [
+      "food-allergy"
+     ]
+    },
+    "defines-your-life": {
+     "rule": "Survivable, but the cost of living with it or of being treated for it is continuous and large — a high ongoing burden, or a residue or a treatment toll rated `harsh`.",
+     "not": "NOT necessarily severe in the clinical sense, and NOT about mortality at all. `me-cfs`, `heds` and `msmds` are here with **no attributed deaths whatsoever** — which is the whole reason this axis is not built on survival.",
+     "examples": [
+      "sickle-cell",
+      "me-cfs",
+      "heds",
+      "cerebral-palsy",
+      "noma"
+     ]
+    },
+    "changes-you": {
+     "rule": "Survivable, and something **rated `major`** is left behind — by the disease, by the treatment, or both — or the ongoing burden of being treated is moderate. Without dominating the rest of your life, which is the bucket above.",
+     "not": "NOT a minor category. **It is still the largest bucket in the register** after v4 took four cancers out of it, and that is this axis's main finding: medicine's characteristic output is neither death nor cure but survival in an altered body. NOT triggered by *any* permanent difference. **v3 fixed exactly that.** Until 2026-09-01 the rule tested whether a `residue` block existed at all, so a record whose residue was a shoe size landed here — and derived `restored: restored` at the same time, because that derivation has always read severity. Eight records held both verdicts at once. `clubfoot` made it undeniable and the rule now reads severity too.",
+     "examples": [
+      "tuberculosis",
+      "benign-prostatic-hyperplasia",
+      "breast-cancer",
+      "malaria"
+     ]
+    },
+    "back-to-normal": {
+     "rule": "Survivable, with nothing worse than a `minor` residue and a `minor` treatment toll, and a low ongoing burden. **A minor permanent difference does not disqualify a record from this bucket** — a treated clubfoot leaves a slightly smaller foot in somebody who runs normally, and calling that a changed life is false.",
+     "not": "NOT the goal state for most of medicine, and still **uncommon** — 14 of 140, unchanged by v4. Read that as a claim about how little the register finds. It remains the bucket resting on the least-tested inputs: `residue` is absent on many records that have simply never been examined for one, and an unexamined record looks identical to a clean one. See `bucket-design.md`.",
+     "examples": [
+      "cholera",
+      "typhoid",
+      "influenza"
+     ]
+    },
+    "nobody-makes-it": {
+     "rule": "A `manufacturing` blocker, or a `no-sponsor` blocker on a record whose capability is real. The requirement that capability be real is what separates *nobody produces the cure* from *nobody funds the research*.",
+     "not": "NOT diseases with no answer. If nothing works, the problem is not manufacturing. `me-cfs` carries `no-sponsor` and is excluded here for exactly that reason — nobody is failing to manufacture its cure.",
+     "examples": [
+      "snakebite",
+      "bladder-cancer",
+      "syphilis",
+      "mrsa",
+      "diarrhoeal-disease"
+     ]
+    },
+    "found-too-late": {
+     "rule": "A `window` exists, the record's strata run from a late form where essentially nothing works (efficacy at or below 0.2) to an early form that is mostly cured (0.7 or above), and **fewer than half are caught in time**.",
+     "not": "NOT every disease with a window; **86 records have one**, which is far too many to be interesting. `caught_in_time` is what turns *a window exists* into *and we are missing it*, and it is the number that makes this bucket actionable rather than descriptive — **it is the size of the prize for a screening programme, per disease.** Chagas is 0.10, obesity 0.15, lung cancer 0.20, liver cancer 0.25. ALSO NOT `pancreatic-cancer`, and that exclusion is the rule working. Its strata spread is 0.15 — it is bad at **every** stage, so earlier detection is not the lever. A disease being terrible and having a window are different claims, and only the second is this bucket. `obesity` is in, on strata running 0.00 to 0.80, and is the entry most worth arguing with: its \"window\" is the period before the complications establish, which is real but is a slower and vaguer thing than a resectable tumour.",
+     "examples": [
+      "lung-cancer",
+      "liver-cancer",
+      "cervical-cancer",
+      "chagas",
+      "gastric-cancer"
+     ]
+    },
+    "cannot-aim-it": {
+     "rule": "The register's `futile_treatment_risk` — a treatment exists, it fails often, and there is no test that says in advance who it will fail.",
+     "not": "NOT the same as a treatment that works badly for everyone. The sketch's *\"% chance\"* is this: **a measurement failure wearing the costume of a treatment failure.**",
+     "examples": [
+      "rheumatoid-arthritis",
+      "schizophrenia",
+      "epilepsy",
+      "osteoarthritis"
+     ]
+    },
+    "no-starting-point": {
+     "rule": "`mechanism` is `none` or `correlates` — the causal account is absent or is a set of associations.",
+     "not": "NOT the famous killers. **Stroke and heart disease are `established`**: hand somebody $100M for stroke and they know exactly where to start, they simply cannot fix it. **The diseases with no starting point are the ones nobody dies of** — which is why a register built on mortality would never find them.",
+     "examples": [
+      "me-cfs",
+      "heds",
+      "depression",
+      "bipolar",
+      "low-back-pain"
+     ]
+    },
+    "cannot-reach-people": {
+     "rule": "`delivery` is `barely` or `undelivered` — efficacy multiplied by access leaves most patients untouched — **and** capability is `curable`, `managed` or `preventable`. A `disease-modifying` treatment is not something that \"works\" in the sense this bucket means: it slows the course and the disease still wins, so there is nothing to arrive.",
+     "not": "NOT a knowledge problem, and it is the single most common state in the register. This is the tag the whole `efficacy`/`access` split exists to make sayable. And NOT the `partial` records — Alzheimer's, ALS, glioblastoma — which are undelivered too, but of a treatment that does not hold the disease; version 4 filed them here on delivery alone and the name overclaimed.",
+     "examples": [
+      "refractive-error",
+      "hearing-loss",
+      "sickle-cell",
+      "hepatitis-b",
+      "obesity"
+     ]
+    },
+    "needs-more-evidence": {
+     "rule": "An `evidence-incomplete` or `candidate-untested` blocker — something plausible exists and nobody has established whether it works.",
+     "not": "NOT \"no path forward\". This is the opposite: a path exists and has not been walked.",
+     "examples": [
+      "idiopathic-pulmonary-fibrosis"
+     ]
+    }
+   },
+   "a": {
+    "changes-you": 65,
+    "held-off": 35,
+    "defines-your-life": 19,
+    "ends-it-later": 19,
+    "back-to-normal": 17,
+    "ends-it": 4,
+    "ends-it-unless-caught": 2,
+    "never-safe": 1
+   },
+   "b": {
+    "cannot-reach-people": 66,
+    "needs-more-evidence": 46,
+    "nobody-makes-it": 34,
+    "cannot-aim-it": 27,
+    "found-too-late": 14,
+    "no-starting-point": 6
+   },
+   "b_untagged": 42,
+   "members": {
+    "pleomorphic-adenoma": {
+     "id": "FND-D-0015",
+     "a": "changes-you",
+     "b": []
+    },
+    "hat": {
+     "id": "FND-D-0026",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "tuberculosis": {
+     "id": "FND-D-0023",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "listeriosis": {
+     "id": "FND-D-0152",
+     "a": "changes-you",
+     "b": []
+    },
+    "covid-19": {
+     "id": "FND-D-0076",
+     "a": "changes-you",
+     "b": [
+      "found-too-late",
+      "needs-more-evidence"
+     ]
+    },
+    "leprosy": {
+     "id": "FND-D-0035",
+     "a": "changes-you",
+     "b": []
+    },
+    "thyroid-cancer": {
+     "id": "FND-D-0061",
+     "a": "changes-you",
+     "b": []
+    },
+    "typhoid": {
+     "id": "FND-D-0066",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "trachoma": {
+     "id": "FND-D-0036",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "botulism": {
+     "id": "FND-D-0154",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "gonorrhoea": {
+     "id": "FND-D-0117",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "malaria": {
+     "id": "FND-D-0069",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "h-pylori-ulcer": {
+     "id": "FND-D-0001",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "uterine-fibroids": {
+     "id": "FND-D-0139",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it"
+     ]
+    },
+    "benign-prostatic-hyperplasia": {
+     "id": "FND-D-0138",
+     "a": "changes-you",
+     "b": []
+    },
+    "mrsa": {
+     "id": "FND-D-0067",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "genital-chlamydia": {
+     "id": "FND-D-0120",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "visceral-leishmaniasis": {
+     "id": "FND-D-0024",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "bacterial-meningitis": {
+     "id": "FND-D-0129",
+     "a": "defines-your-life",
+     "b": []
+    },
+    "coccidioidomycosis": {
+     "id": "FND-D-0111",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-aim-it",
+      "needs-more-evidence"
+     ]
+    },
+    "maternal-haemorrhage": {
+     "id": "FND-D-0073",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "syphilis": {
+     "id": "FND-D-0116",
+     "a": "defines-your-life",
+     "b": [
+      "nobody-makes-it",
+      "needs-more-evidence"
+     ]
+    },
+    "schistosomiasis": {
+     "id": "FND-D-0025",
+     "a": "changes-you",
+     "b": []
+    },
+    "scabies": {
+     "id": "FND-D-0038",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "childhood-pneumonia": {
+     "id": "FND-D-0071",
+     "a": "changes-you",
+     "b": []
+    },
+    "soil-transmitted-helminths": {
+     "id": "FND-D-0029",
+     "a": "back-to-normal",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "diarrhoeal-disease": {
+     "id": "FND-D-0074",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "buruli-ulcer": {
+     "id": "FND-D-0033",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "vulvar-cancer": {
+     "id": "FND-D-0125",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it"
+     ]
+    },
+    "anal-cancer": {
+     "id": "FND-D-0123",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it"
+     ]
+    },
+    "amr-infection": {
+     "id": "FND-D-0014",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "uterine-cancer": {
+     "id": "FND-D-0064",
+     "a": "changes-you",
+     "b": []
+    },
+    "abdominal-aortic-aneurysm": {
+     "id": "FND-D-0157",
+     "a": "ends-it-later",
+     "b": [
+      "found-too-late"
+     ]
+    },
+    "anaemia": {
+     "id": "FND-D-0098",
+     "a": "changes-you",
+     "b": []
+    },
+    "breast-cancer": {
+     "id": "FND-D-0017",
+     "a": "changes-you",
+     "b": []
+    },
+    "melanoma": {
+     "id": "FND-D-0054",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "candidaemia": {
+     "id": "FND-D-0112",
+     "a": "changes-you",
+     "b": []
+    },
+    "prostate-cancer": {
+     "id": "FND-D-0051",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "neonatal-conditions": {
+     "id": "FND-D-0072",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it",
+      "needs-more-evidence"
+     ]
+    },
+    "yaws": {
+     "id": "FND-D-0034",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "cataract": {
+     "id": "FND-D-0089",
+     "a": "changes-you",
+     "b": []
+    },
+    "childhood-all": {
+     "id": "FND-D-0055",
+     "a": "changes-you",
+     "b": []
+    },
+    "trichomoniasis": {
+     "id": "FND-D-0121",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "uveal-melanoma": {
+     "id": "FND-D-0144",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "retinopathy-of-prematurity": {
+     "id": "FND-D-0132",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "renal-cell-carcinoma": {
+     "id": "FND-D-0063",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "echinococcosis": {
+     "id": "FND-D-0032",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "nasopharyngeal-carcinoma": {
+     "id": "FND-D-0103",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "non-typhoidal-salmonellosis": {
+     "id": "FND-D-0153",
+     "a": "back-to-normal",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "penile-cancer": {
+     "id": "FND-D-0124",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "vaginal-cancer": {
+     "id": "FND-D-0126",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "smallpox": {
+     "id": "FND-D-0048",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "invasive-aspergillosis": {
+     "id": "FND-D-0110",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "cirrhosis": {
+     "id": "FND-D-0082",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "ebola": {
+     "id": "FND-D-0045",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "bladder-cancer": {
+     "id": "FND-D-0062",
+     "a": "defines-your-life",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "sepsis": {
+     "id": "FND-D-0070",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "clubfoot": {
+     "id": "FND-D-0135",
+     "a": "back-to-normal",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "colorectal-cancer": {
+     "id": "FND-D-0052",
+     "a": "changes-you",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "snakebite": {
+     "id": "FND-D-0012",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "cryptococcal-meningitis": {
+     "id": "FND-D-0109",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "non-hodgkin-lymphoma": {
+     "id": "FND-D-0057",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "mycoplasma-genitalium": {
+     "id": "FND-D-0122",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "taeniasis-cysticercosis": {
+     "id": "FND-D-0039",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "thoracic-aortic-aneurysm": {
+     "id": "FND-D-0158",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "head-neck-cancer": {
+     "id": "FND-D-0102",
+     "a": "defines-your-life",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "hepatitis-c": {
+     "id": "FND-D-0002",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "cervical-cancer": {
+     "id": "FND-D-0053",
+     "a": "changes-you",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "anti-nmda-receptor-encephalitis": {
+     "id": "FND-D-0159",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "cre": {
+     "id": "FND-D-0068",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "burns": {
+     "id": "FND-D-0151",
+     "a": "defines-your-life",
+     "b": [
+      "found-too-late",
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "gastric-cancer": {
+     "id": "FND-D-0059",
+     "a": "ends-it-later",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "osteoarthritis": {
+     "id": "FND-D-0096",
+     "a": "changes-you",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "congenital-heart-disease": {
+     "id": "FND-D-0094",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "obstetric-fistula": {
+     "id": "FND-D-0136",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "mycetoma": {
+     "id": "FND-D-0030",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "h-pylori-infection": {
+     "id": "FND-D-0150",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it",
+      "found-too-late",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "noma": {
+     "id": "FND-D-0041",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "liver-cancer": {
+     "id": "FND-D-0058",
+     "a": "ends-it-later",
+     "b": [
+      "found-too-late",
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "lung-cancer": {
+     "id": "FND-D-0050",
+     "a": "ends-it-later",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "pancreatic-cancer": {
+     "id": "FND-D-0060",
+     "a": "ends-it-later",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people"
+     ]
+    },
+    "type-2-diabetes": {
+     "id": "FND-D-0080",
+     "a": "changes-you",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "chagas": {
+     "id": "FND-D-0022",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it",
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "sickle-cell": {
+     "id": "FND-D-0006",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "hiv": {
+     "id": "FND-D-0004",
+     "a": "held-off",
+     "b": []
+    },
+    "lymphatic-filariasis": {
+     "id": "FND-D-0028",
+     "a": "held-off",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "onchocerciasis": {
+     "id": "FND-D-0027",
+     "a": "held-off",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "pku": {
+     "id": "FND-D-0003",
+     "a": "held-off",
+     "b": []
+    },
+    "cholera": {
+     "id": "FND-D-0065",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "genital-herpes": {
+     "id": "FND-D-0118",
+     "a": "held-off",
+     "b": []
+    },
+    "cml": {
+     "id": "FND-D-0056",
+     "a": "held-off",
+     "b": []
+    },
+    "hpv-infection": {
+     "id": "FND-D-0119",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "parkinsons": {
+     "id": "FND-D-0087",
+     "a": "ends-it-later",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "atrial-fibrillation": {
+     "id": "FND-D-0083",
+     "a": "held-off",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "ischaemic-heart-disease": {
+     "id": "FND-D-0042",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "polycythaemia-vera": {
+     "id": "FND-D-0145",
+     "a": "held-off",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "type-1-diabetes": {
+     "id": "FND-D-0079",
+     "a": "held-off",
+     "b": []
+    },
+    "food-allergy": {
+     "id": "FND-D-0148",
+     "a": "never-safe",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "toxoplasmosis": {
+     "id": "FND-D-0114",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-aim-it",
+      "needs-more-evidence"
+     ]
+    },
+    "asthma": {
+     "id": "FND-D-0097",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "refractive-error": {
+     "id": "FND-D-0133",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "acute-bronchitis": {
+     "id": "FND-D-0113",
+     "a": "back-to-normal",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "cystic-fibrosis": {
+     "id": "FND-D-0090",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "measles": {
+     "id": "FND-D-0049",
+     "a": "changes-you",
+     "b": []
+    },
+    "epilepsy": {
+     "id": "FND-D-0008",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "mcas": {
+     "id": "FND-D-0021",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "keloid": {
+     "id": "FND-D-0140",
+     "a": "changes-you",
+     "b": [
+      "no-starting-point"
+     ]
+    },
+    "multiple-sclerosis": {
+     "id": "FND-D-0086",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "low-back-pain": {
+     "id": "FND-D-0010",
+     "a": "changes-you",
+     "b": [
+      "no-starting-point"
+     ]
+    },
+    "lupus": {
+     "id": "FND-D-0155",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "wilsons-disease": {
+     "id": "FND-D-0161",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "rheumatoid-arthritis": {
+     "id": "FND-D-0093",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "crohns": {
+     "id": "FND-D-0016",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "h5n1": {
+     "id": "FND-D-0047",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "schizophrenia": {
+     "id": "FND-D-0088",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "hypertension": {
+     "id": "FND-D-0084",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "neonatal-diabetes": {
+     "id": "FND-D-0162",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "pots": {
+     "id": "FND-D-0020",
+     "a": "held-off",
+     "b": [
+      "nobody-makes-it",
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "rheumatic-heart-disease": {
+     "id": "FND-D-0013",
+     "a": "ends-it-later",
+     "b": [
+      "nobody-makes-it",
+      "needs-more-evidence"
+     ]
+    },
+    "glaucoma": {
+     "id": "FND-D-0131",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "varicella-zoster": {
+     "id": "FND-D-0127",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "bipolar": {
+     "id": "FND-D-0011",
+     "a": "held-off",
+     "b": [
+      "nobody-makes-it",
+      "cannot-aim-it",
+      "no-starting-point",
+      "cannot-reach-people"
+     ]
+    },
+    "copd": {
+     "id": "FND-D-0044",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "endometriosis": {
+     "id": "FND-D-0137",
+     "a": "held-off",
+     "b": [
+      "nobody-makes-it",
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "heart-failure": {
+     "id": "FND-D-0100",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "chronic-kidney-disease": {
+     "id": "FND-D-0081",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "cmv-infection": {
+     "id": "FND-D-0128",
+     "a": "defines-your-life",
+     "b": [
+      "cannot-aim-it"
+     ]
+    },
+    "hearing-loss": {
+     "id": "FND-D-0095",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people"
+     ]
+    },
+    "depression": {
+     "id": "FND-D-0007",
+     "a": "changes-you",
+     "b": [
+      "no-starting-point",
+      "needs-more-evidence"
+     ]
+    },
+    "marburg": {
+     "id": "FND-D-0046",
+     "a": "changes-you",
+     "b": []
+    },
+    "duchenne": {
+     "id": "FND-D-0092",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "spinal-muscular-atrophy": {
+     "id": "FND-D-0091",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "narcolepsy-type-1": {
+     "id": "FND-D-0160",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "migraine": {
+     "id": "FND-D-0134",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "multiple-system-atrophy": {
+     "id": "FND-D-0142",
+     "a": "ends-it",
+     "b": []
+    },
+    "stroke": {
+     "id": "FND-D-0043",
+     "a": "ends-it-later",
+     "b": []
+    },
+    "cryptosporidiosis": {
+     "id": "FND-D-0115",
+     "a": "changes-you",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "cerebral-palsy": {
+     "id": "FND-D-0099",
+     "a": "defines-your-life",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "idiopathic-pulmonary-fibrosis": {
+     "id": "FND-D-0108",
+     "a": "ends-it-later",
+     "b": [
+      "found-too-late",
+      "needs-more-evidence"
+     ]
+    },
+    "influenza": {
+     "id": "FND-D-0077",
+     "a": "back-to-normal",
+     "b": [
+      "nobody-makes-it",
+      "needs-more-evidence"
+     ]
+    },
+    "sarcopenia": {
+     "id": "FND-D-0156",
+     "a": "defines-your-life",
+     "b": []
+    },
+    "acute-myeloid-leukaemia": {
+     "id": "FND-D-0147",
+     "a": "ends-it-later",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "familial-hypercholesterolaemia": {
+     "id": "FND-D-0146",
+     "a": "held-off",
+     "b": [
+      "cannot-reach-people",
+      "needs-more-evidence"
+     ]
+    },
+    "hepatitis-b": {
+     "id": "FND-D-0075",
+     "a": "held-off",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "osteoporosis": {
+     "id": "FND-D-0101",
+     "a": "held-off",
+     "b": [
+      "cannot-aim-it",
+      "cannot-reach-people"
+     ]
+    },
+    "als": {
+     "id": "FND-D-0104",
+     "a": "ends-it-later",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "glioblastoma": {
+     "id": "FND-D-0105",
+     "a": "ends-it-later",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "mesothelioma": {
+     "id": "FND-D-0107",
+     "a": "ends-it-later",
+     "b": [
+      "cannot-aim-it",
+      "needs-more-evidence"
+     ]
+    },
+    "obesity": {
+     "id": "FND-D-0085",
+     "a": "held-off",
+     "b": [
+      "found-too-late",
+      "cannot-reach-people"
+     ]
+    },
+    "tay-sachs": {
+     "id": "FND-D-0143",
+     "a": "ends-it",
+     "b": []
+    },
+    "disorders-of-consciousness": {
+     "id": "FND-D-0130",
+     "a": "defines-your-life",
+     "b": []
+    },
+    "alzheimers": {
+     "id": "FND-D-0078",
+     "a": "ends-it-later",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "ebv-infection": {
+     "id": "FND-D-0149",
+     "a": "changes-you",
+     "b": [
+      "nobody-makes-it"
+     ]
+    },
+    "dipg": {
+     "id": "FND-D-0141",
+     "a": "ends-it",
+     "b": [
+      "nobody-makes-it",
+      "cannot-aim-it"
+     ]
+    },
+    "dengue": {
+     "id": "FND-D-0031",
+     "a": "back-to-normal",
+     "b": []
+    },
+    "dracunculiasis": {
+     "id": "FND-D-0040",
+     "a": "changes-you",
+     "b": []
+    },
+    "heds": {
+     "id": "FND-D-0019",
+     "a": "defines-your-life",
+     "b": [
+      "no-starting-point",
+      "needs-more-evidence"
+     ]
+    },
+    "huntington": {
+     "id": "FND-D-0005",
+     "a": "ends-it",
+     "b": []
+    },
+    "me-cfs": {
+     "id": "FND-D-0009",
+     "a": "defines-your-life",
+     "b": [
+      "no-starting-point"
+     ]
+    },
+    "msmds": {
+     "id": "FND-D-0018",
+     "a": "defines-your-life",
+     "b": []
+    },
+    "prion-disease": {
+     "id": "FND-D-0106",
+     "a": "ends-it-unless-caught",
+     "b": [
+      "needs-more-evidence"
+     ]
+    },
+    "rabies": {
+     "id": "FND-D-0037",
+     "a": "ends-it-unless-caught",
+     "b": []
+    }
+   }
+  },
+  "quadrant": {
+   "known & treatable": 124,
+   "known & modifiable": 17,
+   "engineering problem": 15,
+   "frontier": 5,
+   "empirical luck": 1
+  },
+  "delivery": {
+   "barely": 75,
+   "partly": 48,
+   "—": 26,
+   "mostly": 8,
+   "undelivered": 5
+  },
+  "gaps": {
+   "yld_rated": 4,
+   "knowledge_yld": 63850000.0,
+   "delivery_yld": 41857500.0,
+   "top_knowledge_yld": [
+    "low-back-pain",
+    "anaemia",
+    "osteoarthritis",
+    "asthma"
+   ],
+   "rated": 127,
+   "knowledge": 22419560.1,
+   "delivery": 36527362.0,
+   "top_knowledge": [
+    "stroke",
+    "ischaemic-heart-disease",
+    "type-2-diabetes",
+    "sepsis",
+    "hypertension",
+    "copd",
+    "obesity",
+    "lung-cancer",
+    "alzheimers",
+    "liver-cancer"
+   ],
+   "top_delivery": [
+    "hypertension",
+    "sepsis",
+    "ischaemic-heart-disease",
+    "obesity",
+    "stroke",
+    "neonatal-conditions",
+    "copd",
+    "type-2-diabetes",
+    "hepatitis-b",
+    "diarrhoeal-disease"
+   ]
+  },
+  "terms": {
+   "clean": 79,
+   "costly": 78,
+   "harsh": 5
+  },
+  "axes": {
+   "mechanism": {
+    "established": 112,
+    "partial": 44,
+    "correlates": 5,
+    "none": 1
+   },
+   "intervention": {
+    "curative": 83,
+    "suppressive": 35,
+    "symptomatic": 24,
+    "disease-modifying": 17,
+    "none": 3
+   },
+   "prevention": {
+    "risk-reduction": 91,
+    "prophylaxis": 39,
+    "none": 31,
+    "eradicated": 1
+   },
+   "ongoing": {
+    "moderate": 55,
+    "low": 52,
+    "high": 35,
+    "none": 20
+   }
+  },
+  "measurement": {
+   "diagnostic": {
+    "objective": 127,
+    "clinical": 33,
+    "complaint": 2
+   },
+   "prognostic": {
+    "partial": 99,
+    "good": 36,
+    "none": 27
+   },
+   "predictive": {
+    "partial": 78,
+    "none": 50,
+    "n/a": 21,
+    "good": 13
+   }
+  },
+  "flags": {
+   "measurement_gap": 30,
+   "overtreatment_risk": 9,
+   "futile_treatment_risk": 27,
+   "cured_at_a_price": 74,
+   "harm_without_benefit": 9,
+   "orphaned": 131,
+   "spans_ladder": 60,
+   "has_window": 114,
+   "has_residue": 99,
+   "only_knowledge_blockers": 1
+  },
+  "contested": 22,
+  "reach": {
+   "mean": 0.2621,
+   "median": 0.24
+  },
+  "blockers": {
+   "total": 709,
+   "by_kind": {
+    "knowledge": 192,
+    "logistics": 120,
+    "diagnosis": 113,
+    "policy": 92,
+    "cost": 63,
+    "evidence-incomplete": 42,
+    "no-sponsor": 32,
+    "tooling": 17,
+    "adherence": 15,
+    "manufacturing": 10,
+    "regulatory": 8,
+    "candidate-untested": 5
+   },
+   "by_standing": {
+    "documented": 667,
+    "alleged": 33,
+    "disputed": 8,
+    "refuted": 1
+   },
+   "priced": 515,
+   "by_kind_priced": {
+    "adherence": {
+     "total": 15,
+     "priced": 15
+    },
+    "candidate-untested": {
+     "total": 5,
+     "priced": 5
+    },
+    "cost": {
+     "total": 63,
+     "priced": 63
+    },
+    "diagnosis": {
+     "total": 113,
+     "priced": 113
+    },
+    "evidence-incomplete": {
+     "total": 42,
+     "priced": 42
+    },
+    "knowledge": {
+     "total": 192,
+     "priced": 8
+    },
+    "logistics": {
+     "total": 120,
+     "priced": 120
+    },
+    "manufacturing": {
+     "total": 10,
+     "priced": 10
+    },
+    "no-sponsor": {
+     "total": 32,
+     "priced": 31
+    },
+    "policy": {
+     "total": 92,
+     "priced": 87
+    },
+    "regulatory": {
+     "total": 8,
+     "priced": 7
+    },
+    "tooling": {
+     "total": 17,
+     "priced": 14
+    }
+   },
+   "actors": {
+    "government": 442,
+    "academic": 400,
+    "health-system": 392,
+    "nonprofit": 336,
+    "philanthropy": 284,
+    "sponsor": 260,
+    "manufacturer": 246,
+    "payer": 212,
+    "regulator": 110,
+    "patient-org": 90,
+    "legislator": 72,
+    "software": 31
+   }
+  },
+  "moved": {
+   "total": 297,
+   "by_axis": {
+    "efficacy": 89,
+    "intervention": 70,
+    "access": 35,
+    "prevention": 35,
+    "mechanism": 32,
+    "toll": 25,
+    "measurement": 8,
+    "ongoing": 3
+   },
+   "by_decade": {
+    "1790s": 1,
+    "1850s": 1,
+    "1890s": 1,
+    "1910s": 1,
+    "1920s": 4,
+    "1930s": 1,
+    "1940s": 10,
+    "1950s": 8,
+    "1960s": 13,
+    "1970s": 12,
+    "1980s": 22,
+    "1990s": 41,
+    "2000s": 44,
+    "2010s": 80,
+    "2020s": 58
+   }
+  },
+  "provenance": {
+   "scalars": 2841,
+   "by_src": {
+    "reasoning": 1509,
+    "recall": 1223,
+    "cited": 99,
+    "unknown": 10
+   },
+   "cited": 99,
+   "by_tier": {
+    "sourceable": {
+     "total": 546,
+     "cited": 7
+    },
+    "supportable": {
+     "total": 837,
+     "cited": 89
+    },
+    "judged": {
+     "total": 1458,
+     "cited": 3
+    }
+   },
+   "verified": 99,
+   "unknown": 10,
+   "mondo_resolved": 137,
+   "mondo_unresolved": 25,
+   "note": "Every empirical scalar carries a src. `recall` is the model's memory, `reasoning` is its arithmetic, and `unknown` means nobody has the number — none of the three is a citation. `by_tier` is the honest denominator: a citation SETTLES a sourceable scalar, SUPPORTS a supportable one, and cannot touch a judged one, because no dataset holds a quantity this register defines. Blockers are judged and carry their evidential status in `standing` instead."
+  },
+  "burden": {
+   "records_with_deaths": 102,
+   "records_without_deaths": 60,
+   "attributed_deaths_sum": 76227669.0,
+   "note": "An UPPER BOUND, not a total. Records overlap — TB deaths in people with HIV are in both, sepsis is the mode of death for several others — and the sum exceeds annual global mortality. Do not chart this as a total."
+  }
  }
 ];
 window.NORDSTERN_BUCKET_DIFFS = [
@@ -9296,6 +24803,15 @@ window.NORDSTERN_BUCKET_DIFFS = [
     "was": 29,
     "now": 29
    },
+   "never-safe": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 0,
+    "now": 0
+   },
    "defines-your-life": {
     "arrived": 0,
     "left": 0,
@@ -9435,6 +24951,15 @@ window.NORDSTERN_BUCKET_DIFFS = [
     "was": 29,
     "now": 29
    },
+   "never-safe": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 0,
+    "now": 0
+   },
    "defines-your-life": {
     "arrived": 0,
     "left": 0,
@@ -9518,6 +25043,15 @@ window.NORDSTERN_BUCKET_DIFFS = [
     "net": 1,
     "was": 29,
     "now": 30
+   },
+   "never-safe": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 0,
+    "now": 0
    },
    "defines-your-life": {
     "arrived": 0,
@@ -9603,6 +25137,15 @@ window.NORDSTERN_BUCKET_DIFFS = [
     "was": 30,
     "now": 31
    },
+   "never-safe": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 0,
+    "now": 0
+   },
    "defines-your-life": {
     "arrived": 0,
     "left": 0,
@@ -9629,6 +25172,970 @@ window.NORDSTERN_BUCKET_DIFFS = [
     "net": 0,
     "was": 14,
     "now": 14
+   }
+  }
+ },
+ {
+  "from": "2026-10-10",
+  "to": "2026-10-19",
+  "skipped": null,
+  "rules_changed": false,
+  "from_version": 5,
+  "to_version": 5,
+  "arrivals": [
+   {
+    "id": "FND-D-0147",
+    "slug": "acute-myeloid-leukaemia",
+    "bucket": "ends-it-later"
+   }
+  ],
+  "departures": [],
+  "movements": [],
+  "tags_gained": [],
+  "tags_lost": [],
+  "by_bucket": {
+   "ends-it": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 4,
+    "now": 4
+   },
+   "ends-it-unless-caught": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 2,
+    "now": 2
+   },
+   "ends-it-later": {
+    "arrived": 1,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 1,
+    "was": 17,
+    "now": 18
+   },
+   "held-off": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 31,
+    "now": 31
+   },
+   "never-safe": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 0,
+    "now": 0
+   },
+   "defines-your-life": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 17,
+    "now": 17
+   },
+   "changes-you": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 61,
+    "now": 61
+   },
+   "back-to-normal": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 14,
+    "now": 14
+   }
+  }
+ },
+ {
+  "from": "2026-10-19",
+  "to": "2026-10-27",
+  "skipped": null,
+  "rules_changed": false,
+  "from_version": 5,
+  "to_version": 5,
+  "arrivals": [],
+  "departures": [],
+  "movements": [],
+  "tags_gained": [],
+  "tags_lost": [],
+  "by_bucket": {
+   "ends-it": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 4,
+    "now": 4
+   },
+   "ends-it-unless-caught": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 2,
+    "now": 2
+   },
+   "ends-it-later": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 18,
+    "now": 18
+   },
+   "held-off": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 31,
+    "now": 31
+   },
+   "never-safe": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 0,
+    "now": 0
+   },
+   "defines-your-life": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 17,
+    "now": 17
+   },
+   "changes-you": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 61,
+    "now": 61
+   },
+   "back-to-normal": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 14,
+    "now": 14
+   }
+  }
+ },
+ {
+  "from": "2026-10-27",
+  "to": "2026-10-30",
+  "skipped": null,
+  "rules_changed": true,
+  "from_version": 5,
+  "to_version": 6,
+  "arrivals": [
+   {
+    "id": "FND-D-0148",
+    "slug": "food-allergy",
+    "bucket": "never-safe"
+   }
+  ],
+  "departures": [],
+  "movements": [],
+  "tags_gained": [],
+  "tags_lost": [],
+  "by_bucket": {
+   "ends-it": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 4,
+    "now": 4
+   },
+   "ends-it-unless-caught": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 2,
+    "now": 2
+   },
+   "ends-it-later": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 18,
+    "now": 18
+   },
+   "held-off": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 31,
+    "now": 31
+   },
+   "never-safe": {
+    "arrived": 1,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 1,
+    "was": 0,
+    "now": 1
+   },
+   "defines-your-life": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 17,
+    "now": 17
+   },
+   "changes-you": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 61,
+    "now": 61
+   },
+   "back-to-normal": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 14,
+    "now": 14
+   }
+  }
+ },
+ {
+  "from": "2026-10-30",
+  "to": "2026-11-03",
+  "skipped": null,
+  "rules_changed": false,
+  "from_version": 6,
+  "to_version": 6,
+  "arrivals": [],
+  "departures": [],
+  "movements": [],
+  "tags_gained": [],
+  "tags_lost": [],
+  "by_bucket": {
+   "ends-it": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 4,
+    "now": 4
+   },
+   "ends-it-unless-caught": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 2,
+    "now": 2
+   },
+   "ends-it-later": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 18,
+    "now": 18
+   },
+   "held-off": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 31,
+    "now": 31
+   },
+   "never-safe": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 1,
+    "now": 1
+   },
+   "defines-your-life": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 17,
+    "now": 17
+   },
+   "changes-you": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 61,
+    "now": 61
+   },
+   "back-to-normal": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 14,
+    "now": 14
+   }
+  }
+ },
+ {
+  "from": "2026-11-03",
+  "to": "2026-11-05",
+  "skipped": null,
+  "rules_changed": false,
+  "from_version": 6,
+  "to_version": 6,
+  "arrivals": [
+   {
+    "id": "FND-D-0149",
+    "slug": "ebv-infection",
+    "bucket": "changes-you"
+   }
+  ],
+  "departures": [],
+  "movements": [],
+  "tags_gained": [],
+  "tags_lost": [],
+  "by_bucket": {
+   "ends-it": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 4,
+    "now": 4
+   },
+   "ends-it-unless-caught": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 2,
+    "now": 2
+   },
+   "ends-it-later": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 18,
+    "now": 18
+   },
+   "held-off": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 31,
+    "now": 31
+   },
+   "never-safe": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 1,
+    "now": 1
+   },
+   "defines-your-life": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 17,
+    "now": 17
+   },
+   "changes-you": {
+    "arrived": 1,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 1,
+    "was": 61,
+    "now": 62
+   },
+   "back-to-normal": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 14,
+    "now": 14
+   }
+  }
+ },
+ {
+  "from": "2026-11-05",
+  "to": "2026-11-08",
+  "skipped": null,
+  "rules_changed": false,
+  "from_version": 6,
+  "to_version": 6,
+  "arrivals": [
+   {
+    "id": "FND-D-0150",
+    "slug": "h-pylori-infection",
+    "bucket": "back-to-normal"
+   },
+   {
+    "id": "FND-D-0151",
+    "slug": "burns",
+    "bucket": "defines-your-life"
+   }
+  ],
+  "departures": [],
+  "movements": [],
+  "tags_gained": [
+   {
+    "id": "FND-D-0069",
+    "slug": "malaria",
+    "tag": "needs-more-evidence"
+   }
+  ],
+  "tags_lost": [],
+  "by_bucket": {
+   "ends-it": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 4,
+    "now": 4
+   },
+   "ends-it-unless-caught": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 2,
+    "now": 2
+   },
+   "ends-it-later": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 18,
+    "now": 18
+   },
+   "held-off": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 31,
+    "now": 31
+   },
+   "never-safe": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 1,
+    "now": 1
+   },
+   "defines-your-life": {
+    "arrived": 1,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 1,
+    "was": 17,
+    "now": 18
+   },
+   "changes-you": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 62,
+    "now": 62
+   },
+   "back-to-normal": {
+    "arrived": 1,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 1,
+    "was": 14,
+    "now": 15
+   }
+  }
+ },
+ {
+  "from": "2026-11-08",
+  "to": "2026-11-09",
+  "skipped": null,
+  "rules_changed": false,
+  "from_version": 6,
+  "to_version": 6,
+  "arrivals": [
+   {
+    "id": "FND-D-0152",
+    "slug": "listeriosis",
+    "bucket": "changes-you"
+   },
+   {
+    "id": "FND-D-0153",
+    "slug": "non-typhoidal-salmonellosis",
+    "bucket": "back-to-normal"
+   },
+   {
+    "id": "FND-D-0154",
+    "slug": "botulism",
+    "bucket": "back-to-normal"
+   },
+   {
+    "id": "FND-D-0155",
+    "slug": "lupus",
+    "bucket": "held-off"
+   }
+  ],
+  "departures": [],
+  "movements": [],
+  "tags_gained": [],
+  "tags_lost": [],
+  "by_bucket": {
+   "ends-it": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 4,
+    "now": 4
+   },
+   "ends-it-unless-caught": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 2,
+    "now": 2
+   },
+   "ends-it-later": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 18,
+    "now": 18
+   },
+   "held-off": {
+    "arrived": 1,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 1,
+    "was": 31,
+    "now": 32
+   },
+   "never-safe": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 1,
+    "now": 1
+   },
+   "defines-your-life": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 18,
+    "now": 18
+   },
+   "changes-you": {
+    "arrived": 1,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 1,
+    "was": 62,
+    "now": 63
+   },
+   "back-to-normal": {
+    "arrived": 2,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 2,
+    "was": 15,
+    "now": 17
+   }
+  }
+ },
+ {
+  "from": "2026-11-09",
+  "to": "2026-11-10",
+  "skipped": null,
+  "rules_changed": false,
+  "from_version": 6,
+  "to_version": 6,
+  "arrivals": [
+   {
+    "id": "FND-D-0156",
+    "slug": "sarcopenia",
+    "bucket": "defines-your-life"
+   },
+   {
+    "id": "FND-D-0157",
+    "slug": "abdominal-aortic-aneurysm",
+    "bucket": "ends-it-later"
+   },
+   {
+    "id": "FND-D-0158",
+    "slug": "thoracic-aortic-aneurysm",
+    "bucket": "changes-you"
+   }
+  ],
+  "departures": [],
+  "movements": [],
+  "tags_gained": [],
+  "tags_lost": [],
+  "by_bucket": {
+   "ends-it": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 4,
+    "now": 4
+   },
+   "ends-it-unless-caught": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 2,
+    "now": 2
+   },
+   "ends-it-later": {
+    "arrived": 1,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 1,
+    "was": 18,
+    "now": 19
+   },
+   "held-off": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 32,
+    "now": 32
+   },
+   "never-safe": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 1,
+    "now": 1
+   },
+   "defines-your-life": {
+    "arrived": 1,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 1,
+    "was": 18,
+    "now": 19
+   },
+   "changes-you": {
+    "arrived": 1,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 1,
+    "was": 63,
+    "now": 64
+   },
+   "back-to-normal": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 17,
+    "now": 17
+   }
+  }
+ },
+ {
+  "from": "2026-11-10",
+  "to": "2026-11-11",
+  "skipped": null,
+  "rules_changed": false,
+  "from_version": 6,
+  "to_version": 6,
+  "arrivals": [
+   {
+    "id": "FND-D-0159",
+    "slug": "anti-nmda-receptor-encephalitis",
+    "bucket": "changes-you"
+   },
+   {
+    "id": "FND-D-0160",
+    "slug": "narcolepsy-type-1",
+    "bucket": "held-off"
+   },
+   {
+    "id": "FND-D-0161",
+    "slug": "wilsons-disease",
+    "bucket": "held-off"
+   }
+  ],
+  "departures": [],
+  "movements": [],
+  "tags_gained": [],
+  "tags_lost": [],
+  "by_bucket": {
+   "ends-it": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 4,
+    "now": 4
+   },
+   "ends-it-unless-caught": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 2,
+    "now": 2
+   },
+   "ends-it-later": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 19,
+    "now": 19
+   },
+   "held-off": {
+    "arrived": 2,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 2,
+    "was": 32,
+    "now": 34
+   },
+   "never-safe": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 1,
+    "now": 1
+   },
+   "defines-your-life": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 19,
+    "now": 19
+   },
+   "changes-you": {
+    "arrived": 1,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 1,
+    "was": 64,
+    "now": 65
+   },
+   "back-to-normal": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 17,
+    "now": 17
+   }
+  }
+ },
+ {
+  "from": "2026-11-11",
+  "to": "2026-11-12",
+  "skipped": null,
+  "rules_changed": false,
+  "from_version": 6,
+  "to_version": 6,
+  "arrivals": [
+   {
+    "id": "FND-D-0162",
+    "slug": "neonatal-diabetes",
+    "bucket": "held-off"
+   }
+  ],
+  "departures": [],
+  "movements": [],
+  "tags_gained": [],
+  "tags_lost": [],
+  "by_bucket": {
+   "ends-it": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 4,
+    "now": 4
+   },
+   "ends-it-unless-caught": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 2,
+    "now": 2
+   },
+   "ends-it-later": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 19,
+    "now": 19
+   },
+   "held-off": {
+    "arrived": 1,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 1,
+    "was": 34,
+    "now": 35
+   },
+   "never-safe": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 1,
+    "now": 1
+   },
+   "defines-your-life": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 19,
+    "now": 19
+   },
+   "changes-you": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 65,
+    "now": 65
+   },
+   "back-to-normal": {
+    "arrived": 0,
+    "left": 0,
+    "moved_in": 0,
+    "moved_out": 0,
+    "net": 0,
+    "was": 17,
+    "now": 17
    }
   }
  }

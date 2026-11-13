@@ -256,10 +256,24 @@ test("the six canned questions are expressible as queries", () => {
   }
 });
 
-test("src:recall matches the whole register, and the page says so", () => {
-  // Not a curiosity: the provenance ledger is queryable, and today the
-  // honest answer to "what here is verified" is "nothing".
-  assert.equal(clean("src:recall").length, R.length);
+test("src:recall matches all but one record, and the exception is the milestone", () => {
+  // Not a curiosity: the provenance ledger is queryable, and for 158 records
+  // the honest answer to "what here is verified" was "nothing" — every record
+  // carried at least one value written from memory.
+  //
+  // THIS ASSERTION CHANGED ON 2026-11-11 AND THE CHANGE IS THE POINT. The
+  // register's FIRST record with no recalled value anywhere is
+  // `anti-nmda-receptor-encephalitis`: every scalar in it is either `reasoning`
+  // over other numbers here, or a citation carrying its own quote. The test
+  // failed when that record landed, which is the test doing its job — it pins
+  // a fact about the corpus's provenance, and the fact moved.
+  //
+  // Keep it pinned by NAME rather than by count, so the next such record is
+  // also a deliberate decision rather than a silently relaxed number.
+  const recalled = new Set(clean("src:recall"));
+  const missing = R.filter(r => !recalled.has(r)).map(r => r.slug).sort().join(" ");
+  assert.equal(missing, "anti-nmda-receptor-encephalitis");
+  assert.equal(recalled.size, R.length - 1);
 });
 
 /* ---- numeric fields compare numerically ------------------------------ */

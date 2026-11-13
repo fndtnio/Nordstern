@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nordstern — the state of what is solved</title>
+<title>Nordstern — the readings</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
@@ -205,13 +205,13 @@
 
 <header>
   <div>
-    <h1><span class="fig">Nordstern</span>the state of what is solved</h1>
-    <div class="sub"><b>What medicine cannot do</b>, one disease at a time: <i>do we
-      understand it</i>, and <i>can we do anything about it</i>. Nothing here stores
-      whether a disease is solved — every figure is <b>derived</b>, and every one
-      links to the query that produces it.</div>
+    <h1><span class="fig">Nordstern</span>the readings</h1>
+    <div class="sub"><b>Everything behind the one number</b> on the front page: the same
+      147 records read 26 ways. Nothing here stores whether a disease is solved — every
+      figure is <b>derived</b>, and every one links to the query that produces it.</div>
   </div>
   <div style="display:flex;gap:8px;flex-wrap:wrap">
+    <a class="tool" href="index.html">← the number</a>
     <a class="tool" href="engpass.html">what is in the way →</a>
     <a class="tool" href="fallakte.html">the case files →</a>
     <a class="tool" href="query.html">the query tool →</a>
@@ -426,6 +426,7 @@ const BUCKET_COLOUR = {
   "ends-it-unless-caught": ["var(--vermilion)", .74],
   "ends-it-later":         ["var(--vermilion)", .48],
   "held-off":              ["var(--water)",    .85],
+  "never-safe":            ["#7a5ea6",          .85],
   "defines-your-life":     ["var(--gold)",      .95],
   "changes-you":           ["var(--gold)",      .5],
   "back-to-normal":        ["var(--teal)",      .8],
@@ -812,28 +813,29 @@ function render() {
   {
     const B = S.buckets, A = B.a;
     const ORDER = ["ends-it", "ends-it-unless-caught", "ends-it-later", "held-off",
-                   "defines-your-life", "changes-you", "back-to-normal"];
+                   "never-safe", "defines-your-life", "changes-you", "back-to-normal"];
     const rows = ORDER.map(k => [BUCKET_NAME[k], A[k] || 0, `bucket:${k}`,
                                  BUCKET_COLOUR[k][0] === "var(--vermilion)" ? "v"
                                  : BUCKET_COLOUR[k][0] === "var(--teal)" ? "t"
                                  : BUCKET_COLOUR[k][0] === "var(--gold)" ? "g" : ""]);
     const ends = (A["ends-it"] || 0) + (A["ends-it-unless-caught"] || 0) + (A["ends-it-later"] || 0);
-    out.push(`<h2><span class="n">01</span>Seven states, and every disease is in one</h2>
-    <div class="lede standfirst"><b>There is no single score here, and there will
-      not be one.</b> Progress in medicine looks different depending on where you
-      are standing. If you have a rare disease, it looks like whether anyone is
-      working on it at all. If you have one that is curable and you cannot reach
-      the cure, it looks like money. And there are whole areas where nobody knows
-      what to do. <b>Those are all true at once</b>, and any number that averaged
-      them would be a number about nothing.
-      So this page is {{sections}} readings of the same ${active} records rather
-      than one verdict. They disagree with each other on purpose — the register's
-      job is to make a disagreement precise enough to be worth having, not to
-      settle it. <b>Every figure links to the query that produces it</b>, so you
-      can check the reading against the data and take a different one.</div>
+    out.push(`<h2><span class="n">01</span>Eight states, and every disease is in one</h2>
+    <div class="lede standfirst"><b>The front page gives one number, and this page
+      is everything it leaves out.</b> Progress in medicine looks different depending
+      on where you are standing. If you have a rare disease, it looks like whether
+      anyone is working on it at all. If you have one that is curable and you cannot
+      reach the cure, it looks like money. And there are whole areas where nobody
+      knows what to do. <b>Those are all true at once</b>, and a number that averaged
+      them would be a number about nothing — which is why the front page counts
+      instead of averaging, and prints its definition. So this page is {{sections}}
+      readings of the same ${active} records rather than one verdict. They disagree
+      with each other on purpose — the register's job is to make a disagreement
+      precise enough to be worth having, not to settle it. <b>Every figure links to
+      the query that produces it</b>, so you can check the reading against the data
+      and take a different one.</div>
     <div class="lede">Taken together this is the register's whole answer to
       <i>what does medicine do</i>. Each disease is in <b>exactly one</b> of these
-      seven, so the widths are shares and they sum to ${active}. Read left to
+      eight, so the widths are shares and they sum to ${active}. Read left to
       right as severity: the disease ends your life, holds you on treatment, or
       lets you go — and what it takes on the way out.</div>
     <div class="card hot">${bucketBar(ORDER)}</div>
@@ -851,15 +853,18 @@ function render() {
              ? "is" : "are"} beyond help whenever you find
            ${(A["ends-it"] || 0) === 1 ? "it" : "them"} and
            <b>${A["ends-it-unless-caught"] || 0}</b> only if caught in time.
-           <b>Those two are the smallest states in the register</b> — and the
+           <b>Those two are the smallest of the states anyone pictures</b> — the
            first of them held a single record until it was checked and found to
-           be a gap in the corpus rather than a fact about medicine.`,
+           be a gap in the corpus rather than a fact about medicine. Smaller still
+           is the newest state, <i>never safe</i>, which holds
+           <b>${A["never-safe"] || 0}</b>: that is a statement about the corpus,
+           and the record that forced it is food allergy.`,
           "bucket:(ends-it OR ends-it-unless-caught OR ends-it-later)", "sm")}
       </div>
     </div>
     ${changeRow(null)}
-    <div class="note" style="margin-top:10px"><b>The seven sections that follow
-      are those seven states, each listing what is in it.</b> A count is an
+    <div class="note" style="margin-top:10px"><b>The eight sections that follow
+      are those eight states, each listing what is in it.</b> A count is an
       assertion; the names are the thing you can argue with.
       <b>Ordered alphabetically, not by deaths</b> — a register whose argument is
       that mortality is the wrong lens should not quietly rank by it. A filled
@@ -870,7 +875,7 @@ function render() {
   /* ---- one section per bucket: the page's spine ---- */
   {
     const ORDER = ["ends-it", "ends-it-unless-caught", "ends-it-later", "held-off",
-                   "defines-your-life", "changes-you", "back-to-normal"];
+                   "never-safe", "defines-your-life", "changes-you", "back-to-normal"];
     ORDER.forEach((k, i) => out.push(bucketSection(k, i + 2)));
   }
 

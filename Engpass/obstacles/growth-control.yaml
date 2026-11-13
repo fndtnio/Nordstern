@@ -293,6 +293,34 @@ holes:
     *direction*, and Engpass has no field for it. `check.py` cannot express
     "well funded and still stuck", so the record has to say it in prose.
   - >
+    **A RESULT PUBLISHED AFTER THIS RECORD WAS ASSERTED BEARS DIRECTLY ON THE
+    *WILL NOT STOP* FACE, AND ENGPASS HAS NO FIELD FOR POST-ASSERTION
+    EVIDENCE.** The question above says *switch YAP on in a mouse liver and the
+    organ grows several-fold*. A 2026 mouse study switched it on in a handful of
+    hepatocytes instead and got carcinoma — and found **no mutation in any
+    canonical driver gene in about half the tumours**, with widespread loss of
+    DNA methylation and a list of demethylated, switched-on oncogenes in their
+    place. Knocking down the demethylating enzyme roughly halved the number of
+    mice that developed tumours. *"Thus, YAP1-TEAD activation led to HCC
+    formation in the absence of canonical DGMs in about 50% of cases."* (Kosaka
+    et al., Communications Biology 9:1198, 2026, doi:10.1038/s42003-026-10882-w,
+    read 2026-11-03.)
+    **WHAT IT WOULD MEAN IF IT GENERALISES.** This record treats failed growth
+    control as one of several things wrong in a cancer, whose contribution
+    cannot be isolated — that is the stated reason the benign overgrowths are
+    the honest test. Here the brake's release is not one contributing lesion
+    among many; it is upstream of the mutations, and in half the animals there
+    were none to find. The obstacle would then sit *before* the mutational model
+    of cancer rather than beside it, which is a larger claim than anything this
+    record currently makes and is not asserted here.
+    **WHAT IT IS.** One tissue, one mouse model, six tumours from five mice, a
+    plasmid-driven mosaic that the authors cannot fully exclude as a confound,
+    and human data that are correlational. The authors' own knockdown left five
+    of eleven mice with tumours and they say additional unidentified factors are
+    required. **Nothing in this record is re-rated on it**, and `resolution`
+    stays `partly-answered`; it is logged because the alternative is that the
+    record silently keeps citing a 2026-09-02 reading of the same pathway.
+  - >
     **`scale: null` is not asserted, because Engpass does not price obstacles** —
     Nordstern's blockers do, and none cites this. Were one to, the pricing would
     be genuinely contested in the same way `cell-targeting` logs against itself:

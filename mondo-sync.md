@@ -4,9 +4,9 @@
 identifier once; this checks that it is still true and reports what Mondo
 knows that the register does not. Re-run after a Mondo release.
 
-- Mondo release: **2026-10-06** · checked 2026-10-10
-- 124 identifiers checked
-- 0 dead · 2 scope warnings · 98 import proposals
+- Mondo release: **2026-11-03** · checked 2026-11-11
+- 136 identifiers checked
+- 0 dead · 2 scope warnings · 106 import proposals
 
 ## Dead join keys
 
@@ -32,9 +32,11 @@ searches on, which is how five identifiers in this register became
 reproducible in the first place.
 
 - **acute-bronchitis** — Mondo exact synonyms not in `also`: `bronchus inflammation`
+- **acute-myeloid-leukaemia** — Mondo exact synonyms not in `also`: `AML - acute myeloid leukaemia`, `AML - acute myeloid leukemia`, `ANLL`, `acute Nonlymphocytic leukaemia`, `acute Nonlymphocytic leukemia`, `acute granulocytic leukaemia`, `acute granulocytic leukemia`, `acute myeloblastic leukemia`, `acute myelocytic leukaemia`, `acute myelocytic leukemia`, `acute myelogenous leukemias`, `acute myeloid leukaemia (AML)`, `acute myeloid leukemia`, `acute myeloid leukemia (AML)`, `acute nonlymphocytic leukaemia`, `acute nonlymphocytic leukemia`, `hematopoeitic - acute Myleogenous leukaemia (AML)`, `hematopoeitic - acute Myleogenous leukemia (AML)`, `leukemia, myelocytic, acute`, `myeloid leukemia, acute`
 - **alzheimers** — Mondo exact synonyms not in `also`: `Alzheimer's dementia`
 - **anaemia** — Mondo exact synonyms not in `also`: `anaemia (disease)`, `anemia (disease)`
 - **anal-cancer** — Mondo exact synonyms not in `also`: `cancer of anal canal`, `malignant anal canal neoplasm`, `malignant neoplasm of anal canal`
+- **anti-nmda-receptor-encephalitis** — Mondo exact synonyms not in `also`: `limbic encephalitis with N-methyl-D-aspartate receptor antibodies`, `limbic encephalitis with NMDA receptor antibodies`
 - **atrial-fibrillation** — Mondo exact synonyms not in `also`: `atrial fibrillation (disease)`
 - **bacterial-meningitis** — Mondo exact synonyms not in `also`: `Bacteria caused infectious meningitis`
 - **bipolar** — Mondo exact synonyms not in `also`: `major affective disorder`
@@ -65,11 +67,13 @@ reproducible in the first place.
 - **duchenne** — Mondo exact synonyms not in `also`: `severe dystrophinopathy, Duchenne type`
 - **ebola** — Mondo exact synonyms not in `also`: `EHF`, `Ebola fever`, `Ebolavirus caused disease or disorder`
 - **echinococcosis** — Mondo exact synonyms not in `also`: `Echinococcus caused disease or disorder`
+- **food-allergy** — Mondo exact synonyms not in `also`: `allergy of food material`, `food material allergic disease`
 - **gastric-cancer** — Mondo exact synonyms not in `also`: `GC`, `cancer of stomach`, `malignant gastric neoplasm`, `malignant gastric tumor`, `malignant gastric tumour`, `malignant neoplasm of stomach`, `malignant neoplasm of the stomach`, `malignant stomach neoplasm`, `malignant tumor of stomach`, `malignant tumor of the stomach`, `malignant tumour of body of stomach`, `malignant tumour of greater curve of stomach`, `malignant tumour of lesser curve of stomach`, `malignant tumour of stomach`, `malignant tumour of the stomach`
 - **genital-chlamydia** — Mondo exact synonyms not in `also`: `Chlamydia trachomatis caused disease or disorder`, `Chlamydial infection`
 - **genital-herpes** — Mondo exact synonyms not in `also`: `herpes genitalia`, `herpes genitalis`
 - **glioblastoma** — Mondo exact synonyms not in `also`: `GBM (glioblastoma)`, `glioblastoma (disease)`, `glioblastoma multiforme (disease)`, `grade IV astrocytic tumour`, `spongioblastoma multiforme`
 - **gonorrhoea** — Mondo exact synonyms not in `also`: `GC`
+- **h-pylori-infection** — Mondo exact synonyms not in `also`: `Helicobacter pylori caused disease or disorder`
 - **h-pylori-ulcer** — Mondo exact synonyms not in `also`: `acute peptic ulcer with haemorrhage`, `acute peptic ulcer with haemorrhage and perforation`, `acute peptic ulcer without haemorrhage and without perforation`, `peptic ulcer`
 - **hat** — Mondo exact synonyms not in `also`: `Africam sleeping sickness`, `African trypanosomiasis`
 - **head-neck-cancer** — Mondo exact synonyms not in `also`: `SCCHN`, `craniocervical region squamous cell carcinoma`, `squamous cell carcinoma of head and neck`, `squamous cell carcinoma of the head and neck`
@@ -83,8 +87,10 @@ reproducible in the first place.
 - **influenza** — Mondo exact synonyms not in `also`: `Influenza with other manifestations`, `influenza infection`, `orthomyxoviridae caused disease or disorder`, `orthomyxoviridae infectious disease`
 - **ischaemic-heart-disease** — Mondo exact synonyms not in `also`: `coronary artery disease or disorder`, `coronary disease`, `disease of coronary artery`, `disorder of coronary artery`
 - **leprosy** — Mondo exact synonyms not in `also`: `Mycobacterium leprae caused disease or disorder`
+- **listeriosis** — Mondo exact synonyms not in `also`: `Listeria monocytogenes caused disease or disorder`
 - **liver-cancer** — Mondo exact synonyms not in `also`: `cancer of liver`, `hepatic cancer`, `malignant liver neoplasm`, `malignant neoplasm of liver`, `malignant neoplasm of liver, not specified as primary or secondary`, `malignant neoplasm of liver, primary`, `malignant tumour of liver`, `primary malignant liver neoplasm`, `primary malignant neoplasm of liver`
 - **lung-cancer** — Mondo exact synonyms not in `also`: `cancer of lung`, `malignant lung neoplasm`, `malignant lung tumor`, `malignant lung tumour`, `malignant neoplasm of lung`, `malignant neoplasm of the lung`, `malignant tumor of lung`, `malignant tumor of the lung`, `malignant tumour of lung`, `malignant tumour of the lung`
+- **lupus** — Mondo exact synonyms not in `also`: `SLE - lupus erythematosus, systemic`, `lupus erythematosus, systemic`, `systemic lupus erythematosus (disease)`
 - **lymphatic-filariasis** — Mondo exact synonyms not in `also`: `eyelid elephantiasis`
 - **marburg** — Mondo exact synonyms not in `also`: `MHF`, `Marburg disease`
 - **mcas** — Mondo exact synonyms not in `also`: `MACS`, `disorder of mast cell activation`, `mast cell activation disease`
@@ -93,6 +99,7 @@ reproducible in the first place.
 - **melanoma** — Mondo exact synonyms not in `also`: `melanoma (disease)`, `melanoma, malignant`
 - **msmds** — Mondo exact synonyms not in `also`: `ACTA2-related smooth muscle dysfunction syndrome`
 - **mycoplasma-genitalium** — Mondo exact synonyms not in `also`: `mycoplasmosis`
+- **narcolepsy-type-1** — Mondo exact synonyms not in `also`: `Gelineau syndrome`, `Gelineau's syndrome`, `Gélineau disease`
 - **nasopharyngeal-carcinoma** — Mondo exact synonyms not in `also`: `carcinoma of nasopharynx`, `carcinoma of the nasopharynx`, `nasopharynx carcinoma`, `squamous cell carcinoma of the nasopharynx`
 - **non-hodgkin-lymphoma** — Mondo exact synonyms not in `also`: `non-Hodgkin's lymphoma (NHL)`, `non-Hodgkins lymphoma`
 - **onchocerciasis** — Mondo exact synonyms not in `also`: `infection by Onchocerca volvulus`
@@ -127,6 +134,7 @@ reproducible in the first place.
 - **varicella-zoster** — Mondo exact synonyms not in `also`: `Varicella-zoster Virus infection`
 - **visceral-leishmaniasis** — Mondo exact synonyms not in `also`: `viscus leishmaniasis`
 - **vulvar-cancer** — Mondo exact synonyms not in `also`: `cancer of mammalian vulva`, `malignant mammalian vulva neoplasm`, `malignant neoplasm of mammalian vulva`, `malignant neoplasm of the vulva`, `malignant neoplasm of vulva`, `malignant neoplasm of vulva, unspecified`, `malignant tumor of the vulva`, `malignant tumor of vulva`, `malignant tumour of the vulva`, `malignant tumour of vulva`, `malignant vulva neoplasm`, `malignant vulva tumor`, `malignant vulva tumour`, `malignant vulvar neoplasm`, `malignant vulvar tumor`, `malignant vulvar tumour`, `mammalian vulva cancer`, `vulval cancer`
+- **wilsons-disease** — Mondo exact synonyms not in `also`: `Westphal-Strumpell syndrome`
 - **yaws** — Mondo exact synonyms not in `also`: `Bouba`, `Treponema pallidum subsp. pertenue caused disease or disorder`, `frambesia`
 
 ## Label divergence
@@ -134,12 +142,14 @@ reproducible in the first place.
 Reported, never acted on. Some of these are deliberate: Mondo names
 several diseases after their sequela rather than their cause.
 
+- **acute-myeloid-leukaemia** — we call it **acute myeloid leukaemia**; Mondo's label is **acute myeloid leukemia**
 - **childhood-all** — we call it **childhood acute lymphoblastic leukaemia**; Mondo's label is **childhood acute lymphoblastic leukemia**
 - **childhood-pneumonia** — we call it **pneumonia in children under five**; Mondo's label is **pneumonia**
 - **cirrhosis** — we call it **cirrhosis**; Mondo's label is **cirrhosis of liver**
 - **cml** — we call it **chronic myeloid leukaemia**; Mondo's label is **chronic myeloid leukemia**
 - **ebola** — we call it **Ebola virus disease**; Mondo's label is **Ebola hemorrhagic fever**
 - **genital-chlamydia** — we call it **genital chlamydia infection**; Mondo's label is **chlamydia trachomatis infectious disease**
+- **h-pylori-infection** — we call it **Helicobacter pylori infection**; Mondo's label is **Helicobacter pylori infectious disease**
 - **hearing-loss** — we call it **hearing loss**; Mondo's label is **hearing loss disorder**
 - **heds** — we call it **hypermobile Ehlers-Danlos syndrome**; Mondo's label is **Ehlers-Danlos syndrome, hypermobility type**
 - **hepatitis-b** — we call it **chronic hepatitis B**; Mondo's label is **chronic hepatitis B virus infection**
@@ -162,44 +172,49 @@ is a join key into a dataset the register cannot currently reach.
 
 | source | records | what it unlocks |
 |---|---|---|
-| `MEDGEN` | 119/124 | NCBI concept hub — links OMIM, Orphanet, GTR and literature |
-| `UMLS` | 119/124 | concept mapping across vocabularies |
-| `DOID` | 108/124 | disease ontology |
-| `NCIT` | 108/124 | cancer and biomedical terminology |
-| `SCTID` | 106/124 | clinical coding (SNOMED CT) |
-| `MESH` | 98/124 | literature search |
-| `ICD9` | 94/124 | burden — historical coding, still the key for older series |
-| `icd11.foundation` | 75/124 | burden — current WHO classification |
-| `EFO` | 66/124 | experimental factor ontology — the key into GWAS and biobank data |
-| `ICD10CM` | 66/124 | burden — the route into GBD cause mappings |
-| `GARD` | 55/124 | rare disease information |
-| `Orphanet` | 54/124 | RARE DISEASE PREVALENCE — publishes prevalence classes, not point estimates |
-| `MedDRA` | 35/124 | adverse event and regulatory coding |
-| `ICD10WHO` | 30/124 | burden — the route into GBD cause mappings |
-| `NANDO` | 25/124 | Japanese intractable disease designations |
-| `OMIM` | 24/124 | genetic — gene and variant level |
-| `HP` | 17/124 | — |
-| `NORD` | 17/124 | rare disease information |
-| `ONCOTREE` | 9/124 | — |
-| `birnlex` | 7/124 | neuroscience terminology |
-| `ICDO` | 6/124 | oncology morphology coding |
-| `OMIMPS` | 4/124 | OMIM phenotypic series |
-| `CSP` | 2/124 | — |
-| `MFOMD` | 1/124 | mental functioning ontology |
+| `MEDGEN` | 129/136 | NCBI concept hub — links OMIM, Orphanet, GTR and literature |
+| `UMLS` | 129/136 | concept mapping across vocabularies |
+| `DOID` | 116/136 | disease ontology |
+| `SCTID` | 115/136 | clinical coding (SNOMED CT) |
+| `NCIT` | 115/136 | cancer and biomedical terminology |
+| `MESH` | 109/136 | literature search |
+| `ICD9` | 99/136 | burden — historical coding, still the key for older series |
+| `icd11.foundation` | 83/136 | burden — current WHO classification |
+| `EFO` | 73/136 | experimental factor ontology — the key into GWAS and biobank data |
+| `ICD10CM` | 72/136 | burden — the route into GBD cause mappings |
+| `GARD` | 61/136 | rare disease information |
+| `Orphanet` | 61/136 | RARE DISEASE PREVALENCE — publishes prevalence classes, not point estimates |
+| `MedDRA` | 40/136 | adverse event and regulatory coding |
+| `ICD10WHO` | 32/136 | burden — the route into GBD cause mappings |
+| `NANDO` | 28/136 | Japanese intractable disease designations |
+| `OMIM` | 27/136 | genetic — gene and variant level |
+| `NORD` | 21/136 | rare disease information |
+| `HP` | 18/136 | — |
+| `ONCOTREE` | 10/136 | — |
+| `ICDO` | 7/136 | oncology morphology coding |
+| `birnlex` | 7/136 | neuroscience terminology |
+| `OMIMPS` | 5/136 | OMIM phenotypic series |
+| `CSP` | 3/136 | — |
+| `MFOMD` | 1/136 | mental functioning ontology |
 
 Per record:
 
+- **abdominal-aortic-aneurysm** — `DOID:7693` · `EFO:0004214` · `MEDGEN:56524` · `MESH:D017544` · `SCTID:233985008` · `UMLS:C0162871` · `icd11.foundation:1154633768`
 - **acute-bronchitis** — `CSP:2596-1500` · `DOID:6132` · `EFO:0009661` · `ICD9:466.0,490,491` · `MEDGEN:2736` · `MESH:D001991` · `NCIT:C2911` · `SCTID:32398004` · `UMLS:C0006277` · `icd11.foundation:11753425`
+- **acute-myeloid-leukaemia** — `DOID:9119` · `EFO:0000222` · `GARD:0012757` · `ICD10CM:C92.0` · `ICD9:205.0,205.00` · `ICDO:9861/3` · `MEDGEN:9730` · `MESH:D015470` · `MedDRA:10000880` · `NCIT:C3171` · `NORD:1905` · `OMIM:601626` · `ONCOTREE:AML` · `Orphanet:519` · `SCTID:91861009` · `UMLS:C0023467`
 - **als** — `DOID:332` · `GARD:0005786` · `HP:0007354` · `ICD10CM:G12.21` · `ICD9:335.20` · `MEDGEN:274` · `MESH:D000690` · `MedDRA:10002026` · `NANDO:1200002` · `NCIT:C34373` · `NORD:768` · `Orphanet:803` · `SCTID:86044005` · `UMLS:C0002736` · `birnlex:12566` · `icd11.foundation:1982355687`
 - **alzheimers** — `DOID:10652` · `HP:0002511` · `ICD10CM:G30` · `ICD10WHO:G30` · `ICD9:290.1,331.0` · `MEDGEN:1853` · `MESH:D000544` · `NCIT:C2866` · `Orphanet:238616` · `SCTID:142811000119104` · `UMLS:C0002395` · `birnlex:2092` · `icd11.foundation:1611724421`
 - **anaemia** — `DOID:2355` · `HP:0001903` · `ICD9:285.8,285.9` · `MEDGEN:1526` · `MESH:D000740` · `NCIT:C2869` · `SCTID:271737000` · `UMLS:C0002871`
 - **anal-cancer** — `DOID:0050688` · `ICD10CM:C21.1` · `ICD9:154.2` · `MEDGEN:509296` · `SCTID:363352004` · `UMLS:C0153445` · `icd11.foundation:655574575`
+- **anti-nmda-receptor-encephalitis** — `GARD:0020513` · `MEDGEN:458943` · `MESH:D060426` · `NANDO:2201317` · `NCIT:C94853` · `Orphanet:217253` · `SCTID:716684004` · `UMLS:C2986717` · `icd11.foundation:1568915618`
 - **asthma** — `DOID:2841` · `HP:0002099` · `ICD10CM:J45` · `ICD10WHO:J45` · `ICD9:493,493.81,493.9` · `MEDGEN:2109` · `MESH:D001249` · `NCIT:C28397` · `SCTID:31387002` · `UMLS:C0004096` · `icd11.foundation:1656445230`
 - **atrial-fibrillation** — `DOID:0060224` · `EFO:0000275` · `HP:0005110` · `ICD9:427.31` · `MEDGEN:445` · `MESH:D001281` · `NANDO:2100051,2200226` · `NCIT:C50466` · `SCTID:49436004` · `UMLS:C0004238` · `icd11.foundation:171698302`
 - **bacterial-meningitis** — `DOID:9470` · `EFO:1000831` · `GARD:0005881` · `ICD9:320,320.7,320.89,320.9` · `MEDGEN:39048` · `MESH:D016920` · `MedDRA:10004049` · `NCIT:C118297` · `SCTID:95883001` · `UMLS:C0085437` · `icd11.foundation:684930313`
 - **bipolar** — `DOID:3312` · `ICD10CM:F31` · `ICD10WHO:F31` · `ICD9:296.40,296.60,296.80,296.89` · `MEDGEN:2649` · `MESH:D001714` · `NCIT:C34423` · `SCTID:13746004` · `UMLS:C0005586` · `birnlex:12754`
 - **bladder-cancer** — `DOID:11054` · `ICD10CM:C67` · `ICD9:188,188.8,188.9` · `MEDGEN:14150` · `NCIT:C9334` · `OMIM:109800` · `Orphanet:157980` · `SCTID:399326009` · `UMLS:C0005684` · `icd11.foundation:1244512758`
+- **botulism** — `CSP:5000-0060` · `DOID:11976` · `EFO:0005542` · `GARD:0000943` · `MEDGEN:14204` · `MESH:D001906` · `MedDRA:10006041` · `NCIT:C84599` · `Orphanet:1267` · `SCTID:398565003` · `UMLS:C0006057` · `icd11.foundation:78422942`
 - **breast-cancer** — `DOID:1612` · `ICD10CM:C50` · `ICD9:174.8` · `MEDGEN:651` · `NCIT:C9335` · `SCTID:254837009` · `UMLS:C0006142` · `icd11.foundation:1047754165`
+- **burns** — `ICD10CM:T20-T25` · `MESH:D002056` · `NCIT:C34441` · `SCTID:125666000`
 - **buruli-ulcer** — `DOID:0050456` · `GARD:0009520` · `MEDGEN:43206` · `MESH:D054312` · `NCIT:C84604` · `SCTID:15845006` · `UMLS:C0085568` · `icd11.foundation:1974989140`
 - **candidaemia** — `GARD:0025878` · `MEDGEN:163760` · `MESH:D058387` · `SCTID:432261003` · `UMLS:C0877445`
 - **cataract** — `DOID:83` · `HP:0000518` · `ICD9:366,366.44,366.8,366.9` · `MEDGEN:39462` · `MESH:D002386` · `NCIT:C26713` · `OMIMPS:116200` · `SCTID:193570009` · `UMLS:C0086543` · `icd11.foundation:109841337`
@@ -231,11 +246,13 @@ Per record:
 - **echinococcosis** — `DOID:1496` · `EFO:0007245` · `ICD10CM:B67` · `ICD10WHO:B67` · `ICD9:122,122.9` · `MEDGEN:4438` · `MESH:D004443` · `NCIT:C84682` · `SCTID:74942003` · `UMLS:C0013502` · `icd11.foundation:1456802165`
 - **epilepsy** — `DOID:1826` · `EFO:0000474` · `ICD10CM:G40` · `ICD10WHO:G40` · `ICD9:345,345.8,345.80,345.9,345.90,345.91` · `MEDGEN:4506` · `MESH:D004827` · `NCIT:C3020` · `SCTID:84757009` · `UMLS:C0014544` · `birnlex:12718`
 - **familial-hypercholesterolaemia** — `DOID:13810` · `EFO:0004911` · `ICD10CM:E78.01` · `ICD9:V19.8` · `MEDGEN:5688` · `NANDO:2200602` · `NCIT:C34704` · `OMIMPS:143890` · `SCTID:190773008` · `UMLS:C0020445`
+- **food-allergy** — `DOID:3044` · `EFO:1001890` · `ICD9:995.3` · `MEDGEN:1635115` · `MESH:D005512` · `SCTID:414285001` · `UMLS:C4554344`
 - **gastric-cancer** — `DOID:10534` · `GARD:0007704` · `ICD10CM:C16` · `ICD9:151,151.4,151.5,151.6,151.9` · `MEDGEN:44264` · `NCIT:C9331` · `OMIM:613659` · `UMLS:C0024623` · `icd11.foundation:1397617262`
 - **genital-chlamydia** — `DOID:11263` · `EFO:0007205` · `ICD9:078.88,079.88,079.98` · `NCIT:C34463` · `SCTID:105629000`
 - **genital-herpes** — `DOID:8704` · `EFO:0007282` · `ICD9:054.1,054.10,054.19` · `MEDGEN:42436` · `MESH:D006558` · `NCIT:C14364` · `SCTID:33839006` · `UMLS:C0019342`
 - **glioblastoma** — `DOID:3068` · `EFO:0000519` · `GARD:0002491` · `HP:0012174,0100843` · `ICDO:9440/3` · `MEDGEN:42228` · `MESH:D005909` · `MedDRA:10018336,10018337` · `NANDO:2200087` · `NCIT:C3058` · `NORD:1187` · `ONCOTREE:GB,GBM` · `Orphanet:360` · `SCTID:393563007` · `UMLS:C0017636`
 - **gonorrhoea** — `DOID:7551` · `ICD9:098,098.2,098.32,098.89` · `MEDGEN:9077` · `MESH:D006069` · `NCIT:C92950` · `Orphanet:100642` · `SCTID:15628003` · `UMLS:C0018081`
+- **h-pylori-infection** — `EFO:1000961` · `MESH:D016481`
 - **h-pylori-ulcer** — `DOID:750` · `ICD9:533` · `MEDGEN:45384` · `MESH:D010437` · `NCIT:C3318` · `SCTID:13200003` · `UMLS:C0030920`
 - **h5n1** — `DOID:4492` · `EFO:0005222` · `GARD:0021897` · `MEDGEN:42091` · `MESH:D005585` · `Orphanet:454836` · `SCTID:55604004` · `UMLS:C0016627`
 - **hat** — `DOID:10112` · `EFO:0005225` · `GARD:0007826` · `ICD9:086.5` · `MEDGEN:21714` · `MESH:D014353` · `MedDRA:10001461` · `NCIT:C84541` · `Orphanet:3385` · `SCTID:27031003` · `UMLS:C0041228`
@@ -254,8 +271,10 @@ Per record:
 - **invasive-aspergillosis** — `DOID:0050073` · `GARD:0022735` · `MEDGEN:922866` · `SCTID:721798004` · `UMLS:C0238013` · `icd11.foundation:1314810340`
 - **ischaemic-heart-disease** — `DOID:3393` · `EFO:0001645` · `ICD9:410-414,414.0,414.9` · `MEDGEN:365486` · `MESH:D003324` · `NCIT:C26732` · `SCTID:414024009` · `UMLS:C1956346` · `icd11.foundation:1059873720`
 - **leprosy** — `DOID:1024` · `EFO:0001054` · `GARD:0006886` · `ICD10CM:A30` · `ICD9:030,030.8,030.9` · `MEDGEN:6049` · `MESH:D007918` · `MedDRA:10024229` · `NCIT:C84824` · `NORD:1362` · `Orphanet:548` · `SCTID:81004002` · `UMLS:C0023343` · `icd11.foundation:149072669`
+- **listeriosis** — `DOID:11573` · `EFO:0007347` · `GARD:0006915` · `ICD10CM:A32` · `ICD10WHO:A32` · `ICD9:027.0` · `MEDGEN:9788` · `MESH:D008088` · `MedDRA:10024641` · `NCIT:C82994` · `NORD:1375` · `Orphanet:533` · `UMLS:C0023860` · `icd11.foundation:419706488`
 - **liver-cancer** — `DOID:3571` · `GARD:0027613` · `ICD9:155.0,155.2` · `MEDGEN:87520` · `NCIT:C34803` · `SCTID:93870000` · `UMLS:C0345904` · `icd11.foundation:1605020868`
 - **lung-cancer** — `DOID:1324` · `ICD9:162.3,162.4,162.5,162.8,162.9` · `MEDGEN:66885` · `NCIT:C7377` · `OMIM:211980` · `SCTID:363358000` · `UMLS:C0242379`
+- **lupus** — `DOID:9074` · `HP:0002725` · `ICD10CM:M32` · `ICD10WHO:M32` · `ICD9:710.0` · `MEDGEN:6146` · `MESH:D008180` · `NANDO:1200272,2200416` · `NCIT:C3201` · `NORD:38` · `OMIM:152700` · `OMIMPS:601744` · `Orphanet:536` · `SCTID:55464009` · `UMLS:C0024141` · `icd11.foundation:749596428`
 - **lymphatic-filariasis** — `DOID:12211` · `EFO:0007272` · `GARD:0003321` · `ICD9:374.83` · `MEDGEN:8583` · `MESH:D004605` · `MedDRA:10016675` · `NCIT:C128360` · `NORD:1082` · `Orphanet:2035` · `SCTID:14100003,240820001` · `UMLS:C0013884` · `icd11.foundation:247221550`
 - **malaria** — `DOID:12365` · `EFO:0001068` · `GARD:0006961` · `ICD10CM:B53` · `ICD9:084,084.6` · `MEDGEN:7443` · `MESH:D008288` · `MedDRA:10025487` · `NCIT:C34797` · `NORD:1395` · `Orphanet:673` · `SCTID:61462000` · `UMLS:C0024530` · `icd11.foundation:1439886552`
 - **marburg** — `DOID:4327` · `EFO:0007358` · `GARD:0009444` · `ICD10CM:A98.3` · `ICD9:078.89` · `MEDGEN:9888` · `MESH:D008379` · `MedDRA:10026822` · `NCIT:C84883` · `Orphanet:99826` · `SCTID:77503002` · `UMLS:C0024788` · `icd11.foundation:696598707`
@@ -269,6 +288,7 @@ Per record:
 - **multiple-sclerosis** — `DOID:2377` · `ICD10CM:G35` · `ICD10WHO:G35` · `ICD9:340` · `MEDGEN:10123` · `MESH:D009103` · `NANDO:1200023,2100250,2200904` · `NCIT:C3243` · `Orphanet:802` · `SCTID:24700007` · `UMLS:C0026769` · `icd11.foundation:1298865187`
 - **mycetoma** — `GARD:0003862` · `ICD10CM:B47` · `ICD10WHO:B47` · `MEDGEN:44241` · `MESH:D008271` · `MedDRA:10028427` · `NCIT:C85505` · `Orphanet:2583` · `SCTID:410039003` · `UMLS:C0024449`
 - **mycoplasma-genitalium** — *no cross-references*
+- **narcolepsy-type-1** — `GARD:0007162` · `ICD10CM:G47.4,G47.411` · `ICD9:347.0` · `MEDGEN:199638` · `MedDRA:10028713` · `Orphanet:2073` · `UMLS:C0751362` · `icd11.foundation:1851015159`
 - **nasopharyngeal-carcinoma** — `DOID:9261` · `GARD:0007163` · `ICD9:147,147.0,147.1,147.2,147.3` · `MEDGEN:419909` · `MESH:C538339,D00007727,D000077274` · `MedDRA:10028793` · `NCIT:C3871` · `ONCOTREE:NPC` · `Orphanet:150` · `SCTID:363398003` · `UMLS:C2931822` · `icd11.foundation:1883313543`
 - **neonatal-conditions** — `EFO:0010238` · `ICD10CM:P00-P96` · `MEDGEN:75717` · `UMLS:C0270075`
 - **noma** — `DOID:9672` · `EFO:1001063` · `GARD:0004001` · `ICD10CM:A69.0` · `ICD9:528.1` · `MEDGEN:10366` · `MESH:D009625` · `MedDRA:10029502` · `NCIT:C34852` · `Orphanet:2700` · `SCTID:18116006` · `UMLS:C0028271` · `icd11.foundation:340823130`
@@ -298,6 +318,7 @@ Per record:
 - **spinal-muscular-atrophy** — `GARD:0004531` · `MEDGEN:870510` · `NANDO:2100231` · `NORD:1729` · `Orphanet:70` · `UMLS:C4024957`
 - **stroke** — `DOID:0051061` · `EFO:0000712` · `HP:0001297` · `MEDGEN:52522` · `MESH:D020521` · `NCIT:C3390` · `SCTID:230690007` · `UMLS:C0038454` · `birnlex:12783`
 - **syphilis** — `DOID:4166` · `EFO:0007504` · `GARD:0027732` · `ICD9:097.9` · `MEDGEN:21447` · `MESH:D013587` · `MedDRA:10062120` · `NCIT:C35055` · `SCTID:76272004` · `UMLS:C0039128` · `icd11.foundation:455894495`
+- **thoracic-aortic-aneurysm** — `DOID:14004` · `EFO:0004282` · `MEDGEN:56525` · `MESH:D017545` · `SCTID:433068007` · `UMLS:C0162872` · `icd11.foundation:1383534118`
 - **thyroid-cancer** — `DOID:1781` · `ICD10CM:C73` · `ICD9:193` · `MEDGEN:2869` · `NANDO:2200074` · `NCIT:C7510` · `SCTID:363478007` · `UMLS:C0007115` · `icd11.foundation:447433352`
 - **toxoplasmosis** — `DOID:9965` · `EFO:0007517` · `ICD10CM:B58` · `ICD10WHO:B58` · `ICD9:130,130.7,130.9` · `MEDGEN:21597` · `MESH:D014123` · `NCIT:C3418` · `SCTID:187192000` · `UMLS:C0040558` · `icd11.foundation:738999268`
 - **trachoma** — `DOID:11265` · `ICD10CM:A71` · `ICD10WHO:A71` · `ICD9:076,076.0,076.1,076.9` · `MEDGEN:52801` · `MESH:D014141` · `SCTID:2576002` · `UMLS:C0040592` · `icd11.foundation:372424530`
@@ -312,6 +333,7 @@ Per record:
 - **varicella-zoster** — `EFO:0006509` · `ICD9:052.7` · `MEDGEN:668886` · `NCIT:C96407` · `SCTID:309465005` · `UMLS:C0586989`
 - **visceral-leishmaniasis** — `DOID:9146` · `EFO:0005045` · `GARD:0024188` · `ICD10CM:B55.0` · `ICD9:085.0` · `MEDGEN:44098` · `MESH:D007898` · `NCIT:C34771` · `OMIMPS:608207` · `SCTID:186803007` · `UMLS:C0023290` · `icd11.foundation:1646564717`
 - **vulvar-cancer** — `DOID:1245` · `GARD:0027581` · `ICD10CM:C51` · `ICD9:184.4` · `MEDGEN:91196` · `MESH:D014846` · `NCIT:C7502` · `SCTID:363367000` · `UMLS:C0375071` · `icd11.foundation:1530443809`
+- **wilsons-disease** — `DOID:893` · `GARD:0007893` · `ICD10CM:E83.01` · `MEDGEN:42426` · `MESH:D006527` · `MedDRA:10019819` · `NANDO:1200655,2200579` · `NCIT:C84756` · `NORD:1856` · `OMIM:277900` · `Orphanet:905` · `SCTID:88518009` · `UMLS:C0019202` · `icd11.foundation:468161208`
 - **yaws** — `DOID:10371` · `GARD:0007913` · `ICD10CM:A66` · `ICD10WHO:A66` · `ICD9:102,102.7,102.9` · `MEDGEN:12186` · `MESH:D015001` · `NCIT:C41353` · `NORD:1872` · `SCTID:70647001` · `UMLS:C0043388` · `icd11.foundation:840525023`
 
 ## Sub-entities — the distinctions we make against the ones Mondo holds
@@ -339,7 +361,9 @@ nothing narrower exists. Filing the term upstream is the fix; until
 then the register carries a distinction nobody outside can cite.
 
 - **acute-bronchitis** — **acute bronchitis** has no Mondo term; the record points at the parent `MONDO:0003781` **bronchitis**. The ontology cannot hold a distinction this register makes (gaps.md #227)
+- **burns** — **burn injury** has no Mondo term; the record points at the parent `MONDO:0043519` **burn**. The ontology cannot hold a distinction this register makes (gaps.md #227)
 - **childhood-pneumonia** — **pneumonia in children under five** has no Mondo term; the record points at the parent `MONDO:0005249` **pneumonia**. The ontology cannot hold a distinction this register makes (gaps.md #227)
+- **food-allergy** — **IgE-mediated food allergy** has no Mondo term; the record points at the parent `MONDO:0700226` **food allergy**. The ontology cannot hold a distinction this register makes (gaps.md #227)
 - **h-pylori-ulcer** — **peptic ulcer disease caused by Helicobacter pylori** has no Mondo term; the record points at the parent `MONDO:0004247` **peptic ulcer disease**. The ontology cannot hold a distinction this register makes (gaps.md #227)
 - **h5n1** — **H5N1 avian influenza** has no Mondo term; the record points at the parent `MONDO:0018695` **avian influenza**. The ontology cannot hold a distinction this register makes (gaps.md #227)
 - **influenza** — **seasonal influenza** has no Mondo term; the record points at the parent `MONDO:0005812` **influenza**. The ontology cannot hold a distinction this register makes (gaps.md #227)
@@ -357,11 +381,13 @@ their own right**, so each is a candidate for its own record — or for a
 stratum — if the register ever decides the parent is doing too much
 work. Same question as the strata section, asked from the other side.
 
+- **abdominal-aortic-aneurysm** — `also: aortic aneurysm` is the label of `MONDO:0005160` **aortic aneurysm** — the ontology holds it as its own entity, which the register currently folds into this record
 - **anaemia** — `also: iron deficiency anaemia` is the label of `MONDO:0001356` **iron deficiency anemia** — the ontology holds it as its own entity, which the register currently folds into this record
 - **anaemia** — `also: iron-deficiency anemia` is the label of `MONDO:0001356` **iron deficiency anemia** — the ontology holds it as its own entity, which the register currently folds into this record
 - **anaemia** — `also: pernicious anaemia` is the label of `MONDO:0008228` **pernicious anemia** — the ontology holds it as its own entity, which the register currently folds into this record
 - **anal-cancer** — `also: anal canal carcinoma` is the label of `MONDO:0007108` **anal canal carcinoma** — the ontology holds it as its own entity, which the register currently folds into this record
 - **anal-cancer** — `also: anal squamous cell carcinoma` is the label of `MONDO:0006082` **anal squamous cell carcinoma** — the ontology holds it as its own entity, which the register currently folds into this record
+- **anti-nmda-receptor-encephalitis** — `also: autoimmune encephalitis` is the label of `MONDO:0020640` **autoimmune encephalitis** — the ontology holds it as its own entity, which the register currently folds into this record
 - **asthma** — `also: allergic asthma` is the label of `MONDO:0004784` **allergic asthma** — the ontology holds it as its own entity, which the register currently folds into this record
 - **asthma** — `also: reactive airway disease` is the label of `MONDO:0100470` **reactive airway disease** — the ontology holds it as its own entity, which the register currently folds into this record
 - **atrial-fibrillation** — `also: atrial flutter` is the label of `MONDO:0005310` **atrial flutter** — the ontology holds it as its own entity, which the register currently folds into this record
@@ -369,6 +395,9 @@ work. Same question as the strata section, asked from the other side.
 - **bacterial-meningitis** — `also: pneumococcal meningitis` is the label of `MONDO:0006913` **pneumococcal meningitis** — the ontology holds it as its own entity, which the register currently folds into this record
 - **bacterial-meningitis** — `also: meningitis` is the label of `MONDO:0021108` **meningitis** — the ontology holds it as its own entity, which the register currently folds into this record
 - **bladder-cancer** — `also: urothelial carcinoma` is the label of `MONDO:0040679` **urothelial carcinoma** — the ontology holds it as its own entity, which the register currently folds into this record
+- **botulism** — `also: infant botulism` is the label of `MONDO:0015804` **infant botulism** — the ontology holds it as its own entity, which the register currently folds into this record
+- **botulism** — `also: foodborne botulism` is the label of `MONDO:0016453` **foodborne botulism** — the ontology holds it as its own entity, which the register currently folds into this record
+- **botulism** — `also: wound botulism` is the label of `MONDO:0015803` **wound botulism** — the ontology holds it as its own entity, which the register currently folds into this record
 - **cataract** — `also: senile cataract` is the label of `MONDO:0004847` **senile cataract** — the ontology holds it as its own entity, which the register currently folds into this record
 - **cerebral-palsy** — `also: spastic diplegia` is the label of `MONDO:0001167` **spastic diplegia** — the ontology holds it as its own entity, which the register currently folds into this record
 - **cervical-cancer** — `also: cervical carcinoma` is the label of `MONDO:0005131` **cervical carcinoma** — the ontology holds it as its own entity, which the register currently folds into this record
@@ -395,6 +424,7 @@ work. Same question as the strata section, asked from the other side.
 - **liver-cancer** — `also: hepatocellular carcinoma` is the label of `MONDO:0007256` **hepatocellular carcinoma** — the ontology holds it as its own entity, which the register currently folds into this record
 - **lung-cancer** — `also: lung carcinoma` is the label of `MONDO:0005138` **lung carcinoma** — the ontology holds it as its own entity, which the register currently folds into this record
 - **lung-cancer** — `also: bronchogenic carcinoma` is the label of `MONDO:0002806` **bronchogenic carcinoma** — the ontology holds it as its own entity, which the register currently folds into this record
+- **lupus** — `also: lupus erythematosus` is the label of `MONDO:0004670` **lupus erythematosus** — the ontology holds it as its own entity, which the register currently folds into this record
 - **mcas** — `also: idiopathic mast cell activation syndrome` is the label of `MONDO:0100051` **idiopathic mast cell activation syndrome** — the ontology holds it as its own entity, which the register currently folds into this record
 - **melanoma** — `also: cutaneous melanoma` is the label of `MONDO:0005012` **cutaneous melanoma** — the ontology holds it as its own entity, which the register currently folds into this record
 - **melanoma** — `also: mucosal melanoma` is the label of `MONDO:0000544` **mucosal melanoma** — the ontology holds it as its own entity, which the register currently folds into this record
@@ -451,8 +481,14 @@ which are one word and genuine — so it is left visible and named here.
 
 - **bacterial-meningitis** — stratum **meningococcal meningitis** → `MONDO:0018059` **meningococcal meningitis** — the ontology holds this distinction and the register carries it only as prose
 - **bacterial-meningitis** — stratum **pneumococcal meningitis** → `MONDO:0006913` **pneumococcal meningitis** — the ontology holds this distinction and the register carries it only as prose
+- **botulism** — stratum **infant botulism** → `MONDO:0015804` **infant botulism** — the ontology holds this distinction and the register carries it only as prose
+- **botulism** — stratum **foodborne botulism** → `MONDO:0016453` **foodborne botulism** — the ontology holds this distinction and the register carries it only as prose
+- **botulism** — stratum **wound botulism** → `MONDO:0015803` **wound botulism** — the ontology holds this distinction and the register carries it only as prose
 - **diarrhoeal-disease** — stratum **dysentery** → `MONDO:0001517` **dysentery** — the ontology holds this distinction and the register carries it only as prose
+- **h-pylori-infection** — stratum **peptic ulcer disease** → `MONDO:0004247` **peptic ulcer disease** — the ontology holds this distinction and the register carries it only as prose
+- **h-pylori-infection** — stratum **gastric adenocarcinoma** → `MONDO:0005036` **gastric adenocarcinoma** — the ontology holds this distinction and the register carries it only as prose
 - **hypertension** — stratum **resistant hypertension** → `MONDO:0100078` **resistant hypertension** — the ontology holds this distinction and the register carries it only as prose
+- **lupus** — stratum **lupus nephritis** → `MONDO:0005556` **lupus nephritis** — the ontology holds this distinction and the register carries it only as prose
 - **lymphatic-filariasis** — stratum **hydrocele** → `MONDO:0004920` **hydrocele** — the ontology holds this distinction and the register carries it only as prose
 - **prion-disease** — stratum **sporadic Creutzfeldt-Jakob disease** → `MONDO:0016079` **sporadic Creutzfeldt-Jakob disease** — the ontology holds this distinction and the register carries it only as prose
 - **prion-disease** — stratum **acquired** → `MONDO:0021141` **acquired** — the ontology holds this distinction and the register carries it only as prose
@@ -468,4 +504,6 @@ which are one word and genuine — so it is left visible and named here.
 
 ## Changes since the last snapshot
 
-- `MONDO:0005439` **new** — first time this identifier has been snapshotted
+- `MONDO:0010200` **new** — first time this identifier has been snapshotted
+- `MONDO:0016158` **new** — first time this identifier has been snapshotted
+- `MONDO:0021081` **new** — first time this identifier has been snapshotted

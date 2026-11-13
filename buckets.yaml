@@ -27,6 +27,17 @@
 # the version and a digest of the rules in every snapshot, and a test fails if
 # the digest moved and the version did not.
 
+# v6 (2026-10-30) ADDED `never-safe` TO AXIS A, between `held-off` and
+# `defines-your-life`. Forced by `food-allergy`: nothing alters the course,
+# nothing is treated day to day, and the disease is an acute, possibly fatal
+# event that can recur at any time — a `window` that `recurs` — held shut by
+# the patient's own vigilance. The axis was built on survival and could not see
+# it: rated, the record read "alive and still dying of it"; unrated, it fell
+# into `defines-your-life` on `ongoing: high` and lost the one fact that
+# matters. **MOVED: food-allergy (written the same day) from `defines-your-life`.**
+# No earlier record qualifies, so axis-A counts in v1–v5 snapshots remain
+# comparable for the other seven states; `never-safe` simply did not exist.
+
 # v5 (2026-09-19) GUARDED `cannot-reach-people` ON CAPABILITY. The tag is
 # named "It works and it does not arrive" and its rule asked only whether it
 # arrived: `delivery` barely/undelivered. That filed `alzheimers` — a
@@ -62,7 +73,7 @@
 # v2 (2026-08-30) added `found-too-late` to axis B. Axis A is unchanged, so the
 # axis-A counts in earlier snapshots remain comparable; the axis-B tallies do
 # not, because a record can now carry a tag it could not carry before.
-version: 5
+version: 6
 
 axes:
 
@@ -165,6 +176,23 @@ axes:
           NOT cured. **This rung is what stops HIV being filed next to hepatitis
           C** — one is no longer a death sentence, the other is over.
         examples: [hiv, type-1-diabetes, schizophrenia]
+
+      - slug: never-safe
+        name: You survive, and you are never safe
+        rule: >
+          Nothing alters the course and nothing is treated day to day. The
+          disease is an acute, potentially fatal event that can recur at any
+          time — a `window` marked `recurs` — and keeping it shut is the
+          patient's own work, every day, for life: `intervention` symptomatic or
+          none, `ongoing` high, and survival unrated or near-complete.
+        not: >
+          NOT `held-off`: nothing is being suppressed; between events the person
+          is well and untreated. NOT `defines-your-life` on burden alone — the
+          burden here is a lethal possibility rather than a continuous cost.
+          This axis was built on survival and this state is invisible to it:
+          measured by deaths it is nothing, measured by what a life is organised
+          around it is everything.
+        examples: [food-allergy]
 
       - slug: defines-your-life
         name: You survive, and it defines your life

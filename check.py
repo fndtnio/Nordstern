@@ -635,6 +635,94 @@ def delivery(rec) -> str:
 
 
 # --------------------------------------------------------------------------
+# SOLVED — the one number, and the three facts it is made of.
+#
+# The landing page used to say "there is no single score here, and there will
+# not be one". That was right about AVERAGES and wrong about COUNTS. A score
+# that averages the tiers is a number about nothing; a count with its
+# definition printed under it is what this register does for everything else:
+# derived, arguable, and linked to the query that produces it. So:
+#
+#   A disease is SOLVED when medicine can end it, the treatment reaches most
+#   of the people who have it, and it costs them nothing permanent.
+#
+# Three steps, each a fact the register already derives, each strictly inside
+# the one before it, so the page can show the staircase: how many medicine
+# knows how to end, how many of those it actually delivers, how many of those
+# leave no mark. The headline is the last step. The staircase is the thesis.
+#
+# It counts DISEASES, not people: 147 rated records, not medicine. A
+# people-weighted version is the better number and the burden data is too
+# thin to carry it yet. Say that under the number; never let the number
+# stand alone.
+# --------------------------------------------------------------------------
+
+SOLVED_REACH_FLOOR = 0.6     # "reaches most" — the same floor as the `mostly` band
+SOLVED_DEFINITION = ("a disease is solved when medicine can end it, the treatment "
+                     "reaches most of the people who have it, and it costs them "
+                     "nothing permanent")
+SOLVED_STEPS = ["medicine can end it", "and it reaches most patients",
+                "and it costs nothing permanent"]
+
+
+def can_end(rec) -> bool:
+    """Step one: medicine can END it — a finite cure, or prevention. `managed`
+    (HIV) and `partial` (ALS) are real capability and are not this."""
+    return capability(rec) in ("curable", "preventable")
+
+
+def reaches_most(rec) -> bool:
+    """Step two: what ends it reaches most of the people who have it.
+
+    For a curable record that is `reach >= 0.6`, the floor of the `mostly`
+    delivery band. For a PREVENTABLE record there is no reach at all —
+    prevention has no efficacy or access scalars (gaps.md #109) — so this step
+    passes BY ASSUMPTION and the page says so in words. The alternative is to
+    fail them, which would report measles as unsolved because the schema cannot
+    measure vaccination coverage, and that is a fact about the schema, not
+    about measles. When prevention gets its own reach, this branch goes.
+    """
+    if not can_end(rec):
+        return False
+    if capability(rec) == "preventable":
+        return True
+    return reach(rec) >= SOLVED_REACH_FLOOR
+
+
+def solved(rec) -> bool:
+    """Step three, and the verdict: ends it, reaches most, and `terms` is clean
+    — the cure takes nothing permanent (no `toll` of any severity)."""
+    return reaches_most(rec) and terms(rec) == "clean"
+
+
+def solved_step(rec) -> int:
+    """How far up the staircase this record gets: 0 none, 1 can end it,
+    2 and reaches most, 3 solved. Derived, never stored."""
+    if solved(rec):
+        return 3
+    if reaches_most(rec):
+        return 2
+    if can_end(rec):
+        return 1
+    return 0
+
+
+def solved_staircase(active) -> dict:
+    """The three counts over a set of active records, plus what they are over.
+    This is the shape the landing page and the snapshot both carry, so the
+    number on the page and the number frozen on the date cannot differ."""
+    return {
+        "of": len(active),
+        "can_end": sum(1 for r in active if can_end(r)),
+        "reaches_most": sum(1 for r in active if reaches_most(r)),
+        "solved": sum(1 for r in active if solved(r)),
+        "reach_floor": SOLVED_REACH_FLOOR,
+        "definition": SOLVED_DEFINITION,
+        "steps": SOLVED_STEPS,
+    }
+
+
+# --------------------------------------------------------------------------
 # BUCKETS — the register read as a small set of named states. See buckets.yaml
 # for the definitions and for why the two axes are different kinds of thing.
 # --------------------------------------------------------------------------
@@ -644,13 +732,13 @@ def delivery(rec) -> str:
 # is not one. Ending your life outranks changing it; being held off indefinitely
 # outranks the residue that the holding costs.
 BUCKETS_A = ("ends-it", "ends-it-unless-caught", "ends-it-later", "held-off",
-             "defines-your-life", "changes-you", "back-to-normal")
+             "never-safe", "defines-your-life", "changes-you", "back-to-normal")
 BUCKETS_B = ("nobody-makes-it", "found-too-late", "cannot-aim-it",
              "no-starting-point", "cannot-reach-people", "needs-more-evidence")
 
 
 def bucket(rec) -> str:
-    """Which of the seven states of axis A this record is in — always exactly one.
+    """Which of the eight states of axis A this record is in — always exactly one.
 
     **THE SPINE IS WHAT HAPPENS TO YOUR LIFE, NOT WHETHER YOU DIE.** A mortality
     ladder is silent about hearing loss, cataract, osteoarthritis and low back
@@ -695,6 +783,20 @@ def bucket(rec) -> str:
     # `held` covers the rated ones; the rung covers those `survival` cannot rate.
     if out == "held" or ax["intervention"] == "suppressive":
         return "held-off"
+    # NEVER SAFE — buckets.yaml v6, forced by `food-allergy`. Nothing alters the
+    # course and nothing is treated day to day; the disease is an acute, possibly
+    # fatal event that can recur at any time, and keeping it from happening is
+    # the patient's own daily work. The signal is DECLARED on the window
+    # (`recurs: true`): the window reopens with every exposure and the patient
+    # closes it. Read before `defines-your-life`, which it would otherwise fall
+    # into on `ongoing: high` and lose the one fact that matters — that the
+    # ongoing burden is a lethal window held shut by vigilance, not a continuous
+    # cost. Survival is unrated or near-complete by construction: almost nobody
+    # dies of it, which is exactly why a survival-built axis could not see it.
+    win = rec.get("window") or {}
+    if (win.get("recurs") is True and ax["intervention"] in ("symptomatic", "none")
+            and ax["ongoing"] == "high" and (treated is None or treated >= 0.95)):
+        return "never-safe"
     if ax["ongoing"] == "high" or residue_terms(rec) == "harsh" or terms(rec) == "harsh":
         return "defines-your-life"
     # SEVERITY, NOT PRESENCE — buckets.yaml v3, and it fixed a contradiction
@@ -1385,6 +1487,11 @@ def check(rec, path) -> tuple[list[str], list[str]]:
         for field in ("what", "closes_on", "caught_in_time"):
             if not win.get(field):
                 errors.append(f"{here}: window is missing {field}")
+        # `recurs` is the declared signal for `never-safe`: the window reopens
+        # with every exposure. A flag, never a sentence, so a record cannot
+        # half-claim it.
+        if "recurs" in win and not isinstance(win["recurs"], bool):
+            errors.append(f"{here}: window.recurs must be true or false, got {win['recurs']!r}")
 
     for b in rec.get("blockers") or []:
         tag = f"{here}: blocker[{b.get('kind')}]"
@@ -1570,6 +1677,9 @@ def snapshot(payload, on_date=None) -> dict:
         # judgements — which is what it is for, and they do not pretend to be
         # measurements the way the burden block does.
         "capability": _tally(r["derived"]["capability"] for r in active),
+        # THE ONE NUMBER, frozen on the date with the definition that produced
+        # it, so next year's "it was 5%" is a comparison and not a memory.
+        "solved": solved_staircase(active),
         # "You get it, and then what?" — the only axis in this register that
         # means the same thing in every record.
         "survival": {
@@ -1958,7 +2068,25 @@ def build(records, root) -> None:
     """
     import csv
 
-    payload = [{**r, "derived": derive(r)} for r in records]
+    # WHAT IT IS, BORROWED. The register minted no descriptions — it has witnesses
+    # written for the rating, not for a stranger. Mondo has a definition for
+    # almost every id this register borrows, so the build carries it beside the
+    # record, attributed, exactly as it carries the id: never edited, never
+    # paraphrased, dropped when the id has none. mondo-terms.json is the local
+    # snapshot `mondo_sync.py` keeps; absent, the card simply has no definition.
+    mondo_terms = {}
+    try:
+        with open(os.path.join(root, "mondo-terms.json"), encoding="utf-8") as fh:
+            mt = json.load(fh)
+        mondo_terms = {k: v for k, v in (mt.get("terms") or {}).items() if v.get("definition")}
+        mondo_release = mt.get("release")
+    except (OSError, ValueError):
+        mondo_release = None
+    def with_mondo(r):
+        t = mondo_terms.get(r.get("mondo") or "")
+        return {**r, "mondo_term": {"label": t.get("label"), "definition": t["definition"],
+                                    "release": mondo_release}} if t else r
+    payload = [{**with_mondo(r), "derived": derive(r)} for r in records]
     web = os.path.join(root, "web")
     os.makedirs(web, exist_ok=True)
 
@@ -1995,6 +2123,8 @@ def build(records, root) -> None:
         "knowledge_gap": r["derived"]["knowledge_gap"],
         "delivery_gap": r["derived"]["delivery_gap"],
         "bucket": r["derived"]["bucket"], "bucket_tags": r["derived"]["bucket_tags"],
+        "solved_step": r["derived"]["solved_step"],
+        "prevention": r["axes"]["prevention"],
         "ylds": (r["burden"].get("ylds") or {}).get("value"),
         "knowledge_yld": r["derived"]["knowledge_yld"],
         "delivery_yld": r["derived"]["delivery_yld"],
@@ -2063,6 +2193,7 @@ def derive(r) -> dict:
         "reach": round(reach(r), 6), "delivery": delivery(r),
         "knowledge_gap": knowledge_gap(r), "delivery_gap": delivery_gap(r),
         "bucket": bucket(r), "bucket_tags": bucket_tags(r),
+        "solved": solved(r), "solved_step": solved_step(r),
         "knowledge_yld": knowledge_yld(r), "delivery_yld": delivery_yld(r),
         "quadrant": quadrant(r), "orphaned": orphaned(r),
         "survival_band": survival_band(r),

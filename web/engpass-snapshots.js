@@ -1593,6 +1593,5179 @@ window.ENGPASS_SNAPSHOTS = [
     "documented": 1
    }
   }
+ },
+ {
+  "date": "2026-10-30",
+  "register": "engpass",
+  "obstacles": {
+   "active": 17,
+   "by_kind": {
+    "mechanism": 6,
+    "tooling": 4,
+    "capability": 3,
+    "economic": 1,
+    "entity": 1,
+    "epidemiology": 1,
+    "manufacturing": 1
+   },
+   "by_resolution": {
+    "open": 10,
+    "partly-answered": 7
+   }
+  },
+  "against_nordstern_records": 148,
+  "blocks": {
+   "who-progresses": 52,
+   "protective-immunity": 21,
+   "burden-unknown": 20,
+   "tissue-repair": 15,
+   "cell-targeting": 14,
+   "pathogen-persistence": 13,
+   "cold-chain": 8,
+   "no-model-system": 8,
+   "unexplained-illness": 8,
+   "donation-dependency": 6,
+   "growth-control": 4,
+   "validation-throughput": 4,
+   "animal-translation": 2,
+   "anaesthesia-mechanism": 1,
+   "deliverable-form": 0,
+   "in-silico-physiology": 0,
+   "rna-folding": 0
+  },
+  "blocks_members": {
+   "anaesthesia-mechanism": [
+    "disorders-of-consciousness"
+   ],
+   "animal-translation": [
+    "als",
+    "cataract"
+   ],
+   "burden-unknown": [
+    "buruli-ulcer",
+    "candidaemia",
+    "cholera",
+    "coccidioidomycosis",
+    "cryptococcal-meningitis",
+    "cryptosporidiosis",
+    "disorders-of-consciousness",
+    "dracunculiasis",
+    "ebola",
+    "h5n1",
+    "hat",
+    "invasive-aspergillosis",
+    "noma",
+    "obstetric-fistula",
+    "retinopathy-of-prematurity",
+    "scabies",
+    "taeniasis-cysticercosis",
+    "trachoma",
+    "trichomoniasis",
+    "yaws"
+   ],
+   "cell-targeting": [
+    "candidaemia",
+    "cryptococcal-meningitis",
+    "cryptosporidiosis",
+    "cystic-fibrosis",
+    "dipg",
+    "duchenne",
+    "genital-herpes",
+    "glioblastoma",
+    "huntington",
+    "invasive-aspergillosis",
+    "msmds",
+    "sickle-cell",
+    "tay-sachs",
+    "varicella-zoster"
+   ],
+   "cold-chain": [
+    "cryptococcal-meningitis",
+    "hepatitis-b",
+    "maternal-haemorrhage",
+    "measles",
+    "retinopathy-of-prematurity",
+    "snakebite",
+    "type-1-diabetes",
+    "visceral-leishmaniasis"
+   ],
+   "deliverable-form": [],
+   "donation-dependency": [
+    "cml",
+    "hat",
+    "lymphatic-filariasis",
+    "onchocerciasis",
+    "visceral-leishmaniasis",
+    "yaws"
+   ],
+   "growth-control": [
+    "benign-prostatic-hyperplasia",
+    "hearing-loss",
+    "keloid",
+    "uterine-fibroids"
+   ],
+   "in-silico-physiology": [],
+   "no-model-system": [
+    "cryptosporidiosis",
+    "diarrhoeal-disease",
+    "dipg",
+    "heds",
+    "keloid",
+    "leprosy",
+    "malaria",
+    "syphilis"
+   ],
+   "pathogen-persistence": [
+    "chagas",
+    "cml",
+    "ebola",
+    "echinococcosis",
+    "genital-herpes",
+    "hiv",
+    "lung-cancer",
+    "lymphatic-filariasis",
+    "marburg",
+    "onchocerciasis",
+    "toxoplasmosis",
+    "typhoid",
+    "varicella-zoster"
+   ],
+   "protective-immunity": [
+    "bacterial-meningitis",
+    "childhood-pneumonia",
+    "cmv-infection",
+    "covid-19",
+    "cre",
+    "cryptococcal-meningitis",
+    "dengue",
+    "diarrhoeal-disease",
+    "genital-chlamydia",
+    "genital-herpes",
+    "gonorrhoea",
+    "influenza",
+    "invasive-aspergillosis",
+    "malaria",
+    "mrsa",
+    "nasopharyngeal-carcinoma",
+    "schistosomiasis",
+    "soil-transmitted-helminths",
+    "syphilis",
+    "toxoplasmosis",
+    "tuberculosis"
+   ],
+   "rna-folding": [],
+   "tissue-repair": [
+    "als",
+    "atrial-fibrillation",
+    "copd",
+    "crohns",
+    "disorders-of-consciousness",
+    "glaucoma",
+    "hearing-loss",
+    "heart-failure",
+    "huntington",
+    "idiopathic-pulmonary-fibrosis",
+    "ischaemic-heart-disease",
+    "msmds",
+    "obstetric-fistula",
+    "retinopathy-of-prematurity",
+    "stroke"
+   ],
+   "unexplained-illness": [
+    "bipolar",
+    "covid-19",
+    "depression",
+    "heds",
+    "low-back-pain",
+    "mcas",
+    "me-cfs",
+    "pots"
+   ],
+   "validation-throughput": [
+    "crohns",
+    "cystic-fibrosis",
+    "mesothelioma",
+    "spinal-muscular-atrophy"
+   ],
+   "who-progresses": [
+    "anal-cancer",
+    "atrial-fibrillation",
+    "bacterial-meningitis",
+    "breast-cancer",
+    "candidaemia",
+    "cervical-cancer",
+    "chagas",
+    "childhood-all",
+    "childhood-pneumonia",
+    "clubfoot",
+    "cmv-infection",
+    "coccidioidomycosis",
+    "colorectal-cancer",
+    "copd",
+    "dengue",
+    "endometriosis",
+    "epilepsy",
+    "familial-hypercholesterolaemia",
+    "gastric-cancer",
+    "genital-chlamydia",
+    "genital-herpes",
+    "glaucoma",
+    "hpv-infection",
+    "ischaemic-heart-disease",
+    "keloid",
+    "leprosy",
+    "liver-cancer",
+    "lung-cancer",
+    "lymphatic-filariasis",
+    "measles",
+    "melanoma",
+    "migraine",
+    "multiple-system-atrophy",
+    "mycoplasma-genitalium",
+    "noma",
+    "non-hodgkin-lymphoma",
+    "osteoporosis",
+    "pancreatic-cancer",
+    "polycythaemia-vera",
+    "prostate-cancer",
+    "refractive-error",
+    "renal-cell-carcinoma",
+    "retinopathy-of-prematurity",
+    "sepsis",
+    "stroke",
+    "taeniasis-cysticercosis",
+    "thyroid-cancer",
+    "toxoplasmosis",
+    "trachoma",
+    "uterine-cancer",
+    "uterine-fibroids",
+    "visceral-leishmaniasis"
+   ]
+  },
+  "resolution_members": {
+   "anaesthesia-mechanism": {
+    "id": "FND-O-0011",
+    "kind": "mechanism",
+    "name": "How does general anaesthesia switch consciousness off?",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "animal-translation": {
+    "id": "FND-O-0010",
+    "kind": "tooling",
+    "name": "What does a result in a mouse tell you about a human?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "burden-unknown": {
+    "id": "FND-O-0005",
+    "kind": "epidemiology",
+    "name": "How many are there, and how does it spread?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "cell-targeting": {
+    "id": "FND-O-0008",
+    "kind": "capability",
+    "name": "Can a molecule be made to act on the cells you mean, and not the others?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "cold-chain": {
+    "id": "FND-O-0014",
+    "kind": "manufacturing",
+    "name": "The treatment works and does not survive the journey to the patient",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "deliverable-form": {
+    "id": "FND-O-0017",
+    "kind": "capability",
+    "name": "What would it take to deliver this without the scarce thing?",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "donation-dependency": {
+    "id": "FND-O-0007",
+    "kind": "economic",
+    "name": "The drug supply depends on a donation that could stop",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "growth-control": {
+    "id": "FND-O-0015",
+    "kind": "mechanism",
+    "name": "What sets the size of a tissue, and what stops it there?",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "in-silico-physiology": {
+    "id": "FND-O-0012",
+    "kind": "tooling",
+    "name": "Can a specific person be simulated well enough to predict what a treatment will do to them?",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "no-model-system": {
+    "id": "FND-O-0013",
+    "kind": "tooling",
+    "name": "There is nowhere outside a patient to study this",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "pathogen-persistence": {
+    "id": "FND-O-0003",
+    "kind": "mechanism",
+    "name": "Why does the pathogen survive treatment?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "protective-immunity": {
+    "id": "FND-O-0009",
+    "kind": "mechanism",
+    "name": "What does a protective immune response actually consist of?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "rna-folding": {
+    "id": "FND-O-0006",
+    "kind": "mechanism",
+    "name": "How does RNA fold, and what does the fold do?",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "tissue-repair": {
+    "id": "FND-O-0002",
+    "kind": "capability",
+    "name": "Can destroyed tissue be repaired?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "unexplained-illness": {
+    "id": "FND-O-0004",
+    "kind": "entity",
+    "name": "What is actually wrong in these people?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "validation-throughput": {
+    "id": "FND-O-0016",
+    "kind": "tooling",
+    "name": "How many candidates can actually be tested, and how fast?",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "who-progresses": {
+    "id": "FND-O-0001",
+    "kind": "mechanism",
+    "name": "Why this person and not that one?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   }
+  },
+  "claims_by_obstacle": {
+   "animal-translation": [
+    {
+     "unblocks": "alzheimers",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "sepsis",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "stroke",
+     "standing": "alleged"
+    }
+   ],
+   "cell-targeting": [
+    {
+     "unblocks": "alzheimers",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "type-1-diabetes",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "osteoarthritis",
+     "standing": "alleged"
+    }
+   ],
+   "growth-control": [
+    {
+     "unblocks": "heart-failure",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "uterine-cancer",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "pleomorphic-adenoma",
+     "standing": "alleged"
+    }
+   ],
+   "in-silico-physiology": [
+    {
+     "unblocks": "type-1-diabetes",
+     "standing": "documented"
+    },
+    {
+     "unblocks": "epilepsy",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "atrial-fibrillation",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "heart-failure",
+     "standing": "alleged"
+    }
+   ],
+   "protective-immunity": [
+    {
+     "unblocks": "hiv",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "rheumatic-heart-disease",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "amr-infection",
+     "standing": "alleged"
+    }
+   ],
+   "rna-folding": [
+    {
+     "unblocks": "spinal-muscular-atrophy",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "duchenne",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "covid-19",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "h5n1",
+     "standing": "alleged"
+    }
+   ],
+   "validation-throughput": [
+    {
+     "unblocks": "prion-disease",
+     "standing": "alleged"
+    }
+   ]
+  },
+  "claims_earned": {
+   "growth-control": [
+    "hearing-loss"
+   ],
+   "validation-throughput": [
+    "crohns",
+    "cystic-fibrosis",
+    "mesothelioma",
+    "spinal-muscular-atrophy"
+   ]
+  },
+  "records_blocked_at_least_once": 113,
+  "distinct_links": 176,
+  "untagged_knowledge_blockers": 48,
+  "untagged_list": [
+   {
+    "record": "acute-bronchitis",
+    "blocks": "why a three-week cough is normal and nobody believes it"
+   },
+   {
+    "record": "acute-myeloid-leukaemia",
+    "blocks": "cure in the two-thirds of patients who are not young, fit or APL"
+   },
+   {
+    "record": "alzheimers",
+    "blocks": "knowing what causes the dementia, having established what causes the plaques"
+   },
+   {
+    "record": "anaemia",
+    "blocks": "whether correcting it delivers what the association promises"
+   },
+   {
+    "record": "anal-cancer",
+    "blocks": "reducing a permanent toll in a disease that is mostly cured"
+   },
+   {
+    "record": "asthma",
+    "blocks": "the four percent with no target, and preventing the disease at all"
+   },
+   {
+    "record": "bladder-cancer",
+    "blocks": "why BCG works, and what to do when it stops"
+   },
+   {
+    "record": "cerebral-palsy",
+    "blocks": "any way back to the lesion"
+   },
+   {
+    "record": "chronic-kidney-disease",
+    "blocks": "why young farm workers are dying of kidney failure"
+   },
+   {
+    "record": "cirrhosis",
+    "blocks": "why most people with the exposure never get the disease, and how to reverse fibrosis on purpose"
+   },
+   {
+    "record": "cmv-infection",
+    "blocks": "a drug that is not fifty years old and toxic to marrow"
+   },
+   {
+    "record": "congenital-heart-disease",
+    "blocks": "what a substituted circulation does over sixty years"
+   },
+   {
+    "record": "cryptosporidiosis",
+    "blocks": "a drug that works in the children who die of this"
+   },
+   {
+    "record": "dipg",
+    "blocks": "a chromatin lesion that is not a drug target"
+   },
+   {
+    "record": "food-allergy",
+    "blocks": "predicting who will react severely, and so who needs what"
+   },
+   {
+    "record": "genital-chlamydia",
+    "blocks": "whether curing it early stops people becoming immune to it"
+   },
+   {
+    "record": "gonorrhoea",
+    "blocks": "the last drug class, against an organism that has taken six"
+   },
+   {
+    "record": "head-neck-cancer",
+    "blocks": "how to take less away without taking less life"
+   },
+   {
+    "record": "hepatitis-b",
+    "blocks": "a cure, and it is one molecule of DNA in the nucleus"
+   },
+   {
+    "record": "hpv-infection",
+    "blocks": "any way to clear an infection that eighty percent of people get"
+   },
+   {
+    "record": "hypertension",
+    "blocks": "why the pressure is high in nine out of ten people"
+   },
+   {
+    "record": "mesothelioma",
+    "blocks": "a tumour defined by what it has lost"
+   },
+   {
+    "record": "migraine",
+    "blocks": "what actually starts an attack"
+   },
+   {
+    "record": "multiple-sclerosis",
+    "blocks": "progression, and the repair that has never worked"
+   },
+   {
+    "record": "multiple-system-atrophy",
+    "blocks": "why the protein is in the wrong cell, and what to do about it"
+   },
+   {
+    "record": "mycetoma",
+    "blocks": "an antifungal that works for eumycetoma"
+   },
+   {
+    "record": "neonatal-conditions",
+    "blocks": "knowing why labour starts early, which governs the largest stratum"
+   },
+   {
+    "record": "obesity",
+    "blocks": "any way to lower the set point rather than continuously oppose it"
+   },
+   {
+    "record": "osteoarthritis",
+    "blocks": "any drug that acts on the disease"
+   },
+   {
+    "record": "parkinsons",
+    "blocks": "fifty years of levodopa and nothing that slows the disease"
+   },
+   {
+    "record": "penile-cancer",
+    "blocks": "any effective treatment for advanced disease"
+   },
+   {
+    "record": "pku",
+    "blocks": "cure"
+   },
+   {
+    "record": "pleomorphic-adenoma",
+    "blocks": "any non-surgical treatment"
+   },
+   {
+    "record": "prion-disease",
+    "blocks": "treating a disease that is over before it is diagnosed"
+   },
+   {
+    "record": "rabies",
+    "blocks": "any treatment at all, once symptoms begin"
+   },
+   {
+    "record": "rheumatoid-arthritis",
+    "blocks": "which of five working mechanisms is the one in this patient"
+   },
+   {
+    "record": "schizophrenia",
+    "blocks": "the symptoms that disable people, which respond to nothing"
+   },
+   {
+    "record": "spinal-muscular-atrophy",
+    "blocks": "what the treated disease is, now that people survive it"
+   },
+   {
+    "record": "toxoplasmosis",
+    "blocks": "whether latent infection does anything to the brain it sits in"
+   },
+   {
+    "record": "trichomoniasis",
+    "blocks": "knowing whether the harms it is associated with can be prevented"
+   },
+   {
+    "record": "type-1-diabetes",
+    "blocks": "why this is happening to more children every year, and how to stop it"
+   },
+   {
+    "record": "type-2-diabetes",
+    "blocks": "whether this is one disease, and why remission fails in most people"
+   },
+   {
+    "record": "uterine-fibroids",
+    "blocks": "why Black women have this disease worse, at every measure"
+   },
+   {
+    "record": "uveal-melanoma",
+    "blocks": "any treatment of the metastatic half"
+   },
+   {
+    "record": "vaginal-cancer",
+    "blocks": "a toll that is preventable and is not prevented"
+   },
+   {
+    "record": "varicella-zoster",
+    "blocks": "anything that prevents or treats the pain, which is the whole burden"
+   },
+   {
+    "record": "varicella-zoster",
+    "blocks": "whether vaccinating children against chickenpox gives their grandparents shingles"
+   },
+   {
+    "record": "vulvar-cancer",
+    "blocks": "the sixty percent of this disease a vaccine will never touch"
+   }
+  ],
+  "claims": {
+   "total": 26,
+   "by_standing": {
+    "alleged": 20,
+    "derived": 5,
+    "documented": 1
+   }
+  }
+ },
+ {
+  "date": "2026-11-03",
+  "register": "engpass",
+  "obstacles": {
+   "active": 17,
+   "by_kind": {
+    "mechanism": 6,
+    "tooling": 4,
+    "capability": 3,
+    "economic": 1,
+    "entity": 1,
+    "epidemiology": 1,
+    "manufacturing": 1
+   },
+   "by_resolution": {
+    "open": 10,
+    "partly-answered": 7
+   }
+  },
+  "against_nordstern_records": 148,
+  "blocks": {
+   "who-progresses": 52,
+   "protective-immunity": 21,
+   "burden-unknown": 20,
+   "tissue-repair": 15,
+   "cell-targeting": 14,
+   "pathogen-persistence": 13,
+   "cold-chain": 8,
+   "no-model-system": 8,
+   "unexplained-illness": 8,
+   "donation-dependency": 6,
+   "growth-control": 4,
+   "validation-throughput": 4,
+   "animal-translation": 2,
+   "anaesthesia-mechanism": 1,
+   "deliverable-form": 0,
+   "in-silico-physiology": 0,
+   "rna-folding": 0
+  },
+  "blocks_members": {
+   "anaesthesia-mechanism": [
+    "disorders-of-consciousness"
+   ],
+   "animal-translation": [
+    "als",
+    "cataract"
+   ],
+   "burden-unknown": [
+    "buruli-ulcer",
+    "candidaemia",
+    "cholera",
+    "coccidioidomycosis",
+    "cryptococcal-meningitis",
+    "cryptosporidiosis",
+    "disorders-of-consciousness",
+    "dracunculiasis",
+    "ebola",
+    "h5n1",
+    "hat",
+    "invasive-aspergillosis",
+    "noma",
+    "obstetric-fistula",
+    "retinopathy-of-prematurity",
+    "scabies",
+    "taeniasis-cysticercosis",
+    "trachoma",
+    "trichomoniasis",
+    "yaws"
+   ],
+   "cell-targeting": [
+    "candidaemia",
+    "cryptococcal-meningitis",
+    "cryptosporidiosis",
+    "cystic-fibrosis",
+    "dipg",
+    "duchenne",
+    "genital-herpes",
+    "glioblastoma",
+    "huntington",
+    "invasive-aspergillosis",
+    "msmds",
+    "sickle-cell",
+    "tay-sachs",
+    "varicella-zoster"
+   ],
+   "cold-chain": [
+    "cryptococcal-meningitis",
+    "hepatitis-b",
+    "maternal-haemorrhage",
+    "measles",
+    "retinopathy-of-prematurity",
+    "snakebite",
+    "type-1-diabetes",
+    "visceral-leishmaniasis"
+   ],
+   "deliverable-form": [],
+   "donation-dependency": [
+    "cml",
+    "hat",
+    "lymphatic-filariasis",
+    "onchocerciasis",
+    "visceral-leishmaniasis",
+    "yaws"
+   ],
+   "growth-control": [
+    "benign-prostatic-hyperplasia",
+    "hearing-loss",
+    "keloid",
+    "uterine-fibroids"
+   ],
+   "in-silico-physiology": [],
+   "no-model-system": [
+    "cryptosporidiosis",
+    "diarrhoeal-disease",
+    "dipg",
+    "heds",
+    "keloid",
+    "leprosy",
+    "malaria",
+    "syphilis"
+   ],
+   "pathogen-persistence": [
+    "chagas",
+    "cml",
+    "ebola",
+    "echinococcosis",
+    "genital-herpes",
+    "hiv",
+    "lung-cancer",
+    "lymphatic-filariasis",
+    "marburg",
+    "onchocerciasis",
+    "toxoplasmosis",
+    "typhoid",
+    "varicella-zoster"
+   ],
+   "protective-immunity": [
+    "bacterial-meningitis",
+    "childhood-pneumonia",
+    "cmv-infection",
+    "covid-19",
+    "cre",
+    "cryptococcal-meningitis",
+    "dengue",
+    "diarrhoeal-disease",
+    "genital-chlamydia",
+    "genital-herpes",
+    "gonorrhoea",
+    "influenza",
+    "invasive-aspergillosis",
+    "malaria",
+    "mrsa",
+    "nasopharyngeal-carcinoma",
+    "schistosomiasis",
+    "soil-transmitted-helminths",
+    "syphilis",
+    "toxoplasmosis",
+    "tuberculosis"
+   ],
+   "rna-folding": [],
+   "tissue-repair": [
+    "als",
+    "atrial-fibrillation",
+    "copd",
+    "crohns",
+    "disorders-of-consciousness",
+    "glaucoma",
+    "hearing-loss",
+    "heart-failure",
+    "huntington",
+    "idiopathic-pulmonary-fibrosis",
+    "ischaemic-heart-disease",
+    "msmds",
+    "obstetric-fistula",
+    "retinopathy-of-prematurity",
+    "stroke"
+   ],
+   "unexplained-illness": [
+    "bipolar",
+    "covid-19",
+    "depression",
+    "heds",
+    "low-back-pain",
+    "mcas",
+    "me-cfs",
+    "pots"
+   ],
+   "validation-throughput": [
+    "crohns",
+    "cystic-fibrosis",
+    "mesothelioma",
+    "spinal-muscular-atrophy"
+   ],
+   "who-progresses": [
+    "anal-cancer",
+    "atrial-fibrillation",
+    "bacterial-meningitis",
+    "breast-cancer",
+    "candidaemia",
+    "cervical-cancer",
+    "chagas",
+    "childhood-all",
+    "childhood-pneumonia",
+    "clubfoot",
+    "cmv-infection",
+    "coccidioidomycosis",
+    "colorectal-cancer",
+    "copd",
+    "dengue",
+    "endometriosis",
+    "epilepsy",
+    "familial-hypercholesterolaemia",
+    "gastric-cancer",
+    "genital-chlamydia",
+    "genital-herpes",
+    "glaucoma",
+    "hpv-infection",
+    "ischaemic-heart-disease",
+    "keloid",
+    "leprosy",
+    "liver-cancer",
+    "lung-cancer",
+    "lymphatic-filariasis",
+    "measles",
+    "melanoma",
+    "migraine",
+    "multiple-system-atrophy",
+    "mycoplasma-genitalium",
+    "noma",
+    "non-hodgkin-lymphoma",
+    "osteoporosis",
+    "pancreatic-cancer",
+    "polycythaemia-vera",
+    "prostate-cancer",
+    "refractive-error",
+    "renal-cell-carcinoma",
+    "retinopathy-of-prematurity",
+    "sepsis",
+    "stroke",
+    "taeniasis-cysticercosis",
+    "thyroid-cancer",
+    "toxoplasmosis",
+    "trachoma",
+    "uterine-cancer",
+    "uterine-fibroids",
+    "visceral-leishmaniasis"
+   ]
+  },
+  "resolution_members": {
+   "anaesthesia-mechanism": {
+    "id": "FND-O-0011",
+    "kind": "mechanism",
+    "name": "How does general anaesthesia switch consciousness off?",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "animal-translation": {
+    "id": "FND-O-0010",
+    "kind": "tooling",
+    "name": "What does a result in a mouse tell you about a human?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "burden-unknown": {
+    "id": "FND-O-0005",
+    "kind": "epidemiology",
+    "name": "How many are there, and how does it spread?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "cell-targeting": {
+    "id": "FND-O-0008",
+    "kind": "capability",
+    "name": "Can a molecule be made to act on the cells you mean, and not the others?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "cold-chain": {
+    "id": "FND-O-0014",
+    "kind": "manufacturing",
+    "name": "The treatment works and does not survive the journey to the patient",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "deliverable-form": {
+    "id": "FND-O-0017",
+    "kind": "capability",
+    "name": "What would it take to deliver this without the scarce thing?",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "donation-dependency": {
+    "id": "FND-O-0007",
+    "kind": "economic",
+    "name": "The drug supply depends on a donation that could stop",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "growth-control": {
+    "id": "FND-O-0015",
+    "kind": "mechanism",
+    "name": "What sets the size of a tissue, and what stops it there?",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "in-silico-physiology": {
+    "id": "FND-O-0012",
+    "kind": "tooling",
+    "name": "Can a specific person be simulated well enough to predict what a treatment will do to them?",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "no-model-system": {
+    "id": "FND-O-0013",
+    "kind": "tooling",
+    "name": "There is nowhere outside a patient to study this",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "pathogen-persistence": {
+    "id": "FND-O-0003",
+    "kind": "mechanism",
+    "name": "Why does the pathogen survive treatment?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "protective-immunity": {
+    "id": "FND-O-0009",
+    "kind": "mechanism",
+    "name": "What does a protective immune response actually consist of?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "rna-folding": {
+    "id": "FND-O-0006",
+    "kind": "mechanism",
+    "name": "How does RNA fold, and what does the fold do?",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "tissue-repair": {
+    "id": "FND-O-0002",
+    "kind": "capability",
+    "name": "Can destroyed tissue be repaired?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "unexplained-illness": {
+    "id": "FND-O-0004",
+    "kind": "entity",
+    "name": "What is actually wrong in these people?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "validation-throughput": {
+    "id": "FND-O-0016",
+    "kind": "tooling",
+    "name": "How many candidates can actually be tested, and how fast?",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "who-progresses": {
+    "id": "FND-O-0001",
+    "kind": "mechanism",
+    "name": "Why this person and not that one?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   }
+  },
+  "claims_by_obstacle": {
+   "animal-translation": [
+    {
+     "unblocks": "alzheimers",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "sepsis",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "stroke",
+     "standing": "alleged"
+    }
+   ],
+   "cell-targeting": [
+    {
+     "unblocks": "alzheimers",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "type-1-diabetes",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "osteoarthritis",
+     "standing": "alleged"
+    }
+   ],
+   "growth-control": [
+    {
+     "unblocks": "heart-failure",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "uterine-cancer",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "pleomorphic-adenoma",
+     "standing": "alleged"
+    }
+   ],
+   "in-silico-physiology": [
+    {
+     "unblocks": "type-1-diabetes",
+     "standing": "documented"
+    },
+    {
+     "unblocks": "epilepsy",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "atrial-fibrillation",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "heart-failure",
+     "standing": "alleged"
+    }
+   ],
+   "protective-immunity": [
+    {
+     "unblocks": "hiv",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "rheumatic-heart-disease",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "amr-infection",
+     "standing": "alleged"
+    }
+   ],
+   "rna-folding": [
+    {
+     "unblocks": "spinal-muscular-atrophy",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "duchenne",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "covid-19",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "h5n1",
+     "standing": "alleged"
+    }
+   ],
+   "validation-throughput": [
+    {
+     "unblocks": "prion-disease",
+     "standing": "alleged"
+    }
+   ]
+  },
+  "claims_earned": {
+   "growth-control": [
+    "hearing-loss"
+   ],
+   "validation-throughput": [
+    "crohns",
+    "cystic-fibrosis",
+    "mesothelioma",
+    "spinal-muscular-atrophy"
+   ]
+  },
+  "records_blocked_at_least_once": 113,
+  "distinct_links": 176,
+  "untagged_knowledge_blockers": 48,
+  "untagged_list": [
+   {
+    "record": "acute-bronchitis",
+    "blocks": "why a three-week cough is normal and nobody believes it"
+   },
+   {
+    "record": "acute-myeloid-leukaemia",
+    "blocks": "cure in the two-thirds of patients who are not young, fit or APL"
+   },
+   {
+    "record": "alzheimers",
+    "blocks": "knowing what causes the dementia, having established what causes the plaques"
+   },
+   {
+    "record": "anaemia",
+    "blocks": "whether correcting it delivers what the association promises"
+   },
+   {
+    "record": "anal-cancer",
+    "blocks": "reducing a permanent toll in a disease that is mostly cured"
+   },
+   {
+    "record": "asthma",
+    "blocks": "the four percent with no target, and preventing the disease at all"
+   },
+   {
+    "record": "bladder-cancer",
+    "blocks": "why BCG works, and what to do when it stops"
+   },
+   {
+    "record": "cerebral-palsy",
+    "blocks": "any way back to the lesion"
+   },
+   {
+    "record": "chronic-kidney-disease",
+    "blocks": "why young farm workers are dying of kidney failure"
+   },
+   {
+    "record": "cirrhosis",
+    "blocks": "why most people with the exposure never get the disease, and how to reverse fibrosis on purpose"
+   },
+   {
+    "record": "cmv-infection",
+    "blocks": "a drug that is not fifty years old and toxic to marrow"
+   },
+   {
+    "record": "congenital-heart-disease",
+    "blocks": "what a substituted circulation does over sixty years"
+   },
+   {
+    "record": "cryptosporidiosis",
+    "blocks": "a drug that works in the children who die of this"
+   },
+   {
+    "record": "dipg",
+    "blocks": "a chromatin lesion that is not a drug target"
+   },
+   {
+    "record": "food-allergy",
+    "blocks": "predicting who will react severely, and so who needs what"
+   },
+   {
+    "record": "genital-chlamydia",
+    "blocks": "whether curing it early stops people becoming immune to it"
+   },
+   {
+    "record": "gonorrhoea",
+    "blocks": "the last drug class, against an organism that has taken six"
+   },
+   {
+    "record": "head-neck-cancer",
+    "blocks": "how to take less away without taking less life"
+   },
+   {
+    "record": "hepatitis-b",
+    "blocks": "a cure, and it is one molecule of DNA in the nucleus"
+   },
+   {
+    "record": "hpv-infection",
+    "blocks": "any way to clear an infection that eighty percent of people get"
+   },
+   {
+    "record": "hypertension",
+    "blocks": "why the pressure is high in nine out of ten people"
+   },
+   {
+    "record": "mesothelioma",
+    "blocks": "a tumour defined by what it has lost"
+   },
+   {
+    "record": "migraine",
+    "blocks": "what actually starts an attack"
+   },
+   {
+    "record": "multiple-sclerosis",
+    "blocks": "progression, and the repair that has never worked"
+   },
+   {
+    "record": "multiple-system-atrophy",
+    "blocks": "why the protein is in the wrong cell, and what to do about it"
+   },
+   {
+    "record": "mycetoma",
+    "blocks": "an antifungal that works for eumycetoma"
+   },
+   {
+    "record": "neonatal-conditions",
+    "blocks": "knowing why labour starts early, which governs the largest stratum"
+   },
+   {
+    "record": "obesity",
+    "blocks": "any way to lower the set point rather than continuously oppose it"
+   },
+   {
+    "record": "osteoarthritis",
+    "blocks": "any drug that acts on the disease"
+   },
+   {
+    "record": "parkinsons",
+    "blocks": "fifty years of levodopa and nothing that slows the disease"
+   },
+   {
+    "record": "penile-cancer",
+    "blocks": "any effective treatment for advanced disease"
+   },
+   {
+    "record": "pku",
+    "blocks": "cure"
+   },
+   {
+    "record": "pleomorphic-adenoma",
+    "blocks": "any non-surgical treatment"
+   },
+   {
+    "record": "prion-disease",
+    "blocks": "treating a disease that is over before it is diagnosed"
+   },
+   {
+    "record": "rabies",
+    "blocks": "any treatment at all, once symptoms begin"
+   },
+   {
+    "record": "rheumatoid-arthritis",
+    "blocks": "which of five working mechanisms is the one in this patient"
+   },
+   {
+    "record": "schizophrenia",
+    "blocks": "the symptoms that disable people, which respond to nothing"
+   },
+   {
+    "record": "spinal-muscular-atrophy",
+    "blocks": "what the treated disease is, now that people survive it"
+   },
+   {
+    "record": "toxoplasmosis",
+    "blocks": "whether latent infection does anything to the brain it sits in"
+   },
+   {
+    "record": "trichomoniasis",
+    "blocks": "knowing whether the harms it is associated with can be prevented"
+   },
+   {
+    "record": "type-1-diabetes",
+    "blocks": "why this is happening to more children every year, and how to stop it"
+   },
+   {
+    "record": "type-2-diabetes",
+    "blocks": "whether this is one disease, and why remission fails in most people"
+   },
+   {
+    "record": "uterine-fibroids",
+    "blocks": "why Black women have this disease worse, at every measure"
+   },
+   {
+    "record": "uveal-melanoma",
+    "blocks": "any treatment of the metastatic half"
+   },
+   {
+    "record": "vaginal-cancer",
+    "blocks": "a toll that is preventable and is not prevented"
+   },
+   {
+    "record": "varicella-zoster",
+    "blocks": "anything that prevents or treats the pain, which is the whole burden"
+   },
+   {
+    "record": "varicella-zoster",
+    "blocks": "whether vaccinating children against chickenpox gives their grandparents shingles"
+   },
+   {
+    "record": "vulvar-cancer",
+    "blocks": "the sixty percent of this disease a vaccine will never touch"
+   }
+  ],
+  "claims": {
+   "total": 26,
+   "by_standing": {
+    "alleged": 20,
+    "derived": 5,
+    "documented": 1
+   }
+  }
+ },
+ {
+  "date": "2026-11-05",
+  "register": "engpass",
+  "obstacles": {
+   "active": 17,
+   "by_kind": {
+    "mechanism": 6,
+    "tooling": 4,
+    "capability": 3,
+    "economic": 1,
+    "entity": 1,
+    "epidemiology": 1,
+    "manufacturing": 1
+   },
+   "by_resolution": {
+    "open": 10,
+    "partly-answered": 7
+   }
+  },
+  "against_nordstern_records": 149,
+  "blocks": {
+   "who-progresses": 53,
+   "protective-immunity": 22,
+   "burden-unknown": 20,
+   "tissue-repair": 15,
+   "cell-targeting": 14,
+   "pathogen-persistence": 14,
+   "cold-chain": 8,
+   "no-model-system": 8,
+   "unexplained-illness": 8,
+   "donation-dependency": 6,
+   "growth-control": 4,
+   "validation-throughput": 4,
+   "animal-translation": 2,
+   "anaesthesia-mechanism": 1,
+   "deliverable-form": 0,
+   "in-silico-physiology": 0,
+   "rna-folding": 0
+  },
+  "blocks_members": {
+   "anaesthesia-mechanism": [
+    "disorders-of-consciousness"
+   ],
+   "animal-translation": [
+    "als",
+    "cataract"
+   ],
+   "burden-unknown": [
+    "buruli-ulcer",
+    "candidaemia",
+    "cholera",
+    "coccidioidomycosis",
+    "cryptococcal-meningitis",
+    "cryptosporidiosis",
+    "disorders-of-consciousness",
+    "dracunculiasis",
+    "ebola",
+    "h5n1",
+    "hat",
+    "invasive-aspergillosis",
+    "noma",
+    "obstetric-fistula",
+    "retinopathy-of-prematurity",
+    "scabies",
+    "taeniasis-cysticercosis",
+    "trachoma",
+    "trichomoniasis",
+    "yaws"
+   ],
+   "cell-targeting": [
+    "candidaemia",
+    "cryptococcal-meningitis",
+    "cryptosporidiosis",
+    "cystic-fibrosis",
+    "dipg",
+    "duchenne",
+    "genital-herpes",
+    "glioblastoma",
+    "huntington",
+    "invasive-aspergillosis",
+    "msmds",
+    "sickle-cell",
+    "tay-sachs",
+    "varicella-zoster"
+   ],
+   "cold-chain": [
+    "cryptococcal-meningitis",
+    "hepatitis-b",
+    "maternal-haemorrhage",
+    "measles",
+    "retinopathy-of-prematurity",
+    "snakebite",
+    "type-1-diabetes",
+    "visceral-leishmaniasis"
+   ],
+   "deliverable-form": [],
+   "donation-dependency": [
+    "cml",
+    "hat",
+    "lymphatic-filariasis",
+    "onchocerciasis",
+    "visceral-leishmaniasis",
+    "yaws"
+   ],
+   "growth-control": [
+    "benign-prostatic-hyperplasia",
+    "hearing-loss",
+    "keloid",
+    "uterine-fibroids"
+   ],
+   "in-silico-physiology": [],
+   "no-model-system": [
+    "cryptosporidiosis",
+    "diarrhoeal-disease",
+    "dipg",
+    "heds",
+    "keloid",
+    "leprosy",
+    "malaria",
+    "syphilis"
+   ],
+   "pathogen-persistence": [
+    "chagas",
+    "cml",
+    "ebola",
+    "ebv-infection",
+    "echinococcosis",
+    "genital-herpes",
+    "hiv",
+    "lung-cancer",
+    "lymphatic-filariasis",
+    "marburg",
+    "onchocerciasis",
+    "toxoplasmosis",
+    "typhoid",
+    "varicella-zoster"
+   ],
+   "protective-immunity": [
+    "bacterial-meningitis",
+    "childhood-pneumonia",
+    "cmv-infection",
+    "covid-19",
+    "cre",
+    "cryptococcal-meningitis",
+    "dengue",
+    "diarrhoeal-disease",
+    "ebv-infection",
+    "genital-chlamydia",
+    "genital-herpes",
+    "gonorrhoea",
+    "influenza",
+    "invasive-aspergillosis",
+    "malaria",
+    "mrsa",
+    "nasopharyngeal-carcinoma",
+    "schistosomiasis",
+    "soil-transmitted-helminths",
+    "syphilis",
+    "toxoplasmosis",
+    "tuberculosis"
+   ],
+   "rna-folding": [],
+   "tissue-repair": [
+    "als",
+    "atrial-fibrillation",
+    "copd",
+    "crohns",
+    "disorders-of-consciousness",
+    "glaucoma",
+    "hearing-loss",
+    "heart-failure",
+    "huntington",
+    "idiopathic-pulmonary-fibrosis",
+    "ischaemic-heart-disease",
+    "msmds",
+    "obstetric-fistula",
+    "retinopathy-of-prematurity",
+    "stroke"
+   ],
+   "unexplained-illness": [
+    "bipolar",
+    "covid-19",
+    "depression",
+    "heds",
+    "low-back-pain",
+    "mcas",
+    "me-cfs",
+    "pots"
+   ],
+   "validation-throughput": [
+    "crohns",
+    "cystic-fibrosis",
+    "mesothelioma",
+    "spinal-muscular-atrophy"
+   ],
+   "who-progresses": [
+    "anal-cancer",
+    "atrial-fibrillation",
+    "bacterial-meningitis",
+    "breast-cancer",
+    "candidaemia",
+    "cervical-cancer",
+    "chagas",
+    "childhood-all",
+    "childhood-pneumonia",
+    "clubfoot",
+    "cmv-infection",
+    "coccidioidomycosis",
+    "colorectal-cancer",
+    "copd",
+    "dengue",
+    "ebv-infection",
+    "endometriosis",
+    "epilepsy",
+    "familial-hypercholesterolaemia",
+    "gastric-cancer",
+    "genital-chlamydia",
+    "genital-herpes",
+    "glaucoma",
+    "hpv-infection",
+    "ischaemic-heart-disease",
+    "keloid",
+    "leprosy",
+    "liver-cancer",
+    "lung-cancer",
+    "lymphatic-filariasis",
+    "measles",
+    "melanoma",
+    "migraine",
+    "multiple-system-atrophy",
+    "mycoplasma-genitalium",
+    "noma",
+    "non-hodgkin-lymphoma",
+    "osteoporosis",
+    "pancreatic-cancer",
+    "polycythaemia-vera",
+    "prostate-cancer",
+    "refractive-error",
+    "renal-cell-carcinoma",
+    "retinopathy-of-prematurity",
+    "sepsis",
+    "stroke",
+    "taeniasis-cysticercosis",
+    "thyroid-cancer",
+    "toxoplasmosis",
+    "trachoma",
+    "uterine-cancer",
+    "uterine-fibroids",
+    "visceral-leishmaniasis"
+   ]
+  },
+  "resolution_members": {
+   "anaesthesia-mechanism": {
+    "id": "FND-O-0011",
+    "kind": "mechanism",
+    "name": "How does general anaesthesia switch consciousness off?",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "animal-translation": {
+    "id": "FND-O-0010",
+    "kind": "tooling",
+    "name": "What does a result in a mouse tell you about a human?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "burden-unknown": {
+    "id": "FND-O-0005",
+    "kind": "epidemiology",
+    "name": "How many are there, and how does it spread?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "cell-targeting": {
+    "id": "FND-O-0008",
+    "kind": "capability",
+    "name": "Can a molecule be made to act on the cells you mean, and not the others?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "cold-chain": {
+    "id": "FND-O-0014",
+    "kind": "manufacturing",
+    "name": "The treatment works and does not survive the journey to the patient",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "deliverable-form": {
+    "id": "FND-O-0017",
+    "kind": "capability",
+    "name": "What would it take to deliver this without the scarce thing?",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "donation-dependency": {
+    "id": "FND-O-0007",
+    "kind": "economic",
+    "name": "The drug supply depends on a donation that could stop",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "growth-control": {
+    "id": "FND-O-0015",
+    "kind": "mechanism",
+    "name": "What sets the size of a tissue, and what stops it there?",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "in-silico-physiology": {
+    "id": "FND-O-0012",
+    "kind": "tooling",
+    "name": "Can a specific person be simulated well enough to predict what a treatment will do to them?",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "no-model-system": {
+    "id": "FND-O-0013",
+    "kind": "tooling",
+    "name": "There is nowhere outside a patient to study this",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "pathogen-persistence": {
+    "id": "FND-O-0003",
+    "kind": "mechanism",
+    "name": "Why does the pathogen survive treatment?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "protective-immunity": {
+    "id": "FND-O-0009",
+    "kind": "mechanism",
+    "name": "What does a protective immune response actually consist of?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "rna-folding": {
+    "id": "FND-O-0006",
+    "kind": "mechanism",
+    "name": "How does RNA fold, and what does the fold do?",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "tissue-repair": {
+    "id": "FND-O-0002",
+    "kind": "capability",
+    "name": "Can destroyed tissue be repaired?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "unexplained-illness": {
+    "id": "FND-O-0004",
+    "kind": "entity",
+    "name": "What is actually wrong in these people?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "validation-throughput": {
+    "id": "FND-O-0016",
+    "kind": "tooling",
+    "name": "How many candidates can actually be tested, and how fast?",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "who-progresses": {
+    "id": "FND-O-0001",
+    "kind": "mechanism",
+    "name": "Why this person and not that one?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   }
+  },
+  "claims_by_obstacle": {
+   "animal-translation": [
+    {
+     "unblocks": "alzheimers",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "sepsis",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "stroke",
+     "standing": "alleged"
+    }
+   ],
+   "cell-targeting": [
+    {
+     "unblocks": "alzheimers",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "type-1-diabetes",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "osteoarthritis",
+     "standing": "alleged"
+    }
+   ],
+   "growth-control": [
+    {
+     "unblocks": "heart-failure",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "uterine-cancer",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "pleomorphic-adenoma",
+     "standing": "alleged"
+    }
+   ],
+   "in-silico-physiology": [
+    {
+     "unblocks": "type-1-diabetes",
+     "standing": "documented"
+    },
+    {
+     "unblocks": "epilepsy",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "atrial-fibrillation",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "heart-failure",
+     "standing": "alleged"
+    }
+   ],
+   "protective-immunity": [
+    {
+     "unblocks": "hiv",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "rheumatic-heart-disease",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "amr-infection",
+     "standing": "alleged"
+    }
+   ],
+   "rna-folding": [
+    {
+     "unblocks": "spinal-muscular-atrophy",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "duchenne",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "covid-19",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "h5n1",
+     "standing": "alleged"
+    }
+   ],
+   "validation-throughput": [
+    {
+     "unblocks": "prion-disease",
+     "standing": "alleged"
+    }
+   ]
+  },
+  "claims_earned": {
+   "growth-control": [
+    "hearing-loss"
+   ],
+   "validation-throughput": [
+    "crohns",
+    "cystic-fibrosis",
+    "mesothelioma",
+    "spinal-muscular-atrophy"
+   ]
+  },
+  "records_blocked_at_least_once": 114,
+  "distinct_links": 179,
+  "untagged_knowledge_blockers": 48,
+  "untagged_list": [
+   {
+    "record": "acute-bronchitis",
+    "blocks": "why a three-week cough is normal and nobody believes it"
+   },
+   {
+    "record": "acute-myeloid-leukaemia",
+    "blocks": "cure in the two-thirds of patients who are not young, fit or APL"
+   },
+   {
+    "record": "alzheimers",
+    "blocks": "knowing what causes the dementia, having established what causes the plaques"
+   },
+   {
+    "record": "anaemia",
+    "blocks": "whether correcting it delivers what the association promises"
+   },
+   {
+    "record": "anal-cancer",
+    "blocks": "reducing a permanent toll in a disease that is mostly cured"
+   },
+   {
+    "record": "asthma",
+    "blocks": "the four percent with no target, and preventing the disease at all"
+   },
+   {
+    "record": "bladder-cancer",
+    "blocks": "why BCG works, and what to do when it stops"
+   },
+   {
+    "record": "cerebral-palsy",
+    "blocks": "any way back to the lesion"
+   },
+   {
+    "record": "chronic-kidney-disease",
+    "blocks": "why young farm workers are dying of kidney failure"
+   },
+   {
+    "record": "cirrhosis",
+    "blocks": "why most people with the exposure never get the disease, and how to reverse fibrosis on purpose"
+   },
+   {
+    "record": "cmv-infection",
+    "blocks": "a drug that is not fifty years old and toxic to marrow"
+   },
+   {
+    "record": "congenital-heart-disease",
+    "blocks": "what a substituted circulation does over sixty years"
+   },
+   {
+    "record": "cryptosporidiosis",
+    "blocks": "a drug that works in the children who die of this"
+   },
+   {
+    "record": "dipg",
+    "blocks": "a chromatin lesion that is not a drug target"
+   },
+   {
+    "record": "food-allergy",
+    "blocks": "predicting who will react severely, and so who needs what"
+   },
+   {
+    "record": "genital-chlamydia",
+    "blocks": "whether curing it early stops people becoming immune to it"
+   },
+   {
+    "record": "gonorrhoea",
+    "blocks": "the last drug class, against an organism that has taken six"
+   },
+   {
+    "record": "head-neck-cancer",
+    "blocks": "how to take less away without taking less life"
+   },
+   {
+    "record": "hepatitis-b",
+    "blocks": "a cure, and it is one molecule of DNA in the nucleus"
+   },
+   {
+    "record": "hpv-infection",
+    "blocks": "any way to clear an infection that eighty percent of people get"
+   },
+   {
+    "record": "hypertension",
+    "blocks": "why the pressure is high in nine out of ten people"
+   },
+   {
+    "record": "mesothelioma",
+    "blocks": "a tumour defined by what it has lost"
+   },
+   {
+    "record": "migraine",
+    "blocks": "what actually starts an attack"
+   },
+   {
+    "record": "multiple-sclerosis",
+    "blocks": "progression, and the repair that has never worked"
+   },
+   {
+    "record": "multiple-system-atrophy",
+    "blocks": "why the protein is in the wrong cell, and what to do about it"
+   },
+   {
+    "record": "mycetoma",
+    "blocks": "an antifungal that works for eumycetoma"
+   },
+   {
+    "record": "neonatal-conditions",
+    "blocks": "knowing why labour starts early, which governs the largest stratum"
+   },
+   {
+    "record": "obesity",
+    "blocks": "any way to lower the set point rather than continuously oppose it"
+   },
+   {
+    "record": "osteoarthritis",
+    "blocks": "any drug that acts on the disease"
+   },
+   {
+    "record": "parkinsons",
+    "blocks": "fifty years of levodopa and nothing that slows the disease"
+   },
+   {
+    "record": "penile-cancer",
+    "blocks": "any effective treatment for advanced disease"
+   },
+   {
+    "record": "pku",
+    "blocks": "cure"
+   },
+   {
+    "record": "pleomorphic-adenoma",
+    "blocks": "any non-surgical treatment"
+   },
+   {
+    "record": "prion-disease",
+    "blocks": "treating a disease that is over before it is diagnosed"
+   },
+   {
+    "record": "rabies",
+    "blocks": "any treatment at all, once symptoms begin"
+   },
+   {
+    "record": "rheumatoid-arthritis",
+    "blocks": "which of five working mechanisms is the one in this patient"
+   },
+   {
+    "record": "schizophrenia",
+    "blocks": "the symptoms that disable people, which respond to nothing"
+   },
+   {
+    "record": "spinal-muscular-atrophy",
+    "blocks": "what the treated disease is, now that people survive it"
+   },
+   {
+    "record": "toxoplasmosis",
+    "blocks": "whether latent infection does anything to the brain it sits in"
+   },
+   {
+    "record": "trichomoniasis",
+    "blocks": "knowing whether the harms it is associated with can be prevented"
+   },
+   {
+    "record": "type-1-diabetes",
+    "blocks": "why this is happening to more children every year, and how to stop it"
+   },
+   {
+    "record": "type-2-diabetes",
+    "blocks": "whether this is one disease, and why remission fails in most people"
+   },
+   {
+    "record": "uterine-fibroids",
+    "blocks": "why Black women have this disease worse, at every measure"
+   },
+   {
+    "record": "uveal-melanoma",
+    "blocks": "any treatment of the metastatic half"
+   },
+   {
+    "record": "vaginal-cancer",
+    "blocks": "a toll that is preventable and is not prevented"
+   },
+   {
+    "record": "varicella-zoster",
+    "blocks": "anything that prevents or treats the pain, which is the whole burden"
+   },
+   {
+    "record": "varicella-zoster",
+    "blocks": "whether vaccinating children against chickenpox gives their grandparents shingles"
+   },
+   {
+    "record": "vulvar-cancer",
+    "blocks": "the sixty percent of this disease a vaccine will never touch"
+   }
+  ],
+  "claims": {
+   "total": 26,
+   "by_standing": {
+    "alleged": 20,
+    "derived": 5,
+    "documented": 1
+   }
+  }
+ },
+ {
+  "date": "2026-11-08",
+  "register": "engpass",
+  "obstacles": {
+   "active": 18,
+   "by_kind": {
+    "mechanism": 6,
+    "capability": 4,
+    "tooling": 4,
+    "economic": 1,
+    "entity": 1,
+    "epidemiology": 1,
+    "manufacturing": 1
+   },
+   "by_resolution": {
+    "open": 10,
+    "partly-answered": 8
+   }
+  },
+  "against_nordstern_records": 151,
+  "blocks": {
+   "who-progresses": 54,
+   "protective-immunity": 23,
+   "burden-unknown": 20,
+   "tissue-repair": 16,
+   "cell-targeting": 14,
+   "pathogen-persistence": 14,
+   "cold-chain": 8,
+   "no-model-system": 8,
+   "unexplained-illness": 8,
+   "donation-dependency": 6,
+   "growth-control": 4,
+   "validation-throughput": 4,
+   "animal-translation": 2,
+   "microbiome-control": 2,
+   "anaesthesia-mechanism": 1,
+   "deliverable-form": 0,
+   "in-silico-physiology": 0,
+   "rna-folding": 0
+  },
+  "blocks_members": {
+   "anaesthesia-mechanism": [
+    "disorders-of-consciousness"
+   ],
+   "animal-translation": [
+    "als",
+    "cataract"
+   ],
+   "burden-unknown": [
+    "buruli-ulcer",
+    "candidaemia",
+    "cholera",
+    "coccidioidomycosis",
+    "cryptococcal-meningitis",
+    "cryptosporidiosis",
+    "disorders-of-consciousness",
+    "dracunculiasis",
+    "ebola",
+    "h5n1",
+    "hat",
+    "invasive-aspergillosis",
+    "noma",
+    "obstetric-fistula",
+    "retinopathy-of-prematurity",
+    "scabies",
+    "taeniasis-cysticercosis",
+    "trachoma",
+    "trichomoniasis",
+    "yaws"
+   ],
+   "cell-targeting": [
+    "candidaemia",
+    "cryptococcal-meningitis",
+    "cryptosporidiosis",
+    "cystic-fibrosis",
+    "dipg",
+    "duchenne",
+    "genital-herpes",
+    "glioblastoma",
+    "huntington",
+    "invasive-aspergillosis",
+    "msmds",
+    "sickle-cell",
+    "tay-sachs",
+    "varicella-zoster"
+   ],
+   "cold-chain": [
+    "cryptococcal-meningitis",
+    "hepatitis-b",
+    "maternal-haemorrhage",
+    "measles",
+    "retinopathy-of-prematurity",
+    "snakebite",
+    "type-1-diabetes",
+    "visceral-leishmaniasis"
+   ],
+   "deliverable-form": [],
+   "donation-dependency": [
+    "cml",
+    "hat",
+    "lymphatic-filariasis",
+    "onchocerciasis",
+    "visceral-leishmaniasis",
+    "yaws"
+   ],
+   "growth-control": [
+    "benign-prostatic-hyperplasia",
+    "hearing-loss",
+    "keloid",
+    "uterine-fibroids"
+   ],
+   "in-silico-physiology": [],
+   "microbiome-control": [
+    "cre",
+    "malaria"
+   ],
+   "no-model-system": [
+    "cryptosporidiosis",
+    "diarrhoeal-disease",
+    "dipg",
+    "heds",
+    "keloid",
+    "leprosy",
+    "malaria",
+    "syphilis"
+   ],
+   "pathogen-persistence": [
+    "chagas",
+    "cml",
+    "ebola",
+    "ebv-infection",
+    "echinococcosis",
+    "genital-herpes",
+    "hiv",
+    "lung-cancer",
+    "lymphatic-filariasis",
+    "marburg",
+    "onchocerciasis",
+    "toxoplasmosis",
+    "typhoid",
+    "varicella-zoster"
+   ],
+   "protective-immunity": [
+    "bacterial-meningitis",
+    "childhood-pneumonia",
+    "cmv-infection",
+    "covid-19",
+    "cre",
+    "cryptococcal-meningitis",
+    "dengue",
+    "diarrhoeal-disease",
+    "ebv-infection",
+    "genital-chlamydia",
+    "genital-herpes",
+    "gonorrhoea",
+    "h-pylori-infection",
+    "influenza",
+    "invasive-aspergillosis",
+    "malaria",
+    "mrsa",
+    "nasopharyngeal-carcinoma",
+    "schistosomiasis",
+    "soil-transmitted-helminths",
+    "syphilis",
+    "toxoplasmosis",
+    "tuberculosis"
+   ],
+   "rna-folding": [],
+   "tissue-repair": [
+    "als",
+    "atrial-fibrillation",
+    "burns",
+    "copd",
+    "crohns",
+    "disorders-of-consciousness",
+    "glaucoma",
+    "hearing-loss",
+    "heart-failure",
+    "huntington",
+    "idiopathic-pulmonary-fibrosis",
+    "ischaemic-heart-disease",
+    "msmds",
+    "obstetric-fistula",
+    "retinopathy-of-prematurity",
+    "stroke"
+   ],
+   "unexplained-illness": [
+    "bipolar",
+    "covid-19",
+    "depression",
+    "heds",
+    "low-back-pain",
+    "mcas",
+    "me-cfs",
+    "pots"
+   ],
+   "validation-throughput": [
+    "crohns",
+    "cystic-fibrosis",
+    "mesothelioma",
+    "spinal-muscular-atrophy"
+   ],
+   "who-progresses": [
+    "anal-cancer",
+    "atrial-fibrillation",
+    "bacterial-meningitis",
+    "breast-cancer",
+    "candidaemia",
+    "cervical-cancer",
+    "chagas",
+    "childhood-all",
+    "childhood-pneumonia",
+    "clubfoot",
+    "cmv-infection",
+    "coccidioidomycosis",
+    "colorectal-cancer",
+    "copd",
+    "dengue",
+    "ebv-infection",
+    "endometriosis",
+    "epilepsy",
+    "familial-hypercholesterolaemia",
+    "gastric-cancer",
+    "genital-chlamydia",
+    "genital-herpes",
+    "glaucoma",
+    "h-pylori-infection",
+    "hpv-infection",
+    "ischaemic-heart-disease",
+    "keloid",
+    "leprosy",
+    "liver-cancer",
+    "lung-cancer",
+    "lymphatic-filariasis",
+    "measles",
+    "melanoma",
+    "migraine",
+    "multiple-system-atrophy",
+    "mycoplasma-genitalium",
+    "noma",
+    "non-hodgkin-lymphoma",
+    "osteoporosis",
+    "pancreatic-cancer",
+    "polycythaemia-vera",
+    "prostate-cancer",
+    "refractive-error",
+    "renal-cell-carcinoma",
+    "retinopathy-of-prematurity",
+    "sepsis",
+    "stroke",
+    "taeniasis-cysticercosis",
+    "thyroid-cancer",
+    "toxoplasmosis",
+    "trachoma",
+    "uterine-cancer",
+    "uterine-fibroids",
+    "visceral-leishmaniasis"
+   ]
+  },
+  "resolution_members": {
+   "anaesthesia-mechanism": {
+    "id": "FND-O-0011",
+    "kind": "mechanism",
+    "name": "How does general anaesthesia switch consciousness off?",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "animal-translation": {
+    "id": "FND-O-0010",
+    "kind": "tooling",
+    "name": "What does a result in a mouse tell you about a human?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "burden-unknown": {
+    "id": "FND-O-0005",
+    "kind": "epidemiology",
+    "name": "How many are there, and how does it spread?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "cell-targeting": {
+    "id": "FND-O-0008",
+    "kind": "capability",
+    "name": "Can a molecule be made to act on the cells you mean, and not the others?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "cold-chain": {
+    "id": "FND-O-0014",
+    "kind": "manufacturing",
+    "name": "The treatment works and does not survive the journey to the patient",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "deliverable-form": {
+    "id": "FND-O-0017",
+    "kind": "capability",
+    "name": "What would it take to deliver this without the scarce thing?",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "donation-dependency": {
+    "id": "FND-O-0007",
+    "kind": "economic",
+    "name": "The drug supply depends on a donation that could stop",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "growth-control": {
+    "id": "FND-O-0015",
+    "kind": "mechanism",
+    "name": "What sets the size of a tissue, and what stops it there?",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "in-silico-physiology": {
+    "id": "FND-O-0012",
+    "kind": "tooling",
+    "name": "Can a specific person be simulated well enough to predict what a treatment will do to them?",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "microbiome-control": {
+    "id": "FND-O-0018",
+    "kind": "capability",
+    "name": "Can a microbial community in a person be deliberately and durably changed?",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "no-model-system": {
+    "id": "FND-O-0013",
+    "kind": "tooling",
+    "name": "There is nowhere outside a patient to study this",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "pathogen-persistence": {
+    "id": "FND-O-0003",
+    "kind": "mechanism",
+    "name": "Why does the pathogen survive treatment?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "protective-immunity": {
+    "id": "FND-O-0009",
+    "kind": "mechanism",
+    "name": "What does a protective immune response actually consist of?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "rna-folding": {
+    "id": "FND-O-0006",
+    "kind": "mechanism",
+    "name": "How does RNA fold, and what does the fold do?",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "tissue-repair": {
+    "id": "FND-O-0002",
+    "kind": "capability",
+    "name": "Can destroyed tissue be repaired?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "unexplained-illness": {
+    "id": "FND-O-0004",
+    "kind": "entity",
+    "name": "What is actually wrong in these people?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "validation-throughput": {
+    "id": "FND-O-0016",
+    "kind": "tooling",
+    "name": "How many candidates can actually be tested, and how fast?",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "who-progresses": {
+    "id": "FND-O-0001",
+    "kind": "mechanism",
+    "name": "Why this person and not that one?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   }
+  },
+  "claims_by_obstacle": {
+   "animal-translation": [
+    {
+     "unblocks": "alzheimers",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "sepsis",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "stroke",
+     "standing": "alleged"
+    }
+   ],
+   "cell-targeting": [
+    {
+     "unblocks": "alzheimers",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "type-1-diabetes",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "osteoarthritis",
+     "standing": "alleged"
+    }
+   ],
+   "growth-control": [
+    {
+     "unblocks": "heart-failure",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "uterine-cancer",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "pleomorphic-adenoma",
+     "standing": "alleged"
+    }
+   ],
+   "in-silico-physiology": [
+    {
+     "unblocks": "type-1-diabetes",
+     "standing": "documented"
+    },
+    {
+     "unblocks": "epilepsy",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "atrial-fibrillation",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "heart-failure",
+     "standing": "alleged"
+    }
+   ],
+   "microbiome-control": [
+    {
+     "unblocks": "crohns",
+     "standing": "alleged"
+    }
+   ],
+   "protective-immunity": [
+    {
+     "unblocks": "hiv",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "rheumatic-heart-disease",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "amr-infection",
+     "standing": "alleged"
+    }
+   ],
+   "rna-folding": [
+    {
+     "unblocks": "spinal-muscular-atrophy",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "duchenne",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "covid-19",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "h5n1",
+     "standing": "alleged"
+    }
+   ],
+   "validation-throughput": [
+    {
+     "unblocks": "prion-disease",
+     "standing": "alleged"
+    }
+   ]
+  },
+  "claims_earned": {
+   "growth-control": [
+    "hearing-loss"
+   ],
+   "microbiome-control": [
+    "cre",
+    "malaria"
+   ],
+   "validation-throughput": [
+    "crohns",
+    "cystic-fibrosis",
+    "mesothelioma",
+    "spinal-muscular-atrophy"
+   ]
+  },
+  "records_blocked_at_least_once": 116,
+  "distinct_links": 184,
+  "untagged_knowledge_blockers": 48,
+  "untagged_list": [
+   {
+    "record": "acute-bronchitis",
+    "blocks": "why a three-week cough is normal and nobody believes it"
+   },
+   {
+    "record": "acute-myeloid-leukaemia",
+    "blocks": "cure in the two-thirds of patients who are not young, fit or APL"
+   },
+   {
+    "record": "alzheimers",
+    "blocks": "knowing what causes the dementia, having established what causes the plaques"
+   },
+   {
+    "record": "anaemia",
+    "blocks": "whether correcting it delivers what the association promises"
+   },
+   {
+    "record": "anal-cancer",
+    "blocks": "reducing a permanent toll in a disease that is mostly cured"
+   },
+   {
+    "record": "asthma",
+    "blocks": "the four percent with no target, and preventing the disease at all"
+   },
+   {
+    "record": "bladder-cancer",
+    "blocks": "why BCG works, and what to do when it stops"
+   },
+   {
+    "record": "cerebral-palsy",
+    "blocks": "any way back to the lesion"
+   },
+   {
+    "record": "chronic-kidney-disease",
+    "blocks": "why young farm workers are dying of kidney failure"
+   },
+   {
+    "record": "cirrhosis",
+    "blocks": "why most people with the exposure never get the disease, and how to reverse fibrosis on purpose"
+   },
+   {
+    "record": "cmv-infection",
+    "blocks": "a drug that is not fifty years old and toxic to marrow"
+   },
+   {
+    "record": "congenital-heart-disease",
+    "blocks": "what a substituted circulation does over sixty years"
+   },
+   {
+    "record": "cryptosporidiosis",
+    "blocks": "a drug that works in the children who die of this"
+   },
+   {
+    "record": "dipg",
+    "blocks": "a chromatin lesion that is not a drug target"
+   },
+   {
+    "record": "food-allergy",
+    "blocks": "predicting who will react severely, and so who needs what"
+   },
+   {
+    "record": "genital-chlamydia",
+    "blocks": "whether curing it early stops people becoming immune to it"
+   },
+   {
+    "record": "gonorrhoea",
+    "blocks": "the last drug class, against an organism that has taken six"
+   },
+   {
+    "record": "head-neck-cancer",
+    "blocks": "how to take less away without taking less life"
+   },
+   {
+    "record": "hepatitis-b",
+    "blocks": "a cure, and it is one molecule of DNA in the nucleus"
+   },
+   {
+    "record": "hpv-infection",
+    "blocks": "any way to clear an infection that eighty percent of people get"
+   },
+   {
+    "record": "hypertension",
+    "blocks": "why the pressure is high in nine out of ten people"
+   },
+   {
+    "record": "mesothelioma",
+    "blocks": "a tumour defined by what it has lost"
+   },
+   {
+    "record": "migraine",
+    "blocks": "what actually starts an attack"
+   },
+   {
+    "record": "multiple-sclerosis",
+    "blocks": "progression, and the repair that has never worked"
+   },
+   {
+    "record": "multiple-system-atrophy",
+    "blocks": "why the protein is in the wrong cell, and what to do about it"
+   },
+   {
+    "record": "mycetoma",
+    "blocks": "an antifungal that works for eumycetoma"
+   },
+   {
+    "record": "neonatal-conditions",
+    "blocks": "knowing why labour starts early, which governs the largest stratum"
+   },
+   {
+    "record": "obesity",
+    "blocks": "any way to lower the set point rather than continuously oppose it"
+   },
+   {
+    "record": "osteoarthritis",
+    "blocks": "any drug that acts on the disease"
+   },
+   {
+    "record": "parkinsons",
+    "blocks": "fifty years of levodopa and nothing that slows the disease"
+   },
+   {
+    "record": "penile-cancer",
+    "blocks": "any effective treatment for advanced disease"
+   },
+   {
+    "record": "pku",
+    "blocks": "cure"
+   },
+   {
+    "record": "pleomorphic-adenoma",
+    "blocks": "any non-surgical treatment"
+   },
+   {
+    "record": "prion-disease",
+    "blocks": "treating a disease that is over before it is diagnosed"
+   },
+   {
+    "record": "rabies",
+    "blocks": "any treatment at all, once symptoms begin"
+   },
+   {
+    "record": "rheumatoid-arthritis",
+    "blocks": "which of five working mechanisms is the one in this patient"
+   },
+   {
+    "record": "schizophrenia",
+    "blocks": "the symptoms that disable people, which respond to nothing"
+   },
+   {
+    "record": "spinal-muscular-atrophy",
+    "blocks": "what the treated disease is, now that people survive it"
+   },
+   {
+    "record": "toxoplasmosis",
+    "blocks": "whether latent infection does anything to the brain it sits in"
+   },
+   {
+    "record": "trichomoniasis",
+    "blocks": "knowing whether the harms it is associated with can be prevented"
+   },
+   {
+    "record": "type-1-diabetes",
+    "blocks": "why this is happening to more children every year, and how to stop it"
+   },
+   {
+    "record": "type-2-diabetes",
+    "blocks": "whether this is one disease, and why remission fails in most people"
+   },
+   {
+    "record": "uterine-fibroids",
+    "blocks": "why Black women have this disease worse, at every measure"
+   },
+   {
+    "record": "uveal-melanoma",
+    "blocks": "any treatment of the metastatic half"
+   },
+   {
+    "record": "vaginal-cancer",
+    "blocks": "a toll that is preventable and is not prevented"
+   },
+   {
+    "record": "varicella-zoster",
+    "blocks": "anything that prevents or treats the pain, which is the whole burden"
+   },
+   {
+    "record": "varicella-zoster",
+    "blocks": "whether vaccinating children against chickenpox gives their grandparents shingles"
+   },
+   {
+    "record": "vulvar-cancer",
+    "blocks": "the sixty percent of this disease a vaccine will never touch"
+   }
+  ],
+  "claims": {
+   "total": 29,
+   "by_standing": {
+    "alleged": 21,
+    "derived": 7,
+    "documented": 1
+   }
+  }
+ },
+ {
+  "date": "2026-11-09",
+  "register": "engpass",
+  "obstacles": {
+   "active": 18,
+   "by_kind": {
+    "mechanism": 6,
+    "capability": 4,
+    "tooling": 4,
+    "economic": 1,
+    "entity": 1,
+    "epidemiology": 1,
+    "manufacturing": 1
+   },
+   "by_resolution": {
+    "open": 10,
+    "partly-answered": 8
+   }
+  },
+  "against_nordstern_records": 155,
+  "blocks": {
+   "who-progresses": 56,
+   "protective-immunity": 23,
+   "burden-unknown": 20,
+   "tissue-repair": 17,
+   "cell-targeting": 14,
+   "pathogen-persistence": 14,
+   "cold-chain": 8,
+   "no-model-system": 8,
+   "unexplained-illness": 8,
+   "donation-dependency": 6,
+   "validation-throughput": 5,
+   "growth-control": 4,
+   "animal-translation": 3,
+   "microbiome-control": 2,
+   "anaesthesia-mechanism": 1,
+   "deliverable-form": 0,
+   "in-silico-physiology": 0,
+   "rna-folding": 0
+  },
+  "blocks_members": {
+   "anaesthesia-mechanism": [
+    "disorders-of-consciousness"
+   ],
+   "animal-translation": [
+    "als",
+    "cataract",
+    "listeriosis"
+   ],
+   "burden-unknown": [
+    "buruli-ulcer",
+    "candidaemia",
+    "cholera",
+    "coccidioidomycosis",
+    "cryptococcal-meningitis",
+    "cryptosporidiosis",
+    "disorders-of-consciousness",
+    "dracunculiasis",
+    "ebola",
+    "h5n1",
+    "hat",
+    "invasive-aspergillosis",
+    "noma",
+    "obstetric-fistula",
+    "retinopathy-of-prematurity",
+    "scabies",
+    "taeniasis-cysticercosis",
+    "trachoma",
+    "trichomoniasis",
+    "yaws"
+   ],
+   "cell-targeting": [
+    "candidaemia",
+    "cryptococcal-meningitis",
+    "cryptosporidiosis",
+    "cystic-fibrosis",
+    "dipg",
+    "duchenne",
+    "genital-herpes",
+    "glioblastoma",
+    "huntington",
+    "invasive-aspergillosis",
+    "msmds",
+    "sickle-cell",
+    "tay-sachs",
+    "varicella-zoster"
+   ],
+   "cold-chain": [
+    "cryptococcal-meningitis",
+    "hepatitis-b",
+    "maternal-haemorrhage",
+    "measles",
+    "retinopathy-of-prematurity",
+    "snakebite",
+    "type-1-diabetes",
+    "visceral-leishmaniasis"
+   ],
+   "deliverable-form": [],
+   "donation-dependency": [
+    "cml",
+    "hat",
+    "lymphatic-filariasis",
+    "onchocerciasis",
+    "visceral-leishmaniasis",
+    "yaws"
+   ],
+   "growth-control": [
+    "benign-prostatic-hyperplasia",
+    "hearing-loss",
+    "keloid",
+    "uterine-fibroids"
+   ],
+   "in-silico-physiology": [],
+   "microbiome-control": [
+    "cre",
+    "malaria"
+   ],
+   "no-model-system": [
+    "cryptosporidiosis",
+    "diarrhoeal-disease",
+    "dipg",
+    "heds",
+    "keloid",
+    "leprosy",
+    "malaria",
+    "syphilis"
+   ],
+   "pathogen-persistence": [
+    "chagas",
+    "cml",
+    "ebola",
+    "ebv-infection",
+    "echinococcosis",
+    "genital-herpes",
+    "hiv",
+    "lung-cancer",
+    "lymphatic-filariasis",
+    "marburg",
+    "onchocerciasis",
+    "toxoplasmosis",
+    "typhoid",
+    "varicella-zoster"
+   ],
+   "protective-immunity": [
+    "bacterial-meningitis",
+    "childhood-pneumonia",
+    "cmv-infection",
+    "covid-19",
+    "cre",
+    "cryptococcal-meningitis",
+    "dengue",
+    "diarrhoeal-disease",
+    "ebv-infection",
+    "genital-chlamydia",
+    "genital-herpes",
+    "gonorrhoea",
+    "h-pylori-infection",
+    "influenza",
+    "invasive-aspergillosis",
+    "malaria",
+    "mrsa",
+    "nasopharyngeal-carcinoma",
+    "schistosomiasis",
+    "soil-transmitted-helminths",
+    "syphilis",
+    "toxoplasmosis",
+    "tuberculosis"
+   ],
+   "rna-folding": [],
+   "tissue-repair": [
+    "als",
+    "atrial-fibrillation",
+    "botulism",
+    "burns",
+    "copd",
+    "crohns",
+    "disorders-of-consciousness",
+    "glaucoma",
+    "hearing-loss",
+    "heart-failure",
+    "huntington",
+    "idiopathic-pulmonary-fibrosis",
+    "ischaemic-heart-disease",
+    "msmds",
+    "obstetric-fistula",
+    "retinopathy-of-prematurity",
+    "stroke"
+   ],
+   "unexplained-illness": [
+    "bipolar",
+    "covid-19",
+    "depression",
+    "heds",
+    "low-back-pain",
+    "mcas",
+    "me-cfs",
+    "pots"
+   ],
+   "validation-throughput": [
+    "crohns",
+    "cystic-fibrosis",
+    "listeriosis",
+    "mesothelioma",
+    "spinal-muscular-atrophy"
+   ],
+   "who-progresses": [
+    "anal-cancer",
+    "atrial-fibrillation",
+    "bacterial-meningitis",
+    "breast-cancer",
+    "candidaemia",
+    "cervical-cancer",
+    "chagas",
+    "childhood-all",
+    "childhood-pneumonia",
+    "clubfoot",
+    "cmv-infection",
+    "coccidioidomycosis",
+    "colorectal-cancer",
+    "copd",
+    "dengue",
+    "ebv-infection",
+    "endometriosis",
+    "epilepsy",
+    "familial-hypercholesterolaemia",
+    "gastric-cancer",
+    "genital-chlamydia",
+    "genital-herpes",
+    "glaucoma",
+    "h-pylori-infection",
+    "hpv-infection",
+    "ischaemic-heart-disease",
+    "keloid",
+    "leprosy",
+    "liver-cancer",
+    "lung-cancer",
+    "lupus",
+    "lymphatic-filariasis",
+    "measles",
+    "melanoma",
+    "migraine",
+    "multiple-system-atrophy",
+    "mycoplasma-genitalium",
+    "noma",
+    "non-hodgkin-lymphoma",
+    "non-typhoidal-salmonellosis",
+    "osteoporosis",
+    "pancreatic-cancer",
+    "polycythaemia-vera",
+    "prostate-cancer",
+    "refractive-error",
+    "renal-cell-carcinoma",
+    "retinopathy-of-prematurity",
+    "sepsis",
+    "stroke",
+    "taeniasis-cysticercosis",
+    "thyroid-cancer",
+    "toxoplasmosis",
+    "trachoma",
+    "uterine-cancer",
+    "uterine-fibroids",
+    "visceral-leishmaniasis"
+   ]
+  },
+  "resolution_members": {
+   "anaesthesia-mechanism": {
+    "id": "FND-O-0011",
+    "kind": "mechanism",
+    "name": "How does general anaesthesia switch consciousness off?",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "animal-translation": {
+    "id": "FND-O-0010",
+    "kind": "tooling",
+    "name": "What does a result in a mouse tell you about a human?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "burden-unknown": {
+    "id": "FND-O-0005",
+    "kind": "epidemiology",
+    "name": "How many are there, and how does it spread?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "cell-targeting": {
+    "id": "FND-O-0008",
+    "kind": "capability",
+    "name": "Can a molecule be made to act on the cells you mean, and not the others?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "cold-chain": {
+    "id": "FND-O-0014",
+    "kind": "manufacturing",
+    "name": "The treatment works and does not survive the journey to the patient",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "deliverable-form": {
+    "id": "FND-O-0017",
+    "kind": "capability",
+    "name": "What would it take to deliver this without the scarce thing?",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "donation-dependency": {
+    "id": "FND-O-0007",
+    "kind": "economic",
+    "name": "The drug supply depends on a donation that could stop",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "growth-control": {
+    "id": "FND-O-0015",
+    "kind": "mechanism",
+    "name": "What sets the size of a tissue, and what stops it there?",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "in-silico-physiology": {
+    "id": "FND-O-0012",
+    "kind": "tooling",
+    "name": "Can a specific person be simulated well enough to predict what a treatment will do to them?",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "microbiome-control": {
+    "id": "FND-O-0018",
+    "kind": "capability",
+    "name": "Can a microbial community in a person be deliberately and durably changed?",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "no-model-system": {
+    "id": "FND-O-0013",
+    "kind": "tooling",
+    "name": "There is nowhere outside a patient to study this",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "pathogen-persistence": {
+    "id": "FND-O-0003",
+    "kind": "mechanism",
+    "name": "Why does the pathogen survive treatment?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "protective-immunity": {
+    "id": "FND-O-0009",
+    "kind": "mechanism",
+    "name": "What does a protective immune response actually consist of?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "rna-folding": {
+    "id": "FND-O-0006",
+    "kind": "mechanism",
+    "name": "How does RNA fold, and what does the fold do?",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "tissue-repair": {
+    "id": "FND-O-0002",
+    "kind": "capability",
+    "name": "Can destroyed tissue be repaired?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "unexplained-illness": {
+    "id": "FND-O-0004",
+    "kind": "entity",
+    "name": "What is actually wrong in these people?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "validation-throughput": {
+    "id": "FND-O-0016",
+    "kind": "tooling",
+    "name": "How many candidates can actually be tested, and how fast?",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "who-progresses": {
+    "id": "FND-O-0001",
+    "kind": "mechanism",
+    "name": "Why this person and not that one?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   }
+  },
+  "claims_by_obstacle": {
+   "animal-translation": [
+    {
+     "unblocks": "alzheimers",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "sepsis",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "stroke",
+     "standing": "alleged"
+    }
+   ],
+   "cell-targeting": [
+    {
+     "unblocks": "alzheimers",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "type-1-diabetes",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "osteoarthritis",
+     "standing": "alleged"
+    }
+   ],
+   "growth-control": [
+    {
+     "unblocks": "heart-failure",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "uterine-cancer",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "pleomorphic-adenoma",
+     "standing": "alleged"
+    }
+   ],
+   "in-silico-physiology": [
+    {
+     "unblocks": "type-1-diabetes",
+     "standing": "documented"
+    },
+    {
+     "unblocks": "epilepsy",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "atrial-fibrillation",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "heart-failure",
+     "standing": "alleged"
+    }
+   ],
+   "microbiome-control": [
+    {
+     "unblocks": "crohns",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "botulism",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "non-typhoidal-salmonellosis",
+     "standing": "alleged"
+    }
+   ],
+   "protective-immunity": [
+    {
+     "unblocks": "hiv",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "rheumatic-heart-disease",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "amr-infection",
+     "standing": "alleged"
+    }
+   ],
+   "rna-folding": [
+    {
+     "unblocks": "spinal-muscular-atrophy",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "duchenne",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "covid-19",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "h5n1",
+     "standing": "alleged"
+    }
+   ],
+   "validation-throughput": [
+    {
+     "unblocks": "prion-disease",
+     "standing": "alleged"
+    }
+   ]
+  },
+  "claims_earned": {
+   "growth-control": [
+    "hearing-loss"
+   ],
+   "microbiome-control": [
+    "cre",
+    "malaria"
+   ],
+   "validation-throughput": [
+    "crohns",
+    "cystic-fibrosis",
+    "mesothelioma",
+    "spinal-muscular-atrophy"
+   ]
+  },
+  "records_blocked_at_least_once": 120,
+  "distinct_links": 189,
+  "untagged_knowledge_blockers": 49,
+  "untagged_list": [
+   {
+    "record": "acute-bronchitis",
+    "blocks": "why a three-week cough is normal and nobody believes it"
+   },
+   {
+    "record": "acute-myeloid-leukaemia",
+    "blocks": "cure in the two-thirds of patients who are not young, fit or APL"
+   },
+   {
+    "record": "alzheimers",
+    "blocks": "knowing what causes the dementia, having established what causes the plaques"
+   },
+   {
+    "record": "anaemia",
+    "blocks": "whether correcting it delivers what the association promises"
+   },
+   {
+    "record": "anal-cancer",
+    "blocks": "reducing a permanent toll in a disease that is mostly cured"
+   },
+   {
+    "record": "asthma",
+    "blocks": "the four percent with no target, and preventing the disease at all"
+   },
+   {
+    "record": "bladder-cancer",
+    "blocks": "why BCG works, and what to do when it stops"
+   },
+   {
+    "record": "cerebral-palsy",
+    "blocks": "any way back to the lesion"
+   },
+   {
+    "record": "chronic-kidney-disease",
+    "blocks": "why young farm workers are dying of kidney failure"
+   },
+   {
+    "record": "cirrhosis",
+    "blocks": "why most people with the exposure never get the disease, and how to reverse fibrosis on purpose"
+   },
+   {
+    "record": "cmv-infection",
+    "blocks": "a drug that is not fifty years old and toxic to marrow"
+   },
+   {
+    "record": "congenital-heart-disease",
+    "blocks": "what a substituted circulation does over sixty years"
+   },
+   {
+    "record": "cryptosporidiosis",
+    "blocks": "a drug that works in the children who die of this"
+   },
+   {
+    "record": "dipg",
+    "blocks": "a chromatin lesion that is not a drug target"
+   },
+   {
+    "record": "food-allergy",
+    "blocks": "predicting who will react severely, and so who needs what"
+   },
+   {
+    "record": "genital-chlamydia",
+    "blocks": "whether curing it early stops people becoming immune to it"
+   },
+   {
+    "record": "gonorrhoea",
+    "blocks": "the last drug class, against an organism that has taken six"
+   },
+   {
+    "record": "head-neck-cancer",
+    "blocks": "how to take less away without taking less life"
+   },
+   {
+    "record": "hepatitis-b",
+    "blocks": "a cure, and it is one molecule of DNA in the nucleus"
+   },
+   {
+    "record": "hpv-infection",
+    "blocks": "any way to clear an infection that eighty percent of people get"
+   },
+   {
+    "record": "hypertension",
+    "blocks": "why the pressure is high in nine out of ten people"
+   },
+   {
+    "record": "lupus",
+    "blocks": "choosing between agents for a given patient"
+   },
+   {
+    "record": "mesothelioma",
+    "blocks": "a tumour defined by what it has lost"
+   },
+   {
+    "record": "migraine",
+    "blocks": "what actually starts an attack"
+   },
+   {
+    "record": "multiple-sclerosis",
+    "blocks": "progression, and the repair that has never worked"
+   },
+   {
+    "record": "multiple-system-atrophy",
+    "blocks": "why the protein is in the wrong cell, and what to do about it"
+   },
+   {
+    "record": "mycetoma",
+    "blocks": "an antifungal that works for eumycetoma"
+   },
+   {
+    "record": "neonatal-conditions",
+    "blocks": "knowing why labour starts early, which governs the largest stratum"
+   },
+   {
+    "record": "obesity",
+    "blocks": "any way to lower the set point rather than continuously oppose it"
+   },
+   {
+    "record": "osteoarthritis",
+    "blocks": "any drug that acts on the disease"
+   },
+   {
+    "record": "parkinsons",
+    "blocks": "fifty years of levodopa and nothing that slows the disease"
+   },
+   {
+    "record": "penile-cancer",
+    "blocks": "any effective treatment for advanced disease"
+   },
+   {
+    "record": "pku",
+    "blocks": "cure"
+   },
+   {
+    "record": "pleomorphic-adenoma",
+    "blocks": "any non-surgical treatment"
+   },
+   {
+    "record": "prion-disease",
+    "blocks": "treating a disease that is over before it is diagnosed"
+   },
+   {
+    "record": "rabies",
+    "blocks": "any treatment at all, once symptoms begin"
+   },
+   {
+    "record": "rheumatoid-arthritis",
+    "blocks": "which of five working mechanisms is the one in this patient"
+   },
+   {
+    "record": "schizophrenia",
+    "blocks": "the symptoms that disable people, which respond to nothing"
+   },
+   {
+    "record": "spinal-muscular-atrophy",
+    "blocks": "what the treated disease is, now that people survive it"
+   },
+   {
+    "record": "toxoplasmosis",
+    "blocks": "whether latent infection does anything to the brain it sits in"
+   },
+   {
+    "record": "trichomoniasis",
+    "blocks": "knowing whether the harms it is associated with can be prevented"
+   },
+   {
+    "record": "type-1-diabetes",
+    "blocks": "why this is happening to more children every year, and how to stop it"
+   },
+   {
+    "record": "type-2-diabetes",
+    "blocks": "whether this is one disease, and why remission fails in most people"
+   },
+   {
+    "record": "uterine-fibroids",
+    "blocks": "why Black women have this disease worse, at every measure"
+   },
+   {
+    "record": "uveal-melanoma",
+    "blocks": "any treatment of the metastatic half"
+   },
+   {
+    "record": "vaginal-cancer",
+    "blocks": "a toll that is preventable and is not prevented"
+   },
+   {
+    "record": "varicella-zoster",
+    "blocks": "anything that prevents or treats the pain, which is the whole burden"
+   },
+   {
+    "record": "varicella-zoster",
+    "blocks": "whether vaccinating children against chickenpox gives their grandparents shingles"
+   },
+   {
+    "record": "vulvar-cancer",
+    "blocks": "the sixty percent of this disease a vaccine will never touch"
+   }
+  ],
+  "claims": {
+   "total": 31,
+   "by_standing": {
+    "alleged": 23,
+    "derived": 7,
+    "documented": 1
+   }
+  }
+ },
+ {
+  "date": "2026-11-10",
+  "register": "engpass",
+  "obstacles": {
+   "active": 19,
+   "by_kind": {
+    "mechanism": 6,
+    "capability": 5,
+    "tooling": 4,
+    "economic": 1,
+    "entity": 1,
+    "epidemiology": 1,
+    "manufacturing": 1
+   },
+   "by_resolution": {
+    "open": 10,
+    "partly-answered": 9
+   }
+  },
+  "against_nordstern_records": 158,
+  "blocks": {
+   "who-progresses": 59,
+   "protective-immunity": 23,
+   "burden-unknown": 20,
+   "tissue-repair": 18,
+   "cell-targeting": 14,
+   "pathogen-persistence": 14,
+   "cold-chain": 8,
+   "no-model-system": 8,
+   "unexplained-illness": 8,
+   "donation-dependency": 6,
+   "validation-throughput": 5,
+   "growth-control": 4,
+   "animal-translation": 3,
+   "in-silico-physiology": 2,
+   "microbiome-control": 2,
+   "anaesthesia-mechanism": 1,
+   "programme-restart": 1,
+   "deliverable-form": 0,
+   "rna-folding": 0
+  },
+  "blocks_members": {
+   "anaesthesia-mechanism": [
+    "disorders-of-consciousness"
+   ],
+   "animal-translation": [
+    "als",
+    "cataract",
+    "listeriosis"
+   ],
+   "burden-unknown": [
+    "buruli-ulcer",
+    "candidaemia",
+    "cholera",
+    "coccidioidomycosis",
+    "cryptococcal-meningitis",
+    "cryptosporidiosis",
+    "disorders-of-consciousness",
+    "dracunculiasis",
+    "ebola",
+    "h5n1",
+    "hat",
+    "invasive-aspergillosis",
+    "noma",
+    "obstetric-fistula",
+    "retinopathy-of-prematurity",
+    "scabies",
+    "taeniasis-cysticercosis",
+    "trachoma",
+    "trichomoniasis",
+    "yaws"
+   ],
+   "cell-targeting": [
+    "candidaemia",
+    "cryptococcal-meningitis",
+    "cryptosporidiosis",
+    "cystic-fibrosis",
+    "dipg",
+    "duchenne",
+    "genital-herpes",
+    "glioblastoma",
+    "huntington",
+    "invasive-aspergillosis",
+    "msmds",
+    "sickle-cell",
+    "tay-sachs",
+    "varicella-zoster"
+   ],
+   "cold-chain": [
+    "cryptococcal-meningitis",
+    "hepatitis-b",
+    "maternal-haemorrhage",
+    "measles",
+    "retinopathy-of-prematurity",
+    "snakebite",
+    "type-1-diabetes",
+    "visceral-leishmaniasis"
+   ],
+   "deliverable-form": [],
+   "donation-dependency": [
+    "cml",
+    "hat",
+    "lymphatic-filariasis",
+    "onchocerciasis",
+    "visceral-leishmaniasis",
+    "yaws"
+   ],
+   "growth-control": [
+    "benign-prostatic-hyperplasia",
+    "hearing-loss",
+    "keloid",
+    "uterine-fibroids"
+   ],
+   "in-silico-physiology": [
+    "abdominal-aortic-aneurysm",
+    "thoracic-aortic-aneurysm"
+   ],
+   "microbiome-control": [
+    "cre",
+    "malaria"
+   ],
+   "no-model-system": [
+    "cryptosporidiosis",
+    "diarrhoeal-disease",
+    "dipg",
+    "heds",
+    "keloid",
+    "leprosy",
+    "malaria",
+    "syphilis"
+   ],
+   "pathogen-persistence": [
+    "chagas",
+    "cml",
+    "ebola",
+    "ebv-infection",
+    "echinococcosis",
+    "genital-herpes",
+    "hiv",
+    "lung-cancer",
+    "lymphatic-filariasis",
+    "marburg",
+    "onchocerciasis",
+    "toxoplasmosis",
+    "typhoid",
+    "varicella-zoster"
+   ],
+   "programme-restart": [
+    "varicella-zoster"
+   ],
+   "protective-immunity": [
+    "bacterial-meningitis",
+    "childhood-pneumonia",
+    "cmv-infection",
+    "covid-19",
+    "cre",
+    "cryptococcal-meningitis",
+    "dengue",
+    "diarrhoeal-disease",
+    "ebv-infection",
+    "genital-chlamydia",
+    "genital-herpes",
+    "gonorrhoea",
+    "h-pylori-infection",
+    "influenza",
+    "invasive-aspergillosis",
+    "malaria",
+    "mrsa",
+    "nasopharyngeal-carcinoma",
+    "schistosomiasis",
+    "soil-transmitted-helminths",
+    "syphilis",
+    "toxoplasmosis",
+    "tuberculosis"
+   ],
+   "rna-folding": [],
+   "tissue-repair": [
+    "abdominal-aortic-aneurysm",
+    "als",
+    "atrial-fibrillation",
+    "botulism",
+    "burns",
+    "copd",
+    "crohns",
+    "disorders-of-consciousness",
+    "glaucoma",
+    "hearing-loss",
+    "heart-failure",
+    "huntington",
+    "idiopathic-pulmonary-fibrosis",
+    "ischaemic-heart-disease",
+    "msmds",
+    "obstetric-fistula",
+    "retinopathy-of-prematurity",
+    "stroke"
+   ],
+   "unexplained-illness": [
+    "bipolar",
+    "covid-19",
+    "depression",
+    "heds",
+    "low-back-pain",
+    "mcas",
+    "me-cfs",
+    "pots"
+   ],
+   "validation-throughput": [
+    "crohns",
+    "cystic-fibrosis",
+    "listeriosis",
+    "mesothelioma",
+    "spinal-muscular-atrophy"
+   ],
+   "who-progresses": [
+    "abdominal-aortic-aneurysm",
+    "anal-cancer",
+    "atrial-fibrillation",
+    "bacterial-meningitis",
+    "breast-cancer",
+    "candidaemia",
+    "cervical-cancer",
+    "chagas",
+    "childhood-all",
+    "childhood-pneumonia",
+    "clubfoot",
+    "cmv-infection",
+    "coccidioidomycosis",
+    "colorectal-cancer",
+    "copd",
+    "dengue",
+    "ebv-infection",
+    "endometriosis",
+    "epilepsy",
+    "familial-hypercholesterolaemia",
+    "gastric-cancer",
+    "genital-chlamydia",
+    "genital-herpes",
+    "glaucoma",
+    "h-pylori-infection",
+    "hpv-infection",
+    "ischaemic-heart-disease",
+    "keloid",
+    "leprosy",
+    "liver-cancer",
+    "lung-cancer",
+    "lupus",
+    "lymphatic-filariasis",
+    "measles",
+    "melanoma",
+    "migraine",
+    "multiple-system-atrophy",
+    "mycoplasma-genitalium",
+    "noma",
+    "non-hodgkin-lymphoma",
+    "non-typhoidal-salmonellosis",
+    "osteoporosis",
+    "pancreatic-cancer",
+    "polycythaemia-vera",
+    "prostate-cancer",
+    "refractive-error",
+    "renal-cell-carcinoma",
+    "retinopathy-of-prematurity",
+    "sarcopenia",
+    "sepsis",
+    "stroke",
+    "taeniasis-cysticercosis",
+    "thoracic-aortic-aneurysm",
+    "thyroid-cancer",
+    "toxoplasmosis",
+    "trachoma",
+    "uterine-cancer",
+    "uterine-fibroids",
+    "visceral-leishmaniasis"
+   ]
+  },
+  "resolution_members": {
+   "anaesthesia-mechanism": {
+    "id": "FND-O-0011",
+    "kind": "mechanism",
+    "name": "How does general anaesthesia switch consciousness off?",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "animal-translation": {
+    "id": "FND-O-0010",
+    "kind": "tooling",
+    "name": "What does a result in a mouse tell you about a human?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "burden-unknown": {
+    "id": "FND-O-0005",
+    "kind": "epidemiology",
+    "name": "How many are there, and how does it spread?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "cell-targeting": {
+    "id": "FND-O-0008",
+    "kind": "capability",
+    "name": "Can a molecule be made to act on the cells you mean, and not the others?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "cold-chain": {
+    "id": "FND-O-0014",
+    "kind": "manufacturing",
+    "name": "The treatment works and does not survive the journey to the patient",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "deliverable-form": {
+    "id": "FND-O-0017",
+    "kind": "capability",
+    "name": "What would it take to deliver this without the scarce thing?",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "donation-dependency": {
+    "id": "FND-O-0007",
+    "kind": "economic",
+    "name": "The drug supply depends on a donation that could stop",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "growth-control": {
+    "id": "FND-O-0015",
+    "kind": "mechanism",
+    "name": "What sets the size of a tissue, and what stops it there?",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "in-silico-physiology": {
+    "id": "FND-O-0012",
+    "kind": "tooling",
+    "name": "Can a specific person be simulated well enough to predict what a treatment will do to them?",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "microbiome-control": {
+    "id": "FND-O-0018",
+    "kind": "capability",
+    "name": "Can a microbial community in a person be deliberately and durably changed?",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "no-model-system": {
+    "id": "FND-O-0013",
+    "kind": "tooling",
+    "name": "There is nowhere outside a patient to study this",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "pathogen-persistence": {
+    "id": "FND-O-0003",
+    "kind": "mechanism",
+    "name": "Why does the pathogen survive treatment?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "programme-restart": {
+    "id": "FND-O-0019",
+    "kind": "capability",
+    "name": "Can a developmental programme that has shut down be restarted?",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "protective-immunity": {
+    "id": "FND-O-0009",
+    "kind": "mechanism",
+    "name": "What does a protective immune response actually consist of?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "rna-folding": {
+    "id": "FND-O-0006",
+    "kind": "mechanism",
+    "name": "How does RNA fold, and what does the fold do?",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "tissue-repair": {
+    "id": "FND-O-0002",
+    "kind": "capability",
+    "name": "Can destroyed tissue be repaired?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "unexplained-illness": {
+    "id": "FND-O-0004",
+    "kind": "entity",
+    "name": "What is actually wrong in these people?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "validation-throughput": {
+    "id": "FND-O-0016",
+    "kind": "tooling",
+    "name": "How many candidates can actually be tested, and how fast?",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "who-progresses": {
+    "id": "FND-O-0001",
+    "kind": "mechanism",
+    "name": "Why this person and not that one?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   }
+  },
+  "claims_by_obstacle": {
+   "animal-translation": [
+    {
+     "unblocks": "alzheimers",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "sepsis",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "stroke",
+     "standing": "alleged"
+    }
+   ],
+   "cell-targeting": [
+    {
+     "unblocks": "alzheimers",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "type-1-diabetes",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "osteoarthritis",
+     "standing": "alleged"
+    }
+   ],
+   "growth-control": [
+    {
+     "unblocks": "heart-failure",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "uterine-cancer",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "pleomorphic-adenoma",
+     "standing": "alleged"
+    }
+   ],
+   "in-silico-physiology": [
+    {
+     "unblocks": "type-1-diabetes",
+     "standing": "documented"
+    },
+    {
+     "unblocks": "epilepsy",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "atrial-fibrillation",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "heart-failure",
+     "standing": "alleged"
+    }
+   ],
+   "microbiome-control": [
+    {
+     "unblocks": "crohns",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "botulism",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "non-typhoidal-salmonellosis",
+     "standing": "alleged"
+    }
+   ],
+   "programme-restart": [
+    {
+     "unblocks": "influenza",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "osteoporosis",
+     "standing": "alleged"
+    }
+   ],
+   "protective-immunity": [
+    {
+     "unblocks": "hiv",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "rheumatic-heart-disease",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "amr-infection",
+     "standing": "alleged"
+    }
+   ],
+   "rna-folding": [
+    {
+     "unblocks": "spinal-muscular-atrophy",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "duchenne",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "covid-19",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "h5n1",
+     "standing": "alleged"
+    }
+   ],
+   "validation-throughput": [
+    {
+     "unblocks": "prion-disease",
+     "standing": "alleged"
+    }
+   ]
+  },
+  "claims_earned": {
+   "growth-control": [
+    "hearing-loss"
+   ],
+   "microbiome-control": [
+    "cre",
+    "malaria"
+   ],
+   "programme-restart": [
+    "varicella-zoster"
+   ],
+   "validation-throughput": [
+    "crohns",
+    "cystic-fibrosis",
+    "mesothelioma",
+    "spinal-muscular-atrophy"
+   ]
+  },
+  "records_blocked_at_least_once": 123,
+  "distinct_links": 196,
+  "untagged_knowledge_blockers": 50,
+  "untagged_list": [
+   {
+    "record": "acute-bronchitis",
+    "blocks": "why a three-week cough is normal and nobody believes it"
+   },
+   {
+    "record": "acute-myeloid-leukaemia",
+    "blocks": "cure in the two-thirds of patients who are not young, fit or APL"
+   },
+   {
+    "record": "alzheimers",
+    "blocks": "knowing what causes the dementia, having established what causes the plaques"
+   },
+   {
+    "record": "anaemia",
+    "blocks": "whether correcting it delivers what the association promises"
+   },
+   {
+    "record": "anal-cancer",
+    "blocks": "reducing a permanent toll in a disease that is mostly cured"
+   },
+   {
+    "record": "asthma",
+    "blocks": "the four percent with no target, and preventing the disease at all"
+   },
+   {
+    "record": "bladder-cancer",
+    "blocks": "why BCG works, and what to do when it stops"
+   },
+   {
+    "record": "cerebral-palsy",
+    "blocks": "any way back to the lesion"
+   },
+   {
+    "record": "chronic-kidney-disease",
+    "blocks": "why young farm workers are dying of kidney failure"
+   },
+   {
+    "record": "cirrhosis",
+    "blocks": "why most people with the exposure never get the disease, and how to reverse fibrosis on purpose"
+   },
+   {
+    "record": "cmv-infection",
+    "blocks": "a drug that is not fifty years old and toxic to marrow"
+   },
+   {
+    "record": "congenital-heart-disease",
+    "blocks": "what a substituted circulation does over sixty years"
+   },
+   {
+    "record": "cryptosporidiosis",
+    "blocks": "a drug that works in the children who die of this"
+   },
+   {
+    "record": "dipg",
+    "blocks": "a chromatin lesion that is not a drug target"
+   },
+   {
+    "record": "food-allergy",
+    "blocks": "predicting who will react severely, and so who needs what"
+   },
+   {
+    "record": "genital-chlamydia",
+    "blocks": "whether curing it early stops people becoming immune to it"
+   },
+   {
+    "record": "gonorrhoea",
+    "blocks": "the last drug class, against an organism that has taken six"
+   },
+   {
+    "record": "head-neck-cancer",
+    "blocks": "how to take less away without taking less life"
+   },
+   {
+    "record": "hepatitis-b",
+    "blocks": "a cure, and it is one molecule of DNA in the nucleus"
+   },
+   {
+    "record": "hpv-infection",
+    "blocks": "any way to clear an infection that eighty percent of people get"
+   },
+   {
+    "record": "hypertension",
+    "blocks": "why the pressure is high in nine out of ten people"
+   },
+   {
+    "record": "lupus",
+    "blocks": "choosing between agents for a given patient"
+   },
+   {
+    "record": "mesothelioma",
+    "blocks": "a tumour defined by what it has lost"
+   },
+   {
+    "record": "migraine",
+    "blocks": "what actually starts an attack"
+   },
+   {
+    "record": "multiple-sclerosis",
+    "blocks": "progression, and the repair that has never worked"
+   },
+   {
+    "record": "multiple-system-atrophy",
+    "blocks": "why the protein is in the wrong cell, and what to do about it"
+   },
+   {
+    "record": "mycetoma",
+    "blocks": "an antifungal that works for eumycetoma"
+   },
+   {
+    "record": "neonatal-conditions",
+    "blocks": "knowing why labour starts early, which governs the largest stratum"
+   },
+   {
+    "record": "obesity",
+    "blocks": "any way to lower the set point rather than continuously oppose it"
+   },
+   {
+    "record": "osteoarthritis",
+    "blocks": "any drug that acts on the disease"
+   },
+   {
+    "record": "parkinsons",
+    "blocks": "fifty years of levodopa and nothing that slows the disease"
+   },
+   {
+    "record": "penile-cancer",
+    "blocks": "any effective treatment for advanced disease"
+   },
+   {
+    "record": "pku",
+    "blocks": "cure"
+   },
+   {
+    "record": "pleomorphic-adenoma",
+    "blocks": "any non-surgical treatment"
+   },
+   {
+    "record": "prion-disease",
+    "blocks": "treating a disease that is over before it is diagnosed"
+   },
+   {
+    "record": "rabies",
+    "blocks": "any treatment at all, once symptoms begin"
+   },
+   {
+    "record": "rheumatoid-arthritis",
+    "blocks": "which of five working mechanisms is the one in this patient"
+   },
+   {
+    "record": "schizophrenia",
+    "blocks": "the symptoms that disable people, which respond to nothing"
+   },
+   {
+    "record": "spinal-muscular-atrophy",
+    "blocks": "what the treated disease is, now that people survive it"
+   },
+   {
+    "record": "thoracic-aortic-aneurysm",
+    "blocks": "a drug that stops dilatation rather than halving it"
+   },
+   {
+    "record": "toxoplasmosis",
+    "blocks": "whether latent infection does anything to the brain it sits in"
+   },
+   {
+    "record": "trichomoniasis",
+    "blocks": "knowing whether the harms it is associated with can be prevented"
+   },
+   {
+    "record": "type-1-diabetes",
+    "blocks": "why this is happening to more children every year, and how to stop it"
+   },
+   {
+    "record": "type-2-diabetes",
+    "blocks": "whether this is one disease, and why remission fails in most people"
+   },
+   {
+    "record": "uterine-fibroids",
+    "blocks": "why Black women have this disease worse, at every measure"
+   },
+   {
+    "record": "uveal-melanoma",
+    "blocks": "any treatment of the metastatic half"
+   },
+   {
+    "record": "vaginal-cancer",
+    "blocks": "a toll that is preventable and is not prevented"
+   },
+   {
+    "record": "varicella-zoster",
+    "blocks": "anything that prevents or treats the pain, which is the whole burden"
+   },
+   {
+    "record": "varicella-zoster",
+    "blocks": "whether vaccinating children against chickenpox gives their grandparents shingles"
+   },
+   {
+    "record": "vulvar-cancer",
+    "blocks": "the sixty percent of this disease a vaccine will never touch"
+   }
+  ],
+  "claims": {
+   "total": 34,
+   "by_standing": {
+    "alleged": 25,
+    "derived": 8,
+    "documented": 1
+   }
+  }
+ },
+ {
+  "date": "2026-11-11",
+  "register": "engpass",
+  "obstacles": {
+   "active": 19,
+   "by_kind": {
+    "mechanism": 6,
+    "capability": 5,
+    "tooling": 4,
+    "economic": 1,
+    "entity": 1,
+    "epidemiology": 1,
+    "manufacturing": 1
+   },
+   "by_resolution": {
+    "open": 10,
+    "partly-answered": 9
+   }
+  },
+  "against_nordstern_records": 161,
+  "blocks": {
+   "who-progresses": 62,
+   "protective-immunity": 24,
+   "burden-unknown": 21,
+   "tissue-repair": 19,
+   "cell-targeting": 14,
+   "pathogen-persistence": 14,
+   "cold-chain": 8,
+   "no-model-system": 8,
+   "unexplained-illness": 8,
+   "donation-dependency": 6,
+   "validation-throughput": 5,
+   "growth-control": 4,
+   "animal-translation": 3,
+   "in-silico-physiology": 2,
+   "microbiome-control": 2,
+   "anaesthesia-mechanism": 1,
+   "programme-restart": 1,
+   "deliverable-form": 0,
+   "rna-folding": 0
+  },
+  "blocks_members": {
+   "anaesthesia-mechanism": [
+    "disorders-of-consciousness"
+   ],
+   "animal-translation": [
+    "als",
+    "cataract",
+    "listeriosis"
+   ],
+   "burden-unknown": [
+    "anti-nmda-receptor-encephalitis",
+    "buruli-ulcer",
+    "candidaemia",
+    "cholera",
+    "coccidioidomycosis",
+    "cryptococcal-meningitis",
+    "cryptosporidiosis",
+    "disorders-of-consciousness",
+    "dracunculiasis",
+    "ebola",
+    "h5n1",
+    "hat",
+    "invasive-aspergillosis",
+    "noma",
+    "obstetric-fistula",
+    "retinopathy-of-prematurity",
+    "scabies",
+    "taeniasis-cysticercosis",
+    "trachoma",
+    "trichomoniasis",
+    "yaws"
+   ],
+   "cell-targeting": [
+    "candidaemia",
+    "cryptococcal-meningitis",
+    "cryptosporidiosis",
+    "cystic-fibrosis",
+    "dipg",
+    "duchenne",
+    "genital-herpes",
+    "glioblastoma",
+    "huntington",
+    "invasive-aspergillosis",
+    "msmds",
+    "sickle-cell",
+    "tay-sachs",
+    "varicella-zoster"
+   ],
+   "cold-chain": [
+    "cryptococcal-meningitis",
+    "hepatitis-b",
+    "maternal-haemorrhage",
+    "measles",
+    "retinopathy-of-prematurity",
+    "snakebite",
+    "type-1-diabetes",
+    "visceral-leishmaniasis"
+   ],
+   "deliverable-form": [],
+   "donation-dependency": [
+    "cml",
+    "hat",
+    "lymphatic-filariasis",
+    "onchocerciasis",
+    "visceral-leishmaniasis",
+    "yaws"
+   ],
+   "growth-control": [
+    "benign-prostatic-hyperplasia",
+    "hearing-loss",
+    "keloid",
+    "uterine-fibroids"
+   ],
+   "in-silico-physiology": [
+    "abdominal-aortic-aneurysm",
+    "thoracic-aortic-aneurysm"
+   ],
+   "microbiome-control": [
+    "cre",
+    "malaria"
+   ],
+   "no-model-system": [
+    "cryptosporidiosis",
+    "diarrhoeal-disease",
+    "dipg",
+    "heds",
+    "keloid",
+    "leprosy",
+    "malaria",
+    "syphilis"
+   ],
+   "pathogen-persistence": [
+    "chagas",
+    "cml",
+    "ebola",
+    "ebv-infection",
+    "echinococcosis",
+    "genital-herpes",
+    "hiv",
+    "lung-cancer",
+    "lymphatic-filariasis",
+    "marburg",
+    "onchocerciasis",
+    "toxoplasmosis",
+    "typhoid",
+    "varicella-zoster"
+   ],
+   "programme-restart": [
+    "varicella-zoster"
+   ],
+   "protective-immunity": [
+    "bacterial-meningitis",
+    "childhood-pneumonia",
+    "cmv-infection",
+    "covid-19",
+    "cre",
+    "cryptococcal-meningitis",
+    "dengue",
+    "diarrhoeal-disease",
+    "ebv-infection",
+    "genital-chlamydia",
+    "genital-herpes",
+    "gonorrhoea",
+    "h-pylori-infection",
+    "influenza",
+    "invasive-aspergillosis",
+    "malaria",
+    "mrsa",
+    "narcolepsy-type-1",
+    "nasopharyngeal-carcinoma",
+    "schistosomiasis",
+    "soil-transmitted-helminths",
+    "syphilis",
+    "toxoplasmosis",
+    "tuberculosis"
+   ],
+   "rna-folding": [],
+   "tissue-repair": [
+    "abdominal-aortic-aneurysm",
+    "als",
+    "atrial-fibrillation",
+    "botulism",
+    "burns",
+    "copd",
+    "crohns",
+    "disorders-of-consciousness",
+    "glaucoma",
+    "hearing-loss",
+    "heart-failure",
+    "huntington",
+    "idiopathic-pulmonary-fibrosis",
+    "ischaemic-heart-disease",
+    "msmds",
+    "narcolepsy-type-1",
+    "obstetric-fistula",
+    "retinopathy-of-prematurity",
+    "stroke"
+   ],
+   "unexplained-illness": [
+    "bipolar",
+    "covid-19",
+    "depression",
+    "heds",
+    "low-back-pain",
+    "mcas",
+    "me-cfs",
+    "pots"
+   ],
+   "validation-throughput": [
+    "crohns",
+    "cystic-fibrosis",
+    "listeriosis",
+    "mesothelioma",
+    "spinal-muscular-atrophy"
+   ],
+   "who-progresses": [
+    "abdominal-aortic-aneurysm",
+    "anal-cancer",
+    "anti-nmda-receptor-encephalitis",
+    "atrial-fibrillation",
+    "bacterial-meningitis",
+    "breast-cancer",
+    "candidaemia",
+    "cervical-cancer",
+    "chagas",
+    "childhood-all",
+    "childhood-pneumonia",
+    "clubfoot",
+    "cmv-infection",
+    "coccidioidomycosis",
+    "colorectal-cancer",
+    "copd",
+    "dengue",
+    "ebv-infection",
+    "endometriosis",
+    "epilepsy",
+    "familial-hypercholesterolaemia",
+    "gastric-cancer",
+    "genital-chlamydia",
+    "genital-herpes",
+    "glaucoma",
+    "h-pylori-infection",
+    "hpv-infection",
+    "ischaemic-heart-disease",
+    "keloid",
+    "leprosy",
+    "liver-cancer",
+    "lung-cancer",
+    "lupus",
+    "lymphatic-filariasis",
+    "measles",
+    "melanoma",
+    "migraine",
+    "multiple-system-atrophy",
+    "mycoplasma-genitalium",
+    "narcolepsy-type-1",
+    "noma",
+    "non-hodgkin-lymphoma",
+    "non-typhoidal-salmonellosis",
+    "osteoporosis",
+    "pancreatic-cancer",
+    "polycythaemia-vera",
+    "prostate-cancer",
+    "refractive-error",
+    "renal-cell-carcinoma",
+    "retinopathy-of-prematurity",
+    "sarcopenia",
+    "sepsis",
+    "stroke",
+    "taeniasis-cysticercosis",
+    "thoracic-aortic-aneurysm",
+    "thyroid-cancer",
+    "toxoplasmosis",
+    "trachoma",
+    "uterine-cancer",
+    "uterine-fibroids",
+    "visceral-leishmaniasis",
+    "wilsons-disease"
+   ]
+  },
+  "resolution_members": {
+   "anaesthesia-mechanism": {
+    "id": "FND-O-0011",
+    "kind": "mechanism",
+    "name": "How does general anaesthesia switch consciousness off?",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "animal-translation": {
+    "id": "FND-O-0010",
+    "kind": "tooling",
+    "name": "What does a result in a mouse tell you about a human?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "burden-unknown": {
+    "id": "FND-O-0005",
+    "kind": "epidemiology",
+    "name": "How many are there, and how does it spread?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "cell-targeting": {
+    "id": "FND-O-0008",
+    "kind": "capability",
+    "name": "Can a molecule be made to act on the cells you mean, and not the others?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "cold-chain": {
+    "id": "FND-O-0014",
+    "kind": "manufacturing",
+    "name": "The treatment works and does not survive the journey to the patient",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "deliverable-form": {
+    "id": "FND-O-0017",
+    "kind": "capability",
+    "name": "What would it take to deliver this without the scarce thing?",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "donation-dependency": {
+    "id": "FND-O-0007",
+    "kind": "economic",
+    "name": "The drug supply depends on a donation that could stop",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "growth-control": {
+    "id": "FND-O-0015",
+    "kind": "mechanism",
+    "name": "What sets the size of a tissue, and what stops it there?",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "in-silico-physiology": {
+    "id": "FND-O-0012",
+    "kind": "tooling",
+    "name": "Can a specific person be simulated well enough to predict what a treatment will do to them?",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "microbiome-control": {
+    "id": "FND-O-0018",
+    "kind": "capability",
+    "name": "Can a microbial community in a person be deliberately and durably changed?",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "no-model-system": {
+    "id": "FND-O-0013",
+    "kind": "tooling",
+    "name": "There is nowhere outside a patient to study this",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "pathogen-persistence": {
+    "id": "FND-O-0003",
+    "kind": "mechanism",
+    "name": "Why does the pathogen survive treatment?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "programme-restart": {
+    "id": "FND-O-0019",
+    "kind": "capability",
+    "name": "Can a developmental programme that has shut down be restarted?",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "protective-immunity": {
+    "id": "FND-O-0009",
+    "kind": "mechanism",
+    "name": "What does a protective immune response actually consist of?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "rna-folding": {
+    "id": "FND-O-0006",
+    "kind": "mechanism",
+    "name": "How does RNA fold, and what does the fold do?",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "tissue-repair": {
+    "id": "FND-O-0002",
+    "kind": "capability",
+    "name": "Can destroyed tissue be repaired?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "unexplained-illness": {
+    "id": "FND-O-0004",
+    "kind": "entity",
+    "name": "What is actually wrong in these people?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "validation-throughput": {
+    "id": "FND-O-0016",
+    "kind": "tooling",
+    "name": "How many candidates can actually be tested, and how fast?",
+    "resolution": "partly-answered",
+    "superseded_by": null,
+    "status": "active"
+   },
+   "who-progresses": {
+    "id": "FND-O-0001",
+    "kind": "mechanism",
+    "name": "Why this person and not that one?",
+    "resolution": "open",
+    "superseded_by": null,
+    "status": "active"
+   }
+  },
+  "claims_by_obstacle": {
+   "animal-translation": [
+    {
+     "unblocks": "alzheimers",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "sepsis",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "stroke",
+     "standing": "alleged"
+    }
+   ],
+   "cell-targeting": [
+    {
+     "unblocks": "alzheimers",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "type-1-diabetes",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "osteoarthritis",
+     "standing": "alleged"
+    }
+   ],
+   "growth-control": [
+    {
+     "unblocks": "heart-failure",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "uterine-cancer",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "pleomorphic-adenoma",
+     "standing": "alleged"
+    }
+   ],
+   "in-silico-physiology": [
+    {
+     "unblocks": "type-1-diabetes",
+     "standing": "documented"
+    },
+    {
+     "unblocks": "epilepsy",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "atrial-fibrillation",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "heart-failure",
+     "standing": "alleged"
+    }
+   ],
+   "microbiome-control": [
+    {
+     "unblocks": "crohns",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "botulism",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "non-typhoidal-salmonellosis",
+     "standing": "alleged"
+    }
+   ],
+   "programme-restart": [
+    {
+     "unblocks": "influenza",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "osteoporosis",
+     "standing": "alleged"
+    }
+   ],
+   "protective-immunity": [
+    {
+     "unblocks": "hiv",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "rheumatic-heart-disease",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "amr-infection",
+     "standing": "alleged"
+    }
+   ],
+   "rna-folding": [
+    {
+     "unblocks": "spinal-muscular-atrophy",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "duchenne",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "covid-19",
+     "standing": "alleged"
+    },
+    {
+     "unblocks": "h5n1",
+     "standing": "alleged"
+    }
+   ],
+   "validation-throughput": [
+    {
+     "unblocks": "prion-disease",
+     "standing": "alleged"
+    }
+   ]
+  },
+  "claims_earned": {
+   "growth-control": [
+    "hearing-loss"
+   ],
+   "microbiome-control": [
+    "cre",
+    "malaria"
+   ],
+   "programme-restart": [
+    "varicella-zoster"
+   ],
+   "validation-throughput": [
+    "crohns",
+    "cystic-fibrosis",
+    "mesothelioma",
+    "spinal-muscular-atrophy"
+   ]
+  },
+  "records_blocked_at_least_once": 126,
+  "distinct_links": 202,
+  "untagged_knowledge_blockers": 51,
+  "untagged_list": [
+   {
+    "record": "acute-bronchitis",
+    "blocks": "why a three-week cough is normal and nobody believes it"
+   },
+   {
+    "record": "acute-myeloid-leukaemia",
+    "blocks": "cure in the two-thirds of patients who are not young, fit or APL"
+   },
+   {
+    "record": "alzheimers",
+    "blocks": "knowing what causes the dementia, having established what causes the plaques"
+   },
+   {
+    "record": "anaemia",
+    "blocks": "whether correcting it delivers what the association promises"
+   },
+   {
+    "record": "anal-cancer",
+    "blocks": "reducing a permanent toll in a disease that is mostly cured"
+   },
+   {
+    "record": "anti-nmda-receptor-encephalitis",
+    "blocks": "shortening recovery, and knowing when to stop immunotherapy"
+   },
+   {
+    "record": "asthma",
+    "blocks": "the four percent with no target, and preventing the disease at all"
+   },
+   {
+    "record": "bladder-cancer",
+    "blocks": "why BCG works, and what to do when it stops"
+   },
+   {
+    "record": "cerebral-palsy",
+    "blocks": "any way back to the lesion"
+   },
+   {
+    "record": "chronic-kidney-disease",
+    "blocks": "why young farm workers are dying of kidney failure"
+   },
+   {
+    "record": "cirrhosis",
+    "blocks": "why most people with the exposure never get the disease, and how to reverse fibrosis on purpose"
+   },
+   {
+    "record": "cmv-infection",
+    "blocks": "a drug that is not fifty years old and toxic to marrow"
+   },
+   {
+    "record": "congenital-heart-disease",
+    "blocks": "what a substituted circulation does over sixty years"
+   },
+   {
+    "record": "cryptosporidiosis",
+    "blocks": "a drug that works in the children who die of this"
+   },
+   {
+    "record": "dipg",
+    "blocks": "a chromatin lesion that is not a drug target"
+   },
+   {
+    "record": "food-allergy",
+    "blocks": "predicting who will react severely, and so who needs what"
+   },
+   {
+    "record": "genital-chlamydia",
+    "blocks": "whether curing it early stops people becoming immune to it"
+   },
+   {
+    "record": "gonorrhoea",
+    "blocks": "the last drug class, against an organism that has taken six"
+   },
+   {
+    "record": "head-neck-cancer",
+    "blocks": "how to take less away without taking less life"
+   },
+   {
+    "record": "hepatitis-b",
+    "blocks": "a cure, and it is one molecule of DNA in the nucleus"
+   },
+   {
+    "record": "hpv-infection",
+    "blocks": "any way to clear an infection that eighty percent of people get"
+   },
+   {
+    "record": "hypertension",
+    "blocks": "why the pressure is high in nine out of ten people"
+   },
+   {
+    "record": "lupus",
+    "blocks": "choosing between agents for a given patient"
+   },
+   {
+    "record": "mesothelioma",
+    "blocks": "a tumour defined by what it has lost"
+   },
+   {
+    "record": "migraine",
+    "blocks": "what actually starts an attack"
+   },
+   {
+    "record": "multiple-sclerosis",
+    "blocks": "progression, and the repair that has never worked"
+   },
+   {
+    "record": "multiple-system-atrophy",
+    "blocks": "why the protein is in the wrong cell, and what to do about it"
+   },
+   {
+    "record": "mycetoma",
+    "blocks": "an antifungal that works for eumycetoma"
+   },
+   {
+    "record": "neonatal-conditions",
+    "blocks": "knowing why labour starts early, which governs the largest stratum"
+   },
+   {
+    "record": "obesity",
+    "blocks": "any way to lower the set point rather than continuously oppose it"
+   },
+   {
+    "record": "osteoarthritis",
+    "blocks": "any drug that acts on the disease"
+   },
+   {
+    "record": "parkinsons",
+    "blocks": "fifty years of levodopa and nothing that slows the disease"
+   },
+   {
+    "record": "penile-cancer",
+    "blocks": "any effective treatment for advanced disease"
+   },
+   {
+    "record": "pku",
+    "blocks": "cure"
+   },
+   {
+    "record": "pleomorphic-adenoma",
+    "blocks": "any non-surgical treatment"
+   },
+   {
+    "record": "prion-disease",
+    "blocks": "treating a disease that is over before it is diagnosed"
+   },
+   {
+    "record": "rabies",
+    "blocks": "any treatment at all, once symptoms begin"
+   },
+   {
+    "record": "rheumatoid-arthritis",
+    "blocks": "which of five working mechanisms is the one in this patient"
+   },
+   {
+    "record": "schizophrenia",
+    "blocks": "the symptoms that disable people, which respond to nothing"
+   },
+   {
+    "record": "spinal-muscular-atrophy",
+    "blocks": "what the treated disease is, now that people survive it"
+   },
+   {
+    "record": "thoracic-aortic-aneurysm",
+    "blocks": "a drug that stops dilatation rather than halving it"
+   },
+   {
+    "record": "toxoplasmosis",
+    "blocks": "whether latent infection does anything to the brain it sits in"
+   },
+   {
+    "record": "trichomoniasis",
+    "blocks": "knowing whether the harms it is associated with can be prevented"
+   },
+   {
+    "record": "type-1-diabetes",
+    "blocks": "why this is happening to more children every year, and how to stop it"
+   },
+   {
+    "record": "type-2-diabetes",
+    "blocks": "whether this is one disease, and why remission fails in most people"
+   },
+   {
+    "record": "uterine-fibroids",
+    "blocks": "why Black women have this disease worse, at every measure"
+   },
+   {
+    "record": "uveal-melanoma",
+    "blocks": "any treatment of the metastatic half"
+   },
+   {
+    "record": "vaginal-cancer",
+    "blocks": "a toll that is preventable and is not prevented"
+   },
+   {
+    "record": "varicella-zoster",
+    "blocks": "anything that prevents or treats the pain, which is the whole burden"
+   },
+   {
+    "record": "varicella-zoster",
+    "blocks": "whether vaccinating children against chickenpox gives their grandparents shingles"
+   },
+   {
+    "record": "vulvar-cancer",
+    "blocks": "the sixty percent of this disease a vaccine will never touch"
+   }
+  ],
+  "claims": {
+   "total": 34,
+   "by_standing": {
+    "alleged": 25,
+    "derived": 8,
+    "documented": 1
+   }
+  }
  }
 ];
 window.ENGPASS_DIFFS = [
@@ -1658,6 +6831,174 @@ window.ENGPASS_DIFFS = [
    "who-progresses": {
     "was": 50,
     "now": 51
+   }
+  }
+ },
+ {
+  "from": "2026-10-02",
+  "to": "2026-10-30",
+  "skipped": null,
+  "added": [],
+  "gone": [],
+  "resolutions": [],
+  "graded": [],
+  "blocks_delta": {
+   "who-progresses": {
+    "was": 51,
+    "now": 52
+   }
+  }
+ },
+ {
+  "from": "2026-10-30",
+  "to": "2026-11-03",
+  "skipped": null,
+  "added": [],
+  "gone": [],
+  "resolutions": [],
+  "graded": [],
+  "blocks_delta": {}
+ },
+ {
+  "from": "2026-11-03",
+  "to": "2026-11-05",
+  "skipped": null,
+  "added": [],
+  "gone": [],
+  "resolutions": [],
+  "graded": [],
+  "blocks_delta": {
+   "pathogen-persistence": {
+    "was": 13,
+    "now": 14
+   },
+   "protective-immunity": {
+    "was": 21,
+    "now": 22
+   },
+   "who-progresses": {
+    "was": 52,
+    "now": 53
+   }
+  }
+ },
+ {
+  "from": "2026-11-05",
+  "to": "2026-11-08",
+  "skipped": null,
+  "added": [
+   {
+    "id": "FND-O-0018",
+    "slug": "microbiome-control",
+    "resolution": "partly-answered"
+   }
+  ],
+  "gone": [],
+  "resolutions": [],
+  "graded": [],
+  "blocks_delta": {
+   "microbiome-control": {
+    "was": 0,
+    "now": 2
+   },
+   "protective-immunity": {
+    "was": 22,
+    "now": 23
+   },
+   "tissue-repair": {
+    "was": 15,
+    "now": 16
+   },
+   "who-progresses": {
+    "was": 53,
+    "now": 54
+   }
+  }
+ },
+ {
+  "from": "2026-11-08",
+  "to": "2026-11-09",
+  "skipped": null,
+  "added": [],
+  "gone": [],
+  "resolutions": [],
+  "graded": [],
+  "blocks_delta": {
+   "animal-translation": {
+    "was": 2,
+    "now": 3
+   },
+   "tissue-repair": {
+    "was": 16,
+    "now": 17
+   },
+   "validation-throughput": {
+    "was": 4,
+    "now": 5
+   },
+   "who-progresses": {
+    "was": 54,
+    "now": 56
+   }
+  }
+ },
+ {
+  "from": "2026-11-09",
+  "to": "2026-11-10",
+  "skipped": null,
+  "added": [
+   {
+    "id": "FND-O-0019",
+    "slug": "programme-restart",
+    "resolution": "partly-answered"
+   }
+  ],
+  "gone": [],
+  "resolutions": [],
+  "graded": [],
+  "blocks_delta": {
+   "in-silico-physiology": {
+    "was": 0,
+    "now": 2
+   },
+   "programme-restart": {
+    "was": 0,
+    "now": 1
+   },
+   "tissue-repair": {
+    "was": 17,
+    "now": 18
+   },
+   "who-progresses": {
+    "was": 56,
+    "now": 59
+   }
+  }
+ },
+ {
+  "from": "2026-11-10",
+  "to": "2026-11-11",
+  "skipped": null,
+  "added": [],
+  "gone": [],
+  "resolutions": [],
+  "graded": [],
+  "blocks_delta": {
+   "burden-unknown": {
+    "was": 20,
+    "now": 21
+   },
+   "protective-immunity": {
+    "was": 23,
+    "now": 24
+   },
+   "tissue-repair": {
+    "was": 18,
+    "now": 19
+   },
+   "who-progresses": {
+    "was": 59,
+    "now": 62
    }
   }
  }

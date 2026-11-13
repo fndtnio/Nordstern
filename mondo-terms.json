@@ -1,6 +1,6 @@
 {
- "checked": "2026-10-10",
- "release": "2026-10-06",
+ "checked": "2026-11-11",
+ "release": "2026-11-03",
  "terms": {
   "MONDO:0000240": {
    "definition": "An aspergillosis that is a serious fungal infection of the lung with pneumonia caused by Aspergillus, which spreads to other parts of the body through bloodstream in patients with acute leukemia and recipients of tissue transplants. Clinical symptoms include pulmonary nodules and hemorrhage.",
@@ -2650,6 +2650,37 @@
     ]
    }
   },
+  "MONDO:0005350": {
+   "definition": "Enlargement and ballooning of the vessel that supplies arterial blood to the abdomen, pelvis and legs.",
+   "id": "MONDO:0005350",
+   "label": "abdominal aortic aneurysm",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {},
+   "xrefs": {
+    "DOID": [
+     "7693"
+    ],
+    "EFO": [
+     "0004214"
+    ],
+    "MEDGEN": [
+     "56524"
+    ],
+    "MESH": [
+     "D017544"
+    ],
+    "SCTID": [
+     "233985008"
+    ],
+    "UMLS": [
+     "C0162871"
+    ],
+    "icd11.foundation": [
+     "1154633768"
+    ]
+   }
+  },
   "MONDO:0005354": {
    "definition": "Chronic form of hepatitis C infection.",
    "id": "MONDO:0005354",
@@ -2745,6 +2776,37 @@
     ],
     "icd11.foundation": [
      "352087872"
+    ]
+   }
+  },
+  "MONDO:0005396": {
+   "definition": "An aneurysm formed in the wall of the proximal portion of the descending aorta proceeding from the arch of the aorta.",
+   "id": "MONDO:0005396",
+   "label": "thoracic aortic aneurysm",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {},
+   "xrefs": {
+    "DOID": [
+     "14004"
+    ],
+    "EFO": [
+     "0004282"
+    ],
+    "MEDGEN": [
+     "56525"
+    ],
+    "MESH": [
+     "D017545"
+    ],
+    "SCTID": [
+     "433068007"
+    ],
+    "UMLS": [
+     "C0162872"
+    ],
+    "icd11.foundation": [
+     "1383534118"
     ]
    }
   },
@@ -3018,6 +3080,58 @@
     ],
     "UMLS": [
      "C0041228"
+    ]
+   }
+  },
+  "MONDO:0005498": {
+   "definition": "A serious bacterial infection caused by botulinum toxin which is produced by Clostridium botulinum. Patients are infected usually by ingestion of contaminated food or wound contamination. It leads to muscle paralysis which may result in respiratory failure.",
+   "id": "MONDO:0005498",
+   "label": "botulism",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "botulism": "hasExactSynonym",
+    "botulism poisoning": "hasExactSynonym",
+    "foodborne botulism (subtype)": "hasRelatedSynonym",
+    "infant botulism (subtype)": "hasRelatedSynonym",
+    "wound botulism (subtype)": "hasNarrowSynonym"
+   },
+   "xrefs": {
+    "CSP": [
+     "5000-0060"
+    ],
+    "DOID": [
+     "11976"
+    ],
+    "EFO": [
+     "0005542"
+    ],
+    "GARD": [
+     "0000943"
+    ],
+    "MEDGEN": [
+     "14204"
+    ],
+    "MESH": [
+     "D001906"
+    ],
+    "MedDRA": [
+     "10006041"
+    ],
+    "NCIT": [
+     "C84599"
+    ],
+    "Orphanet": [
+     "1267"
+    ],
+    "SCTID": [
+     "398565003"
+    ],
+    "UMLS": [
+     "C0006057"
+    ],
+    "icd11.foundation": [
+     "78422942"
     ]
    }
   },
@@ -3618,6 +3732,63 @@
     ]
    }
   },
+  "MONDO:0005828": {
+   "definition": "A bacterial infection caused by Listeria monocytogenes. It occurs in newborns, elderly, and immunocompromised patients. The bacteria are transmitted through ingestion of contaminated food. Clinical manifestations include fever, muscle pain, respiratory distress, nausea, diarrhea, neck stiffness, irritability, seizures, and lethargy.",
+   "id": "MONDO:0005828",
+   "label": "listeriosis",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "Listeria infection": "hasExactSynonym",
+    "Listeria monocytogenes caused disease or disorder": "hasExactSynonym",
+    "Listeria monocytogenes infection": "hasRelatedSynonym",
+    "infection by Listeria monocytogenes": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "11573"
+    ],
+    "EFO": [
+     "0007347"
+    ],
+    "GARD": [
+     "0006915"
+    ],
+    "ICD10CM": [
+     "A32"
+    ],
+    "ICD10WHO": [
+     "A32"
+    ],
+    "ICD9": [
+     "027.0"
+    ],
+    "MEDGEN": [
+     "9788"
+    ],
+    "MESH": [
+     "D008088"
+    ],
+    "MedDRA": [
+     "10024641"
+    ],
+    "NCIT": [
+     "C82994"
+    ],
+    "NORD": [
+     "1375"
+    ],
+    "Orphanet": [
+     "533"
+    ],
+    "UMLS": [
+     "C0023860"
+    ],
+    "icd11.foundation": [
+     "419706488"
+    ]
+   }
+  },
   "MONDO:0005976": {
    "definition": "A contagious bacterial infection caused by the spirochete Treponema pallidum. It is a sexually transmitted disorder, although it can also be transmitted from the mother to the fetus in utero. Typically, it is initially manifested with a single sore which heals without treatment. If the infection is left untreated, the initial stage is followed by skin rash and mucous membrane lesions. A late stage follows, which is characterized by damage of the internal organs, including the nervous system.",
    "id": "MONDO:0005976",
@@ -3949,6 +4120,28 @@
     ]
    }
   },
+  "MONDO:0006781": {
+   "definition": "Infections with organisms of the genus HELICOBACTER, particularly, in humans, HELICOBACTER PYLORI. The clinical manifestations are focused in the stomach, usually the gastric mucosa and antrum, and the upper duodenum. This infection plays a major role in the pathogenesis of type B gastritis and peptic ulcer disease.",
+   "id": "MONDO:0006781",
+   "label": "Helicobacter pylori infectious disease",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "Helicobacter infection": "hasRelatedSynonym",
+    "Helicobacter pylori caused disease or disorder": "hasExactSynonym",
+    "Helicobacter pylori infection, susceptibility to": "hasRelatedSynonym",
+    "infection, Helicobacter": "hasRelatedSynonym",
+    "infections, Helicobacter": "hasRelatedSynonym"
+   },
+   "xrefs": {
+    "EFO": [
+     "1000961"
+    ],
+    "MESH": [
+     "D016481"
+    ]
+   }
+  },
   "MONDO:0006955": {
    "definition": "An autoinflammatory condition following an infection with Group A Beta Hemolytic Streptococcus (GABHS), in which the heart is attacked by antibodies formed in reaction to a recent GABHS infection. Chief anatomic changes of the valve include leaflet thickening, commissural fusion, and shortening and thickening of the tendinous cords, all of which can result in valvular dysfunction.",
    "id": "MONDO:0006955",
@@ -4156,6 +4349,73 @@
     ],
     "icd11.foundation": [
      "2132180242"
+    ]
+   }
+  },
+  "MONDO:0007915": {
+   "definition": "An autoimmune multi-organ disease typically associated with vasculopathy and autoantibody production. Most patients have antinuclear antibodies (ANA). The presence of anti-dsDNA or anti-Smith antibodies are highly-specific.",
+   "id": "MONDO:0007915",
+   "label": "systemic lupus erythematosus",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "Lupus": "hasExactSynonym",
+    "SLE": "hasExactSynonym",
+    "SLE - lupus erythematosus, systemic": "hasExactSynonym",
+    "disseminated lupus erythematosus": "hasExactSynonym",
+    "lupus erythematosus, systemic": "hasExactSynonym",
+    "systemic lupus erythematosus": "hasExactSynonym",
+    "systemic lupus erythematosus (disease)": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "9074"
+    ],
+    "HP": [
+     "0002725"
+    ],
+    "ICD10CM": [
+     "M32"
+    ],
+    "ICD10WHO": [
+     "M32"
+    ],
+    "ICD9": [
+     "710.0"
+    ],
+    "MEDGEN": [
+     "6146"
+    ],
+    "MESH": [
+     "D008180"
+    ],
+    "NANDO": [
+     "1200272",
+     "2200416"
+    ],
+    "NCIT": [
+     "C3201"
+    ],
+    "NORD": [
+     "38"
+    ],
+    "OMIM": [
+     "152700"
+    ],
+    "OMIMPS": [
+     "601744"
+    ],
+    "Orphanet": [
+     "536"
+    ],
+    "SCTID": [
+     "55464009"
+    ],
+    "UMLS": [
+     "C0024141"
+    ],
+    "icd11.foundation": [
+     "749596428"
     ]
    }
   },
@@ -4646,6 +4906,65 @@
     ]
    }
   },
+  "MONDO:0010200": {
+   "definition": "A very rare inherited multisystemic disease presenting non-specific neurological, hepatic, psychiatric or osseo-muscular manifestations due to excessive copper deposition in the body.",
+   "id": "MONDO:0010200",
+   "label": "Wilson disease",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "WD": "hasRelatedSynonym",
+    "Westphal-Strumpell syndrome": "hasExactSynonym",
+    "Wilson disease": "hasExactSynonym",
+    "Wilson's disease": "hasExactSynonym",
+    "hepatolenticular degeneration": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "893"
+    ],
+    "GARD": [
+     "0007893"
+    ],
+    "ICD10CM": [
+     "E83.01"
+    ],
+    "MEDGEN": [
+     "42426"
+    ],
+    "MESH": [
+     "D006527"
+    ],
+    "MedDRA": [
+     "10019819"
+    ],
+    "NANDO": [
+     "1200655",
+     "2200579"
+    ],
+    "NCIT": [
+     "C84756"
+    ],
+    "NORD": [
+     "1856"
+    ],
+    "OMIM": [
+     "277900"
+    ],
+    "Orphanet": [
+     "905"
+    ],
+    "SCTID": [
+     "88518009"
+    ],
+    "UMLS": [
+     "C0019202"
+    ],
+    "icd11.foundation": [
+     "468161208"
+    ]
+   }
+  },
   "MONDO:0010679": {
    "definition": "Duchenne muscular dystrophy (DMD) is a neuromuscular disease characterized by rapidly progressive muscle weakness and wasting due to degeneration of skeletal, smooth and cardiac muscle.",
    "id": "MONDO:0010679",
@@ -5132,6 +5451,49 @@
     ]
    }
   },
+  "MONDO:0016158": {
+   "definition": "This term is also known as narcolepsy type 1 and is different from the hereditary form, narcolepsy 1 (MONDO:0008062).",
+   "id": "MONDO:0016158",
+   "label": "narcolepsy-cataplexy syndrome",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "Gelineau syndrome": "hasExactSynonym",
+    "Gelineau's syndrome": "hasExactSynonym",
+    "G\u00e9lineau disease": "hasExactSynonym",
+    "narcolepsy type 1": "hasExactSynonym",
+    "narcolepsy with cataplexy": "hasExactSynonym",
+    "narcolepsy-cataplexy syndrome": "hasExactSynonym",
+    "narcoleptic syndrome": "hasRelatedSynonym"
+   },
+   "xrefs": {
+    "GARD": [
+     "0007162"
+    ],
+    "ICD10CM": [
+     "G47.4",
+     "G47.411"
+    ],
+    "ICD9": [
+     "347.0"
+    ],
+    "MEDGEN": [
+     "199638"
+    ],
+    "MedDRA": [
+     "10028713"
+    ],
+    "Orphanet": [
+     "2073"
+    ],
+    "UMLS": [
+     "C0751362"
+    ],
+    "icd11.foundation": [
+     "1851015159"
+    ]
+   }
+  },
   "MONDO:0016472": {
    "definition": "Dracunculiasis (Guinea worm disease) is a neglected tropical disease (NTD) characterized by a painful burning skin lesion from which the Dracunculus medinensis parasite emerges approximately 1 year after infection resulting from consumption of unsafe drinking water containing parasite-infected copepods (Cyclops spp., microcrustacea also called water fleas).",
    "id": "MONDO:0016472",
@@ -5536,6 +5898,90 @@
     ]
    }
   },
+  "MONDO:0018874": {
+   "definition": "Acute myeloid leukemia (AML) is a group of neoplasms arising from precursor cells committed to the myeloid cell-line differentiation. All of them are characterized by clonal expansion of myeloid blasts. AML manifests by fever, pallor, anemia, hemorrhages and recurrent infections.",
+   "id": "MONDO:0018874",
+   "label": "acute myeloid leukemia",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "AML": "hasExactSynonym",
+    "AML - acute myeloid leukaemia": "hasExactSynonym",
+    "AML - acute myeloid leukemia": "hasExactSynonym",
+    "ANLL": "hasExactSynonym",
+    "acute Nonlymphocytic leukaemia": "hasExactSynonym",
+    "acute Nonlymphocytic leukemia": "hasExactSynonym",
+    "acute granulocytic leukaemia": "hasExactSynonym",
+    "acute granulocytic leukemia": "hasExactSynonym",
+    "acute myeloblastic leukemia": "hasExactSynonym",
+    "acute myelocytic leukaemia": "hasExactSynonym",
+    "acute myelocytic leukemia": "hasExactSynonym",
+    "acute myelogenous leukemia": "hasExactSynonym",
+    "acute myelogenous leukemias": "hasExactSynonym",
+    "acute myeloid leukaemia (AML)": "hasExactSynonym",
+    "acute myeloid leukemia": "hasExactSynonym",
+    "acute myeloid leukemia (AML)": "hasExactSynonym",
+    "acute non lymphoblastic leukaemia": "hasRelatedSynonym",
+    "acute non lymphoblastic leukemia": "hasRelatedSynonym",
+    "acute nonlymphocytic leukaemia": "hasExactSynonym",
+    "acute nonlymphocytic leukemia": "hasExactSynonym",
+    "hematopoeitic - acute Myleogenous leukaemia (AML)": "hasExactSynonym",
+    "hematopoeitic - acute Myleogenous leukemia (AML)": "hasExactSynonym",
+    "leukemia, myelocytic, acute": "hasExactSynonym",
+    "myeloid leukemia, acute": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "9119"
+    ],
+    "EFO": [
+     "0000222"
+    ],
+    "GARD": [
+     "0012757"
+    ],
+    "ICD10CM": [
+     "C92.0"
+    ],
+    "ICD9": [
+     "205.0",
+     "205.00"
+    ],
+    "ICDO": [
+     "9861/3"
+    ],
+    "MEDGEN": [
+     "9730"
+    ],
+    "MESH": [
+     "D015470"
+    ],
+    "MedDRA": [
+     "10000880"
+    ],
+    "NCIT": [
+     "C3171"
+    ],
+    "NORD": [
+     "1905"
+    ],
+    "OMIM": [
+     "601626"
+    ],
+    "ONCOTREE": [
+     "AML"
+    ],
+    "Orphanet": [
+     "519"
+    ],
+    "SCTID": [
+     "91861009"
+    ],
+    "UMLS": [
+     "C0023467"
+    ]
+   }
+  },
   "MONDO:0018908": {
    "definition": "Distinct from Hodgkin lymphoma both morphologically and biologically, non-Hodgkin lymphoma (NHL) is characterized by the absence of Reed-Sternberg cells, can occur at any age, and usually presents as a localized or generalized lymphadenopathy associated with fever and weight loss. The clinical course varies according to the morphologic type. NHL is clinically classified as indolent, aggressive, or having a variable clinical course. NHL can be of B-or T-/NK-cell lineage.",
    "id": "MONDO:0018908",
@@ -5720,6 +6166,72 @@
     ]
    }
   },
+  "MONDO:0021081": {
+   "definition": "An autoimmune acute encephalitis caused by antibodies against the glutamate NMDA receptor. It usually affects females and in the majority of cases it is associated with the presence of a tumor, most commonly an ovarian teratoma. The presence of a tumor in patients with this form of encephalitis implies that the latter is a paraneoplastic syndrome. It is manifested with psychiatric symptoms and epileptic seizures. It is a potentially lethal disorder; however, it is usually reversible with the prompt removal of the tumor.",
+   "id": "MONDO:0021081",
+   "label": "anti-NMDA receptor encephalitis",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "anti-NMDA receptor encephalitis": "hasExactSynonym",
+    "limbic encephalitis with N-methyl-D-aspartate receptor antibodies": "hasExactSynonym",
+    "limbic encephalitis with NMDA receptor antibodies": "hasExactSynonym"
+   },
+   "xrefs": {
+    "GARD": [
+     "0020513"
+    ],
+    "MEDGEN": [
+     "458943"
+    ],
+    "MESH": [
+     "D060426"
+    ],
+    "NANDO": [
+     "2201317"
+    ],
+    "NCIT": [
+     "C94853"
+    ],
+    "Orphanet": [
+     "217253"
+    ],
+    "SCTID": [
+     "716684004"
+    ],
+    "UMLS": [
+     "C2986717"
+    ],
+    "icd11.foundation": [
+     "1568915618"
+    ]
+   }
+  },
+  "MONDO:0043519": {
+   "definition": "A traumatic injury involving interruption of tissue cohesiveness that results from exposure to caustic chemicals, extreme heat, extreme cold or excessive radiation.",
+   "id": "MONDO:0043519",
+   "label": "burn",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "Burn": "hasExactSynonym",
+    "burn": "hasExactSynonym"
+   },
+   "xrefs": {
+    "ICD10CM": [
+     "T20-T25"
+    ],
+    "MESH": [
+     "D002056"
+    ],
+    "NCIT": [
+     "C34441"
+    ],
+    "SCTID": [
+     "125666000"
+    ]
+   }
+  },
   "MONDO:0044070": {
    "definition": "A form of invasive candidiasis where species of candida are present in the blood.",
    "id": "MONDO:0044070",
@@ -5861,6 +6373,40 @@
     ],
     "icd11.foundation": [
      "1730556128"
+    ]
+   }
+  },
+  "MONDO:0700226": {
+   "definition": "Gastrointestinal disturbances, skin eruptions, or shock due to allergic reactions to allergens in food.",
+   "id": "MONDO:0700226",
+   "label": "food allergy",
+   "obsolete": false,
+   "replaced_by": [],
+   "synonyms": {
+    "allergy of food material": "hasExactSynonym",
+    "food material allergic disease": "hasExactSynonym"
+   },
+   "xrefs": {
+    "DOID": [
+     "3044"
+    ],
+    "EFO": [
+     "1001890"
+    ],
+    "ICD9": [
+     "995.3"
+    ],
+    "MEDGEN": [
+     "1635115"
+    ],
+    "MESH": [
+     "D005512"
+    ],
+    "SCTID": [
+     "414285001"
+    ],
+    "UMLS": [
+     "C4554344"
     ]
    }
   },

@@ -198,6 +198,12 @@ const FIELDS = {
   no_longer_terminal: { type:"bool", get: r => r.derived.no_longer_terminal, derived:true,
                help:"was uniformly fatal, is not terminal now — read with `outcome`, see gaps.md #216" },
 
+  // THE ONE NUMBER, as fields, so the landing page's figures link to the query
+  // that produces them (dashboard rule) and so "which eight?" is one search.
+  solved:                { type:"bool", get: r => r.derived.solved, derived:true,
+                           help:"ends it, reaches most patients, costs nothing permanent" },
+  solved_step:           { type:"num",  get: r => r.derived.solved_step, derived:true,
+                           help:"0 none · 1 medicine can end it · 2 and it reaches most · 3 solved" },
   // flags (all derived booleans)
   orphaned:              { type:"bool", get: r => r.derived.orphaned, derived:true, help:"⚑ no champion" },
   has_window:            { type:"bool", get: r => r.derived.has_window, derived:true, help:"⧗ timing changes what is possible" },

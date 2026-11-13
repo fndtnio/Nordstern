@@ -343,6 +343,56 @@ moved:
       common pathway enrols a mixture and dilutes toward the null.
     src: recall
 
+  - date: 2016
+    axis: measurement
+    from: infection plus two or more SIRS criteria, with "severe sepsis" in between
+    to: infection plus measurable organ dysfunction, SOFA rising by two or more
+    why: >
+      **SEPSIS-3 DELETED THE DEFINITION THIS DISEASE HAD CARRIED FOR TWENTY-FIVE
+      YEARS, AND IT IS THE LARGEST THING THAT HAS EVER HAPPENED TO THIS RECORD'S
+      POPULATION.** A task force of nineteen convened by the **Society of Critical
+      Care Medicine** and the **European Society of Intensive Care Medicine**
+      redefined sepsis as *life-threatening organ dysfunction caused by a
+      dysregulated host response to infection*, operationalised as a SOFA score
+      rising by two points or more — associated with in-hospital mortality above
+      ten percent. Septic shock became a vasopressor requirement plus a lactate
+      above 2 mmol/L. **The term "severe sepsis" was declared redundant and
+      removed.**
+      The task force's own stated reasons for abandoning SIRS are worth recording
+      exactly, because they are three separate criticisms and the register cares
+      about different ones: *"an excessive focus on inflammation, the misleading
+      model that sepsis follows a continuum through severe sepsis to shock, and
+      inadequate specificity **and sensitivity** of the systemic inflammatory
+      response syndrome (SIRS) criteria"* (Singer et al., *JAMA*
+      2016;315(8):801-10, PMID 26903338).
+      **WHY IT IS ON THE `measurement` AXIS AND NOT ANYWHERE ELSE.** Nothing was
+      discovered, nothing was invented, nothing was delivered. A definition
+      changed, and with it this record's incidence, its case fatality and who
+      counts as having the disease at all — the paper says so itself, naming
+      *"discrepancies in reported incidence and observed mortality"* as the
+      problem it was solving. `burden.note` already states the consequence: **a bad
+      influenza satisfied the old criteria, and nobody's biology changed when the
+      population did.** This is the seventh `moved` entry in the register on this
+      axis, and it was missing until 2026-11-07 — gaps.md #184 exactly, found by
+      the audit in #248.
+      **AND IT IS THE ONLY MEASUREMENT MOVE IN THE CORPUS THAT A CO-AUTHOR OF THE
+      PREVIOUS DEFINITION REFUSED TO SIGN.** The **American College of Chest
+      Physicians**, which wrote the 1991 criteria, declined to endorse Sepsis-3 on
+      the grounds that a narrower definition misses patients who are
+      deteriorating and still treatable — which is the *sensitivity* half of the
+      task force's own objection to SIRS, turned back on its replacement. Thirty-one
+      societies did endorse it. Several national bodies adopted it late or
+      partially. **The register records the change and takes no position on
+      whether it was right**; see `witness.contested`, where the dispute is held
+      with its parties named.
+      **What this entry cannot say is which direction the rating should move.** A
+      narrower definition raises measured case fatality and lowers measured
+      incidence without changing a single patient's outcome, so `survival` and
+      `burden` both shifted for a reason that is not about the disease — and the
+      axis records a diagnostic change with no scalar attached, because attaching
+      one would imply a verdict the register does not have (gaps.md #133, #141).
+    src: recall
+
 witness:
   mechanism: >
     `partial`, and the split is unusual: **the molecular pathways are well

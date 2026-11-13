@@ -267,10 +267,26 @@ holes:
     the vaccine's most important effect is recorded in three places and its
     coverage figure in none.
   - >
-    **Four HPV-attributable cancers have no record at all** — anal, vulvar,
-    vaginal and penile. Anal cancer in particular is rising, is concentrated in
-    identifiable high-risk groups, and has a screening question that resembles
-    cervical cancer's from thirty years ago.
+    **THIS HOLE WAS CLOSED AND THE RECORD WENT ON SAYING IT.** It read *"four
+    HPV-attributable cancers have no record at all — anal, vulvar, vaginal and
+    penile."* All four were written as FND-D-0123 to FND-D-0126 and the finding
+    is gaps.md #240. The sentence stayed here, true-looking and false, until an
+    unrelated reading pass caught it on 2026-11-05. **A hole that names a missing
+    record goes stale the day the record is written**, and #242's complaint runs
+    the other way — it is about a record exposing a hole, not about a record
+    closing one and nothing noticing.
+  - >
+    What replaces it is the level above, and it is the first hole here restated
+    with a number. The IARC infection-attributable tally for 2024 puts HPV at
+    **about four percent of all cancer worldwide — on the order of 750,000 cases
+    a year**, which is one of the two largest of the twelve carcinogenic agents
+    it counts — *Helicobacter pylori* is given the same four percent and some
+    ten thousand more cases, a gap of about one percent between two modelled
+    estimates, so neither is "the largest" on this evidence. **Those cases are distributed across
+    six records in this register and no file can add them up**, because the
+    causal edge from this record to each of them exists only in prose and carries
+    no quantity. That is gaps.md #247, and it is why the vaccine's coverage
+    figure has no home (#109, #236).
   - >
     `deaths: 0` is correct and is the fourth instance of a subset-of-another-record
     zero. The register now has enough of these that the pattern is a schema

@@ -574,6 +574,17 @@ test("a residue on a no-capability record is a reviewed exception, not a habit",
     // the state before it all" is a meaningful question here and `n/a` refuses
     // to answer it. Argued in the record's own `holes`.
     "disorders-of-consciousness",
+    // EBV infection is the fifth and it satisfies the rule the way
+    // `dracunculiasis` does: INFECTIOUS MONONUCLEOSIS RESOLVES, on its own,
+    // over weeks, and the residue is the fatigue that outlasts it — months in
+    // many, indefinitely in a minority. The episode ends; nothing cured it.
+    //
+    // `capability` reads `unsolved` because the intervention rung is
+    // `symptomatic`, which is the correct reading of an infection that nothing
+    // prevents and nothing clears, and the record argues that in its `holes`.
+    // The residue is deliberately `permanent: false` — most of it lifts — which
+    // is gaps.md #176 doing the work a boolean cannot.
+    "ebv-infection",
   ]);
   const found = records.filter(r => r.residue && r.derived.restored === "n/a")
                        .map(r => r.slug).sort();
@@ -813,4 +824,105 @@ test("the spec documents the grammar, the fields and the vocabulary in one place
     assert.ok(spec.includes(section), `the spec has no "${section}" section`);
   assert.ok(!/<dialog id="gloss"/.test(html),
     "the glossary is a second dialog again — it belongs in the spec");
+});
+
+
+/* ---- the plain columns (2026-10-27) ----------------------------------
+ * The first audience is people outside medicine. Five columns in words by
+ * default; the coded set is still in the markup, hidden behind "all columns".
+ * The words are LABELS for derived values, never a derivation, and they must
+ * cover every value the data holds or a new rung arrives as a blank cell. */
+
+test("the default columns are five, in words, and the coded ones are only hidden", () => {
+  const html = fs.readFileSync(path.join(DIR, "query.html"), "utf8");
+  const ths = [...html.matchAll(/<th data-k="(\w+)"( class="more")?>([^<]*)</g)]
+    .map(m => ({ k: m[1], more: !!m[2], label: m[3] }));
+  const plain = ths.filter(t => !t.more).map(t => t.k);
+  assert.deepEqual(plain, ["name", "bucket", "capability", "prevention", "reach"]);
+  for (const k of ["slug", "_flags", "mechanism", "_meas", "terms", "_cost"])
+    assert.ok(ths.some(t => t.k === k && t.more), `${k} must still be in the table, hidden`);
+  assert.match(html, /id="cols"/, "the toggle that reveals the coded columns");
+});
+
+test("every capability, prevention and state value has plain words, and no code leaks into a default cell", () => {
+  const { els, records } = boot();
+  const body = els.tbl.tBodies[0].innerHTML;
+  const rows = [...body.matchAll(/<tr data-slug="([\w-]+)"[^>]*>([\s\S]*?)<\/tr>/g)];
+  assert.equal(rows.length, records.length);
+  const CODES = new Set(["curable", "managed", "partial", "unsolved", "preventable",
+                         "risk-reduction", "prophylaxis", "ends-it", "held-off", "never-safe", "changes-you", "back-to-normal"]);
+  for (const [, slug, inner] of rows) {
+    const cells = [...inner.matchAll(/<td([^>]*)>([\s\S]*?)<\/td>/g)]
+      .filter(m => !/class="[^"]*\bmore\b/.test(m[1])).map(m => m[2].replace(/<[^>]+>/g, "").trim());
+    assert.equal(cells.length, 5, `${slug}: expected five default cells`);
+    for (const c of cells) {
+      assert.ok(c.length > 0, `${slug}: an empty default cell`);
+      assert.ok(!CODES.has(c), `${slug}: the code "${c}" leaked into a default cell — add its plain words`);
+    }
+    const r = records.find(x => x.slug === slug);
+    assert.equal(cells[0].startsWith(r.name), true, `${slug}: the first cell is the plain name`);
+    // reach is withheld exactly where the register withholds delivery
+    assert.equal(cells[4] === "—", r.derived.delivery === "—", `${slug}: reach shown/withheld inconsistently`);
+  }
+});
+
+test("the default order is alphabetical — the list implies no ranking", () => {
+  const { rowSlugs, records } = boot();
+  const names = rowSlugs().map(s => records.find(r => r.slug === s).name.toLowerCase());
+  for (let i = 1; i < names.length; i++) assert.ok(names[i] >= names[i - 1], `${names[i - 1]} > ${names[i]}`);
+});
+
+
+/* ---- the card, for someone who was sent the link (2026-10-27) ---------- */
+
+test("a link that names one record opens its card", () => {
+  const { els } = boot("id:FND-D-0023");
+  assert.match(els.detail.innerHTML, /<h2>tuberculosis<\/h2>/, "the card for the single result must be open");
+  assert.doesNotMatch(els.detail.innerHTML, /ask the register a question/i);
+});
+
+test("the card opens in plain words, in reading order, and folds the full record", () => {
+  const { els, records } = boot("id:FND-D-0023");
+  const html = els.detail.innerHTML, text = html.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
+  const order = ["What it is", "What it does to you", "Treatment", "Prevention", "What stands in the way", "the full record"];
+  let last = -1;
+  for (const h of order) { const i = text.indexOf(h); assert.ok(i > last, `"${h}" missing or out of order`); last = i; }
+  // the definition is borrowed from Mondo and says so; it is the record's own id
+  const tb = records.find(r => r.id === "FND-D-0023");
+  assert.ok(tb.mondo_term && tb.mondo_term.definition, "the build must carry Mondo's definition");
+  assert.ok(text.includes(tb.mondo_term.definition.split(". ")[0]), "the first sentence of the definition is shown");
+  assert.match(text, /Mondo Disease Ontology's definition for MONDO:\d+/);
+  // the coded blocks are still there, inside the fold
+  const fold = html.slice(html.indexOf('<details class="full"'));
+  for (const h of ["Verdict (derived)", "Axes", "Measurement", "Blockers", "Witness", "Burden", "Holes"]) assert.ok(fold.includes(h), `${h} must survive inside the fold`);
+  assert.match(fold, /class="challenge"/, "the challenge link lives in the fold");
+  // nothing coded leaks above the fold
+  const above = html.slice(0, html.indexOf('<details class="full"')).replace(/<[^>]+>/g, " ");
+  for (const code of [" curable", " managed", " unsolved", " prophylaxis", " risk-reduction", "quadrant", "efficacy"])
+    assert.ok(!above.includes(code), `the code "${code.trim()}" leaked above the fold`);
+});
+
+test("every blocker kind and standing has plain words", () => {
+  const { records, sandbox } = boot();
+  const kinds = new Set(records.flatMap(r => r.blockers.map(b => b.kind)));
+  const standings = new Set(records.flatMap(r => r.blockers.map(b => b.standing)));
+  const html = fs.readFileSync(path.join(DIR, "query.html"), "utf8");
+  for (const k of kinds) assert.ok(new RegExp(`["']?${k}["']?\\s*:`).test(html), `no plain words for blocker kind ${k}`);
+  for (const st of standings) assert.ok(new RegExp(`${st}\\s*:`).test(html), `no plain words for standing ${st}`);
+  void sandbox;
+});
+
+test("every record's card renders its plain sections without a blank", () => {
+  const { els, records } = boot();
+  for (const r of records) {
+    els.q.oninput({ target: { value: "id:" + r.id } });
+    const card = els.detail.innerHTML;
+    // the plain sections only: the fold holds witness prose, and ebola's
+    // access units genuinely say "between outbreaks it is undefined"
+    const text = card.slice(0, card.indexOf('<details class="full"')).replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
+    assert.match(text, /What it does to you \S/, `${r.slug}: empty 'what it does to you'`);
+    assert.match(text, /Treatment \S/, `${r.slug}: empty treatment`);
+    assert.match(text, /Prevention \S/, `${r.slug}: empty prevention`);
+    assert.ok(!/undefined|NaN|\[object/.test(text), `${r.slug}: undefined leaked into the card`);
+  }
 });

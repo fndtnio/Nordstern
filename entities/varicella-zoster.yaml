@@ -357,6 +357,31 @@ blockers:
     standing: documented
     src: reasoning
 
+  - kind: knowledge
+    blocks: restoring the immunity that was holding it latent
+    what: >
+      **THE REASON THIS DISEASE IS A DISEASE OF THE OLD IS THAT ONE ORGAN SHUT
+      DOWN ON SCHEDULE, AND NOTHING RESTARTS IT.** Latency is held by
+      cell-mediated immunity; thymic output of new naive T cells falls from the
+      first year of life and is largely gone by the age at which zoster
+      incidence climbs. **Nothing was damaged** — the thymus was dismantled on a
+      developmental schedule and replaced with fat — which is why this is not a
+      repair problem and why it is tagged to `programme-restart` (FND-O-0019)
+      rather than to `tissue-repair`.
+      **And the honest half: this blocker may never need clearing.** The
+      recombinant adjuvanted vaccine already produces above ninety percent
+      protection in people over eighty, by engineering around the deficit rather
+      than correcting it. So the question is live, and this record is the best
+      evidence in either register that answering it is **avoidable** — which is
+      what the obstacle's own claim says back.
+      `scale: null`, because nobody can price restarting a developmental
+      programme.
+    who_could: [academic, nonprofit]
+    scale: null
+    standing: documented
+    src: reasoning
+    obstacles: [programme-restart]
+
   - kind: cost
     blocks: an excellent vaccine that most eligible people do not receive
     what: >

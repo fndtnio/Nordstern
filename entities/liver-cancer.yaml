@@ -422,6 +422,24 @@ holes:
   - `access: 0.30` conflates things that behave completely differently — a
     six-monthly ultrasound, an interventional radiology suite, an expensive
     antibody, and **a donated organ that cannot be bought.**
+  - **THIS RECORD ASSUMES HCC ARRIVES AT THE END OF A ROAD, AND THERE IS A
+    DOCUMENTED ROUTE THAT SKIPS IT.** Everything here — the `window` block, the
+    surveillance blocker, the strata — rests on cancer arising in a liver already
+    damaged by hepatitis, alcohol or metabolic disease, accumulating mutations
+    over years. A 2026 mouse study activated YAP1 in a few otherwise normal
+    hepatocytes and produced carcinoma with **no mutation in any canonical driver
+    gene in about half the tumours**, by DNA demethylation switching oncogenes on
+    instead (Kosaka et al., Communications Biology 9:1198, 2026,
+    doi:10.1038/s42003-026-10882-w, read 2026-11-03). The human end of it is
+    Fontan-associated liver disease, where the same signature is raised and where
+    HCC is already noted to carry fewer driver mutations than usual. If a
+    mutation-free route exists at any scale in people, it lands on the part of
+    this record already flagged as most likely to change: the share of HCC
+    arising outside cirrhosis, in a population nobody is surveilling. **No scalar
+    here is altered on a mouse model** — it is recorded because the record's
+    whole strategy is built on the road it skips. Logged against
+    `growth-control` (FND-O-0015), which holds the same citation from the
+    mechanism side.
   - Hepatitis B, cirrhosis and alcohol use disorder are all queued and unwritten,
     and all three are upstream of this record. Rating this before them is a
     consequence of working through a cancer list rather than a causal one.

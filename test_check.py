@@ -1874,3 +1874,80 @@ class TestBucketMembership(unittest.TestCase):
         for a, b in zip(snaps, snaps[1:]):
             d = check.bucket_diff(a, b)
             self.assertIn("skipped", d)
+
+
+class TestSolved(unittest.TestCase):
+    """THE ONE NUMBER. Three nested facts; each step strictly inside the last;
+    the verdict derived, never stored. Pinned with the records that define it."""
+
+    def make(self, intervention="curative", prevention="none", efficacy=0.9,
+             access=0.9, toll=None):
+        ax = {**rec()["axes"], "intervention": intervention, "prevention": prevention,
+              "efficacy": {"value": efficacy, "units": "u", "src": "recall"},
+              "access": {"value": access, "units": "u", "src": "recall"}}
+        r = rec(axes=ax)
+        if toll:
+            r["toll"] = {"severity": toll, "what": "w"}
+        return r
+
+    def test_the_staircase_is_nested(self):
+        for iv in ("none", "symptomatic", "disease-modifying", "suppressive", "curative"):
+            for pv in ("none", "risk-reduction", "prophylaxis", "eradicated"):
+                for reach_ in ((0.9, 0.9), (0.9, 0.5), (0.1, 0.1)):
+                    for toll in (None, "minor", "major"):
+                        r = self.make(iv, pv, *reach_, toll=toll)
+                        if check.solved(r):
+                            self.assertTrue(check.reaches_most(r))
+                        if check.reaches_most(r):
+                            self.assertTrue(check.can_end(r))
+                        self.assertEqual(check.solved_step(r),
+                                         check.can_end(r) + check.reaches_most(r) + check.solved(r))
+
+    def test_managed_is_real_capability_and_not_solved(self):
+        # HIV: near-normal life, treated indefinitely, delivered to most. Not ended.
+        r = self.make("suppressive", efficacy=0.95, access=0.8)
+        self.assertFalse(check.can_end(r))
+        self.assertEqual(check.solved_step(r), 0)
+
+    def test_curable_but_not_delivered_stops_at_step_one(self):
+        # hepatitis C: a finite cure that reaches a fraction of patients.
+        r = self.make("curative", efficacy=0.95, access=0.2)
+        self.assertTrue(check.can_end(r))
+        self.assertFalse(check.reaches_most(r))
+        self.assertEqual(check.solved_step(r), 1)
+
+    def test_the_floor_is_the_mostly_band(self):
+        self.assertEqual(check.SOLVED_REACH_FLOOR, 0.6)
+        self.assertEqual(check.solved_step(self.make(efficacy=0.8, access=0.75)), 3)   # 0.60
+        self.assertEqual(check.solved_step(self.make(efficacy=0.8, access=0.74)), 1)   # 0.592
+
+    def test_a_permanent_price_stops_at_step_two(self):
+        r = self.make(efficacy=0.9, access=0.9, toll="major")
+        self.assertTrue(check.reaches_most(r))
+        self.assertFalse(check.solved(r))
+        self.assertEqual(check.solved_step(r), 2)
+
+    def test_preventable_passes_reach_by_assumption(self):
+        # measles: no antiviral, a vaccine that emptied a continent; the schema has
+        # no reach number for prevention, so the step passes and the page says so.
+        r = self.make("symptomatic", "prophylaxis", efficacy=0.1, access=0.1)
+        self.assertEqual(check.capability(r), "preventable")
+        self.assertTrue(check.reaches_most(r))
+        self.assertTrue(check.solved(r))
+
+    def test_staircase_counts(self):
+        rs = [self.make("suppressive"), self.make(access=0.2),
+              self.make(toll="major"), self.make()]
+        st = check.solved_staircase(rs)
+        self.assertEqual((st["of"], st["can_end"], st["reaches_most"], st["solved"]), (4, 3, 2, 1))
+        self.assertIn("costs them nothing permanent", st["definition"])
+
+    def test_the_records_that_define_it(self):
+        recs = {r["slug"]: r for r in
+                (check.load(p) for p in
+                 sorted(glob.glob(os.path.join(HERE, "entities", "*.yaml"))))}
+        for slug in ("measles", "rabies", "tuberculosis"):
+            self.assertTrue(check.solved(recs[slug]), slug)
+        self.assertEqual(check.solved_step(recs["hiv"]), 0)            # managed, not ended
+        self.assertEqual(check.solved_step(recs["hepatitis-c"]), 1)    # curable, barely delivered
+        self.assertEqual(check.solved_step(recs["pleomorphic-adenoma"]), 2)   # delivered, costly

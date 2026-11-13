@@ -7,7 +7,7 @@ A row is written into a record only after a pmid is recorded as
 The `quote` is copied verbatim out of the PubMed response. This tool
 cannot compose a sentence — only move one.
 
-**177 entries · 101 with a query · 70 accepted.**
+**261 entries · 101 with a query · 70 accepted.**
 
 ## als — 1993 · `mechanism`
 *query:* `mutations[ti] AND superoxide[ti] AND dismutase[ti] AND familial[ti] AND 1993[dp]`
@@ -55,9 +55,9 @@ cannot compose a sentence — only move one.
 *query:* `dabigatran[ti] AND warfarin[ti] AND fibrillation[ti] AND 2009[dp]`
 -  PMID 20209677 — *[Dabigatran is better than warfarin in patients with atrial fibrillation and stroke risk - Re-Ly studies].* (Kardiol Pol 2009)
   > [Dabigatran is better than warfarin in patients with atrial fibrillation and stroke risk - Re-Ly studies].
--  PMID 20050386 — *Dabigatran versus warfarin in patients with atrial fibrillation.* (N Engl J Med 2009)
+-  PMID 20050386 — *Dabigatran versus warfarin in patients with atrial fibrillation.* (N Engl J Med 2009) — **Comment, Letter, NOT A SOURCE**
   > Dabigatran versus warfarin in patients with atrial fibrillation.
--  PMID 20050385 — *Dabigatran versus warfarin in patients with atrial fibrillation.* (N Engl J Med 2009)
+-  PMID 20050385 — *Dabigatran versus warfarin in patients with atrial fibrillation.* (N Engl J Med 2009) — **Comment, Letter, NOT A SOURCE**
   > Dabigatran versus warfarin in patients with atrial fibrillation.
 
 ## cataract — 1949 · `efficacy`
@@ -77,7 +77,7 @@ cannot compose a sentence — only move one.
 
 ## childhood-all — 1948 · `intervention`
 *query:* `Farber temporary remissions in acute leukemia in children produced by folic acid antagonist aminopterin 1948`
-- **ACCEPTED** PMID 16803563 — *A tribute to Sidney Farber-- the father of modern chemotherapy.* (Br J Haematol 2006)
+- **ACCEPTED** PMID 16803563 — *A tribute to Sidney Farber-- the father of modern chemotherapy.* (Br J Haematol 2006) — **Biography, NOT A SOURCE**
   > Sidney Farber, world-renowned paediatric pathologist, made major contributions to his field but is acknowledged as the father of the modern era of chemotherapy. He recognised that folic acid stimulated leukaemic cell growth and enhanced disease progression.
 
 ## childhood-pneumonia — 2000 · `access`
@@ -92,8 +92,7 @@ cannot compose a sentence — only move one.
 
 ## chronic-kidney-disease — 2020 · `efficacy`
 *query:* `dapagliflozin[ti] AND chronic[ti] AND kidney[ti] AND 2020[dp]`
-**error:** HTTP Error 500: Internal Server Error
--  PMID 33309055 — *[In patients with moderate chronic kidney disease with albuminuria, including non-diabetic patients, does dapagliflozin provide renal and cardiovascular benefit compared to placebo?].* (Rev Med Interne 2021)
+-  PMID 33309055 — *[In patients with moderate chronic kidney disease with albuminuria, including non-diabetic patients, does dapagliflozin provide renal and cardiovascular benefit compared to placebo?].* (Rev Med Interne 2021) — **Letter, NOT A SOURCE**
   > [In patients with moderate chronic kidney disease with albuminuria, including non-diabetic patients, does dapagliflozin provide renal and cardiovascular benefit compared to placebo?].
 -  PMID 33188396 — *Management of chronic kidney disease and its cardiovascular complications: has the dawn of a new era arrived? Comment on 'Dapagliflozin in Patients with Chronic Kidney Disease'.* (Eur Heart J 2020)
   > Management of chronic kidney disease and its cardiovascular complications: has the dawn of a new era arrived? Comment on 'Dapagliflozin in Patients with Chronic Kidney Disease'.
@@ -102,7 +101,7 @@ cannot compose a sentence — only move one.
 
 ## cirrhosis — 2024 · `efficacy`
 *query:* `resmetirom[ti] AND NASH[ti] AND 2024[dp]`
--  PMID 40213239 — *FDA approves Resmetirom: groundbreaking treatment for NASH liver scarring in moderate to advanced fibrosis.* (Ann Med Surg (Lond) 2025)
+-  PMID 40213239 — *FDA approves Resmetirom: groundbreaking treatment for NASH liver scarring in moderate to advanced fibrosis.* (Ann Med Surg (Lond) 2025) — **Editorial, NOT A SOURCE**
   > FDA approves Resmetirom: groundbreaking treatment for NASH liver scarring in moderate to advanced fibrosis.
 -  PMID 39896969 — *Effect of Resmetirom or Placebo in NASH Fibrosis Patients With <5% or >5% Weight Loss and/or on Baseline GLP-1 Therapy in the MAESTRO-NASH 52-Week Serial Liver Biopsy Study.* (Gastroenterol Hepatol (N Y) 2024)
   > Effect of Resmetirom or Placebo in NASH Fibrosis Patients With <5% or >5% Weight Loss and/or on Baseline GLP-1 Therapy in the MAESTRO-NASH 52-Week Serial Liver Biopsy Study.
@@ -172,7 +171,7 @@ cannot compose a sentence — only move one.
 
 ## duchenne — 1989 · `intervention`
 *query:* `prednisone[ti] AND duchenne[ti] AND 1989[dp]`
-- **ACCEPTED** PMID 2811967 — *Prednisone therapy for Duchenne's muscular dystrophy.* (N Engl J Med 1989)
+- **ACCEPTED** PMID 2811967 — *Prednisone therapy for Duchenne's muscular dystrophy.* (N Engl J Med 1989) — **Comment, Letter, NOT A SOURCE**
   > Prednisone therapy for Duchenne's muscular dystrophy.
 
 ## gastric-cancer — 1994 · `prevention`
@@ -236,14 +235,14 @@ cannot compose a sentence — only move one.
   > На состоявшемся 16 сентября 2021 г. международном онлайн-совещании экспертов рассмотрены результаты программы исследований эмпаглифлозина: EMPA-REG Outcome, EMPEROR-Reduced и EMPEROR-Preserved. Проанализированы данные о частоте развития осложнений сердечно-сосудистых заболеваний и болезни почек при применении эмпаглифлозина по сравнению
 -  PMID 34779658 — *Empagliflozin, Health Status, and Quality of Life in Patients With Heart Failure and Preserved Ejection Fraction: The EMPEROR-Preserved Trial.* (Circulation 2022)
   > In patients with heart failure with preserved ejection fraction, empagliflozin reduced the risk for major heart failure outcomes across the range of baseline KCCQ scores. Empagliflozin improved health-related quality of life, an effect that appeared early and was sustained for at least 1 year.
--  PMID 34526679 — *Empagliflozin improves clinical outcomes for HFpEF in EMPEROR-Preserved.* (Nat Rev Cardiol 2021)
+-  PMID 34526679 — *Empagliflozin improves clinical outcomes for HFpEF in EMPEROR-Preserved.* (Nat Rev Cardiol 2021) — **Comment, NOT A SOURCE**
   > Empagliflozin improves clinical outcomes for HFpEF in EMPEROR-Preserved.
 
 ## hepatitis-b — 1998 · `intervention`
 *query:* `lamivudine[ti] AND chronic[ti] AND hepatitis[ti] AND 1998[dp]`
 -  PMID 10398503 — *Lamivudine treatment of chronic hepatitis B.* (Rev Med Virol 1998)
   > Several new nucleoside analogues have been developed which can inhibit hepatitis B replication by at least two logs. Lamivudine is the most widely studied of these new agents. Extensive phase II and III studies in patients with chronic hepatitis B have been completed.
--  PMID 9867557 — *Lamivudine for chronic hepatitis B.* (N Engl J Med 1998)
+-  PMID 9867557 — *Lamivudine for chronic hepatitis B.* (N Engl J Med 1998) — **Comment, Letter, NOT A SOURCE**
   > Lamivudine for chronic hepatitis B.
 -  PMID 9795914 — *Quantitative hepatitis B virus DNA assessment by the limiting-dilution polymerase chain reaction in chronic hepatitis B patients: evidence of continuing viral suppression with longer duration and higher dose of lamivudine therapy.* (J Viral Hepat 1998)
   > Lamivudine, a novel cytosine analogue, exhibits potent antiviral activity against hepatitis B virus (HBV) in vitro and in vivo. The standard HBV DNA hybridization assay used in phase II clinical studies has a low sensitivity, the detection limit of HBV DNA levels being approximately 10(7) genome equivalents per ml (geq ml-1).
@@ -270,8 +269,8 @@ cannot compose a sentence — only move one.
 
 ## idiopathic-pulmonary-fibrosis — 2012 · `toll`
 *query:* `prednisone[ti] AND azathioprine[ti] AND acetylcysteine[ti] AND pulmonary[ti]`
-- **ACCEPTED** PMID 22931325 — *Prednisone, azathioprine, and N-acetylcysteine for pulmonary fibrosis.* (N Engl J Med 2012) — **Comment, Letter, NOT A SOURCE**
-  > Prednisone, azathioprine, and N-acetylcysteine for pulmonary fibrosis.
+- **ACCEPTED** PMID 22607134 — *Prednisone, azathioprine, and N-acetylcysteine for pulmonary fibrosis.* (N Engl J Med 2012)
+  > Increased risks of death and hospitalization were observed in patients with idiopathic pulmonary fibrosis who were treated with a combination of prednisone, azathioprine, and NAC, as compared with placebo. These findings provide evidence against the use of this combination in such patients.
 
 ## idiopathic-pulmonary-fibrosis — 2014 · `intervention`
 *query:* `pirfenidone[ti] AND idiopathic[ti] AND pulmonary[ti] AND fibrosis[ti] AND 2014[dp]`
@@ -314,21 +313,21 @@ cannot compose a sentence — only move one.
 
 ## maternal-haemorrhage — 2023 · `efficacy`
 *query:* `postpartum[ti] AND hemorrhage[ti] AND bundle[ti] AND 2023[dp]`
--  PMID 37142509 — *Incorporating a postpartum hemorrhage bundle on the labor and delivery unit: a state-wide survey of anesthesiologists in Massachusetts.* (Int J Obstet Anesth 2023)
+-  PMID 37142509 — *Incorporating a postpartum hemorrhage bundle on the labor and delivery unit: a state-wide survey of anesthesiologists in Massachusetts.* (Int J Obstet Anesth 2023) — **Comment, Letter, NOT A SOURCE**
   > Incorporating a postpartum hemorrhage bundle on the labor and delivery unit: a state-wide survey of anesthesiologists in Massachusetts.
 -  PMID 36511785 — *Feasibility and impact of a postpartum hemorrhage emergency care package using a bundle approach in Migori County, Kenya.* (Int J Gynaecol Obstet 2023)
   > Implementation of PPH EmC in Migori County, Kenya was feasible and positively impacted PPH emergency care.
 
 ## measles — 1963 · `prevention`
 *query:* `measles vaccine live attenuated Edmonston licensed 1963 Katz Enders`
-- **ACCEPTED** PMID 19198559 — *John F. Enders and measles virus vaccine--a reminiscence.* (Curr Top Microbiol Immunol 2009)
+- **ACCEPTED** PMID 19198559 — *John F. Enders and measles virus vaccine--a reminiscence.* (Curr Top Microbiol Immunol 2009) — **Biography, NOT A SOURCE**
   > Following their initial isolation in cell culture of the virus in 1954, a succession of investigators under the mentorship of John E Enders conducted the research, development, and initial clinical studies responsible for the licensure in 1963 of a successful live attenuated measles virus vaccine.
 
 ## melanoma — 2011 · `efficacy`
 *query:* `ipilimumab[ti] AND survival[ti] AND melanoma[ti] AND 2010[dp]`
--  PMID 21080797 — *Ipilimumab: attenuation of an inhibitory immune checkpoint improves survival in metastatic melanoma.* (Expert Rev Anticancer Ther 2010)
+-  PMID 21080797 — *Ipilimumab: attenuation of an inhibitory immune checkpoint improves survival in metastatic melanoma.* (Expert Rev Anticancer Ther 2010) — **Comment, NOT A SOURCE**
   > Evaluation of: Hodi FS, O'Day SJ, McDermott DF et al. Improved survival with ipilimumab in patients with metastatic melanoma. N. Engl. J. Med. 363(8), 711-723 (2010).
--  PMID 20609175 — *Improved melanoma survival at last! Ipilimumab and a paradigm shift for immunotherapy.* (Pigment Cell Melanoma Res 2010)
+-  PMID 20609175 — *Improved melanoma survival at last! Ipilimumab and a paradigm shift for immunotherapy.* (Pigment Cell Melanoma Res 2010) — **News, NOT A SOURCE**
   > Improved melanoma survival at last! Ipilimumab and a paradigm shift for immunotherapy.
 -  PMID 20525992 — *Improved survival with ipilimumab in patients with metastatic melanoma.* (N Engl J Med 2010)
   > Ipilimumab, with or without a gp100 peptide vaccine, as compared with gp100 alone, improved overall survival in patients with previously treated metastatic melanoma. Adverse events can be severe, long-lasting, or both, but most are reversible with appropriate treatment.
@@ -366,18 +365,18 @@ cannot compose a sentence — only move one.
 *query:* `natalizumab[ti] AND relapsing[ti] AND 2006[dp]`
 -  PMID 16932610 — *Does natalizumab have a role in the treatment of relapsing multiple sclerosis?* (Nat Clin Pract Neurol 2006)
   > Does natalizumab have a role in the treatment of relapsing multiple sclerosis?
--  PMID 16742009 — *Natalizumab for relapsing multiple sclerosis.* (N Engl J Med 2006)
+-  PMID 16742009 — *Natalizumab for relapsing multiple sclerosis.* (N Engl J Med 2006) — **Comment, Letter, NOT A SOURCE**
   > Natalizumab for relapsing multiple sclerosis.
--  PMID 16742008 — *Natalizumab for relapsing multiple sclerosis.* (N Engl J Med 2006)
+-  PMID 16742008 — *Natalizumab for relapsing multiple sclerosis.* (N Engl J Med 2006) — **Comment, Letter, NOT A SOURCE**
   > Natalizumab for relapsing multiple sclerosis.
 
 ## multiple-sclerosis — 2017 · `efficacy`
 *query:* `ocrelizumab[ti] AND primary[ti] AND progressive[ti] AND 2017[dp]`
 -  PMID 29232960 — *Ocrelizumab: A New B-cell Therapy for Relapsing Remitting and Primary Progressive Multiple Sclerosis.* (Ann Pharmacother 2018)
   > Ocrelizumab demonstrated efficacy in the treatment of relapsing and PPMS and is the first therapy approved for patients with PPMS.
--  PMID 28447771 — *Ocrelizumab in Primary Progressive and Relapsing Multiple Sclerosis.* (N Engl J Med 2017)
+-  PMID 28447771 — *Ocrelizumab in Primary Progressive and Relapsing Multiple Sclerosis.* (N Engl J Med 2017) — **Comment, Letter, NOT A SOURCE**
   > Ocrelizumab in Primary Progressive and Relapsing Multiple Sclerosis.
--  PMID 28447770 — *Ocrelizumab in Primary Progressive and Relapsing Multiple Sclerosis.* (N Engl J Med 2017)
+-  PMID 28447770 — *Ocrelizumab in Primary Progressive and Relapsing Multiple Sclerosis.* (N Engl J Med 2017) — **Comment, Letter, NOT A SOURCE**
   > Ocrelizumab in Primary Progressive and Relapsing Multiple Sclerosis.
 
 ## multiple-sclerosis — 2022 · `mechanism`
@@ -440,16 +439,16 @@ cannot compose a sentence — only move one.
 
 ## obesity — 2021 · `efficacy`
 *query:* `semaglutide[ti] AND overweight[ti] AND obesity[ti] AND 2021[dp]`
--  PMID 34866313 — *Once-weekly semaglutide for obesity or overweight: A systematic review and meta-analysis.* (Diabetes Obes Metab 2022)
+-  PMID 34866313 — *Once-weekly semaglutide for obesity or overweight: A systematic review and meta-analysis.* (Diabetes Obes Metab 2022) — **Letter, NOT A SOURCE**
   > Once-weekly semaglutide for obesity or overweight: A systematic review and meta-analysis.
--  PMID 34581745 — *Semaglutide vs Placebo as an Adjunct to Intensive Behavioral Therapy and Body Weight in Adults With Overweight or Obesity.* (JAMA 2021)
+-  PMID 34581745 — *Semaglutide vs Placebo as an Adjunct to Intensive Behavioral Therapy and Body Weight in Adults With Overweight or Obesity.* (JAMA 2021) — **Comment, Letter, NOT A SOURCE**
   > Semaglutide vs Placebo as an Adjunct to Intensive Behavioral Therapy and Body Weight in Adults With Overweight or Obesity.
--  PMID 34581743 — *Semaglutide vs Placebo as an Adjunct to Intensive Behavioral Therapy and Body Weight in Adults With Overweight or Obesity-Reply.* (JAMA 2021)
+-  PMID 34581743 — *Semaglutide vs Placebo as an Adjunct to Intensive Behavioral Therapy and Body Weight in Adults With Overweight or Obesity-Reply.* (JAMA 2021) — **Comment, Letter, NOT A SOURCE**
   > Semaglutide vs Placebo as an Adjunct to Intensive Behavioral Therapy and Body Weight in Adults With Overweight or Obesity-Reply.
 
 ## obesity — 2023 · `efficacy`
 *query:* `semaglutide[ti] AND cardiovascular[ti] AND obesity[ti] AND 2023[dp]`
--  PMID 38157134 — *Comment on: Semaglutide and cardiovascular outcomes in obesity without diabetes.* (J Endocrinol Invest 2024)
+-  PMID 38157134 — *Comment on: Semaglutide and cardiovascular outcomes in obesity without diabetes.* (J Endocrinol Invest 2024) — **Letter, NOT A SOURCE**
   > Comment on: Semaglutide and cardiovascular outcomes in obesity without diabetes.
 -  PMID 37952131 — *Semaglutide and Cardiovascular Outcomes in Obesity without Diabetes.* (N Engl J Med 2023)
   > In patients with preexisting cardiovascular disease and overweight or obesity but without diabetes, weekly subcutaneous semaglutide at a dose of 2.4 mg was superior to placebo in reducing the incidence of death from cardiovascular causes, nonfatal myocardial infarction, or nonfatal stroke at a mean follow-up of 39.8 months.
@@ -477,7 +476,7 @@ cannot compose a sentence — only move one.
 
 ## pancreatic-cancer — 2011 · `efficacy`
 *query:* `FOLFIRINOX[ti] AND gemcitabine[ti] AND 2011[dp]`
-- **ACCEPTED** PMID 21864184 — *FOLFIRINOX versus gemcitabine for metastatic pancreatic cancer.* (N Engl J Med 2011)
+- **ACCEPTED** PMID 21864184 — *FOLFIRINOX versus gemcitabine for metastatic pancreatic cancer.* (N Engl J Med 2011) — **Comment, Letter, NOT A SOURCE**
   > FOLFIRINOX versus gemcitabine for metastatic pancreatic cancer.
 
 ## parkinsons — 1967 · `intervention`
@@ -502,14 +501,14 @@ cannot compose a sentence — only move one.
 
 ## prostate-cancer — 1941 · `intervention`
 *query:* `Huggins Hodges studies on prostatic cancer effect of castration of estrogen 1941`
-- **ACCEPTED** PMID 12050481 — *Studies on prostatic cancer: I. The effect of castration, of estrogen and of androgen injection on serum phosphatases in metastatic carcinoma of the prostate. 1941.* (J Urol 2002)
+- **ACCEPTED** PMID 12050481 — *Studies on prostatic cancer: I. The effect of castration, of estrogen and of androgen injection on serum phosphatases in metastatic carcinoma of the prostate. 1941.* (J Urol 2002) — **Biography, NOT A SOURCE**
   > Studies on prostatic cancer: I. The effect of castration, of estrogen and of androgen injection on serum phosphatases in metastatic carcinoma of the prostate. 1941.
 
 ## prostate-cancer — 2012 · `toll`
 *query:* `active[ti] AND surveillance[ti] AND prostate[ti] AND 2012[dp]`
--  PMID 23312160 — *Re: factors influencing treatment decision making and information preferences of prostate cancer patients on active surveillance.* (J Urol 2013)
+-  PMID 23312160 — *Re: factors influencing treatment decision making and information preferences of prostate cancer patients on active surveillance.* (J Urol 2013) — **Comment, NOT A SOURCE**
   > Re: factors influencing treatment decision making and information preferences of prostate cancer patients on active surveillance.
--  PMID 23278942 — *Standard and saturation transrectal prostate biopsy techniques are equally accurate among prostate cancer active surveillance candidates.* (Int J Urol 2013)
+-  PMID 23278942 — *Standard and saturation transrectal prostate biopsy techniques are equally accurate among prostate cancer active surveillance candidates.* (Int J Urol 2013) — **Comment, NOT A SOURCE**
   > In men with prostate cancer, standard and saturation transrectal prostate biopsies techniques are equally predictive of candidates for active surveillance.
 -  PMID 23271780 — *Quality of life in men undergoing active surveillance for localized prostate cancer.* (J Natl Cancer Inst Monogr 2012)
   > Active surveillance is an important arrow in the quiver of physicians advising men with prostate cancer. Quality-of-life considerations are paramount for patient-centered decision making.
@@ -518,14 +517,14 @@ cannot compose a sentence — only move one.
 *query:* `nivolumab[ti] AND ipilimumab[ti] AND renal-cell[ti] AND 2018[dp]`
 -  PMID 30458884 — *Cost-effectiveness of nivolumab plus ipilimumab as first-line therapy in advanced renal-cell carcinoma.* (J Immunother Cancer 2018)
   > Nivolumab plus ipilimumab as first-line treatment could gain more health benefits for advanced RCC in comparison with standard sunitinib, which is considered to be cost-effective in the US and China but not in the UK.
--  PMID 30332546 — *Frontline immunotherapy treatment with nivolumab and ipilimumab in metastatic renal cell cancer: a new standard of care.* (Cancer Biol Ther 2019)
+-  PMID 30332546 — *Frontline immunotherapy treatment with nivolumab and ipilimumab in metastatic renal cell cancer: a new standard of care.* (Cancer Biol Ther 2019) — **Comment, NOT A SOURCE**
   > Nivolumab is a programmed death 1 (PD-1) inhibitor currently approved as second-line treatment for advanced renal cell carcinomas (RCC) after failure of standard antiangiogenic treatment.
 -  PMID 30201510 — *A Joint Statement from the European Association of Urology Renal Cell Cancer Guidelines Panel and the International Kidney Cancer Coalition: The Rejection of Ipilimumab and Nivolumab for Renal Cancer by the Committee for Medicinal Products for Human Use Does not Change Evidence-based Guideline Recommendations.* (Eur Urol 2018)
   > A Joint Statement from the European Association of Urology Renal Cell Cancer Guidelines Panel and the International Kidney Cancer Coalition: The Rejection of Ipilimumab and Nivolumab for Renal Cancer by the Committee for Medicinal Products for Human Use Does not Change Evidence-based Guideline Recommendations.
 
 ## rheumatoid-arthritis — 1998 · `intervention`
 *query:* `necrosis[ti] AND receptor[ti] AND fusion[ti] AND rheumatoid[ti] AND 1997[dp]`
-- **ACCEPTED** PMID 9380131 — *Treatment of rheumatoid arthritis with a tumor necrosis factor receptor-Fc fusion protein.* (N Engl J Med 1997)
+- **ACCEPTED** PMID 9380131 — *Treatment of rheumatoid arthritis with a tumor necrosis factor receptor-Fc fusion protein.* (N Engl J Med 1997) — **Comment, Letter, NOT A SOURCE**
   > Treatment of rheumatoid arthritis with a tumor necrosis factor receptor-Fc fusion protein.
 
 ## schizophrenia — 1988 · `efficacy`
@@ -537,9 +536,9 @@ cannot compose a sentence — only move one.
 *query:* `drotrecogin[ti] AND septic[ti] AND shock[ti] AND 2012[dp]`
 -  PMID 23174922 — *An updated meta-analysis to understand the variable efficacy of drotrecogin alfa (activated) in severe sepsis and septic shock.* (Minerva Anestesiol 2013)
   > DAA is not associated with improved survival in patients with severe sepsis or septic shock. Further studies should be done to determine whether changes in supportive therapy for sepsis explain the variable efficacy of DAA in randomized controlled clinical trials observed over time.
--  PMID 22931268 — *Drotrecogin alfa (activated) in septic shock.* (N Engl J Med 2012)
+-  PMID 22931268 — *Drotrecogin alfa (activated) in septic shock.* (N Engl J Med 2012) — **Comment, Letter, NOT A SOURCE**
   > Drotrecogin alfa (activated) in septic shock.
--  PMID 22931267 — *Drotrecogin alfa (activated) in septic shock.* (N Engl J Med 2012)
+-  PMID 22931267 — *Drotrecogin alfa (activated) in septic shock.* (N Engl J Med 2012) — **Comment, Letter, NOT A SOURCE**
   > Drotrecogin alfa (activated) in septic shock.
 
 ## sickle-cell — 2023 · `intervention`
@@ -564,7 +563,7 @@ cannot compose a sentence — only move one.
 *query:* `survival[ti] AND motor[ti] AND neuron[ti] AND gene[ti] AND 1995[dp]`
 -  PMID 7581461 — *A frame-shift deletion in the survival motor neuron gene in Spanish spinal muscular atrophy patients.* (Nat Genet 1995)
   > Spinal muscular atrophy (SMA) is a frequent autosomal recessive disease characterized by degeneration of the motor neurons of the spinal cord causing proximal paralysis with muscle atrophy.
--  PMID 8849000 — *Presymptomatic diagnosis of spinal muscular atrophy (SMA) III confirmed by deletion analysis of the survival motor neuron gene.* (Am J Med Genet 1995)
+-  PMID 8849000 — *Presymptomatic diagnosis of spinal muscular atrophy (SMA) III confirmed by deletion analysis of the survival motor neuron gene.* (Am J Med Genet 1995) — **Letter, NOT A SOURCE**
   > Presymptomatic diagnosis of spinal muscular atrophy (SMA) III confirmed by deletion analysis of the survival motor neuron gene.
 -  PMID 7573039 — *Deletions of the survival motor neuron gene in unaffected siblings of patients with spinal muscular atrophy.* (Am J Hum Genet 1995)
   > DNA studies in 103 spinal muscular atrophy (SMA) patients from The Netherlands revealed homozygosity for a survival motor neuron (SMN) deletion in 96 (93%) of 103. Neuronal apoptosis inhibitory protein deletions were found in 38 (37%) of 103 and occurred most frequently in SMA type I.
@@ -601,11 +600,11 @@ cannot compose a sentence — only move one.
 
 ## type-1-diabetes — 2022 · `prevention`
 *query:* `teplizumab[ti] AND relatives[ti] AND 2019[dp]`
--  PMID 31693818 — *Teplizumab in Relatives at Risk for Type 1 Diabetes. Reply.* (N Engl J Med 2019)
+-  PMID 31693818 — *Teplizumab in Relatives at Risk for Type 1 Diabetes. Reply.* (N Engl J Med 2019) — **Comment, Letter, NOT A SOURCE**
   > Teplizumab in Relatives at Risk for Type 1 Diabetes. Reply.
--  PMID 31693817 — *Teplizumab in Relatives at Risk for Type 1 Diabetes.* (N Engl J Med 2019)
+-  PMID 31693817 — *Teplizumab in Relatives at Risk for Type 1 Diabetes.* (N Engl J Med 2019) — **Comment, Letter, NOT A SOURCE**
   > Teplizumab in Relatives at Risk for Type 1 Diabetes.
--  PMID 31693816 — *Teplizumab in Relatives at Risk for Type 1 Diabetes.* (N Engl J Med 2019)
+-  PMID 31693816 — *Teplizumab in Relatives at Risk for Type 1 Diabetes.* (N Engl J Med 2019) — **Comment, Letter, NOT A SOURCE**
   > Teplizumab in Relatives at Risk for Type 1 Diabetes.
 
 ## type-2-diabetes — 1998 · `efficacy`
@@ -617,7 +616,7 @@ cannot compose a sentence — only move one.
 *query:* `empagliflozin[ti] AND cardiovascular[ti] AND mortality[ti] AND 2015[dp]`
 -  PMID 26738271 — *[EMPA-REG OUTCOME: Empagliflozin reduces mortality in patients with type 2 diabetes at high cardiovascular risk].* (Rev Med Liege 2015)
   > EMPA-REG OUTCOME is an international, prospective, placebo-controlled clinical trial investigating the cardiovascular outcomes of empagliflozin, an inhibitor of sodium-glucose cotransporters type 2 (SGLT2), in patients with type 2 diabetes mellitus and known cardiovascular disease.
--  PMID 26671327 — *[Empagliflozin reduces cardiovascular mortality in diabetic patients with previous cardiovascular events].* (Semergen 2016)
+-  PMID 26671327 — *[Empagliflozin reduces cardiovascular mortality in diabetic patients with previous cardiovascular events].* (Semergen 2016) — **Comment, NOT A SOURCE**
   > [Empagliflozin reduces cardiovascular mortality in diabetic patients with previous cardiovascular events].
 -  PMID 26378978 — *Empagliflozin, Cardiovascular Outcomes, and Mortality in Type 2 Diabetes.* (N Engl J Med 2015)
   > Patients with type 2 diabetes at high risk for cardiovascular events who received empagliflozin, as compared with placebo, had a lower rate of the primary composite cardiovascular outcome and of death from any cause when the study drug was added to standard care.
@@ -626,7 +625,7 @@ cannot compose a sentence — only move one.
 *query:* `weight-management[ti] AND remission[ti] AND diabetes[ti] AND 2018[dp]`
 -  PMID 30581081 — *Within-trial cost and 1-year cost-effectiveness of the DiRECT/Counterweight-Plus weight-management programme to achieve remission of type 2 diabetes.* (Lancet Diabetes Endocrinol 2019)
   > Within-trial cost and 1-year cost-effectiveness of the DiRECT/Counterweight-Plus weight-management programme to achieve remission of type 2 diabetes.
--  PMID 29554668 — *Intensive weight management in primary care improved weight loss and remission of type 2 diabetes.* (Ann Intern Med 2018)
+-  PMID 29554668 — *Intensive weight management in primary care improved weight loss and remission of type 2 diabetes.* (Ann Intern Med 2018) — **Comment, NOT A SOURCE**
   > Intensive weight management in primary care improved weight loss and remission of type 2 diabetes.
 -  PMID 29431614 — *Intensive weight management for remission of type 2 diabetes.* (Drug Ther Bull 2018)
   > Intensive weight management for remission of type 2 diabetes.
